@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0034",
+      "slug": "apartamento-varanda-gourmet-residencial-idea-centro-campinas-ap0034",
+      "titulo": "Apartamento com varanda gourmet no Residencial Idea, Centro",
+      "resumo": "Apartamento de 67 m² no Residencial Idea, Centro de Campinas: suíte com armários, cozinha planejada aberta para a sala e varanda gourmet envidraçada com deck.",
+      "capa": {
+        "foto": 1926,
+        "alt": "Varanda gourmet envidraçada com deck de madeira, churrasqueira e vista para os prédios do Centro"
+      },
+      "versao": "982424cc11f6",
+      "publicadoEm": "2026-10-26T23:21:39.840Z"
+    },
+    {
+      "codigo": "CA0029",
+      "slug": "casa-terrea-3-quartos-quintal-vila-nova-teixeira-campinas-ca0029",
+      "titulo": "Casa térrea de 3 quartos com quintal na Vila Nova Teixeira",
+      "resumo": "Casa de 142 m² em terreno de 257 m² na Vila Nova Teixeira, Campinas: 3 quartos com taco de madeira, 3 vagas e área coberta nos fundos.",
+      "capa": {
+        "foto": 1982,
+        "alt": "Fachada azul da casa térrea com toldo, jardim na frente e área de garagem cimentada"
+      },
+      "versao": "931d081cddd8",
+      "publicadoEm": "2026-10-26T23:21:39.834Z"
+    },
+    {
       "codigo": "ST0004",
       "slug": "apartamento-studio-28m2-varanda-moema-sao-paulo-st0004",
       "titulo": "Apartamento estúdio de 28 m² com varanda em Moema, São Paulo",
@@ -110,5 +134,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-26T21:21:59.570Z"
+  "atualizadoEm": "2026-10-26T23:21:39.840Z"
 }

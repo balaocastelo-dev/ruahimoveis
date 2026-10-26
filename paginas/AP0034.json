@@ -1,0 +1,298 @@
+{
+  "codigo": "AP0034",
+  "slug": "apartamento-varanda-gourmet-residencial-idea-centro-campinas-ap0034",
+  "titulo": "Apartamento com varanda gourmet no Residencial Idea, Centro",
+  "resumo": "Apartamento de 67 m² no Residencial Idea, Centro de Campinas: suíte com armários, cozinha planejada aberta para a sala e varanda gourmet envidraçada com deck.",
+  "capa": {
+    "foto": 1926,
+    "alt": "Varanda gourmet envidraçada com deck de madeira, churrasqueira e vista para os prédios do Centro"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Residencial Idea, no Centro de Campinas, perto da divisa com o Cambuí e do Centro de Convivência, segundo o anúncio. São 67 m² com uma suíte, dois banheiros e uma vaga de garagem coberta. As fotos mostram um imóvel com móveis planejados na cozinha e no quarto, ar-condicionado e piso claro de porcelanato."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto alto é a varanda gourmet: fechada com vidro, com piso de deck de madeira, churrasqueira revestida e uma bancada de madeira junto ao guarda-corpo. Ela se abre para a sala por uma porta de vidro de correr. O anúncio informa que a unidade fica no sétimo andar e recebe sol da manhã."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Varanda gourmet envidraçada com deck e churrasqueira",
+        "Cozinha planejada aberta para a sala, com balcão de granito",
+        "Suíte com armário do piso ao teto e ar-condicionado",
+        "Dois banheiros com bancada de pedra e box de vidro",
+        "Fogão e máquina de lavar ficam no imóvel, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e varanda gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala tem piso de porcelanato claro e brilhante, trilho de spots no teto e um painel de madeira para a TV com rack suspenso. De um lado fica a porta de vidro para a varanda; do outro, o balcão de granito preto que separa a cozinha. Um pendente de vidro marca o lugar da mesa de jantar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na varanda, o deck de madeira em placas cobre todo o piso e o fechamento de vidro corre pela frente e pela lateral. Num canto fica a churrasqueira, com revestimento de madeira clara e vasos pendurados na parede. Pela janela aparecem os prédios e as ruas do Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1928,
+          "legenda": "Sala com painel de TV, spots e porta para a varanda"
+        },
+        {
+          "foto": 1925,
+          "legenda": "Varanda com deck, bancada de madeira e fechamento de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha planejada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é em corredor e aberta para a sala. Tem armários claros em cima e embaixo da bancada de granito preto, cuba de inox e faixa de pastilhas na parede branca. Do lado da sala, o balcão tem uma parede revestida de pedra, nichos para garrafas e suporte para taças sobre a bancada. O fogão de quatro bocas aparece instalado nas fotos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O anúncio informa área de serviço e diz que o fogão e a máquina de lavar ficam com o apartamento. O interfone fica na parede junto ao balcão, perto da porta de entrada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1933,
+          "legenda": "Balcão de granito com parede de pedra, nichos e suporte para taças"
+        },
+        {
+          "foto": 1932,
+          "legenda": "Cozinha em corredor com armários claros e fogão"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A suíte tem armário embutido do piso ao teto com portas de correr, ar-condicionado split e cabeceira estofada. Outro quarto aparece vazio, com janela de persiana integrada e também com ar-condicionado. Os dois banheiros têm bancada de pedra bege com cuba branca, gabinete claro, espelho largo e box de vidro com perfil dourado; um deles tem janela no box."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio e para quem é"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Residencial Idea é uma torre alta, com varandas envidraçadas, entrada com jardim vertical e palmeiras e portão de garagem automático. O anúncio cita portaria 24 horas, dois elevadores, salão de festas com espaço gourmet, brinquedoteca e sala de cinema. As fotos mostram o hall de entrada envidraçado, a brinquedoteca com piscina de bolinhas, a sala de cinema com projetor e o salão com cozinha e mesa comprida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para um casal ou uma família pequena que quer morar perto do Cambuí, com a cozinha já montada e uma varanda para receber amigos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quantos dormitórios a planta tem hoje (o texto do anúncio e a ficha não trazem o mesmo número), o valor do condomínio e quais móveis e eletrodomésticos ficam com o imóvel.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1922,
+      "legenda": "Torre do Residencial Idea entre palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1936,
+      "legenda": "Torre com varandas envidraçadas vista da rua",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1935,
+      "legenda": "Fachada vista de baixo, com palmeira e varandas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1926,
+      "legenda": "Varanda gourmet com deck, churrasqueira e vista para o Centro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1925,
+      "legenda": "Varanda com bancada de madeira e fechamento de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1928,
+      "legenda": "Sala com painel de TV, spots e porta para a varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1930,
+      "legenda": "Corredor com vista para a cozinha e o pendente da sala",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1934,
+      "legenda": "Balcão da cozinha junto à porta de entrada",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1933,
+      "legenda": "Balcão de granito com parede de pedra e suporte para taças",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1932,
+      "legenda": "Cozinha em corredor com armários claros e fogão",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1929,
+      "legenda": "Bancada de granito preto com cuba de inox e pastilhas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1931,
+      "legenda": "Suíte com armário embutido, ar-condicionado e TV",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1924,
+      "legenda": "Quarto com ar-condicionado e janela com persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1923,
+      "legenda": "Banheiro com bancada de pedra bege e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1927,
+      "legenda": "Banheiro com janela no box e espelho largo",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1937,
+      "legenda": "Hall de entrada envidraçado com bancos de madeira",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1945,
+      "legenda": "Circulação do térreo com quadro e plantas",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1938,
+      "legenda": "Brinquedoteca com piscina de bolinhas e TV",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1939,
+      "legenda": "Brinquedoteca com escorregador e brinquedos",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1940,
+      "legenda": "Brinquedoteca com mesinha infantil e parede de madeira",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1941,
+      "legenda": "Sala de cinema com projetor, tela e sofás",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1942,
+      "legenda": "Cozinha do salão de festas com coifa e geladeira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1943,
+      "legenda": "Balcão de madeira com banquetas no salão de festas",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1944,
+      "legenda": "Mesa comprida com cadeiras coloridas e pendentes",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1946,
+      "legenda": "Portaria envidraçada com jardim na entrada",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1951,
+      "legenda": "Entrada do prédio com calçada de pedra e palmeiras",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1949,
+      "legenda": "Placa do Condomínio Idea junto ao jardim vertical",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1947,
+      "legenda": "Portão automático da garagem e jardim vertical",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1948,
+      "legenda": "Portão da garagem entre palmeiras e samambaias",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1950,
+      "legenda": "Torre vista da rua por trás das palmeiras",
+      "ambiente": "fachada"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A varanda tem churrasqueira?",
+      "resposta": "Sim. A varanda gourmet é fechada com vidro, tem piso de deck de madeira e churrasqueira."
+    },
+    {
+      "pergunta": "Quantas vagas e banheiros o apartamento tem?",
+      "resposta": "Uma vaga de garagem coberta e dois banheiros, sendo um da suíte."
+    },
+    {
+      "pergunta": "Quais itens de lazer o condomínio tem?",
+      "resposta": "Segundo o anúncio, salão de festas com espaço gourmet, brinquedoteca e sala de cinema, além de portaria 24 horas e dois elevadores."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 67 m² no Residencial Idea, Centro de Campinas, pertinho do Cambuí. Varanda gourmet envidraçada com deck de madeira e churrasqueira, cozinha planejada aberta para a sala, suíte com armários e ar-condicionado. Condomínio com portaria 24 horas, brinquedoteca, sala de cinema e salão de festas. Agende sua visita pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "centrodecampinas",
+      "cambui",
+      "varandagourmet",
+      "campinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "982424cc11f6",
+  "publicadoEm": "2026-10-26T23:21:39.840Z"
+}

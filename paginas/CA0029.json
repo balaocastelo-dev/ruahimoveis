@@ -1,0 +1,213 @@
+{
+  "codigo": "CA0029",
+  "slug": "casa-terrea-3-quartos-quintal-vila-nova-teixeira-campinas-ca0029",
+  "titulo": "Casa térrea de 3 quartos com quintal na Vila Nova Teixeira",
+  "resumo": "Casa de 142 m² em terreno de 257 m² na Vila Nova Teixeira, Campinas: 3 quartos com taco de madeira, 3 vagas e área coberta nos fundos.",
+  "capa": {
+    "foto": 1982,
+    "alt": "Fachada azul da casa térrea com toldo, jardim na frente e área de garagem cimentada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa térrea fica na Vila Nova Teixeira, em Campinas. São 142 m² construídos num terreno de 257 m², com três quartos, um banheiro e espaço para três carros. A casa aparece vazia e pintada nas fotos, com paredes brancas, luminárias quadradas de LED no teto e piso de taco de madeira em espinha na sala e nos quartos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que mais chama atenção é o espaço externo: uma frente cimentada e larga para os carros, um corredor lateral com canteiro e árvores e, nos fundos, uma área coberta com tanque e bancada de alvenaria. É uma casa para quem quer quintal e prefere morar no térreo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos e 1 banheiro em 142 m² construídos",
+        "Terreno de 257 m² com frente para 3 vagas",
+        "Piso de taco de madeira em espinha na sala e nos quartos",
+        "Banheiro com box de vidro e gabinete com cuba de apoio",
+        "Área coberta nos fundos com tanque e bancada"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fachada e sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada é azul, com telhado de duas águas, beiral branco e um toldo sobre a porta de entrada. Na frente, um jardim com folhagens e pedriscos divide espaço com o piso cimentado da garagem, fechado por muro e portão de grade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A porta de entrada é de madeira branca, com vidros estreitos dos dois lados e puxador longo de inox. Ela abre para uma sala comprida, com taco de madeira em espinha e duas luminárias embutidas no teto, que dá espaço para estar e jantar no mesmo ambiente. Uma passagem leva ao corredor dos quartos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1983,
+          "legenda": "Sala comprida com taco de madeira em espinha"
+        },
+        {
+          "foto": 1984,
+          "legenda": "Porta de entrada com vidros laterais e passagem para o corredor"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos seguem o mesmo padrão da sala: taco de madeira em espinha, paredes brancas e rodapé claro. As janelas são de veneziana com grade por dentro, o que permite ventilar com segurança. Em um dos quartos aparece uma luminária quadrada de LED, e todos estão vazios, prontos para a mudança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro tem revestimento bege do piso ao teto, moldura de gesso, box de vidro com janela basculante e um gabinete escuro com tampo de madeira e cuba branca de apoio. Acima da cuba fica um armário com espelho."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1988,
+          "legenda": "Banheiro com box de vidro e revestimento bege"
+        },
+        {
+          "foto": 1989,
+          "legenda": "Quarto com taco de madeira e janela com grade"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha, área coberta e quintal"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem piso cerâmico claro, uma parede revestida com placas que imitam tijolinho e bancada de granito preto com cuba de inox e torneira preta. A porta para a área externa é de ferro trabalhado, e o espaço sob a bancada está livre para você montar os armários do seu jeito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos fundos, uma área coberta com telhado metálico e iluminação no teto reúne um tanque e uma bancada de alvenaria com nichos, fechada por grade. Pela lateral da casa corre um corredor cimentado com canteiro, árvores e muro alto, que liga a frente aos fundos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é esta casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para uma família que precisa de três quartos e de lugar para mais de um carro, ou para quem procura uma casa térrea com terreno e quer espaço livre para usar nos fundos. A casa está vazia, com acabamento simples e conservado nas fotos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A documentação da casa e do terreno, se as vagas são cobertas ou descobertas, a idade da construção e se há planos ou espaço aprovado para ampliar.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1982,
+      "legenda": "Fachada azul com toldo, jardim e frente cimentada para os carros",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1984,
+      "legenda": "Sala com porta de entrada de madeira e vidros laterais",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1983,
+      "legenda": "Sala comprida com taco de madeira em espinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1986,
+      "legenda": "Quarto com janela de veneziana e porta para o corredor",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1987,
+      "legenda": "Vista de dois ambientes com taco, separados por parede",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1985,
+      "legenda": "Quarto com janela de veneziana e grade",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1989,
+      "legenda": "Quarto com luminária de LED e taco de madeira",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1988,
+      "legenda": "Banheiro com box de vidro e revestimento bege",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1990,
+      "legenda": "Gabinete com cuba de apoio e armário com espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1991,
+      "legenda": "Cozinha com parede de tijolinho e porta de ferro para fora",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1992,
+      "legenda": "Bancada de granito preto com cuba de inox",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1993,
+      "legenda": "Área coberta nos fundos com tanque e bancada de alvenaria",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1994,
+      "legenda": "Corredor lateral cimentado com canteiro e árvores",
+      "ambiente": "jardim"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e banheiros a casa tem?",
+      "resposta": "Três quartos e um banheiro, em 142 m² construídos num terreno de 257 m²."
+    },
+    {
+      "pergunta": "Quantos carros cabem?",
+      "resposta": "A ficha informa três vagas, na frente cimentada da casa."
+    },
+    {
+      "pergunta": "A casa tem quintal?",
+      "resposta": "Sim. Tem um corredor lateral com canteiro e árvores e uma área coberta nos fundos com tanque e bancada."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea na Vila Nova Teixeira, em Campinas: 3 quartos, 142 m² construídos em terreno de 257 m² e espaço para 3 carros. Sala e quartos com taco de madeira em espinha, banheiro com box de vidro, cozinha com bancada de granito e área coberta nos fundos. Quer conhecer? Fale com a RUAH pelo link da bio.",
+    "hashtags": [
+      "casacampinas",
+      "casaavenda",
+      "vilanovateixeira",
+      "casaterrea",
+      "campinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "931d081cddd8",
+  "publicadoEm": "2026-10-26T23:21:39.834Z"
+}
