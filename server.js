@@ -33,6 +33,7 @@ app.use('/webhook/whatsapp', publico.webhook);
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', mesmaOrigem);
 app.use('/api/publico/portal', require('./src/routes/portal').api);
+app.use('/api/publico/blog', require('./src/routes/blog').api);
 app.use('/api/publico', publico);
 const ABERTAS = new Set(['/setup', '/login', '/logout', '/drive/callback']);
 app.use('/api', (req, res, next) => (ABERTAS.has(req.path) ? next() : exigeLogin(req, res, next)));
