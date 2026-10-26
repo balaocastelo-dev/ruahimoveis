@@ -26,7 +26,10 @@ nada de pesquisa sobre o bairro. Se não dá para ver na foto nem ler na ficha, 
    para `/tmp/portal/<CÓDIGO>/`: `dados.json` (a ficha) e `foto-<número>.jpg` (todas as fotos).
    Se aparecer `pagina-anterior.json`, o imóvel já teve página: reaproveite o que continua certo e corrija o que mudou
    (o motivo aparece na linha "motivo").
-2. Para cada imóvel: leia o `dados.json` e **abra todas as fotos, uma a uma**. Anote o que cada uma mostra.
+2. Para cada imóvel: leia o `dados.json` e **veja todas as fotos**. Quando houver `folha-1.jpg`, `folha-2.jpg`…
+   (folhas de contato com 4 fotos cada e o número da foto em amarelo no canto), abra as folhas: é o jeito rápido de
+   ver tudo. Se um detalhe ficar pequeno demais para ter certeza (material, eletrodoméstico, vista), abra a foto
+   sozinha (`foto-<número>.jpg`). Anote o que cada foto mostra.
 3. Escreva `/tmp/portal/<CÓDIGO>/pagina.json` no formato abaixo.
 4. `node scripts/portal-publicar.mjs conferir /tmp/portal/<CÓDIGO>/pagina.json` — corrija a PÁGINA até passar.
    Leve os avisos a sério. Releia como comprador: cada frase está numa foto ou na ficha?
