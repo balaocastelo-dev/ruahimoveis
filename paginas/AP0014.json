@@ -1,0 +1,213 @@
+{
+  "codigo": "AP0014",
+  "slug": "apartamento-2-quartos-na-planta-unni-mansoes-santo-antonio-campinas-ap0014",
+  "titulo": "Apartamento de 2 quartos na planta no UNNI Mansões, em Campinas",
+  "resumo": "Apartamento de 2 quartos e 43 m² no UNNI Mansões, em Campinas, com entrega prevista para 2027 e condomínio com piscina, academia, quadra e pet place.",
+  "capa": {
+    "foto": 2082,
+    "alt": "Ilustração da piscina adulto com palmeiras e deque ao entardecer"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento faz parte do UNNI Mansões, empreendimento em construção no bairro Mansões Santo Antônio, em Campinas, com entrega prevista para 2027, segundo o anúncio. São 43 m² com dois quartos, sala, cozinha, área de serviço, um banheiro e uma vaga de garagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Todas as fotos são ilustrações do projeto. Elas mostram uma torre alta com varandas, a planta do apartamento e uma área de lazer extensa: o anúncio fala em mais de 20 itens de lazer, e as imagens trazem piscinas, salão de festas, churrasqueiras, academia, espaço de massagem, pet care e quadra."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "2 quartos e 1 vaga de garagem",
+        "43 m² com varanda, segundo a planta",
+        "Entrega prevista para 2027",
+        "Piscina adulto e infantil, academia e quadra poliesportiva",
+        "Pet place, pet care e playground"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A planta do apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A planta ilustrada mostra a sala de estar e jantar integrada à cozinha em linha, com a área de serviço no mesmo trecho e saída para uma pequena varanda. Um corredor curto leva ao banheiro e aos dois quartos: o de casal com espaço para armário ao longo de uma parede e o segundo montado com duas camas de solteiro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2096,
+          "legenda": "Planta ilustrada com sala, cozinha, varanda e dois quartos"
+        },
+        {
+          "foto": 2083,
+          "legenda": "Ilustração da torre com varandas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lazer do condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A piscina adulto aparece longa, com raia, prainha e deque de madeira cercado de palmeiras, e há uma piscina infantil separada. Para festas, as ilustrações mostram salão com bar e lounge, churrasqueira com bancada e uma churrasqueira externa sob pergolado com mesa de fogo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o dia a dia, há academia com aparelhos e pesos livres, sala de massagem, espaço fitness ao ar livre, quadra poliesportiva, playground e lounge com fogo de chão. Quem tem cachorro conta com pet care para banho e um pet place gramado com obstáculos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2093,
+          "legenda": "Ilustração da quadra poliesportiva"
+        },
+        {
+          "foto": 2094,
+          "legenda": "Ilustração da academia"
+        },
+        {
+          "foto": 2091,
+          "legenda": "Ilustração do pet place"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "interesse"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É uma opção para o primeiro imóvel, para casais e famílias pequenas que querem um apartamento novo, compacto e com muito lazer dentro do condomínio, e que podem esperar a entrega prevista para 2027."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A construtora e o andamento da obra, o andar e a posição da unidade, o mês previsto de entrega, o valor estimado do condomínio e o acabamento que vem no apartamento.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2083,
+      "legenda": "Ilustração da torre do UNNI Mansões com varandas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2096,
+      "legenda": "Planta ilustrada do apartamento de 2 quartos",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 2082,
+      "legenda": "Ilustração da piscina adulto com deque e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2085,
+      "legenda": "Ilustração da piscina infantil",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2086,
+      "legenda": "Ilustração do salão de festas com bar e lounge",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 2084,
+      "legenda": "Ilustração da churrasqueira com bancada e banquetas",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2088,
+      "legenda": "Ilustração da churrasqueira externa sob pergolado",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2092,
+      "legenda": "Ilustração do lounge com fogo de chão e jardim",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2094,
+      "legenda": "Ilustração da academia com aparelhos e pesos",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2095,
+      "legenda": "Ilustração da sala de massagem com jardim vertical",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2089,
+      "legenda": "Ilustração do espaço fitness ao ar livre",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2093,
+      "legenda": "Ilustração da quadra poliesportiva",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2090,
+      "legenda": "Ilustração do playground com escorregadores",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2087,
+      "legenda": "Ilustração do pet care com bancada de banho",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 2091,
+      "legenda": "Ilustração do pet place gramado com obstáculos",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quando o apartamento fica pronto?",
+      "resposta": "O anúncio informa entrega prevista para 2027."
+    },
+    {
+      "pergunta": "Quantos quartos e vagas?",
+      "resposta": "São 2 quartos, 1 banheiro e 1 vaga de garagem, em 43 m²."
+    },
+    {
+      "pergunta": "O que o condomínio vai oferecer?",
+      "resposta": "O anúncio fala em mais de 20 itens de lazer. As ilustrações mostram piscinas adulto e infantil, salão de festas, churrasqueiras, academia, sala de massagem, quadra, playground, pet care e pet place."
+    },
+    {
+      "pergunta": "Como falar com um corretor?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH retorna com os detalhes do empreendimento."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 2 quartos e 43 m² no UNNI Mansões, nas Mansões Santo Antônio, em Campinas, com entrega prevista para 2027. Varanda, 1 vaga e condomínio com piscinas, academia, quadra, playground e pet place. Imagens ilustrativas. Mais detalhes no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "campinas",
+      "apartamentonaplanta",
+      "mansoessantoantonio",
+      "primeiroimovel",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Apartamento 2 quartos no UNNI Mansões, Campinas"
+  },
+  "versao": "809b0e41c342",
+  "publicadoEm": "2026-10-26T19:20:37.841Z"
+}

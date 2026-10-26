@@ -2,6 +2,54 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0011",
+      "slug": "terreno-336-m2-12x28-jardim-das-paineiras-campinas-te0011",
+      "titulo": "Terreno de 336 m² no Jardim das Paineiras, em Campinas",
+      "resumo": "Terreno de 336 m² (12 x 28 m, segundo o anúncio) no Jardim das Paineiras, em Campinas, numa rua residencial asfaltada e arborizada, com muro de arrimo na frente.",
+      "capa": {
+        "foto": 2101,
+        "alt": "Vista aérea com o contorno do lote marcado em vermelho entre casas e árvores"
+      },
+      "versao": "ef96dd6ae6ba",
+      "publicadoEm": "2026-10-26T19:20:37.841Z"
+    },
+    {
+      "codigo": "AP0014",
+      "slug": "apartamento-2-quartos-na-planta-unni-mansoes-santo-antonio-campinas-ap0014",
+      "titulo": "Apartamento de 2 quartos na planta no UNNI Mansões, em Campinas",
+      "resumo": "Apartamento de 2 quartos e 43 m² no UNNI Mansões, em Campinas, com entrega prevista para 2027 e condomínio com piscina, academia, quadra e pet place.",
+      "capa": {
+        "foto": 2082,
+        "alt": "Ilustração da piscina adulto com palmeiras e deque ao entardecer"
+      },
+      "versao": "809b0e41c342",
+      "publicadoEm": "2026-10-26T19:20:37.841Z"
+    },
+    {
+      "codigo": "AP0009",
+      "slug": "apartamento-2-quartos-na-planta-fazenda-sao-quirino-campinas-ap0009",
+      "titulo": "Apartamento de 2 quartos na planta na Fazenda São Quirino, Campinas",
+      "resumo": "Apartamento de 2 quartos e 42 m² em construção na Fazenda São Quirino, em Campinas, com entrega prevista para dezembro de 2026 e condomínio com piscina.",
+      "capa": {
+        "foto": 2103,
+        "alt": "Ilustração das duas torres do empreendimento ao entardecer"
+      },
+      "versao": "96e2dba556a3",
+      "publicadoEm": "2026-10-26T19:20:37.840Z"
+    },
+    {
+      "codigo": "TE0018",
+      "slug": "terreno-810-m2-com-projeto-terras-de-santa-teresa-vinhedo-te0018",
+      "titulo": "Terreno de 810 m² com projeto no Terras de Santa Teresa, em Vinhedo",
+      "resumo": "Terreno de 810 m² no Condomínio Terras de Santa Teresa, em Vinhedo, num condomínio fechado com casas prontas ao redor e projeto arquitetônico já feito para o lote.",
+      "capa": {
+        "foto": 2110,
+        "alt": "Vista aérea do lote gramado em declive, com casas do condomínio ao redor"
+      },
+      "versao": "4bd1fac297a3",
+      "publicadoEm": "2026-10-26T19:20:37.834Z"
+    },
+    {
       "codigo": "AP0033",
       "slug": "apartamento-terreo-2-quartos-reformado-residencial-novo-tempo-campinas-ap0033",
       "titulo": "Apartamento térreo reformado de 2 quartos no Residencial Novo Tempo",
@@ -26,5 +74,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-26T15:21:48.984Z"
+  "atualizadoEm": "2026-10-26T19:20:37.841Z"
 }

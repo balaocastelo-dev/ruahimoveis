@@ -1,0 +1,178 @@
+{
+  "codigo": "TE0018",
+  "slug": "terreno-810-m2-com-projeto-terras-de-santa-teresa-vinhedo-te0018",
+  "titulo": "Terreno de 810 m² com projeto no Terras de Santa Teresa, em Vinhedo",
+  "resumo": "Terreno de 810 m² no Condomínio Terras de Santa Teresa, em Vinhedo, num condomínio fechado com casas prontas ao redor e projeto arquitetônico já feito para o lote.",
+  "capa": {
+    "foto": 2110,
+    "alt": "Vista aérea do lote gramado em declive, com casas do condomínio ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 810 m² fica no Condomínio Terras de Santa Teresa, em Vinhedo. É um lote para quem quer construir a própria casa num condomínio fechado, com espaço para uma residência grande, área de lazer e piscina."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que mais diferencia o lote é que ele já vem com um projeto arquitetônico, segundo o anúncio. Parte das fotos são imagens ilustrativas desse projeto: uma casa contemporânea de dois pavimentos, com pé-direito duplo na sala, piscina e deque de madeira. As fotos aéreas mostram o terreno gramado e as casas já construídas na vizinhança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "810 m² de terreno",
+        "Projeto arquitetônico já feito, segundo o anúncio",
+        "Condomínio fechado em Vinhedo",
+        "Água, energia elétrica, esgoto e rua pavimentada",
+        "Vizinhança com casas prontas e em obra"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote e a vizinhança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas fotos aéreas, o lote aparece gramado e limpo, num trecho com declive, entre casas com piscina, telhados com placas solares e uma obra em andamento ao lado. As ruas internas são asfaltadas e arborizadas. Pela ficha do anúncio, o terreno tem água, energia elétrica, esgoto e pavimentação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma das fotos mostra o condomínio de cima, com muitas casas espalhadas entre áreas verdes e morros ao fundo. Dá para ter uma ideia do padrão das construções e de quanto do condomínio já está ocupado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2109,
+          "legenda": "Vista de cima do lote e das casas vizinhas"
+        },
+        {
+          "foto": 2111,
+          "legenda": "O condomínio visto do alto, com morros ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O projeto que acompanha o terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As imagens do projeto mostram uma casa de dois pavimentos com volumes em tons de cinza e madeira. No térreo, sala com pé-direito duplo e grandes panos de vidro, cozinha com ilha integrada à sala de jantar e lareira na sala de estar. Do lado de fora, piscina com deque de madeira, espreguiçadeiras e churrasqueira na área coberta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outra imagem mostra o pavimento inferior aproveitando o desnível do terreno, com garagem coberta junto a um muro de pedra. São imagens ilustrativas: o que de fato vem com o lote, e em que estágio está o projeto, vale confirmar com o corretor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2114,
+          "legenda": "Imagem do projeto: fachada com piscina e deque"
+        },
+        {
+          "foto": 2112,
+          "legenda": "Imagem do projeto: sala com pé-direito duplo e cozinha integrada"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para quem quer construir uma casa ampla em condomínio fechado em Vinhedo e prefere começar com um projeto pronto, ganhando tempo antes da obra. Também atende quem quer apenas o lote e pretende fazer um projeto próprio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Se o projeto está aprovado no condomínio e na prefeitura, se os arquivos do projeto entram no negócio, as dimensões e a inclinação do lote, as regras de construção do condomínio e o valor da taxa condominial.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2110,
+      "legenda": "Lote gramado em declive, visto do alto",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 2109,
+      "legenda": "Vista de cima do lote e das casas vizinhas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 2111,
+      "legenda": "O condomínio visto do alto, com morros ao fundo",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 2114,
+      "legenda": "Imagem ilustrativa do projeto: fachada com piscina e deque",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2115,
+      "legenda": "Imagem ilustrativa do projeto: piscina iluminada à noite",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2112,
+      "legenda": "Imagem ilustrativa do projeto: sala com pé-direito duplo e cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2113,
+      "legenda": "Imagem ilustrativa do projeto: sala com lareira aberta para a área externa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2116,
+      "legenda": "Imagem ilustrativa do projeto: garagem no nível inferior e muro de pedra",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "São 810 m² de área total, segundo a ficha."
+    },
+    {
+      "pergunta": "O terreno vem com projeto?",
+      "resposta": "Sim, o anúncio informa que o lote já conta com um projeto arquitetônico. As imagens da casa nas fotos são ilustrações desse projeto."
+    },
+    {
+      "pergunta": "Que infraestrutura o lote tem?",
+      "resposta": "Pelo anúncio: água, energia elétrica, esgoto e pavimentação, dentro de condomínio fechado."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 810 m² no Condomínio Terras de Santa Teresa, em Vinhedo, já com projeto arquitetônico de uma casa contemporânea com piscina (imagens ilustrativas). Condomínio fechado, com água, energia, esgoto e rua asfaltada. Fotos e ficha no link da bio.",
+    "hashtags": [
+      "terrenovinhedo",
+      "vinhedo",
+      "terrenoemcondominio",
+      "terrasdesantateresa",
+      "construir",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Terreno de 810 m² no Terras de Santa Teresa, Vinhedo"
+  },
+  "versao": "4bd1fac297a3",
+  "publicadoEm": "2026-10-26T19:20:37.834Z"
+}

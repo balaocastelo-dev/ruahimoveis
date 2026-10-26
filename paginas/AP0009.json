@@ -1,0 +1,169 @@
+{
+  "codigo": "AP0009",
+  "slug": "apartamento-2-quartos-na-planta-fazenda-sao-quirino-campinas-ap0009",
+  "titulo": "Apartamento de 2 quartos na planta na Fazenda São Quirino, Campinas",
+  "resumo": "Apartamento de 2 quartos e 42 m² em construção na Fazenda São Quirino, em Campinas, com entrega prevista para dezembro de 2026 e condomínio com piscina.",
+  "capa": {
+    "foto": 2103,
+    "alt": "Ilustração das duas torres do empreendimento ao entardecer"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento está em construção na Fazenda São Quirino, em Campinas, com entrega prevista para dezembro de 2026, segundo o anúncio. São 42 m² de área útil com dois quartos, sala integrada à cozinha, um banheiro e uma vaga de garagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como o prédio ainda está em obra, todas as fotos são ilustrações do empreendimento: duas torres altas, área de piscina com deque, churrasqueira coberta e os ambientes do apartamento decorados. O anúncio cita fácil acesso à Rodovia Dom Pedro I e a proximidade do Shopping Galleria."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "2 quartos e 1 vaga de garagem",
+        "42 m² de área útil",
+        "Entrega prevista para dezembro de 2026",
+        "Piscina adulto e infantil, playground e churrasqueira",
+        "Perto da Rodovia Dom Pedro I e do Shopping Galleria, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala, cozinha e quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ilustração da área social mostra a cozinha em linha aberta para a sala de jantar e de estar, com espaço para máquina de lavar junto à janela e uma porta de vidro no fundo da sala. Na decoração, piso amadeirado na sala e piso cinza na cozinha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os dois quartos aparecem decorados: um de casal, com cama e criado-mudo, e outro montado para crianças, com duas camas e nicho de estudo. Os dois têm janela com veneziana. Lembre que móveis e acabamentos das ilustrações são sugestão de decoração."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2106,
+          "legenda": "Ilustração da sala integrada à cozinha"
+        },
+        {
+          "foto": 2107,
+          "legenda": "Ilustração do quarto de casal"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lazer do condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo anúncio, o condomínio fechado terá piscina adulto e infantil, playground, pet place, bicicletário, churrasqueira e áreas de convivência. As ilustrações mostram a piscina principal com prainha e espreguiçadeiras, a piscina infantil ao lado, um playground cercado e uma churrasqueira coberta com bancada de granito."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2104,
+          "legenda": "Ilustração da piscina com espreguiçadeiras"
+        },
+        {
+          "foto": 2105,
+          "legenda": "Ilustração da churrasqueira coberta"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "interesse"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Atende bem quem procura o primeiro imóvel, um casal ou uma família pequena que quer um apartamento novo, compacto e com lazer no condomínio, e que pode esperar até a entrega prevista."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O nome do empreendimento e da construtora, o andamento da obra, o andar e a posição da unidade, o valor estimado do condomínio e o que vem de acabamento na entrega.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2103,
+      "legenda": "Ilustração das duas torres ao entardecer",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2106,
+      "legenda": "Ilustração da sala integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2107,
+      "legenda": "Ilustração do quarto de casal com janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2108,
+      "legenda": "Ilustração do segundo quarto com duas camas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2104,
+      "legenda": "Ilustração da piscina com espreguiçadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2102,
+      "legenda": "Ilustração da área de lazer vista do alto, com piscinas e playground",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2105,
+      "legenda": "Ilustração da churrasqueira coberta com bancada",
+      "ambiente": "gourmet"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quando o apartamento fica pronto?",
+      "resposta": "O anúncio informa entrega prevista para dezembro de 2026."
+    },
+    {
+      "pergunta": "Quantos quartos e vagas?",
+      "resposta": "São 2 quartos, 1 banheiro e 1 vaga de garagem, em 42 m² de área útil."
+    },
+    {
+      "pergunta": "O que o condomínio vai oferecer?",
+      "resposta": "Pelo anúncio: piscina adulto e infantil, playground, pet place, bicicletário, churrasqueira e áreas de convivência."
+    },
+    {
+      "pergunta": "Como falar com um corretor?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH retorna com os detalhes do empreendimento."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 2 quartos e 42 m² em construção na Fazenda São Quirino, em Campinas, com entrega prevista para dezembro de 2026. Sala integrada à cozinha, 1 vaga e condomínio com piscina, playground e churrasqueira. Imagens ilustrativas. Mais detalhes no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "campinas",
+      "apartamentonaplanta",
+      "fazendasaoquirino",
+      "primeiroimovel",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Apartamento 2 quartos na planta, Fazenda São Quirino"
+  },
+  "versao": "96e2dba556a3",
+  "publicadoEm": "2026-10-26T19:20:37.840Z"
+}

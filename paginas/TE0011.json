@@ -1,0 +1,152 @@
+{
+  "codigo": "TE0011",
+  "slug": "terreno-336-m2-12x28-jardim-das-paineiras-campinas-te0011",
+  "titulo": "Terreno de 336 m² no Jardim das Paineiras, em Campinas",
+  "resumo": "Terreno de 336 m² (12 x 28 m, segundo o anúncio) no Jardim das Paineiras, em Campinas, numa rua residencial asfaltada e arborizada, com muro de arrimo na frente.",
+  "capa": {
+    "foto": 2101,
+    "alt": "Vista aérea com o contorno do lote marcado em vermelho entre casas e árvores"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 336 m² fica no Jardim das Paineiras, em Campinas. Pelo anúncio, o lote tem formato regular, com 12 metros de frente por 28 de fundo, o que facilita o desenho de uma casa térrea ou sobrado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram um lote gramado em aclive, acima do nível da rua, com um muro de arrimo de blocos na frente. A rua é asfaltada e cheia de árvores, com casas grandes dos dois lados."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "336 m² de área total",
+        "12 m de frente por 28 m de fundo, segundo o anúncio",
+        "Muro de arrimo já construído na frente",
+        "Rua asfaltada e arborizada",
+        "Bairro residencial, com casas prontas dos dois lados"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Visto da calçada, o terreno sobe a partir do muro de arrimo até o fundo, onde aparecem os muros das casas vizinhas. O mato está roçado em boa parte da área, com algumas touceiras e bananeiras nas laterais. A foto aérea marca o contorno do lote, cercado por casas com piscina e por árvores grandes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O aclive pede atenção no projeto: ele pode render uma garagem no nível da rua e a casa mais acima, mas também envolve terraplenagem. Vale levar um arquiteto ou engenheiro para avaliar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2097,
+          "legenda": "O lote em aclive, visto da calçada, com o muro de arrimo"
+        },
+        {
+          "foto": 2098,
+          "legenda": "Muro de arrimo e a casa vizinha na mesma rua"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A rua e o entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rua tem calçada gramada, árvores de copa larga dos dois lados e lombada sinalizada. As casas ao redor são grandes, várias de dois pavimentos e com muros altos. O anúncio descreve a região como residencial consolidada, com infraestrutura urbana e acesso fácil às principais vias da cidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2100,
+          "legenda": "Rua arborizada com lombada sinalizada"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para quem quer construir uma casa num bairro residencial de Campinas, numa rua tranquila e arborizada, e não se importa de trabalhar com um terreno em aclive."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O desnível entre a rua e o fundo do lote, a documentação e a matrícula, o zoneamento e o que a prefeitura permite construir, e se há rede de água e esgoto na frente do terreno.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2097,
+      "legenda": "O lote em aclive, visto da calçada, com o muro de arrimo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 2098,
+      "legenda": "Muro de arrimo e a casa vizinha na mesma rua",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 2099,
+      "legenda": "Lateral do lote e a rua arborizada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 2100,
+      "legenda": "Rua arborizada com lombada sinalizada",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 2101,
+      "legenda": "Vista aérea com o contorno do lote marcado em vermelho",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "São 336 m² de área total. Pelo anúncio, 12 metros de frente por 28 de fundo."
+    },
+    {
+      "pergunta": "O terreno é plano?",
+      "resposta": "Não. As fotos mostram um lote em aclive, acima do nível da rua, com muro de arrimo na frente."
+    },
+    {
+      "pergunta": "A rua é asfaltada?",
+      "resposta": "Sim. As fotos mostram rua asfaltada e arborizada, e o anúncio informa pavimentação."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 336 m² no Jardim das Paineiras, em Campinas: lote regular de 12 x 28 m, em aclive, com muro de arrimo na frente, numa rua asfaltada e arborizada cercada de casas. Fotos e ficha no link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "campinas",
+      "jardimdaspaineiras",
+      "terrenoavenda",
+      "construir",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "ef96dd6ae6ba",
+  "publicadoEm": "2026-10-26T19:20:37.841Z"
+}
