@@ -40,6 +40,7 @@ app.use('/api', require('./src/routes/arquivos'));
 app.use('/api/imoveis', require('./src/routes/imoveis'));
 app.use('/api', require('./src/routes/leads'));
 app.use('/api', require('./src/routes/radar'));
+app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
 app.get('/api/blog', async (req, res) => res.json(await require('./src/blog/diario').situacao()));

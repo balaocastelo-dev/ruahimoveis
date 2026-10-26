@@ -208,6 +208,7 @@ ACT['blog-legenda'] = async (el) => {
 
 // ---------- painel ----------
 async function telaPainel() {
+  if (veTudo() && typeof telaPainelAdm === 'function') return telaPainelAdm();
   const d = await api('GET', '/api/painel');
   if (veTudo()) api('GET', '/api/radar/resumo').then((r) => { const el = $('#painel-aprov'); if (el && r.aprovacoesPendentes) el.innerHTML = `<div class="banner warn"><b>${r.aprovacoesPendentes}</b> pedido(s) de matrícula/birô esperando sua aprovação. <a href="#/radar/aprovacoes">Revisar</a></div>`; }).catch(() => {});
   if (veTudo()) api('GET', '/api/radar/alertas').then((al) => { const el = $('#painel-radar'); if (el && typeof avisoSaude === 'function') el.innerHTML = avisoSaude(al, false); }).catch(() => {});
