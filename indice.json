@@ -1,4 +1,30 @@
 {
   "versao": 1,
-  "paginas": []
+  "paginas": [
+    {
+      "codigo": "AP0033",
+      "slug": "apartamento-terreo-2-quartos-reformado-residencial-novo-tempo-campinas-ap0033",
+      "titulo": "Apartamento térreo reformado de 2 quartos no Residencial Novo Tempo",
+      "resumo": "Apartamento térreo de 48 m² no Residencial Novo Tempo, em Campinas: reformado e nunca habitado, 2 quartos, cozinha americana em granito e condomínio com piscina.",
+      "capa": {
+        "foto": 2137,
+        "alt": "Cozinha americana com bancada de granito preto, torneira gourmet e janela com cortina"
+      },
+      "versao": "9b4bf1e90537",
+      "publicadoEm": "2026-10-26T15:21:48.984Z"
+    },
+    {
+      "codigo": "AP0030",
+      "slug": "apartamento-3-quartos-suite-vila-joao-jorge-campinas-ap0030",
+      "titulo": "Apartamento de 3 quartos com suíte e 2 vagas na Vila João Jorge",
+      "resumo": "Apartamento de 102 m² na Vila João Jorge, em Campinas: 3 quartos com suíte, sala em L para estar e jantar, cozinha com área de serviço separada e 2 vagas.",
+      "capa": {
+        "foto": 2120,
+        "alt": "Sala em L com mesa de jantar, sofá e janela para os prédios do bairro"
+      },
+      "versao": "f2f45fc0d0cc",
+      "publicadoEm": "2026-10-26T15:21:48.983Z"
+    }
+  ],
+  "atualizadoEm": "2026-10-26T15:21:48.984Z"
 }

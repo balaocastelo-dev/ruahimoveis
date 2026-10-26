@@ -1,0 +1,241 @@
+{
+  "codigo": "AP0033",
+  "slug": "apartamento-terreo-2-quartos-reformado-residencial-novo-tempo-campinas-ap0033",
+  "titulo": "Apartamento térreo reformado de 2 quartos no Residencial Novo Tempo",
+  "resumo": "Apartamento térreo de 48 m² no Residencial Novo Tempo, em Campinas: reformado e nunca habitado, 2 quartos, cozinha americana em granito e condomínio com piscina.",
+  "capa": {
+    "foto": 2137,
+    "alt": "Cozinha americana com bancada de granito preto, torneira gourmet e janela com cortina"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento térreo no Residencial Novo Tempo, em Campinas, acabou de passar por uma reforma completa e, segundo o anúncio, nunca foi habitado. São 48 m² de área privativa com dois quartos, sala integrada à cozinha e uma vaga de garagem, num condomínio fechado com piscina e área de lazer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram paredes recém-pintadas em tom areia, piso de porcelanato claro em todos os ambientes e iluminação nova: perfis de luz embutidos no teto da sala e pendentes sobre o balcão. É um imóvel para entrar e morar, sem obra pela frente."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Reformado e nunca habitado, segundo o anúncio",
+        "Térreo: sem depender de elevador no dia a dia",
+        "Cozinha americana com bancada de granito e torneira gourmet",
+        "Gás encanado e infraestrutura para ar-condicionado",
+        "Condomínio com piscina, academia, quadras e portaria 24 horas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e cozinha integradas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala e a cozinha formam um ambiente só, separado por um balcão de granito preto que serve de bancada de apoio e de mesa rápida. Sobre ele, dois pendentes com lâmpadas de filamento; no teto da sala, dois perfis de luz em linha cruzam o ambiente e dão uma iluminação moderna."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem bancada em L de granito preto, cooktop de quatro bocas, cuba de inox com torneira gourmet de mola e parede revestida em porcelanato que imita travertino. O anúncio informa que a área de serviço é integrada à cozinha."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2136,
+          "legenda": "Sala integrada à cozinha, com perfis de luz no teto"
+        },
+        {
+          "foto": 2134,
+          "legenda": "Bancada de granito com cooktop e torneira gourmet"
+        },
+        {
+          "foto": 2139,
+          "legenda": "Balcão de granito entre a cozinha e a sala"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos e o banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um corredor curto, com spots no teto, leva aos dois quartos e ao banheiro. Os quartos estão vazios nas fotos, com piso de porcelanato, rodapé alto e janelas de correr com persiana integrada, o que ajuda a escurecer o ambiente para dormir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro foi refeito com cuba esculpida numa bancada branca, vaso novo e box. Pelo tamanho do apartamento, um dos quartos pode virar escritório sem perder espaço da sala."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Residencial Novo Tempo é formado por torres com jardins entre os prédios. As fotos mostram a área da piscina, com uma piscina para adultos e outra infantil, deque de pedra e cercamento. Pelo anúncio, o condomínio tem ainda portaria 24 horas, elevador, academia, quadra de futebol, quadra de beach tennis, mercadinho, bicicletário, vagas para visitantes, dois quiosques com churrasqueira e salão de festas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2129,
+          "legenda": "Piscinas adulto e infantil com deque de pedra"
+        },
+        {
+          "foto": 2128,
+          "legenda": "Piscina e jardins entre as torres do condomínio"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É uma boa opção para o primeiro imóvel, para um casal que quer praticidade e lazer no condomínio, e para quem procura um apartamento pronto, sem reforma pela frente. Por ser térreo, também atende quem prefere não depender de elevador."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio e o que ele inclui, se o apartamento tem área externa privativa, e quais itens da reforma ficam com o imóvel, como o cooktop e as luminárias.",
+      "titulo": "O que vale perguntar na visita"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2137,
+      "legenda": "Cozinha americana com bancada de granito e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2136,
+      "legenda": "Sala integrada à cozinha, com perfis de luz no teto",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2131,
+      "legenda": "Vista da sala para o balcão da cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2139,
+      "legenda": "Balcão de granito preto com pendentes",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2134,
+      "legenda": "Bancada em L com cooktop e torneira gourmet",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2135,
+      "legenda": "Cooktop de quatro bocas embutido no granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2133,
+      "legenda": "Cuba de inox com torneira gourmet de mola",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2138,
+      "legenda": "Detalhe da torneira gourmet e do revestimento",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2141,
+      "legenda": "Corredor com spots que leva aos quartos",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 2132,
+      "legenda": "Portas dos quartos e do banheiro no corredor",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 2142,
+      "legenda": "Quarto com janela de correr e persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2140,
+      "legenda": "Quarto com piso de porcelanato e rodapé alto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2143,
+      "legenda": "Quarto com janela e persiana integrada",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2144,
+      "legenda": "Segundo quarto visto da porta",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2145,
+      "legenda": "Banheiro com cuba esculpida em bancada branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2129,
+      "legenda": "Piscinas adulto e infantil do condomínio",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2128,
+      "legenda": "Piscina entre os jardins e as torres",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2130,
+      "legenda": "Deque de pedra e espreguiçadeira junto à piscina",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O apartamento é térreo?",
+      "resposta": "Sim. Segundo o anúncio, é um apartamento térreo, reformado e nunca habitado."
+    },
+    {
+      "pergunta": "Quantos quartos e vagas?",
+      "resposta": "São 2 quartos e 1 vaga de garagem, em 48 m² de área privativa."
+    },
+    {
+      "pergunta": "O que o condomínio oferece?",
+      "resposta": "Pelo anúncio: portaria 24 horas, elevador, piscina, academia, quadras de futebol e de beach tennis, mercadinho, bicicletário, quiosques com churrasqueira e salão de festas."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página ou pelo WhatsApp. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento térreo de 2 quartos no Residencial Novo Tempo, em Campinas: reformado e nunca habitado, com cozinha americana em granito, porcelanato e luz nova. Condomínio com piscina, academia e quadras. Fotos e ficha no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "campinas",
+      "apartamentoreformado",
+      "imoveiscampinas",
+      "primeiroimovel",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Apartamento térreo reformado, 2 quartos, Campinas"
+  },
+  "versao": "9b4bf1e90537",
+  "publicadoEm": "2026-10-26T15:21:48.984Z"
+}

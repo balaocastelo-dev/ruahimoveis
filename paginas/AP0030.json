@@ -1,0 +1,206 @@
+{
+  "codigo": "AP0030",
+  "slug": "apartamento-3-quartos-suite-vila-joao-jorge-campinas-ap0030",
+  "titulo": "Apartamento de 3 quartos com suíte e 2 vagas na Vila João Jorge",
+  "resumo": "Apartamento de 102 m² na Vila João Jorge, em Campinas: 3 quartos com suíte, sala em L para estar e jantar, cozinha com área de serviço separada e 2 vagas.",
+  "capa": {
+    "foto": 2120,
+    "alt": "Sala em L com mesa de jantar, sofá e janela para os prédios do bairro"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de 102 m² na Vila João Jorge, em Campinas, tem a planta clássica de três quartos que muita família procura: uma suíte, dois quartos que servem de dormitório ou escritório, sala para estar e jantar e uma cozinha separada da área social."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram um imóvel claro, com piso cerâmico em todos os ambientes, gesso rebaixado com spots na sala e janelas em todos os quartos. São duas vagas de garagem, e o anúncio informa portaria eletrônica, dois elevadores e prédio que aceita animais de estimação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos, sendo 1 suíte",
+        "Sala em L para estar e jantar, com gesso e spots",
+        "Cozinha com passa-pratos e área de serviço separada",
+        "2 vagas de garagem",
+        "Portaria eletrônica, 2 elevadores e prédio pet friendly, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala tem formato em L: na parte mais estreita cabe a mesa de jantar, perto da porta da cozinha; na parte mais larga fica o estar, que termina numa janela ampla voltada para os prédios do bairro. O teto tem moldura de gesso rebaixado com pontos de luz embutidos, o que dá iluminação indireta à noite."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O piso é cerâmico claro, fácil de limpar, e as paredes estão pintadas em tom neutro. Pelas fotos, há espaço para um sofá grande de frente para a TV sem atrapalhar a passagem."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2122,
+          "legenda": "Estar com espaço para sofá grande e TV"
+        },
+        {
+          "foto": 2119,
+          "legenda": "Cozinha em corredor, com armários e passa-pratos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é do tipo corredor, toda revestida de azulejo, com armários sob a bancada de pedra clara e uma abertura de passa-pratos para a sala. No fundo, separada por um vão, fica a área de serviço, com janela, varal de teto, armário aéreo e aquecedor a gás de passagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Separar a lavanderia da cozinha é um detalhe que quem cozinha muito costuma valorizar: a máquina de lavar e o varal ficam fora da área de preparo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos e os banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A suíte tem armários modulados em volta da cama, com nichos e maleiros, e acesso direto ao banheiro. Os outros dois quartos têm janela e boa área de piso; num deles, as fotos mostram cama de casal e mesa de trabalho ao mesmo tempo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento tem dois banheiros, ambos com bancada de pedra clara, box de vidro e janela basculante para ventilação. O acabamento é o original do prédio, com azulejos decorados, bem conservado nas fotos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2125,
+          "legenda": "Suíte com armários modulados e acesso ao banheiro"
+        },
+        {
+          "foto": 2121,
+          "legenda": "Banheiro com bancada de pedra clara e box de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É uma boa opção para famílias que precisam de três quartos e duas vagas sem pagar por metragem que não vão usar, e para quem quer um imóvel pronto para morar e personalizar aos poucos. O anúncio destaca a proximidade de supermercados, farmácias e restaurantes e o acesso fácil às principais vias da região."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos das fotos ficam no imóvel, o valor do condomínio e o que ele inclui, e se a churrasqueira citada no anúncio é do apartamento ou de uso comum do prédio.",
+      "titulo": "O que vale perguntar na visita"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2120,
+      "legenda": "Sala em L com mesa de jantar e janela ampla",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2122,
+      "legenda": "Estar com gesso rebaixado, spots e espaço para TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2119,
+      "legenda": "Cozinha em corredor, com fogão e passa-pratos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2117,
+      "legenda": "Cozinha vista da entrada, com a área de serviço ao fundo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2118,
+      "legenda": "Área de serviço com janela, varal de teto e aquecedor a gás",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 2125,
+      "legenda": "Suíte com armários modulados e porta para o banheiro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 2121,
+      "legenda": "Banheiro com bancada de pedra clara e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2124,
+      "legenda": "Quarto com armários planejados e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2126,
+      "legenda": "Quarto com cama de casal e espaço para mesa de trabalho",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2123,
+      "legenda": "Quarto visto da porta, com janela para o bairro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2127,
+      "legenda": "Segundo banheiro, com janela basculante",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e banheiros tem o apartamento?",
+      "resposta": "São 3 quartos, sendo 1 suíte, e 2 banheiros."
+    },
+    {
+      "pergunta": "Quantas vagas de garagem?",
+      "resposta": "Duas vagas, conforme a ficha do imóvel."
+    },
+    {
+      "pergunta": "O prédio aceita animais de estimação?",
+      "resposta": "Sim. O anúncio informa que o prédio é pet friendly; confirme as regras do condomínio com o corretor."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página ou pelo WhatsApp. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 3 quartos com suíte e 2 vagas na Vila João Jorge, em Campinas. 102 m², sala em L para estar e jantar, cozinha com área de serviço separada e prédio pet friendly. Fotos e ficha completa no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "campinas",
+      "vilajoaojorge",
+      "imoveiscampinas",
+      "apartamentoavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Apartamento 3 quartos com suíte, Vila João Jorge, Campinas"
+  },
+  "versao": "f2f45fc0d0cc",
+  "publicadoEm": "2026-10-26T15:21:48.983Z"
+}
