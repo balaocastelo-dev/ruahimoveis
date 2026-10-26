@@ -1,0 +1,302 @@
+{
+  "codigo": "AP0001",
+  "slug": "apartamento-2-quartos-varanda-gourmet-residencial-idea-centro-campinas-ap0001",
+  "titulo": "Apartamento de 2 quartos com varanda gourmet no Centro",
+  "resumo": "Apartamento de 65 m² no Residencial Idea, Centro de Campinas: 2 quartos com 1 suíte, armários planejados e varanda gourmet envidraçada com churrasqueira.",
+  "capa": {
+    "foto": 2052,
+    "alt": "Sala com piso laminado, pendente de alumínio, cozinha com balcão de madeira e porta de vidro para a varanda"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Residencial Idea, no Centro de Campinas. São 65,3 m² com dois quartos, sendo uma suíte, dois banheiros e uma vaga de garagem. A unidade está vazia nas fotos, pronta para receber a mudança, com armários planejados na cozinha, nos quartos e nos banheiros."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que mais chama atenção é a varanda gourmet: fechada com vidro, com churrasqueira, pia e cortinas rolô, ela se abre para a sala por uma porta de correr larga e tem vista para os prédios do Centro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "2 quartos, 1 suíte e 2 banheiros em 65,3 m²",
+        "Varanda gourmet envidraçada com churrasqueira e pia",
+        "Armários planejados na cozinha, nos quartos e nos banheiros",
+        "Lavanderia separada da cozinha por porta de vidro",
+        "Ar-condicionado instalado em um dos quartos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e varanda gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar e jantar é um ambiente único, com piso laminado em tom de madeira, sanca de gesso e um pendente de alumínio na área da mesa. Um rack baixo de madeira fica junto à parede, e a porta de vidro de correr leva à varanda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na varanda, o piso é cerâmico claro e o fechamento de vidro corre por toda a extensão, com cortinas rolô para filtrar o sol. Num canto fica a churrasqueira a carvão, ao lado de uma pia com bancada de granito, armário de madeira e parede de ladrilhos estampados coloridos. Uma treliça branca esconde a condensadora do ar-condicionado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2044,
+          "legenda": "Varanda gourmet com churrasqueira, pia e vista para o Centro"
+        },
+        {
+          "foto": 2042,
+          "legenda": "Churrasqueira a carvão e pia com parede de ladrilhos estampados"
+        },
+        {
+          "foto": 2051,
+          "legenda": "Sala com porta de vidro para a varanda envidraçada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e lavanderia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é aberta para a sala por um balcão de madeira. Tem armários em madeira escura em cima e embaixo da bancada de granito preto, cuba de inox e parede revestida de branco, com peças em relevo atrás da pia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma porta de vidro com veneziana separa a cozinha da lavanderia, que tem tanque, armário alto, aquecedor de água na parede e saída para a varanda. Assim, a roupa e a máquina ficam fora da vista de quem está na sala."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os dois quartos têm piso laminado, sanca e persianas de faixas nas janelas. Ambos aparecem com armários brancos do piso ao teto, com prateleiras, cabideiros e gavetas por dentro. Um deles já tem ar-condicionado split instalado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os dois banheiros seguem o mesmo padrão: bancada de pedra bege com cuba branca, gabinete branco embaixo, espelho largo e box de vidro. Um deles tem janela no box, o que ajuda na ventilação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2035,
+          "legenda": "Armário planejado com prateleiras, cabideiros e gavetas"
+        },
+        {
+          "foto": 2038,
+          "legenda": "Banheiro com bancada de pedra, box de vidro e janela"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio e para quem é"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Residencial Idea é uma torre alta de varandas envidraçadas. Pelo anúncio, o condomínio tem portaria 24 horas, elevador, gerador, brinquedoteca, salão de festas com copa e espaço gourmet. O apartamento faz sentido para um casal, uma família pequena ou quem trabalha no Centro e quer receber amigos na varanda sem sair de casa."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O andar da unidade, o valor do condomínio, se a vaga é coberta e quais itens ficam com o imóvel, como as cortinas, o ar-condicionado e o rack da sala.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2054,
+      "legenda": "Torre do Residencial Idea com varandas envidraçadas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2052,
+      "legenda": "Sala com pendente, cozinha aberta e porta para a varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2051,
+      "legenda": "Sala com porta de vidro para a varanda envidraçada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2053,
+      "legenda": "Vista da sala em direção à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2048,
+      "legenda": "Sala de jantar com pendente e porta de entrada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2030,
+      "legenda": "Área da mesa de jantar com pendente de alumínio",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2040,
+      "legenda": "Sala comprida com piso laminado e rack de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2050,
+      "legenda": "Balcão de madeira entre a cozinha e a sala",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2031,
+      "legenda": "Cozinha aberta para a sala, com balcão e rack",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2047,
+      "legenda": "Cozinha com armários de madeira e porta para a lavanderia",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2028,
+      "legenda": "Bancada de granito preto e armários na cozinha",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2029,
+      "legenda": "Pia de inox com armários em cima e embaixo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2046,
+      "legenda": "Cuba de inox com torneira e balcão com nichos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2041,
+      "legenda": "Lavanderia com tanque, armário e aquecedor de água",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 2045,
+      "legenda": "Varanda envidraçada com vista para os prédios do Centro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2044,
+      "legenda": "Varanda gourmet com churrasqueira, pia e vista para o Centro",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2043,
+      "legenda": "Varanda gourmet vista a partir da porta da sala",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2042,
+      "legenda": "Churrasqueira a carvão e pia com parede de ladrilhos estampados",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2027,
+      "legenda": "Churrasqueira e cortinas rolô na varanda",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2025,
+      "legenda": "Varanda com fechamento de vidro e porta para a sala",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2026,
+      "legenda": "Varanda com acesso à sala e à lavanderia",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2049,
+      "legenda": "Corredor de acesso aos quartos",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 2032,
+      "legenda": "Quarto com piso laminado e janela com persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2033,
+      "legenda": "Quarto com armário branco do piso ao teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2034,
+      "legenda": "Quarto com ar-condicionado split e armário",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2035,
+      "legenda": "Armário planejado com prateleiras, cabideiros e gavetas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2036,
+      "legenda": "Parede inteira de armários brancos no quarto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2037,
+      "legenda": "Quarto vazio com janela e piso laminado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2038,
+      "legenda": "Banheiro com bancada de pedra, box de vidro e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2039,
+      "legenda": "Banheiro com box de vidro e bancada de pedra bege",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos, suítes e vagas?",
+      "resposta": "São 2 quartos, sendo 1 suíte, 2 banheiros e 1 vaga de garagem, em 65,3 m²."
+    },
+    {
+      "pergunta": "A varanda tem churrasqueira?",
+      "resposta": "Sim. A varanda é envidraçada e tem churrasqueira a carvão, pia com bancada de granito e cortinas rolô."
+    },
+    {
+      "pergunta": "O apartamento tem armários?",
+      "resposta": "Sim. As fotos mostram armários planejados na cozinha, nos dois quartos e nos banheiros."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 2 quartos com suíte no Residencial Idea, Centro de Campinas. São 65,3 m² com armários planejados, lavanderia separada e varanda gourmet envidraçada com churrasqueira e pia. Condomínio com portaria 24 horas, salão de festas e brinquedoteca. Fotos no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "centrocampinas",
+      "campinas",
+      "varandagourmet",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "9a43553f95ca",
+  "publicadoEm": "2026-10-26T21:21:59.569Z"
+}

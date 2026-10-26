@@ -2,6 +2,42 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "ST0004",
+      "slug": "apartamento-studio-28m2-varanda-moema-sao-paulo-st0004",
+      "titulo": "Apartamento estúdio de 28 m² com varanda em Moema, São Paulo",
+      "resumo": "Estúdio de 28 m² em Moema, São Paulo, com cozinha planejada e equipada, ar-condicionado, varanda envidraçada e lavanderia coletiva no prédio, perto do metrô.",
+      "capa": {
+        "foto": 2063,
+        "alt": "Estúdio com cama de casal, painel de madeira na cabeceira, ar-condicionado e porta de vidro para a varanda"
+      },
+      "versao": "59c53ef82a66",
+      "publicadoEm": "2026-10-26T21:21:59.569Z"
+    },
+    {
+      "codigo": "AP0001",
+      "slug": "apartamento-2-quartos-varanda-gourmet-residencial-idea-centro-campinas-ap0001",
+      "titulo": "Apartamento de 2 quartos com varanda gourmet no Centro",
+      "resumo": "Apartamento de 65 m² no Residencial Idea, Centro de Campinas: 2 quartos com 1 suíte, armários planejados e varanda gourmet envidraçada com churrasqueira.",
+      "capa": {
+        "foto": 2052,
+        "alt": "Sala com piso laminado, pendente de alumínio, cozinha com balcão de madeira e porta de vidro para a varanda"
+      },
+      "versao": "9a43553f95ca",
+      "publicadoEm": "2026-10-26T21:21:59.569Z"
+    },
+    {
+      "codigo": "AP0015",
+      "slug": "apartamento-2-quartos-planta-unni-mansoes-santo-antonio-campinas-ap0015",
+      "titulo": "Apartamento de 2 quartos na planta no UNNI Mansões",
+      "resumo": "Apartamento novo de 2 quartos e 43 m² no UNNI Mansões, bairro Mansões Santo Antônio, em Campinas, com entrega prevista para 2027 e condomínio com lazer completo.",
+      "capa": {
+        "foto": 2070,
+        "alt": "Perspectiva ilustrada da piscina adulto com raia, deque de madeira e palmeiras ao entardecer"
+      },
+      "versao": "5de3a2a7d583",
+      "publicadoEm": "2026-10-26T21:21:59.565Z"
+    },
+    {
       "codigo": "TE0011",
       "slug": "terreno-336-m2-12x28-jardim-das-paineiras-campinas-te0011",
       "titulo": "Terreno de 336 m² no Jardim das Paineiras, em Campinas",
@@ -74,5 +110,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-26T19:20:37.841Z"
+  "atualizadoEm": "2026-10-26T21:21:59.570Z"
 }

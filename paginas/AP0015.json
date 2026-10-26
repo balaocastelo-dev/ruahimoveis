@@ -1,0 +1,210 @@
+{
+  "codigo": "AP0015",
+  "slug": "apartamento-2-quartos-planta-unni-mansoes-santo-antonio-campinas-ap0015",
+  "titulo": "Apartamento de 2 quartos na planta no UNNI Mansões",
+  "resumo": "Apartamento novo de 2 quartos e 43 m² no UNNI Mansões, bairro Mansões Santo Antônio, em Campinas, com entrega prevista para 2027 e condomínio com lazer completo.",
+  "capa": {
+    "foto": 2070,
+    "alt": "Perspectiva ilustrada da piscina adulto com raia, deque de madeira e palmeiras ao entardecer"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este é um apartamento na planta no UNNI Mansões, no bairro Mansões Santo Antônio, em Campinas. São 43 m² com dois quartos, um banheiro e uma vaga de garagem, segundo a ficha. O anúncio informa entrega prevista para 2027, então você compra agora um imóvel que ainda vai ser construído."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Todas as imagens do empreendimento são perspectivas ilustradas da construtora, e não fotos do prédio pronto. Elas mostram uma torre alta com varandas e uma área de lazer extensa, com duas piscinas, salão de festas, academia, quadra, playground e espaços para pets."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "2 quartos e 1 vaga em 43 m²",
+        "Imóvel novo, com entrega prevista para 2027",
+        "Sala integrada à cozinha e varanda, pela planta ilustrada",
+        "Piscinas adulto e infantil, academia e quadra",
+        "Pet care e espaço para cães no condomínio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A planta do apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A planta ilustrada mostra um apartamento compacto e bem resolvido. A sala e a cozinha formam um ambiente só: a cozinha é linear, numa parede, com pia, fogão e espaço para geladeira, e termina na área de serviço, com tanque e lugar para a máquina de lavar. A sala dá para uma pequena varanda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado ficam os dois quartos e o banheiro, com box. O quarto maior aparece com cama de casal e armário ao longo da parede; o segundo, com cama de solteiro, serve bem para um filho, um hóspede ou um escritório. Os móveis da planta são só sugestão de decoração."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2081,
+          "legenda": "Planta ilustrada: 2 quartos, sala integrada à cozinha e varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lazer do condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O anúncio fala em mais de 20 itens de lazer, e as perspectivas mostram boa parte deles. Há uma piscina adulto com raia e deque de madeira e uma piscina infantil rodeada de palmeiras. O salão de festas tem sofás, mesas e um bar; ao lado, uma churrasqueira com bancada e banquetas, e um espaço gourmet externo com pergolado e mesa de fogo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o dia a dia, aparecem academia com aparelhos e pesos livres, uma sala de massagem, uma quadra poliesportiva, área de treino ao ar livre com barras, playground e um lounge com fogo no jardim. Quem tem cachorro encontra um pet care com bancada para banho e um espaço gramado com obstáculos para cães."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2071,
+          "legenda": "Salão de festas com sofás, mesas e bar (perspectiva ilustrada)"
+        },
+        {
+          "foto": 2079,
+          "legenda": "Academia com aparelhos e pesos livres (perspectiva ilustrada)"
+        },
+        {
+          "foto": 2078,
+          "legenda": "Quadra poliesportiva (perspectiva ilustrada)"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "interesse"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este apartamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para quem quer o primeiro imóvel novo e pode esperar a obra, para um casal ou uma família pequena, e para quem vai usar bastante o lazer do condomínio. Como ainda está na planta, vale conhecer o projeto em detalhe antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O andar e a posição da unidade na torre, o cronograma da obra, o memorial descritivo com os acabamentos que vêm de fábrica e o valor estimado do condomínio depois da entrega.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2068,
+      "legenda": "Torre do UNNI Mansões com varandas (perspectiva ilustrada)",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2081,
+      "legenda": "Planta ilustrada do apartamento de 2 quartos com varanda",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 2070,
+      "legenda": "Piscina adulto com raia e deque de madeira (perspectiva ilustrada)",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2067,
+      "legenda": "Piscina infantil com palmeiras e jardim (perspectiva ilustrada)",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2071,
+      "legenda": "Salão de festas com sofás, mesas e bar (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2069,
+      "legenda": "Churrasqueira com bancada e banquetas (perspectiva ilustrada)",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2073,
+      "legenda": "Espaço gourmet externo com pergolado e mesa de fogo (perspectiva ilustrada)",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 2079,
+      "legenda": "Academia com aparelhos e pesos livres (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2080,
+      "legenda": "Sala de massagem com jardim vertical (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2078,
+      "legenda": "Quadra poliesportiva com gol e cesta (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2074,
+      "legenda": "Área de treino ao ar livre com barras (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2075,
+      "legenda": "Playground com escorregadores e túnel (perspectiva ilustrada)",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2077,
+      "legenda": "Lounge no jardim com poltronas e fogo (perspectiva ilustrada)",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 2072,
+      "legenda": "Pet care com bancada para banho dos cães (perspectiva ilustrada)",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 2076,
+      "legenda": "Espaço gramado com obstáculos para cães (perspectiva ilustrada)",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O apartamento já está pronto?",
+      "resposta": "Não. É um imóvel na planta, e o anúncio informa entrega prevista para 2027. As imagens são perspectivas ilustradas do projeto."
+    },
+    {
+      "pergunta": "Quantos quartos e vagas?",
+      "resposta": "São 2 quartos, 1 banheiro e 1 vaga de garagem, em 43 m²."
+    },
+    {
+      "pergunta": "O que o condomínio terá de lazer?",
+      "resposta": "Pelas perspectivas: piscinas adulto e infantil, salão de festas, churrasqueira, espaço gourmet, academia, sala de massagem, quadra, playground, área de treino e espaços para pets."
+    },
+    {
+      "pergunta": "Como falar com um corretor?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH retorna com os detalhes do projeto e da unidade."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento na planta de 2 quartos e 43 m² no UNNI Mansões, bairro Mansões Santo Antônio, em Campinas. Entrega prevista para 2027, com piscinas, academia, quadra, salão de festas e espaços para pets no condomínio. Imagens ilustrativas. Mais detalhes no link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "campinas",
+      "imovelnaplanta",
+      "apartamentonovo",
+      "mansoessantoantonio",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "5de3a2a7d583",
+  "publicadoEm": "2026-10-26T21:21:59.565Z"
+}

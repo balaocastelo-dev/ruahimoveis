@@ -1,0 +1,204 @@
+{
+  "codigo": "ST0004",
+  "slug": "apartamento-studio-28m2-varanda-moema-sao-paulo-st0004",
+  "titulo": "Apartamento estúdio de 28 m² com varanda em Moema, São Paulo",
+  "resumo": "Estúdio de 28 m² em Moema, São Paulo, com cozinha planejada e equipada, ar-condicionado, varanda envidraçada e lavanderia coletiva no prédio, perto do metrô.",
+  "capa": {
+    "foto": 2063,
+    "alt": "Estúdio com cama de casal, painel de madeira na cabeceira, ar-condicionado e porta de vidro para a varanda"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este estúdio fica em Moema, na zona sul de São Paulo, e tem 28 m² de área útil. Segundo o anúncio, o prédio fica perto de estações de metrô e de comércio e serviços do dia a dia. É um imóvel para quem quer morar sozinho com praticidade, ou para quem procura um apartamento compacto bem localizado em São Paulo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o apartamento montado: cozinha planejada com eletrodomésticos, cama de casal com painel de madeira, ar-condicionado split, TV em suporte articulado e uma varanda envidraçada com mesa para duas pessoas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Estúdio de 28 m² em Moema",
+        "Cozinha planejada com cooktop, forno e micro-ondas",
+        "Ar-condicionado e interfone",
+        "Varanda envidraçada com cobertura de vidro",
+        "Lavanderia coletiva e portaria 24 horas no prédio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e espaço de dormir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha ocupa uma parede inteira, com armários claros do piso ao teto. Na bancada de granito há cuba de inox e cooktop de duas bocas; embaixo, um forno de embutir, e acima, um nicho com micro-ondas. Ao lado fica a geladeira de inox, e um armário com portas de espelho completa a parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O espaço de dormir é contornado por um painel de madeira que serve de cabeceira. A cama de casal tem um móvel com gavetas ao pé e uma bancada estreita na lateral, que funciona como mesa. Na parede ficam o ar-condicionado e a TV num braço articulado. O piso é de porcelanato claro em todo o apartamento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2056,
+          "legenda": "Cozinha planejada com cooktop, forno de embutir e micro-ondas"
+        },
+        {
+          "foto": 2058,
+          "legenda": "Cama de casal com painel de madeira, TV e ar-condicionado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiro e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro tem revestimento claro do piso ao teto, box de vidro com nicho, cuba esculpida numa bancada de granito com gaveteiro, espelho grande e toalheiro de parede ligado à tomada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda é fechada com vidro, inclusive na cobertura, e tem uma parede de tijolinho aparente. Cabe uma mesa redonda com duas cadeiras e um pequeno balcão. Da varanda se veem prédios e a rua arborizada do bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2062,
+          "legenda": "Varanda envidraçada com parede de tijolinho e mesa para dois"
+        },
+        {
+          "foto": 2059,
+          "legenda": "Banheiro com box de vidro e cuba esculpida em granito"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O prédio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A entrada tem recepção revestida de ripas de madeira, catracas de acesso e elevadores. O anúncio cita portaria 24 horas. O prédio tem ainda uma lavanderia coletiva, com lavadoras e secadoras, ao lado de um espaço com mesas e jardim vertical."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem é este estúdio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Serve bem a quem mora sozinho e quer tudo perto, a estudantes e profissionais que precisam de um ponto em Moema, e a quem procura um imóvel compacto para alugar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos ficam com o imóvel, se há vaga de garagem, o valor do condomínio e como funciona o uso da lavanderia coletiva.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 2066,
+      "legenda": "Fachada do prédio com entrada envidraçada e árvores na calçada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2055,
+      "legenda": "Recepção com ripas de madeira, catracas e elevadores",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 2063,
+      "legenda": "Estúdio com cama de casal, ar-condicionado e porta para a varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2058,
+      "legenda": "Cama de casal com painel de madeira, TV e ar-condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2060,
+      "legenda": "Vista do estúdio para a janela e a porta da varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2057,
+      "legenda": "Espaço de dormir, cozinha e armário com portas de espelho",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2056,
+      "legenda": "Cozinha planejada com cooktop, forno de embutir e micro-ondas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2059,
+      "legenda": "Banheiro com box de vidro e cuba esculpida em granito",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2061,
+      "legenda": "Box com nicho e toalheiro de parede no banheiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2062,
+      "legenda": "Varanda envidraçada com parede de tijolinho e mesa para dois",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2064,
+      "legenda": "Varanda com cobertura de vidro e vista para os prédios do bairro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2065,
+      "legenda": "Lavanderia coletiva com lavadoras, secadoras e mesas",
+      "ambiente": "servico"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho do estúdio?",
+      "resposta": "São 28 m² de área útil, com espaço de dormir, cozinha, banheiro e varanda."
+    },
+    {
+      "pergunta": "Tem ar-condicionado?",
+      "resposta": "Sim. As fotos mostram um aparelho split na parede, e a ficha do anúncio cita ar-condicionado e interfone."
+    },
+    {
+      "pergunta": "O prédio tem lavanderia?",
+      "resposta": "Sim. As fotos mostram uma lavanderia coletiva com lavadoras e secadoras, e o anúncio cita também portaria 24 horas."
+    },
+    {
+      "pergunta": "Como agendar uma visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH confirma o dia e o horário com você."
+    }
+  ],
+  "redes": {
+    "legenda": "Estúdio de 28 m² em Moema, São Paulo, perto do metrô. Cozinha planejada com cooktop, forno e micro-ondas, ar-condicionado, banheiro com box de vidro e varanda envidraçada. No prédio, lavanderia coletiva e portaria 24 horas. Fotos e detalhes no link da bio.",
+    "hashtags": [
+      "studiomoema",
+      "moema",
+      "apartamentosaopaulo",
+      "studiosp",
+      "imoveissp",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "59c53ef82a66",
+  "publicadoEm": "2026-10-26T21:21:59.569Z"
+}
