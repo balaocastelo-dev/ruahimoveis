@@ -101,11 +101,13 @@ function paginaRevista(req, lista, artigos = []) {
   const comuns = lista.filter((x) => !ehSignature(x.imovel));
   const usados = new Set();
   const caps = CAPITULOS.map((c) => {
-    const ims = comuns.filter((x) => c.tipos.includes(x.imovel.tipo) && !usados.has(x.imovel.codigo)).slice(0, 3);
+    // Os mais fotogênicos primeiro (mais fotos), depois o de maior valor.
+    const ims = comuns.filter((x) => c.tipos.includes(x.imovel.tipo) && !usados.has(x.imovel.codigo))
+      .sort((a, b) => Math.min(b.imovel.fotos.length, 20) - Math.min(a.imovel.fotos.length, 20) || (b.imovel.valor || 0) - (a.imovel.valor || 0)).slice(0, 3);
     ims.forEach((x) => usados.add(x.imovel.codigo));
     return { c, ims };
   }).filter((k) => k.ims.length);
-  const capa = (caps[0] && caps[0].ims[0]) || comuns[0];
+  const capa = caps.map((k) => k.ims[0]).sort((a, b) => Math.min(b.imovel.fotos.length, 20) - Math.min(a.imovel.fotos.length, 20) || (b.imovel.valor || 0) - (a.imovel.valor || 0))[0] || comuns[0];
   const blog = artigos.slice(0, 3);
   const restantes = comuns.length - usados.size;
 
