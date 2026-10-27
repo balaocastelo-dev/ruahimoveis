@@ -5,6 +5,7 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-cd-'));
 process.env.RUAH_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
+process.env.MERCADO_CACHE_S = '0';
 delete process.env.DATABASE_URL;
 const assert = require('assert');
 const O = require('../src/condominios/overpass');

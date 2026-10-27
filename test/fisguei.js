@@ -2,6 +2,7 @@
 const os = require('os'), path = require('path'), fs = require('fs'), assert = require('assert');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-fisguei-'));
 process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
+process.env.MERCADO_CACHE_S = '0';
 const app = require('../server');
 const F = require('../src/fisguei/base');
 const { one, all, run } = require('../src/db');

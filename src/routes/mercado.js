@@ -156,45 +156,70 @@ const cartao = (x) => {
     outros: (iguais || []).slice(1).map((o) => ({ id: o.id, ref: refDe(o), href: hrefDe(o), valor: o.valor, anunciante: o.anunciante_nome, portal: o.portal, publicado_em: o.publicado_em })) };
 };
 
+// ---------- base das vitrines em memória ----------
+// Uma leitura só de todos os anúncios de Campinas (Fisguei + Radar, sem as fotos) fica guardada por 3 minutos;
+// resumo, ruas, imóveis e mapa filtram em memória. Com dezenas de milhares de anúncios, reler o banco a cada clique
+// deixava a tela lenta (principalmente na Vercel, onde cada consulta é uma ida ao banco online).
+const BASE_MS = Number(process.env.MERCADO_CACHE_S ?? 180) * 1000;
+let BASE = null;
+function baseVitrine() {
+  if (BASE && Date.now() - BASE.em < BASE_MS) return BASE.linhas;
+  const b0 = base({ min: '0' });
+  const linhas = comRadar(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, ...b0.p), { min: '0' });
+  for (const x of linhas) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
+  BASE = { em: Date.now(), linhas };
+  return linhas;
+}
+const esqueceBase = () => { BASE = null; };
+// os filtros da tela (valor mínimo e máximo, quartos, tipo, só particular), aplicados em memória
+function filtra(linhas, q, cat = catDe(q)) {
+  const min = q.min !== undefined && q.min !== '' ? Number(q.min) || 0 : cat ? CATS[cat].min : 1000000;
+  const max = Number(q.max) || 0, qt = cat === 'terrenos' || cat === 'comerciais' ? 0 : int(q.quartos || 0);
+  const tipo = q.tipo ? sem(String(q.tipo).slice(0, 30)) : '', part = q.particular === '1';
+  return linhas.filter((x) => (!cat || x._cat === cat) && (x.valor || 0) >= min && (!max || x.valor <= max) && (!qt || (x.quartos || 0) >= qt)
+    && (!tipo || sem(x.tipo).includes(tipo)) && (!part || x.anunciante_tipo === 'particular'));
+}
+
 r.get('/mercado/resumo', (req, res) => {
   const cat = catDe(req.query);
-  // uma consulta só (sem valor mínimo e sem quartos); o resto é filtrado aqui, para contar as quatro abas de uma vez
-  const b0 = base({ particular: req.query.particular, min: '0' });
-  const tudo = comRadar(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, ...b0.p), { particular: req.query.particular, min: '0' });
-  const minDe = (k) => (req.query.min !== undefined && req.query.min !== '' ? Number(req.query.min) || 0 : k ? CATS[k].min : 1000000);
+  const tudo = baseVitrine();
   const categorias = {};
-  for (const k of Object.keys(CATS)) categorias[k] = { nome: CATS[k].nome, n: unicos(tudo.filter((x) => categoria(x) === k && (x.valor || 0) >= minDe(k))).length };
-  const max = Number(req.query.max) || 0, qt = cat === 'terrenos' || cat === 'comerciais' ? 0 : int(req.query.quartos || 0);
-  const brutos = tudo.filter((x) => (x.valor || 0) >= minDe(cat) && (!max || x.valor <= max) && (!qt || (x.quartos || 0) >= qt));
+  for (const k of Object.keys(CATS)) categorias[k] = { nome: CATS[k].nome, n: unicos(filtra(tudo, { min: req.query.min, particular: req.query.particular }, k)).length };
+  const brutos = filtra(tudo, { ...req.query, cat: '' }, cat);
   const daCat = naVitrine(brutos, { ...req.query, sub: '' });
   const subtipos = Object.entries(daCat.reduce((m, x) => { if (x.subtipo) m[x.subtipo] = (m[x.subtipo] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]).map(([nome, n]) => ({ nome, n }));
   const todos = naVitrine(brutos, req.query);
   const l = unicos(todos);
   const bairros = capas(agrupa(l, 'bairro').sort((a, b) => b.n - a.n));
-  const total = one('SELECT count(*) n FROM fisguei_anuncios').n + one("SELECT count(*) n FROM oportunidades WHERE status <> 'descartada'").n;
+  const total = tudo.length;
   const doRadarN = l.filter((x) => x.origem === 'op').length;
   const m2 = l.filter((x) => x.valor && x.area_util > 20).map((x) => x.valor / x.area_util);
   res.json({ cat, categorias, subtipos, total: l.length, doRadar: doRadarN, anuncios: todos.length, repetidos: todos.length - l.length, base: total, mediana: med(l.map((x) => x.valor)), m2: med(m2) && Math.round(med(m2)),
     area: med(l.map((x) => x.area_util || 0)), particulares: l.filter((x) => x.anunciante_tipo === 'particular').length, bairros });
 });
 r.get('/mercado/ruas', (req, res) => {
-  const { w, p } = base(req.query);
   const k = G.chave(req.query.bairro || '');
-  const l = unicos(naVitrine(comRadar(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${w}`, ...p), req.query), req.query)).filter((x) => G.chave(x.bairro) === k);
+  const l = unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x._bairro === k), req.query));
   res.json(capas(agrupa(l, 'logradouro', ruaChave).sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome))));
 });
 r.get('/mercado/imoveis', (req, res) => {
-  const { w, p } = base(req.query);
   const kb = G.chave(req.query.bairro || ''), kr = ruaChave(req.query.rua || '');
-  let l = unicos(naVitrine(comRadar(all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a WHERE ${w} ORDER BY a.valor DESC LIMIT 20000`, ...p), req.query), req.query));
-  if (kb) l = l.filter((x) => G.chave(x.bairro) === kb);
-  if (kr) l = l.filter((x) => ruaChave(x.logradouro) === kr);
+  let sel = filtra(baseVitrine(), req.query);
+  if (kb) sel = sel.filter((x) => x._bairro === kb);
+  if (kr) sel = sel.filter((x) => x._rua === kr);
+  sel = sel.slice(0, 3000);
+  // dados completos (fotos, complemento, vagas…) só dos imóveis desta rua
+  const fg = sel.filter((x) => x.id > 0).map((x) => x.id), op = new Map(sel.filter((x) => x.id < 0).map((x) => [x.id, x]));
+  const cheios = [];
+  for (let i = 0; i < fg.length; i += 400) { const parte = fg.slice(i, i + 400); cheios.push(...all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)); }
+  if (op.size) cheios.push(...doRadar({ min: '0' }).filter((x) => op.has(x.id)));
+  const l = unicos(naVitrine(cheios, req.query));
   l.sort((a, b) => (parseInt(a.numero, 10) || 0) - (parseInt(b.numero, 10) || 0) || (b.valor || 0) - (a.valor || 0));
   res.json(l.slice(0, 600).map(cartao));
 });
 r.get('/mercado/mapa', (req, res) => {
-  const { w, p } = base(req.query);
-  res.json(unicos(naVitrine(comRadar(all(`SELECT ${CHAVE}, a.lat, a.lon, a.bairro FROM fisguei_anuncios a WHERE ${w} AND a.lat IS NOT NULL LIMIT 20000`, ...p), req.query).filter((x) => x.lat != null), req.query))
+  res.setHeader('Cache-Control', 'private, max-age=120');
+  res.json(unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x.lat != null), req.query))
     .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, Math.round((x.valor || 0) / 1000), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.subtipo || x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`]));
 });
 
@@ -250,5 +275,6 @@ r.get('/mapas/config', (req, res) => { const f = require('../condominios/fachada
 
 module.exports = r;
 module.exports.unicos = unicos;
+module.exports.esqueceBase = esqueceBase;
 module.exports.categoria = categoria;
 module.exports.subtipo = subtipo;

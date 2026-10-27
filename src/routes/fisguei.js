@@ -61,6 +61,7 @@ receber.post('/receber', (req, res) => {
     if (!r.anuncios && !r.pessoas) tot.ignorados++;
   }
   setConfig('fisguei_ultimo_recebimento', new Date().toISOString());
+  if (tot.anuncios) require('./mercado').esqueceBase(); // anúncios novos aparecem nas vitrines na hora
   res.json(tot);
 });
 

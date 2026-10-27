@@ -55,7 +55,7 @@ function anuncio(x) {
   if (!id || !(x.street || x.district || x.zipcode)) return null;
   const venda = numOu(x.buy_price), aluguel = numOu(x.rental_price);
   if (!venda && aluguel) return { locacao: true }; // a RUAH só trabalha com venda
-  const imgs = Array.isArray(x.images) ? x.images.filter((u) => typeof u === 'string' && /^https:\/\//.test(u)) : [];
+  const imgs = Array.isArray(x.images) ? x.images.filter((u) => typeof u === 'string' && /^https:\/\//.test(u)).slice(0, 10) : []; // até 10 fotos: o banco é pequeno
   const ll = x.longlat || {};
   return {
     fisgar_id: String(id),
