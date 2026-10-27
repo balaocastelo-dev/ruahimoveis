@@ -21,9 +21,10 @@ r.get('/condominios', (req, res) => {
   if (ids.length) {
     const ph = ids.map(() => '?').join(',');
     const capa = new Map(all(`SELECT i.condominio_id cid, min(f.id) capa FROM imoveis i JOIN arquivos f ON f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%' WHERE i.condominio_id IN (${ph}) GROUP BY i.condominio_id`, ...ids).map((x) => [x.cid, x.capa]));
+    // um anúncio por prédio (o mais recente com foto): prédios com centenas de anúncios não trazem as fotos de todos
     const fg = new Map();
-    for (const x of all(`SELECT condominio_id cid, fotos FROM fisguei_anuncios WHERE condominio_id IN (${ph}) AND fotos IS NOT NULL ORDER BY id DESC`, ...ids)) {
-      if (fg.has(x.cid)) continue;
+    const ult = all(`SELECT max(id) id FROM fisguei_anuncios WHERE condominio_id IN (${ph}) AND fotos LIKE '[%' GROUP BY condominio_id`, ...ids).map((x) => x.id).filter(Boolean);
+    if (ult.length) for (const x of all(`SELECT condominio_id cid, fotos FROM fisguei_anuncios WHERE id IN (${ult.map(() => '?').join(',')})`, ...ult)) {
       try { const f = (JSON.parse(x.fotos || '[]') || [])[0]; if (f) fg.set(x.cid, f); } catch {}
     }
     for (const c of l.itens) { c.foto = capa.has(c.id) ? `/api/arquivos/${capa.get(c.id)}` : fg.get(c.id) || null; }
