@@ -157,21 +157,52 @@ const cartao = (x) => {
 };
 
 // ---------- base das vitrines em memória ----------
-// Uma leitura só de todos os anúncios de Campinas (Fisguei + Radar, sem as fotos) fica guardada por 3 minutos;
-// resumo, ruas, imóveis e mapa filtram em memória. Com dezenas de milhares de anúncios, reler o banco a cada clique
-// deixava a tela lenta (principalmente na Vercel, onde cada consulta é uma ida ao banco online).
-const BASE_MS = Number(process.env.MERCADO_CACHE_S ?? 180) * 1000;
-let BASE = null;
-function baseVitrine() {
-  if (BASE && Date.now() - BASE.em < BASE_MS) return BASE.linhas;
-  const b0 = base({ min: '0' });
-  const linhas = comRadar(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, ...b0.p), { min: '0' });
+// Uma leitura de todos os anúncios de Campinas (Fisguei + Radar, sem as fotos) fica guardada; resumo, ruas, imóveis e mapa
+// filtram em memória. Com dezenas de milhares de anúncios a leitura do banco online leva vários segundos, então ela é
+// renovada em segundo plano: a tela responde na hora com o que já tem e a versão nova entra quando chega.
+const BASE_MS = Number(process.env.MERCADO_CACHE_S ?? 600) * 1000;
+let BASE = null, RENOVANDO = null;
+// título só serve para os terrenos (terreno em condomínio); trazer de todos deixava a leitura bem mais pesada
+const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, p: b0.p }; };
+function montaBase(fisguei, radar) {
+  const linhas = [...fisguei, ...radar];
   for (const x of linhas) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
   BASE = { em: Date.now(), linhas, memo: new Map() };
   return linhas;
 }
+// leitura sem travar o servidor (só no banco online): conexão própria e assíncrona
+let POOL = null;
+async function leAsync() {
+  const D = require('../db');
+  if (!D.PG) return null;
+  if (!POOL) {
+    const { Pool } = require('pg');
+    const url = process.env.DATABASE_URL || require('../config').DATABASE_URL;
+    POOL = new Pool({ connectionString: url.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(url) ? false : { rejectUnauthorized: false }, max: 1, idleTimeoutMillis: 20000 });
+    POOL.on('error', () => {});
+  }
+  const traduz = require('../sql-pg');
+  const { sql, p } = SQL_BASE();
+  const t = traduz(sql);
+  const r = await POOL.query(t.text, p);
+  return r.rows;
+}
+function renova() {
+  if (RENOVANDO) return RENOVANDO;
+  RENOVANDO = leAsync().then((rows) => { if (rows) montaBase(rows, doRadar({ min: '0' })); })
+    .catch((e) => console.error('[vitrines] releitura', e.message)).finally(() => { RENOVANDO = null; });
+  return RENOVANDO;
+}
+function baseVitrine() {
+  if (BASE && Date.now() - BASE.em < BASE_MS) return BASE.linhas;
+  if (BASE && BASE_MS > 0 && require('../db').PG) { renova(); return BASE.linhas; } // velha: responde já e renova por trás
+  const { sql, p } = SQL_BASE();
+  return montaBase(all(sql, ...p), doRadar({ min: '0' }));
+}
 // chegou anúncio: a base é relida em até 30 s (numa puxada do Fisgar chega página a cada poucos segundos)
 const esqueceBase = () => { if (BASE) BASE.em = Math.min(BASE.em, Date.now() - BASE_MS + 30000); };
+// no PC (servidor sempre ligado), já deixa a base pronta logo depois de abrir
+if (!process.env.VERCEL && process.env.MERCADO_CACHE_S !== '0') setTimeout(() => { try { if (require('../db').PG) renova(); } catch {} }, 15000).unref();
 // respostas prontas, guardadas enquanto a base não muda
 function memo(req, fn) {
   baseVitrine();
