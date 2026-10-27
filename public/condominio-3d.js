@@ -547,7 +547,7 @@ async function ligaRealista(chave) {
   tiles.errorTarget = celular ? 22 : 10;
   tiles.setCamera(camera); tiles.setResolutionFromRenderer(camera, renderer);
   // o plugin deixa X para oeste e Z para o norte; o modelo usa X para leste e Z para o sul: meia-volta no eixo Y
-  const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.add(tiles.group); scene.add(pai);
+  const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.position.y = -690; pai.add(tiles.group); scene.add(pai);
   real = { tiles, pai, nivelado: 0, erro: null, ligado: true };
   if (qs.has('debug')) window.__real = { real, camera, controls, scene, THREE };
   tiles.addEventListener('load-error', (e) => { if (!real.carregou) { real.erro = 'O Google recusou a chave do 3D realista.'; desligaRealista(true); } });
@@ -556,9 +556,22 @@ async function ligaRealista(chave) {
   // acerta a altura do chão (o Google mede pelo elipsoide) e mede a altura real do prédio
   const nivela = () => {
     if (!real || !real.carregou) return;
-    const y = raioBaixo(baseAlvo.x + 30, baseAlvo.z + 30) ?? raioBaixo(0, 0);
-    if (y === null) return;
+    // o chão é medido nas ruas perto do prédio (raio em cima de telhado ou árvore daria chão alto demais)
+    const pts = [];
+    for (const v of cena.vias) for (let i = 0; i < v.p.length; i += 2) { const x = v.p[i], z = -v.p[i + 1]; const d = Math.hypot(x - baseAlvo.x, z - baseAlvo.z); if (d < 160) pts.push([d, x, z]); }
+    pts.sort((a, b) => a[0] - b[0]);
+    const alturas = pts.slice(0, 24).map(([, x, z]) => raioBaixo(x, z)).filter((h) => h !== null).sort((a, b) => a - b);
+    if (!alturas.length) { const h0 = raioBaixo(0, 0); if (h0 !== null) alturas.push(h0); }
+    if (qs.has('debug')) console.warn('tentativa', pts.length, alturas.length, alturas[0]);
+    if (!alturas.length) return;
+    // descarta os raios que passaram por um buraco e bateram no globo de baixa resolução lá embaixo
+    const med = alturas[Math.floor(alturas.length / 2)];
+    const bons = alturas.filter((h) => Math.abs(h - med) < 25);
+    const y = bons[Math.floor(bons.length * 0.3)];
+    if (real.nivelado >= 2 && Math.abs(y) > 150) return;
+    if (!Number.isFinite(y) || Math.abs(y) > 6000) return;
     pai.position.y -= y; pai.updateMatrixWorld(true); real.nivelado++;
+    if (qs.has('debug')) console.warn('nivela', y, alturas.length, pai.position.y);
     if (poligonoAlvo && D.condominio.tipo !== 'horizontal' && D.condominio.tipo !== 'casa') {
       const [cx, cy] = centro(poligonoAlvo); const topo = raioBaixo(cx, -cy);
       if (topo && topo > 6) {
@@ -575,7 +588,7 @@ async function ligaRealista(chave) {
   const t = setInterval(() => {
     if (!real) return clearInterval(t);
     let malhas = 0; tiles.group.traverse((o) => { if (o.isMesh) malhas++; });
-    const antes = pai.position.y; nivela();
+    const antes = pai.position.y; if (malhas >= 40) nivela();
     estavel = malhas > 60 && Math.abs(pai.position.y - antes) < 0.5 ? estavel + 1 : 0;
     if (++n > 40 || estavel >= 3) clearInterval(t);
   }, 1500);
