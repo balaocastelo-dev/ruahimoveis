@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0033",
+      "slug": "casa-2-quartos-jardim-nossa-senhora-auxiliadora-campinas-ca0033",
+      "titulo": "Casa de 2 quartos com 83 m² no Nossa Senhora Auxiliadora",
+      "resumo": "Casa térrea de 2 quartos e 83 m² no Jardim Nossa Senhora Auxiliadora, em Campinas, com sala de tacos de madeira, cozinha com bancada de granito e corredor externo.",
+      "capa": {
+        "foto": 1734,
+        "alt": "Sala com sofá de couro marrom, piso de tacos de madeira e quadros na parede"
+      },
+      "versao": "c7b31fb660b7",
+      "publicadoEm": "2026-10-27T11:21:39.865Z"
+    },
+    {
+      "codigo": "AP0008",
+      "slug": "apartamento-2-quartos-suite-reformado-cambui-campinas-ap0008",
+      "titulo": "Apartamento reformado de 2 quartos com suíte no Cambuí",
+      "resumo": "Apartamento de 72 m² no Cambuí, em Campinas, reformado e com planejados: 2 quartos (1 suíte), estar e jantar integrados e cozinha com forno embutido.",
+      "capa": {
+        "foto": 1745,
+        "alt": "Sala de jantar com mesa oval branca, estar com sofá claro e estante iluminada ao fundo"
+      },
+      "versao": "4dd2cd5d8816",
+      "publicadoEm": "2026-10-27T11:21:39.860Z"
+    },
+    {
       "codigo": "AP0005",
       "slug": "apartamento-3-quartos-suite-reformado-cambui-campinas-ap0005",
       "titulo": "Apartamento de 3 quartos com suíte, reformado, no Cambuí",
@@ -254,5 +278,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T09:21:28.220Z"
+  "atualizadoEm": "2026-10-27T11:21:39.865Z"
 }

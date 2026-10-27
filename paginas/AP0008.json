@@ -1,0 +1,283 @@
+{
+  "codigo": "AP0008",
+  "slug": "apartamento-2-quartos-suite-reformado-cambui-campinas-ap0008",
+  "titulo": "Apartamento reformado de 2 quartos com suíte no Cambuí",
+  "resumo": "Apartamento de 72 m² no Cambuí, em Campinas, reformado e com planejados: 2 quartos (1 suíte), estar e jantar integrados e cozinha com forno embutido.",
+  "capa": {
+    "foto": 1745,
+    "alt": "Sala de jantar com mesa oval branca, estar com sofá claro e estante iluminada ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Cambuí, em Campinas. A ficha informa 72 m² de área útil, 2 quartos, sendo 1 suíte, e 1 vaga de garagem, que o anúncio descreve como coberta. Segundo o anúncio, o imóvel foi todo reformado e tem móveis planejados em todos os ambientes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram um apartamento em tons claros, com iluminação indireta em quase todos os cômodos, ar-condicionado na sala e nos quartos e uma cozinha com azulejos azuis. Serve a um casal, a quem mora sozinho e quer espaço para hóspedes ou escritório, ou a uma família pequena que quer mudar sem obra."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "72 m² de área útil, 2 quartos e 1 suíte, segundo a ficha",
+        "Reformado e com móveis planejados, segundo o anúncio",
+        "Estar e jantar integrados, com parede espelhada e cortinas do piso ao teto",
+        "Cozinha com forno e micro-ondas embutidos, cooktop, coifa e lava-louças",
+        "Ar-condicionado split na sala e nos dois quartos",
+        "1 vaga de garagem coberta"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala de estar e jantar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A porta de entrada, de madeira com fechadura digital, abre para um pequeno hall com espelho redondo e sapateira preta. Dali se chega à sala, que reúne o estar e o jantar num só ambiente com piso claro. No estar, um sofá claro fica junto a uma parede com fita de luz, e uma estante branca com nichos separa a entrada. Do outro lado, a TV fica num painel ripado branco com aparador e duas banquetas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesa de jantar é oval, com tampo branco e seis cadeiras de madeira com encosto de palhinha, sob um pendente de anéis. Uma parede inteira é espelhada, o que amplia a sala, e as janelas têm cortinas claras do piso ao teto. O teto tem rebaixo com luminária redonda e sanca iluminada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1737,
+          "legenda": "Estar com sofá claro, estante branca e painel ripado com TV"
+        },
+        {
+          "foto": 1740,
+          "legenda": "Mesa de jantar oval diante da parede espelhada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha fica atrás de uma porta de correr branca, ao lado da mesa de jantar. Tem piso que imita madeira, armários brancos com puxadores em concha, bancada clara em L e uma faixa de azulejos azuis e brancos. As fotos mostram forno e micro-ondas embutidos numa torre, cooktop com coifa de inox, lava-louças, geladeira inox e uma prateleira de madeira com potes de vidro. Uma janela pequena fica sobre a bancada, e uma porta de vidro fosco no fim do corredor leva a outro ambiente que não aparece nas fotos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1758,
+          "legenda": "Cozinha com forno e micro-ondas embutidos, cooktop e azulejos azuis"
+        },
+        {
+          "foto": 1746,
+          "legenda": "Bancada em L com lava-louças e prateleira de potes de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos quartos tem parede verde-acinzentada atrás da cama, cabeceira estofada com painel de madeira, criado-mudo branco suspenso e pendentes pretos ao lado de um espelho. Há armários brancos do piso ao teto, uma bancada de estudo com gaveteiro sob a janela, TV na parede e ar-condicionado. As fotos mostram mais de uma porta neste quarto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O outro quarto tem papel de parede em tom terracota, painel de madeira com fita de luz atrás da cama e cabeceira estofada. Sob a janela, uma bancada de madeira com gavetas e um puff; ao lado, armário branco e TV na parede. A ficha não diz qual dos dois é a suíte, e o banheiro não aparece nas fotos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1753,
+          "legenda": "Quarto com parede verde, cabeceira estofada e bancada de estudo"
+        },
+        {
+          "foto": 1760,
+          "legenda": "Quarto com papel de parede terracota e painel de madeira iluminado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer morar no Cambuí num apartamento já reformado e mobiliado com planejados, sem precisar de obra. Com dois quartos e mesa para seis, atende bem um casal ou uma família pequena. As fotos se concentram no interior: não mostram o banheiro, a fachada, a garagem nem as áreas comuns do prédio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos ficam com o imóvel, como é o banheiro da suíte e o social, o que há atrás da porta de vidro da cozinha, o valor do condomínio e a documentação da vaga.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1751,
+      "legenda": "Hall de entrada com porta de madeira, espelho redondo e sapateira preta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1745,
+      "legenda": "Mesa de jantar oval, estar com sofá e estante iluminada ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1737,
+      "legenda": "Estar com sofá claro, estante branca e painel ripado com TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1739,
+      "legenda": "Sofá claro sob sanca iluminada, estante com nichos e cortinas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1747,
+      "legenda": "Estante branca com nichos, sofá e porta de vidro com cortina",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1738,
+      "legenda": "Sofá do estar e mesa de jantar junto à parede espelhada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1740,
+      "legenda": "Mesa de jantar oval diante da parede espelhada e cortinas longas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1749,
+      "legenda": "Painel ripado com TV e aparador, com o jantar ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1743,
+      "legenda": "Mesa de jantar, porta de correr branca e painel com TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1752,
+      "legenda": "Parede de quadros ao lado da mesa de jantar, com a sala ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1742,
+      "legenda": "Porta de correr da cozinha aberta para a mesa de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1741,
+      "legenda": "Bancada da cozinha com banqueta e passagem para a sala",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1758,
+      "legenda": "Cozinha com forno e micro-ondas embutidos, cooktop e azulejos azuis",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1744,
+      "legenda": "Torre de forno e micro-ondas e bancada com cooktop",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1746,
+      "legenda": "Bancada em L com lava-louças e prateleira de potes de vidro",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1748,
+      "legenda": "Canto da bancada com banqueta, azulejos azuis e piso amadeirado",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1753,
+      "legenda": "Quarto com parede verde, cabeceira estofada e bancada de estudo",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1754,
+      "legenda": "Quarto verde visto da porta, com ar-condicionado e armários",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1757,
+      "legenda": "Cama de casal, pendentes pretos e armário branco no quarto verde",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1756,
+      "legenda": "Cabeceira estofada, mesinhas laterais e armário até o teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1761,
+      "legenda": "Quarto verde com portas, ar-condicionado e espelho ao lado da cama",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1750,
+      "legenda": "Bancada de estudo sob a janela e TV na parede do quarto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1760,
+      "legenda": "Quarto com papel de parede terracota e painel de madeira iluminado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1759,
+      "legenda": "Bancada de madeira com puff sob a janela e cama de casal",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1755,
+      "legenda": "Quarto terracota com TV na parede e bancada sob a janela",
+      "ambiente": "quarto"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas o apartamento tem?",
+      "resposta": "A ficha informa 2 quartos, sendo 1 suíte, e 1 vaga de garagem, descrita no anúncio como coberta. A área útil é de 72 m²."
+    },
+    {
+      "pergunta": "O apartamento é vendido com os móveis?",
+      "resposta": "O anúncio informa que o imóvel tem móveis planejados. As fotos mostram armários na cozinha e nos quartos, estante e painel na sala. Confirme com o corretor o que fica com o imóvel."
+    },
+    {
+      "pergunta": "Tem ar-condicionado?",
+      "resposta": "As fotos mostram aparelhos split na sala e nos dois quartos."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento reformado no Cambuí, em Campinas: 72 m², 2 quartos com 1 suíte e 1 vaga coberta. Sala de estar e jantar integradas com parede espelhada, cozinha com forno e micro-ondas embutidos e azulejos azuis, e quartos com armários planejados e ar-condicionado. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "cambui",
+      "apartamentoreformado",
+      "imoveiscampinas",
+      "campinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "4dd2cd5d8816",
+  "publicadoEm": "2026-10-27T11:21:39.860Z"
+}

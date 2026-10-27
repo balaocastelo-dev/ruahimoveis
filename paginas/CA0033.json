@@ -1,0 +1,205 @@
+{
+  "codigo": "CA0033",
+  "slug": "casa-2-quartos-jardim-nossa-senhora-auxiliadora-campinas-ca0033",
+  "titulo": "Casa de 2 quartos com 83 m² no Nossa Senhora Auxiliadora",
+  "resumo": "Casa térrea de 2 quartos e 83 m² no Jardim Nossa Senhora Auxiliadora, em Campinas, com sala de tacos de madeira, cozinha com bancada de granito e corredor externo.",
+  "capa": {
+    "foto": 1734,
+    "alt": "Sala com sofá de couro marrom, piso de tacos de madeira e quadros na parede"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no Jardim Nossa Senhora Auxiliadora, em Campinas. A ficha informa 83 m² de área total, dois quartos e um banheiro, e o anúncio cita cozinha e área de serviço. As fotos mostram acabamentos de época, como azulejos decorados, e piso de tacos de madeira na sala e em um dos quartos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Serve para quem quer morar numa casa compacta, sem condomínio, numa região com comércio e serviços por perto. O anúncio cita o Unisal e o acesso ao Parque Portugal (Lagoa do Taquaral), ao Bosque dos Italianos e ao Ribeirão das Pedras."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Dois quartos e um banheiro, segundo a ficha",
+        "Sala com piso de tacos de madeira e espaço para mesa",
+        "Cozinha com bancada de granito e paredes azulejadas",
+        "Corredor externo com piso cerâmico, cobertura de telhas e canteiro",
+        "Sem condomínio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e circulação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala tem piso de tacos de madeira em espinha, paredes brancas com uma parede amarela e lustre pendente. Cabem um sofá de três lugares, a estante da TV e uma mesa com cadeiras junto à parede amarela. Uma janela grande com grade e cortina e uma porta dão para a área externa de tijolo aparente. Da sala sai o corredor que leva aos quartos e ao banheiro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1735,
+          "legenda": "Sofá, mesa com cadeiras vermelhas e a parede amarela da sala"
+        },
+        {
+          "foto": 1736,
+          "legenda": "Janela com cortina e porta para a área externa de tijolo aparente"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem paredes inteiras de azulejo claro com desenho, piso cerâmico bege e bancada de granito com cuba. Há espaço para geladeira, armários e uma mesa pequena de duas cadeiras. Uma porta de madeira com venezianas abre para fora. O banheiro também é azulejado até o teto, com pia de louça na cor caramelo, vaso sanitário, espelho com armário e janela basculante no alto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram três ambientes arrumados como dormitório, e a ficha conta dois quartos. O maior tem paredes verde-claras, piso de tacos de madeira e janela de venezianas voltada para árvores, com cama de casal e guarda-roupa grande. Outro tem cama de solteiro, piso de tacos e armário embutido de madeira escura, com janela para o corredor externo. Num terceiro aparecem piso amadeirado, cômoda e janela de venezianas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1730,
+          "legenda": "Quarto com paredes verde-claras, piso de tacos e janela para as árvores"
+        },
+        {
+          "foto": 1728,
+          "legenda": "Quarto com cama de solteiro e armário embutido de madeira escura"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e rua"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao lado da casa corre um corredor com piso cerâmico avermelhado e um canteiro com plantas junto ao muro. No fundo, uma parte coberta com telhas e madeira tem parede de tijolo aparente. A foto da rua mostra muros brancos, portão de grade, calçada de pedra portuguesa e prédios altos ao fundo. A ficha informa seis vagas, que não aparecem nas fotos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura uma casa pequena, de dois quartos, fora de condomínio, perto do Taquaral e do Unisal, segundo o anúncio. Os acabamentos são de época, como os azulejos da cozinha e do banheiro, e quem quiser um visual atual deve considerar uma reforma."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais cômodos a ficha conta como os dois quartos, onde ficam e como são as vagas informadas, qual é a área construída, o estado do telhado e das instalações, e se a documentação da casa está regularizada.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1725,
+      "legenda": "Rua com muros brancos, portão de grade e calçada de pedra portuguesa",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1726,
+      "legenda": "Corredor externo com piso cerâmico, canteiro e área coberta ao fundo",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1734,
+      "legenda": "Sala com sofá de couro marrom, estante com TV e piso de tacos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1735,
+      "legenda": "Sofá, mesa com cadeiras vermelhas e parede amarela na sala",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1736,
+      "legenda": "Janela com cortina e porta da sala para a área externa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1733,
+      "legenda": "Sala com estante da TV e o corredor que leva aos quartos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1731,
+      "legenda": "Cozinha azulejada com mesa pequena, armário branco e bancada de granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1732,
+      "legenda": "Cozinha com bancada de granito, geladeira e porta de venezianas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1730,
+      "legenda": "Quarto com paredes verde-claras, cama de casal e guarda-roupa",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1729,
+      "legenda": "Quarto com piso amadeirado, cômoda e janela de venezianas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1728,
+      "legenda": "Quarto com cama de solteiro, piso de tacos e armário embutido",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1727,
+      "legenda": "Banheiro azulejado com pia caramelo, espelho e janela no alto",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e banheiros a casa tem?",
+      "resposta": "A ficha informa dois quartos e o anúncio cita um banheiro. A ficha não informa suíte."
+    },
+    {
+      "pergunta": "A casa fica em condomínio?",
+      "resposta": "Não. É uma casa de rua no Jardim Nossa Senhora Auxiliadora, em Campinas."
+    },
+    {
+      "pergunta": "Qual é o tamanho da casa?",
+      "resposta": "A ficha informa 83 m² de área total. Confirme com o corretor a área construída."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 2 quartos no Jardim Nossa Senhora Auxiliadora, em Campinas, fora de condomínio: sala com piso de tacos de madeira, cozinha com bancada de granito e corredor externo com canteiro. Perto do Taquaral e do Unisal, segundo o anúncio. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "casacampinas",
+      "taquaral",
+      "imoveiscampinas",
+      "casaavenda",
+      "campinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "c7b31fb660b7",
+  "publicadoEm": "2026-10-27T11:21:39.865Z"
+}
