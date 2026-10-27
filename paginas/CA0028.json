@@ -1,0 +1,238 @@
+{
+  "codigo": "CA0028",
+  "slug": "casa-comercial-3-vagas-jardim-bonfim-campinas-ca0028",
+  "titulo": "Casa comercial no Jardim Bonfim, em Campinas, com 3 vagas",
+  "resumo": "Casa comercial no Jardim Bonfim, em Campinas: 170 m² num terreno de 336 m², salas de atendimento, provadores, copa, três vagas na frente e casa nos fundos.",
+  "capa": {
+    "foto": 1564,
+    "alt": "Salão comprido com araras douradas nas duas paredes e a porta da frente ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no Jardim Bonfim, em Campinas, e hoje está montada para o comércio. São 170 m² de área útil num terreno de 336 m², com três vagas, segundo a ficha. O anúncio diz que o imóvel fica numa avenida de bastante movimento e que as vagas ficam na frente, para clientes e equipe."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram um espaço já preparado para loja: salão com araras nas paredes, balcão de atendimento, provadores com cortina, copa e banheiros reformados. Pelo anúncio, há ainda uma casa nos fundos com entrada independente, o que abre outras possibilidades de uso."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "170 m² de área útil em terreno de 336 m²",
+        "Três vagas na frente, segundo a ficha e o anúncio",
+        "Salão com araras e iluminação embutida",
+        "Balcão de atendimento e provadores com cortina",
+        "Copa com armários e pia",
+        "Casa nos fundos com entrada independente, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A parte da frente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na frente ficam as salas voltadas para a rua, com janelas grandes e gradeadas, piso de porcelanato claro em placas grandes e luminárias de teto. Logo atrás vem o salão comprido, com araras douradas fixadas nas duas paredes e fita de luz no alto. Perto da entrada há um balcão de atendimento com gavetas e pendentes de palha, ao lado de uma porta de grade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1566,
+          "legenda": "Balcão de atendimento com pendente de palha junto à porta de grade"
+        },
+        {
+          "foto": 1565,
+          "legenda": "Salão com araras douradas, visto em direção aos fundos (foto com marca de edição por IA)"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Salas internas, provadores e copa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo anúncio, são três salas na parte interna. Nas fotos aparecem uma sala com parede amadeirada e prateleiras iluminadas, duas salas com piso vinílico amadeirado (uma delas com porta de correr branca) e uma fileira de provadores com cortinas e trilho de spots. Há um corredor com espelhos em arco."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A copa tem armários brancos, pia, espaço para frigobar e micro-ondas e uma mesa redonda. Os banheiros têm revestimento cinza até meia altura e gabinete branco. O anúncio fala em um banheiro; as fotos mostram mais de um ambiente com vaso sanitário, então vale confirmar quais ficam na casa dos fundos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1573,
+          "legenda": "Provadores com cortina e trilho de spots"
+        },
+        {
+          "foto": 1580,
+          "legenda": "Copa com armários brancos, pia e frigobar"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer abrir ou mudar uma loja, um escritório, uma clínica ou um consultório no Bonfim, com vagas na frente e o espaço já dividido. As fotos de fachada e das vagas não estão na galeria; vale conhecer o imóvel de perto."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Três fotos da parte da frente trazem a marca de conteúdo gerado por IA no canto. Elas podem não mostrar a sala exatamente como está; confira na visita.",
+      "titulo": "Sobre algumas fotos"
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A documentação e o uso permitido para o imóvel, como é a casa dos fundos e o acesso a ela, quantos banheiros existem e quais móveis e araras ficam.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1562,
+      "legenda": "Sala da frente com janela grande gradeada para a rua (foto com marca de edição por IA)",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1563,
+      "legenda": "Sala da frente vista de dentro, com luminária de teto (foto com marca de edição por IA)",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1571,
+      "legenda": "Circulação com espelhos em arco, sofá e portas para as salas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1566,
+      "legenda": "Balcão de atendimento com pendente de palha junto à porta de grade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1570,
+      "legenda": "Balcão com gavetas e pendentes de palha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1564,
+      "legenda": "Salão comprido com araras douradas e a porta da frente ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1565,
+      "legenda": "Salão com araras douradas, visto em direção aos fundos (foto com marca de edição por IA)",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1567,
+      "legenda": "Sala com parede amadeirada e prateleiras iluminadas",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1569,
+      "legenda": "Sala com piso amadeirado, mesa escura e porta de correr branca",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1572,
+      "legenda": "Sala com piso amadeirado, persiana e mesa",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1573,
+      "legenda": "Provadores com cortina e trilho de spots",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1574,
+      "legenda": "Fileira de provadores com cortinas bege",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1568,
+      "legenda": "Banheiro com cuba sobre gabinete e revestimento cinza",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1575,
+      "legenda": "Banheiro com revestimento cinza e janela gradeada",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1578,
+      "legenda": "Banheiro pequeno com degrau e gabinete escuro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1579,
+      "legenda": "Copa com mesa redonda, frigobar e micro-ondas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1580,
+      "legenda": "Copa com armários brancos, pia e frigobar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1581,
+      "legenda": "Copa vista da porta de vidro, com pia e mesa",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1576,
+      "legenda": "Passagem coberta com armário branco e porta para outro ambiente",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1577,
+      "legenda": "Cômodo com piso de taco em espinha e sofá",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas o imóvel tem?",
+      "resposta": "A ficha informa três vagas. Pelo anúncio, elas ficam na frente do imóvel."
+    },
+    {
+      "pergunta": "Qual é o tamanho?",
+      "resposta": "São 170 m² de área útil num terreno de 336 m², segundo a ficha."
+    },
+    {
+      "pergunta": "Serve para outros negócios além de loja?",
+      "resposta": "O anúncio cita escritórios, clínicas, consultórios e prestadores de serviço. Confirme com o corretor o uso permitido para o seu caso."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa comercial no Jardim Bonfim, em Campinas: 170 m² num terreno de 336 m², salão com araras, balcão de atendimento, provadores, copa e três vagas na frente. Pelo anúncio, tem ainda uma casa nos fundos com entrada independente. Detalhes no link da bio.",
+    "hashtags": [
+      "casacomercial",
+      "imovelcomercial",
+      "bonfimcampinas",
+      "campinas",
+      "imoveisavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "538bb343858e",
+  "publicadoEm": "2026-10-27T23:21:45.922Z"
+}

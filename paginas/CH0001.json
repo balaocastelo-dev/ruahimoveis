@@ -1,0 +1,192 @@
+{
+  "codigo": "CH0001",
+  "slug": "chacara-piscina-espaco-gourmet-jardim-itapua-monte-mor-ch0001",
+  "titulo": "Chácara com piscina e espaço gourmet em Monte Mor",
+  "resumo": "Chácara de 1.000 m² no Jardim Itapuá, em Monte Mor: casa térrea com varanda, piscina cercada por vidro, espaço gourmet com churrasqueira e vista aberta.",
+  "capa": {
+    "foto": 1582,
+    "alt": "Piscina com deck e cerca de vidro, com a casa térrea de telhado de barro ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta chácara fica no Jardim Itapuá, em Monte Mor, num terreno de 1.000 m², segundo a ficha. A casa é térrea, com telhado de barro e uma varanda coberta de ponta a ponta. Na frente dela, um degrau abaixo, fica a piscina, cercada por painéis de vidro com portão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha registra 6 quartos; pelo anúncio, essa conta inclui a casa principal e uma edícula com dormitório e banheiro próprios. O que mais aparece nas fotos é a área de lazer: o espaço gourmet com churrasqueira, forno e fogão a lenha, um salão com mesa de sinuca e a vista aberta para o verde a partir da piscina."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno de 1.000 m²",
+        "6 quartos na ficha, contando a edícula citada no anúncio",
+        "Piscina cercada por vidro, com deck ao redor",
+        "Espaço gourmet com churrasqueira, forno e fogão a lenha",
+        "Vista aberta para o verde a partir do deck",
+        "Escritório e sala com sanca de gesso"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A casa e a varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda tem forro de madeira, piso claro e parede azul com janelas largas protegidas por tela. Lá dentro, a sala de estar tem rebaixamento de gesso com faixa azul-petróleo e piso claro com desenho de pedra. A sala de jantar se abre para a cozinha por um vão, com pendentes pretos e ventilador de teto. O anúncio diz que grande parte da casa foi reformada, com porcelanato, gesso e iluminação de LED."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1589,
+          "legenda": "Sala de estar com sanca de gesso e faixa azul-petróleo no teto"
+        },
+        {
+          "foto": 1590,
+          "legenda": "Sala de jantar com pendentes e vão aberto para a sala de estar"
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram ainda um escritório com mesa de computador e persiana, uma sala com sofás, TV e tela de projeção, com um banheiro ao lado, e a área de serviço coberta, com espaço para duas máquinas e tanque duplo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Piscina e espaço gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A piscina tem formato oval e fica num deck de piso cerâmico, cercado por vidro e alumínio. Do alto da escada se vê a piscina com o horizonte verde atrás, entre palmeiras. Ao lado fica o espaço gourmet, um salão coberto com toldo amarelo. Dentro dele, a churrasqueira de tijolo escuro reúne forno e fogão a lenha; no mesmo ambiente há cozinha, mesa de sinuca e janelas largas com cortinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1586,
+          "legenda": "Churrasqueira de tijolo escuro com forno e fogão a lenha"
+        },
+        {
+          "foto": 1583,
+          "legenda": "Piscina vista do alto da escada, com o verde ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família que quer morar com espaço e receber gente em casa, ou para quem procura uma chácara de fim de semana perto da cidade. O anúncio cita acesso asfaltado, garagem coberta, canil e portão eletrônico; a garagem e o canil não aparecem nas fotos, então vale ver de perto."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A documentação do imóvel, como os quartos se dividem entre a casa e a edícula, quais ambientes passaram pela reforma e o tamanho da garagem coberta.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1582,
+      "legenda": "Piscina com deck e cerca de vidro, com a casa térrea ao fundo",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1585,
+      "legenda": "Varanda coberta com forro de madeira e janelas largas com tela",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1589,
+      "legenda": "Sala de estar com sanca de gesso e faixa azul-petróleo no teto",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1590,
+      "legenda": "Sala de jantar com pendentes, ventilador de teto e vão para a sala",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1591,
+      "legenda": "Sala com sofás, TV e tela de projeção, com banheiro ao lado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1593,
+      "legenda": "Escritório com mesa de computador e persiana",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1588,
+      "legenda": "Área de serviço coberta com espaço para máquinas e tanque duplo",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1592,
+      "legenda": "Espaço gourmet com toldo amarelo, visto do quintal",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1587,
+      "legenda": "Salão do espaço gourmet com mesa de sinuca, cozinha e janelas largas",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1586,
+      "legenda": "Churrasqueira de tijolo escuro com forno e fogão a lenha",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1584,
+      "legenda": "Piscina e telhado da construção ao lado, vistos através da tela",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1583,
+      "legenda": "Piscina vista do alto da escada, com o verde ao fundo",
+      "ambiente": "vista"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "A ficha informa 1.000 m² de área total."
+    },
+    {
+      "pergunta": "Quantos quartos a chácara tem?",
+      "resposta": "A ficha registra 6 quartos. Pelo anúncio, um deles fica numa edícula com banheiro próprio."
+    },
+    {
+      "pergunta": "A piscina é cercada?",
+      "resposta": "Sim. As fotos mostram a piscina cercada por painéis de vidro com estrutura de alumínio e portão."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Chácara no Jardim Itapuá, em Monte Mor, num terreno de 1.000 m². Casa térrea com varanda, piscina cercada por vidro, espaço gourmet com churrasqueira, forno e fogão a lenha, salão com sinuca e vista aberta para o verde. Quer conhecer? O link está na bio.",
+    "hashtags": [
+      "chacaramontemor",
+      "montemor",
+      "chacaracompiscina",
+      "espacogourmet",
+      "imoveisavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "10d21701fb9a",
+  "publicadoEm": "2026-10-27T23:21:45.917Z"
+}

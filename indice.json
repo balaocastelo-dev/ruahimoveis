@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0028",
+      "slug": "casa-comercial-3-vagas-jardim-bonfim-campinas-ca0028",
+      "titulo": "Casa comercial no Jardim Bonfim, em Campinas, com 3 vagas",
+      "resumo": "Casa comercial no Jardim Bonfim, em Campinas: 170 m² num terreno de 336 m², salas de atendimento, provadores, copa, três vagas na frente e casa nos fundos.",
+      "capa": {
+        "foto": 1564,
+        "alt": "Salão comprido com araras douradas nas duas paredes e a porta da frente ao fundo"
+      },
+      "versao": "538bb343858e",
+      "publicadoEm": "2026-10-27T23:21:45.922Z"
+    },
+    {
+      "codigo": "CH0001",
+      "slug": "chacara-piscina-espaco-gourmet-jardim-itapua-monte-mor-ch0001",
+      "titulo": "Chácara com piscina e espaço gourmet em Monte Mor",
+      "resumo": "Chácara de 1.000 m² no Jardim Itapuá, em Monte Mor: casa térrea com varanda, piscina cercada por vidro, espaço gourmet com churrasqueira e vista aberta.",
+      "capa": {
+        "foto": 1582,
+        "alt": "Piscina com deck e cerca de vidro, com a casa térrea de telhado de barro ao fundo"
+      },
+      "versao": "10d21701fb9a",
+      "publicadoEm": "2026-10-27T23:21:45.917Z"
+    },
+    {
       "codigo": "CA0025",
       "slug": "casa-3-quartos-3-vagas-jardim-yeda-campinas-ca0025",
       "titulo": "Casa de 3 quartos com 3 vagas no Jardim Yeda, em Campinas",
@@ -398,5 +422,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T21:23:06.022Z"
+  "atualizadoEm": "2026-10-27T23:21:45.923Z"
 }
