@@ -67,27 +67,82 @@ function alertar(condId, origem, refId, texto) {
   run('INSERT INTO condominio_alertas(condominio_id,origem,ref_id,texto) VALUES(?,?,?,?) ON CONFLICT(origem,ref_id) DO NOTHING', condId, origem, refId, `${texto} em ${c.nome}`);
 }
 const brl = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') : 'valor não informado');
-function vincular({ tudo = false, limite = 2000 } = {}) {
+// Comparação em memória: os condomínios são lidos uma vez e cada anúncio é comparado aqui, sem ir ao banco
+// (antes eram várias consultas por anúncio e, com milhares de anúncios novos, o servidor ficava parado por muito tempo).
+// Mesma ordem do reconhecer(): CEP e número, rua e número, ponto dentro do contorno, até 40 m, nome do condomínio.
+function reconhecedor() {
+  const conds = all("SELECT id, nome, cep, numero, logradouro, lat, lon, situacao, alvo FROM condominios WHERE coalesce(tipo,'') <> 'comercial' OR tipo IS NULL");
+  const porCep = new Map(), porNum = new Map(), grade = new Map(), porId = new Map();
+  const cel = (la, lo) => `${Math.round(la * 1000)}|${Math.round(lo * 1000)}`;
+  const tira = (k) => k.replace(/^(RUA|R|AVENIDA|AV|ALAMEDA|AL|TRAVESSA|TV|PRACA|ESTRADA|ROD|RODOVIA) /, '');
+  for (const c of conds) {
+    porId.set(c.id, c);
+    const cep = G.soDigitos(c.cep), n = G.numero(c.numero);
+    c._rua = tira(G.chave(c.logradouro)); c._nucleo = G.nucleo(c.nome);
+    if (cep && n) { const k = `${cep}|${n}`; if (!porCep.has(k)) porCep.set(k, []); porCep.get(k).push(c); }
+    if (n) { if (!porNum.has(n)) porNum.set(n, []); porNum.get(n).push(c); }
+    if (c.lat && c.lon) { const k = cel(c.lat, c.lon); if (!grade.has(k)) grade.set(k, []); grade.get(k).push(c); }
+  }
+  for (const l of porCep.values()) l.sort((x, y) => (y.situacao === 'ativa') - (x.situacao === 'ativa') || x.id - y.id);
+  const cont = listaContornos();
+  return (x) => {
+    const cep = G.soDigitos(x.cep), n = G.numero(x.numero);
+    if (cep && n && porCep.has(`${cep}|${n}`)) return { c: porCep.get(`${cep}|${n}`)[0], confianca: 'alta' };
+    if (x.logradouro && n) {
+      const k = tira(G.chave(x.logradouro));
+      if (k.length >= 3) { const c = (porNum.get(n) || []).find((y) => y._rua && y._rua.endsWith(k)); if (c) return { c, confianca: 'alta' }; }
+    }
+    const la = Number(x.lat), lo = Number(x.lon);
+    if (la && lo) {
+      const h = cont.find((y) => G.dentro(la, lo, y.p));
+      if (h && porId.has(h.id)) return { c: porId.get(h.id), confianca: 'alta' };
+      const perto = [];
+      for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) for (const c of grade.get(`${Math.round(la * 1000) + i}|${Math.round(lo * 1000) + j}`) || []) {
+        const m = G.distancia(la, lo, c.lat, c.lon); if (m <= 40) perto.push({ c, m });
+      }
+      perto.sort((p1, p2) => p1.m - p2.m);
+      if (perto.length) {
+        const porNome = x.condominio_nome ? perto.find((p) => G.semelhanca(p.c.nome, x.condominio_nome) >= 0.6) : null;
+        return { c: (porNome || perto[0]).c, confianca: porNome || perto.length === 1 ? 'media' : 'baixa' };
+      }
+    }
+    if (x.condominio_nome && G.nucleo(x.condominio_nome).length >= 4) {
+      const palavra = G.nucleo(x.condominio_nome).split(' ').sort((p1, p2) => p2.length - p1.length)[0];
+      const l = conds.filter((c) => c._nucleo.includes(palavra)).map((c) => ({ c, s: G.semelhanca(c.nome, x.condominio_nome) })).filter((y) => y.s >= 0.75).sort((p1, p2) => p2.s - p1.s);
+      if (l.length && (l.length === 1 || l[0].s - l[1].s > 0.1)) return { c: l[0].c, confianca: 'media' };
+    }
+    return null;
+  };
+}
+// grava em lote: um UPDATE por condomínio encontrado e um para os que não acharam prédio
+function gravaLote(tabela, achados, semPredio) {
+  const porCond = new Map();
+  for (const [id, cid] of achados) { if (!porCond.has(cid)) porCond.set(cid, []); porCond.get(cid).push(id); }
+  const pedacos = (l, f) => { for (let i = 0; i < l.length; i += 500) { const p = l.slice(i, i + 500); f(p, p.map(() => '?').join(',')); } };
+  for (const [cid, ids] of porCond) pedacos(ids, (p, ph) => run(`UPDATE ${tabela} SET condominio_id=?, cond_checado=1 WHERE id IN (${ph})`, cid, ...p));
+  pedacos(semPredio, (p, ph) => run(`UPDATE ${tabela} SET cond_checado=1 WHERE id IN (${ph})`, ...p));
+}
+function vincular({ tudo = false, limite = 20000 } = {}) {
   const r = { imoveis: 0, radar: 0, fisguei: 0, conferidos: 0 };
+  const acha = reconhecedor();
   for (const im of all(`SELECT i.id, i.cep, i.numero, i.logradouro, i.lat, i.lon, i.bairro FROM imoveis i WHERE ${tudo ? '1=1' : 'i.condominio_id IS NULL'}`)) {
-    const x = reconhecer(im);
-    if (x.condominio && x.confianca !== 'baixa') { run('UPDATE imoveis SET condominio_id=? WHERE id=?', x.condominio.id, im.id); r.imoveis++; }
+    const x = acha(im);
+    if (x && x.confianca !== 'baixa') { run('UPDATE imoveis SET condominio_id=? WHERE id=?', x.c.id, im.id); r.imoveis++; }
   }
-  for (const op of all(`SELECT id, logradouro, numero, bairro, condominio_nome, valor, tipo, status FROM oportunidades WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, limite)) {
-    const x = (op.logradouro && op.numero) || op.condominio_nome ? reconhecer(op) : {};
-    r.conferidos++;
-    if (x.condominio && x.confianca !== 'baixa') {
-      run('UPDATE oportunidades SET condominio_id=?, cond_checado=1 WHERE id=?', x.condominio.id, op.id); r.radar++;
-      if (['nova', 'em_contato'].includes(op.status)) alertar(x.condominio.id, 'radar', op.id, `${op.tipo || 'Imóvel'} anunciado por ${brl(op.valor)}`);
-    } else run('UPDATE oportunidades SET cond_checado=1 WHERE id=?', op.id);
-  }
-  for (const a of all(`SELECT id, cep, logradouro, numero, bairro, lat, lon, titulo, valor, tipo, status FROM fisguei_anuncios WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, limite)) {
-    const x = reconhecer(a);
-    r.conferidos++;
-    if (x.condominio && x.confianca !== 'baixa') {
-      run('UPDATE fisguei_anuncios SET condominio_id=?, cond_checado=1 WHERE id=?', x.condominio.id, a.id); r.fisguei++;
-      if (!['descartado', 'captado'].includes(a.status)) alertar(x.condominio.id, 'fisguei', a.id, `${a.tipo || 'Imóvel'} anunciado por ${brl(a.valor)}`);
-    } else run('UPDATE fisguei_anuncios SET cond_checado=1 WHERE id=?', a.id);
+  for (const [tabela, sql, origem, ativo] of [
+    ['oportunidades', `SELECT id, logradouro, numero, bairro, condominio_nome, valor, tipo, status FROM oportunidades WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, 'radar', (x) => ['nova', 'em_contato'].includes(x.status)],
+    ['fisguei_anuncios', `SELECT id, cep, logradouro, numero, bairro, lat, lon, titulo, valor, tipo, status FROM fisguei_anuncios WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, 'fisguei', (x) => !['descartado', 'captado'].includes(x.status)],
+  ]) {
+    const achados = [], sem = [];
+    for (const a of all(sql, limite)) {
+      r.conferidos++;
+      const x = tabela === 'oportunidades' && !((a.logradouro && a.numero) || a.condominio_nome) ? null : acha(a);
+      if (x && x.confianca !== 'baixa') {
+        achados.push([a.id, x.c.id]); r[origem]++;
+        if (x.c.alvo && ativo(a)) alertar(x.c.id, origem, a.id, `${a.tipo || 'Imóvel'} anunciado por ${brl(a.valor)}`);
+      } else sem.push(a.id);
+    }
+    gravaLote(tabela, achados, sem);
   }
   return r;
 }
