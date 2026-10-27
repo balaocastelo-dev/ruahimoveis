@@ -1,6 +1,6 @@
 // Condomínios · importa a base de Campinas (CNPJ + Censo 2022 + mapa aberto) e os prédios do 3D para o banco online.
 // Uso (no PC, com DATABASE_URL no .env):
-//   node scripts/condominios-importar.mjs data/condominios/condominios-campinas.json [data/condominios/predios3d.jsonl]
+//   node scripts/condominios-importar.mjs data/condominios/condominios-campinas.json [data/condominios/predios3d_00.jsonl ...]
 // Pode rodar de novo quando a base for atualizada: não apaga nada e não desfaz o que a RUAH editou na ficha.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 require('../src/config');
 const pg = require('pg');
 
-const [arqBase, arqPredios] = process.argv.slice(2);
+const [arqBase, ...arqsPredios] = process.argv.slice(2);
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL não configurada no .env'); process.exit(1); }
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(process.env.DATABASE_URL) ? false : { rejectUnauthorized: false }, max: 4 });
 const chave = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -72,11 +72,11 @@ async function predios(arq) {
 
 try {
   if (arqBase) await base(path.resolve(arqBase));
-  if (arqPredios) await predios(path.resolve(arqPredios));
+  for (const a of arqsPredios) await predios(path.resolve(a));
   // liga carteira, Radar e Fisguei aos condomínios
   const B = require('../src/condominios/base');
   console.log('vínculos:', B.vincular({ tudo: false }));
-  fs.writeFileSync(path.join(path.dirname(path.resolve(arqBase || arqPredios)), 'importar_ok.txt'), new Date().toISOString());
+  fs.writeFileSync(path.join(path.dirname(path.resolve(arqBase)), 'importar_ok.txt'), new Date().toISOString());
 } catch (e) { console.error('ERRO', e.message); process.exitCode = 1; }
 await pool.end();
 process.exit();
