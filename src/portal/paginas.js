@@ -13,6 +13,15 @@ const { SITE_RUAH, INSTAGRAM_RUAH } = require('../blog/categorias');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const POR_PAGINA = 18;
+// Versão dos arquivos do portal no endereço (?v=…): quem já visitou recebe o CSS e o JS novos na hora.
+const VERSAO_ASSETS = (() => {
+  try {
+    const fs = require('fs'), p = require('path');
+    const h = require('crypto').createHash('sha1');
+    for (const f of ['portal.css', 'portal.js']) h.update(fs.readFileSync(p.join(__dirname, '..', '..', 'public', 'portal-assets', f)));
+    return h.digest('hex').slice(0, 10);
+  } catch { return String(Date.now()); }
+})();
 const { SIGNATURE } = require('./edicoes');
 
 /** Acima do limite da RUAH Signature o valor fica reservado aos membros do clube (página /imoveis/signature). */
@@ -94,7 +103,7 @@ ${imagem ? `<meta property="og:image" content="${esc(base + imagem)}"><meta name
 <meta name="theme-color" content="#FBFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
-<link rel="stylesheet" href="/portal-assets/portal.css">
+<link rel="stylesheet" href="/portal-assets/portal.css?v=${VERSAO_ASSETS}">
 ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('\n')}
 </head>
 <body class="${classe}">
@@ -116,7 +125,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
   <nav aria-label="RUAH"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a><a href="${INSTAGRAM_RUAH}" target="_blank" rel="noopener">Instagram</a><a href="${SITE_RUAH}" target="_blank" rel="noopener">Site da RUAH</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
-<script src="/portal-assets/portal.js" defer></script>
+<script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>
 </body></html>`;
 }
 
