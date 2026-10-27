@@ -114,13 +114,14 @@ function reconhecedor() {
     return null;
   };
 }
-// grava em lote: um UPDATE por condomínio encontrado e um para os que não acharam prédio
+// grava em lote: blocos de 400 anúncios por UPDATE (CASE id WHEN … THEN condomínio), poucas idas ao banco no total
 function gravaLote(tabela, achados, semPredio) {
-  const porCond = new Map();
-  for (const [id, cid] of achados) { if (!porCond.has(cid)) porCond.set(cid, []); porCond.get(cid).push(id); }
-  const pedacos = (l, f) => { for (let i = 0; i < l.length; i += 500) { const p = l.slice(i, i + 500); f(p, p.map(() => '?').join(',')); } };
-  for (const [cid, ids] of porCond) pedacos(ids, (p, ph) => run(`UPDATE ${tabela} SET condominio_id=?, cond_checado=1 WHERE id IN (${ph})`, cid, ...p));
-  pedacos(semPredio, (p, ph) => run(`UPDATE ${tabela} SET cond_checado=1 WHERE id IN (${ph})`, ...p));
+  for (let i = 0; i < achados.length; i += 400) {
+    const p = achados.slice(i, i + 400);
+    run(`UPDATE ${tabela} SET condominio_id = CASE id ${p.map(() => 'WHEN ? THEN CAST(? AS INTEGER)').join(' ')} END, cond_checado=1 WHERE id IN (${p.map(() => '?').join(',')})`,
+      ...p.flat(), ...p.map((x) => x[0]));
+  }
+  for (let i = 0; i < semPredio.length; i += 1000) { const p = semPredio.slice(i, i + 1000); run(`UPDATE ${tabela} SET cond_checado=1 WHERE id IN (${p.map(() => '?').join(',')})`, ...p); }
 }
 function vincular({ tudo = false, limite = 20000 } = {}) {
   const r = { imoveis: 0, radar: 0, fisguei: 0, conferidos: 0 };
