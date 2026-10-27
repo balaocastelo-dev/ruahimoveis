@@ -1,6 +1,7 @@
 :root{--gold:#d2ab62;--gold-2:#a8823c;--ink:#f1eee8;--muted:#b9b4aa;--glass:rgba(20,22,26,.62);--line:rgba(255,255,255,.12);
   --f-display:"Cormorant Garamond",Georgia,serif;--f-body:"DM Sans","Segoe UI",system-ui,sans-serif}
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0;height:100%;overflow:hidden;background:#0d0f12;color:var(--ink);font-family:var(--f-body);font-size:14px}
 #palco{position:fixed;inset:0}
 #palco canvas{display:block;outline:none;touch-action:none}

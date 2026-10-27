@@ -328,11 +328,13 @@ function montar() {
 // ------------------------------------------------------------------ andar do apartamento
 function andarPos(andar) { return andar * ANDAR_H; } // térreo 0–3 m; 1º andar 3–6 m…
 function mostraAndar(andar) {
-  if (faixa) { scene.remove(faixa); faixa.geometry.dispose(); faixa = null; }
+  if (faixa) { if (faixa.parent) faixa.parent.remove(faixa); faixa.geometry.dispose(); faixa = null; }
   if (!poligonoAlvo || andar === null || andar === undefined) return;
   const [cx, cy] = centro(poligonoAlvo);
   const p = []; for (let i = 0; i < poligonoAlvo.length; i += 2) p.push(cx + (poligonoAlvo[i] - cx) * 1.035, cy + (poligonoAlvo[i + 1] - cy) * 1.035);
   faixa = new THREE.Mesh(extrudar(p, ANDAR_H * 0.86, andarPos(andar) + ANDAR_H * 0.07), MAT.faixa);
+  faixa.userData.manter = true;
+  if (real && real.ligado) faixa.renderOrder = 10;
   scene.add(faixa);
   const tot = cena.alvo.andares || Math.round(alturaAlvo / ANDAR_H);
   $('#andar-txt').innerHTML = `${andar === 0 ? 'Térreo' : andar + 'º andar'}<small>≈ ${Math.round(andarPos(andar) + 1.5)} m do chão${tot ? ` · de ${tot}` : ''}</small>`;
@@ -547,6 +549,7 @@ async function ligaRealista(chave) {
   // o plugin deixa X para oeste e Z para o norte; o modelo usa X para leste e Z para o sul: meia-volta no eixo Y
   const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.add(tiles.group); scene.add(pai);
   real = { tiles, pai, nivelado: 0, erro: null, ligado: true };
+  if (qs.has('debug')) window.__real = { real, camera, controls, scene, THREE };
   tiles.addEventListener('load-error', (e) => { if (!real.carregou) { real.erro = 'O Google recusou a chave do 3D realista.'; desligaRealista(true); } });
   tiles.addEventListener('load-model', () => { real.carregou = true; });
   aplicaModo();
@@ -567,7 +570,15 @@ async function ligaRealista(chave) {
       }
     }
   };
-  let n = 0; const t = setInterval(() => { nivela(); if (++n > 12 || (real && real.nivelado > 4)) clearInterval(t); }, 1500);
+  // nivela até estabilizar (os primeiros blocos são o globo em baixa resolução)
+  let n = 0, estavel = 0;
+  const t = setInterval(() => {
+    if (!real) return clearInterval(t);
+    let malhas = 0; tiles.group.traverse((o) => { if (o.isMesh) malhas++; });
+    const antes = pai.position.y; nivela();
+    estavel = malhas > 60 && Math.abs(pai.position.y - antes) < 0.5 ? estavel + 1 : 0;
+    if (++n > 40 || estavel >= 3) clearInterval(t);
+  }, 1500);
   setInterval(() => {
     if (!real || !real.ligado || real.erro) return;
     const a = (real.tiles.getAttributions ? real.tiles.getAttributions() : []).map((x) => x.value).filter((v) => typeof v === 'string');
@@ -580,6 +591,8 @@ function aplicaModo() {
   for (const m of meshAlvo) m.visible = !on;
   pegaveis.forEach((m) => { m.raycast = on ? () => {} : THREE.Mesh.prototype.raycast; });
   if (real) real.pai.visible = on;
+  MAT.faixa.depthTest = !on; MAT.faixa.opacity = on ? 0.8 : 0.88; MAT.contorno.depthTest = !on;
+  if (faixa) faixa.renderOrder = on ? 10 : 0;
   const b = $('#b-real'); if (b) { b.textContent = on ? 'Realista' : 'Modelo'; b.classList.toggle('on', on); }
   scene.fog.near = cena.raio * (on ? 3 : 1.7); scene.fog.far = cena.raio * (on ? 9 : 5);
   if (on) { $('#b-sat').hidden = true; } else { $('#b-sat').hidden = false; }
