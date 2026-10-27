@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Fisguei → RUAH</title>
+<style>
+body{font:13px/1.4 system-ui,sans-serif;margin:0;width:320px;color:#1f1d1a}
+header{background:#b08a3e;color:#fff;padding:12px 14px;font-weight:700}
+main{padding:12px 14px;display:flex;flex-direction:column;gap:10px}
+label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:12px}
+input{font:13px monospace;padding:7px 8px;border:1px solid #ccc;border-radius:6px}
+button{font:600 13px system-ui;padding:8px;border:0;border-radius:6px;background:#b08a3e;color:#fff;cursor:pointer}
+#msg{font-size:12px;min-height:16px}
+.ok{color:#2e7d4f}.erro{color:#c0392b}.muted{color:#777;font-size:11.5px}
+</style></head>
+<body><header>Fisguei → RUAH</header><main>
+<label>Endereço do Sistema RUAH<input id="url" placeholder="https://ruahimoveis.vercel.app"></label>
+<label>Chave (Fisguei → Gerar chave)<input id="chave" placeholder="fsg_…"></label>
+<button id="salvar">Salvar e testar</button>
+<div id="msg"></div>
+<div id="cont" class="muted"></div>
+<p class="muted">A extensão só lê o que o painel do Fisgar já mostra na tela e manda para o Sistema RUAH. Ela não clica em nada nem gasta créditos.</p>
+</main><script src="popup.js"></script></body></html>

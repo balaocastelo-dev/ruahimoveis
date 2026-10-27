@@ -97,7 +97,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/radar', 'Radar de captação', 'radar']]],
+  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
@@ -117,6 +117,7 @@ async function atualizaBadge() {
     b.textContent = alerta ? '!' : r.aprovacoesPendentes; b.hidden = !alerta && !r.aprovacoesPendentes;
     b.title = alerta ? 'O radar precisa de atenção' : 'Consultas pagas esperando aprovação';
   }).catch(() => {});
+  api('GET', '/api/fisguei/resumo').then((f) => { const b = $('#badge-fisguei'); if (!b) return; const alerta = ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado); b.textContent = alerta ? '!' : f.precisaCorretor; b.hidden = !alerta && !f.precisaCorretor; b.title = alerta ? 'O robô TH-IA-GO precisa de atenção' : 'Respostas esperando o corretor'; }).catch(() => {});
   try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; } } catch {}
 }
 function marcaNav(h) {
@@ -154,6 +155,8 @@ async function rota() {
     else if (p[0] === 'radar' && p[1] && p[2] === 'editar') await telaOpForm(+p[1]);
     else if (p[0] === 'radar' && p[1]) await telaOp(+p[1]);
     else if (p[0] === 'radar') await telaRadar(new URLSearchParams(qs || ''));
+    else if (p[0] === 'fisguei' && p[1]) await telaFisgueiAnuncio(+p[1], p[2] || 'dados');
+    else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
     else if (p[0] === 'portal') await telaPortal();
     else if (p[0] === 'configuracoes') await telaConfig(new URLSearchParams(qs || ''));

@@ -23,12 +23,15 @@ app.use((req, res, next) => {
   res.setHeader('Referrer-Policy', 'same-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
   next();
 });
 
 // Webhook do WhatsApp precisa do corpo bruto: vem antes do parser JSON.
 app.use('/webhook/whatsapp', publico.webhook);
+
+// Extensão do Chrome "Fisguei → RUAH": entra com a chave própria (fora de /api, sem sessão).
+app.use('/fisguei-api', require('./src/routes/fisguei').receber);
 
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', mesmaOrigem);
@@ -41,6 +44,7 @@ app.use('/api', require('./src/routes/arquivos'));
 app.use('/api/imoveis', require('./src/routes/imoveis'));
 app.use('/api', require('./src/routes/leads'));
 app.use('/api', require('./src/routes/radar'));
+app.use('/api', require('./src/routes/fisguei').api);
 app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
@@ -64,6 +68,7 @@ const PUB = path.join(__dirname, 'public');
 app.use(require('./src/routes/blog'));
 // Portal do visitante (sem login): /imoveis, a página única de cada imóvel, fotos e favoritos.
 app.use(require('./src/routes/portal'));
+app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
 app.get('/assinar/:token', (req, res) => res.sendFile(path.join(PUB, 'assinar.html')));
 app.get('/v/:token', (req, res) => res.sendFile(path.join(PUB, 'imovel.html')));
 app.use(express.static(PUB, { index: 'index.html', maxAge: 0 }));
@@ -91,6 +96,8 @@ if (require.main === module) {
     // com o banco online, o que ele encontra aparece também no link da Vercel.
     require('./src/services/alertas').iniciar();
     require('./src/services/portais').iniciar();
+    // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
+    require('./src/fisguei/robo').iniciar();
   });
 }
 

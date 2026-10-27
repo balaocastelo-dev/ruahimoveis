@@ -433,3 +433,20 @@ canvas#cv:hover,canvas#cv:active{border-color:var(--gold)!important;box-shadow:0
 @media (max-width:760px){.dk-g5{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi.dk{min-height:0}.kpi.dk .n{font-size:26px}.hb-l{grid-template-columns:minmax(80px,34%) 1fr max-content}}
 @media (prefers-reduced-motion:reduce){.hb-f,.col-b{animation:none}}
 .dk-box a.item,.dk-pend a.item{color:var(--ink);text-decoration:none}
+
+/* ===== Fisguei ===== */
+.fg-robo{border-color:color-mix(in srgb,var(--gold) 40%,var(--line))}
+.fg-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;letter-spacing:.5px;background:var(--gold);color:#fff;flex:none}
+.fg-qr{display:flex;gap:16px;align-items:flex-start;margin-top:12px;flex-wrap:wrap}
+.fg-qr img{background:#fff;padding:8px;border-radius:10px;border:1px solid var(--line)}
+.fg-mapa{height:560px;border-radius:12px;border:1px solid var(--line);overflow:hidden;margin-bottom:8px}
+.fg-frame{position:relative;width:100%;height:520px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel)}
+.fg-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.fg-fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.fg-fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;cursor:zoom-in}
+.fg-chat{display:flex;flex-direction:column;gap:6px;margin-top:10px;max-height:340px;overflow:auto;padding:8px;border-radius:10px;background:color-mix(in srgb,var(--line) 30%,transparent)}
+.fg-msg{max-width:78%;padding:7px 10px;border-radius:10px;font-size:13px;white-space:pre-wrap;line-height:1.35}
+.fg-msg span{display:block;font-size:10.5px;color:var(--muted);margin-top:3px}
+.fg-msg.saida{align-self:flex-end;background:color-mix(in srgb,var(--gold) 18%,var(--panel))}
+.fg-msg.entrada{align-self:flex-start;background:var(--panel);border:1px solid var(--line)}
+@media (max-width:700px){.fg-mapa,.fg-frame{height:380px}}

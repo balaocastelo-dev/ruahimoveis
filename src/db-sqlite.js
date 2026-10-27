@@ -211,6 +211,71 @@ CREATE TABLE IF NOT EXISTS aprovacoes (
   criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 
+-- ===== Fisguei: anúncios e proprietários vindos do Fisgar + robô TH-IA-GO =====
+CREATE TABLE IF NOT EXISTS fisguei_anuncios (
+  id INTEGER PRIMARY KEY,
+  fisgar_id TEXT NOT NULL UNIQUE,
+  portal TEXT, link TEXT, titulo TEXT,
+  tipo TEXT, negocio TEXT, finalidade TEXT,
+  logradouro TEXT, numero TEXT, complemento TEXT, bairro TEXT, cidade TEXT, uf TEXT, cep TEXT,
+  lat REAL, lon REAL,
+  valor REAL, valor_condominio REAL, iptu REAL,
+  quartos INTEGER, suites INTEGER, banheiros INTEGER, vagas INTEGER,
+  area_util REAL, area_total REAL,
+  anunciante_nome TEXT, anunciante_tipo TEXT NOT NULL DEFAULT 'desconhecido',
+  publicado_em TEXT,
+  fotos TEXT,
+  status TEXT NOT NULL DEFAULT 'novo',
+  pausado INTEGER NOT NULL DEFAULT 0,
+  oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
+  observacoes TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);
+CREATE INDEX IF NOT EXISTS ix_fa_status ON fisguei_anuncios(status);
+CREATE TABLE IF NOT EXISTS fisguei_pessoas (
+  id INTEGER PRIMARY KEY,
+  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
+  chave TEXT NOT NULL,
+  fisgar_pessoa_id TEXT,
+  nome TEXT NOT NULL,
+  relacao TEXT, unidade TEXT, idade INTEGER,
+  consultado INTEGER NOT NULL DEFAULT 0,
+  consultado_em TEXT,
+  status TEXT NOT NULL DEFAULT 'pendente',
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  UNIQUE (anuncio_id, chave)
+);
+CREATE TABLE IF NOT EXISTS fisguei_contatos (
+  id INTEGER PRIMARY KEY,
+  pessoa_id INTEGER NOT NULL REFERENCES fisguei_pessoas(id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL,
+  valor TEXT NOT NULL,
+  envio TEXT NOT NULL DEFAULT 'fila',
+  enviado_em TEXT, erro TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  UNIQUE (pessoa_id, tipo, valor)
+);
+CREATE INDEX IF NOT EXISTS ix_fc_envio ON fisguei_contatos(envio);
+CREATE INDEX IF NOT EXISTS ix_fc_valor ON fisguei_contatos(valor);
+CREATE TABLE IF NOT EXISTS fisguei_mensagens (
+  id INTEGER PRIMARY KEY,
+  pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE CASCADE,
+  telefone TEXT NOT NULL,
+  direcao TEXT NOT NULL,
+  texto TEXT NOT NULL,
+  status TEXT,
+  wa_id TEXT,
+  autor TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);
+CREATE INDEX IF NOT EXISTS ix_fm_tel ON fisguei_mensagens(telefone);
+CREATE TABLE IF NOT EXISTS fisguei_bloqueios (
+  telefone TEXT PRIMARY KEY,
+  motivo TEXT,
+  em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);
+
 CREATE TABLE IF NOT EXISTS auditoria (
   id INTEGER PRIMARY KEY,
   usuario_id INTEGER, acao TEXT NOT NULL, detalhe TEXT,

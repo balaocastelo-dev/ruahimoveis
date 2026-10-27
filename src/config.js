@@ -58,6 +58,9 @@ module.exports = {
   RADAR_PORTAIS_MIN: env('RADAR_PORTAIS_MIN', '60'),   // de quantos em quantos minutos (mínimo 30)
   RADAR_BAIRROS: env('RADAR_BAIRROS', ''),             // bairros vigiados, separados por vírgula (vazio = os 11 da RUAH)
 
+  // Fisguei: robô TH-IA-GO CORRETOR (WhatsApp pelo QR code). Roda só no PC; 0 desliga.
+  FISGUEI_ROBO: env('FISGUEI_ROBO', '1'),
+
   // IA local (Ollama)
   OLLAMA_URL: env('OLLAMA_URL', 'http://127.0.0.1:11434'),
   OLLAMA_MODEL: env('OLLAMA_MODEL', 'qwen3:14b'),
