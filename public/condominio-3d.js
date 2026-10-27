@@ -587,7 +587,7 @@ async function ligaRealista(chave) {
       for (const b of predios) {
         if (b.ar < 120) continue;
         const [bx, by] = centro(b.p); const d = Math.hypot(bx - px, by - py);
-        if (d > 70) continue;
+        if (d > 70 || !b.alvo) continue; // só confere o próprio prédio (trocar de contorno pelo 3D do Google errava em blocos de baixa resolução)
         const topo = raioBaixo(bx, -by);
         if (!topo || topo < 6) continue;
         const nota = -Math.abs(topo - esperada) - d * 0.15 + (b.alvo ? 4 : 0);
