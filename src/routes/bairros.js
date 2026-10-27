@@ -94,7 +94,7 @@ router.get('/bairros/dados.json', async (req, res) => {
 });
 
 router.get('/bairros/commons/busca.json', async (req, res) => {
-  if (limite(req, 'commons-busca', 60)) return res.status(429).json({ erro: 'Muitas buscas seguidas. Aguarde alguns minutos.' });
+  if (limite(req, 'commons-busca', 400)) return res.status(429).json({ erro: 'Muitas buscas seguidas. Aguarde alguns minutos.' });
   try {
     const l = await commons.buscar(String(req.query.q || ''), Number(req.query.n) || 24);
     res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=3600');
@@ -102,7 +102,7 @@ router.get('/bairros/commons/busca.json', async (req, res) => {
   } catch (err) { res.status(502).json({ erro: `Não consegui buscar no Commons: ${err.message}` }); }
 });
 router.get('/bairros/commons/info.json', async (req, res) => {
-  if (limite(req, 'commons-info', 200)) return res.status(429).json({ erro: 'Muitas consultas seguidas.' });
+  if (limite(req, 'commons-info', 1000)) return res.status(429).json({ erro: 'Muitas consultas seguidas.' });
   try {
     const c = await commons.info(String(req.query.t || ''), { forcar: req.query.renovar === '1' });
     if (!c) return res.status(404).json({ erro: 'Arquivo inválido (use "File:Nome.jpg").' });
@@ -110,7 +110,7 @@ router.get('/bairros/commons/info.json', async (req, res) => {
   } catch (err) { res.status(502).json({ erro: `Não consegui consultar o Commons: ${err.message}` }); }
 });
 router.get('/bairros/commons/ver', async (req, res) => {
-  if (limite(req, 'commons-ver', 300)) return res.sendStatus(429);
+  if (limite(req, 'commons-ver', 3000)) return res.sendStatus(429);
   try {
     const im = await commons.imagem(String(req.query.t || ''), Math.min(1280, Number(req.query.l) || 500));
     if (!im) return res.sendStatus(404);

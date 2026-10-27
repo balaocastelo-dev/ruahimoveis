@@ -182,7 +182,8 @@ if (comando === 'listar' || comando === 'preparar') {
       const modelo = indice.paginas.map((p) => path.join(pasta, 'paginas', `${p.slug}.json`)).filter((f) => fs.existsSync(f)).sort((a, b) => fs.statSync(b).size - fs.statSync(a).size)[0];
       if (modelo) { fs.copyFileSync(modelo, path.join(PASTA_FILA, 'modelo-pagina.json')); console.log(`\nModelo de página já publicada (copie a ESTRUTURA, não o texto): ${path.join(PASTA_FILA, 'modelo-pagina.json')}`); }
       const quantos = Math.max(1, Math.min(5, parseInt(valor('--quantos', '1'), 10) || 1));
-      const lote = fila.slice(0, quantos);
+      const escolhidos = valor('--bairro', '').split(',').map((x) => x.trim()).filter(Boolean);
+      const lote = escolhidos.length ? escolhidos.map((sl) => bairros.find((b) => b.slug === sl) || sair(`Bairro não encontrado na lista: ${sl}`)) : fila.slice(0, quantos);
       console.log(`\n${'='.repeat(24)} Fila ${'='.repeat(24)}\n\n${resumo}`);
       if (!lote.length) { console.log('\nFILA VAZIA: todos os bairros da lista já têm página em dia.'); process.exit(0); }
       console.log(`\nDesta vez: ${lote.length} bairro(s). Tudo fica em ${PASTA_FILA}/<bairro>/.\n`);
@@ -287,7 +288,7 @@ if (comando === 'listar' || comando === 'preparar') {
   } finally { fecharRamo(pasta); }
 } else {
   console.log(`Uso:
-  node scripts/bairros-publicar.mjs preparar [--quantos 1]          regras, fila, dados e fotos (em ${PASTA_FILA})
+  node scripts/bairros-publicar.mjs preparar [--quantos 1 | --bairro a,b]  regras, fila, dados e fotos (em ${PASTA_FILA})
   node scripts/bairros-publicar.mjs fotos <bairro> "<busca>"        fotos de lugares do bairro no Commons (só licença livre)
   node scripts/bairros-publicar.mjs listar                          situação da página de cada bairro
   node scripts/bairros-publicar.mjs conferir pagina.json            confere formato, régua e licenças, sem publicar
