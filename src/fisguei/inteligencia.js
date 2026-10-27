@@ -78,7 +78,7 @@ function carregaBase() {
   const M = require('../routes/mercado');
   const linhas = all(`SELECT a.id, a.fisgar_id, a.portal, a.tipo, a.finalidade, a.titulo, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.lat, a.lon,
       a.valor, a.valor_condominio, a.iptu, a.quartos, a.suites, a.banheiros, a.vagas, a.area_util, a.area_total, a.anunciante_nome, a.anunciante_tipo,
-      a.publicado_em, a.anunciado_desde, substr(a.fotos,1,1600) AS fotos, (length(coalesce(a.fotos,'')) - length(replace(coalesce(a.fotos,''),'"http','')))/5 AS fotos_total, a.status, a.pausado, a.oportunidade_id, a.imovel_id, a.condominio_id, a.criado_em, a.atualizado_em
+      a.publicado_em, a.anunciado_desde, substr(a.fotos,1,900) AS fotos, (length(coalesce(a.fotos,'')) - length(replace(coalesce(a.fotos,''),'"http','')))/5 AS fotos_total, a.status, a.pausado, a.oportunidade_id, a.imovel_id, a.condominio_id, a.criado_em, a.atualizado_em
     FROM fisguei_anuncios a`);
   const pes = new Map(all(`SELECT anuncio_id, count(*) AS n, coalesce(sum(consultado),0) AS cons, coalesce(sum(CASE WHEN status='confirmou' THEN 1 ELSE 0 END),0) AS conf,
       coalesce(sum(CASE WHEN status='respondeu' THEN 1 ELSE 0 END),0) AS resp FROM fisguei_pessoas GROUP BY anuncio_id`).map((x) => [x.anuncio_id, x]));
@@ -102,22 +102,26 @@ function carregaBase() {
   });
   const ativos = itens.filter((x) => !FORA.has(x.status));
 
-  // m² de referência: bairro + vitrine (precisa de 5 anúncios para comparar); sem isso, a vitrine na cidade
-  const grupos = new Map(), cidade = new Map();
-  for (const x of ativos) {
-    if (!x.m2) continue;
-    const k = `${x.bairro_k}|${x.categoria}`;
-    if (!grupos.has(k)) grupos.set(k, []); grupos.get(k).push(x.m2);
-    if (!cidade.has(x.categoria)) cidade.set(x.categoria, []); cidade.get(x.categoria).push(x.m2);
-  }
-  const ref = new Map([...grupos].filter(([, l]) => l.length >= 5).map(([k, l]) => [k, { m2: mediana(l), n: l.length }]));
-  const refCidade = new Map([...cidade].map(([k, l]) => [k, { m2: mediana(l), n: l.length }]));
+  // m² de referência: mesmo bairro e mesmo subtipo (casa em condomínio não se compara com casa de rua), com 5 anúncios ou mais;
+  // senão bairro + vitrine (8+); senão a cidade no subtipo. Áreas absurdas (m² fora de 1/6 a 6x da cidade) ficam fora da conta.
+  const porSub = new Map();
+  for (const x of ativos) if (x.m2) { if (!porSub.has(x.subtipo)) porSub.set(x.subtipo, []); porSub.get(x.subtipo).push(x.m2); }
+  const cidadeSub = new Map([...porSub].map(([k, l]) => [k, mediana(l)]));
+  for (const x of itens) { const c = cidadeSub.get(x.subtipo); if (x.m2 && c && (x.m2 < c / 6 || x.m2 > c * 6)) { x.m2_estranho = true; } }
+  const junta = (chave, min) => {
+    const g = new Map();
+    for (const x of ativos) { if (!x.m2 || x.m2_estranho) continue; const k = chave(x); if (!k) continue; if (!g.has(k)) g.set(k, []); g.get(k).push(x.m2); }
+    return new Map([...g].filter(([, l]) => l.length >= min).map(([k, l]) => [k, { m2: mediana(l), n: l.length }]));
+  };
+  const ref = junta((x) => x.bairro_k && `${x.bairro_k}|${x.subtipo}`, 5);
+  const refCat = junta((x) => x.bairro_k && `${x.bairro_k}|${x.categoria}`, 8);
+  const refCidade = junta((x) => x.subtipo, 8);
 
   // mesmo imóvel em vários anúncios (mesma rua, número e tipo, área parecida)
   const grupoDe = new Map();
   for (const g of M.unicos(ativos)) if (g.iguais.length > 1) for (const y of g.iguais) grupoDe.set(y.id, g);
 
-  for (const x of itens) analisa(x, { ref, refCidade, grupoDe });
+  for (const x of itens) analisa(x, { ref, refCat, refCidade, grupoDe });
   const base = { itens, ativos, ref, geradoEm: new Date().toISOString() };
   CACHE = { em: Date.now(), chave, base };
   return base;
@@ -144,23 +148,26 @@ function analisa(x, ctx) {
   if (idade !== null && idade <= 7) s.push({ id: 'novo', forca: idade <= 2 ? 1 : 0.6, dias: idade, texto: idade <= 0 ? 'Saiu hoje nos portais.' : `Anunciado há ${idade} dia${idade > 1 ? 's' : ''}: quem chega primeiro tem mais chance com o dono.` });
   else if (idade !== null && idade >= 90) s.push({ id: 'antigo', forca: Math.min(1, idade / 240), dias: idade, texto: `Anunciado há ${idade} dias sem vender: o dono pode estar cansado da imobiliária atual.` });
   // m² comparado com o bairro
-  if (x.m2) {
-    const r = ctx.ref.get(`${x.bairro_k}|${x.categoria}`), rc = ctx.refCidade.get(x.categoria);
-    const base = r || (rc && rc.n >= 8 ? { ...rc, cidade: true } : null);
+  if (x.m2 && !x.m2_estranho) {
+    const r = ctx.ref.get(`${x.bairro_k}|${x.subtipo}`) || ctx.refCat.get(`${x.bairro_k}|${x.categoria}`), rc = ctx.refCidade.get(x.subtipo);
+    const base = r || (rc ? { ...rc, cidade: true } : null);
     if (base) {
       const d = pct(x.m2, base.m2);
       x.m2_ref = Math.round(base.m2); x.m2_dif = d; x.m2_ref_n = base.n; x.m2_ref_cidade = !!base.cidade;
-      const onde = base.cidade ? `${{ casas: 'casas', apartamentos: 'apartamentos', terrenos: 'terrenos', comerciais: 'comerciais' }[x.categoria]} de Campinas` : `${x.bairro_nome} (${base.n} anúncios)`;
-      if (d <= -15) s.push({ id: 'abaixo', forca: Math.min(1, -d / 40), pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${Math.abs(d).toLocaleString('pt-BR')}% abaixo da mediana de ${onde}: preço para vender rápido (ou área informada errada).` });
-      else if (d >= 35) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da RUAH.` });
+      const onde = base.cidade ? `Campinas para ${String(x.subtipo || 'esse tipo').toLowerCase()} (${base.n} anúncios)` : `${x.bairro_nome} (${base.n} anúncios comparáveis)`;
+      if (d <= -25) s.push({ id: 'abaixo', forca: Math.min(1, (-d - 15) / 35), pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${Math.abs(d).toLocaleString('pt-BR')}% abaixo da mediana de ${onde}: preço para vender rápido (confira a área no anúncio).` });
+      else if (d >= 45) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da RUAH.` });
     }
   }
   if (x.anunciante_tipo === 'particular') s.push({ id: 'particular', forca: 1, texto: 'Anúncio de particular, sem imobiliária no meio: o caminho mais curto até a exclusividade.' });
   const g = ctx.grupoDe.get(x.id);
   if (g) {
-    const outros = g.iguais.length - 1, menor = g.valor_min, maior = g.valor_max;
-    x.repetido = { n: g.iguais.length, anunciantes: g.anunciantes, min: menor, max: maior, ids: g.iguais.map((y) => y.id).filter((i) => i !== x.id).slice(0, 8) };
-    s.push({ id: 'repetido', forca: 0.4, n: g.iguais.length, texto: `O mesmo imóvel aparece em ${g.iguais.length} anúncios (${g.anunciantes || outros + 1} anunciante${(g.anunciantes || 2) > 1 ? 's' : ''})${maior > menor ? `, de ${mi(menor)} a ${mi(maior)}` : ''}: sem exclusividade com ninguém.` });
+    // o mesmo anúncio da mesma imobiliária em vários portais não conta: precisa de anunciantes diferentes
+    const anun = new Set(g.iguais.map((y) => F.norm(y.anunciante_nome) || (y.anunciante_tipo === 'particular' ? 'particular' : '')).filter(Boolean));
+    if (anun.size >= 2) {
+      x.repetido = { n: g.iguais.length, anunciantes: anun.size, min: g.valor_min, max: g.valor_max, ids: g.iguais.map((y) => y.id).filter((i) => i !== x.id).slice(0, 8) };
+      s.push({ id: 'repetido', forca: 0.4, n: anun.size, texto: `O mesmo imóvel aparece com ${anun.size} anunciantes diferentes${g.valor_max > g.valor_min ? `, de ${mi(g.valor_min)} a ${mi(g.valor_max)}` : ''}: ninguém tem exclusividade.` });
+    }
   }
   x.sinais = s;
   // nota de 0 a 100: o que mais aproxima de uma captação boa e rápida
