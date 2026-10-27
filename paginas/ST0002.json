@@ -1,0 +1,248 @@
+{
+  "codigo": "ST0002",
+  "slug": "apartamento-studio-mobiliado-25m2-vaga-vila-olimpia-sao-paulo-st0002",
+  "titulo": "Apartamento studio mobiliado de 25 m² com vaga na Vila Olímpia",
+  "resumo": "Studio de 25 m² na Vila Olímpia, em São Paulo, vendido mobiliado e com vaga de garagem, num prédio com piscina, academia, sauna e lavanderia compartilhada.",
+  "capa": {
+    "foto": 1847,
+    "alt": "Studio com cama de casal, sofá, bancada com TV e mesa para dois junto à janela"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este studio fica na Vila Olímpia, em São Paulo, num empreendimento da Vitacon de torre única. São 25 m² de área útil num só ambiente, com cama de casal, sofá, bancada de trabalho com TV, cozinha compacta e mesa para duas pessoas junto à janela. O anúncio informa que ele é vendido mobiliado e com uma vaga de garagem no subsolo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um imóvel para quem mora sozinho ou trabalha na região. O anúncio cita a Faria Lima, a Juscelino Kubitschek, o Shopping Vila Olímpia, o JK Iguatemi, o Parque do Povo e a estação Vila Olímpia da CPTM a poucos minutos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Studio de 25 m² mobiliado, segundo o anúncio",
+        "Uma vaga de garagem, no subsolo segundo o anúncio",
+        "Cozinha compacta com geladeira inox e mesa para dois na janela",
+        "Ar-condicionado e armário de portas altas do piso ao teto",
+        "Prédio com piscina, academia, sauna, coworking e lavanderia"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O ambiente do studio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma parede revestida em cinza com efeito de cimento atrás da cama e um painel claro que funciona como cabeceira, com tomadas dos dois lados. No teto, um trilho preto com spots acompanha o comprimento do studio. Em frente à cama há uma bancada comprida com TV na parede, gaveteiro e cadeira, que serve de escrivaninha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um armário de portas lisas, do piso ao teto, ocupa a parede junto à entrada, ao lado do ar-condicionado. Ao pé da cama fica um sofá cinza. O piso é escuro, em tom de cimento, e a janela larga do fundo tem cortina de rolo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1846,
+          "legenda": "Cama de casal, bancada de trabalho e mesa para dois ao fundo"
+        },
+        {
+          "foto": 1849,
+          "legenda": "Armário do piso ao teto, ar-condicionado e TV sobre a bancada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha fica numa das paredes, perto da janela: bancada preta com cuba, armários claros em cima e embaixo e geladeira inox. Ao lado, uma mesa preta com duas cadeiras brancas aproveita a vista para os prédios vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro tem box de vidro, bancada de pedra preta com cuba branca de apoio, gabinete branco com gavetas e espelho largo. A ficha cita armário no banheiro e ar-condicionado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1853,
+          "legenda": "Cozinha compacta com geladeira inox e mesa preta junto à janela"
+        },
+        {
+          "foto": 1850,
+          "legenda": "Banheiro com box de vidro e bancada preta com cuba branca"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos das áreas comuns mostram uma piscina comprida, de raia, ao lado de um gramado com espreguiçadeiras e mesas com ombrelones; uma academia com esteiras e aparelhos de musculação diante de janelas de vidro; sauna revestida de madeira; e uma lavanderia compartilhada com lavadoras empilhadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também espaço gourmet com bancada amarela e mesas brancas, um lounge com poltronas vermelhas, um salão de pé-direito alto com lustre e poltronas, sala de coworking com mesa vermelha e plataforma de acessibilidade junto à escada. O anúncio cita ainda bicicletário, concierge e portaria 24 horas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem trabalha na Vila Olímpia ou na Faria Lima e quer um imóvel pequeno, já montado e com vaga, num prédio com bastante área comum. É um ambiente único, sem quarto separado da sala."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos ficam com o imóvel, se a vaga é escriturada e vinculada à unidade, o valor do condomínio e se há regras do prédio para locação de curta temporada.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1834,
+      "legenda": "Fachada do prédio com entrada envidraçada e escadaria",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1844,
+      "legenda": "Salão de pé-direito alto com lustre laranja e poltronas",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1847,
+      "legenda": "Studio com cama, sofá, bancada com TV e mesa junto à janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1851,
+      "legenda": "Studio visto da entrada, com a cozinha e a janela ao fundo",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1846,
+      "legenda": "Cama de casal, bancada de trabalho e mesa para dois ao fundo",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1848,
+      "legenda": "Cabeceira com painel claro e parede com efeito de cimento",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1845,
+      "legenda": "Studio com sofá cinza ao pé da cama e trilho de spots no teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1852,
+      "legenda": "Cama e porta do banheiro, com ar-condicionado acima",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1849,
+      "legenda": "Armário do piso ao teto, ar-condicionado e TV sobre a bancada",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1853,
+      "legenda": "Cozinha compacta com geladeira inox e mesa preta junto à janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1850,
+      "legenda": "Banheiro com box de vidro e bancada preta com cuba branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1835,
+      "legenda": "Piscina de raia ao lado do gramado com espreguiçadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1836,
+      "legenda": "Área externa com piscina, gramado e mesas com ombrelones",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1840,
+      "legenda": "Academia com esteiras e aparelhos de musculação",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1839,
+      "legenda": "Sauna revestida de madeira",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1842,
+      "legenda": "Espaço gourmet com bancada amarela e mesas brancas",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1843,
+      "legenda": "Lounge com sofás escuros e poltronas vermelhas",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1841,
+      "legenda": "Sala de coworking com mesa vermelha e cadeiras pretas",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1837,
+      "legenda": "Lavanderia compartilhada com lavadoras empilhadas",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1838,
+      "legenda": "Escada com corrimão de inox e plataforma de acessibilidade",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O studio é vendido mobiliado?",
+      "resposta": "Sim, segundo o anúncio. As fotos mostram cama, sofá, bancada com TV, armário, mesa com cadeiras, geladeira e ar-condicionado."
+    },
+    {
+      "pergunta": "Tem vaga de garagem?",
+      "resposta": "Sim. A ficha informa 1 vaga, e o anúncio diz que ela fica no subsolo."
+    },
+    {
+      "pergunta": "Que lazer o prédio tem?",
+      "resposta": "As fotos mostram piscina, academia, sauna, espaço gourmet, lounge, coworking e lavanderia compartilhada. O anúncio cita também bicicletário, concierge e portaria 24 horas."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pelo formulário desta página: um corretor da RUAH retorna para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Studio de 25 m² na Vila Olímpia, em São Paulo, vendido mobiliado e com vaga de garagem. Cama de casal, bancada de trabalho, cozinha compacta e mesa na janela, num prédio com piscina, academia, sauna e lavanderia. Quer conhecer? Fale com a RUAH pelo link da bio.",
+    "hashtags": [
+      "studiosp",
+      "vilaolimpia",
+      "apartamentosaopaulo",
+      "studiomobiliado",
+      "saopaulo",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "c8091ae70ba1",
+  "publicadoEm": "2026-10-27T05:22:01.656Z"
+}

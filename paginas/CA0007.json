@@ -1,0 +1,262 @@
+{
+  "codigo": "CA0007",
+  "slug": "casa-condominio-2-quartos-churrasqueira-santa-candida-campinas-ca0007",
+  "titulo": "Casa em condomínio de 2 quartos com churrasqueira na Santa Cândida",
+  "resumo": "Casa geminada em condomínio fechado na Fazenda Santa Cândida, em Campinas: 2 quartos, 2 vagas, cozinha planejada em U e quintal com churrasqueira de tijolos.",
+  "capa": {
+    "foto": 1859,
+    "alt": "Cozinha planejada com bancada preta aberta para a sala de jantar e a churrasqueira ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta é uma casa geminada em condomínio fechado na Fazenda Santa Cândida, em Campinas. São 68 m² de área útil num terreno de 111 m², com 2 quartos, 2 banheiros e 2 vagas de garagem, segundo a ficha e o anúncio. A casa tem dois pavimentos: a escada sai da sala de estar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que mais aparece nas fotos é o andar de baixo integrado: sala de estar, mesa de jantar e cozinha planejada num só ambiente, com porta de vidro de correr para um quintal com churrasqueira de tijolos. O anúncio informa que os ambientes têm móveis planejados e ar-condicionado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa geminada em condomínio fechado, com 2 quartos e 2 vagas",
+        "Sala de estar e jantar integradas à cozinha",
+        "Cozinha em U com bancada preta, forno de embutir e armários brancos",
+        "Quintal com churrasqueira de tijolos, pia e piso amadeirado",
+        "Armários planejados nos quartos e ar-condicionado, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala de estar e jantar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar tem painel de madeira escura para a TV, prateleira branca na parede e nichos de gesso iluminados. A escada para o andar de cima fica ao lado da porta de entrada, e há ar-condicionado no alto da parede. O piso do térreo é cerâmico claro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesa de jantar fica entre a sala e a cozinha, sob um pendente de cristal, junto de uma parede com espelho e um painel de ripas de madeira. A porta de vidro ao lado da mesa abre para o quintal, o que deixa o ambiente claro durante o dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1855,
+          "legenda": "Sala de estar com painel de madeira para a TV e escada para o andar de cima"
+        },
+        {
+          "foto": 1857,
+          "legenda": "Mesa de jantar sob pendente de cristal, entre a sala e a cozinha"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e quintal com churrasqueira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é em U, com bancada de pedra preta e armários brancos sem puxador aparente. Um dos lados vira balcão voltado para a mesa de jantar, revestido de madeira clara. As fotos mostram cooktop, forno de embutir, micro-ondas em nicho, geladeira inox de duas portas e uma janela sobre a pia que dá para o quintal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O quintal fica nos fundos, com paredes de tijolinho aparente, piso que imita madeira e cobertura translúcida em parte da área. Tem churrasqueira de tijolos, bancada com pia de inox, um banco de madeira com armários embaixo e varal de teto. É o espaço que o anúncio chama de varanda."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1863,
+          "legenda": "Cozinha em U com bancada preta, cooktop e janela para o quintal"
+        },
+        {
+          "foto": 1865,
+          "legenda": "Quintal com churrasqueira de tijolos, pia e piso amadeirado"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos e os banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos quartos está montado como quarto de bebê, com papel de parede floral, armário branco de portas altas e janela com veneziana de alumínio. O outro é o quarto de casal: tem ar-condicionado, porta-janela com veneziana, armário com porta de correr espelhada e espaço para uma cômoda larga e a TV na parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos do banheiro mostram box de vidro do piso ao teto, nicho embutido no revestimento branco, janela basculante e bancada com cuba e gabinete brancos. A ficha informa dois banheiros."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para casais ou famílias pequenas que querem casa em condomínio fechado, com quintal para churrasco e duas vagas, sem a manutenção de um terreno grande. É uma casa compacta: quem precisa de mais quartos ou de escritório separado deve olhar outra planta."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis planejados e aparelhos de ar-condicionado ficam com a casa, o valor do condomínio, o que o condomínio oferece além da portaria e se a cobertura do quintal está regularizada.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1875,
+      "legenda": "Portão de entrada do condomínio, com casas geminadas e árvores floridas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1854,
+      "legenda": "Sala de estar com sofá, pufes de fibra e a mesa de jantar ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1855,
+      "legenda": "Sala de estar com painel de madeira para a TV e escada para o andar de cima",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1861,
+      "legenda": "Mesa de jantar com a sala de estar e a porta de entrada ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1856,
+      "legenda": "Jantar e estar vistos da cozinha, com ar-condicionado na parede",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1857,
+      "legenda": "Mesa de jantar sob pendente de cristal, entre a sala e a cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1858,
+      "legenda": "Balcão de pedra preta e porta de vidro para o quintal",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1859,
+      "legenda": "Cozinha planejada aberta para o jantar, com a churrasqueira ao fundo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1860,
+      "legenda": "Cozinha com forno de embutir, micro-ondas e geladeira inox",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1862,
+      "legenda": "Balcão revestido de madeira clara voltado para a mesa de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1863,
+      "legenda": "Cozinha em U com bancada preta, cooktop e janela para o quintal",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1865,
+      "legenda": "Quintal com churrasqueira de tijolos, pia e piso amadeirado",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1864,
+      "legenda": "Quintal com banco de madeira, armários e paredes de tijolinho",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1866,
+      "legenda": "Quarto de bebê com papel de parede floral e berço",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1867,
+      "legenda": "Quarto de bebê com poltrona de amamentação e janela com veneziana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1868,
+      "legenda": "Outro ângulo do quarto de bebê, com nichos na parede",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1871,
+      "legenda": "Armário branco de portas altas no quarto de bebê",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1872,
+      "legenda": "Quarto de casal com ar-condicionado e porta-janela com veneziana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1873,
+      "legenda": "Armário com porta de correr espelhada no quarto de casal",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1874,
+      "legenda": "Cômoda branca e TV na parede do quarto de casal",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1869,
+      "legenda": "Banheiro com box de vidro, nicho e bancada branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1870,
+      "legenda": "Box de vidro do banheiro com janela basculante",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas a casa tem?",
+      "resposta": "A ficha informa 2 quartos e 2 vagas de garagem. O anúncio cita também 2 banheiros."
+    },
+    {
+      "pergunta": "Qual o tamanho da casa?",
+      "resposta": "São 68 m² de área útil num terreno de 111 m², segundo a ficha."
+    },
+    {
+      "pergunta": "Tem churrasqueira?",
+      "resposta": "Sim. As fotos mostram um quintal nos fundos com churrasqueira de tijolos, bancada com pia e piso amadeirado."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pelo formulário desta página: um corretor da RUAH retorna para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa geminada em condomínio fechado na Fazenda Santa Cândida, em Campinas. São 2 quartos, 2 vagas, sala integrada à cozinha planejada em U e um quintal com churrasqueira de tijolos para os fins de semana. Quer conhecer? Fale com a RUAH pelo link da bio.",
+    "hashtags": [
+      "casacampinas",
+      "casaemcondominio",
+      "santacandida",
+      "campinas",
+      "casageminada",
+      "churrasqueira",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Casa em condomínio de 2 quartos na Santa Cândida, Campinas"
+  },
+  "versao": "bf4622870b5d",
+  "publicadoEm": "2026-10-27T05:22:01.652Z"
+}

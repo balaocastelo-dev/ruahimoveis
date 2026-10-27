@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "ST0002",
+      "slug": "apartamento-studio-mobiliado-25m2-vaga-vila-olimpia-sao-paulo-st0002",
+      "titulo": "Apartamento studio mobiliado de 25 m² com vaga na Vila Olímpia",
+      "resumo": "Studio de 25 m² na Vila Olímpia, em São Paulo, vendido mobiliado e com vaga de garagem, num prédio com piscina, academia, sauna e lavanderia compartilhada.",
+      "capa": {
+        "foto": 1847,
+        "alt": "Studio com cama de casal, sofá, bancada com TV e mesa para dois junto à janela"
+      },
+      "versao": "c8091ae70ba1",
+      "publicadoEm": "2026-10-27T05:22:01.656Z"
+    },
+    {
+      "codigo": "CA0007",
+      "slug": "casa-condominio-2-quartos-churrasqueira-santa-candida-campinas-ca0007",
+      "titulo": "Casa em condomínio de 2 quartos com churrasqueira na Santa Cândida",
+      "resumo": "Casa geminada em condomínio fechado na Fazenda Santa Cândida, em Campinas: 2 quartos, 2 vagas, cozinha planejada em U e quintal com churrasqueira de tijolos.",
+      "capa": {
+        "foto": 1859,
+        "alt": "Cozinha planejada com bancada preta aberta para a sala de jantar e a churrasqueira ao fundo"
+      },
+      "versao": "bf4622870b5d",
+      "publicadoEm": "2026-10-27T05:22:01.652Z"
+    },
+    {
       "codigo": "CA0032",
       "slug": "casa-3-quartos-suite-3-vagas-taquaral-campinas-ca0032",
       "titulo": "Casa térrea de 3 quartos com suíte e 3 vagas no Taquaral",
@@ -182,5 +206,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T03:21:19.985Z"
+  "atualizadoEm": "2026-10-27T05:22:01.657Z"
 }
