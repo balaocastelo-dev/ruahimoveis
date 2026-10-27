@@ -620,6 +620,7 @@ async function ligaRealista(chave) {
     if (!real) return clearInterval(t);
     let malhas = 0; tiles.group.traverseVisible((o) => { if (o.isMesh) malhas++; });
     if (malhas >= 40 && real.ligado) nivela();
+    if (!real.pronto && malhas >= 30) { real.pronto = true; aplicaModo(); }
     if (++n > 90) clearInterval(t);
   }, 2000);
   setInterval(() => {
@@ -630,8 +631,10 @@ async function ligaRealista(chave) {
 }
 function aplicaModo() {
   const on = !!(real && real.ligado);
-  modelo.visible = !on;
-  for (const m of meshAlvo) m.visible = !on;
+  // enquanto o 3D do Google não chegou, o modelo continua na tela
+  const trocou = on && real.pronto;
+  modelo.visible = !trocou;
+  for (const m of meshAlvo) m.visible = !trocou;
   pegaveis.forEach((m) => { m.raycast = on ? () => {} : THREE.Mesh.prototype.raycast; });
   if (real) real.pai.visible = on;
   MAT.faixa.depthTest = !on; MAT.faixa.opacity = on ? 0.8 : 0.88; MAT.contorno.depthTest = !on;
