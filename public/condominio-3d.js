@@ -6,10 +6,10 @@ import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
 const $ = (s) => document.querySelector(s);
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const qs = new URLSearchParams(location.search);
-const ID = qs.get('id'), IMOVEL = qs.get('imovel'), SLUG = qs.get('slug');
+const ID = qs.get('id'), IMOVEL = qs.get('imovel'), SLUG = qs.get('slug'), FG = qs.get('fg');
 const PUBLICO = !!SLUG;
-const URL_DADOS = PUBLICO ? `/api/publico/condominios/${encodeURIComponent(SLUG)}/3d` : `/api/condominios/${encodeURIComponent(ID)}/3d${IMOVEL ? `?imovel=${encodeURIComponent(IMOVEL)}` : ''}`;
-const URL_PERTO = PUBLICO ? `/api/publico/condominios/${encodeURIComponent(SLUG)}/perto` : `/api/condominios/${encodeURIComponent(ID)}/perto`;
+const URL_DADOS = FG ? `/api/mercado/3d/${encodeURIComponent(FG)}` : PUBLICO ? `/api/publico/condominios/${encodeURIComponent(SLUG)}/3d` : `/api/condominios/${encodeURIComponent(ID)}/3d${IMOVEL ? `?imovel=${encodeURIComponent(IMOVEL)}` : ''}`;
+const URL_PERTO = FG ? `/api/mercado/perto/${encodeURIComponent(FG)}` : PUBLICO ? `/api/publico/condominios/${encodeURIComponent(SLUG)}/perto` : `/api/condominios/${encodeURIComponent(ID)}/perto`;
 const reduzMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const celular = matchMedia('(max-width: 720px)').matches;
 
@@ -294,11 +294,11 @@ function montar() {
     box.expandByObject(m);
     // contorno dourado no chão
     const pts = []; for (let k = 0; k < b.p.length; k += 2) pts.push(v3(b.p[k], b.p[k + 1], 0.3)); pts.push(pts[0].clone());
-    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno));
+    const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno); ln.userData.manter = true; scene.add(ln);
   });
   if (cena.alvo.contorno && cena.alvo.contorno.length > 4) {
     const p = cena.alvo.contorno, pts = []; for (let k = 0; k < p.length; k += 2) pts.push(v3(p[k], p[k + 1], 0.5)); pts.push(pts[0].clone());
-    const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno); scene.add(l);
+    const l = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno); l.userData.manter = true; scene.add(l);
     if (box.isEmpty()) pts.forEach((q) => box.expandByPoint(q));
   }
   if (box.isEmpty()) box.setFromCenterAndSize(v3(cena.alvo.ponto[0], cena.alvo.ponto[1], 10), new THREE.Vector3(30, 20, 30));
@@ -442,14 +442,14 @@ renderer.domElement.addEventListener('pointermove', (e) => {
   if (i < 0) { dica.hidden = true; sobre = -1; renderer.domElement.style.cursor = ''; return; }
   const b = predios[i]; sobre = i;
   const andares = b.andares || Math.max(1, Math.round((b.h - 1) / ANDAR_H));
-  dica.innerHTML = `${b.alvo ? `<b>${esc(D.condominio.nome)}</b><br>` : b.nome ? `<b>${esc(b.nome)}</b><br>` : ''}${b.h >= 8 ? `${andares} andar${andares > 1 ? 'es' : ''} · ` : ''}≈ ${Math.round(b.h)} m${b.est ? ' (estimado)' : b.censo ? ' (pelo Censo 2022)' : ''}${!b.alvo && !PUBLICO && b.ref ? '<br><span style="opacity:.7">Clique se este for o prédio do condomínio</span>' : ''}`;
+  dica.innerHTML = `${b.alvo ? `<b>${esc(D.condominio.nome)}</b><br>` : b.nome ? `<b>${esc(b.nome)}</b><br>` : ''}${b.h >= 8 ? `${andares} andar${andares > 1 ? 'es' : ''} · ` : ''}≈ ${Math.round(b.h)} m${b.est ? ' (estimado)' : b.censo ? ' (pelo Censo 2022)' : ''}${!b.alvo && !PUBLICO && ID && b.ref ? '<br><span style="opacity:.7">Clique se este for o prédio do condomínio</span>' : ''}`;
   dica.style.left = e.clientX + 'px'; dica.style.top = e.clientY + 'px'; dica.hidden = false;
-  renderer.domElement.style.cursor = !b.alvo && !PUBLICO && b.ref ? 'pointer' : '';
+  renderer.domElement.style.cursor = !b.alvo && !PUBLICO && ID && b.ref ? 'pointer' : '';
 });
 let clique0 = null;
 renderer.domElement.addEventListener('pointerdown', (e) => { clique0 = [e.clientX, e.clientY]; });
 renderer.domElement.addEventListener('pointerup', async (e) => {
-  if (!clique0 || Math.hypot(e.clientX - clique0[0], e.clientY - clique0[1]) > 4 || PUBLICO) return;
+  if (!clique0 || Math.hypot(e.clientX - clique0[0], e.clientY - clique0[1]) > 4 || PUBLICO || !ID) return;
   const i = predioSob(e); if (i < 0) return;
   const b = predios[i]; if (b.alvo || !b.ref) return;
   if (!confirm(`Usar este prédio como "${D.condominio.nome}"? A posição e o 3D do condomínio passam a usar este contorno.`)) return;
@@ -467,7 +467,9 @@ function interface_() {
   $('#endereco').textContent = [[c.logradouro, c.numero].filter(Boolean).join(', '), c.bairro, 'Campinas'].filter(Boolean).join(' · ');
   const tot = cena.alvo.andares;
   const chips = [];
-  if (c.tipo === 'horizontal') chips.push('<span class="chip ouro">Condomínio de casas</span>');
+  if (FG) { document.querySelector('.marca span').textContent = 'Rua em 3D'; if (D.imovel && D.imovel.valor) chips.push(`<span class="chip ouro">${esc('R$ ' + Math.round(D.imovel.valor).toLocaleString('pt-BR'))}</span>`); }
+  if (c.tipo === 'casa') chips.push('<span class="chip ouro">Casa</span>');
+  else if (c.tipo === 'horizontal') chips.push('<span class="chip ouro">Condomínio de casas</span>');
   else if (tot) chips.push(`<span class="chip ouro${cena.alvo.estimado ? ' est' : ''}">${tot} andares${cena.alvo.estimado ? ' (estimado)' : ''}</span>`);
   if (c.torres) chips.push(`<span class="chip">${c.torres} torres</span>`);
   if (c.unidades) chips.push(`<span class="chip">${c.unidades} unidades</span>`);
@@ -480,12 +482,15 @@ function interface_() {
   if (im && im.andar !== null && im.andar !== undefined) {
     $('#apto').hidden = false;
     $('#apto').innerHTML = `<b>${esc(im.codigo)}${im.unidade ? ' · Unidade ' + esc(im.unidade) : ''}</b><div class="s">${im.andar === 0 ? 'Térreo' : im.andar + 'º andar'}${im.torre ? ' · torre ' + esc(im.torre) : ''} · posição no andar aproximada</div>`;
+  } else if (im && FG) {
+    $('#apto').hidden = false;
+    $('#apto').innerHTML = `<b>${esc(im.codigo)} · ${esc(im.tipo || 'Imóvel')}</b><div class="s">Imóvel destacado em dourado · posição pelo endereço do anúncio</div>`;
   } else if (im) {
     $('#apto').hidden = false;
     $('#apto').innerHTML = `<b>${esc(im.codigo)}</b><div class="s">Cadastre a unidade (ex.: 142) para ver o andar no 3D.</div>`;
   }
 
-  if (c.tipo !== 'horizontal' && poligonoAlvo) {
+  if (c.tipo !== 'horizontal' && c.tipo !== 'casa' && poligonoAlvo) {
     $('#lado').hidden = false;
     const max = tot || Math.max(1, Math.round(alturaAlvo / ANDAR_H) - 1);
     const s = $('#andar'); s.max = max;
@@ -514,6 +519,77 @@ function interface_() {
   $('#b-perto').addEventListener('click', (e) => { const on = !e.currentTarget.classList.contains('on'); e.currentTarget.classList.toggle('on', on); rotPerto.forEach((r) => { r.oculto = !on; }); });
 }
 
+
+// ------------------------------------------------------------------ modo realista (Google Photorealistic 3D Tiles)
+// Liga quando o sistema tem a chave do Google Maps (Map Tiles API). O modelo próprio fica de reserva no botão "Modelo".
+const modelo = new THREE.Group(); scene.add(modelo);
+let real = null;
+const DEG = Math.PI / 180;
+async function chaveGoogle() {
+  try { const r = await fetch('/api/publico/condominios/mapas', { credentials: 'same-origin' }); const j = await r.json(); return j.chave || null; } catch { return null; }
+}
+function raioBaixo(x, z) {
+  if (!real) return null;
+  const rc = new THREE.Raycaster(new THREE.Vector3(x, 4000, z), new THREE.Vector3(0, -1, 0), 0, 9000);
+  const h = rc.intersectObject(real.tiles.group, true)[0];
+  return h ? h.point.y : null;
+}
+async function ligaRealista(chave) {
+  const M = await import('/vendor/three/tiles3d.js');
+  const tiles = new M.TilesRenderer();
+  tiles.registerPlugin(new M.GoogleCloudAuthPlugin({ apiToken: chave, autoRefreshToken: true }));
+  const draco = new M.DRACOLoader(); draco.setDecoderPath('/vendor/draco/');
+  tiles.registerPlugin(new M.GLTFExtensionsPlugin({ dracoLoader: draco }));
+  tiles.registerPlugin(new M.TilesFadePlugin());
+  tiles.registerPlugin(new M.ReorientationPlugin({ lat: cena.centro.lat * DEG, lon: cena.centro.lon * DEG, height: 0, recenter: true }));
+  tiles.errorTarget = celular ? 22 : 10;
+  tiles.setCamera(camera); tiles.setResolutionFromRenderer(camera, renderer);
+  // o plugin deixa X para oeste e Z para o norte; o modelo usa X para leste e Z para o sul: meia-volta no eixo Y
+  const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.add(tiles.group); scene.add(pai);
+  real = { tiles, pai, nivelado: 0, erro: null, ligado: true };
+  tiles.addEventListener('load-error', (e) => { if (!real.carregou) { real.erro = 'O Google recusou a chave do 3D realista.'; desligaRealista(true); } });
+  tiles.addEventListener('load-model', () => { real.carregou = true; });
+  aplicaModo();
+  // acerta a altura do chão (o Google mede pelo elipsoide) e mede a altura real do prédio
+  const nivela = () => {
+    if (!real || !real.carregou) return;
+    const y = raioBaixo(baseAlvo.x + 30, baseAlvo.z + 30) ?? raioBaixo(0, 0);
+    if (y === null) return;
+    pai.position.y -= y; pai.updateMatrixWorld(true); real.nivelado++;
+    if (poligonoAlvo && D.condominio.tipo !== 'horizontal' && D.condominio.tipo !== 'casa') {
+      const [cx, cy] = centro(poligonoAlvo); const topo = raioBaixo(cx, -cy);
+      if (topo && topo > 6) {
+        const tot = Math.max(1, (cena.alvo.andares || Math.round(alturaAlvo / 3)) + 1);
+        ANDAR_H = Math.min(3.8, Math.max(2.5, (topo - 1.5) / tot));
+        alturaAlvo = topo; topoAlvo.y = topo;
+        if (rotAlvo) rotAlvo.pos.y = topo + 8;
+        mostraAndar(+$('#andar').value);
+      }
+    }
+  };
+  let n = 0; const t = setInterval(() => { nivela(); if (++n > 12 || (real && real.nivelado > 4)) clearInterval(t); }, 1500);
+  setInterval(() => {
+    if (!real || !real.ligado || real.erro) return;
+    const a = (real.tiles.getAttributions ? real.tiles.getAttributions() : []).map((x) => x.value).filter((v) => typeof v === 'string');
+    $('#creditos').textContent = `3D: Google${a.length ? ' · ' + a.join(' · ') : ''} · Andar destacado aproximado`;
+  }, 3000);
+}
+function aplicaModo() {
+  const on = !!(real && real.ligado);
+  modelo.visible = !on;
+  for (const m of meshAlvo) m.visible = !on;
+  pegaveis.forEach((m) => { m.raycast = on ? () => {} : THREE.Mesh.prototype.raycast; });
+  if (real) real.pai.visible = on;
+  const b = $('#b-real'); if (b) { b.textContent = on ? 'Realista' : 'Modelo'; b.classList.toggle('on', on); }
+  scene.fog.near = cena.raio * (on ? 3 : 1.7); scene.fog.far = cena.raio * (on ? 9 : 5);
+  if (on) { $('#b-sat').hidden = true; } else { $('#b-sat').hidden = false; }
+}
+function desligaRealista(erro) {
+  if (!real) return;
+  real.ligado = false; aplicaModo();
+  if (erro) { const b = $('#b-real'); if (b) b.remove(); $('#creditos').textContent = real.erro; }
+}
+
 // ------------------------------------------------------------------ laço
 const bussola = document.getElementById('agulha');
 function laco(t) {
@@ -524,19 +600,21 @@ function laco(t) {
     if (k >= 1) voo = null;
   }
   controls.update();
+  if (real && real.ligado) { camera.updateMatrixWorld(); real.tiles.update(); }
   if (faixa) faixa.material.opacity = 0.7 + Math.sin(t / 380) * 0.18;
   bussola.style.transform = `rotate(${controls.getAzimuthalAngle()}rad)`;
   renderer.render(scene, camera);
   atualizaRotulos();
 }
-addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); if (real) real.tiles.setResolutionFromRenderer(camera, renderer); });
 
 // ------------------------------------------------------------------ início
 (async () => {
   try {
-    if (!ID && !SLUG) throw new Error('Abra o 3D pela ficha de um condomínio.');
+    if (!ID && !SLUG && !FG) throw new Error('Abra o 3D pela ficha de um condomínio.');
     D = await carregar();
     cena = D.cena; alvo = cena.alvo; ANDAR_H = alvo.alturaAndar || 3;
+    const antes = new Set(scene.children);
     montar();
     luz(new Date().getHours() >= 18 || new Date().getHours() < 6 ? 'noite' : 'dia');
     interface_();
@@ -546,6 +624,14 @@ addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; cam
     $('#carregando-txt').textContent = 'Trazendo a foto de satélite…';
     chaoSat = await chaoSatelite(cena.centro, cena.raio).catch(() => null);
     if (chaoSat) { scene.add(chaoSat); grupoVerde.visible = false; } else { $('#b-sat').classList.remove('on'); MAT.via.opacity = 0.9; }
+    for (const o of [...scene.children]) if (!antes.has(o) && !o.userData.manter && o !== modelo) modelo.add(o);
+    const chave = await chaveGoogle();
+    if (chave) {
+      $('#controles').insertAdjacentHTML('afterbegin', '<button class="b on" id="b-real" type="button" title="Trocar entre o 3D fotografado pelo Google e o modelo">Realista</button><span class="sep"></span>');
+      $('#b-real').addEventListener('click', () => { if (!real) return; real.ligado = !real.ligado; aplicaModo(); });
+      $('#carregando-txt').textContent = 'Carregando o 3D realista…';
+      ligaRealista(chave).catch((e) => { console.error(e); desligaRealista(true); });
+    }
     $('#carregando').classList.add('fim');
     vistas('intro');
     setTimeout(() => { if (!voo && !reduzMovimento) { controls.autoRotate = true; $('#b-girar').classList.add('on'); } }, 3200);

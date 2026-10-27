@@ -23,3 +23,27 @@ $('salvar').addEventListener('click', async () => {
     else msg((r && r.erro) || 'Não consegui testar.', 'erro');
   });
 });
+
+// ---------- puxar a lista filtrada ----------
+async function abaFisgar() {
+  const abas = await chrome.tabs.query({ url: 'https://painel.fisgar.com.br/*' });
+  return abas.find((t) => t.active) || abas[0] || null;
+}
+async function atualizaPux() {
+  const aba = await abaFisgar();
+  if (!aba) { $('pux').textContent = 'Abra o painel do Fisgar numa aba.'; return; }
+  try {
+    const p = await chrome.tabs.sendMessage(aba.id, { tipo: 'puxada' });
+    $('parar').hidden = !(p && p.andando);
+    $('puxar').hidden = !!(p && p.andando);
+    $('pux').textContent = !p ? '' : p.andando ? `Puxando… página ${p.paginas}, ${p.anuncios} anúncios.` : p.ok ? `Pronto: ${p.paginas} páginas, ${p.anuncios} anúncios enviados.` : (p.erro || '');
+  } catch { $('pux').textContent = 'Recarregue a aba do Fisgar (F5).'; }
+}
+$('puxar').addEventListener('click', async () => {
+  const aba = await abaFisgar();
+  if (!aba) return ($('pux').textContent = 'Abra o painel do Fisgar numa aba.');
+  try { await chrome.tabs.sendMessage(aba.id, { tipo: 'puxar', max: 400 }); } catch { return ($('pux').textContent = 'Recarregue a aba do Fisgar (F5).'); }
+  atualizaPux();
+});
+$('parar').addEventListener('click', async () => { const aba = await abaFisgar(); if (aba) await chrome.tabs.sendMessage(aba.id, { tipo: 'parar-puxar' }); atualizaPux(); });
+atualizaPux(); setInterval(atualizaPux, 1500);

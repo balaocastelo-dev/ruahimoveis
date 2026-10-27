@@ -102,6 +102,15 @@ function marcarAlvo(cena, c) {
     if (c.osm_ref && b.ref === c.osm_ref) b.alvo = 1;
     else if (contorno && contorno.length > 4 && contem(contorno, x, y)) b.alvo = 1;
   }
+  if (c.tipo === 'horizontal-ponto') {
+    // casa avulsa: o contorno que contém o ponto, ou o mais perto (até 25 m); sem mexer na altura
+    const cand = cena.predios.map((b) => ({ b, d: contem(b.p, cx, cy) ? 0 : Math.hypot(centroide(b.p)[0] - cx, centroide(b.p)[1] - cy) }))
+      .filter((x) => x.d <= 25 && x.b.ar >= 30).sort((a, b) => a.d - b.d);
+    if (cand[0]) cand[0].b.alvo = 1;
+    const alvo = cena.predios.filter((b) => b.alvo);
+    cena.alvo = { andares: null, estimado: true, sintetico: false, quantos: alvo.length, alturaAndar: ALTURA_ANDAR, ponto: [cx, cy], contorno: null, casa: true };
+    return cena;
+  }
   if (!cena.predios.some((b) => b.alvo) && c.tipo !== 'horizontal') {
     const cand = cena.predios.map((b) => ({ b, d: contem(b.p, cx, cy) ? 0 : Math.hypot(centroide(b.p)[0] - cx, centroide(b.p)[1] - cy) }))
       .filter((x) => x.d <= 45 && x.b.ar >= 120).sort((a, b) => a.d - b.d || b.b.h - a.b.h);
@@ -126,10 +135,11 @@ function marcarAlvo(cena, c) {
   return cena;
 }
 
-async function cena3d(c, { renovar = false } = {}) {
+async function cena3d(c, { renovar = false, semCache = false } = {}) {
   if (!c.lat) { const e = new Error('Este condomínio ainda não tem posição no mapa. Ajuste a posição na ficha para ver o 3D.'); e.status = 409; throw e; }
   const raio = c.tipo === 'horizontal' ? 450 : 300;
-  const base = await O.comCache(c.id, '3d', renovar ? -1 : 60, () => gerar(c, raio));
+  // ponto avulso (imóvel do Fisguei sem condomínio): gera na hora, sem cache (a base é local e rápida)
+  const base = semCache || !c.id ? await gerar(c, raio) : await O.comCache(c.id, '3d', renovar ? -1 : 60, () => gerar(c, raio));
   return marcarAlvo(JSON.parse(JSON.stringify(base)), c);
 }
 

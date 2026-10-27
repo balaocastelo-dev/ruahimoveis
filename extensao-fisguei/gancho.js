@@ -5,6 +5,16 @@
   if (window.__fisgueiGancho) return;
   window.__fisgueiGancho = true;
   const INTERESSA = /\/(properties\/getAll|properties\/announce\/getAllInfoById\/[^/?]+|owners\/GetPeople|owners\/GetPersonInfo)(\?|$)/i;
+  // últimos pedidos da lista (properties/getAll) que a própria tela fez: servem de modelo para "Puxar a lista filtrada"
+  const listas = [];
+  const guardaLista = (url, corpo) => {
+    try {
+      if (!/properties\/getAll/i.test(url) || typeof corpo !== 'string') return;
+      const j = JSON.parse(corpo);
+      listas.push({ url: new URL(url, location.href).href, corpo: j });
+      if (listas.length > 6) listas.shift();
+    } catch {}
+  };
   const repassa = (url, pedido, texto) => {
     try {
       const u = new URL(url, location.href);
@@ -18,7 +28,7 @@
     const r = await f0.apply(this, arguments);
     try {
       const url = typeof entrada === 'string' ? entrada : entrada && entrada.url;
-      if (url && /router\.fisgar/i.test(url) && r.ok) r.clone().text().then((t) => repassa(url, opcoes && opcoes.body, t)).catch(() => {});
+      if (url && /router\.fisgar/i.test(url) && r.ok) { guardaLista(url, opcoes && opcoes.body); r.clone().text().then((t) => repassa(url, opcoes && opcoes.body, t)).catch(() => {}); }
     } catch {}
     return r;
   };
@@ -27,7 +37,7 @@
   XMLHttpRequest.prototype.send = function (corpo) {
     if (this.__fgUrl && /router\.fisgar/i.test(this.__fgUrl)) {
       this.addEventListener('load', () => {
-        try { if (this.status >= 200 && this.status < 300 && (this.responseType === '' || this.responseType === 'text')) repassa(this.__fgUrl, corpo, this.responseText); } catch {}
+        try { if (this.status >= 200 && this.status < 300 && (this.responseType === '' || this.responseType === 'text')) { guardaLista(this.__fgUrl, corpo); repassa(this.__fgUrl, corpo, this.responseText); } } catch {}
       });
     }
     return envia.apply(this, arguments);
@@ -88,6 +98,57 @@
     }
     return out;
   }
+  // ---------- "Puxar a lista filtrada": percorre todas as páginas do filtro que está na tela ----------
+  // Listar anúncios não gasta crédito no Fisgar (só "Consultar" proprietário gasta). Vai devagar, uma página a cada 3–6 s.
+  const PAGINA = /^(page|pagina|currentpage|pagenumber|page_number|pageindex|numpage)$/i, DESLOC = /^(offset|skip|from|start)$/i;
+  function achaChaves(o, caminho = [], out = []) {
+    if (o && typeof o === 'object') for (const [k, v] of Object.entries(o)) {
+      if (typeof v === 'number' && (PAGINA.test(k) || DESLOC.test(k))) out.push({ caminho: [...caminho, k], tipo: PAGINA.test(k) ? 'pagina' : 'desloc', valor: v });
+      else if (v && typeof v === 'object' && !Array.isArray(v)) achaChaves(v, [...caminho, k], out);
+    }
+    return out;
+  }
+  const pega = (o, c) => c.reduce((a, k) => (a ? a[k] : undefined), o);
+  const poe = (o, c, v) => { let a = o; for (const k of c.slice(0, -1)) a = a[k]; a[c[c.length - 1]] = v; };
+  let puxando = null;
+  async function puxar(maxPaginas) {
+    const modelo = listas[listas.length - 1];
+    if (!modelo) throw new Error('Abra a Base de Anúncios do Fisgar e aplique o filtro (Campinas, venda, valor mínimo) antes.');
+    const chaves = achaChaves(modelo.corpo);
+    const chave = chaves.find((c) => c.tipo === 'pagina') || chaves[0];
+    if (!chave) throw new Error('Não achei a paginação deste filtro. Vá para a página 2 no Fisgar e tente de novo.');
+    const tok = localStorage.getItem('token');
+    if (!tok) throw new Error('O Fisgar está sem login nesta aba.');
+    puxando = { paginas: 0, anuncios: 0, parar: false };
+    let valor = chave.valor, tam = null;
+    for (let i = 0; i < maxPaginas && !puxando.parar; i++) {
+      valor = chave.tipo === 'pagina' ? (i === 0 ? chave.valor : valor + 1) : (i === 0 ? chave.valor : valor + (tam || 20));
+      const corpo = JSON.parse(JSON.stringify(modelo.corpo)); poe(corpo, chave.caminho, valor);
+      const r = await f0.call(window, modelo.url, { method: 'POST', headers: { Accept: 'application/json, text/plain, */*', 'Content-Type': 'application/json', Authorization: tok }, body: JSON.stringify(corpo) });
+      if (r.status === 401 || r.status === 403) throw new Error('O Fisgar pediu login de novo.');
+      if (!r.ok) throw new Error(`Fisgar respondeu ${r.status} na página ${i + 1}.`);
+      const texto = await r.text();
+      let lista = []; try { const j = JSON.parse(texto); lista = Array.isArray(j.data) ? j.data : (j.data && Array.isArray(j.data.data) ? j.data.data : []); } catch {}
+      if (!lista.length) break;
+      tam = lista.length;
+      repassa(modelo.url, JSON.stringify(corpo), texto);
+      puxando.paginas++; puxando.anuncios += lista.length;
+      window.postMessage({ __fisgueiPuxando: 1, paginas: puxando.paginas, anuncios: puxando.anuncios }, location.origin);
+      await espera(3000 + Math.random() * 3000);
+    }
+    const fim = { paginas: puxando.paginas, anuncios: puxando.anuncios, parou: puxando.parar };
+    puxando = null;
+    return fim;
+  }
+  window.addEventListener('message', async (e) => {
+    if (e.source !== window || !e.data) return;
+    if (e.data.__fisgueiPuxar === 1) {
+      try { const r = await puxar(e.data.max || 400); window.postMessage({ __fisgueiPuxou: 1, ok: true, ...r }, location.origin); }
+      catch (err) { puxando = null; window.postMessage({ __fisgueiPuxou: 1, ok: false, erro: String(err.message || err) }, location.origin); }
+    }
+    if (e.data.__fisgueiPararPuxar === 1 && puxando) puxando.parar = true;
+  });
+
   window.addEventListener('message', async (e) => {
     if (e.source !== window || !e.data || e.data.__fisgueiExec !== 1) return;
     const { id, pedido } = e.data;

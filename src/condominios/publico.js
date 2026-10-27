@@ -89,6 +89,8 @@ router.get('/condominios/:slug/3d', (req, res, next) => {
 
 // API pública do 3D: só o prédio, o entorno e (se pedir) o andar de um imóvel da RUAH publicado ali.
 const api = express.Router();
+// chave do Google Maps para o 3D realista (restrita aos sites da RUAH no console do Google)
+api.get('/mapas', (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ chave: (process.env.GOOGLE_MAPS_KEY || '').trim() || null }); });
 api.get('/:slug/3d', async (req, res) => {
   const c = porSlug(req.params.slug);
   if (!c) return res.status(404).json({ erro: 'Condomínio não encontrado.' });

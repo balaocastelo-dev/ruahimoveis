@@ -97,7 +97,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios', 'cond']]],
+  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios', 'cond'], ['#/mercado', 'Mercado']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
@@ -158,6 +158,7 @@ async function rota() {
     else if (p[0] === 'radar') await telaRadar(new URLSearchParams(qs || ''));
     else if (p[0] === 'fisguei' && p[1]) await telaFisgueiAnuncio(+p[1], p[2] || 'dados');
     else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));
+    else if (p[0] === 'mercado') await telaMercado(new URLSearchParams(qs || ''));
     else if (p[0] === 'condominios' && p[1]) await telaCondominio(+p[1]);
     else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();

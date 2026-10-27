@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Fisguei → RUAH",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Leva para o Sistema RUAH os anúncios e proprietários que você abre no painel do Fisgar.",
   "icons": { "16": "icone16.png", "32": "icone32.png", "48": "icone48.png", "128": "icone128.png" },
   "action": { "default_title": "Fisguei → RUAH", "default_popup": "popup.html", "default_icon": { "16": "icone16.png", "32": "icone32.png" } },
   "background": { "service_worker": "fundo.js" },
-  "permissions": ["storage", "alarms"],
+  "permissions": ["storage", "alarms", "tabs"],
   "host_permissions": ["https://painel.fisgar.com.br/*", "https://ruahimoveis.vercel.app/*", "http://localhost:3333/*"],
   "optional_host_permissions": ["https://*/*", "http://*/*"],
   "content_scripts": [

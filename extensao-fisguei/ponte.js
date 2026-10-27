@@ -32,6 +32,20 @@
     if (selo) selo.textContent = `Fisguei: buscando ${m.pedido.ref} no Fisgar…`;
     return true;
   });
+  // "Puxar a lista filtrada": o popup pede, a página do Fisgar percorre as páginas, o selo mostra o andamento.
+  let puxada = null;
+  window.addEventListener('message', (e) => {
+    if (e.source !== window || !e.data) return;
+    if (e.data.__fisgueiPuxando === 1) { puxada = { andando: true, paginas: e.data.paginas, anuncios: e.data.anuncios }; if (selo) selo.textContent = `Fisguei: puxando a lista · página ${e.data.paginas} · ${e.data.anuncios} anúncios`; }
+    if (e.data.__fisgueiPuxou === 1) { puxada = { andando: false, ...e.data }; if (selo) selo.textContent = e.data.ok ? `Fisguei: lista puxada · ${e.data.paginas} páginas · ${e.data.anuncios} anúncios` : `Fisguei: ${e.data.erro}`; }
+  });
+  chrome.runtime.onMessage.addListener((m, quem, responde) => {
+    if (!m) return false;
+    if (m.tipo === 'puxar') { window.postMessage({ __fisgueiPuxar: 1, max: m.max || 400 }, location.origin); puxada = { andando: true, paginas: 0, anuncios: 0 }; responde({ ok: true }); }
+    if (m.tipo === 'parar-puxar') { window.postMessage({ __fisgueiPararPuxar: 1 }, location.origin); responde({ ok: true }); }
+    if (m.tipo === 'puxada') responde(puxada);
+    return false;
+  });
   const pede = () => { try { chrome.runtime.sendMessage({ tipo: 'estado' }, (st) => { if (st) mostra(st); }); } catch {} };
   document.addEventListener('DOMContentLoaded', pede);
   setInterval(pede, 5000);

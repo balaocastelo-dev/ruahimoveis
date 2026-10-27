@@ -125,11 +125,17 @@ async function telaCondominio(id) {
   <div class="grid g2" style="margin-top:16px">
     <div class="card"><div class="row"><h2 style="margin:0;flex:1">Mapa</h2>${c.geo_fonte ? `<span class="muted small">posição: ${esc({ osm: 'mapa aberto', numero: 'endereço exato', rua: 'aproximada pela rua', cep: 'aproximada pelo CEP', ajustado: 'ajustada pela RUAH', cadastro: 'cadastro do imóvel' }[c.geo_fonte] || c.geo_fonte)}</span>` : ''}</div>
       <div id="cd-mini" class="cd-mini"></div><p class="small muted" style="margin:6px 0 0">Arraste o marcador para corrigir a posição do condomínio.</p></div>
-    <div class="card"><h2>Street View</h2>${temGeo ? `<div class="fg-frame"><iframe title="Street View" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?layer=c&cbll=${encodeURIComponent(c.lat + ',' + c.lon)}&cbp=11,0,0,0,0&hl=pt-BR&output=svembed"></iframe></div>
+    <div class="card"><h2>Street View</h2>${temGeo ? `<div class="fg-frame" data-fachada="cd${c.id}"><iframe title="Street View" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?layer=c&cbll=${encodeURIComponent(c.lat + ',' + c.lon)}&cbp=11,0,0,0,0&hl=pt-BR&output=svembed"></iframe></div>
       <p class="small muted">Se a imagem não aparecer, o Google não tem Street View exatamente neste ponto. <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${encodeURIComponent(c.lat + ',' + c.lon)}" target="_blank" rel="noopener">Abrir no Google</a></p>` : '<p class="muted">Sem posição no mapa.</p>'}</div>
   </div>`;
   miniMapa(c);
   if (temGeo) carregaPerto(c.id);
+  // com a chave do Google: foto da fachada no lugar do Street View interativo (guardada; paga uma vez)
+  if (temGeo && typeof mapasCfg === 'function') mapasCfg().then((cfg) => {
+    const box = document.querySelector('[data-fachada]'); if (!cfg.fachada || !box) return;
+    const ifr = box.innerHTML; const img = new Image(); img.alt = 'Fachada (Google Street View)'; img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover';
+    img.onerror = () => { box.innerHTML = ifr; }; img.src = `/api/fachada?ref=${box.dataset.fachada}`; box.innerHTML = ''; box.appendChild(img);
+  });
 }
 
 async function carregaPerto(id) {

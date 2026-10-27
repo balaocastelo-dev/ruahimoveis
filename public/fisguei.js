@@ -155,7 +155,7 @@ async function telaFisgueiAnuncio(id, aba) {
   const a = d.anuncio;
   const temGeo = a.lat && a.lon;
   const aqui = (t) => `#/fisguei/${id}${t === 'dados' ? '' : '/' + t}`;
-  $('#main').innerHTML = `<a class="btn sm" href="#/fisguei">← Fisguei</a>
+  $('#main').innerHTML = `<a class="btn sm" href="#/fisguei">← Fisguei</a> <a class="btn sm" href="#/mercado">Mercado</a>
   <div class="row" style="margin:12px 0 6px;gap:10px;flex-wrap:wrap"><div style="flex:1;min-width:260px">
     <div class="eyebrow">${esc(a.ref)} · Fisgar #${esc(a.fisgar_id)}${a.portal ? ' · ' + esc(a.portal) : ''}</div>
     <h1 style="margin:2px 0">${esc(a.tipo || 'Imóvel')} na ${esc(fgEnd(a))}</h1>
@@ -168,9 +168,11 @@ async function telaFisgueiAnuncio(id, aba) {
     <button class="btn" data-act="fg-pausar" data-id="${id}" data-p="${a.pausado ? 0 : 1}">${a.pausado ? 'Retomar robô neste endereço' : 'Pausar robô neste endereço'}</button>
     ${a.status !== 'descartado' ? `<button class="btn" data-act="fg-descartar" data-id="${id}">Descartar</button>` : ''}
   </div>
+  <div id="fg-fachada"></div>
   ${linhaPedidos(d.pedidos)}
   <div class="tabs">${[['dados', 'Detalhes'], ['donos', `Proprietários (${d.pessoas.length})`], ['mapa', 'Mapa'], ['rua', 'Street View']].map(([k, t]) => `<a href="${aqui(k)}" class="${aba === k ? 'on' : ''}">${t}</a>`).join('')}</div>
   <div id="fg-aba"></div>`;
+  if (aba === 'dados' && typeof fgFachada === 'function') fgFachada(id, a);
   const el = $('#fg-aba');
   if (aba === 'mapa') {
     el.innerHTML = temGeo ? `<div class="fg-frame"><iframe title="Mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=${encodeURIComponent(a.lat + ',' + a.lon)}&z=17&hl=pt-BR&output=embed"></iframe></div>

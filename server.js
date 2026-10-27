@@ -49,6 +49,7 @@ app.use('/api', require('./src/routes/fisguei').api);
 app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
 app.use('/api', require('./src/routes/condominios'));
+app.use('/api', require('./src/routes/mercado'));
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
 app.get('/api/blog', async (req, res) => res.json(await require('./src/blog/diario').situacao()));
 app.get('/api/blog/:slug/redes', async (req, res) => {
@@ -73,6 +74,11 @@ app.use(require('./src/routes/portal'));
 // Página pública de cada condomínio (/condominios/<slug>) e o 3D para o visitante.
 app.use(require('./src/condominios/publico'));
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
+// 3D: o modo realista do Google precisa de WebAssembly (Draco), worker em blob e de falar com tile.googleapis.com.
+app.get('/condominio-3d.html', (req, res) => {
+  res.setHeader('Content-Security-Policy', "default-src 'self'; img-src 'self' data: blob: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self' blob:; connect-src 'self' blob: data: https://tile.googleapis.com; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+  res.sendFile(path.join(PUB, 'condominio-3d.html'));
+});
 app.get('/assinar/:token', (req, res) => res.sendFile(path.join(PUB, 'assinar.html')));
 app.get('/v/:token', (req, res) => res.sendFile(path.join(PUB, 'imovel.html')));
 app.use(express.static(PUB, { index: 'index.html', maxAge: 0 }));

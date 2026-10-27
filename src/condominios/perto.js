@@ -59,4 +59,4 @@ function doBanco(lat, lon, raio = 1200) {
 
 const perto = (c) => (c.lat ? O.comCache(c.id, 'perto', 30, async () => doBanco(c.lat, c.lon) || gerar(c.lat, c.lon)) : null);
 
-module.exports = { perto, CATEGORIAS };
+module.exports = { perto, doBanco, CATEGORIAS };

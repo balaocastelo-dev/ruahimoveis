@@ -339,6 +339,7 @@ CREATE TABLE IF NOT EXISTS condominio_alertas (
   id INTEGER PRIMARY KEY, condominio_id INTEGER NOT NULL REFERENCES condominios(id) ON DELETE CASCADE,
   origem TEXT NOT NULL, ref_id INTEGER NOT NULL, texto TEXT, visto INTEGER NOT NULL DEFAULT 0,
   criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), UNIQUE (origem, ref_id));
+CREATE TABLE IF NOT EXISTS fachadas (ref TEXT PRIMARY KEY, img BLOB, pano_lat REAL, pano_lon REAL, rumo REAL, data_foto TEXT, gerado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE TABLE IF NOT EXISTS mapa3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE TABLE IF NOT EXISTS pois (id INTEGER PRIMARY KEY, cat TEXT NOT NULL, nome TEXT NOT NULL, lat REAL NOT NULL, lon REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
