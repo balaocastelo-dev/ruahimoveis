@@ -94,5 +94,15 @@ CREATE TABLE IF NOT EXISTS fisguei_precos (
 );
 CREATE INDEX IF NOT EXISTS ix_fpr_anuncio ON fisguei_precos(anuncio_id);
 
+-- índices para a base grande (dezenas de milhares de anúncios), 27/10/2026
+CREATE INDEX IF NOT EXISTS ix_fa_oport ON fisguei_anuncios(oportunidade_id) WHERE oportunidade_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_fa_checado ON fisguei_anuncios(cond_checado) WHERE cond_checado = 0;
+CREATE INDEX IF NOT EXISTS ix_fa_criado ON fisguei_anuncios(criado_em);
+CREATE INDEX IF NOT EXISTS ix_fa_imovel ON fisguei_anuncios(imovel_id) WHERE imovel_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_oe_oport ON oportunidade_eventos(oportunidade_id);
+CREATE INDEX IF NOT EXISTS ix_fc_pessoa ON fisguei_contatos(pessoa_id);
+CREATE INDEX IF NOT EXISTS ix_fm_pessoa ON fisguei_mensagens(pessoa_id);
+CREATE INDEX IF NOT EXISTS ix_op_checado ON oportunidades(cond_checado) WHERE cond_checado = 0;
+
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA ruah TO ruah_app;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA ruah TO ruah_app;

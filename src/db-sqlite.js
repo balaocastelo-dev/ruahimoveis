@@ -347,6 +347,14 @@ CREATE TABLE IF NOT EXISTS mapa3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, a
 CREATE TABLE IF NOT EXISTS pois (id INTEGER PRIMARY KEY, cat TEXT NOT NULL, nome TEXT NOT NULL, lat REAL NOT NULL, lon REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);
+CREATE INDEX IF NOT EXISTS ix_fa_oport ON fisguei_anuncios(oportunidade_id) WHERE oportunidade_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_fa_checado ON fisguei_anuncios(cond_checado) WHERE cond_checado = 0;
+CREATE INDEX IF NOT EXISTS ix_fa_criado ON fisguei_anuncios(criado_em);
+CREATE INDEX IF NOT EXISTS ix_fa_imovel ON fisguei_anuncios(imovel_id) WHERE imovel_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_oe_oport ON oportunidade_eventos(oportunidade_id);
+CREATE INDEX IF NOT EXISTS ix_fc_pessoa ON fisguei_contatos(pessoa_id);
+CREATE INDEX IF NOT EXISTS ix_fm_pessoa ON fisguei_mensagens(pessoa_id);
+CREATE INDEX IF NOT EXISTS ix_op_checado ON oportunidades(cond_checado) WHERE cond_checado = 0;
 CREATE TABLE IF NOT EXISTS fisguei_precos (
   id INTEGER PRIMARY KEY, anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
   valor REAL NOT NULL, em TEXT NOT NULL DEFAULT (datetime('now','localtime')), fonte TEXT);
