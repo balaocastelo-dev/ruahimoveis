@@ -178,6 +178,41 @@
       .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a RUAH'; });
   });
 
+  // ------------------------------------------------------------ Clube Signature: pedir acesso aos valores
+  var formS = $('[data-clube]');
+  if (formS) formS.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = $('.p-form-msg', formS), botao = $('button[type=submit]', formS);
+    var d = {};
+    $$('input,select,textarea', formS).forEach(function (c) { if (!c.name) return; d[c.name] = c.type === 'checkbox' ? c.checked : c.value; });
+    var aviso = function (t, erro) { msg.hidden = false; msg.textContent = t; msg.classList.toggle('erro', !!erro); };
+    if (!d.nome.trim()) return aviso('Diga seu nome.', true);
+    if (d.telefone.replace(/\D/g, '').length < 10) return aviso('Confira o telefone, com DDD.', true);
+    if (!d.aceite) return aviso('Marque que concorda com o uso dos dados para o contato.', true);
+    botao.disabled = true; botao.textContent = 'Enviando…';
+    fetch('/api/publico/portal/signature', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.j && r.j.erro || 'Não foi possível enviar.');
+        aviso('Bem-vindo ao Clube Signature. Liberando os valores…');
+        setTimeout(function () { location.reload(); }, 900);
+      })
+      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Entrar para o Clube Signature'; });
+  });
+
+  // ------------------------------------------------------------ revelar ao rolar (revista e Signature)
+  var revelar = $$('[data-revelar]');
+  if (revelar.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('js-revelar');
+    var obs = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('visto'); obs.unobserve(x.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    revelar.forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight) el.classList.add('visto'); else obs.observe(el);
+    });
+  }
+
   // ------------------------------------------------------------ compartilhar
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-compartilhar]'); if (!b) return;

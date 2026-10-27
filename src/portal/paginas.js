@@ -13,6 +13,12 @@ const { SITE_RUAH, INSTAGRAM_RUAH } = require('../blog/categorias');
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
 const POR_PAGINA = 18;
+const { SIGNATURE } = require('./edicoes');
+
+/** Acima do limite da RUAH Signature o valor fica reservado aos membros do clube (página /imoveis/signature). */
+const reservado = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
+const RESERVADO = 'RUAH Signature · valor para membros';
+const valorTexto = (im) => (reservado(im) ? RESERVADO : im.valor ? reais(im.valor) : 'Sob consulta');
 
 function rico(texto) {
   const desenhar = (t) => t.map((x) => (x.tipo === 'texto' ? esc(x.valor) : x.tipo === 'negrito' ? `<strong>${desenhar(x.filhos)}</strong>`
@@ -96,7 +102,8 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <header class="p-topo">
   <a class="p-marca" href="/imoveis" aria-label="RUAH, imóveis à venda"><span class="p-marca-n">RUAH</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
   <nav class="p-nav" aria-label="Portal">
-    <a href="/imoveis"${req.path === '/imoveis' ? ' aria-current="page"' : ''}>Imóveis</a>
+    <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
+    <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
     <a href="/imoveis/favoritos"${req.path === '/imoveis/favoritos' ? ' aria-current="page"' : ''}>Favoritos <span class="p-fav-n" data-fav-n hidden></span></a>
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
     <a href="/blog">Blog Sopro</a>
@@ -124,7 +131,7 @@ function cartao(x, { eager = false } = {}) {
 <p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
 <p class="p-specs">${specs(im, true).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
-<p class="p-preco">${im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
+<p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
 </div></article>`;
 }
 
@@ -137,9 +144,9 @@ function filtrar(lista, q) {
   const quartos = parseInt(q.quartos, 10);
   if (quartos > 0) r = r.filter((x) => (x.imovel.quartos || 0) >= quartos);
   const ate = Number(String(q.ate || '').replace(/\D/g, ''));
-  if (ate > 0) r = r.filter((x) => x.imovel.valor && x.imovel.valor <= ate);
+  if (ate > 0) r = r.filter((x) => x.imovel.valor && !reservado(x.imovel) && x.imovel.valor <= ate);
   const de = Number(String(q.de || '').replace(/\D/g, ''));
-  if (de > 0) r = r.filter((x) => x.imovel.valor && x.imovel.valor >= de);
+  if (de > 0) r = r.filter((x) => x.imovel.valor && !reservado(x.imovel) && x.imovel.valor >= de);
   const termos = semAcento(String(q.q || '').slice(0, 80)).split(/\s+/).filter(Boolean);
   if (termos.length) {
     r = r.filter((x) => {
@@ -173,6 +180,7 @@ function paginaVitrine(req, lista, guiaDoBairro = null) {
   const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · RUAH` : q.bairro ? `Imóveis à venda no ${q.bairro} · RUAH` : 'Imóveis à venda em Campinas e região · RUAH';
 
   const corpo = `
+${require('./versoes').seletor('vitrine')}
 <section class="p-hero p-hero-foto p-hero-direita">
   <div class="p-hero-fundo" aria-hidden="true"><img src="/portal-assets/hero-castelo.jpg?v=2" srcset="/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=2 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
   <div class="p-hero-txt">
@@ -259,7 +267,7 @@ function ficha(im) {
     ['Tipo', im.tipo], ['Código', im.codigo], ['Bairro', im.bairro], ['Cidade', [im.cidade, im.uf].filter(Boolean).join(' – ')],
     ['Condomínio', im.condominio], ['Área útil', metros(im.area_util)], ['Área total', metros(im.area_total)],
     ['Quartos', im.quartos], ['Suítes', im.suites], ['Vagas', im.vagas],
-    ['Valor de venda', im.valor ? reais(im.valor) : 'Sob consulta'],
+    ['Valor de venda', valorTexto(im)],
     ['Condomínio (mês)', reais(im.valor_condominio)], ['IPTU (ano)', reais(im.iptu)],
   ].filter(([, v]) => v !== null && v !== undefined && v !== '');
   return `<dl class="p-ficha">${linhas.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
@@ -327,7 +335,7 @@ function paginaImovel(req, x, lista) {
       '@context': 'https://schema.org', '@type': 'RealEstateListing', name: p.titulo, description: p.resumo, url,
       ...(p.publicadoEm ? { datePosted: p.publicadoEm } : {}),
       image: ordem.slice(0, 8).map((f) => `${base}${fotoUrl(f)}`),
-      ...(im.valor ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: 'RUAH Investimentos Imobiliários', url: SITE_RUAH } } } : {}),
+      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: 'RUAH Investimentos Imobiliários', url: SITE_RUAH } } } : {}),
       about: {
         '@type': residencia, name: `${im.tipo} ${im.codigo}`,
         address: { '@type': 'PostalAddress', ...(im.bairro ? { streetAddress: im.bairro } : {}), addressLocality: im.cidade, addressRegion: im.uf, addressCountry: 'BR' },
@@ -380,7 +388,7 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 <aside class="p-lado" aria-label="Valor e contato">
   <div class="p-lado-caixa">
     <p class="p-lado-rot">Valor de venda</p>
-    <p class="p-lado-preco">${im.valor ? esc(reais(im.valor)) : 'Sob consulta'}</p>
+    <p class="p-lado-preco">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
     ${im.valor_condominio || im.iptu ? `<p class="p-lado-taxas">${[im.valor_condominio ? `Condomínio ${esc(reais(im.valor_condominio))}/mês` : '', im.iptu ? `IPTU ${esc(reais(im.iptu))}/ano` : ''].filter(Boolean).join(' · ')}</p>` : ''}
     <a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>
     <a class="p-botao sec" href="#contato" data-contato="visita">Agendar visita</a>
@@ -395,7 +403,7 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 </div>
 ${formulario(im, p)}
 ${(() => { const ps = parecidos(x, lista); return ps.length ? `<section class="p-parecidos" aria-labelledby="parecidos"><h2 id="parecidos">Imóveis parecidos</h2><div class="p-grade">${ps.map((y) => cartao(y)).join('')}</div></section>` : ''; })()}
-<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${im.valor ? esc(reais(im.valor)) : 'Sob consulta'}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
+<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? 'RUAH Signature' : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
 
   const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · RUAH`;
   return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: fotoUrl(capa.foto), ld, corpo, classe: 'p-pagina-imovel' });
@@ -408,4 +416,4 @@ function paginaNaoAchada(req) {
   });
 }
 
-module.exports = { paginaVitrine, paginaFavoritos, paginaImovel, paginaNaoAchada, urlBase, fotoUrl, GRUPOS, dataPorExtenso, cortar, casca, cartao, whatsapp };
+module.exports = { reservado, paginaVitrine, paginaFavoritos, paginaImovel, paginaNaoAchada, urlBase, fotoUrl, GRUPOS, dataPorExtenso, cortar, casca, cartao, whatsapp };

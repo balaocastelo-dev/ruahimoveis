@@ -11,6 +11,8 @@ const { txt } = require('../util');
 const fonte = require('../portal/fonte');
 const dados = require('../portal/dados');
 const paginas = require('../portal/paginas');
+const versoes = require('../portal/versoes');
+const clube = require('../portal/clube');
 const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
 
@@ -18,9 +20,15 @@ const router = express.Router();
 
 const CSP = "default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
 
-function html(res, corpo, status = 200) {
+function html(res, corpo, status = 200, { privado = false, csp = CSP } = {}) {
   res.status(status);
-  res.setHeader('Content-Security-Policy', CSP);
+  res.setHeader('Content-Security-Policy', csp);
+  if (privado) { // páginas da Signature: mudam com o cookie do Clube, nunca ficam no cache da Vercel
+    res.setHeader('Cache-Control', 'private, no-store');
+    res.setHeader('Vary', 'Cookie');
+    res.setHeader('Referrer-Policy', 'same-origin');
+    return res.type('html').send(corpo);
+  }
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   // A Vercel guarda a página por 2 minutos; o preço e o status vêm do banco a cada renovação.
   res.setHeader('Cache-Control', status === 200 ? 'public, max-age=60, s-maxage=120, stale-while-revalidate=600' : 'no-store');
@@ -38,6 +46,20 @@ async function guiaDoBairro(nome) {
 }
 
 router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro))));
+// A revista mostra as capas do blog Sopro, que moram no GitHub.
+const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
+router.get('/imoveis/revista', async (req, res) => {
+  const artigos = await require('../blog/diario').listar().catch(() => []);
+  html(res, versoes.paginaRevista(req, await fonte.noAr(), artigos), 200, { csp: CSP_REVISTA });
+});
+router.get('/imoveis/signature', (req, res) => html(res, versoes.paginaSignature(req, dados.imoveisAVenda(), clube.membro(req)), 200, { privado: true }));
+router.get('/imoveis/signature/:codigo', (req, res, next) => {
+  const cod = String(req.params.codigo).toUpperCase();
+  if (!CODIGO.test(cod)) return next();
+  const pg = versoes.paginaSignatureImovel(req, dados.imoveisAVenda(), cod, clube.membro(req));
+  if (!pg) return html(res, paginas.paginaNaoAchada(req), 404, { privado: true });
+  html(res, pg, 200, { privado: true });
+});
 router.get('/imoveis/favoritos', async (req, res) => html(res, paginas.paginaFavoritos(req, await fonte.noAr())));
 
 router.get('/imoveis/dados.json', async (req, res) => {
@@ -138,6 +160,37 @@ api.post('/interesse', async (req, res) => {
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', linhas, null);
   audit(null, 'portal_interesse', `${im.codigo} · lead ${leadId}${existente ? ' (já existia)' : ''}${visita ? ' · visita' : ''}`);
+  res.json({ ok: true });
+});
+
+// Clube Signature: o pedido de acesso vira lead QUENTE (origem "RUAH Signature") e o aparelho recebe o cookie que mostra os valores.
+api.post('/signature', (req, res) => {
+  const b = req.body || {};
+  if (b.empresa) return res.json({ ok: true });
+  if (limite(req, 6)) return res.status(429).json({ erro: 'Muitos envios seguidos. Aguarde alguns minutos.' });
+  const d = contato(b);
+  if (d.erro) return res.status(400).json({ erro: d.erro });
+  const codigo = String(b.codigo || '').toUpperCase();
+  const im = CODIGO.test(codigo) ? dados.imovelAVenda(codigo) : null;
+  const s = im && versoes.selecao([im])[0];
+  const texto = [
+    `Pediu acesso ao Clube Signature (valores da seleção RUAH Signature)${s ? ` pela residência ${im.codigo} · ${s.titulo} — /imoveis/signature/${im.codigo.toLowerCase()}` : ''}. O acesso aos valores foi liberado no aparelho dele.`,
+    d.email ? `E-mail: ${d.email}` : '',
+  ].filter(Boolean).join('\n');
+  const existente = one('SELECT * FROM leads WHERE telefone=?', d.tel);
+  let leadId;
+  if (existente) {
+    leadId = existente.id;
+    run(`UPDATE leads SET ultimo_contato=datetime('now','localtime'), temperatura='quente', email=coalesce(email,?) WHERE id=?`, d.email, leadId);
+  } else {
+    leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,corretor_id,tipo_desejado,bairros,busca,ultimo_contato)
+      VALUES(?,?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
+    d.nome, d.tel, d.email, 'RUAH Signature', 'novo', 'quente', im ? one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null : null,
+    im ? im.tipo : null, im ? im.bairro : null, `Clube Signature${im ? `: ${im.codigo}` : ''} · imóveis acima de R$ 10 milhões`).lastInsertRowid);
+  }
+  run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', texto, null);
+  audit(null, 'signature_clube', `lead ${leadId}${existente ? ' (já existia)' : ''}${im ? ` · ${im.codigo}` : ''}`);
+  res.setHeader('Set-Cookie', clube.cookieDe(leadId));
   res.json({ ok: true });
 });
 
