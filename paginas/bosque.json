@@ -1,0 +1,325 @@
+{
+  "slug": "bosque",
+  "titulo": "Bosque, Campinas: como é morar no bairro do Bosque dos Jequitibás",
+  "resumo": "Guia do bairro Bosque, em Campinas: história do Bosque dos Jequitibás, museu e minizoo, prédios, ruas, escolas, acessos e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "O Bosque dos Jequitibás visto do alto, cercado pelas casas e prédios da região central",
+      "alt": "Vista aérea de uma mancha de mata densa no meio da cidade, com casas de telhado laranja em volta e edifícios altos ao fundo",
+      "commons": "File:Bosque dos Jequitibás.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Cartão-postal antigo do Bosque dos Jequitibás, da coleção Werner Haberkorn",
+      "alt": "Foto antiga em preto e branco de um canteiro circular com palmeiras baixas diante de árvores altas",
+      "commons": "File:Werner Haberkorn - Bosque dos Jequitibas - Campinas.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A lagoa do Bosque com a estátua no centro, em cartão-postal antigo",
+      "alt": "Foto antiga de um lago cercado por grade, com uma pequena ilha e uma estátua no meio, e mata densa atrás",
+      "commons": "File:Werner Haberkorn - Bosque dos Jequitibás - Lagoa - Campinas, Acervo do Museu Paulista.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Alameda asfaltada sob a mata do Bosque dos Jequitibás",
+      "alt": "Caminho asfaltado em curva, ladeado por árvores altas e plantas de folhas largas",
+      "commons": "File:Bosque dos Jequitibás - IMG 9961.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Escadaria com estátuas diante de um chalé dentro do Bosque",
+      "alt": "Escada de pedra com quatro estátuas brancas nas laterais, levando a um chalé branco com madeiramento escuro entre árvores",
+      "commons": "File:Bosque Animais e Ruas (6).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Entrada do Museu de História Natural de Campinas, dentro do Bosque",
+      "alt": "Prédio amarelo de telhado colonial com arco na entrada e o letreiro Museu de História Natural",
+      "commons": "File:Museu de História natural - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "A Casa do Caboclo, réplica de casa rural de pau a pique",
+      "alt": "Casa baixa de barro avermelhado com telhado de palha, cerca de bambu e roda de carroça na frente",
+      "commons": "File:Casa do Caboclo, Bosque dos Jequitibás - Campinas - SP.JPG"
+    },
+    {
+      "id": "f8",
+      "legenda": "Hipopótamo no minizoo do Bosque dos Jequitibás",
+      "alt": "Hipopótamo de pé comendo capim diante de um muro de pedra",
+      "commons": "File:Bosque Animais e Ruas (3).jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Rua Uruguaiana, com casas antigas e prédios residenciais lado a lado",
+      "alt": "Rua em declive com carros estacionados, casas térreas à esquerda e edifícios residenciais ao fundo",
+      "commons": "File:Rua Uruguaiana - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Bosque** é um bairro da região central de Campinas que leva o nome do parque que abriga: o **Bosque dos Jequitibás**, uma das áreas de lazer mais antigas da cidade. É um bairro residencial de prédios de médio porte e casas mais antigas, vizinho do Centro, do Cambuí e da Ponte Preta, com a rotina de quem mora perto de tudo e tem uma mata de cerca de 10 hectares a poucos passos de casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em se mudar, o atrativo é essa combinação: comércio, escolas, hospitais e terminais de ônibus a uma caminhada de distância, e um parque com museu, aquário e minizoo no meio do bairro. Este guia reúne a história do lugar, o perfil dos imóveis, o que há em volta e os pontos de atenção antes de escolher um endereço."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região central de Campinas, vizinho do Centro, do Cambuí e da Ponte Preta",
+        "O nome vem do Bosque dos Jequitibás, parque do fim do século XIX com cerca de 10 hectares",
+        "No parque ficam o Museu de História Natural, o Aquário Municipal e um minizoo",
+        "O parque é tombado pelo Condephaat desde 1970, o primeiro bem tombado de Campinas",
+        "Perfil de prédios residenciais de médio porte, com casas e sobrados em várias ruas",
+        "A Rodoviária e o Terminal Central ficam a cerca de 1 km do coração do bairro"
+      ],
+      "titulo": "O Bosque em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história do Bosque dos Jequitibás"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de virar parque, a área era conhecida como **Campo das Caneleiras** e pertencia a **Francisco Bueno de Miranda**, que decidiu transformá-la num espaço de lazer aberto ao público. O ano de criação varia conforme a fonte: o Correio da Manhã e o guia do QuintoAndar falam em 1884; outros registros citam 1880 ou 1888. Todos concordam que é uma das áreas de lazer mais antigas de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O projeto ficou a cargo do arquiteto **Ramos de Azevedo**, que desenhou o parque no estilo de jardim inglês, com chalé, restaurante e outras construções. Em 1915, a **Prefeitura de Campinas** comprou a área, que passou por novas intervenções nas décadas seguintes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1970, o Bosque foi tombado pelo **Condephaat**, o conselho estadual de patrimônio, e se tornou o primeiro bem tombado da cidade. Em 1993, o **Condepacc**, conselho municipal, protegeu também o entorno: num raio de 100 metros do parque, ficaram proibidas construções com mais de dois pavimentos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Uma reportagem do Correio Popular de agosto de 1979, guardada pelo Centro de Memória da Unicamp, descrevia lagos, caminhos sombreados, quiosques de piquenique, um trenzinho que circulava pelo parque, o teatro infantil e, além do Museu de História Natural, um Museu de Folclore.",
+      "titulo": "O Bosque em 1979"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que tem dentro do Bosque dos Jequitibás"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque tem cerca de 100 mil metros quadrados, dos quais aproximadamente 23 mil são de reserva nativa de Mata Atlântica misturada a outras espécies. Há pista de caminhada, quiosques, lanchonetes, parquinho e bebedouros. Segundo o Correio da Manhã, um dos jequitibás do parque tem mais de 300 anos. O endereço de referência é a Rua Coronel Quirino, número 2."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Museu de História Natural** foi inaugurado em 20 de maio de 1939 e reúne animais taxidermizados, fósseis, ossos e exemplares dos biomas brasileiros, com exposições sobre mamíferos, aves, répteis, peixes e insetos. Ao lado ficam o **Aquário Municipal**, de 1992, com tanques de água doce e salgada, e a **Casa dos Animais Interessantes**, de 2003, com serpentes, lagartos, aranhas, escorpiões e bichos-pau."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Completam o conjunto o **Teatro Infantil Carlos Maia**, com 160 lugares e dedicado a peças para crianças, e a **Casa do Caboclo**, réplica de uma casa rural de pau a pique. O **minizoo** abriga aves, répteis e mamíferos, como araras, macacos, antas, jabutis e o hipopótamo **Dinho**, que completou 19 anos em setembro de 2025."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque passou por períodos fechado. Em 2023, a Prefeitura interditou o Bosque e outros parques depois de chuvas fortes e quedas de árvores. Hoje, um decreto municipal de 2025 manda fechar os parques quando a chuva acumulada chega a 80 mm em 72 horas. Em abril de 2026, um plano de manejo que prevê a retirada de 126 árvores, com o plantio de uma muda para cada árvore removida, gerou questionamento do Comdema; a Prefeitura informou que o plano foi aprovado pelo Condepacc. Antes de ir, vale conferir no portal da Prefeitura se o parque está aberto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Bosque"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bosque é um bairro de prédios de médio porte. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 75 condomínios no bairro, quase todos verticais, com perto de 2.500 apartamentos. O edifício mais alto da base tem 22 andares, e a maioria fica entre 6 e 18."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas misturam esses prédios com casas térreas e sobrados mais antigos. Entre as vias com imóveis residenciais estão a **Rua Uruguaiana**, a **Rua José Paulino**, a **Rua Padre Vieira**, a **Rua Proença**, a **Rua General Marcondes Salgado** e a **Avenida Francisco Glicério**. Perto do parque, a regra de altura do tombamento ajuda a explicar por que as quadras vizinhas à mata têm construções baixas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia se resolve a pé. A base de pontos de interesse usada pela RUAH registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas perto do Bosque"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região central concentra escolas particulares e cursos. A poucos passos do bairro, já no Centro, na Rua Boaventura do Amaral, fica o **Pio XII Colégio de Aplicação**, escola particular filantrópica com pré-escola, ensino fundamental e ensino médio. O guia do QuintoAndar cita ainda, entre as instituições da região, o Colégio Dom Barreto, o Bento Quirino e a ESAMC."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base usada pela RUAH conta mais de cem escolas, de educação infantil a cursos livres, num raio de 1,5 km. A lista das mais próximas, com o tempo de caminhada, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por estar na região central, o Bosque fica perto de vários hospitais. O guia do QuintoAndar lista na vizinhança a Santa Casa de Campinas, a Real Sociedade Portuguesa de Beneficência, o Hospital Irmãos Penteado, a Casa de Saúde Campinas e o Hospital Samaritano, entre outros. Clínicas, laboratórios, farmácias e agências bancárias estão espalhados pelas ruas do bairro e do Centro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é um dos trunfos do Bosque. A rodoviária de Campinas, também chamada de **Terminal Intermodal Ramos de Azevedo**, fica a cerca de 600 metros do centro do bairro, e o Terminal Central, a pouco mais de 1 km. Segundo o QuintoAndar, as linhas de ônibus 125, 135, 220, 253, 364 e 395 atendem o entorno do parque."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os vizinhos ajudam a entender o bairro. O **Centro** e o **Cambuí** concentram comércio, serviços e vida noturna. A **Ponte Preta**, que deve o nome a uma antiga ponte de madeira, abriga o **Estádio Moisés Lucarelli**, o Majestoso, inaugurado em 12 de setembro de 1948 e erguido com a ajuda dos próprios torcedores."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Bosque faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bosque costuma agradar a quem quer morar em apartamento na região central sem abrir mão de verde por perto: famílias com crianças, que têm museu, aquário e minizoo a uma caminhada, quem trabalha no Centro ou no Cambuí e quem viaja com frequência e gosta de ter a rodoviária ao lado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como em toda região central, há pontos a pesar. Ruas próximas aos terminais e às avenidas têm mais movimento, e boa parte dos prédios é de décadas passadas, o que pede atenção ao estado de conservação, às vagas e ao valor do condomínio. A diferença entre uma quadra e outra é grande, então vale conhecer o entorno do imóvel em horários diferentes."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte a idade do prédio e as últimas obras, o número de vagas, o que a taxa de condomínio inclui e, se o imóvel fica perto do parque, se há restrições de reforma ou ampliação ligadas ao tombamento do entorno.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o bairro Bosque, em Campinas?",
+      "resposta": "Na região central da cidade, vizinho do Centro, do Cambuí e da Ponte Preta. O bairro se forma em volta do Bosque dos Jequitibás, que lhe dá o nome."
+    },
+    {
+      "pergunta": "O Bosque é bom para morar?",
+      "resposta": "Para quem quer apartamento perto do Centro, com comércio, escolas, hospitais e a rodoviária a uma caminhada e um parque grande no bairro, sim. Quem procura ruas silenciosas deve escolher bem a quadra, longe das avenidas e terminais."
+    },
+    {
+      "pergunta": "Quando foi criado o Bosque dos Jequitibás?",
+      "resposta": "No fim do século XIX. O Correio da Manhã e o QuintoAndar indicam 1884; outras fontes citam 1880 ou 1888. A Prefeitura de Campinas comprou a área em 1915."
+    },
+    {
+      "pergunta": "O que tem para fazer no Bosque dos Jequitibás?",
+      "resposta": "Caminhar na mata, visitar o minizoo, o Museu de História Natural, o Aquário Municipal, a Casa dos Animais Interessantes, a Casa do Caboclo e assistir a peças no Teatro Infantil Carlos Maia."
+    },
+    {
+      "pergunta": "O bairro Bosque tem mais prédios ou casas?",
+      "resposta": "Prédios. A base de condomínios da RUAH identifica cerca de 75 condomínios no bairro, quase todos verticais, além de casas e sobrados em várias ruas."
+    },
+    {
+      "pergunta": "Pode construir prédio alto perto do Bosque dos Jequitibás?",
+      "resposta": "Não no entorno imediato. Desde 1993, o Condepacc proíbe construções com mais de dois pavimentos num raio de 100 metros do parque."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Correio da Manhã, reportagem sobre a história e o minizoo do Bosque dos Jequitibás (dezembro de 2025)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Museu de História Natural de Campinas (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, plano de manejo de árvores no Bosque (abril de 2026) e reabertura dos parques após chuvas (outubro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Estádio Moisés Lucarelli (agosto de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, Bosque dos Jequitibás, e página do bairro Bosque",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, catálogo de espaços educativos (Museu de História Natural, Aquário, Casa dos Animais Interessantes)",
+      "site": "educa.campinas.sp.gov.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, Correio Popular de 3 de agosto de 1979",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Bosque dos Jequitibás",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Escol.as, ficha do Pio XII Colégio de Aplicação",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Bosque, em Campinas: o bairro que cresceu em volta do Bosque dos Jequitibás, parque do século XIX com museu, aquário, minizoo e mata nativa no meio da região central. Preparamos um guia com a história do parque, o perfil dos prédios, escolas, acessos e o que pesar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "bosque",
+      "bosquedosjequitibas",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "apartamentocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Bosque, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

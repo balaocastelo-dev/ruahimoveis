@@ -1,0 +1,334 @@
+{
+  "slug": "botafogo",
+  "titulo": "Botafogo, Campinas: como é morar no bairro dos hospitais e do Culto à Ciência",
+  "resumo": "Guia do Botafogo, em Campinas: a antiga rodoviária, o polo de hospitais da Andrade Neves, o Culto à Ciência, prédios, transporte e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Prédio do Colégio Culto à Ciência, escola fundada em 1874, na rua de mesmo nome",
+      "alt": "Prédio escolar antigo de dois andares, com fachada bege e janelas brancas, gramado e árvores na frente",
+      "commons": "File:Colégio Culto à Ciência - Campinas - 20240921124320.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Cruzamento das avenidas Andrade Neves e Barão de Itapura com o início da Rua Onze de Agosto, em 2009",
+      "alt": "Cruzamento largo com faixas amarelas no asfalto, sobrados comerciais na esquina e prédios ao fundo",
+      "commons": "File:Cruzamentos entre AV Andrade Neves, Av Barao de Itapua e Inicio da Rua 11 de Agosto - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Avenida Andrade Neves fechada no dia da implosão da antiga rodoviária, em março de 2010",
+      "alt": "Avenida vazia com faixas brancas e, ao fundo, a estrutura da rodoviária coberta por lonas brancas",
+      "commons": "File:Av Andrade Neves- Fechada para a Implosão da Antiga Rodoviaria - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Escombros da Rodoviária Dr. Barbosa de Barros logo depois da implosão",
+      "alt": "Letreiro metálico com a palavra Barbosa de Barros tombado sobre entulho, com prédios residenciais ao fundo",
+      "commons": "File:Aqui ja se foi a Velha Rodoviaria de Campinas - Agora^ Puffff..... virou entulhos a baixo - panoramio (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Rua Rodrigues Alves, no Botafogo, com casas, árvores e edifícios ao fundo",
+      "alt": "Rua residencial com carros estacionados, árvores na calçada, casas baixas e prédios altos ao fundo",
+      "commons": "File:Rua Rodrigues Alves - Botafogo - Campinas.JPG"
+    },
+    {
+      "id": "f6",
+      "legenda": "Edifícios residenciais do Botafogo vistos da rua",
+      "alt": "Vários prédios altos lado a lado contra o céu azul, com um telhado de casa no canto",
+      "commons": "File:Botafogo,ao fundo a antiga loja Mesbla. - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Prédio do Hospital Vera Cruz, na região da Avenida Andrade Neves",
+      "alt": "Edifício de vários andares com faixas de janelas azuis e uma palmeira na frente",
+      "commons": "File:Hospital Vera Cruz - Campinas - SP.JPG"
+    },
+    {
+      "id": "f8",
+      "legenda": "A Maternidade de Campinas, na Avenida Orozimbo Maia",
+      "alt": "Prédio hospitalar branco e comprido com jardim e palmeiras na frente e o letreiro Maternidade",
+      "commons": "File:Maternidade de Campinas.JPG"
+    },
+    {
+      "id": "f9",
+      "legenda": "Prédio histórico de 1918 na Rua Culto à Ciência, ocupado pelo Cotuca",
+      "alt": "Edifício eclético amarelo de dois andares, com janelas em arco, gradil e palmeiras na calçada",
+      "commons": "File:Rua Culto à Ciência, 177 - Campinas - 20230908095938.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Botafogo** é um bairro da região central de Campinas, encostado no Centro, com ruas de prédios residenciais, casas antigas e um forte polo de saúde ao longo da **Avenida Andrade Neves**. Abriga o Colégio Culto à Ciência, fundado em 1874, e o Hospital São Luiz, aberto em 2023 no terreno da antiga rodoviária da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Botafogo oferece o que a região central costuma dar: comércio, serviços, hospitais e ônibus a poucos passos, com apartamentos de tamanhos variados. Em troca, as avenidas têm movimento durante o dia, e algumas quadras ainda carregam marcas dos anos de degradação em volta da velha rodoviária. Este guia reúne a história, o perfil dos imóveis e o que considerar antes de escolher o bairro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região central de Campinas, vizinho do Centro, do Bonfim e da Guanabara",
+        "Perfil misto: trechos com muitos prédios e trechos de casas, sem edifícios altos",
+        "Sediou a Rodoviária Dr. Barbosa de Barros de 1973 a 2008; o prédio foi implodido em 2010",
+        "No terreno da antiga rodoviária funciona o Hospital São Luiz, inaugurado em maio de 2023",
+        "Polo hospitalar na Avenida Andrade Neves, com o Hospital Vera Cruz e outros hospitais perto",
+        "Abriga o Colégio Culto à Ciência, escola estadual fundada em 1874"
+      ],
+      "titulo": "O Botafogo em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do Botafogo: dos bondes à rodoviária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região cresceu colada aos trilhos. No começo do século XX, a então **Rua Andrade Neves** fazia parte do trajeto do bonde 8, que em 1916 seguia pelas ruas General Osório, Andrade Neves e Dr. Mascarenhas até o pontilhão da Mogiana. Na mesma rua funcionava uma fundição ligada aos capitais do café. Um pequeno núcleo perto da avenida e da antiga linha da Mogiana ainda é chamado de **Vila Andrade Neves**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O fato que mais marcou o bairro nas últimas décadas foi a **Estação Rodoviária Dr. Barbosa de Barros**. Até então, os ônibus intermunicipais desembarcavam no Centro, na Rua Regente Feijó. A Prefeitura obteve o terreno da Maternidade de Campinas, que em 1963 ganhou a concessão para explorar o terminal por 40 anos. A rodoviária passou a operar em 1973, foi inaugurada oficialmente em 1974, com 12 plataformas, e por anos funcionou acima da capacidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em junho de 2008, as linhas foram transferidas para o novo **Terminal Multimodal Ramos de Azevedo**, construído em área da antiga Fepasa, na Vila Industrial, a cerca de 400 metros em linha reta. O prédio vazio e um esqueleto de shopping abandonado ao lado foram implodidos em **28 de março de 2010**, na primeira implosão da história de Campinas, deixando cerca de 12 mil toneladas de entulho."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Durante a operação da rodoviária e depois do fechamento, o entorno do terminal se degradou, tema que chegou a ser discutido na Câmara Municipal em 2009. O terreno ficou vazio por mais de uma década, até a construção do Hospital São Luiz, iniciada em outubro de 2020. Fontes que acompanharam a obra associam o hospital à volta do movimento comercial na região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Botafogo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Botafogo é um bairro de contrastes na paisagem: há trechos densamente verticalizados e outros sem nenhum prédio alto, com casas e sobrados antigos. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro, quase todos prédios, somando perto de 3.400 apartamentos. Os edifícios costumam ter de 7 a 16 andares, e o mais alto da base chega a 22."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas avaliações de moradores reunidas pelo guia de bairros do QuintoAndar, o Botafogo aparece como um lugar residencial e tranquilo em boa parte das ruas, arborizado e com praças e comércio por perto. Os mesmos relatos citam movimento intenso durante o dia, barulho em alguns pontos e a presença de pessoas em situação de rua nas imediações."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale andar pela quadra em horários diferentes antes de decidir pelo imóvel."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A região dos hospitais"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Botafogo fica no coração do chamado **quadrilátero da saúde** de Campinas. O **Hospital São Luiz Campinas**, da Rede D'Or, foi inaugurado em 19 de maio de 2023 na Avenida Andrade Neves, no terreno da antiga rodoviária. O projeto tem cerca de 47 mil metros quadrados e prevê 325 leitos, incluindo maternidade e UTIs adulto, pediátrica e neonatal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma avenida, entre o Centro e o Botafogo, está o **Hospital Vera Cruz**, com mais de 75 anos de atuação, pronto-socorro 24 horas para adultos e crianças e atendimento de alta complexidade. Perto dali ficam a **Maternidade de Campinas**, fundada em 1913, na Avenida Orozimbo Maia, e a **Beneficência Portuguesa**, criada em 1873, no Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem mora no bairro, isso significa pronto-socorro a poucas quadras, além de clínicas, laboratórios e farmácias espalhados pelas ruas. Para quem trabalha na área da saúde, é uma das regiões de Campinas onde dá para ir ao trabalho a pé."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e colégios históricos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O endereço mais conhecido do bairro é a Rua Culto à Ciência, onde fica o **Colégio Culto à Ciência**. Fundado em 12 de janeiro de 1874 por fazendeiros, comerciantes e intelectuais, entre eles Manoel Ferraz de Campos Salles, que depois presidiria o Brasil, o colégio passou à rede estadual no fim do século XIX. Entre os ex-alunos estão Santos Dumont, Guilherme de Almeida, Regina Duarte e Fausto Silva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio, projetado pelo engenheiro Guilherme Krug, foi tombado pelo Condephaat em 1988 e também pelo Condepacc, e passou por restauro concluído em 2010. Hoje funciona como escola estadual de ensino médio em tempo integral, com um acervo de mais de 20 mil volumes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma rua está o prédio eclético concluído em 1918, com projeto de Ramos de Azevedo, que Bento Quirino doou para uma escola técnica. Ele abriga o **Colégio Técnico de Campinas (Cotuca)**, ligado à Unicamp, que funciona provisoriamente em uma unidade no Taquaral durante o restauro do edifício. O bairro também tem a **Escola Estadual Professor Benedito Sampaio**, na Rua Delfino Cintra, com os anos finais do ensino fundamental."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por estar ao lado do Centro, o Botafogo tem comércio de rua, postos, bancos, mercados, padarias e restaurantes a poucos minutos a pé. O **Mercado Municipal de Campinas**, inaugurado em 1908 com projeto do escritório de Ramos de Azevedo e tombado como patrimônio da cidade, fica a poucos metros do Hospital Vera Cruz."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lazer ao ar livre é o ponto mais fraco: o bairro tem praças, mas os parques mais lembrados pelos moradores nas avaliações do QuintoAndar, como o Bosque dos Italianos e a Praça e Pedreira do Chapadão, ficam em bairros próximos. A seção *o que tem no Botafogo e em volta*, mais abaixo nesta página, lista mercados, academias e restaurantes perto do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mobilidade é um trunfo. O **Terminal Multimodal Ramos de Azevedo**, a rodoviária de Campinas, fica a poucos minutos de caminhada, assim como o Terminal Metropolitano. Pelo bairro passa o **Corredor BRT Perimetral**, com a estação BRS Elisiário, na Rua Francisco Elisiário, e a estação BRT Rodoviária, servida pelas linhas BRT12, BRT20, BRT21, BRT25 e BRT26, segundo a Emdec."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem anda de carro, as avenidas **Andrade Neves** e **Barão de Itapura** são os eixos principais e se cruzam no início da Rua Onze de Agosto. O viaduto estaiado fica junto ao terminal e às estações do BRT. Nos horários de pico, porém, o trânsito em volta dos hospitais e do Centro costuma ser pesado."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos do Botafogo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Botafogo faz divisa com a **Guanabara** ao norte e a leste, com o **Centro** a leste e ao sul e com o **Bonfim** a oeste. Do outro lado da antiga linha férrea fica o Jardim Novo Botafogo, que, apesar do nome, pertence à Guanabara. A **Vila Industrial**, onde está o terminal rodoviário, também fica muito perto."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Campinas não tem uma delimitação oficial e legal de bairros. Por isso, um mesmo endereço pode aparecer como Botafogo, Centro ou Guanabara, conforme o anúncio ou o cadastro. Confira a localização exata do imóvel no mapa.",
+      "titulo": "Limites que variam"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Botafogo faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Botafogo costuma atender bem quem quer morar na região central sem depender de carro: profissionais da saúde que trabalham nos hospitais da Andrade Neves, estudantes, quem viaja com frequência de ônibus e famílias que querem escola, comércio e pronto-socorro por perto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não atender quem procura parque na porta de casa, ruas sem movimento ou um bairro com padrão uniforme. A experiência muda bastante de uma quadra para outra, e a chegada do Hospital São Luiz ainda está mudando o entorno da antiga rodoviária."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a idade do prédio e as últimas obras, o valor do condomínio e o que ele inclui, a vaga de garagem e a posição do apartamento em relação às avenidas e às entradas de pronto-socorro, onde circulam ambulâncias.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Botafogo, em Campinas?",
+      "resposta": "Na região central da cidade. O bairro faz divisa com o Centro, o Bonfim e a Guanabara, e fica perto da Vila Industrial e do terminal rodoviário."
+    },
+    {
+      "pergunta": "O Botafogo é bom para morar?",
+      "resposta": "Para quem quer apartamento perto do Centro, de hospitais, escolas e ônibus, sim. Os pontos de atenção são o movimento das avenidas durante o dia, a falta de parques dentro do bairro e diferenças grandes entre uma quadra e outra."
+    },
+    {
+      "pergunta": "A antiga rodoviária de Campinas ficava no Botafogo?",
+      "resposta": "Sim. A Rodoviária Dr. Barbosa de Barros funcionou no bairro de 1973 a 2008 e foi implodida em 28 de março de 2010. No terreno, na Avenida Andrade Neves, funciona hoje o Hospital São Luiz, aberto em 2023."
+    },
+    {
+      "pergunta": "Quais hospitais ficam no Botafogo ou perto dele?",
+      "resposta": "O Hospital São Luiz Campinas e o Hospital Vera Cruz, ambos na região da Avenida Andrade Neves, além da Maternidade de Campinas e da Beneficência Portuguesa, a poucas quadras."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Botafogo?",
+      "resposta": "O Colégio Culto à Ciência, escola estadual de ensino médio fundada em 1874, a Escola Estadual Professor Benedito Sampaio e o prédio histórico do Cotuca, colégio técnico da Unicamp, que está em restauro."
+    },
+    {
+      "pergunta": "O Botafogo tem mais prédios ou casas?",
+      "resposta": "Tem os dois. A base de condomínios da RUAH identifica cerca de 85 condomínios no bairro, quase todos prédios, mas há trechos inteiros de casas, sem edifícios altos."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Wikipédia, verbetes Botafogo (Campinas), Estação Rodoviária Dr. Barbosa de Barros, Terminal Multimodal de Campinas, Maternidade de Campinas, Colégio Técnico de Campinas e Mercado Municipal de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Rede D'Or, sobre a inauguração do Hospital São Luiz Campinas (maio de 2023)",
+      "site": "rededorsaoluiz.com.br"
+    },
+    {
+      "nome": "Medicina S/A, sobre o Hospital São Luiz Campinas e os 77 anos do Hospital Vera Cruz",
+      "site": "medicinasa.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, sobre o Colégio Culto à Ciência (janeiro de 2026) e a Estação BRS Elisiário (agosto de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Botafogo e guia de hospitais de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Notícia Bibliográfica e Histórica (PUC-Campinas), artigo sobre o Bonfim e as ferrovias",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Melhor Escola e Escol.as, cadastro do Culto à Ciência e da E. E. Prof. Benedito Sampaio",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Botafogo, em Campinas: o bairro que já foi a porta de entrada da cidade, com a antiga rodoviária, hoje reúne hospitais na Avenida Andrade Neves, o Colégio Culto à Ciência, de 1874, e prédios a poucos passos do Centro. Preparamos um guia com a história, o perfil dos imóveis, transporte e o que considerar antes de morar lá. Link na bio.",
+    "hashtags": [
+      "botafogo",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "cultoaciencia",
+      "apartamentocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Botafogo, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

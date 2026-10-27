@@ -1,0 +1,378 @@
+{
+  "slug": "joaquim-egidio",
+  "titulo": "Joaquim Egídio, Campinas: como é morar no distrito histórico",
+  "resumo": "Guia de Joaquim Egídio, distrito de Campinas: história, estação, casario, APA, observatório, restaurantes e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Rua Heitor Penteado, a rua principal do distrito, com calçamento de paralelepípedo",
+      "alt": "Rua de paralelepípedos em leve subida, com casas térreas antigas dos dois lados e céu azul",
+      "commons": "File:Rua Heitor Penteado - Joaquim Egídio - Campinas - SP.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Casario térreo colorido numa rua de paralelepípedo do centro de Joaquim Egídio",
+      "alt": "Rua de pedra com casas antigas pintadas de azul, laranja e branco, carros estacionados e uma árvore na calçada",
+      "commons": "File:Distrito de Joaquim Egídio - Campinas SP - panoramio (11).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Casas antigas de tijolo e fachadas coloridas no núcleo histórico do distrito",
+      "alt": "Esquina com calçamento de pedra e fileira de casas térreas, a primeira de fachada vermelha",
+      "commons": "File:Distrito de Joaquim Egídio - Campinas SP - panoramio (12).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Igreja no centro de Joaquim Egídio, cercada de palmeiras",
+      "alt": "Igreja de fachada bege com torre central e escadaria, emoldurada por palmeiras",
+      "commons": "File:Joaquim Egidio - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Cúpulas do Observatório Municipal Jean Nicolini, na Estrada do Capricórnio",
+      "alt": "Prédio circular com cúpula metálica sobre um gramado e, ao fundo, outro edifício com cúpula branca",
+      "commons": "File:Observatório de capricórnio - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Placa do Observatório de Capricórnio na estrada de terra que leva até ele",
+      "alt": "Estrada de terra com poste e placa azul escrita Observatório de Capricórnio, sob céu com nuvens",
+      "commons": "File:Capricorn Observatory - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Trilha no Pico das Cabras, na zona rural de Joaquim Egídio",
+      "alt": "Trilha de terra entre capim alto e cercas de madeira, com pedras e árvores ao fundo",
+      "commons": "File:Pico das Cabras, Distrito de Joaquim Egídio - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Pastos e cercas de fazenda entre morros na área rural do distrito",
+      "alt": "Campo verde com cercas de madeira, galpões de telha e morros cobertos de mata ao fundo",
+      "commons": "File:Joaquim Egídio - Campinas - panoramio (8).jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Fim de tarde visto das encostas de Joaquim Egídio",
+      "alt": "Silhueta de árvore alta diante do céu rosado, com mata na encosta e a planície ao longe",
+      "commons": "File:Joaquim Egídio - Campinas - panoramio (12).jpg"
+    },
+    {
+      "id": "f10",
+      "legenda": "Restaurante em casa térrea antiga no centro do distrito",
+      "alt": "Casa de tijolo e fachada verde com telhado colonial, árvores na frente e carro estacionado",
+      "commons": "File:Distrito de Joaquim Egídio - Campinas SP - panoramio (5).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Joaquim Egídio** é um distrito de Campinas, a cerca de 15 km do centro da cidade, no leste do município. É o distrito menos populoso de Campinas e tem cara de vila do interior: um núcleo pequeno de casas antigas e ruas de paralelepípedo, cercado por fazendas, morros e mata, quase todo dentro da Área de Proteção Ambiental de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos dias úteis, o ritmo é de cidade pequena. Nos fins de semana, o distrito recebe quem vem de Campinas e da região atrás de restaurantes de comida caipira, trilhas, passeios de bicicleta e do observatório municipal. Este guia reúne a história, o perfil de quem mora ali, o lazer e os pontos que vale pesar antes de escolher Joaquim Egídio para viver."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Distrito de Campinas criado em 1959, a cerca de 15 km do centro",
+        "Pouco mais de 2.200 moradores no Censo 2010, o menor distrito da cidade em população",
+        "Núcleo histórico com casario térreo e ruas de paralelepípedo",
+        "Foi ponta do Ramal Férreo Campineiro, com estação inaugurada em 1894",
+        "Cerca de 40% da APA de Campinas fica no território do distrito",
+        "Abriga o Observatório Municipal Jean Nicolini, o primeiro observatório municipal do país",
+        "Moradia em casas, chácaras e condomínios horizontais, sem prédios"
+      ],
+      "titulo": "Joaquim Egídio em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História e origem do nome"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O povoado nasceu em terras de fazendas de café. O major **Luciano Teixeira Nogueira**, dono da Fazenda Laranjal, é apontado como fundador do vilarejo, que por isso se chamou **São Luciano** antes de ganhar o nome atual. Uma placa de 1842 numa casa da chácara Castália é a data mais antiga registrada no lugar, e em 1882 funcionava ali um colégio com o nome do major."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome Joaquim Egídio homenageia um membro da família **Sousa Aranha**, de grandes cafeicultores de Campinas. As fontes divergem sobre qual: a mais citada aponta Joaquim Egídio de Sousa Aranha, o Marquês de Três Rios; um recorte do acervo do Centro de Memória da Unicamp fala de um neto homônimo, conhecido como Marquezinho, que teria doado o terreno da estrada de ferro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Até a década de 1950, a localidade era subordinada a Sousas. Segundo o IBGE, o distrito de Joaquim Egídio foi criado por lei estadual em fevereiro de 1959 e ligado ao município de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A estação e o Ramal Férreo Campineiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O café explica a ferrovia. Fazendeiros de Sousas e de Joaquim Egídio, cansados de levar a produção por morros íngremes, buscaram uma concessão junto à Companhia Paulista, e a **Companhia Ramal Férreo Campineiro** foi fundada em 1889. O tráfego até a estação de São Luciano foi autorizado em junho de 1893, e a estação abriu em 1894, ligando o distrito à antiga Estação Campinas, hoje Estação Cultura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com o fim do ciclo do café, o movimento caiu e o ramal foi extinto em 1960. A estação ficou em ruínas e foi reconstruída nos anos 2000. Pedaços dessa história continuam no distrito: o restaurante **Estação Marupiara** funciona num prédio de mais de cem anos que serviu de armazém para fazendas de café e é tombado pelo patrimônio histórico de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O casario histórico"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O centro de Joaquim Egídio conserva casas térreas de fachada colorida, telhado de barro e portas altas, alinhadas em ruas de paralelepípedo como a **Rua Heitor Penteado**, a principal do distrito. É esse conjunto que dá ao lugar o ar de cidade pequena tão procurado nos fins de semana."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos imóveis mais conhecidos é o **Casarão**, construído em 1898 para ser um empório e depois usado como alfaiataria. Abandonado após o declínio do café, foi desapropriado pela Prefeitura e restaurado em 1987 pela arquiteta Ana Vilanueva para abrigar a subprefeitura e um centro cultural. Em 1988, um abaixo-assinado com 174 assinaturas, quase 20% da população urbana da época, pediu o tombamento, que recebeu parecer favorável no conselho de patrimônio em 1989."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Em outubro de 1976, o jornal Correio Popular descrevia Joaquim Egídio como um distrito parado, com poucos empregos depois do fim do café. A paisagem preservada daquele período é justamente o que hoje atrai visitantes e novos moradores.",
+      "titulo": "Curiosidade"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar em Joaquim Egídio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Morar em Joaquim Egídio é morar em casa. Não há prédios: a moradia se divide entre as casas do núcleo antigo, chácaras na área rural e **condomínios fechados de casas**, que fizeram a população do distrito crescer nos últimos anos. A base de condomínios da RUAH, montada com dados da Receita Federal e do Censo 2022, identifica apenas três condomínios no distrito, todos horizontais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Boa parte do território é zona rural e área de proteção ambiental, com regras de uso do solo mais restritivas que as da cidade. Na prática, isso significa terrenos grandes, muito verde e pouca densidade. Também significa estradas de terra em vários trechos e serviços mais espaçados: para supermercado grande, hospital e escolas de outros níveis, o caminho costuma ser Sousas ou o centro de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia tem dois tempos. Durante a semana, o núcleo é calmo. Aos sábados, domingos e feriados, os restaurantes enchem e as ruas estreitas recebem muitos carros. A seção *o que tem perto*, mais abaixo nesta página, mostra escolas, mercados, farmácias e serviços mais próximos do centro do distrito e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "APA de Campinas, trilhas e natureza"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Joaquim Egídio está dentro da **APA de Campinas**, a Área de Proteção Ambiental decretada em 1993 que ocupa cerca de 225 km², perto de 28% do território do município. Segundo estudo da Embrapa, cerca de 40% da APA fica no distrito, e os rios **Atibaia** e **Jaguari** formam a maior parte dos seus limites. A paisagem mistura pastos, lavouras e fragmentos de mata que restaram de dois séculos de ocupação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse cenário faz do distrito um dos principais destinos de turismo de aventura de Campinas. Documento da Prefeitura para o Plano Diretor cita trekking, mountain bike e cavalgadas pelas estradas vicinais da APA. Guias de viagem falam em cerca de 70 trilhas mapeadas para caminhada, corrida e bicicleta, além de fazendas centenárias, algumas abertas a visitas e outras ainda produzindo café."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Observatório de Capricórnio e Pico das Cabras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na região da Serra das Cabras, na **Estrada do Capricórnio**, fica o **Observatório Municipal de Campinas Jean Nicolini**, inaugurado em 1977 e conhecido como o primeiro observatório municipal do Brasil. O apelido de Observatório de Capricórnio vem do astrônomo Jean Nicolini, que fundou o seu Observatório do Capricórnio em São Paulo em 1948 e, ao se mudar para Campinas em 1976, viu o acervo ser incorporado ao observatório municipal."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Gazeta de S.Paulo, o observatório abre ao público às sextas e aos domingos à noite e não funciona com chuva ou céu nublado. Do outro lado da estrada, o **Parque Pico das Cabras**, a cerca de mil metros de altitude, reúne trilhas, pedras e o **Museu Aberto de Astronomia**, que tem planetário e radiotelescópio. Horários mudam: confirme antes de subir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Restaurantes, festas e turismo de fim de semana"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A gastronomia é o outro motor do distrito. Guias de turismo citam casas como **Paioça do Caboclo**, com almoço de domingo e moda de viola, **Bar da Cachoeira**, **Estação Marupiara**, **Vila Paraíso**, **Bar do Marcelino** e **Armazém da Estação**, além do **Feijão com Tranqueira**, conhecido pelo prato de feijão com linguiças que leva o nome da casa. O cardápio dominante é a comida caipira e brasileira, servida em casas antigas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O calendário inclui a **Festa de São Roque e São Joaquim**, dos padroeiros, em agosto, e a **Festa das Nações**, com shows gratuitos na Praça Cardeal-Bispo Dom Agnelo Rossi, em frente à Igreja de São Joaquim e São Roque, que chegou à terceira edição em 2025. O distrito também participa, com Sousas, de rotas e festivais gastronômicos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal acesso a partir do centro de Campinas é a **Rodovia José Bonifácio Coutinho Nogueira (SP-81)**, passando por Sousas. Há também a Rodovia Dona Isabel Fragoso Ferrão (CAM-127), que parte da altura do km 122 da Rodovia Dom Pedro I e tem trechos sem pavimento. O trajeto até o centro de Campinas é de cerca de 15 km, e Sousas é o vizinho imediato para compras e serviços do dia a dia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem Joaquim Egídio faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O distrito costuma agradar a quem quer casa com terreno, natureza, céu escuro e vida de vila, aceitando depender do carro: famílias que buscam condomínio de casas, quem trabalha em casa ou em horários flexíveis, aposentados e quem pedala, corre trilha ou gosta de cavalos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são claros. A oferta de comércio e serviços é pequena, as estradas rurais nem sempre são asfaltadas, e as regras da APA limitam o que se pode construir em parte dos terrenos. O próprio documento da Prefeitura cita sobrecarga viária e queixas de barulho ligadas a bares e eventos. Vale visitar o imóvel num sábado e numa terça para ver os dois lados."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte se o terreno está em zona urbana ou rural e o que a APA permite construir ali, se a rua é asfaltada até a porta, como são o abastecimento de água e o esgoto, qual a cobertura de internet e celular e quanto tempo leva o trajeto até a escola e o trabalho nos horários de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Joaquim Egídio é bairro ou distrito de Campinas?",
+      "resposta": "É um distrito do município de Campinas, criado por lei estadual em 1959, segundo o IBGE. Antes, a localidade era subordinada a Sousas."
+    },
+    {
+      "pergunta": "Joaquim Egídio é bom para morar?",
+      "resposta": "Para quem quer casa com terreno, natureza e ritmo de vila, e não se importa de usar o carro para quase tudo, sim. Quem precisa de comércio, escolas e serviços a pé tende a preferir Sousas ou bairros mais centrais."
+    },
+    {
+      "pergunta": "Por que o distrito se chama Joaquim Egídio?",
+      "resposta": "O nome homenageia um membro da família Sousa Aranha, de cafeicultores de Campinas. Antes, o povoado se chamava São Luciano, em referência ao major Luciano Teixeira Nogueira, apontado como fundador."
+    },
+    {
+      "pergunta": "Qual a distância de Joaquim Egídio até o centro de Campinas?",
+      "resposta": "Cerca de 15 km. O acesso principal é a Rodovia José Bonifácio Coutinho Nogueira (SP-81), passando por Sousas."
+    },
+    {
+      "pergunta": "Onde fica o Observatório de Capricórnio?",
+      "resposta": "Na Estrada do Capricórnio, em Joaquim Egídio. É o nome popular do Observatório Municipal de Campinas Jean Nicolini, inaugurado em 1977, que abre ao público em algumas noites da semana."
+    },
+    {
+      "pergunta": "Joaquim Egídio tem prédios?",
+      "resposta": "Não. A moradia é de casas no núcleo antigo, chácaras e condomínios horizontais. A base de condomínios da RUAH identifica três condomínios no distrito, todos de casas."
+    },
+    {
+      "pergunta": "O que fazer em Joaquim Egídio no fim de semana?",
+      "resposta": "Almoçar nos restaurantes de comida caipira do núcleo histórico, fazer trilhas ou pedalar pela APA de Campinas e visitar o observatório municipal e o Parque Pico das Cabras."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "IBGE, Divisão Territorial Brasileira: histórico de Campinas e seus distritos",
+      "site": "biblioteca.ibge.gov.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, recorte sobre a criação do distrito de Joaquim Egídio",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica: processo de tombamento do Casarão de Joaquim Egídio",
+      "site": "periodicos.puc-campinas.edu.br"
+    },
+    {
+      "nome": "Unicamp, resumo de iniciação científica sobre a Companhia Ramal Férreo Campineiro",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Embrapa, estudo sobre a APA de Campinas",
+      "site": "embrapa.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, subsídio de turismo para o Plano Diretor",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Gazeta de S.Paulo, opções de astronomia em Campinas",
+      "site": "gazetasp.com.br"
+    },
+    {
+      "nome": "Olhar Digital, Museu Aberto de Astronomia e a trajetória de Jean Nicolini",
+      "site": "olhardigital.com.br"
+    },
+    {
+      "nome": "Tribuna de Jundiaí, Rota de Sousas e Joaquim Egídio",
+      "site": "tribunadejundiai.com.br"
+    },
+    {
+      "nome": "Quanto Custa Viajar, guia de Joaquim Egídio",
+      "site": "quantocustaviajar.com"
+    },
+    {
+      "nome": "Accor, restaurantes em Sousas e Joaquim Egídio",
+      "site": "all.accor.com"
+    },
+    {
+      "nome": "BaresSP, Festa das Nações de Joaquim Egídio (2025)",
+      "site": "baressp.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Joaquim Egídio",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Joaquim Egídio, em Campinas: casario antigo, ruas de paralelepípedo, a velha estação do Ramal Férreo Campineiro, trilhas na APA e o primeiro observatório municipal do país. Preparamos um guia do distrito com a história, o lazer, os restaurantes e o que pesar antes de morar por lá. Link na bio.",
+    "hashtags": [
+      "joaquimegidio",
+      "campinas",
+      "distritodecampinas",
+      "apacampinas",
+      "casadecampo",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Joaquim Egídio, Campinas: guia do distrito para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

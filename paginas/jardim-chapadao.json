@@ -1,0 +1,356 @@
+{
+  "slug": "jardim-chapadao",
+  "titulo": "Jardim Chapadão, Campinas: como é morar no bairro da Torre do Castelo",
+  "resumo": "Guia do Jardim Chapadão, em Campinas: Torre do Castelo, Pedreira do Chapadão, história, casas e prédios, comércio do Castelo e acessos ao Centro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Torre do Castelo, antiga caixa d'água em estilo art déco na Praça 23 de Outubro",
+      "alt": "Torre clara de concreto com janelas verticais e antena no topo, sob céu azul, com prédios coloridos ao lado",
+      "commons": "File:Torre do Castelo - Campinas.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Vista do alto da Torre do Castelo, com ipês floridos ao longo de uma avenida",
+      "alt": "Avenida vista de cima, ladeada de lojas e árvores de flores roxas, com prédios ao fundo",
+      "commons": "File:Torre do Castelo - Campinas - 20240623110149.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Prédios comerciais em volta do Balão do Castelo",
+      "alt": "Praça pavimentada em primeiro plano e edifícios comerciais de vários andares com letreiros ao fundo",
+      "commons": "File:Campinas - Balão do Castelo - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Cascatas e lago junto aos paredões de basalto da Pedreira do Chapadão",
+      "alt": "Duas quedas d'água descendo por paredões de rocha escura até um lago esverdeado, com palmeira ao lado",
+      "commons": "File:Pedreira do Chapadão - Campinas -SP - panoramio (5).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Aparelhos de ginástica ao pé do paredão de rocha da Pedreira do Chapadão",
+      "alt": "Aparelhos de ginástica azuis e amarelos sobre piso de terra batida, diante de um grande paredão de pedra",
+      "commons": "File:Pedreira do Chapadão - Campinas -SP - panoramio (15).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Pista e área aberta da Pedreira do Chapadão, com um prédio do bairro ao fundo",
+      "alt": "Caminho de terra clara e piso de tijolos em curva, entre paredão de rocha e árvores, com um edifício alto ao fundo",
+      "commons": "File:Pedreira do Chapadão - Campinas -SP - panoramio (21).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Portão e prédio principal da Escola Preparatória de Cadetes do Exército",
+      "alt": "Portão com guaritas rosadas de cúpula branca e, ao fundo, prédio rosa com frontão ornamentado",
+      "commons": "File:Escola Preparatória dos Cadetes do Exército de Campinas - Campinas - 20240929144702.JPG"
+    },
+    {
+      "id": "f8",
+      "legenda": "Sobrado com venda pela RUAH no Jardim Chapadão",
+      "alt": "Sobrado verde com sacada branca, portão de madeira branco e palmeiras na frente",
+      "imovel_foto": 1472
+    },
+    {
+      "id": "f9",
+      "legenda": "Casa de dois andares no Jardim Chapadão, com venda pela RUAH",
+      "alt": "Sobrado claro com telhado inclinado e portão de garagem na frente, ao lado de um muro de pedra",
+      "imovel_foto": 966
+    },
+    {
+      "id": "f10",
+      "legenda": "Casa térrea de esquina no Jardim Chapadão, à venda pela RUAH",
+      "alt": "Casa térrea com telhado de telhas vermelhas, jardim gramado e calçada arborizada numa esquina",
+      "imovel_foto": 1084
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Chapadão** é um bairro de Campinas logo ao norte do Centro, conhecido pela **Torre do Castelo**, a antiga caixa d'água que fica no ponto mais alto do bairro e deu nome à região que muita gente chama simplesmente de *Castelo*. É um bairro residencial e de comércio, com casas, sobrados e prédios de altura média, ruas arborizadas e, no entorno da torre, um polo de lojas, bancos e serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado do bairro fica a **Pedreira do Chapadão**, uma antiga pedreira de basalto transformada em parque, e ao norte, o terreno da **Escola Preparatória de Cadetes do Exército**. Este guia reúne a história, o perfil dos imóveis, o lazer, os acessos e o que vale considerar antes de se mudar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro ao norte do Centro de Campinas, listado pela Prefeitura entre os bairros da Região Norte",
+        "Tem origem numa antiga fazenda de café; a urbanização ganhou força depois da chegada do quartel do Exército, nos anos 1950",
+        "A Torre do Castelo, de 27 metros, foi erguida entre 1936 e 1940 e é tombada pelo Condepacc desde 2008",
+        "A Pedreira do Chapadão, oficialmente Praça Ulysses Guimarães, foi inaugurada como área de lazer em 1994",
+        "Mistura casas e sobrados com prédios: a base da RUAH identifica cerca de 60 condomínios, quase todos verticais",
+        "Faz divisa com Bonfim, Jardim Eulina, Vila Nova, Guanabara e Jardim IV Centenário"
+      ],
+      "titulo": "O Jardim Chapadão em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do Jardim Chapadão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área onde hoje está o bairro era rural, ocupada por chácaras e sítios. Um estudo da Embrapa sobre a arborização de Campinas registra que o Jardim Chapadão tem origem numa **antiga fazenda de café**. O nome Chapadão continua vivo na **Fazenda Chapadão**, área militar que faz divisa com o bairro ao norte e abriga a 11ª Brigada de Infantaria Leve."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dois marcos puxaram a ocupação. O primeiro foi a caixa d'água do Castelo, construída no fim dos anos 1930 para abastecer os bairros que cresciam ao norte da cidade. O segundo foi o Exército: o terreno da Escola Preparatória de Cadetes foi doado pelo Estado em 1958 e a escola se mudou para Campinas em 1959. A partir daí, segundo o guia de bairros do QuintoAndar, as chácaras deram lugar a loteamentos, embora algumas ainda resistam."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região em volta da torre ganhou vida própria. Moradores antigos ouvidos pela PUC-Campinas lembram que, entre as décadas de 1960 e 1970, o Balão do Castelo era arborizado e tinha chafariz, ponto de táxi e banca de jornal, e que os jovens se encontravam ali para o *footing*. Nos anos 1980, o entorno virou um centro comercial, com cinco ou seis agências bancárias por perto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Torre do Castelo: o marco do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Torre do Castelo** foi erguida entre 1936 e 1940, em estilo art déco, com 27 metros de altura e capacidade para 250 mil litros de água. Fica a cerca de 735 metros de altitude, um dos pontos mais altos de Campinas. Segundo o estudo da Embrapa, o urbanista Francisco Prestes Maia trocou um obelisco previsto para o local por um reservatório elevado, com a condição de que ele tivesse um mirante."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mirante, com vista de 360 graus, veio na década de 1970; em dias claros, dá para ver a Serra do Japi, a cerca de 40 km. Em 1991 a torre passou a abrigar o **Museu Histórico da Sanasa**, sobre a história do abastecimento de água na cidade, e lá também funciona a Rádio Educativa. Em 2007 recebeu o nome de Torre do Castelo Vitor Negrete, em homenagem ao alpinista campineiro, e em 2008 foi tombada pelo Condepacc."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Os horários de visita mudaram ao longo dos anos e a torre já fechou para manutenção, como em 2021. Em janeiro de 2026, o Correio da Manhã informou que o acesso ao mirante estava fechado. Confirme com a Sanasa antes de planejar a visita.",
+      "titulo": "Antes de ir ao mirante"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Castelo ou Jardim Chapadão? A Praça 23 de Outubro e o comércio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A torre fica na **Praça 23 de Outubro**, uma rotatória que recebe a Avenida Andrade Neves, a Avenida João Erbolato, a Avenida Dr. Alberto Sarmento, a Avenida Francisco José de Camargo Andrade e as ruas Santo Antônio Claret e Oliveira Cardoso. É por isso que o lugar é um ponto de referência para quem circula entre o Centro e a Região Norte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome *Castelo* gera confusão. O estudo da Embrapa explica que a área do Castelo nasceu como parte do Jardim Chapadão e depois passou a ser reconhecida como um bairro próprio, o Castelo. Em 2016, um vereador chegou a propor que o Chapadão inteiro passasse a se chamar Bairro Castelo, mas a proposta não consta como aprovada. Na prática, anúncios e moradores usam os dois nomes para a mesma região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio é um dos pontos fortes. Há farmácias, bancos, lojas, restaurantes, padarias e postos de combustível, boa parte concentrada nas avenidas que saem da praça. A base de pontos de interesse da RUAH registra mais de cem restaurantes e cafés e cerca de 45 mercados e padarias num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Chapadão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Chapadão é um bairro tradicional, de ruas arborizadas e ritmo mais calmo nas quadras internas. No estudo da Embrapa de 2012, aparece como o **8º bairro mais arborizado de Campinas**, embora o mesmo trabalho aponte perda de árvores ao longo do tempo, sobretudo pelo avanço do comércio e do trânsito. O guia do QuintoAndar descreve muitos moradores idosos e grande presença de famílias de militares, por causa do quartel vizinho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os imóveis misturam casas térreas, sobrados e prédios. A base de condomínios da RUAH, feita com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.500 unidades no total. A maioria dos prédios tem entre 5 e 15 andares, e o mais alto chega a 19. Em volta deles, as casas ainda ocupam boa parte das ruas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9",
+        "f10"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o dia a dia, padaria, mercado, farmácia e banco costumam ficar a poucos minutos a pé, principalmente perto da Torre do Castelo. O QuintoAndar observa, porém, que supermercados e hospitais maiores pedem deslocamento de carro, e que as avenidas em volta da praça ficam movimentadas nos horários de pico."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Pedreira do Chapadão e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Pedreira do Chapadão**, oficialmente **Praça Ulysses Guimarães**, é o maior espaço de lazer do bairro. A extração de basalto começou na primeira metade do século XX e forneceu pedra para ruas e construções da cidade. Depois de desativada, a área ficou degradada até a Prefeitura transformá-la em praça, inaugurada em 1994. Ali está o Memorial Ulysses Guimarães, uma grande escultura de metal com a frase \"Nós não viemos aqui para ter medo\"."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma revitalização em 2013 refez a pista de caminhada e corrida, instalou equipamentos de esporte e recuperou gramados, jardins e o lago, que hoje está entre os pontos mais fotografados do parque. Segundo o Correio da Manhã, chuvas fortes já provocaram queda de pedras, e por isso trechos próximos aos paredões foram isolados e receberam obras."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No limite do bairro fica o **Círculo Militar**, clube de famílias, e na região também funciona o **Auditório do CIESP**, que recebe shows e eventos, segundo o QuintoAndar. A própria Torre do Castelo, quando aberta, é passeio gratuito."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e a Escola de Cadetes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem muitas escolas infantis e creches, além de escolas particulares e públicas, como o Colégio Doctus. A base de pontos de interesse da RUAH lista cerca de 35 escolas num raio de 1,5 km, e a seção ao vivo desta página mostra as mais próximas com o tempo a pé."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vizinha mais conhecida é a **Escola Preparatória de Cadetes do Exército (EsPCEx)**, instalada em Campinas desde 1959. O prédio, projetado pelo arquiteto Hernani do Val Penteado, tem pavilhões em volta de uma grande praça de armas e uma fachada de estilo colonial, com torre e guaritas rosadas visíveis da rua."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Praça 23 de Outubro funciona como um entroncamento: pela Avenida Andrade Neves se chega ao Centro, e as avenidas João Erbolato e Dr. Alberto Sarmento ligam o bairro às regiões vizinhas. Há várias linhas de ônibus e pontos de táxi. Pela base da RUAH, a Rodoviária Dr. Barbosa de Barros fica a cerca de 1,5 km do centro do bairro. Quem pedala deve saber que a estrutura para bicicleta é limitada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Chapadão faz divisa, ao sul, com o **Bonfim** e o **Jardim Eulina**; a leste, com a **Vila Nova** e o **Guanabara**; a oeste, com o **Jardim IV Centenário**; e ao norte, com a EsPCEx e a Fazenda Chapadão. Perto dali ficam o Instituto de Tecnologia de Alimentos e a Fazenda Santa Elisa, do Instituto Agronômico de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Chapadão faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer morar perto do Centro sem estar nele: famílias que procuram casa com quintal ou apartamento em prédio de porte médio, aposentados que gostam de resolver a rotina a pé e quem trabalha na região central ou nos institutos da Região Norte. A Pedreira e as ruas arborizadas ajudam quem gosta de caminhar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o trânsito em volta da Torre do Castelo nos horários de pico e o movimento das avenidas comerciais. Para quem busca silêncio, as quadras internas, longe da praça e das avenidas, fazem diferença. Vale visitar o imóvel em horários diferentes antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Em casa, pergunte sobre a idade da construção, reformas no telhado e na parte elétrica e a documentação do terreno. Em apartamento, pergunte o que o condomínio inclui, o número de vagas e a posição da unidade em relação às avenidas.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Chapadão, em Campinas?",
+      "resposta": "Logo ao norte do Centro de Campinas. O bairro faz divisa com Bonfim, Jardim Eulina, Vila Nova, Guanabara e Jardim IV Centenário, e ao norte com a Escola Preparatória de Cadetes do Exército."
+    },
+    {
+      "pergunta": "Jardim Chapadão e Castelo são o mesmo bairro?",
+      "resposta": "Não exatamente. A área do Castelo nasceu como parte do Jardim Chapadão e depois foi reconhecida como bairro próprio. A Torre do Castelo, porém, fica no Jardim Chapadão, e muita gente usa os dois nomes para a mesma região."
+    },
+    {
+      "pergunta": "O Jardim Chapadão é bom para morar?",
+      "resposta": "Para quem quer comércio e serviços perto, ruas arborizadas e acesso rápido ao Centro, costuma ser uma boa opção. Os pontos de atenção são o trânsito em volta da Torre do Castelo e o movimento das avenidas comerciais."
+    },
+    {
+      "pergunta": "Quando a Torre do Castelo foi construída?",
+      "resposta": "Entre 1936 e 1940, como caixa d'água para abastecer os bairros do norte de Campinas. Tem 27 metros, ganhou mirante nos anos 1970 e foi tombada pelo Condepacc em 2008."
+    },
+    {
+      "pergunta": "O que é a Pedreira do Chapadão?",
+      "resposta": "É uma antiga pedreira de basalto transformada em parque, oficialmente chamada Praça Ulysses Guimarães e inaugurada em 1994. Tem pista de caminhada, lago, cascatas e aparelhos de ginástica."
+    },
+    {
+      "pergunta": "O Jardim Chapadão tem mais casas ou prédios?",
+      "resposta": "Os dois. A base da RUAH identifica cerca de 60 condomínios, quase todos prédios, com até 19 andares, mas casas e sobrados ainda ocupam boa parte das ruas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Embrapa, estudo sobre a arborização de bairros de Campinas (2012)",
+      "site": "infoteca.cnptia.embrapa.br"
+    },
+    {
+      "nome": "Correio da Manhã, reportagem sobre a Torre do Castelo (janeiro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Pedreira do Chapadão: da extração ao coração verde da Zona Norte (janeiro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Digitais PUC-Campinas, A Torre do Castelo completa 80 anos (2016)",
+      "site": "digitaispuccampinas.wordpress.com"
+    },
+    {
+      "nome": "Hora Campinas, reabertura da Torre do Castelo (2021)",
+      "site": "horacampinas.com.br"
+    },
+    {
+      "nome": "QuintoAndar, Como é morar no Jardim Chapadão",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Jardim Chapadão e Torre do Castelo (Campinas), com base na Prefeitura de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipédia, verbete Escola Preparatória de Cadetes do Exército",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Chapadão, em Campinas: o bairro da Torre do Castelo, a caixa d'água art déco de 1940 que virou mirante e símbolo da cidade. Preparamos um guia com a história, a Pedreira do Chapadão, o comércio do Castelo, as casas e prédios e o que considerar antes de morar por lá. Link na bio.",
+    "hashtags": [
+      "jardimchapadao",
+      "castelo",
+      "campinas",
+      "torredocastelo",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Chapadão (Castelo), Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

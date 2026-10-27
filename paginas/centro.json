@@ -1,0 +1,386 @@
+{
+  "slug": "centro",
+  "titulo": "Centro de Campinas: como é morar no coração histórico da cidade",
+  "resumo": "Guia do Centro de Campinas: Catedral, Mercadão, Rua 13 de Maio, Estação Cultura, prédios, terminais de ônibus e o que pesar antes de morar no bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada restaurada da Catedral Metropolitana de Campinas, concluída em 1883",
+      "alt": "Igreja de fachada amarela e branca com torre de relógio, colunas e estátuas no alto, sob céu azul",
+      "commons": "File:Catedral Metropolitana de Campinas restaurada.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Basílica de Nossa Senhora do Carmo, no lugar onde a cidade nasceu em 1774",
+      "alt": "Igreja neogótica clara com duas torres pontiagudas entre palmeiras, com um prédio alto ao fundo",
+      "commons": "File:Igreja Nossa Senhora do Carmo Campinas.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Largo do Rosário, com piso de pedra, postes antigos e prédios em volta",
+      "alt": "Praça ampla pavimentada com postes de ferro, algumas árvores e edifícios altos ao fundo",
+      "commons": "File:Largo do Rosário - Campinas - 20100429014057.JPG"
+    },
+    {
+      "id": "f4",
+      "legenda": "Largo do Rosário em cartão-postal antigo da Fotolabor, com o monumento no centro",
+      "alt": "Foto antiga em sépia de uma praça com monumento alto de pedra e esculturas, e prédios ao fundo",
+      "commons": "File:Werner Haberkorn - Largo do Rosário - Campinas 2.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "O coreto da Praça Carlos Gomes, cercado de palmeiras e prédios",
+      "alt": "Coreto de ferro sobre base verde no meio de um jardim redondo, com palmeiras e edifícios altos atrás",
+      "commons": "File:Praça Carlos Gomes - Campinas - 20250913112613.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Mercado Municipal de Campinas, de 1908, depois da revitalização concluída em 2025",
+      "alt": "Prédio de estilo mourisco com faixas horizontais vermelhas e brancas, janelas em arco e torre central",
+      "commons": "File:Mercado Municipal de Campinas - Campinas - 20250929110629.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "O Mercadão em foto antiga, com carros estacionados na rua",
+      "alt": "Foto em preto e branco de um mercado de muros longos e torre com ameias, com fuscas na rua de paralelepípedo",
+      "commons": "File:Mercado Municipal de Campinas, Centro de Memória - Unicamp (APS 1.1.0464).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Estação Cultura, antiga estação da Companhia Paulista, no Largo Marechal Floriano",
+      "alt": "Estação ferroviária comprida de tijolos aparentes com torre de relógio pontiaguda e carros na frente",
+      "commons": "File:Estação Cultura Prefeito Antônio da Costa Santos - Campinas - 20240921113845.JPG"
+    },
+    {
+      "id": "f9",
+      "legenda": "Palácio dos Azulejos, solar de 1878 que hoje abriga o Museu da Imagem e do Som",
+      "alt": "Casarão de esquina de dois andares com fachada coberta de azulejos e sacadas de ferro",
+      "commons": "File:Palácio dos Azulejos - Campinas - SP.JPG"
+    },
+    {
+      "id": "f10",
+      "legenda": "Torre do Residencial Idea, prédio com apartamentos da RUAH à venda no Centro",
+      "alt": "Edifício residencial alto com varandas envidraçadas, fotografado de baixo entre palmeiras",
+      "imovel_foto": 2054
+    },
+    {
+      "id": "f11",
+      "legenda": "Portaria do Residencial Idea, com jardim na entrada",
+      "alt": "Portaria de vidro de edifício com canteiros de plantas e palmeiras na frente",
+      "imovel_foto": 1946
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Centro de Campinas** é o núcleo onde a cidade nasceu, em 1774, e ainda hoje reúne os principais marcos históricos, o comércio popular mais movimentado e os terminais de ônibus que ligam a região central aos outros bairros. É um bairro de prédios, com milhares de apartamentos em edifícios de várias épocas, misturados a igrejas, casarões tombados, galerias e lojas de rua."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Centro oferece algo que poucos bairros de Campinas têm: quase tudo a pé, do mercado ao museu, e ônibus para a cidade inteira a poucas quadras. Em troca, o movimento é intenso durante o dia e parte dos imóveis é antiga. Este guia reúne a história, os lugares, o perfil dos prédios e os pontos de atenção."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Núcleo de origem da cidade, fundada como freguesia em 14 de julho de 1774",
+        "Abriga a Catedral Metropolitana, concluída em 1883 e feita de taipa de pilão",
+        "Tem o Mercado Municipal, de 1908, revitalizado em obra concluída em 2025",
+        "A Rua 13 de Maio é calçadão de pedestres e eixo do comércio popular",
+        "Perfil de apartamentos: a base da RUAH identifica cerca de 590 condomínios no bairro",
+        "Concentra o Terminal Central, o Terminal Mercado e fica perto da rodoviária",
+        "A Estação Cultura deve receber uma parada do Trem Intercidades, com operação prevista para 2031"
+      ],
+      "titulo": "O Centro de Campinas em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o Centro de Campinas nasceu"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em maio de 1774, o governador da capitania, o Morgado de Mateus, nomeou **Francisco Barreto Leme** para fundar um povoado nas chamadas Campinas do Mato Grosso, então território de Jundiaí. Em 14 de julho daquele ano, o lugar virou freguesia, com o nome de Nossa Senhora da Conceição de Campinas, e foi rezada a primeira missa numa capela provisória coberta de palha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa capela ficava onde hoje está o monumento a Carlos Gomes, ao lado da atual **Basílica de Nossa Senhora do Carmo**. A matriz definitiva, conhecida depois como Matriz Velha, foi inaugurada em 25 de julho de 1781. O prédio atual da basílica, em estilo neogótico, foi erguido na década de 1920."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1797, a freguesia foi elevada a vila com o nome de São Carlos. Em 5 de fevereiro de 1842, uma lei provincial a transformou em cidade e devolveu o nome Campinas. A riqueza do café e a chegada da ferrovia, a partir de 1872, deram ao Centro boa parte dos edifícios que ainda estão de pé."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Catedral Metropolitana e as igrejas do Centro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Catedral Metropolitana de Campinas**, dedicada a Nossa Senhora da Conceição, teve a construção aprovada em 1807 e só foi concluída em 1883, depois de 76 anos de obra. Foi feita em taipa de pilão, a técnica de terra socada, e o jornal Correio da Manhã registra que ela é considerada a maior construção do mundo feita com esse método."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A igreja mistura traços barrocos e neoclássicos e foi tombada em 1969 pelo município, pelo estado e pelo Iphan. Fica junto à Praça José Bonifácio, a praça da Catedral. Todo 8 de dezembro, dia de Nossa Senhora da Conceição, padroeira da cidade, ela recebe a principal celebração religiosa de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outra igreja com história é a do **Rosário**. A primeira capela começou a ser construída em 1817 e ficou aos cuidados da Irmandade de Nossa Senhora do Rosário, formada sobretudo por pessoas escravizadas e, depois, por seus descendentes. Segundo o Centro de Memória da Unicamp, missionários claretianos assumiram a capela em 1897 e abriram uma nova igreja de tijolos em 1913."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Largo do Rosário, Praça Carlos Gomes e outras praças"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Largo do Rosário**, oficialmente Praça Visconde de Indaiatuba desde 1887, é a grande praça aberta do Centro. Ganhou árvores em 1871, chafarizes em 1874 e, em 1895, virou jardim com bancos e iluminação a gás. Em 1909, as calçadas receberam pedra portuguesa. Em 8 de agosto de 1934, foi inaugurado ali o monumento a Campos Salles, presidente da República entre 1898 e 1902."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Praça Carlos Gomes**, criada em 1880 com projeto de Ramos de Azevedo, foi batizada em homenagem ao compositor ainda em vida dele. Em 1883 recebeu cem palmeiras-imperiais, a maioria ainda de pé, e em 1914 ganhou o coreto. Tem monumentos a Ruy Barbosa e ao médico Tomás Alves, e de lá se vê o Edifício Itatiaia, o único projeto de Oscar Niemeyer em Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Mercadão, Rua 13 de Maio e o comércio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Mercado Municipal de Campinas**, o Mercadão, foi inaugurado em 12 de abril de 1908, com projeto de Ramos de Azevedo em estilo neomourisco. Ocupa a quadra entre as ruas Benjamin Constant, Ernesto Kuhlmann, Barreto Leme e Álvares Machado e é tombado pelo Condephaat, desde 1983, e pelo Condepacc, desde 1995."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "São cerca de 143 boxes no prédio principal e 45 do lado de fora, com temperos, frutas, queijos, carnes, peixes e o tradicional sanduíche de mortadela. A maior revitalização da história do mercado começou em julho de 2023 e terminou em 31 de julho de 2025, com telhado novo, redes elétrica e hidráulica refeitas, acessibilidade e um mezanino com restaurantes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Rua 13 de Maio** virou calçadão de pedestres num dos projetos de revitalização do Centro surgidos a partir dos anos 1970, segundo estudo do Instituto de Artes da Unicamp, e se firmou como eixo de comércio popular e serviços. Em agosto de 2026, a Prefeitura começou a trocar o piso do trecho entre a Estação Cultura e a Rua Ernesto Kuhlmann, mantendo o mosaico português tombado junto às lojas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma série de obras prevê, em etapas seguintes, novo piso na Praça Ruy Barbosa e no entorno da Catedral. Em volta ficam galerias, lojas, bancos e serviços, e a base de pontos de interesse da RUAH registra centenas de restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Estação Cultura, Palácio dos Azulejos e vida cultural"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Estação Cultura** é a antiga estação da Companhia Paulista de Estradas de Ferro, no Largo Marechal Floriano. O primeiro trem chegou de Jundiaí em 11 de agosto de 1872, e o corpo central do prédio, de tijolos ingleses e inspiração vitoriana, ficou pronto em 1884. O último trem regular de passageiros partiu em 15 de março de 2001."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 11 de agosto de 2002, o prédio reabriu como centro cultural com o nome de Estação Cultura Prefeito Antônio da Costa Santos. Hoje recebe shows, exposições, oficinas, feiras de artesanato e festivais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Palácio dos Azulejos** começou a ser construído em 1878 como residência da família do Barão de Itatiba, com a fachada coberta de azulejos vindos do Porto. A Prefeitura comprou o solar em 1908 e funcionou ali por cerca de seis décadas, até se mudar para o Palácio dos Jequitibás em 1968. Tombado nas três esferas, o prédio abriga hoje o Museu da Imagem e do Som de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Centro de Campinas hoje"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Centro é um bairro de apartamentos. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 590 condomínios no bairro, quase todos verticais, que somam mais de 17 mil unidades. Há edifícios residenciais de 10 a 25 andares das décadas de 1940 a 1970 e lançamentos recentes com lazer e apartamentos compactos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa paisagem tem explicação: segundo pesquisadores da Unicamp, a verticalização do Centro teve o auge nas décadas de 1940 e 1950, quando as casas baixas foram dando lugar a prédios mais altos. Ao longo do tempo, parte das atividades de renda média e alta migrou para outras regiões, e o comércio passou a atender sobretudo um público popular."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10",
+        "f11"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Prefeitura tenta trazer mais moradores de volta. Em junho de 2026, apresentou em audiência pública o **Habita Centro**, minuta de lei com incentivos urbanísticos e fiscais para prédios residenciais e de uso misto numa área de cerca de 1.900 lotes, como potencial construtivo maior, dispensa de vagas mínimas e desconto de IPTU por alguns anos. A proposta ainda precisa passar pela Câmara Municipal."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Obras do Trem Intercidades, que deve ligar Campinas a São Paulo em cerca de 64 minutos com parada em Jundiaí, começaram em junho de 2026 na Estação Cultura, segundo o Correio da Manhã. A operação está prevista para 2031.",
+      "titulo": "Projeto que pode mudar o Centro"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Morar no Centro é morar ao lado dos principais terminais de ônibus da cidade. O **Terminal Central** e o **Terminal Mercado** ficam na região, e a rodoviária está a menos de 1 km do centro do bairro, segundo a base de pontos de interesse da RUAH."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Desde dezembro de 2023, a linha BRT Ouro Verde chega ao Terminal Mercado e ao Corredor Central, com paradas nas avenidas Anchieta e Orosimbo Maia, segundo o Diário do Transporte. Para quem trabalha no próprio Centro ou nos bairros vizinhos, como o Cambuí, muitos trajetos se fazem a pé."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Centro de Campinas faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Centro costuma agradar a quem quer depender pouco do carro, usar ônibus com frequência, ter comércio, serviços, bancos e cultura na porta e pagar por um imóvel numa região já servida de infraestrutura. Estudantes, profissionais que trabalham na região central e quem gosta de arquitetura histórica estão entre os perfis que se encaixam."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também existem. O movimento do comércio é forte durante o dia, e as obras de requalificação mudam a rotina de algumas ruas. Em prédios antigos, vale olhar com cuidado a manutenção, as instalações e a existência de garagem."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor a idade do prédio e as últimas obras feitas, o valor do condomínio e o que ele inclui, se há vaga de garagem, como é a portaria e se o imóvel fica de frente para rua de comércio ou para o fundo do terreno.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Centro de Campinas é bom para morar?",
+      "resposta": "Para quem quer fazer quase tudo a pé e ter ônibus para a cidade inteira por perto, sim. Quem busca silêncio, rua residencial tranquila ou prédio novo com garagem precisa escolher o imóvel com mais cuidado."
+    },
+    {
+      "pergunta": "Quando Campinas foi fundada?",
+      "resposta": "Em 14 de julho de 1774, quando o povoado fundado por Francisco Barreto Leme virou a freguesia de Nossa Senhora da Conceição de Campinas, no lugar que hoje é o Centro."
+    },
+    {
+      "pergunta": "Do que é feita a Catedral Metropolitana de Campinas?",
+      "resposta": "De taipa de pilão, técnica de terra socada. A obra começou em 1807 e foi concluída em 1883."
+    },
+    {
+      "pergunta": "O Mercadão de Campinas já reabriu depois da reforma?",
+      "resposta": "Sim. A revitalização do Mercado Municipal terminou em 31 de julho de 2025, e os boxes voltaram a funcionar de forma gradual."
+    },
+    {
+      "pergunta": "Quais terminais de ônibus ficam no Centro de Campinas?",
+      "resposta": "O Terminal Central e o Terminal Mercado ficam na região central, e a rodoviária está a menos de 1 km do centro do bairro. A linha BRT Ouro Verde chega ao Terminal Mercado."
+    },
+    {
+      "pergunta": "O Centro de Campinas tem mais casas ou prédios?",
+      "resposta": "Prédios. A base de condomínios da RUAH identifica cerca de 590 condomínios no bairro, quase todos verticais, com mais de 17 mil unidades."
+    },
+    {
+      "pergunta": "Como ver os imóveis à venda no Centro de Campinas?",
+      "resposta": "Os imóveis que a RUAH tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Tribunal de Justiça de São Paulo, memória da comarca de Campinas",
+      "site": "tjsp.jus.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, história do Largo e da Igreja do Rosário (Google Arts & Culture) e acervo fotográfico",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Correio da Manhã, Catedral Metropolitana de Campinas (dezembro de 2025)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Mercadão de Campinas: história, resistência e reinvenção (janeiro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, série sobre a Estação Cultura e reportagem sobre o Trem Intercidades (2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Palácio dos Azulejos, obras na Rua 13 de Maio e programa Habita Centro (2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Instituto de Artes da Unicamp, Paisagem e memória: intervenções na área central de Campinas-SP",
+      "site": "iar.unicamp.br"
+    },
+    {
+      "nome": "Diário do Transporte, linha BRT10 no Terminal Mercado e Corredor Central (2023)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes da Catedral, da Basílica do Carmo e da Praça Carlos Gomes",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Centro de Campinas: foi ali que a cidade nasceu, em 1774. Hoje o bairro reúne a Catedral de taipa de pilão, o Mercadão revitalizado, o calçadão da 13 de Maio, a Estação Cultura e centenas de prédios residenciais a poucos passos dos terminais de ônibus. Preparamos um guia com a história, os lugares e o que considerar antes de morar no Centro. Link na bio.",
+    "hashtags": [
+      "centrodecampinas",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "mercadao",
+      "catedraldecampinas",
+      "apartamentocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Centro de Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

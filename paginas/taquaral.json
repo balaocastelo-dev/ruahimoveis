@@ -1,0 +1,334 @@
+{
+  "slug": "taquaral",
+  "titulo": "Taquaral, Campinas: como é morar no bairro da Lagoa do Taquaral",
+  "resumo": "Guia do Taquaral, em Campinas: a Lagoa do Taquaral, a Caravela, o Planetário, casas e prédios, escolas, acessos e o que considerar antes de morar no bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "A Lagoa do Taquaral, no Parque Portugal, com a fonte ao centro e a Caravela à direita",
+      "alt": "Vista panorâmica de um lago cercado de árvores, com um chafariz no meio e um navio vermelho na margem direita",
+      "commons": "File:Parque Portugal (23).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Portão 1, a entrada principal do Parque Portugal",
+      "alt": "Portal verde com a inscrição Parque Portugal Lagoa do Taquaral e a palavra Entrada, com quiosques dos lados",
+      "commons": "File:Parque Portugal (2).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A réplica da Caravela Anunciação, hoje apoiada sobre um deque à beira da lagoa",
+      "alt": "Navio de madeira vermelho com três mastros, apoiado em escoras de metal sobre um deque na margem do lago",
+      "commons": "File:Caravela Anunciação (15).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Um dos bondes históricos que circulam dentro do Parque Portugal",
+      "alt": "Bonde vermelho e branco com o número 2 parado sobre trilhos, no meio de uma mata fechada",
+      "commons": "File:Parque Portugal tramway (4).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Prédio do Museu Dinâmico de Ciências e do Planetário de Campinas",
+      "alt": "Prédio térreo de concreto entre arbustos, com um marco de pedra escrito Museu Dinâmico de Ciências Planetário",
+      "commons": "File:Planetário - panoramio (2).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Pista de caminhada de terra batida à margem da Lagoa do Taquaral",
+      "alt": "Caminho largo de terra entre eucaliptos e palmeiras, com o lago à esquerda e pessoas caminhando ao fundo",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Sobrado de esquina no Taquaral, com casa da RUAH à venda",
+      "alt": "Sobrado claro de dois andares com gradil azul numa esquina, com árvores e calçada de pedra portuguesa",
+      "imovel_foto": 1184
+    },
+    {
+      "id": "f8",
+      "legenda": "Casa térrea no Taquaral com imóvel da RUAH à venda",
+      "alt": "Fachada de casa térrea verde com dois portões de garagem brancos e telhado de telha cerâmica",
+      "imovel_foto": 1876
+    },
+    {
+      "id": "f9",
+      "legenda": "Casa de tijolo aparente no Taquaral, com imóvel da RUAH à venda",
+      "alt": "Muro e portão de madeira escura diante de um sobrado de tijolo aparente, numa rua ensolarada",
+      "imovel_foto": 1179
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Taquaral** é um bairro da Região Leste de Campinas organizado em volta do **Parque Portugal**, o parque público que toda a cidade conhece como **Lagoa do Taquaral**. É um bairro residencial de ruas arborizadas, com predomínio de casas e sobrados, condomínios de casas e um número crescente de prédios, e tem comércio de bairro, escolas e acesso rápido às grandes avenidas da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o grande atrativo é ter um parque de verdade a poucas quadras: pista de caminhada, ciclovia, quadras, Planetário, bondinho e a réplica de uma caravela. Em troca, o entorno da lagoa recebe muita gente nos fins de semana e em eventos esportivos. Este guia reúne a história, o perfil dos imóveis, o lazer, as escolas e os acessos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da Região Leste de Campinas",
+        "O nome vem da taquara, um tipo de bambu que era comum na região",
+        "Abriga o Parque Portugal, a Lagoa do Taquaral, inaugurado em 5 de novembro de 1972",
+        "No parque ficam a Caravela Anunciação, o Planetário, a Concha Acústica, o ginásio e uma linha de bondes históricos",
+        "Mistura de casas, sobrados, condomínios horizontais e prédios residenciais",
+        "Ligado ao resto da cidade pela Avenida Norte-Sul, pela Avenida Orosimbo Maia e pela Avenida Júlio Prestes"
+      ],
+      "titulo": "O Taquaral em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Taquaral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "*Taquaral* quer dizer lugar com muita **taquara**, um tipo de bambu. Segundo os registros sobre o parque, a lagoa era cercada por essa planta antes da urbanização, e mais tarde boa parte da vegetação deu lugar a eucaliptos, que ainda hoje dominam alguns trechos das margens."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área fez parte da antiga **Fazenda Taquaral**. Os painéis históricos instalados pela Prefeitura dentro do parque contam que essas terras vieram de uma sesmaria do século XVIII, produziram açúcar e, no século XIX, café. No século XX o bairro passou a ser servido por uma linha de bonde e recebeu olarias, cerâmicas e uma refinaria de açúcar, antes de se tornar residencial."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque nasceu da compra, pela Prefeitura, de terras da família Alves de Lima. Uma lei municipal de 14 de julho de 1950 batizou a área de **Parque Portugal**, em homenagem à comunidade portuguesa de Campinas. O projeto do complexo de lazer foi aprovado em 1969, na gestão de Orestes Quércia, e a inauguração oficial aconteceu em **5 de novembro de 1972**."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Taquaral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Taquaral é, em boa parte, um bairro de casas. Ruas residenciais com sobrados, casas térreas com garagem e muros baixos convivem com condomínios fechados de casas e com prédios, que se concentram nas avenidas e nas quadras mais próximas da lagoa. Guias de moradia descrevem o bairro como familiar, arborizado e com ruas internas de pouco movimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro: pouco mais de 50 verticais e pouco mais de 20 horizontais, somando em torno de 3.300 unidades. O maior em número de apartamentos é o Condomínio Jardins do Taquaral, e o prédio mais alto da base tem 31 andares."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, a escolha costuma ser entre casa com quintal em rua tranquila, casa em condomínio fechado ou apartamento com vista para o verde. O bairro também é conhecido pelos apelidos de *Parque Taquaral* e *Alto Taquaral*, nomes que aparecem em anúncios e loteamentos da região."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lagoa do Taquaral: o que tem no Parque Portugal"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A lagoa, oficialmente **Lagoa Isaura Teles Alves de Lima**, é o centro do parque. Em volta dela corre uma pista de terra de cerca de 2,7 km para caminhada e corrida, e há ciclovia, quadras, playgrounds, pedalinhos, pista de skate e bosques para piquenique. Em 2007, leitores do *Correio Popular* escolheram a Lagoa do Taquaral como uma das Sete Maravilhas de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque tem portões numerados. Entre eles estão o **Portão 1**, a entrada principal, o **Portão 2**, da Concha Acústica, o **Portão 5**, conhecido como Amarelinho, o **Portão 6**, do Kartódromo, e o **Portão 7**, do Ginásio. A **Avenida Doutor Heitor Penteado** contorna boa parte do parque e é a referência de endereço do Planetário."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "A Caravela Anunciação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco mais fotografado é a réplica da **Caravela Anunciação**, um dos navios da frota de Pedro Álvares Cabral. Construída com apoio de pesquisas do Museu da Marinha, ela foi inaugurada com o parque, em 1972, e tem cerca de 30 metros de comprimento. Depois de afundar em 2008, foi restaurada e, desde 2014, fica fora d'água, sobre um deque na margem. Passou por novo restauro em 2025."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "Planetário, bondinho, Concha Acústica e ginásio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Planetário de Campinas**, ao lado do Museu Dinâmico de Ciências, foi inaugurado em 28 de outubro de 1987, em parceria com a Unicamp. A cúpula tem 8 metros de diâmetro e 60 lugares, e projeta mais de 60 constelações. O acesso é pelos portões 5 ou 7, e as sessões acontecem à tarde, com programação especial nas férias escolares."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do parque circula uma linha de **bondes históricos** de cerca de 3 km, com veículos que fizeram o transporte público de Campinas entre 1912 e 1968. A **Concha Acústica**, ou Auditório Beethoven, foi inaugurada em 1976 e comporta cerca de 2 mil pessoas. O **ginásio do Taquaral**, de 1960, recebe jogos da Superliga de vôlei."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem escolas públicas e particulares. Guias de moradia citam a **Escola Estadual Adalberto Nascimento**, o **Colégio Progresso**, com uma unidade bilíngue no Taquaral, e o **Colégio Farroupilha**. A base de pontos de interesse usada pela RUAH registra perto de 60 escolas, cursos e institutos num raio de 1,5 km do centro do bairro, e a lista das mais próximas aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o ensino superior, a Unicamp, a PUC-Campinas e a Facamp ficam a cerca de 15 minutos de carro, segundo guias do bairro, o que faz do Taquaral uma opção comum para professores, pesquisadores e famílias com filhos em idade universitária."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia está nas avenidas e nas ruas que cercam a lagoa: supermercados, padarias, açougues, farmácias, academias, bancos e salões. Moradores citam com frequência o **Supermercado Taquaral**, o **Dalben** e o **Oba**. Em volta do parque há bares, cafés e restaurantes que lotam nos fins de semana, e o **Shopping Parque Dom Pedro** fica a uma distância curta de carro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o bairro tem clínicas, consultórios, laboratórios e farmácias, além de postos públicos. Para atendimento hospitalar, o **Hospital Vera Cruz** está a poucos quilômetros, na região central. A seção *o que tem no Taquaral e em volta*, mais abaixo, lista os serviços mais próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Taquaral fica bem ligado ao resto de Campinas. A **Avenida José de Souza Campos**, a Norte-Sul, a **Avenida Orosimbo Maia** e a **Avenida Júlio Prestes** levam ao Centro e aos bairros vizinhos, e a **Avenida Doutor Heitor Penteado** e a **Avenida Padre Almeida Garret** distribuem o trânsito em volta do parque. Há linhas de ônibus gerenciadas pela Emdec e ciclovias, principalmente em torno da lagoa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o **Cambuí**, com sua oferta de restaurantes e serviços. Nos horários de pico, as avenidas principais ficam carregadas, e em dias de corrida ou de evento no parque a Emdec bloqueia cruzamentos no entorno da lagoa. Vale testar o trajeto até o trabalho antes de escolher o imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Taquaral faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Taquaral costuma agradar a famílias com crianças, a quem gosta de correr, pedalar ou caminhar ao ar livre e a quem prefere casa com quintal sem se afastar das avenidas que levam ao Centro. Também atende quem quer apartamento com vista para o verde, nos prédios mais próximos da lagoa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o movimento em volta do parque nos fins de semana, os bloqueios em dias de evento e o trânsito nas avenidas nos horários de pico. Dentro do bairro, a diferença entre uma rua interna e uma rua de frente para o parque é grande, e isso pesa na escolha."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor a distância a pé até o portão mais próximo do parque, se a rua recebe bloqueios em dias de evento, a idade da construção e as últimas reformas, o número de vagas e, em condomínio, o que a taxa inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Taquaral, em Campinas?",
+      "resposta": "Na Região Leste da cidade, em volta do Parque Portugal, a Lagoa do Taquaral. O bairro é vizinho do Cambuí e ligado ao Centro pela Avenida Norte-Sul e pela Avenida Orosimbo Maia."
+    },
+    {
+      "pergunta": "O Taquaral é bom para morar?",
+      "resposta": "Para quem quer casa ou apartamento perto de um grande parque, com escolas e comércio de bairro, sim. O que pesa contra é o movimento em volta da lagoa nos fins de semana e o trânsito nas avenidas no pico."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Taquaral?",
+      "resposta": "Por causa da taquara, um tipo de bambu que existia em quantidade em volta da lagoa antes da urbanização. Taquaral quer dizer lugar com muita taquara."
+    },
+    {
+      "pergunta": "Qual é o nome oficial da Lagoa do Taquaral?",
+      "resposta": "O parque se chama Parque Portugal, nome dado por lei municipal de 1950 em homenagem à comunidade portuguesa. A lagoa em si é a Lagoa Isaura Teles Alves de Lima."
+    },
+    {
+      "pergunta": "O que tem no Parque do Taquaral?",
+      "resposta": "Pista de caminhada de cerca de 2,7 km, ciclovia, quadras, pedalinhos, a réplica da Caravela Anunciação, o Planetário, a Concha Acústica, o ginásio e uma linha de bondes históricos."
+    },
+    {
+      "pergunta": "O Taquaral tem mais casas ou prédios?",
+      "resposta": "Mais casas e sobrados, com condomínios horizontais e prédios. A base de condomínios da RUAH identifica cerca de 85 condomínios no bairro, pouco mais de 50 deles verticais."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Wikipédia, verbete Parque Portugal (português)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipédia, verbete Parque Portugal (inglês)",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Correio da Manhã, sobre a Caravela Anunciação (março de 2026), a decoração da Caravela (dezembro de 2025) e o Planetário (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "ABC do ABC, operação da Emdec no entorno do Parque Portugal",
+      "site": "abcdoabc.com.br"
+    },
+    {
+      "nome": "Painéis históricos da Prefeitura no Parque Portugal, fotografados no Wikimedia Commons",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Taquaral e guia O que fazer em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Chaves na Mão, como é morar no Taquaral",
+      "site": "chavesnamao.com.br"
+    },
+    {
+      "nome": "Go-Astronomy, ficha do Planetário de Campinas",
+      "site": "go-astronomy.com"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Taquaral, em Campinas: o bairro que ganhou nome de bambu e cresceu em volta da Lagoa do Taquaral. Preparamos um guia completo, com a história do Parque Portugal, a Caravela Anunciação, o Planetário, os bondes, as escolas, os acessos e o que considerar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "taquaral",
+      "campinas",
+      "lagoadotaquaral",
+      "morarbem",
+      "guiadebairro",
+      "casacampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Taquaral, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.149Z"
+}

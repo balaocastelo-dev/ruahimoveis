@@ -2,11 +2,71 @@
   "versao": 1,
   "paginas": [
     {
+      "slug": "barao-geraldo",
+      "titulo": "Barão Geraldo, Campinas: como é morar no distrito da Unicamp",
+      "resumo": "Guia de Barão Geraldo, em Campinas: origem do nome, Unicamp, Mata de Santa Genebra, comércio, acessos e o que considerar antes de morar no distrito.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "bosque",
+      "titulo": "Bosque, Campinas: como é morar no bairro do Bosque dos Jequitibás",
+      "resumo": "Guia do bairro Bosque, em Campinas: história do Bosque dos Jequitibás, museu e minizoo, prédios, ruas, escolas, acessos e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "botafogo",
+      "titulo": "Botafogo, Campinas: como é morar no bairro dos hospitais e do Culto à Ciência",
+      "resumo": "Guia do Botafogo, em Campinas: a antiga rodoviária, o polo de hospitais da Andrade Neves, o Culto à Ciência, prédios, transporte e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
       "slug": "cambui",
       "titulo": "Cambuí, Campinas: como é morar no bairro, história, prédios e lazer",
       "resumo": "Guia do Cambuí, em Campinas: origem do nome, Centro de Convivência, Feira Hippie, bares, prédios e o que considerar antes de morar no bairro.",
       "publicadoEm": "2026-10-27T13:42:57.548Z"
+    },
+    {
+      "slug": "centro",
+      "titulo": "Centro de Campinas: como é morar no coração histórico da cidade",
+      "resumo": "Guia do Centro de Campinas: Catedral, Mercadão, Rua 13 de Maio, Estação Cultura, prédios, terminais de ônibus e o que pesar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "guanabara",
+      "titulo": "Guanabara, Campinas: como é morar no bairro da antiga estação Mogiana",
+      "resumo": "Guia do Guanabara, em Campinas: a Estação Guanabara da Mogiana, as avenidas Brasil e Barão de Itapura, prédios, escolas e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "jardim-chapadao",
+      "titulo": "Jardim Chapadão, Campinas: como é morar no bairro da Torre do Castelo",
+      "resumo": "Guia do Jardim Chapadão, em Campinas: Torre do Castelo, Pedreira do Chapadão, história, casas e prédios, comércio do Castelo e acessos ao Centro.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "joaquim-egidio",
+      "titulo": "Joaquim Egídio, Campinas: como é morar no distrito histórico",
+      "resumo": "Guia de Joaquim Egídio, distrito de Campinas: história, estação, casario, APA, observatório, restaurantes e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "nova-campinas",
+      "titulo": "Nova Campinas, Campinas: como é morar no bairro-jardim de 1945",
+      "resumo": "Guia do Nova Campinas, em Campinas: o bairro-jardim de Jorge de Macedo Vieira, ruas arborizadas, casas, novos prédios, comércio e acessos.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "sousas",
+      "titulo": "Sousas, Campinas: como é morar no distrito do Rio Atibaia",
+      "resumo": "Guia de Sousas, distrito de Campinas: história do Arraial dos Sousas, Igreja de Sant'Ana, Rio Atibaia, APA, condomínios de casas, acessos e Joaquim Egídio.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "taquaral",
+      "titulo": "Taquaral, Campinas: como é morar no bairro da Lagoa do Taquaral",
+      "resumo": "Guia do Taquaral, em Campinas: a Lagoa do Taquaral, a Caravela, o Planetário, casas e prédios, escolas, acessos e o que considerar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T17:39:00.149Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T13:42:57.553Z"
+  "atualizadoEm": "2026-10-27T17:39:00.174Z"
 }

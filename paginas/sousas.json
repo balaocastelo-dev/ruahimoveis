@@ -1,0 +1,373 @@
+{
+  "slug": "sousas",
+  "titulo": "Sousas, Campinas: como é morar no distrito do Rio Atibaia",
+  "resumo": "Guia de Sousas, distrito de Campinas: história do Arraial dos Sousas, Igreja de Sant'Ana, Rio Atibaia, APA, condomínios de casas, acessos e Joaquim Egídio.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Igreja Matriz de Sant'Ana, no centro de Sousas",
+      "alt": "Igreja amarela com torre única e porta de madeira, uma palmeira alta ao lado e uma pequena praça na frente",
+      "commons": "File:Sousas - panoramio (2).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Mapa de 1925 com o traçado do Ramal Férreo Campineiro passando pelo Arraial dos Souzas e por Joaquim Egydio",
+      "alt": "Trecho de mapa antigo com curvas de nível, rios e a linha férrea ligando os nomes Arraial dos Souzas, Joaquim Egydio e Cabras",
+      "commons": "File:Ramal Férreo Campineiro (1894-1912).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "O Rio Atibaia no distrito de Sousas, em foto antiga do acervo do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco de um rio com corredeiras, árvores na margem e morros ao fundo",
+      "commons": "File:Rio Atibaia - Distrito de Sousas, Centro de Memória - Unicamp (APS 1.1.0927).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Ponte sobre o Rio Atibaia em Sousas, em foto antiga do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco de um rio largo com uma ponte de estrutura metálica sobre pilares e árvores nas margens",
+      "commons": "File:Rio Atibaia - Distrito de Sousas, Centro de Memória - Unicamp (APS 1.1.0922).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Rua de paralelepípedos no centro de Sousas, com casas antigas transformadas em comércio",
+      "alt": "Rua calçada com pedras, casas térreas coloridas lado a lado e um carro estacionado",
+      "commons": "File:Distrito de Sousas - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Casarões antigos de esquina no centro do distrito de Sousas",
+      "alt": "Construção térrea vermelha com platibanda decorada e janelas brancas, ao lado de uma casa de fachada creme, numa esquina de paralelepípedos",
+      "commons": "File:Distrito de Sousas - Campinas SP - panoramio (1).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Prédio da Subprefeitura de Sousas",
+      "alt": "Casa térrea amarela de estilo antigo, com porta de ferro trabalhado, janelas de madeira e palmeiras ao lado",
+      "commons": "File:Sub-Prefeitura de Sousas - Campinas - 20240928111354.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Gado no pasto e casas de colonos da Fazenda Bonfim, em Sousas, perto da Rodovia SP-81",
+      "alt": "Vacas pastando num gramado em encosta, com duas casas brancas de janelas azuis e árvores no morro atrás",
+      "commons": "File:Rod. SP 81. Fazenda Bonfim em Sousas, Campinas, SP. Casa de colonos - panoramio.jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Rua Heitor Penteado, no distrito vizinho de Joaquim Egídio",
+      "alt": "Rua de paralelepípedos em leve subida, com casas térreas antigas dos dois lados e palmeiras",
+      "commons": "File:Rua Heitor Penteado - Joaquim Egídio - Campinas - SP.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Sousas** é um distrito de Campinas, a cerca de 10 km do Centro, cortado pelo Rio Atibaia e cercado por morros, fazendas e áreas de mata. É o distrito mais antigo do município: tem centro histórico com igreja matriz, ruas de paralelepípedo e casarões, e, em volta dele, bairros e condomínios de casas. Boa parte do território fica dentro da Área de Proteção Ambiental de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em se mudar, Sousas oferece uma rotina com cara de cidade do interior sem sair de Campinas: casas com terreno, natureza perto e restaurantes que atraem gente de toda a região nos fins de semana. Em troca, o dia a dia depende mais do carro. Este guia reúne a história, o perfil dos imóveis, o lazer, os acessos e o que vale considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Distrito de Campinas criado em 1896, o mais antigo do município",
+        "Fica a cerca de 10 km do Centro, ligado à cidade pela Rodovia Heitor Penteado",
+        "O Rio Atibaia atravessa o distrito, perto do centro histórico",
+        "A Igreja Matriz de Sant'Ana marca o centro; a Festa de Santana acontece em julho",
+        "Ocupação de casas e condomínios horizontais, com muita área rural em volta",
+        "Parte da APA de Campinas, com Joaquim Egídio e a região entre os rios Atibaia e Jaguari",
+        "Restaurantes e bares que fazem do distrito um destino de fim de semana"
+      ],
+      "titulo": "Sousas em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história de Sousas, do Arraial ao distrito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ocupação começou por volta de 1830, quando Aleixo António de Godoi e Bernardo José Sampaio chegaram às margens do Rio Atibaia, acamparam ali e construíram uma ponte de madeira. O povoado que se formou em volta ficou conhecido como **Ponte do Arraial**, segundo pesquisa publicada pela PUC-Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome atual homenageia a família Sousa, dona das maiores sesmarias da região. Em 1889, o vereador Ricardo Gumbleton Daunt propôs à Câmara a denominação **Arraial dos Sousas**. Pela Lei Estadual nº 416, de 24 de julho de 1896, o lugar virou distrito de Campinas, e em 1938 um decreto estadual simplificou o nome para Souzas, de acordo com o IBGE. Em 1959, parte das terras do distrito foi usada para criar Joaquim Egídio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A economia seguiu os ciclos da região: primeiro a cana-de-açúcar com engenhos, depois o café. Em 1894 chegou a ferrovia da Companhia Ramal Férreo Campineiro, com 33 km, criada para escoar a produção cafeeira. Com a crise de 1929 e 1930, os cafezais viraram pasto, as propriedades foram divididas e a pecuária leiteira passou a dominar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O desenho atual começou a surgir em 1947, com a fundação do Clube Campineiro de Regatas e Natação, apontada como o marco inicial dos loteamentos. Pelo Censo de 2010, o distrito tinha cerca de 18 mil moradores numa área de aproximadamente 66 km²."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Igreja de Sant'Ana e o centro histórico"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de existir templo, as celebrações aconteciam nas casas. Em 1833, a família de Joaquim Monteiro ergueu a primeira capela, dedicada a São Sebastião. Em 1894, a família Salgado doou o terreno da matriz, inaugurada em 1897 com o nome de Nossa Senhora do Bom Conselho. Em 1898, o povoado foi elevado a Freguesia de Sant'Ana, e em 1903 a igreja passou a ter Sant'Ana como padroeira."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta da matriz fica o núcleo antigo do distrito, com ruas de paralelepípedo e construções térreas do início do século XX, muitas hoje ocupadas por comércio e serviços. É ali que funciona a **Subprefeitura de Sousas**, que responde pela administração local. A Prefeitura de Campinas reconhece no núcleo urbano marcos da formação do distrito, e nas áreas rurais, fazendas centenárias e remanescentes da antiga estrada de ferro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O Rio Atibaia e a APA de Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Rio Atibaia** atravessa a área central de Sousas e foi o ponto de partida do povoado. Ao norte, o distrito faz divisa com Pedreira, e perto dele os rios Atibaia e Jaguari abrigam pequenas usinas hidrelétricas. A paisagem é de relevo acidentado, já na transição para as serras do leste do município, onde fica a Serra das Cabras."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sousas faz parte da **APA de Campinas**, também chamada de APA de Sousas e Joaquim Egídio, criada por decreto municipal em 1993. Segundo estudo da Embrapa, a área de proteção tem cerca de 225 km², perto de 28% do território de Campinas; Sousas responde por cerca de 30% dela. A APA é predominantemente rural, com fragmentos de mata e muitas espécies de aves."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso significa regras de ocupação mais restritas do que no resto da cidade e muita área verde em volta das casas. Os próprios estudos apontam a pressão da expansão imobiliária de médio e alto padrão e problemas de saneamento como desafios para a região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar em Sousas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sousas é um lugar de casas. O distrito reúne dezenas de bairros e loteamentos, como Jardim Conceição, Notre Dame, Vila Santana, Jardim Martinelli, Colinas do Ermitage, Jardim Botânico, Parque das Araucárias e Mirantes da Fazenda, de acordo com a lista de localidades do distrito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O perfil se divide em dois: no centro, casas antigas e sobrados em ruas estreitas, perto da igreja e do comércio; nos morros em volta, condomínios e loteamentos fechados com terrenos maiores, vista para a mata e ruas mais tranquilas. Quem procura apartamento encontra pouca oferta, e os prédios que existem são baixos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ritmo é de interior. Durante a semana, o distrito é calmo; nos fins de semana, o centro e as estradas que levam aos restaurantes ficam mais movimentados. A seção *o que tem em Sousas e em volta*, mais abaixo nesta página, lista mercados, farmácias e serviços próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Restaurantes, festas e vida no distrito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A gastronomia é um dos motivos que levam gente de Campinas a Sousas nos fins de semana. A Prefeitura registra o crescimento de bares e restaurantes no distrito, ao lado de Joaquim Egídio e Barão Geraldo. Os dois distritos vizinhos realizam juntos o **Festival Gastronômico da Primavera** e formam um polo de turismo gastronômico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos endereços conhecidos é o **Floresta Park**, numa fazenda construída em 1840, a cerca de 5 km do centro de Sousas, com comida mineira feita no fogão a lenha e área de lazer para crianças. No calendário local estão a **Festa de Santana**, em julho, e a Vila das Artes, feira de arte e artesanato."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem gosta de atividade ao ar livre, as estradas rurais da APA são usadas para mountain bike, trilhas, caminhadas, cavalgadas e corridas. O distrito também tem vários clubes, como o Clube Concórdia, o Clube Campineiro de Regatas e Natação e o Tênis Clube de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, comércio e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O distrito tem escolas públicas, como a E.E. Antonio Carlos Couto de Barros, a E.E. Doutor Thomas Alves e a E.M. Ângela Cury Zakia, e particulares, como o Colégio Notre Dame, o Colégio Vertical, o Colégio Illuminare e o Colégio San Conrado. Há também creches, entre elas a Creche Gustavo Marcondes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia se concentra no centro e ao longo das avenidas principais, como a **Avenida Antônio Carlos Couto de Barros**, que passa pelo Jardim Conceição: supermercados, padarias, farmácias, agências bancárias e postos de combustível. A água e o esgoto são da Sanasa e a energia, da CPFL Paulista. Para hospitais de maior porte e compras mais variadas, o caminho costuma ser a região central de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como chegar: acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal ligação com Campinas é a **Rodovia Heitor Penteado (SP-81)**, que sai da cidade, passa por Sousas e segue para Joaquim Egídio e Cabras. No trecho até o distrito, ela funciona praticamente como uma avenida. O centro de Sousas fica a cerca de 10 km do Centro de Campinas, e a Rodovia Dom Pedro I também é uma opção de acesso para quem segue para outras cidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como a maior parte do comércio maior, dos hospitais e dos empregos está na área urbana de Campinas, quem mora em Sousas costuma depender do carro. Nos horários de pico e nos fins de semana de movimento nos restaurantes, vale testar o trajeto antes de escolher o imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Joaquim Egídio e os vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais próximo é **Joaquim Egídio**, distrito criado em 1959 com terras desmembradas de Sousas. Fica a cerca de 17 km do centro de Campinas, seguindo pela mesma SP-81, e é ainda mais rural, com casario antigo, agricultura familiar e restaurantes. A Prefeitura cita a Festa de São Roque e São Joaquim, em agosto, como evento tradicional do distrito."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na região da Serra das Cabras, que se estende por Sousas e Joaquim Egídio, fica o **Observatório Municipal Jean Nicolini**. Ao norte, Sousas faz divisa com o município de Pedreira."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem Sousas faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sousas costuma agradar a quem quer casa com espaço, verde por perto e ritmo mais tranquilo sem deixar Campinas: famílias com crianças, quem trabalha em casa parte da semana e quem gosta de pedalar, caminhar ou sair para comer perto de casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também são claros. O trajeto até o Centro e outros bairros depende quase sempre do carro, a oferta de apartamentos é pequena e as regras da APA limitam o que se pode construir. Em períodos de chuva forte, o Rio Atibaia já transbordou em trechos do distrito, então a localização exata do imóvel faz diferença."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte se o terreno fica perto do rio ou de área sujeita a alagamento, quais regras do condomínio e da APA valem para reformas e ampliações, se a rua é atendida por rede de esgoto e quanto tempo leva o trajeto até o trabalho e as escolas no horário de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Sousas é bairro ou distrito de Campinas?",
+      "resposta": "Distrito. Sousas foi criado como distrito de Campinas pela Lei Estadual nº 416, de 1896, e é o mais antigo do município. Tem subprefeitura própria e reúne vários bairros e loteamentos."
+    },
+    {
+      "pergunta": "Sousas é bom para morar?",
+      "resposta": "Para quem quer casa com espaço, natureza perto e ritmo de interior, sim. Em troca, o dia a dia depende do carro, já que hospitais grandes, boa parte do comércio e muitos empregos ficam na área urbana de Campinas."
+    },
+    {
+      "pergunta": "Qual a distância de Sousas até o Centro de Campinas?",
+      "resposta": "Cerca de 10 km. O caminho principal é a Rodovia Heitor Penteado (SP-81), que liga a cidade ao distrito e segue para Joaquim Egídio."
+    },
+    {
+      "pergunta": "Sousas tem mais casas ou apartamentos?",
+      "resposta": "Casas. O distrito é formado por casas no centro histórico e por loteamentos e condomínios horizontais nos morros em volta."
+    },
+    {
+      "pergunta": "Sousas fica dentro da APA de Campinas?",
+      "resposta": "Sim, em boa parte. A APA de Campinas, criada em 1993, abrange Sousas, Joaquim Egídio e a região entre os rios Atibaia e Jaguari. Isso traz regras de ocupação mais restritas do que no restante da cidade."
+    },
+    {
+      "pergunta": "Qual a diferença entre Sousas e Joaquim Egídio?",
+      "resposta": "Joaquim Egídio foi criado em 1959 com terras de Sousas e fica mais adiante na SP-81, a cerca de 17 km do centro de Campinas. É menor e mais rural; Sousas tem mais comércio, escolas e serviços."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica, texto sobre a história de Sousas",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica, Rodovia Heitor Penteado e o distrito de Sousas",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "IBGE, divisão territorial do município de Campinas",
+      "site": "biblioteca.ibge.gov.br"
+    },
+    {
+      "nome": "Maria Lúcia de Souza Rangel Ricci (Centro de Memória da Unicamp), Sousas e Joaquim Egídio frente aos problemas ambientais, ANPUH 2005",
+      "site": "anpuh.org.br"
+    },
+    {
+      "nome": "Embrapa, geoprocessamento para o planejamento e gestão da APA municipal de Campinas",
+      "site": "embrapa.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, texto subsídio de turismo para a revisão do Plano Diretor",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Sousas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Apontador, guia de ruas: Avenida Antônio Carlos Couto de Barros",
+      "site": "apontador.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, convenção no Clube Concórdia, na Rodovia Heitor Penteado (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Accor Limitless, restaurantes em Sousas e Joaquim Egídio",
+      "site": "all.accor.com"
+    },
+    {
+      "nome": "Quanto Custa Viajar, guia de Joaquim Egídio",
+      "site": "quantocustaviajar.com"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, acervo fotográfico",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Sousas, em Campinas: o distrito mais antigo da cidade nasceu às margens do Rio Atibaia, em volta de uma ponte de madeira, e hoje reúne centro histórico, Igreja de Sant'Ana, casas e condomínios cercados de verde dentro da APA de Campinas. Preparamos um guia com a história, os restaurantes, os acessos, Joaquim Egídio e o que considerar antes de se mudar. Link na bio.",
+    "hashtags": [
+      "sousas",
+      "campinas",
+      "distritodesousas",
+      "joaquimegidio",
+      "rioatibaia",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Sousas, Campinas: guia do distrito para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.155Z"
+}
