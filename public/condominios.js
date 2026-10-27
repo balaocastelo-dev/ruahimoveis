@@ -15,7 +15,7 @@ async function telaCondominios(qs) {
   const [l, bairros, alertas] = await Promise.all([api('GET', '/api/condominios?' + new URLSearchParams(f)), api('GET', '/api/condominios/bairros').catch(() => []), api('GET', '/api/condominios/alertas').catch(() => [])]);
   const r = l.resumo || {};
   const paginas = Math.max(1, Math.ceil(l.total / l.porPagina));
-  $('#main').innerHTML = `<div class="eyebrow">Captação</div><h1>Condomínios</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base · Campinas</div><h1>Condomínios</h1>${typeof mkAbas === 'function' ? mkAbas('condominios') : ''}
   <p class="lead">Os prédios e condomínios residenciais de Campinas, juntando o CNPJ da Receita, o mapa aberto e os cadastros da RUAH. Cada um cruza a carteira, o Radar e o Fisguei: quem está vendendo, por quanto e por qual imobiliária.</p>
   ${alertas.length ? `<div class="card cd-alertas"><div class="row"><h2 style="margin:0;flex:1">Anúncios novos em prédios-alvo</h2><button class="btn sm" data-act="cd-visto">Marcar como vistos</button></div>
     <div class="list" style="margin-top:8px">${alertas.slice(0, 8).map((a) => `<a class="item click" href="${a.href}" style="text-decoration:none;color:inherit"><span class="pill ${a.origem === 'radar' ? 'info' : 'ok'}">${a.origem === 'radar' ? 'Radar' : 'Fisguei'}</span><span style="flex:1">${esc(a.texto)}</span><span class="muted small">${dataBR(a.criado_em)}</span></a>`).join('')}</div></div>` : ''}

@@ -16,6 +16,12 @@ const mapasCfg = () => (MAPAS ? Promise.resolve(MAPAS) : api('GET', '/api/mapas/
 // foto do anúncio primeiro; se não abrir, a fachada do Google; se não houver, o quadro "Foto em breve"
 const mkFoto = (x, cfg, alt) => fotoCadeia([x.foto, cfg.fachada && x.lat ? `/api/fachada?ref=fg${x.id}` : null], alt);
 
+// abas das vitrines + Condomínios (com a contagem de cada vitrine quando já se sabe)
+function mkAbas(on, cats) {
+  const n = (k) => (cats && cats[k] ? ` <span class="mk-ab-n">${(cats[k].n || 0).toLocaleString('pt-BR')}</span>` : '');
+  return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}</div>`;
+}
+
 async function telaMercado(qs, cat = 'casas') {
   const C = MK_CATS.find((c) => c[0] === cat) || MK_CATS[1];
   const ehLote = cat === 'terrenos', ehCom = cat === 'comerciais';
@@ -54,7 +60,7 @@ async function telaMercado(qs, cat = 'casas') {
     }).join('')}</div>`;
   }
   const migalha = `<div class="mk-migalha"><a href="${link({ bairro: '', rua: '' })}">${esc(C[1])} em Campinas</a>${bairroAt ? ` › <a href="${link({ rua: '' })}">${esc(bairroAt.nome)}</a>` : ''}${f.rua ? ` › <b>${esc(f.rua.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase()))}</b>` : ''}</div>`;
-  const abas = `<div class="tabs mk-abas">${MK_CATS.map(([k, t]) => `<a href="#/${k}" class="${k === cat ? 'on' : ''}">${esc(t)} <span class="mk-ab-n">${(res.categorias[k] && res.categorias[k].n || 0).toLocaleString('pt-BR')}</span></a>`).join('')}<a href="#/condominios">Condomínios</a></div>`;
+  const abas = mkAbas(cat, res.categorias);
   $('#main').innerHTML = `<div class="eyebrow">Imóveis da base · Campinas</div><h1>${esc(C[1])}</h1>
   ${abas}
   <p class="lead">${esc(C[2])} Escolha o bairro, a rua e o imóvel: a ficha abre com as fotos, a fachada, o 3D da rua e os proprietários.</p>

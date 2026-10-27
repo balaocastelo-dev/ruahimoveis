@@ -541,3 +541,4 @@ canvas#cv:hover,canvas#cv:active{border-color:var(--gold)!important;box-shadow:0
 .cd-item-foto .noimg{height:100%;aspect-ratio:auto;border-radius:0;font-size:0;gap:0}
 .cd-item-foto .noimg-i{font-size:24px}
 .cd-item-txt{flex:1;min-width:0}
+td.num,th.num{white-space:nowrap}
