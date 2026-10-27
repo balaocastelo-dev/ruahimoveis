@@ -20,7 +20,9 @@ const MODELO_PADRAO = 'Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente vi
   + 'Você é o(a) proprietário(a) desse imóvel? Pode responder SIM ou NÃO.\n'
   + 'Se preferir não receber mensagens, responda PARAR.';
 
-function ajustes() {
+// ler: de onde vêm as configurações (padrão: uma consulta por chave; o resumo passa todas lidas de uma vez)
+function ajustes(ler = getConfig) {
+  const getConfig = ler;
   const n = (k, d) => { const v = parseInt(getConfig(k), 10); return Number.isFinite(v) ? v : d; };
   return {
     pausado: getConfig('fisguei_pausado') === '1',

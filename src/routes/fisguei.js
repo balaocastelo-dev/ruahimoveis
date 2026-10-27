@@ -80,25 +80,34 @@ function robo() {
   return { ...st, vivo, estado: vivo ? st.estado : 'desligado', qr: vivo && st.estado === 'qr' ? st.qr : null };
 }
 
+// Uma consulta para as contagens e uma para as configurações (antes eram ~28 idas ao banco; com o banco online
+// longe, a tela e o selo do menu esperavam ~6 s e o servidor ficava parado nesse tempo).
 r.get('/fisguei/resumo', (req, res) => {
   const cont = Object.fromEntries(all('SELECT status, count(*) AS n FROM fisguei_anuncios GROUP BY status').map((x) => [x.status, x.n]));
-  const n = (sql, ...p) => one(sql, ...p).n;
+  const c = one(`SELECT
+      (SELECT count(DISTINCT anuncio_id) FROM fisguei_pessoas WHERE consultado=1) AS comdono,
+      (SELECT count(*) FROM fisguei_pessoas WHERE consultado=1) AS pessoas,
+      (SELECT count(*) FROM fisguei_contatos WHERE tipo='tel' AND envio='fila') AS fila,
+      (SELECT count(*) FROM fisguei_contatos WHERE envio IN ('enviado','respondeu')) AS enviadas,
+      (SELECT count(*) FROM fisguei_contatos WHERE envio IN ('enviado','respondeu') AND substr(enviado_em,1,10)=date('now','localtime')) AS hoje,
+      (SELECT count(*) FROM fisguei_pessoas WHERE status NOT IN ('pendente','abordando')) AS responderam,
+      (SELECT count(*) FROM fisguei_bloqueios) AS bloqueios`);
+  const cfgs = Object.fromEntries(all("SELECT chave, valor FROM config WHERE chave LIKE 'fisguei%'").map((x) => [x.chave, x.valor]));
+  const ler = (k) => (k in cfgs ? cfgs[k] : null);
+  const aj = F.ajustes(ler);
+  let st = {}; try { st = JSON.parse(ler('fisguei_robo') || '{}'); } catch {}
+  const vivo = st.em && Date.now() - new Date(st.em).getTime() < 3 * 60e3;
   res.json({
     porStatus: cont,
-    anuncios: n('SELECT count(*) AS n FROM fisguei_anuncios'),
-    comDono: n('SELECT count(DISTINCT anuncio_id) AS n FROM fisguei_pessoas WHERE consultado=1'),
-    pessoas: n('SELECT count(*) AS n FROM fisguei_pessoas WHERE consultado=1'),
-    fila: n(`SELECT count(*) AS n FROM fisguei_contatos WHERE tipo='tel' AND envio='fila'`),
-    enviadas: n(`SELECT count(*) AS n FROM fisguei_contatos WHERE envio IN ('enviado','respondeu')`),
-    hoje: F.enviadasHoje(),
-    responderam: n(`SELECT count(*) AS n FROM fisguei_pessoas WHERE status NOT IN ('pendente','abordando')`),
-    precisaCorretor: n(`SELECT count(*) AS n FROM fisguei_anuncios WHERE status IN ('respondeu','confirmado')`),
-    bloqueios: n('SELECT count(*) AS n FROM fisguei_bloqueios'),
-    ultimoRecebimento: getConfig('fisguei_ultimo_recebimento'),
-    chave: !!getConfig('fisguei_chave_hash'),
-    ajustes: F.ajustes(),
-    horario: F.dentroDoHorario(),
-    robo: robo(),
+    anuncios: Object.values(cont).reduce((t, n) => t + Number(n), 0),
+    comDono: c.comdono, pessoas: c.pessoas, fila: c.fila, enviadas: c.enviadas, hoje: c.hoje, responderam: c.responderam,
+    precisaCorretor: (cont.respondeu || 0) + (cont.confirmado || 0),
+    bloqueios: c.bloqueios,
+    ultimoRecebimento: ler('fisguei_ultimo_recebimento'),
+    chave: !!ler('fisguei_chave_hash'),
+    ajustes: aj,
+    horario: F.dentroDoHorario(aj),
+    robo: { ...st, vivo, estado: vivo ? st.estado : 'desligado', qr: vivo && st.estado === 'qr' ? st.qr : null },
   });
 });
 
