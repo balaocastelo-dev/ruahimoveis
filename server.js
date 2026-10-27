@@ -37,6 +37,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use('/api', mesmaOrigem);
 app.use('/api/publico/portal', require('./src/routes/portal').api);
 app.use('/api/publico/blog', require('./src/routes/blog').api);
+app.use('/api/publico/condominios', require('./src/condominios/publico').api);
 app.use('/api/publico', publico);
 const ABERTAS = new Set(['/setup', '/login', '/logout', '/drive/callback']);
 app.use('/api', (req, res, next) => (ABERTAS.has(req.path) ? next() : exigeLogin(req, res, next)));
@@ -69,6 +70,8 @@ const PUB = path.join(__dirname, 'public');
 app.use(require('./src/routes/blog'));
 // Portal do visitante (sem login): /imoveis, a página única de cada imóvel, fotos e favoritos.
 app.use(require('./src/routes/portal'));
+// Página pública de cada condomínio (/condominios/<slug>) e o 3D para o visitante.
+app.use(require('./src/condominios/publico'));
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
 app.get('/assinar/:token', (req, res) => res.sendFile(path.join(PUB, 'assinar.html')));
 app.get('/v/:token', (req, res) => res.sendFile(path.join(PUB, 'imovel.html')));
@@ -99,6 +102,9 @@ if (require.main === module) {
     require('./src/services/portais').iniciar();
     // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
     require('./src/fisguei/robo').iniciar();
+    // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
+    const vincula = () => { try { const r = require('./src/condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
+    setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);
   });
 }
 

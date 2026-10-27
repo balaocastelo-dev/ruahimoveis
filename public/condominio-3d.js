@@ -472,11 +472,12 @@ function interface_() {
   if (cena.alvo.sintetico) chips.push('<span class="chip est">contorno aproximado</span>');
   if (c.geo_fonte && ['rua', 'cep'].includes(c.geo_fonte)) chips.push('<span class="chip est">posição aproximada</span>');
   $('#chips').innerHTML = chips.join('');
+  if (PUBLICO) $('#endereco').insertAdjacentHTML('afterend', `<a class="voltar" href="/condominios/${encodeURIComponent(SLUG)}">← Página do condomínio</a>`);
 
   const im = D.imovel;
   if (im && im.andar !== null && im.andar !== undefined) {
     $('#apto').hidden = false;
-    $('#apto').innerHTML = `<b>${esc(im.codigo)} · ${im.unidade ? 'Unidade ' + esc(im.unidade) : ''}</b><div class="s">${im.andar === 0 ? 'Térreo' : im.andar + 'º andar'}${im.torre ? ' · torre ' + esc(im.torre) : ''} · posição no andar aproximada</div>`;
+    $('#apto').innerHTML = `<b>${esc(im.codigo)}${im.unidade ? ' · Unidade ' + esc(im.unidade) : ''}</b><div class="s">${im.andar === 0 ? 'Térreo' : im.andar + 'º andar'}${im.torre ? ' · torre ' + esc(im.torre) : ''} · posição no andar aproximada</div>`;
   } else if (im) {
     $('#apto').hidden = false;
     $('#apto').innerHTML = `<b>${esc(im.codigo)}</b><div class="s">Cadastre a unidade (ex.: 142) para ver o andar no 3D.</div>`;

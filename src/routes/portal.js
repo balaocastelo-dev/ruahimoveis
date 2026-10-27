@@ -90,6 +90,7 @@ api.post('/interesse', async (req, res) => {
   const b = req.body || {};
   if (b.empresa) return res.json({ ok: true }); // armadilha para robô: finge que deu certo
   if (limite(req, 6)) return res.status(429).json({ erro: 'Muitos envios seguidos. Aguarde alguns minutos ou fale pelo WhatsApp.' });
+  if (b.condominio && !b.codigo) return interesseCondominio(req, res, b);
   const codigo = String(b.codigo || '').toUpperCase();
   if (!CODIGO.test(codigo)) return res.status(400).json({ erro: 'Imóvel inválido.' });
   const im = dados.imovelAVenda(codigo);
@@ -129,6 +130,35 @@ api.post('/interesse', async (req, res) => {
   audit(null, 'portal_interesse', `${im.codigo} · lead ${leadId}${existente ? ' (já existia)' : ''}${visita ? ' · visita' : ''}`);
   res.json({ ok: true });
 });
+
+// "Quero morar aqui" na página pública de um condomínio → lead no CRM com o condomínio no perfil de busca.
+function contato(b) {
+  const nome = txt(b.nome, 120);
+  if (!nome || nome.length < 2) return { erro: 'Diga seu nome.' };
+  const tel = normTel(b.telefone);
+  if (!/^55\d{10,11}$/.test(tel)) return { erro: 'Confira o telefone, com DDD.' };
+  const email = txt(b.email, 120);
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { erro: 'Confira o e-mail (ou deixe em branco).' };
+  if (!b.aceite) return { erro: 'Marque que concorda com o uso dos dados para o contato.' };
+  return { nome, tel, email, mensagem: txt(b.mensagem, 1000) };
+}
+function interesseCondominio(req, res, b) {
+  const c = require('../condominios/publico').porSlug(String(b.condominio));
+  if (!c) return res.status(404).json({ erro: 'Condomínio não encontrado.' });
+  const d = contato(b);
+  if (d.erro) return res.status(400).json({ erro: d.erro });
+  const texto = [`Quer morar no condomínio ${c.nome}${c.bairro ? ` (${c.bairro})` : ''} — pediu aviso quando houver imóvel à venda. Página /condominios/${c.slug}.`, d.mensagem ? `Mensagem: ${d.mensagem}` : '', d.email ? `E-mail: ${d.email}` : ''].filter(Boolean).join('\n');
+  const existente = one('SELECT * FROM leads WHERE telefone=?', d.tel);
+  let leadId;
+  if (existente) { leadId = existente.id; run(`UPDATE leads SET ultimo_contato=datetime('now','localtime'), email=coalesce(email,?) WHERE id=?`, d.email, leadId); }
+  else {
+    leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,tipo_desejado,bairros,busca,ultimo_contato) VALUES(?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
+      d.nome, d.tel, d.email, 'Portal RUAH · condomínio', 'novo', 'morno', c.tipo === 'horizontal' ? 'Casa em condomínio' : 'Apartamento', c.bairro, `Condomínio ${c.nome}`).lastInsertRowid);
+  }
+  run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', texto, null);
+  audit(null, 'portal_interesse_condominio', `${c.nome} · lead ${leadId}`);
+  res.json({ ok: true });
+}
 
 module.exports = router;
 module.exports.api = api;

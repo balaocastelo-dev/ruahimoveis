@@ -12,17 +12,19 @@ const cd3d = (id, imovel) => `/condominio-3d.html?id=${id}${imovel ? '&imovel=' 
 async function telaCondominios(qs) {
   const f = { q: qs.get('q') || '', tipo: qs.get('tipo') || '', bairro: qs.get('bairro') || '', venda: qs.get('venda') || '', alvo: qs.get('alvo') || '', ordem: qs.get('ordem') || 'venda', pagina: qs.get('pagina') || '1' };
   const link = (o) => '#/condominios?' + new URLSearchParams(Object.fromEntries(Object.entries({ ...f, pagina: '1', ...o }).filter(([, v]) => v)));
-  const [l, bairros] = await Promise.all([api('GET', '/api/condominios?' + new URLSearchParams(f)), api('GET', '/api/condominios/bairros').catch(() => [])]);
+  const [l, bairros, alertas] = await Promise.all([api('GET', '/api/condominios?' + new URLSearchParams(f)), api('GET', '/api/condominios/bairros').catch(() => []), api('GET', '/api/condominios/alertas').catch(() => [])]);
   const r = l.resumo || {};
   const paginas = Math.max(1, Math.ceil(l.total / l.porPagina));
   $('#main').innerHTML = `<div class="eyebrow">Captação</div><h1>Condomínios</h1>
   <p class="lead">Os prédios e condomínios residenciais de Campinas, juntando o CNPJ da Receita, o mapa aberto e os cadastros da RUAH. Cada um cruza a carteira, o Radar e o Fisguei: quem está vendendo, por quanto e por qual imobiliária.</p>
+  ${alertas.length ? `<div class="card cd-alertas"><div class="row"><h2 style="margin:0;flex:1">Anúncios novos em prédios-alvo</h2><button class="btn sm" data-act="cd-visto">Marcar como vistos</button></div>
+    <div class="list" style="margin-top:8px">${alertas.slice(0, 8).map((a) => `<a class="item click" href="${a.href}" style="text-decoration:none;color:inherit"><span class="pill ${a.origem === 'radar' ? 'info' : 'ok'}">${a.origem === 'radar' ? 'Radar' : 'Fisguei'}</span><span style="flex:1">${esc(a.texto)}</span><span class="muted small">${dataBR(a.criado_em)}</span></a>`).join('')}</div></div>` : ''}
   <div class="grid g4 cd-kpis">${cdKpi((r.total || 0).toLocaleString('pt-BR'), 'condomínios na base')}${cdKpi((r.verticais || 0).toLocaleString('pt-BR'), 'prédios')}${cdKpi((r.horizontais || 0).toLocaleString('pt-BR'), 'condomínios de casas')}${cdKpi((r.alvos || 0).toLocaleString('pt-BR'), 'prédios-alvo', '<a href="' + link({ alvo: '1' }) + '">ver</a>')}</div>
   <form class="row cd-filtros" data-form="cd-busca">
     <input name="q" value="${esc(f.q)}" placeholder="Nome, rua ou CNPJ" style="flex:1;min-width:200px">
     <select name="tipo"><option value="">Todos os tipos</option>${['vertical', 'horizontal', 'indefinido'].map((t) => `<option value="${t}" ${f.tipo === t ? 'selected' : ''}>${CD_TIPO[t][0]}</option>`).join('')}</select>
     <select name="bairro"><option value="">Todos os bairros</option>${bairros.map((b) => `<option ${f.bairro === b ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
-    <select name="ordem">${[['venda', 'Mais à venda'], ['nome', 'Nome'], ['recentes', 'Recém-incluídos']].map(([k, t]) => `<option value="${k}" ${f.ordem === k ? 'selected' : ''}>${t}</option>`).join('')}</select>
+    <select name="ordem">${[['venda', 'Mais à venda agora'], ['giro', 'Mais anúncios em 90 dias'], ['nome', 'Nome'], ['recentes', 'Recém-incluídos']].map(([k, t]) => `<option value="${k}" ${f.ordem === k ? 'selected' : ''}>${t}</option>`).join('')}</select>
     <label class="chk"><input type="checkbox" name="venda" ${f.venda ? 'checked' : ''}> Com imóvel à venda</label>
     <label class="chk"><input type="checkbox" name="alvo" ${f.alvo ? 'checked' : ''}> Prédios-alvo</label>
     <button class="btn pri" type="submit">Buscar</button>
@@ -33,7 +35,7 @@ async function telaCondominios(qs) {
       return `<a class="cd-item" href="#/condominios/${c.id}" data-cd="${c.id}">
         <div class="cd-item-top"><b>${esc(c.nome)}</b>${c.alvo ? '<span class="pill gold" title="Prédio-alvo">alvo</span>' : ''}</div>
         <div class="muted small">${esc(cdEnd(c))}</div>
-        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></a>`;
+        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.giro ? `<span class="pill warn">${c.giro} anúncio(s) em 90 dias</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></a>`;
     }).join('') : '<div class="empty">Nenhum condomínio neste filtro.</div>'}
       <div class="row" style="margin-top:10px"><span class="muted small">${l.total.toLocaleString('pt-BR')} condomínio(s) · página ${l.pagina} de ${paginas}</span><span class="sp"></span>
       ${l.pagina > 1 ? `<a class="btn sm" href="${link({ pagina: l.pagina - 1 })}">← Anterior</a>` : ''}${l.pagina < paginas ? `<a class="btn sm" href="${link({ pagina: l.pagina + 1 })}">Próxima →</a>` : ''}</div>
@@ -80,6 +82,7 @@ async function telaCondominio(id) {
       ${temGeo ? `<a class="btn pri cd-btn3d" href="${cd3d(c.id)}" target="_blank" rel="noopener"><span aria-hidden="true">◈</span> Ver em 3D</a>` : '<span class="pill warn">sem posição no mapa: ajuste para ver o 3D</span>'}
       <button class="btn" data-act="cd-alvo" data-id="${c.id}" data-v="${c.alvo ? 0 : 1}">${c.alvo ? 'Tirar dos prédios-alvo' : '★ Marcar como prédio-alvo'}</button>
       <button class="btn" data-act="cd-editar" data-id="${c.id}">Editar dados</button>
+      ${c.slug && temGeo ? `<a class="btn" href="/condominios/${esc(c.slug)}" target="_blank" rel="noopener" title="Página do condomínio para o cliente (portal)">Página do cliente</a>` : ''}
     </div>
   </div>
   <div class="grid g4 cd-kpis">
@@ -155,6 +158,7 @@ async function miniMapa(c) {
   });
 }
 
+ACT['cd-visto'] = (b) => comBotao(b, async () => { await api('POST', '/api/condominios/alertas/visto'); atualizaBadge(); rota(); });
 ACT['cd-3d'] = (el, e) => { e.stopPropagation(); window.open(el.dataset.href, '_blank', 'noopener'); };
 ACT['cd-alvo'] = (b) => comBotao(b, async () => { await api('PUT', `/api/condominios/${b.dataset.id}`, { alvo: b.dataset.v === '1' }); toast(b.dataset.v === '1' ? 'Prédio-alvo: você será avisado de anúncios novos aqui' : 'Removido dos prédios-alvo'); rota(); });
 ACT['cd-editar'] = async (b) => {

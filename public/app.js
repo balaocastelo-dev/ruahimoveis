@@ -97,7 +97,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios']]],
+  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios', 'cond']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
@@ -118,6 +118,7 @@ async function atualizaBadge() {
     b.title = alerta ? 'O radar precisa de atenção' : 'Consultas pagas esperando aprovação';
   }).catch(() => {});
   api('GET', '/api/fisguei/resumo').then((f) => { const b = $('#badge-fisguei'); if (!b) return; const alerta = ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado); b.textContent = alerta ? '!' : f.precisaCorretor; b.hidden = !alerta && !f.precisaCorretor; b.title = alerta ? 'O robô TH-IA-GO precisa de atenção' : 'Respostas esperando o corretor'; }).catch(() => {});
+  api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; }).catch(() => {});
   try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; } } catch {}
 }
 function marcaNav(h) {
@@ -215,11 +216,12 @@ ACT['blog-legenda'] = async (el) => {
 async function telaPainel() {
   if (veTudo() && typeof telaPainelAdm === 'function') return telaPainelAdm();
   const d = await api('GET', '/api/painel');
+  api('GET', '/api/condominios/alertas').then((l) => { const el = $('#painel-cond'); if (el && l.length) el.innerHTML = `<div class="banner info"><b>${l.length}</b> anúncio(s) novo(s) em prédios-alvo: ${l.slice(0, 3).map((a) => `<a href="${a.href}">${esc(a.texto)}</a>`).join(' · ')}${l.length > 3 ? ' …' : ''} <a href="#/condominios?alvo=1">ver prédios-alvo</a></div>`; }).catch(() => {});
   if (veTudo()) api('GET', '/api/radar/resumo').then((r) => { const el = $('#painel-aprov'); if (el && r.aprovacoesPendentes) el.innerHTML = `<div class="banner warn"><b>${r.aprovacoesPendentes}</b> pedido(s) de matrícula/birô esperando sua aprovação. <a href="#/radar/aprovacoes">Revisar</a></div>`; }).catch(() => {});
   if (veTudo()) api('GET', '/api/radar/alertas').then((al) => { const el = $('#painel-radar'); if (el && typeof avisoSaude === 'function') el.innerHTML = avisoSaude(al, false); }).catch(() => {});
   $('#main').innerHTML = `<div class="eyebrow">${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>
   <h1>Painel</h1><p class="lead">${veTudo() ? 'Visão de toda a imobiliária.' : 'Seus imóveis, leads e visitas.'}</p>
-  <div id="painel-radar"></div><div id="painel-aprov"></div>
+  <div id="painel-radar"></div><div id="painel-aprov"></div><div id="painel-cond"></div>
   ${d.sugestoes ? `<div class="banner warn">A IA preparou <b>${d.sugestoes}</b> resposta(s) esperando aprovação. <a href="#/whats">Abrir WhatsApp</a></div>` : ''}
   <div class="grid g4">
     <div class="card kpi"><div class="n">${d.kpis.imoveis}</div><div class="l">Imóveis na carteira</div></div>

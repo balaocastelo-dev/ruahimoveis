@@ -92,6 +92,11 @@ const B = require('../src/condominios/base');
   assert.equal(one('SELECT alvo, andares FROM condominios WHERE id=?', ed).andares, 18);
   assert.equal((await req('PUT', `/api/condominios/${ed}`, { lat: -10, lon: -40 })).s, 400); console.log('ok · posição fora de Campinas recusada');
   assert.equal((await req('GET', '/api/condominios?alvo=1')).j.itens.length, 1);
+  run("INSERT INTO fisguei_anuncios(fisgar_id,portal,titulo,tipo,cep,logradouro,numero,valor,anunciante_tipo,status) VALUES('fx3','OLX','Novo','Apartamento','13013000','Avenida Governador Pedro de Toledo','1000',990000,'particular','novo')");
+  assert.equal(ok(await req('POST', '/api/condominios/vincular', {}), 'vincula anúncio novo').fisguei, 1);
+  const al = ok(await req('GET', '/api/condominios/alertas'), 'alerta de prédio-alvo'); assert.equal(al.length, 1); assert.match(al[0].texto, /990\.000 em Edifício Central View/);
+  ok(await req('POST', '/api/condominios/alertas/visto'), 'alertas vistos'); assert.equal((await req('GET', '/api/condominios/alertas')).j.length, 0);
+  assert.ok(ok(await req('GET', '/api/condominios?ordem=giro'), 'ranking por giro').itens[0].giro >= 3);
 
   // o que tem perto
   const p = ok(await req('GET', `/api/condominios/${ed}/perto`), 'o que tem perto');
@@ -107,6 +112,19 @@ const B = require('../src/condominios/base');
   assert.equal(c3.imovel.andar, 14);
   console.log(`   3D: ${c3.cena.predios.length} prédios, ${c3.cena.vias.length} ruas, fonte ${c3.cena.fonte}, alvo ${c3.cena.alvo.quantos} prédio(s)`);
   const c3b = ok(await req('GET', `/api/condominios/${ed}/3d`), 'cena 3D do cache'); assert.equal(c3b.cena.gerado, c3.cena.gerado);
+
+  // página pública
+  const pub = await fetch(`${base}/condominios/edificio-central-view`); const corpo = await pub.text();
+  assert.equal(pub.status, 200); assert.match(corpo, /Edifício Central View/); assert.match(corpo, /noindex/);
+  assert.ok(!/Governador Pedro de Toledo/.test(corpo), 'sem rua e número na página pública');
+  assert.ok(!/Concorrente|Fisguei|Radar/.test(corpo), 'sem dados de concorrentes');
+  console.log('ok · página pública do condomínio');
+  const p3 = await (await fetch(`${base}/api/publico/condominios/edificio-central-view/3d`)).json();
+  assert.ok(p3.cena.predios.length > 10); assert.equal(p3.unidades.length, 0); console.log('ok · 3D público');
+  const r3 = await fetch(`${base}/condominios/edificio-central-view/3d`, { redirect: 'manual' }); assert.equal(r3.status, 302);
+  const lead = await (await fetch(`${base}/api/publico/portal/interesse`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ condominio: 'edificio-central-view', nome: 'Maria Visitante', telefone: '19 99876-5432', aceite: true }) })).json();
+  assert.ok(lead.ok); assert.match(one("SELECT busca FROM leads WHERE nome='Maria Visitante'").busca, /Central View/); console.log('ok · "quero morar aqui" vira lead');
+  assert.equal((await fetch(`${base}/condominios/condominio-empresarial-teste`)).status, 404); console.log('ok · comercial não tem página');
 
   srv.close();
   console.log('\nCondomínios: tudo certo.');

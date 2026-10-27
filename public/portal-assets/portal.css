@@ -300,3 +300,18 @@ body.p-luz-aberta{overflow:hidden}
   .p-grade .p-cartao:nth-child(3n){animation-delay:.12s}
   @keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
+
+/* ---- página do condomínio ---- */
+.p-cd-fonte{font-size:13px;color:var(--pedra)}
+.p-cd-sec{margin:44px 0}
+.p-cd-sec h2{font-family:var(--serifa);font-weight:500;font-size:clamp(28px,3.4vw,40px);margin:0 0 16px}
+.p-cd-sub{color:var(--pedra);font-size:14px;margin:-8px 0 16px}
+.p-cd-chips{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+.p-cd-chips li{border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-size:14.5px;background:var(--papel)}
+.p-cd-perto{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.p-cd-cat{border:1px solid var(--linha);border-radius:var(--raio);padding:14px 16px;background:var(--papel)}
+.p-cd-cat h3{font-size:15px;margin:0 0 8px;font-weight:600}
+.p-cd-cat ul{list-style:none;margin:0;padding:0}
+.p-cd-cat li{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:4px 0;border-top:1px dashed var(--linha)}
+.p-cd-cat li:first-child{border-top:0}
+.p-cd-cat li span:last-child{color:var(--pedra);white-space:nowrap}

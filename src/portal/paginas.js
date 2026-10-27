@@ -406,4 +406,4 @@ function paginaNaoAchada(req) {
   });
 }
 
-module.exports = { paginaVitrine, paginaFavoritos, paginaImovel, paginaNaoAchada, urlBase, fotoUrl, GRUPOS, dataPorExtenso, cortar };
+module.exports = { paginaVitrine, paginaFavoritos, paginaImovel, paginaNaoAchada, urlBase, fotoUrl, GRUPOS, dataPorExtenso, cortar, casca, cartao, whatsapp };

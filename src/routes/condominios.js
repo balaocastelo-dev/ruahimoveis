@@ -19,6 +19,8 @@ r.get('/condominios', (req, res) => {
 });
 r.get('/condominios/mapa', (req, res) => { res.setHeader('Cache-Control', 'private, max-age=120'); res.json(B.pontosMapa()); });
 r.get('/condominios/reconhecer', (req, res) => res.json(B.reconhecer(req.query)));
+r.get('/condominios/alertas', (req, res) => res.json(B.alertas({ todos: req.query.todos === '1' })));
+r.post('/condominios/alertas/visto', (req, res) => { run('UPDATE condominio_alertas SET visto=1 WHERE visto=0'); res.json({ ok: true }); });
 r.get('/condominios/bairros', (req, res) => res.json(all("SELECT bairro, count(*) n FROM condominios WHERE bairro IS NOT NULL AND coalesce(tipo,'') <> 'comercial' GROUP BY bairro HAVING count(*) >= 3 ORDER BY bairro").map((x) => x.bairro)));
 
 r.get('/condominios/:id', (req, res) => {

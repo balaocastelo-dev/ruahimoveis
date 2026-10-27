@@ -321,6 +321,8 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['condominios', 'atualizado_em', 'TEXT'],
   ['condominios', 'numeracao', 'TEXT'],
   ['condominios', 'sem_nome', 'INTEGER NOT NULL DEFAULT 0'],
+  ['oportunidades', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
+  ['fisguei_anuncios', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
   ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
@@ -333,6 +335,10 @@ db.exec(`CREATE TABLE IF NOT EXISTS condominio_cache (
 CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_cnpj ON condominios(cnpj) WHERE cnpj IS NOT NULL;
 CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_slug ON condominios(slug) WHERE slug IS NOT NULL;
 CREATE INDEX IF NOT EXISTS ix_op_cond ON oportunidades(condominio_id);
+CREATE TABLE IF NOT EXISTS condominio_alertas (
+  id INTEGER PRIMARY KEY, condominio_id INTEGER NOT NULL REFERENCES condominios(id) ON DELETE CASCADE,
+  origem TEXT NOT NULL, ref_id INTEGER NOT NULL, texto TEXT, visto INTEGER NOT NULL DEFAULT 0,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), UNIQUE (origem, ref_id));
 CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);`);
 
