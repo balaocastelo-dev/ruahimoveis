@@ -12,12 +12,12 @@ const fgEnd = (a) => [a.logradouro, a.numero].filter(Boolean).join(', ') || a.ba
 const fgRef = (id) => 'FG-' + String(id).padStart(5, '0');
 const LEAFLET = { js: '/vendor/leaflet/leaflet.js', css: '/vendor/leaflet/leaflet.css' };
 
-// Fundo dos mapas: CARTO Voyager (dados do OpenStreetMap). O servidor do OSM recusa pedidos sem "Referer" e o sistema não manda
-// Referer para fora; por isso o fundo vem da CARTO, que aceita, e cada pedido de ladrilho leva só a origem do site.
+// Fundo dos mapas: OpenStreetMap. O servidor do OSM recusa pedido sem "Referer" e o sistema não manda Referer para fora
+// (Referrer-Policy same-origin); por isso só os ladrilhos do mapa levam a origem do site (sem caminho nem dados).
 function camadaMapa(m) {
-  return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    maxZoom: 20, subdomains: 'abcd', referrerPolicy: 'strict-origin-when-cross-origin',
-    attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+  return L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19, referrerPolicy: 'strict-origin-when-cross-origin',
+    attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
   }).addTo(m);
 }
 function carregaLeaflet() {

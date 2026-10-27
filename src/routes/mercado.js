@@ -54,17 +54,21 @@ function naVitrine(linhas, q) {
   const sub = String(q.sub || '');
   return linhas.filter((x) => categoria(x) === cat && (!sub || subtipo(x, cat) === sub)).map((x) => ({ ...x, area_util: area(x, cat), subtipo: subtipo(x, cat) }));
 }
-// foto de capa de cada bairro/rua: a primeira foto do imóvel mais valioso do grupo (uma consulta só para todos)
+// foto de capa de cada bairro/rua: entre os imóveis mais valiosos do grupo, o anúncio com mais fotos
+// (anúncio caprichado costuma abrir com a fachada ou a sala, não com propaganda). Uma consulta só para todos.
 function capas(grupos) {
-  const ids = [...new Set(grupos.map((g) => g.top).filter(Boolean))];
+  const ids = [...new Set(grupos.flatMap((g) => g.tops || []))];
   const fotos = new Map();
   for (let i = 0; i < ids.length; i += 400) {
     const parte = ids.slice(i, i + 400);
     for (const x of all(`SELECT id, fotos FROM fisguei_anuncios WHERE id IN (${parte.map(() => '?').join(',')})`, ...parte)) {
-      try { const f = (JSON.parse(x.fotos || '[]') || [])[0]; if (f) fotos.set(x.id, f); } catch {}
+      try { const f = JSON.parse(x.fotos || '[]') || []; if (f[0]) fotos.set(x.id, f); } catch {}
     }
   }
-  return grupos.map((g) => ({ ...g, foto: fotos.get(g.top) || null }));
+  return grupos.map(({ tops = [], ...g }) => {
+    const melhor = tops.filter((id) => fotos.has(id)).sort((a, b) => fotos.get(b).length - fotos.get(a).length)[0];
+    return { ...g, foto: melhor ? fotos.get(melhor)[0] : null };
+  });
 }
 const med = (l) => { const s = l.filter((x) => x > 0).sort((a, b) => a - b); if (!s.length) return null; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 // agrupa variações de grafia ("Cambuí", "CAMBUI") e mostra a mais comum
@@ -78,8 +82,8 @@ function agrupa(linhas, campo, kf = G.chave) {
   return [...g.values()].map((o) => {
     const v = o.itens.map((x) => x.valor), m2 = o.itens.filter((x) => x.valor && x.area_util > 20).map((x) => x.valor / x.area_util);
     const geo = o.itens.filter((x) => x.lat);
-    const top = o.itens.reduce((b, x) => (!b || (x.valor || 0) > (b.valor || 0) ? x : b), null);
-    return { chave: o.chave, top: top && top.id, nome: Object.entries(o.nomes).sort((a, b) => b[1] - a[1] || b[0].length - a[0].length)[0][0], n: o.itens.length, mediana: med(v), m2: med(m2) && Math.round(med(m2)),
+    const tops = [...o.itens].sort((a, b) => (b.valor || 0) - (a.valor || 0)).slice(0, 4).map((x) => x.id);
+    return { chave: o.chave, tops, nome: Object.entries(o.nomes).sort((a, b) => b[1] - a[1] || b[0].length - a[0].length)[0][0], n: o.itens.length, mediana: med(v), m2: med(m2) && Math.round(med(m2)),
       min: Math.min(...v.filter(Boolean)), max: Math.max(...v.filter(Boolean)), particulares: o.itens.filter((x) => x.anunciante_tipo === 'particular').length,
       lat: geo.length ? geo.reduce((s, x) => s + x.lat, 0) / geo.length : null, lon: geo.length ? geo.reduce((s, x) => s + x.lon, 0) / geo.length : null };
   });
