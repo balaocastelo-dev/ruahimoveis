@@ -21,13 +21,18 @@ async function telaEscritorio() {
   const d = await api('GET', '/api/escritorio');
   EV_CACHE = d;
   const porSlug = Object.fromEntries(d.agentes.map((a) => [a.slug, a]));
-  const pcAviso = !d.pc.vivo ? `<div class="banner warn"><b>O escritório está fechado:</b> os agentes trabalham no PC da RUAH (WhatsApp e IA local). Ligue o PC com o Sistema RUAH aberto; aqui você pode configurar tudo enquanto isso.</div>`
-    : d.pc.ia === false ? `<div class="banner warn"><b>A IA local (Ollama) não respondeu no PC.</b> As mensagens chegam e esperam; os agentes respondem assim que o Ollama abrir.</div>`
-    : d.pc.pausado ? '<div class="banner warn"><b>Escritório em pausa:</b> ninguém responde até você retomar.</div>' : '';
+  const p = d.pc;
+  const pcAviso = !p.nuvem && !p.vivo ? `<div class="banner warn"><b>O cérebro dos agentes ainda depende do PC.</b> Coloque a chave do Gemini na <a href="#/whats/config">Configuração geral</a> e eles passam a pensar na nuvem, com o PC desligado.</div>`
+    : !p.nuvem && p.ia === false ? `<div class="banner warn"><b>A IA local (Ollama) não respondeu no PC.</b> Coloque a chave do Gemini na <a href="#/whats/config">Configuração geral</a> para não depender do PC.</div>`
+    : p.nuvem && p.ia === false ? `<div class="banner warn"><b>O Gemini não respondeu no último ciclo${p.cerebro.erro ? ': ' + esc(p.cerebro.erro) : ''}.</b> Confira a chave na <a href="#/whats/config">Configuração geral</a>.</div>`
+    : p.nuvem && !p.vivo ? `<div class="banner info"><b>Cérebro na nuvem funcionando.</b> As linhas de WhatsApp ficam no PC da RUAH: com ele desligado, as respostas esperam na fila e saem quando ele ligar. A conversa de teste funciona normalmente.</div>`
+    : p.pausado ? '<div class="banner warn"><b>Escritório em pausa:</b> ninguém responde até você retomar.</div>' : '';
+  const selo = `<span class="ev-pc ${p.nuvem ? 'on' : p.vivo ? 'on' : ''}"><i></i>${p.nuvem ? `Cérebro na nuvem · ${esc(p.modelo || 'Gemini')}` : p.vivo ? `Cérebro no PC · ${esc(p.modelo || '')}` : 'Cérebro desligado'}</span>
+    <span class="ev-pc ${p.vivo ? 'on' : ''}"><i></i>${p.vivo ? 'WhatsApp no PC ligado' : 'WhatsApp no PC desligado'}</span>`;
   $('#main').innerHTML = `<div class="ev-topo"><div><div class="eyebrow">Atendimento</div><h1>Escritório virtual</h1>
     <p class="lead">Nove agentes robôs, cada um com um setor, um número de WhatsApp (QR code) e uma <b>alma</b> — o arquivo <span class="mono">.soul</span> com as instruções de como ele pensa e fala. Eles atendem clientes, buscam donos de imóveis e mantêm o dono e os corretores informados.</p></div>
-    <div class="ev-topo-acoes"><span class="ev-pc ${d.pc.vivo ? 'on' : ''}"><i></i>${d.pc.vivo ? `PC trabalhando${d.pc.ia ? ' · IA ' + esc(d.pc.modelo || '') : ''}` : 'PC desligado'}</span>
-      <a class="btn" href="#/whats/conversas">Conversas do CRM</a>${d.pode_editar ? '<button class="btn" data-act="ev-regras">Regras do escritório</button>' : ''}</div></div>
+    <div class="ev-topo-acoes">${selo}
+      <a class="btn" href="#/whats/conversas">Conversas do CRM</a>${d.pode_editar ? '<a class="btn pri" href="#/whats/config">Configuração geral</a>' : ''}</div></div>
   ${pcAviso}
   <div class="ev-kpis">
     <div class="ev-kpi"><b>${d.totais.conectados}<small>/9</small></b><span>agentes com WhatsApp no ar</span></div>
@@ -86,17 +91,6 @@ async function evAtualiza() {
 ACT['ev-aprova'] = (el) => comBotao(el, async () => { const t = $('#evap-' + el.dataset.id); await api('POST', `/api/escritorio/saidas/${el.dataset.id}/aprovar`, { texto: t ? t.value : undefined }); toast('Aprovada: sai pelo WhatsApp do agente em instantes.'); rota(); });
 ACT['ev-descarta'] = (el) => comBotao(el, async () => { await api('POST', `/api/escritorio/saidas/${el.dataset.id}/descartar`); toast('Descartada'); rota(); });
 
-ACT['ev-regras'] = async () => {
-  const g = (EV_CACHE && EV_CACHE.geral) || {};
-  modal(`<h2>Regras do escritório</h2><form class="grid" data-form="ev-regras" style="gap:10px">
-    <label class="check"><input type="checkbox" name="ligado" ${g.ligado ? 'checked' : ''}> Escritório trabalhando (desmarque para pausar todos os agentes)</label>
-    <div class="grid g2"><label class="f">Casas da Clara até (R$)<input class="inp" name="limite_casas" type="number" step="50000" value="${g.limite_casas}"></label>
-    <label class="f">Apartamento vira alto padrão a partir de (R$)<input class="inp" name="limite_alto_apto" type="number" step="50000" value="${g.limite_alto_apto}"></label></div>
-    <label class="check"><input type="checkbox" name="puxar_conversa" ${g.puxar_conversa ? 'checked' : ''}> Lead novo do portal ou do blog: o agente do setor manda a primeira mensagem (no modo "sugerir", espera aprovação)</label>
-    <p class="muted small" style="margin:0">Cada imóvel e cada cliente vão para o agente do setor: off-market → Vicente; terreno → Teo; galpão, sala e loja → Bruno; apartamento → Ana (ou Helena acima do limite); casa → Clara (ou Helena acima do limite).</p>
-    <div class="row"><span class="sp"></span><button class="btn" type="button" data-fecha>Cancelar</button><button class="btn pri" type="submit">Salvar</button></div></form>`);
-};
-FORM['ev-regras'] = async (f) => { await api('PUT', '/api/escritorio/geral', formJSON(f)); fechaModal(); toast('Regras salvas'); rota(); };
 
 // ---------- mesa de um agente ----------
 const EV_ABAS = [['mesa', 'Mesa'], ['conversas', 'Conversas'], ['alma', 'Alma (.soul)'], ['whatsapp', 'WhatsApp'], ['teste', 'Testar conversa'], ['ajustes', 'Ajustes']];
@@ -247,7 +241,7 @@ async function evTesteCarrega(slug, silencioso) {
   if (silencioso && box.dataset.sig === sig) return;
   box.dataset.sig = sig;
   box.innerHTML = (d.mensagens.length ? d.mensagens.map((m) => `<div class="msg ${m.direcao === 'entrada' ? 'saida' : 'entrada'}">${esc(m.texto)}<small>${m.direcao === 'entrada' ? 'você' : esc(slug)} · ${evHora(m.criado_em)}</small></div>`).join('') : '<span class="muted small">Mande a primeira mensagem.</span>')
-    + (d.pendente ? `<div class="msg entrada ev-digitando"><span></span><span></span><span></span>${!d.pc.vivo ? '<small>o PC está desligado: a resposta sai quando ele ligar</small>' : d.pc.ia === false ? '<small>esperando a IA local (Ollama) no PC</small>' : ''}</div>` : '');
+    + (d.pendente ? `<div class="msg entrada ev-digitando"><span></span><span></span><span></span>${d.pc.nuvem ? (d.pc.ia === false ? '<small>o Gemini não respondeu: confira a chave na Configuração geral</small>' : '') : !d.pc.vivo ? '<small>sem chave do Gemini, quem responde é o PC (desligado). Coloque a chave na Configuração geral.</small>' : d.pc.ia === false ? '<small>esperando a IA local (Ollama) no PC</small>' : ''}</div>` : '');
   box.scrollTop = box.scrollHeight;
   const ac = $('#ev-teste-acoes'); if (ac) ac.innerHTML = d.acoes.length ? d.acoes.map((x) => `<div class="ev-ev"><span class="ev-ic">⚙</span><div><span class="ev-ev-t">${esc(x.texto.replace('Na conversa de teste, faria: ', ''))}</span><span class="muted small">${dataBR(x.criado_em)}</span></div></div>`).join('') : '<div class="empty">Nenhuma ação ainda.</div>';
 }
@@ -280,3 +274,55 @@ function evLigacoes(a) {
   };
   return `<ul class="small">${(L[a.tipo === 'interno' ? a.slug : a.tipo] || []).map((x) => `<li>${x}</li>`).join('')}</ul>`;
 }
+
+// ---------- configuração geral do escritório ----------
+async function telaEscritorioConfig() {
+  if (!veTudo()) { $('#main').innerHTML = '<div class="empty">Só o administrativo e o gestor mudam a configuração do escritório.</div>'; return; }
+  const d = await api('GET', '/api/escritorio/config');
+  const ia = d.ia, g = d.geral, p = d.pc;
+  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><div class="eyebrow">Escritório virtual</div><h1>Configuração geral</h1>
+  <p class="lead">O que vale para os 9 agentes: o cérebro que alimenta todos eles, as regras dos setores e o funcionamento sem o PC.</p>
+  <div class="grid g2" style="align-items:start">
+    <form class="card grid" data-form="ev-ia" style="gap:12px">
+      <div class="row"><h2 style="margin:0">Cérebro dos agentes</h2><span class="sp"></span><span class="pill ${ia.provedor === 'gemini' ? 'ok' : 'warn'}">${ia.provedor === 'gemini' ? 'Gemini (nuvem)' : 'IA local do PC'}</span></div>
+      <p class="small" style="margin:0">Com a chave da API do Gemini, os agentes pensam na nuvem: respondem, marcam visitas, mandam relatórios e fazem a conversa de teste mesmo com o PC desligado. Sem chave, quem pensa é a IA local do PC (${esc(ia.ollama_modelo)}).</p>
+      <label class="f">Chave da API do Gemini${ia.tem_chave ? ` <span class="muted small">· salva, termina em <span class="mono">${esc(ia.chave_final)}</span></span>` : ''}
+        <input class="inp mono" name="chave" type="password" autocomplete="off" spellcheck="false" placeholder="${ia.tem_chave ? 'Deixe em branco para manter a chave salva' : 'Cole aqui a chave (AIza…)'}"></label>
+      ${ia.chave_quebrada ? '<div class="banner warn small" style="margin:0">A chave salva não pôde ser lida neste ambiente. Cole a chave de novo.</div>' : ''}
+      <p class="muted small" style="margin:-4px 0 0">Crie a chave em <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio › Get API key</a>. Ela fica cifrada no banco e nunca aparece inteira na tela.</p>
+      <label class="f">Modelo<input class="inp mono" name="modelo" list="ev-modelos" value="${esc(ia.modelo)}" placeholder="gemini-flash-latest"><datalist id="ev-modelos"></datalist></label>
+      <p class="muted small" style="margin:-4px 0 0"><span class="mono">gemini-flash-latest</span> sempre aponta para o Flash mais novo (rápido e barato, bom para WhatsApp). "Testar" lista os modelos que a sua chave pode usar.</p>
+      <div id="ev-ia-teste">${ia.testado_em ? `<div class="banner ${ia.teste_ok ? 'ok' : 'bad'} small" style="margin:0">${ia.teste_ok ? '✓ ' : '✗ '}${esc(ia.teste_msg || '')}<br><span class="muted">${dataBR(ia.testado_em)}</span></div>` : ''}</div>
+      <div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn pri" type="submit">Salvar</button><button class="btn" type="button" data-act="ev-ia-testar" ${ia.tem_chave ? '' : 'disabled'}>Testar a chave</button>
+        ${ia.tem_chave ? '<span class="sp"></span><button class="btn" type="button" data-act="ev-ia-apagar">Remover a chave</button>' : ''}</div>
+    </form>
+    <div class="card"><h2>Funcionando sem o PC</h2>
+      <div class="ev-func">
+        <div class="${ia.provedor === 'gemini' ? 'on' : ''}"><b>Cérebro</b><span>${ia.provedor === 'gemini' ? `Na nuvem (Gemini)${p.cerebro.em ? ' · último ciclo ' + dataBR(p.cerebro.em.replace('T', ' ').slice(0, 19)) : ''}` : 'No PC (sem chave do Gemini)'}</span></div>
+        <div class="${ia.provedor === 'gemini' ? 'on' : ''}"><b>Conversa de teste, aprovações, relatório do dono, lembretes</b><span>${ia.provedor === 'gemini' ? 'Na nuvem, a qualquer hora' : 'Dependem do PC ligado'}</span></div>
+        <div class="${p.vivo ? 'on' : ''}"><b>Linhas de WhatsApp (QR code)</b><span>No PC da RUAH${p.vivo ? ', ligado agora' : ', desligado agora'}. Com o PC desligado, as mensagens esperam na fila e saem quando ele ligar.</span></div>
+      </div>
+      <p class="small muted">Para as linhas também saírem do PC, dá para usar um serviço de WhatsApp na nuvem (Z-API, W-API) ou um servidor próprio. Fica para quando você decidir.</p></div>
+    <form class="card grid" data-form="ev-regras" style="gap:10px"><h2 style="margin:0">Regras do escritório</h2>
+      <label class="check"><input type="checkbox" name="ligado" ${g.ligado ? 'checked' : ''}> Escritório trabalhando (desmarque para pausar todos os agentes)</label>
+      <div class="grid g2"><label class="f">Casas da Clara até (R$)<input class="inp" name="limite_casas" type="number" step="50000" value="${g.limite_casas}"></label>
+      <label class="f">Apartamento vira alto padrão a partir de (R$)<input class="inp" name="limite_alto_apto" type="number" step="50000" value="${g.limite_alto_apto}"></label></div>
+      <label class="check"><input type="checkbox" name="puxar_conversa" ${g.puxar_conversa ? 'checked' : ''}> Lead novo do portal ou do blog: o agente do setor manda a primeira mensagem (no modo "sugerir", espera aprovação)</label>
+      <div class="grid g3"><label class="f">Agenda dos corretores<input class="inp" type="time" name="hora_agenda" value="${esc(g.hora_agenda || '')}"></label><label class="f">Lembrete antes da visita (min)<input class="inp" type="number" name="lembrete_visita_min" min="0" max="240" value="${g.lembrete_visita_min}"></label><span></span></div>
+      <p class="muted small" style="margin:0">Off-market → Vicente; terreno → Teo; galpão, sala e loja → Bruno; apartamento → Ana (ou Helena acima do limite); casa → Clara (ou Helena acima do limite). O dono e os horários do relatório ficam na mesa do Augusto.</p>
+      <div class="row"><span class="sp"></span><button class="btn pri" type="submit">Salvar regras</button></div></form>
+  </div>`;
+}
+FORM['ev-ia'] = async (f) => { const o = formJSON(f); if (!o.chave) delete o.chave; const r = await api('PUT', '/api/escritorio/config/ia', o); toast(r.tem_chave ? 'Salvo. Testando a chave…' : 'Salvo'); if (r.tem_chave && o.chave) await evIaTesta(); else rota(); };
+async function evIaTesta(el) {
+  const box = $('#ev-ia-teste'); if (box) box.innerHTML = '<div class="banner info small" style="margin:0">Testando com o Google…</div>';
+  const modelo = $('input[name=modelo]') ? $('input[name=modelo]').value : undefined;
+  const r = await api('POST', '/api/escritorio/config/ia/testar', { modelo });
+  if (!$('#ev-ia-teste')) return;
+  $('#ev-ia-teste').innerHTML = `<div class="banner ${r.teste_ok ? 'ok' : 'bad'} small" style="margin:0">${r.teste_ok ? '✓ ' : '✗ '}${esc(r.teste_msg || '')}${r.modelos.length ? `<br><span class="muted">${r.modelos.length} modelo(s) disponíveis para a chave.</span>` : ''}</div>`;
+  const dl = $('#ev-modelos'); if (dl) dl.innerHTML = ['gemini-flash-latest', 'gemini-flash-lite-latest', 'gemini-pro-latest', ...r.modelos.map((m) => m.id)].map((m) => `<option value="${esc(m)}">`).join('');
+  toast(r.teste_ok ? 'Chave funcionando' : 'A chave não funcionou', !r.teste_ok);
+}
+ACT['ev-ia-testar'] = (el) => comBotao(el, () => evIaTesta(el));
+ACT['ev-ia-apagar'] = (el) => comBotao(el, async () => { if (!confirm('Remover a chave do Gemini? Os agentes voltam a depender da IA local do PC.')) return; await api('PUT', '/api/escritorio/config/ia', { apagar: true }); toast('Chave removida'); rota(); });
+FORM['ev-regras'] = async (f) => { await api('PUT', '/api/escritorio/geral', formJSON(f)); toast('Regras salvas'); rota(); };

@@ -11,6 +11,12 @@ const ia = http.createServer((req, res) => {
   req.on('end', () => {
     res.setHeader('Content-Type', 'application/json');
     if (req.url === '/api/tags') return res.end(JSON.stringify({ models: [{ name: 'qwen3:14b' }] }));
+    if (req.url.startsWith('/v1beta/models?')) return res.end(JSON.stringify({ models: [{ name: 'models/gemini-flash-latest', displayName: 'Gemini Flash', supportedGenerationMethods: ['generateContent'] }] }));
+    if (req.url.startsWith('/v1beta/models/')) {
+      ia.gemini = { chave: req.headers['x-goog-api-key'], corpo: JSON.parse(corpo || '{}') };
+      const r = respostas.shift() || { ok: true, frase: 'Escritório pronto', mensagem: 'Oi! Sou do Gemini.', acoes: [] };
+      return res.end(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify(r) }] } }] }));
+    }
     const pedido = JSON.parse(corpo || '{}');
     ia.ultimo = pedido.messages && pedido.messages[0].content;
     res.end(JSON.stringify({ message: { content: JSON.stringify(respostas.shift() || { mensagem: 'Certo!', acoes: [] }) } }));
@@ -20,6 +26,7 @@ const ia = http.createServer((req, res) => {
 (async () => {
   await new Promise((r) => ia.listen(0, r));
   process.env.OLLAMA_URL = `http://127.0.0.1:${ia.address().port}`;
+  process.env.GEMINI_API_URL = `http://127.0.0.1:${ia.address().port}/v1beta`;
   const app = require('../server');
   const { one, all, run, setConfig } = require('../src/db');
   const B = require('../src/agentes/base');
@@ -129,6 +136,28 @@ const ia = http.createServer((req, res) => {
   const mesa = await req('GET', '/api/escritorio/gerente-corretores');
   ok(mesa.equipe.length >= 2, 'mesa da Marta mostra a equipe');
   await req('GET', '/api/escritorio/captador');
+
+  // 12) chave do Gemini: cérebro na nuvem, teste responde na hora, ciclo protegido por token
+  await req('PUT', '/api/escritorio/config/ia', { chave: 'AIzaTESTE_chave_de_mentira_123456', modelo: 'gemini-flash-latest' });
+  const cf = await req('GET', '/api/escritorio/config');
+  ok(cf.ia.provedor === 'gemini' && cf.ia.chave_final === '3456' && !JSON.stringify(cf).includes('AIzaTESTE'), 'chave salva cifrada e mostrada só no final');
+  ok(!one(`SELECT 1 FROM config WHERE chave='escritorio_ia' AND valor LIKE '%AIzaTESTE%'`), 'chave não fica em texto puro no banco');
+  const tst = await req('POST', '/api/escritorio/config/ia/testar', {});
+  ok(tst.teste_ok && tst.modelos.length === 1, 'teste da chave lista os modelos');
+  respostas.push({ mensagem: 'Oi! Aqui é a Ana, pelo Gemini.', acoes: [] });
+  await req('DELETE', '/api/escritorio/apartamentos/teste');
+  await req('POST', '/api/escritorio/apartamentos/teste', { texto: 'Olá' });
+  const t2 = await req('GET', '/api/escritorio/apartamentos/teste');
+  ok(t2.mensagens.some((m) => m.direcao === 'saida' && /Gemini/.test(m.texto)) && ia.gemini.chave === 'AIzaTESTE_chave_de_mentira_123456', 'conversa de teste respondida na hora pelo Gemini (sem PC)');
+  ok(ia.gemini.corpo.systemInstruction.parts[0].text.includes('Sou a Ana'), 'Gemini recebe a alma');
+  const semToken = await fetch(base + '/escritorio-ciclo', { method: 'POST' });
+  ok(semToken.status === 401, 'ciclo da nuvem recusa sem token');
+  respostas.push({ mensagem: 'Bom dia! Como posso ajudar?', acoes: [] });
+  await E.entrada({ linha: 'casas', telefone: '19977776666', nome: 'Rui', texto: 'Bom dia' });
+  envelhece();
+  const tok = one(`SELECT valor FROM config WHERE chave='escritorio_ciclo_token'`).valor;
+  const cic = await (await fetch(base + '/escritorio-ciclo', { method: 'POST', headers: { 'x-ruah-ciclo': tok } })).json();
+  ok(cic.ok && one(`SELECT 1 FROM agente_mensagens WHERE telefone='5519977776666' AND direcao='saida'`), 'ciclo da nuvem responde o cliente');
 
   srv.close(); ia.close();
   console.log('\nEscritório virtual: tudo certo.');

@@ -871,3 +871,9 @@ fieldset.fx-mais-bairros input[type=search]{width:100%;padding:7px 10px;border:1
 .ev-digitando small{flex-basis:100%}
 @keyframes ev-pula{30%{transform:translateY(-4px);opacity:1}0%,60%,100%{opacity:.4}}
 @media (prefers-reduced-motion:reduce){.ev-mesa:hover{transform:none}.ev-av.pulsa::after,.ev-pc.on i,.ev-ao-vivo i,.ev-ev{animation:none}}
+
+.ev-func{display:grid;gap:8px;margin-bottom:10px}
+.ev-func>div{display:flex;flex-direction:column;gap:1px;padding:9px 12px;border-radius:12px;background:var(--bad-bg);border-left:4px solid var(--bad)}
+.ev-func>div.on{background:var(--ok-bg);border-left-color:var(--ok)}
+.ev-func b{font-size:13px}.ev-func span{font-size:12px;color:var(--muted)}
+.banner.ok{background:var(--ok-bg);color:var(--ok)}.banner.bad{background:var(--bad-bg);color:var(--bad)}

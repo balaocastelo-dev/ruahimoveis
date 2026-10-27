@@ -30,6 +30,9 @@ app.use((req, res, next) => {
 // Webhook do WhatsApp precisa do corpo bruto: vem antes do parser JSON.
 app.use('/webhook/whatsapp', publico.webhook);
 
+// Escritório virtual: ciclo do cérebro na nuvem (agendador do Supabase a cada minuto + aviso do PC quando chega mensagem).
+app.post('/escritorio-ciclo', require('./src/routes/escritorio').ciclo);
+
 // Extensão do Chrome "Fisguei → RUAH": entra com a chave própria (fora de /api, sem sessão).
 app.use('/fisguei-api', require('./src/routes/fisguei').receber);
 
@@ -116,8 +119,18 @@ if (require.main === module) {
     require('./src/services/portais').iniciar();
     // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
     require('./src/fisguei/robo').iniciar();
-    // Escritório virtual: linhas de WhatsApp dos agentes, respostas pela IA local e rotinas dos gerentes.
-    require('./src/agentes/escritorio').iniciar();
+    // Escritório virtual: as linhas de WhatsApp dos agentes rodam num processo à parte (o site pesado não trava o WhatsApp).
+    // O cérebro roda na nuvem quando há chave do Gemini; sem chave, roda nesse processo com a IA local.
+    if (cfg.ESCRITORIO !== '0') {
+      // o processo das linhas fecha sozinho quando o site fecha (canal entre os dois se rompe), então nunca ficam duas cópias
+      const abre = () => {
+        const p = require('child_process').fork(path.join(__dirname, 'src/agentes/servico.js'), [], { execArgv: ['--disable-warning=ExperimentalWarning'] });
+        p.on('exit', (c) => { console.error(new Date().toLocaleTimeString('pt-BR'), '[escritório] processo das linhas saiu (código', c + '); reabrindo em 10 s'); setTimeout(abre, 10e3); });
+        abre.atual = p;
+      };
+      process.on('exit', () => { try { abre.atual && abre.atual.kill(); } catch {} });
+      abre();
+    }
     // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
     const vincula = () => { try { const r = require('./src/condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
     setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);

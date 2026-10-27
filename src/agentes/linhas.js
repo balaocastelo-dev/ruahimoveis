@@ -27,14 +27,21 @@ async function conecta(slug) {
   const pino = (await import('pino')).default;
   const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, Browsers } = B;
   const l = LINHAS[slug] || (LINHAS[slug] = { st: { estado: 'iniciando' }, reconectando: false, parar: false });
+  // nunca duas conexões na mesma sessão (o WhatsApp derruba as duas e o QR code não conecta)
+  if (l.abrindo) return;
+  l.abrindo = true;
+  if (l.sock) { try { l.sock.ev.removeAllListeners(); l.sock.end(); } catch {} l.sock = null; }
   l.parar = false;
+  l.st = { ...l.st, estado: 'iniciando', erro: null }; publica(slug);
   fs.mkdirSync(pasta(slug), { recursive: true });
   const { state, saveCreds } = await useMultiFileAuthState(pasta(slug));
   let version; try { ({ version } = await fetchLatestBaileysVersion()); } catch { /* versão embutida */ }
+  l.abrindo = false;
   const sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`RUAH ${C.POR_SLUG[slug].nome}`), markOnlineOnConnect: false, syncFullHistory: false });
   l.sock = sock;
   sock.ev.on('creds.update', saveCreds);
   sock.ev.on('connection.update', async (u) => {
+    if (l.sock !== sock) return;
     if (u.qr) {
       l.st = { ...l.st, estado: 'qr', erro: null };
       try { l.st.qr = await require('qrcode').toDataURL(u.qr, { margin: 1, width: 320 }); } catch { l.st.qr = null; }
@@ -42,6 +49,7 @@ async function conecta(slug) {
     }
     if (u.connection === 'open') { l.st = { ...l.st, estado: 'conectado', qr: null, erro: null, numero: telDoJid(sock.user && sock.user.id) }; publica(slug); log(slug, 'conectado como', l.st.numero); }
     if (u.connection === 'close') {
+      if (l.sock !== sock) return; // conexão antiga, já substituída
       const codigo = u.lastDisconnect && u.lastDisconnect.error && u.lastDisconnect.error.output && u.lastDisconnect.error.output.statusCode;
       const saiu = codigo === DisconnectReason.loggedOut;
       l.sock = null;
@@ -73,6 +81,7 @@ async function conecta(slug) {
 }
 function falhou(slug, e) {
   const l = LINHAS[slug] || (LINHAS[slug] = { st: {} });
+  l.abrindo = false;
   l.st = { estado: 'erro', erro: String(e && e.message || e).slice(0, 200) }; publica(slug); log(slug, 'falha:', l.st.erro);
   if (!l.reconectando && !l.parar) { l.reconectando = true; setTimeout(() => { l.reconectando = false; conecta(slug).catch((x) => falhou(slug, x)); }, 30e3); }
 }
@@ -86,7 +95,7 @@ async function comandos() {
     log(a.slug, 'comando:', c);
     const l = LINHAS[a.slug];
     if (c === 'conectar') { if (!l || !l.sock) conecta(a.slug).catch((e) => falhou(a.slug, e)); }
-    if (c === 'reiniciar') { if (l && l.sock) { try { l.sock.end(); } catch {} } else conecta(a.slug).catch((e) => falhou(a.slug, e)); }
+    if (c === 'reiniciar') conecta(a.slug).catch((e) => falhou(a.slug, e));
     if (c === 'desconectar') {
       if (l) { l.parar = true; try { await l.sock.logout(); } catch {} try { l.sock && l.sock.end(); } catch {} l.sock = null; l.st = { estado: 'parada' }; }
       fs.rmSync(pasta(a.slug), { recursive: true, force: true });

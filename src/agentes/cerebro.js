@@ -1,4 +1,4 @@
-// Cérebro dos agentes: junta a alma (.soul) com o que o sistema sabe, pergunta à IA local (Ollama, no PC)
+// Cérebro dos agentes: junta a alma (.soul) com o que o sistema sabe, pergunta à IA (Gemini na nuvem ou Ollama no PC)
 // e transforma a resposta em mensagem + ações no sistema (perfil do lead, visita, link, transferência, corretor, afazer).
 const cfg = require('../config');
 const { one, all, run } = require('../db');
@@ -9,22 +9,9 @@ const X = require('./contexto');
 const urlBase = () => (cfg.PUBLIC_URL || (/localhost|127\.0\.0\.1/.test(cfg.BASE_URL) ? cfg.LINK_ONLINE : cfg.BASE_URL)).replace(/\/$/, '');
 const limpa = (s, n = 300) => String(s ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
 
-async function iaDisponivel() {
-  try { const r = await fetch(`${cfg.OLLAMA_URL}/api/tags`, { signal: AbortSignal.timeout(2500) }); return r.ok; } catch { return false; }
-}
-
-async function perguntaIA(sistema, pedido) {
-  const r = await fetch(`${cfg.OLLAMA_URL}/api/chat`, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: cfg.OLLAMA_MODEL, stream: false, think: false, format: 'json',
-      messages: [{ role: 'system', content: sistema }, { role: 'user', content: pedido }],
-      options: { temperature: 0.35, num_predict: 500, num_ctx: 12288 } }),
-    signal: AbortSignal.timeout(150000),
-  });
-  if (!r.ok) throw new Error(`IA local respondeu ${r.status} (confira o Ollama e o modelo ${cfg.OLLAMA_MODEL}).`);
-  const j = await r.json();
-  return String(j.message && j.message.content || '').replace(/<think>[\s\S]*?<\/think>/g, '').trim();
-}
+const ia = require('./ia');
+const iaDisponivel = () => ia.disponivel();
+const perguntaIA = (sistema, pedido) => ia.perguntar(sistema, pedido);
 
 function lerResposta(txt) {
   let o = null;

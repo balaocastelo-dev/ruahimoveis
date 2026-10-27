@@ -1,5 +1,8 @@
-// Escritório virtual (roda no PC): liga as linhas de WhatsApp, recebe mensagens, decide qual agente atende,
-// pede a resposta à IA local, aplica as ações no sistema, manda o que está na fila e roda as rotinas dos gerentes.
+// Escritório virtual em duas partes:
+// - CÉREBRO (cicloCerebro): decide quem atende, pede a resposta à IA, aplica as ações e roda as rotinas dos gerentes.
+//   Com chave do Gemini roda na NUVEM (Vercel, chamado a cada minuto pelo agendador do Supabase e logo depois de cada mensagem);
+//   sem chave, roda no PC com a IA local (Ollama).
+// - LINHAS (iniciar, no PC, num processo separado do site): WhatsApp por QR code, recebe e manda o que está na fila.
 const cfg = require('../config');
 const { one, all, run, getConfig, setConfig } = require('../db');
 const B = require('./base');
@@ -7,13 +10,18 @@ const X = require('./contexto');
 const cerebro = require('./cerebro');
 const linhas = require('./linhas');
 const rotinas = require('./rotinas');
+const ia = require('./ia');
 
 const log = (...a) => console.log(new Date().toLocaleTimeString('pt-BR'), '[escritório]', ...a);
 let ocupado = false, ultimaRotina = 0, ultimaAtribuicao = 0, iaOk = null;
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Estado das linhas no PC (escritorio_status) e do cérebro (escritorio_cerebro), para a tela.
 function status(extra = {}) {
-  try { setConfig('escritorio_status', JSON.stringify({ em: new Date().toISOString(), ia: iaOk, modelo: cfg.OLLAMA_MODEL, ...extra })); } catch {}
+  try { setConfig('escritorio_status', JSON.stringify({ em: new Date().toISOString(), ia: ia.naNuvem() ? 'nuvem' : iaOk, modelo: ia.naNuvem() ? ia.ajustes().modelo : cfg.OLLAMA_MODEL, ...extra })); } catch {}
+}
+function statusCerebro(extra = {}) {
+  try { setConfig('escritorio_cerebro', JSON.stringify({ em: new Date().toISOString(), onde: process.env.VERCEL ? 'nuvem' : 'pc', provedor: ia.ajustes().provedor, modelo: ia.ajustes().provedor === 'gemini' ? ia.ajustes().modelo : cfg.OLLAMA_MODEL, ia: iaOk, ...extra })); } catch {}
 }
 
 // ---------- chegou mensagem numa linha ----------
@@ -42,15 +50,17 @@ async function entrada({ linha, telefone, nome, texto, wa_id }) {
 function captadorEntrada({ telefone, texto, pessoa_id, wa_id }) {
   if (!pessoa_id || !B.ajustes('captador').ativo) return;
   B.registraEntrada({ agente: 'captador', linha: 'captador', telefone, texto, wa_id: wa_id ? 'fg:' + wa_id : null, pessoa_id });
+  avisaNuvem();
 }
 
 // ---------- pensar e responder ----------
-async function processaEntradas() {
+async function processaEntradas(o = {}) {
   // espera 15 s depois da última mensagem da pessoa (muita gente escreve em várias mensagens seguidas)
   const grupos = all(`SELECT agente, telefone, max(id) ultimo, max(criado_em) quando FROM agente_mensagens WHERE processada=0 AND direcao IN ('entrada','nota')
-    GROUP BY agente, telefone ORDER BY max(id) LIMIT 6`);
+    ${o.telefone ? 'AND telefone=?' : ''} GROUP BY agente, telefone ORDER BY max(id) LIMIT 12`, ...(o.telefone ? [o.telefone] : []));
   const corte = new Date(Date.now() - 15e3);
   for (const gr of grupos) {
+    if (o.ate && Date.now() > o.ate) break; // a função da nuvem tem tempo limitado: o resto fica para o próximo ciclo
     const teste = B.ehTeste(gr.telefone);
     const quando = new Date(String(gr.quando).replace(' ', 'T') + '-03:00');
     const ultDir = (one('SELECT direcao FROM agente_mensagens WHERE id=?', gr.ultimo) || {}).direcao;
@@ -93,7 +103,7 @@ async function processaEntradas() {
       fecha(); continue;
     }
 
-    if (!(await cerebro.iaDisponivel())) { iaOk = false; status(); return; } // tenta de novo na próxima volta
+    if (!(await cerebro.iaDisponivel())) { iaOk = false; return; } // tenta de novo no próximo ciclo
     iaOk = true;
     try {
       const r = await cerebro.pensar(gr.agente, gr.telefone, extra);
@@ -156,16 +166,52 @@ function atribuiLeads() {
   }
 }
 
+// ---------- cérebro: um ciclo (nuvem ou PC) ----------
+// Trava no banco para dois ciclos não responderem a mesma pessoa ao mesmo tempo (nuvem x PC, ou dois minutos seguidos).
+function pegaTrava(seg) {
+  const agora = new Date(); const ate = new Date(agora.getTime() + seg * 1000).toISOString();
+  const r = run(`INSERT INTO config(chave,valor) VALUES('escritorio_trava',?) ON CONFLICT(chave) DO UPDATE SET valor=excluded.valor WHERE config.valor < ?`, ate, agora.toISOString());
+  return r.changes > 0;
+}
+const soltaTrava = () => run(`UPDATE config SET valor=? WHERE chave='escritorio_trava'`, new Date(0).toISOString());
+let ultimaRotinaNuvem = 0;
+async function cicloCerebro(o = {}) {
+  if (!B.geral().ligado) { statusCerebro({ pausado: true }); return { pausado: true }; }
+  const prazo = o.prazo || 45e3;
+  if (!pegaTrava(Math.ceil(prazo / 1000) + 15)) return { ocupado: true };
+  const inicio = Date.now(); let erro = null;
+  try {
+    if (o.atribuir !== false && Date.now() - ultimaAtribuicao > 60e3) { ultimaAtribuicao = Date.now(); atribuiLeads(); }
+    await processaEntradas({ ate: inicio + prazo, telefone: o.telefone });
+    if (o.rotinas !== false && Date.now() - ultimaRotinaNuvem > 50e3) { ultimaRotinaNuvem = Date.now(); rotinas.rodar(); }
+  } catch (e) { erro = e.message; log('erro no ciclo:', e.message); }
+  finally { soltaTrava(); statusCerebro({ ms: Date.now() - inicio, erro }); }
+  return { ok: !erro, ms: Date.now() - inicio, erro };
+}
+
+// Avisa a nuvem que chegou mensagem (responde em ~20 s em vez de esperar o próximo minuto).
+let pingMarcado = null;
+function avisaNuvem() {
+  if (!ia.naNuvem() || pingMarcado) return;
+  const token = getConfig('escritorio_ciclo_token');
+  if (!token) return;
+  pingMarcado = setTimeout(async () => {
+    pingMarcado = null;
+    try { await fetch(`${cerebro.urlBase()}/escritorio-ciclo`, { method: 'POST', headers: { 'x-ruah-ciclo': token }, signal: AbortSignal.timeout(60000) }); }
+    catch (e) { log('não consegui chamar a nuvem:', e.message); }
+  }, 17e3);
+}
+
+// ---------- linhas no PC ----------
 async function volta() {
   if (ocupado) return;
   ocupado = true;
   try {
     await linhas.comandos();
     if (!B.geral().ligado) return status({ pausado: true });
-    if (Date.now() - ultimaAtribuicao > 120e3) { ultimaAtribuicao = Date.now(); atribuiLeads(); }
-    await processaEntradas();
     await enviaSaidas();
-    if (Date.now() - ultimaRotina > 60e3) { ultimaRotina = Date.now(); rotinas.rodar(); }
+    // sem chave do Gemini, o cérebro roda aqui mesmo, com a IA local
+    if (!ia.naNuvem()) await cicloCerebro({ prazo: 120e3 });
     status();
   } catch (e) { log('erro na volta:', e.message); }
   finally { ocupado = false; }
@@ -174,10 +220,10 @@ async function volta() {
 function iniciar() {
   if (process.env.VERCEL || cfg.ESCRITORIO === '0') return;
   if (!getConfig('escritorio_desde')) setConfig('escritorio_desde', X.agoraSP().texto + ':00');
-  log('iniciando o escritório virtual (9 agentes)');
-  linhas.iniciar((m) => entrada(m).catch((e) => log('erro na entrada:', e.message)));
-  setInterval(volta, 10e3);
+  log(`iniciando as linhas de WhatsApp dos agentes (cérebro: ${ia.naNuvem() ? 'Gemini na nuvem' : 'IA local do PC'})`);
+  linhas.iniciar((m) => entrada(m).then(avisaNuvem).catch((e) => log('erro na entrada:', e.message)));
+  setInterval(volta, 8e3);
   setTimeout(volta, 3e3);
 }
 
-module.exports = { iniciar, entrada, captadorEntrada, processaEntradas, enviaSaidas, atribuiLeads, volta };
+module.exports = { iniciar, entrada, captadorEntrada, processaEntradas, enviaSaidas, atribuiLeads, volta, cicloCerebro, avisaNuvem };

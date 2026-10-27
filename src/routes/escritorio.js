@@ -7,6 +7,7 @@ const { falha, txt } = require('../util');
 const B = require('../agentes/base');
 const X = require('../agentes/contexto');
 const M = require('../agentes/midias');
+const IA = require('../agentes/ia');
 
 const r = express.Router();
 const gestor = A.exigePerfil('adm', 'gestor');
@@ -17,7 +18,11 @@ const H = (c) => `substr(${c},1,10)=date('now','localtime')`;
 function pc() {
   const st = B.json(getConfig('escritorio_status'), {});
   const vivo = st.em && Date.now() - new Date(st.em).getTime() < 3 * 60e3;
-  return { vivo: !!vivo, ia: vivo ? st.ia : null, modelo: st.modelo || null, em: st.em || null, pausado: !!st.pausado };
+  const cb = B.json(getConfig('escritorio_cerebro'), {});
+  const nuvem = IA.naNuvem();
+  const cbVivo = cb.em && Date.now() - new Date(cb.em).getTime() < (nuvem ? 4 : 3) * 60e3;
+  return { vivo: !!vivo, ia: nuvem ? (cb.ia === false ? false : true) : vivo ? st.ia : null, modelo: nuvem ? IA.ajustes().modelo : st.modelo || null, em: st.em || null, pausado: !!st.pausado,
+    nuvem, cerebro: { vivo: !!cbVivo, em: cb.em || null, onde: cb.onde || null, erro: cb.erro || null, ms: cb.ms || null } };
 }
 function resumoAgente(a, u) {
   const aj = B.ajustes(a.slug);
@@ -72,6 +77,18 @@ r.post('/escritorio/relatorio', gestor, (req, res) => {
   B.evento('gerente', 'relatorio', `Relatório enviado ao dono a pedido de ${req.usuario.nome}`);
   res.json({ ok: true });
 });
+
+
+// ---------- configuração geral (cérebro: chave do Gemini) ----------
+r.get('/escritorio/config', gestor, (req, res) => res.json({ ia: IA.ajustes(), geral: B.geral(), pc: pc(), ciclo: !!getConfig('escritorio_ciclo_token') }));
+r.put('/escritorio/config/ia', gestor, (req, res) => {
+  const b = req.body || {};
+  const a = IA.salva({ chave: b.chave === '' || b.chave === undefined ? (b.apagar ? '' : undefined) : b.chave, modelo: b.modelo }, req.usuario.nome);
+  if (!getConfig('escritorio_ciclo_token')) require('../db').setConfig('escritorio_ciclo_token', A.tokenAleatorio(24));
+  audit(req.usuario.id, 'escritorio.ia', `${a.provedor} ${a.modelo}${b.chave ? ' (chave nova)' : b.apagar ? ' (chave apagada)' : ''}`);
+  res.json(a);
+});
+r.post('/escritorio/config/ia/testar', gestor, async (req, res) => res.json(await IA.testar((req.body || {}).modelo)));
 
 // ---------- fila de aprovação ----------
 r.post('/escritorio/saidas/:id/aprovar', (req, res) => {
@@ -212,10 +229,12 @@ r.get('/escritorio/:slug/teste', (req, res) => {
     acoes: all(`SELECT texto,criado_em FROM agente_eventos WHERE agente=? AND tipo='teste' AND criado_em > datetime('now','localtime','-1 day') ORDER BY id DESC LIMIT 8`, a.slug),
     pendente: !!one(`SELECT 1 FROM agente_mensagens WHERE telefone=? AND processada=0`, telTeste(req.usuario, a.slug)), pc: pc() });
 });
-r.post('/escritorio/:slug/teste', (req, res) => {
+r.post('/escritorio/:slug/teste', async (req, res) => {
   const a = agenteOu404(req.params.slug);
   const texto = txt((req.body || {}).texto, 1000) || falha(400, 'Escreva a mensagem.');
   B.registraEntrada({ agente: a.slug, linha: 'teste', telefone: telTeste(req.usuario, a.slug), nome: req.usuario.nome + ' (teste)', texto });
+  // com o Gemini, quem responde é a nuvem, na hora (o PC não precisa estar ligado)
+  if (IA.naNuvem()) { try { await require('../agentes/escritorio').cicloCerebro({ telefone: telTeste(req.usuario, a.slug), prazo: 40e3, rotinas: false, atribuir: false }); } catch {} }
   res.json({ ok: true, pc: pc() });
 });
 r.delete('/escritorio/:slug/teste', (req, res) => {
@@ -224,4 +243,14 @@ r.delete('/escritorio/:slug/teste', (req, res) => {
   res.json({ ok: true });
 });
 
+// Chamado pelo agendador do Supabase (a cada minuto) e pelo PC quando chega mensagem. Sem chave do Gemini não faz nada (o PC cuida).
+async function ciclo(req, res) {
+  const token = getConfig('escritorio_ciclo_token');
+  const veio = String(req.headers['x-ruah-ciclo'] || '');
+  if (!token || veio.length !== token.length || !require('crypto').timingSafeEqual(Buffer.from(veio), Buffer.from(token))) return res.status(401).json({ erro: 'não autorizado' });
+  if (!IA.naNuvem()) return res.json({ ok: true, sem_chave: true });
+  res.json(await require('../agentes/escritorio').cicloCerebro({ prazo: 45e3 }));
+}
+
 module.exports = r;
+module.exports.ciclo = ciclo;

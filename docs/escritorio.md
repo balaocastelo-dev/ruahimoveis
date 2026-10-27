@@ -49,6 +49,11 @@ Os limites de valor mudam em "Regras do escritório".
 
 ## Onde roda
 
-Tudo funciona pelo PC (linhas de WhatsApp e IA local Ollama `OLLAMA_MODEL`). No link online dá para configurar, aprovar e ver tudo.
+- **Cérebro**: com a chave da API do Gemini em Escritório virtual › Configuração geral (`#/whats/config`), roda na NUVEM (Vercel):
+  o agendador do Supabase (pg_cron + pg_net) chama `POST /escritorio-ciclo` a cada minuto com o token `escritorio_ciclo_token`,
+  e o PC chama o mesmo endereço ~17 s depois de cada mensagem recebida. A conversa de teste responde na hora. Sem chave, o cérebro
+  roda no PC com a IA local (Ollama `OLLAMA_MODEL`). A chave fica cifrada no banco (config `escritorio_ia`), legível no PC e no link.
+- **Linhas de WhatsApp**: no PC, num processo separado do site (`src/agentes/servico.js`, aberto e reaberto pelo server.js), para que telas
+  pesadas não travem o WhatsApp. Com o PC desligado, as respostas esperam na fila. (Decisão de 27/10: linhas continuam no PC por ora.)
 `ESCRITORIO=0` no `.env` desliga. Tabelas: `agente_mensagens`, `agente_eventos`, `agente_afazeres`, `agente_midias` e a coluna `leads.agente`
 (`sql/escritorio.sql`). Teste: `node test/escritorio.js`.
