@@ -91,7 +91,7 @@ function numeros(b, v) {
 function imoveis(b, lista) {
   if (!lista.length) return '';
   return `<section class="p-cd-sec" id="imoveis" aria-labelledby="imoveis-t"><h2 id="imoveis-t">Imóveis da RUAH à venda no ${esc(b.nome)}</h2>
-<p class="p-cd-sub">A foto de cada cartão mostra o prédio ou a casa por fora. Valores atualizados na ficha de cada imóvel.</p>
+<p class="p-cd-sub">${lista.every((x) => x.fotoDoPredio.dePredio) ? 'A foto de cada cartão mostra o prédio ou a casa por fora. ' : ''}Cada imóvel tem página própria com todas as fotos e a ficha; valores atualizados.</p>
 <div class="p-grade">${lista.map((x) => `<article class="p-cartao" data-codigo="${esc(x.imovel.codigo)}">
 <a class="p-cartao-img" href="/imoveis/${esc(x.pagina.slug)}"><img src="${portal.fotoUrl(x.fotoDoPredio.foto)}" alt="${esc(x.fotoDoPredio.legenda)}" width="1280" height="853" loading="lazy" decoding="async"><span class="p-cartao-n">${x.imovel.fotos.length} fotos</span></a>
 <div class="p-cartao-t"><p class="p-cartao-tipo">${esc(x.imovel.tipo)}${x.imovel.condominio ? ` · ${esc(x.imovel.condominio)}` : ''}</p>

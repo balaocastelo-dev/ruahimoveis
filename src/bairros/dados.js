@@ -119,7 +119,7 @@ function imoveisPorBairro(noAr) {
     const gal = x.pagina.galeria || [];
     const existe = new Set(x.imovel.fotos);
     const predio = AMBIENTE_DO_PREDIO.map((a) => gal.find((f) => f.ambiente === a && existe.has(f.foto))).find(Boolean);
-    const foto = predio ? { foto: predio.foto, legenda: predio.legenda } : { foto: x.pagina.capa.foto, legenda: x.pagina.capa.alt };
+    const foto = predio ? { foto: predio.foto, legenda: predio.legenda, dePredio: true } : { foto: x.pagina.capa.foto, legenda: x.pagina.capa.alt, dePredio: false };
     g.get(s).push({ ...x, fotoDoPredio: foto });
   }
   return g;
