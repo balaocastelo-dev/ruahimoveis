@@ -21,49 +21,88 @@ function base(q) {
 }
 const med = (l) => { const s = l.filter((x) => x > 0).sort((a, b) => a - b); if (!s.length) return null; const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
 // agrupa variações de grafia ("Cambuí", "CAMBUI") e mostra a mais comum
-function agrupa(linhas, campo) {
+function agrupa(linhas, campo, kf = G.chave) {
   const g = new Map();
   for (const x of linhas) {
-    const k = G.chave(x[campo]) || '—';
+    const k = kf(x[campo]) || '—';
     if (!g.has(k)) g.set(k, { chave: k, nomes: {}, itens: [] });
-    const o = g.get(k); o.itens.push(x); o.nomes[x[campo] || 'Sem nome'] = (o.nomes[x[campo] || 'Sem nome'] || 0) + 1;
+    const o = g.get(k); o.itens.push(x); for (const y of x.iguais || [x]) o.nomes[y[campo] || 'Sem nome'] = (o.nomes[y[campo] || 'Sem nome'] || 0) + 1;
   }
   return [...g.values()].map((o) => {
     const v = o.itens.map((x) => x.valor), m2 = o.itens.filter((x) => x.valor && x.area_util > 20).map((x) => x.valor / x.area_util);
     const geo = o.itens.filter((x) => x.lat);
-    return { chave: o.chave, nome: Object.entries(o.nomes).sort((a, b) => b[1] - a[1])[0][0], n: o.itens.length, mediana: med(v), m2: med(m2) && Math.round(med(m2)),
+    return { chave: o.chave, nome: Object.entries(o.nomes).sort((a, b) => b[1] - a[1] || b[0].length - a[0].length)[0][0], n: o.itens.length, mediana: med(v), m2: med(m2) && Math.round(med(m2)),
       min: Math.min(...v.filter(Boolean)), max: Math.max(...v.filter(Boolean)), particulares: o.itens.filter((x) => x.anunciante_tipo === 'particular').length,
       lat: geo.length ? geo.reduce((s, x) => s + x.lat, 0) / geo.length : null, lon: geo.length ? geo.reduce((s, x) => s + x.lon, 0) / geo.length : null };
   });
 }
+// ---------- o mesmo imóvel anunciado várias vezes (outro portal, outra imobiliária, republicado com preço novo) ----------
+// Junta num cartão só: mesma rua e número, mesma família de tipo e mesma metragem (±2%) e quartos;
+// sem metragem, só junta se o preço também for igual (lotes diferentes no mesmo endereço continuam separados).
+const familia = (t) => (/apart|cobertura|flat|studio|kitnet|loft|duplex|triplex/i.test(t || '') ? 'ap' : /terreno|lote|[áa]rea/i.test(t || '') ? 'te' : /casa|sobrado|ch[áa]cara|s[íi]tio/i.test(t || '') ? 'ca' : 'ou');
+const TIPO_RUA = /^(RUA|R|AVENIDA|AV|AVN|ALAMEDA|AL|TRAVESSA|TV|ESTRADA|EST|RODOVIA|ROD|PRACA|PC|LARGO|VIA|VIELA)\b\s*/;
+const ruaChave = (s) => G.nucleo(s).replace(TIPO_RUA, '').trim();
+function mesmo(a, b) {
+  if (a.area_util > 0 && b.area_util > 0) {
+    if (Math.abs(a.area_util - b.area_util) > Math.max(2, 0.02 * Math.max(a.area_util, b.area_util))) return false;
+    return !a.quartos || !b.quartos || a.quartos === b.quartos || a.valor === b.valor;
+  }
+  return a.valor === b.valor;
+}
+const recente = (a, b) => String(b.publicado_em || '').localeCompare(String(a.publicado_em || '')) || (a.valor || 0) - (b.valor || 0) || a.id - b.id;
+function unicos(linhas) {
+  const baldes = new Map(), out = [];
+  for (const x of [...linhas].sort(recente)) {
+    const num = G.numero(x.numero);
+    if (!num || num === '0' || !x.logradouro) { out.push({ ...x, iguais: [x] }); continue; }
+    const k = `${ruaChave(x.logradouro)}|${num}|${familia(x.tipo)}`;
+    if (!baldes.has(k)) baldes.set(k, []);
+    const gs = baldes.get(k), g = gs.find((y) => mesmo(y, x));
+    if (g) g.iguais.push(x); else { const n = { ...x, iguais: [x] }; gs.push(n); out.push(n); }
+  }
+  for (const g of out) {
+    const v = g.iguais.map((y) => y.valor).filter(Boolean);
+    g.anuncios = g.iguais.length; g.valor_min = Math.min(...v); g.valor_max = Math.max(...v);
+    if (g.iguais.some((y) => y.anunciante_tipo === 'particular')) g.anunciante_tipo = 'particular';
+    g.anunciantes = [...new Set(g.iguais.map((y) => (y.anunciante_nome || '').trim()).filter(Boolean))].length;
+  }
+  return out;
+}
+const CHAVE = 'a.id, a.tipo, a.logradouro, a.numero, a.area_util, a.quartos, a.valor, a.publicado_em, a.anunciante_tipo, a.anunciante_nome';
+
 const COLS = 'a.id, a.tipo, a.logradouro, a.numero, a.complemento, a.bairro, a.valor, a.quartos, a.suites, a.vagas, a.area_util, a.lat, a.lon, a.anunciante_tipo, a.anunciante_nome, a.status, a.fotos, a.condominio_id, a.publicado_em';
-const cartao = (x) => { let f = null; try { f = (JSON.parse(x.fotos || '[]') || [])[0] || null; } catch {} const { fotos, ...y } = x; return { ...y, foto: f, ref: 'FG-' + String(x.id).padStart(5, '0') }; };
+const cartao = (x) => {
+  let f = null; try { f = (JSON.parse(x.fotos || '[]') || [])[0] || null; } catch {}
+  const { fotos, iguais, ...y } = x;
+  return { ...y, foto: f, ref: 'FG-' + String(x.id).padStart(5, '0'), outros: (iguais || []).slice(1).map((o) => ({ id: o.id, valor: o.valor, anunciante: o.anunciante_nome, portal: o.portal, publicado_em: o.publicado_em })) };
+};
 
 r.get('/mercado/resumo', (req, res) => {
   const { w, p } = base(req.query);
-  const l = all(`SELECT a.valor, a.area_util, a.anunciante_tipo, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${w}`, ...p);
+  const todos = all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${w}`, ...p);
+  const l = unicos(todos);
   const bairros = agrupa(l, 'bairro').sort((a, b) => b.n - a.n);
   const total = one('SELECT count(*) n FROM fisguei_anuncios').n;
-  res.json({ total: l.length, base: total, mediana: med(l.map((x) => x.valor)), particulares: l.filter((x) => x.anunciante_tipo === 'particular').length, bairros });
+  res.json({ total: l.length, anuncios: todos.length, repetidos: todos.length - l.length, base: total, mediana: med(l.map((x) => x.valor)), particulares: l.filter((x) => x.anunciante_tipo === 'particular').length, bairros });
 });
 r.get('/mercado/ruas', (req, res) => {
   const { w, p } = base(req.query);
   const k = G.chave(req.query.bairro || '');
-  const l = all(`SELECT a.valor, a.area_util, a.anunciante_tipo, a.bairro, a.logradouro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${w}`, ...p).filter((x) => G.chave(x.bairro) === k);
-  res.json(agrupa(l, 'logradouro').sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome)));
+  const l = unicos(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${w}`, ...p)).filter((x) => G.chave(x.bairro) === k);
+  res.json(agrupa(l, 'logradouro', ruaChave).sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome)));
 });
 r.get('/mercado/imoveis', (req, res) => {
   const { w, p } = base(req.query);
-  const kb = G.chave(req.query.bairro || ''), kr = G.chave(req.query.rua || '');
-  let l = all(`SELECT ${COLS} FROM fisguei_anuncios a WHERE ${w} ORDER BY a.valor DESC LIMIT 4000`, ...p);
+  const kb = G.chave(req.query.bairro || ''), kr = ruaChave(req.query.rua || '');
+  let l = unicos(all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a WHERE ${w} ORDER BY a.valor DESC LIMIT 8000`, ...p));
   if (kb) l = l.filter((x) => G.chave(x.bairro) === kb);
-  if (kr) l = l.filter((x) => G.chave(x.logradouro) === kr);
+  if (kr) l = l.filter((x) => ruaChave(x.logradouro) === kr);
   l.sort((a, b) => (parseInt(a.numero, 10) || 0) - (parseInt(b.numero, 10) || 0) || (b.valor || 0) - (a.valor || 0));
   res.json(l.slice(0, 600).map(cartao));
 });
 r.get('/mercado/mapa', (req, res) => {
   const { w, p } = base(req.query);
-  res.json(all(`SELECT a.id, a.lat, a.lon, a.valor, a.tipo, a.bairro, a.logradouro, a.numero, a.anunciante_tipo FROM fisguei_anuncios a WHERE ${w} AND a.lat IS NOT NULL LIMIT 6000`, ...p)
+  res.json(unicos(all(`SELECT ${CHAVE}, a.lat, a.lon, a.bairro FROM fisguei_anuncios a WHERE ${w} AND a.lat IS NOT NULL LIMIT 8000`, ...p))
     .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, Math.round((x.valor || 0) / 1000), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`]));
 });
 
@@ -82,6 +121,15 @@ r.get('/mercado/3d/:id', async (req, res) => {
       logradouro: a.logradouro, numero: a.numero, bairro: a.bairro, geo_fonte: c ? c.geo_fonte : 'anuncio' },
     cena, imovel: { id: a.id, codigo: 'FG-' + String(a.id).padStart(5, '0'), tipo: a.tipo, unidade: null, andar: null, valor: a.valor }, unidades: [],
   });
+});
+
+// Os outros anúncios do mesmo imóvel (para a ficha do Fisguei)
+r.get('/mercado/iguais/:id', (req, res) => {
+  const a = one(`SELECT ${CHAVE.replace(/a\./g, '')}, portal FROM fisguei_anuncios WHERE id=?`, int(req.params.id));
+  if (!a || !a.logradouro || !G.numero(a.numero)) return res.json([]);
+  const l = all(`SELECT ${CHAVE}, a.portal, a.status FROM fisguei_anuncios a WHERE a.numero=? AND a.id<>? AND a.status NOT IN ${FORA}`, a.numero, a.id)
+    .filter((x) => ruaChave(x.logradouro) === ruaChave(a.logradouro) && familia(x.tipo) === familia(a.tipo) && mesmo(a, x));
+  res.json(l.sort(recente).map((o) => ({ id: o.id, valor: o.valor, anunciante: o.anunciante_nome, anunciante_tipo: o.anunciante_tipo, portal: o.portal, publicado_em: o.publicado_em })));
 });
 
 r.get('/mercado/perto/:id', async (req, res) => {
@@ -109,3 +157,4 @@ r.get('/fachada', async (req, res) => {
 r.get('/mapas/config', (req, res) => { const f = require('../condominios/fachada'); res.json({ fachada: f.ligado(), google3d: f.ligado() }); });
 
 module.exports = r;
+module.exports.unicos = unicos;

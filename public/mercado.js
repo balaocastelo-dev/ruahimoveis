@@ -30,12 +30,13 @@ async function telaMercado(qs) {
       <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small muted">${esc(x.ref)}</span><span class="small muted">${esc(x.publicado_em ? new Date(x.publicado_em + 'T12:00').toLocaleDateString('pt-BR') : '')}</span></div>
         <div class="imtit">${esc(x.tipo || 'Imóvel')} · nº ${esc(x.numero || 's/n')}</div><div class="muted small">${esc(x.complemento || x.anunciante_nome || '')}</div>
         <div class="imspecs">${[x.quartos && `${x.quartos} quartos`, x.suites && `${x.suites} suítes`, x.vagas && `${x.vagas} vagas`, x.area_util && `${Math.round(x.area_util)} m²`].filter(Boolean).map((s) => `<span>${esc(s)}</span>`).join('')}</div>
-        <div class="imvalor">${brl(x.valor)}</div></div></a></div>`).join('')}</div>`;
+        <div class="imvalor">${brl(x.valor)}</div>
+        ${x.anuncios > 1 ? `<div class="mk-rep" title="${esc(x.outros.map((o) => `${brl(o.valor)} · ${o.anunciante || o.portal || ''}`).join('\n'))}">Anunciado ${x.anuncios} vezes${x.anunciantes > 1 ? ` por ${x.anunciantes} anunciantes` : ''}${x.valor_min !== x.valor_max ? ` · ${mkMi(x.valor_min)} a ${mkMi(x.valor_max)}` : ''}</div>` : ''}</div></a></div>`).join('')}</div>`;
   }
   const migalha = `<div class="mk-migalha"><a href="${link({ bairro: '', rua: '' })}">Campinas</a>${bairroAt ? ` › <a href="${link({ rua: '' })}">${esc(bairroAt.nome)}</a>` : ''}${f.rua ? ` › <b>${esc(f.rua.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase()))}</b>` : ''}</div>`;
   $('#main').innerHTML = `<div class="eyebrow">Captação</div><h1>Mercado</h1>
   <p class="lead">Os imóveis à venda em Campinas que já estão na base do Fisguei. Escolha o bairro, a rua e o imóvel: a ficha abre com a fachada, o 3D da rua e os proprietários.</p>
-  <div class="grid g4 cd-kpis">${cdKpi(res.total.toLocaleString('pt-BR'), 'imóveis neste filtro', `de ${res.base.toLocaleString('pt-BR')} na base do Fisguei`)}${cdKpi(mkMi(res.mediana), 'valor mediano')}${cdKpi(res.bairros.length, 'bairros')}${cdKpi(res.particulares, 'de particular')}</div>
+  <div class="grid g4 cd-kpis">${cdKpi(res.total.toLocaleString('pt-BR'), 'imóveis neste filtro', res.repetidos ? `${res.anuncios.toLocaleString('pt-BR')} anúncios · ${res.repetidos.toLocaleString('pt-BR')} repetidos juntados` : `de ${res.base.toLocaleString('pt-BR')} na base do Fisguei`)}${cdKpi(mkMi(res.mediana), 'valor mediano')}${cdKpi(res.bairros.length, 'bairros')}${cdKpi(res.particulares, 'de particular')}</div>
   <form class="row cd-filtros" data-form="mk-filtro">
     <select name="min">${MK_FAIXAS.map(([v, t]) => `<option value="${v}" ${f.min === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
     <select name="tipo"><option value="">Todos os tipos</option>${['Apartamento', 'Casa', 'Cobertura', 'Terreno', 'Sobrado', 'Chácara'].map((t) => `<option ${f.tipo === t ? 'selected' : ''}>${t}</option>`).join('')}</select>
@@ -77,6 +78,13 @@ async function fgFachada(id, a) {
     <div class="fg-hero-3d">${temGeo ? `<a class="cd-btn3d btn pri" href="/condominio-3d.html?fg=${id}" target="_blank" rel="noopener"><span aria-hidden="true">◈</span> Ver a rua em 3D</a>
       <p class="muted small">O imóvel aparece destacado entre os prédios e casas da rua, com a foto de satélite no chão.</p>
       ${a.condominio_id ? `<a class="btn" href="#/condominios/${a.condominio_id}">Abrir o condomínio</a>` : ''}` : ''}</div></div>`;
+  api('GET', `/api/mercado/iguais/${id}`).then((l) => {
+    if (!l.length || !$('#fg-fachada')) return;
+    const d = document.createElement('div'); d.className = 'card mk-iguais';
+    d.innerHTML = `<b>O mesmo imóvel em mais ${l.length} anúncio${l.length > 1 ? 's' : ''}</b>
+      <div class="mk-lista">${l.map((o) => `<a class="mk-linha" href="#/fisguei/${o.id}"><span class="mono small muted">FG-${String(o.id).padStart(5, '0')}</span><div style="flex:1;min-width:0">${esc(o.anunciante || 'Sem nome')}<div class="muted small">${esc([o.portal, o.publicado_em && new Date(o.publicado_em + 'T12:00').toLocaleDateString('pt-BR')].filter(Boolean).join(' · '))}</div></div>${o.anunciante_tipo === 'particular' ? '<span class="pill ok">particular</span>' : ''}<b>${brl(o.valor)}</b></a>`).join('')}</div>`;
+    $('#fg-fachada').after(d);
+  }).catch(() => {});
   const img = $('#fg-fach-img');
   if (img) img.addEventListener('error', () => { img.parentElement.innerHTML = `<iframe title="Street View" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?layer=c&cbll=${encodeURIComponent(a.lat + ',' + a.lon)}&cbp=11,0,0,0,0&hl=pt-BR&output=svembed"></iframe>`; }, { once: true });
 }

@@ -39,17 +39,25 @@ global.fetch = async (url, op) => {
   add('m3', 'Cambuí', 'Rua Maria Monteiro', '50', 1200000, 120, 0, -22.9010, -47.0750);
   add('m4', 'Taquaral', 'Rua Hermantino Coelho', '10', 3000000, 300, 1, -22.87, -47.05, 'Casa');
   add('m5', 'Taquaral', 'Rua X', '1', 800000, 90, 1, -22.87, -47.05);  // abaixo de 1 mi
+  // o mesmo imóvel anunciado de novo (outra imobiliária, outro bairro escrito, preço novo e metragem 1 m² diferente)
+  add('m7', 'Cambuí', 'R. Coronel Quirino', '1000', 1450000, 151, 0, -22.90172, -47.07559);
+  add('m8', 'Taquaral', 'Rua Hermantino Coelho', '10', 3000000, 300, 0, -22.87, -47.05, 'Casa Padrão');
   run("INSERT INTO fisguei_anuncios(fisgar_id,tipo,bairro,cidade,valor,status) VALUES('m6','Apartamento','Centro','Valinhos',5000000,'novo')"); // outra cidade
 
   const r = ok(await req('GET', '/api/mercado/resumo'), 'resumo (≥ R$ 1 mi, só Campinas)');
-  assert.equal(r.total, 4); assert.equal(r.bairros.length, 2);
+  assert.equal(r.total, 4); assert.equal(r.anuncios, 6); assert.equal(r.repetidos, 2); assert.equal(r.bairros.length, 2);
   const camb = r.bairros.find((b) => b.chave === 'CAMBUI'); assert.equal(camb.n, 3, 'junta Cambuí e CAMBUI'); assert.equal(camb.nome, 'Cambuí');
   assert.equal((await req('GET', '/api/mercado/resumo?min=0')).j.total, 5);
   assert.equal((await req('GET', '/api/mercado/resumo?particular=1')).j.total, 2);
   const ruas = ok(await req('GET', '/api/mercado/ruas?bairro=CAMBUI'), 'ruas do bairro'); assert.equal(ruas[0].nome, 'Rua Coronel Quirino'); assert.equal(ruas[0].n, 2);
   const im = ok(await req('GET', '/api/mercado/imoveis?bairro=CAMBUI&rua=RUA%20CORONEL%20QUIRINO'), 'imóveis da rua'); assert.deepEqual(im.map((x) => x.numero), ['1000', '1200']);
+  assert.equal(im[0].anuncios, 2); assert.equal(im[0].valor_min, 1450000); assert.equal(im[0].outros.length, 1);
+  const ig = ok(await req('GET', `/api/mercado/iguais/${im[0].id}`), 'outros anúncios do mesmo imóvel'); assert.equal(ig.length, 1);
   assert.equal(im[0].foto, 'https://exemplo.com/f.jpg'); assert.match(im[0].ref, /^FG-/);
   assert.equal(ok(await req('GET', '/api/mercado/mapa'), 'mapa').length, 4);
+  // lotes diferentes no mesmo endereço, sem metragem e com preços diferentes, continuam separados
+  const { unicos } = require('../src/routes/mercado');
+  assert.equal(unicos([{ id: 1, tipo: 'Terreno', logradouro: 'Av A', numero: '1', valor: 1e6 }, { id: 2, tipo: 'Terreno', logradouro: 'Avenida A', numero: '1', valor: 1.2e6 }, { id: 3, tipo: 'Terreno', logradouro: 'A', numero: '1', valor: 1e6 }]).length, 2);
 
   // 3D da rua (prédios da base de blocos do teste dos condomínios)
   for (const arq of ['condominio-predios3d.jsonl', 'condominio-mapa3d.jsonl']) {
