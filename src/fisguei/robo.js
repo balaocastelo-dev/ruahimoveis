@@ -72,6 +72,17 @@ async function conecta() {
           || (msg.imageMessage ? `[foto] ${msg.imageMessage.caption || ''}` : msg.audioMessage ? '[áudio — ouça no celular da RUAH]' : msg.documentMessage ? '[documento]' : '[mensagem]');
         const r = F.recebida({ telefone: telDoJid(pn), texto, wa_id: m.key.id });
         if (!r.ignorado) log('resposta de', telDoJid(pn).slice(-4), '→', r.tipo);
+        // Escritório virtual: fotos originais do dono ficam guardadas; conversa depois da 1ª resposta vai para o agente TH-IA-GO
+        if (r.pessoa_id && msg.imageMessage) {
+          try {
+            const buf = await B.downloadMediaMessage(m, 'buffer', {}, { reuploadRequest: sock.updateMediaMessage });
+            require('../agentes/midias').guarda({ agente: 'captador', telefone: r.telefone, pessoa_id: r.pessoa_id, anuncio_id: r.anuncio_id, mime: msg.imageMessage.mimetype || 'image/jpeg', legenda: msg.imageMessage.caption || null, dados: buf });
+            log('foto recebida do dono (final', String(r.telefone).slice(-4) + ')');
+          } catch (e) { log('não consegui baixar a foto:', e.message); }
+        }
+        if (r.pessoa_id && ['conversa', 'outro'].includes(r.tipo)) {
+          try { require('../agentes/escritorio').captadorEntrada({ telefone: r.telefone, texto, pessoa_id: r.pessoa_id, wa_id: m.key.id }); } catch (e) { log('escritório:', e.message); }
+        }
       } catch (e) { log('erro ao ler mensagem:', e.message); }
     }
   });

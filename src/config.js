@@ -61,6 +61,9 @@ module.exports = {
   // Fisguei: robô TH-IA-GO CORRETOR (WhatsApp pelo QR code). Roda só no PC; 0 desliga.
   FISGUEI_ROBO: env('FISGUEI_ROBO', '1'),
 
+  // Escritório virtual (9 agentes robôs com WhatsApp próprio). Roda só no PC; 0 desliga.
+  ESCRITORIO: env('ESCRITORIO', '1'),
+
   // IA local (Ollama)
   OLLAMA_URL: env('OLLAMA_URL', 'http://127.0.0.1:11434'),
   OLLAMA_MODEL: env('OLLAMA_MODEL', 'qwen3:14b'),

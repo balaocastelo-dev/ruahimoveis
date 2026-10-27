@@ -326,7 +326,8 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['fisguei_anuncios', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
   ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
-  ['fisguei_anuncios', 'anunciado_desde', 'TEXT']]) {
+  ['fisguei_anuncios', 'anunciado_desde', 'TEXT'],
+  ['leads', 'agente', 'TEXT']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
 
@@ -357,6 +358,32 @@ CREATE TABLE IF NOT EXISTS bairros (
 CREATE TABLE IF NOT EXISTS bairro_commons (
   titulo TEXT PRIMARY KEY, url TEXT, thumb TEXT, largura INTEGER, altura INTEGER, autor TEXT, licenca TEXT, descricao TEXT,
   ok INTEGER NOT NULL DEFAULT 0, motivo TEXT, verificado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
+
+// Escritório virtual: conversas, eventos, afazeres e fotos dos agentes robôs.
+db.exec(`CREATE TABLE IF NOT EXISTS agente_mensagens (
+  id INTEGER PRIMARY KEY, agente TEXT NOT NULL, linha TEXT, telefone TEXT NOT NULL, nome TEXT,
+  direcao TEXT NOT NULL CHECK (direcao IN ('entrada','saida','nota')), texto TEXT NOT NULL, status TEXT,
+  lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE SET NULL,
+  wa_id TEXT, autor TEXT, processada INTEGER NOT NULL DEFAULT 0, motivo TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), enviado_em TEXT);
+CREATE INDEX IF NOT EXISTS ix_am_agente ON agente_mensagens(agente, telefone);
+CREATE INDEX IF NOT EXISTS ix_am_proc ON agente_mensagens(processada, direcao);
+CREATE INDEX IF NOT EXISTS ix_am_status ON agente_mensagens(direcao, status);
+CREATE INDEX IF NOT EXISTS ix_am_wa ON agente_mensagens(wa_id);
+CREATE TABLE IF NOT EXISTS agente_eventos (
+  id INTEGER PRIMARY KEY, agente TEXT NOT NULL, tipo TEXT NOT NULL, texto TEXT, ref TEXT, chave TEXT UNIQUE,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_ae_agente ON agente_eventos(agente, id);
+CREATE TABLE IF NOT EXISTS agente_afazeres (
+  id INTEGER PRIMARY KEY, corretor_id INTEGER REFERENCES usuarios(id) ON DELETE CASCADE, texto TEXT NOT NULL, quando TEXT,
+  lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, imovel_id INTEGER REFERENCES imoveis(id) ON DELETE SET NULL, origem TEXT,
+  feito INTEGER NOT NULL DEFAULT 0, feito_em TEXT, lembrado_em TEXT, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_af_corretor ON agente_afazeres(corretor_id, feito);
+CREATE TABLE IF NOT EXISTS agente_midias (
+  id INTEGER PRIMARY KEY, agente TEXT NOT NULL, telefone TEXT, pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE SET NULL,
+  anuncio_id INTEGER REFERENCES fisguei_anuncios(id) ON DELETE SET NULL, oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
+  lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, mime TEXT, nome TEXT, tamanho INTEGER, legenda TEXT, dados BLOB NOT NULL,
+  imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);

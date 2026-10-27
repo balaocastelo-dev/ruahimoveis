@@ -117,7 +117,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 // ---------- moldura ----------
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
-  ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
+  ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Captação', [['#/captacao', 'Radar + Fisguei', 'capt']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
@@ -142,13 +142,13 @@ async function atualizaBadge() {
     b.title = alertaRadar ? 'O radar precisa de atenção' : alertaRobo ? 'O robô TH-IA-GO precisa de atenção' : 'Aprovações e respostas esperando alguém';
   });
   api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; }).catch(() => {});
-  try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; } } catch {}
+  try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; } } catch {}
 }
 function marcaNav(h) {
   $$('#nav a').forEach((a) => {
     const n = a.dataset.nav;
     const pai = { '#/imoveis': '#/imoveis/novo' };
-    const hh = /^#\/(radar|fisguei)(\/|$)/.test(h) ? '#/captacao' : h; // Radar e Fisguei moram dentro de "Radar + Fisguei"
+    const hh = /^#\/(radar|fisguei)(\/|$)/.test(h) ? '#/captacao' : /^#\/whats\//.test(h) ? '#/whats' : h; // Radar e Fisguei moram dentro de "Radar + Fisguei"
     const on = hh === n || (pai[n] ? hh.startsWith(n + '/') && hh !== pai[n] : !Object.values(pai).includes(n) && hh.startsWith(n + '/'));
     a.classList.toggle('on', on);
   });
@@ -173,7 +173,10 @@ async function rota() {
     else if (p[0] === 'imoveis') await telaImoveis();
     else if (p[0] === 'leads' && p[1]) await telaLead(+p[1]);
     else if (p[0] === 'leads') await telaLeads();
-    else if (p[0] === 'whats') await telaWhats(p[1] ? +p[1] : null);
+    else if (p[0] === 'whats' && p[1] === 'agente' && p[2]) await telaMesa(p[2], p[3] || 'mesa');
+    else if (p[0] === 'whats' && p[1] === 'conversas') await telaWhats(null);
+    else if (p[0] === 'whats' && p[1]) await telaWhats(+p[1]);
+    else if (p[0] === 'whats') await telaEscritorio();
     else if (p[0] === 'visitas') await telaVisitas();
     else if (p[0] === 'radar' && p[1] === 'novo') { location.replace('#/radar'); return; }
     else if (p[0] === 'radar' && p[1] === 'aprovacoes') await telaAprovacoes();
@@ -555,12 +558,13 @@ ACT['enviar-link'] = (el) => comBotao(el, async () => { const r = await api('POS
 // ---------- WhatsApp ----------
 async function telaWhats(leadId) {
   const d = await api('GET', '/api/whats');
-  $('#main').innerHTML = `<div class="eyebrow">Atendimento</div><h1>WhatsApp da RUAH</h1>
+  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><div class="eyebrow">Atendimento</div><h1>Conversas do CRM</h1>
+  <p class="lead">Todas as conversas com clientes, de todos os agentes e da API oficial. Respostas sugeridas pelos agentes do escritório aparecem aqui para aprovar.</p>
   ${d.modo === 'simulado' ? `<div class="banner warn"><b>Modo simulado:</b> a API oficial do WhatsApp ainda não foi configurada. Use “Simular mensagem recebida” para testar o fluxo; nada é enviado de verdade.</div>` : ''}
   <div class="grid g12"><div class="grid" style="gap:12px;align-content:start">
     ${d.modo === 'simulado' ? `<form class="card grid" data-form="simular" style="gap:8px"><h3>Simular mensagem recebida</h3><div class="grid g2"><input class="inp" name="telefone" placeholder="(19) 99999-0000" required><input class="inp" name="nome" placeholder="Nome do cliente"></div><input class="inp" name="texto" placeholder="Oi, vi o apartamento…" required><button class="btn" type="submit">Receber</button></form>` : ''}
     <div class="card list" id="conversas">${d.conversas.length ? d.conversas.map((c) => `<div class="item click ${c.id === leadId ? 'sel' : ''}" data-act="ir" data-href="#/whats/${c.id}"><div style="flex:1;min-width:0"><div class="t">${esc(c.nome)}</div>
-      <div class="muted small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.direcao === 'saida' ? '✓ ' : ''}${esc(c.ultima)}</div>${veTudo() ? `<div class="muted small">${esc(c.corretor || 'sem corretor')}</div>` : ''}</div>
+      <div class="muted small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.direcao === 'saida' ? '✓ ' : ''}${esc(c.ultima)}</div>${veTudo() ? `<div class="muted small">${esc(c.corretor || 'sem corretor')}${c.agente ? ' · robô ' + esc(c.agente) : ''}</div>` : ''}</div>
       <div style="text-align:right">${c.tem_sugestao ? '<span class="pill gold">IA</span>' : c.direcao === 'entrada' ? '<span class="pill bad">aguarda</span>' : ''}<div class="muted small">${dataBR(c.criado_em)}</div></div></div>`).join('') : '<div class="empty">Nenhuma conversa ainda.</div>'}</div></div>
   <div class="card" id="conversa">${leadId ? '' : '<div class="empty">Escolha uma conversa.</div>'}</div></div>`;
   if (leadId) { await carregaConversa(leadId); poll = setInterval(() => carregaConversa(leadId, true), 6000); }
@@ -579,7 +583,7 @@ async function carregaConversa(leadId, silencioso) {
   box.innerHTML = `<div class="row"><b>${esc(d.lead.nome)}</b><span class="muted small">${esc(tel(d.lead.telefone))}</span><span class="sp"></span><a class="btn sm" href="#/leads/${d.lead.id}">Ficha do lead</a></div>
     <div class="chat" id="chat" style="margin-top:10px">${msgs.map((m) => `<div class="msg ${m.direcao}">${esc(m.texto)}<small>${esc(m.autor || '')} · ${dataBR(m.criado_em)}${m.direcao === 'saida' ? ' · ' + esc(m.status || '') : ''}</small></div>`).join('') || '<span class="muted small">Sem mensagens.</span>'}</div>
     ${d.lead.nao_contatar ? '<div class="banner warn" style="margin-top:10px">Este cliente pediu para não receber mensagens.</div>' : `
-    ${sug ? `<div class="sug" style="margin-top:10px"><span class="small"><b>Sugestão da IA</b> · confira antes de enviar</span><textarea class="inp" id="sugtxt" rows="3">${esc(sug.texto)}</textarea>
+    ${sug ? `<div class="sug" style="margin-top:10px"><span class="small"><b>Sugestão ${esc(sug.autor && sug.autor !== 'IA RUAH' ? 'de ' + sug.autor : 'da IA')}</b> · confira antes de enviar</span><textarea class="inp" id="sugtxt" rows="3">${esc(sug.texto)}</textarea>
       <div class="row"><button class="btn pri sm" data-act="aprovar" data-id="${leadId}">Aprovar e enviar</button><button class="btn sm" data-act="sugerir" data-id="${leadId}">Gerar outra</button></div></div>`
       : `<div class="row" style="margin-top:8px"><button class="btn sm" data-act="sugerir" data-id="${leadId}">Pedir sugestão à IA</button></div>`}
     <form class="copybox" data-form="enviar" data-id="${leadId}" style="margin-top:10px"><input class="inp" id="wmsg" name="texto" placeholder="Escrever mensagem…" autocomplete="off" required><button class="btn pri" type="submit">Enviar</button></form>`}`;

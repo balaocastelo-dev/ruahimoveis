@@ -115,7 +115,7 @@ r.get('/whats', (req, res) => {
   const u = req.usuario;
   res.json({
     modo: wa.modo(), ia: cfg.IA_MODO,
-    conversas: all(`SELECT l.id, l.nome, l.telefone, l.temperatura, l.nao_contatar, us.nome corretor, m.texto ultima, m.direcao, m.criado_em,
+    conversas: all(`SELECT l.id, l.nome, l.telefone, l.temperatura, l.nao_contatar, l.agente, us.nome corretor, m.texto ultima, m.direcao, m.criado_em,
        EXISTS(SELECT 1 FROM mensagens s WHERE s.lead_id=l.id AND s.direcao='sugestao') tem_sugestao
        FROM leads l JOIN mensagens m ON m.id=(SELECT max(id) FROM mensagens WHERE lead_id=l.id AND direcao!='sugestao')
        LEFT JOIN usuarios us ON us.id=l.corretor_id ${A.veTudo(u) ? '' : 'WHERE l.corretor_id=' + u.id} ORDER BY m.id DESC LIMIT 200`),
@@ -130,6 +130,18 @@ r.post('/whats/:leadId/enviar', async (req, res) => {
   const texto = txt(req.body.texto, 4000) || falha(400, 'Escreva a mensagem.');
   if (l.nao_contatar) falha(400, 'Este cliente pediu para não receber mensagens.');
   if (!l.telefone) falha(400, 'Lead sem telefone.');
+  // Cliente atendido por um agente do escritório virtual: a mensagem sai pela linha de WhatsApp do agente (QR code).
+  const E = require('../agentes/base');
+  if (l.agente) run(`UPDATE agente_mensagens SET status='substituida' WHERE lead_id=? AND direcao='saida' AND status='aprovar'`, l.id);
+  if (l.agente && E.POR_SLUG[l.agente]) {
+    const linhaOk = E.estadoLinha(E.linhaDe(l.agente)).estado === 'conectado';
+    if (linhaOk) {
+      run(`INSERT INTO agente_mensagens(agente,linha,telefone,nome,direcao,texto,status,lead_id,autor,processada) VALUES(?,?,?,?,?,?,?,?,?,1)`,
+        l.agente, E.linhaDe(l.agente), l.telefone, l.nome, 'saida', texto, 'fila', l.id, req.usuario.nome + (req.body.da_ia ? ` (aprovou ${E.ajustes(l.agente).nome})` : ''));
+      run(`DELETE FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, l.id);
+      return res.json({ ok: true, status: 'na fila do ' + E.ajustes(l.agente).nome });
+    }
+  }
   const env = await wa.enviarTexto(l.telefone, texto);
   run(`DELETE FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, l.id);
   run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', l.id, l.telefone, 'saida', texto, env.status, env.wa_id, req.usuario.nome + (req.body.da_ia ? ' (aprovou IA)' : ''));

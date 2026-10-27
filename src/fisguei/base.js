@@ -218,7 +218,7 @@ function classifica(texto) {
 }
 
 const RESPOSTAS = {
-  confirmou: 'Que ótimo, obrigado por confirmar! 😊 Um corretor da RUAH vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Se preferir, já pode me dizer o melhor horário para conversar.',
+  confirmou: 'Que ótimo, obrigado por confirmar! 😊 Um corretor da RUAH vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Para adiantar: se tiver fotos suas do imóvel (as originais, tiradas por você), pode me mandar por aqui. E me diga o melhor horário para o corretor ligar.',
   negou: 'Obrigado por avisar e desculpe o incômodo! Não vamos mais enviar mensagens sobre esse imóvel.',
   sem_interesse: 'Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender, a RUAH fica à disposição.',
   parar: 'Pronto, você não vai mais receber mensagens da RUAH neste número. Desculpe o incômodo.',
@@ -264,7 +264,7 @@ function recebida({ telefone, texto, wa_id }) {
     enfileiraResposta(pessoa.id, tel, RESPOSTAS.parar);
     return { tipo };
   }
-  if (jaRespondeu) { run(`UPDATE fisguei_anuncios SET atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id); return { tipo: 'conversa' }; }
+  if (jaRespondeu) { run(`UPDATE fisguei_anuncios SET atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id); return { tipo: 'conversa', pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel }; }
 
   if (tipo === 'confirmou') {
     run(`UPDATE fisguei_pessoas SET status='confirmou' WHERE id=?`, pessoa.id);
@@ -272,7 +272,7 @@ function recebida({ telefone, texto, wa_id }) {
     pulaRestoDoEndereco(anuncio.id, 'O dono já confirmou');
     const opId = criaOportunidade(anuncio, pessoa, tel);
     enfileiraResposta(pessoa.id, tel, RESPOSTAS.confirmou);
-    return { tipo, oportunidade_id: opId };
+    return { tipo, oportunidade_id: opId, pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel };
   }
   if (tipo === 'sem_interesse') {
     run(`UPDATE fisguei_pessoas SET status='sem_interesse' WHERE id=?`, pessoa.id);
@@ -291,7 +291,7 @@ function recebida({ telefone, texto, wa_id }) {
   // resposta que o robô não entendeu: vai para o corretor
   run(`UPDATE fisguei_pessoas SET status='respondeu' WHERE id=?`, pessoa.id);
   run(`UPDATE fisguei_anuncios SET status=CASE WHEN status IN ('novo','abordando') THEN 'respondeu' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id);
-  return { tipo };
+  return { tipo, pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel };
 }
 
 function pulaRestoDoEndereco(anuncioId, motivo) {

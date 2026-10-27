@@ -52,6 +52,8 @@ app.use('/api', require('./src/routes/base'));
 app.use('/api', require('./src/routes/condominios'));
 app.use('/api', require('./src/routes/mercado'));
 app.use('/api', require('./src/routes/captacao'));
+// Escritório virtual: os 9 agentes robôs (#/whats), cada um com alma (.soul) e WhatsApp próprio.
+app.use('/api', require('./src/routes/escritorio'));
 // Páginas de bairros: a lista, a situação de cada página e o que a RUAH quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
@@ -114,6 +116,8 @@ if (require.main === module) {
     require('./src/services/portais').iniciar();
     // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
     require('./src/fisguei/robo').iniciar();
+    // Escritório virtual: linhas de WhatsApp dos agentes, respostas pela IA local e rotinas dos gerentes.
+    require('./src/agentes/escritorio').iniciar();
     // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
     const vincula = () => { try { const r = require('./src/condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
     setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);
