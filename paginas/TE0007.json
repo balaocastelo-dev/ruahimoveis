@@ -1,0 +1,120 @@
+{
+  "codigo": "TE0007",
+  "slug": "terreno-363m2-jardim-lumen-christi-campinas-te0007",
+  "titulo": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas",
+  "resumo": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas, com frente de cerca de 13,85 metros para rua asfaltada e casas térreas no entorno.",
+  "capa": {
+    "foto": 1694,
+    "alt": "Vista aérea com o contorno amarelo do terreno, a rua asfaltada em frente e as casas do outro lado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno fica no Jardim Lumen Christi, em Campinas. A ficha informa 363,53 m² de área total, e o anúncio fala em uma frente de aproximadamente 13,85 metros. É um lote para quem quer construir a própria casa e desenhar o projeto do zero."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "São duas fotos: uma vista aérea, com o contorno do lote marcado em amarelo, e uma foto da rua. Juntas, elas mostram um terreno vazio, sem construção, coberto de vegetação baixa, voltado para uma rua asfaltada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "363,53 m² de área total, segundo a ficha",
+        "Frente de cerca de 13,85 metros, segundo o anúncio",
+        "Lote vazio, sem construção, pronto para um projeto novo",
+        "Rua asfaltada em frente, com casas térreas no entorno",
+        "Levantamento topográfico disponível, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote visto de cima"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na foto aérea, o terreno aparece como um retângulo marcado em amarelo, com o lado mais estreito voltado para a rua. O chão tem vegetação rasteira e trechos de terra à mostra. Do outro lado da rua há uma fileira de casas com telhado de cerâmica, e ao lado do lote aparecem árvores e uma construção de laje clara."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A rua e o entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A foto da rua mostra o asfalto com faixa branca na beira, um canteiro de grama cortada e uma árvore junto à calçada. Atrás da cerca viva aparecem mato alto, um telhado baixo e, mais longe, casas e alguns prédios. O anúncio descreve a região como residencial e tranquila, e a ficha registra rua pavimentada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1695,
+          "legenda": "Rua asfaltada com canteiro gramado, árvore e casas ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer construir uma casa num bairro residencial de Campinas e prefere um lote com frente mais larga, que dá mais liberdade para a fachada e a garagem. Como as fotos são poucas, vale ver o terreno de perto antes de decidir: o desnível e o formato exato só ficam claros no local e no levantamento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Peça o levantamento topográfico citado no anúncio, as medidas de frente e fundo na matrícula, o zoneamento e o que a prefeitura permite construir no lote.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1694,
+      "legenda": "Vista aérea com o lote marcado em amarelo, a rua em frente e casas vizinhas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1695,
+      "legenda": "Rua asfaltada com canteiro gramado, árvore e casas ao fundo",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "A ficha informa 363,53 m² de área total. O anúncio fala em uma frente de aproximadamente 13,85 metros; as medidas exatas estão no levantamento topográfico, que o corretor pode mostrar."
+    },
+    {
+      "pergunta": "O terreno tem alguma construção?",
+      "resposta": "Não, pelas fotos. A vista aérea mostra o lote vazio, com vegetação baixa e trechos de terra."
+    },
+    {
+      "pergunta": "A rua é asfaltada?",
+      "resposta": "Sim. A ficha registra pavimentação e a foto mostra a rua asfaltada em frente ao terreno."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas, com frente de cerca de 13,85 metros para rua asfaltada. Lote vazio, num entorno de casas, para quem quer construir do zero. Levantamento topográfico disponível. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "jardimlumenchristi",
+      "terrenoavenda",
+      "construircasa",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "e66f74260a88",
+  "publicadoEm": "2026-10-27T13:32:04.627Z"
+}

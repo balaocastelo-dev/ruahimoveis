@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0007",
+      "slug": "terreno-363m2-jardim-lumen-christi-campinas-te0007",
+      "titulo": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas",
+      "resumo": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas, com frente de cerca de 13,85 metros para rua asfaltada e casas térreas no entorno.",
+      "capa": {
+        "foto": 1694,
+        "alt": "Vista aérea com o contorno amarelo do terreno, a rua asfaltada em frente e as casas do outro lado"
+      },
+      "versao": "e66f74260a88",
+      "publicadoEm": "2026-10-27T13:32:04.627Z"
+    },
+    {
+      "codigo": "AP0035",
+      "slug": "apartamento-2-quartos-suite-mansoes-santo-antonio-campinas-ap0035",
+      "titulo": "Apartamento de 2 quartos com suíte no Mansões Santo Antônio",
+      "resumo": "Apartamento novo de 66 m² no Mansões Santo Antônio, em Campinas: 2 quartos com suíte, sala integrada à cozinha, sacada e condomínio com piscina e academia.",
+      "capa": {
+        "foto": 1698,
+        "alt": "Sala vazia com piso amadeirado, porta de vidro para a sacada e janela ao lado"
+      },
+      "versao": "b2f31bf7ce28",
+      "publicadoEm": "2026-10-27T13:32:04.621Z"
+    },
+    {
       "codigo": "CA0033",
       "slug": "casa-2-quartos-jardim-nossa-senhora-auxiliadora-campinas-ca0033",
       "titulo": "Casa de 2 quartos com 83 m² no Nossa Senhora Auxiliadora",
@@ -278,5 +302,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T11:21:39.865Z"
+  "atualizadoEm": "2026-10-27T13:32:04.628Z"
 }

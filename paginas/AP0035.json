@@ -1,0 +1,307 @@
+{
+  "codigo": "AP0035",
+  "slug": "apartamento-2-quartos-suite-mansoes-santo-antonio-campinas-ap0035",
+  "titulo": "Apartamento de 2 quartos com suíte no Mansões Santo Antônio",
+  "resumo": "Apartamento novo de 66 m² no Mansões Santo Antônio, em Campinas: 2 quartos com suíte, sala integrada à cozinha, sacada e condomínio com piscina e academia.",
+  "capa": {
+    "foto": 1698,
+    "alt": "Sala vazia com piso amadeirado, porta de vidro para a sacada e janela ao lado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Mansões Santo Antônio, em Campinas. São 66 m² com 2 quartos, sendo uma suíte, e uma vaga de garagem, segundo a ficha. O anúncio diz que o prédio é recém-construído, e as fotos confirmam: paredes brancas, pontos de luz ainda sem luminária e o imóvel vazio, pronto para receber os seus móveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala é integrada à cozinha e se abre para uma sacada com guarda-corpo. O condomínio tem bastante área comum: piscina, quadra, academia, salão gourmet, lavanderia compartilhada e bicicletário aparecem nas fotos. O anúncio cita o Shopping Parque Dom Pedro por perto e a PUC-Campinas e a Unicamp a menos de 1 km."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "66 m² com 2 quartos, sendo uma suíte",
+        "Sala integrada à cozinha, com porta de vidro para a sacada",
+        "Piso amadeirado na sala e nos quartos",
+        "Uma vaga de garagem coberta, segundo o anúncio",
+        "Condomínio com piscina, quadra, academia e salão gourmet"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e sacada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala tem formato em L, com piso amadeirado e rodapé de madeira. Numa ponta, uma porta de vidro de correr leva à sacada; na outra parede, uma janela com veneziana deixa entrar mais luz. Pela porta da sacada se veem árvores e prédios do bairro. Do mesmo ambiente sai o corredor para os quartos, e uma das portas dá para um banheiro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1699,
+          "legenda": "Sala com janela de veneziana e o corredor para os quartos ao fundo"
+        },
+        {
+          "foto": 1700,
+          "legenda": "Sala em L com porta de vidro para a sacada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha fica aberta para a sala e tem piso claro de porcelanato ou cerâmica. A bancada é de granito escuro com cuba de inox, e a parede atrás é revestida de azulejo branco no estilo metrô. No fundo fica a área de serviço, com tanque e uma porta com veneziana que dá para uma pequena varanda com guarda-corpo. O anúncio fala em cozinha planejada; nas fotos, os armários ainda não aparecem."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1707,
+          "legenda": "Cozinha aberta para a sala, com bancada de granito e azulejo metrô"
+        },
+        {
+          "foto": 1702,
+          "legenda": "Bancada com cuba de inox e tanque na área de serviço"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos seguem o mesmo piso amadeirado da sala e têm janelas de alumínio com veneziana. A suíte tem banheiro próprio, com bancada de granito, vaso e área de chuveiro; o outro banheiro tem janela basculante e o mesmo acabamento. O anúncio menciona a possibilidade de adaptar a planta para criar outro dormitório: vale confirmar com o corretor como isso seria feito."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A piscina é cercada por grade, com deck de pedra e espreguiçadeiras. Ao lado fica uma quadra com piso azul, tabela de basquete e traves, protegida por alambrado. A academia tem paredes laranja, janelas largas, esteira, bicicleta, bancos e uma fileira de halteres. O salão gourmet reúne mesas redondas de madeira, sofás e uma bancada com churrasqueira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram também uma área coberta com mesas junto ao jardim, um playground sob pergolado, a lavanderia compartilhada com máquinas de lavar, o bicicletário com suportes na parede e a garagem, com um pavimento coberto e vagas sob cobertura metálica."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1721,
+          "legenda": "Piscina cercada por grade, com deck de pedra e espreguiçadeiras"
+        },
+        {
+          "foto": 1720,
+          "legenda": "Academia com esteira, bancos e halteres"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para um casal, uma família pequena ou quem estuda e trabalha perto da PUC-Campinas e da Unicamp e quer um apartamento novo, sem reforma, num prédio com lazer completo. Quem precisa de um cômodo a mais deve conversar sobre a adaptação citada no anúncio antes da visita."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio, se a vaga é coberta e fixa, o que vem na cozinha planejada citada no anúncio e como seria a adaptação para um terceiro dormitório.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1696,
+      "legenda": "Fachada do prédio cinza com detalhe laranja e a marquise de entrada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1698,
+      "legenda": "Sala com porta de vidro para a sacada e janela de veneziana",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1699,
+      "legenda": "Sala com janela de veneziana e o corredor para os quartos ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1700,
+      "legenda": "Sala em L com porta de vidro para a sacada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1701,
+      "legenda": "Outro ângulo da sala, com a sacada à esquerda e a janela ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1704,
+      "legenda": "Sala com piso amadeirado e porta aberta para um banheiro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1705,
+      "legenda": "Parede livre da sala, porta do banheiro e acesso ao corredor",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1697,
+      "legenda": "Cozinha aberta para a sala, com a sacada à direita",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1707,
+      "legenda": "Cozinha com bancada de granito, azulejo metrô e porta da área de serviço",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1702,
+      "legenda": "Bancada com cuba de inox e tanque na área de serviço",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1703,
+      "legenda": "Área de serviço com tanque, interfone e porta com veneziana",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1708,
+      "legenda": "Quarto com piso amadeirado e janela de veneziana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1711,
+      "legenda": "Quarto com janela voltada para os prédios vizinhos",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1712,
+      "legenda": "Canto de quarto com janela de alumínio e veneziana aberta",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1709,
+      "legenda": "Suíte com porta para o banheiro privativo",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1706,
+      "legenda": "Banheiro com bancada de granito, vaso e área de chuveiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1710,
+      "legenda": "Banheiro com janela basculante, chuveiro e bancada de granito",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1715,
+      "legenda": "Garagem coberta, com vagas demarcadas e iluminação",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1717,
+      "legenda": "Vagas sob cobertura metálica na área externa da garagem",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1713,
+      "legenda": "Bicicletário com bicicletas penduradas na parede",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1714,
+      "legenda": "Lavanderia compartilhada com lavadoras, tanque e bancada",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1716,
+      "legenda": "Balcão escuro e máquinas da lavanderia compartilhada",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1718,
+      "legenda": "Salão gourmet com mesas redondas, bancada e churrasqueira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1719,
+      "legenda": "Salão gourmet com sofás, mesas e janelas para o jardim",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1720,
+      "legenda": "Academia com esteira, bancos e halteres",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1721,
+      "legenda": "Piscina cercada por grade, com deck de pedra e espreguiçadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1723,
+      "legenda": "Quadra com piso azul, tabela de basquete e alambrado",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1722,
+      "legenda": "Área coberta com mesas, cozinha ao fundo e caminho pelo jardim",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1724,
+      "legenda": "Playground sob pergolado, entre as torres do condomínio",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos tem o apartamento?",
+      "resposta": "A ficha informa 2 quartos, sendo uma suíte, em 66 m². O anúncio menciona a possibilidade de adaptar a planta para criar outro dormitório."
+    },
+    {
+      "pergunta": "O apartamento tem vaga de garagem?",
+      "resposta": "Sim. A ficha informa uma vaga, e o anúncio diz que ela é coberta. As fotos mostram a garagem coberta e vagas sob cobertura metálica."
+    },
+    {
+      "pergunta": "O que o condomínio oferece?",
+      "resposta": "As fotos mostram piscina, quadra, academia, salão gourmet com churrasqueira, playground, lavanderia compartilhada e bicicletário."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento novo de 66 m² no Mansões Santo Antônio, em Campinas: 2 quartos com suíte, sala integrada à cozinha, sacada e uma vaga de garagem. No condomínio, piscina, quadra, academia, salão gourmet, lavanderia e bicicletário. Perto da PUC-Campinas e da Unicamp, segundo o anúncio. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "mansoessantoantonio",
+      "apartamentonovo",
+      "imoveiscampinas",
+      "doisquartos",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "b2f31bf7ce28",
+  "publicadoEm": "2026-10-27T13:32:04.621Z"
+}
