@@ -2,7 +2,7 @@
 // Cobre exatamente o que o sistema usa: placeholders "?", datetime/date('now',...), date(coluna),
 // LIKE sem diferenciar maiúsculas, e "RETURNING id" para devolver o id inserido.
 const TZ = "(now() AT TIME ZONE 'America/Sao_Paulo')";
-const SEM_ID = new Set(['sessoes', 'tentativas_login', 'config', 'arquivos_dados', 'fisguei_bloqueios', 'condominio_cache', 'predios3d', 'mapa3d', 'fachadas']);
+const SEM_ID = new Set(['sessoes', 'tentativas_login', 'config', 'arquivos_dados', 'fisguei_bloqueios', 'condominio_cache', 'predios3d', 'mapa3d', 'fachadas', 'bairros', 'bairro_commons']);
 const cache = new Map();
 
 function agoraComModificadores(func, mods) {
