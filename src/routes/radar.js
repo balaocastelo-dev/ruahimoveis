@@ -30,15 +30,24 @@ function prioridade(op) {
 }
 
 // Lista não contatar: telefone marcado em leads/proprietários ou endereço que já pediu para sair.
-function bloqueioContato(op) {
+// A lista é lida uma vez (3 consultas) e conferida em memória; antes eram consultas por oportunidade e a tela
+// do Radar, com centenas de oportunidades, levava dezenas de segundos.
+const digitos = (t) => String(t || '').replace(/\D/g, '');
+function listaNaoContatar() {
+  return {
+    leads: new Set(all('SELECT telefone FROM leads WHERE nao_contatar=1').map((x) => x.telefone).filter(Boolean)),
+    donos: new Set(all('SELECT telefone FROM proprietarios WHERE nao_contatar=1').map((x) => digitos(x.telefone).slice(-9)).filter((t) => t.length >= 8)),
+    enderecos: all("SELECT id, logradouro, numero, unidade FROM oportunidades WHERE motivo_descarte='nao_contatar'"),
+  };
+}
+function bloqueioContato(op, nc = listaNaoContatar()) {
   const tels = [op.telefone_anuncio, op.titular_telefone].map((t) => (t ? wa.normTel(t) : null)).filter(Boolean);
   for (const t of tels) {
-    if (one('SELECT 1 FROM leads WHERE telefone=? AND nao_contatar=1', t)) return 'Este telefone está na lista não contatar (pediu PARAR no WhatsApp).';
-    if (one("SELECT 1 FROM proprietarios WHERE nao_contatar=1 AND replace(replace(replace(replace(telefone,' ',''),'-',''),'(',''),')','') LIKE ?", '%' + t.slice(-9))) return 'Este telefone pertence a um proprietário marcado como não contatar.';
+    if (nc.leads.has(t)) return 'Este telefone está na lista não contatar (pediu PARAR no WhatsApp).';
+    if (nc.donos.has(digitos(t).slice(-9))) return 'Este telefone pertence a um proprietário marcado como não contatar.';
   }
   if (op.logradouro && op.numero) {
-    const outro = all("SELECT * FROM oportunidades WHERE id!=? AND motivo_descarte='nao_contatar' AND numero=?", op.id || 0, String(op.numero))
-      .find((o) => norm(o.logradouro) === norm(op.logradouro) && norm(o.unidade) === norm(op.unidade));
+    const outro = nc.enderecos.find((o) => o.id !== op.id && String(o.numero) === String(op.numero) && norm(o.logradouro) === norm(op.logradouro) && norm(o.unidade) === norm(op.unidade));
     if (outro) return `Este endereço pediu para não ser contatado (oportunidade OP-${String(outro.id).padStart(4, '0')}).`;
   }
   return null;
@@ -75,7 +84,7 @@ function duplicada(c, ignorar = 0) {
   return null;
 }
 
-const comExtras = (op) => ({ ...op, ref: carta.ref(op), prioridade: prioridade(op), bloqueio: bloqueioContato(op) });
+const comExtras = (op, nc) => ({ ...op, ref: carta.ref(op), prioridade: prioridade(op), bloqueio: bloqueioContato(op, nc) });
 
 // ---------- radar automático (alertas por e-mail) ----------
 const alertas = require('../services/alertas');
@@ -110,9 +119,11 @@ r.get('/radar', (req, res) => {
   if (req.query.status) { w += ' AND o.status=?'; p.push(req.query.status); } else w += " AND o.status NOT IN ('captada','descartada')";
   if (req.query.q) { w += ' AND (o.titulo LIKE ? OR o.bairro LIKE ? OR o.condominio_nome LIKE ? OR o.logradouro LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q, q); }
   const l = all(`SELECT o.*, us.nome corretor_nome, (SELECT max(em) FROM oportunidade_eventos e WHERE e.oportunidade_id=o.id) ultimo_evento
-     FROM oportunidades o LEFT JOIN usuarios us ON us.id=o.corretor_id ${w} ORDER BY o.atualizado_em DESC LIMIT 500`, ...p).map(comExtras);
-  l.sort((a, b) => b.prioridade.pontos - a.prioridade.pontos);
-  res.json(l);
+     FROM oportunidades o LEFT JOIN usuarios us ON us.id=o.corretor_id ${w} ORDER BY o.atualizado_em DESC LIMIT 500`, ...p);
+  const nc = listaNaoContatar();
+  const l2 = l.map((op) => comExtras(op, nc));
+  l2.sort((a, b) => b.prioridade.pontos - a.prioridade.pontos);
+  res.json(l2);
 });
 
 r.get('/radar/resumo', (req, res) => {
@@ -133,10 +144,10 @@ r.get('/radar/aprovacoes', A.exigePerfil('adm', 'gestor'), (req, res) => {
 r.get('/radar/cartas.pdf', async (req, res) => {
   const ids = String(req.query.ids || '').split(',').map((x) => parseInt(x, 10)).filter(Boolean).slice(0, 200);
   if (!ids.length) falha(400, 'Escolha ao menos uma oportunidade.');
-  const itens = [];
+  const itens = [], nc = listaNaoContatar();
   for (const id of ids) {
     const op = permitida(req.usuario, id);
-    if (bloqueioContato(op) || op.anunciante_tipo === 'imobiliaria' || !op.logradouro) continue;
+    if (bloqueioContato(op, nc) || op.anunciante_tipo === 'imobiliaria' || !op.logradouro) continue;
     itens.push({ op, corretor: one('SELECT nome,telefone FROM usuarios WHERE id=?', op.corretor_id || req.usuario.id) });
   }
   if (!itens.length) falha(400, 'Nenhuma das oportunidades escolhidas pode receber carta (sem endereço, de imobiliária ou na lista não contatar).');
@@ -233,10 +244,10 @@ r.post('/radar/:id/carta-enviada', (req, res) => {
 });
 r.post('/radar/cartas-enviadas', (req, res) => {
   const ids = (req.body.ids || []).map((x) => parseInt(x, 10)).filter(Boolean).slice(0, 200);
-  let n = 0;
+  let n = 0; const nc = listaNaoContatar();
   for (const id of ids) {
     const op = permitida(req.usuario, id);
-    if (bloqueioContato(op) || op.anunciante_tipo === 'imobiliaria' || !op.logradouro) continue;
+    if (bloqueioContato(op, nc) || op.anunciante_tipo === 'imobiliaria' || !op.logradouro) continue;
     run("UPDATE oportunidades SET carta_enviada_em=date('now','localtime'), corretor_id=coalesce(corretor_id,?) WHERE id=?", req.usuario.id, id);
     evento(id, 'carta', 'Carta enviada (lote).', req.usuario.id);
     toca(id, ['nova', 'em_contato'].includes(op.status) ? 'carta_enviada' : null); n++;
