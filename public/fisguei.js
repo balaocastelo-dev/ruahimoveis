@@ -12,6 +12,14 @@ const fgEnd = (a) => [a.logradouro, a.numero].filter(Boolean).join(', ') || a.ba
 const fgRef = (id) => 'FG-' + String(id).padStart(5, '0');
 const LEAFLET = { js: '/vendor/leaflet/leaflet.js', css: '/vendor/leaflet/leaflet.css' };
 
+// Fundo dos mapas: CARTO Voyager (dados do OpenStreetMap). O servidor do OSM recusa pedidos sem "Referer" e o sistema não manda
+// Referer para fora; por isso o fundo vem da CARTO, que aceita, e cada pedido de ladrilho leva só a origem do site.
+function camadaMapa(m) {
+  return L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    maxZoom: 20, subdomains: 'abcd', referrerPolicy: 'strict-origin-when-cross-origin',
+    attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> · © <a href="https://carto.com/attributions" target="_blank" rel="noopener">CARTO</a>',
+  }).addTo(m);
+}
 function carregaLeaflet() {
   if (window.L) return Promise.resolve();
   if (!document.querySelector(`link[href="${LEAFLET.css}"]`)) { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = LEAFLET.css; document.head.appendChild(l); }
@@ -137,7 +145,7 @@ async function mapaFisguei(filtro, q) {
   c.innerHTML = '<div id="fg-mapa" class="fg-mapa"></div><p class="small muted">Até 3.000 anúncios com localização. Cores: <span class="pill ok">dono confirmou / particular</span> <span class="pill warn">robô abordando</span> <span class="pill bad">precisa do corretor</span> <span class="pill info">demais</span></p>';
   const [pts] = await Promise.all([api('GET', '/api/fisguei/mapa?' + new URLSearchParams({ filtro, q })), carregaLeaflet()]);
   const m = L.map('fg-mapa').setView([-22.9056, -47.0608], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(m);
+  camadaMapa(m);
   const cor = (p) => (['confirmado', 'captado'].includes(p.status) || p.anunciante_tipo === 'particular' ? '#2e7d4f' : p.status === 'respondeu' ? '#c0392b' : p.status === 'abordando' ? '#c98a1a' : '#3b6ea8');
   const b = [];
   for (const p of pts) {

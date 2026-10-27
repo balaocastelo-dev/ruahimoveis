@@ -655,4 +655,5 @@ ACT.ativo = (el) => comBotao(el, async () => { await api('PATCH', `/api/usuarios
 FORM['meu-telefone'] = async (f) => { await api('POST', '/api/me/telefone', formJSON(f)); ME = await api('GET', '/api/me'); toast('WhatsApp salvo'); };
 FORM['minha-senha'] = async (f) => { await api('POST', '/api/me/senha', formJSON(f)); f.reset(); toast('Senha trocada'); };
 
-inicio();
+// só começa depois que todos os scripts da página (radar, fisguei, captação, vitrines…) estiverem carregados
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inicio); else inicio();

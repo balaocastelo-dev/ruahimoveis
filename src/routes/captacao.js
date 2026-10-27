@@ -101,7 +101,7 @@ r.get('/captacao/painel', (req, res) => {
 
   // ---------- mais novos, com foto ----------
   const novosFg = all(`SELECT id, tipo, finalidade, bairro, logradouro, numero, valor, quartos, area_util, area_total, anunciante_tipo, status, fotos, criado_em, lat
-      FROM fisguei_anuncios WHERE status NOT IN ('descartado') ORDER BY CASE WHEN anunciante_tipo='particular' THEN 0 ELSE 1 END, id DESC LIMIT 8`)
+      FROM fisguei_anuncios WHERE status NOT IN ('descartado') AND fotos LIKE '["%' ORDER BY CASE WHEN anunciante_tipo='particular' THEN 0 ELSE 1 END, id DESC LIMIT 8`)
     .map(({ fotos, ...a }) => ({ ...a, ref: 'FG-' + String(a.id).padStart(5, '0'), foto: capaFg(fotos), subtipo: M.subtipo(a) }));
   const novasOp = all(`SELECT o.id, o.titulo, o.tipo, o.bairro, o.logradouro, o.numero, o.valor, o.status, o.anunciante_tipo, o.portal, o.criado_em, o.imovel_id, o.foto op_foto,
       (SELECT f.fotos FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos,
@@ -113,8 +113,8 @@ r.get('/captacao/painel', (req, res) => {
   const creditosMes = creditos.filter((p) => dia(p.criado_em).slice(0, 7) === hoje.slice(0, 7)).reduce((t, p) => t + (p.creditos || 0), 0);
   res.json({
     kpis: {
-      base: fg.length, hoje: fg.filter((a) => dia(a.criado_em) === hoje).length + ops.filter((o) => dia(o.criado_em) === hoje).length,
-      particulares: quem.particular, imobiliarias: quem.imobiliaria, comDono, abordagens: enviados, fila,
+      base: fg.length, hoje: fg.filter((a) => dia(a.criado_em) === hoje).length, opsHoje: ops.filter((o) => dia(o.criado_em) === hoje).length,
+      partFg: fg.filter((a) => a.anunciante_tipo === 'particular').length, particulares: quem.particular, imobiliarias: quem.imobiliaria, comDono, abordagens: enviados, fila,
       respostas: respondeuEnvio, taxaResposta: pct(respondeuEnvio, enviados), confirmados,
       ativas, captadas, gasto, custoPorCaptacao: captadas ? gasto / captadas : null, creditosMes, aprovacoes: tudo ? aprov : 0,
     },

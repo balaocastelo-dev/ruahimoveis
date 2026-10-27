@@ -78,7 +78,7 @@ async function mapaMercado(qf, f, bairroAt) {
   const [pts] = await Promise.all([api('GET', '/api/mercado/mapa?' + qf), carregaLeaflet()]);
   const el = $('#mk-mapa'); if (!el) return;
   const m = L.map(el, { preferCanvas: true }).setView([-22.9056, -47.0608], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(m);
+  camadaMapa(m);
   const destaque = [];
   const chaveRua = (t) => t.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   for (const [id, lat, lon, mil, part, rot] of pts) {

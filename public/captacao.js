@@ -23,7 +23,7 @@ function capFunil(etapas) {
   const max = Math.max(1, ...etapas.map((e) => e.n));
   return `<div class="cap-funil">${etapas.map((e, i) => {
     const ant = i ? etapas[i - 1].n : null;
-    const taxa = ant ? Math.round((e.n / ant) * 1000) / 10 : null;
+    const taxa = ant && i !== 5 ? Math.round((e.n / ant) * 1000) / 10 : null; // o Radar recebe também dos portais: não é % do Fisguei
     return `<a class="cap-fl" href="${e.href}"><span class="cap-fl-r">${esc(e.rotulo)}</span>
       <span class="cap-fl-t"><span class="cap-fl-f ${i >= 5 ? 'radar' : ''}" style="width:${Math.max(e.n ? 3 : 0, (e.n / max) * 100)}%"></span></span>
       <b class="cap-fl-n">${nBR(e.n)}</b><span class="cap-fl-p">${taxa === null ? '' : pctT(taxa)}</span></a>`;
@@ -67,10 +67,10 @@ async function telaCaptacao() {
 
   <h2 class="dk-sec">Números</h2>
   <div class="grid dk-g5">
-    ${kpi('Anúncios na base', nBR(k.base), `${nBR(k.particulares)} de particular · ${nBR(k.hoje)} entraram hoje`)}
+    ${kpi('Anúncios na base', nBR(k.base), `${nBR(k.partFg)} de particular · ${nBR(k.hoje)} entraram hoje`)}
     ${kpi('Proprietários achados', nBR(k.comDono), `anúncios com dono consultado · ${nBR(k.creditosMes)} crédito(s) do Fisgar no mês`)}
     ${kpi('Abordagens do robô', nBR(k.abordagens), `${nBR(k.fila)} número(s) na fila · ${k.taxaResposta === null ? 'sem respostas ainda' : pctT(k.taxaResposta) + ' responderam'}`)}
-    ${kpi('Oportunidades ativas', nBR(k.ativas), `${nBR(k.confirmados)} dono(s) confirmado(s) pelo robô`)}
+    ${kpi('Oportunidades ativas', nBR(k.ativas), `${nBR(k.opsHoje)} nova(s) hoje · ${nBR(k.confirmados)} dono(s) confirmado(s) pelo robô`)}
     ${kpi('Captadas', nBR(k.captadas), k.custoPorCaptacao === null ? `${brl(k.gasto)} gastos em consultas pagas` : `${brl(k.custoPorCaptacao)} por captação`)}
   </div>
 

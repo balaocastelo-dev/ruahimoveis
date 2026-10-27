@@ -52,7 +52,7 @@ async function mapaCondominios(destaque) {
   const [pts] = await Promise.all([api('GET', '/api/condominios/mapa'), carregaLeaflet()]);
   const el = $('#cd-mapa'); if (!el) return;
   const m = L.map(el, { preferCanvas: true }).setView([-22.9056, -47.0608], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(m);
+  camadaMapa(m);
   const set = new Set(destaque); const b = [];
   for (const [id, lat, lon, tipo, venda, alvo, nome] of pts) {
     const cor = alvo ? '#a8823c' : venda ? '#c98a1a' : tipo === 'h' ? '#2e7d4f' : '#3b6ea8';
@@ -156,7 +156,7 @@ async function miniMapa(c) {
   const el = $('#cd-mini'); if (!el) return;
   const centro = c.lat ? [c.lat, c.lon] : [-22.9056, -47.0608];
   const m = L.map(el).setView(centro, c.lat ? 17 : 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© OpenStreetMap' }).addTo(m);
+  camadaMapa(m);
   const mk = L.marker(centro, { draggable: true }).addTo(m);
   mk.on('dragend', async () => {
     const p = mk.getLatLng();
