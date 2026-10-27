@@ -1,0 +1,277 @@
+{
+  "codigo": "ST0003",
+  "slug": "apartamento-1-suite-novo-nova-campinas-campinas-st0003",
+  "titulo": "Apartamento novo de 1 suíte e lavabo no Nova Campinas",
+  "resumo": "Apartamento novo de 47 m² no Nova Campinas, em Campinas: 1 suíte, lavabo, uma vaga, janelas de canto com vista livre e condomínio com academia e coworking.",
+  "capa": {
+    "foto": 1616,
+    "alt": "Ambiente amplo com piso claro e janelas de canto com caixilho preto abertas para o bairro"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Nova Campinas, em Campinas. São 47 m² de área útil com 1 quarto, que é suíte, e uma vaga de garagem, segundo a ficha. O anúncio diz que o imóvel é novo, tem lavabo e vista livre, e fica perto da principal avenida do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que mais chama atenção nas fotos é o canto envidraçado: duas paredes de janelas com caixilho preto, do peitoril ao alto, voltadas para casas, árvores e prédios do bairro. O apartamento aparece vazio, com piso claro em placas grandes, paredes brancas e pontos de luz ainda sem luminária, pronto para receber os seus móveis."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "47 m² com 1 suíte e lavabo",
+        "Janelas de canto com caixilho preto e vista livre, segundo o anúncio",
+        "Bancada longa de granito claro com duas cubas e azulejo branco",
+        "Uma vaga de garagem",
+        "Condomínio com academia, sala de reuniões, salão de festas e jardins"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Um ambiente amplo e iluminado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram um ambiente amplo e aberto. O piso é claro, em placas grandes, com rodapé branco. Numa parede há uma janela menor com persiana embutida; no canto oposto, o pano de vidro em L ocupa quase toda a largura das duas paredes. A porta de entrada é de madeira e tem fechadura digital. Ao lado dela fica o quadro de luz e a porta para um dos banheiros."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1613,
+          "legenda": "Vista geral do ambiente, com a janela menor e o canto envidraçado"
+        },
+        {
+          "foto": 1618,
+          "legenda": "Janelas de canto voltadas para casas, árvores e prédios do bairro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A bancada da cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha fica ao longo de uma parede, aberta para o resto do espaço. É uma bancada comprida de granito claro, que segue até as janelas, com duas cubas de inox e parede revestida de azulejo branco no estilo metrô. Há pontos de água e de energia ao longo dela, mas os armários ainda não foram instalados: você escolhe como montar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1621,
+          "legenda": "Bancada de granito com duas cubas de inox e azulejo metrô branco"
+        },
+        {
+          "foto": 1619,
+          "legenda": "Ponta da bancada junto à janela, com cuba e torneira de parede"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Suíte e lavabo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos banheiros tem área de chuveiro revestida de porcelanato cinza em placas grandes, vaso e bancada de granito claro com cuba. O outro é o lavabo, com cuba de apoio redonda sobre bancada de granito e piso escuro. Os dois aparecem novos, com o vaso ainda lacrado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos do condomínio mostram jardins com canteiros elevados, caminhos de piso claro e gramado, um canto com cadeiras de madeira em volta de um braseiro e um deck de madeira com mesas redondas. O salão de festas tem forro de madeira, parede de pedra, luminárias de fibra e uma mesa grande. A academia tem esteiras, estação de musculação e halteres, e há uma sala de reuniões com mesa e cadeiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo anúncio, o condomínio também tem piscina, playground, horta e espaço de coworking, que não aparecem nas fotos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1632,
+          "legenda": "Salão de festas com forro de madeira, parede de pedra e mesa grande"
+        },
+        {
+          "foto": 1629,
+          "legenda": "Cadeiras de madeira em volta de um braseiro no jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem mora sozinho ou a dois e quer um apartamento novo no Nova Campinas, com bastante luz, para montar do zero. Também para quem trabalha de casa e vai usar a sala de reuniões e o coworking do prédio. Quem precisa de quartos separados deve olhar outra planta."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio, se a vaga é coberta e fixa, o andar do apartamento e como fica a divisão entre a suíte e o restante do espaço.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1616,
+      "legenda": "Ambiente amplo com janelas de canto de caixilho preto",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1613,
+      "legenda": "Vista geral com a janela menor e o canto envidraçado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1614,
+      "legenda": "Espaço aberto visto da entrada, com a bancada da cozinha à direita",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1615,
+      "legenda": "Bancada com duas cubas de um lado e janelas ao fundo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1617,
+      "legenda": "Canto envidraçado com a ponta da bancada de granito",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1618,
+      "legenda": "Janelas de canto voltadas para casas, árvores e prédios",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1625,
+      "legenda": "Janelas em L e bancada com torneira e azulejo metrô",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1619,
+      "legenda": "Ponta da bancada junto à janela, com cuba e torneira de parede",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1620,
+      "legenda": "Cuba de inox na bancada de granito e a porta de entrada",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1621,
+      "legenda": "Bancada de granito com duas cubas de inox e azulejo metrô branco",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1635,
+      "legenda": "Bancada com cuba junto à parede e o pano de vidro ao fundo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1623,
+      "legenda": "Porta de entrada com fechadura digital, quadro de luz e porta do banheiro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1622,
+      "legenda": "Lavabo com cuba de apoio redonda sobre bancada de granito",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1624,
+      "legenda": "Banheiro com área de chuveiro em porcelanato cinza",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1627,
+      "legenda": "Jardim do condomínio com canteiros, gramado e escada",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1630,
+      "legenda": "Caminhos de piso claro entre canteiros, com prédios ao redor",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1628,
+      "legenda": "Corredor com canteiros elevados e vasos junto ao muro",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1629,
+      "legenda": "Cadeiras de madeira em volta de um braseiro no jardim",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1631,
+      "legenda": "Deck de madeira com mesas redondas sob pergolado",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1632,
+      "legenda": "Salão de festas com forro de madeira, parede de pedra e mesa grande",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1626,
+      "legenda": "Sala de reuniões com mesa, cadeiras e televisor na parede",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1633,
+      "legenda": "Academia com esteiras e janelas com persiana",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1634,
+      "legenda": "Academia com estação de musculação, banco e halteres",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos tem o apartamento?",
+      "resposta": "A ficha informa 1 quarto, que é suíte, em 47 m² de área útil. O anúncio cita também um lavabo."
+    },
+    {
+      "pergunta": "O apartamento tem vaga de garagem?",
+      "resposta": "Sim. A ficha informa uma vaga de garagem."
+    },
+    {
+      "pergunta": "O que o condomínio oferece?",
+      "resposta": "As fotos mostram jardins, deck com mesas, salão de festas, academia e sala de reuniões. O anúncio cita também piscina, playground, horta e coworking."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento novo de 47 m² no Nova Campinas, em Campinas: 1 suíte, lavabo, uma vaga e janelas de canto com vista livre. Bancada longa de granito com duas cubas, pronta para você montar a cozinha do seu jeito. No condomínio, academia, salão de festas, sala de reuniões e jardins. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "novacampinas",
+      "apartamentonovo",
+      "imoveiscampinas",
+      "studiocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "55b5ab4a00c8",
+  "publicadoEm": "2026-10-27T21:23:06.014Z"
+}

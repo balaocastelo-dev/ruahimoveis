@@ -1,0 +1,240 @@
+{
+  "codigo": "CA0025",
+  "slug": "casa-3-quartos-3-vagas-jardim-yeda-campinas-ca0025",
+  "titulo": "Casa de 3 quartos com 3 vagas no Jardim Yeda, em Campinas",
+  "resumo": "Casa de 3 quartos no Jardim Yeda, em Campinas, em terreno de 350 m²: 3 vagas, varanda comprida coberta, terraço no andar de cima e área com fogão a lenha.",
+  "capa": {
+    "foto": 1595,
+    "alt": "Varanda comprida e coberta com piso de pedra cinza, vasos de plantas e uma mesa ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no Jardim Yeda, em Campinas, num terreno de 350 m². A ficha informa 3 quartos e 3 vagas de garagem, e o anúncio fala em três banheiros e documentação regularizada. É uma casa para quem quer espaço: as fotos mostram uma varanda comprida, dois pavimentos ligados por escada, um terraço aberto no alto e uma área coberta com fogão a lenha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa aparece mobiliada e em uso nas fotos. Boa parte dos ambientes tem piso de pedra cinza-escura, que se repete da varanda à cozinha e às salas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno de 350 m² com 3 quartos",
+        "3 vagas de garagem, com área coberta",
+        "Varanda comprida e coberta com piso de pedra",
+        "Terraço aberto e sacada no andar de cima",
+        "Área coberta com fogão a lenha de tijolos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entrada, garagem e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Da rua se vê a casa com telhado de telha de barro, atrás de um muro com portões de grade branca. A garagem tem cobertura de telhas metálicas, piso de cimento e um jardim vertical na parede. Logo depois vem uma varanda longa e coberta, com piso de pedra cinza, janelas com grade, bancos de madeira e muitos vasos de plantas. Um corredor lateral, também com piso de pedra, leva ao fundo do terreno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1598,
+          "legenda": "Varanda coberta com janelas de grade, plantas e banco de madeira"
+        },
+        {
+          "foto": 1611,
+          "legenda": "Garagem com cobertura metálica e jardim vertical na parede"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Salas e cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma sala de TV com sofá, lustre pendente e porta para a varanda, e outra sala mais ampla, com cortinas claras, espaço para sofá e uma mesa alta com banquetas. A cozinha tem bancada escura, armários brancos, fogão embutido e espaço para geladeira; dali sai a escada para o andar de cima. Há ainda uma copa com armário de madeira e uma segunda cozinha, com pia de inox e parede de azulejo. A ficha lista armários na cozinha, no banheiro e na área de serviço."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1602,
+          "legenda": "Cozinha com bancada escura, armários brancos e a escada para o andar de cima"
+        },
+        {
+          "foto": 1600,
+          "legenda": "Sala de TV com piso de pedra e porta para a varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha informa 3 quartos. Um deles aparece com guarda-roupa de portas de correr, janela com cortina e escrivaninha. O banheiro das fotos tem bancada clara com cuba e gabinete, espelho largo, box de vidro e uma parede de pastilhas coloridas. A ficha também lista piso laminado; nas fotos, o que mais aparece é o piso de pedra."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Terraço, sacada e fogão a lenha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No andar de cima, uma sacada com forro de madeira e guarda-corpo de metal corre ao longo dos cômodos, com portas de veneziana. Ao lado fica um terraço aberto, com piso cerâmico, que leva a um cômodo com portas e janela de veneziana. Embaixo, uma área coberta reúne um fogão a lenha de tijolos e espaço para mesa. A ficha lista churrasqueira."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família que precisa de 3 vagas, quer área externa para receber e não abre mão de espaço no terreno. A casa aparece mobiliada e em uso: quem pensa em atualizar acabamentos deve ir à visita com isso em mente."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A área construída, o que fica em cada pavimento, para que serve o cômodo do terraço, onde ficam a segunda cozinha e a churrasqueira, e quantas das 3 vagas são cobertas.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1594,
+      "legenda": "Fachada com telhado de barro, muro e portões de grade branca",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1611,
+      "legenda": "Garagem com cobertura metálica e jardim vertical na parede",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1595,
+      "legenda": "Varanda comprida e coberta com piso de pedra cinza e vasos",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1596,
+      "legenda": "Varanda vista do fundo, com banco de madeira e o portão ao longe",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1598,
+      "legenda": "Varanda coberta com janelas de grade, plantas e banco de madeira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1597,
+      "legenda": "Corredor lateral com piso de pedra e vasos junto à parede",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1600,
+      "legenda": "Sala de TV com sofá, lustre e porta para a varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1612,
+      "legenda": "Sala ampla com sofá, televisor e janelas com cortina",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1609,
+      "legenda": "Sala com piso de pedra escuro, mesa alta e banquetas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1599,
+      "legenda": "Copa com armário de madeira e passagem para a escada",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1602,
+      "legenda": "Cozinha com bancada escura, armários brancos e escada",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1608,
+      "legenda": "Segunda cozinha com pia de inox, fogão e parede de azulejo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1610,
+      "legenda": "Quarto com guarda-roupa de portas de correr e escrivaninha",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1605,
+      "legenda": "Cômodo com sofá de canto, nicho na parede e piso de pedra",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1601,
+      "legenda": "Banheiro com bancada clara, espelho largo e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1603,
+      "legenda": "Banheiro com parede de pastilhas coloridas e janela no box",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1604,
+      "legenda": "Sacada do andar de cima com forro de madeira e guarda-corpo",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1606,
+      "legenda": "Terraço aberto com piso cerâmico e cômodo com venezianas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1607,
+      "legenda": "Área coberta com fogão a lenha de tijolos",
+      "ambiente": "gourmet"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas tem a casa?",
+      "resposta": "A ficha informa 3 quartos e 3 vagas de garagem. O anúncio cita três banheiros."
+    },
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "A ficha informa 350 m² de área total, que o anúncio descreve como o terreno da casa."
+    },
+    {
+      "pergunta": "A casa tem área para churrasco?",
+      "resposta": "A ficha lista churrasqueira, e as fotos mostram uma área coberta com fogão a lenha de tijolos."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 3 quartos no Jardim Yeda, em Campinas, em terreno de 350 m². São 3 vagas de garagem, varanda comprida e coberta com piso de pedra, sacada e terraço no andar de cima e uma área coberta com fogão a lenha. Para quem precisa de espaço. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "casacampinas",
+      "jardimyeda",
+      "casaavenda",
+      "imoveiscampinas",
+      "tresquartos",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "0ecbdbcc3ff2",
+  "publicadoEm": "2026-10-27T21:23:06.021Z"
+}

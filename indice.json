@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0025",
+      "slug": "casa-3-quartos-3-vagas-jardim-yeda-campinas-ca0025",
+      "titulo": "Casa de 3 quartos com 3 vagas no Jardim Yeda, em Campinas",
+      "resumo": "Casa de 3 quartos no Jardim Yeda, em Campinas, em terreno de 350 m²: 3 vagas, varanda comprida coberta, terraço no andar de cima e área com fogão a lenha.",
+      "capa": {
+        "foto": 1595,
+        "alt": "Varanda comprida e coberta com piso de pedra cinza, vasos de plantas e uma mesa ao fundo"
+      },
+      "versao": "0ecbdbcc3ff2",
+      "publicadoEm": "2026-10-27T21:23:06.021Z"
+    },
+    {
+      "codigo": "ST0003",
+      "slug": "apartamento-1-suite-novo-nova-campinas-campinas-st0003",
+      "titulo": "Apartamento novo de 1 suíte e lavabo no Nova Campinas",
+      "resumo": "Apartamento novo de 47 m² no Nova Campinas, em Campinas: 1 suíte, lavabo, uma vaga, janelas de canto com vista livre e condomínio com academia e coworking.",
+      "capa": {
+        "foto": 1616,
+        "alt": "Ambiente amplo com piso claro e janelas de canto com caixilho preto abertas para o bairro"
+      },
+      "versao": "55b5ab4a00c8",
+      "publicadoEm": "2026-10-27T21:23:06.014Z"
+    },
+    {
       "codigo": "TE0005",
       "slug": "terreno-300m2-condominio-alphaville-dom-pedro-campinas-te0005",
       "titulo": "Terreno de 300 m² em condomínio no Alphaville Dom Pedro",
@@ -374,5 +398,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T19:21:58.357Z"
+  "atualizadoEm": "2026-10-27T21:23:06.022Z"
 }
