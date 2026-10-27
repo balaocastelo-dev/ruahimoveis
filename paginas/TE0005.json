@@ -1,0 +1,200 @@
+{
+  "codigo": "TE0005",
+  "slug": "terreno-300m2-condominio-alphaville-dom-pedro-campinas-te0005",
+  "titulo": "Terreno de 300 m² em condomínio no Alphaville Dom Pedro",
+  "resumo": "Terreno de 300 m² em condomínio fechado no Alphaville Dom Pedro, em Campinas, num bairro planejado com áreas verdes, perto da Unicamp e da Rodovia Dom Pedro I.",
+  "capa": {
+    "foto": 1637,
+    "alt": "Perspectiva da portaria com cobertura de madeira, cancelas e palmeiras"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno tem 300 m², segundo a ficha, e fica no Alphaville Dom Pedro, em Campinas, dentro de um condomínio fechado. O anúncio o situa no Parque Alphaville, um bairro planejado e diz que a topografia é boa para construir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um aviso honesto antes de tudo: as imagens deste anúncio são perspectivas e mapas do empreendimento, não fotos do lote. Elas mostram como o loteamento foi projetado: portaria, piscina, clube, parque linear e as ruas arborizadas. Para ver o terreno em si, a visita é o caminho."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "300 m² de área total",
+        "Em condomínio fechado, segundo a ficha",
+        "Bairro planejado, com parque linear e áreas verdes nas imagens",
+        "Clube com piscina, academia, brinquedoteca e espaço gourmet nas perspectivas",
+        "Perto da Unicamp, da PUC e do Parque D. Pedro Shopping, segundo o mapa"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote e o loteamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha informa 300 m² de área total e o anúncio fala em topografia favorável para a obra. A fotomontagem aérea mostra o bairro inteiro: ruas curvas, lotes residenciais, uma faixa de prédios e comércio no centro e uma mata extensa ao lado. As etapas Terras Alpha Parque 1 e Parque 2 aparecem marcadas na imagem, junto do parque linear."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1647,
+          "legenda": "Fotomontagem aérea do bairro com as etapas residenciais e o parque linear"
+        },
+        {
+          "foto": 1637,
+          "legenda": "Perspectiva da portaria com cobertura de madeira e cancelas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O clube e as áreas comuns"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As perspectivas mostram uma piscina com deck de madeira e futons, outra piscina junto a um muro de pedra com jardim vertical, um salão com mesas e sofás diante de paredes de vidro e um espaço gourmet com bancada, banquetas e churrasqueira. Há ainda uma brinquedoteca com escorregador e piscina de bolinhas e uma academia com aparelhos de musculação e esteiras."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do lado de fora, as imagens mostram um parque com arquibancada gramada, caminhos de pedra, bancos e muitas árvores floridas, além de avenidas com canteiro central, ciclovia e bicicletário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1641,
+          "legenda": "Perspectiva da piscina com deck de madeira e futons sob pergolado"
+        },
+        {
+          "foto": 1639,
+          "legenda": "Vista aérea ilustrativa do parque com arquibancada e da área comercial"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mapa ilustrado do anúncio coloca o Parque Alphaville entre a Rodovia Dom Pedro I e a Mata Santa Genebrinha, com a Unicamp, o Hospital das Clínicas da Unicamp e a PUC por perto e o Parque D. Pedro Shopping do outro lado da rodovia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer construir a própria casa num loteamento fechado e planejado, perto da Unicamp e da PUC. Como as imagens são do projeto do empreendimento, o lote precisa ser visto de perto: posição, vizinhos e o que já está pronto no condomínio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Em qual etapa do loteamento fica o lote, as medidas de frente e fundo, a inclinação do terreno, o valor do condomínio, as regras de construção e quais áreas de lazer já estão entregues.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1637,
+      "legenda": "Perspectiva da portaria com cobertura de madeira, cancelas e palmeiras",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1647,
+      "legenda": "Fotomontagem aérea do bairro com as etapas residenciais e o parque linear",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1646,
+      "legenda": "Mapa ilustrado com o Parque Alphaville, a Unicamp, a PUC e o shopping",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 1638,
+      "legenda": "Perspectiva de avenida com canteiro florido, ciclovia e bicicletário",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1639,
+      "legenda": "Vista aérea ilustrativa do parque com arquibancada e da área comercial",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1640,
+      "legenda": "Perspectiva do parque com arquibancada gramada, banco e caminho de pedra",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1641,
+      "legenda": "Perspectiva da piscina com deck de madeira e futons sob pergolado",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1636,
+      "legenda": "Perspectiva da piscina com muro de pedra, jardim vertical e espreguiçadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1642,
+      "legenda": "Perspectiva do salão com mesas, sofás e paredes de vidro",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1643,
+      "legenda": "Perspectiva do espaço gourmet com bancada, banquetas e churrasqueira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1644,
+      "legenda": "Perspectiva da brinquedoteca com escorregador e piscina de bolinhas",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1645,
+      "legenda": "Perspectiva da academia com aparelhos de musculação e esteiras",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "São 300 m² de área total, segundo a ficha."
+    },
+    {
+      "pergunta": "O terreno fica em condomínio fechado?",
+      "resposta": "Sim. A ficha informa que o lote está em condomínio fechado, no Alphaville Dom Pedro."
+    },
+    {
+      "pergunta": "As imagens mostram o lote?",
+      "resposta": "Não. As imagens são perspectivas, mapa e fotomontagem do empreendimento. Para ver o lote, marque uma visita."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 300 m² em condomínio fechado no Alphaville Dom Pedro, em Campinas. Bairro planejado, com parque linear, áreas verdes e clube com piscina e academia no projeto, perto da Unicamp e da PUC. Bom para quem quer construir a própria casa. Fale com a RUAH pelo link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "alphavillecampinas",
+      "terrenoemcondominio",
+      "campinas",
+      "terrenoavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "10eccacffa99",
+  "publicadoEm": "2026-10-27T19:21:58.357Z"
+}

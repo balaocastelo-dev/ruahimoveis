@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0005",
+      "slug": "terreno-300m2-condominio-alphaville-dom-pedro-campinas-te0005",
+      "titulo": "Terreno de 300 m² em condomínio no Alphaville Dom Pedro",
+      "resumo": "Terreno de 300 m² em condomínio fechado no Alphaville Dom Pedro, em Campinas, num bairro planejado com áreas verdes, perto da Unicamp e da Rodovia Dom Pedro I.",
+      "capa": {
+        "foto": 1637,
+        "alt": "Perspectiva da portaria com cobertura de madeira, cancelas e palmeiras"
+      },
+      "versao": "10eccacffa99",
+      "publicadoEm": "2026-10-27T19:21:58.357Z"
+    },
+    {
+      "codigo": "CA0016",
+      "slug": "casa-terrea-condominio-3-quartos-suite-marmeleiro-atibaia-ca0016",
+      "titulo": "Casa térrea em condomínio com 3 quartos em Atibaia",
+      "resumo": "Casa térrea isolada de 105 m² num condomínio fechado de Atibaia: 3 quartos com suíte, sala integrada à cozinha com península e quintal gramado privativo.",
+      "capa": {
+        "foto": 1652,
+        "alt": "Fundos da casa térrea com porta de vidro, quintal gramado e muro alto nas laterais"
+      },
+      "versao": "839fdf712d93",
+      "publicadoEm": "2026-10-27T19:21:58.352Z"
+    },
+    {
       "codigo": "CA0034",
       "slug": "casa-5-quartos-2-suites-parque-taquaral-campinas-ca0034",
       "titulo": "Casa de 5 quartos com 2 suítes no Parque Taquaral, Campinas",
@@ -350,5 +374,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T17:22:16.944Z"
+  "atualizadoEm": "2026-10-27T19:21:58.357Z"
 }

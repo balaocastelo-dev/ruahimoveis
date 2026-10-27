@@ -1,0 +1,176 @@
+{
+  "codigo": "CA0016",
+  "slug": "casa-terrea-condominio-3-quartos-suite-marmeleiro-atibaia-ca0016",
+  "titulo": "Casa térrea em condomínio com 3 quartos em Atibaia",
+  "resumo": "Casa térrea isolada de 105 m² num condomínio fechado de Atibaia: 3 quartos com suíte, sala integrada à cozinha com península e quintal gramado privativo.",
+  "capa": {
+    "foto": 1652,
+    "alt": "Fundos da casa térrea com porta de vidro, quintal gramado e muro alto nas laterais"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no bairro Marmeleiro, em Atibaia, dentro do Consoli Residencial, um condomínio fechado que, segundo o anúncio, tem apenas 33 casas térreas, todas isoladas, sem parede encostada no vizinho. A ficha informa 105 m² de área útil num terreno de 288 m², com 3 quartos, sendo uma suíte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É uma casa toda num só piso, pensada para quem quer sair do apartamento sem encarar escada. Nas fotos chamam atenção a sala com pé-direito alto e janela em faixa no topo da parede, a cozinha aberta com península de pedra e o quintal de grama nos fundos, cercado por muro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa térrea isolada, sem paredes compartilhadas",
+        "105 m² de área útil em terreno de 288 m²",
+        "3 quartos, sendo uma suíte",
+        "Sala integrada à cozinha com península de pedra",
+        "Quintal gramado privativo nos fundos",
+        "Condomínio fechado com 33 casas, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e cozinha integradas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala reúne estar e jantar no mesmo ambiente, com piso claro de porcelanato. A porta de entrada é preta e alta, e uma faixa de vidro corre no alto da parede, trazendo luz extra. Uma porta de vidro de correr abre para um recuo lateral com plantas. O anúncio cita fechadura eletrônica na porta principal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha fica aberta para a sala. A península em L tem bancada de pedra clara, que o anúncio descreve como granito, com cuba, cooktop e coifa de inox na parede. Ao lado, uma porta de vidro dá direto para o quintal, o que facilita levar a comida para fora."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1648,
+          "legenda": "Sala de estar e jantar com porta preta de entrada e faixa de vidro no alto"
+        },
+        {
+          "foto": 1650,
+          "legenda": "Cozinha com península de pedra clara, cooktop e porta de vidro para o quintal"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "São 3 quartos, um deles suíte. O quarto que aparece nas fotos tem piso claro, cabeceira revestida até meia altura e uma porta de vidro de correr que sai direto no gramado. Segundo o anúncio, a suíte tem espaço para closet e persiana motorizada. Os outros quartos e os banheiros não aparecem nas fotos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quintal e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos fundos, o quintal é de grama, fechado por muros altos dos dois lados, com canteiros nas bordas. A fachada tem pergolado escuro sobre a entrada e calçada de bloquetes na frente. A imagem aérea mostra as casas térreas separadas por muros, cada uma com o seu quintal, ao longo de ruas internas arborizadas, e a portaria tem cobertura e portão de grade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1653,
+          "legenda": "Vista aérea do condomínio com as casas térreas e seus quintais"
+        },
+        {
+          "foto": 1654,
+          "legenda": "Portaria do Consoli Residencial com cobertura e portão de grade"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família pequena ou um casal que quer casa térrea, com quintal próprio e privacidade, num condomínio de poucas casas em Atibaia. A fachada, a vista aérea e a portaria parecem perspectivas ilustrativas do empreendimento, então vale ver a casa pessoalmente antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quantas vagas a casa tem e se são cobertas, o valor do condomínio, o que vem incluído de acabamento e se as imagens da fachada e do condomínio já correspondem ao que está construído.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1649,
+      "legenda": "Fachada da casa térrea com pergolado escuro e calçada de bloquetes",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1648,
+      "legenda": "Sala de estar e jantar com porta preta de entrada e faixa de vidro no alto",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1650,
+      "legenda": "Cozinha com península de pedra clara, cooktop e porta de vidro para o quintal",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1651,
+      "legenda": "Quarto com cabeceira revestida e porta de vidro para o gramado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1652,
+      "legenda": "Fundos da casa com quintal gramado cercado por muros",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1653,
+      "legenda": "Vista aérea do condomínio com as casas térreas e seus quintais",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1654,
+      "legenda": "Portaria do Consoli Residencial com cobertura e portão de grade",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos a casa tem?",
+      "resposta": "São 3 quartos, sendo uma suíte, em 105 m² de área útil, segundo a ficha."
+    },
+    {
+      "pergunta": "A casa tem escadas?",
+      "resposta": "Não. É uma casa térrea, com todos os ambientes no mesmo piso, segundo o anúncio."
+    },
+    {
+      "pergunta": "A casa tem quintal?",
+      "resposta": "Sim. Nos fundos há um quintal gramado privativo, cercado por muros, como mostram as fotos."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea em condomínio fechado no Marmeleiro, em Atibaia. São 105 m² com 3 quartos, sendo uma suíte, sala integrada à cozinha com península de pedra e quintal gramado privativo. Casa isolada, sem parede encostada no vizinho, num condomínio de poucas casas. Quer conhecer? Fale com a RUAH pelo link da bio.",
+    "hashtags": [
+      "casaatibaia",
+      "casaterrea",
+      "condominiofechado",
+      "atibaia",
+      "casacomquintal",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "839fdf712d93",
+  "publicadoEm": "2026-10-27T19:21:58.352Z"
+}
