@@ -299,9 +299,42 @@ CREATE TABLE IF NOT EXISTS auditoria (
 `);
 
 // Colunas novas em tabelas que já existiam no PC.
-for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES imoveis(id) ON DELETE SET NULL']]) {
+for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES imoveis(id) ON DELETE SET NULL'],
+  ['condominios', 'tipo', 'TEXT'],
+  ['condominios', 'cnpj', 'TEXT'],
+  ['condominios', 'razao_social', 'TEXT'],
+  ['condominios', 'situacao', 'TEXT'],
+  ['condominios', 'abertura', 'TEXT'],
+  ['condominios', 'complemento', 'TEXT'],
+  ['condominios', 'fontes', 'TEXT'],
+  ['condominios', 'osm_ref', 'TEXT'],
+  ['condominios', 'andares', 'INTEGER'],
+  ['condominios', 'torres', 'INTEGER'],
+  ['condominios', 'unidades', 'INTEGER'],
+  ['condominios', 'unidades_fonte', 'TEXT'],
+  ['condominios', 'contorno', 'TEXT'],
+  ['condominios', 'construtora', 'TEXT'],
+  ['condominios', 'slug', 'TEXT'],
+  ['condominios', 'alvo', 'INTEGER NOT NULL DEFAULT 0'],
+  ['condominios', 'nome_busca', 'TEXT'],
+  ['condominios', 'geo_fonte', 'TEXT'],
+  ['condominios', 'atualizado_em', 'TEXT'],
+  ['condominios', 'numeracao', 'TEXT'],
+  ['condominios', 'sem_nome', 'INTEGER NOT NULL DEFAULT 0'],
+  ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
+  ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
+
+db.exec(`CREATE TABLE IF NOT EXISTS condominio_cache (
+  condominio_id INTEGER NOT NULL REFERENCES condominios(id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL, json TEXT NOT NULL, gerado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  PRIMARY KEY (condominio_id, tipo));
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_cnpj ON condominios(cnpj) WHERE cnpj IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_slug ON condominios(slug) WHERE slug IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_op_cond ON oportunidades(condominio_id);
+CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);`);
 
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);

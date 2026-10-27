@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Condomínio em 3D · RUAH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap">
+<link rel="stylesheet" href="/condominio-3d.css">
+</head>
+<body>
+<div id="palco" aria-label="Cena 3D do condomínio e do entorno"></div>
+<div id="rotulos" aria-hidden="true"></div>
+
+<header class="painel topo" id="cabecalho">
+  <div class="marca"><b>RUAH</b><span>Condomínio em 3D</span></div>
+  <h1 id="nome">Carregando…</h1>
+  <div class="end" id="endereco"></div>
+  <div class="chips" id="chips"></div>
+  <div class="apto" id="apto" hidden></div>
+  <div class="creditos" id="creditos">Prédios: Overture Maps (Google, Microsoft, OpenStreetMap) · Alturas pelo Censo 2022 (IBGE) ou estimadas · Ruas © OpenStreetMap · Satélite: Esri, Maxar, Earthstar Geographics</div>
+</header>
+
+<aside class="painel lado" id="lado" hidden>
+  <div class="tit">Andares</div>
+  <input type="range" id="andar" min="0" max="10" value="0" orient="vertical" aria-label="Escolher andar">
+  <div class="andar-txt" id="andar-txt">—</div>
+  <button class="b" id="b-vista" type="button">Vista deste andar</button>
+  <div class="unidades" id="unidades"></div>
+</aside>
+
+<nav class="painel base" id="controles" aria-label="Controles da cena">
+  <button class="b" data-v="intro" type="button" title="Voltar ao prédio">Prédio</button>
+  <button class="b" data-v="cima" type="button" title="Ver de cima">De cima</button>
+  <button class="b" data-v="rua" type="button" title="Altura de quem passa na rua">Da rua</button>
+  <span class="sep"></span>
+  <button class="b on" data-luz="dia" type="button" title="Sol do meio do dia">Dia</button>
+  <button class="b" data-luz="tarde" type="button" title="Sol baixo, fim de tarde">Tarde</button>
+  <button class="b" data-luz="noite" type="button" title="Noite com as janelas acesas">Noite</button>
+  <span class="sep"></span>
+  <button class="b on" id="b-sat" type="button" title="Foto de satélite no chão">Satélite</button>
+  <button class="b on" id="b-perto" type="button" title="Escolas, mercados, parques…">Por perto</button>
+  <button class="b" id="b-girar" type="button" title="Girar sozinho">Girar</button>
+</nav>
+
+<div class="bussola" id="bussola" title="Norte"><svg viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><g id="agulha"><path d="M20 5 L25 20 L20 17 L15 20 Z" fill="#d2ab62"/><path d="M20 35 L25 20 L20 23 L15 20 Z" fill="rgba(255,255,255,.35)"/></g></svg><span class="n">N</span></div>
+<div class="dica" id="dica" hidden></div>
+<div class="carregando" id="carregando"><div class="anel"></div><p id="carregando-txt">Montando o prédio e o entorno…</p></div>
+
+<script type="module" src="/condominio-3d.js"></script>
+</body>
+</html>

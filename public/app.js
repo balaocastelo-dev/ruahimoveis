@@ -97,7 +97,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei']]],
+  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
@@ -157,6 +157,8 @@ async function rota() {
     else if (p[0] === 'radar') await telaRadar(new URLSearchParams(qs || ''));
     else if (p[0] === 'fisguei' && p[1]) await telaFisgueiAnuncio(+p[1], p[2] || 'dados');
     else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));
+    else if (p[0] === 'condominios' && p[1]) await telaCondominio(+p[1]);
+    else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
     else if (p[0] === 'portal') await telaPortal();
     else if (p[0] === 'configuracoes') await telaConfig(new URLSearchParams(qs || ''));
@@ -303,7 +305,9 @@ async function telaImovelForm(id) {
       <div class="row"><button type="button" class="btn pri" data-act="pesquisar-end">Pesquisar endereço</button><span class="muted small" id="end-msg"></span></div>
     </fieldset>
     <fieldset><legend>Condomínio</legend>
-      <label class="f">Nome do condomínio<input name="condominio_nome" value="${v('condominio_nome')}"></label>
+      <input type="hidden" name="condominio_id" value="${v('condominio_id')}">
+      <label class="f">Nome do condomínio<input name="condominio_nome" value="${v('condominio_nome')}" list="cd-alternativas"></label><datalist id="cd-alternativas"></datalist>
+      <div class="small" id="cd-reconhecido"></div>
       <div class="grid g2"><label class="f">Ano de construção<input name="ano_construcao" value="${v('ano_construcao')}"></label><label class="f">Administradora<input name="administradora" value="${v('administradora')}"></label></div>
       <label class="f">Lazer<input name="lazer" value="${v('lazer')}" placeholder="Piscina, academia, salão…"></label>
     </fieldset>
@@ -345,6 +349,9 @@ ACT['pesquisar-end'] = (btn) => comBotao(btn, async () => {
     if (el.type !== 'hidden') { el.classList.add('auto'); el.closest('label').insertAdjacentHTML('beforeend', `<span class="fonte">✓ ${esc(r.fontes[k])}</span>`); }
   }
   $('#end-msg').innerHTML = r.avisos.map(esc).join('<br>') || (r.campos.condominio_nome ? 'Condomínio encontrado.' : 'Endereço encontrado.');
+  const rec = $('#cd-reconhecido');
+  if (rec) rec.innerHTML = r.condominio ? `<span class="pill ${r.condominio.confianca === 'alta' ? 'ok' : 'warn'}">✓ ${esc(r.condominio.nome)}</span> <span class="muted">${esc(r.condominio.como)}</span> · <a href="#/condominios/${r.condominio.id}" target="_blank">abrir ficha do condomínio</a>` : '';
+  const dl = $('#cd-alternativas'); if (dl) dl.innerHTML = (r.alternativas || []).map((a) => `<option value="${esc(a.nome)}">`).join('');
 });
 FORM.imovel = async (f) => {
   const d = formJSON(f); const id = f.dataset.id;
@@ -365,6 +372,7 @@ async function telaFicha(id, aba) {
   <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><div class="eyebrow mono">${esc(im.codigo)}</div>
     <h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1></div>
     <select class="inp" style="width:auto" data-status-imovel="${im.id}">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select>
+    ${im.condominio_id ? `<a class="btn" href="#/condominios/${im.condominio_id}">Condomínio</a><a class="btn" href="/condominio-3d.html?id=${im.condominio_id}&imovel=${im.id}" target="_blank" rel="noopener">Ver no 3D</a>` : ''}
     <a class="btn" href="#/imoveis/${im.id}/editar">Editar</a></div>
   <p class="lead">${esc([im.logradouro, im.numero].filter(Boolean).join(', '))}${im.unidade ? ' · ' + esc(im.unidade) : ''} · ${esc(im.bairro || '')}, ${esc(im.cidade || '')} · <b>${brl(im.valor)}</b> · corretor ${esc(im.corretor_nome || '—')}</p>
   <div class="tabs">${ABAS.map(([k, l]) => `<a href="#/imoveis/${im.id}/${k}" class="${aba === k ? 'on' : ''}">${l}</a>`).join('')}</div><div id="aba"></div>`;

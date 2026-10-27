@@ -1,5 +1,4 @@
 // Cadastro inteligente: CEP (ViaCEP), localização (OpenStreetMap) e condomínio já conhecido pelo endereço.
-const { one } = require('../db');
 const { CIDADE_PADRAO, UF_PADRAO } = require('../config');
 
 const UA = 'SistemaRUAH/1.0 (cadastro de imoveis)';
@@ -42,17 +41,6 @@ async function osm(logradouro, numero, cidade, uf) {
   return { lat: parseFloat(r.lat), lon: parseFloat(r.lon), nome_predio: nome, bairro: r.address && (r.address.suburb || r.address.neighbourhood) };
 }
 
-function condominioConhecido(cep, logradouro, numero) {
-  if (!numero) return null;
-  const c = soDigitos(cep);
-  if (c) {
-    const r = one('SELECT * FROM condominios WHERE cep=? AND numero=?', c, String(numero).trim());
-    if (r) return r;
-  }
-  if (logradouro) return one('SELECT * FROM condominios WHERE lower(logradouro)=lower(?) AND numero=?', logradouro.trim(), String(numero).trim()) || null;
-  return null;
-}
-
 // Junta tudo e diz de onde veio cada dado (o corretor confere os campos marcados como automáticos).
 async function pesquisar({ cep, logradouro, numero, cidade, uf }) {
   cidade = cidade || CIDADE_PADRAO; uf = uf || UF_PADRAO;
@@ -69,25 +57,30 @@ async function pesquisar({ cep, logradouro, numero, cidade, uf }) {
   } else if (cep) out.avisos.push('CEP não encontrado.');
 
   const L = out.campos.logradouro || logradouro, C = out.campos.cidade || cidade, U = out.campos.uf || uf;
-  const cond = condominioConhecido(out.campos.cep || cep, L, numero);
-  if (cond) {
-    out.condominio = cond;
-    set('condominio_nome', cond.nome, 'Cadastro RUAH');
-    set('ano_construcao', cond.ano_construcao, 'Cadastro RUAH');
-    set('lazer', cond.lazer, 'Cadastro RUAH');
-    set('administradora', cond.administradora, 'Cadastro RUAH');
-  }
-
+  let g = null;
   if (L && numero) {
     try {
-      const g = await osm(L, numero, C, U);
+      g = await osm(L, numero, C, U);
       if (g) {
         set('lat', g.lat, 'OpenStreetMap'); set('lon', g.lon, 'OpenStreetMap');
         if (!out.campos.bairro && g.bairro) set('bairro', g.bairro, 'OpenStreetMap');
-        if (!cond && g.nome_predio) set('condominio_nome', g.nome_predio, 'OpenStreetMap');
       }
     } catch { out.avisos.push('Mapa indisponível agora; a localização fica para depois.'); }
   }
+  // Base de condomínios de Campinas (CNPJ + mapa + cadastros da RUAH): pelo CEP e número, pela rua ou pelo ponto no mapa.
+  const x = require('../condominios/base').reconhecer({ cep: out.campos.cep || cep, numero, logradouro: L, lat: g && g.lat, lon: g && g.lon, bairro: out.campos.bairro });
+  const cond = x.condominio;
+  if (cond) {
+    out.condominio = { id: cond.id, nome: cond.nome, tipo: cond.tipo, como: x.como, confianca: x.confianca, unidades: cond.unidades, andares: cond.andares };
+    set('condominio_id', cond.id, 'Base de condomínios');
+    set('condominio_nome', cond.nome, `Base de condomínios · ${x.como}`);
+    set('ano_construcao', cond.ano_construcao || (cond.abertura ? cond.abertura.slice(0, 4) : null), cond.ano_construcao ? 'Cadastro RUAH' : 'CNPJ do condomínio (abertura)');
+    set('lazer', cond.lazer, 'Cadastro RUAH');
+    set('administradora', cond.administradora, 'Cadastro RUAH');
+    if (cond.lat && !out.campos.lat) { set('lat', cond.lat, 'Base de condomínios'); set('lon', cond.lon, 'Base de condomínios'); }
+    if (x.confianca !== 'alta') out.avisos.push(`Condomínio sugerido (${x.como}). Confira o nome antes de salvar.`);
+  } else if (g && g.nome_predio) set('condominio_nome', g.nome_predio, 'OpenStreetMap');
+  out.alternativas = x.alternativas || [];
   if (!out.campos.condominio_nome && numero) out.avisos.push('Condomínio ainda não conhecido neste endereço. Ao salvar, ele fica gravado e os próximos cadastros no mesmo número saem automáticos.');
   return out;
 }

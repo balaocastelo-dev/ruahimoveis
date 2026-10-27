@@ -47,6 +47,7 @@ app.use('/api', require('./src/routes/radar'));
 app.use('/api', require('./src/routes/fisguei').api);
 app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
+app.use('/api', require('./src/routes/condominios'));
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
 app.get('/api/blog', async (req, res) => res.json(await require('./src/blog/diario').situacao()));
 app.get('/api/blog/:slug/redes', async (req, res) => {

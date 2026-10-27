@@ -1,0 +1,26 @@
+-- Condomínios (27/10/2026): aplicado no Supabase (schema ruah) como migração ruah_condominios_base.
+SET search_path = ruah, extensions;
+ALTER TABLE condominios
+  ADD COLUMN IF NOT EXISTS tipo text, ADD COLUMN IF NOT EXISTS cnpj text, ADD COLUMN IF NOT EXISTS razao_social text,
+  ADD COLUMN IF NOT EXISTS situacao text, ADD COLUMN IF NOT EXISTS abertura text, ADD COLUMN IF NOT EXISTS complemento text,
+  ADD COLUMN IF NOT EXISTS fontes text, ADD COLUMN IF NOT EXISTS osm_ref text, ADD COLUMN IF NOT EXISTS andares integer,
+  ADD COLUMN IF NOT EXISTS torres integer, ADD COLUMN IF NOT EXISTS unidades integer, ADD COLUMN IF NOT EXISTS unidades_fonte text,
+  ADD COLUMN IF NOT EXISTS contorno text, ADD COLUMN IF NOT EXISTS construtora text, ADD COLUMN IF NOT EXISTS slug text,
+  ADD COLUMN IF NOT EXISTS alvo integer NOT NULL DEFAULT 0, ADD COLUMN IF NOT EXISTS nome_busca text,
+  ADD COLUMN IF NOT EXISTS geo_fonte text, ADD COLUMN IF NOT EXISTS atualizado_em text;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_cnpj ON condominios(cnpj) WHERE cnpj IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_slug ON condominios(slug) WHERE slug IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cond_osm ON condominios(osm_ref) WHERE osm_ref IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_cond_cep ON condominios(cep, numero);
+CREATE INDEX IF NOT EXISTS ix_cond_busca ON condominios USING gin (nome_busca gin_trgm_ops);
+CREATE INDEX IF NOT EXISTS ix_cond_geo ON condominios(lat, lon);
+CREATE TABLE IF NOT EXISTS condominio_cache (
+  condominio_id integer NOT NULL REFERENCES condominios(id) ON DELETE CASCADE,
+  tipo text NOT NULL, json text NOT NULL, gerado_em text NOT NULL DEFAULT ruah.agora(),
+  PRIMARY KEY (condominio_id, tipo)
+);
+ALTER TABLE oportunidades ADD COLUMN IF NOT EXISTS condominio_id integer REFERENCES condominios(id) ON DELETE SET NULL;
+ALTER TABLE fisguei_anuncios ADD COLUMN IF NOT EXISTS condominio_id integer REFERENCES condominios(id) ON DELETE SET NULL;
+CREATE INDEX IF NOT EXISTS ix_op_cond ON oportunidades(condominio_id);
+CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);
+CREATE INDEX IF NOT EXISTS ix_im_cond ON imoveis(condominio_id);
