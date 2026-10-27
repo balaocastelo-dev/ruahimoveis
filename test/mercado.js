@@ -15,7 +15,7 @@ const { run } = require('../src/db');
 const fetchReal = global.fetch; let chamadasGoogle = 0;
 global.fetch = async (url, op) => {
   const u = String(url);
-  if (u.includes('streetview/metadata')) { chamadasGoogle++; return new Response(JSON.stringify({ status: 'OK', pano_id: 'abc', location: { lat: -22.90180, lng: -47.07570 }, date: '2025-03' })); }
+  if (u.includes('streetview/metadata')) { chamadasGoogle++; return new Response(JSON.stringify({ status: 'OK', copyright: '© Google', pano_id: 'abc', location: { lat: -22.90180, lng: -47.07570 }, date: '2025-03' })); }
   if (u.includes('maps.googleapis.com/maps/api/streetview')) { chamadasGoogle++; return new Response(Buffer.from([0xff, 0xd8, 0xff, 0xe0, 1, 2, 3])); }
   return fetchReal(url, op);
 };

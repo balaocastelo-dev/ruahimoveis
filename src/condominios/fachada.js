@@ -18,9 +18,14 @@ async function foto(ref, lat, lon) {
   if (ja) return ja.img ? Buffer.from(ja.img) : null;
   if (!ligado()) return null;
   const k = encodeURIComponent(chave());
-  const meta = await (await fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${lat},${lon}&radius=60&source=outdoor&key=${k}`, { headers: CAB, signal: AbortSignal.timeout(10000) })).json();
-  if (meta.status === 'ZERO_RESULTS') { run('INSERT INTO fachadas(ref,img) VALUES(?,NULL) ON CONFLICT(ref) DO NOTHING', ref); return null; }
-  if (meta.status !== 'OK') throw new Error(`Google Street View: ${meta.status}${meta.error_message ? ' — ' + meta.error_message : ''}`);
+  // prefere o Street View do próprio Google (fotos 360° de terceiros costumam ter propaganda ou ser de dentro de terrenos)
+  let meta = null;
+  for (const raio of [50, 120]) {
+    const m = await (await fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=${lat},${lon}&radius=${raio}&source=outdoor&key=${k}`, { headers: CAB, signal: AbortSignal.timeout(10000) })).json();
+    if (m.status === 'OK' && /google/i.test(m.copyright || '')) { meta = m; break; }
+    if (m.status !== 'OK' && m.status !== 'ZERO_RESULTS') throw new Error(`Google Street View: ${m.status}${m.error_message ? ' — ' + m.error_message : ''}`);
+  }
+  if (!meta) { run('INSERT INTO fachadas(ref,img) VALUES(?,NULL) ON CONFLICT(ref) DO NOTHING', ref); return null; }
   const pl = meta.location.lat, po = meta.location.lng;
   const h = Math.round(rumo(pl, po, lat, lon));
   const r = await fetch(`https://maps.googleapis.com/maps/api/streetview?size=640x420&scale=2&pano=${encodeURIComponent(meta.pano_id)}&heading=${h}&pitch=12&fov=75&source=outdoor&key=${k}`, { headers: CAB, signal: AbortSignal.timeout(15000) });
