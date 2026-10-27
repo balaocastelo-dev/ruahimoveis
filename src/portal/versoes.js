@@ -17,7 +17,7 @@ const lugar = (im) => [im.bairro, im.cidade].filter(Boolean).join(', ');
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 
 // Fotos com versão em alta definição (ampliadas a partir da original, em public/portal-assets/signature/<id>-1920.jpg e -2560.jpg).
-const HD = new Set([]);
+const HD = new Set([174]);
 /** A imagem de fundo do topo: alta definição quando existe, senão a foto do banco. */
 function fundo(foto) {
   const src = fotoUrl(foto);
