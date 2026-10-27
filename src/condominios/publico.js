@@ -53,7 +53,7 @@ async function pagina(req, c) {
 </section>
 ${noAr.length ? `<section class="p-cd-sec"><h2>À venda com a RUAH neste condomínio</h2><div class="p-grade">${noAr.map((x) => paginas.cartao(x)).join('')}</div></section>` : ''}
 ${lazer.length ? `<section class="p-cd-sec"><h2>Lazer e estrutura</h2><ul class="p-cd-chips">${lazer.map((l) => `<li>${esc(l)}</li>`).join('')}</ul></section>` : ''}
-${cats.length ? `<section class="p-cd-sec"><h2>O que tem perto</h2><p class="p-cd-sub">A pé, a partir da portaria.</p><div class="p-cd-perto">${cats.map((cat) => `<div class="p-cd-cat"><h3><span aria-hidden="true">${cat.icone}</span> ${esc(cat.nome)}</h3><ul>${cat.itens.slice(0, 4).map((x) => `<li><span>${esc(x.nome)}</span><span>${x.min} min</span></li>`).join('')}</ul></div>`).join('')}</div><p class="p-cd-sub">Fonte: OpenStreetMap, mapa colaborativo; pode faltar algum lugar.</p></section>` : ''}
+${cats.length ? `<section class="p-cd-sec"><h2>O que tem perto</h2><p class="p-cd-sub">A pé, a partir da portaria.</p><div class="p-cd-perto">${cats.map((cat) => `<div class="p-cd-cat"><h3><span aria-hidden="true">${cat.icone}</span> ${esc(cat.nome)}</h3><ul>${cat.itens.slice(0, 4).map((x) => `<li><span>${esc(x.nome)}</span><span>${x.min} min</span></li>`).join('')}</ul></div>`).join('')}</div><p class="p-cd-sub p-cd-nota">Fonte: ${esc(p.fonte)}.</p></section>` : ''}
 <section class="p-contato" id="contato" aria-labelledby="contato-t">
 <div class="p-contato-txt"><h2 id="contato-t">Quer morar no ${esc(c.nome)}?</h2>
 <p>Deixe seu contato: a RUAH avisa quando surgir um imóvel aqui e mostra as opções parecidas no ${esc(c.bairro || 'bairro')}.</p></div>

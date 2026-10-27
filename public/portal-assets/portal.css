@@ -315,3 +315,4 @@ body.p-luz-aberta{overflow:hidden}
 .p-cd-cat li{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:4px 0;border-top:1px dashed var(--linha)}
 .p-cd-cat li:first-child{border-top:0}
 .p-cd-cat li span:last-child{color:var(--pedra);white-space:nowrap}
+.p-cd-nota{margin:14px 0 0}

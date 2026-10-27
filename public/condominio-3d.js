@@ -414,10 +414,12 @@ async function perto() {
     const p = await r.json();
     const kx = Math.cos((cena.centro.lat * Math.PI) / 180) * 111320, ky = 110540;
     for (const cat of p.categorias || []) {
-      for (const x of cat.itens.slice(0, cat.id === 'transporte' ? 1 : 3)) {
+      let k = 0;
+      for (const x of cat.itens.slice(0, cat.id === 'transporte' ? 1 : 2)) {
         const lx = (x.lon - cena.centro.lon) * kx, ly = (x.lat - cena.centro.lat) * ky;
         if (Math.hypot(lx, ly) > cena.raio * 1.25) continue;
-        rotPerto.push(rotulo(`<i>${cat.icone}</i>${esc(x.nome)} <span style="opacity:.6">${x.min} min</span>`, 'poi', v3(lx, ly, 14), { ate: cena.raio * 3 }));
+        if (Math.hypot(lx - baseAlvo.x, -ly - baseAlvo.z) < 35) continue;
+        rotPerto.push(rotulo(`<i>${cat.icone}</i>${esc(x.nome)} <span style="opacity:.6">${x.min} min</span>`, 'poi', v3(lx, ly, 12 + (k++ % 2) * 9), { ate: cena.raio * 3 }));
       }
     }
   } catch {}
