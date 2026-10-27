@@ -1,0 +1,245 @@
+{
+  "codigo": "CA0015",
+  "slug": "casa-5-quartos-duas-casas-jardim-nossa-senhora-auxiliadora-campinas-ca0015",
+  "titulo": "Casa com 5 quartos em duas moradias, perto do Taquaral",
+  "resumo": "Duas casas independentes no mesmo terreno, com 5 quartos no total e garagem para 4 carros, no Jardim Nossa Senhora Auxiliadora, perto da Lagoa do Taquaral.",
+  "capa": {
+    "foto": 1778,
+    "alt": "Sala com janelas largas, cortinas de renda, porta de madeira escura e piso de tacos geométricos"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel no Jardim Nossa Senhora Auxiliadora, em Campinas, reúne **duas casas independentes no mesmo terreno**. Segundo o anúncio, a casa da frente tem três quartos e a dos fundos tem dois, separadas por muro e portão. Pela ficha, são 179 m² de área construída, 312 m² de área total, cinco quartos e quatro vagas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma casa térrea de construção mais antiga, com muro bege, portão branco e frontão de madeira vermelha. Por dentro chamam atenção os pisos de tacos em desenho geométrico, as paredes de tijolinho aparente e as portas de madeira almofadadas. O anúncio fala em ficar a duas quadras da Lagoa do Taquaral, numa rua de pouco movimento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Duas casas independentes no mesmo terreno, segundo o anúncio",
+        "Cinco quartos e dois banheiros no total",
+        "Garagem para quatro carros, com corredor coberto",
+        "Pisos de tacos em desenho geométrico e paredes de tijolinho",
+        "Quintal na frente e área externa nos fundos",
+        "Perto da Lagoa do Taquaral, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A frente e a garagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Logo atrás do muro há uma área aberta com piso de caquinhos cerâmicos vermelhos e amarelos e um canteiro com plantas e uma árvore podada em copa redonda. Ao lado, um corredor coberto com telhado de madeira aparente e parede de tijolinho pintado leva até o portão. A ficha informa quatro vagas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1776,
+          "legenda": "Área da frente com piso de caquinhos e canteiro com árvore"
+        },
+        {
+          "foto": 1772,
+          "legenda": "Corredor coberto com telhado de madeira aparente"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "As salas e os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala mais clara tem duas janelas largas com vidro canelado e cortinas de renda, ventilador de teto e porta de entrada de madeira escura. Em outros ambientes, uma parede inteira de tijolinho aparente divide espaço com parede de textura grafiato. O piso de tacos em desenho de estrelas e cubos aparece na maior parte dos cômodos da casa da frente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os corredores têm portas de madeira almofadadas pintadas de branco e uma porta sanfonada. Um dos quartos tem piso de tacos em espinha de peixe e armário escuro; outro tem janela com veneziana e cortina. Há ainda um cômodo de piso avermelhado com duas portas de madeira e outro de piso cerâmico claro com janela de veneziana."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1771,
+          "legenda": "Sala com parede de tijolinho, textura grafiato e porta de madeira"
+        },
+        {
+          "foto": 1781,
+          "legenda": "Quarto com piso de tacos em espinha e armário escuro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha, banheiro e fundos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha que aparece nas fotos tem bancada longa de inox com cuba e parede de azulejo decorado em tom bege. O banheiro tem azulejo branco, box com vidro canelado, pia de coluna e janela basculante. Nos fundos, uma área descoberta tem varal, vasos de planta e muro alto; há também uma passagem coberta com porta de madeira e uma porta de ferro com grade em losango."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos não deixam claro quais cômodos pertencem a cada casa. Na visita vale pedir para ver as duas separadamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para famílias que querem morar perto de parentes sem dividir a mesma casa, para quem pensa em morar numa casa e alugar a outra, ou para quem procura um imóvel térreo com espaço para vários carros. O anúncio cita zoneamento misto, residencial e comercial. A casa tem acabamentos de época, como os tacos e as portas de madeira, e quem busca algo moderno deve contar com reformas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Se as duas casas estão regularizadas na prefeitura e na matrícula, a metragem exata do terreno, o que o zoneamento permite e o estado do telhado e das instalações.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1768,
+      "legenda": "Fachada com muro bege, portão branco e frontão de madeira vermelha",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1776,
+      "legenda": "Área da frente com piso de caquinhos e canteiro com árvore",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1772,
+      "legenda": "Corredor coberto com telhado de madeira aparente e parede de tijolinho",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1771,
+      "legenda": "Sala com porta de madeira escura, textura grafiato e tijolinho aparente",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1770,
+      "legenda": "Sala com parede de tijolinho e porta sanfonada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1773,
+      "legenda": "Parede de tijolinho e piso de tacos em desenho geométrico",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1777,
+      "legenda": "Sala com janelas largas, cortinas de renda e ventilador de teto",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1778,
+      "legenda": "Sala com janelas, porta de madeira e piso de tacos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1779,
+      "legenda": "Porta de entrada de madeira ao lado das janelas com cortina",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1769,
+      "legenda": "Corredor com portas de madeira almofadadas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1774,
+      "legenda": "Corredor com porta sanfonada e portas de madeira",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1780,
+      "legenda": "Quarto com janela de veneziana e cortina",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1781,
+      "legenda": "Quarto com piso de tacos em espinha e armário escuro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1784,
+      "legenda": "Cômodo com piso cerâmico claro e janela de veneziana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1787,
+      "legenda": "Cômodo com piso avermelhado e duas portas de madeira",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1775,
+      "legenda": "Banheiro com azulejo branco, box de vidro canelado e pia de coluna",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1782,
+      "legenda": "Cozinha com bancada de inox e azulejo decorado",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1783,
+      "legenda": "Passagem coberta com porta de madeira e janela basculante",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1786,
+      "legenda": "Porta de ferro com grade em losango",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1785,
+      "legenda": "Área externa nos fundos com varal e vasos de planta",
+      "ambiente": "servico"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "São mesmo duas casas?",
+      "resposta": "Sim, segundo o anúncio: uma casa na frente com três quartos e outra nos fundos com dois, separadas por muro e portão. A ficha soma cinco quartos."
+    },
+    {
+      "pergunta": "Quantas vagas de garagem?",
+      "resposta": "A ficha informa quatro vagas."
+    },
+    {
+      "pergunta": "Qual o tamanho do imóvel?",
+      "resposta": "Pela ficha, 179 m² de área construída e 312 m² de área total."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH responde para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Duas casas independentes no mesmo terreno no Jardim Nossa Senhora Auxiliadora, em Campinas, perto da Lagoa do Taquaral. São cinco quartos no total, garagem para quatro carros, pisos de tacos em desenho geométrico e paredes de tijolinho. Boa opção para morar perto da família ou morar numa e alugar a outra. Link na bio para ver todas as fotos e agendar a visita.",
+    "hashtags": [
+      "casacampinas",
+      "taquaral",
+      "imoveiscampinas",
+      "casaavenda",
+      "duascasas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "f90212cc42d6",
+  "publicadoEm": "2026-10-27T09:21:28.216Z"
+}

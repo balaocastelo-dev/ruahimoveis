@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0005",
+      "slug": "apartamento-3-quartos-suite-reformado-cambui-campinas-ap0005",
+      "titulo": "Apartamento de 3 quartos com suíte, reformado, no Cambuí",
+      "resumo": "Apartamento reformado de 105 m² no Cambuí, em Campinas, com 3 quartos (1 suíte), 1 vaga, piso de porcelanato claro, gesso com spots e armários planejados.",
+      "capa": {
+        "foto": 1762,
+        "alt": "Sala de estar com sofá, painel de madeira clara para a TV e sala de jantar ao fundo"
+      },
+      "versao": "8d2da3689806",
+      "publicadoEm": "2026-10-27T09:21:28.220Z"
+    },
+    {
+      "codigo": "CA0015",
+      "slug": "casa-5-quartos-duas-casas-jardim-nossa-senhora-auxiliadora-campinas-ca0015",
+      "titulo": "Casa com 5 quartos em duas moradias, perto do Taquaral",
+      "resumo": "Duas casas independentes no mesmo terreno, com 5 quartos no total e garagem para 4 carros, no Jardim Nossa Senhora Auxiliadora, perto da Lagoa do Taquaral.",
+      "capa": {
+        "foto": 1778,
+        "alt": "Sala com janelas largas, cortinas de renda, porta de madeira escura e piso de tacos geométricos"
+      },
+      "versao": "f90212cc42d6",
+      "publicadoEm": "2026-10-27T09:21:28.216Z"
+    },
+    {
       "codigo": "CH0003",
       "slug": "chacara-4-quartos-3000m2-jardim-nautico-represa-pedreira-ch0003",
       "titulo": "Chácara de 4 quartos e 3.000 m² em Pedreira (SP)",
@@ -230,5 +254,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T07:23:48.859Z"
+  "atualizadoEm": "2026-10-27T09:21:28.220Z"
 }

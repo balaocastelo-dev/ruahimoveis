@@ -1,0 +1,149 @@
+{
+  "codigo": "AP0005",
+  "slug": "apartamento-3-quartos-suite-reformado-cambui-campinas-ap0005",
+  "titulo": "Apartamento de 3 quartos com suíte, reformado, no Cambuí",
+  "resumo": "Apartamento reformado de 105 m² no Cambuí, em Campinas, com 3 quartos (1 suíte), 1 vaga, piso de porcelanato claro, gesso com spots e armários planejados.",
+  "capa": {
+    "foto": 1762,
+    "alt": "Sala de estar com sofá, painel de madeira clara para a TV e sala de jantar ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Cambuí, em Campinas, e tem 105 m² de área útil, três quartos, sendo uma suíte, e uma vaga de garagem. O anúncio informa que ele foi totalmente reformado, com piso de porcelanato, forro de gesso e móveis planejados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As seis fotos mostram a sala em dois ambientes e dois dos quartos. O que mais aparece é o acabamento: piso claro e brilhante em placas grandes, sanca de gesso com spots embutidos e painéis de madeira clara na sala e na cabeceira da suíte."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "105 m² de área útil, segundo a ficha",
+        "Três quartos, sendo uma suíte",
+        "Reformado, com piso de porcelanato e gesso, segundo o anúncio",
+        "Sala de estar e jantar integradas",
+        "Área de serviço com banheiro de apoio, segundo o anúncio",
+        "Uma vaga de garagem"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A sala de estar e jantar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala é comprida e junta estar e jantar. No estar, um painel de madeira clara ocupa a parede da TV, com rack suspenso logo abaixo. O teto tem rebaixo de gesso com sanca e spots, e pendentes de vidro marcam o centro da sala e a mesa de jantar, que nas fotos tem seis cadeiras. Num canto, um aparador de madeira fica sob um quadro com iluminação própria."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1766,
+          "legenda": "Sala de jantar com mesa de seis lugares e passagem para a cozinha"
+        },
+        {
+          "foto": 1767,
+          "legenda": "Sala com gesso em sanca, spots e piso claro em placas grandes"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A suíte tem a parede da cama revestida com painel de madeira clara, rebaixo de gesso com spots e porta para o banheiro. O outro quarto que aparece nas fotos tem armário embutido, janela com persiana e o mesmo piso claro da sala."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha não aparece nas fotos, só de relance ao fundo da sala de jantar. Pelo anúncio, ela é integrada à área de serviço, que tem banheiro de apoio. A ficha soma três banheiros no total."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para famílias que querem três quartos no Cambuí sem precisar reformar. Como as fotos não mostram a cozinha, os banheiros e o terceiro quarto, vale ver esses ambientes na visita."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis planejados ficam com o apartamento, o valor do condomínio, o que o prédio oferece de áreas comuns e se a vaga é coberta e de uso fixo.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1762,
+      "legenda": "Sala de estar com painel de madeira clara e jantar ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1767,
+      "legenda": "Sala com poltrona vermelha, mesa de jantar e gesso com spots",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1766,
+      "legenda": "Sala de jantar com mesa de seis lugares e passagem para a cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1763,
+      "legenda": "Canto da sala com aparador de madeira e quadro iluminado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1765,
+      "legenda": "Suíte com cabeceira em painel de madeira e porta para o banheiro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1764,
+      "legenda": "Quarto com armário embutido e janela com persiana",
+      "ambiente": "quarto"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e banheiros tem?",
+      "resposta": "Três quartos, sendo uma suíte. O anúncio informa três banheiros, contando o banheiro de apoio da área de serviço."
+    },
+    {
+      "pergunta": "Tem vaga de garagem?",
+      "resposta": "Sim, a ficha informa uma vaga."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pelo formulário desta página. Um corretor da RUAH responde para combinar o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento reformado de 105 m² no Cambuí, em Campinas. Três quartos com uma suíte, sala de estar e jantar integradas, piso de porcelanato claro, gesso com spots e armários planejados. Uma vaga de garagem. Link na bio para ver as fotos e agendar a visita.",
+    "hashtags": [
+      "apartamentocampinas",
+      "cambui",
+      "imoveiscampinas",
+      "apartamentoavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "8d2da3689806",
+  "publicadoEm": "2026-10-27T09:21:28.220Z"
+}
