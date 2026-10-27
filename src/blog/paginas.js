@@ -226,10 +226,12 @@ ${artigos.slice(0, 30).map((a) => `<item><title>${x(a.titulo)}</title><link>${x(
 </channel></rss>`;
 }
 
-function sitemap(req, artigos, imoveis = []) {
+function sitemap(req, artigos, imoveis = [], bairros = []) {
   const base = urlBase(req);
   const urls = [
     `<url><loc>${esc(base)}/imoveis</loc></url>`,
+    ...(bairros.length ? [`<url><loc>${esc(base)}/bairros</loc></url>`] : []),
+    ...bairros.map((x) => `<url><loc>${esc(base)}/bairros/${x.bairro.slug}</loc>${x.pagina.atualizadoEm || x.pagina.publicadoEm ? `<lastmod>${x.pagina.atualizadoEm || x.pagina.publicadoEm}</lastmod>` : ''}</url>`),
     ...imoveis.map((x) => `<url><loc>${esc(base)}/imoveis/${x.pagina.slug}</loc>${x.pagina.atualizadoEm || x.pagina.publicadoEm ? `<lastmod>${x.pagina.atualizadoEm || x.pagina.publicadoEm}</lastmod>` : ''}</url>`),
     `<url><loc>${esc(base)}/blog</loc>${artigos[0] ? `<lastmod>${artigos[0].publicadoEm}</lastmod>` : ''}</url>`,
     ...CATEGORIAS.map((c) => `<url><loc>${esc(base)}/blog/categoria/${c.slug}</loc></url>`),
@@ -241,7 +243,36 @@ function sitemap(req, artigos, imoveis = []) {
 function robots(req) {
   const base = urlBase(req);
   // Só o blog e o portal são públicos. O sistema (login, cadastro, links off-market) fica fora da busca.
-  return `User-agent: *\nAllow: /blog\nAllow: /blog-assets/\nAllow: /imoveis\nAllow: /portal-assets/\nDisallow: /imoveis/favoritos\nDisallow: /imoveis/dados.json\nDisallow: /\n\nSitemap: ${base}/sitemap.xml\n`;
+  return `User-agent: *\nAllow: /blog\nAllow: /blog-assets/\nAllow: /imoveis\nAllow: /bairros\nAllow: /portal-assets/\nAllow: /llms.txt\nDisallow: /imoveis/favoritos\nDisallow: /imoveis/dados.json\nDisallow: /bairros/dados.json\nDisallow: /bairros/commons/\nDisallow: /\n\nSitemap: ${base}/sitemap.xml\n`;
 }
 
-module.exports = { paginaInicial, paginaArtigo, paginaNaoAchada, rss, sitemap, robots, NOME };
+/** /llms.txt: o resumo do site para as IAs, com o endereço de cada guia de bairro, imóvel e artigo. */
+function llms(req, { imoveis = [], bairros = [], artigos = [] }) {
+  const base = urlBase(req);
+  const linhas = [
+    '# RUAH Investimentos Imobiliários',
+    '',
+    '> Imobiliária de venda em Campinas (SP). Publica guias completos dos bairros de Campinas (como é morar, parques, escolas, comércio, prédios e condomínios, com números atualizados), a página de cada imóvel à venda e o blog Sopro, sobre casa, arquitetura e bem-estar.',
+    '',
+    'Os números das páginas (imóveis à venda, valores, áreas, prédios e o que tem perto) vêm do sistema da RUAH ao vivo. Para falar com a RUAH, use o formulário de qualquer página.',
+    '',
+  ];
+  if (bairros.length) {
+    linhas.push('## Guias de bairro (Campinas)', '', `- [Todos os bairros](${base}/bairros)`);
+    for (const x of bairros) linhas.push(`- [${x.bairro.nome}](${base}/bairros/${x.bairro.slug}): ${x.pagina.resumo}`);
+    linhas.push('');
+  }
+  if (imoveis.length) {
+    linhas.push('## Imóveis à venda', '', `- [Todos os imóveis](${base}/imoveis)`);
+    for (const x of imoveis) linhas.push(`- [${x.pagina.titulo}](${base}/imoveis/${x.pagina.slug})`);
+    linhas.push('');
+  }
+  if (artigos.length) {
+    linhas.push('## Blog Sopro', '');
+    for (const a of artigos.slice(0, 60)) linhas.push(`- [${a.titulo}](${base}/blog/${a.slug})`);
+    linhas.push('');
+  }
+  return linhas.join('\n');
+}
+
+module.exports = { paginaInicial, paginaArtigo, paginaNaoAchada, rss, sitemap, robots, llms, NOME };

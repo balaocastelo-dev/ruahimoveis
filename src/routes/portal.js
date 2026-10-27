@@ -27,7 +27,17 @@ function html(res, corpo, status = 200) {
   res.type('html').send(corpo);
 }
 
-router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr())));
+/** O guia do bairro (se já estiver no ar) para ligar o imóvel e a vitrine filtrada à página do bairro. */
+async function guiaDoBairro(nome) {
+  if (!nome) return null;
+  try {
+    const s = require('../bairros/dados').slugDoTexto(nome);
+    const x = s && await require('../bairros/fonte').porSlug(s);
+    return x ? { slug: x.bairro.slug, nome: x.bairro.nome } : null;
+  } catch { return null; }
+}
+
+router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro))));
 router.get('/imoveis/favoritos', async (req, res) => html(res, paginas.paginaFavoritos(req, await fonte.noAr())));
 
 router.get('/imoveis/dados.json', async (req, res) => {
@@ -71,7 +81,7 @@ router.get('/imoveis/:slug', async (req, res, next) => {
   if (!SLUG.test(s)) return next();
   const x = await fonte.porSlug(s);
   if (!x) return html(res, paginas.paginaNaoAchada(req), 404);
-  html(res, paginas.paginaImovel(req, x, await fonte.noAr()));
+  html(res, paginas.paginaImovel(req, { ...x, guiaDoBairro: await guiaDoBairro(x.imovel.bairro) }, await fonte.noAr()));
 });
 router.get('/imoveis/', (req, res) => res.redirect(301, '/imoveis'));
 

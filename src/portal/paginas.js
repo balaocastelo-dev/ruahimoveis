@@ -98,6 +98,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
   <nav class="p-nav" aria-label="Portal">
     <a href="/imoveis"${req.path === '/imoveis' ? ' aria-current="page"' : ''}>Imóveis</a>
     <a href="/imoveis/favoritos"${req.path === '/imoveis/favoritos' ? ' aria-current="page"' : ''}>Favoritos <span class="p-fav-n" data-fav-n hidden></span></a>
+    <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
     <a href="/blog">Blog Sopro</a>
     ${zap ? `<a class="p-nav-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
   </nav>
@@ -105,7 +106,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
   <div><p class="p-rodape-n">RUAH Investimentos Imobiliários</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="RUAH"><a href="/imoveis">Imóveis à venda</a><a href="/blog">Blog Sopro</a><a href="${INSTAGRAM_RUAH}" target="_blank" rel="noopener">Instagram</a><a href="${SITE_RUAH}" target="_blank" rel="noopener">Site da RUAH</a></nav>
+  <nav aria-label="RUAH"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a><a href="${INSTAGRAM_RUAH}" target="_blank" rel="noopener">Instagram</a><a href="${SITE_RUAH}" target="_blank" rel="noopener">Site da RUAH</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js" defer></script>
@@ -156,7 +157,7 @@ function filtrar(lista, q) {
 
 const FAIXAS = [500000, 800000, 1000000, 1500000, 2000000, 3000000, 5000000, 10000000];
 
-function paginaVitrine(req, lista) {
+function paginaVitrine(req, lista, guiaDoBairro = null) {
   const q = req.query || {};
   const achados = filtrar(lista, q);
   const pagina = Math.max(1, parseInt(q.pagina, 10) || 1);
@@ -191,6 +192,7 @@ function paginaVitrine(req, lista) {
   <p class="p-hero-credito">Torre do Castelo, Campinas</p>
 </section>
 <section class="p-resultado" aria-live="polite">
+  ${guiaDoBairro ? `<p class="p-guia">Quer conhecer melhor o bairro? <a href="/bairros/${esc(guiaDoBairro.slug)}">Guia do ${esc(guiaDoBairro.nome)}</a>: história, parques, escolas, comércio e prédios.</p>` : ''}
   <div class="p-resultado-cab"><p><b>${achados.length}</b> ${achados.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}</p>${filtrado ? '<a href="/imoveis">Limpar filtros</a>' : ''}</div>
   ${daPagina.length ? `<div class="p-grade">${daPagina.map((x, i) => cartao(x, { eager: i < 3 })).join('')}</div>` : `<div class="p-vazio"><p>${lista.length ? 'Nenhum imóvel com esses filtros.' : 'Os imóveis chegam em breve.'}</p>${filtrado ? '<a class="p-botao sec" href="/imoveis">Ver todos os imóveis</a>' : ''}${whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.') ? `<a class="p-botao" href="${esc(whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.'))}" target="_blank" rel="noopener">Contar o que procuro</a>` : ''}</div>`}
   ${paginas > 1 ? `<nav class="p-paginas" aria-label="Páginas">${pagina > 1 ? `<a href="${esc(link(pagina - 1))}" rel="prev">← Anteriores</a>` : '<span></span>'}<span>Página ${pagina} de ${paginas}</span>${pagina < paginas ? `<a href="${esc(link(pagina + 1))}" rel="next">Próximos →</a>` : '<span></span>'}</nav>` : ''}
@@ -345,7 +347,7 @@ function paginaImovel(req, x, lista) {
 
   const mosaico = ordem.slice(0, 5);
   const corpo = `
-<nav class="p-trilha" aria-label="Você está em"><a href="/imoveis">Imóveis</a>${grupo ? ` <span aria-hidden="true">›</span> <a href="/imoveis?tipo=${grupo.slug}">${esc(grupo.nome)}</a>` : ''}${im.bairro ? ` <span aria-hidden="true">›</span> <a href="/imoveis?bairro=${encodeURIComponent(im.bairro)}">${esc(im.bairro)}</a>` : ''}</nav>
+<nav class="p-trilha" aria-label="Você está em"><a href="/imoveis">Imóveis</a>${grupo ? ` <span aria-hidden="true">›</span> <a href="/imoveis?tipo=${grupo.slug}">${esc(grupo.nome)}</a>` : ''}${im.bairro ? ` <span aria-hidden="true">›</span> <a href="${x.guiaDoBairro ? `/bairros/${esc(x.guiaDoBairro.slug)}` : `/imoveis?bairro=${encodeURIComponent(im.bairro)}`}">${esc(im.bairro)}</a>` : ''}</nav>
 <header class="p-im-cab">
   <p class="p-sobre">${esc(im.tipo)} · ${esc(lugar(im))}${im.condominio ? ` · ${esc(im.condominio)}` : ''}</p>
   <h1>${esc(p.titulo)}</h1>
@@ -368,7 +370,7 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
   <div class="p-texto">
   ${p.blocos.map((b) => bloco(b, ids, { existe, im })).join('\n')}
   </div>
-  <section class="p-sec" aria-labelledby="ficha"><h2 id="ficha">Ficha do imóvel</h2>${ficha(im)}</section>
+  <section class="p-sec" aria-labelledby="ficha"><h2 id="ficha">Ficha do imóvel</h2>${ficha(im)}${x.guiaDoBairro ? `<p class="p-guia">Como é morar no ${esc(x.guiaDoBairro.nome)}: <a href="/bairros/${esc(x.guiaDoBairro.slug)}">leia o guia do bairro</a>.</p>` : ''}</section>
   <section class="p-sec" aria-labelledby="fotos"><h2 id="fotos">Todas as fotos</h2>
     ${ambientes.length > 1 ? `<div class="p-amb" role="group" aria-label="Filtrar fotos por ambiente"><button type="button" aria-pressed="true" data-amb="">Todas (${galeria.length})</button>${ambientes.map((a) => `<button type="button" aria-pressed="false" data-amb="${esc(a)}">${esc(AMBIENTES[a] || a)} (${galeria.filter((g) => g.ambiente === a).length})</button>`).join('')}</div>` : ''}
     <div class="p-galeria">${[{ foto: capa.foto, legenda: legendas.get(capa.foto), ambiente: (galeria.find((g) => g.foto === capa.foto) || {}).ambiente || 'outro' }, ...resto].map((g) => `<figure data-amb="${esc(g.ambiente)}"><button type="button" data-ver="${g.foto}" aria-label="Ampliar: ${esc(g.legenda)}"><img src="${fotoUrl(g.foto)}" alt="${esc(g.legenda)}" loading="lazy" decoding="async" width="1280" height="853"></button><figcaption>${esc(g.legenda)}</figcaption></figure>`).join('')}</div>

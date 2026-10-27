@@ -343,7 +343,14 @@ CREATE TABLE IF NOT EXISTS fachadas (ref TEXT PRIMARY KEY, img BLOB, pano_lat RE
 CREATE TABLE IF NOT EXISTS mapa3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE TABLE IF NOT EXISTS pois (id INTEGER PRIMARY KEY, cat TEXT NOT NULL, nome TEXT NOT NULL, lat REAL NOT NULL, lon REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
-CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);`);
+CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);
+CREATE TABLE IF NOT EXISTS bairros (
+  slug TEXT PRIMARY KEY, nome TEXT NOT NULL, regiao TEXT, apelidos TEXT, prioridade INTEGER NOT NULL DEFAULT 0,
+  oculto INTEGER NOT NULL DEFAULT 0, notas TEXT, pedido_em TEXT, origem TEXT, lat REAL, lon REAL,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), atualizado_em TEXT);
+CREATE TABLE IF NOT EXISTS bairro_commons (
+  titulo TEXT PRIMARY KEY, url TEXT, thumb TEXT, largura INTEGER, altura INTEGER, autor TEXT, licenca TEXT, descricao TEXT,
+  ok INTEGER NOT NULL DEFAULT 0, motivo TEXT, verificado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);

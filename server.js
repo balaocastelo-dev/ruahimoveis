@@ -38,6 +38,7 @@ app.use('/api', mesmaOrigem);
 app.use('/api/publico/portal', require('./src/routes/portal').api);
 app.use('/api/publico/blog', require('./src/routes/blog').api);
 app.use('/api/publico/condominios', require('./src/condominios/publico').api);
+app.use('/api/publico/bairros', require('./src/routes/bairros').api);
 app.use('/api/publico', publico);
 const ABERTAS = new Set(['/setup', '/login', '/logout', '/drive/callback']);
 app.use('/api', (req, res, next) => (ABERTAS.has(req.path) ? next() : exigeLogin(req, res, next)));
@@ -50,6 +51,8 @@ app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
 app.use('/api', require('./src/routes/condominios'));
 app.use('/api', require('./src/routes/mercado'));
+// Páginas de bairros: a lista, a situação de cada página e o que a RUAH quer em cada uma.
+app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
 app.get('/api/blog', async (req, res) => res.json(await require('./src/blog/diario').situacao()));
 app.get('/api/blog/:slug/redes', async (req, res) => {
@@ -71,6 +74,8 @@ const PUB = path.join(__dirname, 'public');
 app.use(require('./src/routes/blog'));
 // Portal do visitante (sem login): /imoveis, a página única de cada imóvel, fotos e favoritos.
 app.use(require('./src/routes/portal'));
+// Guias de bairro (sem login): /bairros e /bairros/<bairro>, com fotos reais e números ao vivo.
+app.use(require('./src/routes/bairros'));
 // Página pública de cada condomínio (/condominios/<slug>) e o 3D para o visitante.
 app.use(require('./src/condominios/publico'));
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));

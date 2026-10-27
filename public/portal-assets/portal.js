@@ -146,6 +146,38 @@
       .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo ou fale pelo WhatsApp.', true); botao.disabled = false; botao.textContent = 'Enviar para o corretor'; });
   });
 
+  // ------------------------------------------------------------ guia de bairro: contato
+  var formB = $('[data-bairro-contato]');
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-motivo]');
+    if (!b || !formB) return;
+    e.preventDefault();
+    var sel = $('[name=motivo]', formB); if (sel) sel.value = b.getAttribute('data-motivo');
+    var sec = $('#contato');
+    sec.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    sec.classList.remove('p-contato-pisca'); void sec.offsetWidth; sec.classList.add('p-contato-pisca');
+    setTimeout(function () { var n = $('[name=nome]', formB); if (n) n.focus({ preventScroll: true }); }, 450);
+  });
+  if (formB) formB.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var msg = $('.p-form-msg', formB), botao = $('button[type=submit]', formB);
+    var d = {};
+    $$('input,select,textarea', formB).forEach(function (c) { if (!c.name) return; d[c.name] = c.type === 'checkbox' ? c.checked : c.value; });
+    var aviso = function (t, erro) { msg.hidden = false; msg.textContent = t; msg.classList.toggle('erro', !!erro); };
+    if (!d.nome.trim()) return aviso('Diga seu nome.', true);
+    if (d.telefone.replace(/\D/g, '').length < 10) return aviso('Confira o telefone, com DDD.', true);
+    if (!d.aceite) return aviso('Marque que concorda com o uso dos dados para o contato.', true);
+    botao.disabled = true; botao.textContent = 'Enviando…';
+    fetch('/api/publico/bairros/contato', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+      .then(function (r) {
+        if (!r.ok) throw new Error(r.j && r.j.erro || 'Não foi possível enviar.');
+        formB.closest('.p-contato').classList.add('enviado');
+        aviso(d.motivo === 'vender' ? 'Recebemos seu contato. Um corretor da RUAH vai falar com você sobre o seu imóvel.' : 'Recebemos seu contato. Um corretor da RUAH responde em breve, em horário comercial.');
+      })
+      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a RUAH'; });
+  });
+
   // ------------------------------------------------------------ compartilhar
   document.addEventListener('click', function (e) {
     var b = e.target.closest('[data-compartilhar]'); if (!b) return;

@@ -98,7 +98,7 @@ const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
   ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios', 'cond'], ['#/mercado', 'Mercado']]],
-  ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/blog', 'Blog Sopro']]],
+  ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
@@ -163,6 +163,7 @@ async function rota() {
     else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
     else if (p[0] === 'portal') await telaPortal();
+    else if (p[0] === 'bairros') await telaBairros(new URLSearchParams(qs || ''));
     else if (p[0] === 'configuracoes') await telaConfig(new URLSearchParams(qs || ''));
     else await telaPainel();
   } catch (e) { if (seq === rotaSeq && document.body.contains(main)) main.innerHTML = `<div class="empty">${esc(e.message)}</div>`; }

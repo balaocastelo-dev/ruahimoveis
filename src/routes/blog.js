@@ -30,9 +30,16 @@ function relacionados(artigo, todos) {
 }
 
 router.get('/robots.txt', (req, res) => res.type('text/plain').send(paginas.robots(req)));
+// Para as IAs (ChatGPT, Claude, Perplexity…): o mapa do que a RUAH publica, em texto simples.
+router.get('/llms.txt', async (req, res) => {
+  const [imoveis, bairros, artigos] = await Promise.all([require('../portal/fonte').noAr().catch(() => []), require('../bairros/fonte').noAr().catch(() => []), diario.listar().catch(() => [])]);
+  res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=3600');
+  res.type('text/plain').send(paginas.llms(req, { imoveis, bairros, artigos }));
+});
 router.get('/sitemap.xml', async (req, res) => {
   const imoveis = await require('../portal/fonte').noAr().catch(() => []);
-  res.type('application/xml').send(paginas.sitemap(req, await diario.listar(), imoveis));
+  const bairros = await require('../bairros/fonte').noAr().catch(() => []);
+  res.type('application/xml').send(paginas.sitemap(req, await diario.listar(), imoveis, bairros));
 });
 router.get('/blog/rss.xml', async (req, res) => res.type('application/rss+xml').send(paginas.rss(req, await diario.listar())));
 
