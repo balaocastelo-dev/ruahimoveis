@@ -106,6 +106,16 @@ function filtros(query) {
   if (vmax) { where.push('a.valor <= ?'); p.push(vmax); }
   return { w: where.length ? 'WHERE ' + where.join(' AND ') : '', p };
 }
+const POR_PAG = 48;
+// Quantos anúncios cada filtro mostra (para os números nas abas), respeitando a busca digitada.
+function contagem(q) {
+  const out = {};
+  for (const f of ['', 'precisa', 'com_dono', 'abordando', 'confirmado', 'sem_dono', 'particular', 'sem_interesse', 'captado']) {
+    const { w, p } = filtros({ filtro: f, q });
+    out[f || 'todos'] = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${w}`, ...p).n;
+  }
+  return out;
+}
 r.get('/fisguei/mapa', (req, res) => {
   const { w, p } = filtros(req.query);
   res.json(all(`SELECT a.id, a.lat, a.lon, a.valor, a.status, a.tipo, a.logradouro, a.numero, a.bairro, a.anunciante_tipo FROM fisguei_anuncios a
@@ -120,10 +130,12 @@ r.get('/fisguei', (req, res) => {
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id) AS pessoas,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas,
       (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE x.anuncio_id=a.id AND c.tipo='tel' AND c.envio='fila') AS na_fila,
-      (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE x.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS enviadas
-    FROM fisguei_anuncios a ${w} ORDER BY CASE WHEN a.status IN ('respondeu','confirmado') THEN 0 ELSE 1 END, a.atualizado_em DESC, a.id DESC LIMIT 50 OFFSET ?`, ...p, (pag - 1) * 50);
+      (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE x.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS enviadas,
+      (SELECT d.status FROM fisguei_pedidos d WHERE d.anuncio_id=a.id ORDER BY d.id DESC LIMIT 1) AS pedido,
+      (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.status='confirmou') AS confirmados
+    FROM fisguei_anuncios a ${w} ORDER BY CASE WHEN a.status IN ('respondeu','confirmado') THEN 0 ELSE 1 END, a.atualizado_em DESC, a.id DESC LIMIT ${POR_PAG} OFFSET ?`, ...p, (pag - 1) * POR_PAG);
   for (const i of itens) { let f0 = null; try { f0 = (JSON.parse(i.fotos || '[]') || [])[0] || null; } catch {} i.foto = f0; delete i.fotos; i.ref = F.ref(i.id); }
-  res.json({ total, pagina: pag, paginas: Math.max(Math.ceil(total / 50), 1), itens });
+  res.json({ total, pagina: pag, paginas: Math.max(Math.ceil(total / POR_PAG), 1), itens, contagem: contagem(req.query.q) });
 });
 
 function anuncio(id) {
