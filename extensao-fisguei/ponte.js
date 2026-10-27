@@ -11,11 +11,26 @@
     }
     const cor = st.erro ? '#c0392b' : st.configurada ? '#2e7d4f' : '#8a6d2b';
     selo.style.background = cor;
-    selo.textContent = st.erro ? `Fisguei: ${st.erro}` : st.configurada ? `Fisguei ✓ ${st.anuncios} anúncio(s) · ${st.pessoas} pessoa(s) hoje${st.fila ? ` · enviando ${st.fila}` : ''}` : 'Fisguei: abra a extensão e cole a chave';
+    selo.textContent = st.erro ? `Fisguei: ${st.erro}` : st.configurada ? `Fisguei ✓ ${st.anuncios} anúncio(s) · ${st.pessoas} pessoa(s) hoje${st.buscas ? ` · ${st.buscas} busca(s) do robô` : ''}${st.robo && /limite/.test(st.robo) ? ' · ' + st.robo : ''}${st.fila ? ` · enviando ${st.fila}` : ''}` : 'Fisguei: abra a extensão e cole a chave';
   };
   window.addEventListener('message', (e) => {
     if (e.source !== window || !e.data || e.data.__fisguei !== 1) return;
     try { chrome.runtime.sendMessage({ tipo: 'captura', item: { url: e.data.url, pedido: e.data.pedido, json: e.data.json } }, (st) => { if (st) mostra(st); }); } catch {}
+  });
+  // Robô "Buscar dados": a extensão manda a busca, a página do Fisgar executa e devolve.
+  const esperando = new Map();
+  window.addEventListener('message', (e) => {
+    if (e.source !== window || !e.data || e.data.__fisgueiFeito !== 1) return;
+    const r = esperando.get(e.data.id); if (r) { esperando.delete(e.data.id); r(e.data); }
+  });
+  chrome.runtime.onMessage.addListener((m, quem, responde) => {
+    if (!m || m.tipo !== 'executar') return false;
+    const id = Math.random().toString(36).slice(2);
+    const t = setTimeout(() => { if (esperando.has(id)) { esperando.delete(id); responde({ ok: false, erro: 'O Fisgar demorou demais para responder.', volta: true }); } }, 120000);
+    esperando.set(id, (d) => { clearTimeout(t); responde(d); });
+    window.postMessage({ __fisgueiExec: 1, id, pedido: m.pedido }, location.origin);
+    if (selo) selo.textContent = `Fisguei: buscando ${m.pedido.ref} no Fisgar…`;
+    return true;
   });
   const pede = () => { try { chrome.runtime.sendMessage({ tipo: 'estado' }, (st) => { if (st) mostra(st); }); } catch {} };
   document.addEventListener('DOMContentLoaded', pede);

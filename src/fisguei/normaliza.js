@@ -106,7 +106,7 @@ function pessoa(p, key) {
 function corpo(req) { if (!req) return {}; if (typeof req === 'object') return req; try { return JSON.parse(req); } catch { return {}; } }
 
 // url: endereço da chamada; json: resposta; pedido: corpo enviado (para saber de qual anúncio e endereço é a pessoa)
-function processa(url, json, pedido) {
+function processa(url, json, pedido, opcoes = {}) {
   const r = { anuncios: 0, pessoas: 0, telefones: 0 };
   const caminho = String(url).split('?')[0];
   const dados = json && json.data;
@@ -123,7 +123,7 @@ function processa(url, json, pedido) {
     const search = b.search || {}; const key = search.key || {};
     // Em GetPeople a chave é o endereço; em GetPersonInfo é a pessoa (com os endereços dela).
     const endKey = key.street || key.zipcode ? key : (enderecoNoImovel(key, null) || (key.addresses || [])[0] || null);
-    const anuncioId = anuncioDoEndereco(b.announce_id, endKey);
+    const anuncioId = opcoes.anuncioId || anuncioDoEndereco(b.announce_id, endKey);
     if (!anuncioId) return r;
     const ref = one('SELECT logradouro AS street, numero AS number, cep AS zipcode FROM fisguei_anuncios WHERE id=?', anuncioId);
     for (const p of dados.people) {
@@ -137,4 +137,4 @@ function processa(url, json, pedido) {
   return r;
 }
 
-module.exports = { processa, anuncio, pessoa, hashDoc };
+module.exports = { processa, anuncio, pessoa, hashDoc, cepTxt };

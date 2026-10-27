@@ -23,16 +23,17 @@ async function telaRadar(qs) {
   </div>
   <div class="row" style="margin:16px 0 12px">
     <div class="tabs" style="margin:0;flex:1;border:0">${[['', 'Em andamento'], ['nova', 'Novas'], ['carta_enviada', 'Carta enviada'], ['aguardando_aprovacao', 'Aguardando aprovação'], ['captada', 'Captadas'], ['descartada', 'Descartadas']].map(([k, t]) => `<a href="#/radar${k ? '?status=' + k : ''}" class="${st === k ? 'on' : ''}">${t}</a>`).join('')}</div></div>
-  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th></tr></thead><tbody>
+  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th><th>Fisgar</th></tr></thead><tbody>
     ${l.map((o) => `<tr><td><input type="checkbox" class="sel-op" value="${o.id}" ${o.bloqueio || o.anunciante_tipo === 'imobiliaria' || !o.logradouro ? 'disabled title="Sem endereço, de imobiliária ou na lista não contatar"' : ''} aria-label="Selecionar ${esc(o.ref)}"></td>
       <td>${prioPill(o.prioridade)}</td>
       <td class="click" data-act="ir" data-href="#/radar/${o.id}" style="cursor:pointer"><span class="mono" style="color:var(--gold)">${esc(o.ref)}</span> <b>${esc(o.titulo || o.condominio_nome || o.tipo || 'Sem título')}</b><br><span class="muted small">${esc(o.portal || '')}${o.anunciante_tipo === 'particular' ? ' · particular' : o.anunciante_tipo === 'imobiliaria' ? ' · imobiliária' : ''}${o.prioridade.motivos.length ? ' · ' + esc(o.prioridade.motivos.join(', ')) : ''}</span>${o.bloqueio ? '<br><span class="pill bad">não contatar</span>' : ''}</td>
-      <td>${esc(endOp(o) || '—')}<br><span class="muted small">${esc(o.bairro || '')}</span></td><td class="num">${brl(o.valor)}</td><td>${opPill(o.status)}</td><td>${esc(o.corretor_nome || 'livre')}</td></tr>`).join('')}</tbody></table></div>
-    <div class="row" style="margin-top:12px"><span class="muted small" id="sel-n">Nenhuma selecionada</span><button class="btn" data-act="cartas-lote">Gerar cartas das selecionadas (PDF)</button><button class="btn" data-act="cartas-enviadas">Marcar selecionadas como enviadas</button></div>`
+      <td>${esc(endOp(o) || '—')}<br><span class="muted small">${esc(o.bairro || '')}</span></td><td class="num">${brl(o.valor)}</td><td>${opPill(o.status)}</td><td>${esc(o.corretor_nome || 'livre')}</td><td class="fg-op" data-op="${o.id}" data-end="${o.logradouro && o.numero ? 1 : 0}"></td></tr>`).join('')}</tbody></table></div>
+    <div class="row" style="margin-top:12px"><span class="muted small" id="sel-n">Nenhuma selecionada</span><button class="btn" data-act="cartas-lote">Gerar cartas das selecionadas (PDF)</button><button class="btn" data-act="cartas-enviadas">Marcar selecionadas como enviadas</button><span class="sp"></span><button class="btn pri" data-act="fg-buscar-lista" title="O robô busca no Fisgar o dono de cada anúncio desta lista que tem rua e número (gasta créditos do Fisgar)">Buscar dados no Fisgar (lista toda)</button></div>`
     : `<div class="empty">Nada aqui. As oportunidades chegam pelo radar automático.</div>`}`;
   const atualiza = () => { const n0 = $$('.sel-op:checked').length; const el = $('#sel-n'); if (el) el.textContent = n0 ? `${n0} selecionada(s)` : 'Nenhuma selecionada'; };
   $$('.sel-op').forEach((c) => c.addEventListener('change', atualiza));
   const t = $('#sel-todas'); if (t) t.addEventListener('change', () => { $$('.sel-op:not(:disabled)').forEach((c) => (c.checked = t.checked)); atualiza(); });
+  if (typeof fgDecoraRadar === 'function') fgDecoraRadar();
 }
 const selecionadas = () => $$('.sel-op:checked').map((c) => c.value);
 // Quando cada portal mandou o último alerta: mostra na hora se algum parou.
@@ -161,6 +162,7 @@ async function telaOp(id) {
   ${o.bloqueio ? `<div class="banner warn"><b>Não contatar:</b> ${esc(o.bloqueio)}</div>` : ''}
   ${o.anunciante_tipo === 'imobiliaria' ? '<div class="banner warn">Anunciado por imobiliária ou corretor: provável exclusividade de outra empresa. Não abordamos o dono nem gastamos com consulta.</div>' : ''}
   ${o.status === 'captada' ? `<div class="banner" style="background:var(--ok-bg)">Captada. <a href="#/imoveis/${o.imovel_id}">Abrir o imóvel</a></div>` : ''}
+  <div id="op-fisgar" data-op="${o.id}" data-end="${o.logradouro && o.numero ? 1 : 0}"></div>
   <div class="grid g21"><div class="grid" style="gap:12px;align-content:start">
     ${passo(1, 'Contato do anúncio · grátis', fez('anuncio') ? 'ok' : o.telefone_anuncio ? 'atual' : 'off', o.telefone_anuncio ? `
       <div class="row"><span class="mono">${esc(tel(o.telefone_anuncio))}</span>${o.anunciante_nome ? `<span class="muted small">${esc(o.anunciante_nome)}</span>` : ''}${!o.bloqueio && o.anunciante_tipo !== 'imobiliaria' ? `<a class="btn sm pri" href="${esc(o.whatsapp_anuncio)}" target="_blank" rel="noopener">Abrir WhatsApp</a>` : ''}</div>

@@ -228,6 +228,7 @@ CREATE TABLE IF NOT EXISTS fisguei_anuncios (
   status TEXT NOT NULL DEFAULT 'novo',
   pausado INTEGER NOT NULL DEFAULT 0,
   oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
+  imovel_id INTEGER REFERENCES imoveis(id) ON DELETE SET NULL,
   observacoes TEXT,
   criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
   atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
@@ -270,6 +271,20 @@ CREATE TABLE IF NOT EXISTS fisguei_mensagens (
   criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 CREATE INDEX IF NOT EXISTS ix_fm_tel ON fisguei_mensagens(telefone);
+CREATE TABLE IF NOT EXISTS fisguei_pedidos (
+  id INTEGER PRIMARY KEY,
+  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
+  pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE CASCADE,
+  tipo TEXT NOT NULL DEFAULT 'endereco',
+  status TEXT NOT NULL DEFAULT 'fila',
+  creditos INTEGER NOT NULL DEFAULT 0,
+  pessoas INTEGER, consultadas INTEGER,
+  erro TEXT,
+  criado_por INTEGER REFERENCES usuarios(id),
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  iniciado_em TEXT, concluido_em TEXT
+);
+CREATE INDEX IF NOT EXISTS ix_fp_status ON fisguei_pedidos(status);
 CREATE TABLE IF NOT EXISTS fisguei_bloqueios (
   telefone TEXT PRIMARY KEY,
   motivo TEXT,
@@ -282,6 +297,11 @@ CREATE TABLE IF NOT EXISTS auditoria (
   em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 `);
+
+// Colunas novas em tabelas que já existiam no PC.
+for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES imoveis(id) ON DELETE SET NULL']]) {
+  if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
+}
 
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);

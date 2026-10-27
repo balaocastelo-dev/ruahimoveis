@@ -112,6 +112,60 @@ const consulta = (doc, nome, extra, fones) => ({
   ok(await req('cor', 'POST', `/api/fisguei/pessoas/${patricia.id}/status`, { status: 'parar' }), 'corretor marca não contatar');
   assert.ok(F.bloqueado('5519977776666'));
 
+  // ---------- robô "Buscar dados" (Radar → Fisgar → Fisguei) ----------
+  const fetch0 = global.fetch;
+  global.fetch = (u, o) => (/viacep\.com\.br/.test(String(u))
+    ? Promise.resolve(new Response(JSON.stringify([{ cep: '13098-319', logradouro: 'Rua Sabiú', complemento: '', bairro: 'Loteamento Alphaville Campinas' }, { cep: '13098-000', logradouro: 'Rua Outra Sabiú', complemento: '', bairro: 'X' }]), { headers: { 'Content-Type': 'application/json' } }))
+    : fetch0(u, o));
+  const op2 = ok(await req('cor', 'POST', '/api/radar', { portal: 'Chaves na Mão', link: 'https://cnm/2', titulo: 'Casa 4q', tipo: 'Casa em condomínio', anunciante_tipo: 'imobiliaria', logradouro: 'Rua Sabiú', numero: '135', bairro: 'Alphaville', valor: '3.800.000', quartos: 4 }), 'oportunidade no Radar');
+  const semNum = ok(await req('cor', 'POST', '/api/radar', { portal: 'Chaves na Mão', link: 'https://cnm/3', titulo: 'Apto', tipo: 'Apartamento', logradouro: 'Rua Sem Número', bairro: 'Centro' }), 'oportunidade sem número');
+  const bq = ok(await req('cor', 'POST', '/api/fisguei/buscar', { oportunidade_ids: [op2.id, semNum.id] }), 'pede busca no Fisgar');
+  assert.equal(bq.criados, 1); assert.equal(bq.sem_endereco, 1);
+  assert.equal(ok(await req('cor', 'POST', '/api/fisguei/buscar', { oportunidade_ids: [op2.id] }), 'pede de novo').ja, 1); console.log('   não duplica a busca');
+  assert.equal((await req('x', 'GET', '/fisguei-api/pedidos/proximo?fisgar=0', null, H)).j.pedido, null); console.log('ok · sem Fisgar aberto não entrega busca');
+  const px = ok(await req('x', 'GET', '/fisguei-api/pedidos/proximo?fisgar=1', null, H), 'extensão pega a busca');
+  assert.equal(px.pedido.key.zipcode, '13098319'); assert.equal(px.pedido.key.number, '135'); assert.equal(px.pedido.consultar.modo, 'auto'); console.log('   CEP achado pelo trecho da rua');
+  const gente = { data: { searchId: 's', totalElements: 2, totalPages: 1, people: [
+    { document: '11122233344', name: 'MARIA DONA', type: 'PESSOA_FISICA', addresses: [{ street: 'Rua Sabiú', number: 135, extra: '', zipcode: 13098319, iptuMatch: true }] },
+    { document: '55566677788', name: 'JOAO VIZINHO', type: 'PESSOA_FISICA', addresses: [{ street: 'Rua Sabiú', number: 135, extra: '', zipcode: 13098319, iptuMatch: false }] }] } };
+  const info = { data: { people: [{ document: '11122233344', name: 'MARIA DONA', birthDate: '1960-01-01', type: 'PESSOA_FISICA', addresses: [{ number: 135, zipcode: 13098319, iptuMatch: true }], phones: [{ phone: '19955554444', type: 'MOBILE' }], emails: [] }] } };
+  const res = ok(await req('x', 'POST', `/fisguei-api/pedidos/${px.pedido.id}/resultado`, {
+    pessoas: { pedido: JSON.stringify({ search: { type: 'IPTU_ADDRESS', key: px.pedido.key } }), json: gente, cobrado: true },
+    consultas: [{ pedido: JSON.stringify({ search: { key: { type: 'DOCUMENT', document: '11122233344', addresses: [{ number: 135, zipcode: 13098319, iptuMatch: true }], name: 'MARIA DONA' } } }), json: info, cobrado: true }] }, H), 'extensão devolve o resultado');
+  assert.equal(res.status, 'concluido'); assert.equal(res.creditos, 2); assert.equal(res.consultadas, 1);
+  const sit = ok(await req('cor', 'GET', `/api/fisguei/radar?ids=${op2.id}`), 'situação no Radar')[op2.id];
+  assert.equal(sit.consultadas, 1); assert.equal(sit.pessoas, 2);
+  const ficha3 = ok(await req('cor', 'GET', '/api/fisguei/' + sit.id), 'ficha do endereço buscado');
+  assert.equal(ficha3.pedidos[0].status, 'concluido');
+  assert.ok(!JSON.stringify(ficha3).includes('11122233344')); console.log('ok · CPF não gravado na busca do robô');
+  // fila do TH-IA-GO já tem o celular da Maria
+  assert.ok(one(`SELECT 1 FROM fisguei_contatos WHERE valor='5519955554444' AND envio='fila'`)); console.log('ok · telefone na fila do WhatsApp');
+  // consultar o vizinho à mão
+  const joao = ficha3.pessoas.find((p) => p.nome === 'Joao Vizinho');
+  ok(await req('cor', 'POST', `/api/fisguei/pessoas/${joao.id}/consultar`), 'pede consulta de 1 pessoa');
+  const px2 = ok(await req('x', 'GET', '/fisguei-api/pedidos/proximo?fisgar=1', null, H), 'extensão pega a consulta');
+  assert.equal(px2.pedido.consultar.modo, 'nomes'); assert.equal(px2.pedido.consultar.nomes[0].nome, 'Joao Vizinho');
+  ok(await req('x', 'POST', `/fisguei-api/pedidos/${px2.pedido.id}/resultado`, { erro: 'O Fisgar pediu login de novo.', erro_volta: true }, H), 'erro de login devolve para a fila');
+  assert.equal(one('SELECT status FROM fisguei_pedidos WHERE id=?', px2.pedido.id).status, 'fila');
+  // limite de créditos do dia
+  ok(await req('adm', 'POST', '/api/fisguei/pedidos/limites', { creditos_dia: 2 }), 'limite de 2 créditos/dia');
+  const px3 = ok(await req('x', 'GET', '/fisguei-api/pedidos/proximo?fisgar=1', null, H), 'limite do dia');
+  assert.equal(px3.pedido, null); assert.ok(/limite/.test(px3.motivo)); console.log('   robô para no limite de créditos');
+  ok(await req('adm', 'POST', '/api/fisguei/pedidos/limites', { creditos_dia: 70 }), 'volta o limite');
+  const rs = ok(await req('cor', 'GET', '/api/fisguei/pedidos'), 'resumo do robô de busca');
+  assert.equal(rs.creditos_hoje, 2); assert.equal(rs.extensao.fisgar_aberto, true);
+  // importar para a base
+  const im = ok(await req('cor', 'POST', `/api/fisguei/${sit.id}/importar`), 'importa para a carteira');
+  const imv = one('SELECT * FROM imoveis WHERE id=?', im.id);
+  assert.equal(imv.tipo, 'Casa em condomínio'); assert.equal(imv.status, 'captacao'); assert.equal(imv.cep, '13098319'); assert.ok(im.codigo.startsWith('CC'));
+  assert.equal(ok(await req('cor', 'POST', `/api/fisguei/${sit.id}/importar`), 'importa de novo').ja, true); console.log('   não duplica o imóvel');
+  // o dono confirmado vai junto como proprietário
+  run("UPDATE fisguei_pessoas SET status='confirmou' WHERE nome='Andre Luis Arruda'");
+  const im2 = ok(await req('cor', 'POST', `/api/fisguei/${id}/importar`), 'importa endereço com dono confirmado');
+  const pr = one('SELECT p.* FROM imoveis i JOIN proprietarios p ON p.id=i.proprietario_id WHERE i.id=?', im2.id);
+  assert.equal(pr.nome, 'Andre Luis Arruda'); assert.ok(/Fisgar/.test(pr.origem_dado)); console.log('ok · dono confirmado vira proprietário (origem do dado anotada)');
+  global.fetch = fetch0;
+
   srv.close();
   console.log('\nFisguei: tudo certo.');
   process.exit(0);

@@ -153,7 +153,7 @@ async function rota() {
     else if (p[0] === 'radar' && p[1] === 'novo') { location.replace('#/radar'); return; }
     else if (p[0] === 'radar' && p[1] === 'aprovacoes') await telaAprovacoes();
     else if (p[0] === 'radar' && p[1] && p[2] === 'editar') await telaOpForm(+p[1]);
-    else if (p[0] === 'radar' && p[1]) await telaOp(+p[1]);
+    else if (p[0] === 'radar' && p[1]) { await telaOp(+p[1]); if (typeof fgCartaoOp === 'function') fgCartaoOp(); }
     else if (p[0] === 'radar') await telaRadar(new URLSearchParams(qs || ''));
     else if (p[0] === 'fisguei' && p[1]) await telaFisgueiAnuncio(+p[1], p[2] || 'dados');
     else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));

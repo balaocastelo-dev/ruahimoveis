@@ -6,6 +6,7 @@ const { one, all, run, getConfig, setConfig, audit } = require('../db');
 const { falha, txt } = require('../util');
 const F = require('../fisguei/base');
 const normaliza = require('../fisguei/normaliza');
+const P = require('../fisguei/pedidos');
 
 // ---------- recebimento (extensão do Chrome) ----------
 // Fica fora de /api: a extensão não tem a sessão do sistema, ela se identifica com a chave gerada na tela do Fisguei.
@@ -27,6 +28,20 @@ receber.use((req, res, next) => {
   next();
 });
 receber.get('/ping', (req, res) => res.json({ ok: true, robo: F.ROBO }));
+// Robô "Buscar dados": a extensão pergunta se há busca a fazer no Fisgar e devolve o resultado.
+receber.get('/pedidos/proximo', async (req, res) => {
+  const aberto = req.query.fisgar === '1';
+  P.marcaExtensao(aberto);
+  if (!aberto) return res.json({ pedido: null, motivo: 'Fisgar fechado' });
+  res.json(await P.proximo());
+});
+receber.post('/pedidos/:id/resultado', (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  if (!Number.isFinite(id)) return res.status(400).json({ erro: 'Pedido inválido.' });
+  const r = P.resultado(id, req.body || {});
+  setConfig('fisguei_ultimo_recebimento', new Date().toISOString());
+  res.status(r.erro ? 409 : 200).json(r);
+});
 receber.post('/receber', (req, res) => {
   const lote = Array.isArray(req.body && req.body.itens) ? req.body.itens.slice(0, 50) : [req.body];
   const tot = { anuncios: 0, pessoas: 0, telefones: 0, ignorados: 0 };
@@ -126,7 +141,9 @@ r.get('/fisguei/:id', (req, res) => {
     p.mensagens = all('SELECT direcao, texto, status, autor, criado_em FROM fisguei_mensagens WHERE pessoa_id=? ORDER BY id', p.id);
   }
   const op = a.oportunidade_id ? one('SELECT id, status FROM oportunidades WHERE id=?', a.oportunidade_id) : null;
-  res.json({ anuncio: a, pessoas, oportunidade: op, previa: pessoas[0] ? F.montaTexto(F.ajustes().modelo, pessoas[0], a) : null });
+  const imovel = a.imovel_id ? one('SELECT id, codigo, status FROM imoveis WHERE id=?', a.imovel_id) : null;
+  const pedidos = all('SELECT id, tipo, pessoa_id, status, creditos, pessoas, consultadas, erro, criado_em, concluido_em FROM fisguei_pedidos WHERE anuncio_id=? ORDER BY id DESC LIMIT 10', a.id);
+  res.json({ anuncio: a, pessoas, oportunidade: op, imovel, pedidos, previa: pessoas[0] ? F.montaTexto(F.ajustes().modelo, pessoas[0], a) : null });
 });
 
 r.post('/fisguei/:id/pausar', (req, res) => {
@@ -188,6 +205,49 @@ r.post('/fisguei/pessoas/:pid/mensagem', (req, res) => {
   if (F.bloqueado(c.valor)) falha(400, 'Esse número está na lista não contatar.');
   F.enfileiraResposta(p.id, c.valor, texto, req.usuario.nome);
   res.json({ ok: true });
+});
+
+
+// ---------- robô "Buscar dados" no Fisgar ----------
+r.post('/fisguei/buscar', (req, res) => {
+  const ids = (Array.isArray(req.body && req.body.oportunidade_ids) ? req.body.oportunidade_ids : []).map((x) => parseInt(x, 10)).filter(Number.isFinite).slice(0, 1000);
+  if (!ids.length) falha(400, 'Escolha ao menos uma oportunidade.');
+  const out = P.pedeOportunidades(ids, req.usuario.id);
+  audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) na fila do Fisgar (${out.ja} já estavam, ${out.sem_endereco} sem endereço)`);
+  res.json({ ...out, anuncio_id: out.anuncios.length === 1 ? out.anuncios[0] : null });
+});
+r.post('/fisguei/:id/buscar', (req, res) => {
+  const a = anuncio(+req.params.id);
+  const out = P.pedeEndereco(a.id, req.usuario.id);
+  if (out.erro) falha(400, 'Este anúncio não tem rua e número: o Fisgar só acha o dono com o endereço completo.');
+  audit(req.usuario.id, 'fisguei.buscar', F.ref(a.id));
+  res.json(out);
+});
+r.post('/fisguei/pessoas/:pid/consultar', (req, res) => {
+  const p = pessoa(+req.params.pid);
+  const out = P.pedePessoa(p.id, req.usuario.id);
+  if (out.erro) falha(400, out.erro);
+  audit(req.usuario.id, 'fisguei.consultar', `${F.ref(p.anuncio_id)} pessoa #${p.id}`);
+  res.json(out);
+});
+r.get('/fisguei/pedidos', (req, res) => res.json(P.resumo()));
+r.post('/fisguei/pedidos/limites', (req, res) => {
+  if (!A.veTudo(req.usuario)) falha(403, 'Só o administrativo ou o gestor mudam o limite de créditos.');
+  const l = P.salvaLimites(req.body || {});
+  audit(req.usuario.id, 'fisguei.limites', JSON.stringify(l));
+  res.json(l);
+});
+r.get('/fisguei/radar', (req, res) => {
+  const ids = String(req.query.ids || '').split(',').map((x) => parseInt(x, 10)).filter(Number.isFinite).slice(0, 1000);
+  res.json(P.situacaoOportunidades(ids));
+});
+// Leva o anúncio fisgado para a carteira como imóvel em captação (sem as fotos do anúncio original, que são de terceiros).
+r.post('/fisguei/:id/importar', (req, res) => {
+  const a = anuncio(+req.params.id);
+  const { proximoCodigo } = require('./imoveis').ajudantes;
+  const out = P.importa(a.id, req.usuario, proximoCodigo);
+  if (!out.ja) audit(req.usuario.id, 'imovel_criado', `${out.codigo} (importado do Fisguei ${F.ref(a.id)})`);
+  res.json(out);
 });
 
 // ---------- robô ----------

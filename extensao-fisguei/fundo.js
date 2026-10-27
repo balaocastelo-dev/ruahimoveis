@@ -9,7 +9,7 @@ async function config() { const c = await chrome.storage.local.get(['url', 'chav
 async function estado() {
   const c = await config();
   const k = c.cont[hoje()] || { anuncios: 0, pessoas: 0 };
-  return { configurada: !!c.chave, erro: st.erro, anuncios: k.anuncios, pessoas: k.pessoas, fila: fila.length };
+  return { configurada: !!c.chave, erro: st.erro, anuncios: k.anuncios, pessoas: k.pessoas, fila: fila.length, buscas: st.buscas || 0, robo: st.robo || null };
 }
 async function conta(r) {
   const c = await config(); const d = hoje();
@@ -58,3 +58,33 @@ chrome.runtime.onMessage.addListener((m, quem, responde) => {
   return false;
 });
 setInterval(envia, 15000);
+
+// ---------- robô "Buscar dados" ----------
+// Com o Fisgar aberto em alguma aba, pergunta ao sistema se há busca na fila e manda a aba executar.
+let buscando = false;
+async function buscaPedidos() {
+  if (buscando) return;
+  const c = await config();
+  if (!c.chave) return;
+  buscando = true;
+  try {
+    const abas = await chrome.tabs.query({ url: 'https://painel.fisgar.com.br/*' });
+    const aba = abas.find((t) => !/\/entrar/.test(t.url || '')) || null;
+    const r = await fetch(`${c.url}/fisguei-api/pedidos/proximo?fisgar=${aba ? 1 : 0}`, { headers: { 'X-Fisguei-Chave': c.chave } });
+    if (!r.ok) return;
+    const j = await r.json();
+    st.robo = j.motivo || null;
+    if (!j.pedido || !aba) return;
+    let res;
+    try { res = await chrome.tabs.sendMessage(aba.id, { tipo: 'executar', pedido: j.pedido }); }
+    catch { res = { ok: false, erro: 'Recarregue a aba do Fisgar (F5) para o robô funcionar.', volta: true }; }
+    const corpo = res && res.ok ? res.resultado : { erro: (res && res.erro) || 'Falhou no Fisgar.', erro_volta: !!(res && res.volta) };
+    await fetch(`${c.url}/fisguei-api/pedidos/${j.pedido.id}/resultado`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Fisguei-Chave': c.chave }, body: JSON.stringify(corpo) });
+    st.buscas = (st.buscas || 0) + 1;
+    if (res && res.ok) setTimeout(buscaPedidos, 4000 + Math.random() * 4000); // tem mais na fila? segue, com calma
+  } catch { /* sem conexão: tenta na próxima volta */ }
+  finally { buscando = false; }
+}
+chrome.alarms.create('fisguei-busca', { periodInMinutes: 0.5 });
+chrome.alarms.onAlarm.addListener((a) => { if (a.name === 'fisguei-busca') buscaPedidos(); });
+setInterval(buscaPedidos, 20000);
