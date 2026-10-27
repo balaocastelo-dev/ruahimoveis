@@ -43,19 +43,26 @@ r.get('/captacao/painel', (req, res) => {
   const grupo = (k) => GR.filter((x) => x.k === k);
   const somaG = (k, f = () => true) => grupo(k).filter(f).reduce((t, x) => t + Number(x.n), 0);
   const fgTotal = somaG('st');
-  const comDono = one('SELECT count(DISTINCT anuncio_id) n FROM fisguei_pessoas WHERE consultado=1').n;
-  const pessoasSt = conta(all('SELECT status FROM fisguei_pessoas WHERE consultado=1'), (x) => x.status);
-  const envios = all(`SELECT enviado_em FROM fisguei_contatos WHERE envio IN ('enviado','respondeu') AND enviado_em IS NOT NULL`);
-  const respostas = all(`SELECT criado_em FROM fisguei_mensagens WHERE direcao='entrada' AND criado_em >= ?`, ini);
-  const respondeuEnvio = one(`SELECT count(*) n FROM fisguei_contatos WHERE envio='respondeu'`).n;
-  const fila = one(`SELECT count(*) n FROM fisguei_contatos WHERE tipo='tel' AND envio='fila'`).n;
-  const gasto = one('SELECT coalesce(sum(custo),0) v FROM oportunidade_eventos').v;
-  const creditos = all(`SELECT creditos, criado_em, status FROM fisguei_pedidos`);
-  const aprov = one("SELECT count(*) n FROM aprovacoes WHERE status='pendente'").n;
+  // robô, créditos e aprovações: também numa consulta só
+  const X = all(`SELECT 'ps' k, status a, NULL b, count(*) n FROM fisguei_pessoas WHERE consultado=1 GROUP BY status
+    UNION ALL SELECT 'en', substr(enviado_em,1,10), NULL, count(*) FROM fisguei_contatos WHERE envio IN ('enviado','respondeu') AND enviado_em IS NOT NULL GROUP BY substr(enviado_em,1,10)
+    UNION ALL SELECT 're', substr(criado_em,1,10), NULL, count(*) FROM fisguei_mensagens WHERE direcao='entrada' AND criado_em >= ? GROUP BY substr(criado_em,1,10)
+    UNION ALL SELECT 'cr', status, substr(criado_em,1,7), sum(creditos) FROM fisguei_pedidos GROUP BY status, substr(criado_em,1,7)
+    UNION ALL SELECT 'cp', status, NULL, count(*) FROM fisguei_pedidos GROUP BY status
+    UNION ALL SELECT 'cd', NULL, NULL, count(DISTINCT anuncio_id) FROM fisguei_pessoas WHERE consultado=1
+    UNION ALL SELECT 'rs', NULL, NULL, count(*) FROM fisguei_contatos WHERE envio='respondeu'
+    UNION ALL SELECT 'fi', NULL, NULL, count(*) FROM fisguei_contatos WHERE tipo='tel' AND envio='fila'
+    UNION ALL SELECT 'ga', NULL, NULL, coalesce(sum(custo),0) FROM oportunidade_eventos
+    UNION ALL SELECT 'ap', NULL, NULL, count(*) FROM aprovacoes WHERE status='pendente'`, ini);
+  const xs = (k) => X.filter((x) => x.k === k), x1 = (k) => Number((xs(k)[0] || {}).n || 0);
+  const comDono = x1('cd'), respondeuEnvio = x1('rs'), fila = x1('fi'), gasto = x1('ga'), aprov = x1('ap');
+  const pessoasSt = Object.fromEntries(xs('ps').map((x) => [x.a, Number(x.n)]));
+  const enviosDia = Object.fromEntries(xs('en').map((x) => [x.a, Number(x.n)])), respostasDia = Object.fromEntries(xs('re').map((x) => [x.a, Number(x.n)]));
+  const pedidosSt = Object.fromEntries(xs('cp').map((x) => [x.a, Number(x.n)]));
 
   // ---------- funil ----------
   const stOp = conta(ops, (x) => x.status), stFg = Object.fromEntries(grupo('st').map((x) => [x.a, Number(x.n)]));
-  const enviados = envios.length;
+  const enviados = Object.values(enviosDia).reduce((t, n) => t + n, 0);
   const confirmados = pessoasSt.confirmou || 0;
   const ativas = ATIVAS.reduce((t, s) => t + (stOp[s] || 0), 0);
   const captadas = stOp.captada || 0;
@@ -73,8 +80,8 @@ r.get('/captacao/painel', (req, res) => {
   // ---------- precisa de atenção ----------
   const semContato = ops.filter((o) => o.status === 'nova' && (o.ultimo_evento || o.criado_em) < dois).length;
   const particularesSemDono = somaG('pn', (x) => x.a === 'particular');
-  const pedidosErro = creditos.filter((p) => p.status === 'erro').length;
-  const pedidosFila = creditos.filter((p) => ['fila', 'buscando'].includes(p.status)).length;
+  const pedidosErro = pedidosSt.erro || 0;
+  const pedidosFila = (pedidosSt.fila || 0) + (pedidosSt.buscando || 0);
   const atencao = [
     { n: stFg.respondeu || 0, txt: 'resposta(s) de proprietário esperando o corretor', href: '#/fisguei?filtro=precisa', nivel: 'bad' },
     { n: stFg.confirmado || 0, txt: 'dono(s) confirmado(s) para levar ao Radar', href: '#/fisguei?filtro=confirmado', nivel: 'ok' },
@@ -93,8 +100,8 @@ r.get('/captacao/painel', (req, res) => {
     dias,
     fisguei: dias.map((d) => somaG('di', (x) => x.a === d)),
     radar: porDia(ops.map((o) => dia(o.criado_em))),
-    abordagens: porDia(envios.map((e) => dia(e.enviado_em))),
-    respostas: porDia(respostas.map((m) => dia(m.criado_em))),
+    abordagens: dias.map((d) => enviosDia[d] || 0),
+    respostas: dias.map((d) => respostasDia[d] || 0),
   };
 
   // ---------- bairros (juntando grafias), vitrines e portais ----------
@@ -123,7 +130,7 @@ r.get('/captacao/painel', (req, res) => {
       FROM oportunidades o WHERE o.status NOT IN ('descartada') ${tudo ? '' : 'AND (o.corretor_id=? OR o.corretor_id IS NULL)'} ORDER BY o.id DESC LIMIT 6`, ...(tudo ? [] : [u.id]))
     .map(({ fotos, op_foto, ...o }) => ({ ...o, ref: 'OP-' + String(o.id).padStart(4, '0'), foto: o.capa ? `/api/arquivos/${o.capa}` : op_foto || capaFg(fotos) }));
 
-  const creditosMes = creditos.filter((p) => dia(p.criado_em).slice(0, 7) === hoje.slice(0, 7)).reduce((t, p) => t + (p.creditos || 0), 0);
+  const creditosMes = xs('cr').filter((x) => x.b === hoje.slice(0, 7)).reduce((t, x) => t + Number(x.n || 0), 0);
   res.json({
     kpis: {
       base: fgTotal, hoje: somaG('di', (x) => x.a === hoje), opsHoje: ops.filter((o) => dia(o.criado_em) === hoje).length,
