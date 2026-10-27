@@ -1,0 +1,331 @@
+{
+  "slug": "chacara-primavera",
+  "titulo": "Chácara Primavera, Campinas: como é morar no bairro da zona leste",
+  "resumo": "Guia da Chácara Primavera, em Campinas: onde fica, origem do loteamento, ruas com nome de flores, prédios, acessos, Lagoa do Taquaral e vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Edifícios das Mansões Santo Antônio, vizinhas da Chácara Primavera, com placa indicando a Primavera (2005)",
+      "alt": "Conjunto de prédios residenciais altos atrás de um terreno gramado, com placa azul de trânsito escrita Primavera à esquerda",
+      "commons": "File:Mansões Santo Antônio. - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Rodovia Miguel Noel Nascentes Burnier, via que passa pela borda leste da Chácara Primavera",
+      "alt": "Avenida larga de pista dupla com canteiro arborizado e dois prédios altos ao fundo",
+      "commons": "File:Rod.Miguel Noel Nascentes Burnier - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Sede da CPFL, na Rodovia Miguel Noel Nascentes Burnier",
+      "alt": "Prédio comercial branco de seis andares com palmeiras e estacionamento de motos na frente",
+      "commons": "File:Sede da CPFL.JPG"
+    },
+    {
+      "id": "f4",
+      "legenda": "Lagoa do Taquaral, no Parque Portugal, com prédios da zona leste ao fundo",
+      "alt": "Lago calmo cercado de mata densa, com edifícios residenciais aparecendo no horizonte",
+      "commons": "File:Lagoa do Taquaral - panoramio (29).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Pista de caminhada à beira da Lagoa do Taquaral",
+      "alt": "Caminho de terra batida entre a margem do lago e árvores altas, com pessoas caminhando ao longe",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Bondinho do Parque Portugal, linha aberta em 1972",
+      "alt": "Bonde vermelho e branco sobre trilhos no meio de mata fechada",
+      "commons": "File:Parque Portugal tramway (4).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Réplica da caravela Anunciação no deck da Lagoa do Taquaral",
+      "alt": "Barco de madeira vermelho com velas brancas ao fundo de um lago, com chafariz em plataforma na frente",
+      "commons": "File:Lagoa Isaura Teles Alves de Lima.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Chácara Primavera** é um bairro residencial da região leste de Campinas, na faixa entre o Parque Taquaral e as Mansões Santo Antônio. Mistura condomínios de casas, sobrados e prédios de até 18 andares, com ruas que levam nomes de flores e comércio de bairro nas vias principais. Fica a menos de 2 km, em linha reta, da Lagoa do Taquaral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro pequeno, e boa parte da vida diária acontece nas ruas de dentro e nas vias que o contornam, como a Rua Jorge de Figueredo Corrêa e a Rodovia Miguel Noel Nascentes Burnier. Este guia reúne o que dá para confirmar em fontes públicas: a origem do loteamento, o perfil dos imóveis, os acessos, o lazer por perto e os bairros vizinhos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região leste de Campinas",
+        "Fica ao sul das Mansões Santo Antônio e ao norte do Parque Taquaral",
+        "Loteamento que já existia em 1961, quando uma lei municipal citou sua rua 10",
+        "Mistura de condomínios de casas e prédios de até 18 andares",
+        "Ruas com nomes de flores: Margaridas, Lírios, Hortências, Camélias, Jasmim",
+        "Acesso pela Rodovia Miguel Noel Nascentes Burnier, ligada à Norte-Sul",
+        "Lagoa do Taquaral a cerca de 1,7 km em linha reta"
+      ],
+      "titulo": "A Chácara Primavera em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica a Chácara Primavera"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Chácara Primavera faz parte da **região leste** de Campinas, na divisão usada pela lista de bairros da cidade. É a mesma região do Taquaral, de Nova Campinas, do Gramado e de Sousas e Joaquim Egídio, conhecida por concentrar bairros residenciais de padrão alto e cortada em boa parte pela Rodovia Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo mapa do OpenStreetMap, o bairro tem como referência ao norte as **Mansões Santo Antônio**, que por sua vez fazem divisa com a Fazenda Santa Cândida e o Jardim Santana. Ao sul, as ruas seguem para o **Parque Taquaral**. A leste, o limite é dado pela Rodovia Miguel Noel Nascentes Burnier. Como Campinas não tem limites legais de bairro bem definidos, é comum o mesmo endereço aparecer como Chácara Primavera em um cadastro e como Mansões Santo Antônio em outro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Origem e história do loteamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome conta parte da história: até a década de 1970, a área ao norte do Taquaral era ocupada por chácaras, segundo o verbete das Mansões Santo Antônio. A Chácara Primavera surgiu como loteamento nesse cenário, com as ruas inicialmente identificadas por números."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um registro guardado pelo **Centro de Memória da Unicamp** ajuda a datar o bairro. A Lei nº 2.438, de 27 de março de 1961, deu o nome de **Rua Emerson José Moreira** a uma via que, segundo o cabeçalho do documento, era formada por parte da Rua 3 do Parque Taquaral e pela *rua 10 da Chácara Primavera*. Ou seja, o loteamento já tinha ruas abertas no começo dos anos 1960."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O homenageado nasceu em Juiz de Fora, em 1898, e morreu em Campinas, em 1954. Trabalhou no comércio e na industrialização do café, fundou a Companhia Moreira de Padronização, instalada no Bonfim no fim da década de 1930, e foi sócio do jornal *Diário do Povo*. A rua que leva seu nome atravessa a Chácara Primavera e continua até o Parque Taquaral."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Boa parte das ruas internas leva nome de flores: Rua das Margaridas, Rua dos Lírios, Rua das Hortências, Rua das Camélias, Rua Jasmim, Rua Miosótis e Rua do Girassol, segundo o OpenStreetMap. Muitos condomínios do bairro seguem a mesma linha nos nomes.",
+      "titulo": "Ruas com nome de flor"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Chácara Primavera"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Chácara Primavera é um bairro de perfil misto. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro: perto de 30 horizontais, de casas e sobrados, e cerca de 14 verticais, que somam por volta de 1.400 unidades. O prédio mais alto da base tem 18 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso significa ruas de casas em condomínios pequenos, muitos com menos de 30 unidades, ao lado de torres residenciais de 15 a 18 andares com mais de 100 apartamentos cada. Para quem procura casa, a oferta costuma estar nesses condomínios horizontais; para quem quer apartamento, nos edifícios concentrados em algumas quadras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ritmo é de bairro residencial. O comércio de dia a dia fica nas vias principais, e as ruas internas, com nomes de flores, têm menos movimento. A seção *o que tem perto*, mais abaixo nesta página, lista padarias, mercados, farmácias e academias com a distância a pé, e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços, escolas e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o OpenStreetMap, o **Las Casas Mall** fica dentro da Chácara Primavera, na Rua Jorge de Figueredo Corrêa, uma das vias de comércio do bairro. Os levantamentos do Overture Maps e do OpenStreetMap usados nesta página contam cerca de 30 mercados e padarias, 60 restaurantes e cafés, 25 academias e espaços de esporte e cinco centros de compras num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, a região leste reúne alguns dos shoppings mais conhecidos de Campinas. O **Parque Dom Pedro Shopping**, no Jardim Santa Genebra, tem mais de 400 lojas e 185 mil m², segundo o guia do QuintoAndar, e fica do lado oeste das Mansões Santo Antônio, de acordo com o verbete do bairro vizinho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas escolas, o mesmo levantamento encontra cerca de 40 escolas num raio de 1,5 km, entre berçários, educação infantil, colégios e cursos de idiomas, várias a menos de 500 metros. Na saúde, há perto de 15 farmácias e clínicas no mesmo raio. A lista com nomes e tempo a pé aparece na seção ao vivo desta página; antes de decidir, vale confirmar vagas e horários direto com cada escola."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lagoa do Taquaral e lazer por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande espaço de lazer da região é o **Parque Portugal**, onde fica a **Lagoa do Taquaral**, a cerca de 1,7 km em linha reta do centro da Chácara Primavera. O nome oficial da lagoa é Lagoa Isaura Teles Alves de Lima, homenagem à esposa do fazendeiro que doou a área. O espelho d'água tem cerca de 166 mil m²."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque tem pista para caminhada, corrida e bicicleta em volta da lagoa, pedalinhos, playgrounds, quadras, pista de skate, o Planetário de Campinas e um bondinho histórico, cuja linha foi aberta em 1972. Ali também está a réplica da caravela *Anunciação*, de Pedro Álvares Cabral, presente desde os anos 1970 e restaurada em 2014; hoje ela fica num deck à beira da lagoa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos fins de semana o parque fica mais cheio, segundo o guia do QuintoAndar. Da Chácara Primavera, as ruas que seguem para o Parque Taquaral levam até a lagoa."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal via do bairro para quem sai de carro é a **Rodovia Miguel Noel Nascentes Burnier** (SPA-135/065), que passa pela borda leste da Chácara Primavera. É uma via semiexpressa de cerca de 4 km que liga a Avenida José de Souza Campos, a Norte-Sul, à Rodovia Adhemar de Barros, a Campinas–Mogi Mirim. A sede da CPFL fica nessa rodovia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela Norte-Sul, o caminho segue para o Cambuí e para a região central. Pela Campinas–Mogi Mirim, saem as viagens para o norte. Dentro do bairro, a Rua Jorge de Figueredo Corrêa e a Rua Emerson José Moreira fazem a ligação com o Parque Taquaral, e a Avenida do Café passa pelo lado sul."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em linha reta, pelas coordenadas do OpenStreetMap, o centro do bairro fica a cerca de 5 km da Catedral Metropolitana, no Centro de Campinas, e a pouco mais de 4 km da Unicamp, em Barão Geraldo. O tempo real de trajeto muda bastante com o horário, então vale testar o caminho para o trabalho antes de escolher o imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As **Mansões Santo Antônio**, ao norte, são descritas como bairro de classe média alta, com verticalização intensa desde os anos 1990. Incluem recantos como o Jardim Colonial, mais ao norte, e o Parque das Flores e o Villa Bella, a oeste, perto do Parque Dom Pedro Shopping, este último com condomínios verticais e horizontais de padrão alto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao sul, o **Parque Taquaral** e o Taquaral concentram a vida em volta da lagoa. A leste, do outro lado da rodovia, ficam o **Jardim Santana** e a região da Fazenda Santa Cândida. Todos estão na região leste da cidade, segundo a lista de bairros de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Nas Mansões Santo Antônio, uma antiga indústria de recuperação de solventes, a Proquima, funcionou de 1976 a 1996 e deixou uma área com solo contaminado. A Prefeitura de Campinas mantém uma página sobre essa área contaminada e acompanha a descontaminação com a Cetesb. Ao avaliar um imóvel na região, pergunte se o terreno tem alguma restrição ambiental registrada.",
+      "titulo": "Ponto de atenção no bairro vizinho"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Chácara Primavera faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Chácara Primavera costuma fazer sentido para quem quer morar na região leste, perto da Lagoa do Taquaral, com opção entre casa em condomínio pequeno e apartamento em prédio com lazer. Também atende quem precisa de acesso rápido à Norte-Sul e à Campinas–Mogi Mirim, e quem gosta de ter mercado, farmácia e academia a poucas quadras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são os de um bairro em transformação: prédios novos ao lado de casas, trânsito nas vias de acesso nos horários de pico e limites de bairro que mudam de um cadastro para outro. Confira o endereço exato, a distância até as vias principais e a situação documental do terreno."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte o valor do condomínio e o que ele inclui, o número de unidades e de vagas, a idade da construção, se o imóvel está registrado como Chácara Primavera ou Mansões Santo Antônio e se há alguma restrição ambiental no terreno.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Chácara Primavera, em Campinas?",
+      "resposta": "Na região leste de Campinas, entre as Mansões Santo Antônio, ao norte, e o Parque Taquaral, ao sul. A Rodovia Miguel Noel Nascentes Burnier passa pela borda leste do bairro."
+    },
+    {
+      "pergunta": "A Chácara Primavera é bom lugar para morar?",
+      "resposta": "Para quem quer bairro residencial na região leste, perto da Lagoa do Taquaral e com comércio de dia a dia por perto, costuma ser. Há condomínios de casas e prédios de até 18 andares. Pesam contra o trânsito nas vias de acesso nos horários de pico e o fato de ser um bairro ainda em verticalização."
+    },
+    {
+      "pergunta": "A Chácara Primavera tem mais casas ou apartamentos?",
+      "resposta": "Tem os dois. A base de condomínios da RUAH identifica cerca de 60 condomínios no bairro, perto de 30 de casas e cerca de 14 de prédios, que concentram a maior parte das unidades."
+    },
+    {
+      "pergunta": "Qual a distância da Chácara Primavera até a Lagoa do Taquaral?",
+      "resposta": "Cerca de 1,7 km em linha reta do centro do bairro até a lagoa, no Parque Portugal. As ruas Emerson José Moreira e Jorge de Figueredo Corrêa ligam o bairro ao Parque Taquaral."
+    },
+    {
+      "pergunta": "Como chegar ao Centro de Campinas saindo da Chácara Primavera?",
+      "resposta": "Pela Rodovia Miguel Noel Nascentes Burnier até a Avenida José de Souza Campos, a Norte-Sul, que segue para o Cambuí e a região central. Em linha reta, são cerca de 5 km até a Catedral."
+    },
+    {
+      "pergunta": "Por que as ruas da Chácara Primavera têm nome de flor?",
+      "resposta": "Não encontramos registro do motivo. O que se confirma é que muitas ruas internas levam nomes de flores, como Margaridas, Lírios, Hortências, Camélias e Jasmim, e que no começo dos anos 1960 as ruas do loteamento ainda eram identificadas por números."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, ficha da Lei nº 2.438/1961 (Rua Emerson José Moreira)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Wikipédia, Lista de bairros de Campinas (região leste)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipédia, verbete Mansões Santo Antônio",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Prefeitura de Campinas, Secretaria do Verde: área contaminada no bairro Mansões Santo Antônio",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Rodovia Miguel Noel Nascentes Burnier e Lagoa do Taquaral",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipedia, verbete Parque Portugal",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "QuintoAndar Guias, o que fazer em Campinas (Lagoa do Taquaral e Parque Dom Pedro Shopping)",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "OpenStreetMap, ruas, limites e coordenadas do bairro",
+      "site": "openstreetmap.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Chácara Primavera, em Campinas: um loteamento dos anos 1960 na região leste, com ruas de nome de flor, condomínios de casas, prédios de até 18 andares e a Lagoa do Taquaral a poucos minutos. Preparamos um guia com a história, os acessos, o lazer e os bairros vizinhos. Link na bio.",
+    "hashtags": [
+      "chacaraprimavera",
+      "campinas",
+      "taquaral",
+      "zonalestecampinas",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Chácara Primavera, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.014Z"
+}

@@ -1,0 +1,304 @@
+{
+  "slug": "gramado",
+  "titulo": "Gramado, Campinas: como é morar no bairro de casas em condomínio",
+  "resumo": "Guia do Gramado (Sítios de Recreio Gramado), em Campinas: ruas com nome de árvore, casas em condomínio, Gramado Mall, acessos e vizinhos na Região Leste.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Vista da varanda de casa da RUAH à venda no Gramado, com palmeiras e casas vizinhas",
+      "alt": "Varanda com piso de cerâmica e gradil preto, com vista para jardim gramado, palmeiras altas e casas ao fundo",
+      "imovel_foto": 316
+    },
+    {
+      "id": "f2",
+      "legenda": "Casa em condomínio com imóvel da RUAH à venda no Gramado, vista do jardim",
+      "alt": "Casa de dois andares com pergolado de madeira, piscina azul e palmeiras na frente",
+      "imovel_foto": 315
+    },
+    {
+      "id": "f3",
+      "legenda": "Fundos de casa da RUAH à venda no Gramado, com piscina e jardim",
+      "alt": "Piscina com borda de pedra diante de casa branca com terraço e palmeiras",
+      "imovel_foto": 332
+    },
+    {
+      "id": "f4",
+      "legenda": "Shopping Iguatemi Campinas, a cerca de 3 km do Gramado",
+      "alt": "Fachada de shopping com cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada do Galleria Shopping, outro centro de compras da Região Leste",
+      "alt": "Avenida com canteiro de palmeiras, mastro com bandeira do Brasil e prédio vermelho do shopping ao fundo",
+      "commons": "File:Shopping galleria campinas.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rodovia Dom Pedro I no sentido da Anhanguera, principal saída rodoviária da região",
+      "alt": "Rodovia de pista dupla com placas verdes suspensas indicando Americana, Limeira, Jundiaí e São Paulo",
+      "commons": "File:Rodovia Dom Pedro - Sentido Anhanguera - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Rua arborizada da Nova Campinas, bairro-jardim da mesma Região Leste",
+      "alt": "Rua residencial larga e vazia com casas baixas e uma árvore de flores amarelas",
+      "commons": "File:Nova Campinas - Campinas - SP.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Gramado** é um bairro residencial da Região Leste de Campinas, registrado com o nome de **Sítios de Recreio Gramado**. É formado quase só por casas, a maioria dentro de pequenos condomínios fechados, em ruas chamadas de alamedas e batizadas com nomes de árvores. Fica perto da Rodovia Dom Pedro I e tem como ponto de referência o **Gramado Mall**, um centro de lojas e serviços em funcionamento desde 2002."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro pequeno e pouco documentado: não há, nas fontes públicas consultadas, um histórico oficial do loteamento. Este guia reúne o que dá para confirmar, como o perfil dos imóveis, as ruas, o comércio próximo, os acessos e os bairros vizinhos, e aponta o que vale checar antes de decidir pela mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da Região Leste de Campinas, com nome oficial de Sítios de Recreio Gramado",
+        "Perfil de casas em condomínios horizontais, sem prédios altos",
+        "A base da RUAH identifica cerca de 20 condomínios horizontais no bairro",
+        "Ruas com nome de árvores, como Alameda das Tipuanas e Alameda das Palmeiras",
+        "O Gramado Mall, aberto em 2002, reúne mais de 30 lojas e serviços",
+        "A Rodovia Dom Pedro I passa a cerca de 1 km do centro do bairro"
+      ],
+      "titulo": "O Gramado em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica o Gramado e de onde vem o nome"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Gramado aparece na lista de bairros da **Região Leste** de Campinas, ao lado de nomes como Nova Campinas, Taquaral, Santa Marcelina, Hípica e Alphaville. No mapa colaborativo OpenStreetMap, o loteamento está cadastrado como *Sítios de Recreio Gramado*, e um trecho da Rodovia Dom Pedro I aparece dentro dos limites do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome registrado é o do loteamento original, e por isso os dois aparecem nos anúncios e nos cadastros de endereço: *Gramado* no uso do dia a dia, *Sítios de Recreio Gramado* nos documentos. Quando for pesquisar imóveis ou conferir uma escritura, procure pelas duas formas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Os cadastros de endereço listam 19 logradouros no bairro. Quase todos homenageiam árvores: Alameda das Araucárias, das Tipuanas, dos Jacarandás, das Magnólias, dos Ciprestes, dos Cambarás, dos Ingazeiros, das Espatódeas, dos Pinus, das Palmeiras e Rua dos Vidoeiros, entre outras.",
+      "titulo": "Ruas com nome de árvore"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Gramado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Gramado é um bairro de casas. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 23 condomínios no bairro, dos quais 20 são horizontais e nenhum é vertical. São núcleos pequenos, de 6 a pouco mais de 20 casas cada, que somam perto de 190 unidades nos condomínios com dado disponível."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os nomes da base estão **Vila das Verbenas**, **Residencial Quinta das Tipuanas**, **Condomínio Altavila**, **Residencial Porto Vita**, **Villa Deste**, **Residencial Costa Verde**, **Residencial Vila Ophelia**, **Quinta dos Ipês** e **Residencial Vale das Nascentes**. Os anúncios do bairro mostram, em geral, casas grandes, com garagem para vários carros, piscina e jardim."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ritmo é de bairro residencial afastado do movimento: as alamedas internas servem quase só a quem mora ali, e o comércio fica concentrado em poucos pontos. Pela base de pontos de interesse usada pela RUAH, num raio de 1,5 km do centro do bairro há poucos mercados, restaurantes e academias, quase todos agrupados no entorno do Gramado Mall. Para a maior parte das compras, o morador usa o carro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Gramado Mall e comércio por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal endereço de comércio do bairro é o **Gramado Mall**, na Alameda dos Vidoeiros, que alguns cadastros situam já no vizinho Bairro das Palmeiras. Segundo o próprio centro comercial, ele funciona desde 2002 e tem mais de 30 lojas, com estacionamento, fraldário e um espaço para pequenas reuniões."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mix é de conveniência: farmácia, joalheria, clínicas de estética e odontologia, estúdio de atividade física, lavanderia, pet shop, câmbio, salão de beleza e opções de comida, como a hamburgueria Meet Burger, o açougue Zezinho Carnes e o Koa Poke. Na prática, é ali que o morador resolve o básico sem sair da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, os shoppings da Região Leste ficam a poucos quilômetros. O **Shopping Iguatemi Campinas**, na Avenida Iguatemi, está a cerca de 3 km em linha reta do centro do Gramado, e o **Galleria Shopping** fica a pouco mais de 5 km. O Parque Dom Pedro Shopping completa a lista de grandes centros de compras da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos, avenidas e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Rodovia Dom Pedro I**, que corta boa parte da Região Leste, passa a cerca de 1 km do centro do bairro, segundo o OpenStreetMap. É a principal ligação rodoviária do bairro com o resto de Campinas e com as cidades vizinhas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro, a via mais citada nos endereços é a **Avenida Professora Dea Ehrhardt Carvalho**. Nos anúncios da região também aparecem a **Avenida Papa João Paulo I** e a **Avenida Oswaldo Von Zuben**, que ligam o Gramado aos bairros vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em linha reta, a Catedral Metropolitana, no Centro de Campinas, fica a cerca de 6 km, e o Parque Portugal, no Taquaral, a cerca de 6,5 km. O trajeto real de carro é maior e depende do trânsito nas avenidas da Região Leste; vale testar o caminho até o trabalho e a escola em horário de pico."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Gramado faz divisa com o **Bairro das Palmeiras**, onde fica o Shopping Iguatemi, e tem por perto o **Jardim Santa Marcelina** e a **Chácara Bela Vista**. Nos anúncios, os condomínios do Gramado e do Bairro das Palmeiras aparecem lado a lado, com o mesmo perfil de casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma Região Leste, a cerca de 4 km, está a **Nova Campinas**, bairro-jardim proposto em 1945 pelo urbanista Jorge de Macedo Vieira, com ruas sinuosas que acompanham o relevo e muita arborização. Segundo um estudo da Unicamp, o bairro foi tombado pelo Condepacc no fim de 2004."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fontes consultadas não apontam escolas nem hospitais dentro dos limites do Gramado, o que combina com o perfil estritamente residencial do bairro. Clínicas de estética e odontologia funcionam no Gramado Mall. Para escolas, hospitais e laboratórios, o morador recorre aos bairros vizinhos da Região Leste; a seção ao vivo desta página lista o que há por perto, com o tempo a pé."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Gramado faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Gramado costuma atender a quem quer **casa em condomínio**, com terreno, jardim e piscina, em ruas de pouco movimento e perto da Rodovia Dom Pedro I: famílias que circulam de carro, quem trabalha em outras cidades da região ou quem deixa um apartamento em busca de mais espaço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também são claros. O bairro depende do carro, tem pouco comércio a pé além do Gramado Mall e não tem prédios, então quem procura apartamento precisa olhar os vizinhos. Por ser formado por condomínios pequenos, cada um tem regras, taxas e infraestrutura próprias, e a diferença entre eles é grande."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte o valor da taxa do condomínio e o que ela cobre, quantas casas o condomínio tem, como funciona a portaria, se há área comum de lazer, qual o tamanho do terreno e a distância real, de carro, até a escola e o trabalho em horário de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o bairro Gramado, em Campinas?",
+      "resposta": "Na Região Leste de Campinas, perto da Rodovia Dom Pedro I e vizinho ao Bairro das Palmeiras, onde fica o Shopping Iguatemi."
+    },
+    {
+      "pergunta": "Gramado e Sítios de Recreio Gramado são o mesmo bairro?",
+      "resposta": "Sim. Sítios de Recreio Gramado é o nome registrado do loteamento; Gramado é a forma usada no dia a dia. Anúncios e cadastros usam os dois."
+    },
+    {
+      "pergunta": "O Gramado é bom para morar?",
+      "resposta": "Para quem quer casa em condomínio, com espaço e ruas tranquilas perto da Dom Pedro I, sim. Quem prefere resolver tudo a pé ou procura apartamento pode achar o bairro pouco prático."
+    },
+    {
+      "pergunta": "O Gramado tem prédios ou só casas?",
+      "resposta": "Praticamente só casas. A base de condomínios da RUAH identifica cerca de 20 condomínios horizontais no bairro e nenhum prédio residencial."
+    },
+    {
+      "pergunta": "O que tem no Gramado Mall?",
+      "resposta": "Mais de 30 lojas e serviços de conveniência, como farmácia, clínicas, estúdio de atividade física, pet shop, lavanderia, câmbio e restaurantes, além de estacionamento."
+    },
+    {
+      "pergunta": "Qual o shopping mais perto do Gramado?",
+      "resposta": "Dentro do bairro, o Gramado Mall. Entre os grandes shoppings, o Iguatemi Campinas fica a cerca de 3 km em linha reta."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "QuintoAndar, Como é morar em Gramado (Campinas)",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, Regiões de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Gramado Mall, site oficial",
+      "site": "gramadomall.com.br"
+    },
+    {
+      "nome": "Buser, ficha do Gramado Mall",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "Qual o CEP, logradouros de Sítios de Recreio Gramado",
+      "site": "qualocep.com"
+    },
+    {
+      "nome": "Wikipédia, Lista de bairros de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Unicamp (PIBIC/IFCH), Nova Campinas, Bairro-Jardim: o urbanismo de Jorge de Macedo Vieira",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "OpenStreetMap, limites do bairro e distâncias",
+      "site": "openstreetmap.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Gramado, em Campinas: alamedas com nome de árvore, casas em pequenos condomínios e a Rodovia Dom Pedro I a um passo. Montamos um guia do bairro com o perfil dos imóveis, o Gramado Mall, os acessos, os vizinhos da Região Leste e o que perguntar antes de se mudar. Link na bio.",
+    "hashtags": [
+      "gramado",
+      "campinas",
+      "regiaoleste",
+      "casaemcondominio",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Gramado, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.012Z"
+}

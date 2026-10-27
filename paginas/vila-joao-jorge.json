@@ -1,0 +1,298 @@
+{
+  "slug": "vila-joao-jorge",
+  "titulo": "Vila João Jorge, Campinas: como é morar no bairro do Samaritano",
+  "resumo": "Guia da Vila João Jorge, em Campinas: onde fica, o Hospital Samaritano, prédios, vizinhos como a Ponte Preta e o acesso ao Centro e à rodoviária.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada do Estádio Moisés Lucarelli, da Ponte Preta, com prédios residenciais da região ao fundo",
+      "alt": "Fachada branca de estádio com o letreiro Estádio Moisés Lucarelli e A. A. Ponte Preta, com edifícios atrás",
+      "commons": "File:Fachada do Estádio Moisés Lucarelli.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Vista da Zona Sul próxima ao Centro, com casas, telhados e prédios no horizonte",
+      "alt": "Panorama de bairro com casas de telhado cerâmico em primeiro plano e prédios ao longe sob céu nublado",
+      "commons": "File:Bairros Ponte Preta, Proença, Guarani, Nova Campinas e Regiao da Norte Sul, vista pela UNIP 2 - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Cruzamento da Avenida da Abolição com a Rua Álvaro Ribeiro, no bairro Ponte Preta",
+      "alt": "Cruzamento urbano com semáforos, comércio de rua e prédios residenciais de média altura",
+      "commons": "File:Av da Aboliçao X Rua Alvaro Ribeiro - Bairro Ponte Preta - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Sede da Câmara Municipal de Campinas, na Avenida da Saudade",
+      "alt": "Prédio baixo de fachada azul com o letreiro Câmara Municipal de Campinas, à beira de uma avenida",
+      "commons": "File:Câmara Municipal de Campinas.JPG"
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada do Cemitério da Saudade, fundado em 1880",
+      "alt": "Pórtico neoclássico claro com colunas e escadaria, ladeado por palmeiras",
+      "commons": "File:Cemitério da Saudade Campinas (25).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Túmulos e monumentos antigos no interior do Cemitério da Saudade",
+      "alt": "Fileiras de jazigos de mármore com estátuas, cruzes e capelas sob céu com nuvens",
+      "commons": "File:Cemitério da Saudade Campinas (9).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila João Jorge** é um bairro da Zona Sul de Campinas, a pouco mais de um quilômetro do Centro, conhecido sobretudo por abrigar o **Hospital Samaritano Campinas**. É uma área pequena e residencial, com casas e prédios de porte médio, cercada por bairros tradicionais como a Ponte Preta e por vias que levam rápido ao Centro e à rodoviária."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, a Vila João Jorge oferece uma rotina com hospital, padarias, mercados e restaurantes a poucos passos, e o Centro ao alcance de uma caminhada ou de uma viagem curta de ônibus. Este guia reúne o que foi possível confirmar sobre o bairro e seus vizinhos, o perfil dos imóveis e o que vale considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro pequeno da Zona Sul de Campinas, perto do Centro",
+        "Abriga o Hospital Samaritano Campinas, fundado em 1980, com pronto-socorro 24 horas",
+        "Perfil residencial, com cerca de dez condomínios na base da RUAH, quase todos verticais",
+        "Vizinho da Ponte Preta, do Estádio Moisés Lucarelli e da Avenida da Saudade",
+        "A rodoviária de Campinas fica a menos de 1 km, na Vila Industrial",
+        "Comércio de bairro, com padarias, mercados e churrascarias no entorno imediato"
+      ],
+      "titulo": "A Vila João Jorge em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica a Vila João Jorge"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila João Jorge está na Região Sul de Campinas, no trecho entre o Centro e os bairros da Ponte Preta e do Swift. Pelos dados de mapa usados pela RUAH, o Terminal Central de ônibus fica a cerca de 1 km do centro do bairro, e a rodoviária, a pouco mais de 800 metros. A Avenida da Saudade, onde ficam a Câmara Municipal e o Colégio Dom Barreto, passa a poucas quadras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro de dimensão reduzida, que muita gente conhece pelo nome do hospital. Em anúncios de imóveis aparecem como endereços do bairro vias como a Rua Artur Ramos, a Rua Vitoriano dos Anjos e a Avenida General Carneiro, e o próprio Samaritano fica na Rua Engenheiro Monlevade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "As fontes consultadas não explicam a origem do nome Vila João Jorge. Existe uma Avenida João Jorge, via antiga da Vila Industrial que no começo do século XX era o principal caminho para Itu, mas não encontramos registro que ligue a avenida ao loteamento. Por isso, esta página não arrisca uma explicação.",
+      "titulo": "E o nome?"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila João Jorge"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila João Jorge mistura casas térreas e sobrados com prédios de média altura. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de dez condomínios no bairro, oito deles verticais, somando perto de 470 unidades. O prédio mais alto da base tem 17 andares; a maior parte fica entre 5 e 12."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso significa um bairro de apartamentos de dois e três quartos em edifícios mais antigos e enxutos, sem os grandes condomínios-clube das regiões mais novas da cidade. Quem procura casa também encontra opções, já que as residências térreas continuam presentes nas ruas internas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia se resolve perto de casa. No entorno imediato há padarias, mercados, farmácias, academias, clínicas e uma concentração de churrascarias e lanchonetes. A seção *o que tem na Vila João Jorge e em volta*, mais abaixo nesta página, lista esses lugares com a distância de cada um e é atualizada automaticamente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é o movimento natural de um hospital de grande porte, com pronto-socorro aberto 24 horas: há circulação de visitantes, pacientes e profissionais ao longo de todo o dia nas ruas mais próximas. Para quem trabalha na área da saúde, por outro lado, morar a poucos passos do Samaritano é uma vantagem clara."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Hospital Samaritano e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Hospital Samaritano Campinas** fica na Rua Engenheiro Monlevade, na Vila João Jorge. Segundo o próprio hospital, ele foi fundado em 1980 com foco em maternidade e, ao longo dos anos, ampliou a estrutura e os serviços. Hoje oferece pronto-socorro 24 horas, maternidade, exames de imagem e laboratoriais, hemodinâmica, UTIs neonatal, pediátrica e adulto, unidade coronariana e centro cirúrgico, com destaque para cirurgia cardíaca adulta e infantil."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta do hospital se formou um pequeno polo de consultórios, clínicas de ortopedia e fisioterapia e farmácias, o que facilita consultas e exames sem atravessar a cidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ponte Preta, Moisés Lucarelli e Avenida da Saudade"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o bairro **Ponte Preta**, também na Zona Sul e próximo ao Centro. O nome vem de uma ponte construída no fim do século XIX para ligar o centro da cidade à região do Cemitério da Saudade; ela foi revestida de alcatrão para resistir à fumaça dos trens e ficou preta. A ponte inspirou o nome da **Associação Atlética Ponte Preta**, fundada em 11 de agosto de 1900, no início da Rua Abolição."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O clube manda seus jogos no **Estádio Moisés Lucarelli**, o Majestoso, inaugurado em 12 de setembro de 1948. Ele foi erguido ao longo de cerca de seis anos com doações de material feitas por torcedores, e hoje tem capacidade liberada para pouco mais de 17 mil pessoas. Em dias de jogo, o movimento de carros e torcedores aumenta nas ruas da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **Avenida da Saudade** ficam a sede da **Câmara Municipal de Campinas** e o **Colégio Dom Barreto**, escola particular e filantrópica que atende da creche ao ensino médio. Pelos dados de mapa da RUAH, o colégio está a cerca de 300 metros do centro da Vila João Jorge."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cemitério da Saudade, patrimônio da cidade"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Também nas proximidades fica o **Cemitério da Saudade**, fundado em 10 de outubro de 1880, depois que os cemitérios antigos, próximos à ferrovia, foram transferidos para uma área mais afastada do centro. É um cemitério público municipal com cerca de 181 mil metros quadrados e 32 mil jazigos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lugar guarda mausoléus de famílias ligadas à história de Campinas, como os de Francisco Glicério e de Hercules Florence, pioneiro da fotografia no Brasil, além de monumentos do século XIX e do começo do século XX, vários importados da Itália, em estilos que vão do neoclássico ao art déco. O Sesc já organizou caminhadas guiadas pelas alamedas do cemitério."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e o Swift"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A posição da Vila João Jorge favorece quem depende de transporte coletivo. A **rodoviária de Campinas**, o Terminal Multimodal Ramos de Azevedo, fica na Rua Dr. Pereira Lima, na Vila Industrial, e o Terminal Central concentra as linhas urbanas que cruzam a cidade. Na Vila Industrial passa ainda a Avenida João Jorge, que integra o Corredor BRT Ouro Verde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado, o **Swift** reúne comércio de grande porte. O bairro deve o nome à antiga fábrica da Swift, parte do distrito industrial instalado a partir da década de 1940. As indústrias saíram nos anos 1980, e o perfil mudou com a chegada de um hipermercado em 1990 e de uma unidade da Unip, que trouxe também trânsito intenso no horário de pico."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila João Jorge faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila João Jorge combina com quem quer morar perto do Centro sem estar dentro dele, com hospital, comércio de bairro e terminais de ônibus a uma distância curta. Atende bem profissionais de saúde, estudantes, casais e famílias pequenas que preferem apartamentos em prédios menores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de decidir, vale considerar o movimento em volta do hospital e o fluxo extra em dias de jogo no Moisés Lucarelli. Também vale visitar o imóvel em horários diferentes, para sentir o ritmo da rua onde ele fica."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A Vila João Jorge é bom para morar?",
+      "resposta": "Para quem quer ficar perto do Centro, com hospital, mercados e terminais de ônibus a poucos minutos, sim. É um bairro pequeno, de casas e prédios de porte médio. Os pontos de atenção são o movimento ligado ao Hospital Samaritano e o fluxo em dias de jogo da Ponte Preta."
+    },
+    {
+      "pergunta": "Onde fica a Vila João Jorge, em Campinas?",
+      "resposta": "Na Região Sul de Campinas, a pouco mais de 1 km do Centro, entre o Centro e bairros como a Ponte Preta e o Swift. A Avenida da Saudade passa a poucas quadras."
+    },
+    {
+      "pergunta": "Qual hospital fica na Vila João Jorge?",
+      "resposta": "O Hospital Samaritano Campinas, na Rua Engenheiro Monlevade. Fundado em 1980, tem pronto-socorro 24 horas, maternidade, UTIs e centro cirúrgico, com destaque para cirurgia cardíaca."
+    },
+    {
+      "pergunta": "A Vila João Jorge fica perto da rodoviária?",
+      "resposta": "Sim. Pelos dados de mapa usados pela RUAH, a rodoviária de Campinas, na Vila Industrial, fica a pouco mais de 800 metros do centro do bairro, e o Terminal Central, a cerca de 1 km."
+    },
+    {
+      "pergunta": "Tem escola perto da Vila João Jorge?",
+      "resposta": "Sim. O Colégio Dom Barreto, particular, que atende da creche ao ensino médio, fica na Avenida da Saudade, a cerca de 300 metros do centro do bairro. A lista completa de escolas próximas aparece mais abaixo nesta página."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Vila João Jorge?",
+      "resposta": "As fontes consultadas não explicam a origem do nome. Existe uma Avenida João Jorge, antiga via da Vila Industrial, mas não há registro que ligue a avenida ao bairro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Hospital Samaritano Campinas, site oficial (endereço, fundação e serviços)",
+      "site": "samaritanocampinas.com.br"
+    },
+    {
+      "nome": "Câmara Municipal de Campinas, endereço da sede",
+      "site": "campinas.sp.leg.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Ponte Preta (Campinas), Associação Atlética Ponte Preta, Estádio Moisés Lucarelli e Swift (Campinas)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Arte Funerária Brasil, ficha do Cemitério da Saudade de Campinas",
+      "site": "artefunerariabrasil.com.br"
+    },
+    {
+      "nome": "Sesc SP, roteiro de caminhada no Cemitério da Saudade",
+      "site": "sescsp.org.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, documento sobre a Vila Industrial e a Avenida João Jorge",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Notícia Bibliográfica e Histórica (PUC-Campinas), memórias da Vila Industrial",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "Correio da Manhã, sobre a fiscalização no Corredor BRT Ouro Verde na Avenida João Jorge (junho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Escol.as, ficha do Colégio Dom Barreto",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Buser, endereço do Terminal Multimodal Ramos de Azevedo",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila João Jorge, em Campinas: o bairro do Hospital Samaritano, vizinho da Ponte Preta e a poucos minutos do Centro e da rodoviária. Preparamos um guia com o perfil dos imóveis, os vizinhos, a saúde, o transporte e o que considerar antes de se mudar. Link na bio.",
+    "hashtags": [
+      "vilajoaojorge",
+      "campinas",
+      "pontepreta",
+      "zonasulcampinas",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila João Jorge, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.013Z"
+}

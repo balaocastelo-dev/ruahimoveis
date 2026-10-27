@@ -1,0 +1,293 @@
+{
+  "slug": "jardim-proenca",
+  "titulo": "Jardim Proença, Campinas: como é morar no bairro do Proença",
+  "resumo": "Guia do Jardim Proença, em Campinas: a origem na antiga Fazenda Proença, a Casa Grande e Tulha, os prédios, a Avenida Princesa D'Oeste e os vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "O Jardim Proença visto da Rua Proença: casas térreas na frente e prédios ao fundo",
+      "alt": "Casas de telhado alaranjado e árvores em primeiro plano, com uma fileira de edifícios residenciais sob céu azul",
+      "commons": "File:Campinas - SP - Jardim Proença visto da Rua Proença.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Parede de taipa de pilão da Tulha, construção do fim do século XVIII",
+      "alt": "Parede alta de terra socada alaranjada, com telhado de telhas de barro e uma cerca viva na frente",
+      "commons": "File:Casa Grande e Tulha da Antiga Chacara do Paraiso das Campinas Velhas Foto 5.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A Tulha vista da calçada, atrás de uma cerca viva e de uma árvore",
+      "alt": "Construção comprida de terra socada com telhado de barro, um tronco de árvore à frente e uma calçada",
+      "commons": "File:Casa Grande e Tulha da Antiga Chacara do Paraiso das Campinas Velhas Foto 1.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Avenida Princesa D'Oeste com o letreiro do Proença no canteiro central",
+      "alt": "Avenida movimentada com carros, prédios altos dos dois lados e um letreiro com o nome Proença no canteiro",
+      "commons": "File:Av. Princesa D`Oeste - panoramio (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Trecho da Avenida Princesa D'Oeste ladeado por edifícios residenciais",
+      "alt": "Avenida larga com canteiro gramado, um carro preto e vários prédios de apartamentos ao fundo",
+      "commons": "File:Av. Princesa d´oeste - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Vista do Proença em 2007, com casas, prédios e galpões",
+      "alt": "Vista do alto de um bairro com muitas casas de telhado alaranjado, alguns prédios e galpões",
+      "commons": "File:Vista - Proença, jan 2007 - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "O Estádio Brinco de Ouro da Princesa, do Guarani, cercado de casas e prédios",
+      "alt": "Estádio de futebol com arquibancada verde e cobertura de concreto, com prédios altos atrás e casas na frente",
+      "commons": "File:Estádio Brinco de Ouro.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Fachada do Estádio Moisés Lucarelli, da Ponte Preta",
+      "alt": "Fachada branca de estádio com o letreiro Estádio Moisés Lucarelli A. A. Ponte Preta e prédios ao lado",
+      "commons": "File:Fachada do Estádio Moisés Lucarelli.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Proença**, ou simplesmente Proença, é um bairro de Campinas perto do Centro, assentado num vale cortado pela **Avenida Princesa D'Oeste**. Mistura casas térreas e sobrados com uma grande quantidade de prédios residenciais, tem comércio de bairro ao longo das avenidas e fica entre os dois estádios da cidade, o Brinco de Ouro e o Moisés Lucarelli."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É também um bairro com história antiga: nele fica a **Casa Grande e Tulha**, conjunto da época do açúcar e do café tombado nas esferas municipal, estadual e federal. Este guia reúne a origem do nome, o perfil dos imóveis, os acessos e o que vale considerar antes de escolher o Proença para morar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro de Campinas próximo ao Centro, num vale cortado pela Avenida Princesa D'Oeste",
+        "Perfil misto: casas e sobrados lado a lado com prédios residenciais",
+        "Nasceu nas terras da antiga Fazenda Proença, uma das primeiras sesmarias da cidade",
+        "Abriga a Casa Grande e Tulha, tombada por Condepacc, Condephaat e Iphan",
+        "Vizinho dos estádios Brinco de Ouro (Guarani) e Moisés Lucarelli (Ponte Preta)",
+        "A base da RUAH identifica cerca de 80 condomínios no bairro, quase todos verticais"
+      ],
+      "titulo": "O Jardim Proença em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Proença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem da antiga **Fazenda Proença**, que segundo um artigo da revista Tulha, da PUC-Campinas, foi uma das primeiras sesmarias de Campinas e servia de pouso na Estrada dos Goiases, o caminho para as regiões do ouro. Pelo mesmo histórico, a propriedade começou como engenho de açúcar e depois virou fazenda de café."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com o tempo, os herdeiros dividiram as terras, e uma das partes, a Chácara Paraíso, passou a se chamar **Chácara Proença**. A Wikipédia associa o nome a Antônio Manuel Proença, dono de uma fazenda na faixa entre o atual Estádio Brinco de Ouro e o Bosque São José. A **Rua Proença**, onde o bairro começa, guarda o mesmo nome. O córrego que passa pela região também se chama Proença."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O loteamento já aparecia nos atos da Prefeitura no começo dos anos 1970. Um decreto municipal de abril de 1973, guardado no Centro de Memória da Unicamp, deu o nome de **Avenida dos Esportes** à antiga Rua 2 do Jardim Proença, entre a Rua Proença e a Avenida Princesa D'Oeste, e traçou a nova Avenida Monte Castelo passando por parte do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Casa Grande e Tulha, patrimônio do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco histórico do Proença é a **Casa Grande e Tulha**, na Avenida Doutor Arlindo Joaquim de Lemos. A tulha, de taipa de pilão e telhado de quatro águas, é atribuída aos anos de 1790 a 1795, ainda no ciclo do açúcar, e servia para guardar e produzir melado. A casa grande é do início da fase do café, no século XIX, com paredes externas de taipa de cerca de 75 centímetros."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1978, o arquiteto Antônio da Costa Santos, o Toninho, comprou o imóvel com o irmão e conduziu a restauração; ele viveu ali com a família e foi prefeito de Campinas a partir de 2001. O conjunto é tombado pelo Condephaat, pelo Condepacc e pelo Iphan, e é um dos poucos imóveis da cidade protegidos nas três esferas. É propriedade particular: a tulha abriga um escritório de arquitetura e a casa grande virou residência."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Proença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Proença tem duas paisagens. Nas ruas internas ainda há muitas casas e sobrados, alguns com quintal, e na Wikipédia o bairro aparece como um lugar que manteve casas apesar da verticalização ao redor. Ao longo da Avenida Princesa D'Oeste e das ruas próximas, a cena é de prédios residenciais, de médio e grande porte."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da RUAH, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 80 condomínios no bairro, quase todos verticais, que somam em torno de 1.500 apartamentos. O prédio mais alto da base tem 18 andares, mas boa parte dos edifícios tem entre 6 e 16 pavimentos. Há desde prédios pequenos, com menos de dez unidades, até torres com mais de 60 apartamentos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Wikipédia agrupa o Proença com Nova Campinas, Cambuí e Guanabara entre as áreas de renda mais alta próximas ao Centro. Na prática, quem procura imóvel ali encontra apartamentos de vários tamanhos e idades, além de casas para quem prefere térreo e quintal sem se afastar muito do Centro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, comércio e serviços no Proença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro fica a **Escola Estadual Professor José Vilagelin Neto**, na Rua Dom Luiz Antonio de Souza, que oferece os anos finais do ensino fundamental e o ensino médio, segundo o cadastro escolar público. O levantamento de lugares da RUAH, com dados do OpenStreetMap e da Overture Maps, conta cerca de 70 escolas de todos os tipos num raio de 1,5 km do centro do bairro, de educação infantil a cursos livres."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia se concentra ao longo das avenidas, com padarias, mercados, farmácias, agências bancárias e restaurantes. No mesmo raio de 1,5 km, o levantamento da RUAH aponta mais de 70 mercados e padarias, cerca de 160 restaurantes e cafés e quase 50 pontos ligados à saúde, como clínicas e farmácias. Para compras maiores, o Centro de Campinas fica perto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos: a Avenida Princesa D'Oeste"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O eixo do bairro é a **Avenida Princesa D'Oeste**, que corre pelo fundo do vale e é a principal ligação do bairro com o restante da cidade. Outras vias que aparecem nos documentos sobre o bairro são a Rua Proença, a Avenida Monte Castelo, a Avenida dos Esportes e a Avenida Doutor Arlindo Joaquim de Lemos, onde fica a Casa Grande e Tulha."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por estar num vale, o bairro faz parte da bacia do Ribeirão Anhumas, que sofre com alagamentos em chuvas fortes. Para enfrentar o problema, a Prefeitura constrói o **Reservatório Proença**, na Praça de Esportes Paranapanema, com capacidade para 120 milhões de litros. Segundo o Correio da Manhã, as obras começaram em julho de 2024 e a entrega está prevista para junho de 2027, com bloqueios temporários de trechos da Princesa D'Oeste definidos pela Emdec."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Com dois estádios de futebol por perto, o trânsito muda em dias de partida. Se você vai morar perto do Brinco de Ouro ou do Moisés Lucarelli, vale conferir os bloqueios que a Emdec costuma anunciar antes dos jogos.",
+      "titulo": "Dia de jogo"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos: estádios, Bosque São José e bairros próximos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Proença é vizinho dos dois grandes estádios de Campinas. O **Brinco de Ouro da Princesa**, casa do Guarani, foi inaugurado em 1953 e tem capacidade para cerca de 20 mil pessoas. O **Moisés Lucarelli**, da Ponte Preta, foi inaugurado em 1948 e erguido com doações de material de torcedores ao longo de cerca de seis anos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela divisão informal de Campinas, que não tem limites oficiais de bairro, o entorno do Proença inclui o Jardim Paulistano, entre a Avenida Monte Castelo e o Bosque São José, o Jardim Primavera, perto do Moisés Lucarelli, a Vila Marta e a Vila Nova São José. O **Bosque São José** é a área verde mais próxima. Do outro lado, a Nova Campinas, bairro-jardim projetado em 1945, fica às margens do mesmo córrego Proença."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Proença faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Proença atende quem quer morar perto do Centro com comércio de bairro à mão e escolha entre apartamento e casa. A oferta de prédios é grande e variada, e o bairro tem um patrimônio histórico raro em Campinas, além de vizinhos com áreas verdes e cultura do futebol."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também estão nas fontes: a Avenida Princesa D'Oeste concentra o tráfego, há obras de drenagem em andamento até 2027 e os dias de jogo mexem com o trânsito nas ruas perto dos estádios. Antes de decidir, vale conhecer a rua do imóvel em horários diferentes e perguntar sobre o histórico de alagamento no quarteirão."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Proença, em Campinas?",
+      "resposta": "Perto do Centro, num vale cortado pela Avenida Princesa D'Oeste, entre os estádios Brinco de Ouro e Moisés Lucarelli. Os vizinhos incluem o Jardim Paulistano, o Jardim Primavera, a Vila Marta, a Vila Lemos e a Nova Campinas."
+    },
+    {
+      "pergunta": "O Jardim Proença é bom para morar?",
+      "resposta": "Para quem quer ficar perto do Centro, com comércio de bairro e opção entre casa e apartamento, sim. Os pontos de atenção são o trânsito na Princesa D'Oeste, os dias de jogo nos estádios vizinhos e as obras de drenagem previstas até 2027."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Proença?",
+      "resposta": "Por causa da antiga Fazenda Proença, uma das primeiras sesmarias de Campinas. Uma parte dela, a Chácara Paraíso, passou a se chamar Chácara Proença, e a Rua Proença e o córrego da região têm o mesmo nome."
+    },
+    {
+      "pergunta": "O que é a Casa Grande e Tulha do Proença?",
+      "resposta": "É um conjunto da antiga Fazenda Proença, com uma tulha de taipa de pilão de cerca de 1790 e uma casa grande do início do ciclo do café. É tombado pelo Condepacc, pelo Condephaat e pelo Iphan, e é propriedade particular."
+    },
+    {
+      "pergunta": "O Jardim Proença tem mais casas ou prédios?",
+      "resposta": "Tem os dois. A base da RUAH identifica cerca de 80 condomínios no bairro, quase todos verticais, mas as ruas internas ainda têm muitas casas e sobrados."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Proença?",
+      "resposta": "No bairro fica a Escola Estadual Professor José Vilagelin Neto, com anos finais do fundamental e ensino médio. Num raio de 1,5 km, o levantamento da RUAH conta cerca de 70 escolas de vários tipos."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista Tulha (PUC-Campinas), artigo sobre a restauração da Casa Grande e Tulha",
+      "site": "periodicos.puc-campinas.edu.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, leis e decretos de denominação de vias (1953 e 1973)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Correio da Manhã, bloqueios na Avenida Princesa D'Oeste e o Reservatório Proença (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Unicamp, trabalho de iniciação científica sobre o bairro Nova Campinas",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Jardim Proença, Casa Grande e Tulha, Estádio Brinco de Ouro da Princesa e Estádio Moisés Lucarelli",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Escol.as, cadastro da E.E. Professor José Vilagelin Neto",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal e IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps",
+      "site": "ruahimoveis.vercel.app"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Proença, em Campinas: um bairro nascido nas terras de uma das primeiras fazendas da cidade, onde ainda está de pé uma tulha de taipa do século XVIII. Hoje mistura casas e prédios ao longo da Avenida Princesa D'Oeste, entre os estádios do Guarani e da Ponte Preta. Preparamos um guia com a história, os acessos e o que considerar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "jardimproenca",
+      "proenca",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "casagrandeetulha",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Proença, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.013Z"
+}

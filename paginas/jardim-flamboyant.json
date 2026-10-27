@@ -1,0 +1,329 @@
+{
+  "slug": "jardim-flamboyant",
+  "titulo": "Jardim Flamboyant, Campinas: como é morar no bairro perto do Iguatemi",
+  "resumo": "Guia do Jardim Flamboyant, em Campinas: história, prédios baixos, comércio da Rua Mogi Guaçu, escolas, parques próximos e acessos pela região Leste.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Vista noturna da região do Jardim Flamboyant, com prédios no alto e casas na encosta",
+      "alt": "Paisagem urbana à noite com uma fileira de edifícios iluminados no alto de um morro e casas baixas na parte de baixo",
+      "commons": "File:Região do B. Jardim Flamboyant, Campinas SP.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Fachada do Shopping Iguatemi Campinas, vizinho do Jardim Flamboyant",
+      "alt": "Fachada de shopping center com letreiro Iguatemi, cúpula de vidro e estacionamento cheio de carros na frente",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Lateral do Shopping Iguatemi Campinas, com a torre do relógio e jardins",
+      "alt": "Prédio comercial com torre de relógio, palmeiras e gramado ao lado de uma rua",
+      "commons": "File:Shopping Iguatemi Campinas 02.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Lago do Parque Ecológico Monsenhor Emílio José Salim",
+      "alt": "Lago de água parada refletindo árvores e um gramado em declive sob céu azul",
+      "commons": "File:Parque Ecológico Campinas (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Construção de tijolos do século XIX preservada no Parque Ecológico",
+      "alt": "Pequeno edifício de tijolos aparentes com frontão triangular, janelas em arco e telhado de telhas, entre árvores",
+      "commons": "File:Parque Ecológico Monsenhor José Salim - panoramio (10).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Lagoa do Taquaral, no Parque Portugal, com a réplica da caravela ao fundo",
+      "alt": "Vista panorâmica de uma lagoa grande cercada de árvores, com um chafariz e um barco vermelho atracado",
+      "commons": "File:Parque Portugal (23).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Pista de caminhada de terra em volta da Lagoa do Taquaral",
+      "alt": "Caminho largo de terra batida entre árvores altas e um poste de luz, com pessoas caminhando ao longe",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Flamboyant** é um bairro da região Leste de Campinas, vizinho do Shopping Iguatemi, de perfil residencial, com prédios baixos de apartamentos, casas e um eixo de comércio de rua que resolve boa parte do dia a dia a pé. Fica perto das avenidas Norte-Sul e Moraes Sales e a poucos minutos do Parque Ecológico e da Lagoa do Taquaral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não é um bairro de torres altas nem de grandes lançamentos: a maior parte dos edifícios tem até sete andares, e as ruas misturam sobrados, comércio de bairro e escolas. Este guia reúne o que as fontes dizem sobre a história, o perfil dos imóveis, o lazer em volta, as escolas e os acessos, para você decidir com informação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região Leste de Campinas, colado ao Shopping Iguatemi",
+        "Predominam apartamentos em prédios baixos, com casas e sobrados entre eles",
+        "A Rua Mogi Guaçu concentra padarias, mercados, farmácias e restaurantes",
+        "A ocupação da área começou por volta de 1970, com famílias migrantes do Nordeste",
+        "Escola Americana de Campinas e Colégio Axis Mundi ficam na Rua Cajamar, no limite com o Jardim Alto da Barra",
+        "Parque Ecológico e Lagoa do Taquaral estão a poucos minutos de carro"
+      ],
+      "titulo": "O Jardim Flamboyant em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do Jardim Flamboyant"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Cohab Campinas, a ocupação da área do Flamboyant começou em **1970**, quando chegaram as primeiras famílias de migrantes nordestinos que vinham para Campinas em busca de trabalho. Parte desse núcleo, hoje chamado **Núcleo Residencial Novo Flamboyant**, passou décadas sem a documentação dos imóveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em agosto de 2023, a Cohab entregou mais 222 matrículas de imóveis a famílias do Novo Flamboyant, numa cerimônia na EMEF/EJA Raul Pila, escola municipal do bairro. Segundo a companhia, essas famílias esperavam a regularização havia mais de 50 anos. É um lembrete de que o Flamboyant reúne realidades diferentes em poucas quadras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido chegou antes da maior parte dos prédios: o **Shopping Iguatemi Campinas** abriu em 6 de maio de 1980, na Avenida Iguatemi, na Vila Brandina. Ele foi ampliado em 2001, quando ganhou estacionamento coberto, e de novo em 2015, quando passou a ser o maior shopping da rede Iguatemi no país. O guia de bairros do QuintoAndar liga o crescimento do Flamboyant justamente à expansão da infraestrutura em volta do shopping a partir de 2001."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Flamboyant"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Flamboyant é, sobretudo, um bairro de apartamentos em prédios de porte médio. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 edifícios residenciais no bairro, com pouco mais de 700 unidades no total. Quase todos têm entre três e sete andares; o mais alto chega a doze."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os conjuntos maiores estão o **Vilaggio Paineiras** e o **Residencial Ville Neuve I**, citados também nos anúncios da região. Segundo o QuintoAndar, os apartamentos mais comuns vão de um a três quartos, muitos com uma a três vagas, e há casas com quintal e algumas casas em condomínio fechado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas que aparecem com mais frequência nos guias do bairro incluem a **Rua Mogi Guaçu**, a Rua Presidente Bernardes, a Rua Paraibuna, a Rua Patrocínio do Sapucaí, a Rua Promissão, a Rua Paulo de Faria e a Rua Presidente Alves, além das avenidas José Bonifácio e Palestina. A arborização das ruas é um traço citado com frequência."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos relatos de moradores reunidos pelo QuintoAndar, os pontos positivos mais citados são a tranquilidade, a praticidade de ter tudo perto e as boas condições para caminhar. Os negativos são o barulho da avenida principal, alagamentos em algumas ruas, a presença de pessoas em situação de rua e a dificuldade de acesso para carros de aplicativo em certos trechos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio e serviços no bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio se espalha principalmente pela **Rua Mogi Guaçu**, que tem endereços no Jardim Flamboyant e na vizinha Chácara da Barra. Ali fica a unidade Flamboyant da **Abelha Gulosa**, negócio familiar fundado em 1980 que reúne padaria, confeitaria, hortifrúti, rotisseria e mercearia. O QuintoAndar cita ainda a Padaria Fratelli, a Panificadora Flamboyant e o restaurante Mukeca Brasileira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há supermercados, farmácias, academias, salões de beleza, agências bancárias e posto de combustível, este último na Rua Cajamar, segundo o Guia Fácil. Para compras maiores, cinema e restaurantes de rede, o Shopping Iguatemi fica a cerca de um quilômetro do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista os endereços mais próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Wikipédia, o Iguatemi Campinas tem mais de 350 lojas, praça de alimentação, dois complexos de cinema, teatro e academia. Para quem mora no Flamboyant, isso significa ter um centro de compras completo a uma distância que, em muitos casos, dá para fazer a pé."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas no Jardim Flamboyant e arredores"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Escola Americana de Campinas** fica na Rua Cajamar, já no Jardim Alto da Barra, no limite com o Flamboyant. É uma escola particular internacional, da educação infantil ao ensino médio, com cerca de 840 alunos, segundo a Search Associates. Em 2014, a escola contratou um plano diretor para o câmpus que previa novas salas, um centro de artes e uma biblioteca central."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma Rua Cajamar funciona o **Colégio Axis Mundi**. O QuintoAndar cita também o Colégio Leão Savana e a escola de educação infantil Visconde de Sabugosa entre as opções do bairro, além de cursos de idiomas, música e reforço escolar. Na rede pública, a **EMEF/EJA Raul Pila** atende o Flamboyant, segundo a Cohab Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Escolas grandes movimentam o trânsito na entrada e na saída das aulas. Se o imóvel fica perto da Rua Cajamar ou da Rua Mogi Guaçu, vale passar por ali nesses horários antes de decidir.",
+      "titulo": "Antes de escolher a rua"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parques, praças e lazer perto do Flamboyant"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem praças pequenas, como a **Praça Maestro Salvatore Ruperti** e a **Praça O Condor**, listadas no guia de ruas do Jardim Flamboyant. Para áreas verdes maiores, os moradores contam com dois parques conhecidos da região Leste, ambos a poucos minutos de carro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Ecológico Monsenhor Emílio José Salim** ocupa 110 hectares, com paisagismo de Burle Marx. A área foi a sede da Fazenda Mato Dentro, fundada em 1806, e virou parque em 1987. Tem quadras, campos, playground, áreas de piquenique, construções do século XIX tombadas e o Museu Histórico Ambiental."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Lagoa do Taquaral**, no Parque Portugal, foi inaugurada oficialmente em 5 de novembro de 1972. Tem pista de terra de 2,75 km para caminhada e corrida, ciclovia, quadras, planetário, bondinho elétrico e uma réplica da caravela Anunciação. Aos domingos, das 6h às 13h, a avenida em volta do parque fecha para carros."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o dia a dia, há farmácias e drogarias na Rua Mogi Guaçu e na Rua Cajamar, além de clínicas e consultórios espalhados pelo bairro. O Hospital Casa de Saúde Campinas aparece entre os serviços de saúde mais próximos, a cerca de meio quilômetro do centro do bairro. A lista completa, com distâncias, está na seção *o que tem perto*."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Flamboyant fica perto das avenidas **Norte-Sul** e **Moraes Sales**, que levam ao Centro, e das rodovias **Dom Pedro I** e **Anhanguera**, segundo o QuintoAndar. A região Leste, onde fica o bairro, é cortada pela Dom Pedro I, o que facilita viagens para outras cidades da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Linhas de ônibus ligam o bairro ao Centro, ao Terminal Barão Geraldo e a Sousas, e ciclofaixas recentes ajudam quem prefere a bicicleta. Em volta ficam a Vila Brandina, onde está o Iguatemi, o Jardim Alto da Barra, na Rua Cajamar, e a Chácara da Barra, que também tem endereços na Rua Mogi Guaçu. A Wikipédia cita ainda o Jardim das Paineiras e o distrito de Sousas entre as áreas próximas do shopping."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Flamboyant faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Flamboyant costuma servir a quem quer apartamento em prédio baixo, com comércio de bairro na porta e o Shopping Iguatemi por perto: casais, famílias com filhos em escolas da região e quem trabalha no eixo Leste ou precisa de acesso rápido à Dom Pedro I. A proximidade do Parque Ecológico e da Lagoa do Taquaral ajuda quem gosta de atividade ao ar livre."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção, segundo os relatos de moradores: barulho na avenida principal, alagamentos em algumas ruas e diferenças grandes entre uma quadra e outra. Por isso, a rua, a face do prédio e o andar pesam bastante na escolha do imóvel."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o valor do condomínio e o que ele inclui, a idade do prédio e as últimas obras, se a rua tem histórico de alagamento, o número de vagas e a distância a pé até a Rua Mogi Guaçu e o Iguatemi.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Jardim Flamboyant é bom para morar?",
+      "resposta": "Para quem quer apartamento em prédio baixo, comércio de bairro e o Shopping Iguatemi por perto, costuma ser. Moradores citam tranquilidade e praticidade; os pontos negativos relatados são o barulho da avenida principal e alagamentos em algumas ruas."
+    },
+    {
+      "pergunta": "Onde fica o Jardim Flamboyant, em Campinas?",
+      "resposta": "Na região Leste de Campinas, vizinho do Shopping Iguatemi, perto das avenidas Norte-Sul e Moraes Sales e da Rodovia Dom Pedro I. Em volta ficam a Vila Brandina, o Jardim Alto da Barra e a Chácara da Barra."
+    },
+    {
+      "pergunta": "O Jardim Flamboyant tem mais casas ou apartamentos?",
+      "resposta": "Predominam apartamentos. A base de condomínios da RUAH identifica cerca de 50 prédios residenciais no bairro, quase todos de três a sete andares, e há também casas e sobrados."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Flamboyant?",
+      "resposta": "A Escola Americana de Campinas e o Colégio Axis Mundi ficam na Rua Cajamar, no limite com o Jardim Alto da Barra. Também são citados o Colégio Leão Savana, a escola infantil Visconde de Sabugosa e, na rede municipal, a EMEF/EJA Raul Pila."
+    },
+    {
+      "pergunta": "O Jardim Flamboyant fica perto do Shopping Iguatemi?",
+      "resposta": "Sim. O shopping fica na Avenida Iguatemi, na Vila Brandina, a cerca de um quilômetro do centro do Flamboyant."
+    },
+    {
+      "pergunta": "Que parques ficam perto do Jardim Flamboyant?",
+      "resposta": "O Parque Ecológico Monsenhor Emílio José Salim, com 110 hectares, e a Lagoa do Taquaral, no Parque Portugal, com pista de caminhada de 2,75 km. Os dois ficam a poucos minutos de carro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Cohab Campinas, entrega de 222 matrículas ao Núcleo Residencial Novo Flamboyant (agosto de 2023)",
+      "site": "cohabcp.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Iguatemi Campinas, Parque Ecológico Monsenhor Emílio José Salim, Parque Portugal e bairros de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipédia, verbete Iguatemi S.A.",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "QuintoAndar, guia de bairro Jardim Flamboyant",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Search Associates, perfil da Escola Americana de Campinas",
+      "site": "searchassociates.com"
+    },
+    {
+      "nome": "TruexCullins, plano diretor do câmpus da Escola Americana de Campinas",
+      "site": "truexcullins.com"
+    },
+    {
+      "nome": "Abelha Gulosa, página institucional",
+      "site": "abelhagulosa.com.br"
+    },
+    {
+      "nome": "Guia Fácil, Rua Cajamar",
+      "site": "guiafacil.com"
+    },
+    {
+      "nome": "Apontador, guia de ruas da Rua Mogi Guaçu",
+      "site": "apontador.com.br"
+    },
+    {
+      "nome": "Guia Mapa, ruas e praças do Jardim Flamboyant",
+      "site": "guiamapa.com"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Flamboyant, em Campinas: bairro da região Leste com prédios baixos, comércio de rua na Rua Mogi Guaçu, escolas conhecidas e o Shopping Iguatemi ao lado. Preparamos um guia com a história, o perfil dos imóveis, os parques por perto e o que considerar antes da mudança. Link na bio.",
+    "hashtags": [
+      "jardimflamboyant",
+      "flamboyant",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "apartamentocampinas",
+      "iguatemicampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Flamboyant, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.014Z"
+}

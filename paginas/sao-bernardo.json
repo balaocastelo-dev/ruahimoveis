@@ -1,0 +1,322 @@
+{
+  "slug": "sao-bernardo",
+  "titulo": "São Bernardo, Campinas: como é morar no bairro da Avenida das Amoreiras",
+  "resumo": "Guia do São Bernardo, em Campinas: origem nos anos 1940, ruas e praças, prédios, comércio a pé, BRT na Avenida das Amoreiras e bairros vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida das Amoreiras, com prédios residenciais e torres de igreja no horizonte",
+      "alt": "Avenida larga de duas pistas com carros, prédios baixos e um edifício alto à direita sob céu nublado",
+      "commons": "File:Hospital do Câncer de Barretos - Unidade Campinas visto pela Avenida das Amoreiras (4).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Trecho da Avenida das Amoreiras, com canteiro central e palmeiras",
+      "alt": "Avenida em leve descida com calçada à esquerda, postes de luz e palmeiras ao fundo",
+      "commons": "File:Hospital do Câncer de Barretos - Unidade Campinas visto pela Avenida das Amoreiras (2).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Torres do condomínio Up Living em construção na Avenida das Amoreiras",
+      "alt": "Dois edifícios altos cobertos por tela de proteção, com guindaste amarelo e palmeira em primeiro plano",
+      "commons": "File:Construção condomínio Up Living Campinas (4).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Cruzamento da Avenida das Amoreiras com a marginal do Piçarrão",
+      "alt": "Avenida de várias faixas com ônibus, placas de trânsito verdes e morro arborizado com prédios ao fundo",
+      "commons": "File:Amoreiras x marg. Piçarrão - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Viaduto onde a Avenida das Amoreiras cruza a Rodovia Anhanguera, em 2006",
+      "alt": "Pista passando sob um viaduto de concreto, com poste em primeiro plano e um ônibus sobre a ponte",
+      "commons": "File:2006 Anhanguera x Amoreiras - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Fachada do Campinas Shopping, aberto em 1994 no Jardim do Lago",
+      "alt": "Prédio grande de shopping com letreiro vermelho e verde, muro baixo e árvores ao lado de uma rua",
+      "commons": "File:Atras do Campinas Shopping - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Avenida e área verde no Jardim do Trevo, bairro vizinho",
+      "alt": "Avenida com gramado e árvore em primeiro plano, carros e casas ao fundo sob céu azul",
+      "commons": "File:Jardim do Trevo - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Gramado e arquibancadas do Estádio Moisés Lucarelli, da Ponte Preta",
+      "alt": "Estádio de futebol vazio com gramado verde, arquibancadas e prédios residenciais ao fundo",
+      "commons": "File:Estadio Moises Lucarelli (Ponte Preta) - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **São Bernardo** é um bairro residencial de Campinas que fica ao longo da **Avenida das Amoreiras**, no caminho entre o Centro e a Rodovia Anhanguera. Surgiu por volta dos anos 1940 e hoje mistura casas térreas e sobrados com prédios de porte médio, em ruas com nomes de estados e de cidades paulistas. A rotina se resolve a pé, com padarias, mercados e farmácias perto de casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Também aparece com o nome de **Vila São Bernardo**. Para quem pensa em morar ali, os pontos que mais pesam são o acesso rápido ao Centro, o corredor de ônibus da Amoreiras e a vizinhança com bairros conhecidos da cidade, como a Ponte Preta e o Jardim do Trevo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, também chamado de Vila São Bernardo",
+        "Ocupação iniciada por volta dos anos 1940",
+        "Casas e sobrados ao lado de cerca de 50 condomínios, quase todos prédios, segundo a base da RUAH",
+        "Cortado pela Avenida das Amoreiras, que tem faixas exclusivas do BRT Ouro Verde",
+        "Praças Professor Paulo José Otaviano, Prof. Joaquim Orias Sylos e a Praça de Esportes Argemiro Roque",
+        "Perto de Ponte Preta, Jardim do Trevo, Vila São Jorge, Vila Aurocan e Jardim Primavera"
+      ],
+      "titulo": "O São Bernardo em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do São Bernardo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ocupação do São Bernardo começou por volta de 1940. O bairro faz parte de uma onda mais antiga de expansão de Campinas: depois que a Companhia Paulista de Estradas de Ferro chegou à cidade, em 1872, foram surgindo bairros perto do Centro para abrigar operários."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O traçado das ruas conta parte dessa história. Há um conjunto de vias com nomes de estados, como as ruas **Bahia**, **Goiás** e **Paraná**, e outro com nomes de cidades paulistas que começam com \"Guar\": **Guarulhos**, **Guarujá**, **Guaratinguetá**, **Guararema**, **Guareí**, **Guariba** e **Guarantã**. Outras homenageiam pessoas, como a **Rua Padre Bernardo da Silva**, a **Rua Doutor Pinto Ferraz** e a **Rua Doutor Alves do Banho**."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no São Bernardo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O São Bernardo é predominantemente residencial e tem um ritmo mais calmo que o do Centro, embora fique perto dele. As ruas internas são arborizadas em muitos trechos, com calçadas largas e boa iluminação, segundo avaliações de moradores reunidas pelo QuintoAndar. Quem mora ali costuma citar as áreas verdes e as feiras como pontos fortes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os imóveis variam bastante. Nas ruas internas predominam casas e sobrados; perto das avenidas aparecem os prédios. A base de condomínios da RUAH, montada com dados da Receita Federal e do Censo 2022, identifica cerca de 50 condomínios no bairro, 44 deles verticais, somando perto de 1.500 unidades. A maioria dos prédios tem entre 3 e 8 andares; o mais alto chega a 16."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Avenida das Amoreiras surgiram empreendimentos mais recentes, como o **Up Living**, de torres altas. Entre os condomínios conhecidos do bairro estão também o **Residencial Clara**, o **Exclusive** e o **Residencial Topázio**. Para quem procura casa, o São Bernardo ainda oferece opções térreas e sobrados em ruas de pouco movimento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Praças, esporte e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem praças de vizinhança espalhadas entre as ruas residenciais. Entre elas estão a **Praça Professor Paulo José Otaviano**, a **Praça Prof. Joaquim Orias Sylos**, a **Praça Primeiro de Maio**, a **Praça Chanceler Konrad Adenauer**, a **Praça Deonésia Pereira da Silva** e a **Praça Bom Pastor**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o esporte, há a **Praça de Esportes Argemiro Roque**. Para programas maiores ao ar livre, o Parque Taquaral é de acesso fácil a partir do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem gosta de futebol, o vizinho mais famoso é o **Estádio Moisés Lucarelli**, da Ponte Preta, inaugurado em 12 de setembro de 1948. Ganhou o apelido de \"Majestoso\" por ter sido, na inauguração, o terceiro maior estádio do país, e foi erguido com material doado por torcedores ao longo de seis anos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, comércio e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na educação, o bairro tem berçários e escolas particulares como o **Colégio Doctus** e a rede **Decisão-Objetivo**. A base de pontos da RUAH, feita com dados do OpenStreetMap e da Overture, lista cerca de 30 escolas num raio de 1,5 km, entre elas a **E.E José Maria Matosinho** e a **EMEF Professor Geny Rodriguez**. Por perto há também faculdades e cursos, como a Unip, a UniMetrocamp e o Centro Kennedy."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia fica a poucos passos: padarias, mercados, açougues, farmácias, pizzarias e lanchonetes. A mesma base registra cerca de 40 mercados e padarias e perto de 100 restaurantes e cafés no mesmo raio, além de uma feira livre às quintas-feiras. Entre os nomes conhecidos está o **Bar Fumagalli**, de cardápio longo, numa esquina tranquila."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o **Campinas Shopping**, no vizinho Jardim do Lago, foi inaugurado em 1994 e tem cerca de 200 lojas, hipermercado, praça de alimentação, cinema e um setor de serviços com Poupatempo e Detran."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde e segurança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há clínicas de várias especialidades e consultórios odontológicos no bairro. Entre os hospitais da região está o **Hospital Municipal Dr. Mário Gatti**, mantido pela Rede Municipal Dr. Mário Gatti, autarquia da Prefeitura que atende urgência, emergência e internação; a sede fica na Avenida Prefeito Faria Lima, no Parque Itália. Na própria Avenida das Amoreiras foi construída a unidade de Campinas do Hospital do Câncer de Barretos, o Hospital de Amor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O São Bernardo abriga o **2º Distrito Policial de Campinas** e uma base da Guarda Municipal, segundo o QuintoAndar."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal via é a **Avenida das Amoreiras**, que corta o bairro e liga a região ao Centro. Ela faz parte do **BRT Ouro Verde**, corredor de 14,6 km entre o Terminal Central e o Terminal Vida Nova. O primeiro trecho, pelas avenidas João Jorge e Amoreiras, foi liberado em outubro de 2020, com faixas exclusivas de concreto entre a João Jorge e a Avenida Prefeito Faria Lima, segundo o Diário do Transporte."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Linhas municipais de ônibus ligam o bairro ao Centro e a outras regiões; na Amoreiras passam, por exemplo, a linha 122, que atende o Terminal Vida Nova e o Campinas Shopping, e a 404, que vai ao Jardim Maria Rosa. De carro, a avenida leva até a Rodovia Anhanguera, o que facilita viagens para outras cidades da região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O São Bernardo fica cercado por bairros tradicionais da cidade. Entre os vizinhos e próximos estão o **Jardim do Trevo**, a **Vila São Jorge**, a **Ponte Preta**, a **Vila Aurocan** e o **Jardim Primavera**. Isso amplia as opções de comércio e serviços sem que seja preciso ir ao Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o São Bernardo faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer ficar perto do Centro sem morar nele, com comércio do dia a dia a pé, corredor de ônibus na porta e saída rápida para a Anhanguera. Serve tanto para quem procura apartamento em prédio de poucos andares quanto para quem prefere casa ou sobrado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é a Avenida das Amoreiras: por ser corredor de ônibus e ligação com a rodovia, tem movimento intenso em horário de pico. Se você busca silêncio, vale olhar as ruas internas, longe da avenida, e conhecer o imóvel em horários diferentes do dia."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor sobre a distância até o ponto de ônibus ou a estação do BRT, a idade do prédio, o que o condomínio inclui e se a rua tem movimento de passagem.",
+      "titulo": "Antes de fechar negócio"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O São Bernardo, em Campinas, é bom para morar?",
+      "resposta": "Para quem quer bairro residencial perto do Centro, sim. Tem comércio do dia a dia a pé, praças, escolas e o corredor de ônibus da Avenida das Amoreiras. O movimento se concentra na avenida; as ruas internas são mais calmas."
+    },
+    {
+      "pergunta": "Onde fica o bairro São Bernardo em Campinas?",
+      "resposta": "Ao longo da Avenida das Amoreiras, entre o Centro e a Rodovia Anhanguera. Fica perto de Ponte Preta, Jardim do Trevo, Vila São Jorge, Vila Aurocan e Jardim Primavera."
+    },
+    {
+      "pergunta": "O São Bernardo tem mais casas ou apartamentos?",
+      "resposta": "Tem os dois. As ruas internas têm muitas casas e sobrados, e a base da RUAH identifica cerca de 50 condomínios no bairro, quase todos prédios, a maioria de 3 a 8 andares."
+    },
+    {
+      "pergunta": "Quais escolas ficam no São Bernardo?",
+      "resposta": "Entre as escolas do bairro e arredores estão o Colégio Doctus, a rede Decisão-Objetivo, a E.E José Maria Matosinho e a EMEF Professor Geny Rodriguez. Faculdades como Unip e UniMetrocamp ficam na região."
+    },
+    {
+      "pergunta": "Como chegar ao Centro de Campinas saindo do São Bernardo?",
+      "resposta": "Pela Avenida das Amoreiras, que tem faixas exclusivas do BRT Ouro Verde até a Avenida João Jorge e segue para o Terminal Central. Também há linhas municipais de ônibus."
+    },
+    {
+      "pergunta": "Qual shopping fica perto do São Bernardo?",
+      "resposta": "O Campinas Shopping, no Jardim do Lago, inaugurado em 1994, com cerca de 200 lojas, cinema e serviços como Poupatempo."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "QuintoAndar — guia do bairro São Bernardo, Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias — shoppings em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "CEPs Brasil — logradouros do bairro São Bernardo",
+      "site": "cepsbrasil.com.br"
+    },
+    {
+      "nome": "apto.vc — bairro São Bernardo e vizinhos",
+      "site": "apto.vc"
+    },
+    {
+      "nome": "Diário do Transporte — trecho inicial do BRT Ouro Verde",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Correio da Manhã — interdição na Avenida das Amoreiras e linhas de ônibus",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, Saúde — relatório da Rede Mário Gatti",
+      "site": "saude.campinas.sp.gov.br"
+    },
+    {
+      "nome": "Wikipédia — Estádio Moisés Lucarelli",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipedia — Argemiro Roque",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Wikimedia Commons — fotos da Avenida das Amoreiras",
+      "site": "commons.wikimedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "São Bernardo, em Campinas: bairro residencial que nasceu nos anos 1940, com ruas de nomes de estados e cidades paulistas, praças de vizinhança, comércio a pé e o BRT na Avenida das Amoreiras. No guia da RUAH você vê a história, as escolas, os acessos e para quem o bairro faz sentido. Link na bio.",
+    "hashtags": [
+      "saobernardo",
+      "campinas",
+      "bairrosdecampinas",
+      "avenidadasamoreiras",
+      "morarbem",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "São Bernardo, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.014Z"
+}

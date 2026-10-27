@@ -1,0 +1,340 @@
+{
+  "slug": "vila-industrial",
+  "titulo": "Vila Industrial, Campinas: como é morar no bairro da ferrovia",
+  "resumo": "Guia da Vila Industrial, em Campinas: origem ferroviária, vilas operárias tombadas, Teatro Castro Mendes, rodoviária, prédios novos e o que ver antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Esquina do Conjunto Arquitetônico da Vila Industrial, bem tombado pelo município",
+      "alt": "Rua em curva com sobrado antigo cor de areia à direita, casas térreas coloridas e prédios baixos ao fundo",
+      "commons": "File:Conjunto Arquitetônico da Vila Industrial - Campinas - 20240923100153.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Fachada antiga pintada de azul no Conjunto Arquitetônico da Vila Industrial",
+      "alt": "Pequena construção de esquina com fachada azul-turquesa, porta de grade e cadeiras vermelhas na calçada",
+      "commons": "File:Conjunto Arquitetônico da Vila Industrial - Campinas - 20240923100758.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "Sobrado antigo ornamentado na Vila Industrial, perto do Centro",
+      "alt": "Sobrado branco de dois andares com ornamentos na fachada, numa esquina, com prédios atrás",
+      "commons": "File:Imovel Antigo na Vila Industrial proximo ao Centro - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Casa ferroviária de tijolos preservada ao lado da rodoviária",
+      "alt": "Casa térrea de tijolos aparentes com duas janelas de madeira, com a cobertura da rodoviária ao fundo",
+      "commons": "File:Rodoviária de Campinas - Terminal M. Ramos de Azevedo - panoramio (4).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Teatro Municipal José de Castro Mendes, com 760 lugares",
+      "alt": "Prédio de teatro com um bloco amarelo cheio de pequenas janelas e uma fachada cinza e branca de linhas diagonais",
+      "commons": "File:Teatro Castro Mendes (1).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "A antiga estação ferroviária, hoje Estação Cultura, inaugurada em 1872",
+      "alt": "Longo prédio de tijolos vermelhos com torre de relógio no centro, visto do outro lado da avenida",
+      "commons": "File:Estação Cultura Prefeito Antônio da Costa Santos - Campinas - 20240921113437.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Plataforma coberta da Estação Cultura, com os prédios da cidade ao fundo",
+      "alt": "Plataforma de trem sob cobertura metálica escura, trilhos e edifícios altos no horizonte",
+      "commons": "File:Estação Cultura Prefeito Antônio da Costa Santos - Campinas - 20240921114528.JPG"
+    },
+    {
+      "id": "f8",
+      "legenda": "Terminal Multimodal Ramos de Azevedo, a rodoviária de Campinas",
+      "alt": "Prédio largo e curvo de fachada metálica cinza, com rampa de pedestres e gramado na frente",
+      "commons": "File:Rodoviária de Campinas - Terminal M. Ramos de Azevedo - panoramio.jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Viaduto da Cury, uma das ligações entre o Centro e a Vila Industrial",
+      "alt": "Rua com carros estacionados que sobe para um viaduto, com postes e prédios ao fundo",
+      "commons": "File:Viaduto da Cury - Entre o Centro de Campinas e o Vila Industrial - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Industrial** é um bairro de Campinas colado ao Centro, do outro lado dos trilhos da antiga estação ferroviária. Nasceu no fim do século XIX como bairro de ferroviários e operários e ainda guarda vilas de casas geminadas, sobrados antigos e conjuntos tombados pelo patrimônio municipal. Nos últimos anos, ganhou também muitos prédios residenciais, e hoje mistura ruas de casas baixas com condomínios verticais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É ali que ficam a rodoviária da cidade, o Terminal Multimodal Ramos de Azevedo, e o Teatro Municipal José de Castro Mendes. Para quem pensa em morar no bairro, este guia reúne a história, o perfil dos imóveis, a cultura, as escolas, o acesso e os pontos de atenção, sempre com base em fontes públicas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro vizinho ao Centro de Campinas, ao sul da linha férrea",
+        "Surgiu como bairro de trabalhadores da ferrovia, de indústrias e de curtumes",
+        "Tem vilas operárias e ruas inteiras tombadas pelo Condepacc",
+        "Abriga a rodoviária, o Terminal Multimodal Ramos de Azevedo",
+        "O Teatro Castro Mendes, com 760 lugares, fica junto à Praça Correa de Lemos",
+        "Casas antigas convivem com cerca de 60 condomínios, quase todos verticais"
+      ],
+      "titulo": "A Vila Industrial em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história da Vila Industrial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Industrial é considerada o primeiro bairro de Campinas a se formar além da área central, separado dela pela estrada de ferro. A Estação da Companhia Paulista foi inaugurada em 11 de agosto de 1872, e a Companhia Mogiana chegou em seguida. Os operários das oficinas, do pátio de manobras e dos armazéns foram morar nas imediações, em terrenos baratos e alagadiços perto do córrego do Piçarrão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região tinha estruturas que a cidade queria longe do Centro: o Lazareto dos Morféticos, de 1863, o Hospital dos Variolosos, o Matadouro Municipal e cemitérios atrás dos trilhos. Depois que os cemitérios foram fechados, em 1881, surgiram as primeiras casas operárias. Segundo o historiador Benedito Barbosa Pupo, o bairro já foi chamado de Campo de Sant'Anna e de Imigração, e cresceu de oeste para leste a partir da atual Avenida João Jorge, o antigo Caminho de Itu."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Até meados dos anos 1980, a vida do bairro girava em torno da ferrovia, dos curtumes e do matadouro, com missas na Igreja São José, banda no coreto da Praça Correa de Lemos e festas nas vilas. Depois vieram a desativação dessas atividades e a chegada dos prédios, segundo pesquisa publicada na revista GEOgraphia, da UFF."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Patrimônio: vilas operárias e ruas tombadas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que diferencia a Vila Industrial de outros bairros é o conjunto de casas operárias que sobreviveu. São casas geminadas, em geral de três cômodos, em ruelas de paralelepípedo. Os conjuntos Venda Grande e Francisco Teodoro foram construídos em 1893 pelo imigrante alemão Germano Hausen. As vilas Manoel Freire e Manoel Dias, de 1908 e 1918, foram erguidas por irmãos portugueses que começaram como comerciantes de porta em porta no bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Conselho de Defesa do Patrimônio Cultural de Campinas, o **Condepacc**, tombou as travessas das vilas Manoel Freire e Manoel Dias em 1994, a Vila da Venda Grande em 2009 e as ruas Alferes Raimundo e Francisco Teodoro em 2013. Também estão tombados o Curtume Cantúsio, em 2012, a Paróquia São José, em 2013, e o Complexo Ferroviário da Fepasa, protegido ainda pelo Condephaat desde 1982."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Desde o Plano Diretor de 2018, parte do bairro em torno do Complexo Ferroviário é uma Zona Especial de Preservação Cultural, a Zepec. Em imóvel tombado ou em área protegida, reformas e demolições dependem de aprovação dos órgãos de patrimônio. Vale confirmar a situação do imóvel antes de fechar negócio.",
+      "titulo": "O que muda para quem compra"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Industrial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje o bairro tem duas paisagens lado a lado. Nas ruas mais antigas, predominam casas térreas, sobrados e vilas operárias. Nos terrenos maiores, surgiram condomínios verticais, alguns bem altos. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos de prédios, com cerca de 2.600 unidades; o mais alto tem 31 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pesquisadoras da PUC-Campinas apontam que essa verticalização acelerou na última década e mudou o perfil de quem mora ali, com a chegada de moradores de renda mais alta. Para quem compra, isso significa uma oferta variada: casa antiga com quintal, apartamento em prédio mais simples ou unidade em condomínio novo com lazer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, a proximidade com o Centro pesa a favor: mercados, padarias, farmácias e academias aparecem a poucas quadras, e a seção *o que tem na Vila Industrial e em volta*, mais abaixo nesta página, lista os mais próximos com o tempo a pé. O movimento de ônibus em torno da rodoviária e das avenidas é o outro lado da moeda."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cultura e lazer: Teatro Castro Mendes e Estação Cultura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal equipamento cultural do bairro é o **Teatro Municipal José de Castro Mendes**, junto à Praça Correa de Lemos. Foi inaugurado em 1970, no lugar do antigo cine Casablanca, e tem 760 lugares e palco italiano. Ficou fechado a partir de 2007 para reforma e reabriu em dezembro de 2012. O nome homenageia o jornalista, pintor e historiador José de Castro Mendes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado dos trilhos, no limite com o Centro, está a antiga estação ferroviária, hoje **Estação Cultura**. O prédio de tijolos ingleses teve o corpo central concluído em 1884 e funciona como centro cultural da Prefeitura desde 2002; o último trem de passageiros partiu em 15 de março de 2001. Uma de suas salas, a Sala dos Toninhos, tem entrada pela Rua Francisco Teodoro, já na Vila Industrial."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em março de 2025, a PUC-Campinas e a Prefeitura apresentaram um projeto para transformar galpões do Complexo Ferroviário em um polo de inovação, com quase 42 mil metros quadrados para empresas de tecnologia, startups e usos culturais. Não há prazo de obra divulgado. Para caminhar, a Praça Acrísio de Camargo é citada como um dos espaços mais usados pelos moradores."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e faculdades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem escolas particulares de educação infantil ao ensino médio, como o **Colégio Objetivo Vila Industrial** e o **Renovatus**, e também ensino superior: o **UniMetrocamp** e a **ESAMC** têm unidades na Vila Industrial. Na base de pontos de interesse usada pela RUAH, há cerca de 55 escolas e cursos num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse da RUAH registra, a cerca de 800 metros do centro do bairro, o **Hospital Municipal Dr. Mário Gatti** e o Hospital Geral de Campinas. A unidade de Campinas do Hospital de Amor, ligado ao Hospital de Câncer de Barretos, aparece a distância parecida. Farmácias e clínicas se espalham pelas ruas do bairro e do Centro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e rodoviária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Industrial abriga o **Terminal Multimodal Ramos de Azevedo**, a rodoviária de Campinas, na Rua Doutor Pereira Lima. A cerca de 100 metros fica o Terminal Metropolitano Prefeito Magalhães Teixeira. Para quem viaja com frequência ou trabalha em cidades vizinhas, é uma vantagem rara."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ligação com o Centro é feita por viadutos, como o Viaduto da Cury, e por um túnel de pedestres de 200 metros, aberto em 1918 junto à antiga estação. A Avenida João Jorge corta o bairro, e as avenidas das Amoreiras e John Boyd Dunlop ficam próximas, levando às rodovias que saem da cidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao norte, atravessando os trilhos, está o Centro de Campinas, com comércio, serviços e órgãos públicos. Ao sul da ferrovia, a Vila Industrial abriu caminho para outros bairros operários, como Fundão, Ponte Preta, São Bernardo e Parque Industrial. No vizinho Bonfim fica o **Sesc Campinas**, na Rua Dom José I, com teatro, ginásio e programação cultural."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Industrial faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer morar perto do Centro e da rodoviária, a quem gosta de casas com história e a quem procura apartamento em condomínio novo com acesso rápido a ônibus e avenidas. Estudantes e professores das faculdades instaladas ali também encontram tudo por perto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o movimento de ônibus e carros em volta da rodoviária e das avenidas, o contraste entre quadras bem conservadas e imóveis antigos que pedem reforma, e as regras de patrimônio que valem para parte do bairro. Escolher a rua faz muita diferença."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte se o imóvel é tombado ou fica em área de preservação, qual a idade da construção e das instalações, quanto o trajeto de ônibus da rodoviária passa pela rua e, em prédios, o valor do condomínio e o que ele inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Industrial, em Campinas?",
+      "resposta": "Colada ao Centro, ao sul da linha férrea da antiga estação, hoje Estação Cultura. É no bairro que fica a rodoviária da cidade, o Terminal Multimodal Ramos de Azevedo."
+    },
+    {
+      "pergunta": "A Vila Industrial é bom para morar?",
+      "resposta": "Para quem quer ficar perto do Centro e da rodoviária, com casas antigas ou prédios novos à escolha, sim. Quem procura silêncio deve evitar as ruas de maior movimento de ônibus perto do terminal e das avenidas."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Vila Industrial?",
+      "resposta": "Porque nasceu no fim do século XIX como bairro de trabalhadores da ferrovia, das indústrias e dos curtumes. Segundo o historiador Benedito Barbosa Pupo, o nome se ligava mais à ferrovia do que às fábricas, que cresceram depois da Primeira Guerra."
+    },
+    {
+      "pergunta": "A rodoviária de Campinas fica na Vila Industrial?",
+      "resposta": "Sim. O Terminal Multimodal Ramos de Azevedo fica na Rua Doutor Pereira Lima, na Vila Industrial, a cerca de 100 metros do Terminal Metropolitano Prefeito Magalhães Teixeira."
+    },
+    {
+      "pergunta": "O que é tombado na Vila Industrial?",
+      "resposta": "As vilas Manoel Freire, Manoel Dias e Venda Grande, as ruas Alferes Raimundo e Francisco Teodoro, o Curtume Cantúsio, a Paróquia São José e o Complexo Ferroviário da Fepasa, entre outros bens."
+    },
+    {
+      "pergunta": "A Vila Industrial tem mais casas ou prédios?",
+      "resposta": "Os dois. As ruas antigas têm casas e vilas operárias, e a base de condomínios da RUAH identifica cerca de 60 condomínios, quase todos verticais, com cerca de 2.600 unidades."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista CPC (USP), artigo O bairro Vila Industrial em Campinas (SP): entre a preservação e o Plano Diretor, PUC-Campinas (2023)",
+      "site": "revistas.usp.br"
+    },
+    {
+      "nome": "Revista GEOgraphia (UFF), artigo Preservar pra quem? As contradições na preservação do patrimônio urbano-industrial em Campinas (2021)",
+      "site": "periodicos.uff.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, reportagens de Benedito Barbosa Pupo no Correio Popular (1980)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Notícia Bibliográfica e Histórica (PUC-Campinas), texto de Benedito Barbosa Pupo sobre a Vila Industrial",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, Teatro Municipal José de Castro Mendes e Como é morar em Vila Industrial",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Campinas Station",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Sesc SP, Bienal Sesc de Dança 2023, lista de espaços em Campinas",
+      "site": "sescsp.org.br"
+    },
+    {
+      "nome": "ABC do ABC, projeto da PUC-Campinas e da Prefeitura para o Complexo Ferroviário (março de 2025)",
+      "site": "abcdoabc.com.br"
+    },
+    {
+      "nome": "Buser, Terminal Multimodal Ramos de Azevedo",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Industrial, em Campinas: o bairro que nasceu às costas da estação de trem, para os ferroviários, e ainda guarda vilas operárias tombadas, o Teatro Castro Mendes e a rodoviária da cidade. Hoje, casas antigas dividem as ruas com prédios novos. Preparamos um guia com a história, o patrimônio, as escolas, o acesso e o que considerar antes de morar. Link na bio.",
+    "hashtags": [
+      "vilaindustrial",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "patrimoniohistorico",
+      "ferrovia",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Industrial, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.014Z"
+}

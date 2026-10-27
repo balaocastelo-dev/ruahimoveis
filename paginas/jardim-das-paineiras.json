@@ -1,0 +1,315 @@
+{
+  "slug": "jardim-das-paineiras",
+  "titulo": "Jardim das Paineiras, Campinas: como é morar no bairro",
+  "resumo": "Guia do Jardim das Paineiras, em Campinas: localização na região Leste, ruas e praças, casas e prédios, Shopping Iguatemi ao lado e acessos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Rua arborizada do Jardim das Paineiras, com casas atrás de muros e taludes gramados",
+      "alt": "Rua asfaltada com faixa amarela, árvores grandes dos dois lados e casas de dois andares ao fundo",
+      "imovel_foto": 2100
+    },
+    {
+      "id": "f2",
+      "legenda": "Vista aérea de uma quadra do bairro, com o lote da RUAH à venda marcado em vermelho",
+      "alt": "Foto aérea de casas com telhados e piscinas, árvores e um terreno vazio contornado em vermelho",
+      "imovel_foto": 2101
+    },
+    {
+      "id": "f3",
+      "legenda": "Casa no alto de um muro de arrimo, em rua de calçadas gramadas do bairro",
+      "alt": "Casa moderna branca e bege sobre um talude gramado, com muro de blocos e calçada com grama",
+      "imovel_foto": 2098
+    },
+    {
+      "id": "f4",
+      "legenda": "Entrada do Shopping Iguatemi Campinas, na Avenida Iguatemi, vizinho ao bairro",
+      "alt": "Fachada de shopping com cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Torre e lateral do Shopping Iguatemi Campinas",
+      "alt": "Prédio de shopping com torre de relógio, fachada cinza e palmeiras no jardim",
+      "commons": "File:Shopping Iguatemi Campinas 02.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Entrada do Centro Infantil Boldrini, hospital de oncologia e hematologia pediátrica",
+      "alt": "Prédio hospitalar de quatro andares com rotatória ajardinada e placa Boldrini na frente",
+      "commons": "File:241117 Hospital Boldrini Isenção Lixo Hospitalar Foto Carlos Bassan 005 (38622685391).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Rua residencial da Nova Campinas, bairro-jardim vizinho a oeste",
+      "alt": "Rua larga com casas baixas, postes e árvores de copa grande nas calçadas",
+      "commons": "File:Nova Campinas - Campinas - SP.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim das Paineiras** é um bairro residencial da região Leste de Campinas, entre a Nova Campinas e o Shopping Iguatemi. É formado principalmente por casas em lotes grandes, em ruas arborizadas, e tem também nas últimas décadas alguns edifícios e condomínios. A região Leste reúne bairros de alto padrão da cidade, e o Paineiras aparece nessa lista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro combina rua tranquila com um grande centro de compras a poucos minutos a pé. Este guia reúne o que as fontes confirmam sobre a história do loteamento, as ruas e praças, o perfil dos imóveis, os serviços por perto e os acessos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região Leste de Campinas",
+        "Faz divisa a oeste com a Nova Campinas, bairro-jardim projetado em 1945",
+        "Fica ao lado do Shopping Iguatemi Campinas, inaugurado em 1980",
+        "Predominam casas em lotes amplos, com alguns prédios de até 12 andares",
+        "Tem cerca de 11 praças registradas, entre elas a Praça Nelson Rodrigues, nomeada em 1981",
+        "É servido pelas avenidas José Bonifácio, Jesuíno Marcondes Machado e Iguatemi"
+      ],
+      "titulo": "O Jardim das Paineiras em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do Jardim das Paineiras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O material público sobre a origem do loteamento é escasso, mas um documento do acervo do **Centro de Memória da Unicamp** ajuda a datar o bairro. Em 29 de julho de 1981, o Decreto nº 6.558, assinado pelo prefeito em exercício José Roberto Magalhães Teixeira, deu o nome de **Praça Nelson Rodrigues** à área descrita como *Sistema de Lazer do Jardim das Paineiras*, entre as avenidas José Bonifácio e Jesuíno Marcondes Machado e a Rua Cruzália. O pedido havia sido protocolado em dezembro de 1980."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ou seja: no começo dos anos 1980 o loteamento já existia, com suas áreas de lazer definidas. É a mesma época em que o vizinho **Shopping Iguatemi Campinas** foi inaugurado, em 6 de maio de 1980, na Avenida Iguatemi. As fontes consultadas não registram o nome do loteador nem a data de aprovação do projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem de uma árvore, como o do vizinho Jardim Flamboyant. A **paineira** é uma árvore nativa do Brasil, que pode passar de 30 metros, tem tronco esverdeado e engrossado na base e flores grandes, em geral cor-de-rosa. Seus frutos se abrem e soltam a paina, uma fibra branca e sedosa usada para encher travesseiros."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim das Paineiras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim das Paineiras é, antes de tudo, um bairro de casas. As ruas internas têm árvores, calçadas com grama e terrenos em aclive em vários trechos, o que faz muitas casas ficarem acima do nível da rua, sobre muros de arrimo. As vias são, em geral, de trânsito local, e o movimento maior fica nas avenidas que contornam o bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também prédios. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 15 condomínios no bairro, nove deles verticais, com até 12 andares. Entre os nomes registrados estão o Condomínio Place Vendome, o Place des Vosges, o Residencial Ville Neuve II, o Cyrela Legacy Paineiras e o Reserva Botanique, além de condomínios horizontais de casas, como o residencial ligado à Rua Carlo Macchi."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas do bairro estão a Rua Carlo Macchi, a Rua Pérola Byington, a Rua Hermínio Humberto Bertani, a Rua Aroldo de Azevedo, a Rua Lumen Christi e a Rua Doutor João Alves dos Santos, além do trecho final da Avenida José Bonifácio. Quem procura terreno para construir encontra lotes de rua residencial, como o que aparece na foto aérea abaixo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Praças e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem um número grande de praças para o seu tamanho. O cadastro de logradouros lista 11, entre elas a **Praça Nelson Rodrigues**, a Praça Rotary Club, a Praça Santo Sepulcro, a Praça Trinta e Um de Março, a Praça Euzébio Rocha e a Praça Vicente Minari Júnior. A Praça Nelson Rodrigues, por exemplo, ocupa o sistema de lazer original do loteamento, segundo o decreto de 1981."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para lazer maior, a região Leste oferece o **Parque Portugal**, a Lagoa do Taquaral, com bondinho, barco com mirante e pedalinho. Academia e cinema ficam no Shopping Iguatemi, que tem uma sala da Cinemark no 3º piso e uma unidade da Bodytech, segundo o próprio shopping."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Shopping Iguatemi, comércio e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido do bairro é o **Shopping Iguatemi Campinas**, na Avenida Iguatemi, 777, na Vila Brandina. Aberto em 1980, ele chegou a 356 lojas depois da ampliação de 2015, que acrescentou 104 lojas. Pela base de pontos de interesse usada pela RUAH, o shopping fica a menos de 1 km do centro do Jardim das Paineiras, uma caminhada de cerca de dez minutos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Isso resolve boa parte da rotina: o shopping tem supermercado St. Marche no 1º piso, que abre mais cedo que as lojas, caixa eletrônico, praça de alimentação, carregadores para carro elétrico e bicicletário. Em volta, a mesma base registra dezenas de mercados, padarias, restaurantes e cafés num raio de 1,5 km, e a lista dos mais próximos aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mais adiante, já na Rodovia Dom Pedro I, ficam o **Shopping Galleria**, no km 131,5, com cerca de 200 lojas, e o Parque Dom Pedro, também na região Leste."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e saúde perto do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cerca de 500 metros do centro do bairro funciona o **Cefortepe**, o Centro de Formação, Tecnologia e Pesquisa Educacional Prof. Milton de Almeida Santos, da Prefeitura de Campinas. Ele não é uma escola para alunos: é o espaço onde a rede municipal faz a formação continuada de professores e guarda um centro de memória e pesquisa educacional. Escolas particulares de educação infantil e cursos de idiomas aparecem na lista ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o vizinho de peso é o **Centro Infantil Boldrini**, referência em oncologia e hematologia pediátrica, com assistência, ensino e pesquisa. Ele foi criado em 1978 pelo Clube da Lady de Campinas e virou hospital em 1986; o endereço oficial é a Rua Dr. Gabriel Porto, na Cidade Universitária, a menos de 500 metros do centro do Paineiras."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro é contornado por três avenidas que fazem a ligação com o resto da cidade: a **Avenida José Bonifácio**, cujo trecho final passa pelo bairro, a **Avenida Jesuíno Marcondes Machado** e a **Avenida Iguatemi**, onde está o shopping."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região Leste é cortada pela **Rodovia Dom Pedro I** (SP-65), que liga Campinas a Jacareí, no Vale do Paraíba, em 145,5 km, e passa por cidades como Valinhos, Itatiba e Atibaia. Ao longo dela, em Campinas, formou-se um eixo de shoppings, hipermercados e escolas conhecidas. Em Campinas, a rodovia tem saídas para os distritos de Sousas e Joaquim Egídio e termina no acesso à Rodovia Anhanguera. Antes de decidir, vale testar o trajeto no horário em que você vai circular."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A oeste fica a **Nova Campinas**, bairro-jardim de casas de alto padrão, proposto em 1945 pelo urbanista Jorge de Macedo Vieira, com ruas sinuosas que acompanham o terreno, muita arborização e implantado às margens do córrego Proença."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta do Shopping Iguatemi estão também a **Vila Brandina**, onde fica o shopping, e o **Jardim Flamboyant**. Um pouco mais a oeste, a Nova Campinas faz divisa com o Cambuí, já na região central, o que coloca o Paineiras a poucos quilômetros da oferta de bares, restaurantes e serviços do centro expandido."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim das Paineiras faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer casa com quintal, rua residencial e árvores, sem abrir mão de shopping, supermercado e serviços de saúde a uma caminhada de distância. Também atende quem busca terreno para construir em área consolidada, perto da Nova Campinas e do Cambuí, e quem prefere apartamento em prédio de poucos andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também existem. Vários lotes são em aclive, o que pede muro de arrimo e projeto adequado. A proximidade com o shopping e com as avenidas traz movimento em datas comerciais e nos horários de pico, e a oferta de apartamentos é bem menor que a de bairros mais verticalizados."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Em casa ou terreno, pergunte sobre a inclinação do lote, o estado dos muros de arrimo, as regras de uso do solo e a distância até a avenida mais próxima. Em apartamento, confira o que o condomínio inclui, a idade do prédio e o número de vagas.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim das Paineiras, em Campinas?",
+      "resposta": "Na região Leste da cidade, entre a Nova Campinas, a oeste, e o Shopping Iguatemi Campinas, na Avenida Iguatemi. O bairro é servido pelas avenidas José Bonifácio e Jesuíno Marcondes Machado."
+    },
+    {
+      "pergunta": "O Jardim das Paineiras é bom para morar?",
+      "resposta": "Para quem quer casa em rua residencial arborizada, com shopping, supermercado e hospitais por perto, sim. Quem procura grande oferta de apartamentos ou terrenos planos pode encontrar mais opções em outros bairros."
+    },
+    {
+      "pergunta": "O Jardim das Paineiras tem mais casas ou prédios?",
+      "resposta": "Casas. A base de condomínios da RUAH identifica cerca de 15 condomínios no bairro, nove deles prédios de até 12 andares; o resto do bairro é formado por casas em lotes amplos."
+    },
+    {
+      "pergunta": "O Shopping Iguatemi fica no Jardim das Paineiras?",
+      "resposta": "Não. O endereço oficial do shopping é a Avenida Iguatemi, 777, na Vila Brandina, mas ele fica colado ao Jardim das Paineiras, a menos de 1 km do centro do bairro."
+    },
+    {
+      "pergunta": "Desde quando existe o Jardim das Paineiras?",
+      "resposta": "O loteamento já existia no começo dos anos 1980: em julho de 1981, um decreto municipal deu o nome de Praça Nelson Rodrigues ao sistema de lazer do bairro. As fontes consultadas não trazem a data de aprovação do loteamento."
+    },
+    {
+      "pergunta": "Quais bairros fazem divisa com o Jardim das Paineiras?",
+      "resposta": "A Nova Campinas, a oeste, e a região do Shopping Iguatemi, com a Vila Brandina e o Jardim Flamboyant. O Cambuí fica logo depois da Nova Campinas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, Decreto nº 6.558 de 1981 (Praça Nelson Rodrigues)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Lista de bairros de Campinas, Nova Campinas (Campinas), Iguatemi Campinas, Paineira e Rodovia Dom Pedro I",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Iguatemi Campinas, página oficial do shopping",
+      "site": "iguatemi.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, shoppings em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Unicamp, PIBIC: estudo sobre o bairro Nova Campinas",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "Unicamp, PIBIC: estudo sobre o Cefortepe e a formação de professores em Campinas",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "Centro Infantil Boldrini, página institucional",
+      "site": "boldrini.org.br"
+    },
+    {
+      "nome": "CEPs Brasil, logradouros do Jardim das Paineiras",
+      "site": "cepsbrasil.com.br"
+    },
+    {
+      "nome": "Base de condomínios e de pontos de interesse da RUAH: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim das Paineiras, em Campinas: ruas arborizadas, casas em lotes amplos, onze praças e o Shopping Iguatemi a uma caminhada de distância. Preparamos um guia do bairro com a história do loteamento, as ruas, os vizinhos, os acessos pela Dom Pedro e o que considerar antes de comprar casa ou terreno por lá. Link na bio.",
+    "hashtags": [
+      "jardimdaspaineiras",
+      "paineiras",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "terrenocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim das Paineiras, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.013Z"
+}

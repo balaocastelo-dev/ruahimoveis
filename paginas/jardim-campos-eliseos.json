@@ -1,0 +1,285 @@
+{
+  "slug": "jardim-campos-eliseos",
+  "titulo": "Jardim Campos Elíseos, Campinas: como é morar no bairro",
+  "resumo": "Guia do Jardim Campos Elíseos, em Campinas: história das ruas, Avenida das Amoreiras, Terminal BRT, escolas, saúde e o que considerar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida Ruy Rodriguez, que liga a região do Jardim Novo Campos Elíseos ao Vida Nova",
+      "alt": "Avenida arborizada vista do alto, com carros, casas baixas e prédios ao fundo sob céu azul",
+      "commons": "File:Av. Ruy Rodriguez (sentido Vida Nova), Ouro Verde, Campinas, SP.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Avenida das Amoreiras no cruzamento com a marginal do Piçarrão, com ônibus no corredor",
+      "alt": "Avenida larga em subida com canteiro central, postes, ônibus e morros arborizados ao fundo",
+      "commons": "File:Amoreiras x marg. Piçarrão - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A Avenida das Amoreiras passando sob a Rodovia Anhanguera, em 2006",
+      "alt": "Avenida passando por baixo de um viaduto de concreto, com um ônibus em cima e prédios ao fundo",
+      "commons": "File:2006 Anhanguera x Amoreiras - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Vista aérea do Hospital Municipal Mário Gatti, na Avenida Prefeito Faria Lima",
+      "alt": "Vista aérea de um conjunto de prédios hospitalares azuis e brancos cercados de árvores e avenidas",
+      "commons": "File:Hospital Mário Gatti.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "O Hospital Mário Gatti visto da Avenida Prefeito Faria Lima",
+      "alt": "Prédio branco de vários andares atrás de um gramado com palmeiras, ao lado de uma avenida",
+      "commons": "File:Hospital Mario Gatti - Av Prefeito Faria Lima - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Campos Elíseos** é um bairro residencial do sudoeste de Campinas, cortado pela **Avenida das Amoreiras**, no caminho entre o Centro e a região do Ouro Verde. Tem casas e sobrados em ruas planejadas há décadas, prédios baixos e um comércio de bairro forte. Desde 2024, abriga o **Terminal BRT Campos Elíseos**, ponto de encontro de dois corredores de ônibus rápidos da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome aparece em dois loteamentos vizinhos nos documentos da Prefeitura: o Jardim Campos Elíseos e o **Jardim Novo Campos Elíseos**. No dia a dia, quase todo mundo diz apenas Campos Elíseos. Este guia reúne o que as fontes contam sobre a história das ruas, o transporte, a saúde, as escolas e os vizinhos, para você decidir se o bairro combina com a sua rotina."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial do sudoeste de Campinas, entre o Centro e o Ouro Verde",
+        "Formado pelos loteamentos Jardim Campos Elíseos e Jardim Novo Campos Elíseos",
+        "Muitas ruas têm nomes de cidades paulistas, dados por lei de 1957",
+        "Cortado pela Avenida das Amoreiras, uma das vias mais longas da cidade",
+        "Tem o Terminal BRT Campos Elíseos, em operação desde janeiro de 2024",
+        "Predomínio de casas e prédios baixos, de até 7 andares, segundo a base da RUAH",
+        "Conta com Centro de Saúde municipal que leva o nome do bairro"
+      ],
+      "titulo": "O Campos Elíseos em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história do Campos Elíseos contada pelas ruas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história do bairro fica registrada nos atos da Prefeitura guardados pelo Centro de Memória da Unicamp. Em **3 de abril de 1957**, a Lei nº 1.733 deu nome a 19 vias do Jardim Novo Campos Elíseos. Todas receberam nomes de municípios paulistas: Americana, Santa Bárbara d'Oeste, Cosmópolis, Mogi-Mirim, Itatiba, Vinhedo, Indaiatuba, Amparo, Sumaré, Piracicaba e Capivari, entre outros. É por isso que, até hoje, andar pelo bairro é quase percorrer um mapa do interior do estado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma lei definiu a via principal. O trecho da antiga Avenida Campos Elíseos, desde a estrada de Viracopos até o fim do loteamento, passou a se chamar **Avenida das Amoreiras**, por ser o prolongamento natural dessa avenida. Ou seja: a Amoreiras que você conhece hoje nasceu, em parte, como a avenida do próprio Campos Elíseos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Jardim Campos Elíseos, as ruas ficaram anos identificadas só por números. O **Decreto nº 4.196, de 10 de janeiro de 1973**, assinado pelo prefeito Orestes Quércia, trocou parte desses números por homenagens. A antiga Rua 12 virou Rua Conselheiro José Clemente Pereira, a Rua 31 virou Rua Francisco Ferreira Pires, e as Ruas 10 e 13 formaram a Rua Conselheiro Antonio Carlos. Outros decretos, de 1977 e de 1980, completaram a lista."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Em 1983, o Decreto nº 7.605 deu a uma praça do Jardim Novo Campos Elíseos, entre as Ruas Americana, Santa Bárbara D'Oeste e Serra Negra, o nome de **Lídia Vieira da Silva**. Segundo a justificativa do pedido, ela foi uma das primeiras moradoras do bairro, ligada a obras de caridade e à igreja de Santa Luzia.",
+      "titulo": "Uma praça com nome de moradora"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Campos Elíseos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Campos Elíseos é, acima de tudo, um bairro de casas. As ruas foram traçadas em loteamentos dos anos 1950 e 1970, e a paisagem é de sobrados, casas térreas e pequenos prédios. A base de condomínios da RUAH identifica cerca de 36 condomínios no bairro, a maior parte verticais, mas todos baixos: o mais alto tem 7 andares. Somados, eles reúnem em torno de 500 unidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma base aparecem também conjuntos horizontais pequenos, com algumas dezenas de casas cada, como o Village Amoreiras e o Residencial Vila Laranjeiras. Há ainda associações de moradores registradas com o nome do bairro, um sinal de vida comunitária organizada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio é de bairro e fica perto de casa. O levantamento de lugares usado pela RUAH, feito com dados do OpenStreetMap e do Overture Maps, encontra cerca de 50 mercados, padarias e empórios e perto de 80 restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro. Postos de combustível e serviços se concentram nas avenidas principais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte: o Terminal BRT e a Avenida das Amoreiras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O transporte é o ponto forte do bairro. O **Terminal BRT Campos Elíseos** é o extremo sul do **Corredor Perimetral**, que começou a operar em 26 de janeiro de 2024. O corredor tem cerca de 4 km entre o Campos Elíseos e a Vila Aurocan e aproveita o leito do antigo VLT de Campinas, que funcionou de 1990 a 1995 sobre uma linha da antiga Sorocabana. No caminho ficam estações como a Pompeia e a Cidade Jardim."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terminal também se liga ao **Corredor Ouro Verde**, que usa principalmente a Avenida das Amoreiras. O primeiro trecho desse corredor, liberado em outubro de 2020, tem cerca de 4,8 km e liga o Terminal Central ao Terminal Campos Elíseos pelas avenidas João Jorge e Amoreiras, com faixas exclusivas de ônibus. Na prática, essa é a distância de ônibus até o Centro de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o outro lado, o corredor segue pelas avenidas **Ruy Rodriguez** e Camucim até o Terminal Vida Nova, no Ouro Verde. Linhas de bairro também chegam ao terminal: desde julho de 2026, segundo o Correio da Manhã, a linha 404 passou a seguir pela Avenida Tancredo Neves e pela Amoreiras até o Terminal Campos Elíseos, com trajetos alterados nas regiões do Campos Elíseos e da Vila Mingone."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "De carro, a Avenida das Amoreiras é a referência. Ela começa na Avenida João Jorge, perto do Centro, passa sob a Rodovia Anhanguera e segue por cerca de 13 km rumo ao sul da cidade, até um viaduto sobre a Rodovia dos Bandeirantes, sem acesso direto a ela. É também o caminho natural para a região do Aeroporto de Viracopos, já que a lei de 1957 ligava a avenida à antiga estrada de Viracopos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde no Campos Elíseos e arredores"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem atendimento básico do SUS no próprio território: o **Centro de Saúde Campos Elíseos** faz parte da rede de unidades da Secretaria Municipal de Saúde de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para atendimento hospitalar, a referência municipal é o **Hospital Mário Gatti**, na Avenida Prefeito Faria Lima, avenida que cruza a Amoreiras. Ao lado do complexo, no Parque Itália, a Câmara aprovou em 2025 a doação de um terreno ao governo do estado para um hospital metropolitano de alta complexidade. Segundo o Correio da Manhã, em fevereiro de 2026 a obra ainda dependia da licitação, e o serviço público que ocupava parte da área foi transferido para o Jardim Novo Campos Elíseos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas perto do Jardim Campos Elíseos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem tem filhos encontra escolas públicas e particulares a poucos minutos. O levantamento de lugares usado pela RUAH aponta cerca de 30 escolas num raio de 1,5 km do centro do bairro. Entre as particulares, o **Colégio Alicerce** fica na Rua Benedito Rodrigues Gouveia, dentro do Jardim Campos Elíseos, e atende da creche ao ensino fundamental."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de escolher, confirme na Diretoria de Ensino ou na Secretaria Municipal de Educação qual escola atende o seu endereço e se há vaga."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Campos Elíseos faz parte de um conjunto de bairros ligados pela Avenida das Amoreiras e pelos corredores de ônibus. Os documentos da Prefeitura citam como vizinhos o **Parque Ipiranga** e o **Jardim Alvorada**, por onde passa a Rua André de Souza Campos, e a **Vila Perseu Leite de Barros**, cujas ruas foram nomeadas no mesmo decreto de 1977. As notícias de transporte citam ainda o **Jardim Amoreiras** e a **Vila Mingone**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um pouco mais longe, o **Parque Itália** concentra a estrutura hospitalar do Mário Gatti, e a região da **Vila Pompeia** tem estação própria no Corredor Perimetral. No sentido oposto, a Avenida Ruy Rodriguez leva ao **Vida Nova** e ao distrito do **Ouro Verde**, com seu comércio e o terminal do BRT."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Campos Elíseos faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma combinar com quem quer casa ou apartamento em prédio baixo, comércio de bairro perto e transporte coletivo estruturado. O Terminal BRT e as faixas exclusivas da Amoreiras encurtam o trajeto até o Centro, e a avenida facilita o acesso à Anhanguera e à região de Viracopos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também vêm das fontes. A Amoreiras é uma via de muito movimento, então ruas próximas a ela e ao terminal têm mais trânsito e ruído. O bairro não tem parque grande próprio citado nas fontes, e o lazer fica nas praças e nas academias da região. Vale visitar o imóvel em horários diferentes e conferir a distância até o ponto de ônibus e a escola."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Confira se o imóvel fica no Jardim Campos Elíseos ou no Jardim Novo Campos Elíseos, como consta na matrícula. Pergunte também sobre o zoneamento da rua e se há obras viárias previstas nas imediações.",
+      "titulo": "Antes de fechar negócio"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Jardim Campos Elíseos é bom para morar?",
+      "resposta": "Para quem quer casa ou prédio baixo, comércio de bairro e transporte coletivo fácil, costuma ser. O bairro tem o Terminal BRT Campos Elíseos e fica na Avenida das Amoreiras. Em troca, as ruas perto da avenida têm trânsito intenso."
+    },
+    {
+      "pergunta": "Onde fica o Jardim Campos Elíseos, em Campinas?",
+      "resposta": "No sudoeste da cidade, ao longo da Avenida das Amoreiras, entre o Centro e a região do Ouro Verde. De ônibus, o corredor do BRT liga o Terminal Central ao Terminal Campos Elíseos em cerca de 4,8 km."
+    },
+    {
+      "pergunta": "Qual a diferença entre Jardim Campos Elíseos e Jardim Novo Campos Elíseos?",
+      "resposta": "São dois loteamentos vizinhos que aparecem separados nos documentos da Prefeitura. As ruas do Novo Campos Elíseos receberam nomes de cidades paulistas em 1957, e as do Jardim Campos Elíseos foram nomeadas por decretos a partir de 1973."
+    },
+    {
+      "pergunta": "Quais ônibus atendem o Campos Elíseos?",
+      "resposta": "O bairro tem o Terminal BRT Campos Elíseos, ponta sul do Corredor Perimetral e ligado ao Corredor Ouro Verde. Linhas de bairro, como a 404, também chegam ao terminal pela Avenida das Amoreiras."
+    },
+    {
+      "pergunta": "Tem posto de saúde no Jardim Campos Elíseos?",
+      "resposta": "Sim. O Centro de Saúde Campos Elíseos faz parte da rede municipal de Campinas. Para casos hospitalares, a referência pública da região é o Hospital Mário Gatti, na Avenida Prefeito Faria Lima."
+    },
+    {
+      "pergunta": "Por que as ruas do Campos Elíseos têm nomes de cidades?",
+      "resposta": "Porque a Lei nº 1.733, de 1957, deu nomes de municípios paulistas, como Americana, Itatiba, Sumaré e Piracicaba, às vias do Jardim Novo Campos Elíseos. A mesma lei batizou a Avenida das Amoreiras nesse trecho."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp: Lei nº 1.733/1957 e Decretos nº 4.196/1973, 5.035/1977, 6.333/1980 e 7.605/1983 da Prefeitura de Campinas",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, lista de Centros de Saúde da Secretaria de Saúde",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Diário do Transporte, trecho inicial do BRT Ouro Verde (2020) e obras do Corredor Perimetral (2018)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, linha 404 e Terminal BRT Campos Elíseos (julho de 2026) e Hospital Metropolitano (2025 e 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes BRT de Campinas, Avenida das Amoreiras e VLT de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Metro Route Atlas, corredores do BRT de Campinas",
+      "site": "metrorouteatlas.net"
+    },
+    {
+      "nome": "Escol.as, ficha do Colégio Alicerce",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Base de condomínios e de lugares da RUAH: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
+    }
+  ],
+  "redes": {
+    "legenda": "Você sabia que as ruas do Jardim Campos Elíseos, em Campinas, têm nomes de cidades do interior paulista desde 1957? E que a Avenida das Amoreiras nasceu ali como a avenida do bairro? Montamos um guia do Campos Elíseos com a história, o Terminal BRT, escolas, saúde e o que considerar antes de morar. Link na bio.",
+    "hashtags": [
+      "camposeliseos",
+      "campinas",
+      "avenidadasamoreiras",
+      "brtcampinas",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Campos Elíseos, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.015Z"
+}
