@@ -1,0 +1,297 @@
+{
+  "slug": "alphaville-campinas",
+  "titulo": "Alphaville Campinas: como é morar no bairro de condomínios",
+  "resumo": "Guia do Alphaville Campinas: origem do loteamento, perfil das casas em condomínio, clube, escolas, acessos pela Dom Pedro I e os bairros vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Casa com imóvel da RUAH à venda no Alphaville Campinas, com sobrados vizinhos e mata ao fundo",
+      "alt": "Piscina com borda de vidro em primeiro plano e, atrás, casas brancas de telhado vermelho entre árvores altas",
+      "imovel_foto": 222
+    },
+    {
+      "id": "f2",
+      "legenda": "Quintal com piscina e jardim de casa da RUAH à venda no bairro",
+      "alt": "Piscina estreita ao lado de deque de madeira, gramado e palmeiras, com a lateral da casa à direita",
+      "imovel_foto": 221
+    },
+    {
+      "id": "f3",
+      "legenda": "Jardim de casa em condomínio com imóvel da RUAH à venda no Alphaville Campinas",
+      "alt": "Gramado e canteiro de pedras ao lado de uma varanda envidraçada com mesa e cadeiras",
+      "imovel_foto": 1442
+    },
+    {
+      "id": "f4",
+      "legenda": "Rodovia Dom Pedro I no trecho de Campinas, sentido Anhanguera",
+      "alt": "Rodovia de várias faixas com placas verdes indicando Americana, Limeira, Sorocaba e São Paulo",
+      "commons": "File:Rodovia Dom Pedro - Sentido Anhanguera - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Letreiro na entrada da Unicamp, no distrito de Barão Geraldo",
+      "alt": "Painel de concreto com o logotipo e o nome Unicamp sobre um canteiro de plantas, com árvores atrás",
+      "commons": "File:Entrada Unicamp 2.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Alphaville Campinas** é um bairro formado por condomínios residenciais fechados, criado pela Alphaville Urbanismo em Campinas (SP), perto do distrito de Barão Geraldo e com acesso pela Rodovia Dom Pedro I. O perfil é de casas em lotes amplos, com portaria, regras de construção e baixa densidade. Não confunda com o Alphaville Dom Pedro, outro empreendimento da mesma marca na cidade, que tem guia próprio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece rotina de casa com quintal, clube próprio e escolas por perto, com a Unicamp e a PUC-Campinas a uma distância curta. Em troca, quase tudo depende do carro. Este guia reúne o que as fontes confirmam sobre a origem, o perfil dos imóveis, os acessos e os vizinhos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro de condomínios residenciais fechados, criado pela Alphaville Urbanismo",
+        "Campinas foi, em 1994, a primeira cidade fora da Grande São Paulo a receber o modelo Alphaville",
+        "Predominam casas em condomínio horizontal; a base da RUAH registra só um prédio alto",
+        "Tem clube próprio, o Alphaville Campinas Clube, com piscinas, quadras e academia",
+        "Fica perto de Barão Geraldo, onde estão a Unicamp e um campus da PUC-Campinas",
+        "O acesso de carro é feito pela região da Rodovia Dom Pedro I (SP-065)",
+        "Vizinhos como Parque dos Pomares, Jardim Míriam e Jardim Santa Cândida"
+      ],
+      "titulo": "O Alphaville Campinas em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o Alphaville Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem da marca. A Alphaville Urbanismo conta que a história começou no início dos anos 1970, quando o engenheiro Renato de Albuquerque e o sócio Yojiro Takaoka criaram em Barueri, na Grande São Paulo, um centro empresarial para indústrias não poluentes. Quem trabalhava ali precisava morar perto, e assim surgiu o Alphaville Residencial, que deu origem ao modelo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Estudos acadêmicos sobre urbanismo descrevem o Alphaville de Barueri como o primeiro loteamento residencial fechado de alto padrão do Brasil. A fórmula se espalhou a partir dos anos 1990, quando a Alphaville Urbanismo passou a lançar empreendimentos pelo país inteiro. Segundo o registro da empresa na Wikipédia, Campinas foi a primeira cidade fora da Grande São Paulo a receber o produto, em 1994."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje o grupo diz estar presente em 23 estados e no Distrito Federal, com lotes que têm, em média, 400 m² nos empreendimentos da linha Alphaville. Em Campinas, a marca continuou lançando: em outubro de 2021 apresentou o Reserva Alpha Galleria, com 53 casas, que a empresa descreve como seu primeiro condomínio de casas prontas, e em 2024 lançou o Parque Alphaville Campinas, na Avenida Guilherme Campos, no Jardim Santa Genebra."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Alphaville Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Alphaville Campinas é um bairro de casas. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de oito condomínios no bairro, quase todos horizontais. A exceção é um edifício de 20 andares. Os condomínios seguem o padrão descrito pelos guias imobiliários: construções com regras urbanísticas rígidas, lotes grandes e poucas casas por quadra."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As casas costumam ter quintal, jardim e piscina, e os condomínios oferecem áreas comuns. Um exemplo é um condomínio da Rua Carapa, construído em 2016, que, segundo a ficha do QuintoAndar, tem portaria 24 horas, academia, piscina, quadra, salão de festas, playground e área verde, com casas de quatro a seis quartos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na segurança, o guia do Chaves na Mão descreve portarias em todos os condomínios, câmeras e rondas, e cita condomínios com biometria e reconhecimento facial. O mesmo guia aponta moradores de classe média alta e alta, como executivos e profissionais liberais, e custos de moradia acima da média da cidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Clube, lazer e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal equipamento de lazer é o **Alphaville Campinas Clube**, que reúne piscinas, quadras esportivas, academia e espaços para eventos sociais, segundo o guia do Chaves na Mão. Dentro dos condomínios, as áreas verdes e os espaços de lazer de cada empreendimento completam a rotina, com playground, quadras e piscinas para os moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para programas fora do bairro, os guias citam o Shopping Galleria e o Teatro Iguatemi entre os destinos mais próximos de compras e cultura. A seção *o que tem perto*, mais abaixo nesta página, mostra academias, parques e restaurantes num raio de 1,5 km, com dados atualizados automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do próprio loteamento fica o **Colégio Pomares**, escola particular cujo endereço, segundo o portal Melhor Escola, está no bairro Loteamento Alphaville. Na região, a ficha do QuintoAndar cita a **E.E. Luiz Gonzaga Horta Lisboa**, da rede estadual, e o Centro Cultural Brasil-Estados Unidos. Os guias imobiliários lembram ainda colégios particulares como Notre Dame, Objetivo, Integral e Lumiar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ensino superior está perto. O distrito vizinho de **Barão Geraldo** abriga a Unicamp, cuja pedra fundamental foi lançada em 10 de novembro de 1966, e o Campus I da PUC-Campinas, na antiga Fazenda Santa Cândida. Para famílias com filhos em idade universitária ou professores e pesquisadores, essa proximidade pesa na escolha."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia fica nos arredores. O guia do Chaves na Mão aponta o **Alpha Mall** como o principal centro de compras ligado ao bairro, com restaurantes, lojas e serviços como salões e clínicas de estética, além de mercados, farmácias, padarias, academias e cafés na região. O Jardim Míriam, vizinho, concentra mercados, lanchonetes e padarias a poucos minutos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o mesmo guia cita o Hospital Care como opção na própria região e lembra o Hospital Vera Cruz e o Hospital Madre Theodora entre os hospitais acessíveis de carro. Vale confirmar, antes da mudança, quais deles atendem o seu plano."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O carro é o meio principal. O acesso para fora de Campinas passa pela **Rodovia Dom Pedro I (SP-065)**, inaugurada em 1972, que tem 145,5 km entre Jacareí e Campinas, termina no acesso ao km 104 da Rodovia Anhanguera e liga a cidade a Atibaia, Itatiba e Valinhos. No trecho campineiro, ela dá acesso à Rodovia Professor Zeferino Vaz (SP-332), que segue para Barão Geraldo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Barão Geraldo fica a cerca de 12 km do Centro de Campinas pela Zeferino Vaz. O transporte público na região é descrito pelos guias como limitado, com pontos de ônibus nas proximidades. Se você não dirige ou precisa ir ao Centro todo dia sem carro, teste o trajeto antes de decidir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A lista de bairros de Campinas agrupa o Alphaville com vizinhos como **Parque dos Pomares**, **Jardim Míriam**, **Jardim Santa Cândida**, **Jardim Santa Genebra** e **Parque Imperador**. O Jardim Míriam reúne o comércio de bairro mais próximo, e o Santa Genebra recebeu o lançamento mais recente da marca na cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado está Barão Geraldo, distrito criado em 1953 que tinha 55.818 moradores no Censo de 2010, além de uma grande população flutuante de estudantes. A região faz parte de uma área de urbanização controlada, onde estudos sobre o tema registram muitos condomínios e loteamentos fechados."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Alphaville Campinas faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma atender famílias que querem casa com quintal, portaria e clube, e profissionais ligados à Unicamp, à PUC-Campinas e às empresas da região. Para quem viaja com frequência pela Dom Pedro I, a localização também ajuda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não combinar com quem depende de transporte público, gosta de resolver tudo a pé ou procura apartamento: a oferta de prédios é pequena. Os custos de condomínio e de manutenção de uma casa grande também entram na conta."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte o valor da taxa da associação e do condomínio e o que cada uma inclui, as regras de construção e reforma do loteamento, as condições de uso do clube e o tempo real de trajeto até o trabalho e a escola dos filhos nos horários de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Alphaville Campinas?",
+      "resposta": "Em Campinas (SP), perto do distrito de Barão Geraldo e com acesso pela região da Rodovia Dom Pedro I. Tem como vizinhos o Parque dos Pomares, o Jardim Míriam e o Jardim Santa Cândida."
+    },
+    {
+      "pergunta": "Alphaville Campinas e Alphaville Dom Pedro são o mesmo bairro?",
+      "resposta": "Não. São empreendimentos diferentes da mesma marca em Campinas. Esta página trata do Alphaville Campinas; o Alphaville Dom Pedro tem guia próprio."
+    },
+    {
+      "pergunta": "O Alphaville Campinas é bom para morar?",
+      "resposta": "Para quem quer casa em condomínio fechado, com clube e perto da Unicamp e da PUC-Campinas, costuma ser. Quem depende de ônibus ou quer fazer tudo a pé tende a sentir falta de opções."
+    },
+    {
+      "pergunta": "Quando foi criado o Alphaville Campinas?",
+      "resposta": "A Alphaville Urbanismo levou o modelo a Campinas em 1994, segundo o registro da empresa. Foi a primeira cidade fora da Grande São Paulo a receber o produto."
+    },
+    {
+      "pergunta": "O Alphaville Campinas tem prédios?",
+      "resposta": "Poucos. A base de condomínios da RUAH identifica cerca de oito condomínios no bairro, quase todos de casas, e um único edifício alto, de 20 andares."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Alphaville Campinas?",
+      "resposta": "O Colégio Pomares, particular, fica no loteamento. Na região estão a E.E. Luiz Gonzaga Horta Lisboa e, em Barão Geraldo, a Unicamp e o Campus I da PUC-Campinas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Alphaville Urbanismo, página Sobre Nós",
+      "site": "alphaville.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Alphaville Urbanismo, Barão Geraldo, Rodovia Dom Pedro I e Lista de bairros de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Forbes Brasil, perfil de Renato de Albuquerque, criador do Alphaville (novembro de 2025)",
+      "site": "forbes.com.br"
+    },
+    {
+      "nome": "Revista de Direito da Cidade (UERJ), artigo sobre loteamentos fechados em Barão Geraldo",
+      "site": "e-publicacoes.uerj.br"
+    },
+    {
+      "nome": "Alphaville, relatório de resultados com o lançamento do Reserva Alpha Galleria",
+      "site": "api.mziq.com"
+    },
+    {
+      "nome": "Chaves na Mão, guia do bairro Alphaville Campinas",
+      "site": "chavesnamao.com.br"
+    },
+    {
+      "nome": "QuintoAndar, ficha de condomínio no Loteamento Alphaville Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Melhor Escola, ficha do Colégio Pomares",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "apto.vc, ficha do Parque Alphaville Campinas",
+      "site": "apto.vc"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Alphaville Campinas: o bairro de condomínios fechados que levou o modelo Alphaville para fora da Grande São Paulo, em 1994. Casas com quintal, clube próprio, Unicamp e PUC-Campinas por perto e acesso pela Dom Pedro I. Preparamos um guia com a história, o perfil dos imóveis, escolas, acessos e os pontos de atenção antes da mudança. Link na bio.",
+    "hashtags": [
+      "alphavillecampinas",
+      "campinas",
+      "baraogeraldo",
+      "casaemcondominio",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Alphaville Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.505Z"
+}

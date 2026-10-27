@@ -1,0 +1,316 @@
+{
+  "slug": "cidade-universitaria",
+  "titulo": "Cidade Universitária, Campinas: como é morar ao lado da Unicamp",
+  "resumo": "Guia da Cidade Universitária, em Barão Geraldo, Campinas: origem do loteamento, kitnets e casas, Parque do Lago, comércio, saúde e acessos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Garça no lago do Parque Ecológico Hermógenes Leitão Filho, com prédios da Unicamp ao fundo",
+      "alt": "Garça branca pousada no corrimão azul à beira de um lago, com árvores e edifícios baixos na outra margem",
+      "commons": "File:Garça no Parque Hermógenes Leitão Filho.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Margem arborizada do lago do Parque Ecológico, em foto de 2011",
+      "alt": "Árvores de tronco escuro na beira de um lago, com o sol atravessando as folhas",
+      "commons": "File:ParqueBarão3.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "Letreiro de pedra em uma das entradas da Unicamp",
+      "alt": "Muro baixo de pedra com o logotipo e o nome Unicamp, cercado de canteiro verde",
+      "commons": "File:Entrada Unicamp 2.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Praça do Ciclo Básico, no campus da Unicamp",
+      "alt": "Caminho de pedrisco sob uma alameda de árvores, com gramado dos dois lados",
+      "commons": "File:Praça CB Unicamp.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Vista do campus da Unicamp por volta de 1990, ainda cercado de áreas abertas",
+      "alt": "Foto aérea antiga com prédios baixos, construções circulares e campos de terra vermelha ao fundo",
+      "commons": "File:Unicamp campus 1990.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "O prédio do Ciclo Básico da Unicamp iluminado à noite",
+      "alt": "Edifício de concreto em dois andares com palmeiras iluminadas em um pátio de piso de tijolos",
+      "commons": "File:Ciclo Básico UNICAMP 2015.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Jardim de casa com a RUAH à venda na Cidade Universitária",
+      "alt": "Quintal com escada de madeira subindo entre plantas, árvores altas e mesa de jardim",
+      "imovel_foto": 689
+    },
+    {
+      "id": "f8",
+      "legenda": "Varanda com pergolado de casa à venda pela RUAH no bairro",
+      "alt": "Casa de tijolo aparente com pergolado de madeira, cadeiras de varanda e janelas de vidro no andar de cima",
+      "imovel_foto": 691
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Cidade Universitária** é um bairro de Campinas que fica no distrito de Barão Geraldo, colado ao campus da Unicamp, a cerca de 12 km do Centro. Nasceu como loteamento em volta da universidade e hoje mistura casas térreas e sobrados com muitos prédios baixos de kitnets e quartos para estudantes. A rotina é ditada pelo calendário acadêmico: movimento intenso no semestre, ruas mais calmas nas férias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ou investir ali, este guia reúne a origem do bairro, o perfil dos imóveis, o Parque do Lago, o comércio voltado ao público universitário, a saúde por perto e os acessos. Barão Geraldo como um todo tem página própria neste site; aqui o foco é o bairro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro do distrito de Barão Geraldo, vizinho ao campus da Unicamp",
+        "Dividido em loteamentos: Cidade Universitária I, Cidade Universitária II e Jardim Alto da Cidade Universitária",
+        "Formou-se em volta do campus, cuja pedra fundamental foi lançada em 5 de outubro de 1966",
+        "Muitos prédios baixos de kitnets e pensionatos para estudantes, ao lado de casas",
+        "O Parque Ecológico Hermógenes de Freitas Leitão Filho, o Parque do Lago, fica entre o bairro e o campus",
+        "Hospital de Clínicas da Unicamp e Hospital Centro Médico de Campinas por perto",
+        "Acesso pela Rodovia Professor Zeferino Vaz (SP-332) e pela Avenida Albino José Barbosa de Oliveira"
+      ],
+      "titulo": "A Cidade Universitária em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como nasceu a Cidade Universitária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história do bairro começa com a Unicamp. Segundo a Revista Pesquisa FAPESP, o terreno escolhido para o campus era um canavial de 30 alqueires paulistas perto de Barão Geraldo, que pertencia ao banqueiro João Ademar de Almeida Prado e foi desapropriado pelo valor simbólico de 1 cruzeiro, com a concordância do dono. A pedra fundamental foi lançada em **5 de outubro de 1966**, data que a própria universidade adota como a de sua fundação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno do campus foi loteado e virou a Cidade Universitária. Com o tempo surgiram a Cidade Universitária I, a Cidade Universitária II e o Jardim Alto da Cidade Universitária, todos listados entre os bairros do distrito. Uma parte posterior do loteamento recebeu a área do Centro Médico de Campinas. O nome confunde muita gente porque o campus também se chama oficialmente Cidade Universitária Zeferino Vaz, em homenagem ao reitor fundador."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Cidade Universitária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O perfil do bairro é marcado pela demanda dos estudantes. Um guia do QuintoAndar descreve a Cidade Universitária como essencialmente moradia estudantil, com repúblicas, apartamentos pequenos e studios, e clima jovem. Já a Cidade Universitária II é citada pela mesma fonte como área de casas de padrão mais alto, a cerca de 2 km do campus principal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da RUAH, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 170 condomínios no bairro, quase todos verticais e baixos: o mais alto tem cinco andares. São, em boa parte, prédios de kitnets. Entre os horizontais, a base registra o Residencial Sapucaia e a associação de moradores da cohousing sênior Vila Conviver."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pesquisas de iniciação científica da Unicamp estudaram justamente esse fenômeno. Elas descrevem a multiplicação de kitnets, pensionatos com aluguel por vaga e casas adaptadas para estudantes na Cidade Universitária I, e apontam disputas entre associações de bairro e construtores em torno das regras de uso do solo. Ruas como a Augusto Antônio de Almeida, a Ruberlei Boareto da Silva e a Dr. Shigeo Mori aparecem nesses estudos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura casa, a oferta existe: terrenos amplos, quintais arborizados e sobrados nas quadras mais residenciais. Para quem pensa em investir, a procura por moradia estudantil é o que move o bairro. Vale conferir com a Prefeitura o zoneamento do lote antes de qualquer reforma ou mudança de uso."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parque do Lago e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal espaço de lazer é o **Parque Ecológico Prof. Hermógenes de Freitas Leitão Filho**, que todos chamam de Parque do Lago. Ele fica na Avenida Dr. Luís de Tella, entre o bairro e o campus. Segundo artigo da revista Conexões, da Unicamp, o projeto foi formulado pela universidade em 1992 e o parque foi inaugurado em 1996, numa área de cerca de 125 mil m² que antes servia de viveiro de mudas da Prefeitura. É fruto de um acordo entre a Prefeitura e a Unicamp, que cedeu parte do terreno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta do lago há uma pista de caminhada e corrida de cerca de 1.700 metros, academia ao ar livre, playground e quiosques conhecidos pela água de coco, segundo o guia de Barão Geraldo preparado por um núcleo da Unicamp. O site Visite São Paulo informa que o parque reabriu em 2023, funciona todos os dias das 6h às 19h e tem acessibilidade para cadeirantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lago atrai garças e outras aves, que fazem ninhos ali, e uma população grande de capivaras, que chega a danificar árvores, segundo o artigo da Conexões. Um trecho é fechado ao público para proteger a fauna. A orientação dos guias é não se aproximar das capivaras."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Unicamp, escolas e vida universitária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vizinhança com a Unicamp é o que define o bairro. O campus fica a poucos minutos a pé de boa parte das ruas, e espaços como o Ciclo Básico e o Restaurante Universitário, o bandejão, estão a cerca de 300 a 450 metros do centro do bairro, segundo o levantamento de lugares próximos da RUAH."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para famílias com crianças, o mesmo levantamento lista quase uma centena de pontos na categoria ensino num raio de 1,5 km, entre creches, escolas de educação infantil e unidades da própria universidade. Antes de escolher, vale visitar e conferir vagas e proposta pedagógica de cada escola."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, restaurantes e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do bairro e do entorno é pensado para quem vive perto do campus. Na Rua Roxo Moreira, a poucos metros da entrada principal da Unicamp, ficam cafés e restaurantes de comida a quilo, como o Laggiu Coffee e o Del Sol, citados no guia de Barão Geraldo da Unicamp. Na Avenida Dr. Romeu Tórtima, o Bardana serve almoço por quilo e cardápio à noite."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Avenida Albino José Barbosa de Oliveira, a antiga Estrada da Rhodia, concentra outra parte do comércio do distrito, com restaurantes, empórios e serviços. Os bares do bairro são ponto de encontro de estudantes, e o Carnaval de rua de Barão Geraldo, com blocos que ocupam ruas e praças do distrito, é lembrado pelo Correio da Manhã como parte do perfil jovem da região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Cidade Universitária está perto de dois hospitais de referência. O **Hospital de Clínicas da Unicamp**, na Rua Vital Brasil, é público e tem pronto-socorro 24 horas. O **Hospital Centro Médico de Campinas**, na Rua Dr. Gabriel Porto, é particular e funciona 24 horas em várias especialidades. Os dois endereços constam do guia de Barão Geraldo da Unicamp."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, clínicas, consultórios e farmácias se espalham pelo entorno do campus. O levantamento da RUAH conta cerca de 27 serviços de saúde num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O caminho principal até o Centro de Campinas é a **Rodovia Professor Zeferino Vaz (SP-332)**, que liga Barão Geraldo à cidade. A Avenida Albino José Barbosa de Oliveira é a outra ligação importante e atravessa o distrito. São cerca de 12 km até o Centro. Até o Aeroporto de Viracopos, o guia da Unicamp estima uns 20 minutos de carro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No transporte coletivo, o levantamento da RUAH aponta o Terminal Barão Geraldo a cerca de 1,3 km do centro do bairro. O guia da Unicamp recomenda checar os horários antes, porque os ônibus da região nem sempre passam com regularidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Cidade Universitária faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro faz sentido para quem quer morar a pé da Unicamp: estudantes, professores, pesquisadores e funcionários. Também atende quem busca renda com moradia estudantil, já que a procura vem da própria universidade. Na Cidade Universitária II, o perfil de casas maiores atrai famílias que querem a estrutura de Barão Geraldo com mais espaço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também vêm das fontes. O movimento oscila com o semestre letivo, há ruas com bares e vida noturna, e o adensamento de kitnets gera discussões entre moradores e construtores. Antes de comprar, vale conhecer a quadra em dias de aula e à noite, e conferir o zoneamento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Cidade Universitária, em Campinas?",
+      "resposta": "No distrito de Barão Geraldo, ao lado do campus da Unicamp, a cerca de 12 km do Centro de Campinas. O Parque Ecológico Hermógenes de Freitas Leitão Filho fica entre o bairro e o campus."
+    },
+    {
+      "pergunta": "A Cidade Universitária é boa para morar?",
+      "resposta": "Depende do perfil. É prático para quem estuda ou trabalha na Unicamp, tem parque, comércio e hospitais perto. Em troca, o bairro tem muitos estudantes, kitnets e bares, e o movimento varia com o semestre."
+    },
+    {
+      "pergunta": "Qual a diferença entre Cidade Universitária I e II?",
+      "resposta": "A Cidade Universitária I, mais perto do campus, concentra kitnets e moradia estudantil. A Cidade Universitária II, a cerca de 2 km do campus principal, é descrita como área de casas de padrão mais alto."
+    },
+    {
+      "pergunta": "Como é o Parque do Lago, na Cidade Universitária?",
+      "resposta": "É o Parque Ecológico Prof. Hermógenes de Freitas Leitão Filho, inaugurado em 1996, com lago, pista de caminhada de cerca de 1.700 metros, academia ao ar livre e playground. Funciona todos os dias, das 6h às 19h."
+    },
+    {
+      "pergunta": "Qual hospital fica perto da Cidade Universitária?",
+      "resposta": "O Hospital de Clínicas da Unicamp, público e com pronto-socorro 24 horas, e o Hospital Centro Médico de Campinas, particular, ficam no entorno do bairro."
+    },
+    {
+      "pergunta": "Como chegar ao Centro de Campinas saindo da Cidade Universitária?",
+      "resposta": "Pela Rodovia Professor Zeferino Vaz (SP-332) ou pela Avenida Albino José Barbosa de Oliveira. São cerca de 12 km."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista Pesquisa FAPESP, A concepção de uma universidade (terreno e fundação da Unicamp)",
+      "site": "revistapesquisa.fapesp.br"
+    },
+    {
+      "nome": "Unicamp, página de história da universidade",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "Revista Conexões (Unicamp), artigo sobre o Parque Ecológico Prof. Hermógenes Freitas Leitão Filho",
+      "site": "periodicos.sbu.unicamp.br"
+    },
+    {
+      "nome": "Guia de Barão Geraldo do evento SBCM 2025 (NICS, Unicamp)",
+      "site": "nics.unicamp.br"
+    },
+    {
+      "nome": "Pró-Reitoria de Pesquisa da Unicamp, resumos de iniciação científica sobre kitnets e hotéis-residência na Cidade Universitária",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Visite São Paulo, passeios ao ar livre em Campinas (Parque Hermógenes)",
+      "site": "visitesaopaulo.com"
+    },
+    {
+      "nome": "QuintoAndar Guias, morar perto da faculdade em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Carnaval em Barão Geraldo (fevereiro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Barão Geraldo",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Cidade Universitária, em Barão Geraldo: o bairro que nasceu em volta da Unicamp. Tem kitnets e casas, o Parque do Lago com pista de caminhada, cafés na Rua Roxo Moreira e dois hospitais por perto. Preparamos um guia com a história do loteamento, o perfil dos imóveis e o que considerar antes de morar ou investir. Link na bio.",
+    "hashtags": [
+      "cidadeuniversitaria",
+      "baraogeraldo",
+      "campinas",
+      "unicamp",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Cidade Universitária, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.506Z"
+}

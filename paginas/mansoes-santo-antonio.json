@@ -1,0 +1,328 @@
+{
+  "slug": "mansoes-santo-antonio",
+  "titulo": "Mansões Santo Antônio, Campinas: como é morar no bairro",
+  "resumo": "Guia do Mansões Santo Antônio, em Campinas: das chácaras aos prédios, a nova praça, escolas, comércio, acesso à Dom Pedro e pontos de atenção.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Torres residenciais do Mansões Santo Antônio vistas da avenida",
+      "alt": "Fileira de prédios residenciais altos em tons de bege e verde atrás de um gramado e de placas de rua",
+      "commons": "File:Mansões Santo Antônio. - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Prédio com apartamento da RUAH à venda no Mansões Santo Antônio",
+      "alt": "Fachada de prédio cinza com detalhes laranja e marquise de entrada na calçada",
+      "imovel_foto": 1696
+    },
+    {
+      "id": "f3",
+      "legenda": "Torre residencial do bairro com apartamento da RUAH à venda",
+      "alt": "Edifício alto de varandas visto de baixo, com palmeiras e jardim na frente",
+      "imovel_foto": 1518
+    },
+    {
+      "id": "f4",
+      "legenda": "Lazer de condomínio do bairro visto do alto, com quadra e piscina",
+      "alt": "Área de lazer com quadra de tênis, piscina redonda e jardins entre prédios",
+      "imovel_foto": 1532
+    },
+    {
+      "id": "f5",
+      "legenda": "Playground sob pergolado em condomínio com imóvel da RUAH à venda",
+      "alt": "Brinquedos infantis sob pergolado metálico entre torres residenciais",
+      "imovel_foto": 1724
+    },
+    {
+      "id": "f6",
+      "legenda": "Parque D. Pedro Shopping, com os prédios da região ao fundo",
+      "alt": "Estacionamento com torre de letreiros encimada por uma escultura de coruja e prédios residenciais atrás",
+      "commons": "File:Estacionamento do Shopping Parque Dom Pedro - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Entrada das Águas do Parque D. Pedro Shopping, aberto em 2002",
+      "alt": "Entrada de shopping com painel colorido, palmeiras e cobertura de concreto",
+      "commons": "File:Parque Dom Pedro Shopping (1).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Lagoa do Taquaral, no Parque Portugal, com a réplica da caravela à direita",
+      "alt": "Lago amplo cercado de árvores, com chafariz ao centro e um barco vermelho na margem",
+      "commons": "File:Parque Portugal (23).jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Pista de caminhada à beira da Lagoa do Taquaral",
+      "alt": "Caminho de terra batida sob eucaliptos e palmeiras, com o lago à esquerda",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    },
+    {
+      "id": "f10",
+      "legenda": "Terminal de ônibus junto ao Shopping Dom Pedro",
+      "alt": "Plataforma de ônibus com abrigos, um ônibus parado e passageiros ao fundo",
+      "commons": "File:Terminal do Shopping Dom Pedro - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Mansões Santo Antônio** é um bairro residencial de Campinas, na região do Taquaral, que o ACidade ON situa na Zona Leste da cidade. Até a virada dos anos 2000 era uma área de chácaras e ruas de terra; hoje é um bairro de prédios, com mais de 18 mil moradores no Censo 2022, perto do Parque D. Pedro Shopping, da PUC-Campinas e da Unicamp."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura o bairro costuma buscar apartamento em condomínio com lazer, comércio de rua a poucas quadras e acesso rápido à Rodovia Dom Pedro I. Este guia conta como a região mudou, o que há de lazer, escola e serviço por perto, e o que vale considerar antes de escolher um endereço ali."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, na região do Taquaral",
+        "Mais de 18 mil habitantes, segundo o Censo 2022 citado pelo ACidade ON",
+        "Antigas chácaras que deram lugar a prédios, sobretudo a partir de 2002",
+        "Praça Jornalista Gilberto Gonçalves, reurbanizada e entregue em outubro de 2025",
+        "Vizinho da Chácara Primavera, do Taquaral e da região do Parque D. Pedro Shopping",
+        "Acesso pela Rodovia Dom Pedro I (SP-065) e perto da PUC-Campinas e da Unicamp"
+      ],
+      "titulo": "O Mansões Santo Antônio em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Das chácaras aos prédios: a história do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Até meados dos anos 1970, a área era formada por chácaras de recreio, sítios e terrenos agrícolas, fruto do desmembramento de antigas fazendas, entre elas a do Parque Rural Fazenda Santa Cândida. Moradores antigos ouvidos pelo ACidade ON lembram de terrenos grandes, ruas de terra, galinhas e vacas soltas, e de plantações de goiaba e de algodão onde hoje fica o shopping."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região já foi conhecida como **Alto Taquaral**. Esse era também o nome de um jornal criado por dois moradores, os jornalistas Cibele Vieira e Gilberto Gonçalves, para cobrar asfalto, linha telefônica e outros serviços que faltavam. Asfalto e saneamento chegaram depois de anos de mobilização da vizinhança, segundo os próprios moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A virada veio por volta de **2002**, ano em que o Parque D. Pedro Shopping abriu as portas. Segundo o Departamento de Planejamento e Urbanismo de Campinas, desde 2000 a região recebeu em média cerca de 40 alvarás de construção por ano, com pico em 2013. Ortofotos da Prefeitura mostram a troca: em 2001, chácaras e terrenos vazios; em 2023, prédios ocupando boa parte deles."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Mansões Santo Antônio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O perfil hoje é de **condomínios verticais**. A base de condomínios da RUAH identifica cerca de 34 condomínios no bairro, quase todos de prédios, que somam perto de 3 mil unidades; o mais alto tem 19 andares. A Rua Jasmim, segundo um guia de imobiliária local, foi a primeira a receber edifícios. Outras ruas com condomínios são a Rua Adelino Martins, a Rua Hermantino Coelho, a Rua Nelson Alaite e a Rua José Luiz Camargo Moreira."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas são estreitas e arborizadas, e o ritmo é mais calmo que o dos centros comerciais da cidade. Moradores descrevem o bairro como tranquilo e com quase tudo perto. Há quem tenha chegado para estudar na PUC-Campinas e ficado, e famílias que buscam apartamento com espaço para trabalhar em casa. Os prédios mais novos costumam ter piscina, academia, quadra, playground e salão de festas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Praça, parques e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal espaço público do bairro é a **Praça Jornalista Gilberto Gonçalves**, entregue reurbanizada pela Prefeitura em 12 de outubro de 2025. São cerca de 3,2 mil metros quadrados com quadra poliesportiva, academia ao ar livre, parque infantil, pista de skate, mesas e bancos, iluminação de LED e um parcão, o 25º da cidade. O nome homenageia o jornalista que ajudou a cobrar melhorias para a região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para um parque grande, o destino é o **Parque Portugal**, a Lagoa do Taquaral, no bairro vizinho. Ele tem pista para caminhada, corrida e bicicleta, planetário, museu de ciências, réplica de caravela, pedalinhos e uma linha de bonde histórico inaugurada em 1972."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Instituto CPFL**, na região, oferece programação cultural gratuita, com palestras, cinema e teatro, e recebe gravações do Café Filosófico, da TV Cultura. Para esporte, há quadras de society para alugar e várias academias de rede a poucos minutos a pé do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades perto do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na escola básica, aparecem entre as opções próximas o **Colégio Múltiplo**, a **Escola Curumim**, o **Colégio Misericórdia Campinas** e o Elite Colégio e Pré-Vestibular. No ensino técnico e superior, a **Policamp** fica a menos de 1 km do centro do bairro, e a UNIESP também está na região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A proximidade com as universidades é um dos motivos da procura. O **Campus I da PUC-Campinas** e a **Unicamp**, em Barão Geraldo, estão a poucos quilômetros. Uma moradora contou ao ACidade ON que se mudou para o bairro há 45 anos justamente por causa da PUC-Campinas, quando os filhos iam a pé para a faculdade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio de rua cresceu junto com os prédios. A **Panificadora Via Di Fiori** está no bairro desde 1997 e mudou para um ponto maior em 2003, quando a loja antiga já não dava conta do movimento. Hoje há supermercados de rede, padarias, drogarias, academias, pet shops e pequenas galerias e centros comerciais de bairro, como The Mall e Las Casas Mall."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o **Parque D. Pedro Shopping**, aberto em 2002 na Avenida Guilherme Campos, no Jardim Santa Genebra, tem cerca de 350 lojas, além de lojas âncora e megalojas, e 15 salas de cinema. Na saúde, o **Hospital Geral e Maternidade Madre Maria Theodora** está entre os serviços próximos, e há drogarias a poucos minutos a pé."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e trânsito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro fica perto da **Rodovia Dom Pedro I (SP-065)**, que liga a região ao Parque D. Pedro Shopping, às saídas para a Rodovia Anhanguera e a outras cidades da Região Metropolitana. Junto ao shopping há um terminal de ônibus, e a região conta com linhas de ônibus e ciclovias. A Rua Jorge Figueiredo Correa faz a ligação entre o Taquaral e o Mansões, passando pela Chácara Primavera."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto fraco é o trânsito interno. Com tantos prédios novos em ruas estreitas, moradores relatam vias travadas nos horários de pico. Vale testar o trajeto até o trabalho ou a escola nesses horários antes de decidir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Mansões Santo Antônio se mistura com a **Chácara Primavera**, a ponto de anúncios e moradores usarem os dois nomes para a mesma rua. Também faz divisa com a região do **Taquaral**, do Parque Portugal, com o Jardim Santana, a Fazenda Santa Cândida e o Jardim Santa Genebra, onde fica o shopping. Juntos, esses bairros formam um eixo de prédios, comércio e serviços entre a Dom Pedro e o Taquaral."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o bairro faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Mansões Santo Antônio atende bem quem quer apartamento em condomínio com lazer, perto de universidade, de shopping e da rodovia, com padaria, mercado e farmácia a pé. Estudantes e professores da PUC-Campinas, famílias que buscam prédios mais novos e quem trabalha em casa estão entre os perfis citados por moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há pontos de atenção. A verticalização rápida trouxe trânsito em ruas estreitas, e parte dos moradores antigos lamenta a quantidade de prédios. E há um caso ambiental conhecido: segundo o Correio da Manhã e documentos da Cetesb, a área do **Condomínio Parque Primavera** abrigou a indústria química Proquima de 1973 a 1996, e o subsolo de parte do terreno tem solventes clorados. Algumas torres foram interditadas, a remediação está em análise na Cetesb e o Ministério Público abriu inquérito civil em julho de 2026."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Ao avaliar um imóvel na região, peça a matrícula e a situação do condomínio e consulte o cadastro de áreas contaminadas da Cetesb. Isso vale para qualquer bairro de Campinas que já teve indústria.",
+      "titulo": "Antes de comprar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Mansões Santo Antônio é bom para morar?",
+      "resposta": "Para quem quer apartamento em condomínio com lazer, perto da PUC-Campinas, da Unicamp, do Parque D. Pedro Shopping e da Rodovia Dom Pedro I, sim. Moradores descrevem o bairro como tranquilo e com comércio perto; o ponto fraco é o trânsito nas ruas estreitas nos horários de pico."
+    },
+    {
+      "pergunta": "Onde fica o Mansões Santo Antônio, em Campinas?",
+      "resposta": "Na região do Taquaral, que o ACidade ON situa na Zona Leste, perto da Chácara Primavera, do Jardim Santa Genebra e da Rodovia Dom Pedro I."
+    },
+    {
+      "pergunta": "Mansões Santo Antônio e Chácara Primavera são o mesmo bairro?",
+      "resposta": "Não, mas são vizinhos e se misturam. Anúncios e moradores costumam usar os dois nomes para as mesmas ruas, como a Rua Jasmim."
+    },
+    {
+      "pergunta": "Quais escolas ficam perto do Mansões Santo Antônio?",
+      "resposta": "Entre as opções próximas estão o Colégio Múltiplo, a Escola Curumim, o Colégio Misericórdia Campinas e o Elite Colégio. No técnico e superior, a Policamp fica a menos de 1 km, e o Campus I da PUC-Campinas e a Unicamp estão a poucos quilômetros."
+    },
+    {
+      "pergunta": "O bairro tem praça ou parque?",
+      "resposta": "Tem a Praça Jornalista Gilberto Gonçalves, reurbanizada em 2025, com quadra, academia ao ar livre, parque infantil, pista de skate e parcão. Para um parque grande, a Lagoa do Taquaral, no Parque Portugal, fica no bairro vizinho."
+    },
+    {
+      "pergunta": "Por que o bairro cresceu tanto?",
+      "resposta": "A abertura do Parque D. Pedro Shopping, em 2002, e a proximidade com as universidades e a rodovia puxaram os lançamentos. Segundo a Prefeitura, a região teve em média 40 alvarás de construção por ano desde 2000, com pico em 2013."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "ACidade ON Campinas, Mansões Santo Antônio: como o bairro foi das chácaras à verticalização (2025)",
+      "site": "acidadeon.com"
+    },
+    {
+      "nome": "Sampi Campinas, entrega da revitalização da praça no Mansões Santo Antônio (outubro de 2025)",
+      "site": "sampi.net.br"
+    },
+    {
+      "nome": "Correio da Manhã, Pq. Primavera: 25 anos à espera de solução (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "ALLOS, ficha do Parque D. Pedro Shopping",
+      "site": "allos.com.br"
+    },
+    {
+      "nome": "Ladeira e Campanha, artigo sobre o bairro Mansões Santo Antônio",
+      "site": "ladeiraecampanha.com.br"
+    },
+    {
+      "nome": "Tegra Incorporadora, página sobre o bairro Mansões Santo Antônio",
+      "site": "tegraincorporadora.com.br"
+    },
+    {
+      "nome": "QuintoAndar, ficha do Condomínio Chácara Primavera",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Parque Portugal",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Mansões Santo Antônio, em Campinas: de chácaras e ruas de terra a um dos bairros de prédios que mais cresceram na cidade desde 2002. No guia completo, a história do antigo Alto Taquaral, a praça reurbanizada em 2025, escolas, comércio, acesso à Dom Pedro e os pontos de atenção antes de comprar. Link na bio.",
+    "hashtags": [
+      "mansoessantoantonio",
+      "campinas",
+      "chacaraprimavera",
+      "taquaral",
+      "guiadebairro",
+      "apartamentocampinas",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Mansões Santo Antônio, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.504Z"
+}

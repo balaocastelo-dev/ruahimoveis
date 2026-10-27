@@ -1,0 +1,308 @@
+{
+  "slug": "santa-candida",
+  "titulo": "Santa Cândida, Campinas: como é morar no bairro da Ilum e da PUC",
+  "resumo": "Guia do Santa Cândida, em Campinas: história ligada ao Sirius, a Ilum, a PUC ao lado, condomínios de casas e prédios e o que considerar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada da Ilum Escola de Ciência, na Rua Lauro Vannucci, no Santa Cândida",
+      "alt": "Galpão claro com faixas laranja, porta de vidro escura e o letreiro Ilum sobre a entrada",
+      "commons": "File:Fachadailum.png"
+    },
+    {
+      "id": "f2",
+      "legenda": "Portão de condomínio de casas no Santa Cândida, com casa da RUAH à venda",
+      "alt": "Portão branco de condomínio com casas de telhado cinza e árvores floridas na calçada",
+      "imovel_foto": 1875
+    },
+    {
+      "id": "f3",
+      "legenda": "Prédios das Mansões Santo Antônio, bairro vizinho, vistos da avenida",
+      "alt": "Fileira de edifícios residenciais altos em tons de bege e azul atrás de um terreno gramado",
+      "commons": "File:Mansões Santo Antônio. - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Área verde arborizada em campus da PUC-Campinas",
+      "alt": "Gramado com árvores, bancos de concreto e quiosques cobertos sob céu azul",
+      "commons": "File:PUC-Campinas interior, 2025.2.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada das Águas do Shopping Parque Dom Pedro",
+      "alt": "Entrada de shopping com painel azul e amarelo escrito Parque D. Pedro e palmeiras na frente",
+      "commons": "File:Parque Dom Pedro Shopping (1).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rodovia Dom Pedro I em Campinas, no sentido da Anhanguera",
+      "alt": "Rodovia de pista dupla com placas verdes de sinalização sobre as faixas",
+      "commons": "File:Rodovia Dom Pedro - Sentido Anhanguera - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Santa Cândida**, cujo nome registrado é **Parque Rural Fazenda Santa Cândida**, é um bairro de Campinas vizinho do Parque das Universidades, onde fica o Campus I da PUC-Campinas, e das Mansões Santo Antônio, perto da Rodovia Dom Pedro I. É um bairro sobretudo residencial, com condomínios de casas e de prédios, e guarda uma história pouco conhecida: foi ali que começou o Laboratório Nacional de Luz Síncrotron, hoje responsável pelo Sirius."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro combina ruas residenciais com uma universidade, uma faculdade de ciência, um hospital e um supermercado a poucos minutos a pé, além de acesso rápido à rodovia e ao Shopping Parque Dom Pedro. Este guia reúne o que as fontes confirmam sobre a história, o perfil dos imóveis e o entorno."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, registrado como Parque Rural Fazenda Santa Cândida",
+        "Vizinho do Parque das Universidades, sede do Campus I da PUC-Campinas, e das Mansões Santo Antônio",
+        "Condomínios de casas e de prédios: a base da RUAH identifica cerca de 70 condomínios no bairro",
+        "Foi a primeira sede do Laboratório Nacional de Luz Síncrotron, entre 1986 e o fim dos anos 1980",
+        "Abriga a Ilum Escola de Ciência, faculdade pública e gratuita do CNPEM, aberta em 2022",
+        "Perto da Rodovia Dom Pedro I e do Shopping Parque Dom Pedro"
+      ],
+      "titulo": "O Santa Cândida em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história do Santa Cândida e o laboratório do Sirius"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome oficial do bairro mantém a referência a uma fazenda chamada Santa Cândida, mas as fontes consultadas não trazem a história da propriedade original nem a data do loteamento. O que as fontes registram bem é um capítulo da história da ciência brasileira que se passou ali."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o próprio **Laboratório Nacional de Luz Síncrotron (LNLS)**, a implantação do laboratório começou em 1986 numa casa alugada no Jardim Santa Cândida, onde foram contratados os primeiros físicos, engenheiros e técnicos. Em julho de 1987, o CNPq comprou um galpão industrial no mesmo bairro, que passou a abrigar a equipe. Foi nesse galpão que começaram a ser projetados e desenvolvidos os componentes do primeiro acelerador de partículas do LNLS, o UVX."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O laboratório depois se mudou para o campus do **CNPEM**, onde hoje funciona o Sirius, fonte de luz síncrotron. O galpão do Santa Cândida, porém, voltou a ter uso científico mais de três décadas depois, como sede de uma faculdade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Santa Cândida"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Santa Cândida mistura condomínios de casas e de prédios. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 70 condomínios no bairro, divididos quase meio a meio entre verticais e horizontais, com perto de 1.650 unidades. O prédio mais alto da base tem 24 andares. Entre os horizontais predominam vilas pequenas, de 10 a 50 casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um guia de bairros que reúne depoimentos de moradores descreve a região como residencial e tranquila, com ruas arborizadas e áreas verdes, e cita a proximidade de mercado, shopping e da universidade em frente como pontos a favor. Esses relatos têm alguns anos e valem como impressão de quem mora, não como medição."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro também tem um lado comercial. A **Rua Luis Otávio**, que corta o Santa Cândida, concentra imóveis comerciais, galpões e lojas, o que traz movimento de carros e caminhões em alguns trechos. Para quem procura sossego, vale olhar com atenção a rua e a posição do imóvel antes de decidir."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ilum, PUC-Campinas e escolas por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Ilum Escola de Ciência** fica na Rua Lauro Vannucci, no Santa Cândida. É a faculdade pública e gratuita do CNPEM e oferece o bacharelado em Ciência e Tecnologia, em três anos e período integral. A primeira turma, de 40 alunos, começou em março de 2022, no antigo galpão que abrigou a equipe do LNLS e guardou as primeiras peças do UVX."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio tem dois andares e cerca de 2.100 m², com salas de aula, laboratórios, estúdio de vídeo, biblioteca e centro de estudos, segundo o CNPEM. A seleção é concorrida: a segunda turma teve 40 vagas para 1.185 candidatos. Os estudantes recebem alimentação, moradia e transporte, e visitam toda semana os laboratórios do CNPEM, a cerca de 10 km dali."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado fica o **Parque das Universidades**, onde está o Campus I da **PUC-Campinas**, com endereço na Rodovia Dom Pedro I, km 136. A presença da universidade explica parte do movimento de estudantes e professores na região e a procura por imóveis menores perto do campus."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse usada pela RUAH registra cerca de 14 escolas e instituições de ensino num raio de 1,5 km do centro do bairro. A lista com nomes e tempo a pé aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde, mercado e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse registra o **Hospital e Maternidade Madre Theodora**, da rede Américas, a cerca de 300 metros do centro do bairro. Segundo reportagem do portal Medicina S/A, o hospital inaugurou um centro obstétrico com salas de parto normal e salas cirúrgicas, tem retaguarda de UTI neonatal com 12 leitos e UTI adulta, e realiza cerca de 80 partos por mês."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para as compras do dia a dia, a base de pontos de interesse registra um supermercado da rede Covabra a cerca de 100 metros do centro do bairro, além de padarias, hortifrútis, farmácias, academias e dezenas de restaurantes e cafés num raio de 1,5 km. Agências bancárias e uma unidade dos Correios ficam a pouco mais de 1 km."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal eixo de acesso é a **Rodovia Dom Pedro I**, que passa junto ao Parque das Universidades e, no sentido oeste, leva à Rodovia Anhanguera. Moradores ouvidos no guia de bairros citam cerca de 5 minutos até a rodovia e até o Shopping Parque Dom Pedro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Shopping Parque Dom Pedro** fica próximo do bairro; a base de pontos de interesse registra uma das entradas do shopping, a Entrada das Águas, a cerca de 1,4 km do centro do Santa Cândida. A proximidade com a rodovia e o shopping é conveniente, mas traz trânsito carregado nos horários de pico e em datas de grande movimento no comércio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos: Mansões Santo Antônio e Parque das Universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao sul, o Santa Cândida faz divisa com as **Mansões Santo Antônio**. Segundo o verbete do bairro na Wikipédia, a parte mais ao norte das Mansões, chamada Jardim Colonial, fica junto ao Santa Cândida, e o bairro vizinho passa por forte verticalização desde a década de 1990, com condomínios de prédios e de casas perto do Shopping Parque Dom Pedro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao lado fica o **Parque das Universidades**, com a PUC-Campinas. Na prática, muita gente trata os três bairros como uma região só: os nomes aparecem misturados em anúncios, e a escolha entre um e outro costuma depender mais do tipo de imóvel e da rua do que da divisa oficial."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Santa Cândida faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Santa Cândida costuma servir a quem quer morar em casa de condomínio ou apartamento perto da PUC-Campinas, da Rodovia Dom Pedro I e do Shopping Parque Dom Pedro: estudantes e professores, famílias que precisam de hospital e mercado por perto e quem trabalha em cidades ligadas pela rodovia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o trânsito na região da rodovia e do shopping nos horários de pico e o movimento comercial em ruas como a Luis Otávio. Dentro do bairro, a diferença entre uma vila tranquila e um trecho comercial é grande, então visite a rua em horários diferentes antes de fechar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor sobre o valor do condomínio e o que ele inclui, o número de casas da vila, as vagas, a distância a pé até a PUC e o mercado e se a rua tem tráfego de caminhões.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Santa Cândida, em Campinas?",
+      "resposta": "Ao lado do Parque das Universidades, onde está o Campus I da PUC-Campinas, e ao norte das Mansões Santo Antônio, perto da Rodovia Dom Pedro I e do Shopping Parque Dom Pedro."
+    },
+    {
+      "pergunta": "O Santa Cândida é bom para morar?",
+      "resposta": "Para quem quer casa de condomínio ou apartamento perto da PUC, de hospital, mercado e da Rodovia Dom Pedro I, sim. Moradores descrevem a região como tranquila; os pontos de atenção são o trânsito perto da rodovia e as ruas mais comerciais."
+    },
+    {
+      "pergunta": "O Santa Cândida tem mais casas ou prédios?",
+      "resposta": "Os dois, quase meio a meio. A base de condomínios da RUAH identifica cerca de 70 condomínios no bairro, entre vilas de casas e prédios de até 24 andares."
+    },
+    {
+      "pergunta": "Qual faculdade fica no Santa Cândida?",
+      "resposta": "A Ilum Escola de Ciência, faculdade pública e gratuita do CNPEM, na Rua Lauro Vannucci. O Campus I da PUC-Campinas fica no bairro vizinho, o Parque das Universidades."
+    },
+    {
+      "pergunta": "O que o Santa Cândida tem a ver com o Sirius?",
+      "resposta": "O Laboratório Nacional de Luz Síncrotron, que hoje opera o Sirius, começou no bairro em 1986, numa casa alugada, e em 1987 passou para um galpão comprado pelo CNPq no Santa Cândida. Esse galpão é hoje a sede da Ilum."
+    },
+    {
+      "pergunta": "Como ver os imóveis à venda no Santa Cândida?",
+      "resposta": "Os imóveis que a RUAH tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "LNLS/CNPEM, história do Laboratório Nacional de Luz Síncrotron",
+      "site": "lnls.cnpem.br"
+    },
+    {
+      "nome": "Revista Pesquisa FAPESP, reportagem sobre a escola superior Ilum",
+      "site": "revistapesquisa.fapesp.br"
+    },
+    {
+      "nome": "Agência FAPESP, Ilum de Portas Abertas",
+      "site": "agencia.fapesp.br"
+    },
+    {
+      "nome": "CNPEM, escola superior de ciência recebe segunda turma",
+      "site": "cnpem.br"
+    },
+    {
+      "nome": "PUC-Campinas, edital com o endereço do Campus I",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "Medicina S/A, Hospital Madre Theodora inaugura centro obstétrico",
+      "site": "medicinasa.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Mansões Santo Antônio",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "WebQuarto, guia do bairro Parque Rural Fazenda Santa Cândida com depoimentos de moradores",
+      "site": "webquarto.com.br"
+    },
+    {
+      "nome": "Imovelweb, imóveis comerciais na Rua Luis Otávio, Fazenda Santa Cândida",
+      "site": "imovelweb.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Santa Cândida, em Campinas: o bairro onde nasceu o laboratório que hoje opera o Sirius virou endereço de condomínios de casas e prédios, ao lado da PUC-Campinas e perto da Rodovia Dom Pedro I. No guia, a história do galpão que hoje abriga a Ilum Escola de Ciência, o perfil dos imóveis, hospital, mercado e acessos. Link na bio.",
+    "hashtags": [
+      "santacandida",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "puccampinas",
+      "casaemcondominio",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Santa Cândida, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.506Z"
+}

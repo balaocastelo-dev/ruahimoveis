@@ -1,0 +1,284 @@
+{
+  "slug": "vila-nova",
+  "titulo": "Vila Nova, Campinas: como é morar no bairro, história e arredores",
+  "resumo": "Guia da Vila Nova, em Campinas: origem na antiga Fazenda Santa Genebra, a Igreja Nossa Senhora das Graças, a Avenida Imperatriz Leopoldina e os arredores.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada da Igreja Nossa Senhora das Graças, a igreja da Vila Nova",
+      "alt": "Igreja clara com duas torres altas, porta de madeira em arco e imagem de Nossa Senhora no alto, sob céu azul",
+      "commons": "File:Igreja da Vila Nova, Campinas - Vista frontal 01.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "A igreja da Vila Nova iluminada à noite",
+      "alt": "Fachada branca de igreja com duas torres, iluminada contra o céu escuro, com piso de pedras portuguesas na frente",
+      "commons": "File:Igreja da Vila Nova, Campinas - Vista frontal à noite.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Nave da Igreja Nossa Senhora das Graças, com bancos de madeira e altar ao fundo",
+      "alt": "Interior de igreja com corredor central, bancos de madeira dos dois lados, colunas e teto de caixotões claros",
+      "commons": "File:Igreja da Vila Nova, Campinas - Interior 02.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Vitral com a cena da Santa Ceia, no transepto da igreja",
+      "alt": "Vitral colorido em arco mostrando Jesus e os apóstolos sentados em volta de uma mesa",
+      "commons": "File:Igreja da Vila Nova, Campinas - Transepto, vitral esquerdo.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Pintura no teto da abside da igreja da Vila Nova",
+      "alt": "Pintura colorida no teto, com anjos e santos entre nuvens em volta de uma figura central de Nossa Senhora",
+      "commons": "File:Igreja da Vila Nova, Campinas - Abside, pintura no teto 02.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Avenida da Vila Nova com galpões e comércio; à direita, galpão da RUAH à venda",
+      "alt": "Avenida de mão dupla com carros, postes e fachadas de galpões comerciais, com prédios residenciais ao fundo",
+      "imovel_foto": 1050
+    },
+    {
+      "id": "f7",
+      "legenda": "Galpão comercial com imóvel da RUAH à venda na Vila Nova",
+      "alt": "Fachada de galpão de dois pavimentos com duas portas de enrolar abertas e calçada de pedras",
+      "imovel_foto": 1040
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Nova** é um bairro de Campinas que nasceu de terras da antiga Fazenda Santa Genebra e cresceu em torno da **Avenida Imperatriz Leopoldina**, a antiga Estrada da Boiada. Hoje mistura casas simples, prédios residenciais de porte médio e um comércio de rua forte em autopeças e serviços. O marco do bairro é a **Igreja Nossa Senhora das Graças**, inaugurada em 1953, e o Parque Taquaral fica nas proximidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este guia reúne o que as fontes contam sobre a história da Vila Nova, como é a ocupação hoje, o que existe em volta e o que vale considerar antes de comprar um imóvel no bairro. Os números de prédios e a lista de escolas, mercados e serviços mais próximos aparecem nas seções ao vivo desta página."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro de Campinas descrito pela PUC-Campinas como parte da zona norte da cidade",
+        "Surgiu de remanescentes da Fazenda Santa Genebra, que pertenceu ao Barão Geraldo de Rezende",
+        "Eixo principal: Avenida Imperatriz Leopoldina, antiga Estrada da Boiada",
+        "Marco: Igreja Nossa Senhora das Graças, com obras iniciadas em 1949 e inaugurada em 1953",
+        "Mistura casas, prédios residenciais de porte médio e comércio de autopeças e serviços",
+        "Fica perto do Grameiro e do Parque Taquaral"
+      ],
+      "titulo": "A Vila Nova em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história da Vila Nova"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o estudo *Um rápido passeio pelo bairro Vila Nova*, de Maria Lúcia de Souza Ricci, publicado pela PUC-Campinas, o bairro surgiu de remanescentes da **Fazenda Santa Genebra**, antiga propriedade do Barão Geraldo de Rezende. As primeiras casas eram poucas, pequenas e simples, e ficavam numa baixada onde hoje passa a Avenida Imperatriz Leopoldina."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lugar era difícil: havia brejo, taboas, fossas e muita poeira na época da seca. Daí vem o apelido que os moradores antigos carregavam, *pés vermelhos*. Quando iam ao centro da cidade, ouviam que tinham chegado \"os pés vermelhos, os pés sujos\". A comparação entre mapas de 1920 e de 1929 indica que as ruas foram abertas logo depois dos loteamentos, mas continuaram de terra até meados dos anos 1960."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vida religiosa organizou o bairro. Por volta de 1929, as Irmãs Missionárias de Jesus Crucificado ergueram uma capelinha à beira da estrada. Um raio, durante um temporal, derrubou a torre, e a capela deixou de existir em janeiro de 1951. Enquanto isso, as missas eram rezadas num barracão de sapé na Estrada da Boiada ou nos quintais cedidos por moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos anos 1950 e 1960, a comunidade se organizou em entidades próprias. A União Social de Cultura e Esportes deu origem à **Sociedade Amigos do Bairro**, e o esforço coletivo trouxe, até 1961, posto médico, serviço de puericultura e atendimento odontológico, este na Rua Carolina Florence. Antes de 1960, as crianças aprendiam as primeiras letras na casa de Dona Alzira; depois, o ensino elementar passou a funcionar no Salão Paroquial, com apoio do SESI."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Igreja Nossa Senhora das Graças"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A igreja que hoje identifica o bairro foi construída por iniciativa do bispo **D. Paulo de Tarso Campos**. As obras começaram em fevereiro de 1949 e a inauguração aconteceu em 1953. A paróquia fica na própria Avenida Imperatriz Leopoldina, no começo da numeração, e a fachada clara com duas torres é visível de longe."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O primeiro pároco, o **Padre Roccato**, ficou à frente da igreja até morrer, em 1986. O estudo da PUC-Campinas registra que os moradores o lembravam como um padre liberal e como o principal defensor da melhoria das condições de vida do bairro. Por dentro, a igreja tem nave com bancos de madeira, vitrais no transepto e pintura no teto da abside."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Nova"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Nova tem perfil misto. O estudo da PUC-Campinas descreve um bairro de moradias e edifícios simples, com comércio voltado sobretudo a **autopeças** e serviços gerais. Nas avenidas principais aparecem galpões, oficinas e lojas; nas ruas internas, casas e prédios residenciais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da RUAH, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no bairro, quase todos prédios, com menos de mil unidades no total. A maioria tem até 15 andares. Na Avenida Imperatriz Leopoldina ficam, por exemplo, os edifícios Imperatriz, um retrato desse padrão de prédio de porte médio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem mora, isso significa ter comércio de bairro e serviços à mão, com o movimento típico de avenidas comerciais durante o dia. Quem procura uma rua mais calma costuma olhar as quadras internas, longe dos eixos de passagem de carros e caminhões."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parques e lazer por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande espaço de lazer da região é o **Parque Portugal**, mais conhecido como Lagoa do Taquaral. O parque reúne lagoas, concha acústica, museu, áreas de esporte e uma réplica da caravela usada por Pedro Álvares Cabral. Tem também um bondinho histórico, inaugurado em 1972, e pista para caminhada, corrida e bicicleta. O nome Taquaral lembra o bambuzal que cercava a lagoa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outra área verde próxima é o **Bosque dos Italianos**, na Rua Paulo Justi, no Jardim Chapadão, vizinho da Vila Nova. É uma opção mais tranquila para quem quer caminhar entre árvores sem atravessar a cidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No entorno da Avenida Imperatriz Leopoldina há escolas particulares e cursos, como o **Colégio Educap**, a Escola Criativa, a Escola Infantil Carinha de Anjo e uma unidade da CNA, de idiomas. A lista completa de escolas, mercados, farmácias e serviços mais próximos, com o tempo a pé, está na seção ao vivo desta página e é atualizada automaticamente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A tradição de serviços comunitários no bairro é antiga: já em 1961 a Vila Nova tinha posto médico e odontológico conquistados pelos próprios moradores. Hoje, farmácias, clínicas e mercados aparecem espalhados pelas avenidas principais."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história da Vila Nova está ligada à do **Grameiro**, bairro contíguo ao Parque Taquaral. Nos anos 1960, segundo a PUC-Campinas, moradores da Vila Nova que passavam por dificuldades se mudaram para lá, e o Dispensário dos Pobres e dos Vicentinos, criado com esforço comunitário, ajudou a desenvolver aquela área. Outros antigos moradores foram para o Complexo São Marcos e o Jardim Santa Mônica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Chapadão**, onde fica o Bosque dos Italianos, também faz parte do entorno imediato. E o Taquaral, com o Parque Portugal, completa a vizinhança para quem busca lazer ao ar livre sem sair da região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Nova faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Nova tende a agradar a quem quer um bairro de história própria, com comércio e serviços no dia a dia, prédios de porte médio e o Parque Taquaral por perto. Também interessa a quem procura imóvel comercial, já que as avenidas concentram galpões e lojas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são os de qualquer bairro com avenidas comerciais: movimento de veículos durante o dia e diferenças grandes entre uma quadra e outra. Antes de decidir, vale conhecer o quarteirão em horários diferentes e comparar as ruas internas com as de passagem."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o uso dos imóveis vizinhos (residencial ou comercial), o movimento de caminhões na rua, a idade do prédio e as últimas obras, o valor do condomínio e o número de vagas.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Nova, em Campinas?",
+      "resposta": "Ao longo da Avenida Imperatriz Leopoldina, perto do Grameiro, do Jardim Chapadão e do Parque Taquaral. O estudo da PUC-Campinas sobre o bairro o situa na zona norte da cidade."
+    },
+    {
+      "pergunta": "Como surgiu o bairro Vila Nova?",
+      "resposta": "De remanescentes da Fazenda Santa Genebra, que pertenceu ao Barão Geraldo de Rezende. As primeiras casas ficavam numa baixada onde hoje passa a Avenida Imperatriz Leopoldina, e as ruas ficaram de terra até meados dos anos 1960."
+    },
+    {
+      "pergunta": "Qual é a igreja da Vila Nova?",
+      "resposta": "A Igreja Nossa Senhora das Graças, na Avenida Imperatriz Leopoldina. As obras começaram em 1949, por iniciativa do bispo D. Paulo de Tarso Campos, e a inauguração foi em 1953."
+    },
+    {
+      "pergunta": "A Vila Nova é bom para morar?",
+      "resposta": "Para quem quer comércio e serviços no bairro, prédios de porte médio e o Parque Taquaral por perto, pode ser uma boa escolha. Quem procura silêncio deve preferir as ruas internas, longe das avenidas comerciais."
+    },
+    {
+      "pergunta": "A Vila Nova tem mais casas ou prédios?",
+      "resposta": "Tem os dois. A base de condomínios da RUAH identifica cerca de 45 condomínios no bairro, quase todos prédios de até 15 andares, ao lado de casas e de galpões comerciais nas avenidas."
+    },
+    {
+      "pergunta": "Qual parque fica perto da Vila Nova?",
+      "resposta": "O Parque Portugal, a Lagoa do Taquaral, com lagoas, bondinho histórico e pista de caminhada. O Bosque dos Italianos, no Jardim Chapadão, é outra área verde próxima."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica: Um rápido passeio pelo bairro Vila Nova, de Maria Lúcia de Souza Ricci",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "Buser, ficha da Paróquia Nossa Senhora das Graças (Vila Nova) e do Bosque dos Italianos",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "QuintoAndar, ficha do Condomínio Imperatriz na Vila Nova",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Parque Portugal",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Uber Blog, parques em Campinas",
+      "site": "uber.com"
+    },
+    {
+      "nome": "Wikimedia Commons, fotos da Igreja da Vila Nova",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Nova, em Campinas: um bairro que nasceu de terras da antiga Fazenda Santa Genebra, cresceu na velha Estrada da Boiada e ganhou em 1953 a Igreja Nossa Senhora das Graças. Preparamos um guia com a história, o perfil dos imóveis, os arredores e o que considerar antes de comprar. Link na bio.",
+    "hashtags": [
+      "vilanova",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "historiadecampinas",
+      "taquaral",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Nova, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.506Z"
+}

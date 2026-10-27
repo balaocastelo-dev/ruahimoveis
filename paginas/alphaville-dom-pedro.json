@@ -1,0 +1,319 @@
+{
+  "slug": "alphaville-dom-pedro",
+  "titulo": "Alphaville Dom Pedro, Campinas: como é morar nos residenciais",
+  "resumo": "Guia do Alphaville Dom Pedro, em Campinas: história dos residenciais 1, 2, 3 e Zero, lotes, clubes, acessos pela Dom Pedro I e o que fica perto.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Portaria de residencial do Alphaville Dom Pedro onde a RUAH tem terreno à venda",
+      "alt": "Portaria com cobertura de concreto sobre a pista de entrada, cancela e jardim gramado ao lado",
+      "imovel_foto": 1204
+    },
+    {
+      "id": "f2",
+      "legenda": "Entrada de residencial do Alphaville Dom Pedro, com palmeiras e muro baixo",
+      "alt": "Pista de acesso larga com poste de luz, palmeiras e guarita de concreto à direita",
+      "imovel_foto": 1205
+    },
+    {
+      "id": "f3",
+      "legenda": "Rua interna com casas de dois andares e terreno da RUAH à venda no Alphaville Dom Pedro",
+      "alt": "Rua asfaltada em frente a um terreno gramado, entre uma casa cinza pronta e outra em obra, com o pôr do sol ao fundo",
+      "imovel_foto": 1198
+    },
+    {
+      "id": "f4",
+      "legenda": "Entrada do Galleria Shopping, do outro lado da Rodovia Dom Pedro I",
+      "alt": "Entrada de shopping com letreiro, palmeiras e um mastro alto com a bandeira do Brasil, vista da pista",
+      "commons": "File:Shopping galleria campinas.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada do Shopping Iguatemi Campinas, com a cúpula de vidro",
+      "alt": "Prédio de shopping com cúpula envidraçada, palmeiras na frente e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Entrada das Águas do Parque D. Pedro Shopping",
+      "alt": "Grande painel azul com o nome Parque D. Pedro sobre a entrada de um shopping, com palmeiras em volta",
+      "commons": "File:Parque Dom Pedro Shopping (1).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Rodovia Dom Pedro I em Campinas, no sentido da Anhanguera",
+      "alt": "Rodovia de pista dupla com placas verdes de direção e carros, sob céu nublado",
+      "commons": "File:Rodovia Dom Pedro - Sentido Anhanguera - panoramio (1).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Alphaville Dom Pedro** é um conjunto de loteamentos residenciais fechados de Campinas, construído pela Alphaville Urbanismo às margens da Rodovia Dom Pedro I, em frente ao Galleria Shopping. É um bairro de casas em lotes de cerca de 400 a 1.000 m², com portaria, clube próprio em cada residencial e ruas internas, formado pelas etapas Dom Pedro 1, 2, 3 e Zero."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não confunda com o **Alphaville Campinas**, o primeiro empreendimento da marca na cidade, lançado em 1997 e com página própria neste site. O Alphaville Dom Pedro veio depois, a partir de 2004, e cresceu em etapas. Este guia reúne a história de cada residencial, o perfil dos lotes e das casas, o lazer dos clubes, os acessos e o que fica por perto."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Conjunto de residenciais fechados da Alphaville Urbanismo, ao lado da Rodovia Dom Pedro I, em Campinas",
+        "Etapas: Dom Pedro 1 (lançado em 2004), Dom Pedro 2 e 3 (2013) e Dom Pedro Zero, o quarto lançamento da marca na cidade",
+        "Perfil de casas em lotes de cerca de 400 a 1.000 m², com clube em cada residencial",
+        "Fica em frente ao Galleria Shopping e perto do Iguatemi Campinas e do Parque D. Pedro Shopping",
+        "Vizinho do Parque Imperador; PUC-Campinas e Unicamp ficam a cerca de 10 minutos pela rodovia, segundo moradores"
+      ],
+      "titulo": "O Alphaville Dom Pedro em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como surgiu o Alphaville Dom Pedro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história do Alphaville em Campinas começa em 1997, com o Alphaville Campinas. Em 2004 a empresa lançou o **Alphaville Dom Pedro**, hoje chamado de Dom Pedro 1, numa área ao lado da Rodovia Dom Pedro I. Em setembro de 2006, quando esse primeiro residencial já estava licenciado e em obras, a Alphaville Urbanismo apresentou o plano de trabalho do estudo de impacto ambiental de duas novas etapas, vizinhas a ele."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo esse estudo, as glebas ficavam do lado leste da rodovia, perto do entroncamento com a Rodovia Campinas–Mogi Mirim (SP-340), com o Galleria Shopping e o hipermercado Carrefour do outro lado da pista. A área tinha sido desmatada para a agricultura e era quase toda pasto, com eucaliptos e árvores nativas esparsas. O levantamento de fauna registrou 56 espécies de aves e não encontrou espécies ameaçadas de extinção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lançamento dessas duas etapas, o **Alphaville Dom Pedro Residencial 2** e o **Residencial 3**, aconteceu em 14 de dezembro de 2013. Segundo o Jornal Mais Expressão, todos os lotes foram vendidos no mesmo dia, com mais de mil pessoas no plantão de vendas. Com o Alphaville Campinas e o Dom Pedro 1, os novos residenciais passaram a formar o que a empresa chama de Complexo Alphaville."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A etapa mais recente é o **Alphaville Dom Pedro Zero**, apresentado como o quarto lançamento da marca em Campinas, com 373 lotes residenciais de no mínimo 400 m² e mais de 100 mil m² de área verde. Dentro dele, a Alphaville e a Incorpi entregaram as **Casas Alphaville Dom Pedro 0**, um conjunto de 42 casas prontas de 288 a 362 m²."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Alphaville Dom Pedro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os residenciais do Alphaville Dom Pedro são loteamentos de casas unifamiliares. Cada um tem portaria própria, ruas internas e clube de uso dos moradores. O Residencial 2 tem 265 lotes com média de 500 m², numa área de cerca de 88,5 mil m², e foi entregue em 2016. O Residencial 3, ao lado, tem 233 lotes: 206 com média de 500 m² e 27 com no mínimo 1.000 m²."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As casas costumam ser grandes. No Residencial 2, por exemplo, os anúncios reunidos pela TCO Imóveis mostram imóveis de 308 a 434 m² de área construída, em geral sobrados com três ou quatro suítes. Ainda há terrenos vazios entre casas prontas e em obra, o que significa que algumas quadras seguem em construção."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na infraestrutura, o Jornal Mais Expressão registrou no lançamento das etapas 2 e 3 as redes de energia e telefonia subterrâneas, portaria com cancela, câmeras com gravação 24 horas e central de monitoramento. No Dom Pedro Zero, o perímetro é fechado por muros e gradis e há associação de moradores, segundo o site do empreendimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ritmo é de bairro residencial: o comércio fica fora dos muros, nas avenidas e no entorno da rodovia, e quase tudo se faz de carro. Para quem trabalha em casa ou depende de deslocamentos pela região, isso pesa na escolha da etapa e da rua."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Clubes, áreas verdes e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lazer do bairro está dentro dos residenciais. O clube do Residencial 2 tem cerca de 12,9 mil m², e o do Residencial 3, cerca de 17,5 mil m², entregue equipado e decorado. Segundo o Jornal Mais Expressão, os dois incluem salão de festas, academia, piscina adulto com raia, deck molhado, piscina infantil, solário, playground, quadra poliesportiva, quadra de tênis e campo de futebol."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada etapa também tem área de preservação permanente: no Residencial 3, mais de 88 mil m², segundo a mesma reportagem. As Casas Alphaville Dom Pedro 0 somam itens como quadra de beach tennis, raia de 25 metros, espaço de coworking e bicicletário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As glebas ficam na microbacia do **Córrego São Quirino**, afluente do Ribeirão das Anhumas. O estudo ambiental de 2006 citou o Parque Imperador, rio abaixo, como área com histórico de enchentes, e previu reservatórios de detenção para segurar a água da chuva."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compras e serviços perto do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o **Galleria Shopping**, administrado pela Iguatemi e conhecido pelo jardim interno de mais de 7 mil m², com plantas tropicais e cascatas. Em 2012 o shopping inaugurou uma expansão com 63 lojas. Pelos tempos de carro divulgados pela Alphaville, o Galleria e o Sam's Club ficam a cerca de 2 minutos das Casas Dom Pedro 0, e a Leroy Merlin a cerca de 5."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um pouco mais longe estão o **Shopping Iguatemi Campinas**, a cerca de 8 minutos, e o **Parque D. Pedro Shopping**, a cerca de 15 minutos, segundo a mesma fonte. Na região também ficam hipermercados como o Carrefour, lojas como a Decathlon e centros empresariais como o Galleria Office, o Galleria Corporate e o Techno Park, citados no lançamento das etapas 2 e 3."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma das escolas mais próximas citadas por moradores é o **Colégio Photon**, em funcionamento desde 1997, com educação infantil e ensino fundamental; a TCO Imóveis calcula cerca de 4,4 km de carro a partir do Residencial 2."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o ensino superior, a referência é o eixo da Rodovia Dom Pedro I: moradores ouvidos pelo QuintoAndar contam cerca de 10 minutos até a **PUC-Campinas**, a **Facamp** e a **Unicamp**, no sentido do Parque D. Pedro Shopping. Quem tem filhos em idade escolar deve conferir o trajeto até a escola nos horários de entrada e saída."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O acesso principal é a **Rodovia Dom Pedro I (SP-065)**, inaugurada em 1972, ano dos 150 anos da Independência. Ela tem cerca de 145 km, liga Jacareí, no Vale do Paraíba, a Campinas e termina na Rodovia Anhanguera. O site do Dom Pedro Zero indica a entrada pelo km 130 da rodovia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela rodovia, o bairro se liga à Anhanguera e, por ela, a São Paulo e ao interior. A **Rodovia Adhemar de Barros (SP-340)**, que leva a Mogi Mirim, fica a cerca de 4 km do Residencial 2, e o Aeroporto de Viracopos, a cerca de 28 km, ou 35 minutos de carro, segundo a TCO Imóveis. Há linhas de ônibus no Parque Imperador, mas a rotina no bairro depende principalmente do carro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho imediato é o **Parque Imperador**, bairro residencial que começou a ser loteado na década de 1980 e que, em vários cadastros, aparece como o endereço dos condomínios Alphaville Dom Pedro. Perto dele ficam a Fazenda Santa Cândida e o Jardim Santana, segundo o guia do QuintoAndar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado da rodovia está a área do Galleria Shopping, com comércio, escritórios e serviços. Mais adiante, no sentido do Parque D. Pedro Shopping, ficam as universidades e o distrito de Barão Geraldo, onde está a Unicamp."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Alphaville Dom Pedro faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer **casa em condomínio fechado**, com terreno amplo, clube dentro do residencial e acesso rápido à rodovia, aos shoppings e às universidades. Também atrai quem pretende construir: ainda há lotes disponíveis entre as casas prontas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não servir a quem quer resolver a rotina a pé ou depender de transporte público, já que o comércio fica fora dos muros. Antes de escolher, compare as etapas: o tamanho dos lotes, a idade do residencial, o clube e o valor da taxa de associação mudam de um para outro."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte em qual etapa fica o imóvel, quais são as regras de construção do loteamento, o valor da taxa de associação e o que ela inclui, se o terreno é plano ou em declive e quanto tempo leva o trajeto até a escola ou o trabalho no horário de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Alphaville Dom Pedro, em Campinas?",
+      "resposta": "Às margens da Rodovia Dom Pedro I, em frente ao Galleria Shopping, ao lado do bairro Parque Imperador. O Dom Pedro Zero tem acesso pelo km 130 da rodovia."
+    },
+    {
+      "pergunta": "Qual a diferença entre Alphaville Dom Pedro e Alphaville Campinas?",
+      "resposta": "São empreendimentos diferentes da mesma empresa. O Alphaville Campinas foi lançado em 1997; o Alphaville Dom Pedro é um conjunto de etapas lançadas a partir de 2004 ao lado da Rodovia Dom Pedro I."
+    },
+    {
+      "pergunta": "Quantos residenciais tem o Alphaville Dom Pedro?",
+      "resposta": "Quatro etapas: Dom Pedro 1, lançado em 2004; Dom Pedro 2 e 3, lançados em dezembro de 2013; e Dom Pedro Zero, o lançamento mais recente, onde ficam as Casas Alphaville Dom Pedro 0."
+    },
+    {
+      "pergunta": "O Alphaville Dom Pedro é bom para morar?",
+      "resposta": "Atende bem a quem quer casa em condomínio fechado, com clube e acesso rápido à rodovia e aos shoppings Galleria e Iguatemi. Em troca, o comércio fica fora dos residenciais e quase tudo depende de carro."
+    },
+    {
+      "pergunta": "Qual o tamanho dos lotes no Alphaville Dom Pedro?",
+      "resposta": "Nos Residenciais 2 e 3, a média é de 500 m², com 27 lotes de no mínimo 1.000 m² no Residencial 3. No Dom Pedro Zero, os lotes têm no mínimo 400 m²."
+    },
+    {
+      "pergunta": "Quais universidades ficam perto do Alphaville Dom Pedro?",
+      "resposta": "PUC-Campinas, Facamp e Unicamp ficam a cerca de 10 minutos de carro pela Rodovia Dom Pedro I, segundo moradores da região."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Jornal Mais Expressão, lançamento do Alphaville Dom Pedro 2 e 3 (dezembro de 2013)",
+      "site": "maisexpressao.com.br"
+    },
+    {
+      "nome": "Comitês PCJ, plano de trabalho do EIA/RIMA do Alphaville Dom Pedro 2 e 3 (2006)",
+      "site": "comitespcj.org.br"
+    },
+    {
+      "nome": "Comitês PCJ, EIA/RIMA dos loteamentos AlphaVille Dom Pedro 2 e 3",
+      "site": "comitespcj.org.br"
+    },
+    {
+      "nome": "Alphaville, página das Casas Alphaville Dom Pedro 0",
+      "site": "alphaville.com.br"
+    },
+    {
+      "nome": "Site do Alphaville Dom Pedro Zero, história do Alphaville em Campinas",
+      "site": "dompedrozero.com.br"
+    },
+    {
+      "nome": "TCO Imóveis, ficha do Residencial Alphaville Dom Pedro 2",
+      "site": "tcoimoveis.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do Parque Imperador e ficha do condomínio Alphaville Dom Pedro",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Rodovia Dom Pedro I e Galleria Shopping",
+      "site": "pt.wikipedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Alphaville Dom Pedro, em Campinas: casas em condomínio fechado ao lado da Rodovia Dom Pedro I, em frente ao Galleria Shopping. No guia, a história das etapas 1, 2, 3 e Zero, o tamanho dos lotes, os clubes, os acessos e o que fica perto. Link na bio.",
+    "hashtags": [
+      "alphavilledompedro",
+      "campinas",
+      "condominiofechado",
+      "casaemcondominio",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Alphaville Dom Pedro, Campinas: guia para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.505Z"
+}
