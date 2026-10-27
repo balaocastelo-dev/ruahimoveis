@@ -467,7 +467,7 @@ body.p-sig{
 .s-hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;margin-top:22px;overflow:hidden;isolation:isolate}
 .s-hero-fundo{position:absolute;inset:0;z-index:-1}
 .s-hero-fundo img{width:100%;height:100%;object-fit:cover;animation:s-zoom 26s ease-out both}
-.s-hero-fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,13,.15) 0%,rgba(14,14,13,.25) 45%,rgba(14,14,13,.92) 100%)}
+.s-hero-fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,13,.72) 0%,rgba(14,14,13,.38) 42%,rgba(14,14,13,0) 70%),linear-gradient(180deg,rgba(14,14,13,.1) 0%,rgba(14,14,13,.2) 45%,rgba(14,14,13,.9) 100%)}
 @keyframes s-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.s-hero-fundo img{animation:none}}
 .s-hero-txt{max-width:1240px;width:100%;margin:0 auto;padding:0 20px 72px}
