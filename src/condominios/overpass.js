@@ -5,7 +5,7 @@ const SERVIDORES = ['https://overpass-api.de/api/interpreter', 'https://overpass
 
 async function overpass(q, ms = 25000) {
   let ultimo;
-  for (const url of SERVIDORES) {
+  for (const url of SERVIDORES.slice(0, 2)) {
     try {
       const r = await fetch(url, {
         method: 'POST',

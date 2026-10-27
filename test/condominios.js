@@ -104,11 +104,14 @@ const B = require('../src/condominios/base');
 
   // 3D (prédios da base de blocos, se houver no teste; senão do recorte do mapa)
   const blocos = path.join(__dirname, 'condominio-predios3d.jsonl');
+  const arqMapa = path.join(__dirname, 'condominio-mapa3d.jsonl');
+  if (fs.existsSync(arqMapa)) for (const linha of fs.readFileSync(arqMapa, 'utf8').split('\n').filter(Boolean)) { const t = JSON.parse(linha); run('INSERT INTO mapa3d(tile,dados) VALUES(?,?)', t.t, Buffer.from(t.d, 'base64')); }
   if (fs.existsSync(blocos)) for (const linha of fs.readFileSync(blocos, 'utf8').split('\n').filter(Boolean)) { const t = JSON.parse(linha); run('INSERT INTO predios3d(tile,dados) VALUES(?,?)', t.t, Buffer.from(t.d, 'base64')); }
   const c3 = ok(await req('GET', `/api/condominios/${ed}/3d?imovel=${im.id}`), 'cena 3D');
   assert.ok(c3.cena.predios.length > 10, 'prédios no entorno: ' + c3.cena.predios.length);
   assert.ok(c3.cena.predios.some((b) => b.alvo), 'prédio do condomínio marcado');
   assert.equal(c3.cena.alvo.andares, 18);
+  assert.ok(c3.cena.vias.length > 20 && c3.cena.fonte === 'base', 'ruas da base própria, sem mapa ao vivo');
   assert.equal(c3.imovel.andar, 14);
   console.log(`   3D: ${c3.cena.predios.length} prédios, ${c3.cena.vias.length} ruas, fonte ${c3.cena.fonte}, alvo ${c3.cena.alvo.quantos} prédio(s)`);
   const c3b = ok(await req('GET', `/api/condominios/${ed}/3d`), 'cena 3D do cache'); assert.equal(c3b.cena.gerado, c3.cena.gerado);

@@ -44,17 +44,20 @@ async function gerar(c, raio) {
   const a = `(around:${raio},${lat},${lon})`;
   // contornos dos prédios: base própria (Overture + Censo) quando houver; senão, o OpenStreetMap
   const daBase = require('./predios3d').prediosNoRaio(lat, lon, raio, P);
+  const mapa = daBase ? require('./mapa3d').mapaNoRaio(lat, lon, raio, P) : null;
   let j = { elements: [] }, aviso = null;
-  try {
-    j = await O.overpass(`[out:json][timeout:25];(
-    ${daBase ? '' : `way["building"]${a}; relation["building"]${a};`}
-    way["highway"]${a};
-    way["leisure"~"^(park|garden|pitch|playground|swimming_pool|golf_course)$"]${a};
-    way["landuse"~"^(grass|forest|recreation_ground|meadow|village_green|cemetery)$"]${a};
-    way["natural"~"^(water|wood|scrub|grassland)$"]${a};
-    way["waterway"~"^(river|stream|canal)$"]${a};
-  );out tags geom;`, 28000);
-  } catch (e) { if (!daBase) throw e; aviso = 'Ruas e áreas verdes indisponíveis agora (mapa aberto fora do ar).'; }
+  if (!mapa) {
+    try {
+      j = await O.overpass(`[out:json][timeout:20];(
+      ${daBase ? '' : `way["building"]${a}; relation["building"]${a};`}
+      way["highway"]${a};
+      way["leisure"~"^(park|garden|pitch|playground|swimming_pool|golf_course)$"]${a};
+      way["landuse"~"^(grass|forest|recreation_ground|meadow|village_green|cemetery)$"]${a};
+      way["natural"~"^(water|wood|scrub|grassland)$"]${a};
+      way["waterway"~"^(river|stream|canal)$"]${a};
+    );out tags geom;`, 20000);
+    } catch (e) { if (!daBase) throw e; aviso = 'Ruas e áreas verdes indisponíveis agora (mapa aberto fora do ar).'; }
+  }
 
   const predios = [], vias = [], verdes = [], agua = [], piscinas = [];
   const linha = (geom) => geom.flatMap((g) => P(g.lat, g.lon));
@@ -81,8 +84,9 @@ async function gerar(c, raio) {
       else if (fechado) verdes.push({ p: pf, t: t.leisure || t.landuse || t.natural });
     }
   }
+  if (mapa) { vias.push(...mapa.vias); verdes.push(...mapa.verdes); agua.push(...mapa.agua); }
   if (daBase) daBase.forEach((b, i) => predios.push({ p: b.p, h: Math.round(b.h * 10) / 10, est: b.est, censo: b.censo, andares: b.andares, nome: null, tipo: b.h >= 11 ? 'apartments' : 'yes', ref: `b${i}`, ar: Math.round(areaPoligono(b.p)) }));
-  return { centro: { lat, lon }, raio, predios, vias, verdes, agua, piscinas, fonte: daBase ? 'base' : 'osm', aviso, gerado: new Date().toISOString() };
+  return { centro: { lat, lon }, raio, predios, vias, verdes, agua, piscinas, fonte: daBase ? (mapa ? 'base' : 'base+osm') : 'osm', aviso, gerado: new Date().toISOString() };
 }
 
 // Marca os prédios do condomínio e ajusta a altura pelo número de andares cadastrado.

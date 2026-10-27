@@ -249,10 +249,10 @@ function montar() {
   const pontos = [];
   let semente = 11; const rnd = () => ((semente = (semente * 9301 + 49297) % 233280) / 233280);
   for (const v of cena.verdes) {
-    if (!['park', 'garden', 'forest', 'wood', 'scrub', 'recreation_ground', 'village_green', 'grass', 'meadow', 'grassland'].includes(v.t)) continue;
+    if (!['park', 'garden', 'forest', 'wood', 'scrub', 'shrub', 'tree', 'recreation_ground', 'village_green', 'grass', 'meadow', 'grassland'].includes(v.t)) continue;
     const xs = [], ys = []; for (let i = 0; i < v.p.length; i += 2) { xs.push(v.p[i]); ys.push(v.p[i + 1]); }
     const [mx, Mx, my, My] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
-    const dens = ['forest', 'wood', 'scrub'].includes(v.t) ? 70 : ['grass', 'meadow', 'grassland'].includes(v.t) ? 600 : 180;
+    const dens = ['forest', 'wood', 'scrub', 'shrub', 'tree'].includes(v.t) ? 70 : ['grass', 'meadow', 'grassland'].includes(v.t) ? 600 : 180;
     const n = Math.min(160, Math.round(areaP(v.p) / dens));
     for (let k = 0, t = 0; k < n && t < n * 4; t++) { const x = mx + rnd() * (Mx - mx), y = my + rnd() * (My - my); if (dentro(v.p, x, y)) { pontos.push([x, y, 0.7 + rnd() * 0.7]); k++; } }
     if (pontos.length > 1400) break;

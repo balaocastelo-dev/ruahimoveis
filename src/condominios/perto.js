@@ -21,7 +21,7 @@ async function gerar(lat, lon, raio = 1200) {
     nwr["leisure"~"^(park|sports_centre|fitness_centre|garden|nature_reserve)$"]${a};
     node["highway"="bus_stop"](around:500,${lat},${lon});
     nwr["railway"="station"]${a};
-  );out tags center;`);
+  );out tags center;`, 20000);
   const out = CATEGORIAS.map((c) => ({ id: c.id, nome: c.nome, icone: c.icone, total: 0, itens: [] }));
   for (const e of j.elements || []) {
     const t = e.tags || {}; const p = e.center || e;
@@ -40,6 +40,23 @@ async function gerar(lat, lon, raio = 1200) {
   return { raio, categorias: out, fonte: 'OpenStreetMap (colaborativo; pode faltar algum lugar)' };
 }
 
-const perto = (c) => (c.lat ? O.comCache(c.id, 'perto', 30, () => gerar(c.lat, c.lon)) : null);
+// Pontos de interesse guardados no banco (Overture Maps): rápido e sem depender do mapa aberto ao vivo.
+function doBanco(lat, lon, raio = 1200) {
+  const { all, one } = require('../db');
+  if (!one('SELECT 1 x FROM pois LIMIT 1')) return null;
+  const dLat = raio / 110540, dLon = raio / (Math.cos((lat * Math.PI) / 180) * 111320);
+  const l = all('SELECT cat, nome, lat, lon FROM pois WHERE lat BETWEEN ? AND ? AND lon BETWEEN ? AND ?', lat - dLat, lat + dLat, lon - dLon, lon + dLon);
+  const out = CATEGORIAS.map((c) => ({ id: c.id, nome: c.nome, icone: c.icone, total: 0, itens: [] }));
+  for (const x of l) {
+    const m = Math.round(distancia(lat, lon, x.lat, x.lon));
+    if (m > raio) continue;
+    const c = out.find((o) => o.id === x.cat); if (!c) continue;
+    c.total++; c.itens.push({ nome: x.nome, m, min: Math.max(1, Math.round(m / 80)), lat: x.lat, lon: x.lon });
+  }
+  for (const c of out) { const vistos = new Set(); c.itens = c.itens.sort((a, b) => a.m - b.m).filter((x) => (vistos.has(x.nome) ? false : vistos.add(x.nome))).slice(0, c.id === 'transporte' ? 3 : 6); }
+  return { raio, categorias: out, fonte: 'Overture Maps e OpenStreetMap (pode faltar algum lugar)' };
+}
+
+const perto = (c) => (c.lat ? O.comCache(c.id, 'perto', 30, async () => doBanco(c.lat, c.lon) || gerar(c.lat, c.lon)) : null);
 
 module.exports = { perto, CATEGORIAS };

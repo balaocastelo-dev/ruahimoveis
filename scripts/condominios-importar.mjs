@@ -53,9 +53,27 @@ async function base(arq) {
   } finally { c.release(); }
 }
 
+async function pois(arq) {
+  const l = JSON.parse(fs.readFileSync(arq, 'utf8'));
+  const c = await pool.connect();
+  try {
+    await c.query('SET search_path = ruah, extensions');
+    await c.query('BEGIN'); await c.query('DELETE FROM pois');
+    for (let i = 0; i < l.length; i += 500) {
+      const vals = [], v = [];
+      for (const [cat, nome, lat, lon] of l.slice(i, i + 500)) { vals.push(cat, nome, lat, lon); v.push(`($${vals.length - 3},$${vals.length - 2},$${vals.length - 1},$${vals.length})`); }
+      await c.query(`INSERT INTO pois(cat,nome,lat,lon) VALUES ${v.join(',')}`, vals);
+    }
+    await c.query('COMMIT');
+    await c.query("DELETE FROM condominio_cache WHERE tipo='perto'");
+    console.log(`pontos de interesse: ${l.length}`);
+  } catch (e) { await c.query('ROLLBACK'); throw e; } finally { c.release(); }
+}
+
 async function predios(arq) {
+  const tabela = /mapa3d/.test(path.basename(arq)) ? 'mapa3d' : 'predios3d';
   const linhas = fs.readFileSync(arq, 'utf8').split('\n').filter(Boolean);
-  console.log(`blocos de prédios 3D: ${linhas.length}`);
+  console.log(`blocos (${tabela}): ${linhas.length}`);
   const c = await pool.connect();
   try {
     await c.query('SET search_path = ruah, extensions');
@@ -63,7 +81,7 @@ async function predios(arq) {
       const lote = linhas.slice(i, i + 100).map((l) => JSON.parse(l));
       const vals = [], v = [];
       for (const x of lote) { vals.push(x.t, Buffer.from(x.d, 'base64')); v.push(`($${vals.length - 1},$${vals.length})`); }
-      await c.query(`INSERT INTO predios3d(tile,dados) VALUES ${v.join(',')} ON CONFLICT (tile) DO UPDATE SET dados=excluded.dados, atualizado_em=ruah.agora()`, vals);
+      await c.query(`INSERT INTO ${tabela}(tile,dados) VALUES ${v.join(',')} ON CONFLICT (tile) DO UPDATE SET dados=excluded.dados, atualizado_em=ruah.agora()`, vals);
       process.stdout.write(`\r  ${Math.min(i + 100, linhas.length)}/${linhas.length}`);
     }
     console.log('');
@@ -71,12 +89,12 @@ async function predios(arq) {
 }
 
 try {
-  if (arqBase) await base(path.resolve(arqBase));
-  for (const a of arqsPredios) await predios(path.resolve(a));
+  if (arqBase && arqBase !== '-') await base(path.resolve(arqBase));
+  for (const a of arqsPredios) await (/pois/.test(path.basename(a)) ? pois(path.resolve(a)) : predios(path.resolve(a)));
+  if (arqsPredios.some((a) => /mapa3d/.test(a))) { const c = await pool.connect(); await c.query("DELETE FROM ruah.condominio_cache WHERE tipo='3d'"); c.release(); }
   // liga carteira, Radar e Fisguei aos condomínios
-  const B = require('../src/condominios/base');
-  console.log('vínculos:', B.vincular({ tudo: false }));
-  fs.writeFileSync(path.join(path.dirname(path.resolve(arqBase)), 'importar_ok.txt'), new Date().toISOString());
+  if (arqBase && arqBase !== '-') { const B = require('../src/condominios/base'); console.log('vínculos:', B.vincular({ tudo: false })); }
+  fs.writeFileSync(path.join(path.dirname(path.resolve(arqsPredios[0] || arqBase)), 'importar_ok.txt'), new Date().toISOString());
 } catch (e) { console.error('ERRO', e.message); process.exitCode = 1; }
 await pool.end();
 process.exit();
