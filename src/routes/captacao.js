@@ -29,9 +29,20 @@ r.get('/captacao/painel', (req, res) => {
 
   // ---------- consultas ----------
   const ops = all(`SELECT o.id, o.status, o.bairro, o.portal, o.anunciante_tipo, o.valor, o.tipo, o.corretor_id, o.criado_em, o.atualizado_em,
-      (SELECT max(em) FROM oportunidade_eventos e WHERE e.oportunidade_id=o.id) ultimo_evento FROM oportunidades o
+      (SELECT max(em) FROM oportunidade_eventos e WHERE e.oportunidade_id=o.id) ultimo_evento,
+      CASE WHEN EXISTS (SELECT 1 FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id) THEN 1 ELSE 0 END lig FROM oportunidades o
       ${tudo ? '' : 'WHERE o.corretor_id=? OR o.corretor_id IS NULL'}`, ...(tudo ? [] : [u.id]));
-  const fg = all(`SELECT id, status, bairro, portal, anunciante_tipo, valor, tipo, finalidade, cidade, criado_em, oportunidade_id, imovel_id FROM fisguei_anuncios`);
+  // Fisguei: tudo contado no banco numa consulta só (são dezenas de milhares de anúncios; trazer um por um levava segundos)
+  const GR = all(`SELECT 'st' k, status a, NULL b, count(*) n FROM fisguei_anuncios GROUP BY status
+    UNION ALL SELECT 'ba', bairro, NULL, count(*) FROM fisguei_anuncios WHERE status <> 'descartado' GROUP BY bairro
+    UNION ALL SELECT 'po', portal, NULL, count(*) FROM fisguei_anuncios GROUP BY portal
+    UNION ALL SELECT 'an', anunciante_tipo, NULL, count(*) FROM fisguei_anuncios GROUP BY anunciante_tipo
+    UNION ALL SELECT 'pn', anunciante_tipo, NULL, count(*) FROM fisguei_anuncios WHERE status='novo' GROUP BY anunciante_tipo
+    UNION ALL SELECT 'di', substr(criado_em,1,10), NULL, count(*) FROM fisguei_anuncios WHERE criado_em >= ? GROUP BY substr(criado_em,1,10)
+    UNION ALL SELECT 'vi', tipo, finalidade, count(*) FROM fisguei_anuncios WHERE status <> 'descartado' AND lower(coalesce(cidade,'campinas')) LIKE 'campinas%' GROUP BY tipo, finalidade`, ini);
+  const grupo = (k) => GR.filter((x) => x.k === k);
+  const somaG = (k, f = () => true) => grupo(k).filter(f).reduce((t, x) => t + Number(x.n), 0);
+  const fgTotal = somaG('st');
   const comDono = one('SELECT count(DISTINCT anuncio_id) n FROM fisguei_pessoas WHERE consultado=1').n;
   const pessoasSt = conta(all('SELECT status FROM fisguei_pessoas WHERE consultado=1'), (x) => x.status);
   const envios = all(`SELECT enviado_em FROM fisguei_contatos WHERE envio IN ('enviado','respondeu') AND enviado_em IS NOT NULL`);
@@ -43,13 +54,13 @@ r.get('/captacao/painel', (req, res) => {
   const aprov = one("SELECT count(*) n FROM aprovacoes WHERE status='pendente'").n;
 
   // ---------- funil ----------
-  const stOp = conta(ops, (x) => x.status), stFg = conta(fg, (x) => x.status);
+  const stOp = conta(ops, (x) => x.status), stFg = Object.fromEntries(grupo('st').map((x) => [x.a, Number(x.n)]));
   const enviados = envios.length;
   const confirmados = pessoasSt.confirmou || 0;
   const ativas = ATIVAS.reduce((t, s) => t + (stOp[s] || 0), 0);
   const captadas = stOp.captada || 0;
   const funil = [
-    { rotulo: 'Anúncios na base (Fisguei)', n: fg.length, href: '#/fisguei' },
+    { rotulo: 'Anúncios na base (Fisguei)', n: fgTotal, href: '#/fisguei' },
     { rotulo: 'Com proprietário consultado', n: comDono, href: '#/fisguei?filtro=com_dono' },
     { rotulo: 'Proprietários abordados pelo robô', n: enviados, href: '#/fisguei?filtro=abordando' },
     { rotulo: 'Responderam', n: respondeuEnvio, href: '#/fisguei?filtro=precisa' },
@@ -61,7 +72,7 @@ r.get('/captacao/painel', (req, res) => {
 
   // ---------- precisa de atenção ----------
   const semContato = ops.filter((o) => o.status === 'nova' && (o.ultimo_evento || o.criado_em) < dois).length;
-  const particularesSemDono = fg.filter((a) => a.anunciante_tipo === 'particular' && a.status === 'novo').length;
+  const particularesSemDono = somaG('pn', (x) => x.a === 'particular');
   const pedidosErro = creditos.filter((p) => p.status === 'erro').length;
   const pedidosFila = creditos.filter((p) => ['fila', 'buscando'].includes(p.status)).length;
   const atencao = [
@@ -80,7 +91,7 @@ r.get('/captacao/painel', (req, res) => {
   const porDia = (datas) => { const c = conta(datas.filter((d) => d >= dias[0]), (d) => d); return dias.map((d) => c[d] || 0); };
   const serie = {
     dias,
-    fisguei: porDia(fg.map((a) => dia(a.criado_em))),
+    fisguei: dias.map((d) => somaG('di', (x) => x.a === d)),
     radar: porDia(ops.map((o) => dia(o.criado_em))),
     abordagens: porDia(envios.map((e) => dia(e.enviado_em))),
     respostas: porDia(respostas.map((m) => dia(m.criado_em))),
@@ -89,16 +100,17 @@ r.get('/captacao/painel', (req, res) => {
   // ---------- bairros (juntando grafias), vitrines e portais ----------
   const bairros = new Map();
   const somaBairro = (nome, k) => { const c = G.chave(nome); if (!c) return; if (!bairros.has(c)) bairros.set(c, { nomes: {}, fisguei: 0, radar: 0 }); const b = bairros.get(c); b[k]++; b.nomes[nome] = (b.nomes[nome] || 0) + 1; };
-  for (const a of fg) if (a.status !== 'descartado') somaBairro(a.bairro, 'fisguei');
+  for (const x of grupo('ba')) for (let i = 0; i < Number(x.n); i++) somaBairro(x.a, 'fisguei');
   for (const o of ops) if (o.status !== 'descartada') somaBairro(o.bairro, 'radar');
   const topBairros = [...bairros.values()].map((b) => ({ nome: Object.entries(b.nomes).sort((x, y) => y[1] - x[1])[0][0], fisguei: b.fisguei, radar: b.radar, n: b.fisguei + b.radar }))
     .sort((a, b) => b.n - a.n).slice(0, 10);
-  const ligadas = new Set(fg.map((a) => a.oportunidade_id).filter(Boolean));
-  const vit = conta([...fg.filter((a) => a.status !== 'descartado' && /^campinas/i.test(a.cidade || 'campinas')), ...ops.filter((o) => o.status !== 'descartada' && !ligadas.has(o.id))], (a) => M.categoria(a));
+  const vit = conta(ops.filter((o) => o.status !== 'descartada' && !o.lig), (a) => M.categoria(a));
+  for (const x of grupo('vi')) { const k = M.categoria({ tipo: x.a, finalidade: x.b }); vit[k] = (vit[k] || 0) + Number(x.n); }
   const vitrines = Object.entries(VITRINE).map(([k, nome]) => ({ chave: k, rotulo: nome, n: vit[k] || 0, href: '#/' + k }));
-  const portais = conta([...fg, ...ops], (x) => x.portal || 'Outro');
-  const quem = { particular: fg.filter((a) => a.anunciante_tipo === 'particular').length + ops.filter((o) => o.anunciante_tipo === 'particular').length,
-    imobiliaria: fg.filter((a) => a.anunciante_tipo === 'imobiliaria').length + ops.filter((o) => o.anunciante_tipo === 'imobiliaria').length };
+  const portais = conta(ops, (x) => x.portal || 'Outro');
+  for (const x of grupo('po')) portais[x.a || 'Outro'] = (portais[x.a || 'Outro'] || 0) + Number(x.n);
+  const quem = { particular: somaG('an', (x) => x.a === 'particular') + ops.filter((o) => o.anunciante_tipo === 'particular').length,
+    imobiliaria: somaG('an', (x) => x.a === 'imobiliaria') + ops.filter((o) => o.anunciante_tipo === 'imobiliaria').length };
 
   // ---------- mais novos, com foto ----------
   const novosFg = all(`SELECT id, tipo, finalidade, bairro, logradouro, numero, valor, quartos, area_util, area_total, anunciante_tipo, status, fotos, criado_em, lat
@@ -114,8 +126,8 @@ r.get('/captacao/painel', (req, res) => {
   const creditosMes = creditos.filter((p) => dia(p.criado_em).slice(0, 7) === hoje.slice(0, 7)).reduce((t, p) => t + (p.creditos || 0), 0);
   res.json({
     kpis: {
-      base: fg.length, hoje: fg.filter((a) => dia(a.criado_em) === hoje).length, opsHoje: ops.filter((o) => dia(o.criado_em) === hoje).length,
-      partFg: fg.filter((a) => a.anunciante_tipo === 'particular').length, particulares: quem.particular, imobiliarias: quem.imobiliaria, comDono, abordagens: enviados, fila,
+      base: fgTotal, hoje: somaG('di', (x) => x.a === hoje), opsHoje: ops.filter((o) => dia(o.criado_em) === hoje).length,
+      partFg: somaG('an', (x) => x.a === 'particular'), particulares: quem.particular, imobiliarias: quem.imobiliaria, comDono, abordagens: enviados, fila,
       respostas: respondeuEnvio, taxaResposta: pct(respondeuEnvio, enviados), confirmados,
       ativas, captadas, gasto, custoPorCaptacao: captadas ? gasto / captadas : null, creditosMes, aprovacoes: tudo ? aprov : 0,
     },
