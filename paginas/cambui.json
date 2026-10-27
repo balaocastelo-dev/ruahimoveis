@@ -1,0 +1,333 @@
+{
+  "slug": "cambui",
+  "titulo": "Cambuí, Campinas: como é morar no bairro, história, prédios e lazer",
+  "resumo": "Guia do Cambuí, em Campinas: origem do nome, Centro de Convivência, Feira Hippie, bares, prédios e o que considerar antes de morar no bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Arquibancada do Centro de Convivência Cultural, com os prédios do Cambuí ao fundo",
+      "alt": "Arquibancada de concreto ao ar livre cercada de árvores, com edifícios residenciais atrás",
+      "commons": "File:Centro de Convivência - Campinas - 20260912160854.jpeg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Entrada do Centro de Convivência Cultural, inaugurado em 1976",
+      "alt": "Prédio baixo de concreto com o letreiro Centro de Convivência Cultural de Campinas e uma torre inclinada de iluminação",
+      "commons": "File:Centro de Convivência - Campinas - SP.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "A Praça Imprensa Fluminense em foto antiga, com casarões em volta",
+      "alt": "Foto em preto e branco de uma praça arborizada com casas de dois andares ao fundo",
+      "commons": "File:Praça Imprensa Fluminense, Centro de Memória - Unicamp (APS 1.1.0279).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Banca de discos de vinil na feira da Praça Imprensa Fluminense",
+      "alt": "Barraca de feira com lona azul e caixas de discos de vinil sobre a mesa",
+      "commons": "File:Vinis à venda na Praça Imprensa Fluminense, Campinas, em 2026.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "O City Bar, bar tradicional na Avenida Júlio de Mesquita",
+      "alt": "Fachada de bar de esquina com letreiro vermelho e mesas de plástico vermelhas na calçada",
+      "commons": "File:City Bar em Campinas.03.07.2025.2.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rua MMDC: casas com muros verdes e edifícios altos lado a lado",
+      "alt": "Rua residencial com muros cobertos de trepadeira e prédios altos ao fundo",
+      "commons": "File:Rua MMDC, Cambuí, Campinas, São Paulo, Brasil em 2026.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Esquina da Rua General Osório, com comércio e árvores grandes",
+      "alt": "Cruzamento com faixa de pedestres, restaurante de esquina e árvores de copa larga",
+      "commons": "File:Rua General Osorio - Cambuí - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Edifício no Cambuí com apartamento da RUAH à venda",
+      "alt": "Fachada de edifício residencial alto com varandas e tijolo aparente na base",
+      "imovel_foto": 659
+    },
+    {
+      "id": "f9",
+      "legenda": "Prédio residencial com palmeiras na entrada, com unidade da RUAH à venda",
+      "alt": "Torre residencial branca com varandas e palmeiras altas na frente",
+      "imovel_foto": 635
+    },
+    {
+      "id": "f10",
+      "legenda": "Edifício alto do bairro visto da calçada, com apartamento da RUAH à venda",
+      "alt": "Edifício de muitos andares fotografado de baixo, com gradil verde na frente",
+      "imovel_foto": 828
+    },
+    {
+      "id": "f11",
+      "legenda": "Área de lazer de condomínio do Cambuí, com prédios vizinhos em volta",
+      "alt": "Terraço com piso claro, pergolado e palmeiras, cercado de edifícios",
+      "imovel_foto": 1220
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Cambuí** é um bairro da região central de Campinas, colado ao Centro, conhecido pelas ruas arborizadas, pela grande quantidade de prédios residenciais e por concentrar bares, restaurantes, cafés e serviços a poucas quadras de casa. É um dos bairros mais tradicionais e valorizados da cidade, e se estende das imediações da Via Norte-Sul até o Centro de Convivência Cultural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Cambuí oferece uma rotina que se resolve a pé: padaria, mercado, farmácia, academia, consultório e restaurante costumam ficar no mesmo trajeto. Em troca, o bairro tem movimento, trânsito nos horários de pico e vida noturna em algumas ruas. Este guia reúne a história, o perfil dos imóveis, o lazer e o que vale considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região central de Campinas, vizinho do Centro",
+        "Perfil residencial de prédios, com casas e sobrados em meio às torres",
+        "O nome vem de um arbusto, o cambuí, que existia em abundância na região",
+        "Abriga o Centro de Convivência Cultural, inaugurado em 1976 e reaberto em 2025",
+        "Na Praça Imprensa Fluminense acontece a Feira Hippie, aos sábados e domingos",
+        "Comércio, bares e restaurantes espalhados pelas ruas internas do bairro"
+      ],
+      "titulo": "O Cambuí em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Cambuí"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem dos **cambuís**, arbustos que cresciam em quantidade no caminho que hoje corresponde, aproximadamente, à Rua Coronel Quirino. Os moradores antigos chamavam a área de *cambuizal*, e o apelido acabou batizando o bairro inteiro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No século XIX, a região era periférica e abrigava uma população pobre, que vivia em cortiços. O perfil mudou com a chegada das ferrovias Paulista e Mogiana, por volta de 1870: famílias da elite de Campinas e de cidades vizinhas passaram a ocupar a área, primeiro com chácaras e, no início do século XX, com casarões."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A partir das décadas de 1950 e 1960 começou a verticalização: as mansões foram dando lugar a edifícios residenciais, em geral de padrão alto. É esse processo que explica a paisagem de hoje, com torres altas ao lado de casas mais antigas que resistiram em algumas ruas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Mauricio de Sousa, criador da Turma da Mônica, contou em 2011 que o bairro do Limoeiro, onde vivem os personagens, foi inspirado no Cambuí, onde ele morou por alguns anos.",
+      "titulo": "Curiosidade"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Cambuí"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Cambuí é, antes de tudo, um bairro de apartamentos. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 440 prédios residenciais no bairro, alguns com mais de 30 andares. Há de tudo: edifícios antigos com plantas amplas, prédios das décadas de 1980 e 1990 e lançamentos recentes com apartamentos compactos e lazer completo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas internas mantêm árvores grandes e calçadas largas em muitos trechos, e algumas ainda guardam casas e sobrados entre as torres, como se vê na Rua MMDC. A Avenida Júlio de Mesquita é um dos eixos arborizados mais conhecidos do bairro, e a Rua Maria Monteiro está entre as vias mais movimentadas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia combina com quem gosta de resolver as coisas sem pegar o carro: há padarias, mercados, farmácias, clínicas, laboratórios e academias espalhados pelo bairro. A seção *o que tem no Cambuí e em volta*, mais abaixo nesta página, lista os lugares mais próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O outro lado da moeda é o movimento. Em horário de pico, as avenidas que cortam e cercam o bairro ficam carregadas, e algumas ruas com bares têm vida noturna nos fins de semana. Quem procura silêncio costuma preferir quadras mais internas e apartamentos de frente para o fundo do terreno."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Centro de Convivência e Feira Hippie"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal marco cultural do bairro é o **Centro de Convivência Cultural Carlos Gomes**, inaugurado em outubro de 1976 com projeto do arquiteto Fábio Penteado. O conjunto reúne a Sala de Espetáculos Luís Otávio Burnier, o Teatro de Arena Teresa Aguiar, ao ar livre, e galerias de arte, e recebe concertos da Orquestra Sinfônica Municipal, peças, shows, exposições e feiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O espaço ficou fechado por cerca de 14 anos para obras de revitalização e reabriu em julho de 2025. Segundo a Prefeitura, foram 80 eventos entre julho de 2025 e maio de 2026, com cerca de 64,5 mil pessoas. Em 2026, a Prefeitura abriu licitação para a área gastronômica do conjunto, onde funcionou o café La Recoleta, ponto de encontro de artistas entre 1993 e 2003."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao lado, na **Praça Imprensa Fluminense**, acontece a **Feira Hippie de Campinas**, aos sábados e domingos, das 9h às 14h. A feira nasceu em 1973, em encontros no Largo das Andorinhas, e está na praça do Cambuí desde o começo dos anos 1990. São mais de 300 expositores por dia, com artesanato, roupas, acessórios, comida, antiguidades, cerâmica e discos, e cerca de 3 mil visitantes diários. Em 2019, foi reconhecida como patrimônio cultural imaterial."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bares, restaurantes e comércio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Cambuí concentra uma das maiores ofertas de bares, restaurantes e cafés de Campinas. A base de pontos de interesse usada pela RUAH registra centenas de restaurantes e cafés num raio de 1,5 km do centro do bairro, de casas tradicionais a endereços novos de cozinha autoral, japonesa e italiana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os nomes tradicionais está o **City Bar**, na Avenida Júlio de Mesquita, um bar de esquina com mesas na calçada que virou referência no bairro. As ruas próximas reúnem lojas de rua, galerias, bancos, salões e serviços, o que faz do Cambuí um destino de compras para gente de outros bairros também."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem escolas particulares tradicionais e faculdades por perto. Uma das mais antigas é o **Colégio Progresso**, fundado em 1900 por cinco cidadãos de Campinas como escola para meninas e hoje com ensino bilíngue. A lista de escolas mais próximas, com o tempo a pé, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o Cambuí abriga a **Santa Casa de Campinas**, hospital filantrópico que atende também pelo SUS, e fica perto de outros hospitais da região central, como o Hospital Vera Cruz, entre o Centro e o Botafogo, e a Beneficência Portuguesa. Clínicas, laboratórios e farmácias estão distribuídos por todo o bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é o grande trunfo: o Cambuí faz divisa com o Centro de Campinas e é cercado por vias que distribuem o tráfego para o resto da cidade, como a **Via Norte-Sul** e a **Avenida Orozimbo Maia**. Para quem trabalha no Centro, boa parte dos trajetos pode ser feita a pé ou de bicicleta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As linhas de ônibus que passam pelo bairro ligam o Cambuí aos terminais da região central. Para viagens de carro, o acesso às rodovias que saem de Campinas é feito pelas avenidas que cercam o bairro; nos horários de pico, vale testar o trajeto antes de decidir pelo imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Cambuí faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Cambuí costuma agradar a quem quer morar em apartamento, perto de tudo, com vida de bairro e oferta cultural: casais, profissionais que trabalham na região central, famílias que valorizam escola e serviços por perto e quem está deixando uma casa grande para um imóvel mais prático."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não ser a escolha certa para quem procura quintal, silêncio absoluto ou ruas sem movimento. Dentro do próprio bairro, porém, a diferença entre uma quadra e outra é grande, e a escolha do prédio, do andar e da face do apartamento muda bastante a experiência."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10",
+        "f11"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor sobre o valor do condomínio e o que ele inclui, a idade do prédio e as últimas obras, a posição do apartamento em relação a bares e avenidas, o número de vagas e se o prédio tem gerador e reúso de água.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Cambuí, em Campinas?",
+      "resposta": "Na região central da cidade, vizinho ao Centro. O bairro vai das imediações da Via Norte-Sul até o Centro de Convivência Cultural."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Cambuí?",
+      "resposta": "Por causa dos cambuís, arbustos que cresciam em quantidade no caminho que hoje corresponde, aproximadamente, à Rua Coronel Quirino. A área era chamada de cambuizal."
+    },
+    {
+      "pergunta": "O Cambuí é bom para morar?",
+      "resposta": "Para quem quer apartamento perto de comércio, serviços, cultura e do Centro, sim: a rotina se resolve a pé. Quem procura silêncio ou casa com quintal pode preferir outros bairros ou quadras mais internas."
+    },
+    {
+      "pergunta": "Quando acontece a Feira Hippie do Cambuí?",
+      "resposta": "Aos sábados e domingos, das 9h às 14h, na Praça Imprensa Fluminense, ao lado do Centro de Convivência Cultural."
+    },
+    {
+      "pergunta": "O Cambuí tem mais casas ou prédios?",
+      "resposta": "Prédios. A base de condomínios da RUAH identifica cerca de 440 edifícios residenciais no bairro, alguns com mais de 30 andares, além de casas e sobrados em ruas internas."
+    },
+    {
+      "pergunta": "Como ver os imóveis à venda no Cambuí?",
+      "resposta": "Os imóveis que a RUAH tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Wikipédia, verbete Cambuí (Campinas)",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Correio da Manhã, sobre a licitação da área gastronômica do Centro de Convivência (junho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, Feira Hippie de Campinas e hospitais de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Revista Antíteses (UEL), artigo sobre o Colégio Progresso Campineiro (1900-1937)",
+      "site": "ojs.uel.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, acervo fotográfico",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Cambuí, em Campinas: o bairro que ganhou nome de arbusto, virou endereço de casarões e hoje é um dos mais procurados para morar em apartamento. Preparamos um guia completo, com a história, o Centro de Convivência, a Feira Hippie, bares, escolas e o que considerar antes da mudança. Link na bio.",
+    "hashtags": [
+      "cambui",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "apartamentocampinas",
+      "feirahippie",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Cambuí, Campinas: guia completo do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T13:42:57.548Z"
+}

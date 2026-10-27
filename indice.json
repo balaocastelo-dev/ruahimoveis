@@ -1,4 +1,12 @@
 {
   "versao": 1,
-  "paginas": []
+  "paginas": [
+    {
+      "slug": "cambui",
+      "titulo": "Cambuí, Campinas: como é morar no bairro, história, prédios e lazer",
+      "resumo": "Guia do Cambuí, em Campinas: origem do nome, Centro de Convivência, Feira Hippie, bares, prédios e o que considerar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T13:42:57.548Z"
+    }
+  ],
+  "atualizadoEm": "2026-10-27T13:42:57.553Z"
 }
