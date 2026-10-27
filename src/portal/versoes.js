@@ -16,6 +16,15 @@ const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 const lugar = (im) => [im.bairro, im.cidade].filter(Boolean).join(', ');
 const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 
+// Fotos com versão em alta definição (ampliadas a partir da original, em public/portal-assets/signature/<id>-1920.jpg e -2560.jpg).
+const HD = new Set([]);
+/** A imagem de fundo do topo: alta definição quando existe, senão a foto do banco. */
+function fundo(foto) {
+  const src = fotoUrl(foto);
+  const hd = HD.has(foto) ? `/portal-assets/signature/${foto}` : null;
+  return `<div class="s-hero-fundo" aria-hidden="true"><img src="${hd ? `${hd}-1920.jpg` : src}"${hd ? ` srcset="${hd}-1920.jpg 1920w, ${hd}-2560.jpg 2560w" sizes="100vw" width="2560" height="1706"` : ' width="1280" height="853"'} alt="" fetchpriority="high" decoding="async"></div>`;
+}
+
 const ehSignature = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
 const RESIDENCIAIS = new Set(['Casa', 'Casa em condomínio', 'Sobrado', 'Chácara', 'Sítio', 'Fazenda', 'Apartamento', 'Cobertura', 'Flat']);
 const residencia = (im) => RESIDENCIAIS.has(im.tipo);
@@ -222,11 +231,12 @@ function paginaSignature(req, imoveis, membro) {
   const sel = selecao(imoveis);
   const casas = sel.filter((s) => s.residencia && s.fotos.length);
   const ativos = sel.filter((s) => !(s.residencia && s.fotos.length));
-  const abre = casas[0];
+  // A capa: a foto escolhida em alta definição (SIGNATURE.capa), se a residência ainda está na seleção.
+  const capa = casas.flatMap((c) => c.fotos).find((f) => f.foto === SIGNATURE.capa) || (casas[0] && casas[0].fotos[0]);
   const corpo = `
 ${seletor('signature')}
 <section class="s-hero">
-  ${abre ? `<div class="s-hero-fundo" aria-hidden="true"><img src="${fotoUrl(abre.fotos[0].foto)}" alt="" width="1280" height="853" fetchpriority="high" decoding="async"></div>` : ''}
+  ${capa ? fundo(capa.foto) : ''}
   <div class="s-hero-txt">
     <p class="s-marca">RUAH <span>Signature</span></p>
     <h1>${esc(SIGNATURE.titulo)}</h1>
@@ -266,7 +276,7 @@ ${clube(membro)}`;
   return casca(req, {
     titulo: 'RUAH Signature · residências de altíssimo padrão',
     descricao: 'RUAH Signature: uma seleção reservada de residências acima de R$ 10 milhões em Campinas e região, com valores e visitas para membros do Clube Signature.',
-    caminho: '/imoveis/signature', imagem: abre && fotoUrl(abre.fotos[0].foto), corpo, classe: 'p-sig',
+    caminho: '/imoveis/signature', imagem: capa && (HD.has(capa.foto) ? `/portal-assets/signature/${capa.foto}-1920.jpg` : fotoUrl(capa.foto)), corpo, classe: 'p-sig',
   });
 }
 
@@ -281,7 +291,7 @@ function paginaSignatureImovel(req, imoveis, codigo, membro) {
 ${seletor('signature')}
 <nav class="p-trilha s-trilha" aria-label="Você está em"><a href="/imoveis/signature">RUAH Signature</a> <span aria-hidden="true">›</span> <span>${esc(s.titulo)}</span></nav>
 <section class="s-hero s-hero-im">
-  ${primeira ? `<div class="s-hero-fundo" aria-hidden="true"><img src="${fotoUrl(primeira.foto)}" alt="" width="1280" height="853" fetchpriority="high" decoding="async"></div>` : ''}
+  ${primeira ? fundo(primeira.foto) : ''}
   <div class="s-hero-txt">
     <p class="s-marca">RUAH <span>Signature</span></p>
     <p class="s-sobre">${esc(im.tipo)} · ${esc(s.local)}</p>

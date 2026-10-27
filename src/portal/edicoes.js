@@ -86,6 +86,8 @@ const CARTA = {
 // ------------------------------------------------------------------ Signature
 const SIGNATURE = {
   limite: 10000000,
+  /** A foto da capa da Signature (a varanda da casa de Ricardo Julião, CA0004), em alta definição. */
+  capa: 174,
   titulo: 'Residências que não se anunciam',
   linhaFina: 'Uma seleção reservada de propriedades acima de R$ 10 milhões, apresentadas com a discrição que elas pedem. Valores e visitas, só para membros do Clube Signature.',
   manifesto: [
