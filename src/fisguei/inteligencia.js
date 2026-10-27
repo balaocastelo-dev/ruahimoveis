@@ -145,7 +145,7 @@ function analisa(x, ctx) {
   const desde = [x.anunciado_desde, x.publicado_em, String(x.criado_em || '').slice(0, 10)].filter(Boolean).sort()[0] || null;
   const idade = dias(desde), naBase = dias(x.criado_em);
   x.desde = desde; x.idade = idade; x.na_base_dias = naBase;
-  if (idade !== null && idade <= 7) s.push({ id: 'novo', forca: idade <= 2 ? 1 : 0.6, dias: idade, texto: idade <= 0 ? 'Saiu hoje nos portais.' : `Anunciado há ${idade} dia${idade > 1 ? 's' : ''}: quem chega primeiro tem mais chance com o dono.` });
+  if (idade !== null && idade <= 3) s.push({ id: 'novo', forca: idade <= 1 ? 1 : 0.6, dias: idade, texto: idade <= 0 ? 'Saiu hoje nos portais.' : `Anunciado há ${idade} dia${idade > 1 ? 's' : ''}: quem chega primeiro tem mais chance com o dono.` });
   else if (idade !== null && idade >= 90) s.push({ id: 'antigo', forca: Math.min(1, idade / 240), dias: idade, texto: `Anunciado há ${idade} dias sem vender: o dono pode estar cansado da imobiliária atual.` });
   // m² comparado com o bairro
   if (x.m2 && !x.m2_estranho) {
@@ -155,8 +155,9 @@ function analisa(x, ctx) {
       const d = pct(x.m2, base.m2);
       x.m2_ref = Math.round(base.m2); x.m2_dif = d; x.m2_ref_n = base.n; x.m2_ref_cidade = !!base.cidade;
       const onde = base.cidade ? `Campinas para ${String(x.subtipo || 'esse tipo').toLowerCase()} (${base.n} anúncios)` : `${x.bairro_nome} (${base.n} anúncios comparáveis)`;
-      if (d <= -25) s.push({ id: 'abaixo', forca: Math.min(1, (-d - 15) / 35), pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${Math.abs(d).toLocaleString('pt-BR')}% abaixo da mediana de ${onde}: preço para vender rápido (confira a área no anúncio).` });
-      else if (d >= 45) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da RUAH.` });
+      // só sinaliza comparando com o próprio bairro (a mediana da cidade mistura regiões muito diferentes)
+      if (d <= -30 && !base.cidade) s.push({ id: 'abaixo', forca: Math.min(1, (-d - 20) / 35), pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${Math.abs(d).toLocaleString('pt-BR')}% abaixo da mediana de ${onde}: preço para vender rápido (confira a área no anúncio).` });
+      else if (d >= 50 && !base.cidade) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da RUAH.` });
     }
   }
   if (x.anunciante_tipo === 'particular') s.push({ id: 'particular', forca: 1, texto: 'Anúncio de particular, sem imobiliária no meio: o caminho mais curto até a exclusividade.' });

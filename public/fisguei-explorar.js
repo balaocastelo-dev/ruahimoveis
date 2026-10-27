@@ -264,7 +264,8 @@ function fxCard(a, i = 0) {
 // régua do m²: onde o imóvel fica em relação à mediana do bairro (−50% a +50%)
 function fxRegua(a) {
   const d = Math.max(-50, Math.min(50, a.m2_dif));
-  return `<div class="fx-regua" title="Mediana ${a.m2_ref_cidade ? 'da cidade' : 'do bairro'}: R$ ${fxN(a.m2_ref)}/m²"><span class="fx-r-t"><i style="left:${50 + d}%" class="${d <= -15 ? 'bom' : d >= 35 ? 'alto' : ''}"></i></span><small>${a.m2_dif > 0 ? '+' : ''}${a.m2_dif.toLocaleString('pt-BR')}% vs. ${a.m2_ref_cidade ? 'cidade' : 'bairro'}</small></div>`;
+  // marcador verde/âmbar só quando o próprio bairro serve de comparação
+  return `<div class="fx-regua" title="Mediana ${a.m2_ref_cidade ? 'da cidade' : 'do bairro'}: R$ ${fxN(a.m2_ref)}/m²"><span class="fx-r-t"><i style="left:${50 + d}%" class="${a.m2_ref_cidade ? '' : d <= -30 ? 'bom' : d >= 50 ? 'alto' : ''}"></i></span><small>${a.m2_dif > 0 ? '+' : ''}${a.m2_dif.toLocaleString('pt-BR')}% vs. ${a.m2_ref_cidade ? 'cidade' : 'bairro'}</small></div>`;
 }
 function fxGrade(novos, doZero) {
   const corpo = $('#fx-corpo');
