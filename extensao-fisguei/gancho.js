@@ -69,13 +69,18 @@
     } else {
       let cand = gente.filter((p) => (enderecoDaPessoa(p, key) || {}).iptuMatch);
       if (c.unidade) { const u = semAcento(c.unidade).replace(/\D/g, ''); const daUnid = cand.filter((p) => semAcento((enderecoDaPessoa(p, key) || {}).extra).replace(/\D/g, '') === u); if (daUnid.length) cand = daUnid; }
+      // casa com até N pessoas e nenhuma marcada pelo IPTU: consulta todas (costuma ser o dono morando lá)
+      if (!cand.length && gente.length <= (c.limite ?? 3)) cand = gente.slice();
       if (cand.length && cand.length <= (c.limite ?? 3)) escolhidos = cand;
     }
     for (const p of escolhidos) {
       await espera(1500 + Math.random() * 2000);
       const pode = await chama('user/CanUseFeature', { search: { key: { document: p.document, name: '', addresses: [] } }, type: 'get_person_info' });
-      if (pode && pode.data === false) { out.sem_credito = true; break; }
-      const jaPaga = /n[aã]o ser[aá] cobrada/i.test((pode && pode.message) || '');
+      // data=true: já foi paga por alguém do plano (não cobra). data=false: "essa consulta será cobrada" (gasta 1 crédito).
+      // Só para por falta de crédito se o Fisgar disser isso com todas as letras.
+      const msg = String((pode && pode.message) || '');
+      if (/(sem|n[aã]o (possui|tem|h[aá])|insuficiente|esgotad|acabaram|limite).{0,40}(cr[eé]dito|consulta|saldo)/i.test(msg) && !/ser[aá] cobrada/i.test(msg)) { out.sem_credito = true; out.aviso = msg; break; }
+      const jaPaga = (pode && pode.data === true) || /n[aã]o ser[aá] cobrada/i.test(msg);
       const end = enderecoDaPessoa(p, key);
       const corpo = { search: { key: { type: 'DOCUMENT', document: p.document, document_type: p.type, addresses: end ? [end] : [], name: p.name } } };
       const ji = await chama('region/sp/owners/GetPersonInfo', corpo);

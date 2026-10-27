@@ -158,7 +158,7 @@ function resultado(id, b) {
   if (p.tipo === 'endereco' && !total) status = 'sem_resultado';
   else if (p.tipo === 'endereco' && total && !consultadas) status = 'escolher';
   if (b.sem_credito) status = consultadas ? 'concluido' : 'erro';
-  conclui(id, status, { creditos, pessoas: total, consultadas, erro: b.sem_credito ? 'O Fisgar recusou: sem créditos no plano.' : b.aviso || null });
+  conclui(id, status, { creditos, pessoas: total, consultadas, erro: b.sem_credito ? 'O Fisgar recusou por falta de crédito: ' + (b.aviso || 'sem créditos no plano') : b.aviso || null });
   if (status === 'sem_resultado') run(`UPDATE fisguei_anuncios SET observacoes=coalesce(observacoes,'') || ? WHERE id=?`, ' O Fisgar não achou dono pelo IPTU neste endereço.', p.anuncio_id);
   return { ok: true, status, creditos, pessoas: total, consultadas };
 }
