@@ -167,10 +167,21 @@ function baseVitrine() {
   const b0 = base({ min: '0' });
   const linhas = comRadar(all(`SELECT ${CHAVE}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, ...b0.p), { min: '0' });
   for (const x of linhas) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
-  BASE = { em: Date.now(), linhas };
+  BASE = { em: Date.now(), linhas, memo: new Map() };
   return linhas;
 }
-const esqueceBase = () => { BASE = null; };
+// chegou anúncio: a base é relida em até 30 s (numa puxada do Fisgar chega página a cada poucos segundos)
+const esqueceBase = () => { if (BASE) BASE.em = Math.min(BASE.em, Date.now() - BASE_MS + 30000); };
+// respostas prontas, guardadas enquanto a base não muda
+function memo(req, fn) {
+  baseVitrine();
+  const k = req.path + '?' + new URLSearchParams(req.query).toString();
+  const m = BASE.memo;
+  if (m.has(k)) return m.get(k);
+  const v = fn();
+  if (BASE_MS > 0) { if (m.size > 300) m.clear(); m.set(k, v); }
+  return v;
+}
 // os filtros da tela (valor mínimo e máximo, quartos, tipo, só particular), aplicados em memória
 function filtra(linhas, q, cat = catDe(q)) {
   const min = q.min !== undefined && q.min !== '' ? Number(q.min) || 0 : cat ? CATS[cat].min : 1000000;
@@ -180,7 +191,8 @@ function filtra(linhas, q, cat = catDe(q)) {
     && (!tipo || sem(x.tipo).includes(tipo)) && (!part || x.anunciante_tipo === 'particular'));
 }
 
-r.get('/mercado/resumo', (req, res) => {
+r.get('/mercado/resumo', (req, res) => res.json(memo(req, () => resumo(req))));
+function resumo(req) {
   const cat = catDe(req.query);
   const tudo = baseVitrine();
   const categorias = {};
@@ -194,14 +206,14 @@ r.get('/mercado/resumo', (req, res) => {
   const total = tudo.length;
   const doRadarN = l.filter((x) => x.origem === 'op').length;
   const m2 = l.filter((x) => x.valor && x.area_util > 20).map((x) => x.valor / x.area_util);
-  res.json({ cat, categorias, subtipos, total: l.length, doRadar: doRadarN, anuncios: todos.length, repetidos: todos.length - l.length, base: total, mediana: med(l.map((x) => x.valor)), m2: med(m2) && Math.round(med(m2)),
-    area: med(l.map((x) => x.area_util || 0)), particulares: l.filter((x) => x.anunciante_tipo === 'particular').length, bairros });
-});
-r.get('/mercado/ruas', (req, res) => {
+  return { cat, categorias, subtipos, total: l.length, doRadar: doRadarN, anuncios: todos.length, repetidos: todos.length - l.length, base: total, mediana: med(l.map((x) => x.valor)), m2: med(m2) && Math.round(med(m2)),
+    area: med(l.map((x) => x.area_util || 0)), particulares: l.filter((x) => x.anunciante_tipo === 'particular').length, bairros };
+}
+r.get('/mercado/ruas', (req, res) => res.json(memo(req, () => {
   const k = G.chave(req.query.bairro || '');
   const l = unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x._bairro === k), req.query));
-  res.json(capas(agrupa(l, 'logradouro', ruaChave).sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome))));
-});
+  return capas(agrupa(l, 'logradouro', ruaChave).sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome)));
+})));
 r.get('/mercado/imoveis', (req, res) => {
   const kb = G.chave(req.query.bairro || ''), kr = ruaChave(req.query.rua || '');
   let sel = filtra(baseVitrine(), req.query);
@@ -219,8 +231,8 @@ r.get('/mercado/imoveis', (req, res) => {
 });
 r.get('/mercado/mapa', (req, res) => {
   res.setHeader('Cache-Control', 'private, max-age=120');
-  res.json(unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x.lat != null), req.query))
-    .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, Math.round((x.valor || 0) / 1000), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.subtipo || x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`]));
+  res.json(memo(req, () => unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x.lat != null), req.query))
+    .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, Math.round((x.valor || 0) / 1000), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.subtipo || x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`])));
 });
 
 // 3D da rua de um imóvel do Fisguei: o mesmo 3D dos condomínios, centrado no imóvel.
