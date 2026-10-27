@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0034",
+      "slug": "casa-5-quartos-2-suites-parque-taquaral-campinas-ca0034",
+      "titulo": "Casa de 5 quartos com 2 suítes no Parque Taquaral, Campinas",
+      "resumo": "Casa de 195 m² no Parque Taquaral, em Campinas: 5 quartos com 2 suítes, piso de tábuas de madeira, três salas, escritório e terraço com churrasqueira.",
+      "capa": {
+        "foto": 1655,
+        "alt": "Alpendre da frente com arcos, colunas brancas, janelas em arco e piso de pedra"
+      },
+      "versao": "21178f4234e6",
+      "publicadoEm": "2026-10-27T17:22:16.943Z"
+    },
+    {
+      "codigo": "TE0006",
+      "slug": "terreno-462-m2-zona-mista-jardim-itamarati-campinas-te0006",
+      "titulo": "Terreno de 462 m² em zona mista no Jardim Itamarati, Campinas",
+      "resumo": "Terreno de 462 m² no Jardim Itamarati, em Campinas, em zona mista (ZM2) e com uma laje de subsolo já executada: base para casa, clínica ou escritório.",
+      "capa": {
+        "foto": 1680,
+        "alt": "Vista do terreno a partir da entrada, com piso de terra e brita, laje de concreto do subsolo e árvores ao fundo"
+      },
+      "versao": "f77d48e2f035",
+      "publicadoEm": "2026-10-27T17:22:16.939Z"
+    },
+    {
       "codigo": "CA0010",
       "slug": "casa-3-quartos-tijolinho-jardim-bom-retiro-campinas-ca0010",
       "titulo": "Casa térrea de 3 quartos no Jardim Bom Retiro, em Campinas",
@@ -326,5 +350,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T15:28:40.426Z"
+  "atualizadoEm": "2026-10-27T17:22:16.944Z"
 }

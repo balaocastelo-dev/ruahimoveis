@@ -1,0 +1,111 @@
+{
+  "codigo": "TE0006",
+  "slug": "terreno-462-m2-zona-mista-jardim-itamarati-campinas-te0006",
+  "titulo": "Terreno de 462 m² em zona mista no Jardim Itamarati, Campinas",
+  "resumo": "Terreno de 462 m² no Jardim Itamarati, em Campinas, em zona mista (ZM2) e com uma laje de subsolo já executada: base para casa, clínica ou escritório.",
+  "capa": {
+    "foto": 1680,
+    "alt": "Vista do terreno a partir da entrada, com piso de terra e brita, laje de concreto do subsolo e árvores ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno fica no Jardim Itamarati, em Campinas, e tem 462 m² de área total, segundo a ficha. Não é um lote vazio: o anúncio informa que já existe uma estrutura de subsolo executada, e a foto do interior mostra a laje de concreto dessa construção, com aberturas de ventilação na lateral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Faz sentido para quem quer construir sem começar do zero, seja para morar, seja para montar um consultório ou um escritório. Pelo anúncio, o zoneamento é ZM2, zona mista que admite uso residencial e comercial."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "462 m² de área total",
+        "Zoneamento ZM2, com uso residencial e comercial, segundo o anúncio",
+        "Estrutura de subsolo já executada, com laje de concreto",
+        "Muro na frente e portão de madeira para pedestres",
+        "Energia elétrica e esgoto informados no anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A frente do lote"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A frente é fechada por um muro rebocado em tom bege, com pilares e um portão de pedestres de ripas de madeira. Na calçada há gramado e uma árvore grande junto ao portão. Pelas frestas das ripas dá para ver a vegetação do terreno e prédios ao longe. O anúncio informa 12 metros de frente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que já está construído"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Logo depois da entrada, o chão é de terra batida com brita, com mato baixo crescendo. Mais adiante aparece a laje de concreto do subsolo, com uma tampa de acesso, restos de tijolos e madeiras empilhadas. Na lateral da laje há aberturas de ventilação com grade. O terreno é ladeado por muros de tijolo e por vegetação, e ao fundo se vê bastante área verde e um prédio alto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura um lote em Campinas com uso misto e quer aproveitar uma estrutura que já existe. A estrutura existente pede avaliação técnica: antes de fechar o projeto, vale levar um engenheiro ou arquiteto para conferir o estado da laje e do subsolo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Se há projeto aprovado e alvará para a estrutura já construída, qual é a situação da documentação e do IPTU, e o que exatamente o zoneamento ZM2 permite construir neste lote.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1679,
+      "legenda": "Muro bege com pilares e portão de pedestres de ripas de madeira",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1680,
+      "legenda": "Interior do lote, com piso de terra e brita e a laje de concreto do subsolo",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "A ficha informa 462 m² de área total. O anúncio fala em 12 metros de frente."
+    },
+    {
+      "pergunta": "O terreno aceita uso comercial?",
+      "resposta": "Segundo o anúncio, o zoneamento é ZM2, zona mista que permite projetos residenciais e comerciais. Vale confirmar com o corretor o que pode ser construído."
+    },
+    {
+      "pergunta": "Já existe alguma construção no lote?",
+      "resposta": "Sim. O anúncio informa uma estrutura de subsolo já executada, e a foto mostra a laje de concreto dessa estrutura."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 462 m² no Jardim Itamarati, em Campinas, em zona mista (ZM2), que admite uso residencial e comercial. O lote já tem uma estrutura de subsolo executada, com laje de concreto, e é fechado por muro com portão de madeira. Bom ponto de partida para casa, clínica ou escritório. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "jardimitamarati",
+      "zonamista",
+      "imoveiscampinas",
+      "terrenoavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "f77d48e2f035",
+  "publicadoEm": "2026-10-27T17:22:16.939Z"
+}
