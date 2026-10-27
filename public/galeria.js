@@ -16,7 +16,7 @@
       <div class="gal-palco"><img alt=""></div>
       <button type="button" class="gal-seta gal-prox" aria-label="Próxima foto" title="Próxima (→)">›</button>`;
     document.body.appendChild(el);
-    img = el.querySelector('img'); cont = el.querySelector('.gal-cont'); leg = el.querySelector('.gal-leg');
+    img = el.querySelector('img'); img.referrerPolicy = 'no-referrer'; cont = el.querySelector('.gal-cont'); leg = el.querySelector('.gal-leg');
     el.querySelector('.gal-x').addEventListener('click', fechar);
     el.querySelector('.gal-ant').addEventListener('click', () => vai(-1));
     el.querySelector('.gal-prox').addEventListener('click', () => vai(1));

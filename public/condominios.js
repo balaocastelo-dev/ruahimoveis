@@ -32,10 +32,11 @@ async function telaCondominios(qs) {
   <div class="cd-split">
     <div class="cd-lista">${l.itens.length ? l.itens.map((c) => {
       const venda = c.radar + c.fisguei + c.carteira;
-      return `<a class="cd-item" href="#/condominios/${c.id}" data-cd="${c.id}">
+      return `<a class="cd-item cd-item-f" href="#/condominios/${c.id}" data-cd="${c.id}">
+        <span class="cd-item-foto">${fotoCadeia([c.foto, c.lat != null && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${c.id}` : null], c.nome, { vazio: ' ' })}</span><div class="cd-item-txt">
         <div class="cd-item-top"><b>${esc(c.nome)}</b>${c.alvo ? '<span class="pill gold" title="Prédio-alvo">alvo</span>' : ''}</div>
         <div class="muted small">${esc(cdEnd(c))}</div>
-        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.giro ? `<span class="pill warn">${c.giro} anúncio(s) em 90 dias</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></a>`;
+        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.giro ? `<span class="pill warn">${c.giro} anúncio(s) em 90 dias</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></div></a>`;
     }).join('') : '<div class="empty">Nenhum condomínio neste filtro.</div>'}
       <div class="row" style="margin-top:10px"><span class="muted small">${l.total.toLocaleString('pt-BR')} condomínio(s) · página ${l.pagina} de ${paginas}</span><span class="sp"></span>
       ${l.pagina > 1 ? `<a class="btn sm" href="${link({ pagina: l.pagina - 1 })}">← Anterior</a>` : ''}${l.pagina < paginas ? `<a class="btn sm" href="${link({ pagina: l.pagina + 1 })}">Próxima →</a>` : ''}</div>
@@ -115,8 +116,8 @@ async function telaCondominio(id) {
         <button class="btn sm" data-act="cd-vizinhos" data-id="${c.id}">Mensagem para os vizinhos</button>
       </div></div>
   </div>
-  <div class="card tbl" style="margin-top:16px"><h2 style="padding:10px 10px 0">À venda agora</h2>${c.aVenda.length ? `<table><thead><tr><th>Origem</th><th>Unidade</th><th>Quartos</th><th>Área</th><th>Valor</th><th>R$/m²</th><th>Anunciado há</th><th>Quem anuncia</th>${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
-    ${c.aVenda.map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td><span class="pill ${a.origem === 'RUAH' ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
+  <div class="card tbl" style="margin-top:16px"><h2 style="padding:10px 10px 0">À venda agora</h2>${c.aVenda.length ? `<table><thead><tr><th></th><th>Origem</th><th>Unidade</th><th>Quartos</th><th>Área</th><th>Valor</th><th>R$/m²</th><th>Anunciado há</th><th>Quem anuncia</th>${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
+    ${c.aVenda.map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${a.origem === 'RUAH' ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
       <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b></td><td>${a.valor && a.area ? cdM2(a.valor / a.area) : '—'}</td>
       <td>${a.dias !== null ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${a.origem === 'RUAH' ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
   </tbody></table>` : '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>'}</div>

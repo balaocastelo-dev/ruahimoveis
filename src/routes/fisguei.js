@@ -147,6 +147,7 @@ r.get('/fisguei/:id', (req, res) => {
   const a = anuncio(+req.params.id);
   try { a.fotos = JSON.parse(a.fotos || '[]'); } catch { a.fotos = []; }
   a.ref = F.ref(a.id);
+  { const M = require('./mercado'); a.categoria = M.categoria(a); a.subtipo = M.subtipo(a, a.categoria); }
   const pessoas = all('SELECT * FROM fisguei_pessoas WHERE anuncio_id=? ORDER BY CASE WHEN relacao LIKE ? THEN 0 ELSE 1 END, id', a.id, '%ropriet%');
   for (const p of pessoas) {
     p.contatos = all('SELECT id, tipo, valor, envio, enviado_em, erro FROM fisguei_contatos WHERE pessoa_id=? ORDER BY tipo DESC, id', p.id);

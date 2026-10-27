@@ -15,7 +15,20 @@ const condominio = (id) => { const c = one('SELECT * FROM condominios WHERE id=?
 
 r.get('/condominios', (req, res) => {
   const q = req.query;
-  res.json(B.listar({ q: txt(q.q, 80), bairro: txt(q.bairro, 60), tipo: ['vertical', 'horizontal', 'indefinido'].includes(q.tipo) ? q.tipo : null, alvo: q.alvo === '1', comVenda: q.venda === '1', ordem: q.ordem, pagina: int(q.pagina) || 1 }));
+  const l = B.listar({ q: txt(q.q, 80), bairro: txt(q.bairro, 60), tipo: ['vertical', 'horizontal', 'indefinido'].includes(q.tipo) ? q.tipo : null, alvo: q.alvo === '1', comVenda: q.venda === '1', ordem: q.ordem, pagina: int(q.pagina) || 1 });
+  // foto de cada condomínio da página: do imóvel da carteira; senão, do anúncio mais recente do Fisguei no prédio
+  const ids = (l.itens || []).map((c) => c.id);
+  if (ids.length) {
+    const ph = ids.map(() => '?').join(',');
+    const capa = new Map(all(`SELECT i.condominio_id cid, min(f.id) capa FROM imoveis i JOIN arquivos f ON f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%' WHERE i.condominio_id IN (${ph}) GROUP BY i.condominio_id`, ...ids).map((x) => [x.cid, x.capa]));
+    const fg = new Map();
+    for (const x of all(`SELECT condominio_id cid, fotos FROM fisguei_anuncios WHERE condominio_id IN (${ph}) AND fotos IS NOT NULL ORDER BY id DESC`, ...ids)) {
+      if (fg.has(x.cid)) continue;
+      try { const f = (JSON.parse(x.fotos || '[]') || [])[0]; if (f) fg.set(x.cid, f); } catch {}
+    }
+    for (const c of l.itens) { c.foto = capa.has(c.id) ? `/api/arquivos/${capa.get(c.id)}` : fg.get(c.id) || null; }
+  }
+  res.json(l);
 });
 r.get('/condominios/mapa', (req, res) => { res.setHeader('Cache-Control', 'private, max-age=120'); res.json(B.pontosMapa()); });
 r.get('/condominios/reconhecer', (req, res) => res.json(B.reconhecer(req.query)));

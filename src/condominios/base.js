@@ -152,16 +152,16 @@ function numeros(id) {
   const carteira = all(`SELECT i.id, i.codigo, i.tipo, i.status, i.unidade, i.quartos, i.suites, i.vagas, i.area_util, i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em,
       (SELECT a.id FROM arquivos a WHERE a.imovel_id=i.id AND a.categoria='Fotos' ORDER BY a.id LIMIT 1) foto
     FROM imoveis i WHERE i.condominio_id=? ORDER BY i.status, i.valor DESC`, id);
-  const radar = all(`SELECT id, portal, link, titulo, tipo, unidade, quartos, vagas, area, valor, valor_anterior, anunciante_tipo, anunciante_nome, publicado_em, criado_em, status
+  const radar = all(`SELECT id, portal, link, titulo, tipo, unidade, quartos, vagas, area, valor, valor_anterior, anunciante_tipo, anunciante_nome, publicado_em, criado_em, status, foto
     FROM oportunidades WHERE condominio_id=? ORDER BY criado_em DESC`, id);
-  const fisguei = all(`SELECT f.id, f.portal, f.link, f.titulo, f.tipo, f.complemento, f.quartos, f.vagas, f.area_util, f.valor, f.valor_condominio, f.iptu, f.anunciante_nome, f.anunciante_tipo, f.publicado_em, f.criado_em, f.status,
+  const fisguei = all(`SELECT f.id, f.portal, f.link, f.titulo, f.tipo, f.complemento, f.quartos, f.vagas, f.area_util, f.valor, f.valor_condominio, f.iptu, f.anunciante_nome, f.anunciante_tipo, f.publicado_em, f.criado_em, f.status, f.fotos,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=f.id) pessoas
     FROM fisguei_anuncios f WHERE f.condominio_id=? ORDER BY f.criado_em DESC`, id);
 
   const aVenda = [
-    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: 'RUAH', ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: 'RUAH' })),
-    ...radar.filter((o) => ['nova', 'em_contato', 'carta_enviada', 'aguardando_aprovacao'].includes(o.status)).map((o) => ({ origem: 'Radar', ref: 'OP-' + String(o.id).padStart(4, '0'), href: `#/radar/${o.id}`, valor: o.valor, area: o.area, quartos: o.quartos, unidade: o.unidade, desde: o.publicado_em || o.criado_em, anunciante: o.anunciante_nome || (o.anunciante_tipo === 'particular' ? 'Particular' : null), portal: o.portal })),
-    ...fisguei.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.valor, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal })),
+    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: 'RUAH', ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: 'RUAH', foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
+    ...radar.filter((o) => ['nova', 'em_contato', 'carta_enviada', 'aguardando_aprovacao'].includes(o.status)).map((o) => ({ origem: 'Radar', ref: 'OP-' + String(o.id).padStart(4, '0'), href: `#/radar/${o.id}`, valor: o.valor, area: o.area, quartos: o.quartos, unidade: o.unidade, desde: o.publicado_em || o.criado_em, anunciante: o.anunciante_nome || (o.anunciante_tipo === 'particular' ? 'Particular' : null), portal: o.portal, foto: o.foto || null })),
+    ...fisguei.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.valor, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal, foto: (() => { try { return (JSON.parse(f.fotos || '[]') || [])[0] || null; } catch { return null; } })() })),
   ];
   // o mesmo apartamento costuma aparecer no Radar e no Fisguei: junta por valor e área parecidos
   const unicos = [];

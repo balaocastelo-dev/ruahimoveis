@@ -131,7 +131,7 @@ async function anunciosDoEmail(html, texto, portal) {
   return [...porLink.values()].map((x) => {
     const texto0 = [...x.textos].sort((a, b) => b.length - a.length)[0] || '';
     const portalLink = PORTAIS.find((p) => p.anuncio.test(x.link)) || portal;
-    return { portal: portalLink.nome, link: x.link, titulo: x.titulo, texto: texto0.slice(0, 700), ...extraiCampos(texto0, x.titulo) };
+    return { portal: portalLink.nome, link: x.link, titulo: x.titulo, foto: x.foto, texto: texto0.slice(0, 700), ...extraiCampos(texto0, x.titulo) };
   });
 }
 
@@ -165,6 +165,7 @@ function registra(a, quando) {
   const brl = (v) => 'R$ ' + Math.round(v).toLocaleString('pt-BR');
   const existe = one('SELECT * FROM oportunidades WHERE link=?', a.link);
   if (existe) {
+    if (a.foto && !existe.foto) run('UPDATE oportunidades SET foto=? WHERE id=?', a.foto, existe.id);
     if (a.valor && existe.valor && a.valor < existe.valor - 1) {
       run("UPDATE oportunidades SET valor_anterior=?, valor=?, atualizado_em=datetime('now','localtime') WHERE id=?", existe.valor, a.valor, existe.id);
       ev(existe.id, `Preço caiu de ${brl(existe.valor)} para ${brl(a.valor)} (alerta ${a.portal}).`);
@@ -179,10 +180,10 @@ function registra(a, quando) {
   }
   // endereço quando o título traz ("... na Rua Antônio Cesarino, 686, Cambuí")
   const end = String(a.titulo || '').match(/\b(?:na|no)\s+((?:Rua|Avenida|Av\.|Alameda|Al\.|Travessa|Estrada|Rodovia|Praça|Largo)\s[^,]{2,80}),\s*(\d{1,6})\b/i);
-  const id = Number(run(`INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,cidade,quartos,vagas,area,valor,anunciante_tipo,publicado_em,observacoes,logradouro,numero)
-      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, a.portal, a.link, a.titulo, a.tipo, a.bairro, a.cidade || cfg.CIDADE_PADRAO,
+  const id = Number(run(`INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,cidade,quartos,vagas,area,valor,anunciante_tipo,publicado_em,observacoes,logradouro,numero,foto)
+      VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, a.portal, a.link, a.titulo, a.tipo, a.bairro, a.cidade || cfg.CIDADE_PADRAO,
     a.quartos ? parseInt(a.quartos, 10) : null, a.vagas ? parseInt(a.vagas, 10) : null, a.area, a.valor, a.anunciante_tipo, quando,
-    `${a.origem ? 'Texto do anúncio' : 'Texto do alerta'}: ${a.texto}`.slice(0, 2000), end ? end[1].trim() : null, end ? end[2] : null).lastInsertRowid);
+    `${a.origem ? 'Texto do anúncio' : 'Texto do alerta'}: ${a.texto}`.slice(0, 2000), end ? end[1].trim() : null, end ? end[2] : null, /^https:\/\//.test(a.foto || '') ? a.foto : null).lastInsertRowid);
   ev(id, `Encontrada automaticamente ${a.origem ? 'pelo ' + a.origem : 'no alerta de e-mail do ' + a.portal}: ${a.link}`);
   if (a.anunciante_tipo === 'imobiliaria') ev(id, 'Anunciado por imobiliária: não abordar o dono (provável exclusividade).');
   return 'nova';

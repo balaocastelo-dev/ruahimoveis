@@ -126,7 +126,7 @@ async function lerAgora({ log = () => {}, testar = false } = {}) {
       try { d = await detalhe(it.url); } catch (e) { if (e.bloqueio) { fila.unshift(it); throw e; } log(`não abriu ${it.url}: ${e.message}`); }
       const anuncio = {
         portal: 'Chaves na Mão', link: it.url, titulo: d.titulo || `${it.tipo} ${it.quartos ? it.quartos + ' quartos ' : ''}${it.area ? it.area + ' m² ' : ''}${it.bairro}`,
-        tipo: it.tipo, bairro: it.bairro, cidade: 'Campinas', quartos: it.quartos, vagas: null, area: it.area, valor: it.valor,
+        tipo: it.tipo, bairro: it.bairro, cidade: 'Campinas', quartos: it.quartos, vagas: null, area: it.area, valor: it.valor, foto: d.foto || null,
         anunciante_tipo: d.anunciante, texto: [d.descricao, d.nome ? `Anunciante: ${d.nome}` : ''].filter(Boolean).join(' · '),
         origem: 'monitor direto do Chaves na Mão',
       };

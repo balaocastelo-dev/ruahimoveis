@@ -34,6 +34,24 @@ async function comBotao(btn, fn) { const t = btn && btn.innerHTML; if (btn) { bt
 const opcoesUsuarios = (sel, vazio = 'Sem corretor') => `<option value="">${vazio}</option>` + USUARIOS.filter((u) => u.perfil !== undefined).map((u) => `<option value="${u.id}" ${+sel === u.id ? 'selected' : ''}>${esc(u.nome)}</option>`).join('');
 
 // ---------- ações (delegação de eventos: a política de segurança não permite onclick no HTML) ----------
+// ---------- fotos com reserva: tenta cada endereço da lista; se nenhum abrir, mostra o quadro "Foto em breve" ----------
+// fotoCadeia(['/api/arquivos/1', 'https://portal/foto.jpg', '/api/fachada?ref=fg9'], 'Casa no Cambuí')
+const SEM_FOTO = (txt = 'Foto em breve') => `<div class="noimg"><span class="noimg-i" aria-hidden="true">⌂</span><span>${esc(txt)}</span></div>`;
+function fotoCadeia(urls, alt = '', o = {}) {
+  const l = [...new Set((urls || []).filter(Boolean))];
+  if (!l.length) return SEM_FOTO(o.vazio);
+  return `<img src="${esc(l[0])}" alt="${esc(alt)}" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-cadeia="${esc(l.slice(1).join('|'))}"${o.vazio ? ` data-vazio="${esc(o.vazio)}"` : ''}${o.style ? ` style="${o.style}"` : ''}>`;
+}
+document.addEventListener('error', (e) => {
+  const i = e.target;
+  if (!(i instanceof HTMLImageElement) || !i.hasAttribute('data-cadeia')) return;
+  const resto = (i.dataset.cadeia || '').split('|').filter(Boolean);
+  if (resto.length) { i.dataset.cadeia = resto.slice(1).join('|'); i.src = resto[0]; return; }
+  const d = document.createElement('div'); d.innerHTML = SEM_FOTO(i.dataset.vazio); const ph = d.firstChild;
+  if (i.getAttribute('style')) ph.setAttribute('style', i.getAttribute('style'));
+  i.replaceWith(ph);
+}, true);
+
 const ACT = {}, FORM = {};
 document.addEventListener('click', (e) => {
   const el = e.target.closest('[data-act]');
@@ -60,7 +78,10 @@ async function inicio() {
 async function carregaBase() {
   const [t, u] = await Promise.all([api('GET', '/api/imoveis/tipos'), api('GET', '/api/usuarios')]);
   TIPOS = t.tipos; USUARIOS = u.filter((x) => x.ativo !== 0);
+  if (typeof mapasCfg === 'function') mapasCfg(); // sabe se a fachada do Google está ligada (reserva das fotos)
 }
+// fotos de um imóvel da carteira: a capa; sem foto, a fachada do prédio/condomínio pelo Google (quando ligada)
+const imFotos = (i) => [i.capa && `/api/arquivos/${i.capa}`, i.condominio_id && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${i.condominio_id}` : null];
 function telaSetup() {
   $('#root').innerHTML = `<div class="auth"><form class="card" data-form="setup">
     <div class="brand"><b>RUAH</b><span>Primeiro acesso</span></div>
@@ -97,7 +118,8 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'WhatsApp', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/radar', 'Radar de captação', 'radar'], ['#/fisguei', 'Fisguei', 'fisguei'], ['#/condominios', 'Condomínios', 'cond'], ['#/mercado', 'Mercado']]],
+  ['Captação', [['#/captacao', 'Radar + Fisguei', 'capt']]],
+  ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
   ['Sistema', [['#/configuracoes', 'Configurações']]],
 ];
@@ -111,13 +133,14 @@ function shell() {
   atualizaBadge();
 }
 async function atualizaBadge() {
-  if (veTudo()) Promise.all([api('GET', '/api/radar/resumo'), api('GET', '/api/radar/alertas').catch(() => null)]).then(([r, al]) => {
-    const b = $('#badge-radar'); if (!b) return;
-    const alerta = al && al.saude && !al.saude.ok;
-    b.textContent = alerta ? '!' : r.aprovacoesPendentes; b.hidden = !alerta && !r.aprovacoesPendentes;
-    b.title = alerta ? 'O radar precisa de atenção' : 'Consultas pagas esperando aprovação';
-  }).catch(() => {});
-  api('GET', '/api/fisguei/resumo').then((f) => { const b = $('#badge-fisguei'); if (!b) return; const alerta = ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado); b.textContent = alerta ? '!' : f.precisaCorretor; b.hidden = !alerta && !f.precisaCorretor; b.title = alerta ? 'O robô TH-IA-GO precisa de atenção' : 'Respostas esperando o corretor'; }).catch(() => {});
+  // Radar + Fisguei dividem o mesmo item do menu: "!" se algo parou; senão, o que espera alguém (aprovações + respostas do robô)
+  Promise.all([veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null, veTudo() ? api('GET', '/api/radar/alertas').catch(() => null) : null, api('GET', '/api/fisguei/resumo').catch(() => null)]).then(([r, al, f]) => {
+    const b = $('#badge-capt'); if (!b) return;
+    const alertaRadar = al && al.saude && !al.saude.ok, alertaRobo = f && ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado);
+    const n = ((r && r.aprovacoesPendentes) || 0) + ((f && f.precisaCorretor) || 0);
+    b.textContent = alertaRadar || alertaRobo ? '!' : n; b.hidden = !alertaRadar && !alertaRobo && !n;
+    b.title = alertaRadar ? 'O radar precisa de atenção' : alertaRobo ? 'O robô TH-IA-GO precisa de atenção' : 'Aprovações e respostas esperando alguém';
+  });
   api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; }).catch(() => {});
   try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; } } catch {}
 }
@@ -125,7 +148,8 @@ function marcaNav(h) {
   $$('#nav a').forEach((a) => {
     const n = a.dataset.nav;
     const pai = { '#/imoveis': '#/imoveis/novo' };
-    const on = h === n || (pai[n] ? h.startsWith(n + '/') && h !== pai[n] : !Object.values(pai).includes(n) && h.startsWith(n + '/'));
+    const hh = /^#\/(radar|fisguei)(\/|$)/.test(h) ? '#/captacao' : h; // Radar e Fisguei moram dentro de "Radar + Fisguei"
+    const on = hh === n || (pai[n] ? hh.startsWith(n + '/') && hh !== pai[n] : !Object.values(pai).includes(n) && hh.startsWith(n + '/'));
     a.classList.toggle('on', on);
   });
 }
@@ -158,7 +182,9 @@ async function rota() {
     else if (p[0] === 'radar') await telaRadar(new URLSearchParams(qs || ''));
     else if (p[0] === 'fisguei' && p[1]) await telaFisgueiAnuncio(+p[1], p[2] || 'dados');
     else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));
-    else if (p[0] === 'mercado') await telaMercado(new URLSearchParams(qs || ''));
+    else if (p[0] === 'mercado') { location.replace('#/casas' + (qs ? '?' + qs : '')); return; }
+    else if (['apartamentos', 'casas', 'terrenos', 'comerciais'].includes(p[0])) await telaMercado(new URLSearchParams(qs || ''), p[0]);
+    else if (p[0] === 'captacao') await telaCaptacao(new URLSearchParams(qs || ''));
     else if (p[0] === 'condominios' && p[1]) await telaCondominio(+p[1]);
     else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
@@ -244,10 +270,10 @@ async function telaPainel() {
 const lerPref = (k, d) => { try { return localStorage.getItem(k) || d; } catch { return d; } };
 const gravaPref = (k, v) => { try { localStorage.setItem(k, v); } catch { /* sem armazenamento: só não lembra */ } };
 let IM_LISTA = [];
-const miniFoto = (x) => `<span class="minifoto">${x.capa ? `<img src="/api/arquivos/${x.capa}" alt="" loading="lazy">` : ''}</span>`;
+const miniFoto = (x) => `<span class="minifoto">${fotoCadeia(imFotos(x), '', { vazio: ' ' })}</span>`;
 const imSub = (i) => i.condominio_nome || i.condominio || [i.logradouro, i.numero].filter(Boolean).join(', ');
 const imTabela = (l) => `<div class="card tbl"><table><thead><tr><th>Código</th><th>Imóvel</th><th>Bairro</th><th class="num">Valor</th><th>Status</th><th>Corretor</th></tr></thead><tbody>
-  ${l.map((i) => `<tr class="click" data-act="ir" data-href="#/imoveis/${i.id}"><td class="mono">${esc(i.codigo)}</td><td><b>${esc(i.tipo)}</b><br><span class="muted">${esc(imSub(i))}${i.quartos ? ' · ' + i.quartos + 'q' : ''}${i.area_util ? ' · ' + Math.round(i.area_util) + ' m²' : ''}</span></td>
+  ${l.map((i) => `<tr class="click" data-act="ir" data-href="#/imoveis/${i.id}"><td class="mono"><span class="row" style="gap:8px;flex-wrap:nowrap">${miniFoto(i)}${esc(i.codigo)}</span></td><td><b>${esc(i.tipo)}</b><br><span class="muted">${esc(imSub(i))}${i.quartos ? ' · ' + i.quartos + 'q' : ''}${i.area_util ? ' · ' + Math.round(i.area_util) + ' m²' : ''}</span></td>
   <td>${esc(i.bairro)}</td><td class="num">${brl(i.valor)}</td><td>${stPill(i.status)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}</td><td>${esc(i.corretor_nome)}</td></tr>`).join('')}</tbody></table></div>`;
 // Cards de imóvel com foto, usados em toda parte (lista, painel, lead).
 // o.badge(i): selo sobre a foto · o.extra(i): conteúdo extra no corpo · o.acoes(i): botões abaixo do card · o.mini: cards menores
@@ -255,7 +281,7 @@ const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l
   const specs = [i.quartos && `${i.quartos} quarto${i.quartos > 1 ? 's' : ''}`, i.suites && `${i.suites} suíte${i.suites > 1 ? 's' : ''}`, i.vagas && `${i.vagas} vaga${i.vagas > 1 ? 's' : ''}`, i.area_util && `${Math.round(i.area_util).toLocaleString('pt-BR')} m²`].filter(Boolean);
   const acoes = o.acoes ? o.acoes(i) : '';
   return `<div class="imcardw${acoes ? ' com-acoes' : ''}"><a class="imcard" href="${o.href ? o.href(i) : '#/imoveis/' + i.id}">
-    <div class="imfoto">${i.capa ? `<img src="/api/arquivos/${i.capa}" alt="${esc(i.tipo + ' ' + i.codigo)}" loading="lazy" decoding="async">` : '<div class="noimg">Sem foto</div>'}
+    <div class="imfoto">${fotoCadeia(imFotos(i), `${i.tipo} ${i.codigo}`)}
       <span class="imst">${stPill(i.status)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}</span>${o.badge ? `<span class="imbadge">${o.badge(i)}</span>` : ''}${i.n_fotos > 1 ? `<span class="imnf">📷 ${i.n_fotos}</span>` : ''}</div>
     <div class="imcorpo"><div class="row" style="justify-content:space-between;gap:8px"><span class="mono small muted">${esc(i.codigo)}</span><span class="small muted">${esc(i.corretor_nome || '')}</span></div>
       <div class="imtit">${esc(i.tipo)}${imSub(i) ? ' · ' + esc(imSub(i)) : ''}</div>

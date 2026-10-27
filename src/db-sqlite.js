@@ -322,6 +322,7 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['condominios', 'numeracao', 'TEXT'],
   ['condominios', 'sem_nome', 'INTEGER NOT NULL DEFAULT 0'],
   ['oportunidades', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
+  ['oportunidades', 'foto', 'TEXT'],
   ['fisguei_anuncios', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
   ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL']]) {

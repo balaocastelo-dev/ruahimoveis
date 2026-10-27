@@ -91,7 +91,8 @@ async function telaFisguei(qs) {
   const [r, l, pd] = await Promise.all([api('GET', '/api/fisguei/resumo'), vista === 'lista' ? api('GET', '/api/fisguei?' + params) : Promise.resolve(null), api('GET', '/api/fisguei/pedidos')]);
   const n = (k) => r.porStatus[k] || 0;
   const link = (o) => '#/fisguei?' + new URLSearchParams({ filtro, q, vista, ...o }).toString();
-  $('#main').innerHTML = `<div class="eyebrow">Captação</div><h1>Fisguei</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Anúncios e proprietários (Fisguei)</h1>
+  ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
   <p class="lead">Os anúncios e proprietários que vocês abrem no Fisgar viram a base da RUAH. Quando chega o telefone de um possível dono, o robô <b>TH-IA-GO CORRETOR</b> chama no WhatsApp perguntando, com educação, se a pessoa é a proprietária. Quem responde SIM vai direto para o Radar com o corretor.</p>
   ${cartaoRobo(r)}${cartaoBusca(pd)}${cartaoExtensao(r)}
   <div class="grid g4" style="margin-top:14px">
@@ -155,10 +156,11 @@ async function telaFisgueiAnuncio(id, aba) {
   const a = d.anuncio;
   const temGeo = a.lat && a.lon;
   const aqui = (t) => `#/fisguei/${id}${t === 'dados' ? '' : '/' + t}`;
-  $('#main').innerHTML = `<a class="btn sm" href="#/fisguei">← Fisguei</a> <a class="btn sm" href="#/mercado">Mercado</a>
+  const vitrine = { apartamentos: 'Apartamentos', casas: 'Casas', terrenos: 'Terrenos', comerciais: 'Salas e barracões' }[a.categoria];
+  $('#main').innerHTML = `<a class="btn sm" href="#/fisguei">← Radar + Fisguei</a>${vitrine ? ` <a class="btn sm" href="#/${a.categoria}">${vitrine}</a>` : ''}
   <div class="row" style="margin:12px 0 6px;gap:10px;flex-wrap:wrap"><div style="flex:1;min-width:260px">
     <div class="eyebrow">${esc(a.ref)} · Fisgar #${esc(a.fisgar_id)}${a.portal ? ' · ' + esc(a.portal) : ''}</div>
-    <h1 style="margin:2px 0">${esc(a.tipo || 'Imóvel')} na ${esc(fgEnd(a))}</h1>
+    <h1 style="margin:2px 0">${esc(a.subtipo || a.tipo || 'Imóvel')} na ${esc(fgEnd(a))}</h1>
     <div class="muted">${esc([a.complemento, a.bairro, a.cidade, a.cep].filter(Boolean).join(' · '))}</div></div>
     <div>${fgPill(a.status)}${a.pausado ? ' <span class="pill bad">robô pausado aqui</span>' : ''}</div></div>
   <div class="row" style="gap:6px;margin:10px 0 14px;flex-wrap:wrap">
@@ -193,7 +195,7 @@ async function telaFisgueiAnuncio(id, aba) {
     window.__fgFotos = a.fotos;
   }
 }
-ACT['fg-foto'] = (el) => { const u = window.__fgFotos && window.__fgFotos[+el.dataset.i]; if (u) window.open(u, '_blank', 'noopener'); };
+ACT['fg-foto'] = (el) => { const f = window.__fgFotos || []; if (!f.length) return; if (typeof abrirGaleria === 'function') abrirGaleria(f, +el.dataset.i, ''); else window.open(f[+el.dataset.i], '_blank', 'noopener'); };
 function cartaoPessoa(p) {
   const tels = p.contatos.filter((c) => c.tipo === 'tel' || c.tipo === 'fixo'), mails = p.contatos.filter((c) => c.tipo === 'email');
   return `<div class="card" style="margin-bottom:12px"><div class="row" style="gap:8px;flex-wrap:wrap;align-items:flex-start">

@@ -51,6 +51,7 @@ app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
 app.use('/api', require('./src/routes/condominios'));
 app.use('/api', require('./src/routes/mercado'));
+app.use('/api', require('./src/routes/captacao'));
 // Páginas de bairros: a lista, a situação de cada página e o que a RUAH quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.

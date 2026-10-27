@@ -11,7 +11,8 @@ async function telaRadar(qs) {
   const st = qs.get('status') || '';
   const [l, r, al] = await Promise.all([api('GET', '/api/radar?' + new URLSearchParams({ status: st })), api('GET', '/api/radar/resumo'), api('GET', '/api/radar/alertas').catch(() => null)]);
   const n = (k) => r.porStatus[k] || 0;
-  $('#main').innerHTML = `<div class="eyebrow">Captação</div><h1>Radar de captação</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Oportunidades (Radar)</h1>
+  ${typeof capAbas === 'function' ? capAbas('radar') : ''}
   <p class="lead">Imóveis à venda por particulares que podem virar exclusividade da RUAH. A ordem é sempre do grátis para o pago: contato do anúncio, carta com QR code, placa/portaria e, só com aprovação, matrícula e birô.</p>
   ${avisoSaude(al, true)}${painelAlertas(al)}
   ${veTudo() && r.aprovacoesPendentes ? `<div class="banner warn"><b>${r.aprovacoesPendentes}</b> pedido(s) de consulta paga esperando aprovação. <a href="#/radar/aprovacoes">Revisar agora</a></div>` : ''}
@@ -23,8 +24,9 @@ async function telaRadar(qs) {
   </div>
   <div class="row" style="margin:16px 0 12px">
     <div class="tabs" style="margin:0;flex:1;border:0">${[['', 'Em andamento'], ['nova', 'Novas'], ['carta_enviada', 'Carta enviada'], ['aguardando_aprovacao', 'Aguardando aprovação'], ['captada', 'Captadas'], ['descartada', 'Descartadas']].map(([k, t]) => `<a href="#/radar${k ? '?status=' + k : ''}" class="${st === k ? 'on' : ''}">${t}</a>`).join('')}</div></div>
-  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th><th>Fisgar</th></tr></thead><tbody>
+  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th><th>Fisgar</th></tr></thead><tbody>
     ${l.map((o) => `<tr><td><input type="checkbox" class="sel-op" value="${o.id}" ${o.bloqueio || o.anunciante_tipo === 'imobiliaria' || !o.logradouro ? 'disabled title="Sem endereço, de imobiliária ou na lista não contatar"' : ''} aria-label="Selecionar ${esc(o.ref)}"></td>
+      <td class="click" data-act="ir" data-href="#/radar/${o.id}" style="width:72px;cursor:pointer"><span class="mk-mini">${fotoCadeia([o.foto], o.titulo || o.tipo || '', { vazio: ' ' })}</span></td>
       <td>${prioPill(o.prioridade)}</td>
       <td class="click" data-act="ir" data-href="#/radar/${o.id}" style="cursor:pointer"><span class="mono" style="color:var(--gold)">${esc(o.ref)}</span> <b>${esc(o.titulo || o.condominio_nome || o.tipo || 'Sem título')}</b><br><span class="muted small">${esc(o.portal || '')}${o.anunciante_tipo === 'particular' ? ' · particular' : o.anunciante_tipo === 'imobiliaria' ? ' · imobiliária' : ''}${o.prioridade.motivos.length ? ' · ' + esc(o.prioridade.motivos.join(', ')) : ''}</span>${o.bloqueio ? '<br><span class="pill bad">não contatar</span>' : ''}</td>
       <td>${esc(endOp(o) || '—')}<br><span class="muted small">${esc(o.bairro || '')}</span></td><td class="num">${brl(o.valor)}</td><td>${opPill(o.status)}</td><td>${esc(o.corretor_nome || 'livre')}</td><td class="fg-op" data-op="${o.id}" data-end="${o.logradouro && o.numero ? 1 : 0}"></td></tr>`).join('')}</tbody></table></div>
@@ -60,7 +62,7 @@ function monitorLinha(al) {
 }
 function avisoSaude(al, ondeRadar) {
   if (!al || !al.saude || al.saude.ok) return '';
-  return `<div class="banner warn" style="border-style:solid;border-color:var(--bad);background:var(--bad-bg)"><b>⚠ Radar de captação precisa de atenção.</b><ul style="margin:6px 0 0;padding-left:18px">${al.saude.problemas.map((p) => `<li>${esc(p.texto)}</li>`).join('')}</ul>${ondeRadar ? '' : ' <a href="#/radar">Abrir o Radar</a>'}</div>`;
+  return `<div class="banner warn" style="border-style:solid;border-color:var(--bad);background:var(--bad-bg)"><b>⚠ Radar de captação precisa de atenção.</b><ul style="margin:6px 0 0;padding-left:18px">${al.saude.problemas.map((p) => `<li>${esc(p.texto)}</li>`).join('')}</ul>${ondeRadar ? '' : ' <a href="#/captacao">Abrir a captação</a>'}</div>`;
 }
 function painelAlertas(al) {
   if (!al) return '';
@@ -162,6 +164,7 @@ async function telaOp(id) {
   ${o.bloqueio ? `<div class="banner warn"><b>Não contatar:</b> ${esc(o.bloqueio)}</div>` : ''}
   ${o.anunciante_tipo === 'imobiliaria' ? '<div class="banner warn">Anunciado por imobiliária ou corretor: provável exclusividade de outra empresa. Não abordamos o dono nem gastamos com consulta.</div>' : ''}
   ${o.status === 'captada' ? `<div class="banner" style="background:var(--ok-bg)">Captada. <a href="#/imoveis/${o.imovel_id}">Abrir o imóvel</a></div>` : ''}
+ ${o.foto ? `<div class="op-foto" data-act="op-foto" data-u="${esc(o.foto)}" title="Ver a foto do anúncio">${fotoCadeia([o.foto], o.titulo || '')}<span class="op-foto-l">Foto do anúncio${o.portal ? ' · ' + esc(o.portal) : ''}</span></div>` : ''}
   <div id="op-fisgar" data-op="${o.id}" data-end="${o.logradouro && o.numero ? 1 : 0}"></div>
   <div class="grid g21"><div class="grid" style="gap:12px;align-content:start">
     ${passo(1, 'Contato do anúncio · grátis', fez('anuncio') ? 'ok' : o.telefone_anuncio ? 'atual' : 'off', o.telefone_anuncio ? `
@@ -207,13 +210,14 @@ FORM.matricula = async (f) => { await api('POST', `/api/radar/${f.dataset.id}/ma
 FORM.biro = async (f) => { const r = await api('POST', `/api/radar/${f.dataset.id}/biro`, formJSON(f)); toast(r.aviso || 'Telefone registrado', !!r.aviso); rota(); };
 FORM.descartar = async (f) => { if (!confirm('Descartar esta oportunidade?')) return; await api('POST', `/api/radar/${f.dataset.id}/descartar`, formJSON(f)); toast('Descartada'); rota(); };
 FORM.captar = async (f) => { const r = await api('POST', `/api/radar/${f.dataset.id}/converter`, formJSON(f)); toast(`Imóvel ${r.codigo} criado em captação`); location.hash = `#/imoveis/${r.imovel_id}/autorizacao`; };
+ACT['op-foto'] = (el) => abrirGaleria([el.dataset.u], 0, 'Foto do anúncio');
 ACT['op-assumir'] = (el) => comBotao(el, async () => { await api('POST', `/api/radar/${el.dataset.id}/assumir`); rota(); });
 ACT['op-reabrir'] = (el) => comBotao(el, async () => { await api('POST', `/api/radar/${el.dataset.id}/reabrir`); rota(); });
 
 async function telaAprovacoes() {
   if (!veTudo()) { $('#main').innerHTML = '<div class="empty">Só o gestor e o administrativo aprovam consultas pagas.</div>'; return; }
   const l = await api('GET', '/api/radar/aprovacoes');
-  $('#main').innerHTML = `<a class="btn sm" href="#/radar">← Radar</a><div class="eyebrow" style="margin-top:12px">Captação</div><h1>Aprovar consultas pagas</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Aprovar consultas pagas</h1>${typeof capAbas === 'function' ? capAbas('aprovacoes') : ''}
   <p class="lead">Matrícula e birô custam dinheiro e envolvem dados pessoais. Aprove só quando os caminhos grátis já foram tentados e o imóvel justifica.</p>
   ${l.length ? `<div class="list">${l.map((a) => `<div class="item" style="flex-wrap:wrap"><div style="flex:1;min-width:240px"><div class="t"><span class="mono" style="color:var(--gold)">${esc(a.ref)}</span> ${a.tipo === 'matricula' ? 'Matrícula' : 'Birô de dados'} · ${esc(a.titulo || a.condominio_nome || '')}</div>
     <div class="muted small">${esc([a.logradouro, a.numero, a.unidade].filter(Boolean).join(', '))} · ${brl(a.valor)} · pedido por ${esc(a.solicitante || '')}${a.custo_estimado ? ' · custo ' + brl(a.custo_estimado) : ''}</div>${a.justificativa ? `<div class="small">“${esc(a.justificativa)}”</div>` : ''}</div>

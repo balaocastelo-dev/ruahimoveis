@@ -80,6 +80,44 @@ global.fetch = async (url, op) => {
   assert.equal((await req('GET', '/api/mapas/config')).j.google3d, true);
   assert.equal((await fetchReal(`${base}/api/fachada?ref=xx1`, { headers: { cookie } })).status, 404);
 
+  // ---------- as quatro vitrines ----------
+  const addV = (id, tipo, fin, valor, extra = {}) => run(`INSERT INTO fisguei_anuncios(fisgar_id,tipo,finalidade,logradouro,numero,bairro,cidade,valor,area_util,area_total,anunciante_tipo,lat,lon,status,fotos)
+    VALUES(?,?,?,?,?,'Cambuí','Campinas',?,?,?,'particular',-22.9,-47.07,'novo',?)`, id, tipo, fin, extra.rua || 'Rua V', extra.num || id.replace(/\D/g, ''), valor, extra.au || null, extra.at || null, JSON.stringify(['https://exemplo.com/' + id + '.jpg']));
+  addV('v1', 'Terreno', 'Residencial', 1200000, { at: 600 });
+  addV('v2', 'Terreno', 'Comercial', 2000000, { at: 1000 });
+  addV('v3', 'Galpão', 'Comercial', 3000000, { au: 1500 });
+  addV('v4', 'Casa Padrão', 'Comercial', 1500000, { au: 300 });
+  addV('v5', 'Sala Comercial', 'Comercial', 1100000, { au: 80 });
+  addV('v6', 'Apartamento Padrão', 'Residencial', 600000, { au: 70 });
+  addV('v7', 'Sobrado', 'Residencial', 1300000, { au: 250 });
+  const { categoria, subtipo } = require('../src/routes/mercado');
+  assert.equal(categoria({ tipo: 'Galpão', finalidade: 'Comercial' }), 'comerciais');
+  assert.equal(categoria({ tipo: 'Casa Padrão', finalidade: 'Comercial' }), 'comerciais');
+  assert.equal(categoria({ tipo: 'Terreno', finalidade: 'Comercial' }), 'terrenos');
+  assert.equal(categoria({ tipo: 'Apartamento Padrão' }), 'apartamentos');
+  assert.equal(categoria({ tipo: 'Outros', finalidade: 'Residencial' }), 'casas');
+  assert.equal(subtipo({ tipo: 'Galpão', finalidade: 'Comercial' }), 'Galpão / barracão');
+  const rt = ok(await req('GET', '/api/mercado/resumo?cat=terrenos'), 'vitrine Terrenos');
+  assert.equal(rt.total, 2); assert.equal(rt.categorias.terrenos.n, 2); assert.equal(rt.categorias.apartamentos.n, 5, 'apartamentos: qualquer valor por padrão');
+  assert.deepEqual(rt.subtipos.map((x) => x.nome).sort(), ['Terreno comercial', 'Terreno residencial']);
+  assert.equal(rt.m2, Math.round(((1200000 / 600) + (2000000 / 1000)) / 2), 'R$/m² do terreno pela área total');
+  assert.ok(rt.bairros[0].foto, 'bairro com foto de capa');
+  const rc = ok(await req('GET', '/api/mercado/resumo?cat=comerciais'), 'vitrine Salas e barracões'); assert.equal(rc.total, 3);
+  assert.equal((await req('GET', '/api/mercado/resumo?cat=comerciais&sub=' + encodeURIComponent('Galpão / barracão'))).j.total, 1);
+  const rca = ok(await req('GET', '/api/mercado/resumo?cat=casas'), 'vitrine Casas'); assert.equal(rca.total, 2, 'casa + sobrado (casa comercial fica fora)');
+  const rap = ok(await req('GET', '/api/mercado/resumo?cat=apartamentos'), 'vitrine Apartamentos'); assert.equal(rap.total, 5);
+  const ruasT = ok(await req('GET', '/api/mercado/ruas?cat=terrenos&bairro=CAMBUI'), 'ruas dos terrenos'); assert.ok(ruasT[0].foto);
+  const imT = ok(await req('GET', '/api/mercado/imoveis?cat=terrenos&bairro=CAMBUI&rua=RUA%20V'), 'terrenos da rua'); assert.equal(imT.length, 2); assert.equal(imT[0].area_util, 600); assert.match(imT[0].subtipo, /Terreno/);
+  assert.equal(ok(await req('GET', '/api/mercado/mapa?cat=comerciais'), 'mapa da vitrine').length, 3);
+
+  // ---------- painel de captação (Radar + Fisguei) ----------
+  run("INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,valor,status,foto) VALUES('Chaves na Mão','https://x/1','Casa no Cambuí','Casa','Cambuí',2000000,'nova','https://exemplo.com/op.jpg')");
+  const cp = ok(await req('GET', '/api/captacao/painel'), 'painel de captação');
+  assert.ok(cp.kpis.base >= 14); assert.equal(cp.funil.length, 8); assert.equal(cp.serie.dias.length, 30);
+  assert.equal(cp.novasOp[0].foto, 'https://exemplo.com/op.jpg'); assert.ok(cp.novosFg.every((a) => a.foto));
+  assert.ok(cp.bairros.some((b) => /Cambu/i.test(b.nome) && b.radar === 1));
+  assert.equal(cp.vitrines.find((v) => v.chave === 'terrenos').n, 2);
+
   srv.close();
   console.log('\nMercado: tudo certo.');
   process.exit(0);
