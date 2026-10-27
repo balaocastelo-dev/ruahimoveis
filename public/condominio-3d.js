@@ -294,7 +294,7 @@ function montar() {
     box.expandByObject(m);
     // contorno dourado no chão
     const pts = []; for (let k = 0; k < b.p.length; k += 2) pts.push(v3(b.p[k], b.p[k + 1], 0.3)); pts.push(pts[0].clone());
-    const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno); ln.userData.manter = true; scene.add(ln);
+    const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), MAT.contorno); ln.userData.manter = true; ln.userData.contornoModelo = true; scene.add(ln);
   });
   if (cena.alvo.contorno && cena.alvo.contorno.length > 4) {
     const p = cena.alvo.contorno, pts = []; for (let k = 0; k < p.length; k += 2) pts.push(v3(p[k], p[k + 1], 0.5)); pts.push(pts[0].clone());
@@ -378,7 +378,8 @@ function vistas(v) {
   const dist = Math.max(alturaAlvo * 2.6, tamanhoAlvo * 2.2, 160);
   if (v === 'intro') voar(alvoMeio.clone().add(new THREE.Vector3(-dist * 0.72, dist * 0.55, dist * 0.72)), alvoMeio, 2.6);
   if (v === 'cima') voar(baseAlvo.clone().add(new THREE.Vector3(0.1, cena.raio * 1.7, cena.raio * 0.35)), baseAlvo.clone(), 2);
-  if (v === 'rua') voar(baseAlvo.clone().add(new THREE.Vector3(-55, 1.7, 55)), topoAlvo.clone().setY(alturaAlvo * 0.6), 2);
+  // o OrbitControls não deixa olhar de baixo para cima além do horizonte: alvo perto do chão, com leve subida
+  if (v === 'rua') { controls.minDistance = 1; voar(baseAlvo.clone().add(new THREE.Vector3(-60, 1.7, 60)), baseAlvo.clone().setY(8), 2); }
 }
 
 // ------------------------------------------------------------------ luz do dia
@@ -530,25 +531,30 @@ const DEG = Math.PI / 180;
 async function chaveGoogle() {
   try { const r = await fetch('/api/publico/condominios/mapas', { credentials: 'same-origin' }); const j = await r.json(); return j.chave || null; } catch { return null; }
 }
-function raioBaixo(x, z) {
+// raio de cima para baixo só nos blocos VISÍVEIS (os blocos pai, em baixa resolução, ficam carregados escondidos e não têm os prédios)
+let visiveis = null, visiveisEm = 0;
+function raioBaixo(x, z, maisBaixo = false) {
   if (!real) return null;
+  if (!visiveis || performance.now() - visiveisEm > 500) { visiveis = []; real.tiles.group.traverseVisible((o) => { if (o.isMesh) visiveis.push(o); }); visiveisEm = performance.now(); }
   const rc = new THREE.Raycaster(new THREE.Vector3(x, 4000, z), new THREE.Vector3(0, -1, 0), 0, 9000);
-  const h = rc.intersectObject(real.tiles.group, true)[0];
+  const hs = rc.intersectObjects(visiveis, false);
+  // o chão é o último ponto atravessado (blocos grossos e finos podem estar visíveis juntos; o grosso fica por cima)
+  const h = maisBaixo ? hs[hs.length - 1] : hs[0];
   return h ? h.point.y : null;
 }
 async function ligaRealista(chave) {
-  const M = await import('/vendor/three/tiles3d.js');
+  const [M, el] = await Promise.all([import('/vendor/three/tiles3d.js'), fetch(`/api/publico/condominios/elevacao?lat=${cena.centro.lat}&lon=${cena.centro.lon}`).then((r) => r.json()).catch(() => ({}))]);
+  const altura = Number.isFinite(el.elipsoide) ? el.elipsoide : null;
   const tiles = new M.TilesRenderer();
   tiles.registerPlugin(new M.GoogleCloudAuthPlugin({ apiToken: chave, autoRefreshToken: true }));
   const draco = new M.DRACOLoader(); draco.setDecoderPath('/vendor/draco/');
   tiles.registerPlugin(new M.GLTFExtensionsPlugin({ dracoLoader: draco }));
-  tiles.registerPlugin(new M.TilesFadePlugin());
-  tiles.registerPlugin(new M.ReorientationPlugin({ lat: cena.centro.lat * DEG, lon: cena.centro.lon * DEG, height: 0, recenter: true }));
+  tiles.registerPlugin(new M.ReorientationPlugin({ lat: cena.centro.lat * DEG, lon: cena.centro.lon * DEG, height: altura ?? 0, recenter: true }));
   tiles.errorTarget = celular ? 22 : 10;
   tiles.setCamera(camera); tiles.setResolutionFromRenderer(camera, renderer);
   // o plugin deixa X para oeste e Z para o norte; o modelo usa X para leste e Z para o sul: meia-volta no eixo Y
-  const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.position.y = -690; pai.add(tiles.group); scene.add(pai);
-  real = { tiles, pai, nivelado: 0, erro: null, ligado: true };
+  const pai = new THREE.Group(); pai.rotation.y = Math.PI; pai.position.y = altura === null ? -690 : 0; pai.add(tiles.group); scene.add(pai);
+  real = { tiles, pai, nivelado: altura === null ? 0 : 2, dem: altura !== null, erro: null, ligado: true };
   if (qs.has('debug')) window.__real = { real, camera, controls, scene, THREE };
   tiles.addEventListener('load-error', (e) => { if (!real.carregou) { real.erro = 'O Google recusou a chave do 3D realista.'; desligaRealista(true); } });
   tiles.addEventListener('load-model', () => { real.carregou = true; });
@@ -560,38 +566,62 @@ async function ligaRealista(chave) {
     const pts = [];
     for (const v of cena.vias) for (let i = 0; i < v.p.length; i += 2) { const x = v.p[i], z = -v.p[i + 1]; const d = Math.hypot(x - baseAlvo.x, z - baseAlvo.z); if (d < 160) pts.push([d, x, z]); }
     pts.sort((a, b) => a[0] - b[0]);
-    const alturas = pts.slice(0, 24).map(([, x, z]) => raioBaixo(x, z)).filter((h) => h !== null).sort((a, b) => a - b);
-    if (!alturas.length) { const h0 = raioBaixo(0, 0); if (h0 !== null) alturas.push(h0); }
+    const alturas = pts.slice(0, 24).map(([, x, z]) => raioBaixo(x, z, true)).filter((h) => h !== null).sort((a, b) => a - b);
+    if (!alturas.length) { const h0 = raioBaixo(0, 0, true); if (h0 !== null) alturas.push(h0); }
     if (qs.has('debug')) console.warn('tentativa', pts.length, alturas.length, alturas[0]);
     if (!alturas.length) return;
     // descarta os raios que passaram por um buraco e bateram no globo de baixa resolução lá embaixo
     const med = alturas[Math.floor(alturas.length / 2)];
     const bons = alturas.filter((h) => Math.abs(h - med) < 25);
     const y = bons[Math.floor(bons.length * 0.3)];
-    if (real.nivelado >= 2 && Math.abs(y) > 150) return;
+    if (real.nivelado >= 2 && Math.abs(y) > (real.dem ? 8 : 150)) return;
+    if (Math.abs(y) < 0.3 && real.nivelado >= 2 && real.corrigido) return;
     if (!Number.isFinite(y) || Math.abs(y) > 6000) return;
     pai.position.y -= y; pai.updateMatrixWorld(true); real.nivelado++;
     if (qs.has('debug')) console.warn('nivela', y, alturas.length, pai.position.y);
-    if (poligonoAlvo && D.condominio.tipo !== 'horizontal' && D.condominio.tipo !== 'casa') {
-      const [cx, cy] = centro(poligonoAlvo); const topo = raioBaixo(cx, -cy);
-      if (topo && topo > 6) {
-        const tot = Math.max(1, (cena.alvo.andares || Math.round(alturaAlvo / 3)) + 1);
+    if (poligonoAlvo && D.condominio.tipo !== 'horizontal' && D.condominio.tipo !== 'casa' && real.nivelado >= 2) {
+      // confere no 3D do Google qual contorno perto do endereço é mesmo o prédio (altura parecida com a esperada)
+      const esperada = (cena.alvo.andares || 8) * 3 + 3;
+      const [px, py] = cena.alvo.ponto || centro(poligonoAlvo);
+      let melhor = null;
+      for (const b of predios) {
+        if (b.ar < 120) continue;
+        const [bx, by] = centro(b.p); const d = Math.hypot(bx - px, by - py);
+        if (d > 70) continue;
+        const topo = raioBaixo(bx, -by);
+        if (!topo || topo < 6) continue;
+        const nota = -Math.abs(topo - esperada) - d * 0.15 + (b.alvo ? 4 : 0);
+        if (!melhor || nota > melhor.nota) melhor = { b, topo, nota };
+      }
+      if (melhor) {
+        real.corrigido = true;
+        if (melhor.b.p !== poligonoAlvo) {
+          poligonoAlvo = melhor.b.p;
+          const [cx, cy] = centro(poligonoAlvo); baseAlvo.set(cx, 0, -cy);
+          scene.children.filter((o) => o.userData.contornoModelo).forEach((o) => { o.visible = false; });
+          const q = []; for (let k = 0; k < poligonoAlvo.length; k += 2) q.push(v3(poligonoAlvo[k], poligonoAlvo[k + 1], 0.4)); q.push(q[0].clone());
+          const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints(q), MAT.contorno); ln.userData.manter = true; scene.add(ln);
+          if (pinoApto) { let r = 0; for (let k = 0; k < poligonoAlvo.length; k += 2) r = Math.max(r, Math.hypot(poligonoAlvo[k] - cx, poligonoAlvo[k + 1] - cy)); pinoApto.pos.x = cx + r * 0.7; pinoApto.pos.z = -(cy - r * 0.7); }
+        }
+        const topo = melhor.topo;
+        const tot = Math.max(1, (cena.alvo.andares || Math.round(topo / 3)) + 1);
         ANDAR_H = Math.min(3.8, Math.max(2.5, (topo - 1.5) / tot));
-        alturaAlvo = topo; topoAlvo.y = topo;
-        if (rotAlvo) rotAlvo.pos.y = topo + 8;
+        alturaAlvo = topo; topoAlvo.set(baseAlvo.x, topo, baseAlvo.z);
+        if (rotAlvo) rotAlvo.pos.copy(topoAlvo).add(new THREE.Vector3(0, 8, 0));
         mostraAndar(+$('#andar').value);
+        if (pinoApto) pinoApto.pos.y = andarPos(+$('#andar').value) + ANDAR_H;
       }
     }
   };
-  // nivela até estabilizar (os primeiros blocos são o globo em baixa resolução)
-  let n = 0, estavel = 0;
+  // nivela de novo enquanto os blocos de alta resolução chegam (os primeiros são o globo e o relevo suavizado,
+  // que fica acima do chão nos bairros com prédios)
+  let n = 0;
   const t = setInterval(() => {
     if (!real) return clearInterval(t);
-    let malhas = 0; tiles.group.traverse((o) => { if (o.isMesh) malhas++; });
-    const antes = pai.position.y; if (malhas >= 40) nivela();
-    estavel = malhas > 60 && Math.abs(pai.position.y - antes) < 0.5 ? estavel + 1 : 0;
-    if (++n > 40 || estavel >= 3) clearInterval(t);
-  }, 1500);
+    let malhas = 0; tiles.group.traverseVisible((o) => { if (o.isMesh) malhas++; });
+    if (malhas >= 40 && real.ligado) nivela();
+    if (++n > 90) clearInterval(t);
+  }, 2000);
   setInterval(() => {
     if (!real || !real.ligado || real.erro) return;
     const a = (real.tiles.getAttributions ? real.tiles.getAttributions() : []).map((x) => x.value).filter((v) => typeof v === 'string');

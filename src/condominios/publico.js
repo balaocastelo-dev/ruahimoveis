@@ -90,6 +90,23 @@ router.get('/condominios/:slug/3d', (req, res, next) => {
 // API pública do 3D: só o prédio, o entorno e (se pedir) o andar de um imóvel da RUAH publicado ali.
 const api = express.Router();
 // chave do Google Maps para o 3D realista (restrita aos sites da RUAH no console do Google)
+// altitude do terreno (Copernicus DEM pelo Open-Meteo) para encaixar o 3D do Google no chão certo
+const elev = new Map();
+api.get('/elevacao', async (req, res) => {
+  const lat = Number(req.query.lat), lon = Number(req.query.lon);
+  if (!(lat > -24 && lat < -22 && lon > -48 && lon < -46)) return res.status(400).json({ erro: 'Fora de Campinas.' });
+  const k = `${lat.toFixed(4)},${lon.toFixed(4)}`;
+  if (!elev.has(k)) {
+    try {
+      const r = await fetch(`https://api.open-meteo.com/v1/elevation?latitude=${lat}&longitude=${lon}`, { signal: AbortSignal.timeout(6000) });
+      const j = await r.json(); const h = j && j.elevation && Number(j.elevation[0]);
+      if (Number.isFinite(h)) { elev.set(k, h); if (elev.size > 5000) elev.clear(); }
+    } catch {}
+  }
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  // o 3D do Google usa altura sobre o elipsoide: em Campinas o geoide fica ~5,5 m abaixo
+  res.json({ altitude: elev.get(k) ?? null, elipsoide: elev.has(k) ? elev.get(k) - 5.5 : null });
+});
 api.get('/mapas', (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ chave: (process.env.GOOGLE_MAPS_KEY || '').trim() || null }); });
 api.get('/:slug/3d', async (req, res) => {
   const c = porSlug(req.params.slug);
