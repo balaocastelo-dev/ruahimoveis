@@ -212,7 +212,7 @@ if (comando === 'listar' || comando === 'preparar') {
     for (const b of bairros) console.log(`- ${b.nome} (${b.slug}) · ${ESTADOS[b.pagina.estado] || b.pagina.estado}${b.pagina.endereco ? ` · ${b.pagina.endereco}` : ''}`);
   }
 } else if (comando === 'fotos') {
-  const [slug, ...termos] = resto.filter((a) => !a.startsWith('--'));
+  const [slug, ...termos] = resto.filter((a, i) => !a.startsWith('--') && !(i > 0 && resto[i - 1] === '--n'));
   const busca = termos.join(' ').trim();
   if (!slug || !SLUG.test(slug) || busca.length < 3) sair('Uso: fotos <bairro> "<o que procurar>"   (ex.: fotos taquaral "Lagoa do Taquaral")');
   const dir = path.join(PASTA_FILA, slug, 'commons');
