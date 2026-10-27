@@ -1,0 +1,233 @@
+{
+  "codigo": "AP0006",
+  "slug": "apartamento-2-quartos-suite-cambui-campinas-ap0006",
+  "titulo": "Apartamento de 2 quartos com suíte no Cambuí, em Campinas",
+  "resumo": "Apartamento de 72 m² no Cambuí, em Campinas, com dois quartos (um deles suíte), sala com painel ripado de madeira e cozinha aberta com balcão de refeições.",
+  "capa": {
+    "foto": 1822,
+    "alt": "Sala com sofá verde, mesa de centro de madeira e, ao fundo, a cozinha com balcão ripado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Cambuí, em Campinas. São 72 m² de área útil, com dois quartos, sendo um suíte, e uma vaga de garagem, segundo a ficha. O anúncio informa três banheiros no total. As fotos mostram o imóvel mobiliado e em uso, com piso claro e brilhante na área social, molduras de gesso no teto e janelas com tela de proteção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É uma planta para casal, para quem mora sozinho e quer um segundo dormitório para hóspedes ou escritório, ou para uma família pequena que prefere morar num bairro com comércio e serviços por perto. O anúncio cita restaurantes, cafés, padarias, farmácias e supermercados na região."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "72 m² de área útil, com dois quartos, sendo um suíte",
+        "Sala com painel ripado de madeira, estante e trilho de spots",
+        "Cozinha aberta para a sala, com balcão ripado e pendentes",
+        "Armários brancos na cozinha e nos quartos",
+        "Uma vaga de garagem, segundo a ficha"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala é um ambiente só, que vai da porta de entrada até a cozinha. O destaque é o painel de ripas de madeira que divide o espaço e recebe a TV, com prateleiras do mesmo material acima e abaixo. No teto, um trilho com spots e um lustre de vidro. Ao lado do painel, uma porta de vidro dá para uma área externa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Junto à entrada, uma parede pintada de verde-escuro marca a porta, e uma janela com persiana fica no canto. O piso é claro, em placas grandes e brilhantes. No lado oposto, o sofá de canto encosta na parede com prateleiras de madeira e um espelho grande."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1818,
+          "legenda": "Painel ripado de madeira com TV e prateleiras, e a cozinha ao fundo"
+        },
+        {
+          "foto": 1821,
+          "legenda": "Sofá de canto, espelho grande e a porta de entrada com parede verde"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é aberta para a sala por um balcão revestido com as mesmas ripas de madeira, com tampo para refeições rápidas e dois pendentes em cima. Dentro, as fotos mostram armários brancos em cima e embaixo, bancada escura, forno de embutir, coifa, revestimento quadriculado na parede e geladeira inox de duas portas. Uma janela horizontal fica sobre a bancada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1825,
+          "legenda": "Cozinha com armários brancos, forno de embutir, coifa e geladeira inox"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um corredor curto, com ar-condicionado split no alto, leva aos quartos. O quarto maior tem cabeceira de painel listrado em toda a largura da parede, bancada de trabalho sob a janela, armário branco de quatro portas e janela com tela e persiana, de onde se veem prédios vizinhos. O outro quarto também tem armário branco embutido."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram três banheiros com o mesmo padrão: azulejo branco nas paredes, bancada de pedra bege com cuba, gabinete branco com gavetas e janela basculante. Um deles tem chuveiro e ducha higiênica ao lado do vaso."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1832,
+          "legenda": "Quarto com cabeceira de painel listrado, bancada sob a janela e tela de proteção"
+        },
+        {
+          "foto": 1829,
+          "legenda": "Banheiro com azulejo branco e bancada de pedra bege"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer morar no Cambuí num apartamento de dois quartos já com marcenaria na sala, na cozinha e nos quartos. As fotos não mostram o prédio, a garagem nem áreas comuns, então essas informações vale confirmar direto com a RUAH."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e armários ficam com o imóvel, como é a área externa ao lado da sala, o andar, o que o prédio oferece de área comum e o valor do condomínio.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1822,
+      "legenda": "Sala com sofá verde, mesa de centro de madeira e a cozinha ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1818,
+      "legenda": "Painel ripado de madeira com TV e prateleiras, ao lado do balcão da cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1819,
+      "legenda": "Sala vista do sofá, com mesa de centro e o painel ripado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1820,
+      "legenda": "Sala comprida, do sofá até o balcão de refeições da cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1821,
+      "legenda": "Sofá de canto, espelho grande e porta de entrada com parede verde",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1823,
+      "legenda": "Painel ripado com TV e porta de vidro para a área externa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1824,
+      "legenda": "Balcão ripado com tampo para refeições e pendentes",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1825,
+      "legenda": "Cozinha com armários brancos, forno de embutir, coifa e geladeira inox",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1826,
+      "legenda": "Corredor dos quartos com ar-condicionado split",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1832,
+      "legenda": "Quarto com cabeceira de painel listrado e bancada sob a janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1827,
+      "legenda": "Quarto com cama de casal, bancada e janela com tela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1828,
+      "legenda": "Armário branco de quatro portas ao lado da cama",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1831,
+      "legenda": "Segundo quarto com armário branco embutido",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1829,
+      "legenda": "Banheiro com azulejo branco, bancada de pedra bege e ducha higiênica",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1830,
+      "legenda": "Banheiro com bancada de pedra bege, gabinete branco e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1833,
+      "legenda": "Banheiro com azulejo branco, gabinete com gavetas e janela basculante",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e banheiros tem o apartamento?",
+      "resposta": "São dois quartos, sendo um suíte, segundo a ficha. O anúncio informa três banheiros."
+    },
+    {
+      "pergunta": "Qual é a área do apartamento?",
+      "resposta": "A ficha informa 72 m² de área útil."
+    },
+    {
+      "pergunta": "O apartamento tem vaga de garagem?",
+      "resposta": "Sim, a ficha informa uma vaga. A garagem não aparece nas fotos."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e a equipe da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 72 m² no Cambuí, em Campinas: dois quartos, sendo um suíte, sala com painel ripado de madeira, cozinha aberta com balcão de refeições e armários nos quartos. Quer conhecer? O link para a página do imóvel está na bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "cambui",
+      "campinas",
+      "apartamentoavenda",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "30cb85ab1eb7",
+  "publicadoEm": "2026-10-27T07:23:48.853Z"
+}

@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CH0003",
+      "slug": "chacara-4-quartos-3000m2-jardim-nautico-represa-pedreira-ch0003",
+      "titulo": "Chácara de 4 quartos e 3.000 m² em Pedreira (SP)",
+      "resumo": "Chácara de 3.000 m² em Pedreira (SP), com quatro quartos, gramado em declive, varandas, chalé de madeira e vista para os morros e para a água.",
+      "capa": {
+        "foto": 1788,
+        "alt": "Gramado com coqueiro, telhados de barro do chalé e da casa e morros verdes ao fundo"
+      },
+      "versao": "01eaedf6183d",
+      "publicadoEm": "2026-10-27T07:23:48.858Z"
+    },
+    {
+      "codigo": "AP0006",
+      "slug": "apartamento-2-quartos-suite-cambui-campinas-ap0006",
+      "titulo": "Apartamento de 2 quartos com suíte no Cambuí, em Campinas",
+      "resumo": "Apartamento de 72 m² no Cambuí, em Campinas, com dois quartos (um deles suíte), sala com painel ripado de madeira e cozinha aberta com balcão de refeições.",
+      "capa": {
+        "foto": 1822,
+        "alt": "Sala com sofá verde, mesa de centro de madeira e, ao fundo, a cozinha com balcão ripado"
+      },
+      "versao": "30cb85ab1eb7",
+      "publicadoEm": "2026-10-27T07:23:48.853Z"
+    },
+    {
       "codigo": "ST0002",
       "slug": "apartamento-studio-mobiliado-25m2-vaga-vila-olimpia-sao-paulo-st0002",
       "titulo": "Apartamento studio mobiliado de 25 m² com vaga na Vila Olímpia",
@@ -206,5 +230,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T05:22:01.657Z"
+  "atualizadoEm": "2026-10-27T07:23:48.859Z"
 }

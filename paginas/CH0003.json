@@ -1,0 +1,299 @@
+{
+  "codigo": "CH0003",
+  "slug": "chacara-4-quartos-3000m2-jardim-nautico-represa-pedreira-ch0003",
+  "titulo": "Chácara de 4 quartos e 3.000 m² em Pedreira (SP)",
+  "resumo": "Chácara de 3.000 m² em Pedreira (SP), com quatro quartos, gramado em declive, varandas, chalé de madeira e vista para os morros e para a água.",
+  "capa": {
+    "foto": 1788,
+    "alt": "Gramado com coqueiro, telhados de barro do chalé e da casa e morros verdes ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta chácara fica no Jardim Náutico Represa, em Pedreira (SP). A ficha informa 3.000 m² de área total e quatro quartos; o anúncio cita três banheiros. O terreno desce em declive, com gramado, palmeiras e árvores, e as fotos mostram, lá embaixo, um espelho d'água com um píer de madeira na margem, cercado de mata."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As construções se espalham pelo terreno: uma casa térrea branca, com janelas azuis e varanda comprida; um chalé de madeira com deck; e edificações menores no alto. É um imóvel para quem procura casa de fim de semana, lugar para reunir a família ou para morar no campo com espaço de sobra."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3.000 m² de área total, segundo a ficha",
+        "Quatro quartos; o anúncio cita três banheiros",
+        "Vista para os morros com mata e para a água",
+        "Chalé de madeira com deck e varanda coberta",
+        "Área coberta com mesa comprida e bancos de madeira",
+        "Pátio de entrada com espaço para vários carros"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O terreno e a vista"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do alto, a vista abre para morros cobertos de mata e para a água no fundo do vale. Uma escada estreita de concreto desce pelo gramado até a parte baixa, passando por bananeiras, palmeiras e mudas de árvores. Perto da margem, o chão é de terra batida, com árvores maiores e um pequeno barco de alumínio virado na sombra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A parte alta tem jardim mais cuidado: cerca viva baixa, plantas de folhas vermelhas e gramado aparado. Algumas áreas do terreno aparecem com mato baixo, terra exposta e cercas de mourão, à espera de um projeto de paisagismo ou de pomar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1789,
+          "legenda": "Espelho d'água com píer de madeira na margem e mata ao fundo"
+        },
+        {
+          "foto": 1805,
+          "legenda": "Escada de concreto descendo o gramado em direção à água"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "As construções"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa branca tem telhado de barro, janelas e colunas pintadas de azul e uma varanda comprida com forro de madeira e lanternas, voltada para o gramado. Por dentro, as fotos mostram uma sala com piso de cerâmica, molduras de gesso no teto, dois sofás e quadros nas paredes, e uma cozinha com bancada de pedra escura, armários e uma despensa com prateleiras de alvenaria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também uma área coberta, com telhado aparente, piso cerâmico vermelho, mesa comprida de madeira com bancos e grandes vãos abertos para o jardim. O chalé de madeira tem portas de duas folhas, deck e varanda coberta lateral. Um banheiro aparece com box de vidro e piso cerâmico. As fotos não mostram os quartos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1813,
+          "legenda": "Casa branca de janelas azuis com varanda comprida diante do gramado"
+        },
+        {
+          "foto": 1816,
+          "legenda": "Área coberta com mesa comprida de madeira e bancos"
+        },
+        {
+          "foto": 1815,
+          "legenda": "Deck do chalé de madeira com portas de duas folhas"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acesso e estacionamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma rampa de concreto com mureta branca e cerca de mourões leva do portão até o pátio da casa. O pátio, de piso de concreto, recebe os carros perto do chalé. A ficha informa 14 vagas. A lista de características do anúncio cita ainda churrasqueira e varanda."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer terreno grande, verde e água à vista, com mais de uma construção para receber gente. É um imóvel de uso rural, com áreas que pedem manutenção e um terreno em declive: quem tem dificuldade com escadas deve observar isso na visita."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Onde fica a divisa do terreno e se a margem com o píer faz parte dele, quais construções pertencem à chácara, como estão divididos os quartos e banheiros, a documentação e se o imóvel fica em condomínio, como aparece na lista de características.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1809,
+      "legenda": "Rampa de acesso de concreto com mureta branca e a casa ao fundo",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1807,
+      "legenda": "Pátio de entrada com o chalé de madeira e carro estacionado",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1800,
+      "legenda": "Rampa de acesso curva e, ao fundo, uma construção no alto do morro",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1788,
+      "legenda": "Gramado com coqueiro, telhados de barro e morros verdes ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1798,
+      "legenda": "Vista de cima dos telhados, com gramado e a casa branca ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1803,
+      "legenda": "Casa branca com telhado de barro, jardim florido e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1813,
+      "legenda": "Casa branca de janelas azuis com varanda comprida diante do gramado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1814,
+      "legenda": "Varanda com forro de madeira, colunas azuis, lanterna e vasos",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1808,
+      "legenda": "Lateral da casa com cerca viva e palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1810,
+      "legenda": "Sala com piso de cerâmica, sofás e quadros",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1811,
+      "legenda": "Sala com tapete verde, mesa de centro e dois sofás",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1812,
+      "legenda": "Cozinha com bancada de pedra escura, armários e despensa",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1806,
+      "legenda": "Banheiro com box de vidro e piso cerâmico",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1816,
+      "legenda": "Área coberta com mesa comprida de madeira, bancos e vãos para o jardim",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1815,
+      "legenda": "Deck do chalé de madeira com portas de duas folhas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1817,
+      "legenda": "Varanda coberta lateral do chalé, com forro de madeira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1802,
+      "legenda": "Jardim com palmeira e cerca viva visto do alto do telhado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1801,
+      "legenda": "Palmeira entre canteiros com cerca viva",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1797,
+      "legenda": "Gramado em declive com palmeiras e construção branca no alto",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1799,
+      "legenda": "Escada de concreto subindo o gramado até a construção branca",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1792,
+      "legenda": "Escada de concreto com bananeira e construção ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1796,
+      "legenda": "Parte do terreno com árvore, mourões e construção de tijolos",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1794,
+      "legenda": "Área com mudas de árvores e gramado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1795,
+      "legenda": "Escada de concreto descendo entre palmeiras e bananeiras",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1804,
+      "legenda": "Escada descendo o gramado, com construção de madeira e morro ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1805,
+      "legenda": "Gramado em declive em direção à água, com mata ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1793,
+      "legenda": "Área aberta de gramado na parte baixa, junto às árvores",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1791,
+      "legenda": "Parte baixa do terreno com terra exposta e palmeiras ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1790,
+      "legenda": "Barco de alumínio virado sob as árvores, perto da água",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1789,
+      "legenda": "Espelho d'água com píer de madeira na margem e mata ao fundo",
+      "ambiente": "vista"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho da chácara?",
+      "resposta": "A ficha informa 3.000 m² de área total."
+    },
+    {
+      "pergunta": "Quantos quartos e banheiros tem?",
+      "resposta": "A ficha informa quatro quartos e o anúncio cita três banheiros. As fotos não mostram os quartos."
+    },
+    {
+      "pergunta": "Tem lugar para estacionar?",
+      "resposta": "Sim. A ficha informa 14 vagas, e as fotos mostram um pátio de concreto na entrada."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Use o formulário desta página e a equipe da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Chácara de 3.000 m² no Jardim Náutico Represa, em Pedreira (SP): quatro quartos, casa com varanda comprida, chalé de madeira com deck, área coberta para reunir a família e vista para os morros e para a água. Quer conhecer? O link está na bio.",
+    "hashtags": [
+      "chacaraavenda",
+      "pedreira",
+      "pedreirasp",
+      "chacara",
+      "imoveisinterior",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "01eaedf6183d",
+  "publicadoEm": "2026-10-27T07:23:48.858Z"
+}
