@@ -17,6 +17,11 @@
     if (e.source !== window || !e.data || e.data.__fisguei !== 1) return;
     try { chrome.runtime.sendMessage({ tipo: 'captura', item: { url: e.data.url, pedido: e.data.pedido, json: e.data.json } }, (st) => { if (st) mostra(st); }); } catch {}
   });
+  // Saldo de créditos que apareceu numa resposta do Fisgar
+  window.addEventListener('message', (e) => {
+    if (e.source !== window || !e.data || e.data.__fisgueiCredito !== 1) return;
+    try { chrome.runtime.sendMessage({ tipo: 'credito', saldo: e.data.saldo, plano: e.data.plano, chave: e.data.chave, url: e.data.url }); } catch {}
+  });
   // Robô "Buscar dados": a extensão manda a busca, a página do Fisgar executa e devolve.
   const esperando = new Map();
   window.addEventListener('message', (e) => {

@@ -42,3 +42,22 @@ Tabelas `fisguei_*` no `src/db-sqlite.js`, `sql/schema.sql` e `sql/fisguei.sql` 
 ## Importar para a base
 
 - Fisguei > anúncio > *Importar para a base*: cria o imóvel em captação na carteira (tipo, endereço, CEP, áreas, quartos, valor, condomínio, IPTU, localização) e, se alguém confirmou que é dono, cria o proprietário com a origem do dado anotada. As fotos do anúncio original não são copiadas (são de terceiros).
+
+## Fisguei inteligente (27/10/2026)
+
+A tela Captação > Fisguei (`#/fisguei`) virou uma vitrine de cartões para operar a captação:
+
+- **Créditos do Fisgar** no topo: saldo, gasto de hoje e do mês, ritmo por dia até o fim do mês. O saldo vem, nesta ordem:
+  1. lido pela extensão (1.3.0) numa resposta do próprio Fisgar que traga o saldo (`POST /fisguei-api/creditos`);
+  2. informado à mão por adm/gestor ("Corrigir saldo", `POST /api/fisguei/creditos`);
+  3. estimado: plano (2.200/mês, ajustável) menos o que o sistema viu gastar no mês.
+  Depois de uma leitura, o sistema desconta cada busca do robô e cada consulta feita no Fisgar com a extensão ligada.
+- **Leitura da base**: frases curtas sobre o filtro atual (quedas de preço, particulares sem dono buscado, anúncios novos, m² abaixo do bairro, anúncios antigos, mesmo imóvel em vários anúncios). Cada frase aplica o filtro.
+- **Sinais** de cada anúncio (src/fisguei/inteligencia.js), todos com explicação em texto: queda de preço (forte: ≥ 8% de uma vez ou ≥ 12% desde o primeiro preço), anúncio novo (≤ 7 dias), anúncio antigo (≥ 90 dias), m² ≥ 15% abaixo / ≥ 35% acima da mediana do bairro na mesma vitrine (mín. 5 anúncios; senão a cidade), particular, repetido (mesma rua, número e tipo, área parecida). Nota de 0 a 100 para ordenar.
+- **Histórico de preço**: tabela `fisguei_precos`. Cada vez que a extensão manda o mesmo anúncio com outro valor, entra uma linha. Coluna `fisguei_anuncios.anunciado_desde` guarda a data mais antiga conhecida.
+- **Filtros**: proprietário (sem / com / dono confirmou), sinais (vários juntos), tipo, bairros, valor, quartos, área, anunciante, andamento, só com número, só com foto; busca enquanto digita (atalho `/`); ordem; cartões ou mapa.
+- **Prévia lateral** ao clicar no cartão: fotos, histórico de preço, por que apareceu, proprietários, ações (buscar dono, Radar, ficha, 3D, descartar). Setas ← → passam para o próximo.
+- **Seleção em lote**: marcar vários cartões e "Buscar dono" de todos (`POST /api/fisguei/buscar-anuncios`); o limite diário de créditos continua valendo.
+
+API: `GET /api/fisguei/explorar`, `GET /api/fisguei/explorar/mapa`, `GET|POST /api/fisguei/creditos`. Teste: `node test/fisguei-inteligente.js`.
+Migração no Supabase: `ruah_fisguei_inteligente` (sql/fisguei.sql).

@@ -7,6 +7,7 @@ const { falha, txt } = require('../util');
 const F = require('../fisguei/base');
 const normaliza = require('../fisguei/normaliza');
 const P = require('../fisguei/pedidos');
+const I = require('../fisguei/inteligencia');
 
 // ---------- recebimento (extensão do Chrome) ----------
 // Fica fora de /api: a extensão não tem a sessão do sistema, ela se identifica com a chave gerada na tela do Fisguei.
@@ -42,6 +43,13 @@ receber.post('/pedidos/:id/resultado', (req, res) => {
   setConfig('fisguei_ultimo_recebimento', new Date().toISOString());
   res.status(r.erro ? 409 : 200).json(r);
 });
+// saldo de créditos que a extensão leu numa resposta do próprio Fisgar
+receber.post('/creditos', (req, res) => {
+  const b = req.body || {};
+  const c = I.gravaSaldo(b.saldo, { fonte: 'fisgar', plano: b.plano, chave: [b.url, b.chave].filter(Boolean).join(' · ') });
+  if (!c) return res.status(400).json({ erro: 'Saldo inválido.' });
+  res.json({ ok: true, saldo: c.saldo });
+});
 receber.post('/receber', (req, res) => {
   const lote = Array.isArray(req.body && req.body.itens) ? req.body.itens.slice(0, 50) : [req.body];
   const tot = { anuncios: 0, pessoas: 0, telefones: 0, ignorados: 0 };
@@ -61,6 +69,8 @@ const r = express.Router();
 // Express 5 não aceita regex no caminho: :id e :pid que não forem número seguem para a próxima rota.
 r.param('id', (req, res, next, v) => (/^\d+$/.test(v) ? next() : next('route')));
 r.param('pid', (req, res, next, v) => (/^\d+$/.test(v) ? next() : next('route')));
+// qualquer mudança feita pela tela recalcula a leitura inteligente na próxima consulta
+r.use((req, res, next) => { if (req.method !== 'GET' && /^\/fisguei/.test(req.path)) I.invalida(); next(); });
 const STATUS = ['novo', 'abordando', 'respondeu', 'confirmado', 'sem_interesse', 'sem_dono', 'captado', 'descartado'];
 
 function robo() {
@@ -116,6 +126,25 @@ function contagem(q) {
   }
   return out;
 }
+// ---------- Fisguei inteligente: cartões, filtros, sinais e leitura da base ----------
+r.get('/fisguei/explorar', (req, res) => {
+  const q = {}; for (const k of ['q', 'dono', 'sinais', 'cat', 'bairro', 'anunciante', 'vmin', 'vmax', 'quartos', 'amin', 'foto', 'numero', 'etapa', 'ordem', 'pagina']) if (req.query[k] !== undefined) q[k] = String(req.query[k]).slice(0, 400);
+  res.json(I.explorar(q));
+});
+r.get('/fisguei/explorar/mapa', (req, res) => {
+  const q = {}; for (const k of ['q', 'dono', 'sinais', 'cat', 'bairro', 'anunciante', 'vmin', 'vmax', 'quartos', 'amin', 'foto', 'numero', 'etapa']) if (req.query[k] !== undefined) q[k] = String(req.query[k]).slice(0, 400);
+  res.json(I.pontos(q));
+});
+r.get('/fisguei/creditos', (req, res) => res.json(I.creditos()));
+r.post('/fisguei/creditos', (req, res) => {
+  if (!A.veTudo(req.usuario)) falha(403, 'Só o administrativo ou o gestor corrigem o saldo de créditos.');
+  const b = req.body || {};
+  let c = null;
+  if (b.plano !== undefined && b.plano !== '') c = I.gravaPlano(b.plano);
+  if (b.saldo !== undefined && b.saldo !== '') { c = I.gravaSaldo(b.saldo, { fonte: 'manual', chave: 'informado por ' + req.usuario.nome }); if (!c) falha(400, 'Saldo inválido.'); }
+  audit(req.usuario.id, 'fisguei.creditos', JSON.stringify(b));
+  res.json(c || I.creditos());
+});
 r.get('/fisguei/mapa', (req, res) => {
   const { w, p } = filtros(req.query);
   res.json(all(`SELECT a.id, a.lat, a.lon, a.valor, a.status, a.tipo, a.logradouro, a.numero, a.bairro, a.anunciante_tipo FROM fisguei_anuncios a
@@ -228,6 +257,15 @@ r.post('/fisguei/buscar', (req, res) => {
   const out = P.pedeOportunidades(ids, req.usuario.id);
   audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) na fila do Fisgar (${out.ja} já estavam, ${out.sem_endereco} sem endereço)`);
   res.json({ ...out, anuncio_id: out.anuncios.length === 1 ? out.anuncios[0] : null });
+});
+// "Buscar dono" de vários cartões de uma vez (cada endereço gasta crédito quando o robô executar no Fisgar)
+r.post('/fisguei/buscar-anuncios', (req, res) => {
+  const ids = (Array.isArray(req.body && req.body.ids) ? req.body.ids : []).map((x) => parseInt(x, 10)).filter(Number.isFinite).slice(0, 200);
+  if (!ids.length) falha(400, 'Escolha ao menos um imóvel.');
+  const out = { criados: 0, ja: 0, sem_endereco: 0 };
+  for (const id of ids) { const p = P.pedeEndereco(id, req.usuario.id); if (p.erro) out.sem_endereco++; else if (p.ja) out.ja++; else out.criados++; }
+  audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) pela tela de cartões`);
+  res.json({ ...out, creditos: I.creditos() });
 });
 r.post('/fisguei/:id/buscar', (req, res) => {
   const a = anuncio(+req.params.id);

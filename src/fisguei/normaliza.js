@@ -28,6 +28,27 @@ function portalDasFotos(imgs) {
   return null;
 }
 
+// Datas e preços antigos que alguns anúncios trazem (nomes variam conforme o portal de origem). Só aproveita se vier.
+const CHAVES_DESDE = ['createdAt', 'created_at', 'insertedAt', 'inserted_at', 'firstSeen', 'first_seen', 'first_seen_at', 'dt_create', 'data_cadastro', 'publishedAt', 'published_at', 'listingDate', 'createdDate'];
+const CHAVES_PRECO_ANTIGO = ['old_price', 'oldPrice', 'previous_price', 'previousPrice', 'last_price', 'lastPrice', 'preco_anterior', 'old_buy_price', 'previous_buy_price'];
+function historicoDoAnuncio(x) {
+  const out = [];
+  for (const [k, v] of Object.entries(x)) {
+    if (!Array.isArray(v) || !/hist|price_?changes|prices$|precos/i.test(k)) continue;
+    for (const h of v.slice(0, 40)) {
+      if (!h || typeof h !== 'object') continue;
+      const valor = numOu(h.buy_price ?? h.price ?? h.value ?? h.valor ?? h.preco);
+      const em = dataSP(h.date ?? h.data ?? h.createdAt ?? h.created_at ?? h.updatedAt ?? h.updated_at ?? h.em);
+      if (valor && em) out.push({ valor, em });
+    }
+  }
+  return out;
+}
+function desdeDoAnuncio(x) {
+  const ds = CHAVES_DESDE.map((k) => dataSP(x[k])).filter(Boolean).sort();
+  return ds[0] || null;
+}
+
 function anuncio(x) {
   if (!x || typeof x !== 'object') return null;
   const id = x.announce_id || x.id;
@@ -56,6 +77,14 @@ function anuncio(x) {
     anunciante_tipo: x.private === 1 || x.private === true ? 'particular' : x.private === 0 || x.private === false ? 'imobiliaria' : 'desconhecido',
     publicado_em: dataSP(x.postedAt),
     fotos: imgs.length ? imgs : undefined,
+    desde: desdeDoAnuncio(x),
+    historico: (() => {
+      const h = historicoDoAnuncio(x);
+      const antigo = CHAVES_PRECO_ANTIGO.map((k) => numOu(x[k])).find(Boolean);
+      // preço antigo sem data: entra como do dia anterior à data em que o anúncio foi visto (só para marcar a queda)
+      if (antigo && venda && antigo !== venda && !h.length) { const d = new Date(Date.now() - 864e5).toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' }); h.push({ valor: antigo, em: d }); }
+      return h;
+    })(),
   };
 }
 

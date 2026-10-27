@@ -325,7 +325,8 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['oportunidades', 'foto', 'TEXT'],
   ['fisguei_anuncios', 'cond_checado', 'INTEGER NOT NULL DEFAULT 0'],
   ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
-  ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL']]) {
+  ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
+  ['fisguei_anuncios', 'anunciado_desde', 'TEXT']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
 
@@ -345,6 +346,10 @@ CREATE TABLE IF NOT EXISTS mapa3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, a
 CREATE TABLE IF NOT EXISTS pois (id INTEGER PRIMARY KEY, cat TEXT NOT NULL, nome TEXT NOT NULL, lat REAL NOT NULL, lon REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS predios3d (tile TEXT PRIMARY KEY, dados BLOB NOT NULL, atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE INDEX IF NOT EXISTS ix_fa_cond ON fisguei_anuncios(condominio_id);
+CREATE TABLE IF NOT EXISTS fisguei_precos (
+  id INTEGER PRIMARY KEY, anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
+  valor REAL NOT NULL, em TEXT NOT NULL DEFAULT (datetime('now','localtime')), fonte TEXT);
+CREATE INDEX IF NOT EXISTS ix_fpr_anuncio ON fisguei_precos(anuncio_id);
 CREATE TABLE IF NOT EXISTS bairros (
   slug TEXT PRIMARY KEY, nome TEXT NOT NULL, regiao TEXT, apelidos TEXT, prioridade INTEGER NOT NULL DEFAULT 0,
   oculto INTEGER NOT NULL DEFAULT 0, notas TEXT, pedido_em TEXT, origem TEXT, lat REAL, lon REAL,

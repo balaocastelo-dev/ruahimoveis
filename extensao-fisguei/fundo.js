@@ -36,7 +36,17 @@ async function envia() {
   } finally { enviando = false; }
   if (fila.length && !st.erro) setTimeout(envia, 500);
 }
+// saldo de créditos lido no Fisgar: manda no máximo uma vez por minuto (ou quando muda)
+let ultimoSaldo = { v: null, em: 0 };
+async function enviaSaldo(m) {
+  const c = await config();
+  if (!c.chave || !Number.isFinite(m.saldo)) return;
+  if (m.saldo === ultimoSaldo.v && Date.now() - ultimoSaldo.em < 60000) return;
+  ultimoSaldo = { v: m.saldo, em: Date.now() };
+  try { await fetch(c.url + '/fisguei-api/creditos', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Fisguei-Chave': c.chave }, body: JSON.stringify({ saldo: m.saldo, plano: m.plano, chave: m.chave, url: m.url }) }); } catch {}
+}
 chrome.runtime.onMessage.addListener((m, quem, responde) => {
+  if (m && m.tipo === 'credito') { enviaSaldo(m); return false; }
   if (m && m.tipo === 'captura' && m.item) {
     fila.push(m.item);
     if (fila.length > 300) fila = fila.slice(-300);

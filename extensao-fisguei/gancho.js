@@ -15,11 +15,38 @@
       if (listas.length > 6) listas.shift();
     } catch {}
   };
+  // ---------- saldo de créditos do plano ----------
+  // O painel do Fisgar mostra o saldo do plano; quando alguma resposta traz esse número, a extensão avisa o sistema.
+  // Só lê o número que já veio na tela (não faz chamada nova).
+  const CHAVE_SALDO = /^(credits?|creditos?|saldo|saldo_?creditos?|balance|remaining_?credits|credits_?remaining|available_?credits|credits_?available|creditsBalance|remainingCredits|availableCredits|qtd_?creditos|quantidade_?creditos)$/i;
+  const CHAVE_PLANO = /^(plan_?credits|credits_?plan|total_?credits|credits_?total|monthly_?credits|creditsPerMonth|limite_?creditos)$/i;
+  function achaSaldo(o, caminho = '', prof = 0, out = {}) {
+    if (!o || typeof o !== 'object' || prof > 6) return out;
+    for (const [k, v] of Object.entries(o)) {
+      if (typeof v === 'number' && Number.isFinite(v) && v >= 0 && v < 1e6) {
+        if (out.saldo === undefined && CHAVE_SALDO.test(k)) { out.saldo = Math.round(v); out.chave = caminho + k; }
+        else if (out.plano === undefined && CHAVE_PLANO.test(k)) out.plano = Math.round(v);
+      } else if (typeof v === 'string' && out.saldo === undefined && /cr[eé]dito/i.test(v)) {
+        const m = v.match(/(?:possui|tem|restam?|saldo(?: de)?|dispon[ií]ve(?:l|is))\D{0,20}(\d[\d.]*)\s*cr[eé]ditos?/i);
+        if (m) { out.saldo = parseInt(m[1].replace(/\./g, ''), 10); out.chave = caminho + k + ' (mensagem)'; }
+      } else if (v && typeof v === 'object' && !Array.isArray(v)) achaSaldo(v, caminho + k + '.', prof + 1, out);
+    }
+    return out;
+  }
+  const olhaSaldo = (u, json) => {
+    try {
+      if (/properties\/getAll|getAllInfoById/i.test(u.pathname)) return; // lista de anúncios não traz saldo
+      const s = achaSaldo(json);
+      if (s.saldo !== undefined) window.postMessage({ __fisgueiCredito: 1, saldo: s.saldo, plano: s.plano ?? null, chave: s.chave, url: u.pathname }, location.origin);
+    } catch {}
+  };
   const repassa = (url, pedido, texto) => {
     try {
       const u = new URL(url, location.href);
-      if (!/router\.fisgar\.com\.br$/i.test(u.hostname) || !INTERESSA.test(u.pathname)) return;
+      if (!/router\.fisgar\.com\.br$/i.test(u.hostname)) return;
+      if (!INTERESSA.test(u.pathname)) { try { olhaSaldo(u, JSON.parse(texto)); } catch {} return; }
       const json = JSON.parse(texto);
+      olhaSaldo(u, json);
       window.postMessage({ __fisguei: 1, url: u.origin + u.pathname, pedido: typeof pedido === 'string' ? pedido : null, json }, location.origin);
     } catch { /* resposta que não é JSON: ignora */ }
   };
@@ -55,6 +82,7 @@
     let j = null; try { j = await r.json(); } catch {}
     if (r.status === 401 || r.status === 403) { const e = new Error('O Fisgar pediu login de novo.'); e.volta = true; throw e; }
     if (!r.ok) throw new Error((j && (j.message || j.mensagem)) || `Fisgar respondeu ${r.status}`);
+    if (j) olhaSaldo(new URL(API + caminho), j);
     return j;
   }
   function enderecoDaPessoa(p, key) {

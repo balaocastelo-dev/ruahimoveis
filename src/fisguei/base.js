@@ -66,21 +66,39 @@ const enviadasHoje = () => one(`SELECT count(*) AS n FROM fisguei_contatos WHERE
 // ---------- gravar o que chega do Fisgar ----------
 const TIPOS_PRIORIDADE = (relacao) => (/propriet/i.test(relacao || '') ? 0 : /conjuge|cônjuge|morador|residente/i.test(relacao || '') ? 1 : 2);
 
+// Data mais antiga entre as que temos (AAAA-MM-DD)
+const maisAntiga = (...ds) => ds.filter((d) => d && /^\d{4}-\d{2}-\d{2}/.test(d)).map((d) => d.slice(0, 10)).sort()[0] || null;
 function salvaAnuncio(a) {
   if (!a || !a.fisgar_id) return null;
   const campos = ['portal', 'link', 'titulo', 'tipo', 'negocio', 'finalidade', 'logradouro', 'numero', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'lat', 'lon',
     'valor', 'valor_condominio', 'iptu', 'quartos', 'suites', 'banheiros', 'vagas', 'area_util', 'area_total', 'anunciante_nome', 'anunciante_tipo', 'publicado_em', 'fotos'];
   const v = campos.map((k) => (a[k] === undefined || a[k] === '' ? null : k === 'fotos' && Array.isArray(a[k]) ? JSON.stringify(a[k].slice(0, 30)) : a[k]));
-  const ja = one('SELECT id FROM fisguei_anuncios WHERE fisgar_id=?', String(a.fisgar_id));
+  const ja = one('SELECT id, valor, criado_em, anunciado_desde FROM fisguei_anuncios WHERE fisgar_id=?', String(a.fisgar_id));
+  let id;
   if (ja) {
     // atualiza só o que veio preenchido (uma tela do Fisgar traz mais dados que outra)
     const sets = [], ps = [];
     campos.forEach((k, i) => { if (v[i] !== null) { sets.push(`${k}=?`); ps.push(v[i]); } });
     if (sets.length) run(`UPDATE fisguei_anuncios SET ${sets.join(', ')}, atualizado_em=datetime('now','localtime') WHERE id=?`, ...ps, ja.id);
-    return ja.id;
+    id = ja.id;
+    // mudou o preço: guarda no histórico (o primeiro valor conhecido entra com a data em que o anúncio chegou)
+    if (a.valor && ja.valor && Math.abs(a.valor - ja.valor) / ja.valor > 0.004) {
+      if (!one('SELECT 1 AS x FROM fisguei_precos WHERE anuncio_id=? LIMIT 1', id)) run('INSERT INTO fisguei_precos(anuncio_id,valor,em,fonte) VALUES(?,?,?,?)', id, ja.valor, ja.criado_em, 'base');
+      run(`INSERT INTO fisguei_precos(anuncio_id,valor,fonte) VALUES(?,?,'visto')`, id, a.valor);
+    }
+  } else {
+    id = run(`INSERT INTO fisguei_anuncios(fisgar_id,${campos.join(',')}) VALUES(?${',?'.repeat(campos.length)})`, String(a.fisgar_id), ...v).lastInsertRowid;
+    if (a.valor) run(`INSERT INTO fisguei_precos(anuncio_id,valor,fonte) VALUES(?,?,'visto')`, id, a.valor);
   }
-  const r = run(`INSERT INTO fisguei_anuncios(fisgar_id,${campos.join(',')}) VALUES(?${',?'.repeat(campos.length)})`, String(a.fisgar_id), ...v);
-  return r.lastInsertRowid;
+  // preços antigos que o próprio anúncio informa (quando o portal guarda o histórico)
+  for (const h of Array.isArray(a.historico) ? a.historico.slice(0, 30) : []) {
+    if (!h || !h.valor || !h.em) continue;
+    if (!one('SELECT 1 AS x FROM fisguei_precos WHERE anuncio_id=? AND valor=? AND substr(em,1,10)=?', id, h.valor, h.em.slice(0, 10)))
+      run(`INSERT INTO fisguei_precos(anuncio_id,valor,em,fonte) VALUES(?,?,?,'fisgar')`, id, h.valor, h.em.slice(0, 10) + ' 12:00:00');
+  }
+  const desde = maisAntiga(ja && ja.anunciado_desde, a.desde, a.publicado_em);
+  if (desde && desde !== (ja && ja.anunciado_desde)) run('UPDATE fisguei_anuncios SET anunciado_desde=? WHERE id=?', desde, id);
+  return id;
 }
 
 function salvaPessoa(anuncioId, p) {
