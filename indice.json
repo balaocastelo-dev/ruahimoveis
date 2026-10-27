@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0032",
+      "slug": "casa-3-quartos-suite-3-vagas-taquaral-campinas-ca0032",
+      "titulo": "Casa térrea de 3 quartos com suíte e 3 vagas no Taquaral",
+      "resumo": "Casa de 3 quartos, uma suíte, no Taquaral, em Campinas: 128,25 m² de área útil, garagem para 3 carros, escritório, lavanderia e área externa coberta.",
+      "capa": {
+        "foto": 1876,
+        "alt": "Fachada com muro verde e portão de garagem branco, numa rua asfaltada"
+      },
+      "versao": "37b3d68293b5",
+      "publicadoEm": "2026-10-27T03:21:19.985Z"
+    },
+    {
+      "codigo": "TE0008",
+      "slug": "terreno-378m2-alto-taquaral-campinas-te0008",
+      "titulo": "Terreno de 378 m² em rua residencial do Alto Taquaral",
+      "resumo": "Terreno de 378 m² no Alto Taquaral, em Campinas, numa rua asfaltada de casas, com lote comprido, gramado e cercado na frente, pronto para receber um projeto.",
+      "capa": {
+        "foto": 1888,
+        "alt": "Terreno gramado com cerca de mourões, entre duas casas, de frente para a rua asfaltada"
+      },
+      "versao": "01e6fce30a5b",
+      "publicadoEm": "2026-10-27T03:21:19.978Z"
+    },
+    {
       "codigo": "TE0009",
       "slug": "terreno-plano-360m2-vila-brandina-campinas-te0009",
       "titulo": "Terreno plano de 360 m² na Vila Brandina, Campinas",
@@ -158,5 +182,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T01:21:26.994Z"
+  "atualizadoEm": "2026-10-27T03:21:19.985Z"
 }

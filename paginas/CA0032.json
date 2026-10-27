@@ -1,0 +1,209 @@
+{
+  "codigo": "CA0032",
+  "slug": "casa-3-quartos-suite-3-vagas-taquaral-campinas-ca0032",
+  "titulo": "Casa térrea de 3 quartos com suíte e 3 vagas no Taquaral",
+  "resumo": "Casa de 3 quartos, uma suíte, no Taquaral, em Campinas: 128,25 m² de área útil, garagem para 3 carros, escritório, lavanderia e área externa coberta.",
+  "capa": {
+    "foto": 1876,
+    "alt": "Fachada com muro verde e portão de garagem branco, numa rua asfaltada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no Taquaral, em Campinas. A ficha informa 3 quartos, sendo uma suíte, 3 vagas, 128,25 m² de área útil e 208 m² de área total. O anúncio descreve sala integrada à copa, cozinha, escritório, lavanderia independente, corredor lateral e um banheiro de apoio na área externa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o anúncio, ela serve tanto para morar quanto para montar um negócio. As fotos mostram paredes externas verdes, piso que imita madeira no interior, frente envidraçada e bastante área coberta do lado de fora."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos, sendo uma suíte, e 128,25 m² de área útil",
+        "Garagem para 3 carros com portão eletrônico, segundo o anúncio",
+        "Frente com fechamento de vidro e base de pedra",
+        "Escritório para trabalho em casa ou atendimento",
+        "Lavanderia com cobertura translúcida e varal de teto",
+        "Área externa coberta com pia e banheiro de apoio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A frente e a garagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Da rua, você vê um muro verde com portão de garagem branco. Do lado de dentro, a garagem tem piso de pedra estampada e de tijolinho, cobertura translúcida em parte do espaço e um portão de metal. A ficha informa 3 vagas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada da casa tem um fechamento de vidro do piso até perto do teto, sobre uma base revestida de pedra, com degraus de acesso. Ao lado, uma porta azul leva ao corredor lateral. Uma das paredes da garagem tem revestimento de pedra cinza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1884,
+          "legenda": "Frente da casa com fechamento de vidro, base de pedra e degraus"
+        },
+        {
+          "foto": 1878,
+          "legenda": "Garagem coberta com piso de tijolinho e portão de metal"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os ambientes internos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos do interior mostram paredes brancas, moldura de gesso no encontro com o teto e piso claro que imita madeira. As portas são de madeira escura, uma delas com vidros. Um corredor com o mesmo piso dá acesso aos quartos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos banheiros tem paredes de azulejo branco com faixa decorada, box de vidro fosco e bancada de pedra esverdeada com cuba de apoio. A cozinha e os quartos não aparecem nas fotos: vale conhecer pessoalmente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1886,
+          "legenda": "Corredor interno com piso que imita madeira e portas escuras"
+        },
+        {
+          "foto": 1887,
+          "legenda": "Banheiro com box de vidro fosco e bancada de pedra"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lavanderia e área externa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A lavanderia fica numa área com cobertura translúcida, paredes verdes e piso de cerâmica estampada. Tem tanque, varal de teto, espaço para a máquina de lavar e painéis de vidro que fecham o ambiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos fundos há uma área coberta com telhado aparente sobre vigas e pilar de madeira, uma bancada com pia e uma parede revestida de azulejo branco. Ali fica o banheiro de apoio, com pia de coluna e vaso sanitário."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para famílias que querem casa térrea com garagem para 3 carros no Taquaral, e para quem precisa de um escritório em casa. O anúncio também aponta o uso comercial, como consultório ou pequeno negócio. Confira antes se a atividade que você tem em mente é permitida para o imóvel."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Como são a cozinha e os quartos, se a área construída está toda averbada na matrícula e se o uso comercial é permitido no endereço.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1876,
+      "legenda": "Fachada com muro verde e portão de garagem branco",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1882,
+      "legenda": "Frente da casa com área coberta, janelas de vidro e porta azul lateral",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1884,
+      "legenda": "Fechamento de vidro sobre base de pedra, com degraus de acesso",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1878,
+      "legenda": "Garagem com piso de tijolinho, cobertura translúcida e portão de metal",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1883,
+      "legenda": "Ambiente interno com piso que imita madeira, moldura de gesso e porta escura",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1886,
+      "legenda": "Corredor interno com piso claro e portas de madeira escura",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1887,
+      "legenda": "Banheiro com azulejo branco, box de vidro fosco e bancada de pedra",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1879,
+      "legenda": "Lavanderia com tanque, varal de teto e cobertura translúcida",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1880,
+      "legenda": "Área de serviço com painéis de vidro, porta gradeada e espaço da lavadora",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1881,
+      "legenda": "Área coberta com vigas e pilar de madeira e bancada com pia",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1885,
+      "legenda": "Área dos fundos com telhado aparente, parede de azulejo e banheiro ao fundo",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1877,
+      "legenda": "Banheiro de apoio com pia de coluna e vaso sanitário",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas a casa tem?",
+      "resposta": "A ficha informa 3 quartos, sendo uma suíte, e 3 vagas de garagem."
+    },
+    {
+      "pergunta": "Qual é o tamanho da casa?",
+      "resposta": "São 128,25 m² de área útil num terreno de 208 m² de área total, segundo a ficha."
+    },
+    {
+      "pergunta": "A casa tem escritório?",
+      "resposta": "Sim, segundo o anúncio, que descreve um escritório para home office ou atendimento. Ele não aparece claramente nas fotos."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea no Taquaral, em Campinas: 3 quartos com suíte, 128,25 m² de área útil e garagem para 3 carros. Tem escritório, frente envidraçada, lavanderia coberta e área externa com pia e banheiro de apoio. Serve para morar ou para trabalhar, segundo o anúncio. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "casacampinas",
+      "taquaral",
+      "casaavenda",
+      "casaterrea",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "37b3d68293b5",
+  "publicadoEm": "2026-10-27T03:21:19.985Z"
+}

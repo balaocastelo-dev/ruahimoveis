@@ -1,0 +1,115 @@
+{
+  "codigo": "TE0008",
+  "slug": "terreno-378m2-alto-taquaral-campinas-te0008",
+  "titulo": "Terreno de 378 m² em rua residencial do Alto Taquaral",
+  "resumo": "Terreno de 378 m² no Alto Taquaral, em Campinas, numa rua asfaltada de casas, com lote comprido, gramado e cercado na frente, pronto para receber um projeto.",
+  "capa": {
+    "foto": 1888,
+    "alt": "Terreno gramado com cerca de mourões, entre duas casas, de frente para a rua asfaltada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno fica no Alto Taquaral, em Campinas. A ficha informa 378 m² de área total. Ele está vazio, coberto de grama e mato baixo, com calçada na frente e casas dos dois lados. É uma opção para quem quer construir a própria casa num bairro já formado, em vez de comprar pronta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As duas fotos mostram o lote por ângulos diferentes: uma da rua, outra do alto. Juntas, dão uma boa ideia do formato do terreno e da vizinhança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "378 m² de área total, segundo a ficha",
+        "Lote comprido, com a frente voltada para rua asfaltada",
+        "Frente cercada com mourões de madeira e tela",
+        "Vizinhança de casas térreas e sobrados, várias com piscina",
+        "Calçada com faixa gramada e árvores na rua"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Da rua, você vê um terreno gramado, com arbustos ao fundo e uma cerca de mourões de madeira e tela separando o lote da calçada. O chão parece subir um pouco a partir da calçada, mas a inclinação real vale conferir no local. De um lado há um muro branco; do outro, um sobrado com telhado de cerâmica e portão de garagem escuro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na foto aérea, o lote aparece marcado em vermelho: é um retângulo estreito e comprido, que vai da calçada até o fundo da quadra, sem construção nenhuma. Isso deixa o projeto livre, do jeito que você quiser."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A vizinhança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno que aparece nas fotos é residencial. A quadra tem casas de telhado de cerâmica, sobrados e algumas construções mais novas, de laje. Vários quintais vizinhos têm piscina. A rua é asfaltada, tem calçada dos dois lados e árvores plantadas junto ao meio-fio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O anúncio cita fácil acesso ao Shopping Dom Pedro, a universidades, supermercados, escolas e às principais rodovias da região."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer construir uma casa num bairro residencial do Alto Taquaral, com vizinhança já consolidada. O lote é estreito e comprido, o que pede um projeto que aproveite a profundidade. Antes de fechar negócio, vale ver o terreno pessoalmente e conversar com um arquiteto sobre o que dá para construir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "As medidas de frente e fundo na matrícula, se a documentação está em dia, a inclinação do lote e as regras de construção da prefeitura para o bairro.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1888,
+      "legenda": "Terreno gramado com cerca de mourões, visto da rua, entre um muro branco e um sobrado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1889,
+      "legenda": "Vista aérea com o lote estreito marcado em vermelho, entre casas com piscina",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "A ficha informa 378 m² de área total. Na foto aérea, o lote é estreito e comprido."
+    },
+    {
+      "pergunta": "O terreno tem alguma construção?",
+      "resposta": "Não. As fotos mostram o lote vazio, coberto de grama e mato baixo, com cerca de mourões e tela na frente."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 378 m² no Alto Taquaral, em Campinas. Lote comprido e vazio, numa rua asfaltada de casas e sobrados, com a vizinhança já formada. Bom para quem quer construir a casa do seu jeito. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "altotaquaral",
+      "taquaral",
+      "terrenoavenda",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "01e6fce30a5b",
+  "publicadoEm": "2026-10-27T03:21:19.978Z"
+}
