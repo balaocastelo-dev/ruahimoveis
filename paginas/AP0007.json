@@ -1,0 +1,205 @@
+{
+  "codigo": "AP0007",
+  "slug": "apartamento-4-quartos-suite-centro-campinas-ap0007",
+  "titulo": "Apartamento de 4 quartos com suíte no Centro de Campinas",
+  "resumo": "Apartamento de 147 m² no Centro de Campinas, região do Bosque: 4 quartos com suíte, sacada com rede de proteção, armários embutidos e duas vagas.",
+  "capa": {
+    "foto": 1684,
+    "alt": "Sala com parede texturizada amarela, ar-condicionado e porta de vidro para a sacada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Centro de Campinas, na região do Bosque, segundo o anúncio. São 147 m² de área útil com 4 quartos, sendo uma suíte, e duas vagas de garagem, de acordo com a ficha. O anúncio informa três banheiros. É um imóvel para quem precisa de espaço: uma família grande ou quem quer reservar um dos quartos para escritório."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o apartamento vazio, com piso de cerâmica clara na sala e na cozinha e piso laminado amadeirado nos quartos. Quase todos os quartos já têm armários embutidos de madeira, e a sala abre para uma sacada protegida por rede, de onde se veem prédios e árvores do bairro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "147 m² de área útil",
+        "4 quartos, sendo uma suíte",
+        "Duas vagas de garagem, segundo a ficha",
+        "Armários embutidos nos quartos e na cozinha",
+        "Sala com ar-condicionado e sacada com rede de proteção",
+        "Região do Bosque, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e sacada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala é comprida, com piso de cerâmica clara, moldura de gesso no teto e uma parede com textura amarela. Há um ar-condicionado do tipo split sobre a porta da sacada, além de trilhos de spots e um lustre. A porta de vidro com moldura vermelha leva à sacada, que tem piso cerâmico, forro de madeira, guarda-corpo cinza e rede de proteção em toda a abertura."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1685,
+          "legenda": "Sacada com forro de madeira, guarda-corpo e rede de proteção"
+        },
+        {
+          "foto": 1686,
+          "legenda": "Vista da sacada para prédios e árvores do bairro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem armários claros em cima e embaixo, alguns com portas de vidro, e um nicho para garrafas. A bancada em L é de granito, com cuba de inox, e as paredes são revestidas de azulejo claro até o teto. Na foto aparecem um cooktop e um forno embutidos sob a bancada, além de uma coifa sobre o fogão. Vale confirmar com o corretor o que fica no imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos e os banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso laminado amadeirado e moldura de gesso no teto. Um deles tem uma parede inteira de armários de madeira e ventilador de teto; outro combina guarda-roupa embutido com uma bancada de estudo e armário aéreo, bom para home office. Em um dos quartos, uma porta leva direto a um banheiro com box de vidro, o que indica a suíte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um dos banheiros tem bancada longa de granito com gabinete branco, espelho com armário e box de vidro. A área de banho é revestida de porcelanato cinza com uma faixa de pastilhas e tem dois chuveiros."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1692,
+          "legenda": "Quarto com guarda-roupa embutido e bancada de estudo"
+        },
+        {
+          "foto": 1691,
+          "legenda": "Banheiro com bancada longa de granito e box de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha coloca o imóvel no Centro de Campinas, e o anúncio fala em região do Bosque, com comércio, serviços, escolas, supermercados e farmácias por perto e acesso às principais vias da cidade. O anúncio também cita condomínio fechado; as fotos não mostram as áreas comuns do prédio."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família que precisa de quatro quartos e duas vagas e quer morar perto do centro, num apartamento que já vem com armários. O acabamento é de alguns anos atrás: quem gosta de deixar tudo do seu jeito pode planejar uma atualização com calma."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio, o que o prédio oferece de área comum, se as duas vagas são fixas e cobertas, e quais móveis e eletrodomésticos ficam no apartamento.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1684,
+      "legenda": "Sala com parede texturizada amarela, ar-condicionado e porta para a sacada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1685,
+      "legenda": "Sacada com forro de madeira, guarda-corpo e rede de proteção",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1686,
+      "legenda": "Vista da sacada para prédios e árvores do bairro",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1683,
+      "legenda": "Cozinha com armários claros, bancada de granito em L e cuba de inox",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1687,
+      "legenda": "Quarto com parede de armários de madeira e ventilador de teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1688,
+      "legenda": "Quarto com porta para banheiro com box de vidro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1689,
+      "legenda": "Quarto com guarda-roupa embutido e portas para o corredor",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1692,
+      "legenda": "Quarto com guarda-roupa embutido, bancada de estudo e armário aéreo",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1693,
+      "legenda": "Quarto com armários do piso ao teto e ventilador de teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1691,
+      "legenda": "Banheiro com bancada longa de granito, gabinete e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1690,
+      "legenda": "Área de banho com porcelanato cinza, faixa de pastilhas e dois chuveiros",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas tem o apartamento?",
+      "resposta": "A ficha informa 4 quartos, sendo uma suíte, e duas vagas de garagem, em 147 m² de área útil. O anúncio fala em três banheiros."
+    },
+    {
+      "pergunta": "Os quartos têm armários?",
+      "resposta": "Sim. As fotos mostram armários embutidos de madeira nos quartos, e um deles tem também uma bancada de estudo com armário aéreo."
+    },
+    {
+      "pergunta": "O apartamento tem sacada?",
+      "resposta": "Sim. A sala abre para uma sacada com forro de madeira, guarda-corpo e rede de proteção."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 147 m² no Centro de Campinas, região do Bosque: 4 quartos com suíte, duas vagas, sala com ar-condicionado e sacada com rede de proteção. Os quartos já têm armários embutidos, e um deles tem bancada para home office. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "centrocampinas",
+      "bosquecampinas",
+      "quatroquartos",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "7f315d457fa6",
+  "publicadoEm": "2026-10-27T15:28:40.420Z"
+}

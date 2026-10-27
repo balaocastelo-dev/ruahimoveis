@@ -1,0 +1,115 @@
+{
+  "codigo": "CA0010",
+  "slug": "casa-3-quartos-tijolinho-jardim-bom-retiro-campinas-ca0010",
+  "titulo": "Casa térrea de 3 quartos no Jardim Bom Retiro, em Campinas",
+  "resumo": "Casa de 3 quartos no Jardim Bom Retiro, em Campinas: 177,36 m² construídos em terreno de 256,58 m², fachada de tijolinho aparente e garagem coberta.",
+  "capa": {
+    "foto": 1681,
+    "alt": "Fachada de tijolinho aparente com portões brancos de grade e árvore na calçada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa fica no Jardim Bom Retiro, em Campinas. A ficha informa 3 quartos, 177,36 m² de área construída e um terreno de 256,58 m². O anúncio acrescenta uma frente de 11 metros, garagem coberta, cozinha, área de serviço e um banheiro. É uma opção para quem quer sair do apartamento e ter uma casa de rua num bairro já formado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As duas fotos do anúncio mostram a frente do imóvel. Por dentro, ainda não há fotos: o que se sabe dos cômodos vem da ficha e do anúncio, e a distribuição dos ambientes você confere na visita."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos, segundo a ficha",
+        "177,36 m² construídos em terreno de 256,58 m²",
+        "Fachada de tijolinho aparente",
+        "Frente de 11 metros e garagem coberta, segundo o anúncio",
+        "Casa térrea com recuo fechado por grade"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A fachada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa é térrea, com telhado de duas águas e fachada de tijolinho aparente em tom alaranjado. As janelas têm arco no alto e moldura branca, e um toldo cobre a parte da frente. Na entrada, um recuo com piso cerâmico é fechado por grade branca com detalhes em arabesco, dividida em portões. À direita, um arco branco marca a passagem coberta que, pelo anúncio, é a garagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pilares laterais são pintados de verde-claro e reúnem a caixa de correio e o interfone. A calçada é de bloquete, com uma árvore grande em frente à casa que faz sombra na fachada."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por dentro e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela ficha, são 3 quartos em 177,36 m² construídos. O anúncio cita cozinha, área de serviço e um banheiro, e descreve a construção como sólida. Como as fotos não mostram o interior, vale levar uma lista do que você precisa e conferir cada cômodo na visita. O anúncio diz que a região tem acesso fácil a comércio, serviços, escolas e a vias importantes de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura uma casa térrea, sem escadas, com garagem e um terreno que vai além da área construída. Também pode interessar a quem quer reformar o interior ao seu gosto mantendo a fachada de tijolinho."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quantos carros cabem na garagem, se há quintal nos fundos, a situação da documentação e se a casa passou por reformas recentes.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1681,
+      "legenda": "Fachada de tijolinho aparente com portões brancos de grade e árvore na calçada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1682,
+      "legenda": "Frente da casa vista de lado, com janelas em arco e a entrada coberta da garagem",
+      "ambiente": "fachada"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos tem a casa?",
+      "resposta": "A ficha informa 3 quartos, em 177,36 m² de área construída sobre um terreno de 256,58 m²."
+    },
+    {
+      "pergunta": "A casa tem garagem?",
+      "resposta": "Sim. O anúncio informa garagem coberta, e as fotos mostram a entrada em arco ao lado da fachada. Pergunte ao corretor quantos carros cabem."
+    },
+    {
+      "pergunta": "Há fotos do interior?",
+      "resposta": "Ainda não. As fotos mostram só a fachada; o interior pode ser conhecido na visita."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea de 3 quartos no Jardim Bom Retiro, em Campinas: 177,36 m² construídos em terreno de 256,58 m², fachada de tijolinho aparente, frente de 11 metros e garagem coberta. Quer conhecer por dentro? Chame a RUAH pelo link da bio e agende sua visita.",
+    "hashtags": [
+      "casacampinas",
+      "jardimbomretiro",
+      "casaterrea",
+      "imoveiscampinas",
+      "casaavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "8595e03d6d60",
+  "publicadoEm": "2026-10-27T15:28:40.426Z"
+}

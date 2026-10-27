@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0010",
+      "slug": "casa-3-quartos-tijolinho-jardim-bom-retiro-campinas-ca0010",
+      "titulo": "Casa térrea de 3 quartos no Jardim Bom Retiro, em Campinas",
+      "resumo": "Casa de 3 quartos no Jardim Bom Retiro, em Campinas: 177,36 m² construídos em terreno de 256,58 m², fachada de tijolinho aparente e garagem coberta.",
+      "capa": {
+        "foto": 1681,
+        "alt": "Fachada de tijolinho aparente com portões brancos de grade e árvore na calçada"
+      },
+      "versao": "8595e03d6d60",
+      "publicadoEm": "2026-10-27T15:28:40.426Z"
+    },
+    {
+      "codigo": "AP0007",
+      "slug": "apartamento-4-quartos-suite-centro-campinas-ap0007",
+      "titulo": "Apartamento de 4 quartos com suíte no Centro de Campinas",
+      "resumo": "Apartamento de 147 m² no Centro de Campinas, região do Bosque: 4 quartos com suíte, sacada com rede de proteção, armários embutidos e duas vagas.",
+      "capa": {
+        "foto": 1684,
+        "alt": "Sala com parede texturizada amarela, ar-condicionado e porta de vidro para a sacada"
+      },
+      "versao": "7f315d457fa6",
+      "publicadoEm": "2026-10-27T15:28:40.420Z"
+    },
+    {
       "codigo": "TE0007",
       "slug": "terreno-363m2-jardim-lumen-christi-campinas-te0007",
       "titulo": "Terreno de 363,53 m² no Jardim Lumen Christi, em Campinas",
@@ -302,5 +326,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T13:32:04.628Z"
+  "atualizadoEm": "2026-10-27T15:28:40.426Z"
 }
