@@ -1,0 +1,328 @@
+{
+  "slug": "parque-jambeiro",
+  "titulo": "Parque Jambeiro, Campinas: como é morar no bairro da antiga fazenda",
+  "resumo": "Guia do Parque Jambeiro, em Campinas: a Fazenda Jambeiro que deu origem ao bairro, a lagoa, o Parque das Águas, escolas, casas e acessos na região Sul.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "A lagoa do Parque Jambeiro, com casas do bairro ao fundo",
+      "alt": "Lagoa cercada de vegetação rasteira e plantas aquáticas, com morros e casas ao longe",
+      "commons": "File:Lagoa no Parque Jambeiro - panoramio (2).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Ruína da casa-sede da antiga Fazenda Jambeiro, tombada pelo Condepacc",
+      "alt": "Parede de casarão antigo em ruínas, coberta de pichações, com janelas sem esquadria e árvores por cima",
+      "commons": "File:Casarão do Parque Jambeiro - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Casas térreas e sobrados do Parque Jambeiro vistos do alto",
+      "alt": "Vista de cima de um bairro de casas com telhados de cerâmica, árvores e uma rua que sobe o morro",
+      "commons": "File:Parque Jambeiro - panoramio - enioprado.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Esquina residencial do Parque Jambeiro, com casas de telhado colonial",
+      "alt": "Casa térrea de telhado de cerâmica com jardim na frente, em uma esquina de rua asfaltada",
+      "commons": "File:Parque Jambeiro - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Rua Dr. Helcio Lizzardi, uma das ruas em declive do bairro",
+      "alt": "Rua asfaltada em descida, com casas à esquerda, mato à direita e um carro antigo estacionado",
+      "commons": "File:Rua Helcio Lizzardi - Parque Jambeiro - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Vertedouro da lagoa do Parque Jambeiro",
+      "alt": "Pequena barragem de madeira e concreto com água escorrendo, e a lagoa coberta de plantas aquáticas atrás",
+      "commons": "File:Lagoa no Parque Jambeiro - panoramio (1).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Entrada do Parque das Águas, ligado à Sanasa",
+      "alt": "Rua asfaltada em frente à portaria de um parque, com placa redonda, palmeiras e casas no morro ao fundo",
+      "commons": "File:Parque das Águas - Parque Jambeiro - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Vista do alto das casas da região, com uma lagoa e áreas verdes ao fundo",
+      "alt": "Panorama de bairro de casas baixas com telhados laranja, uma avenida curva, uma lagoa e campos verdes ao fundo",
+      "commons": "File:Parque São Martinho-Parque Jambeiro - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Jambeiro** é um bairro residencial da região Sul de Campinas, formado por casas térreas, sobrados e alguns condomínios pequenos. Nasceu do loteamento das terras da antiga **Fazenda Jambeiro**, cafezal do século XIX cuja casa-sede, hoje em ruínas, é tombada pelo patrimônio municipal. Tem uma lagoa no meio do bairro e fica colado ao **Parque das Águas**, uma das áreas verdes públicas mais conhecidas da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Parque Jambeiro oferece ritmo de bairro de casas, com ruas em aclive e declive, comércio de vizinhança e espaço verde por perto. Este guia reúne a história da fazenda, o perfil dos imóveis, o lazer, as escolas e os acessos, com base em fontes públicas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região Sul de Campinas, de casas, sobrados e condomínios horizontais",
+        "O nome vem da Fazenda Jambeiro, fundada por volta de 1823 e loteada no fim dos anos 1970",
+        "A casa-sede da fazenda, de 1897, foi tombada pelo Condepacc a pedido dos moradores",
+        "Tem uma lagoa no meio do bairro e fica ao lado do Parque das Águas, inaugurado em 2007",
+        "Abriga a Escola Estadual Dr. Disnei Francisco Scornaienchi e o CEI Parque Jambeiro",
+        "Fica a pouco mais de 7 km do centro histórico, perto da Rodovia Anhanguera"
+      ],
+      "titulo": "O Parque Jambeiro em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Parque Jambeiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro herdou o nome da **Fazenda Jambeiro**. A propriedade se formou em 1823, com o casamento de Thereza Michelina Pompeu do Amaral e Antonio Pompeu de Camargo, em terras de uma antiga sesmaria. No começo, a fazenda plantava cana-de-açúcar; a partir da década de 1840, passou ao café, como boa parte das fazendas de Campinas na época."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O auge veio com **Herculano Pompeu de Camargo**, que assumiu a administração em 1885. Ele chegou a cerca de 90 mil pés de café, trocou a mão de obra escravizada por colonos europeus e mandou construir, em 1897, a casa-sede que existe até hoje. Em 1907, a fazenda foi a leilão e passou por vários donos ao longo do século XX; nos anos 1950, chegou a ser usada para plantar algodão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A virada para bairro aconteceu nas mãos da família Silva Prado. Segundo pesquisa do historiador Marcelo Gaudio Augusto, a fazenda foi abandonada no fim da década de 1970, e Maria Cecília da Silva Prado contratou uma construtora para dividir as terras em lotes. A ocupação residencial começou por volta de 1979, com moradores vindos em boa parte de outras regiões, os migrantes que formaram o bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O casarão tombado da Fazenda Jambeiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa-sede de 1897 é o principal marco histórico do bairro. Em junho de 1989, o **Condepacc**, conselho de patrimônio cultural de Campinas, abriu o processo de tombamento, que recebeu um abaixo-assinado de 148 moradores pedindo a proteção do conjunto. A área tombada foi doada à Prefeitura em 1998."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O estado de conservação, porém, é ruim. Os estudos sobre a fazenda descrevem o casarão como ruína: telhados caídos, demolições parciais, uma senzala da qual restou só uma parede de taipa e uma capela que foi derrubada em 2010. Ao longo dos anos surgiram propostas de uso, como centro cultural, museu e escola, sem que nenhuma fosse concluída."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A única parte do plano paisagístico que saiu do papel foi uma **praça de esportes**, inaugurada em junho de 2010 no antigo pomar da fazenda, ao lado de um lago junto à sede. Para quem mora no bairro, o casarão funciona como lembrança visível de que ali, há pouco mais de um século, havia um cafezal."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Circula a história de que Dom Pedro II teria se hospedado no casarão. Não é possível: a casa-sede atual é de 1897, e o imperador morreu em 1891. Thereza Michelina recebeu o casal imperial em 1875, mas num sobrado dela no centro de Campinas.",
+      "titulo": "Curiosidade"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque Jambeiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Jambeiro é, antes de tudo, um bairro de **casas**. As ruas têm residências térreas e sobrados, muitas com garagem na frente e quintal, e o relevo é ondulado, com trechos de subida e descida, como a Rua Dr. Helcio Lizzardi. Os portais de anúncios mostram sobretudo casas e sobrados à venda, além de alguns apartamentos de dois quartos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há poucos prédios. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de uma dúzia de condomínios no bairro, a maioria horizontal, com perto de 430 unidades no total e nenhum edifício acima de cinco andares. Entre eles estão os residenciais da série Novo Horizonte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia é de bairro: padarias, mercados, lanchonetes e pizzarias espalhados pelas ruas principais. A base de pontos de interesse usada pela RUAH registra cerca de meia dúzia de mercados e padarias num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista esses lugares com o tempo a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A lagoa e o Parque das Águas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No meio do bairro fica a **lagoa do Parque Jambeiro**, cadastrada como área de lazer municipal, junto à Rua Eduardo Monkecevic. É um espelho d'água cercado de vegetação, com um pequeno vertedouro, e faz parte da paisagem de quem mora nas ruas em volta."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande vizinho verde é o **Parque das Águas**, inaugurado em 8 de dezembro de 2007 e ligado à Sanasa, a empresa de água e esgoto de Campinas. O endereço é a Avenida Paulo Corrêa Viana, e o parque abre todos os dias, das 6h às 20h. São cerca de 295 mil m² com mata nativa, dois lagos, pista de caminhada e corrida, playground, chafariz infantil, academias ao ar livre, quiosques e lanchonete."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro dele funciona o **Centro de Conhecimento da Água**, com exposição permanente, o museu e a biblioteca da Sanasa. Ali também está o primeiro bebedouro público de água potável de Campinas, tombado pelo Condepacc. Em dezembro de 2023 e em 2024, o parque recebeu concertos gratuitos da Orquestra Sinfônica Municipal. Capivaras, aves, tartarugas e saguis são vistos com frequência."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma reportagem do Correio da Manhã de 2026 registrou também as queixas: em alguns períodos, frequentadores relatam água turva nas lagoas e acúmulo de resíduos, e a conservação dos equipamentos é apontada como ponto a melhorar. Vale passar por lá antes de decidir, para ver como está."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas no Parque Jambeiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem escola pública do infantil ao ensino médio por perto. A **Escola Estadual Dr. Disnei Francisco Scornaienchi** fica na Rua Edmundo Vosgrau, no próprio Parque Jambeiro, e pertence à Diretoria de Ensino Campinas Oeste."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para os pequenos, o **CEI Parque Jambeiro**, da rede municipal, atende creche e pré-escola em período diurno, na Rua Claudio Geraldo de Godoy. Segundo o Censo Escolar 2024, a unidade tem biblioteca com sala de leitura, parquinho, quadra descoberta, pátio e salas acessíveis. A lista de escolas mais próximas, com distâncias, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos e vizinhança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Jambeiro fica a pouco mais de 7 km da Praça Bento Quirino, no centro histórico de Campinas, e as terras da antiga fazenda margeiam a **Rodovia Anhanguera**, o que facilita a saída para São Paulo e para o interior. A Avenida Paulo Corrêa Viana, onde fica a entrada do Parque das Águas, é uma das vias de referência da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os vizinhos está o **Parque Prado**, bairro com quem o Jambeiro divide o entorno do Parque das Águas, numa região de expansão imobiliária no quadrante Sul da cidade. Para trajetos diários até o Centro ou outras regiões, vale testar o percurso de carro e de ônibus no horário em que você vai fazer o trajeto antes de escolher o imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque Jambeiro faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma combinar com quem quer **casa com quintal** ou condomínio horizontal, gosta de ter parque e lagoa por perto para caminhar e não precisa estar no Centro todos os dias. Famílias com crianças pequenas encontram escola estadual e creche municipal dentro do bairro, e quem pega estrada com frequência tem a Anhanguera ao lado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também são claros: há poucos prédios, então quem procura apartamento com lazer completo tem menos opções; o relevo tem ladeiras; e a distância até o Centro pede carro ou ônibus. Dentro do bairro, a posição da casa em relação à lagoa, ao parque e às ruas de mais movimento muda bastante a experiência."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor sobre a documentação da casa e eventuais ampliações averbadas, a inclinação do terreno, a distância a pé até a escola e o parque, e, no caso de condomínio, o valor da taxa e o que ela inclui.",
+      "titulo": "O que conferir antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque Jambeiro, em Campinas?",
+      "resposta": "Na região Sul da cidade, a pouco mais de 7 km do centro histórico, perto da Rodovia Anhanguera e ao lado do Parque das Águas, vizinho do Parque Prado."
+    },
+    {
+      "pergunta": "O Parque Jambeiro é bom para morar?",
+      "resposta": "Para quem quer casa ou condomínio horizontal, com parque e lagoa por perto e escola pública no bairro, é uma opção a considerar. Quem procura apartamento com lazer completo ou precisa ir ao Centro todo dia a pé pode preferir outros bairros."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Parque Jambeiro?",
+      "resposta": "Porque nasceu do loteamento da Fazenda Jambeiro, propriedade de café do século XIX. As terras foram divididas em lotes no fim da década de 1970."
+    },
+    {
+      "pergunta": "O casarão da Fazenda Jambeiro pode ser visitado?",
+      "resposta": "A casa-sede de 1897 é tombada pelo Condepacc e pertence à Prefeitura, mas está em ruínas e não funciona como espaço de visitação. Ao lado dela há uma praça de esportes inaugurada em 2010."
+    },
+    {
+      "pergunta": "Qual é o horário do Parque das Águas?",
+      "resposta": "O parque abre todos os dias, das 6h às 20h, com entrada pela Avenida Paulo Corrêa Viana. É bom confirmar o horário antes de ir, porque pode mudar."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Parque Jambeiro?",
+      "resposta": "A Escola Estadual Dr. Disnei Francisco Scornaienchi, na Rua Edmundo Vosgrau, e o CEI Parque Jambeiro, creche e pré-escola municipal, na Rua Claudio Geraldo de Godoy."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Marcelo Gaudio Augusto, Considerações sobre um patrimônio abandonado: Jambeiro, uma fazenda do século XIX na cidade do século XXI (Revista Confluências Culturais, 2012)",
+      "site": "periodicos.univille.br"
+    },
+    {
+      "nome": "Marcelo Gaudio Augusto, Fazenda Jambeiro: o despertar de um patrimônio abandonado (Projeto História, PUC-SP, 2010)",
+      "site": "revistas.pucsp.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Fazenda Jambeiro e Parque das Águas (Campinas)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, Decreto nº 8.556 de 1985 sobre praça do Parque Jambeiro",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Correio da Manhã, reportagem sobre o Parque das Águas (março de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Visite São Paulo, passeios ao ar livre em Campinas (Parque das Águas)",
+      "site": "visitesaopaulo.com"
+    },
+    {
+      "nome": "Faculdade de Educação da Unicamp, listagem de escolas de Campinas",
+      "site": "fe.unicamp.br"
+    },
+    {
+      "nome": "Escol.as, ficha do CEI Parque Jambeiro (Censo Escolar 2024)",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Bendito Guia, cadastro da Lagoa do Parque Jambeiro",
+      "site": "benditoguia.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque Jambeiro, em Campinas: o bairro que nasceu de uma fazenda de café do século XIX e ainda guarda o casarão de 1897, tombado a pedido dos moradores. Hoje é endereço de casas e sobrados, com lagoa no meio do bairro e o Parque das Águas ao lado. Preparamos um guia com a história, o lazer, as escolas e o que considerar antes de morar lá. Link na bio.",
+    "hashtags": [
+      "parquejambeiro",
+      "campinas",
+      "regiaosul",
+      "parquedasaguas",
+      "morarbem",
+      "guiadebairro",
+      "casaemcampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque Jambeiro, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.588Z"
+}

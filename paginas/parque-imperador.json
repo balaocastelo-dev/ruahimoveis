@@ -1,0 +1,303 @@
+{
+  "slug": "parque-imperador",
+  "titulo": "Parque Imperador, Campinas: como é morar no bairro da Dom Pedro",
+  "resumo": "Guia do Parque Imperador, em Campinas: casas em condomínio, Colégio Photon, Rodovia Dom Pedro I, shoppings, Estação Anhumas e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Locomotiva a vapor na plataforma da Estação Anhumas, sede da ABPF em Campinas",
+      "alt": "Locomotiva preta com frente vermelha parada ao lado de uma estação amarela com o letreiro Anhumas",
+      "commons": "File:Maria Fumaça - panoramio (4).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Locomotivas preservadas sob a cobertura da Estação Anhumas",
+      "alt": "Fileira de locomotivas a vapor pretas, a primeira com o número 215, sob um galpão coberto e árvores ao fundo",
+      "commons": "File:Estação Anhumas, Campinas • Maria Fumaça 215.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Vagões de passageiros de madeira na Estação Anhumas, ponto de partida do passeio",
+      "alt": "Dois vagões de passageiros vinho com janelas amarelas estacionados lado a lado em trilhos sob céu azul",
+      "commons": "File:Estação Anhumas, Campinas • trilhos paralelos à plataforma.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Rodovia Dom Pedro I em Campinas, no sentido da Anhanguera",
+      "alt": "Rodovia de várias pistas com placas verdes suspensas indicando Americana, Limeira, Sorocaba, Jundiaí e São Paulo",
+      "commons": "File:Rodovia Dom Pedro - Sentido Anhanguera - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada do Galleria Shopping, às margens da Rodovia Dom Pedro I",
+      "alt": "Fachada vermelha do Galleria Shopping com palmeiras e um mastro com a bandeira do Brasil na frente",
+      "commons": "File:Shopping galleria campinas.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Fachada do Shopping Iguatemi Campinas, inaugurado em 1980",
+      "alt": "Prédio de shopping com cúpula de vidro e letreiro Iguatemi, com estacionamento cheio de carros na frente",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Imperador** é um bairro residencial da região leste de Campinas, colado à **Rodovia Dom Pedro I** e vizinho do Alphaville Dom Pedro, da Fazenda Santa Cândida e do Jardim Santana. É um bairro tranquilo, de casas, muitas delas em condomínios fechados, com perfil familiar e acesso rápido aos shoppings e às universidades que ficam ao longo da rodovia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este guia reúne o que se sabe com fonte sobre o bairro: como ele surgiu, o tipo de imóvel que predomina, escolas, comércio, acessos e os vizinhos, além de uma seção honesta sobre para quem o Parque Imperador faz sentido."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região leste de Campinas, junto à Rodovia Dom Pedro I (SP-65)",
+        "Loteamento e urbanização começaram nos anos 1980",
+        "Predominam casas, muitas em condomínios fechados de pequeno porte",
+        "O Colégio Photon, de educação infantil e ensino fundamental, fica no bairro",
+        "PUC-Campinas, Facamp e Unicamp ficam a cerca de 10 minutos pela rodovia",
+        "Vizinho do Alphaville Dom Pedro, da Fazenda Santa Cândida e do Jardim Santana"
+      ],
+      "titulo": "O Parque Imperador em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica e como surgiu o Parque Imperador"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Imperador ocupa uma faixa da região leste de Campinas encostada na Rodovia Dom Pedro I, a SP-65, que liga Jacareí a Campinas em 145,5 km e foi inaugurada em novembro de 1972. Fica entre o Loteamento Alphaville Dom Pedro, que tem página própria neste site, e bairros como a Fazenda Santa Cândida e o Jardim Santana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O loteamento e a urbanização da área começaram na década de 1980, segundo o guia de bairros do QuintoAndar, e a ocupação cresceu depressa a partir daí. Diferente de bairros antigos da cidade, o Parque Imperador nasceu já no ritmo da expansão de Campinas para os lados da Dom Pedro, com lotes residenciais e, mais tarde, pequenos condomínios fechados."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque Imperador"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro essencialmente residencial, descrito como tranquilo e voltado para famílias. A maior parte dos imóveis são **casas**, térreas e sobrados, e boa parte delas fica em condomínios fechados. Entre os nomes que aparecem com frequência estão os residenciais **Vila Aster**, **Vila Dália** e **Vila Antúrio**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de dez condomínios no bairro, a maioria de casas e de pequeno porte. Além dos já citados, constam o Jardins de Firenze, o Las Palmas Residence, o Villaggio San Gottardo, o Porto Ville e outros residenciais da série Vila, como Amarilis, Hera e Dalia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas internas têm nomes como **Rua César dos Santos**, **Rua João Duque**, **Rua das Lantanas**, **Rua Thomas Nilsen Júnior**, **Rua Amalia Della Colleta** e **Rua Cinira Fonseca de Oliveira**. Em levantamento com moradores publicado pelo QuintoAndar, quem vive ali destacou ruas bem iluminadas, calçadas largas e um bairro bom para quem tem animais de estimação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As áreas verdes são modestas: o bairro tem pequenas praças, mas não um grande parque. A lista ao vivo desta página mostra as praças, padarias, mercados e restaurantes mais próximos, com o tempo de caminhada."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro, na Rua João Duque, fica o **Colégio Photon**, escola particular em funcionamento desde 1997, com educação infantil e ensino fundamental, incluindo período integral. Segundo o Censo Escolar 2024, a escola tem biblioteca, laboratório de ciências e de informática, quadras cobertas e descobertas, sala de música e ateliê de artes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o ensino superior, a posição junto à Dom Pedro ajuda: **PUC-Campinas**, **Facamp** e **Unicamp** ficam a cerca de 10 minutos de carro pela rodovia, segundo o QuintoAndar. Outras escolas, públicas e particulares, aparecem na seção ao vivo desta página, com a distância a pé."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, mercados e shoppings"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia inclui salões, pet shops, bancos, mercados, farmácias e restaurantes na região. Para compras maiores, há um hipermercado **Carrefour** a cerca de 3 minutos, às margens da Rodovia Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Três shoppings ficam a poucos minutos. O **Galleria Shopping** está no km 131,5 da Dom Pedro, no Jardim Nilópolis, com cerca de 205 lojas e um jardim interno de mais de 7 mil m². O **Shopping Iguatemi Campinas**, na Avenida Iguatemi, na Vila Brandina, foi inaugurado em maio de 1980 e tem cerca de 356 lojas. O **Shopping Parque Dom Pedro**, de 2002, fica no Jardim Santa Genebra e tem mais de 400 operações."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em junho de 2026, o Correio da Manhã noticiou que a administradora do Parque Dom Pedro anunciou um plano de expansão com 17 torres de usos variados, incluindo um prédio corporativo e um hotel na primeira etapa, em estudo de mobilidade com a Prefeitura."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Estação Anhumas e a Maria Fumaça"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A pouco mais de 1 km do bairro, no Jardim Madalena, fica a **Estação Anhumas**, que leva o nome do Ribeirão Anhumas. A primeira estação foi construída em 1872 e usada até 1926, quando a linha foi retificada e o prédio atual a substituiu. O tráfego regular acabou em 1977, e em 1981 a **Associação Brasileira de Preservação Ferroviária (ABPF)** assumiu a estação, que virou sua sede."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dali parte o passeio de trem a vapor conhecido como **Maria Fumaça**, que segue pelos trilhos da antiga Companhia Mogiana por 24 km até Jaguariúna, passando por estações como Pedro Américo, Tanquinho e Carlos Gomes. O percurso completo leva cerca de 3h30 e o meio percurso, até Tanquinho, cerca de 1h50. As saídas acontecem aos sábados, domingos e feriados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal trunfo do Parque Imperador é a **Rodovia Dom Pedro I**, administrada pela concessionária Rota das Bandeiras. Pela rodovia, chega-se em poucos minutos aos shoppings, ao hipermercado e às universidades, e ela se conecta à **Rodovia Anhanguera** (SP-330), principal ligação com São Paulo, Jundiaí, Americana e Limeira."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há linhas de ônibus que ligam o bairro ao Centro de Campinas e a outras regiões. Ainda assim, pelo perfil de casas e pela distância do Centro, a rotina de quem mora ali costuma depender do carro. Vale testar o trajeto até o trabalho e a escola nos horários de pico antes de decidir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o **Alphaville Dom Pedro**, loteamento fechado formado por três residenciais e acessado pela Avenida Alphaville. Muitos anúncios e até moradores confundem os dois nomes, mas são bairros diferentes, e o Alphaville tem guia próprio neste site."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado ficam a **Fazenda Santa Cândida** e o **Jardim Santana**. Um pouco mais longe, no sentido da Rodovia Anhanguera, estão o Jardim Nilópolis, onde fica o Galleria, e o Jardim Madalena, da Estação Anhumas. A Vila Brandina, do Iguatemi, e o Jardim Santa Genebra, do Parque Dom Pedro, completam o entorno de compras."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque Imperador faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a famílias que querem casa, de preferência em condomínio pequeno, num lugar calmo e com acesso rápido à Dom Pedro, aos shoppings e às universidades. Também serve a quem trabalha no eixo da rodovia ou viaja com frequência para São Paulo pela Anhanguera."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também aparecem nas fontes. O custo de vida é descrito como mais alto que a média da cidade, as áreas verdes são limitadas e o dia a dia depende de carro. Uma moradora relatou ao QuintoAndar mau cheiro vindo de uma estação de tratamento, sobretudo à noite e de madrugada: vale visitar o imóvel em horários diferentes."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor o valor do condomínio e o que ele inclui, o tamanho do terreno, a posição da casa em relação à rodovia, se há gerador e como é a portaria. Confira também o trajeto até a escola dos filhos nos horários de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque Imperador, em Campinas?",
+      "resposta": "Na região leste da cidade, junto à Rodovia Dom Pedro I, vizinho do Alphaville Dom Pedro, da Fazenda Santa Cândida e do Jardim Santana."
+    },
+    {
+      "pergunta": "O Parque Imperador é bom para morar?",
+      "resposta": "Para quem procura casa num bairro tranquilo, residencial e perto da Dom Pedro, dos shoppings e das universidades, sim. Quem depende de transporte público ou quer muita área verde pode estranhar."
+    },
+    {
+      "pergunta": "O Parque Imperador é a mesma coisa que o Alphaville Dom Pedro?",
+      "resposta": "Não. São bairros vizinhos e muitas vezes confundidos. O Alphaville Dom Pedro é um loteamento fechado com três residenciais; o Parque Imperador é um bairro aberto, com casas soltas e pequenos condomínios."
+    },
+    {
+      "pergunta": "Que tipo de imóvel predomina no Parque Imperador?",
+      "resposta": "Casas, térreas e sobrados, muitas em condomínios fechados de pequeno porte, como os residenciais Vila Aster, Vila Dália e Vila Antúrio."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Parque Imperador?",
+      "resposta": "No bairro fica o Colégio Photon, escola particular de educação infantil e ensino fundamental, na Rua João Duque. PUC-Campinas, Facamp e Unicamp ficam a cerca de 10 minutos pela Rodovia Dom Pedro I."
+    },
+    {
+      "pergunta": "Quais shoppings ficam perto do Parque Imperador?",
+      "resposta": "O Galleria Shopping, na própria Rodovia Dom Pedro I, o Shopping Iguatemi Campinas, na Vila Brandina, e o Shopping Parque Dom Pedro, no Jardim Santa Genebra."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "QuintoAndar, guia do bairro Parque Imperador e ficha do Condomínio Parque Imperador",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, shoppings de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Escol.as, ficha do Photon Colégio com dados do Censo Escolar 2024",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Melhor Escola, ficha do Photon Colégio",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Estação Anhumas, Rodovia Dom Pedro I e Galleria Shopping",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Sesc São Paulo, Nos trilhos da história (Maria Fumaça Campinas-Jaguariúna)",
+      "site": "sescsp.org.br"
+    },
+    {
+      "nome": "São Paulo para Crianças, passeio da Maria Fumaça Campinas-Jaguariúna",
+      "site": "saopauloparacriancas.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, plano de expansão do Parque Dom Pedro Shopping (junho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque Imperador, em Campinas: bairro de casas e pequenos condomínios colado à Rodovia Dom Pedro I, vizinho do Alphaville e a poucos minutos de shoppings, universidades e da Estação Anhumas, de onde parte a Maria Fumaça. Preparamos um guia com a história, escolas, acessos e o que pesar antes de morar. Link na bio.",
+    "hashtags": [
+      "parqueimperador",
+      "campinas",
+      "dompedro",
+      "morarbem",
+      "guiadebairro",
+      "casaemcondominio",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque Imperador, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.588Z"
+}

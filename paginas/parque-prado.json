@@ -1,0 +1,339 @@
+{
+  "slug": "parque-prado",
+  "titulo": "Parque Prado, Campinas: como é morar no bairro da Região Sul",
+  "resumo": "Guia do Parque Prado, em Campinas: origem na Chácara Eglantina, prédios em condomínio, Parque das Águas, shopping, avenidas e o que avaliar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida larga do Parque Prado, com canteiro arborizado e torres residenciais dos dois lados",
+      "alt": "Avenida de pista dupla com canteiro gramado e árvores, ladeada por prédios residenciais altos de cores amarela e branca",
+      "commons": "File:Parque Prado e seus Belíssimos Predios - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Abrigos de ônibus e prédios residenciais no Parque Prado, na Região Sul de Campinas",
+      "alt": "Calçada nova com abrigos de ônibus cobertos, prédios brancos e de tijolo ao fundo e céu azul",
+      "commons": "File:Parque Prado - Campinas - SP.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "Avenida do Parque Prado com canteiro central de palmeiras e comércio ao lado",
+      "alt": "Rua larga com canteiro central de palmeiras, lojas à direita e prédios residenciais ao fundo",
+      "commons": "File:Parque Prado - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Condomínio de torres amarelas e brancas em uma esquina do bairro",
+      "alt": "Conjunto de edifícios residenciais amarelos e brancos com jardim e palmeiras na frente, numa rua de esquina",
+      "commons": "File:Parque Prado e seus Belíssimos Predios - Campinas-SP - panoramio (3).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Torre residencial com portaria e rampa de acesso, típica dos condomínios do Parque Prado",
+      "alt": "Edifício residencial bege de muitos andares com portão de garagem, gramado e palmeiras na entrada",
+      "commons": "File:Parque Prado e seus Belíssimos Predios - Campinas-SP - panoramio (6).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Prédios do Parque Prado vistos de uma área verde, com a cidade ao fundo",
+      "alt": "Edifício alto amarelo e prédios menores atrás de uma encosta coberta de mata, com outros prédios da cidade ao longe",
+      "commons": "File:Parque Prado - panoramio (2).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "O Parque das Águas em 2007, ano da inauguração, com lago, quiosques e playground",
+      "alt": "Vista do alto de um parque com lago, pergolado de madeira, quiosque de telhado laranja e caminhos de concreto",
+      "commons": "File:Parque das Águas,Campinas S.P - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Lago do Parque das Águas com flores na margem e prédios ao fundo",
+      "alt": "Arbusto com flores coloridas na beira de um lago coberto de plantas aquáticas, com prédios ao longe",
+      "commons": "File:Parque das Águas - panoramio (41).jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Construções de telhado de barro na beira do lago do Parque das Águas",
+      "alt": "Lago de água barrenta com construções térreas de telhado de cerâmica e árvores na margem oposta",
+      "commons": "File:Parque das Águas - panoramio (30).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Prado** é um bairro da Região Sul de Campinas, a cerca de 4 km do Centro, formado quase todo por condomínios fechados, em sua maioria de prédios. É um bairro jovem: nasceu nos anos 1990 em terras da antiga Chácara Eglantina, da família Prado, e ganhou ruas largas, avenidas com canteiros arborizados e um shopping na divisa com a Vila Marieta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Parque Prado oferece apartamento em condomínio com lazer, comércio de bairro a poucas quadras e um parque público grande ao lado, o Parque das Águas. Este guia reúne a origem do bairro, o perfil dos imóveis, o lazer, as escolas, as avenidas de acesso e o que vale avaliar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da Região Sul de Campinas, a cerca de 4 km do Centro",
+        "Surgiu nos anos 1990 em terras da antiga Chácara Eglantina, da família Prado",
+        "Ocupação de condomínios fechados, principalmente torres residenciais",
+        "Vizinho do Parque das Águas, parque público inaugurado em 2007",
+        "Shopping Prado Boulevard, com cerca de 80 lojas e cinema, na Avenida Washington Luís",
+        "Acesso pelas avenidas Washington Luís e Baden Powell, perto da Via Anhanguera"
+      ],
+      "titulo": "O Parque Prado em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Parque Prado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome homenageia a **família Prado**, antiga dona das terras onde o bairro foi aberto. A área pertencia à **Chácara Eglantina**, que foi loteada por volta de 1990. Diferente de bairros centrais de Campinas, que cresceram aos poucos ao longo de um século, o Parque Prado foi desenhado de uma vez, com ruas e avenidas planejadas, e por isso costuma ser descrito como um bairro planejado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ocupação ganhou ritmo a partir dos anos 2000, com a chegada das primeiras torres residenciais e, depois, do shopping às margens da Avenida Washington Luís, que virou referência para a região. Novos empreendimentos seguiram aparecendo nas décadas seguintes, levando mais moradores para a Zona Sul e mudando o perfil de uma área que antes era de chácaras."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque Prado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Prado é, antes de tudo, um bairro de apartamentos em condomínio. A base de condomínios da RUAH, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 15 condomínios no bairro, quase todos verticais, que somam por volta de 1.200 unidades. As torres variam de prédios baixos, de quatro andares, a edifícios de mais de 20 pavimentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A paisagem é de avenidas largas com canteiro central, calçadas e prédios recuados atrás de muros e portarias. Guias de imóveis destacam os condomínios fechados com portaria 24 horas e monitoramento, e muitos empreendimentos anunciam área de lazer própria. Também há casas em condomínio horizontal, em menor número."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Guias de bairro descrevem o Parque Prado como tranquilo e familiar, com ruas arborizadas e áreas verdes usadas para caminhar e passear com cachorro. Em uma pesquisa com moradores publicada pelo QuintoAndar, a maioria apontou ruas bem iluminadas e calçadas largas. É o tipo de bairro em que o comércio do dia a dia fica perto, mas o deslocamento para o trabalho, em geral, é de carro ou ônibus."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parque das Águas e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal espaço de lazer ao ar livre é o **Parque das Águas**, que fica entre o Parque Prado e o Parque Jambeiro. Inaugurado em 8 de dezembro de 2007, tem cerca de 295 mil metros quadrados, dois lagos artificiais, trilhas, playground, chafariz infantil, quiosques, academias ao ar livre, lanchonete e um trecho de mata nativa, segundo o Correio da Manhã."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Desde 2011 o parque abriga o **Centro de Conhecimento da Água**, da Sanasa, a empresa de água e esgoto de Campinas. O espaço tem exposição permanente sobre o abastecimento da cidade, oficinas e o museu e a biblioteca da Sanasa. Ali também está exposto o primeiro chafariz público de Campinas, retirado da Rua Ferreira Penteado e protegido pelo Condepacc, o conselho de patrimônio do município. As visitas de grupos e escolas são agendadas com a Sanasa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além do parque, o bairro tem praças e canteiros arborizados ao longo das avenidas. Para quem gosta de clube, guias citam o Clube Campineiro de Regatas e Natação entre as opções da região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, shopping e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A referência comercial é o **Shopping Prado Boulevard**, na Avenida Washington Luís, 2480, endereço que já pertence à vizinha Vila Marieta. O centro de compras tem cerca de 80 lojas, cinema, academia, supermercado e farmácia, e funciona de segunda a sábado das 10h às 22h e aos domingos das 14h às 20h, segundo a divulgação do próprio shopping."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No entorno do shopping e nas avenidas do bairro há padarias, açougues, mercados, farmácias, bancos, salões de beleza, barbearias, pizzarias, churrascarias e restaurantes de vários tipos. Para a rotina da semana, a maior parte das compras se resolve sem sair da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o bairro conta com farmácias, laboratórios e clínicas no comércio local. Para atendimento hospitalar, o guia do Chaves na Mão cita o **Hospital Samaritano** entre as referências próximas; para outros hospitais, o morador recorre às regiões central e sul da cidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Prado e os bairros colados a ele têm escolas municipais e particulares, principalmente de educação infantil e ensino fundamental. Para o ensino médio, uma das opções citadas é a unidade do **Colégio Elementar** no Jardim dos Oliveiras, vizinho ao bairro. Guias da região também mencionam o **Colégio Renovatus** e o **Colégio Madre Cecília** entre as escolas de referência nas proximidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há ainda escolas de idiomas e cursos livres, como uma unidade de escola de inglês dentro do Shopping Prado Boulevard. Para o ensino superior, a PUC-Campinas e a Unicamp ficam em outras regiões da cidade e são alcançadas de carro ou ônibus."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, avenidas e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro fica a cerca de 4 km do Centro de Campinas e a cerca de 3 km da **Rodovia Anhanguera** (SP-330). A **Avenida Washington Luís** é o eixo principal: ela é a continuação da Estrada Velha de Campinas (SP-332), a antiga ligação com São Paulo, e leva tanto ao Centro quanto às rodovias. A **Avenida Baden Powell** é outra entrada importante, também na direção do Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro circulam avenidas como a Maria Emília Alves dos Santos de Ângelis, a Brunoro de Gasperi, a Jorge Tibiriçá, a São José dos Campos e a Nelsia Vanucci. O **Anel Viário Magalhães Teixeira** também fica perto, o que facilita a saída para outras regiões da cidade e para Valinhos, Vinhedo e Jundiaí."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No transporte público, várias linhas de ônibus ligam o Parque Prado ao Centro e a outros bairros, e há um pequeno terminal de transferência perto do Shopping Prado Boulevard, na Avenida Washington Luís."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Prado faz divisa com o **Jardim dos Oliveiras** ao norte e a leste, a **Vila Ipê** a sudeste, a **Vila Campos Sales** a sudoeste, o **Parque Jambeiro** ao sul e o **Jardim Nova Europa** a oeste. A **Vila Marieta**, onde fica o endereço do shopping, também está colada ao bairro e tem guia próprio aqui no site."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, muita gente trata o conjunto como uma só região: o Jardim dos Oliveiras é citado como parte da área do Parque Prado, e a vida comercial se espalha pela Washington Luís e pelas avenidas que ligam esses bairros. O Parque Jambeiro divide com o Parque Prado o acesso ao Parque das Águas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque Prado faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Prado costuma agradar a quem quer apartamento em condomínio com lazer, em um bairro planejado, com shopping, mercado e parque por perto e saída rápida para a Anhanguera. Guias da região citam entre os moradores típicos famílias, casais jovens, profissionais e aposentados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não ser o ideal para quem quer fazer tudo a pé, inclusive trabalho e faculdade, ou para quem procura vida noturna de bairro central. Os condomínios grandes também têm regras e custos próprios, que pesam na decisão."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte o valor do condomínio e o que ele inclui, a idade do edifício, o número de vagas e o trajeto até o seu trabalho ou a escola dos filhos nos horários de pico, principalmente pela Avenida Washington Luís.",
+      "titulo": "Antes de escolher o prédio"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque Prado, em Campinas?",
+      "resposta": "Na Região Sul da cidade, a cerca de 4 km do Centro e 3 km da Rodovia Anhanguera. Faz divisa com o Jardim dos Oliveiras, a Vila Ipê, a Vila Campos Sales, o Parque Jambeiro e o Jardim Nova Europa."
+    },
+    {
+      "pergunta": "O Parque Prado é bom para morar?",
+      "resposta": "Para quem procura apartamento em condomínio com lazer, em bairro planejado e com shopping e parque perto, sim. Quem quer fazer tudo a pé ou busca vida noturna pode preferir bairros mais centrais."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Parque Prado?",
+      "resposta": "Por causa da família Prado, antiga dona da Chácara Eglantina, cujas terras foram loteadas por volta de 1990 para formar o bairro."
+    },
+    {
+      "pergunta": "Qual parque fica perto do Parque Prado?",
+      "resposta": "O Parque das Águas, entre o Parque Prado e o Parque Jambeiro. Inaugurado em 2007, tem lagos, trilhas, playground e o Centro de Conhecimento da Água, da Sanasa."
+    },
+    {
+      "pergunta": "Qual shopping fica no Parque Prado?",
+      "resposta": "O Shopping Prado Boulevard, na Avenida Washington Luís, 2480, na divisa com a Vila Marieta. Tem cerca de 80 lojas, cinema e supermercado."
+    },
+    {
+      "pergunta": "Como chegar à Rodovia Anhanguera saindo do Parque Prado?",
+      "resposta": "Pela Avenida Washington Luís, continuação da Estrada Velha de Campinas. A rodovia fica a cerca de 3 km do bairro, e o Anel Viário Magalhães Teixeira também está perto."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "QuintoAndar, guia do bairro Parque Prado (história, comércio, escolas e pesquisa com moradores)",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, shoppings em Campinas (Shopping Prado)",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Chaves na Mão, guia do bairro Parque Prado",
+      "site": "chavesnamao.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, edição de Campinas de 23 de março de 2026, sobre o Parque das Águas",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Uber Blog, parques em Campinas (Parque das Águas e Centro de Conhecimento da Água)",
+      "site": "uber.com"
+    },
+    {
+      "nome": "Sanasa, formulário de agendamento do Centro de Conhecimento da Água",
+      "site": "sanasa.com.br"
+    },
+    {
+      "nome": "Divulgação do Shopping Prado Boulevard (endereço e horários)",
+      "site": "dol.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Parque Prado e Parque das Águas (Campinas)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque Prado, na Zona Sul de Campinas: o bairro que nasceu nos anos 1990 nas terras da antiga Chácara Eglantina e hoje é endereço de condomínios de prédios, com o Parque das Águas ao lado e shopping na Washington Luís. Preparamos um guia com a história, o lazer, as escolas, os acessos e o que avaliar antes da mudança. Link na bio.",
+    "hashtags": [
+      "parqueprado",
+      "campinas",
+      "zonasulcampinas",
+      "morarbem",
+      "guiadebairro",
+      "parquedasaguas",
+      "apartamentocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque Prado, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.587Z"
+}

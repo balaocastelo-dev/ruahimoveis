@@ -1,0 +1,321 @@
+{
+  "slug": "jardim-dom-vieira",
+  "titulo": "Jardim Dom Vieira, Campinas: guia do bairro para morar",
+  "resumo": "Guia do Jardim Dom Vieira, em Campinas: prédios, acesso pela Amoreiras e pela Marginal do Piçarrão, Hospital Mário Gatti e bairros vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Cruzamento da Avenida das Amoreiras com a Marginal do Piçarrão, principal acesso da região",
+      "alt": "Avenida larga de pista dupla descendo em direção a um vale arborizado, com prédios ao fundo e placa verde de sinalização",
+      "commons": "File:Amoreiras x marg. Piçarrão - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Córrego Piçarrão canalizado, com a avenida marginal ao lado, em 2009",
+      "alt": "Canal de concreto com água corrente entre margens gramadas, avenida à esquerda e um prédio de tijolos ao fundo",
+      "commons": "File:Corrego Piçarrao - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Vista aérea do Hospital Municipal Dr. Mário Gatti e das avenidas em volta",
+      "alt": "Vista do alto de um conjunto de prédios hospitalares azuis e brancos entre árvores, com avenidas e a cidade ao fundo",
+      "commons": "File:Hospital Mário Gatti.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Placa em homenagem ao médico Mário Gatti dentro do hospital municipal",
+      "alt": "Placa de bronze com texto em homenagem ao doutor Mário Gatti, ao lado de um retrato emoldurado",
+      "commons": "File:Mario Gatti (3).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Avenida das Amoreiras em 2017, durante a obra da unidade Campinas do Hospital do Câncer de Barretos",
+      "alt": "Avenida de várias faixas com carros, prédios baixos à esquerda e torres residenciais ao fundo",
+      "commons": "File:Hospital do Câncer de Barretos - Unidade Campinas visto pela Avenida das Amoreiras (5).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rua do Parque Itália, bairro vizinho, com prédios residenciais",
+      "alt": "Rua arborizada com calçada, faixa de pedestres e edifícios residenciais altos ao fundo",
+      "commons": "File:Bairro Parque Italia - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Dom Vieira** é um bairro pequeno da região Sul de Campinas, encaixado entre o Parque Itália e o São Bernardo, perto do cruzamento da Avenida das Amoreiras com a Marginal do Piçarrão. É um bairro residencial de prédios baixos e médios, a poucos minutos do Centro, com o Hospital Municipal Dr. Mário Gatti e um campus da UNIP logo ao lado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura o Jardim Dom Vieira costuma querer uma coisa: morar perto da região central sem estar no meio dela. Este guia reúne o que as fontes públicas dizem sobre o nome, os acessos, a saúde e os bairros em volta, e mostra também os limites do que se sabe sobre um bairro com pouca história escrita."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro pequeno da região Sul de Campinas, vizinho do Parque Itália e do São Bernardo",
+        "Perfil de prédios residenciais, a maioria com poucos andares",
+        "Ruas conhecidas: Rua Francisco Bueno Lacerda, Rua Dona Maria Luíza Pereira Queiroz e Rua Pedro Domingos Vitali",
+        "Fica perto do Hospital Municipal Dr. Mário Gatti, inaugurado em 1974",
+        "Acesso pela Avenida das Amoreiras, pela Marginal do Piçarrão e pela Avenida Prestes Maia",
+        "Em Campinas, Dom Vieira é como se lembra Dom Joaquim José Vieira, padre que fundou a Santa Casa de Campinas"
+      ],
+      "titulo": "O Jardim Dom Vieira em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Dom Vieira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nenhuma fonte consultada explica oficialmente o nome do loteamento. Mas, em Campinas, **Dom Vieira** é como a cidade se refere a **Dom Joaquim José Vieira**, nascido em Itapetininga em 1836 e morto em Campinas em 1917. Ele foi vigário interino de Campinas entre 1860 e 1864 e comandou a restauração da antiga igreja matriz, hoje a Catedral Metropolitana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome dele está ligado, sobretudo, à **Santa Casa de Misericórdia de Campinas**. A construção começou em 1871 e o hospital foi aberto em 1876. Em 1883, Vieira deixou a cidade para assumir a diocese do Ceará, onde ficou por quase trinta anos como bispo, segundo o Instituto do Ceará. Na época de Campinas, os paroquianos o chamavam de *Vigarinho*."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ele também fundou, com Diogo Prado, o Asilo de Órfãs da Santa Casa, aberto em 15 de agosto de 1890. Em 1960, o Correio Popular noticiou a ampliação dessa obra com um novo **Educandário Dom Vieira**, instalado num prédio da Avenida Rio de Janeiro, no São Bernardo, bairro vizinho ao Jardim Dom Vieira. É um indício da presença do nome na região, mas não uma prova de que o loteamento foi batizado em homenagem a ele."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Dom Vieira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Dom Vieira é um bairro de apartamentos. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 10 prédios residenciais no bairro, com pouco mais de 300 unidades no total. Entre os prédios listados com altura, a maioria tem de 3 a 7 andares; o maior é o Condomínio Ilhas do Mediterrâneo, com 12 andares e mais da metade das unidades do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas do bairro estão a **Rua Francisco Bueno Lacerda**, onde fica o Edifício Don Vieira I, a **Rua Dona Maria Luíza Pereira Queiroz** e a **Rua Pedro Domingos Vitali**. Os anúncios de imóveis nessas ruas mostram apartamentos, casas em condomínio e quitinetes, um perfil que combina com a presença de universidade e hospitais por perto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por ser pequeno, o bairro depende dos vizinhos para muita coisa do dia a dia. A vantagem é que tudo fica perto: a base de pontos de interesse usada pela RUAH (Overture Maps e OpenStreetMap) registra cerca de 50 mercados e padarias e mais de 100 restaurantes e cafés num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é o trânsito das avenidas em volta. Segundo a Emdec, citada pelo Correio da Manhã, a Avenida Prestes Maia recebe cerca de 85 mil veículos num dia útil, e a Marginal do Piçarrão, perto da Rua Francisco Bueno de Lacerda, tem em média 34 mil veículos por dia útil no sentido Centro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde: o bairro ao lado do Mário Gatti"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido do Jardim Dom Vieira é o **Hospital Municipal Dr. Mário Gatti**, na região do Parque Itália, a cerca de 2 km do Centro. Inaugurado em 14 de julho de 1974, ganhou o nome do médico em fevereiro de 1976 e é descrito como o maior hospital público da Região Metropolitana de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mário Gatti nasceu em Nápoles, em 1879, chegou a Campinas em 1905 e ficou conhecido pelas cirurgias complexas, a ponto de virar ditado na cidade: *isso nem Mário Gatti resolve*. Desde 2018, o hospital faz parte da **Rede Mário Gatti**, que reúne o Complexo Hospitalar Ouro Verde, a unidade pediátrica Mário Gattinho, o SAMU e as UPAs do município."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região deve ganhar mais um hospital. Em março de 2026, o Governo do Estado formalizou o terreno do futuro **Hospital Metropolitano**, no Parque Itália, entre a Avenida Prefeito Faria Lima e as ruas Pastor Cícero Canuto de Lima e Francisco de Assis Iglésias. O projeto prevê 262 leitos gerais e 50 de UTI numa área de cerca de 35 mil m². Até a última notícia consultada, a licitação da obra ainda não tinha sido publicada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Também perto do bairro fica a unidade Campinas do **Hospital do Câncer de Barretos**, visível da Avenida das Amoreiras, cuja obra foi fotografada em 2017."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Faculdade, escolas e serviços por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um campus da **UNIP (Universidade Paulista)** fica a poucos metros do centro do bairro, e os anúncios de prédios da Rua Francisco Bueno Lacerda citam também a proximidade dos **Patrulheiros de Campinas** e do Hospital Metropolitano Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para famílias com crianças, a base de pontos de interesse usada pela RUAH registra cerca de 45 escolas, creches e cursos num raio de 1,5 km, entre públicas e particulares. Antes de decidir, vale conferir no site da Secretaria de Educação qual escola municipal ou estadual atende o endereço do imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e obras viárias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Dom Vieira fica no encontro de três vias importantes da região Sul. A **Avenida das Amoreiras** tem cerca de 13 km e é a segunda maior avenida de Campinas: começa na Avenida João Jorge e vai até a Rodovia dos Bandeirantes, ligando a região central aos bairros perto de Viracopos. Ela tem corredor de ônibus em cerca de 4 km, da João Jorge até a Avenida Tancredo Neves."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Marginal do Piçarrão**, oficialmente Avenida Dr. José Roberto Magalhães Teixeira, acompanha o Córrego Piçarrão e passa ao lado do bairro. Em julho de 2026, a Prefeitura anunciou uma nova alça de acesso entre a Marginal e a Avenida das Amoreiras, perto da Rua Francisco Bueno de Lacerda, com 280 metros de pavimentação e galerias de drenagem."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Prestes Maia**, com cerca de 2 km, é a saída da região para as rodovias e para o Aeroporto de Viracopos. Em 2026, ela passa por duas obras: a ampliação da ponte sobre o Córrego Piçarrão, de duas para três faixas por sentido, iniciada em março, e uma nova alça a partir da Avenida Benedicto Campos, com previsão de término em dezembro de 2026."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Estação Campinas e o Terminal Central ficam a menos de 1,5 km do centro do bairro, segundo a base de pontos de interesse usada pela RUAH."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos e o que eles oferecem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Itália** é o vizinho que concentra os grandes equipamentos: o Hospital Mário Gatti, o terreno do futuro Hospital Metropolitano e ruas com prédios residenciais mais altos. O **São Bernardo**, do outro lado, recebe obras de canalização, pavimentação e drenagem na Rua São Luís do Paraitinga, segundo a Prefeitura."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao redor da Avenida Prestes Maia ficam ainda o **Jardim do Trevo**, a **Vila Santana** e a **Nova Europa**, bairros ligados pela nova alça da avenida. A alça facilita a entrada desses bairros na Prestes Maia, segundo a Emdec."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Dom Vieira faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma fazer sentido para quem quer apartamento perto da região central, com prédios menores e menos unidades por condomínio. Também atende quem trabalha ou estuda nos hospitais e na faculdade da vizinhança, e quem precisa de saída rápida para as rodovias e para Viracopos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o barulho e o movimento das avenidas que cercam o bairro, a oferta pequena de imóveis, já que são poucos prédios, e as obras viárias previstas para 2026 na região. Visite o imóvel em horários diferentes e ande pelas ruas de dentro, longe das avenidas, para comparar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte a idade do prédio e as últimas obras, se há elevador (muitos prédios do bairro são baixos e podem não ter), quantas vagas de garagem cabem à unidade e o que a taxa de condomínio inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Dom Vieira, em Campinas?",
+      "resposta": "Na região Sul da cidade, entre o Parque Itália e o São Bernardo, perto do cruzamento da Avenida das Amoreiras com a Marginal do Piçarrão e do Hospital Municipal Dr. Mário Gatti."
+    },
+    {
+      "pergunta": "O Jardim Dom Vieira é bom para morar?",
+      "resposta": "Atende bem quem quer apartamento perto do Centro, com hospitais, faculdade e comércio a poucos minutos. Em troca, as avenidas em volta têm trânsito intenso e o bairro tem poucos prédios, o que limita a oferta."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Dom Vieira?",
+      "resposta": "Nenhuma fonte oficial consultada explica o nome. Em Campinas, Dom Vieira é como é lembrado Dom Joaquim José Vieira, vigário da cidade e fundador da Santa Casa, que depois foi bispo do Ceará."
+    },
+    {
+      "pergunta": "Que hospital fica perto do Jardim Dom Vieira?",
+      "resposta": "O Hospital Municipal Dr. Mário Gatti, inaugurado em 1974, fica na região vizinha do Parque Itália. A unidade Campinas do Hospital do Câncer de Barretos também fica perto, na altura da Avenida das Amoreiras."
+    },
+    {
+      "pergunta": "Como sair do Jardim Dom Vieira para as rodovias e Viracopos?",
+      "resposta": "Pela Avenida Prestes Maia, que leva às rodovias da região e ao aeroporto, ou pela Avenida das Amoreiras, que segue até a altura da Rodovia dos Bandeirantes."
+    },
+    {
+      "pergunta": "O Jardim Dom Vieira tem mais casas ou prédios?",
+      "resposta": "Prédios. A base de condomínios da RUAH identifica cerca de 10 edifícios residenciais no bairro, a maioria dos listados com 3 a 7 andares, e o mais alto com 12."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "QuintoAndar, ruas do Jardim Dom Vieira e página do Edifício Don Vieira I",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, nova alça entre a Marginal do Piçarrão e a Avenida das Amoreiras (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, ampliação da alça da Avenida Prestes Maia no Jardim do Trevo (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, terreno do Hospital Metropolitano no Parque Itália (março de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Estratégia MED, história de Mário Gatti e do hospital municipal",
+      "site": "med.estrategia.com"
+    },
+    {
+      "nome": "QuintoAndar Guias, hospitais de Campinas e Rede Mário Gatti",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, Correio Popular de 28 de setembro de 1960 e texto sobre a Santa Casa e o Asilo de Órfãs",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Instituto do Ceará, revista de 2024, sobre Dom Joaquim José Vieira",
+      "site": "institutodoceara.org.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Joaquim José Vieira e Avenida das Amoreiras",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikimedia Commons, descrições das fotos do Hospital do Câncer de Barretos na Avenida das Amoreiras",
+      "site": "commons.wikimedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Dom Vieira, em Campinas: um bairro pequeno de prédios na região Sul, entre o Parque Itália e o São Bernardo, ao lado do Hospital Mário Gatti e com saída pela Amoreiras e pela Marginal do Piçarrão. No guia, a história do nome, os acessos, as obras viárias de 2026 e o que considerar antes de morar. Link na bio.",
+    "hashtags": [
+      "jardimdomvieira",
+      "campinas",
+      "regiaosul",
+      "parqueitalia",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Dom Vieira, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.589Z"
+}

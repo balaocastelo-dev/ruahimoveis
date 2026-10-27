@@ -1,0 +1,323 @@
+{
+  "slug": "jardim-brasil",
+  "titulo": "Jardim Brasil, Campinas: como é morar no bairro da Avenida Brasil",
+  "resumo": "Guia do Jardim Brasil, em Campinas: onde fica, a história das ruas, prédios, escolas como o Mackenzie, Avenida Brasil e os vizinhos Guanabara e Vila Nova.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida Brasil no trecho do Guanabara, vizinho do Jardim Brasil, com prédios ao fundo",
+      "alt": "Avenida de duas pistas com comércio térreo à esquerda, posto de combustível à direita e edifícios altos ao fundo",
+      "commons": "File:Av Brasil - B .Guanabara - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Trecho arborizado da Avenida Brasil, com canteiro central e palmeiras",
+      "alt": "Avenida com canteiro central de palmeiras e arbustos, lojas e prédios comerciais dos dois lados",
+      "commons": "File:Avenida Brasil, Campinas - SP.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "Outro trecho da Avenida Brasil no Guanabara, com comércio dos dois lados",
+      "alt": "Rua com carros, calçada larga, palmeiras e fachadas comerciais com letreiros",
+      "commons": "File:Av Brasil - Bairro Guanabara - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Início do recapeamento da Avenida Brasil, em abril de 2023",
+      "alt": "Máquina fresadora despejando asfalto velho em caminhão numa avenida arborizada",
+      "commons": "File:Obras de Recapeamento da Avenida Brasil em Campinas - SP (52809774839).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada do Liceu Salesiano Nossa Senhora Auxiliadora, no Guanabara",
+      "alt": "Pórtico com vitral redondo e colunas, prédios históricos de telhado vermelho dos lados",
+      "commons": "File:Edifício do Liceu Salesiano Nossa Senhora Auxiliadora - Campinas - 20240921170040.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Escola Estadual Professor Aníbal de Freitas, na Rua Primeiro de Março",
+      "alt": "Prédio escolar de dois andares com letreiro na fachada, palmeiras e grade branca",
+      "commons": "File:Fachada do Colégio Estadual Aníbal de Freitas, em Campinas-SP.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Igreja Nossa Senhora das Graças, na Vila Nova, inaugurada em 1953",
+      "alt": "Fachada clara de igreja com duas torres, imagem de Nossa Senhora no alto e porta de madeira",
+      "commons": "File:Igreja da Vila Nova, Campinas - Vista frontal 02.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Brasil** é um bairro pequeno de Campinas, na parte alta da cidade, entre o Guanabara, a Vila Nova e o Jardim Nossa Senhora Auxiliadora. É uma área residencial de poucas ruas, cortada pela **Avenida Brasil**, que mistura casas, prédios de altura média e torres recentes, com o comércio e os serviços das avenidas em volta a poucos minutos a pé."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por ser pequeno, o bairro costuma ser confundido com os vizinhos, e muitos endereços e empreendimentos da região usam o nome Guanabara. Este guia reúne o que as fontes contam sobre a origem das ruas, o perfil dos imóveis, as escolas, os acessos e os bairros em volta, para você entender se o Jardim Brasil combina com a sua rotina."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro pequeno de Campinas, na parte alta, vizinho do Guanabara, da Vila Nova e do Jardim Nossa Senhora Auxiliadora",
+        "Cerca de 18 logradouros, entre eles a Avenida Brasil e a Rua Eduardo Lane",
+        "Ruas abertas sem nome receberam denominação por leis municipais de 1949 e 1950",
+        "A base da RUAH identifica cerca de 16 condomínios, quase todos prédios, o mais alto com 26 andares",
+        "Campus Campinas do Mackenzie fica na Avenida Brasil, a poucas quadras",
+        "Avenida Brasil liga a região central à região norte da cidade"
+      ],
+      "titulo": "O Jardim Brasil em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica o Jardim Brasil"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Brasil ocupa um pedaço da parte alta da cidade, perto da Vila Nova e do Jardim Nossa Senhora Auxiliadora, e é citado entre os bairros pequenos que cercam o Guanabara, ao lado da Vila Angelino Rossi, da Vila Itapura e da Vila Eliza. Na divisão usada pela base da RUAH, ele aparece na região central."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os cadastros de endereços dos Correios listam cerca de 18 logradouros no bairro. Entre eles estão a **Avenida Brasil**, a Rua Eduardo Lane, a Rua Dom Pedro I, a Rua Buarque de Macedo, a Rua Doutor Pelágio Lobo, a Rua Alberto Faria, a Rua José do Patrocínio, a Rua Clóvis Bevilacqua e a Rua Frei Manoel da Ressurreição, além de praças como a **Praça Euclides da Cunha**, a Praça Clodomiro Rodrigues, a Praça dos Pioneiros e a Praça Vinte e Cinco de Abril."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Repare que boa parte dos nomes homenageia figuras da história e das letras brasileiras, como o imperador Dom Pedro I, o escritor Euclides da Cunha, o abolicionista José do Patrocínio e o jurista Clóvis Bevilacqua. As fontes consultadas não explicam a origem do nome do loteamento."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: as ruas que ganharam nome em 1949 e 1950"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O acervo do Centro de Memória da Unicamp guarda as leis que deram nome às ruas do Jardim Brasil. Até o fim dos anos 1940, várias vias do loteamento eram só ruas sem denominação. A **Lei nº 296, de 30 de dezembro de 1949**, promulgada pelo prefeito Miguel Vicente Cury, batizou uma delas de **Rua Alberto Faria**, descrita no texto como uma rua do Jardim Brasil que terminava na Avenida Brasil e ficava junto à linha da Estrada de Ferro Sorocabana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O homenageado, Alberto Faria, nasceu no Rio de Janeiro em 1869 e morreu em 1925. Jornalista, escritor e estudioso de folclore, chegou a Campinas por volta de 1889, dirigiu a *Gazeta de Campinas* e fundou, em 1897, o jornal *A Cidade de Campinas*."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Meses depois, a **Lei nº 361, de 15 de julho de 1950**, também de Miguel Vicente Cury, deu nome a outras vias do bairro, como as ruas Gonçalves Cezar, Camargo Pimentel, Frei Antônio de Pádua e Frei Manoel da Ressurreição, várias delas terminando perto da linha da Sorocabana. A mesma lei prolongou a Avenida Brasil pelas divisas do Jardim Guanabara e do Jardim Chapadão, em direção à antiga estrada dos Amarais."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "A Praça Clodomiro Rodrigues, entre a Rua Camargo Pimentel, a Rua Dom Pedro I e a Avenida Brasil, recebeu o nome por decreto de 1984. Clodomiro Rodrigues (1921-1981) foi desenhista do Serviço de Sericicultura e da Unicamp, pioneiro do escotismo em Campinas e líder religioso, segundo o Centro de Memória da Unicamp.",
+      "titulo": "A praça do escoteiro"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Brasil"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Brasil mistura casas térreas e sobrados com prédios residenciais. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 condomínios no bairro, quase todos verticais, com perto de 770 unidades no total. Há prédios baixos, de seis ou sete andares, e torres recentes de 16 a 26 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Muitos desses empreendimentos levam Guanabara no nome, o que ajuda a entender por que o bairro aparece tanto em anúncios como parte do vizinho. Na prática, quem mora no Jardim Brasil usa o comércio, as escolas e os serviços do Guanabara e da Vila Nova como se fossem do próprio bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pela RUAH, feita com dados do OpenStreetMap e do Overture Maps, registra mais de 90 mercados e padarias, mais de 250 restaurantes e cafés e mais de 100 serviços de saúde. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é a Avenida Brasil: ela recebe o fluxo de quem atravessa a cidade, e imóveis voltados para ela tendem a ser mais barulhentos que os das ruas internas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Avenida Brasil, acessos e transporte"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Brasil** é o principal eixo do bairro. Junto com a Avenida Barão de Itapura, ela liga a região central à região norte de Campinas e dá acesso a Barão Geraldo, Paulínia e Cosmópolis. Por isso o trânsito costuma ser pesado nos horários de pico, e o comércio se concentra ao longo dela, com lojas e serviços."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em abril de 2023, o Governo do Estado de São Paulo deu início a obras de recapeamento da Avenida Brasil, com fresagem do asfalto antigo e nova pavimentação, segundo o registro fotográfico oficial do governo. O trecho fotografado fica no Jardim Chapadão, vizinho a oeste do Guanabara."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela localização, o Jardim Brasil fica perto do Centro, do Cambuí e do Taquaral, bairros que concentram serviços, vida noturna e lazer ao ar livre."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Campus Campinas da Universidade Presbiteriana Mackenzie** fica na Avenida Brasil, número 1220, endereço registrado como Jardim Guanabara, a poucas quadras do centro do Jardim Brasil. O campus começou a funcionar em 2008 e ganhou instalações próprias em 2011, segundo a própria universidade, e oferece graduação em Administração, Direito, Engenharia Civil e Engenharia de Produção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Guanabara fica também o **Liceu Salesiano Nossa Senhora Auxiliadora**, na Rua Baronesa Geraldo de Resende. Fundado em 25 de julho de 1897 para acolher crianças que perderam a família na epidemia de febre amarela, hoje faz parte da Rede Salesiana de Escolas, com educação infantil, ensino fundamental e ensino médio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na rede estadual, a **Escola Estadual Professor Aníbal de Freitas** funciona na Rua Primeiro de Março, também no Jardim Guanabara. A base de pontos de interesse da RUAH registra cerca de 70 escolas num raio de 1,5 km, entre escolas infantis, colégios e cursos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vila Nova e a Igreja Nossa Senhora das Graças"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Nova**, vizinha do Jardim Brasil, fica na zona norte. Segundo artigo da PUC-Campinas, as primeiras casas surgiram em terras da antiga Fazenda Santa Genebra, as ruas só foram pavimentadas por volta de meados dos anos 1960, e o comércio local é marcado por autopeças e serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco do bairro é a **Igreja Nossa Senhora das Graças**. Em 1929, irmãs missionárias ergueram uma pequena capela à beira da estrada; a construção da igreja atual começou em fevereiro de 1949, por iniciativa do bispo Dom Paulo de Tarso Campos, e a inauguração foi em 1953. O primeiro pároco, padre Roccato, ficou na paróquia até morrer, em 1986."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma região, a Vila Nova deu nome a uma rua ligada à ferrovia: a antiga Travessa Buarque de Macedo, que seguia o leito do ramal Funilense, passou a se chamar Rua Funilense em 1973. O ramal foi inaugurado em 1899 e depois incorporado à Sorocabana."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Outros vizinhos: Guanabara e Jardim Chapadão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Guanabara** nasceu em volta da antiga estação da Companhia Mogiana e é hoje um bairro de casas e prédios com muitos consultórios médicos. A oeste fica o **Jardim Chapadão**, um dos pontos mais altos de Campinas, onde está a Torre do Castelo, com prédios, casas e condomínios horizontais. Na Avenida Barão de Itapura, a poucas quadras, fica a sede do Instituto Agronômico (IAC), registrada no bairro Botafogo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Brasil faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Brasil costuma agradar a quem quer morar perto do Centro e do Cambuí sem estar no meio do movimento, a estudantes e professores do Mackenzie e a famílias que querem escola e serviços de saúde por perto. A oferta mistura apartamentos em prédios baixos, torres com lazer e casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são o trânsito da Avenida Brasil nos horários de pico e o tamanho do bairro: a oferta de imóveis é pequena, e muitos anúncios da região aparecem como Guanabara. Vale conferir o endereço exato e visitar o imóvel em horários diferentes antes de decidir."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Brasil, em Campinas?",
+      "resposta": "Na parte alta da cidade, entre o Guanabara, a Vila Nova e o Jardim Nossa Senhora Auxiliadora. A Avenida Brasil passa pelo bairro."
+    },
+    {
+      "pergunta": "O Jardim Brasil é bom para morar?",
+      "resposta": "Para quem quer morar perto do Centro e do Cambuí, com escolas, mercados e clínicas por perto, costuma ser. O ponto de atenção é o trânsito da Avenida Brasil nos horários de pico."
+    },
+    {
+      "pergunta": "O Jardim Brasil faz parte do Guanabara?",
+      "resposta": "Não. É um bairro próprio, pequeno, vizinho do Guanabara. Muitos prédios da região levam Guanabara no nome, o que causa a confusão."
+    },
+    {
+      "pergunta": "Quais escolas e faculdades ficam perto do Jardim Brasil?",
+      "resposta": "O campus Campinas do Mackenzie, na Avenida Brasil, o Liceu Salesiano Nossa Senhora Auxiliadora e a Escola Estadual Professor Aníbal de Freitas, todos no Guanabara."
+    },
+    {
+      "pergunta": "O Jardim Brasil tem prédios ou casas?",
+      "resposta": "Os dois. A base da RUAH identifica cerca de 16 condomínios, quase todos verticais, o mais alto com 26 andares, ao lado de casas e sobrados."
+    },
+    {
+      "pergunta": "Como sair do Jardim Brasil para Barão Geraldo?",
+      "resposta": "Pela Avenida Brasil ou pela Avenida Barão de Itapura, que ligam a região central à região norte e dão acesso a Barão Geraldo, Paulínia e Cosmópolis."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, Lei nº 296 de 1949 (Rua Alberto Faria), Lei nº 361 de 1950 e Decreto nº 8.204 de 1984 (Praça Clodomiro Rodrigues)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "CEP Brasil e Qual o CEP, logradouros do Jardim Brasil (Campinas)",
+      "site": "cepbrasil.org"
+    },
+    {
+      "nome": "Notícia Bibliográfica e Histórica (PUC-Campinas), artigos sobre a Vila Nova e o ramal Funilense",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Universidade Presbiteriana Mackenzie, edital do vestibular do Campus Campinas e revista dos 150 anos",
+      "site": "mackenzie.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Guanabara (Campinas), Jardim Chapadão e Liceu Salesiano Nossa Senhora Auxiliadora",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Instituto Agronômico (IAC), endereço da sede",
+      "site": "iac.sp.gov.br"
+    },
+    {
+      "nome": "Wikimedia Commons, registro do Governo do Estado de São Paulo sobre o recapeamento da Avenida Brasil (2023) e foto da E.E. Aníbal de Freitas",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Brasil, em Campinas: um bairro pequeno, na parte alta da cidade, entre o Guanabara e a Vila Nova. Preparamos um guia com a história das ruas, os prédios, as escolas por perto, a Avenida Brasil e o que considerar antes de se mudar. Link na bio.",
+    "hashtags": [
+      "jardimbrasil",
+      "campinas",
+      "guanabara",
+      "vilanova",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Brasil, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.587Z"
+}

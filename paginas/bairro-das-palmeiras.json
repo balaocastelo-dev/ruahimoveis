@@ -1,0 +1,313 @@
+{
+  "slug": "bairro-das-palmeiras",
+  "titulo": "Bairro das Palmeiras, Campinas: como é morar perto da Hípica",
+  "resumo": "Guia do Bairro das Palmeiras, em Campinas: a Sociedade Hípica, o Parque Ecológico, os condomínios de casas, shoppings, escolas e acessos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Escola de equitação da Sociedade Hípica de Campinas, clube que fica na Rua Buriti",
+      "alt": "Galpão branco e azul com telhado de duas águas, portão de madeira, banco e vasos de plantas na frente",
+      "commons": "File:Fachada da Escola de Equitação Pompêo de Camargo.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Casa sede da antiga Fazenda Mato Dentro, hoje dentro do Parque Ecológico",
+      "alt": "Casarão colonial branco de dois pavimentos com portas e janelas azuis e escadaria dupla na frente",
+      "commons": "File:Fazenda Mato Dentro.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A sede da Fazenda Mato Dentro em foto antiga do acervo do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco de um casarão com uma charrete puxada por cavalos parada na frente",
+      "commons": "File:Fazenda Mato Dentro, Centro de Memória - Unicamp (APS 1.1.1010).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Lago do Parque Ecológico Monsenhor Emílio José Salim",
+      "alt": "Lago amplo refletindo o céu azul, com gramado e mata em volta",
+      "commons": "File:Parque Ecológico Campinas (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Represa e gramados no Parque Ecológico, projeto do escritório Burle Marx",
+      "alt": "Pequena represa com muretas de concreto cercada de árvores e grama",
+      "commons": "File:Parque Ecológico Campinas (2).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "A casa principal da fazenda vista entre as árvores do parque",
+      "alt": "Casarão branco de janelas azuis ao fundo, com tronco grosso de árvore e gramado em primeiro plano",
+      "commons": "File:Casa principal da fazenda.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Shopping Iguatemi Campinas, na vizinha Vila Brandina",
+      "alt": "Fachada de shopping com cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Bairro das Palmeiras** é um bairro residencial da região Leste de Campinas, conhecido por abrigar a **Sociedade Hípica de Campinas** e por reunir condomínios de casas em ruas que levam nomes de palmeiras brasileiras. Fica entre a Vila Brandina, o Gramado e o Jardim Santa Marcelina, perto do Shopping Iguatemi, do Gramado Mall e do Parque Ecológico Monsenhor Emílio José Salim."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro de ritmo tranquilo, com pouca verticalização e muito verde em volta. Neste guia você encontra a origem das terras, o que há para fazer, as escolas e serviços mais próximos e o que considerar antes de escolher uma casa por ali."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região Leste de Campinas, também chamado de Jardim das Palmeiras",
+        "Ruas com nomes de palmeiras: Buriti, Açaí, Juçara, Indaiá, Babaçu, Butiá, Tucumã e outras",
+        "Sede da Sociedade Hípica de Campinas, na Rua Buriti, que completou 77 anos em 2025",
+        "Perfil de casas, com predomínio de condomínios horizontais",
+        "Vizinho do Parque Ecológico Monsenhor Emílio José Salim, com 110 hectares",
+        "Gramado Mall dentro do bairro e Shopping Iguatemi na vizinha Vila Brandina"
+      ],
+      "titulo": "O Bairro das Palmeiras em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: da fazenda Lapa ao bairro da Hípica"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As terras do bairro têm raiz no Brasil rural do café. Um estudo sobre o Parque Ecológico publicado na revista *Paisagem e Ambiente*, da USP, registra que a área do Bairro das Palmeiras corresponde à antiga **fazenda Lapa**, e a relaciona ao conjunto de terras da Fazenda Mato Dentro, ao lado da Vila Brandina (antiga Mato Dentro de Baixo) e do terreno da Sociedade Hípica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Fazenda Mato Dentro**, vizinha do bairro, nasceu em 1806 como engenho de açúcar, fundado pelo tenente-coronel Joaquim Aranha Barreto de Camargo. Na segunda metade do século XIX passou a produzir café e, em 1937, foi vendida ao Estado de São Paulo para servir ao Instituto Biológico. Exatamente meio século depois, em 1987, um decreto estadual transformou a área no Parque Ecológico."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome do bairro aparece também no traçado das ruas. A relação de logradouros do bairro lista vias como as ruas **Buriti**, **Açaí**, **Bacuri**, **Babaçu**, **Butiá**, **Caranda**, **Guariroba**, **Indaiá**, **Janari**, **Juçara**, **Macaúva**, **Tucum** e **Tucumã**, todas nomes de palmeiras nativas do Brasil. Nas bordas do bairro aparecem avenidas com nomes de pessoas, como a Avenida Oswaldo Von Zuben, a Avenida Professor Pedro Calazans de Moraes e a Avenida Papa João Paulo I."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sociedade Hípica de Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal marco do bairro é a **Sociedade Hípica de Campinas**, clube que funciona na Rua Buriti. Em abril de 2025, o clube celebrou seus **77 anos** com um Concurso de Saltos Nacional, realizado de 8 a 13 de abril, segundo o programa oficial da competição. O mesmo documento descreve a estrutura usada nas provas: duas pistas de competição de 90 por 50 metros com piso de areia, pistas de aquecimento, cocheiras em pavilhões de alvenaria e um espaço gourmet."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O clube mantém ainda a **Escola de Equitação Pompêo de Camargo**, e os eventos de hipismo trazem cavaleiros de outras cidades ao bairro ao longo do ano. Para quem mora perto, a Hípica é a referência de endereço: muitos condomínios da região levam o nome do clube, como o Residencial Palmeiras da Hípica e o Condomínio Jardins da Hípica."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Bairro das Palmeiras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bairro das Palmeiras é, antes de tudo, um bairro de casas. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio. São, em geral, vilas e residenciais pequenos, de algumas dezenas de casas, como o Condomínio Forest Hill Village, o Residencial Porto Veneza, o Residencial Village Campestre e o Residencial Outeiro das Palmeiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia de regiões do QuintoAndar também descreve o bairro pela presença de condomínios fechados, como o Hípica Boulevard, o Villagio Martina Franca e o Maidan Hípica Lifestyle. Na prática, isso significa ruas com pouco trânsito de passagem, casas com quintal e área de lazer dentro do condomínio, e um dia a dia mais dependente do carro do que em bairros centrais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para as compras do dia a dia, a base de pontos de interesse usada pela RUAH registra um supermercado Pão de Açúcar a menos de 200 metros do centro do bairro, farmácias a poucos minutos e um hipermercado Carrefour a cerca de 1 km. Restaurantes e cafés aparecem às dezenas num raio de 1,5 km, boa parte deles ao redor da Hípica e dos shoppings."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parque Ecológico: o grande quintal verde do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cerca de 1 km do centro do bairro fica o **Parque Ecológico Monsenhor Emílio José Salim**, criado pelo Decreto estadual nº 27.071, de 8 de junho de 1987, nas terras da Fazenda Experimental Mato Dentro, do Instituto Biológico. O parque foi inaugurado em 1991 e ocupa 110 hectares, com projeto paisagístico de Roberto Burle Marx e Haruyoshi Ono, segundo o estudo da USP."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Lá estão um lago com cascatas formado a partir de cursos d'água existentes, quadras poliesportivas, dois campos de futebol, mirante, teatro de arena, trilhas e pista de mountain bike. A casa sede e a tulha da antiga fazenda são tombadas pelo **Condephaat**, órgão estadual de patrimônio, e o parque também é protegido pelo Condepacc, o conselho municipal, pelo valor do projeto urbano."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Segundo o estudo da USP, a portaria principal do parque fica na Rodovia Heitor Penteado, e há uma segunda entrada pela Avenida Manoel Afonso Ferreira. O mesmo trabalho aponta que o parque é usado abaixo do seu potencial como espaço público.",
+      "titulo": "Bom saber"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Shoppings, comércio e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Gramado Mall** tem endereço na Alameda dos Vidoeiros, no próprio Bairro das Palmeiras, e fica a pouco mais de 1 km do centro do bairro. Do outro lado, na vizinha Vila Brandina, está o **Shopping Iguatemi Campinas**, na Avenida Iguatemi, inaugurado em 6 de maio de 1980 e apontado pelo QuintoAndar como o primeiro shopping center da cidade. Depois da ampliação de 2015, passou a ter 356 lojas, dois complexos de cinema e um teatro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Bancos, postos de combustível, clínicas e laboratórios ficam concentrados nesse eixo dos shoppings. A seção *o que tem perto*, mais abaixo nesta página, mostra os lugares mais próximos com a distância a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas perto do Bairro das Palmeiras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as escolas públicas, a **Escola Estadual Professor Alberto Medaljon**, na Rua Conselheiro Leôncio de Carvalho, na Vila Brandina, oferece ensino fundamental e médio e fica a cerca de 700 metros do centro do bairro. O guia do QuintoAndar cita ainda o Colégio Graal Kids entre as escolas da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse da RUAH registra perto de dez escolas num raio de 1,5 km, entre escolas de educação infantil, bilíngues e de ensino regular. Como a oferta muda, vale confirmar vagas, etapas de ensino e trajeto antes de decidir pelo imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos e bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A relação de logradouros do bairro inclui trechos da **Rodovia Dom Pedro I** entre os quilômetros 125 e 131, o que coloca o Bairro das Palmeiras junto de uma das principais ligações de Campinas com outras cidades do interior. O estudo da USP cita também o anel viário Magalhães Teixeira e a Rodovia Heitor Penteado, que segue rumo aos distritos de Sousas e Joaquim Egídio, entre as vias da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os vizinhos completam a rotina. A **Vila Brandina** reúne o Shopping Iguatemi e a escola estadual citada acima; o **Gramado** e o **Jardim Santa Marcelina** fazem divisa com o bairro, segundo o QuintoAndar. Para o trabalho e os estudos em outras regiões da cidade, a maior parte dos moradores depende de carro; nos horários de pico, vale testar o trajeto antes de fechar negócio."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Bairro das Palmeiras faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem procura casa em condomínio pequeno, com quintal e silêncio, sem abrir mão de ter shopping, supermercado e um grande parque a poucos minutos. Também atrai quem pratica hipismo ou tem filhos na equitação, pela proximidade com a Hípica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não combinar com quem quer resolver tudo a pé, prefere apartamento ou depende de transporte público para longas distâncias. Como a maioria das moradias está em condomínios, as regras internas, a portaria e a taxa mensal pesam na escolha tanto quanto a casa em si."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor sobre o valor do condomínio e o que ele inclui, o tamanho do terreno, a idade da construção, a posição da casa em relação à rodovia e às avenidas, e quanto tempo leva o trajeto até o seu trabalho e a escola dos filhos.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Bairro das Palmeiras, em Campinas?",
+      "resposta": "Na região Leste de Campinas, vizinho da Vila Brandina, do Gramado e do Jardim Santa Marcelina, perto do Shopping Iguatemi e do Parque Ecológico Monsenhor Emílio José Salim."
+    },
+    {
+      "pergunta": "O Bairro das Palmeiras é bom para morar?",
+      "resposta": "Para quem quer casa em condomínio, com rotina tranquila e shopping, supermercado e parque por perto, sim. Quem prefere fazer tudo a pé ou depende de ônibus para longas distâncias pode achar o bairro dependente demais do carro."
+    },
+    {
+      "pergunta": "O bairro tem mais casas ou prédios?",
+      "resposta": "Casas. A base de condomínios da RUAH identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio."
+    },
+    {
+      "pergunta": "A Sociedade Hípica de Campinas fica no Bairro das Palmeiras?",
+      "resposta": "Sim. O clube funciona na Rua Buriti, no Bairro das Palmeiras, e celebrou 77 anos em abril de 2025 com um concurso nacional de saltos."
+    },
+    {
+      "pergunta": "Por que as ruas do bairro têm nomes de palmeiras?",
+      "resposta": "As ruas acompanham o nome do bairro: vias como Buriti, Açaí, Juçara, Indaiá, Babaçu, Butiá e Tucumã homenageiam palmeiras nativas do Brasil."
+    },
+    {
+      "pergunta": "Que shoppings ficam perto do Bairro das Palmeiras?",
+      "resposta": "O Gramado Mall, na Alameda dos Vidoeiros, dentro do próprio bairro, e o Shopping Iguatemi Campinas, na Avenida Iguatemi, na vizinha Vila Brandina."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista Paisagem e Ambiente (USP), artigo sobre o Parque Ecológico Monsenhor Emílio José Salim",
+      "site": "revistas.usp.br"
+    },
+    {
+      "nome": "Assembleia Legislativa de SP, Decreto nº 27.071, de 8 de junho de 1987",
+      "site": "al.sp.gov.br"
+    },
+    {
+      "nome": "Programa do CSN Aniversário 77 anos da Sociedade Hípica de Campinas (abril de 2025)",
+      "site": "cbhnew.duckdns.org"
+    },
+    {
+      "nome": "CEPs Brasil, relação de logradouros do Bairro das Palmeiras",
+      "site": "cepsbrasil.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia de regiões (Bairro das Palmeiras) e guia de shoppings de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Buser Destinos, fichas da Sociedade Hípica de Campinas e do Gramado Mall",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "Escol.as, ficha da E.E. Professor Alberto Medaljon",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Wikimedia Commons, descrições das fotos da Hípica e da Fazenda Mato Dentro",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Bairro das Palmeiras, em Campinas: ruas com nomes de palmeiras, a Sociedade Hípica, condomínios de casas e o Parque Ecológico, criado em 1987 nas terras da antiga Fazenda Mato Dentro, logo ao lado. Preparamos um guia com a história, o lazer, as escolas, os shoppings e o que considerar antes de escolher sua casa no bairro. Link na bio.",
+    "hashtags": [
+      "bairrodaspalmeiras",
+      "campinas",
+      "hipicacampinas",
+      "parqueecologico",
+      "morarbem",
+      "guiadebairro",
+      "casaemcondominio",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Bairro das Palmeiras, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.584Z"
+}

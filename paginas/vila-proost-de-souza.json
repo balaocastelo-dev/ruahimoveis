@@ -1,0 +1,310 @@
+{
+  "slug": "vila-proost-de-souza",
+  "titulo": "Vila Proost de Souza, Campinas: como é morar no bairro",
+  "resumo": "Guia da Vila Proost de Souza, em Campinas: a chácara que virou bairro, o Lar dos Velhinhos, prédios, serviços, vizinhos e acessos pela John Boyd Dunlop.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Portaria do Lar dos Velhinhos de Campinas, instituição fundada em 1904",
+      "alt": "Portão de entrada com cobertura de telhas, placa azul com o nome da instituição e árvores altas atrás",
+      "commons": "File:Lar dos Velhinhos de Campinas - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Avenida com passarela de pedestres, em foto de 2011 identificada como Vila Proost de Souza",
+      "alt": "Avenida de pista dupla com carros, passarela coberta atravessando a via e árvores à direita",
+      "commons": "File:Vila Proost de Souza, Campinas - panoramio (2).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Trilhos e vista de casas e prédios, em foto de 2011 identificada como Vila Proost de Souza",
+      "alt": "Linha de trem cercada de mato, árvores e, ao fundo, casas, prédios e uma torre de antena sob céu nublado",
+      "commons": "File:Vila Proost de Souza, Campinas - panoramio (1).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Prédios residenciais no Jardim Aurélia, bairro vizinho",
+      "alt": "Dois edifícios residenciais de cerca de doze andares, árvores e uma torre publicitária ao lado",
+      "commons": "File:Jardim Aurélia - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Avenida John Boyd Dunlop, com prédios da região ao fundo",
+      "alt": "Avenida em descida com canteiro gramado, postes de luz e edifícios no horizonte",
+      "commons": "File:Av. John Boyd Dunlop - panoramio (1).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Obras do BRT no trecho da Vila Teixeira, em agosto de 2018",
+      "alt": "Estação de ônibus em construção, com cobertura metálica e pista de concreto, e prédios ao fundo",
+      "commons": "File:010818 BRT Obras Trecho Vila Teixeira foto Carlos Bassan 031 (43808923261).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Entrada do Shopping Unimart, ao entardecer",
+      "alt": "Placa alta com o nome Unimart, prédio comercial iluminado e carros estacionados na rua",
+      "commons": "File:Shopping Unimart - panoramio - Paulo Humberto.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Vias de acesso à Vila Teixeira e aos bairros vizinhos",
+      "alt": "Avenida larga com canteiro gramado, pista lateral, posto de combustível e prédios ao fundo",
+      "commons": "File:Ruas de Acessos para os Bairros Vila Teixeira e outros. - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Proost de Souza** é um bairro pequeno e residencial de Campinas, encaixado entre o **Bonfim**, o **Jardim Aurélia** e a **Vila Teixeira**. Tem ruas de casas e sobrados, um conjunto de prédios baixos e médios e, perto dali, o comércio das avenidas Governador Pedro de Toledo e John Boyd Dunlop. Seu marco mais conhecido é o **Lar dos Velhinhos de Campinas**, instituição centenária que fica no bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, a Vila Proost de Souza oferece ruas residenciais com serviços públicos dentro do próprio bairro, como centro de saúde e praça de esportes, e acesso rápido aos bancos, mercados e ao shopping dos bairros vizinhos. Este guia reúne o que as fontes contam da história do lugar, como é a ocupação hoje, o que há em volta e os caminhos para o resto da cidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial pequeno entre o Bonfim, o Jardim Aurélia e a Vila Teixeira",
+        "Onde hoje está a vila havia, no fim do século XIX, uma chácara de um militar",
+        "Abriga o Lar dos Velhinhos de Campinas, fundado em 1904 como Asilo de Inválidos",
+        "Tem centro de saúde municipal e praça de esportes dentro do bairro",
+        "A base de condomínios da RUAH identifica cerca de 35 prédios, o mais alto com 18 andares",
+        "Perto da Avenida John Boyd Dunlop, que tem corredor de ônibus BRT"
+      ],
+      "titulo": "A Vila Proost de Souza em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: da chácara à vila"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em junho de 1969, o jornal **Correio Popular** dedicou à Vila Proost de Souza uma edição da série *Nossos Bairros São Assim*, sugerida por uma leitora, Ilda Vendimiatti. O texto descrevia o lugar como um pequeno núcleo residencial entre três bairros grandes, o Bonfim, o Jardim Aurélia e a Vila Teixeira, e afirmava que ele tinha papel na história de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o mesmo jornal, pouco menos de cem anos antes daquela reportagem, ou seja, no fim do século XIX, o terreno onde a vila se formou era uma **chácara que pertencia a um militar**. O trecho do texto que chegou até hoje não diz o nome desse proprietário nem explica a origem do nome Proost de Souza. Nas listas da própria Prefeitura, o nome aparece escrito de mais de um jeito, como Vila Proost de Souza e Proost Souza."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O Lar dos Velhinhos, marco do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O endereço mais conhecido da vila é o **Lar dos Velhinhos de Campinas**, na Rua Irmã Maria de Santa Paula Terrier, que a Prefeitura de Campinas registra como Vila Proost de Souza. A instituição nasceu em 25 de julho de 1904, numa reunião de cidadãos campineiros na Delegacia de Polícia, e foi inaugurada em 10 de dezembro de 1905, segundo reportagens do Correio Popular guardadas no Centro de Memória da Unicamp."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O primeiro nome foi *Asilo dos Mendigos*, logo trocado por **Asilo dos Inválidos**. Em 1911, Rui Barbosa visitou a casa e deixou elogios registrados no livro de visitas. Em 1972, os associados se reuniram para mudar o nome para **Lar dos Velhinhos de Campinas**, enquanto o antigo casarão dava lugar a pavilhões novos de dois andares, cercados de jardins. Na época, a reportagem de 1972 situava o asilo no bairro do Bonfim, vizinho imediato."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1974, quando completou 70 anos, o Lar atendia 375 idosos, com a ajuda de 15 irmãs missionárias, era filiado à FEAC e mantinha o Pensionato São Rafael, com 22 apartamentos para casais e pensionistas. A reportagem também citava como idealizadores o delegado Paulo Florence, o jornalista Antonio Sarmento e Alberto Sarmento, representante paulista no Congresso Nacional."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Proost de Souza"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro de casas, sobrados e prédios de porte baixo e médio. A base de condomínios da RUAH, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 prédios residenciais na Vila Proost de Souza, com perto de 900 apartamentos no total. A maioria tem três andares e poucas unidades; os maiores são condomínios mais novos, o mais alto com 18 andares."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nomes de ruas ajudam a se localizar: a **Avenida José Pancetti**, que tem até agência franqueada dos Correios, a Rua Licínia Teixeira de Souza e a Rua Joaquim Teodoro T. de Souza aparecem nos cadastros da Prefeitura como endereços do bairro. A avenida é homônima do pintor modernista José Pancetti, nascido em Campinas em 1902 e conhecido pelas marinhas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia combina com quem quer morar perto de serviços sem estar no centro do movimento. Açougues, empórios e restaurantes ficam a poucos minutos a pé do miolo do bairro, e a seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos com o tempo de caminhada, atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde, esporte e escolas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro fica o **Centro de Saúde Doutor Estimado Domingues**, unidade municipal na Rua Licínia Teixeira de Souza, segundo o Plano Municipal de Rotas Acessíveis da Prefeitura (2021). Para esporte e lazer ao ar livre, há a **Praça de Esportes José Gentil Franco de Campos**, na Rua Joaquim Teodoro T. de Souza, também listada pela Prefeitura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Vila Teixeira, a poucas quadras, a Rua Rouxinol reúne duas entidades de referência em reabilitação e inclusão: a **SORRI Campinas** e a **APASCAMP**, associação de pais e amigos de surdos. Na educação, a **Escola Estadual Barão Ataliba Nogueira** fica no Jardim Magnólia, segundo a lista de escolas organizada pela Faculdade de Educação da Unicamp, a cerca de 500 metros do centro do bairro pela base de lugares da RUAH. Escolas infantis e cursos particulares aparecem na lista ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio e serviços nos vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio de maior porte fica nas avenidas que cercam a vila. Na **Avenida Governador Pedro de Toledo**, no Bonfim, a Prefeitura registra agências do Banco do Brasil, Bradesco, Caixa, Itaú e Santander, além de agência dos Correios. Na **Avenida John Boyd Dunlop**, do lado do Jardim Aurélia, há mais agências bancárias e casas lotéricas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras e lazer, o **Shopping Unimart** fica a cerca de 800 metros do centro do bairro, pela base de lugares usada pela RUAH. No Bonfim, a **Biblioteca Pública Municipal Joaquim de Castro Tibiriçá**, na Rua Quintino Bocaiúva, é outro serviço público a pouca distância."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal ligação da região com o resto da cidade é a **Avenida John Boyd Dunlop**, que recebeu o corredor de ônibus BRT Campo Grande. Segundo o Diário do Transporte, em 2020 cerca de 80% do corredor já estava liberado, com mais de 14 km de faixas exclusivas do Centro até o Jardim Aurélia e o Jardim Nova Esperança. A via tem, na maior parte, seis faixas, duas delas só para ônibus."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As obras do BRT passaram também pelo trecho da Vila Teixeira, registrado pela Prefeitura em 2018. Pela base de lugares da RUAH, a Estação de Transferência Anhanguera fica a cerca de 1 km do centro do bairro. A Avenida Governador Pedro de Toledo, no Bonfim, é o outro eixo de saída, na direção da região central."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e região"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Prefeitura de Campinas coloca a Vila Proost de Souza na **Área de Planejamento e Gestão São Bernardo**, a mesma da Vila Teixeira e do Jardim Aurélia; o Bonfim, do outro lado, aparece na área dos Amarais. Na prática, quem mora na vila usa os três vizinhos: os bancos e a biblioteca do Bonfim, o comércio da John Boyd Dunlop no Jardim Aurélia e as entidades da Vila Teixeira."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Proost de Souza faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem procura casa ou apartamento em prédio pequeno, em ruas residenciais, com centro de saúde e praça de esportes por perto e com bancos, mercados e shopping a poucos minutos. Também serve a quem precisa do corredor de ônibus da John Boyd Dunlop para chegar ao Centro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como pontos de atenção, a vila é pequena e o comércio maior fica nos bairros vizinhos, e as avenidas do entorno concentram trânsito nos horários de pico. Vale conhecer a rua escolhida em horários diferentes e perguntar ao corretor sobre o prédio, as vagas e a distância a pé até os pontos de ônibus."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a idade do imóvel e as últimas reformas, o valor do condomínio e o que ele inclui, o número de vagas, a posição em relação às avenidas e o caminho a pé até o ponto de ônibus mais próximo.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Proost de Souza, em Campinas?",
+      "resposta": "Entre o Bonfim, o Jardim Aurélia e a Vila Teixeira. A Prefeitura inclui o bairro na Área de Planejamento e Gestão São Bernardo."
+    },
+    {
+      "pergunta": "A Vila Proost de Souza é boa para morar?",
+      "resposta": "Para quem quer rua residencial com centro de saúde e praça de esportes no bairro e comércio nos vizinhos, sim. Quem quer tudo a pé na mesma quadra deve olhar bem a localização exata, porque o comércio maior fica nas avenidas do entorno."
+    },
+    {
+      "pergunta": "Qual é a origem da Vila Proost de Souza?",
+      "resposta": "Segundo o Correio Popular de 1969, no fim do século XIX o terreno era uma chácara de um militar. As fontes consultadas não explicam a origem do nome."
+    },
+    {
+      "pergunta": "O Lar dos Velhinhos de Campinas fica na Vila Proost de Souza?",
+      "resposta": "Sim. A Prefeitura registra o endereço na Rua Irmã Maria de Santa Paula Terrier, na Vila Proost de Souza. A instituição foi fundada em 1904 como Asilo dos Inválidos."
+    },
+    {
+      "pergunta": "Tem posto de saúde na Vila Proost de Souza?",
+      "resposta": "Sim, o Centro de Saúde Doutor Estimado Domingues, na Rua Licínia Teixeira de Souza, segundo a Prefeitura."
+    },
+    {
+      "pergunta": "Como chegar ao Centro saindo da Vila Proost de Souza?",
+      "resposta": "De ônibus, pelo corredor BRT da Avenida John Boyd Dunlop, que tem faixas exclusivas até o Centro. De carro, pela própria John Boyd Dunlop ou pela Avenida Governador Pedro de Toledo, no Bonfim."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Correio Popular, série Nossos Bairros São Assim: Proost de Souza, um nome, um bairro (1969, republicado em 2019)",
+      "site": "correio.rac.com.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, Plano Municipal de Rotas Acessíveis 2021, anexo de locais",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, recortes do Correio Popular sobre o Lar dos Velhinhos (1972 e 1974)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Faculdade de Educação da Unicamp, listagem de escolas de Campinas",
+      "site": "fe.unicamp.br"
+    },
+    {
+      "nome": "Diário do Transporte, sobre a liberação de trechos do BRT em Campinas (novembro de 2020)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete José Pancetti",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikimedia Commons, fotos da Vila Proost de Souza, do Lar dos Velhinhos e das obras do BRT",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da RUAH: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Proost de Souza, em Campinas: um bairro pequeno entre o Bonfim, o Jardim Aurélia e a Vila Teixeira, que nasceu onde havia a chácara de um militar e abriga o centenário Lar dos Velhinhos. Preparamos um guia com a história, os serviços do bairro, os vizinhos e os acessos pela John Boyd Dunlop. Link na bio.",
+    "hashtags": [
+      "vilaproostdesouza",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "jardimaurelia",
+      "bonfim",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Proost de Souza, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.582Z"
+}
