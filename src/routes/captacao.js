@@ -93,7 +93,8 @@ r.get('/captacao/painel', (req, res) => {
   for (const o of ops) if (o.status !== 'descartada') somaBairro(o.bairro, 'radar');
   const topBairros = [...bairros.values()].map((b) => ({ nome: Object.entries(b.nomes).sort((x, y) => y[1] - x[1])[0][0], fisguei: b.fisguei, radar: b.radar, n: b.fisguei + b.radar }))
     .sort((a, b) => b.n - a.n).slice(0, 10);
-  const vit = conta(fg.filter((a) => a.status !== 'descartado' && /^campinas/i.test(a.cidade || 'campinas')), (a) => M.categoria(a));
+  const ligadas = new Set(fg.map((a) => a.oportunidade_id).filter(Boolean));
+  const vit = conta([...fg.filter((a) => a.status !== 'descartado' && /^campinas/i.test(a.cidade || 'campinas')), ...ops.filter((o) => o.status !== 'descartada' && !ligadas.has(o.id))], (a) => M.categoria(a));
   const vitrines = Object.entries(VITRINE).map(([k, nome]) => ({ chave: k, rotulo: nome, n: vit[k] || 0, href: '#/' + k }));
   const portais = conta([...fg, ...ops], (x) => x.portal || 'Outro');
   const quem = { particular: fg.filter((a) => a.anunciante_tipo === 'particular').length + ops.filter((o) => o.anunciante_tipo === 'particular').length,

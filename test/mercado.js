@@ -110,12 +110,21 @@ global.fetch = async (url, op) => {
   const imT = ok(await req('GET', '/api/mercado/imoveis?cat=terrenos&bairro=CAMBUI&rua=RUA%20V'), 'terrenos da rua'); assert.equal(imT.length, 2); assert.equal(imT[0].area_util, 600); assert.match(imT[0].subtipo, /Terreno/);
   assert.equal(ok(await req('GET', '/api/mercado/mapa?cat=comerciais'), 'mapa da vitrine').length, 3);
 
+  // ---------- o Radar também entra na vitrine (sem repetir o que já está no Fisguei) ----------
+  run("INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,logradouro,numero,area,valor,status,foto,anunciante_tipo) VALUES('Chaves na Mão','https://x/ap','Apto no Cambuí','Apartamento','Cambuí','Rua W','10',120,900000,'nova','https://exemplo.com/apto.jpg','particular')");
+  const ap2 = ok(await req('GET', '/api/mercado/resumo?cat=apartamentos'), 'vitrine com o Radar'); assert.equal(ap2.total, 6); assert.equal(ap2.doRadar, 1);
+  const imR = ok(await req('GET', '/api/mercado/imoveis?cat=apartamentos&bairro=CAMBUI&rua=RUA%20W'), 'apto do Radar na rua');
+  assert.equal(imR.length, 1); assert.equal(imR[0].origem, 'op'); assert.match(imR[0].href, /^#\/radar\/\d+$/); assert.match(imR[0].ref, /^OP-/); assert.equal(imR[0].foto, 'https://exemplo.com/apto.jpg');
+  const opId = +imR[0].href.split('/').pop();
+  run("INSERT INTO fisguei_anuncios(fisgar_id,tipo,logradouro,numero,bairro,cidade,valor,area_util,status,oportunidade_id) VALUES('w1','Apartamento','Rua W','10','Cambuí','Campinas',900000,120,'captado',?)", opId);
+  assert.equal((await req('GET', '/api/mercado/resumo?cat=apartamentos')).j.doRadar, 0, 'já no Fisguei: não repete');
+
   // ---------- painel de captação (Radar + Fisguei) ----------
   run("INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,valor,status,foto) VALUES('Chaves na Mão','https://x/1','Casa no Cambuí','Casa','Cambuí',2000000,'nova','https://exemplo.com/op.jpg')");
   const cp = ok(await req('GET', '/api/captacao/painel'), 'painel de captação');
   assert.ok(cp.kpis.base >= 14); assert.equal(cp.funil.length, 8); assert.equal(cp.serie.dias.length, 30);
   assert.equal(cp.novasOp[0].foto, 'https://exemplo.com/op.jpg'); assert.ok(cp.novosFg.every((a) => a.foto));
-  assert.ok(cp.bairros.some((b) => /Cambu/i.test(b.nome) && b.radar === 1));
+  assert.ok(cp.bairros.some((b) => /Cambu/i.test(b.nome) && b.radar === 2));
   assert.equal(cp.vitrines.find((v) => v.chave === 'terrenos').n, 2);
 
   srv.close();

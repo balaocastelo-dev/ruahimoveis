@@ -14,7 +14,7 @@ const mkArea = (v) => (v ? Math.round(v).toLocaleString('pt-BR') + ' m²' : '');
 let MAPAS = null;
 const mapasCfg = () => (MAPAS ? Promise.resolve(MAPAS) : api('GET', '/api/mapas/config').then((c) => (MAPAS = c)).catch(() => (MAPAS = {})));
 // foto do anúncio primeiro; se não abrir, a fachada do Google; se não houver, o quadro "Foto em breve"
-const mkFoto = (x, cfg, alt) => fotoCadeia([x.foto, cfg.fachada && x.lat ? `/api/fachada?ref=fg${x.id}` : null], alt);
+const mkFoto = (x, cfg, alt) => fotoCadeia([x.foto, cfg.fachada && x.lat ? (x.origem === 'op' ? (x.condominio_id ? `/api/fachada?ref=cd${x.condominio_id}` : null) : `/api/fachada?ref=fg${x.id}`) : null], alt);
 
 // abas das vitrines + Condomínios (com a contagem de cada vitrine quando já se sabe)
 function mkAbas(on, cats) {
@@ -49,9 +49,9 @@ async function telaMercado(qs, cat = 'casas') {
     corpo = `<div class="imcards">${l.map((x) => {
       const specs = ehLote ? [x.area_util && `${mkArea(x.area_util)} de terreno`, x.valor && x.area_util ? m2txt(Math.round(x.valor / x.area_util)) : '']
         : [x.quartos && `${x.quartos} quartos`, x.suites && `${x.suites} suítes`, x.vagas && `${x.vagas} vagas`, x.area_util && mkArea(x.area_util)];
-      return `<div class="imcardw"><a class="imcard" href="#/fisguei/${x.id}">
+      return `<div class="imcardw"><a class="imcard" href="${x.href || '#/fisguei/' + x.id}">
       <div class="imfoto">${mkFoto(x, cfg, `${x.subtipo || x.tipo || 'Imóvel'} na ${x.logradouro || ''}`)}
-        <span class="imst">${x.anunciante_tipo === 'particular' ? '<span class="pill ok">particular</span>' : '<span class="pill info">imobiliária</span>'}</span>${x.subtipo ? `<span class="imbadge"><span class="pill gold">${esc(x.subtipo)}</span></span>` : ''}</div>
+        <span class="imst">${x.anunciante_tipo === 'particular' ? '<span class="pill ok">particular</span>' : x.anunciante_tipo === 'imobiliaria' ? '<span class="pill info">imobiliária</span>' : ''}${x.origem === 'op' ? '<span class="pill warn" title="Veio do Radar (portais)">Radar</span>' : ''}</span>${x.subtipo ? `<span class="imbadge"><span class="pill gold">${esc(x.subtipo)}</span></span>` : ''}</div>
       <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small muted">${esc(x.ref)}</span><span class="small muted">${esc(x.publicado_em ? new Date(x.publicado_em + 'T12:00').toLocaleDateString('pt-BR') : '')}</span></div>
         <div class="imtit">${esc(x.subtipo || x.tipo || 'Imóvel')} · nº ${esc(x.numero || 's/n')}</div><div class="muted small">${esc(x.complemento || x.anunciante_nome || '')}</div>
         <div class="imspecs">${specs.filter(Boolean).map((s) => `<span>${esc(s)}</span>`).join('')}</div>
@@ -89,7 +89,7 @@ async function mapaMercado(qf, f, bairroAt) {
   const chaveRua = (t) => t.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   for (const [id, lat, lon, mil, part, rot] of pts) {
     const mk = L.circleMarker([lat, lon], { radius: 5.5, color: '#fff', weight: 1, fillColor: part ? '#2e7d4f' : '#3b6ea8', fillOpacity: 0.85 }).addTo(m);
-    mk.bindTooltip(`${rot} · ${mkMi(mil * 1000)}`); mk.on('click', () => navega(`#/fisguei/${id}`));
+    mk.bindTooltip(`${rot} · ${mkMi(mil * 1000)}`); mk.on('click', () => navega(id < 0 ? `#/radar/${-id}` : `#/fisguei/${id}`));
     if (f.rua && chaveRua(rot).includes(f.rua.split(' ').slice(-1)[0])) destaque.push([lat, lon]);
   }
   if (destaque.length) m.fitBounds(destaque, { padding: [40, 40], maxZoom: 17 });
