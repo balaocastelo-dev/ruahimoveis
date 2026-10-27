@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0009",
+      "slug": "terreno-plano-360m2-vila-brandina-campinas-te0009",
+      "titulo": "Terreno plano de 360 m² na Vila Brandina, Campinas",
+      "resumo": "Terreno plano de 360 m² na Vila Brandina, em Campinas, já murado e com portão, numa rua de casas perto do Shopping Iguatemi e da Nova Campinas.",
+      "capa": {
+        "foto": 1891,
+        "alt": "Vista aérea do terreno de terra, marcado em vermelho, entre casas de telhado cerâmico"
+      },
+      "versao": "39953b035340",
+      "publicadoEm": "2026-10-27T01:21:26.994Z"
+    },
+    {
+      "codigo": "ST0001",
+      "slug": "apartamento-studio-mobiliado-24m2-vila-olimpia-sao-paulo-st0001",
+      "titulo": "Apartamento studio mobiliado de 24 m² na Vila Olímpia",
+      "resumo": "Studio de 24 m² na Vila Olímpia, em São Paulo, entregue mobiliado: cama, cozinha compacta com geladeira e micro-ondas, ar-condicionado e varanda envidraçada.",
+      "capa": {
+        "foto": 1893,
+        "alt": "Studio com cama, ar-condicionado e porta de vidro para a varanda envidraçada"
+      },
+      "versao": "de659b26604c",
+      "publicadoEm": "2026-10-27T01:21:26.988Z"
+    },
+    {
       "codigo": "AP0034",
       "slug": "apartamento-varanda-gourmet-residencial-idea-centro-campinas-ap0034",
       "titulo": "Apartamento com varanda gourmet no Residencial Idea, Centro",
@@ -134,5 +158,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-26T23:21:39.840Z"
+  "atualizadoEm": "2026-10-27T01:21:26.994Z"
 }

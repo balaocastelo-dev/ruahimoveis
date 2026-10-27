@@ -1,0 +1,298 @@
+{
+  "codigo": "ST0001",
+  "slug": "apartamento-studio-mobiliado-24m2-vila-olimpia-sao-paulo-st0001",
+  "titulo": "Apartamento studio mobiliado de 24 m² na Vila Olímpia",
+  "resumo": "Studio de 24 m² na Vila Olímpia, em São Paulo, entregue mobiliado: cama, cozinha compacta com geladeira e micro-ondas, ar-condicionado e varanda envidraçada.",
+  "capa": {
+    "foto": 1893,
+    "alt": "Studio com cama, ar-condicionado e porta de vidro para a varanda envidraçada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este studio fica no Charming Studio Vila Olímpia, em São Paulo. São 24 m² de área útil num só ambiente, com cama, cozinha compacta, mesa para duas pessoas e uma varanda fechada com vidro. O anúncio informa que ele é vendido totalmente mobiliado, com armários planejados, ar-condicionado e fechadura biométrica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um imóvel pensado para quem mora sozinho, estuda ou trabalha na região. O anúncio cita o Insper, a Universidade Anhembi Morumbi, o Shopping Vila Olímpia e a Faria Lima a poucos minutos. O prédio tem fachada com varandas de vidro e árvores na calçada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Studio de 24 m² entregue mobiliado, segundo o anúncio",
+        "Varanda envidraçada com mesa e cortina de persiana",
+        "Cozinha compacta com cooktop, geladeira inox e micro-ondas",
+        "Ar-condicionado split e fechadura biométrica na porta",
+        "Condomínio com piscina, academia, lavanderia e bicicletário"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O ambiente e a varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cama fica encostada numa parede com painel cinza e cabeceira branca, logo abaixo do ar-condicionado. O piso é de madeira em tom avermelhado e o teto tem rebaixo com spots e iluminação indireta junto à janela. A porta de entrada é escura, com fechadura digital, e o interfone fica ao lado dela."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma porta de vidro de correr leva à varanda, que é fechada com vidro e tem uma mesinha branca com cadeiras amarelas. Da varanda se veem os prédios vizinhos e, numa das fotos, um jardim com gramado logo abaixo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1894,
+          "legenda": "Porta de entrada com fechadura digital, cama e ar-condicionado"
+        },
+        {
+          "foto": 1896,
+          "legenda": "Varanda fechada com vidro, mesa branca e cadeiras amarelas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha ocupa uma parede só. Tem armários brancos com portas de vidro em cima, bancada de pedra preta com cooktop de duas bocas e cuba de inox, depurador, micro-ondas num nicho amarelo e geladeira inox de duas portas. Ao lado, um móvel de madeira reúne o armário de roupas, a estante com a TV e uma mesa que serve para comer ou trabalhar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro fica atrás de uma divisória de vidro fosco. As fotos mostram bancada de granito preto com cuba branca, gabinete branco embaixo, espelho largo e vaso sanitário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1901,
+          "legenda": "Bancada preta com cooktop, cuba de inox e micro-ondas no nicho amarelo"
+        },
+        {
+          "foto": 1899,
+          "legenda": "Banheiro com bancada de granito preto e espelho largo"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram as áreas comuns: uma piscina comprida com deck de madeira e espreguiçadeiras, cercada de jardim; um salão com janelas do piso ao teto, poltronas, sofás e uma bancada de pedra clara com banquetas; uma cozinha com fogão, coifa e geladeira inox; academia com esteiras e um espaço de exercícios ao ar livre."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também lavanderia compartilhada com lavadoras empilhadas e uma sala de espera com sofá estofado, bicicletário com suportes na parede e hall de entrada com cadeiras suspensas e quadros. O anúncio cita ainda a conveniência Grab & Go e portaria 24 horas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para estudantes, profissionais que trabalham na Vila Olímpia ou na Faria Lima e para quem quer um imóvel pequeno, já montado, num prédio com bastante área comum. É um ambiente único: quem precisa de quarto separado deve olhar outra planta."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos ficam com o imóvel, se a vaga de garagem e o depósito citados no anúncio são da unidade e estão na matrícula, e o valor do condomínio.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1892,
+      "legenda": "Fachada do prédio vista de baixo, com varandas de vidro e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1913,
+      "legenda": "Entrada do prédio com pergolado de vidro e jardim",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1912,
+      "legenda": "Hall de entrada com cadeiras suspensas, quadros e recepção azul",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1893,
+      "legenda": "Studio com cama, ar-condicionado e porta para a varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1894,
+      "legenda": "Porta de entrada com fechadura digital ao lado da cama",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1895,
+      "legenda": "Armário de madeira, estante com TV, mesa e cozinha ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1900,
+      "legenda": "Mesa de madeira com cadeiras amarelas, TV e geladeira inox",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1901,
+      "legenda": "Cozinha com cooktop, cuba de inox e micro-ondas no nicho amarelo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1902,
+      "legenda": "Geladeira inox de duas portas e bancada, com a varanda ao fundo",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1899,
+      "legenda": "Banheiro com bancada de granito preto, gabinete branco e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1896,
+      "legenda": "Varanda envidraçada com mesa branca e cadeiras amarelas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1897,
+      "legenda": "Vista da varanda para um jardim gramado e prédios do bairro",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1898,
+      "legenda": "Piscina comprida com deck de madeira e espreguiçadeiras, vista do alto",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1903,
+      "legenda": "Salão com bancada de pedra clara, banquetas e poltronas",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1915,
+      "legenda": "Bancada do salão com pendentes pretos e janelas do piso ao teto",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1904,
+      "legenda": "Estar do salão com poltronas, sofá e cortinas claras",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1916,
+      "legenda": "Poltronas e luminárias de tripé junto às janelas do salão",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1905,
+      "legenda": "Poltronas pretas diante de janelas altas com vista da cidade",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1917,
+      "legenda": "Canto de leitura do salão com mesa branca e vista para os prédios",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1906,
+      "legenda": "Bancada comprida com banquetas cinza e pendentes",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1918,
+      "legenda": "Salão com bancada, pilar espelhado e parede azul ao fundo",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1907,
+      "legenda": "Cozinha do salão com geladeira inox, coifa e forno",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1919,
+      "legenda": "Armários pretos, cooktop e porta azul na cozinha do salão",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1910,
+      "legenda": "Academia com esteiras, TV e espelhos",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1911,
+      "legenda": "Espaço de exercícios ao ar livre com barras e banco inclinado",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1908,
+      "legenda": "Lavanderia compartilhada com lavadoras empilhadas",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1920,
+      "legenda": "Lavadoras de abertura frontal e janelas altas na lavanderia",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1909,
+      "legenda": "Sala de espera da lavanderia com sofá estofado e pendentes",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1921,
+      "legenda": "Sofá capitonê, mesinhas brancas e painel colorido na parede",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1914,
+      "legenda": "Bicicletário com bicicletas penduradas na parede azul",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O studio é vendido mobiliado?",
+      "resposta": "Sim, segundo o anúncio. As fotos mostram cama, armário, estante com TV, mesa com cadeiras, cozinha com geladeira, cooktop e micro-ondas, e ar-condicionado. Confirme com o corretor a lista do que fica."
+    },
+    {
+      "pergunta": "Qual é o tamanho do studio?",
+      "resposta": "A ficha informa 24 m² de área útil, num ambiente único com banheiro e varanda envidraçada."
+    },
+    {
+      "pergunta": "O que o condomínio oferece?",
+      "resposta": "As fotos mostram piscina com deck, salão com cozinha, academia, espaço de exercícios ao ar livre, lavanderia compartilhada e bicicletário. O anúncio cita ainda conveniência e portaria 24 horas."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Studio de 24 m² na Vila Olímpia, em São Paulo, entregue mobiliado: cama, cozinha compacta com geladeira e micro-ondas, ar-condicionado e varanda envidraçada. No condomínio, piscina com deck, salão com cozinha, academia, lavanderia e bicicletário. Perto do Insper e da Faria Lima, segundo o anúncio. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "studiosaopaulo",
+      "vilaolimpia",
+      "studiomobiliado",
+      "apartamentosp",
+      "imoveissp",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "de659b26604c",
+  "publicadoEm": "2026-10-27T01:21:26.988Z"
+}

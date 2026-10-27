@@ -1,0 +1,120 @@
+{
+  "codigo": "TE0009",
+  "slug": "terreno-plano-360m2-vila-brandina-campinas-te0009",
+  "titulo": "Terreno plano de 360 m² na Vila Brandina, Campinas",
+  "resumo": "Terreno plano de 360 m² na Vila Brandina, em Campinas, já murado e com portão, numa rua de casas perto do Shopping Iguatemi e da Nova Campinas.",
+  "capa": {
+    "foto": 1891,
+    "alt": "Vista aérea do terreno de terra, marcado em vermelho, entre casas de telhado cerâmico"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno fica na Vila Brandina, em Campinas. A ficha informa 360 m² de área total e o anúncio descreve um lote plano, com 12 metros de frente por 30 de profundidade, desimpedido e com água e energia disponíveis na rua."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As duas fotos mostram o essencial: na frente, um muro branco alto com portão de garagem de correr e portão de pedestre; de cima, um lote retangular de terra batida entre casas, voltado para uma rua asfaltada e arborizada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "360 m² de área total, segundo a ficha",
+        "Lote plano e retangular, segundo o anúncio",
+        "Frente já murada, com portão de garagem e portão de pedestre",
+        "Rua asfaltada de casas, com árvores na calçada",
+        "Perto do Shopping Iguatemi e da Nova Campinas, segundo o anúncio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O lote"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na vista aérea, o terreno aparece marcado em vermelho: um retângulo de terra, sem construção, mais comprido do que largo, com a frente para a rua. Dos lados e no fundo ficam casas com telhado de cerâmica, algumas com piscina no quintal. Na foto da rua, a calçada é larga e o muro corre por toda a frente, com o portão branco no meio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O anúncio destaca a topografia plana, que costuma simplificar a obra, e diz que o tamanho do lote permite uma casa com área gourmet, piscina e jardim. Antes de fechar um projeto, vale conferir com um arquiteto o que a legislação da prefeitura permite construir ali."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1890,
+          "legenda": "Frente murada com portão de garagem de correr e portão de pedestre"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma rua residencial, com casas térreas e sobrados, muros baixos e altos e árvores na calçada. O anúncio fala em loteamento consolidado e cita acesso fácil ao Shopping Iguatemi, à Nova Campinas e à Rodovia Dom Pedro I, além de escolas e supermercados por perto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer construir uma casa do zero numa rua já formada de Campinas, sem condomínio, ou para quem procura um lote plano para um projeto residencial."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "A matrícula e a documentação do lote, o zoneamento e o que a prefeitura permite construir, as ligações de água, esgoto e energia e o valor do IPTU.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1890,
+      "legenda": "Frente do terreno com muro branco, portão de correr e portão de pedestre",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1891,
+      "legenda": "Vista aérea do lote de terra marcado em vermelho, entre casas",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é o tamanho do terreno?",
+      "resposta": "A ficha informa 360 m² de área total. O anúncio descreve 12 metros de frente por 30 de profundidade."
+    },
+    {
+      "pergunta": "O terreno é plano?",
+      "resposta": "Sim, segundo o anúncio. A foto aérea mostra um lote de terra sem construção, com a frente para a rua."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno plano de 360 m² na Vila Brandina, em Campinas. Frente já murada, com portão de garagem e portão de pedestre, numa rua residencial arborizada. Perto do Shopping Iguatemi e da Nova Campinas, segundo o anúncio. Bom para quem quer construir a casa do zero. Saiba mais pelo link da bio.",
+    "hashtags": [
+      "terrenocampinas",
+      "vilabrandina",
+      "terrenoavenda",
+      "campinas",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "39953b035340",
+  "publicadoEm": "2026-10-27T01:21:26.994Z"
+}
