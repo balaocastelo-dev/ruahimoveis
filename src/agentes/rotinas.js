@@ -22,8 +22,8 @@ function relatorioDoDia() {
   const decidir = [];
   if (d.aprovar) decidir.push(`${d.aprovar} resposta(s) dos robôs esperando aprovação`);
   if (d.semResposta) decidir.push(`${d.semResposta} cliente(s) sem resposta há mais de 2 h`);
-  const parados = d.linhas.filter((l) => l.ativo && l.estado !== 'conectado');
-  if (parados.length) decidir.push(`sem WhatsApp: ${parados.map((l) => l.nome).join(', ')}`);
+  const parados = d.linhas.filter((l) => l.ativo && ['desconectado', 'erro', 'qr'].includes(l.estado));
+  if (parados.length) decidir.push(`WhatsApp caiu: ${parados.map((l) => l.nome).join(', ')} (leia o QR code de novo)`);
   if (decidir.length) { L.push('*Precisa de você*'); decidir.forEach((x) => L.push(`• ${x}`)); L.push(''); }
   L.push('*Comercial*');
   L.push(`• Leads novos: ${nLeads}${d.leads.length ? ' (' + d.leads.slice(0, 4).map((x) => `${x.origem} ${x.n}`).join(', ') + ')' : ''}`);

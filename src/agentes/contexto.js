@@ -83,7 +83,7 @@ function textoNumeros(d) {
   L.push(`Captados hoje: ${d.captados.length}${d.captados.length ? ' — ' + d.captados.map((c) => c.codigo || c.titulo).join(', ') : ''}. Leads em proposta: ${d.propostas}.`);
   L.push(`Pendências: ${d.aprovar} resposta(s) dos robôs esperando aprovação; ${d.semResposta} cliente(s) sem resposta há mais de 2 h; ${d.afazeresAbertos} afazer(es) abertos.`);
   if (d.chamados.length) L.push(`Agentes que chamaram um corretor hoje: ${d.chamados.map((c) => `${nome(c.agente)}: ${c.texto}`).join(' | ')}.`);
-  const parados = d.linhas.filter((l) => l.ativo && l.estado !== 'conectado');
+  const parados = d.linhas.filter((l) => l.ativo && l.estado !== 'conectado' && l.estado !== 'parada');
   L.push(`WhatsApp dos agentes: ${d.linhas.filter((l) => l.estado === 'conectado').length} de ${d.linhas.length} conectados${parados.length ? ` (sem linha: ${parados.map((l) => l.nome).join(', ')})` : ''}.`);
   return L.join('\n');
 }
@@ -123,7 +123,10 @@ function formato(tipoAcoes) {
 {"mensagem":"o texto que vai no WhatsApp (pode ser vazio se não for o caso de responder)","acoes":[ ... ]}
 Ações que você pode usar (zero, uma ou mais):
 ${ACOES[tipoAcoes]}
-Não invente códigos de imóvel, números, datas ou nomes. Se não souber, diga que o corretor confirma.`;
+Regras do formato:
+- Não invente códigos de imóvel, números, datas, bairros ou nomes. Se não souber, diga que o corretor confirma.
+- Em "atualizar_perfil", preencha SÓ o que a pessoa disse com as palavras dela nesta conversa; campo que ela não disse fica de fora.
+- Se disser que tem opções, cite pelo menos uma pelo código do catálogo (ex.: AP0029) com bairro e valor. Se o catálogo não tiver nada que combine, diga isso com sinceridade.`;
 }
 
 // Monta tudo o que o agente precisa para a mensagem desta pessoa.

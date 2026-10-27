@@ -5,7 +5,8 @@ const { one, all, run } = require('../db');
 const B = require('./base');
 const X = require('./contexto');
 
-const urlBase = () => (cfg.PUBLIC_URL || cfg.BASE_URL).replace(/\/$/, '');
+// Link que vai nas mensagens: o endereço público (nunca o localhost do PC).
+const urlBase = () => (cfg.PUBLIC_URL || (/localhost|127\.0\.0\.1/.test(cfg.BASE_URL) ? cfg.LINK_ONLINE : cfg.BASE_URL)).replace(/\/$/, '');
 const limpa = (s, n = 300) => String(s ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
 
 async function iaDisponivel() {

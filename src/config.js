@@ -63,6 +63,7 @@ module.exports = {
 
   // Escritório virtual (9 agentes robôs com WhatsApp próprio). Roda só no PC; 0 desliga.
   ESCRITORIO: env('ESCRITORIO', '1'),
+  LINK_ONLINE: env('LINK_ONLINE', 'https://ruahimoveis.vercel.app'), // links das mensagens dos agentes quando não há PUBLIC_URL
 
   // IA local (Ollama)
   OLLAMA_URL: env('OLLAMA_URL', 'http://127.0.0.1:11434'),
