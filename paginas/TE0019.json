@@ -1,0 +1,173 @@
+{
+  "codigo": "TE0019",
+  "slug": "terreno-alphaville-dom-pedro-3-campinas-sp-te0019",
+  "titulo": "Terreno de 614,23 m² no Alphaville Dom Pedro 3, Campinas",
+  "resumo": "Terreno de 614,23 m² no Alphaville Dom Pedro 3, Campinas, ideal para construir uma casa em condomínio fechado com acesso a áreas de lazer e segurança.",
+  "capa": {
+    "foto": 1201,
+    "alt": "Terreno com gramado e casas vizinhas ao entardecer"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 614,23 m² está localizado no Alphaville Dom Pedro 3, uma região de alto padrão em Campinas. O imóvel está situado em um condomínio fechado com estrutura de lazer e segurança 24 horas, ideal para quem busca qualidade de vida e tranquilidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o terreno com gramado bem cuidado, casas em construção ao fundo e um ambiente acolhedor com paisagismo. O local é propício para a construção de uma casa que aproveita a infraestrutura do condomínio."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com 614,23 m² em condomínio fechado",
+        "Bem localizada no Alphaville Dom Pedro 3",
+        "Acesso a áreas de lazer como piscina e quadras de tênis",
+        "Segurança 24 horas e vigilância permanente",
+        "Áreas verdes e paisagismo em volta do terreno"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área do terreno e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado em uma área com gramado bem cuidado e casas em construção ao redor. As fotos mostram o entorno com paisagismo e uma vista agradável com o céu ao entardecer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também uma pista de grama em áreas externas e casas vizinhas que dão um aspecto de desenvolvimento em andamento no condomínio. O local permite a construção de uma casa com privacidade e integração com o entorno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1202,
+          "legenda": "Terreno com gramado e casas vizinhas ao entardecer"
+        },
+        {
+          "foto": 1203,
+          "legenda": "Pista de grama em área externa com casas ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está em um condomínio fechado com portaria e áreas verdes. As fotos da portaria mostram um acesso com portão automático, logotipo da RUAH e áreas de estacionamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio possui estrutura de lazer, como piscina, quadras de tênis e sala de fitness, além de segurança 24 horas. O acesso é controlado e oferece tranquilidade aos moradores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1204,
+          "legenda": "Portaria de entrada em condomínio com logotipo 'RUAH' e áreas verdes"
+        },
+        {
+          "foto": 1205,
+          "legenda": "Portaria de condomínio com entrada e árvore"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca construir uma casa em um condomínio de alto padrão, com acesso a áreas de lazer, segurança e bem localizada. É uma opção para quem valoriza a qualidade de vida e a infraestrutura de um empreendimento bem planejado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre os documentos do terreno, como o IPTU e a situação do lote. Além disso, confirme se o condomínio permite a construção de casa e quais são as restrições do loteamento.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1198,
+      "legenda": "Terreno com casas em construção e paisagismo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1199,
+      "legenda": "Terreno com casas em construção e céu com nuvens",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1200,
+      "legenda": "Terreno com casa em construção e céu ao por do sol",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1201,
+      "legenda": "Terreno com gramado e casas em fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1202,
+      "legenda": "Terreno com gramado e casas vizinhas ao entardecer",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1203,
+      "legenda": "Pista de grama em área externa com casas ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1204,
+      "legenda": "Portaria de entrada em condomínio com logotipo 'RUAH' e áreas verdes",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1205,
+      "legenda": "Portaria de condomínio com entrada e árvore",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem 614,23 m²."
+    },
+    {
+      "pergunta": "Tem acesso a áreas de lazer?",
+      "resposta": "Sim, o condomínio oferece áreas de lazer como piscina, quadras de tênis e sala de fitness."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 614,23 m² no Alphaville Dom Pedro 3, Campinas. Localizado em condomínio fechado com estrutura de lazer e segurança. Ideal para quem busca qualidade de vida e infraestrutura completa.",
+    "hashtags": [
+      "terrenocampinas",
+      "alphavillecampinas",
+      "terrenofechado",
+      "condominioalphaville",
+      "investimentoreal",
+      "imovelcampinas",
+      "terrenosdisponiveis",
+      "campinasimoveis"
+    ]
+  },
+  "versao": "6504883fabb5",
+  "publicadoEm": "2026-10-28T04:00:05.517Z"
+}

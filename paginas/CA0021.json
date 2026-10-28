@@ -1,0 +1,215 @@
+{
+  "codigo": "CA0021",
+  "slug": "casa-nova-campinas-3-quartos-piscina-area-lazer-ca0021",
+  "titulo": "Casa de 3 quartos com piscina e área de lazer em Nova Campinas",
+  "resumo": "Casa de 3 quartos com área de lazer completa em Nova Campinas. 228m² de área útil em terreno de 300m², com piscina privativa, churrasqueira e ambientes amplos.",
+  "capa": {
+    "foto": 1142,
+    "alt": "Fachada de casa com portão branco e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa de 3 quartos, com 228m² de área útil em terreno de 300m², está localizada em Nova Campinas, uma região consolidada de Campinas. A propriedade oferece ambientes amplos, com salas de estar, jantar e TV, e um design funcional e moderno. Uma das grandes vantagens é a área externa, que inclui piscina privativa e churrasqueira, ideal para momentos de lazer e convivência. O imóvel também conta com um cômodo adicional que pode ser usado como escritório ou home office, atendendo às necessidades de famílias contemporâneas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizado em uma região com fácil acesso a comércios, escolas e serviços, o imóvel é uma excelente opção para quem busca conforto e qualidade de vida. A planta é funcional, com dormitórios com sacadas voltadas para a área da piscina e ambientes sociais bem distribuídos. Com todos os recursos necessários para uma vida prazerosa, esta casa é uma opção para investimento ou moradia própria."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Piscina privativa e área de lazer completa",
+        "3 quartos com sacadas e 1 suíte",
+        "Ambientes sociais amplos e bem distribuídos",
+        "Cômodo adicional para escritório ou home office",
+        "Bem localizada em Nova Campinas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes internos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os ambientes sociais da casa são amplos e bem planejados. A sala de estar e jantar são integradas, com paredes brancas e um piso claro que dão um toque moderno ao ambiente. A iluminação é agradável, com luz pendente e iluminação natural que entra pelas janelas. O espaço também conta com uma sala de TV, ideal para momentos de lazer em família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem iluminados. O quarto principal possui um armário branco e uma porta com janelas vermelhas, enquanto outro quarto tem uma prateleira branca e uma porta aberta, permitindo uma maior integração com o ambiente. Todos os quartos têm piso claro e ventiladores de teto, garantindo conforto térmico."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1146,
+          "legenda": "Quarto com armários e porta com janelas"
+        },
+        {
+          "foto": 1147,
+          "legenda": "Sala com mesa e estante"
+        },
+        {
+          "foto": 1151,
+          "legenda": "Quarto com porta de madeira e janela com persiana"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é prática e bem equipada, com armários brancos e uma bancada branca que facilita a preparação de refeições. A mesa de madeira e o banco de cozinha dão um toque rústico ao ambiente, enquanto a janela com persiana permite a entrada de luz natural. A área de serviço também é funcional, com armários e um piso claro que mantém o ambiente limpo e organizado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1149,
+          "legenda": "Cozinha com escada e prateleira coberta"
+        },
+        {
+          "foto": 1152,
+          "legenda": "Cozinha com mesa de madeira e armários brancos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área externa da casa é um dos grandes destaques. A piscina privativa é um ponto de destaque, ideal para relaxar e aproveitar o sol. A churrasqueira complementa o espaço, permitindo reuniões com amigos e familiares. O terreno é bem aproveitado, com vegetação e áreas abertas que proporcionam privacidade e conforto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno de 300m² permite a instalação de um jardim, com gramado e árvores que dão um toque natural ao ambiente. A fachada da casa tem um portão branco e um jardim bem cuidado, com plantas e uma árvore de palmeira que realça a beleza do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1153,
+          "legenda": "Terreno com vegetação e estrutura de construção"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam um espaço amplo e bem localizado, com área de lazer para momentos de convivência e conforto. O imóvel é uma excelente opção para moradia própria ou investimento, considerando a localização e as características oferecidas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o estado da documentação, a disponibilidade de vagas de garagem e o que não aparece nas fotos, como o estado do telhado e da instalação elétrica.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1142,
+      "legenda": "Fachada de casa com portão branco e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1144,
+      "legenda": "Fachada de casa com mosaico e grades",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1153,
+      "legenda": "Terreno com vegetação e estrutura de construção",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1147,
+      "legenda": "Sala com mesa e estante",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1149,
+      "legenda": "Cozinha com escada e prateleira coberta",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1152,
+      "legenda": "Cozinha com mesa de madeira e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1146,
+      "legenda": "Quarto com armários e porta com janelas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1148,
+      "legenda": "Quarto com prateleira e porta aberta",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1151,
+      "legenda": "Quarto com porta de madeira e janela com persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1145,
+      "legenda": "Banheiro com azulejos decorativos e banheira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1143,
+      "legenda": "Portão branco com placa 'RUAH INVESTIMENTOS IMOBILIÁRIOS' em jardim",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1150,
+      "legenda": "Escada interna com piso de madeira e parede de tijolinho",
+      "ambiente": "planta"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos tem o imóvel?",
+      "resposta": "O imóvel possui 3 quartos, sendo 1 suíte."
+    },
+    {
+      "pergunta": "Tem área de lazer?",
+      "resposta": "Sim, o imóvel tem piscina privativa e churrasqueira."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 3 quartos com piscina e área de lazer em Nova Campinas. 228m² de área útil em terreno de 300m², com ambientes amplos e bem distribuídos. Ideal para famílias que buscam conforto e qualidade de vida.",
+    "hashtags": [
+      "casaemcampinas",
+      "novacampinas",
+      "imoveisparaalugar",
+      "piscinaprivativa",
+      "terrenolargo",
+      "imoveiscomareaexterna",
+      "casa3quartos",
+      "imoveiscomlazer"
+    ]
+  },
+  "versao": "edbba0130611",
+  "publicadoEm": "2026-10-28T04:00:05.518Z"
+}

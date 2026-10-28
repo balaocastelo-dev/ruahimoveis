@@ -1,0 +1,266 @@
+{
+  "codigo": "AP0012",
+  "slug": "apartamento-cambui-campinas-3-quartos-varanda-localizacao-privilegiada-ap0012",
+  "titulo": "Apartamento de 3 quartos com varanda e bem localizada no Cambuí, Campinas",
+  "resumo": "Apartamento de 3 quartos no Cambuí, Campinas. bem localizada, ambientes amplos e com área de lazer. Ideal para quem busca conforto e praticidade.",
+  "capa": {
+    "foto": 1217,
+    "alt": "Varanda com churrasqueira, plantas e muro azulejado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento no Cambuí oferece 3 quartos, 1 suíte e 2 vagas de garagem. Localizado em frente à principal rua do bairro, próximo ao Tênis Clube e ao Regatas, é uma excelente opção para quem busca conforto e praticidade. Os ambientes são amplos e bem distribuídos, com área de lazer à disposição."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda com churrasqueira e a sala integrada são destaque, assim como a bem localizada. O imóvel é ideal para quem valoriza a proximidade com serviços, restaurantes e comércios."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 dormitórios, sendo 1 suíte",
+        "Bem localizada no Cambuí",
+        "Sala integrada à varanda com iluminação embutida",
+        "Banheiro com pia de mármore e box de vidro",
+        "Cozinha moderna com bancada preta e armários brancos",
+        "Área de serviço com varanda e lavatório"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar é ampla e integrada à varanda, com teto com moldura dourada e pendente de vidro. A iluminação embutida e as cortinas brancas contribuem para um ambiente aconchegante. A varanda conta com churrasqueira, plantas em vasos e muro azulejado, ideal para refeições ao ar livre."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na sala, há sofá cinza, poltronas e mesa de centro, com teto alto e piso claro. A área social é integrada, oferecendo flexibilidade para uso de espaços."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1206,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 1218,
+          "legenda": "Sala de estar com sofá, mesa de centro e plantas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna, com armários brancos, bancada preta e fogão a gás. Há uma luminária quadrada no teto e porta de madeira, contribuindo para um ambiente funcional e elegante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de serviço possui lavatório, varanda e ventilador de teto. O piso claro e a janela com grade garantem boa iluminação natural e ventilação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1214,
+          "legenda": "Cozinha moderna com armários brancos e bancada preta"
+        },
+        {
+          "foto": 1216,
+          "legenda": "Área de serviço com lavatório e varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso de madeira e janelas com persianas. O quarto principal possui armário espelhado, luminária pendente e cama com cabeceira clássica. Há também um quarto com mesa de trabalho e armário com portas de vidro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros possuem pia de mármore, box de vidro, espelho grande e banheira. O design moderno e funcional é visível em todos os ambientes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1208,
+          "legenda": "Banheiro com vaso sanitário e pia de mármore"
+        },
+        {
+          "foto": 1210,
+          "legenda": "Banheiro com box de vidro, pia, vaso sanitário e espelho"
+        },
+        {
+          "foto": 1213,
+          "legenda": "Armário com portas de vidro e madeira clara"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio conta com uma piscina em terraço com mesas e cadeiras, toldos e plantas. A área de lazer é ideal para momentos de relaxamento e convivência com amigos e familiares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Embora o condomínio não tenha informações sobre lazer adicionais, a área externa do imóvel e o entorno oferecem opções de convivência e lazer."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1221,
+          "legenda": "Piscina em terraço com mesas e cadeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, praticidade e bem localizada. Com ambientes amplos e bem distribuídos, é uma ótima opção para quem deseja viver em um dos bairros mais valorizados de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há informações adicionais sobre o lazer do condomínio que não estão nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1206,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1207,
+      "legenda": "Sala de estar com televisão e tapete",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1218,
+      "legenda": "Sala de estar com sofá, mesa de centro e plantas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1219,
+      "legenda": "Sala de estar com sofá, poltronas e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1217,
+      "legenda": "Varanda com churrasqueira e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1220,
+      "legenda": "Varanda com plantas e edifícios ao fundo",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1214,
+      "legenda": "Cozinha moderna com armários brancos e bancada preta",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1215,
+      "legenda": "Cozinha moderna com bancada branca e cadeiras de bar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1216,
+      "legenda": "Área de serviço com lavatório e varanda",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1211,
+      "legenda": "Quarto com cama e janela com persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1212,
+      "legenda": "Quarto com cama, mesa de trabalho e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1213,
+      "legenda": "Armário com portas de vidro e madeira clara",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1209,
+      "legenda": "Suite com piso de madeira e armário espelhado",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1208,
+      "legenda": "Banheiro com vaso sanitário e pia de mármore",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1210,
+      "legenda": "Banheiro com box de vidro, pia, vaso sanitário e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1221,
+      "legenda": "Piscina em terraço com mesas e cadeiras",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a varanda possui churrasqueira, servindo como área gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 3 quartos no Cambuí, Campinas. bem localizada, ambientes amplos, varanda com churrasqueira e área de lazer. Ideal para quem busca conforto e praticidade.",
+    "hashtags": [
+      "apartamento",
+      "cambui",
+      "campinas",
+      "3quartos",
+      "varanda",
+      "lazer",
+      "condominio",
+      "imovel"
+    ]
+  },
+  "versao": "22c7d266496a",
+  "publicadoEm": "2026-10-28T04:00:05.516Z"
+}

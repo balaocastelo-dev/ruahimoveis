@@ -1,0 +1,306 @@
+{
+  "codigo": "CA0043",
+  "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0043",
+  "titulo": "Casa em condomínio com 3 suítes, varanda gourmet e vista no Swiss Park",
+  "resumo": "Casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet, 208 m² de área privativa e vista para áreas verdes. bem localizada com infraestrutura completa.",
+  "capa": {
+    "foto": 1172,
+    "alt": "Fachada de casas modernas com jardins verticais e pessoas caminhando"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é uma casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet e 208 m² de área privativa. A casa oferece espaços integrados, como a sala de estar com vista para a cozinha e jantar, além de uma varanda com churrasqueira e jacuzzi. A bem localizada do Swiss Park garante acesso a áreas verdes, comércios e serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa tem uma arquitetura contemporânea, com um rooftop privativo e vista para áreas verdes. O condomínio inclui lazer completo, como piscina, academia, quadra poliesportiva e campo de futebol sintético. O imóvel é ideal para quem busca conforto, praticidade e uma localização estratégica."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa com 3 suítes e 208 m² de área privativa",
+        "Varanda gourmet com churrasqueira e jacuzzi",
+        "Rooftop privativo com vista para áreas verdes",
+        "Condomínio com lazer completo e segurança 24h",
+        "Localização no Swiss Park, um dos bairros mais desejados de Campinas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é integrada, com a sala de estar conectada à cozinha e jantar. A sala tem um sofá branco, mesa de centro e TV na parede, enquanto a cozinha conta com banco de madeira e iluminação embutida. A varanda gourmet é um destaque, com mesa de madeira, churrasqueira e vista para o céu. Ela também possui uma jacuzzi e plantas em vasos, ideal para reuniões e momentos de lazer."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1154,
+          "legenda": "Varanda gourmet com mesa de madeira, churrasqueira e vista para o céu"
+        },
+        {
+          "foto": 1163,
+          "legenda": "Varanda com jacuzzi e vista para o céu"
+        },
+        {
+          "foto": 1171,
+          "legenda": "Varanda com vista panorâmica e plantas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem iluminados, com cama de casal, mesas de cabeceira e janelas com vista para o exterior. As suítes contam com armários embutidos, ar condicionado e varanda com vista para áreas verdes. O ambiente é aconchegante, com paredes com textura e iluminação embutida no teto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1155,
+          "legenda": "Suite com cama de casal, escritório e vista para o exterior"
+        },
+        {
+          "foto": 1159,
+          "legenda": "Suite com cama de casal, televisão e varanda"
+        },
+        {
+          "foto": 1166,
+          "legenda": "Suite com cama de casal, televisão e vista para o exterior"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Lausanne Swiss Park Residence oferece um lazer completo, com piscina, academia, quadra poliesportiva e campo de futebol sintético. Há ainda área de churrasqueira, salão de festas e brinquedoteca. A segurança do condomínio é 24h, com portão eletrônico, guarita e vigilância. O bairro Swiss Park é planejado, com áreas verdes, parque botânico e fácil acesso a rodovias."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1173,
+          "legenda": "Piscina com espreguiçadeiras e mesa de jantar ao ar livre"
+        },
+        {
+          "foto": 1174,
+          "legenda": "Galeria de fitness com máquinas de correr"
+        },
+        {
+          "foto": 1175,
+          "legenda": "Campo de futebol sintético cercado por palmeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Swiss Park é um bairro planejado com infraestrutura completa, áreas verdes preservadas, parque botânico, lagos e comércios próximos. O condomínio tem acesso fácil às principais rodovias da região e oferece tranquilidade e segurança. A bem localizada garante conveniência para o dia a dia e excelente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1177,
+          "legenda": "Fachada moderna de casa com garagem e varanda"
+        },
+        {
+          "foto": 1178,
+          "legenda": "Jogadores de beach tennis em ação"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, área de lazer e bem localizada. A casa oferece espaços integrados, com suítes, varanda gourmet e vista para áreas verdes. O condomínio inclui infraestrutura completa, como academia, piscina e segurança 24h, garantindo tranquilidade e bem-estar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há qualquer restrição no uso do rooftop ou varanda.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1172,
+      "legenda": "Fachada de casas modernas com jardins verticais",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1177,
+      "legenda": "Fachada moderna de casa com garagem e varanda",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1167,
+      "legenda": "Vista interna de um edifício com escada em espiral",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1156,
+      "legenda": "Sala de estar integrada à cozinha e jantar",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1157,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1160,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1161,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1162,
+      "legenda": "Sala de jantar com mesa redonda e cadeiras de couro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1168,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1154,
+      "legenda": "Varanda gourmet com mesa de madeira, churrasqueira e vista para o céu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1163,
+      "legenda": "Varanda com jacuzzi e vista para o céu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1164,
+      "legenda": "Varanda com deck de madeira, jacuzzi e vista para o céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1165,
+      "legenda": "Varanda com mesa e cadeira, plantas e vista para a estrada",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1171,
+      "legenda": "Varanda com vista panorâmica e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1169,
+      "legenda": "Quarto com cama, mesa de cabeceira e cortina",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1170,
+      "legenda": "Quarto com cama, janela com vista para o exterior e ar condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1155,
+      "legenda": "Suite com cama de casal, escritório e vista para o exterior",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1159,
+      "legenda": "Suite com cama de casal, televisão e varanda",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1166,
+      "legenda": "Suite com cama de casal, televisão e vista para o exterior",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1175,
+      "legenda": "Campo de futebol sintético cercado por palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1178,
+      "legenda": "Jogadores de beach tennis em ação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1173,
+      "legenda": "Piscina com espreguiçadeiras e mesa de jantar ao ar livre",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1174,
+      "legenda": "Galeria de fitness com máquinas de correr",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1176,
+      "legenda": "Gym moderno com equipamentos de fitness",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1158,
+      "legenda": "Corredor com elevador e vista para sala",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem?",
+      "resposta": "O imóvel tem 3 suítes."
+    },
+    {
+      "pergunta": "Tem varanda gourmet?",
+      "resposta": "Sim, a casa possui uma varanda gourmet com churrasqueira, jacuzzi e vista para o céu."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Swiss Park com 3 suítes, varanda gourmet e vista para áreas verdes. Ideal para quem busca conforto e localização estratégica.",
+    "hashtags": [
+      "casaemcondominio",
+      "swisspark",
+      "campinassp",
+      "imovelparafamilia",
+      "varandagourmet",
+      "lazercompleto",
+      "condominiofechado",
+      "areaverde"
+    ]
+  },
+  "versao": "86f39e0b0dbc",
+  "publicadoEm": "2026-10-28T04:00:05.518Z"
+}

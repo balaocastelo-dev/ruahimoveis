@@ -1,0 +1,243 @@
+{
+  "codigo": "CA0050",
+  "slug": "casa-parque-taquaral-campinas-sp-ca0050",
+  "titulo": "Casa reformada no Parque Taquaral com 4 vagas de garagem e área de serviço",
+  "resumo": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem, área de serviço e estrutura renovada. bem localizada em bairro com infraestrutura urbana.",
+  "capa": {
+    "foto": 1185,
+    "alt": "Fachada de casa com portão azul e logotipo 'RUAH Investimentos Imobiliários'"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem e área de serviço. O imóvel foi reformado recentemente com substituição de telhado, madeiramento, instalações elétricas, pisos e portas. A fachada é branca, com portão azul e logotipo da RUAH Investimentos Imobiliários visível. Localizado em bairro com infraestrutura urbana, o imóvel combina características residenciais com possibilidade de uso comercial, conforme autorizações locais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área total do imóvel é de 190 m², com área útil de 219 m². A garagem possui portão azul e escada para o segundo andar, enquanto a varanda oferece vista para a rua e área externa com árvores. O imóvel está situado em uma região com acesso a comércios e serviços, sendo uma opção interessante para quem busca um imóvel versátil."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa reformada com substituição de telhado e madeiramento",
+        "4 vagas de garagem com portão azul e escada para o segundo andar",
+        "Varanda com vista para área externa e edifícios vizinhos",
+        "Cozinha com bancada escura e armários brancos",
+        "Fachada branca com portão azul e logotipo da RUAH visível"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fachada e entrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada da casa é branca, com portão azul e logotipo 'RUAH Investimentos Imobiliários' em destaque. As fotos mostram uma fachada com área de estacionamento, árvore em frente e carro estacionado. A estrutura da fachada inclui telhado e fiação elétrica visível, indicando a reforma recente. A entrada principal conta com portão azul e logotipo da imobiliária, o que chama a atenção visualmente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1186,
+          "legenda": "Fachada de casa com portão azul e árvore ao lado"
+        },
+        {
+          "foto": 1187,
+          "legenda": "Fachada de casa com varanda e portão azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Varanda e área externa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda possui piso claro e balaustrada azul, com vista para a rua e edifícios vizinhos. Algumas fotos mostram uma varanda com portão de ferro e escada moderna, enquanto outras destacam uma churrasqueira e banheiro externo. A área externa inclui árvores e estrutura elétrica, indicando que o imóvel é adequado para uso residencial e social."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1188,
+          "legenda": "Varanda com vista para a rua e edifícios vizinhos"
+        },
+        {
+          "foto": 1189,
+          "legenda": "Varanda com portão de ferro e vista para área externa"
+        },
+        {
+          "foto": 1195,
+          "legenda": "Varanda com churrasqueira e banheiro externo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Interno e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala é vazia com piso de cerâmica, paredes brancas e teto com luminárias. A cozinha possui bancada escura e armários brancos, com janela com grades e piso de cerâmica. A área de serviço inclui uma tigela de lavagem e janela com grades. A sala também apresenta uma escada moderna e porta de ferro, indicando a estrutura interna reformada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1191,
+          "legenda": "Sala vazia com porta de ferro e teto com luminárias"
+        },
+        {
+          "foto": 1192,
+          "legenda": "Cozinha com bancada escura e armários"
+        },
+        {
+          "foto": 1196,
+          "legenda": "Sala com escada moderna e parede branca"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Garagem e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A garagem possui portão azul e escada de ferro para o segundo andar. As fotos mostram uma garagem com parede branca e tijolos na base. O acesso ao imóvel é facilitado pela garagem, que oferece espaço para até quatro carros, conforme informado no anúncio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1197,
+          "legenda": "Garagem com portão azul e escada para o segundo andar"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para quem busca uma casa reformada com versatilidade de uso, seja residencial ou comercial. A localização no Parque Taquaral, com infraestrutura urbana, é um diferencial para quem valoriza acessibilidade a serviços e comércios. A reforma recente e a estrutura renovada garantem um imóvel moderno e funcional."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Verifique a documentação do imóvel, o estado atual da reforma e os usos permitidos no local. Pergunte sobre a documentação do imóvel, o estado das instalações elétricas e se há possibilidade de uso comercial.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1184,
+      "legenda": "Fachada de casa com portão azul e logotipo 'RUAH' em destaque",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1185,
+      "legenda": "Fachada de casa com portão e logotipo 'RUAH Investimentos Imobiliários'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1186,
+      "legenda": "Fachada de casa com portão azul e árvore ao lado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1187,
+      "legenda": "Fachada de casa com varanda e portão azul",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1190,
+      "legenda": "Fachada de casa com carro estacionado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1193,
+      "legenda": "Fachada de imóvel com portão aberto e logotipo 'RUAH' visível",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1194,
+      "legenda": "Fachada de prédio com ônibus parado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1191,
+      "legenda": "Sala vazia com porta de ferro e teto com luminárias",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1196,
+      "legenda": "Sala com escada moderna e parede branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1188,
+      "legenda": "Varanda com vista para a rua e edifícios vizinhos",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1189,
+      "legenda": "Varanda com portão de ferro e vista para área externa",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1195,
+      "legenda": "Varanda com churrasqueira e banheiro externo",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1192,
+      "legenda": "Cozinha com bancada escura e armários",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1197,
+      "legenda": "Garagem com portão azul e escada para o segundo andar",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 4 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "A varanda conta com churrasqueira, indicando uma área de uso social."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Entre em contato pelo formulário desta página para agendar uma visita."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem e área de serviço. bem localizada com infraestrutura urbana. Ideal para uso residencial ou comercial.",
+    "hashtags": [
+      "casacampinas",
+      "parquetaquaral",
+      "imoveisrueh",
+      "vendacampinas",
+      "reformado",
+      "garagem4",
+      "areautil",
+      "campinasimoveis"
+    ]
+  },
+  "versao": "29c654913ea1",
+  "publicadoEm": "2026-10-28T04:00:05.518Z"
+}
