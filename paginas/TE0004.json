@@ -1,0 +1,115 @@
+{
+  "codigo": "TE0004",
+  "slug": "terreno-parque-taquaral-campinas-sp-te0004",
+  "titulo": "Terreno de 5.020 m² com projeto aprovado no Parque Taquaral, Campinas",
+  "resumo": "Terreno de 5.020 m² no Parque Taquaral, com projeto aprovado para 29 casas e localização estratégica em uma das regiões mais valorizadas de Campinas.",
+  "capa": {
+    "foto": 251,
+    "alt": "Lote com vegetação e casas ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 5.020 m² no Parque Taquaral, uma das regiões mais valorizadas de Campinas, está pronto para receber um empreendimento residencial. O imóvel já conta com um projeto aprovado para a implantação de 29 casas, o que facilita e acelera o desenvolvimento do projeto. Localizado em uma área estratégica, próximo a vias importantes, comércios e serviços, ele é uma opção para investidores e construtoras que buscam um empreendimento com potencial de crescimento. A região é consolidada e está em constante procura, o que torna este terreno ainda mais atrativo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com 5.020 m²",
+        "Projeto aprovado para 29 casas",
+        "Localização no Parque Taquaral",
+        "Área em constante procura",
+        "Documentação regularizada",
+        "Acesso fácil às principais avenidas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado no Parque Taquaral, uma região consolidada e em constante procura em Campinas. Sua localização estratégica oferece fácil acesso a importantes vias de circulação, comércios, serviços e infraestrutura urbana. A proximidade com ações públicas e privadas facilita o desenvolvimento do empreendimento. A região é uma das mais desejadas da cidade, combinando qualidade de vida e mobilidade, o que a torna atrativa para moradores e investidores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 250,
+          "legenda": "Terreno com muro e vegetação ao lado de uma estrada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta vegetação nativa em partes da área e conta com um muro de concreto que delimita parte do lote. A área está em um loteamento com casas ao redor, algumas das quais possuem piscinas, o que demonstra o padrão do entorno. O terreno já está com projeto aprovado para a construção de 29 casas, o que agiliza o processo de desenvolvimento. A área total é de 5.020 m², com possibilidade de implantação de um condomínio horizontal, ideal para quem busca um empreendimento de médio ou alto padrão."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores, construtoras e incorporadoras que buscam um empreendimento com e desenvolvimento acelerado. A localização no Parque Taquaral, combinada com um projeto aprovado, oferece uma vantagem significativa para quem quer aproveitar o crescimento da região. A área está em uma das regiões mais valorizadas de Campinas, o que garante um futuro promissor para o imóvel e seus futuros moradores."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o progresso do projeto, a disponibilidade de documentação e a infraestrutura do entorno.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 250,
+      "legenda": "Terreno com muro e vegetação ao lado de uma estrada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 251,
+      "legenda": "Lote com vegetação e casas ao redor",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno possui área total de 5.020 m²."
+    },
+    {
+      "pergunta": "Tem projeto aprovado?",
+      "resposta": "Sim, o terreno já conta com projeto aprovado para a implantação de 29 casas."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 5.020 m² no Parque Taquaral, com projeto aprovado para 29 casas e localização estratégica em uma das regiões mais valorizadas de Campinas. Ideal para investidores e construtoras.",
+    "hashtags": [
+      "terrenocampinas",
+      "parquetaquaral",
+      "investimentoreal",
+      "empreendimentos",
+      "terrenoparquetaquaral",
+      "campinasinvestimento",
+      "areautil",
+      "campinasimoveis"
+    ]
+  },
+  "versao": "26536f7e45eb",
+  "publicadoEm": "2026-10-28T04:34:07.324Z"
+}

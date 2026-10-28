@@ -1,0 +1,104 @@
+{
+  "codigo": "SO0001",
+  "slug": "sobrado-parque-taquaral-campinas-sp-so0001",
+  "titulo": "Sobrado de 3 suítes com terreno amplo no Parque Taquaral, Campinas",
+  "resumo": "Sobrado com 3 suítes e terreno de 1.180 m² no Parque Taquaral, Campinas. Ideal para personalização e adaptação residencial ou corporativa.",
+  "capa": {
+    "foto": 467,
+    "alt": "Fachada de casa com portão branco, muro de concreto e gramado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este sobrado no Parque Taquaral oferece um terreno de 1.180 m² e uma construção de 580 m², ideal para quem busca um imóvel com potencial de transformação. Localizado em uma região estratégica de Campinas, o imóvel conta com 3 suítes e 4 banheiros, proporcionando uma base sólida para adaptações residenciais ou profissionais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade está em um estágio de modernização parcial, permitindo que quem comprar personalize os ambientes conforme suas necessidades. A fachada apresenta um portão branco e muro de concreto, com gramado bem cuidado, reforçando o após a conclusão dos trabalhos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com 1.180 m²",
+        "Construção com 580 m²",
+        "3 suítes e 4 banheiros",
+        "Potencial de personalização",
+        "Localização estratégica em Campinas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Terreno e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está situado em um terreno amplo de 1.180 m², com gramado bem mantido e muro de concreto que delimita o espaço. A localização no Parque Taquaral é estratégica, permitindo fácil acesso a serviços essenciais e áreas comerciais da cidade. A fachada da casa apresenta um portão branco e telhado de telha, com janelas fechadas que mantêm a privacidade do imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Estrutura e potencial de uso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A construção de 580 m² oferece amplos espaços internos, adequados para adaptações residenciais ou corporativas. Com 3 suítes e 4 banheiros, o imóvel já possui uma estrutura sólida que pode ser modernizada conforme o gosto de quem comprar. A propriedade está em um estágio inicial de modernização, criando uma oportunidade para quem busca personalizar os ambientes."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este sobrado é ideal para quem busca um imóvel com e flexibilidade de uso. Seja para adaptação residencial ou profissional, o terreno amplo e a estrutura existente oferecem uma base sólida para projetos de alto padrão. A localização estratégica no Parque Taquaral reforça o potencial de investimento a longo prazo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado atual da modernização e quais são as possibilidades de adaptação para uso residencial ou corporativo.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 467,
+      "legenda": "Fachada de casa com portão branco e muro de concreto",
+      "ambiente": "fachada"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o imóvel?",
+      "resposta": "O imóvel possui 3 suítes."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "As fotos não mostram área gourmet. Pergunte ao corretor sobre essa possibilidade."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Sobrado no Parque Taquaral, Campinas, com terreno amplo e potencial de personalização. Ideal para adaptações residenciais ou corporativas. Localização estratégica e estrutura sólida.",
+    "hashtags": [
+      "sobrado",
+      "campinas",
+      "parquetaquaral",
+      "imovelamplo",
+      "investimento",
+      "terreno",
+      "personalizacao",
+      "residencial"
+    ]
+  },
+  "versao": "1c675349c12c",
+  "publicadoEm": "2026-10-28T04:34:07.325Z"
+}

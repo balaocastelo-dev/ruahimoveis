@@ -1,0 +1,322 @@
+{
+  "codigo": "CA0001",
+  "slug": "casa-gramado-campinas-4-suites-piscina-area-gourmet-ca0001",
+  "titulo": "Casa em condomínio de 4 suítes com piscina e área gourmet no Gramado, Campinas",
+  "resumo": "Casa em condomínio de alto padrão no Gramado, Campinas, com 4 suítes, piscina, área gourmet e amplo espaço para lazer. Ideal para quem busca conforto e privacidade.",
+  "capa": {
+    "foto": 331,
+    "alt": "Sala de estar com vista para piscina e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa em condomínio no Gramado, Campinas, oferece um estilo de vida de luxo com 4 suítes, piscina, área gourmet e uma ampla infraestrutura de lazer. O imóvel destaca-se pela integração dos ambientes e pela qualidade dos materiais usados na construção. A sala de estar, com piso claro e vista para a piscina, é um dos pontos altos da residência, combinando elegância com funcionalidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem uma área total de 901,66 m², com 504,13 m² de área útil, distribuídos em dois pavimentos. O primeiro piso conta com sala de estar, sala de jantar, cozinha ampla com ilha, área de serviço e escritório com lavabo. No segundo piso, estão as 4 suítes, todas com armários embutidos e comodidades modernas, incluindo a suíte master com banheira de hidromassagem."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 suítes com armários embutidos e comodidades modernas",
+        "Piscina com hidromassagem e deck de madeira",
+        "Área gourmet com churrasqueira e vista para o jardim",
+        "Garagem para até 9 veículos, com 3 vagas cobertas",
+        "Cozinha moderna com ilha central e armários de madeira",
+        "Condomínio com salão de festas, academia, quadra de tênis e outras áreas de lazer"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa foi projetada com o objetivo de promover a integração entre os ambientes. A sala de estar, com piso claro e vista para a piscina, é ampla e bem iluminada. A sala de jantar conecta-se diretamente à cozinha, que tem uma ilha central e armários de madeira clara. O living com lareira e o home theater são espaços ideais para momentos de lazer e convivência familiar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha moderna conta com ilha central, bancada de granito e armários funcionais. A área de serviço também é ampla, com lavanderia, quarto e banheiro de apoio para funcionários. O escritório, com lavabo, é um espaço prático para quem trabalha ou estuda em casa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 324,
+          "legenda": "Cozinha moderna com ilha central e vista para a sala"
+        },
+        {
+          "foto": 318,
+          "legenda": "Sala de estar com piso de mármore e parede de madeira"
+        },
+        {
+          "foto": 320,
+          "legenda": "Sala de estar com piso de ardósia e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No segundo pavimento, as 4 suítes são espaçosas e bem distribuídas. A suíte master tem um closet e banheira de hidromassagem, enquanto as demais suítes também contam com armários embutidos e banheiros completos. As suítes têm vista para o jardim e a varanda, com piso de madeira e portas de vidro que permitem a entrada de luz natural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros possuem revestimento de azulejos verdes, pias duplas, chuveiros de vidro e bancadas brancas. Alguns deles têm hidromassagem, tornando-os ainda mais aconchegantes e modernos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 334,
+          "legenda": "Sala com piso de madeira e porta de vidro"
+        },
+        {
+          "foto": 336,
+          "legenda": "Banheiro moderno com banheira, pia dupla e revestimento de azulejos verdes"
+        },
+        {
+          "foto": 343,
+          "legenda": "Suite com vista para varanda e jardim tropical"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e piscina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de lazer conta com uma piscina com hidromassagem, deck de madeira e vista para o jardim. A área gourmet, integrada à piscina, tem churrasqueira, bancada de granito e vitrine de vidro, ideal para confraternizações. A varanda, com piso de ardósia e vista para o jardim tropical, é um espaço adequado para relaxar ou receber convidados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece uma infraestrutura completa, com salão de festas, club house, academia, quadra de tênis, quadra de squash, mini campo com grama sintética e ginásio coberto. A casa também possui uma edícula, gerador de energia e aquecimento solar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 315,
+          "legenda": "Piscina com deck de madeira e palmeiras"
+        },
+        {
+          "foto": 329,
+          "legenda": "Cozinha gourmet com ilha central e armários de vidro"
+        },
+        {
+          "foto": 332,
+          "legenda": "Piscina com azulejos azuis e área externa com palmeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e qualidade de vida. Com 4 suítes, piscina, área gourmet e uma infraestrutura completa de lazer, é uma excelente opção para quem deseja morar em um ambiente sofisticado e bem localizado no Gramado, Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e os detalhes sobre a garagem e o acesso ao imóvel.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 340,
+      "legenda": "Fachada de casa com varanda e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 318,
+      "legenda": "Sala de estar com piso de mármore e parede de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 319,
+      "legenda": "Sala de estar com lareira e vista para o jardim",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 320,
+      "legenda": "Sala de estar com piso de ardósia e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 321,
+      "legenda": "Sala com escada e porta dupla",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 322,
+      "legenda": "Sala de estar com vista para a escada e jardim",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 323,
+      "legenda": "Sala de estar com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 331,
+      "legenda": "Sala de estar com vista para piscina e jardim",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 334,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 335,
+      "legenda": "Sala com piso de madeira e vista para varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 316,
+      "legenda": "Varanda com piso de ladrilho e vista para palmeiras e casas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 317,
+      "legenda": "Varanda com piso de ardósia e vista para jardim tropical",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 329,
+      "legenda": "Cozinha gourmet com ilha central e armários de vidro",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 330,
+      "legenda": "Cozinha gourmet com churrasqueira e bancada de granito",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 324,
+      "legenda": "Cozinha moderna com ilha central e vista para a sala",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 325,
+      "legenda": "Cozinha moderna com ilha e armários de madeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 326,
+      "legenda": "Cozinha moderna com bancada de granito e armários de madeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 327,
+      "legenda": "Cozinha moderna com ilha e cooktop",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 328,
+      "legenda": "Cozinha gourmet com iluminação natural e vista para o jardim",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 343,
+      "legenda": "Suite com vista para varanda e jardim tropical",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 344,
+      "legenda": "Suite com piso de madeira e vista para varanda com palmeiras",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 336,
+      "legenda": "Banheiro moderno com banheira, pia dupla e revestimento de azulejos verdes",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 337,
+      "legenda": "Banheiro moderno com azulejos verdes e bancada branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 338,
+      "legenda": "Banheiro com hidromassagem e piso de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 339,
+      "legenda": "Banheiro moderno com bancada dupla e chuveiro de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 315,
+      "legenda": "Piscina com deck de madeira e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 332,
+      "legenda": "Piscina com azulejos azuis e área externa com palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 333,
+      "legenda": "Piscina com hidromassagem em área externa",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 341,
+      "legenda": "Piscina com hidromassagem e deck de madeira",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 342,
+      "legenda": "Corredor com varanda e banheiro",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel conta com 9 vagas de garagem, sendo 3 cobertas e 6 descobertas."
+    },
+    {
+      "pergunta": "Tem piscina e área gourmet?",
+      "resposta": "Sim, o imóvel tem piscina com hidromassagem e área gourmet integrada, com churrasqueira e vista para o jardim."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Descubra uma residência de alto padrão no Gramado, Campinas, com 4 suítes, piscina, área gourmet e infraestrutura completa de lazer. Ideal para quem busca conforto e privacidade. Marque sua visita já!",
+    "hashtags": [
+      "casacondominio",
+      "campinas",
+      "gramado",
+      "4suites",
+      "piscina",
+      "areagourmet",
+      "imovel",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "f5528e5b568a",
+  "publicadoEm": "2026-10-28T04:34:07.326Z"
+}

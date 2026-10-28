@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0052",
+      "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0052",
+      "titulo": "Casa em condomínio de 4 suítes com varanda gourmet no Swiss Park",
+      "resumo": "Casa em condomínio no Swiss Park, Campinas, com 4 suítes, 4 vagas de garagem e área de lazer completa. Localizada em uma das regiões mais valorizadas da cidade.",
+      "capa": {
+        "foto": 477,
+        "alt": "Fachada de casa com garagem e jardim bem manejado"
+      },
+      "versao": "880a638f71df",
+      "publicadoEm": "2026-10-28T04:34:07.327Z"
+    },
+    {
+      "codigo": "CA0001",
+      "slug": "casa-gramado-campinas-4-suites-piscina-area-gourmet-ca0001",
+      "titulo": "Casa em condomínio de 4 suítes com piscina e área gourmet no Gramado, Campinas",
+      "resumo": "Casa em condomínio de alto padrão no Gramado, Campinas, com 4 suítes, piscina, área gourmet e amplo espaço para lazer. Ideal para quem busca conforto e privacidade.",
+      "capa": {
+        "foto": 331,
+        "alt": "Sala de estar com vista para piscina e jardim"
+      },
+      "versao": "f5528e5b568a",
+      "publicadoEm": "2026-10-28T04:34:07.326Z"
+    },
+    {
+      "codigo": "CA0027",
+      "slug": "casa-em-condominio-5-suites-area-lazer-alphaville-campinas-ca0027",
+      "titulo": "Casa em condomínio com 5 suítes e área de lazer completa no Alphaville, Campinas",
+      "resumo": "Casa em condomínio no Alphaville, Campinas, com 5 suítes, área de lazer completa e 2.025 m² de terreno. Ideal para quem busca conforto e exclusividade.",
+      "capa": {
+        "foto": 221,
+        "alt": "Fachada moderna com piscina e jardim bem cuidado"
+      },
+      "versao": "dda553a608e0",
+      "publicadoEm": "2026-10-28T04:34:07.326Z"
+    },
+    {
+      "codigo": "SO0001",
+      "slug": "sobrado-parque-taquaral-campinas-sp-so0001",
+      "titulo": "Sobrado de 3 suítes com terreno amplo no Parque Taquaral, Campinas",
+      "resumo": "Sobrado com 3 suítes e terreno de 1.180 m² no Parque Taquaral, Campinas. Ideal para personalização e adaptação residencial ou corporativa.",
+      "capa": {
+        "foto": 467,
+        "alt": "Fachada de casa com portão branco, muro de concreto e gramado"
+      },
+      "versao": "1c675349c12c",
+      "publicadoEm": "2026-10-28T04:34:07.325Z"
+    },
+    {
+      "codigo": "TE0004",
+      "slug": "terreno-parque-taquaral-campinas-sp-te0004",
+      "titulo": "Terreno de 5.020 m² com projeto aprovado no Parque Taquaral, Campinas",
+      "resumo": "Terreno de 5.020 m² no Parque Taquaral, com projeto aprovado para 29 casas e localização estratégica em uma das regiões mais valorizadas de Campinas.",
+      "capa": {
+        "foto": 251,
+        "alt": "Lote com vegetação e casas ao redor"
+      },
+      "versao": "26536f7e45eb",
+      "publicadoEm": "2026-10-28T04:34:07.324Z"
+    },
+    {
       "codigo": "CA0046",
       "slug": "casa-em-condominio-6-suites-quinta-da-baroneza-braganca-paulista-ca0046",
       "titulo": "Casa em condomínio com 6 suítes e área de lazer completa na Quinta da Baroneza",
@@ -1226,5 +1286,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:30:19.646Z"
+  "atualizadoEm": "2026-10-28T04:34:07.327Z"
 }

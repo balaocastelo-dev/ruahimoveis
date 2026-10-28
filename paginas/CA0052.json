@@ -1,0 +1,325 @@
+{
+  "codigo": "CA0052",
+  "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0052",
+  "titulo": "Casa em condomínio de 4 suítes com varanda gourmet no Swiss Park",
+  "resumo": "Casa em condomínio no Swiss Park, Campinas, com 4 suítes, 4 vagas de garagem e área de lazer completa. Localizada em uma das regiões mais valorizadas da cidade.",
+  "capa": {
+    "foto": 477,
+    "alt": "Fachada de casa com garagem e jardim bem manejado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no Swiss Park, uma das regiões mais valorizadas de Campinas. Com 357 m² de área construída, o imóvel conta com 4 suítes, 5 banheiros e 4 vagas de garagem. A fachada moderna e o jardim bem cuidado trazem uma sensação de conforto e acolhimento desde a entrada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social é espaçosa e bem distribuída, com sala de jantar, sala de TV e sala de visitas. A varanda gourmet com vista para o jardim é um destaque, ideal para momentos de lazer e reuniões familiares."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 suítes com amplo espaço e conforto",
+        "4 vagas de garagem, sendo 2 cobertas e 2 descobertas",
+        "Área social integrada e espaçosa",
+        "Varanda gourmet com vista para o jardim",
+        "Infraestrutura completa de lazer no condomínio"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e sala de estar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e bem distribuída, com sala de jantar, sala de TV e sala de visitas. A sala de estar é integrada à cozinha, com teto alto, paredes claras e uma decoração elegante. O ambiente é ideal para receber convidados e aproveitar momentos em família."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 483,
+          "legenda": "Sala de estar integrada à cozinha"
+        },
+        {
+          "foto": 484,
+          "legenda": "Sala de estar com piano e sofá branco"
+        },
+        {
+          "foto": 485,
+          "legenda": "Sala de estar com sofá, mesa de centro e televisão"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha moderna conta com ilha central, armários sob a bancada e uma iluminação agradável. A bancada escura e os armários bem organizados dão um toque profissional ao ambiente. A área de serviço possui duas máquinas de lavar e secar, além de um espaço bem planejado para o dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 487,
+          "legenda": "Cozinha moderna com ilha central e armários sob a bancada"
+        },
+        {
+          "foto": 497,
+          "legenda": "Área de serviço com duas máquinas de lavar e secar"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel possui 4 suítes, todas com amplo espaço e comodidades. As suítes têm cama de casal, luminárias pendentes e vistas para a varanda. O armário de roupas é bem organizado, com estantes e gavetas, facilitando o dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 488,
+          "legenda": "Suite com cama de casal, sofá e televisão"
+        },
+        {
+          "foto": 490,
+          "legenda": "Armário de roupas com estantes e gavetas"
+        },
+        {
+          "foto": 492,
+          "legenda": "Suite com cama de casal, luminárias pendentes e vista para varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Varanda e área de lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda gourmet é um destaque do imóvel, com sofá de vime, mesa de centro e janelas panorâmicas. É um espaço ideal para refeições ao ar livre e momentos de relaxamento. O condomínio oferece piscina, academia, playground e portaria 24 horas, garantindo segurança e conforto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 482,
+          "legenda": "Varanda com árvore de flores cor de rosa e plantas suspensas"
+        },
+        {
+          "foto": 494,
+          "legenda": "Varanda com sofá de vime, mesa de centro e janelas panorâmicas"
+        },
+        {
+          "foto": 496,
+          "legenda": "Varanda com mesa de madeira, cadeiras de vime e vista para o jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, segurança e qualidade de vida. A localização no Swiss Park, um dos bairros mais valorizados de Campinas, e a infraestrutura do condomínio tornam o imóvel uma excelente opção para quem busca um lar moderno e completo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, as regras do condomínio e se há possibilidade de visitas agendadas com antecedência.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 477,
+      "legenda": "Fachada de casa com garagem e jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 478,
+      "legenda": "Fachada de casa com jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 481,
+      "legenda": "Fachada de casa com muro de tijolinho e vegetação",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 483,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 484,
+      "legenda": "Sala de estar com piano e sofá branco",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 485,
+      "legenda": "Sala de estar com sofá, mesa de centro e televisão",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 486,
+      "legenda": "Sala de estar com sofá branco e almofadas vermelhas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 502,
+      "legenda": "Sala de estar com bar e barris de vinho",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 503,
+      "legenda": "Sala com sofá verde, TV, bicicleta estática e mesa de escritório",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 504,
+      "legenda": "Sala com mesa de jantar, cadeira giratória, sofá preto e cortina branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 482,
+      "legenda": "Varanda com árvore de flores cor de rosa e plantas suspensas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 494,
+      "legenda": "Varanda com sofá de vime, mesa de centro e janelas panorâmicas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 496,
+      "legenda": "Varanda com mesa de madeira, cadeiras de vime e vista para o jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 498,
+      "legenda": "Varanda com mesa de jantar, cadeiras, plantas e luminárias",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 487,
+      "legenda": "Cozinha moderna com ilha central e armários sob a bancada",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 499,
+      "legenda": "Cozinha moderna com ilha central e cooktop",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 500,
+      "legenda": "Cozinha moderna com iluminação natural e armários pretos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 501,
+      "legenda": "Cozinha moderna com ilha e churrasqueira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 497,
+      "legenda": "Área de serviço com duas máquinas de lavar e secar",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 491,
+      "legenda": "Quarto com cama, televisão, armários e janela com cortina",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 488,
+      "legenda": "Suite com cama de casal, sofá e televisão",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 490,
+      "legenda": "Armário de roupas com estantes e gavetas",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 492,
+      "legenda": "Suite com cama de casal, luminárias pendentes e vista para varanda",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 493,
+      "legenda": "Suite com cama de casal, cabeceira estofada e tapete",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 489,
+      "legenda": "Banheiro com pia e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 495,
+      "legenda": "Banheiro moderno com cuba suspenso e espelho redondo",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 479,
+      "legenda": "Piscina com deck de madeira e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 480,
+      "legenda": "Piscina com deck de madeira e jardim",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 505,
+      "legenda": "Escritório com mesa de madeira, cadeira giratória e armário de madeira",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 4 vagas de garagem, sendo 2 cobertas e 2 descobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a varanda gourmet está integrada e oferece espaço para refeições e lazer."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Para marcar a visita, utilize o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Swiss Park, Campinas, com 4 suítes e área de lazer completa. Ideal para quem busca conforto e qualidade de vida. bem localizada e infraestrutura moderna.",
+    "hashtags": [
+      "casacondominio",
+      "swisspark",
+      "campinas",
+      "4suites",
+      "imovel",
+      "varandagourmet",
+      "lazercompleto"
+    ]
+  },
+  "versao": "880a638f71df",
+  "publicadoEm": "2026-10-28T04:34:07.327Z"
+}
