@@ -122,6 +122,7 @@ async function porSlug(slug) { return (await noAr()).find((x) => x.bairro.slug =
 async function situacao() { return [...(await obterEstado()).situacao.values()]; }
 function limparCache() { limpaMemoria(); est().estado = null; dados.limpar(); }
 /** Depois de mudar a lista na tela do sistema: recalcula sem reler o GitHub. */
-function recalcular() { est().estado = null; dados.limpar(); }
+// todas: o catálogo comum mudou (nome, apelidos, bairro novo), então a situação de todas as imobiliárias é refeita
+function recalcular({ todas = false } = {}) { if (todas) ESTADOS.clear(); else est().estado = null; dados.limpar({ todas }); }
 
 module.exports = { noAr, porSlug, situacao, obterEstado, limparCache, recalcular, bairroParaRegua };

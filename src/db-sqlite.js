@@ -471,4 +471,4 @@ function audit(usuarioId, acao, detalhe) {
   run('INSERT INTO auditoria(usuario_id,acao,detalhe) VALUES(?,?,?)', usuarioId ?? null, acao, detalhe ? String(detalhe).slice(0, 1000) : null);
 }
 
-module.exports = { db, one, all, run, getConfig, setConfig, audit, criaImobiliaria, PG: false };
+module.exports = { db, one, all, run, getConfig, setConfig, audit, criaImobiliaria, migraMistas, PG: false };

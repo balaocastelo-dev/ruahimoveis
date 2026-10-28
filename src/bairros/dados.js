@@ -54,8 +54,9 @@ function listar({ ocultos = true } = {}) {
   return ocultos ? C.lista.valor : C.lista.valor.filter((b) => !b.oculto);
 }
 const porSlug = (slug) => listar().find((b) => b.slug === slug) || null;
-// limpa os caches da imobiliária atual (o "perto" é dado público por coordenada: limpa de todas)
-function limpar() { CACHES.delete(tenant.chaveCache()); cachePerto.clear(); }
+// limpa os caches da imobiliária atual; todas: depois de mexer no catálogo comum (vale para todas as imobiliárias).
+// O "perto" é dado público por coordenada: limpa sempre.
+function limpar({ todas = false } = {}) { if (todas) CACHES.clear(); else CACHES.delete(tenant.chaveCache()); cachePerto.clear(); }
 
 /** chave do nome (e de cada apelido) → slug. Bairro oculto continua reconhecido (não vira "sugestão"). */
 function mapaDeChaves() {

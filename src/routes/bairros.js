@@ -230,7 +230,7 @@ function salvar(slug, b) {
   if (b.oculto !== undefined) aj.oculto = b.oculto ? 1 : 0;
   if (b.notas !== undefined) aj.notas = txt(b.notas, 2000) || null;
   if (Object.keys(aj).length) dados.ajusta(slug, aj);
-  fonte.recalcular();
+  fonte.recalcular({ todas: true });
 }
 
 tela.post('/bairros', gestor, (req, res) => {
@@ -243,7 +243,7 @@ tela.post('/bairros', gestor, (req, res) => {
   run(`INSERT INTO bairros(slug,nome,regiao,apelidos,origem) VALUES(?,?,?,?,'manual')`, slug, nome, txt(req.body.regiao, 60) || null, '');
   if (txt(req.body.notas, 2000)) dados.ajusta(slug, { notas: txt(req.body.notas, 2000) });
   audit(req.usuario.id, 'bairro_novo', slug);
-  fonte.recalcular();
+  fonte.recalcular({ todas: true });
   res.json({ ok: true, slug });
 });
 tela.put('/bairros/:slug', gestor, (req, res) => {
