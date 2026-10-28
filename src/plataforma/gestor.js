@@ -15,6 +15,9 @@ const REPO = process.env.PLATAFORMA_REPO || 'balaocastelo-dev/ruahimoveis';
 const VAZIO = 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/conteudo-vazio';
 const POOLER = process.env.PLATAFORMA_POOLER || 'aws-1-us-west-2.pooler.supabase.com:6543';
 const PROJETO_DB = process.env.PLATAFORMA_PROJETO_DB || 'yufvfitdhfdjdluvymha';
+// Endereço padrão de cada imobiliária: <nome>.corretordofuturo.app (pedido do Thiago, 28/10/2026).
+const DOMINIO_BASE = process.env.PLATAFORMA_DOMINIO || 'corretordofuturo.app';
+const dominioDe = (slug) => `${String(slug).replace(/_/g, '-')}.${DOMINIO_BASE}`;
 
 // ---------- banco (assíncrono, conexão própria) ----------
 let POOL = null;
@@ -113,6 +116,8 @@ async function publicaNaVercel(im, vars) {
     environmentVariables: Object.entries(vars).map(([key, value]) => ({ key, value, type: /URL$|KEY$/.test(key) && key !== 'BLOG_DIARIO_URL' ? 'encrypted' : 'plain', target: ['production', 'preview'] })),
   });
   if (!p) return null;
+  // endereço padrão <nome>.corretordofuturo.app ligado ao projeto (o domínio já é da equipe na Vercel)
+  try { await vercel(`/v10/projects/${p.id}/domains`, 'POST', { name: dominioDe(im.slug) }); } catch (e) { console.error('[gestor] domínio', e.message); }
   const [org, repo] = REPO.split('/');
   await vercel('/v13/deployments', 'POST', { name: nome, project: p.id, target: 'production', gitSource: { type: 'github', org, repo, ref: 'main' } });
   return p;
@@ -121,7 +126,7 @@ async function publicaNaVercel(im, vars) {
 async function linkDaVercel(projeto) {
   try {
     const d = await vercel(`/v9/projects/${encodeURIComponent(projeto)}/domains?production=true`);
-    const l = d && (d.domains || []).map((x) => x.name).sort((a, b) => a.length - b.length);
+    const l = d && (d.domains || []).map((x) => x.name).sort((a, b) => (b.endsWith('.' + DOMINIO_BASE) - a.endsWith('.' + DOMINIO_BASE)) || a.length - b.length);
     return l && l.length ? 'https://' + l[0] : null;
   } catch { return null; }
 }
@@ -227,10 +232,11 @@ api.post('/imobiliarias', exige(async (req, res) => {
   const adminEmail = txt(b.admin_email, 160); if (!adminEmail || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(adminEmail)) falha(400, 'Informe o e-mail do administrador da imobiliária.');
   const adminSenha = String(b.admin_senha || ''); if (adminSenha.length < 8) falha(400, 'A senha do administrador precisa ter pelo menos 8 caracteres.');
   if (await um('SELECT 1 FROM imobiliarias WHERE slug = $1', [slug])) falha(409, `Já existe uma imobiliária com o nome técnico "${slug}".`);
-  const im = await um(`INSERT INTO imobiliarias(slug, nome, empresa, contato_nome, contato_email, contato_telefone, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, notas)
-    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,'implantacao',$12) RETURNING ${COLS}`,
+  const im = await um(`INSERT INTO imobiliarias(slug, nome, empresa, contato_nome, contato_email, contato_telefone, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, notas, link, dominio)
+    VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,'implantacao',$12,$13,$14) RETURNING ${COLS}`,
   [slug, nome, txt(b.empresa, 160) || nome, txt(b.contato_nome, 120), txt(b.contato_email, 160) || adminEmail, txt(b.contato_telefone, 40), txt(b.plano, 40) || 'essencial',
-    num(b.mensalidade) || 0, num(b.comissao_pct) ?? 20, num(b.comissao_venda_pct) ?? 6, Math.round(num(b.creditos_fisgar_mes) || 0), txt(b.notas, 2000)]);
+    num(b.mensalidade) || 0, num(b.comissao_pct) ?? 20, num(b.comissao_venda_pct) ?? 6, Math.round(num(b.creditos_fisgar_mes) || 0), txt(b.notas, 2000),
+    `https://${dominioDe(slug)}`, dominioDe(slug)]);
   const dbSenha = senhaForte();
   try {
     await q('SELECT criar_imobiliaria($1, $2, $3, $4, $5)', [slug, dbSenha, txt(b.admin_nome, 120) || `Administrador ${nome}`, adminEmail, hashSenha(adminSenha)]);
@@ -255,7 +261,7 @@ api.get('/imobiliarias/:id/instalacao', exige(async (req, res) => {
   if (!im.db_url_cifrada) return res.json({ variaveis: null, aviso: 'Esta imobiliária foi instalada antes do painel: as variáveis estão no projeto dela na Vercel.' });
   const { dbUrl, segredo } = JSON.parse(decifra(im.db_url_cifrada));
   evento(req.gestor.id, im.id, 'viu_instalacao', null);
-  res.json({ variaveis: variaveis(await comFundo(im), dbUrl, segredo), repo: REPO, vercel_automatico: !!process.env.VERCEL_TOKEN });
+  res.json({ variaveis: variaveis(await comFundo(im), dbUrl, segredo), repo: REPO, dominio: im.dominio || dominioDe(im.slug), vercel_automatico: !!process.env.VERCEL_TOKEN });
 }));
 api.post('/imobiliarias/:id/publicada', exige(async (req, res) => {
   const link = txt(req.body && req.body.link, 300);
