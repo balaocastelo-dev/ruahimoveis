@@ -1,0 +1,312 @@
+{
+  "codigo": "AP0023",
+  "slug": "apartamento-cambui-campinas-3-suites-varanda-ap0023",
+  "titulo": "Apartamento de 3 suítes com varanda e vista no Cambuí, Campinas",
+  "resumo": "Apartamento de 3 suítes no Cambuí, Campinas, com área social integrada, varanda com vista e acabamentos de alta qualidade.",
+  "capa": {
+    "foto": 635,
+    "alt": "Fachada de prédio com palmeiras e várias janelas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento no Cambuí, um dos bairros mais valorizados de Campinas, oferece 164 m² de área privativa com 3 suítes, 4 vagas de garagem e uma bem localizada. O imóvel está em um condomínio completo, com piscina climatizada, academia, salão de festas e outros amenities."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento possui uma sala de estar e jantar integrada, com iluminação embutida e vista para a varanda. As fotos mostram ambientes modernos, com acabamentos cuidadosos e detalhes que trazem conforto e sofisticação para o dia a dia."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com acabamentos de alta qualidade",
+        "Sala de estar e jantar integrada com iluminação embutida",
+        "Varanda com vista para a copa das árvores",
+        "Cozinha moderna com armários brancos e bancada de mármore",
+        "Condomínio completo com piscina, academia e salão de festas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é composta por uma sala de estar e jantar integrada, com iluminação embutida e vista para a varanda. As fotos mostram uma decoração clara, com sofá e mesa de centro brancos, além de uma varanda com mesa redonda, cadeiras de vime e plantas em vasos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda está equipada com uma porta de vidro e uma vista agradável para o interior do apartamento. As fotos indicam que ela é um espaço funcional, com armário branco e piso de cerâmica claro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 637,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 638,
+          "legenda": "Sala de jantar com mesa e cadeiras"
+        },
+        {
+          "foto": 658,
+          "legenda": "Varanda com mesa e cadeiras, plantas e vista para o interior"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem planejada, com armários brancos e uma bancada de mármore. As fotos mostram uma ilha central com balcão, eletrodomésticos de alta qualidade, como geladeira de aço inox e forno, além de janelas com persiana que trazem luz natural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de serviço conta com máquina de lavar e secar, bancada escura e armários brancos. As fotos destacam o espaço bem organizado e com boa iluminação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 652,
+          "legenda": "Cozinha moderna com iluminação natural e armários brancos"
+        },
+        {
+          "foto": 653,
+          "legenda": "Cozinha moderna com ilha central e eletrodomésticos"
+        },
+        {
+          "foto": 655,
+          "legenda": "Área de serviço com máquina de lavar e secar"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem iluminados, com teto com iluminação embutida e mobiliário claro. As fotos mostram um quarto com cama de casal, estante com livros e uma cadeira de escritório, além de uma suíte com cama de casal, televisão e armário de roupas organizado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As suítes possuem armários de roupas bem organizados, com prateleiras para sapatos e gavetas. As fotos destacam o uso de piso de madeira e o cuidado com os detalhes, como luzes embutidas e estantes com fotos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 643,
+          "legenda": "Quarto com cama, cadeira de escritório e janela"
+        },
+        {
+          "foto": 644,
+          "legenda": "Suite com cama de casal, televisão, estante com fotos e crucifixo"
+        },
+        {
+          "foto": 646,
+          "legenda": "Armário de roupas bem organizado com sapatos e roupas penduradas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Ldylle Cambuí oferece infraestrutura completa, incluindo piscina climatizada, academia, salão de jogos, brinquedoteca e salão de festas. As fotos mostram o elevador privativo e o corredor com iluminação embutida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização do imóvel é estratégica, próximo ao Pão de Açúcar, drogarias, praças e com fácil acesso às principais vias da cidade. As fotos indicam que o prédio está em um bairro tranquilo e bem planejado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 649,
+          "legenda": "Corredor com elevador e sala de jantar à esquerda"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e uma bem localizada. Com 3 suítes, 4 vagas de garagem e um condomínio completo, ele oferece tudo o que é necessário para uma vida de qualidade no Cambuí."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o que está incluso no condomínio e se há possibilidade de personalizar o mobiliário.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 635,
+      "legenda": "Fachada de prédio residencial com palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 636,
+      "legenda": "Sala de estar com sofá e poltronas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 637,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 638,
+      "legenda": "Sala de jantar com mesa e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 639,
+      "legenda": "Sala de jantar com mesa branca e cadeiras bege",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 640,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 657,
+      "legenda": "Varanda com armário e porta de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 658,
+      "legenda": "Varanda com mesa e cadeiras, plantas e vista para o interior",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 652,
+      "legenda": "Cozinha moderna com iluminação natural e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 653,
+      "legenda": "Cozinha moderna com ilha central e eletrodomésticos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 654,
+      "legenda": "Cozinha moderna com ilha e bancada de granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 651,
+      "legenda": "Entrada de serviço com elevador e bancada para sapatos",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 655,
+      "legenda": "Área de serviço com máquina de lavar e secar",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 641,
+      "legenda": "Quarto infantil com cama de casal e estante acima",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 642,
+      "legenda": "Quarto infantil colorido com estantes e brinquedos",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 643,
+      "legenda": "Quarto com cama, cadeira de escritório e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 644,
+      "legenda": "Suite com cama de casal, televisão, estante com fotos e crucifixo",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 645,
+      "legenda": "Armário de roupas e prateleiras de sapatos em suite",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 646,
+      "legenda": "Armário de roupas bem organizado com sapatos e roupas penduradas",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 648,
+      "legenda": "Suite com cama de casal, televisão e armário de roupas",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 647,
+      "legenda": "Banheiro com bancada dupla e espelho grande",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 650,
+      "legenda": "Banheiro moderno com piso claro e bancada de mármore",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 656,
+      "legenda": "Banheiro com box de vidro, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 649,
+      "legenda": "Corredor com elevador e sala de jantar à esquerda",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 4 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "As fotos não mostram uma área gourmet, mas há uma varanda com vista e mesa para refeições."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 3 suítes no Cambuí, Campinas, com área social integrada, varanda e condomínio completo. Ideal para quem busca conforto e privacidade em uma das regiões mais valorizadas da cidade.",
+    "hashtags": [
+      "apartamentocambui",
+      "campinas",
+      "3suites",
+      "varanda",
+      "condominiocompleto",
+      "areasocial",
+      "imovelnobre"
+    ]
+  },
+  "versao": "3426903382af",
+  "publicadoEm": "2026-10-28T04:37:58.143Z"
+}

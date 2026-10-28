@@ -2,6 +2,18 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0023",
+      "slug": "apartamento-cambui-campinas-3-suites-varanda-ap0023",
+      "titulo": "Apartamento de 3 suítes com varanda e vista no Cambuí, Campinas",
+      "resumo": "Apartamento de 3 suítes no Cambuí, Campinas, com área social integrada, varanda com vista e acabamentos de alta qualidade.",
+      "capa": {
+        "foto": 635,
+        "alt": "Fachada de prédio com palmeiras e várias janelas"
+      },
+      "versao": "3426903382af",
+      "publicadoEm": "2026-10-28T04:37:58.143Z"
+    },
+    {
       "codigo": "AP0031",
       "slug": "apartamento-3-suites-cambui-campinas-ap0031",
       "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
@@ -1346,5 +1358,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:35:56.509Z"
+  "atualizadoEm": "2026-10-28T04:37:58.144Z"
 }
