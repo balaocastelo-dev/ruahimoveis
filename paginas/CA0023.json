@@ -1,0 +1,266 @@
+{
+  "codigo": "CA0023",
+  "slug": "casa-5-suites-varanda-jardim-chapadao-campinas-sp-ca0023",
+  "titulo": "Casa de 5 suítes com varanda e área de lazer no Jardim Chapadão, Campinas",
+  "resumo": "Casa com 5 suítes, 300m² de área útil e 382m² de terreno no Jardim Chapadão, Campinas. Ideal para famílias que buscam conforto e espaço.",
+  "capa": {
+    "foto": 1472,
+    "alt": "Fachada de casa com portão branco e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa moderna e acolhedora está localizada no Jardim Chapadão, em Campinas, e oferece 300m² de área útil em um terreno de 382m². Com 5 suítes espaçosas e 2 vagas de garagem, o imóvel é ideal para famílias que buscam conforto e privacidade. As fotos destacam a fachada com jardim bem cuidado e a varanda superior, que traz uma sensação de amplitude e integração com o exterior."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com 3 salas integradas, uma sala de jantar e uma varanda com vista para o jardim. O projeto valoriza a área social, com um ambiente aconchegante e bem distribuído. A cozinha moderna, com bancada de granito e armários brancos, é outro destaque, bem como os banheiros com hidromassagem e o uso de materiais de qualidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "5 suítes espaçosas e modernas",
+        "Varanda com vista para o jardim",
+        "Cozinha moderna com bancada de granito",
+        "Banheiros com hidromassagem",
+        "2 vagas de garagem cobertas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integração dos ambientes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e bem distribuída, com 3 salas integradas, uma sala de jantar e uma varanda com vista para o jardim. As fotos mostram uma sala com parede azul turquesa e piso de madeira, ideal para receber convidados. A varanda, com paredes de pedra e porta de vidro, traz uma sensação de amplitude e integração com o exterior."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de jantar é decorada com mesa de vidro e cadeiras de couro, criando um ambiente elegante e funcional. A integração entre os ambientes é uma das características que tornam o imóvel atraente para quem busca conforto e estilo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1478,
+          "legenda": "Sala com parede azul turquesa e piso de madeira"
+        },
+        {
+          "foto": 1480,
+          "legenda": "Sala de jantar com mesa de vidro e cadeiras de couro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem equipada, com bancada de granito e armários brancos. As fotos destacam a cozinha com utensílios de cozinha e um forno embutido, além de uma janela com persiana que traz luz natural para o ambiente. A área de serviço é funcional e bem integrada à cozinha, com espaço suficiente para armazenamento e movimentação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também possui um lavabo, bem localizado e com acabamento cuidado. A cozinha e a área de serviço são espaços que valorizam a praticidade e o conforto do dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1482,
+          "legenda": "Cozinha moderna com bancada de granito e armários brancos"
+        },
+        {
+          "foto": 1483,
+          "legenda": "Cozinha moderna com bancada de granito e utensílios de cozinha"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem iluminados, com decoração que valoriza o conforto e o estilo. As fotos mostram quartos com camas bem arrumadas, mesas de cabeceira e quadros na parede, criando ambientes aconchegantes. A casa conta com 5 suítes, cada uma com características que atendem às necessidades de toda a família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos e bem equipados, com box de vidro, bidê e piso de cerâmica. Alguns deles possuem hidromassagem, garantindo conforto e bem-estar. O acabamento de qualidade e a distribuição dos espaços são destaque nesses ambientes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1474,
+          "legenda": "Quarto com cama, mesa de trabalho e janela"
+        },
+        {
+          "foto": 1477,
+          "legenda": "Banheiro com vaso sanitário, pia, espelho e toalha pendurada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno de 382m² oferece espaço para áreas de lazer e movimentação. As fotos mostram um jardim bem cuidado, com plantas em vasos e uma varanda com vista para o entorno. O imóvel também possui uma escada de madeira com acesso a áreas externas, valorizando a integração entre os ambientes internos e externos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada da casa é atraente, com portão branco e jardim com arbustos. O entorno do imóvel é bem cuidado, com áreas verdes que contribuem para o conforto e o bem-estar dos moradores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1485,
+          "legenda": "Escada de madeira com vista para jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, espaço e privacidade. Com 5 suítes, varanda e áreas sociais bem distribuídas, é uma excelente opção para quem valoriza a qualidade de vida e o estilo de vida acolhedor. A localização no Jardim Chapadão, em Campinas, complementa as características do imóvel, oferecendo um ambiente tranquilo e bem localizado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado do condomínio e os detalhes que não estão visíveis nas fotos, como a situação da documentação e o histórico de reformas.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1472,
+      "legenda": "Fachada de casa com portão branco e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1473,
+      "legenda": "Fachada de casa com portão e janela",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1478,
+      "legenda": "Sala com parede azul turquesa e piso de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1480,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras de couro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1484,
+      "legenda": "Sala com sofá e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1479,
+      "legenda": "Varanda com parede de pedra e porta de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1482,
+      "legenda": "Cozinha moderna com bancada de granito e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1483,
+      "legenda": "Cozinha moderna com bancada de granito e utensílios de cozinha",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1474,
+      "legenda": "Quarto com cama, mesa de trabalho e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1475,
+      "legenda": "Quarto com cama, mesa de cabeceira e quadro na parede",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1481,
+      "legenda": "Quarto com cama, cadeira e estante",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1486,
+      "legenda": "Quarto com cama, janela, porta e painéis decorativos",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1477,
+      "legenda": "Banheiro com vaso sanitário, pia, espelho e toalha pendurada",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1487,
+      "legenda": "Banheiro com box de vidro, vaso sanitário, bidê e piso de cerâmica",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1476,
+      "legenda": "Corredor com portas de vidro e madeira",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1485,
+      "legenda": "Escada de madeira com vista para jardim",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1488,
+      "legenda": "Corredor com portas de madeira e divisória",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel possui 2 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem varanda?",
+      "resposta": "Sim, o imóvel possui varanda com vista para o jardim."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa com 5 suítes, varanda e área de lazer no Jardim Chapadão, Campinas. Ideal para famílias que buscam conforto e espaço. Veja as fotos e descubra mais sobre este imóvel.",
+    "hashtags": [
+      "casa5suites",
+      "campinasimovel",
+      "jardimchapadao",
+      "imovelcompleto",
+      "varandagourmet",
+      "hidromassagem",
+      "campinas",
+      "familia"
+    ]
+  },
+  "versao": "589457b757c7",
+  "publicadoEm": "2026-10-28T03:51:31.338Z"
+}

@@ -2,6 +2,18 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0023",
+      "slug": "casa-5-suites-varanda-jardim-chapadao-campinas-sp-ca0023",
+      "titulo": "Casa de 5 suítes com varanda e área de lazer no Jardim Chapadão, Campinas",
+      "resumo": "Casa com 5 suítes, 300m² de área útil e 382m² de terreno no Jardim Chapadão, Campinas. Ideal para famílias que buscam conforto e espaço.",
+      "capa": {
+        "foto": 1472,
+        "alt": "Fachada de casa com portão branco e jardim"
+      },
+      "versao": "589457b757c7",
+      "publicadoEm": "2026-10-28T03:51:31.338Z"
+    },
+    {
       "codigo": "AP0021",
       "slug": "apartamento-3-quartos-varanda-bonfim-campinas-sp-ap0021",
       "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
@@ -494,5 +506,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T03:51:24.312Z"
+  "atualizadoEm": "2026-10-28T03:51:31.339Z"
 }
