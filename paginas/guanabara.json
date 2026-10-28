@@ -1,0 +1,331 @@
+{
+  "slug": "guanabara",
+  "titulo": "Guanabara, Campinas: como é morar no bairro da antiga estação Mogiana",
+  "resumo": "Guia do Guanabara, em Campinas: a Estação Guanabara da Mogiana, as avenidas Brasil e Barão de Itapura, prédios, escolas e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada da antiga Estação Guanabara, hoje centro cultural da Unicamp",
+      "alt": "Prédio térreo antigo de cor bege com janelas em arco e cobertura metálica na entrada, sob céu azul",
+      "commons": "File:Estação Guanabara - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "A Estação Guanabara em foto antiga do acervo do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco do prédio da estação, com janelas em arco e um carro antigo estacionado na frente",
+      "commons": "File:Estação Guanabara, Centro de Memória - Unicamp (APS 1.1.0448).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "A gare de estrutura metálica da Estação Guanabara, com bancos ao longo da plataforma",
+      "alt": "Grande cobertura de treliças metálicas sobre uma plataforma larga de concreto, com prédio baixo à esquerda",
+      "commons": "File:Estação Guanabara - panoramio (2).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "O Armazém do Café, galpão do conjunto ferroviário usado para shows e eventos",
+      "alt": "Parede de tijolo pintada de laranja com placa Armazém do Café e vasos de plantas sob a janela",
+      "commons": "File:Estação Guanabara - panoramio (7).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Plataforma coberta da estação, com as portas do prédio antigo restaurado",
+      "alt": "Corredor coberto por telhado metálico ao lado de um prédio antigo com janelas e portas brancas",
+      "commons": "File:Estação Guanabara - panoramio (3).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rua Prefeito Passos, no Guanabara: casas baixas e prédios residenciais",
+      "alt": "Rua residencial arborizada com casas de muro baixo à esquerda e edifícios altos ao fundo",
+      "commons": "File:Guanabara - Campinas.JPG"
+    },
+    {
+      "id": "f7",
+      "legenda": "Rua Álvaro Müller, no bairro Guanabara, com árvores e prédios ao fundo",
+      "alt": "Rua estreita com carros estacionados, árvores na calçada e edifícios residenciais ao fundo",
+      "commons": "File:Rua Alvaro Muller - Bairro Guanabara, Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Avenida Brasil no trecho do Guanabara, com comércio e prédios altos",
+      "alt": "Avenida larga com lojas térreas dos dois lados e edifícios residenciais ao fundo sob céu azul",
+      "commons": "File:Av Brasil - B .Guanabara - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Sede do Instituto Agronômico, na Avenida Barão de Itapura",
+      "alt": "Prédio neoclássico amarelo com colunas na fachada, cercado de palmeiras",
+      "commons": "File:Instituto Agronômico de Campinas - Campinas - 20240921163558.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Guanabara**, também chamado de **Jardim Guanabara**, é um bairro de Campinas que fica entre o Centro, o Cambuí, o Botafogo, o Jardim Chapadão e o Taquaral, em parte na região central e em parte na região norte da cidade. É um bairro sobretudo residencial, com ruas internas arborizadas, mistura de casas e prédios, e um comércio forte nas avenidas **Brasil** e **Barão de Itapura**. O marco do bairro é a antiga **Estação Guanabara**, da Companhia Mogiana, hoje centro cultural da Unicamp."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o Guanabara oferece localização central, serviços de saúde e escolas por perto e acesso rápido ao Cambuí e ao Taquaral. Em troca, as avenidas principais têm trânsito pesado em boa parte do dia. Este guia reúne a história ferroviária do bairro, o perfil dos imóveis, a vida cultural, as escolas e o que pesar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro de Campinas entre o Centro, o Cambuí, o Botafogo, o Jardim Chapadão e o Taquaral",
+        "Perfil residencial, com casas, sobrados e prédios de altura média",
+        "Nasceu em volta das oficinas da Companhia Mogiana de Estradas de Ferro",
+        "A Estação Guanabara, inaugurada em 1893 e desativada em 1974, abriga hoje o CIS-Guanabara, da Unicamp",
+        "Avenida Brasil e Avenida Barão de Itapura são os eixos de trânsito e comércio",
+        "Muitos consultórios médicos e revendas de veículos ao longo das avenidas"
+      ],
+      "titulo": "O Guanabara em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: um bairro que nasceu com a ferrovia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome Guanabara é mais antigo que a própria estação: o lugar já era chamado assim quando a **Companhia Mogiana de Estradas de Ferro** abriu ali sua estação. Em 1891, o Barão de Itapura cedeu à empresa parte da fazenda Chapadão, o que permitiu erguer os prédios ferroviários. A estação foi inaugurada em 1º de março de 1893, em parte para desafogar o tráfego e fazer a ligação com a Companhia Paulista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta das oficinas da Mogiana se instalaram os trabalhadores de reparo e manutenção dos trens, e a Prefeitura ajudou a dar forma ao bairro abrindo as ruas. O conjunto cresceu com uma vila ferroviária, a partir de 1894, oficinas e depósitos a partir de 1910 e uma gare de estilo inglês em 1915. Em 1940, ganhou até um estádio, o do Esporte Clube Mogiana. No auge, o pátio tinha 13 linhas e mais de cem estruturas construídas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No fim da década de 1910, os trens da Sorocabana que chegavam à região central de Campinas também usavam a Estação Guanabara, até a inauguração da Estação Bonfim, em 1924. Com o declínio das ferrovias paulistas, a área passou à FEPASA em 1971, e a estação foi desativada em 1974. O bairro residencial que se vê hoje se consolidou a partir de meados do século XX."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Estação Guanabara e o CIS-Guanabara"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois de anos de abandono, a Unicamp recebeu em comodato, em 1990, a estação e o armazém. O Conselho de Defesa do Patrimônio Cultural de Campinas, o **CONDEPACC**, abriu o processo de tombamento em 1996 e aprovou a área protegida em 1999, incluindo a estação, o armazém, prédios de manutenção e 23 casas da antiga vila ferroviária."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em abril de 2006, a Unicamp abriu ali o **CIS-Guanabara**, Centro Cultural de Inclusão e Integração Social. O prédio administrativo e a gare foram restaurados em 2007 e 2008, com apoio da mostra de arquitetura Campinas Decor, que ocupou o espaço. Segundo o Jornal da Unicamp, o **Armazém do Café** tem cerca de 500 m² e recebe shows, e as plataformas da gare somam cerca de 2.000 m²."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje o CIS-Guanabara é ligado à Pró-Reitoria de Extensão, Esporte e Cultura da Unicamp e recebe oficinas, festivais, exposições e encontros abertos ao público, como os do coletivo Urban Sketchers Campinas. Em 2025, a universidade abriu chamada pública para gravação de podcasts e videocasts no estúdio do centro. O endereço oficial, na Rua Mário Siqueira, é registrado como Botafogo, bairro vizinho."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Segundo um estudo da Unesp de 2017, nem todo o antigo conjunto ferroviário está com a Unicamp: as oficinas e a vila passaram a um grupo privado, e a área esportiva ficou com o Governo do Estado. Em 2016, parte da vila estava tomada pelo mato.",
+      "titulo": "Patrimônio dividido"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Guanabara"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Guanabara mistura casas térreas e sobrados com prédios residenciais, a maioria de altura média. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.800 apartamentos no total. O prédio mais alto da base tem 21 andares, e muitos edifícios ficam entre 7 e 16."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As ruas internas são arborizadas e mais calmas que as avenidas, com casas de muro baixo dividindo a quadra com torres residenciais, como se vê na Rua Prefeito Passos e na Rua Álvaro Müller. Já a Avenida Brasil e a Avenida Barão de Itapura concentram lojas, revendas de veículos, consultórios e clínicas, e carregam boa parte do trânsito que passa pelo bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pela ONDEMORAR registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e o Instituto Agronômico"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Avenida Barão de Itapura funciona o **Colégio Imaculada** (Imaculada Instituto Educacional), escola particular com educação infantil, ensino fundamental e médio. Na Rua Primeiro de Março fica a **Escola Estadual Professor Aníbal de Freitas**, da rede estadual. A base de pontos de interesse registra cerca de 90 escolas num raio de 1,5 km, entre públicas, particulares e cursos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma avenida está a sede do **Instituto Agronômico (IAC)**, fundado em 1887 por Dom Pedro II como Estação Agronômica Imperial de Campinas. O conjunto de prédios neoclássicos é um dos marcos da região e fica a poucas quadras do Guanabara; o endereço oficial do instituto aparece como Botafogo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Guanabara é conhecido pela grande concentração de consultórios médicos, e o Hospital Renascença aparece entre os pontos de referência do bairro. A base de pontos de interesse da ONDEMORAR registra mais de 140 serviços de saúde num raio de 1,5 km, entre clínicas, laboratórios e farmácias, além de agências bancárias e postos de combustível nas avenidas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Brasil** e a **Avenida Barão de Itapura** são os principais corredores do Guanabara. Elas ligam a região central à região norte e dão acesso a Barão Geraldo, Paulínia e Cosmópolis. A Barão de Itapura é uma das avenidas abertas no fim do século XIX para desafogar o trânsito da cidade, e a Avenida Orozimbo Maia passa perto, junto à Vila Eliza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os vizinhos ajudam a explicar o bairro: o **Cambuí**, com bares, restaurantes e vida noturna; o **Taquaral**, com a Lagoa e o Parque Portugal; o **Botafogo** e o **Centro**, com comércio e serviços; e o **Jardim Chapadão**, mais residencial. Em volta do Guanabara também ficam áreas menores, como a Vila Angelino Rossi, a Vila Itapura, o Jardim Brasil e a Vila Eliza."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Guanabara faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Guanabara costuma agradar a quem quer morar perto do Centro e do Cambuí sem estar no meio do movimento noturno, a famílias que valorizam escola e saúde por perto e a quem busca opções entre casa e apartamento no mesmo bairro. A história ferroviária e o centro cultural da Unicamp dão ao bairro uma identidade própria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é o trânsito: as avenidas Brasil e Barão de Itapura recebem o fluxo de quem atravessa a cidade, e imóveis de frente para elas são mais barulhentos. Nas ruas internas, o ritmo é outro, e a diferença entre uma quadra e outra pesa bastante na escolha."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor a distância do imóvel até as avenidas Brasil e Barão de Itapura, a idade do prédio e as últimas obras, o valor do condomínio e o que ele inclui, o número de vagas e, no caso de casas, a situação da documentação e do terreno.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o bairro Guanabara, em Campinas?",
+      "resposta": "Entre o Centro, o Cambuí, o Botafogo, o Jardim Chapadão e o Taquaral, em parte na região central e em parte na região norte da cidade. As avenidas Brasil e Barão de Itapura cortam o bairro."
+    },
+    {
+      "pergunta": "O Guanabara é bom para morar?",
+      "resposta": "Para quem quer localização central, escolas e serviços de saúde por perto e opções de casa e apartamento, sim. O ponto de atenção é o trânsito nas avenidas principais; as ruas internas são mais calmas e arborizadas."
+    },
+    {
+      "pergunta": "O que é a Estação Guanabara?",
+      "resposta": "É a antiga estação da Companhia Mogiana, inaugurada em 1893 e desativada em 1974. Tombada pelo CONDEPACC, abriga desde 2006 o CIS-Guanabara, centro cultural da Unicamp com shows, oficinas e exposições."
+    },
+    {
+      "pergunta": "Jardim Guanabara e Guanabara são o mesmo bairro?",
+      "resposta": "Sim. Jardim Guanabara é outro nome usado para o bairro Guanabara, em Campinas."
+    },
+    {
+      "pergunta": "O Guanabara tem mais casas ou prédios?",
+      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 60 condomínios no bairro, quase todos prédios, com perto de 1.800 apartamentos, ao lado de muitas casas e sobrados nas ruas internas."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Guanabara?",
+      "resposta": "Entre as conhecidas estão o Colégio Imaculada, particular, na Avenida Barão de Itapura, e a Escola Estadual Professor Aníbal de Freitas, na Rua Primeiro de Março. A lista com o tempo a pé aparece nesta página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Unesp, dissertação sobre o conjunto ferroviário da Estação Guanabara (Priscila K. A. dos Santos, 2017)",
+      "site": "memoriaferroviaria.assis.unesp.br"
+    },
+    {
+      "nome": "Notícia Bibliográfica e Histórica (PUC-Campinas), artigos sobre a Estação Guanabara e a formação dos bairros de Campinas",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Jornal da Unicamp, reportagens sobre o CIS-Guanabara (2007 e 2009)",
+      "site": "unicamp.br"
+    },
+    {
+      "nome": "Unicamp ProEEC, chamamento público do Estúdio CIS-Guanabara (2025)",
+      "site": "proec.unicamp.br"
+    },
+    {
+      "nome": "Agência FAPESP, encontro do Urban Sketchers Campinas no CIS-Guanabara",
+      "site": "agencia.fapesp.br"
+    },
+    {
+      "nome": "Bienal Sesc de Dança, espaços do CIS-Guanabara",
+      "site": "sescsp.org.br"
+    },
+    {
+      "nome": "Google Arts & Culture, Complexo Ferroviário de Campinas",
+      "site": "artsandculture.google.com"
+    },
+    {
+      "nome": "Instituto Agronômico (IAC), sede",
+      "site": "iac.sp.gov.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Guanabara (Campinas) e Instituto Agronômico de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Melhor Escola, fichas do Imaculada Instituto Educacional e da EE Professor Aníbal de Freitas",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Guanabara, em Campinas: o bairro que nasceu em volta das oficinas da Mogiana e guarda a antiga Estação Guanabara, hoje centro cultural da Unicamp. Preparamos um guia com a história, o perfil dos imóveis, escolas, saúde, acessos pelas avenidas Brasil e Barão de Itapura e o que pesar antes da mudança. Link na bio.",
+    "hashtags": [
+      "guanabara",
+      "jardimguanabara",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "estacaoguanabara",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Guanabara, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.156Z"
+}

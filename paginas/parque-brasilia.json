@@ -1,0 +1,262 @@
+{
+  "slug": "parque-brasilia",
+  "titulo": "Parque Brasília, Campinas: guia do bairro para quem pensa em morar",
+  "resumo": "Guia do Parque Brasília, em Campinas: ruas, prédios e casas, história dos nomes, comércio, escolas por perto, acesso e a vizinhança do Shopping Iguatemi.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Vista noturna da região do Jardim Flamboyant, bairro vizinho do Parque Brasília",
+      "alt": "Prédios residenciais iluminados à noite, com casas baixas e árvores em primeiro plano",
+      "commons": "File:Região do B. Jardim Flamboyant, Campinas SP.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Entrada do Shopping Iguatemi Campinas, na Avenida Iguatemi, a pouco mais de 1 km do bairro",
+      "alt": "Fachada de shopping com cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Torre do relógio e lateral do Shopping Iguatemi Campinas",
+      "alt": "Prédio comercial com torre de tijolos, cúpula ao fundo e gramado com palmeiras na frente",
+      "commons": "File:Shopping Iguatemi Campinas 02.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "O Shopping Iguatemi visto da avenida, com gramado e placa de 40 km/h",
+      "alt": "Gramado amplo à beira de uma via, com placa de trânsito e o shopping com cúpula ao fundo",
+      "commons": "File:Shopping Iguatemi - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Brasília** é um bairro residencial de Campinas, encaixado entre o Jardim Flamboyant, o Jardim Alto da Barra e o Jardim Boa Esperança, a pouco mais de 1 km do Shopping Iguatemi. Mistura casas, sobrados, casas em condomínio e prédios de porte médio, com comércio de bairro espalhado pelas ruas em volta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro pequeno e pouco conhecido fora da região, o que tem lado bom: ruas de uso mais local, perto de avenidas e de um polo grande de compras e serviços. Este guia reúne o que as fontes confirmam sobre o Parque Brasília, das ruas e da origem dos nomes ao comércio, às escolas e ao acesso, para você decidir se ele combina com o seu momento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, vizinho do Jardim Flamboyant e do Jardim Alto da Barra",
+        "Casas, sobrados, casas em condomínio e prédios de até cerca de 11 andares",
+        "A base da ONDEMORAR identifica cerca de 14 condomínios e 565 unidades no bairro",
+        "As ruas eram numeradas no loteamento e ganharam nomes a partir do fim dos anos 1970",
+        "Shopping Iguatemi Campinas a cerca de 1,2 km do centro do bairro",
+        "Avenida Doutor Bernardo Kaplan é uma das vias que cortam o bairro"
+      ],
+      "titulo": "O Parque Brasília em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: das ruas numeradas aos nomes de hoje"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como muitos loteamentos de Campinas, o Parque Brasília nasceu com ruas identificadas por números. Os processos de denominação de ruas guardados no **Centro de Memória da Unicamp** registram essa fase: um decreto de novembro de 1978 deu nome a ruas numeradas do loteamento, e um novo decreto, de 31 de julho de 1979, assinado pelo então prefeito Francisco Amaral, fixou o nome da antiga **Rua 12 do Parque Brasília**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rua passou a se chamar **Rua Major Telmo Coelho Filho**. O homenageado nasceu em Santa Maria, no Rio Grande do Sul, em 1910, entrou no Exército como voluntário aos 17 anos, participou das revoluções de 1930 e 1932 e serviu na Força Expedicionária Brasileira na Itália, durante a Segunda Guerra. Depois foi delegado de recrutamento militar em Avaré. Segundo o processo, viveu cerca de 15 anos em Campinas e pediu para ser enterrado na cidade; morreu em 1978."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Não encontramos registro confiável sobre a data exata de abertura do loteamento nem sobre a origem do nome Brasília. Por isso, esses pontos ficam de fora deste guia até que uma fonte documente.",
+      "titulo": "O que as fontes não contam"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque Brasília"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem perfil misto. Os anúncios de venda organizados por rua no QuintoAndar mostram apartamentos, casas e casas em condomínio em vias como a Avenida Doutor Bernardo Kaplan, a Rua Major Telmo Coelho Filho, a Rua Maísa, a Rua José Fernandes de Lima, a Rua Claudinei Mattano e a Rua João Antônio da Silva. Studios e quitinetes aparecem só em algumas delas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 14 condomínios no Parque Brasília, com aproximadamente 565 unidades. A maioria é vertical, e o prédio mais alto da base tem 11 andares. Não é um bairro de torres muito altas: a escala é de edifícios médios ao lado de casas e sobrados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso significa ruas com movimento de bairro, sem o adensamento de regiões centrais. Para quem procura casa com quintal ou um apartamento em prédio menor, a oferta costuma ser variada. Quem precisa de um imóvel específico, como cobertura ou casa térrea, deve contar com menos opções do que em bairros maiores, porque o próprio bairro é pequeno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e o Shopping Iguatemi"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia fica nas ruas do bairro e nas vizinhas. A base de pontos de interesse usada pela ONDEMORAR, com dados do OpenStreetMap e do Overture Maps, registra num raio de 1,5 km do centro do bairro cerca de 36 mercados e padarias, mais de 100 restaurantes, lanchonetes e cafés, cerca de 18 farmácias e serviços de saúde e agências de bancos como Santander e Itaú."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o vizinho de peso é o **Shopping Iguatemi Campinas**, na Avenida Iguatemi, na Vila Brandina, a cerca de 1,2 km do centro do Parque Brasília. Segundo o próprio shopping, além das lojas ele tem supermercado St. Marche, cinema Cinemark, academia Bodytech e o Teatro Oficina do Estudante, com 515 lugares, no terceiro piso."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas perto do Parque Brasília"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma base de pontos de interesse lista cerca de 22 escolas e instituições de ensino num raio de 1,5 km do bairro, entre públicas e particulares. Entre as mais próximas aparecem a Escola Municipal de Ensino Fundamental Lourenço Bellocchio, o CEI Professora Noemia Cardoso Asbahr, a Escola de Educação Infantil Visconde de Sabugosa e um polo da UniCesumar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a escola é critério decisivo, confirme a vaga e o atendimento direto com cada instituição antes de escolher o imóvel. A lista completa, com a distância a pé de cada escola, aparece na seção ao vivo desta página, atualizada automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Brasília não tem um parque grande dentro dos seus limites. A base de pontos de interesse aponta, nas redondezas, a Praça Omar Cardoso, a cerca de 600 metros, academias e espaços esportivos, e uma praça no Jardim Flamboyant. Para lazer coberto, o Shopping Iguatemi concentra cinema, teatro e restaurantes a poucos minutos de carro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Doutor Bernardo Kaplan** é uma das vias de entrada do bairro. Um roteiro de trânsito calcula cerca de 1 km de carro entre a Avenida José Bonifácio e a Bernardo Kaplan, passando pela Rua João Quirino do Nascimento e por uma rotatória que leva à Rua Claudinei Mattano."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não há estação de metrô por perto, e o transporte coletivo da região é feito por ônibus. Antes de decidir pelo imóvel, vale testar no horário de pico o trajeto até o trabalho e até a escola dos filhos, porque as avenidas da região recebem o fluxo do entorno do Iguatemi."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Brasília faz parte de um conjunto de bairros residenciais. Os vizinhos mais citados são o **Jardim Flamboyant**, com prédios e comércio, o **Jardim Alto da Barra**, o **31 de Março** e o **Jardim Boa Esperança**. A Vila Brandina, onde fica o Shopping Iguatemi, está logo adiante. Na prática, quem mora no Parque Brasília usa o comércio e os serviços desses bairros como extensão do próprio."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque Brasília faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tende a agradar quem quer morar em rua residencial, em casa ou em prédio de porte médio, com mercado, padaria e farmácia por perto e um shopping grande a pouco mais de 1 km. Funciona para famílias, casais e quem trabalha na região do Iguatemi."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção: o bairro é pequeno, então a oferta de imóveis à venda em cada momento é limitada, e as áreas verdes de porte ficam fora dele. Compare a rua, a posição do imóvel em relação às avenidas e o trajeto diário antes de fechar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor se o imóvel fica em rua de passagem ou de uso local, qual a idade do prédio ou da casa, se há vaga coberta, o valor do condomínio e o que ele inclui, e quais escolas atendem aquele endereço.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque Brasília, em Campinas?",
+      "resposta": "É um bairro residencial vizinho do Jardim Flamboyant, do Jardim Alto da Barra e do Jardim Boa Esperança, a cerca de 1,2 km do Shopping Iguatemi Campinas."
+    },
+    {
+      "pergunta": "O Parque Brasília é bom para morar?",
+      "resposta": "Para quem busca rua residencial, casa ou prédio de porte médio e comércio de bairro por perto, costuma ser uma opção a considerar. O bairro é pequeno, então a oferta de imóveis é limitada e os parques maiores ficam fora dele."
+    },
+    {
+      "pergunta": "O Parque Brasília tem mais casas ou apartamentos?",
+      "resposta": "Tem os dois. A base da ONDEMORAR identifica cerca de 14 condomínios, a maioria de prédios de até cerca de 11 andares, e os anúncios mostram também muitas casas e casas em condomínio."
+    },
+    {
+      "pergunta": "Qual shopping fica perto do Parque Brasília?",
+      "resposta": "O Shopping Iguatemi Campinas, na Avenida Iguatemi, na Vila Brandina, a cerca de 1,2 km do centro do bairro, com supermercado, cinema, academia e teatro."
+    },
+    {
+      "pergunta": "Quais escolas ficam perto do Parque Brasília?",
+      "resposta": "A base de pontos de interesse lista cerca de 22 escolas num raio de 1,5 km, entre elas a EMEF Lourenço Bellocchio, o CEI Professora Noemia Cardoso Asbahr e a Escola de Educação Infantil Visconde de Sabugosa."
+    },
+    {
+      "pergunta": "Como chegar ao Parque Brasília?",
+      "resposta": "Uma das entradas é a Avenida Doutor Bernardo Kaplan. Da Avenida José Bonifácio são cerca de 1 km de carro, pela Rua João Quirino do Nascimento e pela Rua Claudinei Mattano."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, processo de denominação da Rua Major Telmo Coelho Filho (decretos 5539/1978 e 5772/1979)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "QuintoAndar, mapa de ruas do Parque Brasília e anúncio na Avenida Doutor Bernardo Kaplan",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Apto, página do Parque Brasília com bairros próximos",
+      "site": "apto.vc"
+    },
+    {
+      "nome": "Shopping Iguatemi Campinas, página oficial",
+      "site": "iguatemi.com.br"
+    },
+    {
+      "nome": "ComoChegar, roteiro da Avenida José Bonifácio à Avenida Doutor Bernardo Kaplan",
+      "site": "comochegar.com"
+    },
+    {
+      "nome": "Base de condomínios e pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque Brasília, em Campinas: um bairro residencial pequeno, de casas, sobrados e prédios médios, vizinho do Jardim Flamboyant e a pouco mais de 1 km do Shopping Iguatemi. No guia, contamos a história dos nomes das ruas, o que tem de comércio e escolas por perto e o que considerar antes de mudar. Link na bio.",
+    "hashtags": [
+      "parquebrasilia",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "imoveiscampinas",
+      "jardimflamboyant",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque Brasília, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.588Z"
+}

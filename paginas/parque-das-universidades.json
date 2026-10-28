@@ -1,0 +1,332 @@
+{
+  "slug": "parque-das-universidades",
+  "titulo": "Parque das Universidades, Campinas: como é morar ao lado da PUC",
+  "resumo": "Guia do Parque das Universidades, em Campinas: o bairro colado ao Campus I da PUC-Campinas, perto da Unicamp, da Rodovia Dom Pedro I e de hospitais.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Jardins internos da PUC-Campinas, em foto de 2025",
+      "alt": "Gramado com árvores, bancos e quiosques de madeira, com um prédio branco ao fundo e céu azul",
+      "commons": "File:PUC-Campinas interior, 2025.4.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Área verde da PUC-Campinas vista do alto de um dos prédios",
+      "alt": "Árvores grandes e gramado ao lado de um muro branco, com galpões e palmeiras ao fundo",
+      "commons": "File:PUC-Campinas interior, 2025.3.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Letreiro em uma das entradas da Unicamp, em Barão Geraldo",
+      "alt": "Grande placa de pedra com o logotipo e o nome Unicamp sobre um canteiro de plantas",
+      "commons": "File:Entrada Unicamp 2.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Praça do Ciclo Básico, no campus da Unicamp",
+      "alt": "Caminho de terra sob árvores altas e gramado sombreado",
+      "commons": "File:Praça CB Unicamp.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada do Hospital de Clínicas da Unicamp",
+      "alt": "Marquise de concreto com o letreiro Hospital de Clínicas, faixa de pedestres e árvores em volta",
+      "commons": "File:Hospital de Clínicas da Unicamp (1).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Pista da Rodovia Dom Pedro I (SP-065)",
+      "alt": "Rodovia de pista dupla com caminhões e carros, gramado nas margens e céu claro",
+      "commons": "File:Rodovia Dom Pedro I - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Entrada das Águas do Parque Dom Pedro Shopping",
+      "alt": "Entrada de shopping com painel colorido escrito Parque D. Pedro e palmeiras na frente",
+      "commons": "File:Parque Dom Pedro Shopping (1).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Ciclovia no canteiro central da Avenida Atílio Martini, em Barão Geraldo",
+      "alt": "Ciclovia vermelha em canteiro gramado, com um ciclista e árvores dos dois lados",
+      "commons": "File:Ciclovia em Barão Geraldo.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque das Universidades** é um bairro residencial de Campinas que fica colado ao Campus I da PUC-Campinas, na região de Barão Geraldo, ao sul da Cidade Universitária da Unicamp. Começa junto à Rodovia Dom Pedro I e é ocupado principalmente por casas e pequenos condomínios, com grande presença de estudantes, professores e pesquisadores das faculdades vizinhas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro tem duas cartas na manga: a universidade do outro lado da rua e o acesso rápido à rodovia. Este guia reúne o que se sabe da origem da área, o perfil dos imóveis, as faculdades e os hospitais próximos, os acessos e os bairros que fazem divisa com ele."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, vizinho do Campus I da PUC-Campinas",
+        "Fica na região de Barão Geraldo, ao sul da Cidade Universitária da Unicamp",
+        "Começa junto à Rodovia Dom Pedro I (SP-065)",
+        "Perfil de casas e condomínios baixos, de até três andares",
+        "Muitos moradores são estudantes, professores e pesquisadores",
+        "Hospital Madre Theodora e Parque Dom Pedro Shopping ficam na vizinhança"
+      ],
+      "titulo": "O Parque das Universidades em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como surgiu o Parque das Universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área era terra agrícola, fora do perímetro urbano de Campinas, e foi loteada à medida que a cidade cresceu e a procura por moradia aumentou, segundo o guia do bairro do QuintoAndar. O nome remete à vizinhança: o loteamento ocupa o entorno de duas universidades que se instalaram na região a partir dos anos 1960 e 1970."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A primeira foi a **Unicamp**, criada oficialmente em 1966, com o médico Zeferino Vaz como idealizador e primeiro reitor, e com a cidade universitária em Barão Geraldo, como lembra o Correio da Manhã. Na década seguinte veio o **Campus I da PUC-Campinas**: segundo a Revista Jurídica da própria universidade, a construção começou nos anos 1970, em terras doadas pelo agrônomo Caio Pinto Guimarães, dono da Fazenda Santa Cândida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome da antiga fazenda continua no mapa. O endereço oficial do Campus I fica no Parque Rural Fazenda Santa Cândida, bairro que faz divisa com o Parque das Universidades. Nos anos 1980, a Prefeitura instituiu também o Parque Tecnológico CIATEC-II, com cerca de 8 milhões de m² ao lado da Unicamp e da PUC-Campinas, segundo artigo do Boletim Campineiro de Geografia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque das Universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro é essencialmente residencial. A base de condomínios da ONDEMORAR identifica cerca de 60 condomínios ali, perto de 40 verticais e 20 horizontais, somando por volta de 780 unidades, nenhum com mais de três andares. A mesma base registra associações de moradores para as partes Sul e Norte do Parque das Universidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A oferta de imóveis acompanha o público. O QuintoAndar descreve estúdios e quitinetes, muitos mobiliados, ao lado de apartamentos e casas de dois a seis quartos, parte deles em condomínio. É comum encontrar moradia pensada para quem estuda ou trabalha nas faculdades, e o guia destaca que dá para resolver boa parte da rotina sem carro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas e avenidas do bairro estão a Avenida José Próspero Jacobucci, a Avenida Senador Jarbas Gonçalves Passarinho, a Avenida Professora Ana Maria Silvestre Adade, a Rua Valentina Penteado de Freitas, a Rua Daciano Ribeiro Rocha e a Rua Helton Camargo Lobo. O bairro também tem as praças Jahyra de Barros Souto Rhormens e Henrique Pinheiro de Souza Campos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "PUC-Campinas, Unicamp e outras faculdades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho principal é o **Campus I da PUC-Campinas**, na Rua Professor Doutor Euryclides de Jesus Zerbini. Segundo a universidade, é o seu maior campus, com cerca de 783 mil m² de área total, e abriga a Reitoria e mais de 50 cursos de graduação e pós-graduação. Lá funcionam as escolas de Ciências Humanas, Jurídicas e Sociais, de Linguagem e Comunicação, Politécnica e de Economia e Negócios."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo manual do candidato da PUC-Campinas, no Campus I ficam cursos como Direito, Arquitetura e Urbanismo, Administração, Jornalismo, Publicidade e Propaganda, Relações Internacionais e quase todas as engenharias. O campus tem 42 laboratórios, bibliotecas, auditórios, capela, praças de alimentação e centro esportivo com quadras e piscina."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Unicamp** fica ao norte, na Cidade Universitária de Barão Geraldo. O distrito também recebe a Facamp, e o QuintoAndar lembra que o Parque das Universidades fica perto do Centro de Pesquisa Clínica da Unicamp, o que atrai pesquisadores e residentes da área da saúde."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro, o comércio é de bairro: o QuintoAndar cita supermercados e farmácias que abrem 24 horas, padarias, pequenas lojas, restaurantes, bares, pizzarias e cervejarias, boa parte voltada ao público universitário. Para compras maiores, o caminho é o **Parque Dom Pedro Shopping**, a cerca de 10 minutos de carro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Inaugurado em 2002, no Jardim Santa Genebra, o Parque Dom Pedro tem 351 lojas, 15 salas de cinema e serviços como bancos, correios e posto de emissão de passaporte, segundo a administradora Allos. No lazer ao ar livre, o guia do QuintoAndar cita a Praça da Paz, nas proximidades, e as ruas da Unicamp que ficam fechadas aos carros nos fins de semana para patins, skate e bicicleta."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Hospitais e saúde por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Hospital Madre Theodora** fica a poucos minutos do bairro, como aponta o guia universitário do QuintoAndar. Ligado à rede Américas, o hospital tem certificação da Organização Nacional de Acreditação e atende em mais de 20 especialidades, incluindo maternidade, segundo o Centro de Tecnologia da Informação Renato Archer. Em 2021, inaugurou um centro obstétrico e conta com UTI neonatal de 12 leitos, segundo o portal Medicina S/A."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Cidade Universitária, o **Hospital de Clínicas da Unicamp** integra o complexo de saúde da universidade e é referência em procedimentos de alta complexidade, segundo o Correio da Manhã. Para consultas do dia a dia, vale conferir as unidades de saúde da Prefeitura que atendem o seu endereço."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Rodovia Dom Pedro I** é o principal acesso. A SP-065 liga Campinas, onde encontra a Via Anhanguera, a Jacareí, no Vale do Paraíba, passando por Jaguariúna, Itatiba e Atibaia, segundo o AARoads. Em Campinas, ela faz parte do anel viário que também liga as rodovias Anhanguera e Bandeirantes, o que permite trocar de rodovia sem atravessar o Centro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia do QuintoAndar destaca a infraestrutura cicloviária da região, usada pelos moradores em trajetos curtos até as faculdades, e lembra que linhas integradas de ônibus ligam o bairro ao restante da cidade. Para quem estuda na PUC, o campus fica a uma caminhada de casa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo QuintoAndar, o Parque das Universidades faz divisa com a Fazenda Santa Cândida, o Parque Rural Fazenda Santa Cândida, o Parque dos Jacarandás, a Cidade Universitária e as Mansões Santo Antônio. A Cidade Universitária abriga a Unicamp; o Parque Rural Fazenda Santa Cândida abriga o próprio Campus I da PUC."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura um perfil parecido costuma comparar o bairro com Barão Geraldo e com a Santa Cândida, que têm guias próprios no site da ONDEMORAR. A diferença está na escala: o Parque das Universidades é menor, mais residencial e mais colado à PUC."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque das Universidades faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro faz sentido para quem estuda, leciona ou trabalha na PUC-Campinas, na Unicamp ou nos hospitais da região, e para investidores que pensam em imóveis menores voltados a esse público. Também serve a quem precisa da Rodovia Dom Pedro I no dia a dia e prefere casas e condomínios baixos a torres altas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção: o ritmo do bairro segue o calendário das faculdades, com mais movimento no período letivo e menos nas férias. O QuintoAndar observa ainda que a procura de estudantes e professores deixa o custo de vida mais alto que em outras partes da cidade. Antes de decidir, vale conhecer o bairro em dia de aula e no fim de semana."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque das Universidades, em Campinas?",
+      "resposta": "Na região de Barão Geraldo, ao lado do Campus I da PUC-Campinas e ao sul da Cidade Universitária da Unicamp. O bairro começa junto à Rodovia Dom Pedro I."
+    },
+    {
+      "pergunta": "O Parque das Universidades é bom para morar?",
+      "resposta": "Para quem estuda ou trabalha na PUC-Campinas, na Unicamp ou nos hospitais da região, o bairro oferece casas e condomínios baixos a poucos minutos das faculdades e da Rodovia Dom Pedro I. O ritmo acompanha o calendário universitário."
+    },
+    {
+      "pergunta": "Que tipo de imóvel existe no Parque das Universidades?",
+      "resposta": "Casas de dois a seis quartos, estúdios, quitinetes e apartamentos em prédios baixos. A base da ONDEMORAR identifica cerca de 60 condomínios no bairro, nenhum com mais de três andares."
+    },
+    {
+      "pergunta": "Qual faculdade fica no Parque das Universidades?",
+      "resposta": "O Campus I da PUC-Campinas, maior campus da universidade, fica colado ao bairro. A Unicamp e a Facamp ficam na região de Barão Geraldo, a poucos minutos."
+    },
+    {
+      "pergunta": "Qual hospital fica perto do Parque das Universidades?",
+      "resposta": "O Hospital Madre Theodora fica a poucos minutos do bairro. O Hospital de Clínicas da Unicamp fica na Cidade Universitária."
+    },
+    {
+      "pergunta": "Como chegar à Rodovia Dom Pedro I saindo do Parque das Universidades?",
+      "resposta": "O bairro começa junto à rodovia, então o acesso é imediato. Pela Dom Pedro I se chega à Via Anhanguera e ao anel viário de Campinas, que leva à Bandeirantes."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "PUC-Campinas, página do Campus I",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "PUC-Campinas, Manual do Candidato do vestibular",
+      "site": "vestibular.puc-campinas.edu.br"
+    },
+    {
+      "nome": "Revista Jurídica da PUC-Campinas, v. 22, n. 2 (2006), texto sobre a história da universidade",
+      "site": "periodicos.puc-campinas.edu.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Parque das Universidades",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, Vida de universitário: more perto da sua faculdade em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Unicamp, 60 anos de ciência e poder intelectual (março de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Boletim Campineiro de Geografia, Lucas Baldoni (2014), sobre o Parque Científico e Tecnológico da Unicamp",
+      "site": "publicacoes.agb.org.br"
+    },
+    {
+      "nome": "Allos, página do Parque Dom Pedro Shopping",
+      "site": "allos.com.br"
+    },
+    {
+      "nome": "Medicina S/A, sobre o centro obstétrico do Hospital Madre Theodora (2021)",
+      "site": "medicinasa.com.br"
+    },
+    {
+      "nome": "CTI Renato Archer, Dicas de interesse",
+      "site": "gov.br"
+    },
+    {
+      "nome": "AARoads Wiki, SP-065 (Rodovia Dom Pedro I)",
+      "site": "wiki.aaroads.com"
+    },
+    {
+      "nome": "CEPs Brasil, logradouros do Parque das Universidades",
+      "site": "cepsbrasil.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque das Universidades, em Campinas: o bairro que nasceu em terra agrícola e cresceu colado ao Campus I da PUC-Campinas, com a Unicamp a poucos minutos e a Rodovia Dom Pedro I na porta. Preparamos um guia com a história, o perfil dos imóveis, as faculdades, os hospitais e os acessos. Link na bio.",
+    "hashtags": [
+      "parquedasuniversidades",
+      "campinas",
+      "pucampinas",
+      "baraogeraldo",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque das Universidades, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.014Z"
+}

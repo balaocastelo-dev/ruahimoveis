@@ -1,0 +1,335 @@
+{
+  "slug": "ouro-verde",
+  "titulo": "Ouro Verde, Campinas: como é morar na região e no distrito",
+  "resumo": "Guia do Ouro Verde, em Campinas: história do distrito, BRT, Avenida Ruy Rodriguez, Hospital Ouro Verde, comércio, Viracopos e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida Ruy Rodriguez, um dos eixos do Ouro Verde, com o casario da região ao fundo",
+      "alt": "Avenida de mão dupla com canteiro arborizado, carros e, ao fundo, um mar de casas e alguns prédios sob céu azul",
+      "commons": "File:Av. Ruy Rodriguez (sentido Vida Nova), Ouro Verde, Campinas, SP.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Casas e conjuntos de prédios baixos na região do Ouro Verde",
+      "alt": "Casas de telhado de cerâmica em primeiro plano e blocos de apartamentos de poucos andares ao fundo",
+      "commons": "File:Região do Ouro Verde - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Avenida Ruy Rodriguez em 2017, com ipês floridos, antes das obras do corredor BRT",
+      "alt": "Avenida larga com ônibus articulado, árvores de flores rosadas no canteiro e calçada",
+      "commons": "File:Campinas, São Paulo, Brasil (51382796590).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Terminal Ouro Verde, ponto de partida da linha BRT10 rumo ao Centro",
+      "alt": "Galpões de cobertura azul do terminal de ônibus cercados de palmeiras, com uma rua e semáforo em primeiro plano",
+      "commons": "File:Terminal Ouro Verde - Campinas, SP.JPG"
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada do Complexo Hospitalar Ouro Verde",
+      "alt": "Prédio hospitalar bege com detalhes em vermelho e azul e carros estacionados na frente",
+      "commons": "File:Hospital Ouro Verde - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Entrada do Hospital Municipal Ouro Verde, da Rede Mário Gatti",
+      "alt": "Fachada clara com o logotipo da Rede Mário Gatti, plantas tropicais e uma ambulância na entrada",
+      "commons": "File:230121 Campinas atinge 100% de leitos Covid Foto Carlos Bassan (14) (50866532793).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Prédio do Shopping Spazio Ouro Verde, na Avenida Ruy Rodriguez",
+      "alt": "Edifício comercial comprido em tons de azul e verde visto por trás de copas de árvores",
+      "commons": "File:Shopping Spazio Ouro Verde - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Horto Shopping, centro de compras ao lado do Terminal Ouro Verde",
+      "alt": "Galpão comercial com telhado verde atrás de um gradil, com carros estacionados na rua",
+      "commons": "File:Horto Shopping Ouro Verde - Campinas, SP.JPG"
+    },
+    {
+      "id": "f9",
+      "legenda": "Fachada do terminal de passageiros do Aeroporto Internacional de Viracopos",
+      "alt": "Fachada envidraçada com o letreiro Aeroporto Internacional de Viracopos e portas de vidro",
+      "commons": "File:Fachada do Aeroporto Internacional de Viracopos.18.6.2025.jpg"
+    },
+    {
+      "id": "f10",
+      "legenda": "Vista aérea do Aeroporto de Viracopos, que fica no distrito do Ouro Verde",
+      "alt": "Vista do alto de terminal de aeroporto com pátio de aeronaves, pista e campos ao redor",
+      "commons": "File:Aeroporto de Campinas.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Ouro Verde** é uma região e um distrito de Campinas, no sudoeste da cidade, a cerca de 14 km do Centro. Reúne perto de 140 bairros, na maioria residenciais e de casas, com comércio forte ao longo de avenidas como a **Ruy Rodriguez**. É apontado como o distrito mais populoso de Campinas, tem um dos principais hospitais públicos da cidade e abriga o Aeroporto Internacional de Viracopos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pensa em morar no Ouro Verde encontra uma região com vida própria: terminal de ônibus, corredor BRT ligado ao Centro, shopping, hospital e serviços públicos. Este guia reúne a história do distrito, como é a ocupação, o transporte, a saúde, o comércio e os pontos de atenção, sempre com base em fontes públicas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Distrito do sudoeste de Campinas, a cerca de 14 km do Centro",
+        "Ocupação começou em meados da década de 1950",
+        "Virou distrito oficial em 2015, depois de plebiscito realizado em 2014",
+        "Perto de 140 bairros, com predomínio de casas e comércio de rua",
+        "Corredor BRT Ouro Verde liga a região ao Terminal Central",
+        "Abriga o Hospital Municipal Ouro Verde e o Aeroporto de Viracopos"
+      ],
+      "titulo": "O Ouro Verde em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: de área periférica a distrito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ocupação do Ouro Verde começou em meados dos anos 1950 e cresceu rápido, muitas vezes sem planejamento nem infraestrutura à altura. Estudos de geografia publicados no Boletim Campineiro de Geografia lembram que, nas décadas de 1920 e 1930, o vale do Rio Capivari era conhecido pela extração mineral, e que a abertura da Via Anhanguera, em 1948, transformou o sudoeste de Campinas em área de passagem, com estradas rumo a Itu e Sorocaba."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Até o Plano Diretor de 2006, o Ouro Verde e o Campo Grande eram tratados como uma única grande região, chamada Sudoeste. Juntos, os dois concentram cerca de 40% da população do município, segundo o mesmo estudo. Foi esse peso que levou à criação dos distritos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 5 de outubro de 2014, junto com as eleições gerais, cerca de 800 mil eleitores de Campinas responderam a um plebiscito, organizado pelo TRE-SP, sobre transformar o Ouro Verde e o Campo Grande em distritos. O *sim* venceu com cerca de 54% dos votos válidos. O distrito do Ouro Verde foi criado oficialmente pela Lei Municipal 15.059, de 10 de setembro de 2015."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Ouro Verde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Ouro Verde é, antes de tudo, uma região de casas. A paisagem típica mistura sobrados e casas térreas de telhado cerâmico com conjuntos de prédios baixos, e o comércio se espalha pelas avenidas principais. A população é mais jovem que a média da cidade, e a região tem estrutura própria o bastante para que boa parte do dia a dia se resolva sem ir ao Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com cerca de 140 bairros, o distrito é grande e variado: há loteamentos antigos e consolidados, conjuntos habitacionais e áreas que ainda recebem obras de infraestrutura. Por isso, a experiência muda bastante de um bairro para outro. A distância até o corredor BRT, o acesso às rodovias e a proximidade de comércio e serviços pesam mais do que o nome do distrito na hora de escolher o imóvel."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "O nome Ouro Verde aparece de dois jeitos: como distrito oficial de Campinas, criado em 2015, e como nome popular de toda a região ao redor do Terminal Ouro Verde e da Avenida Ruy Rodriguez. Nos anúncios, também aparecem bairros com o nome no próprio loteamento, como a Vila Ouro Verde e o Jardim Ouro Verde.",
+      "titulo": "Região e distrito"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte: BRT, terminais e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O transporte coletivo mudou com o **Corredor BRT Ouro Verde**, de 14,6 km. Ele parte do Terminal Central e segue pelas avenidas João Jorge, das Amoreiras, Ruy Rodriguez e Camucim até o Terminal Vida Nova. O primeiro trecho, de 4,8 km, entrou em operação em outubro de 2020, e o corredor passou a ter serviço o dia todo, todos os dias, em dezembro de 2023."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Avenida Ruy Rodriguez, a **Estação Capivari** começou a funcionar em outubro de 2024 e atende o Jardim Capivari e o Jardim Yeda. Por ela passam as linhas BRT10, que sai do Terminal Ouro Verde, e BRT11, que sai do Terminal Vida Nova, as duas em direção ao Centro. O caminho também passa perto do Hospital Municipal Dr. Mário Gatti e do Hospital Metropolitano."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "De carro, o distrito é delimitado pela **Rodovia dos Bandeirantes** e pela **Rodovia Santos Dumont (SP-75)**, que dão saída para São Paulo, para o interior e para Indaiatuba, Itu e Sorocaba. Do outro lado, o **Rio Capivari** marca a divisa com o distrito do Campo Grande. Nos horários de pico, vale testar o trajeto até o trabalho antes de decidir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Viracopos, o aeroporto do distrito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Aeroporto Internacional de Viracopos** fica no distrito do Ouro Verde, a cerca de 17 km do Centro de Campinas. Foi inaugurado em 19 de outubro de 1960 e é ligado à cidade pela Rodovia Santos Dumont. É o principal aeroporto internacional do interior paulista, base da Azul e um dos maiores centros de carga aérea do país."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem viaja a trabalho ou trabalha no próprio aeroporto e nas empresas de logística do entorno, morar no Ouro Verde encurta bastante o deslocamento. Para quem mora perto da rota dos aviões, porém, o ruído é um ponto a observar na visita ao imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9",
+        "f10"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde: o Hospital Ouro Verde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Hospital Municipal Ouro Verde** é um dos principais hospitais públicos de Campinas. Um convênio assinado em 2008 entre a Prefeitura, a Unifesp e a SPDM organizou o complexo, com pronto-socorro, ambulatório e internação, e previa ao menos 130 leitos, entre clínica médica, pediatria, cirurgia, ortopedia e UTIs adulta e pediátrica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje o hospital integra a **Rede Mário Gatti**, rede municipal de urgência, emergência e atendimento hospitalar. Em março de 2026, a Secretaria de Saúde informou ocupação de 93% a 100% dos leitos nos dois hospitais municipais, com cerca de 30 altas e 30 internações por dia em cada um. Na atenção básica, há centros de saúde nos bairros, como o Centro de Saúde Dr. Armando Rocha Brito Junior, perto da Estação Capivari."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio e compras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal centro de compras é o **Shopping Spazio Ouro Verde**, na Avenida Ruy Rodriguez, no Parque Universitário de Viracopos. Ele tem supermercado Covabra como âncora, lojas como Americanas, Marisa e Casas Bahia, academia, praça de alimentação e cinema. Ao lado do Terminal Ouro Verde fica o **Horto Shopping**, de porte menor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fora dos shoppings, o comércio de rua acompanha as avenidas que cortam a região. Perto da Estação Capivari, por exemplo, há escolas estaduais, escolas de idiomas, centro de saúde e estabelecimentos comerciais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e áreas verdes na região Sudoeste"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Ouro Verde faz parte da região Sudoeste de Campinas, que guias da cidade associam a equipamentos como a **Casa de Cultura Fazenda Roseira**, o **Parque Linear do Rio Capivari** e o **Parque União**. O Parque Linear do Capivari, em volta da Lagoa do Mingone, tem cerca de 115 mil m², quadras, pista de caminhada e aparelhos de ginástica, e foi reaberto em abril de 2026 depois de manutenção."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Ouro Verde faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Ouro Verde costuma fazer sentido para quem procura casa, quer comércio e serviços perto, trabalha no próprio sudoeste, em Viracopos ou nas empresas de logística da região, ou depende de ônibus e quer estar perto do corredor BRT. A estrutura própria do distrito, com hospital, terminais e shopping, reduz as idas ao Centro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também aparecem nas fontes: o crescimento sem planejamento deixou diferenças grandes de infraestrutura entre os bairros, e estudos acadêmicos registram desigualdade social no sudoeste da cidade. A distância do Centro e o trânsito nas rodovias pesam para quem trabalha do outro lado da cidade. Escolher bem o bairro e a rua faz toda a diferença."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Veja a distância a pé até a estação de BRT ou o ponto de ônibus mais próximo, o trajeto até o trabalho no horário de pico, a infraestrutura da rua (asfalto, iluminação, drenagem), a escola e o centro de saúde de referência e, perto de Viracopos, o ruído dos aviões.",
+      "titulo": "O que conferir antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Ouro Verde, em Campinas?",
+      "resposta": "No sudoeste da cidade, a cerca de 14 km do Centro. O distrito é delimitado pelas rodovias dos Bandeirantes e Santos Dumont e pelo Rio Capivari, que o separa do Campo Grande."
+    },
+    {
+      "pergunta": "O Ouro Verde é um bairro ou um distrito?",
+      "resposta": "As duas coisas, dependendo do uso. Oficialmente, é um distrito de Campinas criado pela Lei Municipal 15.059, de 2015, com cerca de 140 bairros. No dia a dia, o nome também designa a região em volta do Terminal Ouro Verde."
+    },
+    {
+      "pergunta": "O Ouro Verde é bom para morar?",
+      "resposta": "Para quem procura casa, comércio e serviços próprios da região e acesso ao BRT, Viracopos e às rodovias, pode ser. A infraestrutura varia muito de bairro para bairro, então vale avaliar a rua e o trajeto até o trabalho."
+    },
+    {
+      "pergunta": "Como ir do Ouro Verde ao Centro de Campinas de ônibus?",
+      "resposta": "Pelo Corredor BRT Ouro Verde. A linha BRT10 sai do Terminal Ouro Verde e a BRT11, do Terminal Vida Nova, ambas em direção ao Centro, passando por avenidas como Ruy Rodriguez e das Amoreiras."
+    },
+    {
+      "pergunta": "Qual hospital atende a região do Ouro Verde?",
+      "resposta": "O Hospital Municipal Ouro Verde, da Rede Mário Gatti, com pronto-socorro, ambulatório e internação. Os bairros também têm centros de saúde para a atenção básica."
+    },
+    {
+      "pergunta": "O Aeroporto de Viracopos fica no Ouro Verde?",
+      "resposta": "Sim. Viracopos fica no distrito do Ouro Verde, a cerca de 17 km do Centro de Campinas, e é ligado à cidade pela Rodovia Santos Dumont."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Wikipédia, verbetes Ouro Verde (Campinas) e Aeroporto Internacional de Viracopos",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "TRE-SP, Plebiscito em Campinas (eleições 2014)",
+      "site": "tre-sp.jus.br"
+    },
+    {
+      "nome": "Boletim Campineiro de Geografia (AGB Campinas), artigo sobre os distritos Campo Grande e Ouro Verde",
+      "site": "publicacoes.agb.org.br"
+    },
+    {
+      "nome": "Diário do Transporte, sobre o trecho inicial do BRT Ouro Verde (2020) e a Estação Capivari (2024)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, Termo de Convênio 13/2008 do Complexo Hospitalar Ouro Verde",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Correio da Manhã, sobre os hospitais públicos de Campinas e o Parque Linear do Capivari (2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, regiões de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Comércio São Paulo, guia do Shopping Spazio Ouro Verde",
+      "site": "comerciosaopaulo.com.br"
+    },
+    {
+      "nome": "Metro Route Atlas, BRT de Campinas",
+      "site": "metrorouteatlas.net"
+    }
+  ],
+  "redes": {
+    "legenda": "Ouro Verde, em Campinas: a região que começou a ser ocupada nos anos 1950, virou distrito em 2015 e hoje tem BRT até o Centro, hospital municipal, shopping e até o Aeroporto de Viracopos. Preparamos um guia com a história, o transporte, a saúde, o comércio e o que observar antes de comprar casa por lá. Link na bio.",
+    "hashtags": [
+      "ouroverde",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "viracopos",
+      "brtcampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Ouro Verde, Campinas: guia da região para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.589Z"
+}

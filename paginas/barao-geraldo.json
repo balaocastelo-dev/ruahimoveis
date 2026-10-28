@@ -1,0 +1,382 @@
+{
+  "slug": "barao-geraldo",
+  "titulo": "Barão Geraldo, Campinas: como é morar no distrito da Unicamp",
+  "resumo": "Guia de Barão Geraldo, em Campinas: origem do nome, Unicamp, Mata de Santa Genebra, comércio, acessos e o que considerar antes de morar no distrito.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Prédio do Ciclo Básico, no campus da Unicamp em Barão Geraldo",
+      "alt": "Prédio curvo de concreto e tijolo aparente, com palmeiras e piso de blocos na frente",
+      "commons": "File:Ciclo Básico (olho esquerdo) - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Retrato do Barão Geraldo de Rezende, de Henrique Manzo, no acervo do Museu Paulista da USP",
+      "alt": "Pintura de um homem de barba escura, terno azul-escuro e colarinho branco",
+      "commons": "File:Henrique Manzo - Retrato do Barão Geraldo de Rezende, Acervo do Museu Paulista da USP.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "O campus da Unicamp por volta de 1990, ainda cercado de áreas rurais",
+      "alt": "Vista aérea de prédios baixos e dois pavilhões circulares entre árvores, com campos de terra vermelha ao fundo",
+      "commons": "File:Unicamp campus 1990.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Ipê-rosa florido em rua residencial de casas térreas em Barão Geraldo",
+      "alt": "Árvore coberta de flores cor-de-rosa sob céu azul, com casas de telhado baixo embaixo",
+      "commons": "File:Handroanthus em Barão Geraldo - 04.9.2025.11.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Casa com ipê-amarelo florido, cena comum nas ruas do distrito",
+      "alt": "Casa térrea com muro de tijolos e um ipê de flores amarelas na calçada",
+      "commons": "File:IpêBarão.JPG"
+    },
+    {
+      "id": "f6",
+      "legenda": "Barão Geraldo visto de uma área afastada do campus da Unicamp",
+      "alt": "Vista ampla de casas e poucos prédios baixos ao longe, atrás de uma faixa de mata e uma cerca branca",
+      "commons": "File:Centro de Barão Geraldo ao longe.JPG"
+    },
+    {
+      "id": "f7",
+      "legenda": "Placas da Trilha do Jatobá, do laguinho e do borboletário na Mata de Santa Genebra",
+      "alt": "Placas de madeira vermelhas apontando caminhos, entre mudas e árvores",
+      "commons": "File:Área de Relevante Interesse Ecológico Mata de Santa Genebra - Renato Palma (07).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Entrada da Fundação José Pedro de Oliveira, que administra a Mata de Santa Genebra",
+      "alt": "Caminho arborizado com placa vertical da fundação e um prédio térreo de tijolos ao fundo",
+      "commons": "File:Posse presidente Mata Santa Genebra Thiago Ferrari.jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Margem da lagoa do Parque Ecológico Prof. Hermógenes de Freitas Leitão Filho",
+      "alt": "Árvores na beira de um lago, com o sol baixo aparecendo entre os galhos",
+      "commons": "File:ParqueBarão3.JPG"
+    },
+    {
+      "id": "f10",
+      "legenda": "Ciclovia no canteiro central da Avenida Professor Atílio Martini",
+      "alt": "Ciclovia vermelha no meio de um canteiro gramado, com árvores dos dois lados e um ciclista ao longe",
+      "commons": "File:Ciclovia em Barão Geraldo.JPG"
+    },
+    {
+      "id": "f11",
+      "legenda": "Entrada do Sirius, o acelerador de partículas do CNPEM, no Polo II de Alta Tecnologia",
+      "alt": "Edifício curvo com fachada de vidro refletindo nuvens, com gramado e rua na frente",
+      "commons": "File:Sirius Synchrotron Entrance.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Barão Geraldo** é um distrito de Campinas, no norte da cidade, a cerca de 12 a 15 km do Centro, conhecido por abrigar o campus principal da **Unicamp**. É uma região de casas, condomínios horizontais e prédios baixos, com muito verde, vida universitária e um comércio que se concentra ao longo da Avenida Albino J. B. de Oliveira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o distrito combina ritmo de cidade do interior com a estrutura de um polo de ciência e tecnologia: universidade, hospitais de referência, centros de pesquisa e a Mata de Santa Genebra, uma das maiores florestas urbanas do país."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Distrito de Campinas criado por lei estadual em 30 de dezembro de 1953",
+        "O nome homenageia o Barão Geraldo de Rezende, dono da antiga Fazenda Santa Genebra",
+        "Abriga o campus principal da Unicamp, cuja pedra fundamental foi lançada em 1966",
+        "Perfil de casas, condomínios horizontais e prédios baixos, com repúblicas e kitnets perto das universidades",
+        "Tem a Mata de Santa Genebra, área de cerca de 250 hectares protegida desde 1985",
+        "O comércio se concentra na Avenida Albino J. B. de Oliveira, eixo principal do distrito",
+        "Liga-se ao Centro e a Paulínia pela Rodovia Professor Zeferino Vaz (SP-332)"
+      ],
+      "titulo": "Barão Geraldo em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Barão Geraldo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O distrito leva o nome de **Geraldo Ribeiro de Sousa Rezende**, o Barão Geraldo de Rezende. Nascido no Rio de Janeiro, ele se instalou em 1870 na **Fazenda Santa Genebra**, propriedade da família da mãe que estava semiabandonada, e a transformou numa das fazendas mais produtivas da região, com café e cana-de-açúcar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ele recebeu o título de Barão de Iporanga em janeiro de 1889 e, a pedido próprio, passou a se chamar Barão Geraldo de Rezende em junho do mesmo ano. Também foi vereador e deputado pelo Partido Conservador e ajudou a fundar o Club da Lavoura, em 1878. Morreu em Campinas em 1907, pouco antes da venda da fazenda, que enfrentava dificuldades financeiras."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O distrito foi criado pela **Lei Estadual n.º 2.456, de 30 de dezembro de 1953**, com terras desmembradas do então distrito de Paulínia, segundo o IBGE. A mesma lei separou Sumaré e Valinhos de Campinas. Parte da antiga Fazenda Santa Genebra deu origem à mata que leva o mesmo nome."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Unicamp e PUC-Campinas: o distrito que cresceu com as universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A virada de Barão Geraldo veio com a **Universidade Estadual de Campinas**. A lei de criação da Unicamp foi assinada em 1962, e a pedra fundamental do campus foi lançada em 5 de outubro de 1966. O terreno era um canavial de 30 alqueires perto do distrito, cerca de 12 km do Centro, cedido pelo banqueiro João Ademar de Almeida Prado por um valor simbólico, segundo a revista Pesquisa FAPESP. O projeto da universidade foi conduzido pelo médico Zeferino Vaz, que depois foi reitor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As primeiras ocupações urbanas, a **Cidade Universitária I e II**, surgiram nos anos 1960, junto com a Unicamp, e atraíram professores e famílias de alta escolaridade. Na década de 1970 chegou o **Campus I da PUC-Campinas**, às margens da Rodovia Dom Pedro I, no Parque das Universidades, e a população de estudantes cresceu bastante. Com isso vieram repúblicas, pensões e kitnets, principalmente na Cidade Universitária e no Parque das Universidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje, além das universidades, o distrito reúne centros de pesquisa como o **CNPEM**, onde funciona o Sirius, acelerador de partículas instalado no Polo II de Alta Tecnologia, além do CPqD e do Instituto Eldorado. Por isso, Barão Geraldo costuma ser apontado como parte do chamado Vale do Silício brasileiro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f11"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar em Barão Geraldo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Barão Geraldo é, antes de tudo, um lugar de casas. Um estudo de pesquisadoras da PUC-Campinas sobre o distrito mostra que a maior parte das construções ao longo do eixo principal tem um ou dois pavimentos, e que os prédios mais altos aparecem no setor mais antigo. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos, o mais alto com cerca de 12 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há perfis bem diferentes lado a lado. Perto das universidades predominam kitnets, repúblicas e apartamentos pequenos. Nos bairros mais antigos, como a Cidade Universitária, ficam casas com quintal em ruas arborizadas. A partir dos anos 1990 e 2000 surgiram condomínios fechados como Lagoa Serena, Espaço e Verde I e II e Estância Eudóxia, além de áreas como Terras do Barão e Terras do Engenho. Rio das Pedras, Barão do Café e Santa Eudóxia também estão entre os condomínios conhecidos do distrito."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia tem cara de bairro: padarias, empórios, mercados, farmácias, academias e bancos ficam perto uns dos outros na região central do distrito. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos com o tempo a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O distrito também tem forte organização comunitária: o mesmo estudo registrou 22 associações de moradores, algumas criadas para proteger o caráter residencial das ruas diante da expansão do comércio."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Mata de Santa Genebra e parques"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande patrimônio verde do distrito é a **Mata de Santa Genebra**, com cerca de 250 hectares de mata, na divisa com Paulínia. A área fazia parte da antiga fazenda do barão e foi doada ao município em 1981 por Jandyra Pamplona de Oliveira, viúva de José Pedro de Oliveira, com a condição de ser preservada. Em 1985 virou **Área de Relevante Interesse Ecológico (ARIE)**, administrada pela Fundação José Pedro de Oliveira e pelo ICMBio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o Correio da Manhã, é a segunda maior floresta urbana do Brasil, atrás da Floresta da Tijuca. Um estudo publicado em 2025 registrou 706 espécies de borboletas na mata, que tem um borboletário de 3.000 m². Há visitas monitoradas gratuitas no primeiro domingo de cada mês e roteiros autoguiados, todos com inscrição prévia, além de trilhas como a do Jatobá."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o lazer do dia a dia, o **Parque Ecológico Prof. Hermógenes de Freitas Leitão Filho**, conhecido como Parque do Lago, fica na Avenida Dr. Luís de Tella. Tem uma lagoa com pista de caminhada e corrida de cerca de 1.700 metros, academia ao ar livre e área para crianças."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f9"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, bares e vida universitária"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio de Barão Geraldo nasceu num pequeno núcleo central, com oficinas, bares e galerias, e foi se espalhando pela **Avenida Albino J. B. de Oliveira**, que continua como Estrada da Rhodia e liga a parte urbana à rural. Hoje o eixo reúne supermercados, franquias, redes de fast-food e muitas agências bancárias. Segundo o estudo da PUC-Campinas, cerca de 55 mil pessoas circulam diariamente pelo distrito, mais do que os moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A presença de estudantes e pesquisadores de todo o país dá ao distrito uma vida noturna própria, com bares, cervejarias e restaurantes. Um guia de Barão Geraldo publicado por um grupo de pesquisa da Unicamp cita casas como o Candreva, o Confra Empório Bar, o Empório do Nono e a Die Oma."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Aos fins de semana, a **Praça do Coco**, na Rua Manoel Antunes Novo, recebe a Feira de Barão, com artesanato, roupas, cerâmica, comida de várias regiões, cerveja artesanal e música ao vivo em algumas datas. Em junho, as festas juninas da Igreja Santa Izabel e da comunidade da Vila São João movimentam o distrito."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde e escolas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Barão Geraldo abriga o **Hospital de Clínicas da Unicamp**, que funciona plenamente desde 1985 e atende 100% pelo SUS. Com 405 leitos ativos, é referência para 86 municípios, segundo o Correio da Manhã. No mesmo complexo ficam o Caism, centro de saúde da mulher, e o Hemocentro da Unicamp. O distrito também tem hospitais particulares, como o Centro Médico de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na educação, além da Unicamp e da PUC-Campinas, há escolas públicas e particulares. A lista das escolas mais próximas do centro do distrito, com o tempo a pé, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal ligação com o Centro de Campinas e com Paulínia é a **Rodovia Professor Zeferino Vaz (SP-332)**, que recebe cerca de 51 mil veículos por dia útil, segundo o Correio da Manhã. Em 2026, o trecho entre Paulínia e Barão Geraldo passou por um projeto de modernização com vias marginais, faixas adicionais e novos trevos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do distrito, as avenidas Dr. Romeu Tórtima, Professor Atílio Martini e Oscar Alves Horta ligam o eixo da Albino J. B. de Oliveira ao campus da Unicamp. A Atílio Martini tem ciclovia no canteiro central. O Shopping Parque Dom Pedro fica ao lado do distrito, e o Aeroporto de Viracopos está a cerca de 20 minutos de carro, segundo o guia da Unicamp."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse usada pela ONDEMORAR registra um terminal de ônibus no distrito. Ainda assim, boa parte dos moradores depende do carro, e os horários de entrada e saída das universidades concentram trânsito nas avenidas de acesso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem Barão Geraldo faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Barão Geraldo costuma agradar a quem trabalha ou estuda na Unicamp, na PUC-Campinas ou nos centros de pesquisa, a famílias que querem casa com quintal ou condomínio horizontal perto do verde e a investidores interessados em imóveis para estudantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não ser a escolha certa para quem precisa ir ao Centro todos os dias, já que a distância e o trânsito na Zeferino Vaz pesam na rotina, ou para quem procura prédios altos com lazer completo. Também vale lembrar que o movimento de estudantes muda de acordo com o calendário letivo e que algumas ruas perto dos bares têm vida noturna."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a distância a pé até a universidade ou o trabalho, o trânsito na saída para a Rodovia Zeferino Vaz no horário de pico, as regras do condomínio ou da associação de moradores da rua e se há repúblicas ou bares por perto.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Barão Geraldo é bairro ou distrito?",
+      "resposta": "É um distrito de Campinas, criado pela Lei Estadual n.º 2.456, de 30 de dezembro de 1953, e reúne vários bairros e condomínios, como a Cidade Universitária e o Parque das Universidades."
+    },
+    {
+      "pergunta": "Por que o distrito se chama Barão Geraldo?",
+      "resposta": "Em homenagem a Geraldo Ribeiro de Sousa Rezende, o Barão Geraldo de Rezende, que transformou a Fazenda Santa Genebra numa das fazendas mais produtivas da região no fim do século XIX."
+    },
+    {
+      "pergunta": "Barão Geraldo é bom para morar?",
+      "resposta": "Para quem quer casa, verde e proximidade da Unicamp, da PUC-Campinas e dos centros de pesquisa, sim. Quem precisa ir ao Centro todos os dias deve considerar a distância e o trânsito na Rodovia Zeferino Vaz."
+    },
+    {
+      "pergunta": "Qual a distância de Barão Geraldo até o Centro de Campinas?",
+      "resposta": "Cerca de 12 a 15 km. O acesso principal é pela Rodovia Professor Zeferino Vaz (SP-332)."
+    },
+    {
+      "pergunta": "Como visitar a Mata de Santa Genebra?",
+      "resposta": "Com inscrição prévia pela Fundação José Pedro de Oliveira. Há visitas monitoradas gratuitas no primeiro domingo de cada mês e roteiros autoguiados em datas definidas."
+    },
+    {
+      "pergunta": "Barão Geraldo tem mais casas ou prédios?",
+      "resposta": "Casas. A maior parte das construções tem um ou dois pavimentos, e a base de condomínios da ONDEMORAR identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos ou horizontais."
+    },
+    {
+      "pergunta": "Quando acontece a feira de Barão Geraldo?",
+      "resposta": "Aos sábados e domingos, na Praça do Coco, com artesanato, roupas, comida e cerveja artesanal."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "IBGE, Divisão Territorial Brasileira: histórico de Campinas e criação do distrito",
+      "site": "biblioteca.ibge.gov.br"
+    },
+    {
+      "nome": "Revista Pesquisa FAPESP, A concepção de uma universidade (fundação da Unicamp)",
+      "site": "revistapesquisa.fapesp.br"
+    },
+    {
+      "nome": "Cuadernos de Vivienda y Urbanismo, Expansão comercial e mudanças no tecido urbano: Barão Geraldo (Wassall e Schicchi, PUC-Campinas, 2008)",
+      "site": "revistas.javeriana.edu.co"
+    },
+    {
+      "nome": "PUC-Campinas, endereço do Campus I",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "Guia de Barão Geraldo do evento SBCM 2025 (NICS, Unicamp)",
+      "site": "nics.unicamp.br"
+    },
+    {
+      "nome": "Correio da Manhã: HC-Unicamp, Mata de Santa Genebra, obras na Zeferino Vaz e Feira de Barão (2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "São Paulo Secreto, Mata de Santa Genebra",
+      "site": "saopaulosecreto.com"
+    },
+    {
+      "nome": "CNPEM, localização do Sirius em Barão Geraldo",
+      "site": "cnpem.br"
+    },
+    {
+      "nome": "Revista Conexões (Unicamp), artigo sobre o Parque Ecológico Prof. Hermógenes Freitas Leitão Filho",
+      "site": "periodicos.sbu.unicamp.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Barão Geraldo, Barão Geraldo de Resende e Mata de Santa Genebra",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Barão Geraldo, em Campinas: o distrito que leva o nome de um barão do café, cresceu em volta da Unicamp e guarda a Mata de Santa Genebra, uma das maiores florestas urbanas do país. Preparamos um guia com a história, a vida universitária, os parques, o comércio da Albino J. B. de Oliveira e o que considerar antes de morar por lá. Link na bio.",
+    "hashtags": [
+      "baraogeraldo",
+      "campinas",
+      "unicamp",
+      "matadesantagenebra",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Barão Geraldo, Campinas: guia do distrito para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.155Z"
+}

@@ -1,0 +1,322 @@
+{
+  "slug": "jardim-santa-genebra",
+  "titulo": "Jardim Santa Genebra, Campinas: como é morar no bairro de Barão Geraldo",
+  "resumo": "Guia do Jardim Santa Genebra, em Barão Geraldo, Campinas: origem do nome, ruas, prédios, escolas, acessos e o que considerar antes de morar no bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Prédios do Jardim Santa Genebra ao fundo, vistos de um estacionamento em 2008",
+      "alt": "Estacionamento amplo em dia de céu azul, com gramado e torres residenciais altas no horizonte",
+      "commons": "File:Jardim Santa Genebra, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Trilha de terra na Mata de Santa Genebra, área protegida que leva o mesmo nome",
+      "alt": "Caminho de terra vermelha entre mata fechada, com uma árvore alta de tronco claro",
+      "commons": "File:Arie Mata de Santa Genebra Campinas Fernando caselatto neto 03.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Galpão comercial com venda pela ONDEMORAR no Jardim Santa Genebra",
+      "alt": "Edifício comercial baixo com fachada de vidro curva, palmeiras e gramado na frente",
+      "imovel_foto": 114
+    },
+    {
+      "id": "f4",
+      "legenda": "Entrada do Hospital de Clínicas da Unicamp, no campus vizinho ao bairro",
+      "alt": "Marquise de concreto com o letreiro Hospital de Clínicas, faixa de pedestres e árvores grandes",
+      "commons": "File:Hospital de Clínicas da Unicamp (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada das Águas do Parque Dom Pedro Shopping, ao lado do bairro",
+      "alt": "Entrada de shopping com painel azul e amarelo escrito Parque D. Pedro e palmeiras na calçada",
+      "commons": "File:Parque Dom Pedro Shopping (1).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Ciclovia no canteiro central da Avenida Professor Atílio Martini, em Barão Geraldo",
+      "alt": "Ciclovia vermelha no meio de um canteiro gramado, com árvores dos dois lados e um ciclista ao longe",
+      "commons": "File:Ciclovia em Barão Geraldo.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Santa Genebra** é um bairro do distrito de Barão Geraldo, em Campinas, entre o campus da Unicamp e o Parque Dom Pedro Shopping. É uma área residencial de prédios de poucos andares, condomínios e casas, cortada pela Avenida Dr. Romeu Tórtima e encostada na Avenida Albino José Barbosa de Oliveira, o eixo comercial do distrito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O loteamento foi dividido em partes, e por isso muitos endereços aparecem como **Jardim Santa Genebra II**. Para quem pensa em morar ali, o bairro oferece a estrutura de Barão Geraldo a poucos minutos, com acesso rápido à Rodovia Dom Pedro I. Este guia reúne o que as fontes registram sobre a história, as ruas, as escolas e os acessos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro do distrito de Barão Geraldo, no norte de Campinas",
+        "O nome vem da antiga Fazenda Santa Genebra, do Barão Geraldo de Rezende",
+        "Loteamento dividido em partes e glebas; o trecho mais citado nos endereços é o Jardim Santa Genebra II",
+        "Ruas batizadas por decretos municipais entre 1975 e 1980, muitas com nomes de figuras da história do Brasil",
+        "Perfil de prédios baixos e condomínios, com casas em parte das ruas",
+        "Fica entre a Unicamp e o Parque Dom Pedro Shopping, perto da Rodovia Dom Pedro I (SP-065)"
+      ],
+      "titulo": "O Jardim Santa Genebra em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Santa Genebra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem da **Fazenda Santa Genebra**, que ocupava boa parte das terras do atual distrito. Um artigo do jornal *Diário do Povo*, de abril de 1966, guardado no Centro de Memória da Unicamp, conta que a propriedade era antes uma velha fazenda de cana chamada Morro Grande e que passou pela família de Francisco Antonio de Souza, cujas filhas se chamavam Isabel e Genebra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por volta de 1870, o **Barão Geraldo de Rezende** se instalou na fazenda, que acabou dando nome ao distrito inteiro. O mesmo artigo relata que ele sonhou com um núcleo colonial, mas que as terras foram a leilão no início do século XX. Em 1966, o autor já observava que ali, às portas de Campinas, caberia uma cidade. Poucos anos depois, os loteamentos chegaram."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Parte da antiga fazenda virou a **Mata de Santa Genebra**, hoje uma Área de Relevante Interesse Ecológico de 251,77 hectares, segundo o Correio da Manhã. A área foi doada à Prefeitura em 1981 com uma condição: só continua sendo do município enquanto a floresta estiver de pé."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o loteamento ganhou nome de ruas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os decretos municipais preservados pelo Centro de Memória da Unicamp mostram que, em meados dos anos 1970, o Jardim Santa Genebra já existia como loteamento, com ruas identificadas por números. Em abril de 1975, o **Decreto nº 4.634** deu o nome de **Dr. Romeu Tórtima** (1899–1972), advogado, à antiga Avenida Cidade Universitária do bairro, que começa na Avenida Albino José Barbosa de Oliveira e segue até a Cidade Universitária."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em julho do mesmo ano, o Decreto nº 4.696 batizou ruas da primeira parte do loteamento com o nome de **Fiorindo Casotti** (1905–1975), ferroviário da Companhia Mogiana. Em outubro de 1976, o Decreto nº 4.976 nomeou de uma vez várias vias da primeira parte com personagens da história e da cultura brasileiras, como Estácio de Sá, Alexandre de Gusmão, Evaristo da Veiga, Macedo Costa, Frei Tibúrcio e o Maestro Francisco Manuel da Silva, autor da música do Hino Nacional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A segunda gleba também aparece nos registros. Em 1980, o **Decreto nº 6.165** deu à Rua 35 do Jardim Santa Genebra Gleba 2 o nome da professora **Zuneide Aparecida Marin**, com início na Avenida Albino José Barbosa de Oliveira. Essa divisão em partes e glebas explica por que o bairro aparece com nomes diferentes nos endereços."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Quem anda pela primeira parte do bairro encontra uma pequena aula de história do Brasil nas placas: fundador do Rio de Janeiro, diplomata do período colonial, jornalistas do Império e um frade pioneiro da imprensa em Campinas.",
+      "titulo": "Ruas com nomes da história"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Santa Genebra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem perfil residencial. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no Jardim Santa Genebra, quase todos verticais, que somam perto de 1.900 unidades. Entre os nomes da base estão os residenciais Lumini I, II e III, o Residencial Luxemburgo, o Residencial Colline Suisse e o Edifício Santa Genebra I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Boa parte desses prédios tem de três a sete andares, mas há torres mais altas, que aparecem no horizonte de quem chega pela região do shopping. Há também condomínios horizontais e casas de rua. O guia do bairro publicado pelo QuintoAndar o descreve como predominantemente residencial, com casas e condomínios, e reúne depoimentos de moradores que falam em vizinhança calma e na necessidade de carro para boa parte da rotina."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ONDEMORAR tem à venda no bairro, no momento, um galpão comercial, o que mostra que o Jardim Santa Genebra também tem imóveis de uso não residencial nas bordas das avenidas. A seção *o que tem perto*, mais abaixo nesta página, lista os serviços mais próximos com o tempo a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, Unicamp e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro funcionam escolas públicas registradas no Jardim Santa Genebra II. A **Escola Estadual José Pedro de Oliveira** fica na Rua Albino de Oliveira, segundo o portal Melhor Escola. O **CEI Profa. Leonor Motta Zuppi**, centro de educação infantil da rede municipal, atende creche na Rua José Antonio Marinho, de acordo com o cadastro do portal Escolas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vizinhança com a **Unicamp** é a maior vantagem nesse ponto: pela base de pontos de interesse usada pela ONDEMORAR, a Faculdade de Ciências Médicas fica a cerca de 500 metros do centro do bairro. O guia do QuintoAndar cita ainda a proximidade com a PUC-Campinas e a Facamp, e a EMEI Presidente Arthur Bernardes entre os pontos de interesse da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o bairro fica ao lado do campus onde estão o Hospital de Clínicas e a Faculdade de Ciências Médicas da Unicamp. Para o dia a dia, a base de pontos registra farmácias e clínicas a menos de 1 km, em especial no trecho da Avenida Albino José Barbosa de Oliveira."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio e serviços no dia a dia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio mais próximo está na **Avenida Albino José Barbosa de Oliveira**, onde começam as vias do bairro e que leva ao centro de Barão Geraldo. Segundo a base de pontos de interesse usada pela ONDEMORAR, num raio de 1,5 km há mais de 20 mercados e padarias, cerca de 90 restaurantes e cafés, além de bancos, postos de combustível e academias. O QuintoAndar menciona farmácias, salões de beleza e pequenos mercados dentro do próprio bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o **Parque Dom Pedro Shopping** fica ao lado do bairro, segundo o QuintoAndar, com lojas, restaurantes, cinema e eventos. Um artigo do Boletim Campineiro de Geografia registra que o shopping custeou trechos do Parque Linear Ribeirão das Pedras como medida compensatória, em 1999."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos: Romeu Tórtima, Albino J. B. de Oliveira e Dom Pedro I"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Dr. Romeu Tórtima** é a ligação interna do bairro com a Cidade Universitária e o campus da Unicamp, como define o decreto de 1975. A **Avenida Albino José Barbosa de Oliveira** leva ao centro de Barão Geraldo e, dali, à Rodovia Professor Zeferino Vaz, caminho para o Centro de Campinas e para Paulínia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do lado do shopping, o QuintoAndar aponta a proximidade da **Rodovia Dom Pedro I (SP-065)**, que liga Campinas a cidades como Valinhos, Sumaré e Hortolândia, e das avenidas Guilherme Campos e Wagner Samara. A base de pontos registra um terminal de ônibus em Barão Geraldo a menos de 1 km do centro do bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Verde, Ribeirão das Pedras e pontos de atenção"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região faz parte da bacia do **Ribeirão das Pedras**, afluente do Anhumas. O Parque Linear Ribeirão das Pedras nasceu como projeto do Plano Local de Gestão Urbana de Barão Geraldo, instituído pela Lei nº 9.199, de 1996, e previa um corredor verde de cerca de 10 km. Em 1999, a nascente e trechos iniciais foram recuperados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo artigo, de 2016, faz um alerta útil para quem procura imóvel: segundo reportagens citadas pela autora, nos anos 1990 as construções no alto Taquaral e nos prédios próximos à Avenida Santa Genebra ampliaram a impermeabilização do solo, e as enchentes no ribeirão ficaram frequentes. Vale perguntar sobre o histórico de alagamento da rua antes de fechar negócio."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Santa Genebra faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma combinar com quem estuda ou trabalha na Unicamp e na área da saúde do campus, com quem quer apartamento em prédio baixo perto do comércio de Barão Geraldo e com quem usa com frequência a Rodovia Dom Pedro I ou o Parque Dom Pedro Shopping."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também aparecem nas fontes: a rotina ainda depende bastante do carro, as avenidas de acesso concentram movimento nos horários de entrada e saída das universidades e há registro histórico de enchentes na bacia do Ribeirão das Pedras."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte em qual parte ou gleba fica o imóvel, se a rua já teve alagamento, quanto tempo leva até a Unicamp e até a Rodovia Dom Pedro I no horário de pico e quais são as regras do condomínio.",
+      "titulo": "Antes de fechar negócio"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Santa Genebra, em Campinas?",
+      "resposta": "No distrito de Barão Geraldo, no norte de Campinas, entre o campus da Unicamp e o Parque Dom Pedro Shopping, com acesso pelas avenidas Dr. Romeu Tórtima e Albino José Barbosa de Oliveira."
+    },
+    {
+      "pergunta": "O Jardim Santa Genebra é bom para morar?",
+      "resposta": "Para quem quer ficar perto da Unicamp, do comércio de Barão Geraldo e da Rodovia Dom Pedro I, costuma ser uma boa opção. É um bairro residencial de prédios baixos e condomínios. Vale considerar que boa parte da rotina depende de carro e checar o histórico de alagamento da rua."
+    },
+    {
+      "pergunta": "Qual a diferença entre Jardim Santa Genebra e Jardim Santa Genebra II?",
+      "resposta": "O loteamento foi dividido em partes e glebas, como mostram os decretos municipais dos anos 1970 e 1980. Jardim Santa Genebra II é o nome usado nos endereços de uma dessas partes; todas ficam na mesma região de Barão Geraldo."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Santa Genebra?",
+      "resposta": "Entre as escolas públicas registradas no Jardim Santa Genebra II estão a Escola Estadual José Pedro de Oliveira e o CEI Profa. Leonor Motta Zuppi, creche da rede municipal. A Unicamp fica ao lado do bairro."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Santa Genebra?",
+      "resposta": "Por causa da antiga Fazenda Santa Genebra, onde o Barão Geraldo de Rezende se instalou por volta de 1870. A mesma fazenda deu origem ao nome da Mata de Santa Genebra."
+    },
+    {
+      "pergunta": "Como chegar à Rodovia Dom Pedro I saindo do Jardim Santa Genebra?",
+      "resposta": "O bairro fica ao lado do Parque Dom Pedro Shopping, e a rodovia passa pela região do shopping. Por lá também ficam as avenidas Guilherme Campos e Wagner Samara."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp: Decreto nº 4.634/1975 (Avenida Dr. Romeu Tórtima)",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp: Decretos nº 4.696/1975 e nº 6.165/1980 (ruas do Jardim Santa Genebra)",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp: Decreto nº 4.976/1976 (vias da primeira parte do Jardim Santa Genebra)",
+      "site": "memoriae-nuvem.cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp: artigo do Diário do Povo sobre a Fazenda Santa Genebra (1966)",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "Boletim Campineiro de Geografia: o caso do Parque Linear Ribeirão das Pedras (Giaretta, 2016)",
+      "site": "publicacoes.agb.org.br"
+    },
+    {
+      "nome": "Correio da Manhã: Mata de Santa Genebra, bioma de 251,77 hectares (2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar: guia do bairro Santa Genebra, Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Melhor Escola: Escola Estadual José Pedro de Oliveira",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Escolas: CEI Profa. Leonor Motta Zuppi",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Base de condomínios e pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Santa Genebra, em Barão Geraldo: o bairro entre a Unicamp e o Parque Dom Pedro Shopping. O nome vem da antiga fazenda do Barão Geraldo de Rezende, e as ruas da primeira parte homenageiam figuras da história do Brasil. Prédios baixos, condomínios, escolas e acesso rápido à Dom Pedro I. Leia o guia completo no link da bio.",
+    "hashtags": [
+      "jardimsantagenebra",
+      "baraogeraldo",
+      "campinas",
+      "unicamp",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Santa Genebra, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.506Z"
+}

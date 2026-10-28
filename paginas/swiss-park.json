@@ -1,0 +1,344 @@
+{
+  "slug": "swiss-park",
+  "titulo": "Swiss Park, Campinas: como é morar no bairro planejado da região sul",
+  "resumo": "Guia do Swiss Park, em Campinas: história da antiga fazenda, residenciais com nomes suíços, Parque Botânico, acessos pela Anhanguera e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "A torre do relógio com o nome Swiss Park, num canteiro gramado do bairro",
+      "alt": "Torre alta de pedra cinza com relógio no topo e placa Swiss Park, em gramado com palmeiras sob céu azul",
+      "commons": "File:Torre do Relógio - Swiss Park Campinas - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Sede da Fazenda Sete Quedas em desenho de Fúlvia Gonçalves, do acervo do Centro de Memória da Unicamp",
+      "alt": "Desenho a nanquim de um casarão térreo comprido com muitas janelas, palmeiras e construções menores ao lado",
+      "commons": "File:Sede da Fazenda Sete Quedas, Fulvia Goncalves, Centro de Memoria - Unicamp, FG 165.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Casas de um dos residenciais do Swiss Park vistas de longe, com área verde na frente",
+      "alt": "Fileira de casas claras de dois andares atrás de um muro, com mata baixa em primeiro plano e céu azul",
+      "commons": "File:Swiss Park Campinas - panoramio (2).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Rua de condomínio no Swiss Park com casa da ONDEMORAR à venda",
+      "alt": "Esquina de rua interna de condomínio com sobrados amarelos, jardim e calçada",
+      "imovel_foto": 477
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada de casa em condomínio com unidade da ONDEMORAR à venda no Swiss Park",
+      "alt": "Sobrado claro com telhado de telhas e jardim florido na frente, em rua de condomínio",
+      "imovel_foto": 478
+    },
+    {
+      "id": "f6",
+      "legenda": "Placa do Parque Botânico Amador Aguiar à beira de uma avenida do Swiss Park",
+      "alt": "Avenida em curva com calçada, gramado e uma placa azul com o nome Parque Botânico Amador Aguiar",
+      "commons": "File:Parque Botânico Amador Aguiar - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Lagoa do Parque Botânico, cercada de mata",
+      "alt": "Lago de água parada com árvores em volta e uma árvore de flores vermelhas na margem",
+      "commons": "File:Parque Botânico - Lagoa - panoramio.jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Ponte de pedra em arcos sobre um lago, com a réplica de moinho ao fundo",
+      "alt": "Ponte de pedra com vários arcos sobre lago, mata alta atrás e um moinho coberto de folhagem",
+      "commons": "File:Swiss Park, Campinas - SP, Brazil - panoramio (1).jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "Capela de paredes brancas e detalhes azuis no Swiss Park",
+      "alt": "Pequena capela branca com pilares e janelas azuis, cercada de plantas e gramado",
+      "commons": "File:Swiss Park, Campinas - SP, Brazil - panoramio.jpg"
+    },
+    {
+      "id": "f10",
+      "legenda": "Rotatória ajardinada numa das avenidas que ligam os residenciais",
+      "alt": "Avenida larga em curva com rotatória, placas de trânsito, árvores e arbustos de flores roxas",
+      "commons": "File:Swiss Park Campinas - panoramio (5).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Swiss Park** é um bairro planejado da região sul de Campinas, às margens da Rodovia Anhanguera, formado por residenciais fechados que levam nomes de cidades suíças. O perfil é de casas em condomínio, com alguns prédios baixos, ruas largas entre os residenciais, comércio concentrado nas vias de ligação e um grande parque botânico público no meio do loteamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Lançado em 2006 sobre terras de uma antiga fazenda, o Swiss Park é recente para os padrões de Campinas e ainda está em ocupação. Este guia reúne o que as fontes dizem sobre a origem do bairro, o tipo de imóvel, o lazer, os acessos e os pontos que valem atenção antes de escolher um endereço ali."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro planejado da região sul de Campinas, junto à Rodovia Anhanguera, na altura do km 90",
+        "Lançado em 2006, com área total de cerca de 5 milhões de m²",
+        "17 residenciais fechados com nomes de cidades suíças, como Baden, Lucerna, Lugano e Zurich",
+        "Cerca de 4.800 lotes residenciais e pouco mais de 200 comerciais, segundo a incorporadora",
+        "Parque Botânico Amador Aguiar, área pública com lagos e trilhas",
+        "Saídas para as rodovias Santos Dumont, Bandeirantes e Dom Pedro I e para Viracopos"
+      ],
+      "titulo": "O Swiss Park em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: da Fazenda Sete Quedas ao bairro planejado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Swiss Park foi implantado numa antiga fazenda, e o projeto preservou um casarão antigo, segundo o júri do prêmio Master Imobiliário de 2014, organizado pelo Secovi-SP. Publicações do mercado imobiliário identificam a área como a da antiga **Fazenda Sete Quedas** e situam o início das obras em 2005; o lançamento oficial, de acordo com a própria incorporadora, foi em 2006."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Sete Quedas tem lugar na história do café em Campinas. Foi aberta pelo tenente José Rodrigues Ferraz do Amaral e pertenceu ao filho dele, Joaquim Bonifácio do Amaral, o **Visconde de Indaiatuba**. Segundo texto publicado pela PUC-Campinas, a fazenda adotou colonos livres a partir de 1852, e em 1870 o visconde foi pessoalmente à Europa recrutar agricultores na região de Holstein."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma reportagem de 1947 guardada no Centro de Memória da Unicamp coloca a sede da Sete Quedas entre as maiores casas-grandes do município e conta que o visconde esteve entre os primeiros a modernizar as máquinas de beneficiar café. O Centro de Memória também guarda um desenho da sede feito pela artista Fúlvia Gonçalves."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O empreendimento é da **Swiss Park Incorporadora** e recebeu o prêmio Master Imobiliário de 2014 na categoria Desenvolvimento Urbano. Um artigo do Boletim Campineiro de Geografia registrou que, em 2010, onze dos doze loteamentos já colocados à venda estavam vendidos, e projetava cerca de 35 mil moradores quando o bairro estivesse completo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Swiss Park"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Swiss Park funciona como um conjunto de condomínios. São 17 residenciais fechados, cada um com nome de cidade suíça, portaria própria e área de lazer de uso exclusivo dos seus moradores. Entre os nomes citados pelas fontes estão Baden, Lucerna, Friburgo, Lugano, Davos, Zurich e Genève. Há ainda condomínios de casas e prédios baixos, como o Lausanne Swiss Park Residence, o Villeneuve e o Residencial Noville."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelos números da incorporadora, o bairro soma 4.808 lotes residenciais e 212 comerciais, 17 lagos paisagísticos e cerca de 1 milhão de m² de área verde preservada. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022, identifica alguns condomínios verticais no bairro, o mais alto com cerca de sete andares: o Swiss Park é, antes de tudo, um bairro de casas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O acesso ao complexo é feito por quatro portais monitorados, e cada residencial tem a sua portaria, segundo o Secovi-SP e o Boletim Campineiro de Geografia. A incorporadora informa mais de 850 câmeras no conjunto. Na prática, a rotina dentro dos residenciais é de rua tranquila, enquanto as avenidas de ligação concentram o trânsito e o comércio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Por ser recente, o Swiss Park ainda tem lotes vagos e casas em obra em vários residenciais. Antes de comprar, vale saber quantos terrenos ainda faltam construir na sua quadra e quais são as regras de obra do condomínio.",
+      "titulo": "Bairro ainda em formação"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parque Botânico, lagos e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal espaço de lazer aberto a todos é o **Parque Botânico Amador Aguiar**, dentro do Swiss Park. Segundo o Secovi-SP, o parque pertence ao poder público, assim como o Centro de Excelência Desportiva do bairro. O tamanho varia conforme a fonte: cerca de 500 mil m² para o júri do prêmio e perto de 600 mil m² para a incorporadora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O parque preserva parte das matas nativas da antiga fazenda e é aberto à visitação, segundo a Rede Provectum. Material de imobiliárias da cidade descreve lagos, pistas de caminhada, trilhas e ciclovias, além do plantio de mudas nativas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A paisagem do bairro tem alguns marcos que brincam com o tema suíço: a torre do relógio com o nome Swiss Park, uma réplica de moinho perto de uma das entradas e uma capela. Os 17 lagos ficam distribuídos entre os residenciais. Dentro de cada condomínio, a área de lazer é privativa dos moradores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, escolas e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do Swiss Park fica nas avenidas que ligam os residenciais: padarias, restaurantes, mercados e lojas de material de construção, segundo a Rede Provectum. A incorporadora contabiliza cerca de 220 pontos comerciais, parte deles já em funcionamento, e o **Swiss Park Office**, centro empresarial com mais de 500 salas, praça de alimentação, lojas, consultórios e agências bancárias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as escolas citadas nas proximidades está a **Fundação Bradesco**, a cerca de 600 metros do centro do bairro pela base da ONDEMORAR, e o Colégio RDS Swiss, segundo o guia do portal Chaves na Mão. Para compras maiores, as imobiliárias citam o Shopping Campinas e o Hipermercado Carrefour, além dos shoppings Parque Dom Pedro e Iguatemi, mais distantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, há clínicas e consultórios no próprio bairro, inclusive no Swiss Park Office. Hospitais de referência da cidade, como o Vera Cruz e o Hospital de Clínicas da Unicamp, ficam em outras regiões de Campinas, e o trajeto até eles passa pelas rodovias e avenidas principais."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O endereço de referência do Swiss Park é a **Rodovia Anhanguera, na altura do km 90**. Pela Anhanguera chega-se à **Rodovia Santos Dumont**, que leva ao Aeroporto de Viracopos e a Indaiatuba, e ao Anel Viário Magalhães Teixeira. A Avenida das Amoreiras é citada como outra ligação com o resto da cidade, e um viaduto liga o loteamento ao restante da cidade, segundo o Secovi-SP."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Imobiliárias estimam cerca de 15 minutos até o Centro de Campinas, a uns 15 km, e cerca de 10 minutos até Viracopos, fora do horário de pico. A proximidade com Anhanguera, Bandeirantes e Dom Pedro I facilita viagens a São Paulo, Jundiaí e Indaiatuba. Há linhas de ônibus nas entradas principais, mas o dia a dia da maioria dos moradores depende do carro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f10"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O entorno do Swiss Park"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Swiss Park ocupa uma área grande da região sul, perto da Anhanguera e do eixo que leva a Viracopos. Um artigo do Boletim Campineiro de Geografia observa que o complexo foi erguido ao lado de bairros populares e de ocupações, numa das partes de menor renda da cidade, e que tende a concentrar serviços privados dentro dos seus portões."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o morador, isso significa uma diferença visível entre o interior dos residenciais e o entorno, e uma rotina que se apoia nos serviços do próprio bairro e nas rodovias para chegar ao restante de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Swiss Park faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Swiss Park costuma atrair famílias que querem casa em condomínio fechado, com área verde e lazer no residencial, e quem precisa de saída rápida para as rodovias ou para Viracopos. Quem trabalha em Indaiatuba, Jundiaí ou viaja com frequência tem ali uma localização prática."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são a dependência do carro, a distância dos hospitais e universidades de referência da cidade e o fato de o bairro ainda estar em formação, com obras ao redor. As regras, a taxa e o lazer mudam de um residencial para outro, e a escolha do condomínio pesa tanto quanto a escolha da casa."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte em qual dos residenciais fica o imóvel e o que a taxa cobre, quais são as regras de obra e reforma, quantos lotes vagos há perto, o tempo de trajeto até o trabalho e a escola no horário de pico e quais linhas de ônibus passam na entrada mais próxima.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Swiss Park, em Campinas?",
+      "resposta": "Na região sul da cidade, às margens da Rodovia Anhanguera, na altura do km 90, perto da Rodovia Santos Dumont e do caminho para o Aeroporto de Viracopos."
+    },
+    {
+      "pergunta": "O Swiss Park é bom para morar?",
+      "resposta": "Para quem procura casa em condomínio fechado, com área verde e acesso fácil às rodovias, costuma atender bem. Os pontos de atenção são a dependência do carro, a distância dos hospitais de referência e as obras de um bairro ainda em formação."
+    },
+    {
+      "pergunta": "Quantos condomínios tem o Swiss Park?",
+      "resposta": "São 17 residenciais fechados com nomes de cidades suíças, além de um polo empresarial, o Swiss Park Office, e de alguns condomínios menores de casas e prédios baixos."
+    },
+    {
+      "pergunta": "Quando o Swiss Park foi criado?",
+      "resposta": "O lançamento foi em 2006, segundo a incorporadora, numa área de antiga fazenda. Publicações do mercado imobiliário situam o início das obras em 2005."
+    },
+    {
+      "pergunta": "O Parque Botânico do Swiss Park é aberto ao público?",
+      "resposta": "Sim. O Parque Botânico Amador Aguiar pertence ao poder público, segundo o Secovi-SP, e é aberto à visitação, com lagos e trilhas."
+    },
+    {
+      "pergunta": "Qual a distância do Swiss Park ao Centro de Campinas?",
+      "resposta": "Cerca de 15 km, segundo imobiliárias da cidade, o que dá perto de 15 minutos de carro fora do horário de pico."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Secovi-SP, Complexo urbanístico de Primeiro Mundo, prêmio Master Imobiliário (2014)",
+      "site": "secovi.com.br"
+    },
+    {
+      "nome": "O Estado de S. Paulo, caderno Master Imobiliário (2 de setembro de 2014), na hemeroteca da Unisanta",
+      "site": "sites.unisanta.br"
+    },
+    {
+      "nome": "Boletim Campineiro de Geografia (AGB Campinas), artigo sobre o Swiss Park e a segregação urbana",
+      "site": "publicacoes.agb.org.br"
+    },
+    {
+      "nome": "Swiss Park Incorporadora, página do Swiss Park Campinas",
+      "site": "swisspark.com.br"
+    },
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica, O Visconde de Indaiatuba e o trabalho livre em São Paulo",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, reportagem de Ernani da Silva Bueno (Correio Popular, 1947) e acervo Fúlvia Gonçalves",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Rede Provectum, Vantagens de morar no Swiss Park Campinas",
+      "site": "redeprovectum.com.br"
+    },
+    {
+      "nome": "Petrucci Imóveis, Swiss Park Campinas",
+      "site": "petrucci.com.br"
+    },
+    {
+      "nome": "Chaves na Mão, guia do bairro Swiss Park",
+      "site": "chavesnamao.com.br"
+    },
+    {
+      "nome": "FBC Imóveis, Casas no Swiss Park Campinas",
+      "site": "fbcimoveis.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Swiss Park, em Campinas: um bairro planejado que nasceu em 2006 nas terras de uma antiga fazenda de café, com 17 residenciais de nomes suíços e um parque botânico público. Preparamos um guia com a história da Fazenda Sete Quedas, o lazer, os acessos pela Anhanguera e o que perguntar antes de escolher sua casa. Link na bio.",
+    "hashtags": [
+      "swisspark",
+      "campinas",
+      "casaemcondominio",
+      "guiadebairro",
+      "morarbem",
+      "regiaosul",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Swiss Park, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.505Z"
+}

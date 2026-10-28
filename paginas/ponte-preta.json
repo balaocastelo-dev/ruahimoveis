@@ -1,0 +1,334 @@
+{
+  "slug": "ponte-preta",
+  "titulo": "Ponte Preta, Campinas: como é morar no bairro do Majestoso",
+  "resumo": "Guia da Ponte Preta, em Campinas: origem do nome, o Estádio Moisés Lucarelli, a vila ferroviária, prédios, escolas, acessos e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fachada do Estádio Moisés Lucarelli, com prédios residenciais do bairro ao fundo",
+      "alt": "Fachada branca e curva de estádio com o letreiro A. A. Ponte Preta e edifícios altos atrás",
+      "commons": "File:Fachada do Estádio Moisés Lucarelli.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Pequeno viaduto sobre a linha férrea, apontado como a ponte que deu origem ao nome do bairro",
+      "alt": "Ponte baixa de concreto escuro sobre a linha do trem, com pichações e mato em volta",
+      "commons": "File:Ponte que deu origem ao bairro Ponte Preta -vandalizada.JPG"
+    },
+    {
+      "id": "f3",
+      "legenda": "Vista aérea antiga do estádio da Ponte Preta, ainda cercado de terrenos vazios",
+      "alt": "Foto aérea em preto e branco de um estádio oval cercado por ruas de terra e poucos lotes ocupados",
+      "commons": "File:Werner Haberkorn - Vista aérea do Estádio da Ponte Preta. Campinas-SP (cropped).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Escultura do gorila em frente ao estádio, inaugurada nos 125 anos do clube",
+      "alt": "Escultura geométrica de aço escuro de um gorila sobre pedestal, diante da fachada do estádio",
+      "commons": "File:Gorila Monumento Ponte Preta Rodrigo Zingoni 2025.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Cruzamento da Abolição com a Rua Álvaro Ribeiro: comércio de rua e prédios",
+      "alt": "Esquina com semáforos, faixa de pedestres, lojas térreas coloridas e edifícios residenciais ao fundo",
+      "commons": "File:Av da Aboliçao X Rua Alvaro Ribeiro - Bairro Ponte Preta - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Portal do Cemitério da Saudade, inaugurado em 1880",
+      "alt": "Pórtico claro de estilo clássico com colunas e escadaria, ladeado por palmeiras",
+      "commons": "File:Portal do Cemitério da Saudade - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Alameda arborizada no interior do Cemitério da Saudade",
+      "alt": "Alameda calçada e reta entre túmulos de granito, com palmeiras e árvores dos dois lados",
+      "commons": "File:Cemitério da Saudade Campinas (18).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Fachada do Colégio Dom Barreto, na Avenida da Saudade",
+      "alt": "Prédio escolar de fachada rosada com o letreiro Colégio Dom Barreto entre palmeiras",
+      "commons": "File:Fachada do domba.jpg"
+    },
+    {
+      "id": "f9",
+      "legenda": "O Moisés Lucarelli e a praça de estacionamento em frente, ao entardecer",
+      "alt": "Estádio branco com o nome Ponte Preta na fachada, palmeiras e carros estacionados na frente",
+      "commons": "File:Estádio Moisés Lucarelli - Ponte Preta - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Ponte Preta** é um bairro da zona sul de Campinas, colado ao Centro, conhecido em todo o país por dar nome à Associação Atlética Ponte Preta e por abrigar o **Estádio Moisés Lucarelli**, o Majestoso. É um dos bairros mais antigos da cidade, com casas térreas, prédios residenciais de vários tamanhos e comércio de rua, cortado pela linha férrea que marcou a sua origem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, a Ponte Preta oferece proximidade com o Centro e com a Rodoviária, serviços a poucas quadras e um ritmo de bairro tradicional, que muda nos dias de jogo. Este guia reúne a história, o perfil dos imóveis, os marcos, as escolas e o que vale considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da zona sul de Campinas, vizinho do Centro e da Vila Industrial",
+        "O nome vem de uma ponte do fim do século XIX, escurecida por piche",
+        "Abriga o Estádio Moisés Lucarelli, inaugurado em 1948 e erguido com ajuda da torcida",
+        "Tem uma vila ferroviária construída pela Companhia Paulista de Estradas de Ferro",
+        "Mistura casas antigas, prédios residenciais e comércio de rua",
+        "Fica perto do Cemitério da Saudade, aberto em 1880, e da Rodoviária de Campinas"
+      ],
+      "titulo": "A Ponte Preta em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Ponte Preta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem de uma **ponte de madeira** construída no fim do século XIX. Ela ligava a cidade de então, que se resumia ao Centro e a poucos bairros, à área do Cemitério da Saudade. Para conservar a madeira, a ponte recebeu uma camada de piche, e a fuligem das locomotivas a vapor escurecia ainda mais tudo em volta. A cor deu o apelido ao lugar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Perto dessa ponte, estudantes do Colégio Culto à Ciência jogavam futebol. Em **11 de agosto de 1900**, eles fundaram ali a Associação Atlética Ponte Preta, apontada como o segundo clube de futebol mais antigo do Brasil ainda em atividade. A ponte batizou primeiro o bairro e, depois, o time. Um pequeno viaduto sobre a linha do trem ainda é identificado como a ponte original."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Um bairro de ferroviários"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história da Ponte Preta é inseparável da ferrovia. A Companhia Paulista de Estradas de Ferro foi inaugurada em Campinas em 11 de agosto de 1872 e construiu, ao longo de suas linhas, mais de 1.600 casas para os funcionários. Uma dessas vilas ferroviárias fica justamente na Ponte Preta. Segundo a Assembleia Legislativa de São Paulo, alguns dos fundadores do clube moravam nesse bairro operário."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma dissertação de mestrado da PUC-Campinas, defendida em 2006, estudou a vila e mostrou que, em cerca de 80 anos, os moradores reformaram e ampliaram as casas por conta própria. A pesquisadora encontrou imóveis deteriorados e pediu a abertura de um estudo de tombamento, aceito pelo Condepacc, o conselho de patrimônio de Campinas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O Estádio Moisés Lucarelli, o Majestoso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Durante décadas, a Ponte Preta jogou em campos emprestados, como o Campo do Cruzeiro e o Hipódromo Campineiro, e chegou a ter o Estádio Júlio de Mesquita, demolido nos anos 1930. Sem casa própria, o time ganhou o apelido de \"time de onze camisas\". A virada veio em 1944, com a compra da antiga **Chácara Maranhão**, um terreno de cerca de 30 mil metros quadrados no bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno tinha desníveis, áreas alagadiças e córregos, e a terraplanagem levou quase dois anos. A pedra fundamental foi lançada em 13 de agosto de 1944, diante de cerca de 5 mil pessoas. Na chamada **Campanha do Tijolo**, torcedores, dirigentes e até jogadores recolheram material e trabalharam como pedreiros nos fins de semana."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O estádio foi inaugurado em **12 de setembro de 1948**, projetado para cerca de 35 mil pessoas, o que fazia dele, na época, o terceiro maior estádio do país. Fica na Praça Dr. Francisco Ursaia, número 1900, o ano de fundação do clube. Hoje a capacidade registrada é menor, perto de 20 mil lugares. Em 16 de agosto de 1970, recebeu o Santos de Pelé num dos maiores públicos de sua história."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A linha férrea passa ao lado do estádio, e os trilhos são vistos das arquibancadas. Em 11 de agosto de 2025, nos 125 anos do clube, foi inaugurada em frente à fachada uma escultura de aço de um gorila, obra do artista Rodrigo Zingoni em homenagem ao torcedor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Ponte Preta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Ponte Preta mistura casas térreas antigas, sobrados e prédios residenciais. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 40 condomínios no bairro, quase todos verticais, que somam perto de 1.900 unidades. O mais alto tem 23 andares; há também muitos prédios baixos, de quatro a oito pavimentos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as vias citadas nos anúncios e cadastros do bairro estão a **Rua da Abolição**, a **Avenida Doutor Ângelo Simões**, a **Avenida da Saudade**, a **Avenida Washington Luiz** e a **Rua Doutor Álvaro Ribeiro**. A Abolição concentra comércio de rua e boa parte dos prédios. Dentro do bairro existem recortes menos conhecidos, como a Vila Elza e a Vila Meirelles, entre a Rua da Abolição e a linha do trem."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Num levantamento do QuintoAndar com 24 moradores, a maioria disse que o bairro é bom para animais de estimação, que as ruas são bem iluminadas e que não há risco de enchente. Houve queixas de barulho de quadras esportivas à noite. É uma amostra pequena, que serve como pista, não como regra."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cemitério da Saudade e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vizinho ao bairro, o **Cemitério da Saudade** foi inaugurado em 10 de outubro de 1880 e ocupa cerca de 181 mil metros quadrados. É descrito como um museu a céu aberto, com túmulos esculpidos por marmoristas italianos e campineiros. Lá estão sepultados nomes ligados à história da cidade, como Francisco Glicério, o Barão Geraldo de Rezende e Hercules Florence, pioneiro da fotografia no Brasil."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por ser um bairro urbano e antigo, a Ponte Preta tem pouco verde de grande porte: o que existe são praças pequenas e árvores nas calçadas. Para um parque maior, a referência da região central é o **Bosque dos Jequitibás**, aberto em 1884, com cerca de 100 mil metros quadrados e trecho de Mata Atlântica. Ele passou por fechamento temporário depois das chuvas de 2023; vale confirmar o funcionamento antes de ir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A escola mais conhecida do bairro é o **Colégio Dom Barreto**, particular, na Avenida da Saudade, que atende da Educação Infantil ao Ensino Médio. A base de pontos de interesse usada pela ONDEMORAR registra também o Colégio Adventista de Campinas a poucos minutos a pé do centro do bairro, além de dezenas de escolas e cursos num raio de 1,5 km."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o ensino superior, a Ponte Preta fica a uma distância razoável de instituições como a PUC-Campinas, a Metrocamp e a USF, segundo o guia do QuintoAndar. A lista completa de escolas perto do bairro, com o tempo a pé, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é o principal trunfo. O bairro faz divisa com o Centro, e a base de pontos de interesse da ONDEMORAR coloca a **Rodoviária de Campinas** a cerca de 700 metros do centro do bairro e o Terminal Central a pouco mais de 1 km. O transporte coletivo da cidade é gerido pela Emdec, e várias linhas de ônibus passam pela região. A **Avenida Governador Pedro de Toledo** é um dos eixos próximos que ligam o bairro a outras partes de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os vizinhos da Ponte Preta são o Centro, ao norte; o Jardim Proença, a leste, do outro lado da linha férrea; a Vila Joaquim Inácio, a sudeste; a Vila Marieta, ao sul; o Jardim Leonor, a sudoeste; e a Vila Industrial, a noroeste."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Ponte Preta faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Ponte Preta costuma agradar a quem quer morar perto do Centro e da Rodoviária sem estar no meio do movimento central, a quem gosta de bairro com história e comércio de rua, e a quem procura tanto casa térrea quanto apartamento em prédio de porte médio. Para torcedores do clube, morar perto do Majestoso tem um valor à parte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não servir para quem quer silêncio absoluto ou muito verde na porta de casa. As quadras próximas ao estádio e à linha férrea têm movimento em dias de jogo e passagem de trens, e a distância de uma rua para outra muda bastante a experiência."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte a que distância o imóvel fica do estádio e da linha do trem, como fica a rua em dia de jogo, qual a idade do prédio ou da casa e as últimas reformas, e se há vaga de garagem, já que muitas casas antigas do bairro não têm.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o bairro Ponte Preta, em Campinas?",
+      "resposta": "Na zona sul de Campinas, colado ao Centro. Faz divisa com o Centro, a Vila Industrial, o Jardim Proença, a Vila Joaquim Inácio, a Vila Marieta e o Jardim Leonor."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Ponte Preta?",
+      "resposta": "Por causa de uma ponte de madeira do fim do século XIX, coberta de piche e escurecida pela fuligem dos trens, que ligava o Centro à área do Cemitério da Saudade. A ponte deu nome ao bairro e, depois, ao clube fundado em 1900."
+    },
+    {
+      "pergunta": "A Ponte Preta é bom bairro para morar?",
+      "resposta": "Para quem quer ficar perto do Centro e da Rodoviária, com comércio de rua e opções de casa e apartamento, sim. Quem busca silêncio deve observar a distância do estádio e da linha férrea, que trazem movimento em dias de jogo e passagem de trens."
+    },
+    {
+      "pergunta": "Onde fica o Estádio Moisés Lucarelli?",
+      "resposta": "Na Praça Dr. Francisco Ursaia, número 1900, no bairro Ponte Preta. O estádio foi inaugurado em 12 de setembro de 1948 e foi construído com materiais e mão de obra doados pela torcida."
+    },
+    {
+      "pergunta": "A Ponte Preta tem mais casas ou prédios?",
+      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 40 condomínios no bairro, quase todos verticais, com o mais alto de 23 andares, e há muitas casas térreas antigas, inclusive na vila ferroviária."
+    },
+    {
+      "pergunta": "Quais escolas ficam no bairro Ponte Preta?",
+      "resposta": "A mais conhecida é o Colégio Dom Barreto, particular, na Avenida da Saudade, da Educação Infantil ao Ensino Médio. A lista de escolas mais próximas, com o tempo a pé, aparece na seção ao vivo desta página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Correio da Manhã, especial sobre o Estádio Moisés Lucarelli (agosto de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Assembleia Legislativa de São Paulo, sobre os clubes mais antigos do estado",
+      "site": "al.sp.gov.br"
+    },
+    {
+      "nome": "PUC-Campinas, dissertação Vila Ferroviária Ponte Preta: passado e futuro (2006)",
+      "site": "puc-campinas.edu.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Ponte Preta (Campinas), Estádio Moisés Lucarelli e Associação Atlética Ponte Preta",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Arte Funerária Brasil, ficha do Cemitério da Saudade de Campinas",
+      "site": "artefunerariabrasil.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Ponte Preta, das escolas de Campinas e do Bosque dos Jequitibás",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Melhor Escola, ficha do Colégio Dom Barreto",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Wikimedia Commons, descrição da escultura do gorila (2025)",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios e pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Ponte Preta, em Campinas: o bairro que ganhou nome de uma ponte coberta de piche, cresceu com a ferrovia e viu a torcida erguer o Majestoso tijolo por tijolo. Preparamos um guia com a história, o estádio, a vila ferroviária, escolas, acessos e o que considerar antes de morar por lá. Link na bio.",
+    "hashtags": [
+      "pontepreta",
+      "campinas",
+      "majestoso",
+      "morarbem",
+      "guiadebairro",
+      "historiadecampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Ponte Preta, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.015Z"
+}

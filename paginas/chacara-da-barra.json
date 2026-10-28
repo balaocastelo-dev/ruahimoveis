@@ -1,0 +1,282 @@
+{
+  "slug": "chacara-da-barra",
+  "titulo": "Chácara da Barra, Campinas: como é morar no bairro-jardim da Norte-Sul",
+  "resumo": "Guia da Chácara da Barra, em Campinas: o bairro-jardim de 1950, ruas curvas, casas e prédios baixos, praça de esportes, acessos pela Norte-Sul e vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida Norte-Sul arborizada, principal via de acesso da Chácara da Barra",
+      "alt": "Avenida larga com canteiro gramado, árvores altas dos dois lados e um prédio de vidro ao fundo",
+      "commons": "File:Avenida Norte-Sul - panoramio (4).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Avenida José de Souza Campos, a Norte-Sul, com comércio e edifícios de escritórios",
+      "alt": "Avenida com faixa de pedestres, canteiro com palmeiras, placas de lojas e edifícios espelhados",
+      "commons": "File:Av. José de Souza Campos - Norte-sul - panoramio (1).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Ingá fotografado na Chácara da Barra, registro de naturalista feito em 2023",
+      "alt": "Galho com folhas verdes e vagens amarelas de ingá sobre a grama",
+      "commons": "File:Inga vera - Nelson Wisnik - 343478842.jpeg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Shopping Iguatemi Campinas, a poucas quadras da Chácara da Barra",
+      "alt": "Fachada de shopping com letreiro Iguatemi, cúpula de vidro, palmeiras e estacionamento cheio na frente",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Chácara da Barra** é um bairro residencial de Campinas, na região leste da cidade, colado à Avenida Norte-Sul e vizinho do Cambuí. Nasceu por volta de 1950 como um *bairro-jardim*, com ruas curvas e praças desenhadas pelo engenheiro Jorge de Macedo Vieira, e hoje mistura casas de médio padrão com prédios residenciais, a maioria baixos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece ruas internas mais calmas que as do Cambuí, ao lado de uma das avenidas mais movimentadas de Campinas, com comércio, serviços, o Shopping Iguatemi e acesso à Rodovia Dom Pedro I por perto. Este guia reúne a história do loteamento, o perfil dos imóveis, o lazer e os acessos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região leste de Campinas, junto à Avenida Norte-Sul",
+        "Loteamento projetado por volta de 1950 por Jorge de Macedo Vieira, no modelo bairro-jardim",
+        "Ruas curvas que acompanham o relevo, praças triangulares e pequenos jardins",
+        "Casas de médio padrão e prédios residenciais, a maioria de poucos andares",
+        "Ruas com nomes de cidades paulistas, como Monte Alto, Piratininga e Pereira Barreto",
+        "Praça de Esportes Edgard Ariani, inaugurada em 1972 e reformada em 2021",
+        "Vizinha do Cambuí e perto do Shopping Iguatemi Campinas"
+      ],
+      "titulo": "A Chácara da Barra em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história da Chácara da Barra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro ocupa uma antiga chácara na margem direita do **Córrego Proença**, na zona leste. Para lotear a área, o casal Maria C. Coutinho da Cunha Bueno e Francisco Luiz da Cunha Bueno criou a incorporadora Cunha Bueno S.A. Comercial e Comissária. O projeto ficou a cargo de **Jorge de Macedo Vieira**, engenheiro e urbanista que também desenhou a Nova Campinas e a Vila Iza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo uma pesquisa do Instituto de Geociências da Unicamp, o desenho foi feito entre 1948 e 1950. Um artigo publicado pela Unesp cita a lei de aprovação de 1950 e conta que o bairro foi pensado para famílias de comerciantes da cidade, com incentivo da Prefeitura e financiamento dos antigos Institutos de Aposentadorias e Pensões, os IAPs."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A diferença em relação à Nova Campinas, projetada pelo mesmo engenheiro, estava no público: lá, lotes grandes para a classe alta; na Chácara da Barra, lotes e casas menores, voltados à classe média. O mesmo artigo observa que a Chácara da Barra não passou pelo esvaziamento que a Nova Campinas viveu a partir dos anos 1990, quando casas viraram escritórios e clínicas, e por isso manteve moradores e boa parte do traçado original."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Um bairro-jardim: ruas curvas, praças e nomes de cidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O modelo **bairro-jardim** é a versão brasileira da cidade-jardim do urbanista inglês Ebenezer Howard. Na Chácara da Barra, isso aparece no traçado orgânico: as ruas fazem curvas para acompanhar o terreno, há praças em formato de triângulo, pequenos jardins circulares e, no projeto original, um parque sinuoso no centro e uma via-parque interna ligando as quadras aos bairros vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos primeiros anos, as ruas eram identificadas por números. Em setembro de 1959, a Lei nº 2.139 deu a elas nomes de municípios paulistas, segundo registros do Centro de Memória da Unicamp. A antiga Rua 7 virou **Rua Monte Alto**; a Rua 33, **Rua Pereira Barreto**; e outras passaram a se chamar Piedade, Monte Azul, Monte Aprazível, Piratininga, Redenção da Serra e Pereiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma das praças do bairro, entre a Avenida José de Souza Campos e as ruas Nuporanga e Dino Zamarion, recebeu em 1979, por decreto municipal, o nome de **Praça Ópera Joana de Flandres**."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Chácara da Barra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Chácara da Barra é um bairro de ocupação mista, mas majoritariamente residencial. A pesquisa da Unicamp descreve imóveis de médio padrão e uma verticalização bem mais tímida que a do Cambuí e a do Taquaral. Casas e sobrados ainda dão o tom em muitas ruas, como a Rua Pereira Barreto e a Rua Monte Alto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os prédios existem, mas em escala menor. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, em sua maioria edifícios pequenos, de três a sete andares e poucas dezenas de apartamentos, além de alguns condomínios de casas e de empreendimentos mais recentes e mais altos perto da Norte-Sul."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, o bairro tem duas faces: as ruas internas, residenciais e de trânsito local, e as bordas, viradas para a Norte-Sul, onde ficam o comércio, os restaurantes e o movimento de carros. Guias de bairro citam padaria, farmácia, mercados e restaurantes a uma distância que dá para fazer a pé. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer: praça de esportes e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal equipamento público do bairro é a **Praça de Esportes Edgard Ariani**, na Rua Maria Encarnação Duarte. Inaugurada em 1972, é uma das praças de esportes mais antigas de Campinas. Em junho de 2021, a Prefeitura entregou uma reforma que trocou as instalações elétricas e hidráulicas, refez os banheiros e pintou a quadra poliesportiva. O espaço tem cerca de 1.800 m² de área construída e foi preparado para aulas de ginástica, vôlei, handebol e futsal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As praças herdadas do projeto de bairro-jardim completam o verde do dia a dia, e a **Praça Ércio Benatti** aparece entre as áreas de lazer citadas por guias da região. Um pouco mais longe, a ciclovia da Norte-Sul, o Parque Taquaral e o Tênis Clube de Campinas estão entre os pontos de interesse que costumam ser listados para quem mora no bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, comércio e compras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na educação, um nome conhecido da vizinhança é a **Escola Americana de Campinas**, fundada em 1956 e pioneira no ensino bilíngue na cidade. Ela fica no Jardim Alto da Barra, na Rua Cajamar, e atende da educação infantil ao ensino médio. Guias citam ainda escolas infantis e de ensino fundamental espalhadas pelo bairro; a lista das mais próximas, com o tempo a pé, está na seção ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A gastronomia se concentra perto da Norte-Sul e nas ruas de ligação com o Cambuí. Entre as casas citadas por guias de bairro estão o Restaurante Chácara da Barra, o Armazém Venda Velha, o Frango & Grill, aberto desde 2000, e a Padaria Norte Sul. Para compras maiores, o **Shopping Iguatemi Campinas** fica a algumas quadras, com lojas, cinema e área infantil."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é o ponto forte. O bairro é margeado pela **Avenida José de Souza Campos**, trecho da Norte-Sul, um dos eixos que cortam Campinas e concentram escritórios, comércio e serviços. Do outro lado da avenida fica o Cambuí, e seguindo pela Norte-Sul chega-se às saídas para a **Rodovia Dom Pedro I**, que liga Campinas a cidades como Valinhos e Vinhedo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há linhas de ônibus que passam pela Norte-Sul e ciclovia ao longo da avenida. Nos horários de pico, porém, o trânsito na Norte-Sul fica carregado; quem depende de carro deve testar o trajeto até o trabalho nesses horários antes de escolher o imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Guias de bairro situam a Chácara da Barra na zona leste, dentro da macrorregião central de Campinas, com o **Jardim Margarida** ao norte, o **Jardim das Paineiras** ao sul, o **Jardim Flamboyant** a leste e o **Cambuí** a oeste. O Jardim Alto da Barra, onde fica a Escola Americana, também está na vizinhança. O Cambuí, logo depois da Norte-Sul, amplia a oferta de bares, restaurantes e vida cultural."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Chácara da Barra faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a famílias que querem casa ou apartamento em prédio pequeno, sem abrir mão de estar perto da região central, do Cambuí e do Shopping Iguatemi. Também atende quem trabalha nos escritórios da Norte-Sul ou precisa sair com frequência pela Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção estão nas bordas: imóveis virados para a Norte-Sul convivem com barulho e trânsito, e a oferta de prédios com lazer completo é menor que a de bairros mais verticalizados. Como o bairro é pequeno, a diferença entre uma rua interna e uma rua de passagem pesa bastante na escolha."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a distância do imóvel até a Norte-Sul, o fluxo de carros na rua nos horários de pico, a idade da construção e as últimas reformas, o número de vagas e, no caso de prédio, o que a taxa de condomínio inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Chácara da Barra, em Campinas?",
+      "resposta": "Na região leste da cidade, junto à Avenida José de Souza Campos, a Norte-Sul. O bairro faz divisa com o Cambuí, a oeste, e com o Jardim Margarida, o Jardim das Paineiras e o Jardim Flamboyant."
+    },
+    {
+      "pergunta": "A Chácara da Barra é bom para morar?",
+      "resposta": "Para quem procura um bairro residencial perto do Cambuí, do Shopping Iguatemi e da Norte-Sul, sim. As ruas internas são residenciais, com casas e prédios baixos; as bordas, voltadas para a Norte-Sul, têm mais movimento e barulho."
+    },
+    {
+      "pergunta": "Quem projetou a Chácara da Barra?",
+      "resposta": "O engenheiro e urbanista Jorge de Macedo Vieira, o mesmo da Nova Campinas e da Vila Iza. O projeto, no modelo bairro-jardim, foi feito por volta de 1950 para a incorporadora Cunha Bueno S.A. Comercial e Comissária."
+    },
+    {
+      "pergunta": "Por que as ruas da Chácara da Barra têm nomes de cidades?",
+      "resposta": "Porque a Lei nº 2.139, de setembro de 1959, trocou os números das ruas por nomes de municípios paulistas, como Monte Alto, Pereira Barreto, Piratininga e Redenção da Serra."
+    },
+    {
+      "pergunta": "A Chácara da Barra tem muitos prédios?",
+      "resposta": "Tem prédios, mas em escala menor que o Cambuí. A base da ONDEMORAR identifica cerca de 35 condomínios no bairro, a maioria edifícios pequenos, de três a sete andares, entre muitas casas."
+    },
+    {
+      "pergunta": "Que área de lazer pública existe na Chácara da Barra?",
+      "resposta": "A Praça de Esportes Edgard Ariani, na Rua Maria Encarnação Duarte, inaugurada em 1972 e reformada pela Prefeitura em 2021, com quadra poliesportiva e atividades como ginástica, vôlei, handebol e futsal."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Unicamp, Instituto de Geociências: resumo de pesquisa sobre Jorge de Macedo Vieira e o ideário cidade-jardim em Campinas",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Revista Ateliê Geográfico (Unesp), artigo sobre a cidade-jardim e suas contradições socioespaciais em Campinas",
+      "site": "periodicos.rc.biblioteca.unesp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, registros da Lei nº 2.139/1959 e do Decreto nº 5.847/1979",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "ACidadeON Campinas, sobre a revitalização da Praça de Esportes Edgard Ariani (junho de 2021)",
+      "site": "acidadeon.com"
+    },
+    {
+      "nome": "Tegra Incorporadora, guia do bairro Chácara da Barra",
+      "site": "tegraincorporadora.com.br"
+    },
+    {
+      "nome": "TCO Imóveis, guia do bairro Chácara da Barra",
+      "site": "tcoimoveis.com.br"
+    },
+    {
+      "nome": "Webquarto, guia de bairros: limites da Chácara da Barra",
+      "site": "webquarto.com.br"
+    },
+    {
+      "nome": "Search Associates, ficha da Escola Americana de Campinas",
+      "site": "searchassociates.com"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Chácara da Barra, em Campinas: um bairro-jardim desenhado por volta de 1950, com ruas curvas, praças e nomes de cidades paulistas, colado à Norte-Sul e vizinho do Cambuí. Preparamos um guia com a história do loteamento, o perfil das casas e prédios, a praça de esportes, os acessos e o que considerar antes da mudança. Link na bio.",
+    "hashtags": [
+      "chacaradabarra",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "nortesul",
+      "cambui",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Chácara da Barra, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.505Z"
+}

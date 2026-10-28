@@ -1,0 +1,308 @@
+{
+  "slug": "jardim-do-lago",
+  "titulo": "Jardim do Lago, Campinas: como é morar no bairro do Campinas Shopping",
+  "resumo": "Guia do Jardim do Lago, em Campinas: história das avenidas, Campinas Shopping, escolas, prédios, acessos às rodovias e o que pesar antes de morar no bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Fundos do Campinas Shopping, inaugurado em 1994 no Jardim do Lago",
+      "alt": "Rua com muro e árvores ao lado de um grande prédio com o letreiro Campinas Shopping",
+      "commons": "File:Atras do Campinas Shopping - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Viaduto e pista na região do Jardim do Lago, com prédios de Campinas ao fundo",
+      "alt": "Pista de asfalto com mureta de concreto, viaduto baixo e silhueta de prédios no horizonte",
+      "commons": "File:Jardim do Lago, Campinas - State of São Paulo, Brazil - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Viaduto da Rodovia Anhanguera sobre a Avenida das Amoreiras, em 2006",
+      "alt": "Avenida passando por baixo de um viaduto de concreto com pichações, com ônibus e prédios ao fundo",
+      "commons": "File:2006 Anhanguera x Amoreiras - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Avenida das Amoreiras no cruzamento com a marginal do Piçarrão",
+      "alt": "Avenida larga de pista dupla com canteiro central, árvores e prédios ao fundo",
+      "commons": "File:Amoreiras x marg. Piçarrão - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Avenida John Boyd Dunlop, outro eixo de acesso da região",
+      "alt": "Avenida com árvore grande no canteiro, gramado e prédios amarelos ao fundo",
+      "commons": "File:Av. John Boyd Dunlop - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim do Lago** é um bairro da Região Sul de Campinas, encostado na Rodovia Anhanguera e conhecido principalmente por abrigar o **Campinas Shopping**. É um bairro residencial de perfil misto, com casas, sobrados e condomínios de apartamentos de porte médio, cortado por avenidas que levam rápido às rodovias Anhanguera, Santos Dumont e Lix da Cunha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o atrativo é a combinação de serviços à mão e saída fácil para a estrada: shopping, hipermercado, Poupatempo e escolas ficam no próprio bairro, e o Aeroporto de Viracopos está no eixo da Santos Dumont. Este guia reúne o que as fontes públicas dizem sobre a história, os imóveis, as escolas e os acessos do Jardim do Lago."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da Região Sul de Campinas, às margens da Rodovia Anhanguera",
+        "Abriga o Campinas Shopping, inaugurado em 1994, com Poupatempo e Detran",
+        "Mistura de casas, sobrados e condomínios de apartamentos de 2 e 3 quartos",
+        "A base de condomínios da ONDEMORAR identifica cerca de 30 prédios residenciais no bairro",
+        "Principais avenidas: das Amoreiras e John Boyd Dunlop",
+        "Acesso rápido às rodovias Anhanguera, Santos Dumont e Lix da Cunha"
+      ],
+      "titulo": "O Jardim do Lago em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: do caminho de Viracopos ao bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região que hoje forma o Jardim do Lago era ocupada por fazendas e chácaras. Segundo o guia de bairros do QuintoAndar, a ocupação residencial ganhou força depois da construção das rodovias Anhanguera e Santos Dumont, que passaram a ligar essa parte de Campinas ao resto do estado e ao aeroporto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal avenida da região conta parte dessa história. Pela **Lei nº 1.733, de 3 de abril de 1957**, a Câmara de Campinas deu o nome de **Avenida das Amoreiras** ao trecho da antiga estrada de Vira-Copos que chegava até o Jardim Novo Campos Elíseos, por ser o prolongamento natural da avenida. O documento está no acervo do Centro de Memória da Unicamp."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O loteamento já tinha ruas abertas no fim dos anos 1970. Um decreto da Prefeitura de Campinas, o de nº 5.926, de 20 de dezembro de 1979, deu o nome de **Avenida Jamil Gadia** à via que até então se chamava apenas \"Avenida 10 do Jardim do Lago\", sinal de que as ruas do bairro eram identificadas por números antes de receberem nomes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim do Lago"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim do Lago tem perfil de bairro residencial de classe média, com ruas largas e arborizadas em vários trechos, segundo o guia do QuintoAndar, que também cita várias praças e espaços de convivência. Casas térreas e sobrados dividem as quadras com condomínios de apartamentos, em geral de poucos andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 condomínios no bairro e nos loteamentos ligados a ele, dos quais por volta de 30 são prédios, somando perto de 4 mil unidades. O mais alto tem cerca de 20 andares, mas a maioria fica entre 3 e 7 pavimentos. Os maiores conjuntos, como o Residencial Torres da Espanha e os Residenciais Vilas do Taubaté, passam de 100 apartamentos cada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos anúncios de condomínios do bairro predominam apartamentos de 2 e 3 quartos. O Portal das Amoreiras, na Avenida Dom Joaquim Mamede da Silva Leite, tem unidades de 58 a 96 m², com quadra, salão de festas, churrasqueira e playground. Na Rua José Elías Jorge há condomínios de unidades menores, de 42 a 56 m², com academia e portaria 24 horas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro também tem uma parte chamada **Jardim do Lago Continuação**, que aparece em cadastros de escolas e serviços como área separada. Na lista de bairros de Campinas, o Jardim do Lago aparece dividido em Jardim do Lago I e Jardim do Lago II, ambos na Região Sul."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Campinas Shopping, comércio e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande marco do bairro é o **Campinas Shopping**, na Rua Jacy Teixeira de Camargo, 940. Inaugurado em 1994, tem cerca de 180 lojas e 34 mil m² de área bruta locável, segundo a gestora Patria. Entre as lojas âncoras aparecem Renner, Riachuelo e C&A, e o complexo tem hipermercado Carrefour, cinema Cinépolis, academia e praça de alimentação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O shopping também concentra serviços públicos: uma alameda abriga o **Poupatempo** e o **Detran**. Em junho de 2026, a Prefeitura anunciou um segundo Poupatempo, no Palácio da Cidade, e informou que o posto do Campinas Shopping continua funcionando normalmente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fora do shopping, o comércio de rua cobre o dia a dia: supermercados, padarias, açougues, farmácias, bancos, postos de combustível e restaurantes populares. A seção *o que tem no Jardim do Lago e em volta*, mais abaixo, lista os endereços mais próximos do centro do bairro e é atualizada automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas no Jardim do Lago"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A maior escola da região é a **Escola de Educação Básica e Profissional Fundação Bradesco**, na Rodovia Lix da Cunha, km 3,5, no Jardim do Lago Continuação. Segundo parecer do Conselho Estadual de Educação, com dados do Censo Escolar 2023, a unidade de Campinas oferece da educação infantil ao ensino médio, EJA e curso técnico integrado, com cerca de 1.300 matrículas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na rede pública, o bairro tem a **Escola Estadual Jardim Icaraí**, na Rua Amália Forti Poli, e os centros de educação infantil **CEI Nave Mãe Prefeito Francisco Amaral** e **CEI Nave Mãe Mayara Masson Christofoletti**, que atendem crianças pequenas. A **E.E. Consuelo Freire Brandão** também aparece como referência nos anúncios de condomínios do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há ainda escolas de educação infantil particulares cadastradas no bairro, como a Escola Infantil Com Vivendo. Para ver a distância a pé de cada escola, use a lista ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Farmácias e drogarias se espalham pelas avenidas do bairro. Para atendimento público, a região é servida pelo **Centro de Saúde Carvalho de Moura**, citado entre os equipamentos próximos ao Jardim do Lago. Entre os hospitais da cidade relacionados como próximos em anúncios do bairro estão o Hospital Metropolitano, o Hospital Municipal Dr. Mário Gatti e o Hospital Samaritano."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A posição junto às rodovias é o principal trunfo do Jardim do Lago. O Campinas Shopping fica no entroncamento das rodovias **Anhanguera** e **Santos Dumont**, e o bairro tem acesso também à **Rodovia Lix da Cunha** (SP-73), que liga Campinas a Indaiatuba e Salto, e à Rodovia Prestes Maia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Rodovia Santos Dumont** (SP-75) é a principal ligação entre Campinas e o **Aeroporto de Viracopos**, que fica a cerca de 17 km do Centro da cidade, e segue em direção a Itu e Sorocaba. Para quem viaja a trabalho ou trabalha no aeroporto e nos distritos industriais da região, o trajeto é direto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro da cidade, a **Avenida das Amoreiras** liga o bairro à região central, e a **Avenida John Boyd Dunlop** é outro eixo citado para quem sai do Jardim do Lago. Várias linhas de ônibus atendem a região. Nos horários de pico, o trânsito perto do shopping e dos acessos à Anhanguera costuma carregar; vale testar o trajeto antes de decidir."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na lista de bairros da Região Sul, o Jardim do Lago divide espaço com o **Parque Oziel**, o **Jardim Icaraí** e a **Vila Teixeira**. A base de pontos próximos usada pela ONDEMORAR, com dados do OpenStreetMap, localiza o Parque Oziel a cerca de 500 metros do centro do bairro. Pela Avenida das Amoreiras chega-se ao **Jardim Novo Campos Elíseos**, bairro que deu limite ao trecho batizado em 1957."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim do Lago faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer apartamento ou casa com serviços perto e saída rápida para as rodovias: famílias com filhos em idade escolar, quem trabalha em Viracopos, em Indaiatuba ou nas empresas ao longo da Anhanguera, e quem gosta de ter shopping, mercado e Poupatempo a poucos minutos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção estão justamente na proximidade das rodovias e do shopping: barulho e movimento em algumas quadras, e trânsito nos acessos nos horários de pico. Quem busca vida noturna, centros culturais ou grandes parques urbanos vai precisar sair do bairro. A diferença entre uma rua e outra é grande, então vale conhecer a quadra em horários diferentes."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o valor do condomínio e o que ele inclui, a idade do prédio e as últimas obras, a distância até a Anhanguera e o barulho da rodovia, o número de vagas e quais linhas de ônibus passam perto.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim do Lago, em Campinas?",
+      "resposta": "Na Região Sul da cidade, às margens da Rodovia Anhanguera, junto ao entroncamento com a Rodovia Santos Dumont. É o bairro do Campinas Shopping."
+    },
+    {
+      "pergunta": "O Jardim do Lago é bom para morar?",
+      "resposta": "Para quem quer serviços perto e acesso rápido às rodovias e a Viracopos, sim: shopping, Poupatempo, escolas e comércio ficam no bairro. Quem procura silêncio deve escolher quadras longe da Anhanguera e do shopping."
+    },
+    {
+      "pergunta": "Qual shopping fica no Jardim do Lago?",
+      "resposta": "O Campinas Shopping, na Rua Jacy Teixeira de Camargo, 940, inaugurado em 1994, com cerca de 180 lojas, hipermercado, cinema, Poupatempo e Detran."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim do Lago?",
+      "resposta": "Entre elas, a Escola de Educação Básica e Profissional Fundação Bradesco, na Rodovia Lix da Cunha, a Escola Estadual Jardim Icaraí e os CEIs Nave Mãe Prefeito Francisco Amaral e Mayara Masson Christofoletti."
+    },
+    {
+      "pergunta": "O Jardim do Lago tem mais casas ou prédios?",
+      "resposta": "Tem os dois. Casas e sobrados dividem as ruas com condomínios de apartamentos, em geral de poucos andares; a base da ONDEMORAR identifica cerca de 30 prédios residenciais no bairro."
+    },
+    {
+      "pergunta": "Como chegar a Viracopos saindo do Jardim do Lago?",
+      "resposta": "Pela Rodovia Santos Dumont (SP-75), que encontra a Anhanguera junto ao Campinas Shopping e é a principal ligação entre Campinas e o aeroporto."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, Lei nº 1.733/1957 (Avenida das Amoreiras) e Decreto nº 5.926/1979 (Avenida Jamil Gadia)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Jardim do Lago, guia de shoppings de Campinas e fichas de condomínios",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Patria Real Estate, ficha do Campinas Shopping",
+      "site": "realestate.patria.com"
+    },
+    {
+      "nome": "Comércio São Paulo, sobre o Campinas Shopping",
+      "site": "comerciosaopaulo.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, novo Poupatempo no Palácio da Cidade (junho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Melhor Escola, escolas do Jardim do Lago Continuação",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Quero Bolsa, escolas do Jardim do Lago",
+      "site": "querobolsa.com.br"
+    },
+    {
+      "nome": "Conselho Estadual de Educação de São Paulo, parecer sobre a Fundação Bradesco de Campinas",
+      "site": "ceesp.sp.gov.br"
+    },
+    {
+      "nome": "Tenda, página do Reserva do Lago (região e acessos)",
+      "site": "tenda.com"
+    },
+    {
+      "nome": "Wikipédia, Lista de bairros de Campinas, Rodovia Santos Dumont, Rodovia Lix da Cunha e Aeroporto de Viracopos",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim do Lago, em Campinas: o bairro do Campinas Shopping, às margens da Anhanguera e no começo da Santos Dumont, a caminho de Viracopos. Preparamos um guia com a história das avenidas, as escolas, os prédios, os acessos e o que pesar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "jardimdolago",
+      "campinas",
+      "campinasshopping",
+      "morarbem",
+      "guiadebairro",
+      "zonasulcampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim do Lago, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.015Z"
+}

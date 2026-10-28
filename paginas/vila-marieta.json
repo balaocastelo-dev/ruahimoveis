@@ -1,0 +1,310 @@
+{
+  "slug": "vila-marieta",
+  "titulo": "Vila Marieta, Campinas: como é morar no bairro do Shopping Prado",
+  "resumo": "Guia da Vila Marieta, em Campinas: história desde os anos 1930, casas e condomínios, Shopping Prado Boulevard, escolas, acessos e bairros vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida Washington Luiz em frente ao Shopping Prado, com prédios residenciais ao fundo",
+      "alt": "Avenida de duas pistas com canteiro central gramado, carros e edifícios altos ao fundo",
+      "commons": "File:Av Washington Luiz - Em frente ao Shopping Prado - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Trecho da Avenida Washington Luiz com edifícios residenciais e comércio na calçada",
+      "alt": "Avenida larga com prédios residenciais altos de um lado e um prédio comercial baixo",
+      "commons": "File:Av. Washington Luiz - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "O Shopping Prado, hoje Shopping Prado Boulevard, em foto de 2010",
+      "alt": "Centro comercial de dois andares com estacionamento na frente e prédios altos atrás",
+      "commons": "File:Shopping Prado, Pequeno Shopping Regional da Regiao - Pq Prado - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Avenida Washington Luis em trecho arborizado",
+      "alt": "Avenida com árvores grandes dos dois lados e calçada sombreada",
+      "commons": "File:Av. Washington Luis - panoramio (1).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Avenida do Parque Prado, bairro vizinho, com torres residenciais",
+      "alt": "Avenida com canteiro central arborizado e vários edifícios residenciais coloridos",
+      "commons": "File:Parque Prado e seus Belíssimos Predios - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Avenida do Piçarrão, com área verde à margem da pista",
+      "alt": "Gramado com uma árvore em primeiro plano e uma avenida com carros mais abaixo",
+      "commons": "File:Av do Piçarrao entre Av prestes MAia - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Área verde ao longo da Avenida do Piçarrão, com mudas de árvores",
+      "alt": "Terreno gramado com mudas amarradas a estacas e fachadas comerciais ao fundo",
+      "commons": "File:Area Verde - Av do Piçarrão - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Marieta** é um bairro residencial de Campinas, na porção sul da cidade, vizinho ao Parque Prado e ao bairro da Ponte Preta. Mistura casas antigas em quadras pequenas, prédios e condomínios mais novos, e tem como endereço o Shopping Prado Boulevard, na Avenida Washington Luiz. O acesso principal é pela Avenida do Piçarrão, que liga o bairro a outras regiões da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro de origem antiga, que cresceu a partir dos anos 1930 e mudou bastante de perfil depois dos anos 1950. Este guia reúne o que as fontes contam sobre a história, o tipo de imóvel, o comércio, as escolas, os acessos e os bairros em volta, para você decidir se a Vila Marieta combina com a sua rotina."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da porção sul de Campinas, vizinho ao Parque Prado e à Ponte Preta",
+        "Antes de 1900, a área pertencia ao subdistrito da Vila Industrial",
+        "Ganhou movimento nos anos 1930, como caminho da antiga estrada para São Paulo",
+        "Casas em quadras pequenas, prédios e condomínios fechados",
+        "O Shopping Prado Boulevard fica na Avenida Washington Luiz, no bairro",
+        "Avenida do Piçarrão é o principal eixo de acesso",
+        "A festa tradicional do bairro homenageia Santa Teresinha"
+      ],
+      "titulo": "A Vila Marieta em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História da Vila Marieta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a historiadora Maria Lúcia de Souza Rangel Ricci, em artigo publicado pela revista *Notícia Bibliográfica e Histórica*, da PUC-Campinas, a área da Vila Marieta fazia parte, antes de 1900, do subdistrito da Vila Industrial. O texto não explica a origem do nome do bairro, e as fontes consultadas também não."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro ganhou importância a partir dos anos 1930 por estar no caminho da estrada primitiva entre Campinas e São Paulo. Pouco depois, em 1948, foi inaugurada a Rodovia Anhanguera, numa época em que grandes levas de migrantes chegavam atraídas pelas indústrias. O guia de bairros do QuintoAndar também registra que a procura pela Vila Marieta cresceu em meados dos anos 1930, quando o Centro de Campinas ficou adensado e muita gente passou a buscar bairros próximos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os loteamentos da região foram traçados quase todos em *pequenas quadras*, segundo o mesmo artigo da PUC-Campinas. Depois dos anos 1950, o bairro passou por uma grande troca de moradores, e hoje é ocupado por famílias de classe média e média alta. A autora situa a Vila Marieta a leste da Ponte Preta, depois do cemitério, numa área que os moradores antigos chamavam de Palheiro e Palheirão."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Um documento de 1968 guardado no Centro de Memória da Unicamp lista, entre as obras da Prefeitura de Campinas em andamento naquele ano, a construção de um parque infantil na Vila Marieta.",
+      "titulo": "Um registro de 1968"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Marieta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Marieta é, antes de tudo, residencial. O guia do QuintoAndar descreve um bairro com casas, prédios de apartamentos e condomínios fechados, ruas em geral retas ou de pouca inclinação, calçadas largas e boa iluminação à noite. Os moradores ouvidos pelo guia citam jardins nas casas e árvores grandes como parte da paisagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, a maior parte deles verticais, com aproximadamente 1.400 unidades no total. Os prédios mais altos da base chegam a 16 andares, e boa parte dos condomínios tem poucos pavimentos, ao lado de conjuntos maiores com perto de 200 apartamentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso significa um bairro de escala intermediária: você encontra sobrados e casas térreas de rua, prédios baixos e condomínios mais recentes. Para quem procura o perfil de torres altas com lazer completo, o bairro vizinho do Parque Prado concentra mais esse tipo de empreendimento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Shopping Prado Boulevard e comércio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O principal polo de compras é o **Shopping Prado Boulevard**, que tem endereço na Avenida Washington Luiz, 2480, na Vila Marieta. Segundo o QuintoAndar, o centro comercial reúne mais de 80 lojas, cinema, academia, supermercado, caixas eletrônicos, lotérica, farmácia, praça de alimentação e estacionamento coberto com quase 300 vagas. O funcionamento divulgado é de segunda a sábado, das 10h às 22h, e aos domingos, das 14h às 20h."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia de bairro do QuintoAndar sobre o Parque Prado aponta que o desenvolvimento da região acelerou depois da construção do Shopping Prado, hoje Shopping Prado Boulevard, e que a quadra em volta tem farmácias, minimercados, bancos, cafés, barbearia, pizzarias e restaurantes. Na Vila Marieta, os moradores citam padarias, mercados, posto de combustível e churrascarias perto de casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A seção *o que tem na Vila Marieta e em volta*, mais abaixo nesta página, lista mercados, farmácias, restaurantes e serviços próximos com base no OpenStreetMap e é atualizada automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Praças, parques e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Praça Dr. Santos Rodrigues Coy é o espaço de lazer mais citado no bairro. Segundo o QuintoAndar, ela tem campo de futebol de areia, quadra de vôlei de areia, academia ao ar livre e dois parquinhos, um deles adaptado para crianças com deficiência. Os moradores também mencionam uma ciclovia nas proximidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao lado do Parque Prado fica o **Parque das Águas**, descrito pelo QuintoAndar como uma área de vegetação com animais, usada pela vizinhança. Pela Avenida do Piçarrão, você chega a outros parques, praças e centros comerciais da região sul."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro e o entorno têm escolas de educação infantil, ensino fundamental e médio. Uma das referências públicas é a Escola Estadual Julio Mesquita, na Rua Daniel Cesario de Andrade, no Jardim Oliveiras, que oferece os anos finais do ensino fundamental, o ensino médio e educação profissional, segundo o cadastro escolar. A base da ONDEMORAR mostra a escola a cerca de 400 metros do centro da Vila Marieta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Parque Prado, o QuintoAndar cita escolas municipais e particulares, a maioria de educação infantil e ensino fundamental, além da E.E. Profa. Neli Helena Assis de Andrade. Para o ensino superior, a UNIP fica a poucos quilômetros, segundo o mesmo guia. A lista completa de escolas próximas aparece na seção de lugares desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida do Piçarrão** é a via principal do bairro e o caminho para shoppings, parques e outras regiões. A Avenida Washington Luiz passa pelo bairro, na altura do Shopping Prado Boulevard. Segundo o QuintoAndar, várias linhas de ônibus ligam a Vila Marieta a outros pontos da cidade, e há um miniterminal de ônibus perto do shopping."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro vizinho do Parque Prado é descrito como próximo do Centro, da Via Anhanguera e do anel viário Magalhães Teixeira, o que vale também para a Vila Marieta. Em julho de 2026, o Correio da Manhã informou que a Marginal do Piçarrão recebia cerca de 34 mil veículos por dia útil no sentido Centro, segundo a Emdec, e que a Prefeitura começaria uma nova alça de acesso entre a marginal e a Avenida das Amoreiras."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Prado** é o vizinho mais conhecido. Segundo o QuintoAndar, ele nasceu da Chácara Eglantina, loteada em 1990, e leva o nome da família Prado, antiga dona das terras. Tem ruas planejadas e arborizadas e muitos condomínios de prédios. O Jardim dos Oliveiras aparece como parte da região do Parque Prado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A oeste fica a **Ponte Preta**, bairro antigo que, segundo o artigo da PUC-Campinas, os moradores costumam usar como nome para quase toda a região. Também aparecem em endereços próximos o Parque das Águas, o Jardim Leonor, a Vila João Jorge e a Vila Paraíso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Marieta faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Marieta tende a agradar quem quer morar perto de shopping, supermercado e serviços sem estar no Centro, e quem prefere casas ou prédios de menor porte. O acesso à Avenida do Piçarrão e a vizinhança com o Parque Prado ampliam as opções de comércio e lazer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os pontos de atenção, o trânsito nas avenidas do entorno é intenso nos horários de pico. O bairro está na bacia do Ribeirão do Piçarrão, que, segundo estudo de iniciação científica da Unicamp de 2025, teve forte aumento de área impermeabilizada desde 1970, com reflexo em inundações. Antes de escolher o imóvel, vale conferir a rua e o histórico do local."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A Vila Marieta é bom bairro para morar?",
+      "resposta": "Para quem quer um bairro residencial perto de shopping, supermercado e serviços, sim: o Shopping Prado Boulevard fica no próprio bairro e a Avenida do Piçarrão dá acesso a outras regiões. Nos horários de pico, as avenidas do entorno ficam carregadas."
+    },
+    {
+      "pergunta": "Onde fica a Vila Marieta, em Campinas?",
+      "resposta": "Na porção sul de Campinas, vizinha ao Parque Prado e a leste da Ponte Preta. A Avenida do Piçarrão é o principal acesso."
+    },
+    {
+      "pergunta": "O Shopping Prado Boulevard fica na Vila Marieta?",
+      "resposta": "Sim. O endereço do shopping é Avenida Washington Luiz, 2480, Vila Marieta, embora muita gente o associe ao Parque Prado, bairro vizinho."
+    },
+    {
+      "pergunta": "A Vila Marieta tem mais casas ou prédios?",
+      "resposta": "Tem os dois. Há casas em quadras pequenas e cerca de 35 condomínios, segundo a base da ONDEMORAR, a maioria verticais e com no máximo 16 andares."
+    },
+    {
+      "pergunta": "Quais escolas ficam perto da Vila Marieta?",
+      "resposta": "Uma das referências públicas é a Escola Estadual Julio Mesquita, no Jardim Oliveiras, com ensino fundamental (anos finais), médio e profissional. Há também escolas infantis e particulares no entorno."
+    },
+    {
+      "pergunta": "Qual é a história da Vila Marieta?",
+      "resposta": "A área pertencia ao subdistrito da Vila Industrial antes de 1900 e ganhou movimento nos anos 1930, como caminho da antiga estrada para São Paulo. Depois dos anos 1950, o perfil dos moradores mudou bastante."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista Notícia Bibliográfica e Histórica (PUC-Campinas), artigo de Maria Lúcia de Souza Rangel Ricci sobre bairros de Campinas",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, documento de 1968 sobre obras da Prefeitura",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "QuintoAndar, guias dos bairros Vila Marieta e Parque Prado",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "QuintoAndar Guias, shoppings em Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "DOL Diário Online, sobre o Shopping Prado Boulevard (março de 2022)",
+      "site": "dol.com.br"
+    },
+    {
+      "nome": "Escol.as, ficha da Escola Estadual Julio Mesquita",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Correio da Manhã, alça de acesso entre a Marginal do Piçarrão e a Avenida das Amoreiras (julho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Unicamp, resumo do XXXIII Congresso de Iniciação Científica sobre a bacia do Ribeirão do Piçarrão",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Marieta, em Campinas: bairro residencial que cresceu nos anos 1930 no caminho da antiga estrada para São Paulo e hoje reúne casas, condomínios e o Shopping Prado Boulevard. Preparamos um guia com a história, o comércio, as escolas, os acessos e os bairros vizinhos. Link na bio.",
+    "hashtags": [
+      "vilamarieta",
+      "campinas",
+      "parqueprado",
+      "guiadebairro",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Marieta, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.507Z"
+}

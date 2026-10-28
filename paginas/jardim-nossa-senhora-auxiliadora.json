@@ -1,0 +1,325 @@
+{
+  "slug": "jardim-nossa-senhora-auxiliadora",
+  "titulo": "Jardim Nossa Senhora Auxiliadora, Campinas: como é morar no bairro",
+  "resumo": "Guia do Jardim Nossa Senhora Auxiliadora, em Campinas: ruas com nomes portugueses, casas e prédios, Lagoa do Taquaral, Liceu Salesiano e acessos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Lagoa do Taquaral, no Parque Portugal, com prédios da região ao fundo",
+      "alt": "Lago calmo cercado de árvores, com edifícios residenciais aparecendo atrás da mata",
+      "commons": "File:Lagoa do Taquaral - panoramio (29).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Pista de caminhada à beira da Lagoa do Taquaral",
+      "alt": "Caminho de terra batida largo entre gramado, eucaliptos altos e postes de iluminação",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Bonde histórico do Parque Portugal, linha aberta em 1972",
+      "alt": "Bonde vermelho e branco sobre trilhos em meio à mata fechada",
+      "commons": "File:Parque Portugal tramway (4).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "O Liceu Nossa Senhora Auxiliadora em foto antiga de Werner Haberkorn",
+      "alt": "Foto em sépia de um grande prédio de dois andares com pátio de terra e árvores altas na frente",
+      "commons": "File:Werner Haberkorn - Liceu Nossa Senhora Auxiliadora - Campinas (cropped).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada do Liceu Salesiano Nossa Senhora Auxiliadora em 2024",
+      "alt": "Prédio histórico longo de dois andares atrás de grade, com portaria em arco e rua de paralelepípedo",
+      "commons": "File:Edifício do Liceu Salesiano Nossa Senhora Auxiliadora - Campinas - 20240921170059.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Igreja e prédio antigo do Liceu Salesiano, com edifícios residenciais ao lado",
+      "alt": "Igreja com torre alta ao lado de prédio histórico, estacionamento e edifícios residenciais ao fundo",
+      "commons": "File:Edifício do Liceu Salesiano Nossa Senhora Auxiliadora - Campinas - 20240921165830.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Casa térrea com imóvel da ONDEMORAR à venda no Jardim Nossa Senhora Auxiliadora",
+      "alt": "Casa térrea com muro bege, portão branco, árvore na calçada de pedra portuguesa e telhado de madeira vermelha",
+      "imovel_foto": 1768
+    },
+    {
+      "id": "f8",
+      "legenda": "Rua do bairro, em frente a casa com imóvel da ONDEMORAR à venda",
+      "alt": "Rua residencial com muros brancos, portão de grade, calçada de pedra portuguesa e ipê florido",
+      "imovel_foto": 1725
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Nossa Senhora Auxiliadora** é um bairro residencial da região central de Campinas, encostado no Taquaral e a poucas quadras da Lagoa do Taquaral. Mistura casas térreas e sobrados com um grupo pequeno de prédios, e chama a atenção pelas ruas batizadas com nomes de escritores e navegadores portugueses, como Eça de Queiroz, Alexandre Herculano e Pero Vaz de Caminha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece ruas tranquilas com acesso rápido a avenidas importantes, como a Avenida Doutor Heitor Penteado, que contorna a lagoa, e a Avenida Barão de Itapura. Este guia reúne o que as fontes contam sobre a história, o perfil dos imóveis, o lazer, as escolas e os acessos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da região central de Campinas, vizinho do Taquaral",
+        "Casas térreas e sobrados, com cerca de 16 prédios residenciais segundo a base da ONDEMORAR",
+        "Ruas com nomes de escritores e navegadores portugueses, definidos por lei municipal de 1957",
+        "Fica perto da Lagoa do Taquaral, no Parque Portugal, e do antigo Kartódromo, hoje área de lazer",
+        "Tem a Escola Estadual Professor Aníbal de Freitas, na Rua Primeiro de Março",
+        "Avenidas como Heitor Penteado, Júlio Diniz e Barão de Itapura passam pelo bairro"
+      ],
+      "titulo": "O Jardim Nossa Senhora Auxiliadora em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História: um bairro de ruas com nomes portugueses"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A marca mais clara do Jardim Nossa Senhora Auxiliadora está no mapa. Até meados dos anos 1950, as vias do loteamento eram identificadas por números e letras, como rua 3-A ou rua 14. A **Lei nº 1.780, de 26 de junho de 1957**, promulgada pelo prefeito Ruy Hellmeister Novaes, deu nome a essas vias, e quase todos os homenageados eram figuras de Portugal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Foi assim que surgiram a Rua Alexandre Herculano, a Rua Eça de Queiroz, a Rua Fialho de Almeida, a Rua Camilo Castelo Branco, a Rua Teófilo Braga e a Rua João de Deus, ligadas à literatura portuguesa. Navegadores e outros personagens da história de Portugal aparecem na Rua Pero Vaz de Caminha, na Rua Bartolomeu Dias, na Rua Gaspar de Lemos, na Rua Vasco Fernandes Coutinho, na Rua Inês de Castro e na Rua Dom Manuel, o Venturoso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As avenidas seguiram a mesma linha, com nomes como **Avenida Júlio Diniz** e Avenida Padre Almeida Garret. A homenagem chegou a ser noticiada em abril de 1958 pelo suplemento *O Mundo Português*, publicado no Rio de Janeiro, segundo o acervo do Centro de Memória da Unicamp."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "A mesma lei de 1957 também deu nome a ruas da antiga Fazenda Taquaral, área vizinha. Em alguns casos, uma mesma via juntou trechos dos dois loteamentos, como a Rua Fernão Lopes.",
+      "titulo": "Curiosidade"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Nossa Senhora Auxiliadora"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro é, antes de tudo, de casas. Nas ruas internas aparecem casas térreas e sobrados com muro na frente, e as fotos dos imóveis mostram calçadas de pedra portuguesa. As duas casas que a ONDEMORAR tem à venda no bairro mostram bem esse perfil: construções de terreno próprio, com quintal e garagem."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os prédios existem, mas são poucos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 edifícios residenciais no bairro, com algo perto de 480 apartamentos no total. Há prédios baixos, de dois ou três andares, e torres mais recentes; a mais alta registrada tem 31 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, o bairro funciona como uma área residencial que usa o comércio das avenidas em volta. Padarias, farmácias, mercados e restaurantes aparecem principalmente nos eixos de maior movimento. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos com a distância a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lagoa do Taquaral e lazer ao ar livre"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande vizinho verde é o **Parque Portugal**, conhecido como Lagoa do Taquaral. O nome Taquaral vem dos bambuzais que cercavam a lagoa, e o nome Portugal homenageia os imigrantes portugueses. O parque tem pista para caminhada, corrida e ciclismo, pedalinhos, planetário, museu de ciências, ginásio com piscina, auditório ao ar livre e uma réplica de caravela sobre a água."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma das atrações mais lembradas é o **bonde histórico**, que circula dentro do parque desde 1972, quatro anos depois do fim do último serviço regular de bondes de Campinas. Em 2007, leitores do jornal Correio Popular escolheram a lagoa como uma das Sete Maravilhas de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A poucas quadras do centro do bairro fica o antigo **Kartódromo Municipal Afrânio Ferreira Júnior**, inaugurado em 1973 ao lado da lagoa. Pela pista passaram pilotos como Ayrton Senna, Rubens Barrichello, Felipe Massa e Nelson Piquet. As corridas acabaram por causa do barulho, e na década de 2020 a Prefeitura revitalizou o espaço, que ganhou ciclovia, pista de caminhada, pista infantil e campo de futebol society."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e o Liceu Salesiano"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro, na Rua Primeiro de Março, funciona a **Escola Estadual Professor Aníbal de Freitas**, da rede estadual, com ensino fundamental (anos finais), ensino médio e curso técnico em Administração. A escola tem quadra coberta, elevador e sala de recursos para atendimento educacional especializado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O homenageado, Aníbal de Freitas, foi farmacêutico, professor de Física e Química e diretor do Colégio Estadual Culto à Ciência entre 1928 e 1955. Também foi vereador de Campinas por três legislaturas e ajudou a fundar a Escola de Comércio Bento Quirino, em 1910."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Rua Baronesa Geraldo de Resende, via que também passa pelo bairro, fica o **Liceu Salesiano Nossa Senhora Auxiliadora**, escola particular tradicional de Campinas. Ele nasceu para acolher órfãos da epidemia de febre amarela de 1889: a pedra fundamental foi lançada em 9 de outubro de 1892, no então distante bairro do Guanabara, e a maior parte do prédio foi inaugurada em 25 de julho de 1897, com 52 alunos internos e 17 externos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo reportagem de 1987 guardada pelo Centro de Memória da Unicamp, o terreno foi doado pelo Barão e pela Baronesa Geraldo de Rezende, e nos primeiros anos a escola tinha oficinas de alfaiataria, sapataria e tipografia. Na época, a região era descrita como praticamente desabitada, sem luz, água ou calçamento."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro é cortado ou margeado por avenidas que ligam a região ao resto da cidade. Entre as vias que aparecem na lista de logradouros do bairro estão a **Avenida Doutor Heitor Penteado**, a **Avenida Barão de Itapura**, a Avenida Doutor Theodureto de Almeida Camargo, a Avenida Monsenhor Jerônimo Baggio, a Avenida José Teixeira Penteado, a Avenida Machado de Assis e a Avenida Júlio Diniz."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Avenida Heitor Penteado, que contorna a Lagoa do Taquaral, ganhou esse nome depois que desapareceu uma antiga praça do Centro que homenageava o mesmo personagem, segundo artigo da PUC-Campinas. Para a ligação com outras regiões, a Avenida José de Souza Campos, a Norte-Sul, é um dos acessos usados por quem mora no Taquaral e arredores. O bairro também tem um trecho de ciclovia, a Ciclovia André Melchert Faber."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o **Taquaral**, onde ficam a lagoa e o antigo kartódromo, com comércio, academias e restaurantes. O **Guanabara**, bairro onde o Liceu Salesiano foi fundado no fim do século XIX, também fica na região, e a Vila Rossi e Borchi aparece como bairro do endereço da escola em cadastros escolares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A proximidade com o Taquaral explica por que tantos anúncios e empreendimentos usam esse nome: um condomínio recente da região, o Wish Taquaral Residence, fica na Avenida Monsenhor Jerônimo Baggio, dentro do Jardim Nossa Senhora Auxiliadora. Na prática, quem mora no bairro usa o Taquaral como extensão do próprio quintal."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o bairro faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Nossa Senhora Auxiliadora costuma agradar a quem quer **casa com quintal** sem se afastar da região central, famílias que valorizam escola por perto e quem gosta de caminhar ou pedalar na Lagoa do Taquaral. Também atende quem procura apartamento em prédio pequeno, longe do adensamento de bairros como o Cambuí."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são os de qualquer bairro de casas perto de avenidas movimentadas: o trânsito nas vias principais em horário de pico e a variação grande entre uma quadra interna e uma rua de passagem. Vale visitar o imóvel em horários diferentes e observar o movimento da rua antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Em casa, peça a documentação do terreno, pergunte sobre reformas e ampliações regularizadas, o estado do telhado e da parte elétrica e a distância até a avenida mais próxima. Em apartamento, pergunte o valor do condomínio e o que ele inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Nossa Senhora Auxiliadora, em Campinas?",
+      "resposta": "Na região central da cidade, vizinho ao Taquaral e perto da Lagoa do Taquaral. Avenidas como a Doutor Heitor Penteado, a Júlio Diniz e a Barão de Itapura passam pelo bairro."
+    },
+    {
+      "pergunta": "O Jardim Nossa Senhora Auxiliadora é bom para morar?",
+      "resposta": "Para quem quer casa com quintal perto da região central e da Lagoa do Taquaral, é uma opção a considerar. O bairro é residencial, com poucos prédios; o comércio fica principalmente nas avenidas em volta."
+    },
+    {
+      "pergunta": "Por que as ruas do bairro têm nomes portugueses?",
+      "resposta": "Porque a Lei nº 1.780, de 26 de junho de 1957, deu às vias do loteamento nomes de escritores e navegadores de Portugal, como Eça de Queiroz, Alexandre Herculano, Pero Vaz de Caminha e Bartolomeu Dias."
+    },
+    {
+      "pergunta": "O bairro tem mais casas ou prédios?",
+      "resposta": "Casas. A base de condomínios da ONDEMORAR identifica cerca de 16 prédios residenciais no bairro, o maior com 31 andares; o restante é formado por casas térreas e sobrados."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Nossa Senhora Auxiliadora?",
+      "resposta": "No bairro fica a Escola Estadual Professor Aníbal de Freitas, na Rua Primeiro de Março, com ensino fundamental, médio e técnico. O Liceu Salesiano Nossa Senhora Auxiliadora fica na Rua Baronesa Geraldo de Resende, nas vizinhanças."
+    },
+    {
+      "pergunta": "Como ver as casas à venda no Jardim Nossa Senhora Auxiliadora?",
+      "resposta": "Os imóveis que a ONDEMORAR tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, Lei nº 1.780 de 1957 e recortes sobre as ruas do bairro",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, Jornal de Domingo (1987) sobre os 90 anos do Liceu Salesiano",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, biografia de Aníbal de Freitas",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Faculdade de Educação da Unicamp, listagem de escolas de Campinas",
+      "site": "fe.unicamp.br"
+    },
+    {
+      "nome": "Escol.as, ficha da Escola Estadual Professor Aníbal de Freitas",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Melhor Escola, ficha do Colégio Salesiano Nossa Senhora Auxiliadora",
+      "site": "melhorescola.com.br"
+    },
+    {
+      "nome": "Correio da Manhã, Os anos dourados do kartódromo de Campinas (junho de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Parque Portugal",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica, artigo sobre Heitor Penteado",
+      "site": "periodicos.puc-campinas.edu.br"
+    },
+    {
+      "nome": "CEPs Brasil, logradouros do Jardim Nossa Senhora Auxiliadora",
+      "site": "cepsbrasil.com.br"
+    },
+    {
+      "nome": "QuintoAndar, página do Taquaral",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Nossa Senhora Auxiliadora, em Campinas: um bairro de casas vizinho ao Taquaral, onde as ruas levam nomes de Eça de Queiroz, Alexandre Herculano e Pero Vaz de Caminha desde 1957. Preparamos um guia com a história, a Lagoa do Taquaral, o Liceu Salesiano, escolas e acessos. Link na bio.",
+    "hashtags": [
+      "jardimnossasenhoraauxiliadora",
+      "campinas",
+      "taquaral",
+      "lagoadotaquaral",
+      "morarbem",
+      "guiadebairro",
+      "casacampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim N. S. Auxiliadora, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.505Z"
+}

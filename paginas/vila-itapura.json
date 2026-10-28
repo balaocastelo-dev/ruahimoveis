@@ -1,0 +1,323 @@
+{
+  "slug": "vila-itapura",
+  "titulo": "Vila Itapura, Campinas: como é morar no bairro do Barão de Itapura",
+  "resumo": "Guia da Vila Itapura, em Campinas: a origem nas terras do Barão de Itapura, prédios, avenidas, Instituto Agronômico, escolas e o que considerar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Igreja São Paulo Apóstolo, com o telhado em dobras e as palmeiras na frente",
+      "alt": "Igreja moderna de concreto com telhado em forma de dobras pontiagudas, escadaria e palmeiras altas na frente",
+      "commons": "File:Igreja São Paulo Apóstolo - panoramio (1).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Escadaria da Igreja São Paulo Apóstolo, ladeada por palmeiras imperiais",
+      "alt": "Escadaria com gradil levando à entrada de uma igreja de telhado triangular, entre troncos de palmeiras e prédios ao fundo",
+      "commons": "File:Fachada da Igreja São Paulo Apóstolo, Arquidiocese de Campinas-SP-Brasil.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Edifício residencial alto na Vila Itapura, sobre pilotis e cercado de árvores",
+      "alt": "Prédio residencial de muitos andares visto de baixo, com térreo sobre pilares, árvores e palmeiras em volta",
+      "commons": "File:Vila Itapura, Campinas - State of São Paulo, Brazil - panoramio (1).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Casa antiga da Vila Itapura tomada por plantas e trepadeiras",
+      "alt": "Fachada de casa com muro baixo e portão, quase coberta por árvores, palmeiras e trepadeiras",
+      "commons": "File:Vila Itapura, Campinas - State of São Paulo, Brazil - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Prédio de esquina com imóvel da ONDEMORAR à venda na Vila Itapura",
+      "alt": "Prédio comercial de três andares em esquina, com faixa de pedestres e palmeiras na avenida ao lado",
+      "imovel_foto": 469
+    },
+    {
+      "id": "f6",
+      "legenda": "Prédio histórico do Instituto Agronômico, na Avenida Barão de Itapura",
+      "alt": "Edifício neoclássico amarelo com colunas na fachada, cercado de palmeiras e árvores grandes",
+      "commons": "File:Instituto Agronômico de Campinas - Campinas - 20240921163558.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Avenida Orosimbo Maia ao lado do canal, com prédios dos dois lados",
+      "alt": "Avenida com calçada e guarda-corpo branco ao lado de um canal gramado, com edifícios altos ao fundo",
+      "commons": "File:Avenida Orozimbo Maia - Campinas - SP.JPG"
+    },
+    {
+      "id": "f8",
+      "legenda": "Cruzamento das avenidas Andrade Neves e Barão de Itapura",
+      "alt": "Cruzamento largo com faixas amarelas no asfalto, faixa de pedestres e prédios baixos e altos nas esquinas",
+      "commons": "File:Cruzamentos entre AV Andrade Neves, Av Barao de Itapua e Inicio da Rua 11 de Agosto - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Itapura** é um bairro residencial da região central de Campinas, entre o Centro, o Cambuí e o Jardim Guanabara. Nasceu nas terras do Barão de Itapura, foi loteada nos anos 1920 e hoje mistura prédios de apartamentos, casas antigas, comércio de rua e clínicas, com o Centro a uma caminhada de distância."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro pequeno, mas com nome forte na história da cidade: a avenida que o margeia, o Instituto Agronômico do outro lado dela e o traçado regular das quadras vêm todos do século XIX. Este guia reúne essa história, o perfil dos imóveis, os acessos e o que vale considerar antes de escolher um endereço ali."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região central de Campinas, vizinho do Centro, do Cambuí e do Jardim Guanabara",
+        "Formado no loteamento das terras do Barão de Itapura, vendidas em 1923 à Rossi, Borghi & Cia",
+        "Perfil de prédios residenciais, com casas antigas e comércio entre eles",
+        "Tem como marco a Igreja São Paulo Apóstolo, de arquitetura moderna, na Rua Barata Ribeiro",
+        "O Instituto Agronômico, fundado em 1887, fica na Avenida Barão de Itapura",
+        "Acesso pelas avenidas Orosimbo Maia, Barão de Itapura, Brasil e Francisco Glicério"
+      ],
+      "titulo": "A Vila Itapura em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Vila Itapura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem de **Joaquim Policarpo Aranha**, o Barão de Itapura, conhecido em Campinas como Nenê Aranha. Nascido em 1809, ele foi vereador na década de 1840 e recebeu o título de barão no começo da década de 1880. Sua propriedade rural, também chamada Itapura, ocupava boa parte da área que vai da atual Rua Francisco Glicério até a Avenida Barão de Itapura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O barão foi um agente ativo da urbanização dessas terras. Em 1872, a primeira linha da Companhia Mogiana cruzou a propriedade, e ele doou parte dela para o primeiro gasômetro da cidade, o que levou à abertura da Rua Dona Libânia, nome de sua esposa. Em 1886, por iniciativa dele, foi aberta a avenida que marcava a divisa entre o Itapura e a Fazenda Chapadão, depois batizada de **Avenida Barão de Itapura**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Registros do Centro de Memória da Unicamp contam que a avenida foi aberta cortando as terras do barão para dar passagem a tropeiros e às boiadas que vinham de Minas Gerais rumo a São Paulo, e que por ela passaram depois o bonde e a linha da Mogiana."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o loteamento nasceu"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O barão morreu no começo do século XX, e a urbanização da propriedade avançou com os herdeiros. Em 1921, o inventário da baronesa descrevia o Itapura como uma área de cerca de 13 alqueires, entre as ruas Dona Libânia, Santa Cruz, José Paulino e Barão de Itapura, com pastos, pomar e cultivo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1923, os herdeiros venderam parte dessas terras à **Rossi, Borghi & Cia**, que desenhou um traçado de quadras regulares. O plano, apresentado em 1924, previa recuos obrigatórios, uso exclusivamente residencial e marcos de concreto nos limites dos lotes, e foi aprovado formalmente pela Resolução nº 807, de 1925. Daí surgiram a Vila Itapura e parte do Jardim Guanabara."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um artigo de 2026 da revista *Cadernos de Pós-Graduação em Arquitetura e Urbanismo*, do Mackenzie, mostra que o desenho das ruas e das quadras de hoje ainda guarda os limites dessas antigas propriedades, mesmo depois de as casas originais terem dado lugar a prédios. Guias imobiliários também associam o crescimento do bairro ao Plano de Melhoramentos Urbanos, encomendado em 1934 ao engenheiro Francisco Prestes Maia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Itapura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Itapura de hoje é, sobretudo, um bairro de apartamentos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 prédios residenciais no bairro, somando perto de 1.800 unidades, o mais alto com cerca de 20 andares. Entre eles ainda resistem casas antigas, muitas com jardim na frente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas residenciais citadas pelos guias estão a Rua Barata Ribeiro, a Coelho Neto, a José Paulino, a Álvaro Muller, a Barão de Atibaia, a Jorge Krug, a Tiradentes e a Sacramento. Moradores ouvidos pelo QuintoAndar descrevem ruas arborizadas e dizem que dá para ir a pé ao Centro e ao Cambuí; as quadras longe das avenidas são apontadas como as mais calmas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dia a dia se resolve perto de casa: guias do bairro registram supermercados, padarias, farmácias, bancos, agência dos Correios, academias, clínicas, consultórios odontológicos e laboratórios. A seção *o que tem perto*, mais abaixo nesta página, lista os endereços mais próximos com o tempo a pé e é atualizada automaticamente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de atenção é o trânsito. As avenidas Orosimbo Maia e Brasil estão entre as mais movimentadas da cidade, e moradores relatam dificuldade para estacionar perto delas em horário comercial. Nos fins de semana, o ritmo cai bastante."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Igreja São Paulo Apóstolo e outros marcos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco mais fotografado do bairro é a **Igreja São Paulo Apóstolo**, com entrada pela Rua Barata Ribeiro. O templo chama a atenção pelo telhado em dobras pontiagudas, pelos vitrais triangulares e pela escadaria entre palmeiras imperiais. Uma placa na entrada registra que o projeto foi oferecido pelo arquiteto **José Leite de Carvalho e Silva**; a mesma placa, de 2006, marca os 40 anos de criação da paróquia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado da Avenida Barão de Itapura fica o **Instituto Agronômico (IAC)**. Criado em 1887 por D. Pedro II como Imperial Estação Agronômica, em terras que tinham sido do próprio barão, ele mantém a sede no número 1.481 da avenida. O conjunto, com prédios, estufas e o Parque Arboreto, é tombado pelo Condepacc, o conselho de patrimônio de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região tem escolas públicas e particulares, da educação infantil ao ensino médio. A **Escola Estadual Dona Castorina Cavalheiro** aparece entre os pontos de referência do bairro, e o tradicional **Colégio Imaculada** fica nas imediações. No ensino superior, a PUC-Campinas e outras faculdades ficam a uma distância curta, e a base de pontos de interesse da ONDEMORAR registra unidades de ensino superior a poucos minutos a pé do centro do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o **Hospital Vera Cruz**, na Avenida Andrade Neves, é o hospital de referência mais próximo citado pelos guias. Clínicas, laboratórios e farmácias se espalham pelas ruas do bairro e pelas avenidas em volta."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e distâncias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Itapura é cercada por eixos importantes. A **Avenida Orosimbo Maia**, aberta entre 1917 e 1918 ao longo do antigo Córrego Serafim, retificado no fim do século XIX, liga o bairro ao Centro. A **Avenida Barão de Itapura** segue até o Botafogo, o Guanabara e o Taquaral, e cruza a **Avenida Andrade Neves** perto do Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelas avenidas Orosimbo Maia e Brasil se chega às rodovias Dom Pedro I e Anhanguera. Várias linhas de ônibus passam pelo bairro, e a Rodoviária de Campinas fica a pouco mais de 1 km do centro da Vila Itapura, segundo a base de pontos de interesse usada pela ONDEMORAR. O Terminal Mercado está a cerca de 1 km."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "lista",
+      "itens": [
+        "**Centro**: a poucas quadras, com comércio, serviços públicos, o Largo do Rosário e as praças Carlos Gomes e Bento Quirino.",
+        "**Cambuí**: vizinho, com bares, restaurantes e o Centro de Convivência Cultural, alcançável a pé.",
+        "**Jardim Guanabara**: nasceu do mesmo loteamento; moradores costumam chamar a região toda de Guanabara.",
+        "**Botafogo** e **Taquaral**: ligados à Vila Itapura pela Avenida Barão de Itapura."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para áreas verdes maiores, os guias apontam o **Bosque dos Jequitibás** entre as opções próximas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Itapura faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Itapura costuma agradar a quem quer apartamento perto do Centro e do Cambuí, com comércio, escolas e serviços de saúde a poucas quadras, sem morar no meio do movimento das ruas de bares. Serve a profissionais que trabalham na região central, a estudantes e a famílias que querem resolver a rotina a pé."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura quintal grande ou ruas sem trânsito deve olhar com cuidado: as avenidas em volta são carregadas, e a escolha da quadra muda bastante a experiência. Imóveis em ruas internas, longe da Orosimbo Maia e da Avenida Brasil, tendem a ser mais silenciosos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o valor do condomínio e o que ele inclui, a idade do prédio e as últimas obras, a distância até as avenidas de maior movimento, o número de vagas na garagem e se há vaga para visitantes.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Itapura, em Campinas?",
+      "resposta": "Na região central da cidade, entre o Centro, o Cambuí e o Jardim Guanabara. É cercada pelas avenidas Orosimbo Maia, Barão de Itapura, Brasil e Francisco Glicério."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Vila Itapura?",
+      "resposta": "Porque foi formado nas terras de Joaquim Policarpo Aranha, o Barão de Itapura. Os herdeiros venderam parte da propriedade em 1923 à Rossi, Borghi & Cia, que fez o loteamento."
+    },
+    {
+      "pergunta": "A Vila Itapura é bom lugar para morar?",
+      "resposta": "Para quem quer apartamento perto do Centro e do Cambuí, com comércio e serviços a pé, sim. O ponto de atenção é o trânsito nas avenidas em volta; ruas internas costumam ser mais calmas."
+    },
+    {
+      "pergunta": "A Vila Itapura tem mais casas ou prédios?",
+      "resposta": "Prédios. A base de condomínios da ONDEMORAR identifica cerca de 50 edifícios residenciais no bairro, com perto de 1.800 unidades, além de casas antigas entre eles."
+    },
+    {
+      "pergunta": "Vila Itapura e Guanabara são o mesmo bairro?",
+      "resposta": "Não, mas têm a mesma origem: a Vila Itapura e parte do Jardim Guanabara saíram do loteamento das terras do Barão de Itapura, e muitos moradores chamam a região toda de Guanabara."
+    },
+    {
+      "pergunta": "Como chegar às rodovias saindo da Vila Itapura?",
+      "resposta": "Pelas avenidas Orosimbo Maia e Brasil, que levam às rodovias Dom Pedro I e Anhanguera."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Cadernos de Pós-Graduação em Arquitetura e Urbanismo (Mackenzie), artigo sobre o Barão de Itapura e a forma urbana de Campinas (2026)",
+      "site": "editorarevistas.mackenzie.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, documentação sobre a Avenida Barão de Itapura",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Vila Itapura",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Chaves na Mão, guia do bairro Vila Itapura",
+      "site": "chavesnamao.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Instituto Agronômico de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikimedia Commons, fotos e placa da Igreja São Paulo Apóstolo",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Itapura, em Campinas: o bairro que nasceu nas terras do Barão de Itapura, foi loteado nos anos 1920 e hoje reúne prédios, casas antigas e comércio a poucas quadras do Centro e do Cambuí. No guia, a história do loteamento, a Igreja São Paulo Apóstolo, o Instituto Agronômico, os acessos e o que considerar antes de morar. Link na bio.",
+    "hashtags": [
+      "vilaitapura",
+      "campinas",
+      "guiadebairro",
+      "morarbem",
+      "apartamentocampinas",
+      "historiadecampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Itapura, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.506Z"
+}

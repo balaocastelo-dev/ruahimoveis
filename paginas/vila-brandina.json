@@ -1,0 +1,312 @@
+{
+  "slug": "vila-brandina",
+  "titulo": "Vila Brandina, Campinas: como é morar no bairro do Shopping Iguatemi",
+  "resumo": "Guia da Vila Brandina, em Campinas: a antiga granja que virou bairro, o Shopping Iguatemi, os acessos à Dom Pedro I e o que considerar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Entrada do Shopping Iguatemi Campinas, inaugurado em 1980 na Vila Brandina",
+      "alt": "Fachada de shopping com letreiro Iguatemi, cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "O Shopping Iguatemi visto da rua, com gramado e placa de 40 km/h",
+      "alt": "Rua com gramado largo em primeiro plano, placa de trânsito e o prédio do shopping com cúpula ao fundo",
+      "commons": "File:Shopping Iguatemi - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Lateral do Shopping Iguatemi, com a torre e as palmeiras do acesso",
+      "alt": "Prédio comercial com torre de relógio, pergolado, palmeiras e via de acesso em curva",
+      "commons": "File:Shopping Iguatemi Campinas 02.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Torre do Shopping Iguatemi, com prédios residenciais da região ao fundo",
+      "alt": "Torre amarela de um shopping, árvores e edifícios residenciais no horizonte sob céu nublado",
+      "commons": "File:Torre do Shopping - panoramio - Paulo Humberto.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Escola de equitação da Sociedade Hípica de Campinas",
+      "alt": "Galpão branco e azul com telhado de duas águas, letreiro de escola de equitação, bancos e vasos na frente",
+      "commons": "File:Fachada da Escola de Equitação Pompêo de Camargo.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Rua residencial da Vila Brandina, com terreno da ONDEMORAR à venda",
+      "alt": "Muro branco com portão de correr e portão de pedestre, casas e palmeiras ao fundo, calçada larga",
+      "imovel_foto": 1890
+    },
+    {
+      "id": "f7",
+      "legenda": "Vista aérea de uma quadra de casas da Vila Brandina, com o terreno da ONDEMORAR marcado",
+      "alt": "Foto aérea de casas com telhado de cerâmica, piscinas e uma avenida arborizada ao lado de um lote vazio marcado em vermelho",
+      "imovel_foto": 1891
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Brandina** é um bairro da região leste de Campinas conhecido, antes de tudo, por abrigar o **Shopping Iguatemi Campinas**, inaugurado em 1980. Em volta do shopping convivem ruas de casas de padrão alto, condomínios de prédios e uma faixa comercial com hipermercado, restaurantes e serviços, a poucos minutos da Rodovia Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome vem de uma granja leiteira que ocupava a área até a segunda metade do século XX. Este guia conta essa história, mostra como é o dia a dia de quem mora ali, quais são os acessos e o que está previsto para o entorno nos próximos anos, com base em fontes públicas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região leste de Campinas, ao lado da Rodovia Dom Pedro I",
+        "Nasceu nas terras da antiga Granja Vila Brandina, de produção de leite tipo A",
+        "Abriga o Shopping Iguatemi Campinas, aberto em 6 de maio de 1980, na Avenida Iguatemi",
+        "Mistura casas de padrão alto e condomínios verticais, alguns com mais de 15 andares",
+        "Acesso rápido à Rodovia Dom Pedro I pela Avenida Mackenzie e pela Avenida Dr. Nélson Noronha Gustavo Filho",
+        "Terrenos da FEAC no entorno do shopping vão receber o bairro planejado Casa Figueira"
+      ],
+      "titulo": "A Vila Brandina em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome Vila Brandina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro herdou o nome da **Granja Vila Brandina**, fundada por Lafayette Álvaro de Sousa Camargo em terras da antiga fazenda da família, a Mato Dentro de Baixo. Um discurso de 1959, guardado pelo Centro de Memória da Unicamp, descreve a granja como produtora de um leite de alta qualidade e diz que ela recebia visitantes ilustres. O mesmo texto registra que a fazenda veio de Dona Maria Brandina, filha da Viscondessa de Campinas e avó de Lafayette."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1958, Lafayette e a esposa, Odila, doaram a granja a uma fundação que levava o nome do casal, mantendo o usufruto enquanto vivessem. Reportagens de 1968 do *Correio Popular*, também no acervo da Unicamp, falam em 184 alqueires paulistas, cerca de 445 hectares, com sede, casas e instalações para leite tipo A. A área, dizia o jornal, já estava cercada por bairros residenciais e praticamente dentro da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fundação acabou unida à **FEAC**, a Federação das Entidades Assistenciais de Campinas, que recebeu a fazenda como patrimônio. Um artigo da revista *Oculum*, da PUC-Campinas, conta que a área passou ao perímetro urbano pouco depois e que a Rodovia Dom Pedro I a dividiu em duas glebas, chamadas Sede e Invernada. Foi nesse terreno que surgiram o bairro e, depois, o shopping."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "O discurso de 1959 conta que a fazenda Lapa, também formada em terras do antigo engenho do Mato Dentro, se tornou a sede da Sociedade Hípica de Campinas. O clube mantém uma escola de equitação com o ano de 1948 no brasão.",
+      "titulo": "A Hípica na mesma antiga fazenda"
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Brandina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ocupação mistura dois perfis. Nas ruas internas predominam casas de padrão alto, em quadras arborizadas. Perto do shopping e das avenidas aparecem os condomínios de prédios. A base de condomínios da ONDEMORAR, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 20 condomínios no bairro, a maioria verticais, com pouco mais de mil unidades no total; o prédio mais alto tem 19 andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No guia de bairros do QuintoAndar, moradores descrevem ruas calmas, iluminadas e de calçadas largas, um ambiente familiar e uma origem ligada a casas de fim de semana de famílias de alta renda, que depois viraram moradia fixa. O mesmo espaço traz uma ressalva: em alguns trechos o tráfego é intenso e pouco amigável para crianças e ciclistas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura casa, o bairro ainda tem lotes residenciais em ruas já consolidadas, o que permite construir do zero perto de toda a estrutura do shopping. Para quem prefere apartamento, há condomínios verticais perto do shopping, a uma caminhada curta das lojas e restaurantes."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Shopping Iguatemi: o centro da vida no bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Shopping Iguatemi Campinas** abriu em 6 de maio de 1980, na Avenida Iguatemi, e foi uma das primeiras unidades da rede. Na mesma semana, o *Correio Popular* publicou uma série de reportagens sobre o impacto do novo shopping no comércio do Centro, com cerca de 200 lojas previstas e funcionamento até as 22h, algo novo para a cidade na época."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Hoje, segundo o guia de shoppings do QuintoAndar, o Iguatemi tem 356 lojas, dois complexos de cinema, o Teatro Oficina do Estudante Iguatemi, com 515 lugares, e mais de 4.500 vagas de estacionamento. O shopping foi construído em parceria com a FEAC, que segue sócia do empreendimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem mora perto, isso significa supermercado, farmácia, banco, academia, restaurantes e cinema a poucos minutos de casa. No entorno também fica um hipermercado Carrefour, citado pela Emdec no projeto de mobilidade da região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Casa Figueira: o bairro planejado ao lado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A FEAC ainda tem cerca de 1 milhão de metros quadrados de terra no entorno do shopping. Nessa área, a Iguatemi atua como desenvolvedora do **Casa Figueira**, um bairro planejado com lotes para prédios residenciais e comerciais, escolas, serviços e um parque, segundo reportagens do Money Times e do BP Money. A primeira fase prevê 66 lotes, e a obra deve se estender por cerca de duas décadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A proposta divulgada pela empresa fala em prédios sem muros, ligados por alamedas, praças e ciclovias. Para a Vila Brandina, isso quer dizer mais moradores e mais comércio no entorno nos próximos anos, e também obras e mudanças no trânsito ao longo do caminho."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Brandina fica colada à **Rodovia Dom Pedro I**, o que facilita a saída para outras cidades da região. Em setembro de 2026, a Emdec ativou semáforos no cruzamento da **Avenida Dr. Nélson Noronha Gustavo Filho** com a **Avenida Mackenzie**, na Vila Brandina, e abriu uma alça de acesso direto entre as duas avenidas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com a mudança, quem sai do Centro pelas avenidas Moraes Salles e José Bonifácio e segue pela Mackenzie ganha entrada direta para o Parque Brasília. A Emdec apresentou a obra como a primeira etapa de um projeto para o entorno do shopping, que prevê ainda rota para bicicletas, travessias seguras para pedestres, iluminação nova, abrigos de ônibus e outros semáforos no bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia do QuintoAndar cita ainda a Avenida Norte-Sul e a Avenida Orozimbo Maia como ligações importantes com o resto da cidade, além de linhas de ônibus municipais que levam ao Centro e a outros bairros."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parques, escolas e serviços por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro não tem um grande parque dentro dos seus limites. Segundo o QuintoAndar, quem mora ali costuma ir ao **Parque Ecológico Monsenhor Emílio José Salim** e ao **Bosque dos Jequitibás**. Moradores também citam uma pista de cerca de 2,8 km para caminhada e corrida nas proximidades."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em escolas, o mesmo guia aponta opções de ensino fundamental e médio na região e cita o Colégio Graal Kids. O mapa de serviços da ONDEMORAR, feito com dados do OpenStreetMap, também registra a Escola Estadual Alberto Medaljon a cerca de 500 metros do centro do bairro. Vale sempre conferir vagas e proposta pedagógica direto com cada escola."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Brandina faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Brandina combina com quem quer casa ampla ou apartamento em condomínio com o shopping, o hipermercado e a rodovia a poucos minutos. Atende bem famílias que dependem de carro e quem trabalha em outras cidades da região, pela saída rápida para a Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também são claros: o movimento do shopping e das avenidas pesa no trânsito em horários de pico, e a chegada do Casa Figueira deve trazer anos de obras e mais gente circulando. Antes de escolher a rua, observe o trajeto em dias úteis e nos fins de semana."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor se a rua recebe trânsito do shopping, qual a distância até as obras do bairro planejado, as regras de construção do loteamento, no caso de terreno, e, em apartamento, o valor do condomínio e o que ele inclui.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Brandina, em Campinas?",
+      "resposta": "Na região leste de Campinas, ao lado da Rodovia Dom Pedro I. O Shopping Iguatemi Campinas fica dentro do bairro, na Avenida Iguatemi."
+    },
+    {
+      "pergunta": "A Vila Brandina é bom para morar?",
+      "resposta": "Para quem quer casa ou apartamento perto de shopping, hipermercado e rodovia, sim. Moradores ouvidos pelo QuintoAndar falam em ruas calmas e calçadas largas; a ressalva é o trânsito intenso em alguns trechos."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Vila Brandina?",
+      "resposta": "Por causa da Granja Vila Brandina, fazenda leiteira fundada por Lafayette Álvaro de Sousa Camargo e doada em 1958 a uma fundação que depois se uniu à FEAC."
+    },
+    {
+      "pergunta": "Quando o Shopping Iguatemi Campinas foi inaugurado?",
+      "resposta": "Em 6 de maio de 1980. Hoje tem 356 lojas, cinemas, teatro e mais de 4.500 vagas de estacionamento, segundo o QuintoAndar."
+    },
+    {
+      "pergunta": "O que é o Casa Figueira?",
+      "resposta": "É o bairro planejado que a Iguatemi desenvolve em terras da FEAC no entorno do shopping, em cerca de 1 milhão de metros quadrados, com prédios residenciais e comerciais, escolas, serviços e um parque."
+    },
+    {
+      "pergunta": "Como chegar à Rodovia Dom Pedro I saindo da Vila Brandina?",
+      "resposta": "Pela Avenida Mackenzie e pela Avenida Dr. Nélson Noronha Gustavo Filho, que ganharam uma alça de ligação com semáforos em setembro de 2026, segundo a Emdec."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, discurso de 1959 sobre as famílias e fazendas do Mato Dentro",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, recortes do Correio Popular de 1968 sobre a Granja Vila Brandina e de 1980 sobre o Shopping Iguatemi",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Revista Oculum (PUC-Campinas), artigo sobre a Fazenda Brandina e a FEAC",
+      "site": "seer.sis.puc-campinas.edu.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Vila Brandina e guia de shoppings de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "ABC do ABC, Emdec muda trânsito e ativa semáforo na região do Iguatemi (setembro de 2026)",
+      "site": "abcdoabc.com.br"
+    },
+    {
+      "nome": "Money Times, reportagem sobre o bairro planejado Casa Figueira",
+      "site": "moneytimes.com.br"
+    },
+    {
+      "nome": "BP Money, Iguatemi e FEAC no bairro planejado de Campinas (2023)",
+      "site": "bpmoney.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbete Iguatemi S.A.",
+      "site": "en.wikipedia.org"
+    },
+    {
+      "nome": "Base de condomínios e mapa de serviços da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Brandina, em Campinas: o bairro que nasceu numa granja de leite tipo A e ganhou, em 1980, o Shopping Iguatemi. Preparamos um guia com a história do nome, como é morar ali, os acessos à Dom Pedro I, o bairro planejado Casa Figueira e o que observar antes da mudança. Link na bio.",
+    "hashtags": [
+      "vilabrandina",
+      "campinas",
+      "iguatemicampinas",
+      "guiadebairro",
+      "morarbem",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Brandina, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.013Z"
+}

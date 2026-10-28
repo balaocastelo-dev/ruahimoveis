@@ -1,0 +1,293 @@
+{
+  "slug": "bonfim",
+  "titulo": "Bonfim, Campinas: como é morar no bairro, história e acessos",
+  "resumo": "Guia do Bonfim, em Campinas: origem do nome, história operária, Avenida Pedro de Toledo, Torre do Castelo ao lado e o perfil dos prédios e casas.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Vista da região do Bonfim, com prédios residenciais e casas em volta",
+      "alt": "Panorama de cidade com edifícios altos ao fundo, casas de telhado vermelho e árvores na frente",
+      "commons": "File:Região do Bonfim - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Campinas vista do alto do Bonfim, em foto de 2007",
+      "alt": "Vista aérea de bairro com muitas casas de telhado cerâmico e alguns prédios",
+      "commons": "File:Visto do Bonfim 2007 - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Rua do Bonfim com templo da Congregação Cristã no Brasil, casas e prédio vizinho",
+      "alt": "Esquina com templo branco de três frontões, prédio de tijolo aparente e casas baixas",
+      "commons": "File:CCB - Central de Campinas - Bonfim (1).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Torre do Castelo, antigo reservatório art déco vizinho ao Bonfim",
+      "alt": "Torre cilíndrica de concreto claro com mirante no topo, sob céu azul",
+      "commons": "File:Torre do Castelo - Campinas.JPG"
+    },
+    {
+      "id": "f5",
+      "legenda": "Vista do alto da Torre do Castelo, com avenida arborizada e prédios",
+      "alt": "Avenida com ipês roxos floridos, comércio dos dois lados e edifícios ao fundo",
+      "commons": "File:Torre do Castelo - Campinas - 20240623110149.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Piscina de condomínio no Bonfim com apartamento da ONDEMORAR à venda",
+      "alt": "Piscina de condomínio com espreguiçadeiras e prédios ao fundo",
+      "imovel_foto": 1995
+    },
+    {
+      "id": "f7",
+      "legenda": "Quadra esportiva do mesmo condomínio, com as torres ao lado",
+      "alt": "Quadra poliesportiva colorida ao lado de edifícios residenciais",
+      "imovel_foto": 2007
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Bonfim** é um dos bairros mais antigos de Campinas, logo ao norte do Centro, entre a Vila Industrial e o Castelo. Nasceu no começo do século XX como bairro operário e de imigrantes, cresceu em torno da **Avenida Governador Pedro de Toledo** e hoje mistura casas antigas, comércio de rua e prédios residenciais mais novos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem procura onde morar, o Bonfim oferece a proximidade do Centro e do Castelo com ruas majoritariamente residenciais. Este guia conta de onde vem o nome, como o bairro se formou, como é o dia a dia e o que vale observar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro antigo de Campinas, vizinho do Centro, da Vila Industrial e do Castelo",
+        "Formado a partir do loteamento de uma antiga fazenda, com ruas abertas pela Prefeitura a partir de 1910",
+        "O nome vem da família Bonfim, uma das primeiras a se instalar na região",
+        "A Avenida Governador Pedro de Toledo é o eixo principal e concentra o comércio",
+        "Perfil misto: casas antigas e prédios residenciais, com verticalização gradual",
+        "A Torre do Castelo, patrimônio tombado, fica nas imediações"
+      ],
+      "titulo": "O Bonfim em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História do Bonfim e origem do nome"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As terras do Bonfim faziam parte de uma antiga sesmaria que se tornou o Engenho e depois a **Fazenda Chapadão**. Segundo o estudo *Bonfim: origem e formação*, de Duília Battistoni Filho, publicado pela revista Notícia Bibliográfica e Histórica da PUC-Campinas, foi depois da abolição da escravatura, em 1888, que o proprietário Otaviano Alves de Lima decidiu dividir a fazenda em sítios e chácaras. Desse desmembramento surgiu o bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome, de acordo com o mesmo estudo, vem da família **Bonfim**, que a maioria dos historiadores aponta como uma das primeiras a morar ali; um de seus descendentes seria o poeta Paulo Bonfim. A planta de Campinas feita por Leopoldo Amaral em 1900 já mostrava a área, coberta de cafezais, mas ainda sem nenhuma rua com nome."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A partir de 1910, a Prefeitura começou a desapropriar terrenos e abrir ruas. A água encanada chegou por volta de 1915 e, em 1916, o **bonde 8** passou a ligar o centro da cidade ao bairro, terminando na esquina da Avenida Governador Pedro de Toledo com a Rua Alberto Sarmento. Em 1941, um decreto-lei autorizou o loteamento das terras do coronel Bento Bicudo e a abertura de ruas da firma Rossi, Borghi & Siqueira, nome que até hoje batiza a vizinha Vila Rossi Borghi e Siqueira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bonfim também foi um dos primeiros redutos industriais fora do centro. Já em 1858, a fundição Faber & Irmão se instalou em suas terras, e depois de 1910 várias indústrias compraram lotes ao longo das ferrovias Paulista e Mogiana. Imigrantes portugueses, italianos e, mais tarde, alemães ocuparam as ruas próximas; a **Rua Germânia** era conhecida como a rua dos alemães. Do lado da Vila Industrial ficava o antigo Hipódromo Campineiro."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Entre as décadas de 1930 e 1950, havia uma rivalidade bem-humorada entre os estudantes do Bonfim e os da Vila Industrial: uns chamavam os outros de *cerca bode*, por causa da planta barba-de-bode que cobria as terras do Bonfim, e ouviam de volta *bucheiro*, em alusão ao curtume da Vila.",
+      "titulo": "Curiosidade"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Avenida Governador Pedro de Toledo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal via do bairro se chamava Avenida Pará até 1937, quando uma lei municipal lhe deu o nome do governador Pedro de Toledo, que comandou São Paulo durante a Revolução Constitucionalista de 1932. Por décadas foi a saída de Campinas em direção a Sumaré e Americana. Até os anos 1940 era praticamente a única rua calçada do Bonfim; as demais só receberam asfalto nos anos 1950."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Foi ao longo da avenida que se concentrou o comércio, marcado pela presença portuguesa, com armazéns, farmácias e padarias. Os anúncios de imóveis da região mostram que ela segue como endereço comercial e residencial, e é a referência de quem se localiza no bairro. Entre as primeiras ruas do Bonfim, o estudo da PUC-Campinas cita as paralelas Dr. Arnaldo de Carvalho, Santana Gomes e Emílio Henking e as transversais Luís Gama, Germânia, Teodoro Langaard, Alberto Sarmento, Rafael Sales e Júlio Ribeiro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Bonfim"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bonfim foi, por quase todo o século XX, um bairro de casas. O guia de bairros do QuintoAndar descreve a região como residencial, tranquila, com muitas famílias e em processo de verticalização gradual, com prédios novos dividindo a paisagem com construções antigas. Ali predominam apartamentos de dois e três quartos, muitos em condomínios com piscina, academia e churrasqueira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 65 condomínios no bairro, quase todos verticais, somando por volta de 2.400 unidades. O prédio mais alto da base tem 17 andares; boa parte dos edifícios mais antigos tem entre três e sete pavimentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro fica em terreno elevado, o que, segundo o QuintoAndar, abre vistas amplas da cidade em vários pontos. Na mesma avaliação, a maioria dos moradores que responderam disse que as ruas são bem iluminadas e que não há risco de alagamento. É uma rotina de bairro: comércio de proximidade, ruas de casas e o Centro a poucos minutos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Torre do Castelo e lazer nas redondezas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco mais conhecido das imediações é a **Torre do Castelo**, na divisa com o Jardim Chapadão. Segundo reportagem do Correio da Manhã, o reservatório foi construído entre 1936 e 1940, em estilo art déco, com 27 metros de altura e capacidade para 250 mil litros, para abastecer os bairros que cresciam ao norte de Campinas. Fica a cerca de 735 metros de altitude."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na década de 1970 ganhou um mirante com vista de 360 graus, e em 1991 passou a abrigar o Museu Histórico da Sanasa. Em 2007 recebeu o nome de Torre do Castelo Vitor Negrete, em homenagem ao primeiro alpinista brasileiro a chegar ao cume do Everest, e em 2008 foi tombada pelo Condepacc. Também foi eleita uma das Sete Maravilhas de Campinas. A praça em volta recebe eventos e, segundo o QuintoAndar, há uma feira de artesanato e culinária aos sábados na região."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, igrejas e vida de bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A escola mais tradicional do bairro é a **Escola Estadual Dom João Nery**, na Rua Erasmo Braga. Ela nasceu como Grupo Escolar do Bonfim, criado em 1932 em frente à praça Thompson, recebeu o nome de Dom João Nery em 1938 e, em 1976, se fundiu ao Colégio Estadual Hildebrando Siqueira. Na vizinha Vila Rossi Borghi e Siqueira funciona o CEI Cônego Manoel Garcia, da rede municipal, com creche e pré-escola."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vida religiosa também ajuda a contar o bairro. A capela de **Bom Jesus do Bonfim** foi erguida pelo cônego Samuel Fragoso e, com o crescimento da comunidade, virou paróquia em 30 de junho de 1942, tendo o padre Roque Francisco Neto como primeiro pároco. O Bonfim teve ainda clube social próprio, fundado em 22 de abril de 1922, com sede inicial na Avenida Governador Pedro de Toledo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o QuintoAndar, o dia a dia se resolve com padarias, restaurantes, bancos, farmácias e mercados no próprio bairro e no Castelo, incluindo unidades do Pão de Açúcar e do Mini Extra, além de uma feira de hortifrúti às terças-feiras. A mesma página registra também a avaliação de um morador de que hospitais e supermercados maiores não ficam tão perto, o que vale conferir conforme a rua."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para circular, o eixo é a Avenida Governador Pedro de Toledo, que leva ao Centro de um lado e ao Castelo do outro. O guia do QuintoAndar destaca o acesso às principais avenidas da cidade e às rodovias. Por ser vizinho do Centro, o Bonfim também fica perto da Vila Industrial e dos serviços concentrados na região central."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos do Bonfim"
+    },
+    {
+      "tipo": "lista",
+      "itens": [
+        "**Vila Industrial**: bairro histórico ligado às oficinas ferroviárias, do outro lado da antiga divisa marcada pela atual praça Aldemar Tavares",
+        "**Castelo e Jardim Chapadão**: onde fica a Torre do Castelo, com comércio e serviços",
+        "**Vila Rossi Borghi e Siqueira**: loteamento aberto a partir de 1941, colado ao Bonfim",
+        "**Centro**: a região central de Campinas, ligada ao Bonfim desde a época do bonde 8"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Bonfim faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Bonfim costuma agradar a quem quer morar perto do Centro e do Castelo em uma área predominantemente residencial, com história e ruas de casas, mas também com prédios novos e condomínios com lazer. É uma opção para famílias e para quem trabalha na região central."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção: a oferta de serviços grandes, como hospitais e hipermercados, depende do trecho, e a verticalização muda a paisagem de algumas quadras. Vale percorrer a rua em diferentes horários antes de decidir e comparar prédios antigos e novos dentro do próprio bairro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Bonfim é bom para morar?",
+      "resposta": "Para quem busca um bairro residencial perto do Centro e do Castelo, sim. O Bonfim é descrito como tranquilo e familiar, com casas antigas e prédios mais novos, comércio na Avenida Governador Pedro de Toledo e a Torre do Castelo nas imediações."
+    },
+    {
+      "pergunta": "Onde fica o bairro Bonfim, em Campinas?",
+      "resposta": "Logo ao norte do Centro, entre a Vila Industrial e o Castelo, tendo a Avenida Governador Pedro de Toledo como eixo principal."
+    },
+    {
+      "pergunta": "De onde vem o nome Bonfim?",
+      "resposta": "Segundo estudo publicado pela PUC-Campinas, vem da família Bonfim, apontada pela maioria dos historiadores como uma das primeiras a se instalar na região."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Bonfim?",
+      "resposta": "A mais tradicional é a Escola Estadual Dom João Nery, na Rua Erasmo Braga, criada em 1932 como Grupo Escolar do Bonfim. Na vizinha Vila Rossi Borghi e Siqueira há o CEI Cônego Manoel Garcia, municipal, de educação infantil."
+    },
+    {
+      "pergunta": "O Bonfim tem mais casas ou apartamentos?",
+      "resposta": "Historicamente, casas. Hoje o bairro passa por verticalização gradual, e a base da ONDEMORAR identifica cerca de 65 condomínios, quase todos verticais, com prédios de até 17 andares."
+    },
+    {
+      "pergunta": "A Torre do Castelo fica no Bonfim?",
+      "resposta": "Fica nas imediações, na divisa com o Jardim Chapadão. O antigo reservatório, de 1936 a 1940, foi tombado pelo Condepacc em 2008."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "PUC-Campinas — Notícia Bibliográfica e Histórica, \"Bonfim: origem e formação\" (Duília Battistoni Filho)",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "PUC-Campinas — Notícia Bibliográfica e Histórica, \"Os primórdios de Campinas\" (Odilon Nogueira de Matos)",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Correio da Manhã — Torre do Castelo: farol de concreto que acolhe a cidade do alto (5/1/2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar — Como é morar em Bonfim, Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Escol.as — CEI Cônego Manoel Garcia",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Wikimedia Commons — fotos do Bonfim e da Torre do Castelo",
+      "site": "commons.wikimedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Bonfim, um dos bairros mais antigos de Campinas: nasceu do loteamento de uma fazenda, foi bairro de imigrantes e operários e cresceu em torno da Avenida Governador Pedro de Toledo. Hoje mistura casas antigas e prédios novos, perto do Centro e da Torre do Castelo. Leia o guia completo do bairro pelo link da bio.",
+    "hashtags": [
+      "bonfim",
+      "campinas",
+      "bairrosdecampinas",
+      "torredocastelo",
+      "morarbem",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Bonfim, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.499Z"
+}

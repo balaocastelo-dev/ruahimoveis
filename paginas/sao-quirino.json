@@ -1,0 +1,312 @@
+{
+  "slug": "sao-quirino",
+  "titulo": "São Quirino, Campinas: como é morar no bairro da antiga fazenda",
+  "resumo": "Guia do São Quirino, em Campinas: a antiga fazenda, o loteamento dos anos 1960, a Estação Anhumas, o Galleria e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Prédio da Estação Anhumas, de 1926, ponto de partida da Maria Fumaça",
+      "alt": "Prédio térreo amarelo de estação ferroviária com telhado de telha e janelas altas, junto a uma rua asfaltada",
+      "commons": "File:Estação Anhumas, Campinas • 4.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Plataforma da Estação Anhumas com o letreiro do nome na fachada",
+      "alt": "Fachada amarela com o letreiro Anhumas, plataforma coberta e vagões de madeira vermelhos ao lado",
+      "commons": "File:Estação Anhumas, Campinas • 3.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Locomotiva a vapor 338 sobre o pontilhão perto da Estação Anhumas",
+      "alt": "Locomotiva a vapor preta com a inscrição VFCO passando sobre um pontilhão de pedra",
+      "commons": "File:Estação Anhumas, Campinas • Maria Fumaça 338 (a).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Vagões de passageiros parados nos trilhos da Estação Anhumas",
+      "alt": "Dois trens de vagões vermelhos com frisos amarelos, um de cada lado de uma plataforma de cascalho",
+      "commons": "File:Estação Anhumas, Campinas • trilhos paralelos à plataforma.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Entrada do Galleria Shopping, às margens da Rodovia Dom Pedro I",
+      "alt": "Avenida com palmeiras, mastro com a bandeira do Brasil e a fachada vermelha de um shopping ao fundo",
+      "commons": "File:Shopping galleria campinas.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Lagoa do Taquaral, no Parque Portugal, com a fonte e a réplica da caravela",
+      "alt": "Lago com uma fonte de água em primeiro plano e uma caravela de velas brancas ao fundo, entre árvores",
+      "commons": "File:Lagoa Isaura Teles Alves de Lima.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Pista de terra em volta da Lagoa do Taquaral, no Parque Portugal",
+      "alt": "Caminho largo de terra batida com eucaliptos e palmeiras dos lados",
+      "commons": "File:Estrada de caminhada da Lagoa do Parque Taquaral - panoramio.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **São Quirino** é uma área da região Leste de Campinas que nasceu do loteamento da antiga **Fazenda São Quirino**, logo depois da Lagoa do Taquaral. Hoje o nome cobre dois bairros vizinhos: o **Parque São Quirino**, de casas em lotes amplos, aberto nos anos 1960, e a **Fazenda São Quirino**, onde os prédios e condomínios mais novos se espalham em direção à Rodovia Dom Pedro I."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o São Quirino junta duas coisas que raramente andam juntas em Campinas: rua residencial tranquila e acesso rápido a uma rodovia, a um shopping grande e à Lagoa do Taquaral. Nesta página você encontra a história da fazenda, o perfil dos imóveis, o que há por perto e os pontos que vale pesar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Região Leste de Campinas, entre o Taquaral e a Rodovia Dom Pedro I.",
+        "Nasceu do loteamento da Fazenda São Quirino, que em 1968 tinha 520 alqueires, segundo o jornal O Estado de S. Paulo.",
+        "Parque São Quirino: casas em ruas residenciais; Fazenda São Quirino: prédios e condomínios mais recentes.",
+        "A Estação Anhumas, ponto de partida da Maria Fumaça até Jaguariúna, fica a menos de 1 km do centro do bairro.",
+        "O Galleria Shopping fica no km 131,5 da Rodovia Dom Pedro I, na mesma região.",
+        "A base da ONDEMORAR identifica cerca de 20 condomínios na área, o mais alto com 22 andares."
+      ],
+      "titulo": "O São Quirino em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o nome São Quirino"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro herdou o nome da **Fazenda São Quirino**. Uma reportagem de *O Estado de S. Paulo* de 12 de setembro de 1968, preservada pelo Centro de Memória da Unicamp, descreve a propriedade como situada pouco além da lagoa do Taquaral, praticamente dentro da área urbana. A fazenda pertencia a **Paulo Almeida Nogueira**, avô do ex-secretário estadual da Agricultura José Bonifácio Coutinho Nogueira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo texto dá a escala do lugar: 520 alqueires, cerca de 840 cabeças de gado holandês, produção de aproximadamente 4 mil litros de leite por dia, 130 mil pés de café e um haras. A casa-grande, branca, podia hospedar até 50 pessoas. A fazenda recebeu visitantes ilustres: o príncipe Philip, da Inglaterra, e, naquele setembro de 1968, o presidente do Chile, Eduardo Frei, que passou a manhã ali antes de embarcar em Viracopos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ligação da região com a família Quirino é antiga. O registro histórico da primeira **Estação Anhumas**, aberta pela Companhia Mogiana em 1875, conta que ela ficava junto ao rio Anhumas, em terras vizinhas às \"fazendas dos Quirinos\", segundo o acervo do site Estações Ferroviárias."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o Parque São Quirino foi loteado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma reportagem de 1968 informa que parte dos 520 alqueires tinha sido loteada pouco antes, dando origem ao **Parque São Quirino**, com lotes de alto valor. Os decretos da Prefeitura confirmam a ocupação: o Decreto nº 3.128, de 1968, deu à antiga Rua 5 do loteamento o nome de **Rua Dr. Joaquim de Castro Tibiriçá**, e o Decreto nº 6.114, de 1980, batizou a **Praça Moysés Marques dos Santos**, entre as ruas Sidney, Viena e Maria Luiza Furlani Merchert."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O loteamento continua avançando sobre o que sobrou da fazenda. Em março de 2023, o Decreto nº 22.715 aprovou o loteamento **Jatiúna**, numa gleba remanescente da Fazenda São Quirino entre o Residencial Galeria Garden e o km 131 da Rodovia Dom Pedro I. O decreto prevê ligação com o Trevo Galleria, acesso pela Avenida Carlos Grimaldi, um parque linear e área para equipamento público."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no São Quirino"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque São Quirino é, em boa parte, um bairro de casas: ruas residenciais, lotes grandes e pouco comércio no meio das quadras. Algumas ruas levam nomes de cidades do mundo, como Viena e Sidney. É o perfil de quem quer quintal, garagem para mais de um carro e silêncio à noite."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Fazenda São Quirino e no entorno do Galleria, o desenho muda. A base de condomínios da ONDEMORAR identifica cerca de 20 condomínios na área, metade verticais e metade horizontais, com perto de 870 unidades registradas. O prédio mais alto da base tem 22 andares. Há também condomínios fechados de casas e lançamentos de apartamentos com lazer completo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, quem mora ali costuma depender do carro para a maior parte das tarefas, mas encontra padarias, mercados e restaurantes a poucos minutos. Na base de serviços da ONDEMORAR, há mais de 30 mercados e padarias e mais de 80 restaurantes e cafés num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "imoveis"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Estação Anhumas e a Maria Fumaça"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O marco histórico mais próximo do bairro é a **Estação Anhumas**, a menos de 1 km do centro do São Quirino. O prédio atual foi inaugurado em 12 de outubro de 1926, quando a Mogiana retificou a linha, e fica a cerca de 200 metros do local da estação original. O nome vem do ribeirão das Anhumas, que passa ali perto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Desativada pela Fepasa em 1977, a estação ficou abandonada até 1981, quando a **Associação Brasileira de Preservação Ferroviária** (ABPF) a assumiu e restaurou. Hoje é o ponto de embarque do trem turístico a vapor da Viação Férrea Campinas-Jaguariúna, num percurso de cerca de 24 km pelos trilhos da antiga Mogiana, segundo o Sesc São Paulo. O trecho preservado é tombado pelo Condepacc."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A estação também serve de cenário para filmes de época com locomotivas a vapor. Para quem mora no bairro, é um passeio de fim de semana a poucos minutos de casa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Parques e lazer perto do São Quirino"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O São Quirino fica na vizinhança do **Parque Portugal**, mais conhecido como **Lagoa do Taquaral**, inaugurado oficialmente em 5 de novembro de 1972. A lagoa tem pista de terra de 2,75 km para caminhada e corrida, pedalinhos, a réplica da caravela de Cabral, a Concha Acústica, o Planetário de Campinas, quadras e o Balneário Municipal Marlene Porto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do próprio bairro, a base da ONDEMORAR aponta uma área verde chamada Parque São Quirino a cerca de 300 metros do centro, além de academias e quadras particulares no entorno. Num raio de 1,5 km, a base lista mais de 20 parques, praças e espaços de esporte."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compras, escolas e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, a referência é o **Galleria Shopping**, no km 131,5 da Rodovia Dom Pedro I. Administrado pela Iguatemi, ele tem dois pisos, cerca de 205 lojas, cinco salas de cinema e um jardim interno de mais de 7 mil m². A ampliação inaugurada em 2012 acrescentou 63 lojas. Em volta do shopping há outros centros comerciais menores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na educação, a base da ONDEMORAR lista mais de 20 escolas e cursos num raio de 1,5 km, entre escolas de educação infantil, colégios particulares e polos de ensino superior. Na saúde, a base aponta farmácias e clínicas no entorno; para atendimento hospitalar, informe-se sobre o hospital de referência do seu plano. Antes de decidir, confira vagas e distâncias reais da escola que você tem em vista."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O grande trunfo do São Quirino é a **Rodovia Dom Pedro I** (SP-065), que liga a região de Campinas ao Vale do Paraíba e passa por cidades como Valinhos, Itatiba, Atibaia e Jacareí. Pelo trevo do Galleria, quem mora no bairro chega à rodovia em poucos minutos e daí às saídas para Jaguariúna, Paulínia, Sousas e Joaquim Egídio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O acesso ao Taquaral e ao centro de Campinas é feito pelas avenidas da região Leste. A Avenida Carlos Grimaldi, citada no decreto do loteamento Jatiúna, é uma das ligações com o trevo. Vale fazer o trajeto até o trabalho em horário de pico antes de fechar negócio, porque o movimento do shopping e das alças da rodovia pesa no tempo de viagem."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos do São Quirino"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro faz parte da região Leste de Campinas, a mesma do **Taquaral**, do Alto do Taquaral e do Jardim das Paineiras, segundo a divisão por regiões usada pela Prefeitura. Do lado do Taquaral fica a lagoa do Parque Portugal; do lado da rodovia, a área do Galleria reúne o shopping e centros comerciais menores."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o São Quirino faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O São Quirino costuma agradar a quem trabalha fora de Campinas ou viaja com frequência pela Dom Pedro, a famílias que querem casa com quintal ou apartamento em condomínio com lazer, e a quem gosta de ter a Lagoa do Taquaral e um shopping grande por perto sem morar no meio do movimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pode não servir para quem quer resolver tudo a pé ou depende só de ônibus. As distâncias entre casa, escola e comércio pedem carro, e o entorno da rodovia segue recebendo novos loteamentos, o que muda o trânsito e a paisagem com o tempo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte se a rua fica no Parque São Quirino ou na Fazenda São Quirino, qual é o caminho até o trevo do Galleria e se há obras ou loteamentos novos previstos nas glebas vizinhas.",
+      "titulo": "Antes de visitar um imóvel"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O São Quirino é bom para morar?",
+      "resposta": "Para quem tem carro e quer rua residencial com acesso rápido à Rodovia Dom Pedro I, ao Galleria Shopping e à Lagoa do Taquaral, sim. Quem depende de ônibus ou quer fazer tudo a pé pode achar as distâncias grandes."
+    },
+    {
+      "pergunta": "Qual a diferença entre Parque São Quirino e Fazenda São Quirino?",
+      "resposta": "Os dois saíram da mesma fazenda. O Parque São Quirino foi loteado nos anos 1960 e tem sobretudo casas; a Fazenda São Quirino reúne prédios e condomínios mais recentes, perto da rodovia."
+    },
+    {
+      "pergunta": "Em que região de Campinas fica o São Quirino?",
+      "resposta": "Na região Leste, perto do Taquaral e às margens da Rodovia Dom Pedro I, na altura do km 131."
+    },
+    {
+      "pergunta": "De onde vem o nome São Quirino?",
+      "resposta": "Da antiga Fazenda São Quirino, que pertencia a Paulo Almeida Nogueira e tinha 520 alqueires em 1968, segundo O Estado de S. Paulo."
+    },
+    {
+      "pergunta": "A Maria Fumaça sai perto do São Quirino?",
+      "resposta": "Sim. A Estação Anhumas, ponto de partida do trem turístico até Jaguariúna, fica a menos de 1 km do centro do bairro."
+    },
+    {
+      "pergunta": "Qual shopping fica perto do São Quirino?",
+      "resposta": "O Galleria Shopping, no km 131,5 da Rodovia Dom Pedro I, com cerca de 205 lojas e cinema."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp — O Estado de S. Paulo, 12/09/1968, \"Último dia, na fazenda\"",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp — Decretos municipais nº 3.128 (1968) e nº 6.114 (1980)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas — Diário Oficial nº 13.048, Decreto nº 22.715/2023",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Estações Ferroviárias do Brasil — Anhumas e Anhumas-nova",
+      "site": "estacoesferroviarias.com.br"
+    },
+    {
+      "nome": "Sesc São Paulo — Nos trilhos da história",
+      "site": "sescsp.org.br"
+    },
+    {
+      "nome": "Wikipédia — Parque Portugal, Galleria Shopping, Rodovia Dom Pedro I e Taquaral (Campinas)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "QuintoAndar Guias — shoppings em Campinas",
+      "site": "quintoandar.com.br"
+    }
+  ],
+  "redes": {
+    "legenda": "Você sabia que o São Quirino, em Campinas, nasceu de uma fazenda de café e leite que já recebeu o príncipe Philip e o presidente do Chile? Hoje o bairro junta casas em ruas tranquilas, condomínios novos, a Estação Anhumas da Maria Fumaça e o acesso rápido à Dom Pedro. Leia o guia completo do bairro no link da bio.",
+    "hashtags": [
+      "saoquirino",
+      "campinas",
+      "parquesaoquirino",
+      "morarbem",
+      "guiadebairro",
+      "mariafumaca",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "São Quirino, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:19:31.013Z"
+}

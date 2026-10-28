@@ -1,0 +1,318 @@
+{
+  "slug": "jardim-nova-europa",
+  "titulo": "Jardim Nova Europa, Campinas: como é morar no bairro da Região Sul",
+  "resumo": "Guia do Jardim Nova Europa, em Campinas: origem do loteamento, Bosque dos Guarantãs, Avenida Baden Powell, prédios, casas e acessos da Região Sul.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "O lago do Bosque dos Guarantãs, com casas do bairro ao fundo",
+      "alt": "Lago de água verde com patos, cercado de grama, árvores e casas ao fundo",
+      "commons": "File:Lago - panoramio - enioprado.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Vista do Jardim Nova Europa, com casas de telhado cerâmico e prédios ao fundo",
+      "alt": "Bairro visto do alto, com muitas casas de telhado laranja, prédios baixos e torres altas no horizonte",
+      "commons": "File:Jardim Nova Europa-Campinas - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Avenida Estados Unidos, eixo central do bairro, em foto de 2009",
+      "alt": "Avenida asfaltada com árvores grandes de um lado e casas com portões do outro",
+      "commons": "File:Av Estados Unidos - Jardim Nova Europa - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Casas e prédios do Jardim Nova Europa, com a torre de uma igreja entre eles",
+      "alt": "Igreja rosa com torre pontuda no meio de casas, com um edifício alto atrás",
+      "commons": "File:Jardim Nova Europa - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Ciclovia no canteiro central da Avenida Baden Powell",
+      "alt": "Ciclovia vermelha e cinza no canteiro gramado de uma avenida, com árvores e lojas dos dois lados",
+      "commons": "File:Avenida Baden Powell, Jardim Nova Europa (3).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Praça Casa da Criança Paralítica de Campinas, na Avenida Baden Powell",
+      "alt": "Totem com o nome da praça em um gramado com arbustos, ao lado de uma avenida com ônibus",
+      "commons": "File:Avenida Baden Powell, Jardim Nova Europa (9).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Avenida Baden Powell, com comércio, árvores e um prédio residencial ao fundo",
+      "alt": "Avenida larga com canteiro arborizado, carros estacionados e uma torre residencial clara",
+      "commons": "File:Avenida Baden Powell, Jardim Nova Europa (8).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Nova Europa** é um bairro residencial da Região Sul de Campinas, entre o Jardim Leonor, o Parque Prado, o Parque da Figueira e o Jardim do Trevo. Mistura ruas de casas térreas e sobrados com condomínios de prédios mais recentes, tem comércio de bairro concentrado nas avenidas Baden Powell e Estados Unidos e guarda uma área verde conhecida na região, o Bosque dos Guarantãs."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece uma rotina resolvida por perto, ciclovia no canteiro central de uma das avenidas principais e acesso rápido a rodovias como a Anhanguera e a Santos Dumont. Este guia reúne a origem do loteamento, o perfil dos imóveis, o lazer, os serviços e os acessos, com base em fontes públicas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da Região Sul de Campinas, vizinho do Parque Prado e do Jardim Leonor",
+        "Casas e sobrados em ruas arborizadas, com condomínios de prédios em várias quadras",
+        "Nasceu como loteamento de uma imobiliária chamada Nova Europa, que deu nome ao bairro",
+        "Muitas ruas homenageiam países das Américas; outras levam nomes de cidades paulistas",
+        "Abriga o Bosque dos Guarantãs, com mais de 87 mil m², lago e pista de cooper",
+        "Comércio nas avenidas Baden Powell e Estados Unidos; a Baden Powell tem ciclovia",
+        "Acesso às rodovias Anhanguera, Santos Dumont e Visconde de Porto Seguro"
+      ],
+      "titulo": "O Jardim Nova Europa em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "História e origem do nome Nova Europa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o historiador Wagner Paulo dos Santos, citado no verbete do bairro na Wikipédia, a área era uma grande fazenda da família Pessanha. Depois que as terras passaram à Prefeitura, uma empresa imobiliária chamada **Nova Europa** fez o loteamento, e os vereadores adotaram o nome da loteadora para o bairro que nascia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome lembra o Velho Continente, mas as ruas seguiram outro caminho. Em 1956, a Câmara Municipal decidiu batizar boa parte delas com nomes de países das Américas, sobretudo da América Central e do Caribe, em vez de personalidades históricas. Por isso você encontra no bairro ruas como Guatemala, Cuba, El Salvador e Nicarágua, e a avenida principal se chama **Estados Unidos**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outra camada de nomes veio por lei. A Lei nº 2.139, de 9 de setembro de 1959, assinada pelo prefeito José Nicolau Ludgero Maselli e guardada no acervo do Centro de Memória da Unicamp, trocou números por nomes em ruas do Jardim Nova Europa e de loteamentos vizinhos, como Parque da Figueira e Vila Lemos. Muitos dos nomes escolhidos são de cidades paulistas: a antiga Avenida 6, por exemplo, passou a se chamar São José dos Campos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro já aparecia nas obras municipais no fim dos anos 1960. Uma reportagem de *O Estado de S. Paulo* de 14 de julho de 1968, sobre o aniversário de Campinas, lista o Jardim Nova Europa entre os bairros que receberam os chamados parques-escolas naquele ano."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Nova Europa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Nova Europa é descrito como um bairro de classe média, majoritariamente residencial, com ruas e praças arborizadas e uma mistura de trechos tradicionais com imóveis de padrão mais alto. Na prática, isso significa quadras de casas térreas e sobrados com quintal ao lado de condomínios verticais construídos nas últimas décadas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022, identifica cerca de 26 condomínios no bairro, a maior parte verticais, somando perto de 3 mil unidades. Chama atenção um grupo de residenciais com nomes de pedras preciosas, como Topázio Ville, Ágata Ville, Ametista Ville e Turqueza Ville, em geral prédios de cinco andares com centenas de apartamentos cada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma base registra uma associação de moradores que reúne o Jardim Nova Europa I e II, o Parque da Figueira, o Parque São Martinho, a Vila Campos Salles e o Jardim do Trevo, sinal de que esses bairros funcionam, no dia a dia, como uma vizinhança só. Se você procura casa com quintal, o bairro tem oferta; se prefere apartamento em condomínio com lazer, também."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bosque dos Guarantãs, praças e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Bosque dos Guarantãs** fica na Rua Santa Rita do Passa Quatro, dentro do Jardim Nova Europa. Segundo o guia Visite São Paulo, o espaço tem mais de 87 mil m², dos quais cerca de 23 mil m² são de mata nativa. Há lago com cachoeira, quadras poliesportivas, campo de futebol, pista para cooper, churrasqueiras, parquinho e banheiros."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo guia informa que o bosque aceita animais de estimação, tem acessibilidade para cadeirantes e pessoas com mobilidade reduzida e abre todos os dias, das 6h às 18h. Nos fins de semana, é comum ver gente correndo e fazendo piquenique. Vale confirmar o horário antes de ir, porque a informação é de 2024."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Praça de Esportes Pompeo de Vitto**, na Rua Plínio Pereira Neves, é outro ponto de lazer citado entre os mais conhecidos do bairro. O centro da vida comunitária é a **Praça Pan Americana**, onde está a **Paróquia Santa Cruz**, fundada em 1963 por voluntários que construíram o salão paroquial e levantaram recursos com festas e eventos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pedala tem a ciclovia da **Avenida Baden Powell**, no canteiro central, usada por ciclistas e por quem treina ao ar livre. Em agosto de 2018, a Prefeitura entregou duas ciclovias no Jardim Nova Europa, segundo o registro fotográfico oficial do evento publicado no Wikimedia Commons. O Parque das Águas, nas proximidades, completa as opções de área verde."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e compras"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia se concentra em duas avenidas: a **Baden Powell** e a **Estados Unidos**. Ali ficam lojas, supermercados, farmácias, padarias e restaurantes de comida simples. O levantamento de serviços desta página, feito com dados do OpenStreetMap e da Overture, conta mais de 50 mercados e padarias e mais de 100 restaurantes, bares e cafés num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o bairro fica perto de dois shoppings: o **Shopping Prado Boulevard**, a pouco mais de 1 km do Bosque dos Guarantãs, e o **Campinas Shopping**, também a cerca de 1,3 km da Paróquia Santa Cruz, segundo as distâncias do guia de viagem Buser."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e saúde perto do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo levantamento identifica cerca de 25 escolas num raio de 1,5 km, entre escolas municipais e particulares, de educação infantil ao ensino fundamental. Antes de escolher o imóvel, consulte a Secretaria de Educação de Campinas para saber qual escola pública atende o seu endereço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde, o levantamento conta cerca de 20 pontos de atendimento no mesmo raio, entre farmácias, clínicas e hospitais. A lista completa, com a distância de cada lugar, aparece na seção de serviços próximos desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, avenidas e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As vias que estruturam o bairro são as avenidas **Baden Powell**, **Estados Unidos**, **São José dos Campos** e **Santa Bárbara do Rio Pardo**. Segundo a Wikipédia, o Jardim Nova Europa tem boa ligação com o Centro e com as regiões Oeste e Norte de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para sair da cidade, o bairro tem acesso rápido às rodovias **Anhanguera**, **Santos Dumont** e **Visconde de Porto Seguro**, o que facilita viagens para Indaiatuba, Valinhos e Vinhedo. A Região Sul de Campinas, onde o bairro está, faz divisa com Indaiatuba e Valinhos e é cortada pelas rodovias Anhanguera e Bandeirantes."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Nova Europa faz divisa com o **Jardim Leonor** ao norte, o **Parque Prado** a leste, o **Parque da Figueira** ao sul e o **Jardim do Trevo** a oeste. O Parque Prado, vizinho imediato, fica a cerca de 4 km do Centro e a 3 km da Rodovia Anhanguera, e é formado em boa parte por condomínios fechados, segundo a Wikipédia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, a vizinhança funciona de forma integrada: a associação de moradores registrada na base da ONDEMORAR reúne vários desses loteamentos, e o Shopping Prado Boulevard e o Campinas Shopping ficam a pouco mais de 1 km do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Nova Europa faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma atender bem quem quer morar na Região Sul com comércio a poucas quadras, área verde de verdade por perto e saída fácil para as rodovias. Famílias que procuram casa com quintal encontram ruas tradicionais de casas; quem prefere apartamento tem condomínios verticais com áreas de lazer."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "As avenidas Baden Powell e Estados Unidos concentram o comércio e, por isso, o movimento. Se você valoriza silêncio, compare imóveis nas ruas internas com os de frente para essas avenidas, e visite em horários diferentes do dia.",
+      "titulo": "Antes de decidir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como em qualquer bairro, vale olhar a rua, a distância até o Bosque dos Guarantãs e até a avenida mais próxima, e o perfil do condomínio. A ONDEMORAR ajuda você a comparar opções no Nova Europa e nos bairros vizinhos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Jardim Nova Europa, em Campinas?",
+      "resposta": "Na Região Sul de Campinas. O bairro faz divisa com o Jardim Leonor ao norte, o Parque Prado a leste, o Parque da Figueira ao sul e o Jardim do Trevo a oeste."
+    },
+    {
+      "pergunta": "O Jardim Nova Europa é bom para morar?",
+      "resposta": "Para quem busca um bairro residencial de classe média com comércio por perto, o Bosque dos Guarantãs e acesso fácil a rodovias, sim. O ponto de atenção é o movimento nas avenidas Baden Powell e Estados Unidos, que concentram o comércio."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Nova Europa?",
+      "resposta": "O nome vem da imobiliária Nova Europa, que fez o loteamento. Os vereadores adotaram o nome da empresa para o bairro, segundo o historiador Wagner Paulo dos Santos."
+    },
+    {
+      "pergunta": "O que tem no Bosque dos Guarantãs?",
+      "resposta": "Lago com cachoeira, quadras poliesportivas, campo de futebol, pista de cooper, churrasqueiras, parquinho e banheiros, em mais de 87 mil m², com cerca de 23 mil m² de mata nativa. Abre todos os dias, das 6h às 18h, segundo o guia Visite São Paulo."
+    },
+    {
+      "pergunta": "Quais são as principais avenidas do Jardim Nova Europa?",
+      "resposta": "Baden Powell, Estados Unidos, São José dos Campos e Santa Bárbara do Rio Pardo. A Baden Powell tem ciclovia no canteiro central."
+    },
+    {
+      "pergunta": "Tem shopping perto do Jardim Nova Europa?",
+      "resposta": "Sim. O Shopping Prado Boulevard e o Campinas Shopping ficam a pouco mais de 1 km do bairro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Wikipédia, verbete Jardim Nova Europa (Campinas)",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikipédia, verbetes Parque Prado e Região Sul de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, Lei nº 2.139 de 9 de setembro de 1959 (denominação de ruas)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, O Estado de S. Paulo, reportagem de 14 de julho de 1968 sobre obras em Campinas",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Visite São Paulo, passeios ao ar livre em Campinas (Bosque dos Guarantãs)",
+      "site": "visitesaopaulo.com"
+    },
+    {
+      "nome": "Buser Destinos, Paróquia Santa Cruz, Bosque dos Guarantãs e Praça de Esportes Pompeo de Vitto",
+      "site": "buser.com.br"
+    },
+    {
+      "nome": "Wikimedia Commons, fotos oficiais da entrega de ciclovias no Jardim Nova Europa (agosto de 2018)",
+      "site": "commons.wikimedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Nova Europa, na Região Sul de Campinas: um bairro que ganhou o nome da imobiliária que o loteou e ruas batizadas com países das Américas. Tem o Bosque dos Guarantãs, com lago e mata nativa, ciclovia na Avenida Baden Powell e saída rápida para as rodovias. Preparamos um guia com a história, o lazer, os serviços e o que considerar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "jardimnovaeuropa",
+      "novaeuropa",
+      "campinas",
+      "regiaosul",
+      "bosquedosguarantas",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Nova Europa, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.584Z"
+}

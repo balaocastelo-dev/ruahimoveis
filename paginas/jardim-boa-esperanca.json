@@ -1,0 +1,310 @@
+{
+  "slug": "jardim-boa-esperanca",
+  "titulo": "Jardim Boa Esperança, Campinas: como é morar no bairro da Região Leste",
+  "resumo": "Guia do Jardim Boa Esperança, em Campinas: história do loteamento, a antiga linha 14 do bonde, escolas, prédios, acessos e os bairros vizinhos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Bonde nº 126 da linha Boa Esperança em outubro de 1968, no acervo do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco de um bonde aberto com passageiros sobre trilhos, com barranco e árvores ao fundo",
+      "commons": "File:Linha- Boa Esperança. Bondes em Campinas, Centro de Memória - Unicamp (APS 1.1.5-76).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Bonde elétrico nº 114 com a placa da linha 14, a linha Boa Esperança",
+      "alt": "Foto em preto e branco de um bonde de frente com o número 14 no alto, motorneiro na cabine e casas ao fundo",
+      "commons": "File:Bonde elétrico nº 114, no trecho , Centro de Memória - Unicamp (APS 1.1.5-78).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Bonde nº 121 no Taquaral, bairro vizinho, em foto do acervo do Centro de Memória da Unicamp",
+      "alt": "Foto em preto e branco de um bonde fazendo uma curva em trilhos de terra, com postes e terreno aberto",
+      "commons": "File:Bonde n° 121, no Taquaral, Centro de Memória - Unicamp (APS 1.1.5-74).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Vista noturna da região do Jardim Flamboyant, vizinho do Jardim Boa Esperança",
+      "alt": "Prédios residenciais iluminados à noite no alto, com casas baixas na encosta em primeiro plano",
+      "commons": "File:Região do B. Jardim Flamboyant, Campinas SP.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Fachada do Shopping Iguatemi Campinas, um dos shoppings da Região Leste",
+      "alt": "Fachada de shopping com letreiro Iguatemi, cúpula de vidro, palmeiras e estacionamento cheio de carros",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Boa Esperança** é um bairro residencial da Região Leste de Campinas, perto do Jardim Flamboyant, da Chácara da Barra e do Taquaral. É um loteamento antigo, já registrado em leis municipais da década de 1950, onde casas térreas e sobrados dividem as ruas com prédios baixos e com condomínios de apartamentos mais recentes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura imóvel ali encontra um bairro de escala pequena, com escolas municipais e creches dentro dele e comércio de bairro por perto, a poucos minutos de shoppings e de avenidas da Região Leste. Este guia reúne o que os documentos e as fontes públicas contam sobre a história, a rotina e os acessos do bairro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial da Região Leste de Campinas",
+        "Loteamento que já aparece em lei municipal de 1953",
+        "Foi atendido pela linha 14 do bonde, chamada Boa Esperança, até o fim dos bondes em 1968",
+        "Mistura casas, prédios baixos e condomínios de apartamentos compactos",
+        "Tem escola municipal de ensino fundamental e creches públicas dentro do bairro",
+        "Vizinho do Jardim Flamboyant, da Chácara da Barra e do Taquaral"
+      ],
+      "titulo": "O Jardim Boa Esperança em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história do loteamento Jardim Boa Esperança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro nasceu como loteamento, com ruas que de início tinham apenas números. O Centro de Memória da Unicamp guarda o registro da **Lei nº 1.898, de 1º de julho de 1953**, assinada pelo prefeito Ruy Hellmeister Novaes, que deu o nome de **Rua João Quirino do Nascimento** à antiga Rua 4 do Jardim Boa Esperança, que começava na Avenida 1 do loteamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Poucos anos depois, uma lei de 1959, promulgada na gestão do prefeito José Nicolau Ludgero Maselli, batizou de **Rua Boa Esperança** uma via que unia trechos do Jardim Flamboyant e do Jardim Boa Esperança. O documento, digitalizado pelo mesmo Centro de Memória, mostra que os dois loteamentos já estavam ligados desde aquela época."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outras ruas do bairro receberam nomes de pessoas nas décadas seguintes. O acervo do urbanista Arthur Nazareno Pereira Villagelin, também no Centro de Memória da Unicamp, reúne documentos de 1978 sobre ruas como a **Rua Lucia Helena Zampieri**, a **Rua Manoel Mendes Sansano** e a **Rua Miguel Arnaldo Anderson**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na mesma Rua João Quirino do Nascimento, a praça sem nome que ficava entre ela e a Rua Artur M. de Castro, na Vila Mimosa, passou a se chamar **Praça Independência do Brasil** por um decreto de 8 de julho de 1981, assinado pelo prefeito José Roberto Magalhães Teixeira."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A linha 14 do bonde, a Boa Esperança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome do bairro também batizou uma linha de bonde. Campinas teve bondes puxados a burro a partir de 1879 e bondes elétricos a partir de 24 de junho de 1912, segundo um levantamento publicado pela PUC-Campinas. O serviço elétrico terminou em 1968, quando os ônibus assumiram o transporte."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as linhas da cidade estava a **linha 14, Boa Esperança**. O Centro de Memória da Unicamp tem fotos dela feitas por Aristides Pedro da Silva em outubro de 1968, na despedida dos bondes, e um diapositivo colorido dos anos 1960 que mostra o bonde quatorze passando por uma área do Jardim Boa Esperança. Uma das fotos registra o bonde nº 114 circulando pela Rua Doutor Quirino, no Centro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na época, boa parte do trajeto passava por terrenos ainda pouco ocupados, como se vê nas imagens. Uma anotação no verso de uma foto do acervo, de 1969 ou 1970, diz que a linha era conhecida popularmente como *Fura Zóio*. Os trilhos sumiram, mas o nome Boa Esperança continua no bairro e na rua."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Boa Esperança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem perfil residencial. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 20 condomínios no Jardim Boa Esperança, a maior parte verticais, somando perto de 380 unidades. São prédios de pouca altura: o mais alto da base tem 13 andares, e vários têm de dois a quatro pavimentos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos últimos anos, o bairro passou a receber lançamentos de apartamentos compactos. O portal apto.vc, que reúne imóveis na planta, aponta que as unidades novas do Jardim Boa Esperança têm em média cerca de 41 m², em condomínios fechados com área de lazer, e cita a Rua Manoel Mendes Sansano entre as mais procuradas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre esses prédios continuam as casas e os sobrados das primeiras décadas do loteamento, o que dá às ruas uma escala baixa. Para quem quer apartamento, a oferta é de imóveis menores e mais novos; para quem prefere casa, há unidades térreas e assobradadas nas ruas internas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e creches no bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Boa Esperança tem escolas públicas dentro dos seus limites, segundo os dados do Censo Escolar reunidos pelo portal Escol.as:"
+    },
+    {
+      "tipo": "lista",
+      "itens": [
+        "**EMEF Dr. Lourenço Bellocchio**, na Rua Lucia Helena Zampieri: escola municipal de ensino fundamental, anos iniciais e finais, com biblioteca, sala de leitura e parque infantil",
+        "**CEI Profa. Noemia Cardoso Asbahr**, na Rua Professor René de Oliveira Barreto: creche e pré-escola municipais",
+        "**CEI Maria Aparecida Vilela Gomes Julio**, na Rua Doutor João Quirino do Nascimento: creche municipal",
+        "**Escola Estadual Professor Joaquim Ferreira Lima**, na vizinha Vila Trinta e Um de Março: ensino fundamental e ensino médio"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Considerando um raio de 1,5 km a partir do centro do bairro, o levantamento da ONDEMORAR com dados do Overture Maps e do OpenStreetMap encontra cerca de 18 escolas, entre públicas e particulares. A lista com as mais próximas e o tempo a pé aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio do dia a dia fica nas ruas do próprio bairro e nas vizinhas: mercados, açougues, padarias, farmácias, marmitarias e sorveterias. No mesmo raio de 1,5 km, o levantamento da ONDEMORAR conta cerca de 30 mercados e padarias, mais de 60 restaurantes e cafés e perto de 15 farmácias e serviços de saúde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, a Região Leste concentra três shoppings conhecidos de Campinas, o **Iguatemi**, o **Galleria** e o **Parque Dom Pedro**. O Shopping Iguatemi aparece entre os pontos próximos citados pelo QuintoAndar para os condomínios do Jardim Boa Esperança. Agências bancárias e postos de combustível ficam no entorno, a cerca de 1 km."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessos e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo mapa do OpenStreetMap, o Jardim Boa Esperança fica na área que o mapa associa à Chácara da Barra e ao Parque Brasília, cortado por vias como a **Avenida Martinho Nogueira** e a **Avenida Doutor Bernardo Kaplan**. Nas redondezas, o QuintoAndar lista condomínios na Rua Doutor João Quirino do Nascimento, na Rua Artur Urbano de Andrade, na Rua Paraibuna e na Rua Presidente Bernardes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Região Leste de Campinas é cortada em boa parte pela **Rodovia Dom Pedro I**, que liga a cidade a outras regiões do estado. Anúncios de imóveis do bairro falam em cerca de 15 minutos até o Centro, mas o tempo real depende do horário. Antes de decidir, vale testar o trajeto até o trabalho e a escola nos horários de pico."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os vizinhos: Flamboyant, Chácara da Barra e Taquaral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Boa Esperança faz parte de um grupo de bairros residenciais da Região Leste. O portal apto.vc cita, entre os bairros próximos que os compradores também consideram, o **Jardim Flamboyant**, o **Jardim Alto da Barra**, o **Jardim Nossa Senhora Auxiliadora**, a **Chácara da Barra** e o **Taquaral**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Flamboyant está ligado ao Boa Esperança por ruas comuns desde os anos 1950. O Taquaral é conhecido pelo parque da Lagoa, onde, segundo a Wikipédia, há bondinho, barco com mirante e pedalinho. Para quem mora no Boa Esperança, os parques maiores ficam nesses bairros vizinhos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Boa Esperança faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tende a agradar a quem quer morar na Região Leste em um bairro residencial de escala baixa, com creche e escola municipal na vizinhança e comércio de bairro para o dia a dia. Os apartamentos compactos dos lançamentos recentes atendem bem quem mora sozinho, casais e quem busca o primeiro imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção: os parques e os grandes equipamentos de lazer ficam nos bairros vizinhos, e os shoppings e bancos exigem um deslocamento curto. Como o bairro mistura casas antigas e prédios novos, a experiência muda bastante de uma rua para outra, por isso vale conhecer a quadra antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte ao corretor quanto custa o condomínio e o que ele inclui, qual é a idade do prédio, quantas vagas cabem ao apartamento e como é o trajeto até as avenidas nos horários de pico.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Jardim Boa Esperança é bom para morar?",
+      "resposta": "O bairro é residencial, de escala baixa, com escola municipal e creches dentro dele e comércio de bairro por perto. Os pontos de atenção são os parques maiores, que ficam nos bairros vizinhos, e a dependência de carro ou ônibus para shoppings e bancos."
+    },
+    {
+      "pergunta": "Onde fica o Jardim Boa Esperança, em Campinas?",
+      "resposta": "Na Região Leste de Campinas, perto do Jardim Flamboyant, da Chácara da Barra, do Jardim Nossa Senhora Auxiliadora e do Taquaral."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Boa Esperança?",
+      "resposta": "A EMEF Dr. Lourenço Bellocchio, de ensino fundamental, e as creches municipais CEI Profa. Noemia Cardoso Asbahr e CEI Maria Aparecida Vilela Gomes Julio. A Escola Estadual Professor Joaquim Ferreira Lima, com ensino médio, fica na vizinha Vila Trinta e Um de Março."
+    },
+    {
+      "pergunta": "Quando surgiu o Jardim Boa Esperança?",
+      "resposta": "O loteamento já existia em 1953: a Lei nº 1.898, de 1º de julho daquele ano, deu nome à antiga Rua 4 do Jardim Boa Esperança, hoje Rua João Quirino do Nascimento."
+    },
+    {
+      "pergunta": "O Jardim Boa Esperança tem apartamentos?",
+      "resposta": "Sim. A base de condomínios da ONDEMORAR identifica cerca de 20 condomínios no bairro, a maioria verticais e de poucos andares, e há lançamentos recentes de apartamentos compactos."
+    },
+    {
+      "pergunta": "Por que existiu um bonde chamado Boa Esperança em Campinas?",
+      "resposta": "A linha 14 dos bondes elétricos de Campinas se chamava Boa Esperança e passava por área do bairro. Ela funcionou até o fim dos bondes na cidade, em 1968, e tem fotos no acervo do Centro de Memória da Unicamp."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, registros da Rua João Quirino do Nascimento (Lei nº 1.898/1953), da Praça Independência do Brasil e das fotos da linha 14 Boa Esperança",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, lei municipal de 1959 de denominação de ruas (fundo Villagelin)",
+      "site": "atom.cmu.unicamp.br"
+    },
+    {
+      "nome": "PUC-Campinas, Notícia Bibliográfica e Histórica, sobre os bondes de Campinas",
+      "site": "puccampinas.emnuvens.com.br"
+    },
+    {
+      "nome": "Escol.as, fichas das escolas com dados do Censo Escolar",
+      "site": "escol.as"
+    },
+    {
+      "nome": "apto.vc, lançamentos no Jardim Boa Esperança",
+      "site": "apto.vc"
+    },
+    {
+      "nome": "QuintoAndar, ficha de condomínio no Jardim Boa Esperança",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Lopes, anúncio de apartamento na Rua Manoel Mendes Sansano",
+      "site": "lopes.com.br"
+    },
+    {
+      "nome": "Wikipédia, lista de bairros de Campinas por região",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "OpenStreetMap, ruas e avenidas do bairro",
+      "site": "openstreetmap.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Boa Esperança, na Região Leste de Campinas: um loteamento dos anos 1950 que deu nome à linha 14 do bonde, hoje com casas, prédios baixos, condomínios novos, escola municipal e creches no bairro. Preparamos um guia com a história, as escolas, os acessos e os bairros vizinhos. Link na bio.",
+    "hashtags": [
+      "jardimboaesperanca",
+      "campinas",
+      "regiaoleste",
+      "guiadebairro",
+      "morarbem",
+      "apartamentocampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Boa Esperança, Campinas: guia do bairro"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.587Z"
+}

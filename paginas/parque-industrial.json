@@ -1,0 +1,303 @@
+{
+  "slug": "parque-industrial",
+  "titulo": "Parque Industrial, Campinas: como é morar no bairro e sua história",
+  "resumo": "Guia do Parque Industrial, em Campinas: origem operária ligada à família Cantúsio, prédios, escolas, comércio e acesso pela Avenida das Amoreiras.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida arborizada do Parque Industrial, com prédios residenciais ao fundo",
+      "alt": "Avenida de asfalto novo com canteiro central gramado, árvores grandes, carros estacionados e edifícios ao fundo",
+      "commons": "File:Parque Industrial - Campinas-SP - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Avenida Doutor Abelardo Pompeu do Amaral, no Parque Industrial",
+      "alt": "Avenida de mão dupla com canteiro central, árvores e casas térreas e sobrados na calçada à direita",
+      "commons": "File:Av Aberlado Pompel Amaral - Parque Industrial - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Entradas do Complexo Viário Túnel Joá Penteado, caminho para o Centro",
+      "alt": "Duas bocas de túnel em muro de concreto com o letreiro Complexo Viário Túnel Joá Penteado e jardim entre as pistas",
+      "commons": "File:Túnel Joá Penteado - panoramio (2).jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Interior do Túnel Joá Penteado, que passa sob o pátio ferroviário",
+      "alt": "Interior de túnel rodoviário iluminado, com pista de mão única e guarda-corpo azul na calçada lateral",
+      "commons": "File:Túnel Joá Penteado, ligando o Centro de Campinas ao Bairro Parque Industrial - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Avenida das Amoreiras no cruzamento com a marginal do Piçarrão",
+      "alt": "Avenida larga com várias faixas, ônibus ao fundo, placas verdes de trânsito e prédios na linha do horizonte",
+      "commons": "File:Amoreiras x marg. Piçarrão - panoramio.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Viaduto da Rodovia Anhanguera sobre a Avenida das Amoreiras, em 2006",
+      "alt": "Viaduto de concreto sobre uma avenida, com ônibus passando por cima e prédios ao fundo",
+      "commons": "File:2006 Anhanguera x Amoreiras - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Vista aérea do Hospital Municipal Dr. Mário Gatti, no São Bernardo",
+      "alt": "Vista aérea de um conjunto hospitalar com prédios azuis e brancos, avenidas arborizadas e a cidade ao fundo",
+      "commons": "File:Hospital Mário Gatti.jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Parque Industrial** é um bairro de Campinas que fica ao sul do Centro, vizinho da Vila Industrial e cortado por avenidas como a **Avenida das Amoreiras** e a **Avenida Doutor Carlos de Campos**. Nasceu como bairro operário, ligado a uma das indústrias mais antigas da cidade, e hoje mistura casas, sobrados, prédios residenciais e um comércio de rua que resolve boa parte do dia a dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece acesso rápido ao Centro, às rodovias Anhanguera e Santos Dumont e ao corredor de ônibus BRT Ouro Verde. Este guia reúne a origem do bairro, o perfil dos imóveis, escolas, saúde, comércio e o que vale considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da porção sul de Campinas, vizinho da Vila Industrial e próximo do Centro",
+        "Origem operária, ligada ao Curtume Cantúsio, fundado em 1911",
+        "A escola estadual do bairro leva o nome de Felipe Cantúsio desde a década de 1960",
+        "Mistura de casas, sobrados e prédios de até 17 andares",
+        "Cortado pela Avenida das Amoreiras, por onde passa o corredor BRT Ouro Verde",
+        "Perto das rodovias Anhanguera e Santos Dumont e do Hospital Mário Gatti"
+      ],
+      "titulo": "O Parque Industrial em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A origem do Parque Industrial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história do bairro passa pela família **Cantúsio**. Felipe Cantúsio nasceu na Itália em 1870, chegou ao Brasil em 1895 e se mudou para Campinas em 1900, onde trabalhou num curtume antes de abrir o próprio negócio, em 1911. O primeiro prédio do **Curtume Cantúsio** foi erguido em agosto daquele ano, à beira do córrego Piçarrão, na Vila Industrial, numa rua que mais tarde recebeu o nome de Dr. Carlos de Campos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo biografias guardadas no Centro de Memória da Unicamp, Cantúsio comprou terrenos no Parque Industrial, construiu dezenas de casas populares alugadas a preços baixos, manteve uma escola de alfabetização e apoiou a construção de uma igreja, de um grupo escolar e de uma praça de esportes para os moradores. Seu filho, José Cantúsio, é lembrado em documento da Prefeitura por ter tido destaque na formação do bairro, onde promovia uma festa de confraternização operária."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 1963, quando o Parque Industrial já era descrito como um bairro populoso, um projeto de lei rebatizou o **Grupo Escolar do Parque Industrial** como Grupo Escolar Felipe Cantúsio, em terreno doado pelos herdeiros. O antigo curtume aparece hoje entre os bens tombados ou em estudo de tombamento do Polo Turístico da Vila Industrial, criado por lei municipal em 2024."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "O Parque Industrial é um bairro residencial e comercial. Ele não é o mesmo que os Distritos Industriais de Campinas (os DICs), que ficam mais ao sul e sudoeste da cidade, perto da Rodovia Santos Dumont e de Viracopos.",
+      "titulo": "Não confunda"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Parque Industrial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tem ruas de casas térreas e sobrados, avenidas com canteiro central arborizado e, em alguns trechos, prédios residenciais. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 18 condomínios no bairro, a maioria verticais, somando perto de 850 unidades. O mais alto da base tem 17 andares, e o maior conjunto reúne cerca de 320 apartamentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os nomes que aparecem tanto na base da ONDEMORAR quanto em guias de moradia estão o **Residencial Vita Parque**, o **Happy Patriani**, o **Veredas Patriani** e o **Brisas Bella Cittá**. Avaliações de moradores reunidas pelo QuintoAndar destacam o comércio que se faz a pé, a proximidade do trabalho e a facilidade de chegar a outros bairros; entre as queixas, aparece o barulho de motos em alguns horários."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A seção ao vivo desta página, *o que tem perto*, mostra mercados, padarias, farmácias, academias e restaurantes num raio de 1,5 km do centro do bairro, com o tempo a pé até cada um."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas no Parque Industrial e em volta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A escola mais ligada à história do bairro é a **Escola Estadual Felipe Cantusio**, herdeira do antigo grupo escolar. A base de pontos de interesse usada pela ONDEMORAR também registra a **EMEF Professor Vicente Rao**, da rede municipal, e colégios particulares de educação infantil e ensino fundamental a poucas quadras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Guias de moradia citam ainda a **Escola Estadual Vitor Meireles** e unidades de ensino técnico e superior na região, como a Faculdade Anhanguera. No total, a base identifica algumas dezenas de escolas num raio de 1,5 km, listadas na seção ao vivo da página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e saúde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio de rua é um dos pontos fortes. Há lojas de roupas, eletrodomésticos, materiais de construção e autopeças, além de mercados, padarias, lanchonetes, bares e restaurantes. Para compras maiores, o Campinas Shopping fica a poucos minutos de carro, segundo o QuintoAndar. Entre os pontos de referência do bairro listados pelo QuintoAndar estão os **Patrulheiros de Campinas** e o **Centro Kennedy**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na saúde pública, um hospital de referência da região é o **Hospital Municipal Dr. Mário Gatti**, na Avenida Prefeito Faria Lima, no bairro São Bernardo, a mesma avenida onde termina o primeiro trecho do BRT Ouro Verde. Farmácias, clínicas e laboratórios estão espalhados pelo Parque Industrial e pelas avenidas em volta."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida das Amoreiras** é o grande eixo da região. Com cerca de 13 km, é a segunda maior avenida de Campinas: começa na Avenida João Jorge, perto do Centro, e segue até um viaduto sobre a Rodovia dos Bandeirantes, ligando o Centro aos bairros próximos de Viracopos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela Amoreiras passa o **corredor BRT Ouro Verde**, que vai do Terminal Central ao Terminal Vida Nova pelas avenidas João Jorge, Amoreiras, Ruy Rodriguez e Camucim. O primeiro trecho, com faixas exclusivas de concreto entre a João Jorge e a Avenida Prefeito Faria Lima, foi liberado em outubro de 2020."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para chegar ao Centro de carro, uma das ligações é o **Complexo Viário Túnel Joá Penteado**, que passa sob parte da Vila Industrial e do pátio ferroviário e é descrito no acervo do Wikimedia Commons como a ligação entre o Centro e o Parque Industrial. As rodovias **Anhanguera** e **Santos Dumont** ficam próximas, o que facilita viagens para cidades vizinhas e para o Aeroporto de Viracopos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é a **Vila Industrial**, um dos bairros mais antigos de Campinas, formado no século XIX em volta das oficinas da Companhia Paulista. Ali ficam o Terminal Multimodal Ramos de Azevedo, a rodoviária da cidade, o Sesc Campinas e a Estação Cultura, do outro lado dos trilhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Logo ao sul da Vila Industrial ficam o **São Bernardo**, onde está o Hospital Mário Gatti, e o **Parque Itália**, perto de onde começa a Avenida das Amoreiras. A lista de bairros de Campinas coloca o Parque Industrial na Região Sul, ao lado de bairros como Ponte Preta e Swiss Park."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Parque Industrial faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer ficar perto do Centro sem morar nele, com comércio de rua, escola e transporte coletivo por perto, e a quem viaja com frequência pelas rodovias Anhanguera, Santos Dumont e Bandeirantes. A oferta de casas, sobrados e apartamentos atende de famílias a quem procura o primeiro imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como pontos de atenção, as avenidas principais têm trânsito intenso nos horários de pico, e os imóveis voltados para a Amoreiras ou para o corredor de ônibus recebem mais barulho. Ruas internas e apartamentos de fundo costumam ser mais calmos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a distância até o ponto do BRT, a posição do imóvel em relação às avenidas, o valor do condomínio e o que ele inclui, o número de vagas e, em casas, a situação da documentação e das reformas.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Parque Industrial, em Campinas?",
+      "resposta": "Na porção sul da cidade, ao lado da Vila Industrial e perto do Centro, com acesso pela Avenida das Amoreiras e pelo Túnel Joá Penteado."
+    },
+    {
+      "pergunta": "O Parque Industrial é bom para morar?",
+      "resposta": "Para quem quer comércio de rua, escola, transporte coletivo e acesso rápido ao Centro e às rodovias, sim. Quem busca silêncio deve preferir ruas internas, longe da Amoreiras e do corredor de ônibus."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Parque Industrial?",
+      "resposta": "Porque nasceu ligado à indústria: a família Cantúsio, dona de um curtume fundado em 1911, construiu casas para operários, uma escola e apoiou a igreja e a praça de esportes do bairro."
+    },
+    {
+      "pergunta": "O Parque Industrial tem mais casas ou prédios?",
+      "resposta": "Tem os dois. Há muitas casas e sobrados, e a base de condomínios da ONDEMORAR identifica cerca de 18 condomínios, a maioria de prédios, com perto de 850 unidades."
+    },
+    {
+      "pergunta": "Passa BRT no Parque Industrial?",
+      "resposta": "Sim. O corredor BRT Ouro Verde usa a Avenida das Amoreiras, com faixas exclusivas desde 2020 no trecho entre a Avenida João Jorge e a Avenida Prefeito Faria Lima."
+    },
+    {
+      "pergunta": "Qual hospital fica perto do Parque Industrial?",
+      "resposta": "O Hospital Municipal Dr. Mário Gatti, na Avenida Prefeito Faria Lima, no bairro São Bernardo, na mesma região."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, processos de denominação sobre Felipe e José Cantúsio (1963 e 1978)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "IAU-USP, artigo sobre o Curtume Cantúsio e a Vila Industrial",
+      "site": "iau.usp.br"
+    },
+    {
+      "nome": "Diário Oficial de Campinas, Lei nº 16.627/2024 (Polo Turístico da Vila Industrial)",
+      "site": "campinas.sp.gov.br"
+    },
+    {
+      "nome": "Diário do Transporte, liberação do trecho inicial do BRT Ouro Verde (outubro de 2020)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Parque Industrial e da Vila Industrial",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Avenida das Amoreiras, Vila Industrial e Lista de bairros de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Revista Geografia (UFJF), artigo sobre os Distritos Industriais de Campinas",
+      "site": "periodicos.ufjf.br"
+    },
+    {
+      "nome": "Doctoralia, endereço do Hospital Municipal Dr. Mário Gatti",
+      "site": "doctoralia.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Parque Industrial, em Campinas: um bairro que nasceu operário, em volta do Curtume Cantúsio, e hoje junta casas, sobrados, prédios e comércio de rua, com a Avenida das Amoreiras e o BRT na porta. Preparamos um guia com a história, escolas, saúde, acessos e o que considerar antes da mudança. Link na bio.",
+    "hashtags": [
+      "parqueindustrial",
+      "campinas",
+      "vilaindustrial",
+      "morarbem",
+      "guiadebairro",
+      "avenidadasamoreiras",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Parque Industrial, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.587Z"
+}

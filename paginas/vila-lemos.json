@@ -1,0 +1,330 @@
+{
+  "slug": "vila-lemos",
+  "titulo": "Vila Lemos, Campinas: guia do bairro para quem pensa em morar",
+  "resumo": "Guia da Vila Lemos, em Campinas: onde fica, ruas, história registrada, escolas, saúde, acessos pela Princesa D'Oeste e o que pesar antes de morar.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Avenida sob viaduto na Vila Lemos, com os prédios de Campinas ao fundo, em 2008",
+      "alt": "Avenida em curva passando sob um viaduto, barranco gramado à esquerda e a cidade com muitos prédios no horizonte",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto (1).jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Trilhos na Vila Lemos, com casas de telhado cerâmico e prédios atrás, em 2008",
+      "alt": "Trilhos de trem entre capim seco, com casas térreas e edifícios ao fundo",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto (2).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Linha férrea na Vila Lemos, com edifícios no horizonte, em foto de 2008",
+      "alt": "Dois trilhos de ferrovia em linha reta, mato dos lados, postes e prédios distantes",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Galpão comprido ao lado dos trilhos na Vila Lemos, em 2008",
+      "alt": "Trilhos de trem ao lado de um galpão industrial longo com telhado em serra",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Silos e galpões na Vila Lemos, com casas espalhadas ao fundo, em 2008",
+      "alt": "Silos altos de concreto e galpões, com bairro de casas térreas se estendendo até o horizonte",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto (3).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Avenida em desnível na Vila Lemos, vista de uma passarela, em 2008",
+      "alt": "Avenida de pista dupla em trincheira, com muro colorido e galpões ao lado",
+      "commons": "File:Vila Lemos, Campinas - State of São Paulo, Brazil - panoramio - Paulo Humberto (4).jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Avenida Princesa D'Oeste na altura do Jardim Proença, em 2013",
+      "alt": "Avenida movimentada com carros, prédios residenciais altos e letreiro com a palavra Proença no canteiro",
+      "commons": "File:Av. Princesa D`Oeste - panoramio (1).jpg"
+    },
+    {
+      "id": "f8",
+      "legenda": "Jardim Proença visto da Rua Proença: casas na frente e prédios atrás",
+      "alt": "Casas de telhado cerâmico em primeiro plano e um conjunto de edifícios residenciais ao fundo, sob céu azul",
+      "commons": "File:Campinas - SP - Jardim Proença visto da Rua Proença.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Lemos** é um bairro pequeno de Campinas, ao sul do Centro, vizinho do Jardim Proença e cortado pela Avenida Princesa D'Oeste. É uma área de ruas residenciais, com casas, sobrados e prédios baixos, que tem comércio de bairro por perto e instituições conhecidas na cidade, como a Associação Pestalozzi de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por ser um bairro de poucas quadras, a Vila Lemos aparece pouco em livros e jornais. Este guia reúne o que está documentado: os registros oficiais das ruas, as escolas e serviços confirmados, os acessos e os bairros vizinhos. Onde não há fonte, a página diz isso com clareza, em vez de supor."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro pequeno ao sul do Centro de Campinas, vizinho do Jardim Proença",
+        "Aparece na lista de bairros da Região Sul da cidade",
+        "Já existia em 1973, quando um decreto deu nome a uma rua da Vila Lemos",
+        "Perfil de casas, sobrados e prédios baixos, de até 7 andares na base da ONDEMORAR",
+        "Abriga a creche municipal CEI Lions Clube Campinas Norte e a escola da Pestalozzi",
+        "Acesso principal pela Avenida Princesa D'Oeste"
+      ],
+      "titulo": "A Vila Lemos em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica a Vila Lemos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Lemos fica ao sul do Centro de Campinas, na faixa entre o Jardim Proença e o Jardim Guarani. A Wikipédia, na lista de bairros de Campinas, inclui a Vila Lemos entre os bairros da **Região Sul**. Na prática, é um bairro de transição: perto o bastante do Centro para chegar rápido aos serviços da área central, mas com ritmo de rua residencial."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O eixo que organiza a região é a **Avenida Princesa D'Oeste**, que corre pelo vale onde está o Jardim Proença. Os decretos municipais citam a avenida como ponto de início e de término de uma rua da Vila Lemos, o que mostra o quanto o bairro se apoia nela para entrar e sair."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que se sabe da história e do nome"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O registro mais antigo encontrado nesta pesquisa está no **Decreto nº 4.239, de 5 de abril de 1973**, guardado no acervo do Centro de Memória da Unicamp. Ele deu o nome de **Rua Conde D'Eu** a uma rua sem denominação da Vila Lemos, que começava e terminava na Avenida Princesa D'Oeste."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo decreto criou a **Avenida Imperatriz Dona Teresa Cristina**, formada pela Perimetral Interna na Vila Lemos e em parte do Jardim Guarani, com início na rua da Vila Lemos e término na Avenida Dr. Manoel Afonso Ferreira. A escolha dos nomes, ligados à família imperial, era comum nas denominações de ruas da época."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre a origem do nome do bairro, não encontramos documento que a explique. O que se vê nas placas é a presença do sobrenome Lemos em várias vias: a **Rua Alaíde Nascimento de Lemos**, a **Rua Engenheiro Osvaldo Nascimento de Lemos** e a **Avenida Doutor Arlindo Joaquim de Lemos**, uma das ruas mais procuradas da região nos portais imobiliários."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Um recorte do Centro de Memória da Unicamp sobre o advogado Tito Joaquim de Lemos, que dá nome a uma rua na Vila Lidia, cita o irmão dele, o médico Dr. Arlindo Joaquim de Lemos. O documento não liga essa família à Vila Lemos, então a relação com o nome do bairro não está confirmada.",
+      "titulo": "Um Arlindo Joaquim de Lemos na história de Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fotos de 2008 publicadas no Wikimedia Commons mostram trilhos de ferrovia, galpões e silos na Vila Lemos, com casas térreas em volta e os prédios da área central no horizonte. É um retrato de bairro que cresceu ao lado de estruturas industriais e de transporte."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Lemos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Lemos é, sobretudo, um bairro de casas e de prédios pequenos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 17 condomínios no bairro, a maioria verticais, com perto de 160 unidades no total. O mais alto tem 7 andares, bem diferente das torres do vizinho Jardim Proença."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas do bairro estão a Rua Porto Feliz, a Rua Birigui, a Rua João Ramalho, a Rua Wagram, a Rua Professor Adriano Boucault, a Rua Nícola Di Marzio e a Rua Pedro Cazácio. Quem procura casa térrea ou sobrado encontra aqui um tecido urbano mais baixo do que nos bairros verticalizados ao lado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os anúncios dos portais imobiliários mostram, além de casas e apartamentos, salas e imóveis comerciais na Vila Lemos, sinal de que comércio e moradia convivem em algumas ruas. Ao escolher o imóvel, vale observar a quadra: ruas internas tendem a ser mais calmas que as vias próximas da Princesa D'Oeste."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e educação especial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **Rua Alaíde Nascimento de Lemos, 490**, funciona o **CEI Lions Clube Campinas Norte**, centro de educação infantil da rede municipal, com atendimento de creche. Na mesma rua fica a **Associação Pestalozzi de Campinas**, com sua escola de educação especial."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Pestalozzi tem convênio com a Secretaria Municipal de Saúde para atender pessoas com deficiência intelectual, deficiência múltipla e TEA, a partir dos 4 anos e sem idade máxima, encaminhadas pela rede municipal. Segundo o relatório da Prefeitura, o trabalho inclui terapias multidisciplinares, atendimento pedagógico para alunos de 6 a 30 anos e estimulação precoce para bebês. A instituição ocupa prédio próprio em terreno cedido pela Prefeitura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A base de pontos de interesse usada pela ONDEMORAR registra dezenas de escolas, creches e centros educativos num raio de 1,5 km do centro do bairro. A lista com o tempo a pé até cada uma aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saúde, comércio e serviços por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O centro de saúde municipal mais próximo na base da ONDEMORAR é o **CS Paranapanema**. Em setembro de 2026, a Prefeitura informou que a unidade ficaria fechada de 40 a 60 dias para consertar telhado, calhas e rede elétrica, danificados por um temporal em 30 de agosto. No período, acolhimento e odontologia passaram ao CS Orosimbo Maia. Antes de se mudar, confirme qual unidade atende o seu endereço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o dia a dia, a base de pontos de interesse registra hortifrútis, padarias, supermercados, farmácias, agências bancárias, academias e dezenas de restaurantes num raio de 1,5 km. Os mais próximos, com a distância a pé, estão listados mais abaixo nesta página e são atualizados automaticamente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida Princesa D'Oeste** é a principal ligação da Vila Lemos com o resto da cidade. Pelo vale do Proença, ela conecta a região à área central e às avenidas que distribuem o trânsito de Campinas, e é cercada de prédios residenciais e comércio ao longo do trajeto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outra via próxima é a **Avenida dos Esportes**, que, pelos registros municipais de 1973, vai da Rua Proença até a Avenida Princesa D'Oeste. Nos horários de pico, as avenidas da região ficam carregadas; se o trajeto diário pesa na sua decisão, teste o caminho no horário em que você costuma sair."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vizinhos e regiões próximas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vizinho mais conhecido é o **Jardim Proença**, bairro tradicional da Zona Sul que ocupa o vale da Princesa D'Oeste. Segundo a Wikipédia, o nome vem de Antônio Manuel Proença, dono de uma fazenda na região, e entre os limites do Proença estão os dois principais estádios da cidade, o Brinco de Ouro e o Moisés Lucarelli."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do outro lado, o **Jardim Guarani** divide com a Vila Lemos o traçado da antiga Perimetral Interna, segundo o decreto de 1973. Nos guias de ruas, endereços vizinhos aparecem também como Jardim Baroneza, o que mostra como os limites entre esses bairros pequenos se misturam no dia a dia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Lemos faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Lemos tende a agradar a quem quer casa ou apartamento em prédio baixo, perto do Centro e do Jardim Proença, sem pagar pelo endereço de um bairro mais conhecido. Famílias que precisam de creche municipal ou do atendimento da Pestalozzi encontram os dois no próprio bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção são os de qualquer bairro encostado em avenida de grande fluxo: trânsito nos horários de pico e mais movimento nas quadras próximas da Princesa D'Oeste. Como o bairro é pequeno e mistura casas, prédios e comércio, a escolha da rua faz bastante diferença."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte qual centro de saúde atende o endereço, a distância a pé até a Princesa D'Oeste, se há comércio ou oficina na mesma quadra e, no caso de apartamento, a idade do prédio e o que o condomínio inclui.",
+      "titulo": "O que conferir antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica a Vila Lemos, em Campinas?",
+      "resposta": "Ao sul do Centro, vizinha do Jardim Proença e do Jardim Guarani, com acesso pela Avenida Princesa D'Oeste. Ela aparece entre os bairros da Região Sul da cidade."
+    },
+    {
+      "pergunta": "A Vila Lemos é bom bairro para morar?",
+      "resposta": "Para quem quer casa ou prédio baixo perto do Centro e do Jardim Proença, pode ser uma boa opção, com creche municipal e comércio por perto. Quem procura silêncio deve preferir as ruas mais longe da Princesa D'Oeste."
+    },
+    {
+      "pergunta": "A Vila Lemos tem mais casas ou prédios?",
+      "resposta": "Predominam casas e sobrados. A base de condomínios da ONDEMORAR identifica cerca de 17 condomínios no bairro, com perto de 160 unidades, e nenhum passa de 7 andares."
+    },
+    {
+      "pergunta": "Quais escolas ficam na Vila Lemos?",
+      "resposta": "Na Rua Alaíde Nascimento de Lemos ficam o CEI Lions Clube Campinas Norte, creche da rede municipal, e a escola de educação especial da Associação Pestalozzi de Campinas."
+    },
+    {
+      "pergunta": "Por que o bairro se chama Vila Lemos?",
+      "resposta": "Não encontramos documento que explique a origem do nome. O sobrenome Lemos aparece em várias ruas do bairro, como a Rua Alaíde Nascimento de Lemos e a Avenida Doutor Arlindo Joaquim de Lemos."
+    },
+    {
+      "pergunta": "Qual centro de saúde fica perto da Vila Lemos?",
+      "resposta": "O mais próximo é o CS Paranapanema, que fechou para reparos depois de um temporal em agosto de 2026. Confirme com a Prefeitura qual unidade atende o seu endereço."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Centro de Memória da Unicamp, Decreto nº 4.239 de 5 de abril de 1973 (denominação de vias na Vila Lemos)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Centro de Memória da Unicamp, recorte sobre a Rua Dr. Tito Joaquim de Lemos (Lei nº 37 de 1948)",
+      "site": "cmu.unicamp.br"
+    },
+    {
+      "nome": "Prefeitura de Campinas, Secretaria de Saúde: relatório do convênio com a Associação Pestalozzi (2021)",
+      "site": "saude.campinas.sp.gov.br"
+    },
+    {
+      "nome": "Correio da Manhã, sobre o fechamento do CS Paranapanema após temporal (setembro de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "Escol.as, ficha do CEI Lions Clube Campinas Norte",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Guia Fácil e Apontador, endereços da Rua Alaíde Nascimento de Lemos",
+      "site": "apontador.com.br"
+    },
+    {
+      "nome": "QuintoAndar e Lopes, listas de ruas da Vila Lemos",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes Lista de bairros de Campinas e Jardim Proença",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "Wikimedia Commons, fotos da Vila Lemos (2008) e da Avenida Princesa D'Oeste",
+      "site": "commons.wikimedia.org"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Vila Lemos, em Campinas: um bairro pequeno, de casas e prédios baixos, vizinho do Jardim Proença e com acesso pela Avenida Princesa D'Oeste. No guia, contamos o que os registros oficiais dizem sobre as ruas do bairro, as escolas, a saúde, os acessos e o que conferir antes de se mudar. Link na bio.",
+    "hashtags": [
+      "vilalemos",
+      "campinas",
+      "jardimproenca",
+      "guiadebairro",
+      "morarbem",
+      "casacampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Lemos, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.587Z"
+}

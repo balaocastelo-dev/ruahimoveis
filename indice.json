@@ -1,0 +1,324 @@
+{
+  "versao": 1,
+  "paginas": [
+    {
+      "slug": "alphaville-campinas",
+      "titulo": "Alphaville Campinas: como é morar no bairro de condomínios",
+      "resumo": "Guia do Alphaville Campinas: origem do loteamento, perfil das casas em condomínio, clube, escolas, acessos pela Dom Pedro I e os bairros vizinhos.",
+      "publicadoEm": "2026-10-27T18:00:20.505Z"
+    },
+    {
+      "slug": "alphaville-dom-pedro",
+      "titulo": "Alphaville Dom Pedro, Campinas: como é morar nos residenciais",
+      "resumo": "Guia do Alphaville Dom Pedro, em Campinas: história dos residenciais 1, 2, 3 e Zero, lotes, clubes, acessos pela Dom Pedro I e o que fica perto.",
+      "publicadoEm": "2026-10-27T18:00:20.505Z"
+    },
+    {
+      "slug": "bairro-das-palmeiras",
+      "titulo": "Bairro das Palmeiras, Campinas: como é morar perto da Hípica",
+      "resumo": "Guia do Bairro das Palmeiras, em Campinas: a Sociedade Hípica, o Parque Ecológico, os condomínios de casas, shoppings, escolas e acessos.",
+      "publicadoEm": "2026-10-27T18:38:40.584Z"
+    },
+    {
+      "slug": "barao-geraldo",
+      "titulo": "Barão Geraldo, Campinas: como é morar no distrito da Unicamp",
+      "resumo": "Guia de Barão Geraldo, em Campinas: origem do nome, Unicamp, Mata de Santa Genebra, comércio, acessos e o que considerar antes de morar no distrito.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "bonfim",
+      "titulo": "Bonfim, Campinas: como é morar no bairro, história e acessos",
+      "resumo": "Guia do Bonfim, em Campinas: origem do nome, história operária, Avenida Pedro de Toledo, Torre do Castelo ao lado e o perfil dos prédios e casas.",
+      "publicadoEm": "2026-10-27T18:00:20.499Z"
+    },
+    {
+      "slug": "bosque",
+      "titulo": "Bosque, Campinas: como é morar no bairro do Bosque dos Jequitibás",
+      "resumo": "Guia do bairro Bosque, em Campinas: história do Bosque dos Jequitibás, museu e minizoo, prédios, ruas, escolas, acessos e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "botafogo",
+      "titulo": "Botafogo, Campinas: como é morar no bairro dos hospitais e do Culto à Ciência",
+      "resumo": "Guia do Botafogo, em Campinas: a antiga rodoviária, o polo de hospitais da Andrade Neves, o Culto à Ciência, prédios, transporte e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "cambui",
+      "titulo": "Cambuí, Campinas: como é morar no bairro, história, prédios e lazer",
+      "resumo": "Guia do Cambuí, em Campinas: origem do nome, Centro de Convivência, Feira Hippie, bares, prédios e o que considerar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T13:42:57.548Z"
+    },
+    {
+      "slug": "centro",
+      "titulo": "Centro de Campinas: como é morar no coração histórico da cidade",
+      "resumo": "Guia do Centro de Campinas: Catedral, Mercadão, Rua 13 de Maio, Estação Cultura, prédios, terminais de ônibus e o que pesar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "chacara-da-barra",
+      "titulo": "Chácara da Barra, Campinas: como é morar no bairro-jardim da Norte-Sul",
+      "resumo": "Guia da Chácara da Barra, em Campinas: o bairro-jardim de 1950, ruas curvas, casas e prédios baixos, praça de esportes, acessos pela Norte-Sul e vizinhos.",
+      "publicadoEm": "2026-10-27T18:00:20.505Z"
+    },
+    {
+      "slug": "chacara-primavera",
+      "titulo": "Chácara Primavera, Campinas: como é morar no bairro da zona leste",
+      "resumo": "Guia da Chácara Primavera, em Campinas: onde fica, origem do loteamento, ruas com nome de flores, prédios, acessos, Lagoa do Taquaral e vizinhos.",
+      "publicadoEm": "2026-10-27T18:19:31.014Z"
+    },
+    {
+      "slug": "cidade-universitaria",
+      "titulo": "Cidade Universitária, Campinas: como é morar ao lado da Unicamp",
+      "resumo": "Guia da Cidade Universitária, em Barão Geraldo, Campinas: origem do loteamento, kitnets e casas, Parque do Lago, comércio, saúde e acessos.",
+      "publicadoEm": "2026-10-27T18:00:20.506Z"
+    },
+    {
+      "slug": "gramado",
+      "titulo": "Gramado, Campinas: como é morar no bairro de casas em condomínio",
+      "resumo": "Guia do Gramado (Sítios de Recreio Gramado), em Campinas: ruas com nome de árvore, casas em condomínio, Gramado Mall, acessos e vizinhos na Região Leste.",
+      "publicadoEm": "2026-10-27T18:19:31.012Z"
+    },
+    {
+      "slug": "guanabara",
+      "titulo": "Guanabara, Campinas: como é morar no bairro da antiga estação Mogiana",
+      "resumo": "Guia do Guanabara, em Campinas: a Estação Guanabara da Mogiana, as avenidas Brasil e Barão de Itapura, prédios, escolas e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "jardim-boa-esperanca",
+      "titulo": "Jardim Boa Esperança, Campinas: como é morar no bairro da Região Leste",
+      "resumo": "Guia do Jardim Boa Esperança, em Campinas: história do loteamento, a antiga linha 14 do bonde, escolas, prédios, acessos e os bairros vizinhos.",
+      "publicadoEm": "2026-10-27T18:38:40.587Z"
+    },
+    {
+      "slug": "jardim-brasil",
+      "titulo": "Jardim Brasil, Campinas: como é morar no bairro da Avenida Brasil",
+      "resumo": "Guia do Jardim Brasil, em Campinas: onde fica, a história das ruas, prédios, escolas como o Mackenzie, Avenida Brasil e os vizinhos Guanabara e Vila Nova.",
+      "publicadoEm": "2026-10-27T18:38:40.587Z"
+    },
+    {
+      "slug": "jardim-campos-eliseos",
+      "titulo": "Jardim Campos Elíseos, Campinas: como é morar no bairro",
+      "resumo": "Guia do Jardim Campos Elíseos, em Campinas: história das ruas, Avenida das Amoreiras, Terminal BRT, escolas, saúde e o que considerar antes de morar.",
+      "publicadoEm": "2026-10-27T18:19:31.015Z"
+    },
+    {
+      "slug": "jardim-chapadao",
+      "titulo": "Jardim Chapadão, Campinas: como é morar no bairro da Torre do Castelo",
+      "resumo": "Guia do Jardim Chapadão, em Campinas: Torre do Castelo, Pedreira do Chapadão, história, casas e prédios, comércio do Castelo e acessos ao Centro.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "jardim-das-paineiras",
+      "titulo": "Jardim das Paineiras, Campinas: como é morar no bairro",
+      "resumo": "Guia do Jardim das Paineiras, em Campinas: localização na região Leste, ruas e praças, casas e prédios, Shopping Iguatemi ao lado e acessos.",
+      "publicadoEm": "2026-10-27T18:19:31.013Z"
+    },
+    {
+      "slug": "jardim-do-lago",
+      "titulo": "Jardim do Lago, Campinas: como é morar no bairro do Campinas Shopping",
+      "resumo": "Guia do Jardim do Lago, em Campinas: história das avenidas, Campinas Shopping, escolas, prédios, acessos às rodovias e o que pesar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T18:19:31.015Z"
+    },
+    {
+      "slug": "jardim-dom-vieira",
+      "titulo": "Jardim Dom Vieira, Campinas: guia do bairro para morar",
+      "resumo": "Guia do Jardim Dom Vieira, em Campinas: prédios, acesso pela Amoreiras e pela Marginal do Piçarrão, Hospital Mário Gatti e bairros vizinhos.",
+      "publicadoEm": "2026-10-27T18:38:40.589Z"
+    },
+    {
+      "slug": "jardim-flamboyant",
+      "titulo": "Jardim Flamboyant, Campinas: como é morar no bairro perto do Iguatemi",
+      "resumo": "Guia do Jardim Flamboyant, em Campinas: história, prédios baixos, comércio da Rua Mogi Guaçu, escolas, parques próximos e acessos pela região Leste.",
+      "publicadoEm": "2026-10-27T18:19:31.014Z"
+    },
+    {
+      "slug": "jardim-nossa-senhora-auxiliadora",
+      "titulo": "Jardim Nossa Senhora Auxiliadora, Campinas: como é morar no bairro",
+      "resumo": "Guia do Jardim Nossa Senhora Auxiliadora, em Campinas: ruas com nomes portugueses, casas e prédios, Lagoa do Taquaral, Liceu Salesiano e acessos.",
+      "publicadoEm": "2026-10-27T18:00:20.505Z"
+    },
+    {
+      "slug": "jardim-nova-europa",
+      "titulo": "Jardim Nova Europa, Campinas: como é morar no bairro da Região Sul",
+      "resumo": "Guia do Jardim Nova Europa, em Campinas: origem do loteamento, Bosque dos Guarantãs, Avenida Baden Powell, prédios, casas e acessos da Região Sul.",
+      "publicadoEm": "2026-10-27T18:38:40.584Z"
+    },
+    {
+      "slug": "jardim-pauliceia",
+      "titulo": "Jardim Paulicéia, Campinas: como é morar no bairro, prédios e acessos",
+      "resumo": "Guia do Jardim Paulicéia, em Campinas: prédios baixos, escolas, comércio de bairro, BRT na John Boyd Dunlop e acesso à Anhanguera.",
+      "publicadoEm": "2026-10-27T18:38:40.584Z"
+    },
+    {
+      "slug": "jardim-proenca",
+      "titulo": "Jardim Proença, Campinas: como é morar no bairro do Proença",
+      "resumo": "Guia do Jardim Proença, em Campinas: a origem na antiga Fazenda Proença, a Casa Grande e Tulha, os prédios, a Avenida Princesa D'Oeste e os vizinhos.",
+      "publicadoEm": "2026-10-27T18:19:31.013Z"
+    },
+    {
+      "slug": "jardim-santa-genebra",
+      "titulo": "Jardim Santa Genebra, Campinas: como é morar no bairro de Barão Geraldo",
+      "resumo": "Guia do Jardim Santa Genebra, em Barão Geraldo, Campinas: origem do nome, ruas, prédios, escolas, acessos e o que considerar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T18:00:20.506Z"
+    },
+    {
+      "slug": "joaquim-egidio",
+      "titulo": "Joaquim Egídio, Campinas: como é morar no distrito histórico",
+      "resumo": "Guia de Joaquim Egídio, distrito de Campinas: história, estação, casario, APA, observatório, restaurantes e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T17:39:00.156Z"
+    },
+    {
+      "slug": "mansoes-santo-antonio",
+      "titulo": "Mansões Santo Antônio, Campinas: como é morar no bairro",
+      "resumo": "Guia do Mansões Santo Antônio, em Campinas: das chácaras aos prédios, a nova praça, escolas, comércio, acesso à Dom Pedro e pontos de atenção.",
+      "publicadoEm": "2026-10-27T18:00:20.504Z"
+    },
+    {
+      "slug": "nova-campinas",
+      "titulo": "Nova Campinas, Campinas: como é morar no bairro-jardim de 1945",
+      "resumo": "Guia do Nova Campinas, em Campinas: o bairro-jardim de Jorge de Macedo Vieira, ruas arborizadas, casas, novos prédios, comércio e acessos.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "ouro-verde",
+      "titulo": "Ouro Verde, Campinas: como é morar na região e no distrito",
+      "resumo": "Guia do Ouro Verde, em Campinas: história do distrito, BRT, Avenida Ruy Rodriguez, Hospital Ouro Verde, comércio, Viracopos e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:38:40.589Z"
+    },
+    {
+      "slug": "parque-brasilia",
+      "titulo": "Parque Brasília, Campinas: guia do bairro para quem pensa em morar",
+      "resumo": "Guia do Parque Brasília, em Campinas: ruas, prédios e casas, história dos nomes, comércio, escolas por perto, acesso e a vizinhança do Shopping Iguatemi.",
+      "publicadoEm": "2026-10-27T18:38:40.588Z"
+    },
+    {
+      "slug": "parque-das-universidades",
+      "titulo": "Parque das Universidades, Campinas: como é morar ao lado da PUC",
+      "resumo": "Guia do Parque das Universidades, em Campinas: o bairro colado ao Campus I da PUC-Campinas, perto da Unicamp, da Rodovia Dom Pedro I e de hospitais.",
+      "publicadoEm": "2026-10-27T18:19:31.014Z"
+    },
+    {
+      "slug": "parque-imperador",
+      "titulo": "Parque Imperador, Campinas: como é morar no bairro da Dom Pedro",
+      "resumo": "Guia do Parque Imperador, em Campinas: casas em condomínio, Colégio Photon, Rodovia Dom Pedro I, shoppings, Estação Anhumas e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:38:40.588Z"
+    },
+    {
+      "slug": "parque-industrial",
+      "titulo": "Parque Industrial, Campinas: como é morar no bairro e sua história",
+      "resumo": "Guia do Parque Industrial, em Campinas: origem operária ligada à família Cantúsio, prédios, escolas, comércio e acesso pela Avenida das Amoreiras.",
+      "publicadoEm": "2026-10-27T18:38:40.587Z"
+    },
+    {
+      "slug": "parque-jambeiro",
+      "titulo": "Parque Jambeiro, Campinas: como é morar no bairro da antiga fazenda",
+      "resumo": "Guia do Parque Jambeiro, em Campinas: a Fazenda Jambeiro que deu origem ao bairro, a lagoa, o Parque das Águas, escolas, casas e acessos na região Sul.",
+      "publicadoEm": "2026-10-27T18:38:40.588Z"
+    },
+    {
+      "slug": "parque-prado",
+      "titulo": "Parque Prado, Campinas: como é morar no bairro da Região Sul",
+      "resumo": "Guia do Parque Prado, em Campinas: origem na Chácara Eglantina, prédios em condomínio, Parque das Águas, shopping, avenidas e o que avaliar antes de morar.",
+      "publicadoEm": "2026-10-27T18:38:40.587Z"
+    },
+    {
+      "slug": "ponte-preta",
+      "titulo": "Ponte Preta, Campinas: como é morar no bairro do Majestoso",
+      "resumo": "Guia da Ponte Preta, em Campinas: origem do nome, o Estádio Moisés Lucarelli, a vila ferroviária, prédios, escolas, acessos e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:19:31.015Z"
+    },
+    {
+      "slug": "santa-candida",
+      "titulo": "Santa Cândida, Campinas: como é morar no bairro da Ilum e da PUC",
+      "resumo": "Guia do Santa Cândida, em Campinas: história ligada ao Sirius, a Ilum, a PUC ao lado, condomínios de casas e prédios e o que considerar antes de morar.",
+      "publicadoEm": "2026-10-27T18:00:20.506Z"
+    },
+    {
+      "slug": "sao-bernardo",
+      "titulo": "São Bernardo, Campinas: como é morar no bairro da Avenida das Amoreiras",
+      "resumo": "Guia do São Bernardo, em Campinas: origem nos anos 1940, ruas e praças, prédios, comércio a pé, BRT na Avenida das Amoreiras e bairros vizinhos.",
+      "publicadoEm": "2026-10-27T18:19:31.014Z"
+    },
+    {
+      "slug": "sao-quirino",
+      "titulo": "São Quirino, Campinas: como é morar no bairro da antiga fazenda",
+      "resumo": "Guia do São Quirino, em Campinas: a antiga fazenda, o loteamento dos anos 1960, a Estação Anhumas, o Galleria e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:19:31.013Z"
+    },
+    {
+      "slug": "sousas",
+      "titulo": "Sousas, Campinas: como é morar no distrito do Rio Atibaia",
+      "resumo": "Guia de Sousas, distrito de Campinas: história do Arraial dos Sousas, Igreja de Sant'Ana, Rio Atibaia, APA, condomínios de casas, acessos e Joaquim Egídio.",
+      "publicadoEm": "2026-10-27T17:39:00.155Z"
+    },
+    {
+      "slug": "swiss-park",
+      "titulo": "Swiss Park, Campinas: como é morar no bairro planejado da região sul",
+      "resumo": "Guia do Swiss Park, em Campinas: história da antiga fazenda, residenciais com nomes suíços, Parque Botânico, acessos pela Anhanguera e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:00:20.505Z"
+    },
+    {
+      "slug": "taquaral",
+      "titulo": "Taquaral, Campinas: como é morar no bairro da Lagoa do Taquaral",
+      "resumo": "Guia do Taquaral, em Campinas: a Lagoa do Taquaral, a Caravela, o Planetário, casas e prédios, escolas, acessos e o que considerar antes de morar no bairro.",
+      "publicadoEm": "2026-10-27T17:39:00.149Z"
+    },
+    {
+      "slug": "vila-brandina",
+      "titulo": "Vila Brandina, Campinas: como é morar no bairro do Shopping Iguatemi",
+      "resumo": "Guia da Vila Brandina, em Campinas: a antiga granja que virou bairro, o Shopping Iguatemi, os acessos à Dom Pedro I e o que considerar antes de morar.",
+      "publicadoEm": "2026-10-27T18:19:31.013Z"
+    },
+    {
+      "slug": "vila-industrial",
+      "titulo": "Vila Industrial, Campinas: como é morar no bairro da ferrovia",
+      "resumo": "Guia da Vila Industrial, em Campinas: origem ferroviária, vilas operárias tombadas, Teatro Castro Mendes, rodoviária, prédios novos e o que ver antes de morar.",
+      "publicadoEm": "2026-10-27T18:19:31.014Z"
+    },
+    {
+      "slug": "vila-itapura",
+      "titulo": "Vila Itapura, Campinas: como é morar no bairro do Barão de Itapura",
+      "resumo": "Guia da Vila Itapura, em Campinas: a origem nas terras do Barão de Itapura, prédios, avenidas, Instituto Agronômico, escolas e o que considerar antes de morar.",
+      "publicadoEm": "2026-10-27T18:00:20.506Z"
+    },
+    {
+      "slug": "vila-joao-jorge",
+      "titulo": "Vila João Jorge, Campinas: como é morar no bairro do Samaritano",
+      "resumo": "Guia da Vila João Jorge, em Campinas: onde fica, o Hospital Samaritano, prédios, vizinhos como a Ponte Preta e o acesso ao Centro e à rodoviária.",
+      "publicadoEm": "2026-10-27T18:19:31.013Z"
+    },
+    {
+      "slug": "vila-lemos",
+      "titulo": "Vila Lemos, Campinas: guia do bairro para quem pensa em morar",
+      "resumo": "Guia da Vila Lemos, em Campinas: onde fica, ruas, história registrada, escolas, saúde, acessos pela Princesa D'Oeste e o que pesar antes de morar.",
+      "publicadoEm": "2026-10-27T18:38:40.587Z"
+    },
+    {
+      "slug": "vila-marieta",
+      "titulo": "Vila Marieta, Campinas: como é morar no bairro do Shopping Prado",
+      "resumo": "Guia da Vila Marieta, em Campinas: história desde os anos 1930, casas e condomínios, Shopping Prado Boulevard, escolas, acessos e bairros vizinhos.",
+      "publicadoEm": "2026-10-27T18:00:20.507Z"
+    },
+    {
+      "slug": "vila-nova",
+      "titulo": "Vila Nova, Campinas: como é morar no bairro, história e arredores",
+      "resumo": "Guia da Vila Nova, em Campinas: origem na antiga Fazenda Santa Genebra, a Igreja Nossa Senhora das Graças, a Avenida Imperatriz Leopoldina e os arredores.",
+      "publicadoEm": "2026-10-27T18:00:20.506Z"
+    },
+    {
+      "slug": "vila-proost-de-souza",
+      "titulo": "Vila Proost de Souza, Campinas: como é morar no bairro",
+      "resumo": "Guia da Vila Proost de Souza, em Campinas: a chácara que virou bairro, o Lar dos Velhinhos, prédios, serviços, vizinhos e acessos pela John Boyd Dunlop.",
+      "publicadoEm": "2026-10-27T18:38:40.582Z"
+    },
+    {
+      "slug": "vila-santa-isabel",
+      "titulo": "Vila Santa Isabel, Campinas: como é morar no bairro de Barão Geraldo",
+      "resumo": "Guia da Vila Santa Isabel, em Barão Geraldo, Campinas: origem na antiga Colônia do Xadrez, Moradia Estudantil da Unicamp, escolas, acessos e perfil do bairro.",
+      "publicadoEm": "2026-10-27T18:00:20.507Z"
+    }
+  ],
+  "atualizadoEm": "2026-10-27T18:38:40.607Z"
+}

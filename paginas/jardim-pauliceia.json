@@ -1,0 +1,276 @@
+{
+  "slug": "jardim-pauliceia",
+  "titulo": "Jardim Paulicéia, Campinas: como é morar no bairro, prédios e acessos",
+  "resumo": "Guia do Jardim Paulicéia, em Campinas: prédios baixos, escolas, comércio de bairro, BRT na John Boyd Dunlop e acesso à Anhanguera.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Prédios residenciais baixos e coloridos à beira da Avenida John Boyd Dunlop",
+      "alt": "Avenida em descida com carros, gramado no barranco e prédios de quatro andares pintados de verde, bege e amarelo; torres da cidade ao fundo",
+      "commons": "File:Av.John Boyd Dunlop - panoramio.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "Conjuntos de apartamentos de poucos andares ao longo da Avenida John Boyd Dunlop",
+      "alt": "Avenida larga com canteiro gramado e, no alto do barranco, blocos de apartamentos de quatro andares em cores claras",
+      "commons": "File:Av John Boyd Dunlop - panoramio - Paulo Humberto (2).jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Vista a partir da Rodovia Anhanguera para a região da Avenida John Boyd Dunlop",
+      "alt": "Pista de rodovia com mureta de concreto e, além dela, prédios residenciais e galpões sob céu com nuvens",
+      "commons": "File:Rod Anhanguera sobre a Regiao da John Boyd Dunlop - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Entrada do Shopping Unimart, na Avenida John Boyd Dunlop, ao anoitecer",
+      "alt": "Rua de acesso a um shopping com totem iluminado escrito Unimart, palmeiras e carros estacionados",
+      "commons": "File:Shopping Unimart - panoramio - Paulo Humberto.jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Terraço com mesas e guarda-sóis na fachada do Shopping Unimart",
+      "alt": "Varanda de shopping com guarda-sóis laranja, palmeiras e cactos, vista da rua",
+      "commons": "File:Shopping Unimart - panoramio - Paulo Humberto (2).jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Avenida John Boyd Dunlop, com os prédios de Campinas no horizonte",
+      "alt": "Avenida em linha reta com canteiro gramado, postes e, ao fundo, vários edifícios altos",
+      "commons": "File:Av. John Boyd Dunlop - panoramio (1).jpg"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Jardim Paulicéia** é um bairro residencial de Campinas, entre a Rodovia Anhanguera e a Avenida John Boyd Dunlop, que a ONDEMORAR agrupa na região Oeste e Sudoeste da cidade. A paisagem mistura casas térreas e sobrados com condomínios de prédios baixos, em geral de três andares, e algumas torres mais altas. O comércio do dia a dia fica nas ruas internas, e o Shopping Unimart e o corredor do BRT estão a poucos minutos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É um bairro de rotina simples: padaria, mercado, escola e academia perto de casa, e avenidas que levam rápido ao Centro e às rodovias. Este guia reúne o que as fontes consultadas confirmam sobre o perfil dos imóveis, as escolas, o comércio, o transporte e os bairros vizinhos, para você decidir se ele combina com a sua mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro residencial de Campinas, entre a Rodovia Anhanguera e a Avenida John Boyd Dunlop",
+        "Casas e sobrados misturados a condomínios de prédios baixos, a maioria de três andares",
+        "A base da ONDEMORAR identifica cerca de 30 condomínios e perto de 1.700 apartamentos no bairro",
+        "Tem a Escola Estadual Professor Djalma Octaviano, de ensino médio, na Rua Willian Booth",
+        "Shopping Unimart a cerca de 1,3 km do centro do bairro, na Avenida John Boyd Dunlop",
+        "Corredor BRT Campo Grande na John Boyd Dunlop, em operação com linhas BRT desde 2022"
+      ],
+      "titulo": "O Jardim Paulicéia em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde fica o Jardim Paulicéia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro ocupa uma área entre dois eixos importantes da cidade. De um lado, a **Rodovia Anhanguera**, cuja pista marginal margeia o bairro, segundo o mapa do OpenStreetMap. Do outro, a **Avenida John Boyd Dunlop**, que liga a região central ao Campo Grande. Pelas coordenadas do OpenStreetMap, o centro do bairro fica a cerca de 4,5 km em linha reta da Catedral Metropolitana de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as ruas do bairro registradas no OpenStreetMap estão a **Rua Willian Booth**, a **Rua Oswaldo Oscar Barthelson**, a **Rua Ferdinando Panattoni**, a **Rua Jornalista Ernesto Napoli**, a **Rua Padre Emilio Miotti**, a **Rua Sílvio Rizzardo** e a **Rua Frei Caneca**. A **Avenida Paulo Provenza Sobrinho** faz a ligação com o Jardim Campos Elíseos, e a **Avenida Mirandópolis** segue em direção à Vila Pompéia."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "As fontes consultadas nesta pesquisa não registram a data do loteamento nem a origem do nome. Por isso este guia não traz uma seção de história. Se você conhece documentos sobre o começo do Jardim Paulicéia, a ONDEMORAR quer saber.",
+      "titulo": "Sobre a história do bairro"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Jardim Paulicéia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Paulicéia é, em boa parte, um bairro de apartamentos de prédio baixo. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 30 condomínios no bairro, mais de 20 deles verticais, somando perto de 1.700 unidades. Muitos têm três andares, sem elevador, e o mais alto da base tem 14 pavimentos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os maiores conjuntos da base são o **Condomínio Maria Tereza I e II**, com cerca de 280 unidades, e os residenciais **Paulicéia I, II e III**, que somam perto de 490 apartamentos. O Residencial Paulicéia III, na Rua Ferdinando Panattoni, tem apartamentos de 1 a 3 quartos, com 39 a 86 m², portaria 24 horas e playground, segundo o QuintoAndar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2",
+        "f6"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os prédios aparecem casas térreas e sobrados, e o comércio de bairro se espalha pelas ruas internas. Para quem procura o primeiro imóvel, um apartamento compacto em condomínio pequeno, ou uma casa com quintal perto de avenida, o bairro oferece as duas opções lado a lado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas no bairro e por perto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro do bairro fica a **Escola Estadual Professor Djalma Octaviano**, na Rua Willian Booth, que oferece ensino médio. Ela pertence à Diretoria de Ensino Campinas Leste, segundo a listagem de escolas estaduais publicada pela Faculdade de Educação da Unicamp."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma listagem aponta outras escolas estaduais nos bairros vizinhos: a **EE Professor André Fort**, na Avenida Paulo Provenza Sobrinho, e a **EE Professor Wilson Brandão Toffano**, ambas no Jardim Campos Elíseos, e a **EE Professor Carlos Lencastre**, na Rua Antonio Grigoleto, no Jardim García. A base de pontos de interesse usada pela ONDEMORAR registra cerca de 35 escolas, entre públicas, particulares e de educação infantil, num raio de 1,5 km do centro do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, serviços e o Shopping Unimart"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio de bairro resolve a rotina sem pegar o carro. Num raio de 1,5 km do centro do Jardim Paulicéia, a base de pontos de interesse da ONDEMORAR (Overture Maps e OpenStreetMap) registra cerca de 40 mercados e padarias, mais de 70 restaurantes, bares e lanchonetes, perto de 30 academias e espaços de esporte, além de farmácias, agência bancária, posto de combustível e agência dos Correios."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, a referência é o **Shopping Unimart**, na Avenida John Boyd Dunlop, a cerca de 1,3 km do centro do bairro. O OpenStreetMap registra ali também um cinema da rede Moviecom."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Avenida John Boyd Dunlop recebe o **Corredor BRT Campo Grande**. Segundo o Diário do Transporte, o corredor tem 17,9 km, sai da região central, ao lado do Terminal Mercado, e segue pelo antigo leito do VLT até os terminais Campo Grande e Itajaí. A linha BRT 20 começou a operar em novembro de 2022, e depois vieram linhas semiexpressas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O trilho que existia ali era o do **VLT de Campinas**, que funcionou de 1990 a 1995 sobre um antigo ramal da Estrada de Ferro Sorocabana. Entre as estações do BRT citadas pela imprensa estão Rossin, PUC/Roseiras, Londres e Aurélia. Para quem vai de carro, a marginal da Rodovia Anhanguera, junto ao bairro, dá acesso à rodovia e às saídas para São Paulo e para o interior."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quem vai trabalhar no Centro de ônibus deve conferir a distância da casa até a parada do BRT mais próxima na John Boyd Dunlop. Quem usa mais a rodovia pode preferir as ruas do lado da marginal da Anhanguera.",
+      "titulo": "Antes de escolher a rua"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bairros vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Jardim Paulicéia faz parte de um conjunto de bairros residenciais ligados pela John Boyd Dunlop e pela Avenida Paulo Provenza Sobrinho. Pelo OpenStreetMap, o **Jardim Londres** fica a cerca de 1 km do centro do bairro e o **Jardim García**, a cerca de 1,3 km. O **Jardim Campos Elíseos**, onde estão duas escolas estaduais citadas acima, e a **Vila Pompéia**, acessada pela Avenida Mirandópolis, completam a vizinhança."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Jardim Paulicéia faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro tende a agradar quem quer um apartamento compacto em condomínio pequeno, com comércio e escola a pé, ônibus rápido para o Centro e saída fácil para a Anhanguera. Também atende quem procura casa com quintal sem se afastar das avenidas principais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pontos de atenção: muitos prédios do bairro têm três andares e podem não ter elevador, o que pesa para quem tem mobilidade reduzida. A proximidade da rodovia e das avenidas traz ruído e trânsito em algumas ruas. Vale visitar o imóvel em horários diferentes e perguntar sobre vaga de garagem, idade do prédio e valor do condomínio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O Jardim Paulicéia é bom para morar?",
+      "resposta": "Para quem quer apartamento compacto ou casa perto de comércio, escola e transporte, sim. O bairro tem padarias, mercados e academias nas ruas internas, BRT na Avenida John Boyd Dunlop e acesso à Rodovia Anhanguera. Em troca, algumas ruas têm ruído de avenida e rodovia."
+    },
+    {
+      "pergunta": "Onde fica o Jardim Paulicéia, em Campinas?",
+      "resposta": "Entre a Rodovia Anhanguera e a Avenida John Boyd Dunlop, a cerca de 4,5 km em linha reta da Catedral Metropolitana. A ONDEMORAR agrupa o bairro na região Oeste e Sudoeste da cidade."
+    },
+    {
+      "pergunta": "Os prédios do Jardim Paulicéia têm elevador?",
+      "resposta": "Muitos não. A base de condomínios da ONDEMORAR mostra que boa parte dos prédios do bairro tem três andares, padrão que costuma dispensar elevador. Há também torres mais altas, a maior com 14 pavimentos."
+    },
+    {
+      "pergunta": "Quais escolas ficam no Jardim Paulicéia?",
+      "resposta": "No bairro fica a Escola Estadual Professor Djalma Octaviano, de ensino médio, na Rua Willian Booth. Nos vizinhos estão a EE Professor André Fort e a EE Professor Wilson Brandão Toffano, no Jardim Campos Elíseos, e a EE Professor Carlos Lencastre, no Jardim García."
+    },
+    {
+      "pergunta": "Tem shopping perto do Jardim Paulicéia?",
+      "resposta": "Sim. O Shopping Unimart fica na Avenida John Boyd Dunlop, a cerca de 1,3 km do centro do bairro, e tem cinema da rede Moviecom."
+    },
+    {
+      "pergunta": "Como ir do Jardim Paulicéia ao Centro de Campinas de ônibus?",
+      "resposta": "Pelo Corredor BRT Campo Grande, na Avenida John Boyd Dunlop, que liga a região ao Terminal Mercado, na área central. As linhas BRT operam no corredor desde novembro de 2022."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Faculdade de Educação da Unicamp, listagem das escolas estaduais de Campinas",
+      "site": "fe.unicamp.br"
+    },
+    {
+      "nome": "Escol.as, ficha da EE Professor Djalma Octaviano",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Diário do Transporte, sobre o Terminal BRT Campo Grande (dezembro de 2020) e as linhas do BRT Campo Grande (setembro de 2023)",
+      "site": "diariodotransporte.com.br"
+    },
+    {
+      "nome": "Wikipédia, verbetes VLT de Campinas e BRT de Campinas",
+      "site": "pt.wikipedia.org"
+    },
+    {
+      "nome": "QuintoAndar, ficha do Residencial Paulicéia III",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "OpenStreetMap, ruas, localização do bairro e do Shopping Unimart",
+      "site": "openstreetmap.org"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Jardim Paulicéia, em Campinas: prédios baixos, casas e sobrados, comércio de bairro, escola estadual no bairro, BRT na John Boyd Dunlop e a Anhanguera ali do lado. Preparamos um guia com o perfil dos imóveis, as escolas, o comércio, o transporte e os bairros vizinhos, para você decidir se o bairro combina com a sua mudança. Link na bio.",
+    "hashtags": [
+      "jardimpauliceia",
+      "campinas",
+      "morarbem",
+      "guiadebairro",
+      "apartamentocampinas",
+      "brtcampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Jardim Paulicéia, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:38:40.584Z"
+}

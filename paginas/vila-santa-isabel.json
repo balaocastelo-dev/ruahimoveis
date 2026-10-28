@@ -1,0 +1,317 @@
+{
+  "slug": "vila-santa-isabel",
+  "titulo": "Vila Santa Isabel, Campinas: como é morar no bairro de Barão Geraldo",
+  "resumo": "Guia da Vila Santa Isabel, em Barão Geraldo, Campinas: origem na antiga Colônia do Xadrez, Moradia Estudantil da Unicamp, escolas, acessos e perfil do bairro.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Maracujá em flor no jardim da Moradia Estudantil da Unicamp, na Vila Santa Isabel",
+      "alt": "Flor branca e roxa de maracujá entre folhas verdes, com uma escada de tijolo e piso de pedra ao fundo",
+      "commons": "File:Moradia passiflora.jpg"
+    },
+    {
+      "id": "f2",
+      "legenda": "O campus da Unicamp por volta de 1990, ano em que a Moradia Estudantil foi inaugurada",
+      "alt": "Vista aérea de prédios baixos e dois pavilhões circulares entre árvores, com campos de terra vermelha ao fundo",
+      "commons": "File:Unicamp campus 1990.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Casa térrea com ipê-amarelo florido, cena comum nas ruas de Barão Geraldo",
+      "alt": "Casa térrea com muro de tijolos e cerca viva, com um ipê de flores amarelas na calçada",
+      "commons": "File:IpêBarão.JPG"
+    },
+    {
+      "id": "f4",
+      "legenda": "Vista aérea com o terreno da ONDEMORAR à venda na Vila Santa Isabel destacado em vermelho",
+      "alt": "Imagem de satélite com quadras de casas à direita, uma área verde contornada em vermelho e uma rodovia à esquerda",
+      "imovel_foto": 258
+    },
+    {
+      "id": "f5",
+      "legenda": "Terreno arborizado da ONDEMORAR à venda na Vila Santa Isabel",
+      "alt": "Área gramada com árvores de copa larga e céu claro ao fundo",
+      "imovel_foto": 265
+    },
+    {
+      "id": "f6",
+      "legenda": "Prédio do Ciclo Básico, no campus principal da Unicamp, em Barão Geraldo",
+      "alt": "Prédio curvo de concreto e tijolo aparente, com palmeiras e piso de blocos na frente",
+      "commons": "File:Ciclo Básico (olho esquerdo) - panoramio.jpg"
+    },
+    {
+      "id": "f7",
+      "legenda": "Margem da lagoa do Parque Ecológico Hermógenes Leitão Filho, em Barão Geraldo",
+      "alt": "Árvores na beira de um lago, com o sol baixo aparecendo entre os galhos",
+      "commons": "File:ParqueBarão3.JPG"
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Vila Santa Isabel** é um bairro antigo do distrito de Barão Geraldo, no norte de Campinas, formado a partir do loteamento de terras de fazenda em meados do século XX. É uma área residencial de casas de porte médio e popular, com comércio de bairro e trechos que ainda guardam ar rural. O que mais marca o lugar é a **Moradia Estudantil da Unicamp**, que fica no bairro e reúne cerca de mil estudantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, a Vila Santa Isabel oferece a estrutura de Barão Geraldo, com universidades, polos de tecnologia e avenidas que levam ao resto da cidade, num bairro de ritmo mais calmo e com vida comunitária própria. Este guia reúne a origem do bairro, o perfil das moradias, as escolas, os acessos e os pontos a considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro do distrito de Barão Geraldo, no norte de Campinas",
+        "Nasceu do loteamento de uma gleba de fazenda, em meados do século XX",
+        "Ocupa a área da antiga Colônia do Xadrez, ligada à Fazenda Rio das Pedras",
+        "A Igreja de Santa Isabel teve a missa inaugural em setembro de 1963",
+        "Abriga a Moradia Estudantil da Unicamp, inaugurada em 1990, com 226 casas",
+        "Perfil de casas de porte médio e popular, com comércio de bairro",
+        "Tem a Escola Estadual Professor Hilton Federici, na Rua Eduardo Modesto"
+      ],
+      "titulo": "A Vila Santa Isabel em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem a Vila Santa Isabel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história do bairro começa nas fazendas de café que ocupavam a região de Barão Geraldo. Onde hoje fica a Vila Santa Isabel existia a chamada **Colônia do Xadrez**, a colônia de imigrantes da Fazenda Rio das Pedras. O apelido vinha do cafezal vizinho, conhecido como *cafezal do Xadrez*."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vila surgiu do loteamento de uma gleba desmembrada dessa fazenda. Um estudo do Instituto de Geociências da Unicamp situa o loteamento na década de 1940, e outro, na década de 1950; ambos concordam que o bairro nasceu da divisão de terras de fazenda. Segundo o primeiro estudo, a vila manteve os limites da propriedade de onde saiu, o que ajuda a explicar o traçado próprio do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em setembro de 1963, a nova **Igreja de Santa Isabel** celebrou a missa inaugural no local onde está até hoje. No mesmo ano, moradores da região pediram que a futura Universidade Estadual de Campinas fosse instalada nas terras do chamado *cafezal Santa Izabel*. A gleba escolhida, de 30 alqueires, foi desapropriada pelo valor simbólico de 1 cruzeiro, com a concordância do dono, e a pedra fundamental da Unicamp foi lançada em 5 de outubro de 1966."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Os dois jeitos aparecem nos documentos. Os estudos da Unicamp e o texto sobre a Moradia Estudantil escrevem *Vila Santa Izabel*; cadastros de escolas e o itinerário do ônibus da Moradia usam *Santa Isabel*. É o mesmo bairro.",
+      "titulo": "Isabel ou Izabel?"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar na Vila Santa Isabel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Santa Isabel é, antes de tudo, um bairro de casas. O estudo do Instituto de Geociências descreve uma mistura de moradias de porte médio e popular, comércio e serviços de pequeno porte e trechos de paisagem ainda rural. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 24 condomínios no bairro, quase todos pequenos, somando perto de 180 unidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro cresceu em ondas. Segundo os pesquisadores, chegaram primeiro trabalhadores atraídos pela descentralização da indústria paulista; depois, com a Unicamp, o campus II da PUC-Campinas e o Parque II do CIATEC, vieram estudantes e novos moradores, sobretudo após a construção da Moradia Estudantil. Um estudo mais recente, apresentado no congresso de iniciação científica da Unicamp, aponta que a proximidade com a Unicamp e as melhorias de infraestrutura que a universidade trouxe fizeram o preço da terra subir."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4",
+        "f5"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um traço que aparece nos estudos é a vida comunitária. A pesquisa do Instituto de Geociências registrou que a Vila Santa Isabel é o bairro de Barão Geraldo em que a população mais usa os espaços públicos para atividades comunitárias e de lazer. Outro trabalho descreve o bairro como antigo, consolidado e com identidade própria."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A Moradia Estudantil da Unicamp"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Moradia Estudantil da Unicamp** fica na Vila Santa Isabel, a cerca de 6 km do campus principal. A obra começou em 1989 e terminou em 1990, quando o conjunto foi inaugurado pelo então reitor Carlos Alberto Vogt. O projeto é do arquiteto Joan Villá. Ocupa cerca de 55 mil m², com 22 mil m² de área construída."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "São **226 casas** para quatro estudantes cada, 27 estúdios para casais com filhos, 13 salas de estudo, quatro centros de convivência e um campo de futebol. Vivem ali cerca de mil pessoas, selecionadas todo ano por critérios socioeconômicos. Em 2001, a Unicamp criou o Programa de Moradia Estudantil, ligado à Reitoria, para organizar o atendimento que já existia desde 1989."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Moradia pesa no dia a dia do bairro. Segundo pesquisa da Unicamp, o comércio local cresceu principalmente por causa dela, e o conjunto apoia atividades culturais e sociais, como cursinhos, alfabetização de adultos e espetáculos de teatro. Em agosto de 2025, a Unicamp oficializou a compra de um terreno de 44 mil m² em Barão Geraldo para um novo conjunto, com mais 1.400 vagas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas e universidades perto da Vila Santa Isabel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No próprio bairro fica a **Escola Estadual Professor Hilton Federici**, na Rua Eduardo Modesto, da rede estadual, com os anos finais do ensino fundamental, o ensino médio e a educação de jovens e adultos. A seção *o que tem perto*, mais abaixo nesta página, lista outras escolas e creches num raio de 1,5 km, com distâncias atualizadas automaticamente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o ensino superior, o bairro está no distrito que abriga o campus principal da **Unicamp** e o campus II da **PUC-Campinas**, citados pelos pesquisadores como motores do crescimento da vila. Para quem estuda ou trabalha nessas instituições, morar na Vila Santa Isabel encurta o trajeto diário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio e serviços no dia a dia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio da Vila Santa Isabel é de bairro: estudos da Unicamp falam em comércio e serviços de pequeno porte e, mais recentemente, diversificados. Parte do movimento vem da Moradia Estudantil e parte das grandes vias próximas, onde se concentram lojas e serviços maiores. Mercados, padarias, restaurantes e academias aparecem na lista de lugares próximos desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores e serviços especializados, o caminho natural é o centro de Barão Geraldo, ao longo da Avenida Albino J. B. de Oliveira, antiga Estrada dos Fazendeiros. A base de lugares da ONDEMORAR registra poucos serviços de saúde num raio de 1,5 km do bairro; vale conferir, antes da mudança, qual centro de saúde atende o seu endereço."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte e acessos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Unicamp mantém a **Linha 110 – Moradia Estudantil**, um ônibus que liga a Moradia ao campus nos dias úteis e nos fins de semana. Pelo itinerário divulgado pela Prefeitura Universitária, o trajeto usa vias como a Avenida Santa Isabel, as ruas Jerônimo Pattaro e Agostinho Pattaro, a Avenida Albino J. B. de Oliveira e a Avenida Professor Atílio Martini. O serviço é exclusivo dos moradores da Moradia, com exceção das viagens noturnas, abertas a outros alunos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o resto de Campinas, a ligação de Barão Geraldo com o centro da cidade é a **Rodovia Professor Zeferino Vaz (SP-332)**, que antes se chamava Rodovia General Milton Tavares de Souza. A Estrada da Rhodia, continuação da antiga Estrada dos Fazendeiros, também aparece no itinerário noturno do ônibus da Moradia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Polos de tecnologia e áreas verdes em volta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vizinhança da Vila Santa Isabel é marcada pela ciência. Além das universidades, uma pesquisa da Unicamp sobre o bairro cita como influências o CPqD, o Centro Tecnológico de Informática, o Laboratório Síncrotron e empresas de tecnologia instaladas na região, além do Parque II do CIATEC. É esse conjunto que atrai pesquisadores, técnicos e estudantes para Barão Geraldo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para lazer ao ar livre, uma opção do distrito é o **Parque Ecológico Hermógenes Leitão Filho**, nos limites entre a Unicamp e o bairro Cidade Universitária, com lagoa e área arborizada. Os loteamentos da Cidade Universitária se formaram no entorno do campus."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f7"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem a Vila Santa Isabel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Vila Santa Isabel combina com quem quer casa em Barão Geraldo, num bairro consolidado e de vizinhança ativa, perto da Unicamp, da PUC-Campinas e dos polos de tecnologia. Também interessa a quem trabalha com a comunidade universitária, já que a Moradia Estudantil movimenta o comércio e a vida cultural do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também vêm das fontes. O comércio local é de pequeno porte, e compras maiores pedem deslocamento até o centro do distrito. A oferta de saúde num raio curto é limitada, e a maior parte dos imóveis é de casas, com poucos condomínios. Antes de decidir, vale percorrer o trajeto até o trabalho ou a faculdade nos horários em que você vai usá-lo."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A Vila Santa Isabel é bom para morar?",
+      "resposta": "Para quem quer casa em Barão Geraldo perto da Unicamp, sim. É um bairro antigo e consolidado, de moradias de porte médio e popular, com comércio de bairro e vida comunitária ativa, segundo estudos da própria Unicamp. Compras maiores e serviços de saúde pedem deslocamento até o centro do distrito."
+    },
+    {
+      "pergunta": "Onde fica a Vila Santa Isabel, em Campinas?",
+      "resposta": "No distrito de Barão Geraldo, no norte de Campinas. A Moradia Estudantil da Unicamp, que fica no bairro, está a cerca de 6 km do campus principal da universidade."
+    },
+    {
+      "pergunta": "A Moradia Estudantil da Unicamp fica na Vila Santa Isabel?",
+      "resposta": "Sim. O conjunto foi inaugurado em 1990, tem projeto do arquiteto Joan Villá e reúne 226 casas para quatro estudantes cada e 27 estúdios para famílias, onde vivem cerca de mil pessoas."
+    },
+    {
+      "pergunta": "Qual escola fica na Vila Santa Isabel?",
+      "resposta": "A Escola Estadual Professor Hilton Federici, na Rua Eduardo Modesto, com os anos finais do ensino fundamental, o ensino médio e a educação de jovens e adultos. Há outras escolas e creches num raio de 1,5 km."
+    },
+    {
+      "pergunta": "Como ir da Vila Santa Isabel ao centro de Campinas?",
+      "resposta": "A ligação de Barão Geraldo com o centro da cidade é a Rodovia Professor Zeferino Vaz (SP-332). Dentro do distrito, a Avenida Albino J. B. de Oliveira, antiga Estrada dos Fazendeiros, é um dos caminhos usados a partir do bairro."
+    },
+    {
+      "pergunta": "Qual é a origem da Vila Santa Isabel?",
+      "resposta": "O bairro ocupa a área da antiga Colônia do Xadrez, a colônia de imigrantes da Fazenda Rio das Pedras, e nasceu do loteamento de uma gleba dessa fazenda em meados do século XX. A Igreja de Santa Isabel teve a missa inaugural em setembro de 1963."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Unicamp, Instituto de Geociências — Estruturação urbana da Vila Santa Izabel (PIBIC)",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Unicamp, Instituto de Geociências — Vila Santa Izabel e Barão Geraldo (PIBIC, resumos 461 e 568)",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Unicamp — Congresso PIBIC 2013, resumo sobre a Vila Santa Isabel e o DIC V",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Artigo sobre o Programa de Moradia Estudantil da Unicamp (Redalyc)",
+      "site": "redalyc.org"
+    },
+    {
+      "nome": "Prefeitura Universitária da Unicamp — Linha 110 Moradia Estudantil",
+      "site": "prefeitura.unicamp.br"
+    },
+    {
+      "nome": "Revista Pesquisa FAPESP — A concepção de uma universidade",
+      "site": "revistapesquisa.fapesp.br"
+    },
+    {
+      "nome": "Times Brasil — Unicamp compra terreno para novo conjunto de moradias",
+      "site": "timesbrasil.com.br"
+    },
+    {
+      "nome": "Escol.as — E.E. Professor Hilton Federici (Censo Escolar)",
+      "site": "escol.as"
+    },
+    {
+      "nome": "Wikipédia — Barão Geraldo",
+      "site": "pt.wikipedia.org"
+    }
+  ],
+  "redes": {
+    "legenda": "Você conhece a Vila Santa Isabel, em Barão Geraldo? O bairro nasceu onde ficava a antiga Colônia do Xadrez, da Fazenda Rio das Pedras, ganhou a Igreja de Santa Isabel em 1963 e hoje abriga a Moradia Estudantil da Unicamp, inaugurada em 1990. Casas, comércio de bairro e vida comunitária perto das universidades. Leia o guia completo do bairro no link da bio.",
+    "hashtags": [
+      "vilasantaisabel",
+      "baraogeraldo",
+      "campinas",
+      "unicamp",
+      "morarbem",
+      "guiadebairro",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Vila Santa Isabel, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T18:00:20.507Z"
+}

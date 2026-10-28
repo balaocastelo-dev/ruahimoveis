@@ -1,0 +1,335 @@
+{
+  "slug": "nova-campinas",
+  "titulo": "Nova Campinas, Campinas: como é morar no bairro-jardim de 1945",
+  "resumo": "Guia do Nova Campinas, em Campinas: o bairro-jardim de Jorge de Macedo Vieira, ruas arborizadas, casas, novos prédios, comércio e acessos.",
+  "capa": {
+    "foto": "f1"
+  },
+  "fotos": [
+    {
+      "id": "f1",
+      "legenda": "Rua tranquila do Nova Campinas, com casas baixas e árvores de copa larga",
+      "alt": "Rua residencial larga e vazia com casas de muro baixo e árvores grandes dos dois lados",
+      "commons": "File:Nova Campinas - Campinas - SP.JPG"
+    },
+    {
+      "id": "f2",
+      "legenda": "Rua Antonio Arruda Camargo, com casas e comércio entre palmeiras",
+      "alt": "Rua com palmeiras, casas de alto padrão e uma loja de fachada de tijolo à direita",
+      "commons": "File:Rua Antonio Arruda Camargo - Bairro Nova Campinas - Campinas SP - panoramio.jpg"
+    },
+    {
+      "id": "f3",
+      "legenda": "Avenida José de Souza Campos, a Norte-Sul, com canteiro central e prédios comerciais",
+      "alt": "Avenida larga com canteiro de palmeiras e um edifício espelhado alto ao fundo",
+      "commons": "File:Av. José de Souza Campos - Norte-sul - panoramio.jpg"
+    },
+    {
+      "id": "f4",
+      "legenda": "Trecho arborizado da Avenida Norte-Sul",
+      "alt": "Avenida com árvores altas à esquerda, calçada gramada e um prédio de escritórios ao fundo",
+      "commons": "File:Avenida Norte-Sul - panoramio (4).jpg"
+    },
+    {
+      "id": "f5",
+      "legenda": "Shopping Iguatemi Campinas, na Vila Brandina, inaugurado em 1980",
+      "alt": "Fachada de shopping center com letreiro Iguatemi, palmeiras e estacionamento cheio na frente",
+      "commons": "File:Shopping Iguatemi Campinas 01.jpg"
+    },
+    {
+      "id": "f6",
+      "legenda": "Casa com venda pela ONDEMORAR no Nova Campinas, em rua com calçada de pedra portuguesa",
+      "alt": "Casa térrea de muro baixo ondulado em rua arborizada com calçada de mosaico",
+      "imovel_foto": 1143
+    },
+    {
+      "id": "f7",
+      "legenda": "Terreno à venda pela ONDEMORAR no Nova Campinas, em esquina arborizada",
+      "alt": "Esquina com muro baixo, gradil branco, jardim e árvores, com prédios ao fundo",
+      "imovel_foto": 1382
+    },
+    {
+      "id": "f8",
+      "legenda": "Piscina de condomínio com apartamento da ONDEMORAR à venda no Nova Campinas",
+      "alt": "Piscina longa com palmeiras ao lado de um edifício residencial de varandas envidraçadas",
+      "imovel_foto": 1273
+    },
+    {
+      "id": "f9",
+      "legenda": "Jardim de condomínio novo do bairro, com unidade da ONDEMORAR à venda",
+      "alt": "Área externa com canteiros, gramado e rampa, cercada por torres residenciais altas",
+      "imovel_foto": 1627
+    }
+  ],
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Nova Campinas** é um bairro da região leste de Campinas, colado ao Cambuí, conhecido pelas ruas sinuosas e arborizadas e pelas casas de alto padrão. Nasceu em 1945 como *bairro-jardim*, projetado pelo engenheiro e urbanista Jorge de Macedo Vieira. Hoje mistura casas, clínicas, escritórios, restaurantes e lojas, e vem recebendo prédios residenciais novos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem pensa em morar ali, o bairro oferece pouca densidade, muito verde e acesso rápido à Avenida Norte-Sul, com o Cambuí do outro lado da avenida. Em troca, convive com o movimento do comércio durante o dia e com a transformação trazida pelos novos edifícios. Este guia reúne a história, o perfil dos imóveis, os serviços e o que considerar antes da mudança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bairro da região leste de Campinas, vizinho do Cambuí, do outro lado da Avenida Norte-Sul",
+        "Loteado em 1945 com projeto de bairro-jardim do urbanista Jorge de Macedo Vieira",
+        "Ruas sinuosas, praças nas esquinas das quadras e muita arborização",
+        "Cerca de 3.750 moradores e 1,7 km², segundo dados da Prefeitura citados pela imprensa",
+        "Uso misto: casas de alto padrão, clínicas, escritórios, restaurantes e prédios novos",
+        "Acessos pelas avenidas José de Souza Campos (Norte-Sul) e Moraes Salles"
+      ],
+      "titulo": "O Nova Campinas em poucas linhas"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A história do Nova Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As terras do bairro pertenciam à **Chácara das Laranjeiras**, de Alzira Ferreira Coutinho, neta do Barão de Itatiba, às margens do **Córrego Proença**. A família criou a Companhia Imobiliária Nova Campinas para vender os lotes. A primeira parte, a Vila Nova Campinas, de 1939, ficou na margem esquerda do córrego e hoje faz parte do Cambuí. O bairro atual ocupa a margem direita e foi loteado em 1945."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vale do Proença era um terreno alagadiço: aparece como brejo em plantas da cidade de 1916 e 1929. Em 1939, o córrego foi retificado e canalizado para receber a Perimetral Externa, que deu origem à atual **Avenida José de Souza Campos**, a Norte-Sul. Até o começo dos anos 1930, ele marcava o limite leste da área urbana de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f1"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Um bairro-jardim desenhado por Jorge de Macedo Vieira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "**Jorge de Macedo Vieira** (1894-1978), formado engenheiro civil pela Escola Politécnica em 1917, trabalhou na Companhia City, em São Paulo, na época dos bairros-jardim como o Jardim América e o Pacaembu. Depois, com escritório próprio, assinou planos como o de Maringá, em 1943. Em Campinas, desenhou o Nova Campinas, a Vila Iza e a Chácara da Barra entre 1945 e 1950."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O projeto seguiu o modelo inglês de bairro-jardim: ruas sinuosas que acompanham o relevo, praças triangulares nas esquinas das quadras e um *park-way* ao longo do córrego canalizado. Esse trecho verde, formado pelas praças Augusto César e Ralph Stettinger, tem cerca de 580 metros, segundo pesquisa da Unicamp. O loteamento tinha 997 lotes; em 1947, 431 já estavam vendidos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro atraiu famílias de classe média e alta e, segundo os pesquisadores, recebeu investimento público acima da média da cidade. Nos anos 1960, já estava entre os mais bem equipados de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "texto": "Em 2002, a Sociedade do Bairro da Nova Campinas pediu ao Condepacc a proteção do traçado. O processo foi aberto em 2004 e o tombamento saiu em 2005, mas acabou anulado. Segundo pesquisa da Unicamp, o traçado voltou a ser estudado para tombamento, sem a área da antiga chácara.",
+      "titulo": "O tombamento que não durou"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é morar no Nova Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Nova Campinas foi pensado para casas, e elas ainda dão o tom em boa parte das ruas: terrenos amplos, muros baixos, jardins e calçadas sombreadas. Guias de bairro descrevem casas de alto padrão, com mansões na parte antiga, perto do Cambuí, e um trecho de perfil mais de classe média a leste."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f6",
+        "f7"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A partir dos anos 1990, o bairro passou a ter uso misto. A lei de uso do solo de 1988 abriu espaço para pequenos comércios e serviços, e muitas casas viraram clínicas, escritórios e lojas. Pesquisas da Unicamp associam a saída de parte dos moradores, nessa época, a uma onda de assaltos. O resultado é um bairro movimentado de dia e calmo à noite."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mudança mais recente é a verticalização. Segundo reportagem do ACidadeON com a PUC-Campinas, o Plano Diretor de 2018 flexibilizou a ocupação do solo, e o bairro recebeu ao menos 12 novos empreendimentos desde 2024. A base de condomínios da ONDEMORAR identifica cerca de 30 condomínios no bairro, a maioria prédios baixos ou recentes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f8",
+        "f9"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "contato"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Comércio, gastronomia e serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O comércio se espalha pelas ruas do bairro e pela Norte-Sul. A reportagem do ACidadeON cita supermercados e endereços como o **Katori Sushi**, o **Kansas Steak**, o **Quintal Mediterrâneo**, a **Notre Pane**, o **Wood Café** e a **Boulangerie de France**, além da Cozinha da Leca, de comida caseira e saudável. Há também consultórios, agências bancárias e lojas de moda e decoração."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f2"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para compras maiores, o **Shopping Iguatemi Campinas**, inaugurado em 1980 na Avenida Iguatemi, na Vila Brandina, fica perto do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista padarias, mercados, farmácias e academias com a distância a pé, atualizada automaticamente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f5"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolas, igreja e memória do bairro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No ensino infantil, o bairro tem a escola municipal **CEI Prof. José Villagelin Neto**. Guias de bairro citam também, por perto, o **Colégio Coração de Jesus** e a unidade Moraes Salles da **ESAMC**. A lista de escolas mais próximas, com o tempo a pé, aparece na seção ao vivo desta página."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na Avenida Jesuíno Marcondes Machado fica o **Santuário Santa Rita de Cássia**, elevado a santuário diocesano em 2022. O projeto original da igreja é de 1957; a cúpula foi instalada em 2006, e a comunidade arrecada fundos para concluir um campanário de cerca de 40 metros. A Festa de Santa Rita acontece em maio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Moradores antigos lembram da Padaria Inca, perto do balão da Avenida Carlos Stevenson, a Praça Franklin Roosevelt, que ganhou o apelido de *Balão da Inca* e foi ponto de encontro da juventude do bairro por décadas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Transporte, acessos e vizinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Avenida José de Souza Campos** (Norte-Sul) separa o Nova Campinas do Cambuí, a oeste. Ao sul, a **Avenida Moraes Salles** separa o bairro do Jardim Paraíso. Os outros vizinhos são o Jardim das Paineiras, a leste, e o Jardim Planalto, ao norte. A Chácara da Barra, outro bairro-jardim do mesmo urbanista, também fica na região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Guias imobiliários citam acesso fácil à Norte-Sul, à Moraes Salles, à Heitor Penteado e à Rodovia Dom Pedro I. Nos horários de pico, a Norte-Sul fica carregada, e a reportagem do ACidadeON aponta a dificuldade de estacionar como um dos incômodos do bairro."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Nova Campinas faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a quem quer casa com terreno, ruas verdes e pouca densidade sem se afastar da região central: famílias, profissionais que trabalham no Cambuí ou no Centro e quem procura um apartamento novo num entorno de casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os pontos de atenção também vêm das fontes: o comércio e as clínicas trazem movimento e falta de vaga de dia, a segurança aparece nas falas de moradores ouvidos pela imprensa, e a verticalização recente vai mudar a paisagem de algumas quadras. Vale conhecer a rua em horários diferentes antes de decidir."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o zoneamento da quadra e os projetos aprovados por perto, se a rua tem muito comércio ou clínicas, as condições de estacionamento e, nas casas, a idade da construção e o estado do telhado e da parte elétrica.",
+      "titulo": "O que perguntar antes de fechar"
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o Nova Campinas, em Campinas?",
+      "resposta": "Na região leste da cidade, colado ao Cambuí. A Avenida José de Souza Campos (Norte-Sul) separa os dois bairros, e a Avenida Moraes Salles passa ao sul."
+    },
+    {
+      "pergunta": "Quem projetou o bairro Nova Campinas?",
+      "resposta": "O engenheiro e urbanista Jorge de Macedo Vieira, em 1945, no modelo de bairro-jardim, com ruas sinuosas e praças nas esquinas. Ele também desenhou a Vila Iza e a Chácara da Barra."
+    },
+    {
+      "pergunta": "O Nova Campinas é bom para morar?",
+      "resposta": "Para quem quer casa ou apartamento em ruas arborizadas e de baixa densidade, perto do Cambuí e da Norte-Sul, sim. O ponto de atenção é o movimento do comércio e das clínicas durante o dia."
+    },
+    {
+      "pergunta": "O Nova Campinas é tombado?",
+      "resposta": "Não hoje. O tombamento pelo Condepacc saiu em 2005, mas foi anulado. Segundo pesquisa da Unicamp, o traçado do bairro voltou a ser estudado."
+    },
+    {
+      "pergunta": "O Nova Campinas tem prédios?",
+      "resposta": "Sim, e cada vez mais. O bairro nasceu para casas, mas o Plano Diretor de 2018 permitiu a verticalização, e ao menos 12 empreendimentos foram lançados desde 2024, segundo o ACidadeON."
+    },
+    {
+      "pergunta": "Quais bairros fazem divisa com o Nova Campinas?",
+      "resposta": "O Cambuí, a oeste, o Jardim das Paineiras, a leste, e o Jardim Planalto, ao norte. A Avenida Moraes Salles faz o limite sul."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Revista Geografia (Unesp), artigo de Arruda e Paes sobre a cidade-jardim em Campinas (2023)",
+      "site": "periodicos.rc.biblioteca.unesp.br"
+    },
+    {
+      "nome": "Unicamp, pesquisa de iniciação científica sobre o urbanismo de Jorge de Macedo Vieira no Nova Campinas",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "Unicamp, resumo de congresso sobre Jorge de Macedo Vieira e o ideário cidade-jardim em Campinas",
+      "site": "prp.unicamp.br"
+    },
+    {
+      "nome": "ACidadeON e PUC-Campinas, projeto Vozes da Nossa Gente: conheça o Nova Campinas (novembro de 2025)",
+      "site": "acidadeon.com"
+    },
+    {
+      "nome": "ANPUH, artigo de Rosana Steinke sobre a biografia profissional de Jorge de Macedo Vieira",
+      "site": "anpuh.org.br"
+    },
+    {
+      "nome": "Anais do Museu Paulista, artigo de Pedro Rossetto sobre a estrada dos Goiases em Campinas",
+      "site": "redalyc.org"
+    },
+    {
+      "nome": "Correio da Manhã, sobre a Festa de Santa Rita e o campanário do santuário (maio de 2026)",
+      "site": "correiodamanha.com.br"
+    },
+    {
+      "nome": "QuintoAndar, guia do bairro Nova Campinas e guia de shoppings de Campinas",
+      "site": "quintoandar.com.br"
+    },
+    {
+      "nome": "Webquarto, guia do bairro Nova Campinas",
+      "site": "webquarto.com.br"
+    },
+    {
+      "nome": "Novo Metro, artigo sobre a história do Nova Campinas",
+      "site": "novometro.com.br"
+    },
+    {
+      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+    }
+  ],
+  "redes": {
+    "legenda": "Nova Campinas, em Campinas: o bairro-jardim desenhado em 1945 por Jorge de Macedo Vieira, com ruas sinuosas, praças nas esquinas e muito verde, vizinho do Cambuí. Preparamos um guia com a história, o tombamento que não durou, o comércio, as escolas, os acessos e o que considerar antes de morar no bairro. Link na bio.",
+    "hashtags": [
+      "novacampinas",
+      "campinas",
+      "bairrojardim",
+      "morarbem",
+      "guiadebairro",
+      "casacampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "seo": {
+    "titulo": "Nova Campinas, Campinas: guia do bairro para morar"
+  },
+  "publicadoEm": "2026-10-27T17:39:00.155Z"
+}
