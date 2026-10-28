@@ -1,0 +1,331 @@
+{
+  "codigo": "CA0044",
+  "slug": "casa-1-suited-piscina-paisagismo-vila-verde-campinas-ca0044",
+  "titulo": "Casa com 1 suíte, piscina e paisagismo no Condomínio Vila Verde, Campinas",
+  "resumo": "Casa de alto padrão com 1 suíte, piscina, área de lazer e paisagismo em condomínio fechado em Campinas, localizada em rua sem saída",
+  "capa": {
+    "foto": 592,
+    "alt": "Fachada da casa com piscina e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa de alto padrão com 600 m² de área construída e 900 m² de terreno, localizada no Condomínio Residencial Vila Verde, em Campinas. A casa está situada em uma rua sem saída, garantindo privacidade e tranquilidade. O imóvel conta com ambientes amplos e bem distribuídos, com destaque para o piso em madeira que traz elegância aos espaços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa possui uma área externa com piscina e um belo paisagismo, ideal para momentos de lazer com familiares e amigos. O imóvel também conta com uma suíte de serviço, escritório, sala de TV, sala de jantar e área de luz, oferecendo conforto e praticidade para quem busca um espaço completo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "1 suíte e uma suíte de serviço",
+        "Piscina com área de lazer e espreguiçadeiras",
+        "Paisagismo assinado por profissional",
+        "Ambientes amplos e bem distribuídos",
+        "Piso em madeira em ambientes sociais"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área Social e Varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla, com salas de estar e jantar integradas à varanda, proporcionando uma sensação de amplitude e conexão com o exterior. O piso de madeira e os teto altos dão elegância aos ambientes. A varanda conta com mesas e cadeiras de madeira, além de plantas e uma vista para a piscina."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 564,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 566,
+          "legenda": "Varanda com plantas e cadeira"
+        },
+        {
+          "foto": 570,
+          "legenda": "Varanda com mesa de madeira e sofá de vime"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e Serviços"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha possui armários brancos, fogão, geladeira e janela com vista para o exterior. A área de serviço está bem separada, e há uma área de luz, ideal para atividades domésticas. O ambiente é funcional e bem iluminado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 572,
+          "legenda": "Cozinha com armários brancos, fogão, geladeira e janela com vista para o exterior"
+        },
+        {
+          "foto": 590,
+          "legenda": "Cozinha com forno de tijolo e geladeira branca"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e Banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos, com decoração diferenciada, como o uso de borboletas em uma das suítes. Os banheiros possuem pias de mármore e granito, box de vidro e janelas, garantindo conforto e praticidade. Um dos banheiros possui uma área de apoio à piscina."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 581,
+          "legenda": "Quarto com cama, mesa de cabeceira e porta aberta para varanda"
+        },
+        {
+          "foto": 582,
+          "legenda": "Quarto com cama, televisão e armário"
+        },
+        {
+          "foto": 583,
+          "legenda": "Quarto com cama, armário e decoração de borboletas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de Lazer e Piscina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de lazer externa inclui uma piscina com deck de pedra e madeira, espreguiçadeiras e chaise longues. O paisagismo é bem cuidado, com plantas e jardins que valorizam o entorno da casa. A piscina está localizada em um ambiente integrado ao jardim, permitindo momentos de relaxamento e entretenimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 563,
+          "legenda": "Piscina com espreguiçadeiras e plantas"
+        },
+        {
+          "foto": 569,
+          "legenda": "Piscina com espelho d'água e chaise longue"
+        },
+        {
+          "foto": 585,
+          "legenda": "Piscina com deck de pedra e plantas"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam privacidade, conforto e um espaço completo de lazer. Com 1 suíte, piscina e área externa bem planejada, é adequado para quem valoriza a qualidade de vida e o bem-estar de todos os moradores."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o tipo de condomínio e o que não está visível nas fotos, como a estrutura do telhado e o tipo de fundação.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 592,
+      "legenda": "Fachada de casa com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 564,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 565,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras estofadas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 567,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 568,
+      "legenda": "Sala de estar com sofá de vime e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 571,
+      "legenda": "Sala de estar com sofá e poltronas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 573,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 574,
+      "legenda": "Sala de jantar com mesa de madeira e churrasqueira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 577,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 578,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras estofadas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 579,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 591,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 566,
+      "legenda": "Varanda com plantas e cadeira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 570,
+      "legenda": "Varanda com mesa de madeira e sofá de vime",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 575,
+      "legenda": "Varanda com mesa de madeira e vista para piscina",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 589,
+      "legenda": "Varanda com piscina e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 572,
+      "legenda": "Cozinha com armários brancos, fogão, geladeira e janela com vista para o exterior",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 590,
+      "legenda": "Cozinha com forno de tijolo e geladeira branca",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 581,
+      "legenda": "Quarto com cama, mesa de cabeceira e porta aberta para varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 582,
+      "legenda": "Quarto com cama, televisão e armário",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 583,
+      "legenda": "Quarto com cama, armário e decoração de borboletas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 576,
+      "legenda": "Banheiro com pia de mármore, torneira dourada e espelho arredondado",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 584,
+      "legenda": "Banheiro com box de vidro, pia de granito e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 563,
+      "legenda": "Piscina com espreguiçadeiras e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 569,
+      "legenda": "Piscina com espelho d'água e chaise longue",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 580,
+      "legenda": "Piscina iluminada à noite com espreguiadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 585,
+      "legenda": "Piscina com deck de pedra e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 586,
+      "legenda": "Piscina com deck de pedra e chaise longues",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 587,
+      "legenda": "Piscina com deck de madeira e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 588,
+      "legenda": "Piscina com espreguiçadeiras e plantas",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o imóvel?",
+      "resposta": "O imóvel possui 1 suíte, além de uma suíte de serviço."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, o imóvel possui uma piscina com área de lazer e espreguiçadeiras."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de alto padrão com 1 suíte, piscina e paisagismo no Condomínio Vila Verde, em Campinas. Ambientes amplos, piso em madeira e área de lazer integrada ao jardim. Ideal para quem busca privacidade e conforto.",
+    "hashtags": [
+      "casaaltaresidencial",
+      "campinasimovel",
+      "suited",
+      "piscina",
+      "condominio",
+      "vilaverde",
+      "jardim",
+      "areaexterna"
+    ]
+  },
+  "versao": "0174ba73d4db",
+  "publicadoEm": "2026-10-28T04:16:18.024Z"
+}

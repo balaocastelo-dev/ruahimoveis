@@ -1,0 +1,112 @@
+{
+  "codigo": "TE0002",
+  "slug": "terreno-parque-brasil-500-paulinia-sp-te0002",
+  "titulo": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia",
+  "resumo": "Terreno de 695 m² no Parque Brasil 500, Paulínia, com localização estratégica e potencial construtivo. Ideal para investidores e empresas.",
+  "capa": {
+    "foto": 562,
+    "alt": "Terreno com edificação, vegetação e estrada asfaltada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 695 m² está localizado no Parque Brasil 500, um bairro consolidado e em constante expansão urbana em Paulínia. A área oferece topografia favorável e grande potencial construtivo, ideal para diferentes tipos de empreendimentos. Sua localização estratégica, na Avenida José Paulino, garante excelente visibilidade e acesso a importantes vias de deslocamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel se encontra em uma região com crescente procura imobiliária, cercada por empreendimentos residenciais, condomínios, centros comerciais e polos empresariais. A proximidade com rodovias principais amplia sua atratividade para negócios e investimentos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Localização estratégica na Avenida José Paulino",
+        "Topografia favorável para diferentes tipos de construções",
+        "Área de 695 m² com potencial construtivo",
+        "Próximo a vias principais e polos empresariais",
+        "Região em constante expansão urbana e procura imobiliária"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está situado na Avenida José Paulino, uma das principais vias de Paulínia, conhecida por seu intenso fluxo de veículos e excelente visibilidade. A localização facilita o deslocamento para diferentes pontos da cidade e região, além de garantir fácil acesso a rodovias que conectam Paulínia a Campinas e outras cidades da Região Metropolitana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Parque Brasil 500 é um bairro planejado e consolidado, cercado por empreendimentos residenciais de alto padrão, centros comerciais e serviços. A região recebe investimentos contínuos em infraestrutura, o que contribui para a procura imobiliária e ao fortalecimento da atividade econômica local."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A foto mostra o terreno com uma edificação vermelha e vegetação em crescimento. A área possui estrada asfaltada, garantindo acesso facilitado. A topografia favorece a construção de diferentes tipos de empreendimentos, como escritórios, lojas, clínicas ou centros de serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno é ideal para quem busca um ativo com e visibilidade estratégica. O ambiente é composto por vegetação natural, o que pode ser aproveitado em projetos sustentáveis ou com áreas verdes integradas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores e empresas que desejam aproveitar uma localização estratégica em uma região em expansão. Sua topografia favorável e acesso a vias principais tornam o imóvel uma opção para empreendimentos comerciais, corporativos ou de atendimento à crescente demanda da região."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre as restrições de uso do terreno, a documentação do imóvel e a possibilidade de construção de diferentes tipos de empreendimentos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 562,
+      "legenda": "Terreno com edificação e vegetação",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a área total do terreno?",
+      "resposta": "O terreno possui área total de 695 m²."
+    },
+    {
+      "pergunta": "Tem acesso a vias principais?",
+      "resposta": "Sim, o terreno está localizado na Avenida José Paulino, uma das principais vias de Paulínia."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia. Ideal para investidores e empresas que buscam procura e visibilidade. Localizado em uma região em constante expansão urbana.",
+    "hashtags": [
+      "terrenopaulinia",
+      "investimentoreal",
+      "imoveisparquebrasil500",
+      "empreendimentoscomerciais",
+      "valorizacaoimobiliaria",
+      "paulinia",
+      "terrenosparavenda",
+      "expansaourbana"
+    ]
+  },
+  "versao": "59a7d5e6e3e9",
+  "publicadoEm": "2026-10-28T04:16:18.044Z"
+}

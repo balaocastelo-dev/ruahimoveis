@@ -1,0 +1,170 @@
+{
+  "codigo": "AR0002",
+  "slug": "terreno-monte-mor-sp-zoneamento-misto-acesso-estrada-municipal-ar0002",
+  "titulo": "Terreno de 20.000 m² em Monte Mor/SP com zoneamento misto e acesso à estrada",
+  "resumo": "Terreno de 20.000 m² em Monte Mor/SP com zoneamento misto (industrial e comercial), ideal para empreendimentos de grande porte com acesso direto à estrada municipal.",
+  "capa": {
+    "foto": 623,
+    "alt": "Terreno com área destacada em amarelo e vegetação ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Terreno à venda em Monte Mor/SP, com área total de 20.000 m² e zoneamento misto, permitindo atividades industriais e comerciais. O terreno possui formato triangular e leve declive, o que pode favorecer projetos de terraplenagem e drenagem. Um grande diferencial é a servidão de passagem registrada, garantindo acesso direto à estrada municipal. Ideal para investidores e empreendedores que buscam uma área estratégica para implantação de galpões, indústrias ou centros de distribuição."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "20.000 m² de área total",
+        "Zoneamento misto (industrial e comercial)",
+        "Servidão de passagem registrada",
+        "Formato triangular e leve declive",
+        "Acesso direto à estrada municipal",
+        "Potencial para empreendimentos de grande porte"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado em Monte Mor/SP, uma região em crescimento no entorno de Campinas. A área está próxima a uma estrada municipal, com acesso facilitado por meio da servidão de passagem registrada. As fotos mostram a vegetação ao redor e a estrada asfaltada ao lado do terreno. A localização estratégica é um ponto forte, permitindo a entrada e saída de veículos leves e pesados com facilidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 624,
+          "legenda": "Terreno ao lado de estrada com vegetação e céu azul"
+        },
+        {
+          "foto": 626,
+          "legenda": "Lote de terreno com área destacada em amarelo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno possui formato triangular e leve declive, o que pode ser aproveitado para projetos de drenagem e terraplenagem. As fotos mostram áreas verdes, campos agrícolas ao redor e estrutura elétrica instalada. O terreno também apresenta uma área destacada em amarelo, indicando possíveis divisões ou utilizações específicas. A vegetação densa em parte do terreno sugere que a área pode oferecer condições favoráveis para projetos que valorizam a integração com o meio ambiente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 625,
+          "legenda": "Terreno com vegetação e estrutura elétrica"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Potencial de uso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com zoneamento misto, o terreno pode ser utilizado para atividades industriais, comerciais ou logísticas. As fotos mostram áreas abertas e estrutura residencial ao redor, sugerindo que o entorno já possui infraestrutura adequada. O terreno é ideal para investidores que buscam um empreendimento de longo prazo, como galpões, centros de distribuição, indústrias ou comércios de grande porte. A servidão de passagem também traz segurança jurídica e facilidade de acesso."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 627,
+          "legenda": "Lote com medidas e estrutura"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entorno e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o entorno do terreno com vegetação densa, áreas verdes e campos agrícolas. Há presença de estrutura elétrica e fio de energia, indicando que a área já possui infraestrutura básica. A proximidade da estrada municipal e a servidão de passagem garantem conectividade e facilitam o transporte de materiais e pessoas. O terreno também apresenta uma sinalização com o logotipo da empresa, indicando que está em fase de regularização ou comercialização."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores, empreendedores e empresas que buscam uma área estratégica para implantação de empreendimentos industriais, comerciais ou logísticos. A localização, o zoneamento e o acesso direto à estrada municipal tornam o terreno uma excelente opção para quem busca um empreendimento de longo prazo em uma região em crescimento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a regularização da servidão de passagem, a disponibilidade de água e energia na área, e se há restrições de uso no zoneamento.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 623,
+      "legenda": "Lote de terreno com área destacada em amarelo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 624,
+      "legenda": "Terreno ao lado de estrada com vegetação e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 625,
+      "legenda": "Terreno com vegetação e estrutura elétrica",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 626,
+      "legenda": "Lote de terreno com área destacada em amarelo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 627,
+      "legenda": "Lote com medidas e estrutura",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "O terreno tem área total de 20.000 m²."
+    },
+    {
+      "pergunta": "Qual o tipo de zoneamento?",
+      "resposta": "O zoneamento é misto, permitindo atividades industriais e comerciais."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 20.000 m² em Monte Mor/SP com zoneamento misto e acesso à estrada municipal. Ideal para empreendimentos industriais, comerciais e logísticos. Veja as fotos e marque a visita pelo formulário da página.",
+    "hashtags": [
+      "terrenomonteormor",
+      "zoneamentomisto",
+      "empreendimentosindustriais",
+      "acessoestrada",
+      "investimentoemterreno",
+      "montemor",
+      "campinas",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "b3f1467ad5b4",
+  "publicadoEm": "2026-10-28T04:16:18.023Z"
+}

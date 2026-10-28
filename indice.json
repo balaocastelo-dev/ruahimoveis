@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0002",
+      "slug": "terreno-parque-brasil-500-paulinia-sp-te0002",
+      "titulo": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia",
+      "resumo": "Terreno de 695 m² no Parque Brasil 500, Paulínia, com localização estratégica e potencial construtivo. Ideal para investidores e empresas.",
+      "capa": {
+        "foto": 562,
+        "alt": "Terreno com edificação, vegetação e estrada asfaltada"
+      },
+      "versao": "59a7d5e6e3e9",
+      "publicadoEm": "2026-10-28T04:16:18.044Z"
+    },
+    {
+      "codigo": "CA0045",
+      "slug": "casa-em-condominio-4-suites-8-vagas-residencial-vila-verde-campinas-ca0045",
+      "titulo": "Casa em condomínio com 4 suítes, 8 vagas e 700 m² no Residencial Vila Verde",
+      "resumo": "Casa em condomínio no Residencial Vila Verde, Campinas. 4 suítes, 8 vagas, área total de 700 m². Ambientes amplos e bem conservados.",
+      "capa": {
+        "foto": 593,
+        "alt": "Fachada de casa com jardim bem manejado e varanda"
+      },
+      "versao": "e98bd011d718",
+      "publicadoEm": "2026-10-28T04:16:18.024Z"
+    },
+    {
+      "codigo": "CA0044",
+      "slug": "casa-1-suited-piscina-paisagismo-vila-verde-campinas-ca0044",
+      "titulo": "Casa com 1 suíte, piscina e paisagismo no Condomínio Vila Verde, Campinas",
+      "resumo": "Casa de alto padrão com 1 suíte, piscina, área de lazer e paisagismo em condomínio fechado em Campinas, localizada em rua sem saída",
+      "capa": {
+        "foto": 592,
+        "alt": "Fachada da casa com piscina e jardim"
+      },
+      "versao": "0174ba73d4db",
+      "publicadoEm": "2026-10-28T04:16:18.024Z"
+    },
+    {
+      "codigo": "AR0002",
+      "slug": "terreno-monte-mor-sp-zoneamento-misto-acesso-estrada-municipal-ar0002",
+      "titulo": "Terreno de 20.000 m² em Monte Mor/SP com zoneamento misto e acesso à estrada",
+      "resumo": "Terreno de 20.000 m² em Monte Mor/SP com zoneamento misto (industrial e comercial), ideal para empreendimentos de grande porte com acesso direto à estrada municipal.",
+      "capa": {
+        "foto": 623,
+        "alt": "Terreno com área destacada em amarelo e vegetação ao redor"
+      },
+      "versao": "b3f1467ad5b4",
+      "publicadoEm": "2026-10-28T04:16:18.023Z"
+    },
+    {
+      "codigo": "TE0014",
+      "slug": "terreno-campinas-sp-loteamento-residencial-entre-verdes-te0014",
+      "titulo": "Terreno de 3.350 m² em localização estratégica no Loteamento Entre Verdes",
+      "resumo": "Terreno de 3.350 m² em Campinas, localizado entre os bairros Entre Verdes e San Conrado, com acesso a estradas asfaltadas e vegetação ao redor.",
+      "capa": {
+        "foto": 634,
+        "alt": "Vista aérea de um lote com estrada e casas ao redor"
+      },
+      "versao": "0e56753cdc10",
+      "publicadoEm": "2026-10-28T04:16:17.995Z"
+    },
+    {
       "codigo": "CA0048",
       "slug": "casa-4-quartos-area-gourmet-piscina-cidade-universitaria-campinas-ca0048",
       "titulo": "Casa de 4 quartos com área gourmet e piscina na Cidade Universitária, Campinas",
@@ -926,5 +986,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:11:28.832Z"
+  "atualizadoEm": "2026-10-28T04:16:18.045Z"
 }

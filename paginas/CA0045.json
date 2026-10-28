@@ -1,0 +1,344 @@
+{
+  "codigo": "CA0045",
+  "slug": "casa-em-condominio-4-suites-8-vagas-residencial-vila-verde-campinas-ca0045",
+  "titulo": "Casa em condomínio com 4 suítes, 8 vagas e 700 m² no Residencial Vila Verde",
+  "resumo": "Casa em condomínio no Residencial Vila Verde, Campinas. 4 suítes, 8 vagas, área total de 700 m². Ambientes amplos e bem conservados.",
+  "capa": {
+    "foto": 593,
+    "alt": "Fachada de casa com jardim bem manejado e varanda"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa em condomínio no Residencial Vila Verde, em Campinas, tem 4 suítes, 8 vagas e 450 m² de área útil em um terreno de 700 m². Construída há mais de 20 anos, mantém a qualidade e a funcionalidade do projeto original, com ambientes amplos e bem conservados. A fachada amarela e o jardim bem cuidado são destaque da área externa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizada em um dos condomínios mais tradicionais da região, a casa oferece fácil acesso a comércios, hospitais, universidades e ao centro da cidade. A área social e a varanda estão integradas, com vista para o jardim e a piscina. O imóvel tem potencial para personalização, mantendo a estrutura sólida e a funcionalidade do projeto original."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 suítes espaçosas e bem distribuídas",
+        "8 vagas de garagem, incluindo espaço para 5 carros",
+        "Área gourmet e piscina com deck de tijolinho",
+        "Jardim bem manejado com plantas e gramado",
+        "Vista para a piscina e área de lazer",
+        "Construção sólida com detalhes de qualidade"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e integrada à varanda, que tem piso de cerâmica, mesa de jardim e plantas. A varanda está coberta com teto de madeira e tem vista para o jardim e a piscina. As fotos mostram a varanda com decoração simples, mas bem cuidada, com plantas em vasos e paredes amarelas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ambiente é iluminado com luz natural e tem acesso a uma área gourmet, que fica ao lado da piscina. A varanda tem toldo retrátil e janelas com vidro, permitindo a entrada de ar fresco."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 603,
+          "legenda": "Varanda com piso de cerâmica, mesa de jardim e plantas"
+        },
+        {
+          "foto": 604,
+          "legenda": "Varanda coberta com teto de madeira e plantas"
+        },
+        {
+          "foto": 605,
+          "legenda": "Varanda com mesa e cadeiras, piscina ao fundo e jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem bancada de granito e armários brancos, com área de serviço integrada. As fotos mostram uma cozinha com piso de ladrilho, churrasqueira de pedra e estante com caixas. Há uma máquina de lavar roupa e lavatório, com piso de cerâmica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ambiente é funcional e bem organizado, com espaço para armários e armazenagem. A cozinha tem acesso à área de serviço, que também é espaçosa e bem iluminada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 607,
+          "legenda": "Cozinha com bancada de granito e churrasqueira"
+        },
+        {
+          "foto": 612,
+          "legenda": "Cozinha com armários brancos e mesa vermelha"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos, com suítes com armários e closets. As fotos mostram um quarto com cama, armário, mesa de ferro e estante. Há um quarto com teto inclinado e paredes de pedra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As suítes têm banheiros com piso claro, bancada de granito e armários. A iluminação é natural e os ambientes são bem planejados para o uso diário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 614,
+          "legenda": "Quarto com cama, armário, mesa de ferro e estante"
+        },
+        {
+          "foto": 622,
+          "legenda": "Suite com parede de pedra e chão de madeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e jardim"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem piscina com deck de tijolinho, área gourmet e jardim com gramado bem manejado. As fotos mostram o jardim com plantas pendentes, flores cor de rosa e toldos. Há uma varanda com vista para a piscina e o jardim."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O jardim é bem cuidado e tem plantas em vasos, gramado e áreas com toldos. A piscina tem azulejos e está integrada à área de lazer, com decoração simples e funcional."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 606,
+          "legenda": "Sala de estar integrada à cozinha"
+        },
+        {
+          "foto": 608,
+          "legenda": "Banheiro com vaso sanitário e pia"
+        },
+        {
+          "foto": 610,
+          "legenda": "Banheiro com chuveiro, lavatório e máquina de lavar roupa"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa em condomínio é ideal para quem busca uma residência espaçosa, bem localizada e com estrutura sólida. A área total de 700 m², 4 suítes, 8 vagas e o jardim bem manejado são pontos fortes para quem busca conforto e praticidade no dia a dia."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado do condomínio e se há áreas que não foram fotografadas, como o escritório e a escada com piso de mármore.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 593,
+      "legenda": "Fachada de casa com jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 594,
+      "legenda": "Fachada de casa com varandas e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 595,
+      "legenda": "Fachada de casa com varandas e jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 606,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 618,
+      "legenda": "Sala com sofá, televisão e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 619,
+      "legenda": "Sala de estar com sofá e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 620,
+      "legenda": "Sala de estar com teto de madeira e varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 621,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 599,
+      "legenda": "Varanda com plantas e gramado",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 602,
+      "legenda": "Varanda com plantas em vasos e parede amarela",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 603,
+      "legenda": "Varanda com piso de cerâmica, mesa de jardim e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 604,
+      "legenda": "Varanda coberta com teto de madeira e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 605,
+      "legenda": "Varanda com mesa e cadeiras, piscina ao fundo e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 609,
+      "legenda": "Varanda com piso de ardósia e parede branca",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 607,
+      "legenda": "Cozinha com bancada de granito e churrasqueira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 612,
+      "legenda": "Cozinha com armários brancos e mesa vermelha",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 614,
+      "legenda": "Quarto com cama, armário, mesa de ferro e estante",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 622,
+      "legenda": "Suite com parede de pedra e chão de madeira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 608,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 610,
+      "legenda": "Banheiro com chuveiro, lavatório e máquina de lavar roupa",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 611,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 615,
+      "legenda": "Banheiro com piso de porcelanato, armário, espelho e janela com vidro opaco",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 616,
+      "legenda": "Banheiro com piso claro, bancada de granito, espelho, prateleira e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 598,
+      "legenda": "Jardim com grama e plantas em vasos",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 600,
+      "legenda": "Jardim com piscina e casa à vista",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 601,
+      "legenda": "Jardim com plantas pendentes e flores cor de rosa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 596,
+      "legenda": "Piscina com deck de tijolinho e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 597,
+      "legenda": "Piscina com deck de tijolinho e área gourmet",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 613,
+      "legenda": "Escritório com mesa, cadeira, máquina de escrever e computador",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 617,
+      "legenda": "Escada com piso de mármore e guarda-corpo branco",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel tem 8 vagas de garagem, incluindo espaço para acomodar até 5 automóveis."
+    },
+    {
+      "pergunta": "Tem área gourmet e piscina?",
+      "resposta": "Sim, o imóvel tem área gourmet e piscina com deck de tijolinho."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Residencial Vila Verde, Campinas. 4 suítes, 8 vagas, 700 m² de terreno. Jardim bem manejado, piscina e área gourmet. Conforto e praticidade para sua família.",
+    "hashtags": [
+      "casaemcondominio",
+      "campinas",
+      "vilaeverde",
+      "campinasimovel",
+      "imovelresidencial",
+      "700m2",
+      "4suites",
+      "8vagas"
+    ]
+  },
+  "versao": "e98bd011d718",
+  "publicadoEm": "2026-10-28T04:16:18.024Z"
+}

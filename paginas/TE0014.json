@@ -1,0 +1,173 @@
+{
+  "codigo": "TE0014",
+  "slug": "terreno-campinas-sp-loteamento-residencial-entre-verdes-te0014",
+  "titulo": "Terreno de 3.350 m² em localização estratégica no Loteamento Entre Verdes",
+  "resumo": "Terreno de 3.350 m² em Campinas, localizado entre os bairros Entre Verdes e San Conrado, com acesso a estradas asfaltadas e vegetação ao redor.",
+  "capa": {
+    "foto": 634,
+    "alt": "Vista aérea de um lote com estrada e casas ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Terreno com 3.350 m² localizado no Loteamento Residencial Entre Verdes, em Campinas. A área está situada entre os bairros Entre Verdes e San Conrado, em uma região valorizada e com acesso a vias principais. O imóvel possui frente para avenida asfaltada e acesso lateral pavimentado, facilitando a circulação e oferecendo versatilidade para projetos. A vegetação ao redor e o entorno com casas e áreas verdes reforçam a tranquilidade e o potencial de desenvolvimento do local."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A topografia do terreno permite diferentes possibilidades de implantação, ideal para empreendimentos residenciais, comerciais ou de serviços. A localização estratégica e a infraestrutura existente tornam esse imóvel uma boa opção para quem busca um terreno em área consolidada e em constante procura."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Acesso a estradas asfaltadas e pavimentadas",
+        "Localização entre bairros valorizados",
+        "Área verde abundante ao redor",
+        "Possibilidade de diversos tipos de empreendimentos",
+        "Frente para avenida e acesso lateral"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado no Loteamento Residencial Entre Verdes, em Campinas, próximo aos bairros Entre Verdes e San Conrado. A região é conhecida por sua procura e infraestrutura. O imóvel possui acesso a uma avenida asfaltada e também a uma via lateral pavimentada, facilitando o deslocamento e oferecendo maior versatilidade para projetos futuros. A proximidade de vias principais e a boa conectividade com outras áreas da cidade são pontos importantes para quem busca um imóvel com potencial de desenvolvimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 629,
+          "legenda": "Terreno com estrada, vegetação e construção em distância"
+        },
+        {
+          "foto": 630,
+          "legenda": "Pista asfaltada com vegetação ao lado"
+        },
+        {
+          "foto": 631,
+          "legenda": "Terreno com vegetação e antena celular"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entorno e vegetação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está cercado por vegetação densa, com árvores como bananeiras e palmeiras, e também por áreas verdes. As fotos mostram o entorno com casas e construções distantes, mantendo a tranquilidade e a privacidade do local. A vegetação ao redor e a presença de torres de comunicação e fios elétricos são visíveis, indicando que a região está bem conectada e com infraestrutura adequada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 628,
+          "legenda": "Terreno com vegetação e edifícios circundantes"
+        },
+        {
+          "foto": 632,
+          "legenda": "Caminho rural com vegetação e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Potencial de uso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A topografia do terreno permite diferentes formas de uso, como residencial, comercial ou de serviços. A área total de 3.350 m² oferece espaço para projetos de médio e grande porte, dependendo do zoneamento e da viabilidade do empreendimento. A frente para avenida e o acesso lateral pavimentado são pontos que facilitam o desenvolvimento de qualquer tipo de construção, com boa circulação e conectividade com a região."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse terreno é ideal para investidores, construtores e profissionais que buscam um local com potencial de desenvolvimento em uma região consolidada de Campinas. A localização estratégica, o acesso a estradas asfaltadas e a vegetação ao redor são fatores que contribuem para o valor e a atratividade do imóvel. Ele é uma excelente opção para quem deseja aproveitar o crescimento da região e as oportunidades de empreendimento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o zoneamento do terreno, as restrições de uso e a documentação do imóvel. Também é importante verificar detalhes sobre a infraestrutura da região e a viabilidade de projetos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 628,
+      "legenda": "Terreno com vegetação e edifícios circundantes",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 629,
+      "legenda": "Terreno com estrada, vegetação e construção em distância",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 630,
+      "legenda": "Pista asfaltada com vegetação ao lado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 631,
+      "legenda": "Terreno com vegetação e antena celular",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 632,
+      "legenda": "Caminho rural com vegetação e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 633,
+      "legenda": "Terreno com estrada e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 634,
+      "legenda": "Vista aérea de um lote com estrada e casas",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quais são as possibilidades de uso do terreno?",
+      "resposta": "O terreno pode ser usado para empreendimentos residenciais, comerciais ou de serviços, conforme o zoneamento vigente."
+    },
+    {
+      "pergunta": "Tem acesso a estradas pavimentadas?",
+      "resposta": "Sim, o imóvel possui acesso a uma avenida asfaltada e também a uma via lateral pavimentada."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 3.350 m² em Campinas, localizado entre os bairros Entre Verdes e San Conrado, com acesso a estradas asfaltadas e vegetação ao redor. Ideal para empreendimentos residenciais, comerciais ou de serviços.",
+    "hashtags": [
+      "terrenocampinas",
+      "campinasimovel",
+      "terrenovenda",
+      "campinasnegocios",
+      "terrenoentreverdes",
+      "loteamentoresidencial",
+      "imovelcampinas",
+      "empreendimentos"
+    ]
+  },
+  "versao": "0e56753cdc10",
+  "publicadoEm": "2026-10-28T04:16:17.995Z"
+}
