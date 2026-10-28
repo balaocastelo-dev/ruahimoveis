@@ -344,6 +344,7 @@ r.post('/radar/:id/converter', (req, res) => {
      VALUES(?,?,'captacao',?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, codigo, tipo, op.logradouro, op.numero, op.unidade, op.bairro, op.cidade || cfg.CIDADE_PADRAO, cfg.UF_PADRAO, condId,
     op.quartos, op.vagas, op.area, op.valor, op.corretor_id || req.usuario.id, donoId, `Captado pelo radar (${carta.ref(op)}).${op.link ? ' Anúncio original: ' + op.link : ''}`).lastInsertRowid);
   run("UPDATE oportunidades SET status='captada', imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?", imId, op.id);
+  require('../services/fotos-internas').garante(imId, { oportunidadeId: op.id });
   evento(op.id, 'sistema', `Captada: virou o imóvel ${codigo}.`, req.usuario.id);
   audit(req.usuario.id, 'radar_captado', `${carta.ref(op)} → ${codigo}`);
   res.json({ imovel_id: imId, codigo });

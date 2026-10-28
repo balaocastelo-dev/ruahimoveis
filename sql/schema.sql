@@ -311,3 +311,6 @@ CREATE TABLE IF NOT EXISTS fisguei_precos (
   fonte text
 );
 CREATE INDEX IF NOT EXISTS ix_fpr_anuncio ON fisguei_precos(anuncio_id);
+
+-- Fotos internas (fotos do anúncio de origem, só endereço; nunca públicas) — 28/10/2026
+ALTER TABLE arquivos ADD COLUMN IF NOT EXISTS url_externa text;

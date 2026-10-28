@@ -38,6 +38,12 @@ r.get('/drive/callback', async (req, res) => {
 r.get('/arquivos/:id', (req, res) => {
   const a = one('SELECT * FROM arquivos WHERE id=?', req.params.id) || falha(404, 'Arquivo não encontrado.');
   imovelPermitido(req.usuario, a.imovel_id);
+  // foto interna: só o endereço da foto do anúncio de origem (não fica no banco)
+  if (a.url_externa) {
+    if (!require('../services/fotos-internas').urlOk(a.url_externa)) falha(404, 'Arquivo não encontrado.');
+    res.setHeader('Cache-Control', 'private, max-age=3600'); res.setHeader('Referrer-Policy', 'no-referrer');
+    return res.redirect(302, a.url_externa);
+  }
   const buf = require('../services/conteudo').ler(a) || falha(404, 'Arquivo não encontrado no armazenamento.');
   enviaArquivo(res, a.nome, a.mime, buf, req.query.baixar);
 });

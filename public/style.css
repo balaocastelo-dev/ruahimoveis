@@ -1060,3 +1060,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 #cd-avenda th.cd-ord:hover{background:rgba(168,130,60,.08)}
 #cd-avenda .cd-seta{opacity:.35;font-size:.8em;margin-left:2px}
 #cd-avenda th.cd-ord.on .cd-seta{opacity:1;color:var(--accent,#a8823c)}
+
+/* Fotos internas (do anúncio de origem; nunca vão para o portal) */
+.foto.interna{position:relative}
+.foto-int{position:absolute;left:6px;bottom:6px;background:rgba(20,20,20,.78);color:#fff;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px;pointer-events:none}
+.im-int{position:absolute;left:8px;top:8px;z-index:2;background:rgba(20,20,20,.78);color:#fff;font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:999px;pointer-events:none}

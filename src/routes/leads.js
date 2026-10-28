@@ -48,7 +48,7 @@ r.get('/leads/:id', (req, res) => {
   res.json({
     ...l, corretor_nome: l.corretor_id ? one('SELECT nome FROM usuarios WHERE id=?', l.corretor_id).nome : null,
     interacoes: all('SELECT i.*, u.nome autor FROM interacoes i LEFT JOIN usuarios u ON u.id=i.autor_id WHERE lead_id=? ORDER BY i.id DESC LIMIT 100', l.id),
-    visitas: all("SELECT v.*, i.codigo, (SELECT min(f.id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa FROM visitas v JOIN imoveis i ON i.id=v.imovel_id WHERE v.lead_id=? ORDER BY v.data_hora DESC", l.id),
+    visitas: all("SELECT v.*, i.codigo, (SELECT f.id FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria IN ('Fotos','Fotos internas') AND f.mime LIKE 'image/%' ORDER BY CASE WHEN f.categoria='Fotos' THEN 0 ELSE 1 END, f.id LIMIT 1) capa FROM visitas v JOIN imoveis i ON i.id=v.imovel_id WHERE v.lead_id=? ORDER BY v.data_hora DESC", l.id),
     imoveis: match.imoveisParaLead(l.id),
   });
 });
@@ -85,7 +85,7 @@ r.post('/leads/:id/nota', (req, res) => {
 // ---- visitas ----
 r.get('/visitas', (req, res) => {
   const u = req.usuario;
-  res.json(all(`SELECT v.*, l.nome lead, l.telefone, i.codigo, i.logradouro, i.numero, c.nome condominio, us.nome corretor, (SELECT min(f.id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa FROM visitas v
+  res.json(all(`SELECT v.*, l.nome lead, l.telefone, i.codigo, i.logradouro, i.numero, c.nome condominio, us.nome corretor, (SELECT f.id FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria IN ('Fotos','Fotos internas') AND f.mime LIKE 'image/%' ORDER BY CASE WHEN f.categoria='Fotos' THEN 0 ELSE 1 END, f.id LIMIT 1) capa FROM visitas v
      JOIN leads l ON l.id=v.lead_id JOIN imoveis i ON i.id=v.imovel_id LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios us ON us.id=v.corretor_id
      WHERE date(v.data_hora) >= date('now','localtime','-30 day') ${A.veTudo(u) ? '' : 'AND v.corretor_id=' + u.id} ORDER BY v.data_hora`));
 });

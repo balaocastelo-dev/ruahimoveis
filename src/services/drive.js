@@ -164,7 +164,7 @@ async function enviarAoDrive(arquivoId) {
 }
 
 async function enviarPendentes() {
-  const pend = all('SELECT id FROM arquivos WHERE drive_id IS NULL');
+  const pend = all('SELECT id FROM arquivos WHERE drive_id IS NULL AND url_externa IS NULL');
   let ok = 0; const erros = [];
   for (const p of pend) { try { await enviarAoDrive(p.id); ok++; } catch (e) { erros.push(e.message); } }
   return { enviados: ok, pendentes: pend.length - ok, erros: erros.slice(0, 3) };
@@ -174,7 +174,7 @@ function status() {
   return {
     configurado: configurado(), conectado: conectado(), conta: getConfig('drive_email'),
     raiz: cfg.DRIVE_ROOT_FOLDER_ID ? 'Pasta/Drive compartilhado definido no .env' : cfg.DRIVE_ROOT_NAME,
-    pendentes: one('SELECT count(*) n FROM arquivos WHERE drive_id IS NULL').n,
+    pendentes: one('SELECT count(*) n FROM arquivos WHERE drive_id IS NULL AND url_externa IS NULL').n,
     redirect: redirectUri(),
   };
 }

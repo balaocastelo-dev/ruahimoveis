@@ -94,7 +94,7 @@ r.get('/painel', (req, res) => {
     leads: one(`SELECT count(*) n FROM leads l WHERE etapa NOT IN ('escritura','perdido')${fL}`).n,
     quentes: one(`SELECT count(*) n FROM leads l WHERE temperatura='quente' AND etapa NOT IN ('escritura','perdido')${fL}`).n,
   };
-  const visitas = all(`SELECT v.*, l.nome lead, i.codigo, u.nome corretor, (SELECT min(f.id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa FROM visitas v JOIN leads l ON l.id=v.lead_id JOIN imoveis i ON i.id=v.imovel_id
+  const visitas = all(`SELECT v.*, l.nome lead, i.codigo, u.nome corretor, (SELECT f.id FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria IN ('Fotos','Fotos internas') AND f.mime LIKE 'image/%' ORDER BY CASE WHEN f.categoria='Fotos' THEN 0 ELSE 1 END, f.id LIMIT 1) capa FROM visitas v JOIN leads l ON l.id=v.lead_id JOIN imoveis i ON i.id=v.imovel_id
      LEFT JOIN usuarios u ON u.id=v.corretor_id WHERE date(v.data_hora) BETWEEN date('now','localtime') AND date('now','localtime','+2 day')
      AND v.status IN ('agendada','confirmada') ${todos ? '' : 'AND v.corretor_id=' + u.id} ORDER BY v.data_hora LIMIT 8`);
   const aguardando = all(`SELECT l.id, l.nome, m.texto, m.criado_em FROM leads l JOIN mensagens m ON m.id=(SELECT max(id) FROM mensagens WHERE lead_id=l.id AND direcao!='sugestao')

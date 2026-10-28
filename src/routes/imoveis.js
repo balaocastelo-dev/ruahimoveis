@@ -38,7 +38,7 @@ r.get('/', (req, res) => {
   if (!A.veTudo(u)) { w += ' AND i.corretor_id=?'; p.push(u.id); }
   if (req.query.status) { w += ' AND i.status=?'; p.push(req.query.status); }
   if (req.query.q) { w += ' AND (i.codigo LIKE ? OR c.nome LIKE ? OR i.bairro LIKE ? OR i.logradouro LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q, q); }
-  const fotos = `(SELECT min(id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa,
+  const fotos = `${require('../services/fotos-internas').capaSQL('i')} capa,
     (SELECT count(*) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') n_fotos`;
   res.json(carteira.enriquece(all(`${SELECT.replace('SELECT i.*,', 'SELECT i.*, ' + fotos + ',')} ${w} ORDER BY i.atualizado_em DESC LIMIT 3000`, ...p).map(semDono)).map(({ descricao, ...i }) => i));
 });
@@ -64,8 +64,11 @@ r.get('/:id', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
   const im = one(`${SELECT} WHERE i.id=?`, req.params.id);
   const dono = im.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', im.proprietario_id) : null;
-  const fotos = all("SELECT id,nome FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id", im.id);
-  const [extra] = carteira.enriquece([{ ...im, n_fotos: fotos.length }]);
+  const proprias = all("SELECT id,nome FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id", im.id);
+  // sem foto própria: as fotos internas (do anúncio de origem) aparecem com o selo "interna"; nunca saem do sistema
+  const internas = all("SELECT id,nome FROM arquivos WHERE imovel_id=? AND categoria='Fotos internas' ORDER BY id", im.id).map((f) => ({ ...f, interna: true }));
+  const fotos = [...proprias, ...internas];
+  const [extra] = carteira.enriquece([{ ...im, n_fotos: proprias.length }]);
   res.json({ ...semDono(im), etapa: extra.etapa, origem: extra.origem, ficha: extra.ficha, fisguei_ids: extra.fisguei_ids, proprietario: dono, fotos, drive_link: im.drive_pasta_id && A.veTudo(req.usuario) ? `https://drive.google.com/drive/folders/${im.drive_pasta_id}` : null });
 });
 

@@ -207,7 +207,7 @@ const dias = (d) => (d ? Math.max(0, Math.round((Date.now() - new Date(String(d)
 function numeros(id) {
   const c = one('SELECT * FROM condominios WHERE id=?', id);
   const carteira = all(`SELECT i.id, i.codigo, i.tipo, i.status, i.unidade, i.quartos, i.suites, i.vagas, i.area_util, i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em,
-      (SELECT a.id FROM arquivos a WHERE a.imovel_id=i.id AND a.categoria='Fotos' ORDER BY a.id LIMIT 1) foto
+      (SELECT a.id FROM arquivos a WHERE a.imovel_id=i.id AND a.categoria IN ('Fotos','Fotos internas') ORDER BY CASE WHEN a.categoria='Fotos' THEN 0 ELSE 1 END, a.id LIMIT 1) foto
     FROM imoveis i WHERE i.condominio_id=? ORDER BY i.status, i.valor DESC`, id);
   const radar = all(`SELECT id, portal, link, titulo, tipo, unidade, quartos, vagas, area, valor, valor_anterior, anunciante_tipo, anunciante_nome, publicado_em, criado_em, status, foto
     FROM oportunidades WHERE condominio_id=? ORDER BY criado_em DESC`, id);

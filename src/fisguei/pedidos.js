@@ -237,13 +237,14 @@ function importa(anuncioId, usuario, proximoCodigo) {
   if (!a) { const e = new Error('Anúncio não encontrado.'); e.status = 404; throw e; }
   if (a.imovel_id && one('SELECT 1 FROM imoveis WHERE id=?', a.imovel_id)) {
     sincronizaDono(a.id);
+    require('../services/fotos-internas').garante(a.imovel_id, { anuncioId: a.id });
     return { id: a.imovel_id, ja: true, codigo: one('SELECT codigo FROM imoveis WHERE id=?', a.imovel_id).codigo };
   }
   const tipo = tipoImovel(a.tipo);
   const codigo = proximoCodigo(tipo);
   const descricao = [`Veio da base (${F.ref(a.id)}) em ${new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}, com o proprietário localizado no Fisgar.`,
     a.anunciante_nome ? `Anunciado antes por: ${a.anunciante_nome}${a.anunciante_tipo === 'imobiliaria' ? ' (imobiliária)' : ''}.` : '',
-    `Fotos: tirar fotos próprias da ${cfg.CLIENTE_NOME} ou pedir as originais ao dono (as do anúncio são de terceiros e não foram copiadas).`].filter(Boolean).join('\n');
+    `Fotos: as do anúncio entraram como fotos INTERNAS (só para a equipe; não vão para o portal). Para publicar, tirar fotos próprias da ${cfg.CLIENTE_NOME} ou pedir as originais ao dono.`].filter(Boolean).join('\n');
   const corretor = usuario && usuario.perfil === 'corretor' ? usuario.id : (a.oportunidade_id && one('SELECT corretor_id FROM oportunidades WHERE id=?', a.oportunidade_id) || {}).corretor_id || (usuario && usuario.id) || null;
   const d = melhorDono(a.id);
   const unidade = d && d.unidade ? d.unidade : (a.complemento && /\d/.test(a.complemento) ? a.complemento.slice(0, 40) : null);
@@ -253,6 +254,7 @@ function importa(anuncioId, usuario, proximoCodigo) {
   run(`UPDATE fisguei_anuncios SET imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, id, a.id);
   if (a.oportunidade_id) run(`UPDATE oportunidades SET imovel_id=coalesce(imovel_id,?) WHERE id=?`, id, a.oportunidade_id);
   sincronizaDono(a.id);
+  require('../services/fotos-internas').garante(id, { anuncioId: a.id });
   return { id, codigo };
 }
 // Depois que o Fisgar respondeu: com alguém consultado (telefone na mão), o imóvel entra na carteira sozinho.

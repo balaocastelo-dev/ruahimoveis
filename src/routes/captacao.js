@@ -126,7 +126,7 @@ r.get('/captacao/painel', (req, res) => {
   const novasOp = all(`SELECT o.id, o.titulo, o.tipo, o.bairro, o.logradouro, o.numero, o.valor, o.status, o.anunciante_tipo, o.portal, o.criado_em, o.imovel_id, o.foto op_foto,
       (SELECT f.fotos FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos,
       (SELECT f.id FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fg_id,
-      (SELECT min(a.id) FROM arquivos a WHERE a.imovel_id=o.imovel_id AND a.categoria='Fotos') capa
+      (SELECT a.id FROM arquivos a WHERE a.imovel_id=o.imovel_id AND a.categoria IN ('Fotos','Fotos internas') ORDER BY CASE WHEN a.categoria='Fotos' THEN 0 ELSE 1 END, a.id LIMIT 1) capa
       FROM oportunidades o WHERE o.status NOT IN ('descartada') ${tudo ? '' : 'AND (o.corretor_id=? OR o.corretor_id IS NULL)'} ORDER BY o.id DESC LIMIT 6`, ...(tudo ? [] : [u.id]))
     .map(({ fotos, op_foto, ...o }) => ({ ...o, ref: 'OP-' + String(o.id).padStart(4, '0'), foto: o.capa ? `/api/arquivos/${o.capa}` : op_foto || capaFg(fotos) }));
 

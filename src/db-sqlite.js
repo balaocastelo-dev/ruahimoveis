@@ -327,7 +327,8 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['oportunidades', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'anunciado_desde', 'TEXT'],
-  ['leads', 'agente', 'TEXT']]) {
+  ['leads', 'agente', 'TEXT'],
+  ['arquivos', 'url_externa', 'TEXT']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
 

@@ -167,10 +167,19 @@ const consulta = (doc, nome, extra, fones) => ({
   const rs = ok(await req('cor', 'GET', '/api/fisguei/pedidos'), 'resumo do robô de busca');
   assert.equal(rs.creditos_hoje, 2); assert.equal(rs.extensao.fisgar_aberto, true);
   // importar para a base
+  run('UPDATE fisguei_anuncios SET fotos=? WHERE id=?', JSON.stringify(['https://img.exemplo.com/f1.jpg', 'https://img.exemplo.com/f2.jpg']), sit.id);
   const im = ok(await req('cor', 'POST', `/api/fisguei/${sit.id}/importar`), 'importa para a carteira');
   const imv = one('SELECT * FROM imoveis WHERE id=?', im.id);
   assert.equal(imv.tipo, 'Casa em condomínio'); assert.equal(imv.status, 'captacao'); assert.equal(imv.cep, '13098319'); assert.ok(im.codigo.startsWith('CC'));
   assert.equal(ok(await req('cor', 'POST', `/api/fisguei/${sit.id}/importar`), 'importa de novo').ja, true); console.log('   não duplica o imóvel');
+  // nenhum imóvel fica sem foto: as do anúncio entram como internas e nunca são públicas
+  const fichaIm = ok(await req('cor', 'GET', '/api/imoveis/' + im.id), 'ficha com fotos internas');
+  assert.ok(fichaIm.fotos.length === 2 && fichaIm.fotos.every((f) => f.interna), 'fotos internas na ficha');
+  const rd = await fetch(`${base}/api/arquivos/${fichaIm.fotos[0].id}`, { redirect: 'manual', headers: { cookie: jar.cor } });
+  assert.equal(rd.headers.get('location'), 'https://img.exemplo.com/f1.jpg', 'foto interna abre pelo endereço');
+  assert.equal(one("SELECT count(*) n FROM arquivos WHERE imovel_id=? AND categoria='Fotos'", im.id).n, 0, 'nenhuma foto pública');
+  const lstIm = ok(await req('cor', 'GET', '/api/imoveis'), 'lista da carteira').find((x) => x.id === im.id);
+  assert.ok(lstIm.capa && lstIm.n_fotos === 0, 'capa interna na carteira'); console.log('ok · fotos do anúncio entram como internas (carteira com foto, portal sem)');
   // o dono confirmado vai junto como proprietário
   run("UPDATE fisguei_pessoas SET status='confirmou' WHERE nome='Andre Luis Arruda'");
   const im2 = ok(await req('cor', 'POST', `/api/fisguei/${id}/importar`), 'importa endereço com dono confirmado');

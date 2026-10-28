@@ -254,8 +254,7 @@ FORM['fg-limites'] = async (f) => { await api('POST', '/api/fisguei/pedidos/limi
 ACT['fg-buscar'] = (el) => comBotao(el, async () => { const r = await api('POST', `/api/fisguei/${el.dataset.id}/buscar`); toast(r.ja ? 'Já está na fila do Fisgar' : 'Na fila: quando o Fisgar devolver o dono, o imóvel entra na carteira (precisa do Fisgar aberto no Chrome)'); rota(); });
 ACT['fg-consultar'] = (el) => comBotao(el, async () => { await api('POST', `/api/fisguei/pessoas/${el.dataset.id}/consultar`); toast('Na fila do robô (1 crédito)'); rota(); });
 ACT['fg-importar'] = (el) => comBotao(el, async () => {
-  if (!confirm('Levar este imóvel para a carteira? Os dados do anúncio e o melhor proprietário encontrado vão junto. As fotos do anúncio original NÃO são copiadas.')) return;
-  const r = await api('POST', `/api/fisguei/${el.dataset.id}/importar`); toast(r.ja ? `Já estava na carteira (${r.codigo})` : `Imóvel ${r.codigo} criado`); navega('#/imoveis/' + r.id);
+  const r = await api('POST', `/api/fisguei/${el.dataset.id}/importar`); toast(r.ja ? `Já estava na carteira (${r.codigo})` : `Imóvel ${r.codigo} criado na carteira, com as fotos do anúncio como internas (não vão para o portal)`); navega('#/imoveis/' + r.id);
 });
 
 // No Radar: coluna "Fisgar" da lista e cartão na ficha da oportunidade
