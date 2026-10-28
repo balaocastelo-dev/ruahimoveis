@@ -154,8 +154,8 @@ const ANUNCIO = [
   [/\bpel[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'por quem comprar'], [/\bd[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'de quem comprar'],
   [/\ba[oa]?\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'a quem comprar'], [/\b[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'quem comprar'],
   [/\bfutur[oa]s?\s+propriet[áa]ri[oa]s?\b/giu, 'quem comprar'], [/\bpropriet[áa]ri[oa]s?\b/giu, 'comprador'],
-  [/\b(?:localiza[çc][ãa]o\s+)?privilegiad[ao]s?\b/giu, 'bem localizada'], [/\bpotencial\s+de\s+valoriza[çc][ãa]o\b/giu, ''],
-  [/\bvaloriza[çc][ãa]o\b/giu, 'procura'], [/\b(?:magn[íi]fic|maravilhos|incr[íi]ve|espetacular|deslumbrante)\w*/giu, 'amplo'],
+  [/\blocaliza[çc][ãa]o\s+privilegiada\b/giu, 'boa localização'], [/\s*\b(?:muito\s+)?privilegiad[ao]s?\b/giu, ''], [/\bpotencial\s+de\s+valoriza[çc][ãa]o\b/giu, ''],
+  [/,?\s*(?:e\s+)?(?:com\s+)?(?:grande\s+)?valoriza[çc][ãa]o\b/giu, ''], [/\b(?:magn[íi]fic|maravilhos|incr[íi]ve|espetacular|deslumbrante)\w*/giu, 'amplo'],
   [/\bdos\s+sonhos\b/giu, ''], [/\bperfeit[ao]s?\b/giu, 'adequado'],
 ];
 const semLinks = (s) => { let t = texto(s).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/https?:\/\/\S+|www\.\S+/g, ''); for (const [re, por] of ANUNCIO) t = t.replace(re, por); return t.replace(/\s{2,}/g, ' ').replace(/\s+([,.])/g, '$1').trim(); };
