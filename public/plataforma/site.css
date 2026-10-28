@@ -156,3 +156,5 @@ form.fale .nota { grid-column: 1 / -1; margin: 0; font-size: 13.5px; color: var(
 .celular-cx img { width: 220px; height: auto; border-radius: 28px; border: 6px solid var(--grafite); }
 .celular-cx p { margin: 0; font-size: 18px; }
 @media (max-width: 560px) { .celular-cx { grid-template-columns: 1fr; justify-items: center; text-align: center; } }
+.topo nav a.entrar { color: var(--grafite); font-weight: 600; }
+@media (max-width: 720px) { .topo nav a.entrar { display: inline; } }

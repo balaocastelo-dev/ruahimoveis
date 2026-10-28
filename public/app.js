@@ -124,7 +124,7 @@ const MENU = [
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
-  ['Sistema', [['#/robos', 'Robôs e Fisgar', 'capt'], ['#/configuracoes', 'Configurações']]],
+  ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
@@ -396,7 +396,7 @@ async function telaImoveis(qs) {
   const veio = qs && CART_CAMPOS.filter((k) => qs.get(k));
   if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
   $('#main').innerHTML = `<div class="eyebrow">Operação</div><h1>Carteira de imóveis</h1>
-  <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado no Fisgar. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
+  <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado pela consulta de proprietários. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
   <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
   <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
   <div class="seg" role="group" aria-label="Modo de exibição"><button type="button" data-act="im-modo" data-modo="cards" title="Ver em cards com fotos">▦ Cards</button><button type="button" data-act="im-modo" data-modo="lista" title="Ver em lista">☰ Lista</button></div>
@@ -516,7 +516,7 @@ function abaDados(im) {
       <div class="row" style="margin-top:10px">${im.exclusivo ? `<span class="pill gold">Exclusivo${im.exclusivo_ate ? ' até ' + new Date(im.exclusivo_ate + 'T12:00').toLocaleDateString('pt-BR') : ''}</span>` : '<span class="pill warn">Sem exclusividade</span>'}</div></div>
     ${im.ficha ? `<div class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Ficha</h3>${fichaBarra(im.ficha)}</div>
       ${im.ficha.falta.length ? `<ul class="cart-falta">${im.ficha.falta.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="muted small" style="margin:8px 0 0">Tudo preenchido.</p>'}</div>` : ''}
-    ${im.fisguei_ids && im.fisguei_ids.length ? '<div class="card" id="ficha-fisgar"><h3>Dados do Fisgar</h3><p class="muted small">Carregando…</p></div>' : ''}
+    ${im.fisguei_ids && im.fisguei_ids.length ? '<div class="card" id="ficha-fisgar"><h3>Dados da consulta</h3><p class="muted small">Carregando…</p></div>' : ''}
   </div></div>`;
   if (im.fisguei_ids && im.fisguei_ids.length) fichaFisgar(im);
 }
@@ -527,13 +527,13 @@ async function fichaFisgar(im) {
   let d; try { d = await api('GET', `/api/imoveis/${im.id}/fisgar`); } catch { return; }
   const el = $('#ficha-fisgar'); if (!el) return;
   const a = d.anuncios[0];
-  el.innerHTML = `<div class="row" style="justify-content:space-between"><h3 style="margin:0">Dados do Fisgar</h3>${a ? `<a class="btn sm" href="#/fisguei/${a.id}">Anúncio e conversa</a>` : ''}</div>
+  el.innerHTML = `<div class="row" style="justify-content:space-between"><h3 style="margin:0">Dados da consulta</h3>${a ? `<a class="btn sm" href="#/fisguei/${a.id}">Anúncio e conversa</a>` : ''}</div>
     <p class="muted small" style="margin:6px 0 10px">${a ? `${esc(a.ref)}${a.anunciante_nome ? ' · anunciado por ' + esc(a.anunciante_nome) : ''}${a.anunciante_tipo === 'particular' ? ' (particular)' : ''}` : ''}</p>
     ${d.pessoas.length ? `<div class="list">${d.pessoas.map((p) => { const [c, t] = FG_PESSOA[p.status] || ['info', p.status]; const tels = p.contatos.filter((x) => x.tipo === 'tel');
       return `<div class="item" style="flex-wrap:wrap;align-items:flex-start"><div style="flex:1;min-width:160px"><div class="t">${esc(p.nome)}</div>
         <div class="muted small">${esc([p.relacao, p.unidade, p.idade ? p.idade + ' anos' : ''].filter(Boolean).join(' · '))}</div>
         ${tels.length ? `<div class="small" style="margin-top:4px">${tels.map((x) => `${esc(tel(x.valor))} <span class="muted">(${esc(FG_ENVIO[x.envio] || x.envio)})</span>`).join('<br>')}</div>` : p.consultado ? '<div class="muted small">sem telefone</div>' : '<div class="muted small">não consultado (sem gastar crédito)</div>'}</div>
-        <span class="pill ${c}">${esc(t)}</span></div>`; }).join('')}</div>` : '<p class="muted small">O Fisgar ainda não trouxe ninguém para este endereço.</p>'}`;
+        <span class="pill ${c}">${esc(t)}</span></div>`; }).join('')}</div>` : '<p class="muted small">A consulta ainda não trouxe ninguém para este endereço.</p>'}`;
 }
 async function abaArquivos(im) {
   const d = await api('GET', `/api/imoveis/${im.id}/arquivos`);

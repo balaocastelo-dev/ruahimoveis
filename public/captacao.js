@@ -107,7 +107,7 @@ async function telaRobos() {
   const [r, pd, cr, rr] = await Promise.all([api('GET', '/api/fisguei/resumo'), api('GET', '/api/fisguei/pedidos'), api('GET', '/api/fisguei/creditos'),
     veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null]);
   const al = veTudo() ? await api('GET', '/api/radar/alertas').catch(() => null) : null;
-  $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Robôs e Fisgar</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Robôs e consultas</h1>
   <p class="lead">Tudo o que trabalha sozinho para a captação: os créditos do Fisgar, a busca de proprietários (a extensão do Chrome executa no Fisgar o que vocês pedem nas vitrines), o robô TH-IA-GO no WhatsApp e o radar dos portais.</p>
   <div id="rb-radar">${al && typeof avisoSaude === 'function' ? avisoSaude(al, false) : ''}</div>
   ${r.precisaCorretor ? `<div class="banner warn"><b>${r.precisaCorretor}</b> resposta(s) de proprietário esperando o corretor. <a href="#/fisguei?etapa=precisa">Ver agora</a></div>` : ''}

@@ -8,6 +8,13 @@ const HOSTS = new Set(String(process.env.PLATAFORMA_HOSTS || 'corretordofuturo.a
 const EMAIL = process.env.PLATAFORMA_EMAIL || 'tiagaskan@gmail.com';
 const WHATSAPP = String(process.env.PLATAFORMA_WHATSAPP || '5519984515960').replace(/\D/g, '');
 
+// Entrada do sistema para as imobiliárias clientes (login). Só o sistema: nenhum portal/blog de cliente aparece aqui.
+const APP_HOSTS = new Set(String(process.env.PLATAFORMA_APP_HOSTS || 'app.corretordofuturo.app')
+  .split(',').map((h) => h.trim().toLowerCase()).filter(Boolean));
+const APP_URL = process.env.PLATAFORMA_APP_URL || 'https://app.corretordofuturo.app/';
+// Páginas públicas que são do cliente (portal, blog, bairros, condomínios): ficam no domínio dele, nunca na entrada da plataforma.
+const PUBLICAS_DO_CLIENTE = /^\/(imoveis|blog|bairros|condominios)(\/|$)|^\/(llms\.txt|sitemap\.xml|feed|rss)/;
+
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const telBonito = (n) => { const m = n.match(/^55(\d{2})(\d{4,5})(\d{4})$/); return m ? `(${m[1]}) ${m[2]}-${m[3]}` : n; };
 
@@ -104,7 +111,7 @@ function pagina() {
 <div class="cx">
 <header class="topo">
   <a class="marca" href="/" aria-label="${nome}, início"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 12 13 4l10 8v11H3Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 23v-7h6v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>${nome}</a>
-  <nav aria-label="Seções"><a href="#por-dentro">Por dentro</a><a href="#comodos">O que tem dentro</a><a href="#para-quem">Para quem</a><a href="#perguntas">Perguntas</a><a class="btn" href="#contato">Fale com a gente</a></nav>
+  <nav aria-label="Seções"><a href="#por-dentro">Por dentro</a><a href="#comodos">O que tem dentro</a><a href="#para-quem">Para quem</a><a href="#perguntas">Perguntas</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn" href="#contato">Fale com a gente</a></nav>
 </header>
 
 <main>
@@ -200,7 +207,7 @@ function pagina() {
 </section>
 </main>
 
-<footer class="rodape"><span>${nome}</span><span>© <span id="ano">${new Date().getFullYear()}</span> · <a href="mailto:${email}">${email}</a></span></footer>
+<footer class="rodape"><span>${nome} · <a href="${APP_URL}">Entrar no sistema</a></span><span>© <span id="ano">${new Date().getFullYear()}</span> · <a href="mailto:${email}">${email}</a></span></footer>
 </div>
 <script src="/plataforma/site.js" defer></script>
 </body></html>`;
@@ -208,6 +215,13 @@ function pagina() {
 
 let cache = null;
 function vitrine(req, res, next) {
+  const host = String(req.hostname || '').toLowerCase();
+  if (APP_HOSTS.has(host)) {
+    if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nDisallow: /\n');
+    if (PUBLICAS_DO_CLIENTE.test(req.path)) return res.status(404).type('text/plain').send('Não encontrado.');
+    res.setHeader('X-Robots-Tag', 'noindex');
+    return next();
+  }
   if (!HOSTS.has(String(req.hostname || '').toLowerCase())) return next();
   if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nAllow: /\nSitemap: https://corretordofuturo.app/sitemap.xml\n');
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url></urlset>');
@@ -218,4 +232,4 @@ function vitrine(req, res, next) {
   res.type('html').send(cache || (cache = pagina()));
 }
 
-module.exports = { vitrine, HOSTS, pagina };
+module.exports = { vitrine, HOSTS, APP_HOSTS, pagina };
