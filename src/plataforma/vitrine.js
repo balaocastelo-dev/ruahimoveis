@@ -23,6 +23,52 @@ const PUBLICAS_DO_CLIENTE = /^\/(imoveis|blog|bairros|condominios)(\/|$)|^\/(llm
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const telBonito = (n) => { const m = n.match(/^55(\d{2})(\d{4,5})(\d{4})$/); return m ? `(${m[1]}) ${m[2]}-${m[3]}` : n; };
 const T = '/plataforma/telas/';
+const F = '/plataforma/fotos/';
+// "signature" sempre em minúsculo, em caligrafia dourada (pedido do Thiago).
+const CAL = '<span class="cal">signature</span>';
+
+// Simulações do portal (não são capturas): montadas aqui com fotos ilustrativas geradas por IA (Flux, RTX 4090).
+const MV_CARDS = [
+  ['ap-sala', 'R$ 1.290.000', 'Apartamento · Cambuí', '118 m² · 3 quartos · 2 vagas'],
+  ['casa-fachada', 'R$ 2.380.000', 'Casa em condomínio · Alphaville', '320 m² · 4 quartos · 4 vagas'],
+  ['cob-terraco', 'R$ 3.450.000', 'Cobertura · Cambuí', '236 m² · 4 quartos · 3 vagas'],
+  ['casa-piscina', 'R$ 2.950.000', 'Casa em condomínio · Sousas', '380 m² · 4 suítes · 4 vagas'],
+  ['ap-varanda', 'R$ 780.000', 'Apartamento · Taquaral', '96 m² · 3 quartos · 2 vagas'],
+  ['casa-terrea', 'R$ 1.890.000', 'Casa · Nova Campinas', '290 m² · 4 quartos · 3 vagas'],
+];
+function mockVitrine() {
+  return `<div class="mock mv" role="img" aria-label="Simulação da Vitrine: busca com filtros e imóveis em cartões com foto, valor e ficha">
+    <div class="mv-topo"><b>Casa Prado</b><span>Imóveis</span><span>Revista</span>${CAL}<span class="mv-fav">♡ Favoritos</span></div>
+    <div class="mv-hero"><img src="${F}sig1-fachada.webp" alt="" loading="lazy"><div><b>Imóveis à venda em Campinas</b><span>15 imóveis com fotos, ficha completa e uma página para cada um</span></div></div>
+    <div class="mv-busca"><span>Apartamento ▾</span><span>Cambuí ▾</span><span>3+ quartos ▾</span><span>Até R$ 1,5 mi ▾</span><em>Buscar</em></div>
+    <div class="mv-grade">${MV_CARDS.map(([f, v, t, d]) => `<div class="mv-card"><img src="${F}${f}.webp" alt="" loading="lazy"><div><b>${v}</b><i>${t}</i><small>${d}</small></div></div>`).join('')}</div>
+  </div>`;
+}
+function mockRevista() {
+  return `<div class="mock mr" role="img" aria-label="Simulação da Revista: capa com o imóvel mais fotogênico, ensaio sobre morar bem e imóveis entre os textos">
+    <div class="mr-capa"><img src="${F}sig1-sala.webp" alt="" loading="lazy">
+      <div class="mr-mastro"><span>Revista</span><b>Casa Prado</b></div><span class="mr-ed">Edição de outubro · nº 10</span>
+      <div class="mr-chamada"><small>Ensaio de abertura</small><b>A casa que respira</b><span>Luz, ar e tempo: o que se procura numa casa</span></div></div>
+    <div class="mr-pag"><span class="mr-cap">02 · Altura</span><b class="mr-tit">Luz, altura e o horizonte como paisagem</b>
+      <p>Morar no alto é trocar a rua pelo céu. A cidade vira desenho, o pôr do sol entra na sala e o silêncio sobe junto.</p>
+      <img src="${F}cob-terraco.webp" alt="" loading="lazy"><span class="mr-leg">Cobertura no Cambuí · 4 quartos · terraço com vista</span>
+      <p>Nos prédios mais novos, a varanda virou cômodo: cozinha, mesa e plantas, de frente para o horizonte.</p>
+      <div class="mr-duo"><img src="${F}ap-varanda.webp" alt="" loading="lazy"><img src="${F}ap-cozinha.webp" alt="" loading="lazy"></div></div>
+  </div>`;
+}
+function mockSignature(grande) {
+  return `<div class="mock ms${grande ? ' ms-g' : ''}" role="img" aria-label="Simulação da linha signature: fundo escuro, caligrafia dourada e residências acima de dez milhões com valor só para membros">
+    <img class="ms-fundo" src="${F}sig1-fachada.webp" alt="" loading="lazy">
+    <div class="ms-topo"><b>Casa Prado</b>${CAL}<span class="ms-clube">Clube</span></div>
+    <div class="ms-capa">${CAL}<b>Residências que não se anunciam</b><span>Uma seleção reservada acima de R$ 10 milhões</span><em>Solicitar acesso ao Clube</em></div>
+    <div class="ms-lista">
+      <div class="ms-item"><img src="${F}sig1-piscina.webp" alt="" loading="lazy"><div><i>Sousas</i><b>Casa contemporânea sobre o vale</b><small>1.450 m² · 6 suítes · borda infinita</small><span>◆ valor para membros</span></div></div>
+      <div class="ms-item"><img src="${F}sig2-sala.webp" alt="" loading="lazy"><div><i>Alphaville</i><b>Casa à beira do lago</b><small>1.180 m² · 5 suítes · forno a lenha</small><span>◆ valor para membros</span></div></div>
+      ${grande ? `<div class="ms-item"><img src="${F}sig3-terraco.webp" alt="" loading="lazy"><div><i>Cambuí</i><b>Cobertura com vista de 360°</b><small>680 m² · 4 suítes · piscina no terraço</small><span>◆ valor para membros</span></div></div>
+      <div class="ms-item"><img src="${F}sig4-sede.webp" alt="" loading="lazy"><div><i>Joaquim Egídio</i><b>Fazenda histórica restaurada</b><small>48 hectares · sede colonial · lago</small><span>◆ valor para membros</span></div></div>` : ''}
+    </div>
+  </div>`;
+}
 
 // Uma captura de tela numa moldura de navegador. `nome` = arquivo em /plataforma/telas (há a versão inteira e a "-m", com metade da largura).
 function janela(nome, alt, { url = 'app.corretordofuturo.app', w = 2880, h = 1800, lazy = true } = {}) {
@@ -44,8 +90,8 @@ const COMODOS = [
     texto: 'Nove agentes de inteligência artificial no WhatsApp, cada um num setor. Respondem, qualificam, marcam visitas e chamam o corretor. Por padrão, sugerem a resposta e esperam a sua aprovação.' },
   { k: 'crm', nome: 'CRM e visitas', x: 250, y: 170, w: 150, h: 140, area: 'clientes', ir: '#operacao',
     texto: 'Funil de vendas, histórico de cada cliente, cruzamento entre o que o comprador procura e os imóveis da carteira, e a agenda de visitas da equipe.' },
-  { k: 'portal', nome: 'Portal e Signature', x: 20, y: 310, w: 190, h: 110, area: 'sua vitrine', ir: '#portal',
-    texto: 'Uma vitrine com a sua marca e no seu domínio, em três versões: Vitrine, Revista e Signature, a linha reservada para imóveis acima de R$ 10 milhões.' },
+  { k: 'portal', nome: 'Portal e signature', x: 20, y: 310, w: 190, h: 110, area: 'sua vitrine', ir: '#portal',
+    texto: 'Uma vitrine com a sua marca e no seu domínio, em três versões: Vitrine, Revista e signature, a linha reservada para imóveis acima de R$ 10 milhões.' },
   { k: 'blog', nome: 'Blog e bairros', x: 210, y: 310, w: 190, h: 110, area: 'Google e IAs', ir: '#conteudo',
     texto: 'Textos publicados sozinhos e um guia para cada bairro onde você atua, feitos para o seu nome aparecer quando alguém pesquisa a região, no Google ou numa IA.' },
 ];
@@ -84,7 +130,7 @@ const NUMEROS = [
   [92, ' mil', 'anúncios da região lidos e organizados'],
   [9, '', 'agentes de inteligência artificial no WhatsApp'],
   [53, '', 'guias de bairro escritos para o Google e as IAs'],
-  [3, '', 'versões do seu portal, da Vitrine à Signature'],
+  [3, '', 'versões do seu portal: Vitrine, Revista e signature'],
 ];
 
 // O escritório virtual: os nove agentes (nomes e limites editáveis em cada imobiliária).
@@ -114,7 +160,7 @@ const PERGUNTAS = [
   ['Os dados da minha carteira são só meus?', 'Sim. Imóveis, clientes, proprietários e conversas de cada corretor ou imobiliária ficam separados e ninguém mais vê. A base de anúncios, prédios e bairros da região é a parte comum.'],
   ['A inteligência artificial manda mensagem sem eu ver?', 'Por padrão, não: o agente sugere a resposta e você aprova antes de enviar. Você escolhe quais agentes podem responder sozinhos.'],
   ['De onde vem o 3D dos prédios?', 'De bases públicas de mapas e do Censo do IBGE, com a altura de cada prédio e o número de andares. O sistema destaca o andar do apartamento e mostra o entorno, de dia e de noite.'],
-  ['O que é a Signature?', 'Uma versão reservada do seu portal para imóveis acima de R$ 10 milhões: poucas fotos, texto discreto e valores só para quem entra no Clube Signature, que vira cliente quente no seu CRM.'],
+  ['O que é a @SIG@?', 'Uma versão reservada do seu portal para imóveis acima de R$ 10 milhões: poucas fotos, texto discreto e valores só para quem entra no Clube @SIG@, que vira cliente quente no seu CRM.'],
   ['Funciona na minha cidade?', 'Começamos por Campinas (SP) e a base de anúncios, prédios e bairros cresce por região. Fale com a gente para saber como está a sua cidade.'],
   ['Preciso de um número de WhatsApp para cada agente?', 'Não para começar. Dá para iniciar com um número e separar os agentes depois, conforme o movimento crescer.'],
   ['Quanto custa?', 'Há planos para corretor autônomo e para imobiliária. Fale com a gente e montamos a proposta para o seu tamanho.'],
@@ -134,25 +180,25 @@ function pagina() {
   const email = esc(EMAIL);
   const wa = esc(WHATSAPP);
   const ld = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: cfg.SISTEMA_NOME, applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Sistema imobiliário com inteligência artificial para corretores e imobiliárias: radar de captação, condomínios em 3D, carteira, CRM, nove agentes de IA no WhatsApp, portal com linha Signature e blog próprios.',
+    description: 'Sistema imobiliário com inteligência artificial para corretores e imobiliárias: radar de captação, condomínios em 3D, carteira, CRM, nove agentes de IA no WhatsApp, portal com linha signature e blog próprios.',
     url: 'https://corretordofuturo.app/', inLanguage: 'pt-BR', image: 'https://corretordofuturo.app/plataforma/telas/3d-noite.webp' };
-  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: PERGUNTAS.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
+  const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: PERGUNTAS.map(([q, a]) => ({ '@type': 'Question', name: q.replace(/@SIG@/g, 'signature'), acceptedAnswer: { '@type': 'Answer', text: a.replace(/@SIG@/g, 'signature') } })) };
   const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
   return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${nome} · o sistema imobiliário com inteligência artificial</title>
-<meta name="description" content="Radar de captação, condomínios em 3D, nove agentes de IA no WhatsApp, carteira, CRM, portal com a linha Signature e blog com a sua marca. Para corretores e imobiliárias.">
+<meta name="description" content="Radar de captação, condomínios em 3D, nove agentes de IA no WhatsApp, carteira, CRM, portal com a linha signature e blog com a sua marca. Para corretores e imobiliárias.">
 <link rel="canonical" href="https://corretordofuturo.app/">
 <meta property="og:title" content="${nome} · o corretor do futuro já tem escritório"><meta property="og:description" content="O sistema imobiliário com inteligência artificial: 3D dos prédios, radar de captação, agentes no WhatsApp e portal com a sua marca."><meta property="og:url" content="https://corretordofuturo.app/"><meta property="og:type" content="website"><meta property="og:image" content="https://corretordofuturo.app/plataforma/telas/3d-noite.webp"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#070b0f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="/plataforma/site.css?v=2">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=Pinyon+Script&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="/plataforma/site.css?v=3">
 <link rel="preload" as="image" href="${T}3d-poster.webp">
 <script type="application/ld+json">${json(ld)}</script><script type="application/ld+json">${json(faq)}</script>
 </head><body>
 <header class="topo"><div class="cx">
   <a class="marca" href="/" aria-label="${nome}, início"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 12 13 4l10 8v11H3Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 23v-7h6v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>${nome}</a>
-  <nav aria-label="Seções"><a class="sec" href="#ia">Inteligência artificial</a><a class="sec" href="#radar">Radar</a><a class="sec" href="#condominios">3D</a><a class="sec" href="#portal">Portal e Signature</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn pri" href="#contato">Fale com a gente</a></nav>
+  <nav aria-label="Seções"><a class="sec" href="#ia">Inteligência artificial</a><a class="sec" href="#radar">Radar</a><a class="sec" href="#condominios">3D</a><a class="sec" href="#portal">Portal e ${CAL}</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn pri" href="#contato">Fale com a gente</a></nav>
 </div></header>
 
 <main>
@@ -161,7 +207,7 @@ function pagina() {
     <div>
       <p class="kicker">Sistema imobiliário com inteligência artificial</p>
       <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
-      <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à Signature.</p>
+      <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
       <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ia">Conhecer por dentro</a></div>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
@@ -289,10 +335,11 @@ function pagina() {
   <h2 id="t-portal">Uma vitrine, três jeitos de apresentar.</h2>
   <p class="lead">O portal fica no seu domínio, com a sua marca, e cada imóvel ganha uma página escrita a partir das fotos e da ficha. Quem se interessa vira cliente quente no seu CRM, com o imóvel e o horário da visita.</p>
   <ul class="versoes">
-    <li class="versao revelar"><img src="${T}portal-vitrine-m.webp" width="1440" height="900" alt="Vitrine do portal com busca, filtros e os imóveis em cartões com foto" loading="lazy" decoding="async"><div><span class="tag">Vitrine</span><h3>Para quem busca</h3><p>Busca, filtros por tipo, bairro, quartos e valor, favoritos e uma página completa para cada imóvel.</p></div></li>
-    <li class="versao revelar"><img src="${T}portal-revista-m.webp" width="1440" height="900" alt="A versão Revista do portal, com ensaios sobre morar bem e os imóveis entre os textos" loading="lazy" decoding="async"><div><span class="tag">Revista</span><h3>Para quem sonha</h3><p>Uma edição por mês, com ensaios sobre modos de morar e os imóveis entre os textos, como numa revista de casa.</p></div></li>
-    <li class="versao sig revelar"><img src="${T}portal-signature-m.webp" width="1440" height="900" alt="A linha Signature, escura e dourada, com residências acima de dez milhões" loading="lazy" decoding="async"><div><span class="tag">Signature</span><h3>Para poucos</h3><p>Residências acima de R$ 10 milhões, com menos fotos e mais intenção. Valores só para membros do Clube Signature.</p></div></li>
+    <li class="versao revelar">${mockVitrine()}<div><span class="tag">Vitrine</span><h3>Para quem busca</h3><p>Busca, filtros por tipo, bairro, quartos e valor, favoritos e uma página completa para cada imóvel.</p></div></li>
+    <li class="versao revelar">${mockRevista()}<div><span class="tag">Revista</span><h3>Para quem sonha</h3><p>Uma edição por mês, com ensaios sobre modos de morar e os imóveis entre os textos, como numa revista de casa.</p></div></li>
+    <li class="versao sig revelar">${mockSignature(false)}<div><span class="tag">${CAL}</span><h3>Para poucos</h3><p>Residências acima de R$ 10 milhões, com menos fotos e mais intenção. Valores só para membros do Clube ${CAL}.</p></div></li>
   </ul>
+  <p class="demo-aviso">Simulações com imóveis fictícios e fotos ilustrativas geradas por inteligência artificial.</p>
   <figure class="pagina-imovel revelar">${janela('portal-imovel', 'Página de um apartamento no portal, com mosaico de fotos, o texto escrito pela IA, a ficha e o botão de agendar visita', { url: 'casaprado.com.br/imoveis/apartamento-cambui' })}
     <figcaption>A página de cada imóvel: mosaico de fotos, texto escrito a partir das fotos, ficha ao vivo e “Agendar visita”, que cai direto no CRM.</figcaption></figure>
 </div></section>
@@ -300,19 +347,20 @@ function pagina() {
 <section class="escuro signature" aria-labelledby="t-sig"><div class="cx">
   <div class="sig-grade">
     <div>
-      <p class="kicker ouro-k">Linha Signature</p>
+      <p class="kicker ouro-k">A linha</p>
+      <p class="cal cal-grande">signature</p>
       <h2 id="t-sig">Residências que não se anunciam.</h2>
-      <p class="lead">Imóvel acima de R$ 10 milhões entra sozinho na Signature e some do portal comum. A apresentação muda de tom: escura, silenciosa, com as fotos escolhidas a dedo.</p>
+      <p class="lead">Imóvel acima de R$ 10 milhões entra sozinho na ${CAL} e some do portal comum. A apresentação muda de tom: escura, silenciosa, com as fotos escolhidas a dedo.</p>
       <ul class="sig-lista">
-        <li>Valores reservados aos membros do Clube Signature</li>
-        <li>Cada pedido de acesso vira cliente quente no CRM, com origem “Signature”</li>
+        <li>Valores reservados aos membros do Clube ${CAL}</li>
+        <li>Cada pedido de acesso vira cliente quente no CRM, com origem “${CAL}”</li>
         <li>Visita privada com hora marcada, pedida pela própria página</li>
         <li>Páginas fora do Google, endereço nunca aparece</li>
       </ul>
-      <a class="btn ouro" href="#contato">Quero a Signature na minha imobiliária</a>
+      <a class="btn ouro" href="#contato">Quero a ${CAL} na minha imobiliária</a>
     </div>
-    <figure class="revelar">${janela('portal-signature', 'Página inicial da linha Signature com uma residência de luxo em destaque, tipografia clássica e detalhes dourados', { url: 'casaprado.com.br/imoveis/signature' })}
-      <p class="sig-nota">Demonstração com imóveis fictícios e imagens ilustrativas geradas por IA.</p></figure>
+    <figure class="revelar">${mockSignature(true)}
+      <p class="sig-nota">Simulação com imóveis fictícios e fotos ilustrativas geradas por inteligência artificial.</p></figure>
   </div>
 </div></section>
 
@@ -349,7 +397,7 @@ function pagina() {
     <div class="perfil"><h3>Corretor parceiro</h3><p>Você sozinho, com a estrutura de uma imobiliária por trás.</p>
       <ul><li>Agentes que atendem no WhatsApp enquanto você está em visita</li><li>Portal, Revista e blog com o seu nome</li><li>Radar de captação na sua região, sem planilha</li><li>3D do prédio para impressionar o cliente na primeira conversa</li></ul></div>
     <div class="perfil forte"><h3>Imobiliária parceira</h3><p>A equipe toda no mesmo lugar, cada um vendo o que é seu.</p>
-      <ul><li>Perfis de administrador, gestor e corretor</li><li>Carteira em etapas e painel do dono</li><li>Nove agentes por setor, com relatório diário</li><li>Linha Signature para o alto padrão</li></ul></div>
+      <ul><li>Perfis de administrador, gestor e corretor</li><li>Carteira em etapas e painel do dono</li><li>Nove agentes por setor, com relatório diário</li><li>Linha ${CAL} para o alto padrão</li></ul></div>
   </div>
 </div></section>
 
@@ -370,7 +418,7 @@ function pagina() {
 <section id="perguntas" class="claro" aria-labelledby="t-perguntas"><div class="cx">
   <h2 id="t-perguntas">Perguntas</h2>
   <div class="perguntas">
-    ${PERGUNTAS.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n    ')}
+    ${PERGUNTAS.map(([q, a]) => `<details><summary>${esc(q).replace(/@SIG@/g, CAL)}</summary><p>${esc(a).replace(/@SIG@/g, CAL)}</p></details>`).join('\n    ')}
   </div>
 </div></section>
 
@@ -398,7 +446,7 @@ function pagina() {
 </main>
 
 <footer class="rodape"><div class="cx"><span>${nome} · <a href="${APP_URL}">Entrar no sistema</a></span><span>Telas de demonstração com dados fictícios · © <span id="ano">${new Date().getFullYear()}</span> · <a href="mailto:${email}">${email}</a></span></div></footer>
-<script src="/plataforma/site.js?v=2" defer></script>
+<script src="/plataforma/site.js?v=3" defer></script>
 </body></html>`;
 }
 
