@@ -97,6 +97,7 @@ async function olharFotos(im, dir) {
 function limparLegenda(s) {
   let t = String(s || '').replace(/\s+/g, ' ').trim();
   t = t.replace(/\b(\d{1,2}|um|uma|dois|duas|tr[êe]s|quatro|cinco|seis)\s+(quartos?|dormit[óo]rios?|su[íi]tes?|vagas?|banheiros?)\b/giu, '$2');
+  t = t.replace(/\s*,?\s*\b(?:de\s+|com\s+o\s+|com\s+)?(?:n[º°o]\.?|n[úu]mero)\s*\d+[A-Za-z]?\b/giu, '');
   t = t.replace(/\d+[.,]?\d*\s*(m²|m2|metros( quadrados)?)/giu, '').replace(/https?:\S+|www\.\S+/giu, '');
   t = t.replace(/\s{2,}/g, ' ').trim();
   t = t.charAt(0).toUpperCase() + t.slice(1);
@@ -158,7 +159,8 @@ const ANUNCIO = [
   [/,?\s*(?:e\s+)?(?:com\s+)?(?:grande\s+)?valoriza[çc][ãa]o\b/giu, ''], [/\b(?:magn[íi]fic|maravilhos|incr[íi]ve|espetacular|deslumbrante)\w*/giu, 'amplo'],
   [/\bdos\s+sonhos\b/giu, ''], [/\bperfeit[ao]s?\b/giu, 'adequado'],
 ];
-const semLinks = (s) => { let t = texto(s).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/https?:\/\/\S+|www\.\S+/g, ''); for (const [re, por] of ANUNCIO) t = t.replace(re, por); return t.replace(/\s{2,}/g, ' ').replace(/\s+([,.])/g, '$1').trim(); };
+const ENDERECO = /\s*,?\s*\b(?:de\s+|com\s+o\s+|com\s+)?(?:n[º°o]\.?|n[úu]mero)\s*\d+[A-Za-z]?\b/giu;
+const semLinks = (s) => { let t = texto(s).replace(ENDERECO, '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/https?:\/\/\S+|www\.\S+/g, ''); for (const [re, por] of ANUNCIO) t = t.replace(re, por); return t.replace(/\s{2,}/g, ' ').replace(/\s+([,.])/g, '$1').trim(); };
 /** Resumo entre 110 e 165: corta no fim de frase ou de palavra. */
 function ajustarResumo(r) {
   let t = semLinks(r);
@@ -171,7 +173,7 @@ function ajustarResumo(r) {
 
 function montar(im, fotos, j) {
   const ids = new Set(im.fotos.map((f) => f.foto));
-  const legenda = (id) => (fotos[id] && fotos[id].legenda) || 'Foto do imóvel';
+  const legenda = (id) => limparLegenda((fotos[id] && fotos[id].legenda) || 'Foto do imóvel');
   const galeria = im.fotos.map((f) => ({ foto: f.foto, legenda: legenda(f.foto), ambiente: (fotos[f.foto] && fotos[f.foto].ambiente) || 'outro' }))
     .sort((a, b) => ORDEM.indexOf(a.ambiente) - ORDEM.indexOf(b.ambiente));
   let capa = Number(j.capa && j.capa.foto);
