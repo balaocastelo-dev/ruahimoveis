@@ -70,6 +70,7 @@ let calculando = null;
 async function calcular() {
   const imoveis = dados.imoveisAVenda();
   const situacao = new Map(imoveis.map((im) => [im.codigo, { codigo: im.codigo, tipo: im.tipo, bairro: im.bairro, cidade: im.cidade, fotos: im.fotos.length, versao: im.versao, estado: 'sem-pagina' }]));
+  for (const x of dados.publicadosSemFoto()) situacao.set(x.codigo, { codigo: x.codigo, tipo: x.tipo, bairro: x.bairro, cidade: x.cidade, fotos: 0, estado: 'sem-foto' });
   if (!ligado()) return { noAr: [], situacao, imoveis };
 
   let indice = null;

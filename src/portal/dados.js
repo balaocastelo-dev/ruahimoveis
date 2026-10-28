@@ -50,6 +50,12 @@ function imoveisAVenda() {
   return linhas.filter((i) => fotos.has(i.id)).map((i) => montar(i, fotos.get(i.id)));
 }
 
+/** Publicados sem nenhuma foto própria (só fotos internas ou nenhuma): ficam fora do portal; a tela Portal mostra por quê. */
+function publicadosSemFoto() {
+  return all(`SELECT i.codigo, i.tipo, i.bairro, i.cidade FROM imoveis i WHERE i.status='publicado'
+    AND NOT EXISTS (SELECT 1 FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') ORDER BY i.id DESC`);
+}
+
 /** Um imóvel à venda pelo código, ou null. */
 function imovelAVenda(codigo) {
   const i = one(`SELECT ${CAMPOS} FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
@@ -68,4 +74,4 @@ function fotoPublica(id) {
 /** O que a régua precisa da ficha. */
 const fichaParaRegua = (im) => im && ({ codigo: im.codigo, tipo: im.tipo, quartos: im.quartos, suites: im.suites, vagas: im.vagas, area_util: im.area_util, area_total: im.area_total, fotos: im.fotos });
 
-module.exports = { imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe };
+module.exports = { publicadosSemFoto, imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe };

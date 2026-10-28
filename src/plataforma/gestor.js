@@ -164,6 +164,10 @@ api.post('/senha', exige(async (req, res) => {
 const COLS = 'id, slug, nome, empresa, contato_nome, contato_email, contato_telefone, link, dominio, vercel_projeto, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, publicada, notas, criado_em, atualizado_em';
 api.get('/imobiliarias', exige(async (req, res) => {
   const lista = await q(`SELECT ${COLS} FROM imobiliarias ORDER BY id`);
+  { // papel de parede de cada imobiliária (o mesmo do portal dela), para o fundo do cartão
+    const { SEQUENCIA, fundoDe } = require('../portal/fundos'); let k = 0;
+    for (const im of lista) { const f = fundoDe(im.slug === 'ruah' ? 'castelo' : SEQUENCIA[(k++) % SEQUENCIA.length], im.nome); im.fundo = { src: f.src, lugar: f.lugar, posicao: f.posicao }; }
+  }
   await Promise.all(lista.map(async (im) => {
     try { im.numeros = (await um('SELECT numeros($1) AS n', [im.slug])).n; } catch (e) { im.numeros = null; im.erro = e.message; }
     if (!im.link && im.vercel_projeto && process.env.VERCEL_TOKEN) {
