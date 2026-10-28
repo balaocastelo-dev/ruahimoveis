@@ -124,6 +124,7 @@ BEGIN
   EXECUTE format('GRANT EXECUTE ON FUNCTION %I.agora() TO %I', p_slug, papel);
   EXECUTE format('INSERT INTO %I.usuarios(nome, email, perfil, senha_hash) VALUES (%L, %L, ''adm'', %L)', p_slug, p_admin_nome, p_admin_email, p_admin_hash);
   UPDATE plataforma.imobiliarias SET situacao = 'implantacao' WHERE slug = p_slug;
+  PERFORM plataforma.compartilhar_base(p_slug); -- já começa vendo todos os anúncios da base (sql/plataforma-base-comum.sql)
 END $f$;
 
 REVOKE ALL ON FUNCTION plataforma.numeros(text), plataforma.suspender(text, boolean), plataforma.criar_imobiliaria(text, text, text, text, text) FROM PUBLIC;
