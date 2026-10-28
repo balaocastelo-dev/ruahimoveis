@@ -31,6 +31,8 @@ app.use((req, res, next) => {
 app.use(require('./src/plataforma/gestor').gestor);
 // Domínio da plataforma (corretordofuturo.app): vitrine do produto, nunca o sistema ou o portal de um cliente.
 app.use(require('./src/plataforma/vitrine').vitrine);
+// Imobiliária tirada do ar por completo (FORA_DO_AR=1): só o domínio da plataforma continua respondendo.
+app.use(require('./src/plataforma/fora-do-ar'));
 // Conta suspensa pelo gestor da plataforma: sistema, portal e blog desta imobiliária mostram o aviso.
 app.use(require('./src/plataforma/suspensa'));
 
