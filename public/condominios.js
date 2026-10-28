@@ -66,6 +66,61 @@ async function mapaCondominios(destaque) {
   if (b.length && b.length < pts.length) m.fitBounds(b, { padding: [30, 30], maxZoom: 15 });
 }
 
+// ---------- ficha: captação e "à venda agora" ----------
+const CD_IMOB_TOPO = 5;
+const cdImobItem = (x) => `<div class="item"><span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${esc(x.nome)}">${esc(x.nome)}</span><span class="pill info">${x.n}</span></div>`;
+
+// colunas ordenáveis: chave → valor para comparar
+const CD_ORDEM = {
+  origem: { t: 'Origem', v: (a) => (a.origem || '') + ' ' + (a.ref || ''), txt: true },
+  unidade: { t: 'Unidade', v: (a) => { const n = parseInt(String(a.unidade || '').replace(/\D/g, ''), 10); return Number.isFinite(n) ? n : null; } },
+  quartos: { t: 'Quartos', v: (a) => a.quartos || null },
+  area: { t: 'Área', v: (a) => a.area || null },
+  valor: { t: 'Valor', v: (a) => a.valor || null },
+  m2: { t: 'R$/m²', v: (a) => (a.valor && a.area ? a.valor / a.area : null) },
+  dias: { t: 'Anunciado há', v: (a) => (a.dias !== null && a.dias !== undefined ? a.dias : null) },
+  anunciante: { t: 'Quem anuncia', v: (a) => a.anunciante || '', txt: true },
+};
+let cdOrdem = (() => { try { return JSON.parse(localStorage.getItem('ruah.cdOrdem')) || { k: 'valor', d: 1 }; } catch { return { k: 'valor', d: 1 }; } })();
+
+function cdOrdena(lista) {
+  const col = CD_ORDEM[cdOrdem.k]; if (!col) return lista;
+  return lista.map((a, i) => ({ a, i, v: col.v(a) })).sort((x, y) => {
+    const vx = x.v, vy = y.v;
+    const fx = vx === null || vx === '', fy = vy === null || vy === '';
+    if (fx || fy) return fx === fy ? x.i - y.i : fx ? 1 : -1; // sem dado sempre no fim
+    const r = col.txt ? String(vx).localeCompare(String(vy), 'pt-BR', { sensitivity: 'base', numeric: true }) : vx - vy;
+    return (r || x.i - y.i) * (r ? cdOrdem.d : 1);
+  }).map((x) => x.a);
+}
+
+function cdTabelaVenda(c, temGeo) {
+  if (!c.aVenda.length) return '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>';
+  const th = (k) => {
+    const on = cdOrdem.k === k, seta = on ? (cdOrdem.d > 0 ? '▲' : '▼') : '↕';
+    const dica = on ? (cdOrdem.d > 0 ? 'do menor para o maior · clique para inverter' : 'do maior para o menor · clique para inverter') : 'ordenar';
+    return `<th class="cd-ord${on ? ' on' : ''}" data-ord="${k}" aria-sort="${on ? (cdOrdem.d > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" title="${dica}">${CD_ORDEM[k].t} <span class="cd-seta" aria-hidden="true">${seta}</span></button></th>`;
+  };
+  return `<table><thead><tr><th></th>${Object.keys(CD_ORDEM).map(th).join('')}${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
+    ${cdOrdena(c.aVenda).map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
+      <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b></td><td>${a.valor && a.area ? cdM2(a.valor / a.area) : '—'}</td>
+      <td>${a.dias !== null && a.dias !== undefined ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${cdDaCasa(a) ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
+  </tbody></table>`;
+}
+
+function ligaOrdemVenda(c, temGeo) {
+  const box = $('#cd-avenda'); if (!box) return;
+  box.addEventListener('click', (e) => {
+    const th = e.target.closest('th[data-ord]'); if (!th) return;
+    e.preventDefault(); e.stopPropagation();
+    const k = th.dataset.ord;
+    // texto começa em A→Z; número começa do menor; clicar de novo inverte
+    cdOrdem = cdOrdem.k === k ? { k, d: -cdOrdem.d } : { k, d: 1 };
+    try { localStorage.setItem('ruah.cdOrdem', JSON.stringify(cdOrdem)); } catch {}
+    box.innerHTML = cdTabelaVenda(c, temGeo);
+  });
+}
+
 // ---------- ficha ----------
 async function telaCondominio(id) {
   const c = await api('GET', '/api/condominios/' + id);
@@ -109,20 +164,16 @@ async function telaCondominio(id) {
       <dt>Plantas</dt><dd>${s.quartos.length ? s.quartos.map((x) => `${x.q} quarto${x.q > 1 ? 's' : ''} (${x.n})`).join(' · ') : '—'}</dd>
       ${c.razao_social ? `<dt>Razão social</dt><dd>${esc(c.razao_social)}</dd>` : ''}
     </dl>${s.lazer.length ? `<h3 style="margin-top:14px">Lazer e estrutura</h3><div class="row" style="gap:6px;flex-wrap:wrap">${s.lazer.map((x) => `<span class="pill info">${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin:6px 0 0">Lido das descrições dos anúncios do prédio.</p>` : ''}</div>
-    <div class="card"><h2>Captação no prédio</h2>
+    <div class="card cd-capta"><h2>Captação no prédio</h2>
       <div class="grid g3" style="gap:10px">${cdKpi(s.proprietarios_conhecidos, 'possíveis donos conhecidos')}${cdKpi(s.donos_confirmados, 'donos confirmados')}${cdKpi(s.vendidos_ruah, 'vendidos pela ' + MARCA.cliente)}</div>
-      ${s.imobiliarias.length ? `<h3 style="margin-top:14px">Imobiliárias anunciando aqui</h3><div class="list">${s.imobiliarias.map((x) => `<div class="item"><span style="flex:1">${esc(x.nome)}</span><span class="pill info">${x.n}</span></div>`).join('')}</div>` : '<p class="muted small" style="margin-top:12px">Nenhuma imobiliária concorrente anunciando neste prédio agora.</p>'}
+      ${s.imobiliarias.length ? `<h3 style="margin-top:14px">Imobiliárias anunciando aqui <span class="muted small">(${s.imobiliarias.length})</span></h3><div class="list cd-imob">${s.imobiliarias.slice(0, CD_IMOB_TOPO).map(cdImobItem).join('')}</div>${s.imobiliarias.length > CD_IMOB_TOPO ? `<details class="cd-imob-mais"><summary>Ver todas as ${s.imobiliarias.length}</summary><div class="list cd-imob cd-imob-rola">${s.imobiliarias.slice(CD_IMOB_TOPO).map(cdImobItem).join('')}</div></details>` : ''}` : '<p class="muted small" style="margin-top:12px">Nenhuma imobiliária concorrente anunciando neste prédio agora.</p>'}
       <div class="row" style="gap:6px;margin-top:14px;flex-wrap:wrap">
         ${c.fisguei.length ? `<a class="btn sm" href="#/fisguei?q=${encodeURIComponent(c.logradouro || c.nome)}">Ver no Fisguei (${c.fisguei.length})</a>` : ''}
         ${c.radar.length ? `<a class="btn sm" href="#/radar">Ver no Radar (${c.radar.length})</a>` : ''}
         <button class="btn sm" data-act="cd-vizinhos" data-id="${c.id}">Mensagem para os vizinhos</button>
       </div></div>
   </div>
-  <div class="card tbl" style="margin-top:16px"><h2 style="padding:10px 10px 0">À venda agora</h2>${c.aVenda.length ? `<table><thead><tr><th></th><th>Origem</th><th>Unidade</th><th>Quartos</th><th>Área</th><th>Valor</th><th>R$/m²</th><th>Anunciado há</th><th>Quem anuncia</th>${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
-    ${c.aVenda.map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
-      <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b></td><td>${a.valor && a.area ? cdM2(a.valor / a.area) : '—'}</td>
-      <td>${a.dias !== null ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${cdDaCasa(a) ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
-  </tbody></table>` : '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>'}</div>
+  <div class="card tbl" style="margin-top:16px"><div class="row" style="padding:10px 10px 0;gap:8px;flex-wrap:wrap"><h2 style="margin:0;flex:1">À venda agora${c.aVenda.length ? ` <span class="muted small">(${c.aVenda.length})</span>` : ''}</h2>${c.aVenda.length > 1 ? '<span class="muted small">Clique no título da coluna para ordenar</span>' : ''}</div><div id="cd-avenda">${cdTabelaVenda(c, temGeo)}</div></div>
   ${c.carteira.length ? `<div class="row" style="margin:22px 0 12px"><h2 style="margin:0">Na carteira da ${esc(MARCA.cliente)}</h2></div>${imCards(c.carteira.map((i) => ({ ...i, condominio_nome: c.nome, bairro: c.bairro, capa: i.foto })))}` : ''}
   <div class="card" style="margin-top:16px"><div class="row"><h2 style="margin:0;flex:1">O que tem perto</h2><span class="muted small">a pé, a partir da portaria</span></div><div id="cd-perto"><p class="muted">${temGeo ? 'Carregando…' : 'Ajuste a posição no mapa para ver o entorno.'}</p></div></div>
   <div class="grid g2" style="margin-top:16px">
@@ -132,6 +183,7 @@ async function telaCondominio(id) {
       <p class="small muted">Se a imagem não aparecer, o Google não tem Street View exatamente neste ponto. <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${encodeURIComponent(c.lat + ',' + c.lon)}" target="_blank" rel="noopener">Abrir no Google</a></p>` : '<p class="muted">Sem posição no mapa.</p>'}</div>
   </div>`;
   miniMapa(c);
+  ligaOrdemVenda(c, temGeo);
   if (temGeo) carregaPerto(c.id);
   // com a chave do Google: foto da fachada no lugar do Street View interativo (guardada; paga uma vez)
   if (temGeo && typeof mapasCfg === 'function') mapasCfg().then((cfg) => {

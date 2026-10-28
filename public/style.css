@@ -1047,3 +1047,16 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (max-width:760px){.cart-filtros{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:380px){.cart-filtros{grid-template-columns:1fr}}
 @media (max-width:760px){.gal-palco img{max-height:calc(100dvh - 80px)}.gal-topo{padding-top:max(10px,env(safe-area-inset-top))}}
+
+/* Condomínio: Captação no prédio compacta + "À venda agora" ordenável (28/10/2026) */
+.cd-capta{max-height:560px;overflow:auto}
+.cd-imob .item{padding:6px 8px}
+.cd-imob-mais{margin-top:6px}
+.cd-imob-mais summary{cursor:pointer;color:var(--accent,#a8823c);font-size:.9em;padding:4px 0}
+.cd-imob-rola{max-height:220px;overflow:auto;margin-top:6px}
+#cd-avenda th.cd-ord{padding:0;white-space:nowrap}
+#cd-avenda th.cd-ord button{all:unset;cursor:pointer;display:block;padding:8px 10px;font:inherit;color:inherit;width:100%;box-sizing:border-box}
+#cd-avenda th.cd-ord button:focus-visible{outline:2px solid var(--accent,#a8823c);outline-offset:-2px}
+#cd-avenda th.cd-ord:hover{background:rgba(168,130,60,.08)}
+#cd-avenda .cd-seta{opacity:.35;font-size:.8em;margin-left:2px}
+#cd-avenda th.cd-ord.on .cd-seta{opacity:1;color:var(--accent,#a8823c)}
