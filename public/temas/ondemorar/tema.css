@@ -1,4 +1,4 @@
-/* ONDEMORAR.COM · tema do portal e do blog: colorido, jovem, de blocos.
+/* Onde morar? · tema do portal e do blog: colorido, jovem, de blocos.
    Azul-noite no texto, creme no fundo, cores vivas nas ações. Fredoka nos títulos, Nunito no texto. */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap");
 :root{
@@ -14,7 +14,7 @@
 body{background-image:radial-gradient(circle at 8% 0%, rgba(255,200,0,.10), transparent 32%), radial-gradient(circle at 92% 6%, rgba(61,123,255,.10), transparent 30%)}
 /* logo no topo */
 .p-marca{align-items:center}
-.p-marca-logo{height:46px;width:auto;display:block}
+.p-marca-logo{height:52px;width:auto;display:block}
 .marca-logo{height:clamp(54px,9vw,82px);width:auto;display:block}
 @media (max-width:640px){.p-marca-logo{height:34px}}
 /* títulos arredondados, um pouco mais pesados */

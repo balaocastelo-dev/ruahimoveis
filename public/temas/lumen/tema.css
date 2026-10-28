@@ -1,0 +1,16 @@
+/* Lumen · alto padrão: preto, marfim e dourado, Josefin Sans fina e espaçada nos títulos. */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+:root{
+  --cal:#FAF8F3; --papel:#FFFFFF; --grafite:#141414; --pedra:#6A665E; --linha:#E8E3D8;
+  --ouro:#A88440; --ouro-escuro:#7D6230; --salvia:#141414; --salvia-claro:#F2EDE4;
+  --serifa:"Josefin Sans", "Segoe UI", system-ui, sans-serif; --raio:6px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --cal:#0E0E0D; --papel:#171615; --grafite:#F2EDE4; --pedra:#B5AEA2; --linha:#2A2825;
+  --ouro:#D8B676; --ouro-escuro:#EBD3A2; --salvia:#F2EDE4; --salvia-claro:#22201C}}
+/* logo no topo */
+.p-marca{align-items:center}
+.p-marca-logo{height:52px;width:auto;display:block}
+.marca-logo{height:clamp(54px,9vw,82px);width:auto;display:block}
+@media (max-width:640px){.p-marca-logo{height:38px}}
+h1,h2,.p-hero h1{font-weight:300!important;letter-spacing:.04em!important}

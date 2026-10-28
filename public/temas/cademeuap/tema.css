@@ -1,0 +1,18 @@
+/* Cadê meu AP? · apartamentos: verde-azulado e coral, Outfit nos títulos. */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&display=swap");
+:root{
+  --cal:#F4FBFA; --papel:#FFFFFF; --grafite:#12302F; --pedra:#4E6B69; --linha:#DCEFEC;
+  --ouro:#0E8C8C; --ouro-escuro:#0A6B6B; --salvia:#FF6B4A; --salvia-claro:#FFEDE8;
+  --serifa:"Outfit", "Segoe UI", system-ui, sans-serif; --raio:14px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --cal:#0C1D1C; --papel:#132826; --grafite:#E9FBF9; --pedra:#A6C4C1; --linha:#21403D;
+  --ouro:#2EC4C4; --ouro-escuro:#7FE0E0; --salvia:#FF8C70; --salvia-claro:#2A1A16}}
+/* logo no topo */
+.p-marca{align-items:center}
+.p-marca-logo{height:52px;width:auto;display:block}
+.marca-logo{height:clamp(54px,9vw,82px);width:auto;display:block}
+@media (max-width:640px){.p-marca-logo{height:38px}}
+h1,h2,h3{letter-spacing:-.015em}
+button,.btn,.p-btn,a.p-btn,.p-cta{border-radius:12px!important}
+.p-card,.cartao,.card,article.c{border-radius:16px!important;overflow:hidden}

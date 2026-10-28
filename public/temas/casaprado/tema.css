@@ -1,0 +1,15 @@
+/* Casa Prado · casas: verde-floresta e trigo, Fraunces nos títulos. */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap");
+:root{
+  --cal:#F7F5EE; --papel:#FFFFFF; --grafite:#1F3D2F; --pedra:#5E6B60; --linha:#E6E2D3;
+  --ouro:#2F5D46; --ouro-escuro:#1F3D2F; --salvia:#A8843F; --salvia-claro:#F3ECDB;
+  --serifa:"Fraunces", Georgia, serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --cal:#111A15; --papel:#18241D; --grafite:#EEF3EA; --pedra:#AAB8AB; --linha:#26362C;
+  --ouro:#8FC2A0; --ouro-escuro:#B7DCC2; --salvia:#D9B56C; --salvia-claro:#2A2416}}
+/* logo no topo */
+.p-marca{align-items:center}
+.p-marca-logo{height:52px;width:auto;display:block}
+.marca-logo{height:clamp(54px,9vw,82px);width:auto;display:block}
+@media (max-width:640px){.p-marca-logo{height:38px}}
