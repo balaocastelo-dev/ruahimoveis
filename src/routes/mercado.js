@@ -126,14 +126,24 @@ function mesmo(a, b) {
 }
 const recente = (a, b) => String(b.publicado_em || '').localeCompare(String(a.publicado_em || '')) || (a.valor || 0) - (b.valor || 0) || a.id - b.id;
 function unicos(linhas) {
-  const baldes = new Map(), out = [];
-  for (const x of [...linhas].sort(recente)) {
-    const num = G.numero(x.numero);
-    if (!num || num === '0' || !x.logradouro) { out.push({ ...x, iguais: [x] }); continue; }
-    const k = `${ruaChave(x.logradouro)}|${num}|${familia(x.tipo)}`;
-    if (!baldes.has(k)) baldes.set(k, []);
-    const gs = baldes.get(k), g = gs.find((y) => mesmo(y, x));
-    if (g) g.iguais.push(x); else { const n = { ...x, iguais: [x] }; gs.push(n); out.push(n); }
+  const out = [];
+  if (linhas.length && linhas.every((x) => x._g !== undefined)) {
+    // rápido: os grupos já foram calculados uma vez sobre a base inteira (marcaGrupos); aqui só junta
+    const m = new Map();
+    for (const x of [...linhas].sort((a, b) => a._ord - b._ord)) {
+      const g = m.get(x._g);
+      if (g) g.iguais.push(x); else { const n = { ...x, iguais: [x] }; m.set(x._g, n); out.push(n); }
+    }
+  } else {
+    const baldes = new Map();
+    for (const x of [...linhas].sort(recente)) {
+      const num = G.numero(x.numero);
+      if (!num || num === '0' || !x.logradouro) { out.push({ ...x, iguais: [x] }); continue; }
+      const k = `${x._rua !== undefined ? x._rua : ruaChave(x.logradouro)}|${num}|${familia(x.tipo)}`;
+      if (!baldes.has(k)) baldes.set(k, []);
+      const gs = baldes.get(k), g = gs.find((y) => mesmo(y, x));
+      if (g) g.iguais.push(x); else { const n = { ...x, iguais: [x] }; gs.push(n); out.push(n); }
+    }
   }
   for (const g of out) {
     const v = g.iguais.map((y) => y.valor).filter(Boolean);
@@ -164,9 +174,17 @@ const BASE_MS = Number(process.env.MERCADO_CACHE_S ?? 600) * 1000;
 let BASE = null, RENOVANDO = null;
 // título só serve para os terrenos (terreno em condomínio); trazer de todos deixava a leitura bem mais pesada
 const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, p: b0.p }; };
+// Calcula uma vez, sobre a base inteira, qual anúncio é o mesmo imóvel de qual (_g) e a ordem de recência (_ord).
+// Com ~80 mil anúncios, juntar as repetições levava ~3 s a cada filtro; assim cada filtro só agrupa pelos números prontos.
+function marcaGrupos(linhas) {
+  const ord = [...linhas].sort(recente);
+  ord.forEach((x, i) => { x._ord = i; });
+  unicos(ord).forEach((g, gi) => { for (const y of g.iguais) y._g = gi; });
+}
 function montaBase(fisguei, radar) {
   const linhas = [...fisguei, ...radar];
   for (const x of linhas) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
+  marcaGrupos(linhas);
   BASE = { em: Date.now(), linhas, memo: new Map() };
   return linhas;
 }
@@ -349,5 +367,6 @@ r.get('/mapas/config', (req, res) => { const f = require('../condominios/fachada
 module.exports = r;
 module.exports.unicos = unicos;
 module.exports.esqueceBase = esqueceBase;
+module.exports.marcaGrupos = marcaGrupos;
 module.exports.categoria = categoria;
 module.exports.subtipo = subtipo;
