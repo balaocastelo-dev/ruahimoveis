@@ -75,6 +75,12 @@ const ramo = http.createServer((req, res) => {
     const pg = await get(`/imoveis/${modelo.slug}`);
     assert.equal(pg.s, 200);
     assert.ok(pg.t.includes('<h1>') && pg.t.includes('RealEstateListing') && pg.t.includes('FAQPage') && pg.t.includes('og:image'));
+    assert.ok(pg.t.includes('property="og:title"') && pg.t.includes('property="og:description"') && pg.t.includes('property="og:url"') && pg.t.includes('og:type" content="website"') && pg.t.includes('summary_large_image'));
+    const ogImg = /property="og:image" content="([^"]+)"/.exec(pg.t);
+    assert.ok(ogImg && /^https?:\/\/.+\/imoveis\/foto\/9101/.test(ogImg[1]), ogImg && ogImg[1]);
+    const ogR = await fetch(ogImg[1].replace(/&amp;/g, '&'));
+    assert.equal(ogR.status, 200); assert.match(ogR.headers.get('content-type') || '', /^image\//);
+    await ogR.arrayBuffer();
     assert.ok(pg.t.includes('R$ 1.890.000'), 'valor ao vivo da ficha');
     assert.ok(!pg.t.includes('Rua Secreta') && !pg.t.includes('"77"'), 'sem endereço');
     assert.match(pg.h.get('content-security-policy'), /script-src 'self'/); console.log('ok · página do imóvel: texto no HTML, JSON-LD, valor da ficha e sem endereço');

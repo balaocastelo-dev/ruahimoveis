@@ -9,6 +9,7 @@ const { falha, txt, cpfValido, fmtCpf } = require('../util');
 const drive = require('../services/drive');
 const wa = require('../services/whatsapp');
 const { pdfAutorizacao } = require('../services/pdf');
+const og = require('../og');
 
 const r = express.Router();
 
@@ -68,12 +69,66 @@ function linkValido(token) {
   if (!k) falha(404, 'Este link expirou ou não existe. Peça um novo ao corretor.');
   return k;
 }
+// Ficha para a prévia. Não grava acesso. Rua só sai daqui se o corretor marcou mostrar_endereco.
+function contextoLink(token) {
+  const tok = String(token || '');
+  if (!/^[A-Za-z0-9_-]{6,80}$/.test(tok)) return null;
+  const k = one(`SELECT id, token, imovel_id, mostrar_endereco FROM links_internos WHERE token=? AND expira_em > datetime('now','localtime')`, tok);
+  if (!k) return null;
+  const i = one(`SELECT id, codigo, tipo, status, bairro, cidade, logradouro, numero, quartos, suites, vagas, area_util, area_total, valor
+    FROM imoveis WHERE id=?`, k.imovel_id);
+  if (!i || ['vendido', 'suspenso'].includes(i.status)) return null;
+  const foto = one("SELECT id, nome, mime, tamanho, caminho_local FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id LIMIT 1", i.id);
+  return { k, i, foto };
+}
+function enderecoSePermitido(k, i) {
+  if (!Number(k.mostrar_endereco)) return null;
+  return [i.logradouro, i.numero].filter(Boolean).join(', ') || null;
+}
+const HTML_LINK = fs.readFileSync(path.join(__dirname, '..', '..', 'public', 'imovel.html'), 'utf8');
+function paginaLink(req, res) {
+  const tok = String(req.params.token || '');
+  const origem = og.origemPublica(req);
+  const tokenOk = /^[A-Za-z0-9_-]{6,80}$/.test(tok);
+  const url = tokenOk && origem ? `${origem}/v/${tok}` : (origem ? `${origem}/v/` : '');
+  let titulo = 'Imóvel · RUAH';
+  let descricao = 'Apresentação exclusiva RUAH.';
+  let imagem = null, largura = null, altura = null;
+  const ctx = tokenOk ? contextoLink(tok) : null;
+  if (ctx) {
+    titulo = og.tituloImovel(ctx.i) || titulo;
+    descricao = og.descricaoImovel(ctx.i, enderecoSePermitido(ctx.k, ctx.i)) || descricao;
+    if (ctx.foto && origem) {
+      imagem = `${origem}/v/${tok}/og.jpg?v=${og.VERSAO_OG}-${ctx.foto.id}`;
+      const m = og.metaCapaLink(ctx.foto);
+      largura = m.largura || null;
+      altura = m.altura || null;
+    }
+  }
+  res.setHeader('Cache-Control', 'private, no-store');
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.type('html').send(og.htmlComTags(HTML_LINK, titulo, og.tagsLink({ titulo, descricao, url, imagem, largura, altura })));
+}
+const ogHits = new Map();
+async function fotoOg(req, res) {
+  const agora = Date.now();
+  const chave = `${req.ip || ''}|og`;
+  const h = (ogHits.get(chave) || []).filter((t) => agora - t < 60e3);
+  h.push(agora); ogHits.set(chave, h);
+  if (ogHits.size > 5000) ogHits.clear();
+  if (h.length > 90) return res.status(429).type('text').send('Muitas tentativas. Aguarde um minuto.');
+  const ctx = contextoLink(req.params.token);
+  if (!ctx || !ctx.foto) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  await og.enviarJpeg(res, ctx.foto, { publico: false });
+}
 r.get('/imovel/:token', limite(60), (req, res) => {
   const k = linkValido(req.params.token);
   const i = one(`SELECT i.*, c.nome condominio, c.lazer, u.nome corretor, u.telefone corretor_tel FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id
                  LEFT JOIN usuarios u ON u.id=i.corretor_id WHERE i.id=?`, k.imovel_id);
   if (!i || ['vendido', 'suspenso'].includes(i.status)) falha(404, 'Este imóvel não está mais disponível.');
-  run('INSERT INTO links_acessos(link_id,ip,user_agent) VALUES(?,?,?)', k.id, req.ip, String(req.headers['user-agent'] || '').slice(0, 300));
+  // O robô de prévia (WhatsApp, Facebook, Telegram…) não é visita de cliente.
+  const ua = String(req.headers['user-agent'] || '');
+  if (!og.ehPreview(ua)) run('INSERT INTO links_acessos(link_id,ip,user_agent) VALUES(?,?,?)', k.id, req.ip, ua.slice(0, 300));
   const fotos = all("SELECT id FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id LIMIT 40", i.id).map((f) => f.id);
   res.json({
     empresa: cfg.EMPRESA, codigo: i.codigo, tipo: i.tipo, condominio: i.condominio, lazer: i.lazer, bairro: i.bairro, cidade: i.cidade,
@@ -91,6 +146,8 @@ r.get('/imovel/:token/foto/:fid', limite(300), (req, res) => {
 });
 
 module.exports = r;
+module.exports.paginaLink = paginaLink;
+module.exports.fotoOg = fotoOg;
 
 // ---- webhook WhatsApp (corpo bruto para conferir a assinatura da Meta) ----
 module.exports.webhook = express.Router()

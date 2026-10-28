@@ -6,6 +6,7 @@
 //   /imoveis/<endereço>      a página única do imóvel
 
 const cfg = require('../config');
+const og = require('../og');
 const { AMBIENTES, CHAMADAS } = require('./config');
 const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = require('../blog/texto');
 const { SITE_RUAH, INSTAGRAM_RUAH } = require('../blog/categorias');
@@ -80,7 +81,21 @@ function specs(im, curto = false) {
 }
 
 // --------------------------------------------------------------------- casca
-function casca(req, { titulo, descricao, caminho, imagem, ld = [], corpo, classe = '', semIndice = false }) {
+function blocoImagem(base, imagem, largura, altura, tipo) {
+  if (!imagem) return '<meta name="twitter:card" content="summary">';
+  const url = /^https?:\/\//i.test(imagem) ? imagem : base + imagem;
+  const linhas = [`<meta property="og:image" content="${esc(url)}">`];
+  if (tipo) linhas.push(`<meta property="og:image:type" content="${esc(tipo)}">`);
+  const w = Number(largura), h = Number(altura);
+  if (w > 0 && h > 0) {
+    linhas.push(`<meta property="og:image:width" content="${Math.round(w)}">`);
+    linhas.push(`<meta property="og:image:height" content="${Math.round(h)}">`);
+  }
+  linhas.push('<meta name="twitter:card" content="summary_large_image">');
+  return linhas.join('\n');
+}
+
+function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false }) {
   const base = urlBase(req);
   const canonico = base + caminho;
   const zap = whatsapp(null, 'Olá! Vim pelo portal da RUAH e quero ajuda para encontrar um imóvel.');
@@ -99,7 +114,7 @@ ${semIndice ? '<meta name="robots" content="noindex">' : ''}
 <meta property="og:title" content="${esc(titulo)}">
 <meta property="og:description" content="${esc(descricao)}">
 <meta property="og:url" content="${esc(canonico)}">
-${imagem ? `<meta property="og:image" content="${esc(base + imagem)}"><meta name="twitter:card" content="summary_large_image">` : '<meta name="twitter:card" content="summary">'}
+${blocoImagem(base, imagem, imagemLargura, imagemAltura, imagemTipo)}
 <meta name="theme-color" content="#FBFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
@@ -219,9 +234,10 @@ ${require('./versoes').seletor('vitrine')}
     '@context': 'https://schema.org', '@type': 'ItemList', name: titulo, numberOfItems: achados.length,
     itemListElement: daPagina.map((x, i) => ({ '@type': 'ListItem', position: (pagina - 1) * POR_PAGINA + i + 1, url: `${base}/imoveis/${x.pagina.slug}`, name: x.pagina.titulo })),
   }];
+  const capaOg = daPagina[0] ? og.metaFotoPortal(daPagina[0].pagina.capa.foto) : {};
   return casca(req, {
     titulo, descricao: `${lista.length} imóveis à venda pela RUAH em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
-    caminho: link(pagina), imagem: daPagina[0] && fotoUrl(daPagina[0].pagina.capa.foto), ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
+    caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
   });
 }
 
@@ -415,7 +431,8 @@ ${(() => { const ps = parecidos(x, lista); return ps.length ? `<section class="p
 <div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? 'RUAH Signature' : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
 
   const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · RUAH`;
-  return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: fotoUrl(capa.foto), ld, corpo, classe: 'p-pagina-imovel' });
+  const capaOg = og.metaFotoPortal(capa.foto);
+  return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-pagina-imovel' });
 }
 
 function paginaNaoAchada(req) {

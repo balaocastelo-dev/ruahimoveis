@@ -15,6 +15,7 @@ const versoes = require('../portal/versoes');
 const clube = require('../portal/clube');
 const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
+const og = require('../og');
 
 const router = express.Router();
 
@@ -82,6 +83,12 @@ router.get('/imoveis/dados.json', async (req, res) => {
   });
 });
 
+router.get('/imoveis/foto/:id/og.jpg', async (req, res) => {
+  if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
+  const f = dados.fotoPublica(req.params.id);
+  if (!f) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  await og.enviarJpeg(res, f, { publico: true });
+});
 router.get('/imoveis/foto/:id', (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
   const f = dados.fotoPublica(req.params.id);
