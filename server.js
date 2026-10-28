@@ -27,6 +27,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Domínio da plataforma (corretordofuturo.app): vitrine do produto, nunca o sistema ou o portal de um cliente.
+app.use(require('./src/plataforma/vitrine').vitrine);
+
 // Webhook do WhatsApp precisa do corpo bruto: vem antes do parser JSON.
 app.use('/webhook/whatsapp', publico.webhook);
 
