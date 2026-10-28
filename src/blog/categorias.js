@@ -1,8 +1,12 @@
-// Blog RUAH · categorias, chamadas e o endereço do ramo de conteúdo.
+// Blog do cliente (a imobiliária) · categorias, chamadas e o endereço do ramo de conteúdo.
 //
-// As chamadas (o convite para falar com a RUAH) têm o texto escrito AQUI, e não
+// As chamadas (o convite para falar com a imobiliária) têm o texto escrito AQUI, e não
 // pela rotina: o artigo automático só escolhe o tema. Assim nenhum texto que
 // ninguém revisou fala em nome da imobiliária. Para mudar um convite, mude aqui.
+// O nome da imobiliária vem da configuração (cfg.CLIENTE_NOME / cfg.EMPRESA).
+
+const cfg = require('../config');
+const CLIENTE = cfg.CLIENTE_NOME;
 
 const CATEGORIAS = [
   { slug: 'alto-padrao', nome: 'Alto padrão', descricao: 'Como avaliar, comprar e viver bem num imóvel de alto padrão.' },
@@ -15,10 +19,14 @@ const CATEGORIAS = [
 const SLUGS = new Set(CATEGORIAS.map((c) => c.slug));
 const nomeDaCategoria = (slug) => (CATEGORIAS.find((c) => c.slug === slug) || {}).nome || slug;
 
-const SITE_RUAH = 'https://www.ruahimobiliaria.com.br';
+// Site e Instagram da imobiliária. SITE_CLIENTE / INSTAGRAM_CLIENTE no .env; SITE_RUAH / INSTAGRAM_RUAH (nomes antigos) continuam valendo.
+const envDe = (...nomes) => { for (const n of nomes) { const v = (process.env[n] || '').trim(); if (v) return v; } return ''; };
+const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH') || 'https://www.ruahimobiliaria.com.br';
+const INSTAGRAM_CLIENTE = envDe('INSTAGRAM_CLIENTE', 'INSTAGRAM_RUAH');
+const SITE_RUAH = SITE_CLIENTE, INSTAGRAM_RUAH = INSTAGRAM_CLIENTE; // apelidos antigos
 
 /**
- * Temas de chamada. O leitor nunca sai do site da RUAH (decisão do Thiago, 26/10/2026):
+ * Temas de chamada. O leitor nunca sai do site da imobiliária (decisão do Thiago, 26/10/2026):
  *   'contato' abre o formulário do próprio blog (vira lead no CRM, com o motivo);
  *   'portal'  leva à vitrine de imóveis à venda (/imoveis);
  *   'blog'    fica no blog.
@@ -26,27 +34,27 @@ const SITE_RUAH = 'https://www.ruahimobiliaria.com.br';
 const CHAMADAS = {
   comprar: {
     titulo: 'Procurando um imóvel em Campinas?',
-    texto: 'Conte o que você procura e um corretor da RUAH responde. O atendimento é feito por pessoas, do primeiro contato à assinatura.',
+    texto: `Conte o que você procura e um corretor da ${CLIENTE} responde. O atendimento é feito por pessoas, do primeiro contato à assinatura.`,
     rotulo: 'Falar com um corretor',
     acao: 'contato',
     motivo: 'comprar',
   },
   vender: {
     titulo: 'Vai vender o seu imóvel?',
-    texto: 'A RUAH trabalha com a venda de imóveis em Campinas e região. Deixe seu contato e conte o que você tem.',
+    texto: `A ${CLIENTE} trabalha com a venda de imóveis em Campinas e região. Deixe seu contato e conte o que você tem.`,
     rotulo: 'Quero vender',
     acao: 'contato',
     motivo: 'vender',
   },
   'alto-padrao': {
-    titulo: 'Veja os imóveis à venda pela RUAH',
+    titulo: `Veja os imóveis à venda pela ${CLIENTE}`,
     texto: 'Casas e apartamentos à venda em Campinas, com fotos, ficha completa e contato direto com o corretor.',
     rotulo: 'Ver imóveis',
     acao: 'portal',
   },
   visita: {
     titulo: 'Quer ver um imóvel de perto?',
-    texto: 'Escolha o imóvel na vitrine da RUAH e peça a visita na página dele: um corretor confirma o dia com você.',
+    texto: `Escolha o imóvel na vitrine da ${CLIENTE} e peça a visita na página dele: um corretor confirma o dia com você.`,
     rotulo: 'Ver imóveis à venda',
     acao: 'portal',
   },
@@ -57,7 +65,7 @@ const CHAMADAS = {
     acao: 'blog',
   },
   geral: {
-    titulo: 'Fale com a RUAH',
+    titulo: `Fale com a ${CLIENTE}`,
     texto: 'Imobiliária de venda em Campinas. Deixe sua dúvida e um corretor responde.',
     rotulo: 'Enviar minha dúvida',
     acao: 'contato',
@@ -82,6 +90,6 @@ function capaDaRotina(src, slug) {
 }
 
 module.exports = {
-  CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_RUAH,
+  CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_CLIENTE, INSTAGRAM_CLIENTE, SITE_RUAH, INSTAGRAM_RUAH,
   RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
 };

@@ -1,4 +1,4 @@
-// Portal RUAH · as páginas públicas, montadas no servidor (o Google lê o texto
+// Portal do cliente (a imobiliária) · as páginas públicas, montadas no servidor (o Google lê o texto
 // e a ficha direto do HTML, sem depender de JavaScript).
 //
 //   /imoveis                 vitrine com busca e filtros
@@ -9,7 +9,10 @@ const cfg = require('../config');
 const og = require('../og');
 const { AMBIENTES, CHAMADAS } = require('./config');
 const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = require('../blog/texto');
-const { SITE_RUAH, INSTAGRAM_RUAH } = require('../blog/categorias');
+const { SITE_CLIENTE, INSTAGRAM_CLIENTE } = require('../blog/categorias');
+// O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
+const CLIENTE = cfg.CLIENTE_NOME;
+const EMPRESA = cfg.EMPRESA;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -25,9 +28,9 @@ const VERSAO_ASSETS = (() => {
 })();
 const { SIGNATURE } = require('./edicoes');
 
-/** Acima do limite da RUAH Signature o valor fica reservado aos membros do clube (página /imoveis/signature). */
+/** Acima do limite da seleção Signature o valor fica reservado aos membros do clube (página /imoveis/signature). */
 const reservado = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
-const RESERVADO = 'RUAH Signature · valor para membros';
+const RESERVADO = `${CLIENTE} Signature · valor para membros`;
 const valorTexto = (im) => (reservado(im) ? RESERVADO : im.valor ? reais(im.valor) : 'Sob consulta');
 
 function rico(texto) {
@@ -49,7 +52,7 @@ function urlBase(req) {
 }
 
 function telefoneWhats(im) {
-  let n = String((im && im.corretor && im.corretor.telefone) || cfg.WHATSAPP_RUAH || '').replace(/\D/g, '');
+  let n = String((im && im.corretor && im.corretor.telefone) || cfg.WHATSAPP_CLIENTE || '').replace(/\D/g, '');
   if (!n) return null;
   if (n.length <= 11) n = `55${n}`;
   return n;
@@ -98,7 +101,7 @@ function blocoImagem(base, imagem, largura, altura, tipo) {
 function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false }) {
   const base = urlBase(req);
   const canonico = base + caminho;
-  const zap = whatsapp(null, 'Olá! Vim pelo portal da RUAH e quero ajuda para encontrar um imóvel.');
+  const zap = whatsapp(null, `Olá! Vim pelo portal da ${CLIENTE} e quero ajuda para encontrar um imóvel.`);
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -108,7 +111,7 @@ function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemA
 <meta name="description" content="${esc(descricao)}">
 <link rel="canonical" href="${esc(canonico)}">
 ${semIndice ? '<meta name="robots" content="noindex">' : ''}
-<meta property="og:site_name" content="RUAH Investimentos Imobiliários">
+<meta property="og:site_name" content="${esc(EMPRESA)}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(titulo)}">
@@ -124,7 +127,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <body class="${classe}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="p-topo">
-  <a class="p-marca" href="/imoveis" aria-label="RUAH, imóveis à venda"><span class="p-marca-n">RUAH</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
+  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE)}, imóveis à venda"><span class="p-marca-n">${esc(CLIENTE)}</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
   <nav class="p-nav" aria-label="Portal">
     <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
@@ -136,8 +139,8 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
-  <div><p class="p-rodape-n">RUAH Investimentos Imobiliários</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="RUAH"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a><a href="${INSTAGRAM_RUAH}" target="_blank" rel="noopener">Instagram</a><a href="${SITE_RUAH}" target="_blank" rel="noopener">Site da RUAH</a></nav>
+  <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
+  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>
@@ -201,14 +204,14 @@ function paginaVitrine(req, lista, guiaDoBairro = null) {
   const filtrado = ['tipo', 'bairro', 'quartos', 'ate', 'de', 'q'].some((k) => q[k]);
   const link = (n) => { const u = new URLSearchParams(Object.entries(q).filter(([k, v]) => k !== 'pagina' && v)); if (n > 1) u.set('pagina', n); const s = u.toString(); return `/imoveis${s ? `?${s}` : ''}`; };
   const grupo = GRUPOS.find((g) => g.slug === q.tipo);
-  const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · RUAH` : q.bairro ? `Imóveis à venda no ${q.bairro} · RUAH` : 'Imóveis à venda em Campinas e região · RUAH';
+  const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · ${CLIENTE}` : q.bairro ? `Imóveis à venda no ${q.bairro} · ${CLIENTE}` : `Imóveis à venda em Campinas e região · ${CLIENTE}`;
 
   const corpo = `
 ${require('./versoes').seletor('vitrine')}
 <section class="p-hero p-hero-foto p-hero-direita">
   <div class="p-hero-fundo" aria-hidden="true"><img src="/portal-assets/hero-castelo.jpg?v=2" srcset="/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=2 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
   <div class="p-hero-txt">
-  <p class="p-sobre">Portal RUAH</p>
+  <p class="p-sobre">Portal ${esc(CLIENTE)}</p>
   <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
   <p class="p-hero-l">${lista.length} imóveis com fotos, ficha completa e uma página para cada um. Encontrou? Fale com o corretor pela própria página.</p>
   </div>
@@ -236,20 +239,20 @@ ${require('./versoes').seletor('vitrine')}
   }];
   const capaOg = daPagina[0] ? og.metaFotoPortal(daPagina[0].pagina.capa.foto) : {};
   return casca(req, {
-    titulo, descricao: `${lista.length} imóveis à venda pela RUAH em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
+    titulo, descricao: `${lista.length} imóveis à venda pela ${CLIENTE} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
     caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
   });
 }
 
 function paginaFavoritos(req, lista) {
   const corpo = `
-<section class="p-hero p-hero-curto"><p class="p-sobre">Portal RUAH</p><h1>Seus favoritos</h1>
-<p class="p-hero-l">Os imóveis que você marcou com o coração ficam guardados neste aparelho. Nada é enviado para a RUAH até você pedir contato.</p></section>
+<section class="p-hero p-hero-curto"><p class="p-sobre">Portal ${esc(CLIENTE)}</p><h1>Seus favoritos</h1>
+<p class="p-hero-l">Os imóveis que você marcou com o coração ficam guardados neste aparelho. Nada é enviado para a ${esc(CLIENTE)} até você pedir contato.</p></section>
 <section class="p-resultado" data-favoritos>
   <div class="p-grade">${lista.map((x) => cartao(x)).join('')}</div>
   <div class="p-vazio" data-favoritos-vazio hidden><p>Você ainda não guardou nenhum imóvel. Toque no coração de um imóvel para guardar aqui.</p><a class="p-botao" href="/imoveis">Ver os imóveis</a></div>
 </section>`;
-  return casca(req, { titulo: 'Favoritos · RUAH', descricao: 'Os imóveis da RUAH que você guardou.', caminho: '/imoveis/favoritos', corpo, classe: 'p-vitrine', semIndice: true });
+  return casca(req, { titulo: `Favoritos · ${CLIENTE}`, descricao: `Os imóveis da ${CLIENTE} que você guardou.`, caminho: '/imoveis/favoritos', corpo, classe: 'p-vitrine', semIndice: true });
 }
 
 // --------------------------------------------------------- página do imóvel
@@ -302,7 +305,7 @@ ${im.lazer ? `<p class="p-lazer"><b>Lazer do condomínio:</b> ${esc(im.lazer)}</
 function formulario(im, p) {
   const msg = `Olá! Tenho interesse no imóvel ${im.codigo}: ${p.titulo}.`;
   return `<section class="p-contato" id="contato" aria-labelledby="contato-t">
-<div class="p-contato-txt"><h2 id="contato-t">Fale com a RUAH sobre este imóvel</h2>
+<div class="p-contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE)} sobre este imóvel</h2>
 <p>Deixe seu contato e um corretor responde, em horário comercial, com o que você quiser saber: documentação, condomínio, condições e visita.</p>
 ${whatsapp(im, msg) ? `<p>Prefere conversar agora? <a href="${esc(whatsapp(im, msg))}" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p>` : ''}</div>
 <form class="p-form" data-interesse novalidate>
@@ -317,7 +320,7 @@ ${whatsapp(im, msg) ? `<p>Prefere conversar agora? <a href="${esc(whatsapp(im, m
     <label class="p-campo"><span>Melhor dia</span><input type="date" name="dia"></label>
     <label class="p-campo"><span>Período</span><select name="periodo"><option value="">Tanto faz</option><option>Manhã</option><option>Tarde</option><option>Fim de semana</option></select></label>
   </div>
-  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a RUAH use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
+  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE)} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
   <button class="p-botao p-largo" type="submit">Enviar para o corretor</button>
   <p class="p-form-msg p-largo" role="status" aria-live="polite" hidden></p>
 </form></section>`;
@@ -360,7 +363,7 @@ function paginaImovel(req, x, lista) {
       '@context': 'https://schema.org', '@type': 'RealEstateListing', name: p.titulo, description: p.resumo, url,
       ...(p.publicadoEm ? { datePosted: p.publicadoEm } : {}),
       image: ordem.slice(0, 8).map((f) => `${base}${fotoUrl(f)}`),
-      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: 'RUAH Investimentos Imobiliários', url: SITE_RUAH } } } : {}),
+      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: EMPRESA, url: SITE_CLIENTE } } } : {}),
       about: {
         '@type': residencia, name: `${im.tipo} ${im.codigo}`,
         address: { '@type': 'PostalAddress', ...(im.bairro ? { streetAddress: im.bairro } : {}), addressLocality: im.cidade, addressRegion: im.uf, addressCountry: 'BR' },
@@ -422,22 +425,22 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
       <button class="p-link" type="button" data-fav="${esc(im.codigo)}" aria-pressed="false">Guardar nos favoritos</button>
       <button class="p-link" type="button" data-compartilhar="${esc(url)}" data-titulo="${esc(p.titulo)}">Compartilhar</button>
     </div>
-    <p class="p-lado-corretor">${im.corretor ? `Corretor: <b>${esc(im.corretor.nome)}</b>` : 'Atendimento: <b>Equipe RUAH</b>'} · Cód. ${esc(im.codigo)}</p>
+    <p class="p-lado-corretor">${im.corretor ? `Corretor: <b>${esc(im.corretor.nome)}</b>` : `Atendimento: <b>Equipe ${esc(CLIENTE)}</b>`} · Cód. ${esc(im.codigo)}</p>
   </div>
 </aside>
 </div>
 ${formulario(im, p)}
 ${(() => { const ps = parecidos(x, lista); return ps.length ? `<section class="p-parecidos" aria-labelledby="parecidos"><h2 id="parecidos">Imóveis parecidos</h2><div class="p-grade">${ps.map((y) => cartao(y)).join('')}</div></section>` : ''; })()}
-<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? 'RUAH Signature' : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
+<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? `${CLIENTE} Signature` : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
 
-  const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · RUAH`;
+  const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE}`;
   const capaOg = og.metaFotoPortal(capa.foto);
   return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-pagina-imovel' });
 }
 
 function paginaNaoAchada(req) {
   return casca(req, {
-    titulo: 'Imóvel não encontrado · RUAH', descricao: 'Este imóvel não está mais à venda ou mudou de endereço.', caminho: req.path, semIndice: true,
+    titulo: `Imóvel não encontrado · ${CLIENTE}`, descricao: 'Este imóvel não está mais à venda ou mudou de endereço.', caminho: req.path, semIndice: true,
     corpo: '<div class="p-vazio p-vazio-g"><h1>Este imóvel não está aqui</h1><p>Ele pode ter sido vendido, saído do ar ou mudado de endereço.</p><a class="p-botao" href="/imoveis">Ver os imóveis à venda</a></div>',
   });
 }
