@@ -1,0 +1,336 @@
+{
+  "codigo": "CA0002",
+  "slug": "casa-em-condominio-residencial-jatibela-campinas-sp-ca0002",
+  "titulo": "Casa em condomínio de 4 quartos com piscina e varanda no Residencial Jatibela",
+  "resumo": "Casa em condomínio no Residencial Jatibela com 4 quartos, 4 vagas de garagem, 700m² de área útil e piscina. Ideal para quem busca conforto e sofisticação.",
+  "capa": {
+    "foto": 285,
+    "alt": "Fachada moderna com varanda, piscina e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizada no Residencial Jatibela, esta casa em condomínio oferece um espaço amplo e integrado, ideal para quem busca conforto e sofisticação. Com 700m² de área útil, a residência conta com 4 quartos, 4 vagas de garagem e uma piscina de destaque. A fachada moderna e o jardim bem cuidado trazem um toque de elegância e tranquilidade ao imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O projeto da casa foi pensado para promover a fluidez entre os ambientes, com áreas sociais e íntimas integradas. A varanda, com piso claro e vista para o exterior, e a piscina moderna com deck de mármore são destaque nas fotos, mostrando a qualidade e o acabamento do imóvel."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "700m² de área útil com distribuição funcional",
+        "Piscina com deck de mármore e vista para a natureza",
+        "Varanda com piso claro e vista para a cozinha",
+        "4 quartos com varanda e excelente iluminação natural",
+        "Garagem coberta para 4 veículos",
+        "Condomínio com infraestrutura completa de lazer"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e integrada, com sala de estar e jantar conectados, criando um ambiente ideal para reuniões em família ou recepções. As fotos mostram a sala com piso claro e portas de vidro, permitindo uma excelente iluminação natural e vista para o exterior. A varanda, com teto de madeira e vista para a cozinha, reforça a sensação de abertura e convivência entre os ambientes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 288,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 291,
+          "legenda": "Varanda com piso claro e vista para a cozinha"
+        },
+        {
+          "foto": 308,
+          "legenda": "Sala de estar com piso claro e janelas grandes"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e funcional, com bancada escura e iluminação adequada. As fotos mostram uma cozinha gourmet com ilha central e churrasqueira, integrada à área de serviço. A área de serviço conta com armários e estrutura para facilitar o dia a dia. A cozinha tem vista para a varanda, reforçando a integração entre os espaços."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 304,
+          "legenda": "Cozinha moderna com bancada escura e azulejo verde"
+        },
+        {
+          "foto": 306,
+          "legenda": "Cozinha gourmet com ilha central e churrasqueira"
+        },
+        {
+          "foto": 309,
+          "legenda": "Cozinha gourmet com bancada escura e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa conta com 4 quartos, todos com varanda e excelente iluminação natural. A suíte master foi projetada com privacidade e conforto, com circulação elegante entre o dormitório, closet e banheiro. As fotos mostram quartos com piso claro e varanda integrada, permitindo uma experiência acolhedora e moderna."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 297,
+          "legenda": "Varanda com piso claro e vista para o céu"
+        },
+        {
+          "foto": 300,
+          "legenda": "Banheiro moderno com piso claro e bancada branca"
+        },
+        {
+          "foto": 302,
+          "legenda": "Banheiro com bancada dupla e chuveiro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Residencial Jatibela oferece uma infraestrutura completa de lazer, incluindo academia, pista de caminhada, playground, quadras poliesportivas e salão de festas. As fotos da piscina mostram um espaço moderno com deck de mármore e vista para a natureza, reforçando o conforto e a qualidade de vida oferecida pelo imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 286,
+          "legenda": "Piscina moderna com deck de mármore e muro de concreto"
+        },
+        {
+          "foto": 289,
+          "legenda": "Piscina moderna com deck de concreto e cercada por árvores"
+        },
+        {
+          "foto": 292,
+          "legenda": "Varanda com piscina e churrasqueira"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa em condomínio é ideal para famílias que valorizam conforto, sofisticação e integração entre os ambientes. Com áreas de lazer e um projeto moderno, ela atende a quem busca qualidade de vida em um dos endereços mais desejados de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há detalhes que não estão visíveis nas fotos, como o estado da piscina ou o funcionamento do sistema de aquecimento solar.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 285,
+      "legenda": "Fachada moderna com varanda e piscina",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 290,
+      "legenda": "Fachada moderna com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 288,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 293,
+      "legenda": "Sala com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 298,
+      "legenda": "Sala com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 299,
+      "legenda": "Sala vazia com piso de madeira clara e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 301,
+      "legenda": "Sala vazia com piso de madeira e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 305,
+      "legenda": "Sala de estar com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 307,
+      "legenda": "Sala vazia com piso claro e paredes neutras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 308,
+      "legenda": "Sala de estar com piso claro e janelas grandes",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 311,
+      "legenda": "Sala com escada e janela",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 312,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 291,
+      "legenda": "Varanda com piso claro e vista para a cozinha",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 292,
+      "legenda": "Varanda com piscina e churrasqueira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 296,
+      "legenda": "Varanda com vista para o céu azul e vegetação",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 297,
+      "legenda": "Varanda com piso claro e vista para o céu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 313,
+      "legenda": "Varanda com vista para o jardim e estrutura moderna",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 304,
+      "legenda": "Cozinha moderna com bancada escura e azulejo verde",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 306,
+      "legenda": "Cozinha gourmet com ilha central e churrasqueira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 309,
+      "legenda": "Cozinha gourmet com bancada escura e porta de vidro",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 310,
+      "legenda": "Cozinha com bancada escura e porta de vidro",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 294,
+      "legenda": "Banheiro com vaso sanitário, pia e chuveiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 295,
+      "legenda": "Banheiro com piso claro, cuba branca, vaso sanitário e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 300,
+      "legenda": "Banheiro moderno com piso claro e bancada branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 302,
+      "legenda": "Banheiro com bancada dupla e chuveiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 303,
+      "legenda": "Banheiro moderno com bancada de granito e janela com vista para plantas",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 286,
+      "legenda": "Piscina moderna com deck de mármore e muro de concreto",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 287,
+      "legenda": "Piscina com vista para a natureza e céu azul",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 289,
+      "legenda": "Piscina moderna com deck de concreto e cercada por árvores",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 314,
+      "legenda": "Garagem coberta com piso claro e plantas",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "A casa conta com 4 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, a casa possui uma piscina moderna com deck de mármore e vista para a natureza."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Residencial Jatibela com 4 quartos, 4 vagas de garagem, 700m² de área útil e piscina. Ideal para quem busca conforto e sofisticação. Localizada em Campinas, SP.",
+    "hashtags": [
+      "casaemcondominio",
+      "campinas",
+      "jatibela",
+      "piscina",
+      "quartos",
+      "vagas",
+      "condominio",
+      "imovel"
+    ]
+  },
+  "versao": "834ab573730b",
+  "publicadoEm": "2026-10-28T04:27:05.337Z"
+}

@@ -1,0 +1,176 @@
+{
+  "codigo": "AR0005",
+  "slug": "terreno-chacara-santa-margarida-campinas-sp-ar0005",
+  "titulo": "Terreno de 22.295 m² em Chácara Santa Margarida, Campinas",
+  "resumo": "Terreno de 22.295 m² em Chácara Santa Margarida, Campinas, ideal para incorporação e desenvolvimento imobiliário.",
+  "capa": {
+    "foto": 252,
+    "alt": "Terreno com vegetação densa e casas vizinhas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 22.295 m² está localizado na região valorizada de Chácara Santa Margarida, em Campinas. Ideal para investidores e incorporadoras, o imóvel apresenta vegetação densa e áreas verdes, com boa acessibilidade e infraestrutura ao redor. A localização estratégica, combinada com as diretrizes urbanísticas favoráveis, torna este terreno uma opção para projetos residenciais de médio e alto padrão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está delimitado e apresenta estrada de acesso, com casas vizinhas já construídas. A vegetação nativa e a área verde contribuem para a tranquilidade e o valor do imóvel, que se enquadra no Zoneamento ZR-B BG, permitindo desenvolvimento de condomínios horizontais e residências isoladas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Área total de 22.295 m²",
+        "Localização em Chácara Santa Margarida",
+        "Vegetação densa e área verde",
+        "Diretrizes urbanísticas favoráveis",
+        "Possibilidade de construir condomínios e residências isoladas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área do terreno e vegetação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta vegetação densa, com árvores altas e gramados bem cuidados. As fotos mostram uma área verde extensa, com sombra e ambientes naturais. A topografia favorece o desenvolvimento de empreendimentos imobiliários, com espaço suficiente para projetos residenciais de médio e alto padrão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vegetação nativa e a área arborizada são pontos fortes do imóvel, garantindo um ambiente tranquilo e atraente. A vegetação também contribui para o valor de mercado e a sustentabilidade do empreendimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 254,
+          "legenda": "Terreno com vegetação densa e árvores altas"
+        },
+        {
+          "foto": 256,
+          "legenda": "Terreno com área verde e estrutura de concreto"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acessibilidade e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado na região de Chácara Santa Margarida, em Barão Geraldo, com acesso facilitado por estradas já existentes. As fotos mostram casas vizinhas e estruturas de concreto, indicando que o local está bem integrado ao entorno e próximo a áreas urbanizadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização estratégica, perto de universidades e centros de pesquisa, é um diferencial para investimentos imobiliários. O terreno está em uma região cobiçada por sua tranquilidade e procura constante."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 257,
+          "legenda": "Jardim com árvores e edifício ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Infraestrutura e potencial de desenvolvimento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está delimitado e apresenta estrutura de concreto, com possibilidade de implantação de condomínios horizontais, vilas residenciais ou casas geminadas. As diretrizes urbanísticas permitem projetos com recuos amplos e aproveitamento eficiente do solo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A infraestrutura existente no entorno, como edifícios e áreas de estacionamento, sugere que o terreno está bem integrado ao bairro. Isso facilita o desenvolvimento de empreendimentos que atendam a diferentes perfis de moradores."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para incorporadoras que buscam implantar condomínios horizontais exclusivos ou para investidores que desejam desenvolver um empreendimento urbano planejado. A localização estratégica e as diretrizes urbanísticas favoráveis tornam este imóvel uma opção para investimento imobiliário em Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com vegetação densa e área verde, o terreno oferece um ambiente atraente e sustentável, ideal para projetos que valorizam a natureza e a qualidade de vida dos futuros moradores."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre os limites do terreno, as diretrizes urbanísticas detalhadas e o acesso à infraestrutura do entorno. Também é importante saber se há restrições para construção e como o terreno pode ser desenvolvido.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 252,
+      "legenda": "Lote com vegetação densa e casas vizinhas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 254,
+      "legenda": "Terreno com vegetação densa e árvores altas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 256,
+      "legenda": "Terreno com área verde e estrutura de concreto",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 253,
+      "legenda": "Jardim com casa à vista",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 255,
+      "legenda": "Jardim com árvores e muro",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 257,
+      "legenda": "Jardim com árvores e edifício ao fundo",
+      "ambiente": "jardim"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "O terreno tem 22.295 m² de área total."
+    },
+    {
+      "pergunta": "Tem acesso à estrada?",
+      "resposta": "Sim, o terreno tem acesso facilitado por estradas já existentes."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 22.295 m² em Chácara Santa Margarida, Campinas, ideal para incorporação e desenvolvimento imobiliário. Localização estratégica, com vegetação densa e área verde. uma opção para investimento.",
+    "hashtags": [
+      "terrenocampinas",
+      "imobiliaria",
+      "campinas",
+      "chacara",
+      "investimento",
+      "terreno",
+      "barao",
+      "santamargarida"
+    ]
+  },
+  "versao": "479098fcaea0",
+  "publicadoEm": "2026-10-28T04:27:05.337Z"
+}

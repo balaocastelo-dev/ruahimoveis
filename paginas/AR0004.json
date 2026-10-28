@@ -1,0 +1,176 @@
+{
+  "codigo": "AR0004",
+  "slug": "terreno-barao-geraldo-campinas-sp-zoneamento-misto-ar0004",
+  "titulo": "Terreno de 22.701 m² em Barão Geraldo, Campinas, SP com zoneamento misto",
+  "resumo": "Terreno de 22.701 m² em Barão Geraldo, Campinas, SP, com zoneamento ZR-A BG e ZM1-C BG, ideal para investimento imobiliário e desenvolvimento de projetos.",
+  "capa": {
+    "foto": 215,
+    "alt": "Terreno com vegetação densa e cercado por casas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 22.701 m² está localizado em Barão Geraldo, uma região estratégica de Campinas, SP, com acesso fácil a vias importantes, universidades e polos tecnológicos. O imóvel tem zoneamento misto, com 88% da área em ZR-A BG e 12% em ZM1-C BG, permitindo flexibilidade para diversos tipos de empreendimentos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área possui vegetação densa e topografia favorável, o que a torna ideal para projetos de desenvolvimento imobiliário como loteamentos, condomínios ou vilas residenciais. Sua bem localizada e o tornam o terreno uma opção para investidores."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno amplo com 22.701 m²",
+        "Zoneamento misto ZR-A BG e ZM1-C BG",
+        "Localização estratégica em Barão Geraldo",
+        "Área com vegetação densa e topografia favorável",
+        "E infraestrutura consolidada"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta vegetação densa, com árvores e gramados bem cuidados. A área é cercada por casas e se encontra próxima a uma estrada, facilitando o acesso. A topografia é plana, o que favorece a construção de empreendimentos residenciais e comerciais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram áreas verdes bem preservadas, com sombra e luz solar distribuídas de forma equilibrada. A vegetação nativa contribui para o aspecto natural do terreno, que pode ser aproveitado para projetos que valorizem o meio ambiente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 217,
+          "legenda": "Área verde com árvores e vegetação"
+        },
+        {
+          "foto": 218,
+          "legenda": "Terreno com vegetação e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Infraestrutura e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado em uma região com infraestrutura consolidada, próxima a comércios, serviços, instituições de ensino e polos de inovação. O acesso a rodovias e avenidas principais facilita a mobilidade e a conectividade com outras partes de Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A proximidade com universidades e centros de pesquisa reforça o potencial de desenvolvimento imobiliário, especialmente para projetos que atendam a demanda por moradias e serviços relacionados ao ensino e à tecnologia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 219,
+          "legenda": "Jardim com casas e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Potencial de uso e zoneamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O zoneamento ZR-A BG e ZM1-C BG permite uma ampla gama de utilizações, desde residenciais até mistas. Isso aumenta a versatilidade do terreno e abre espaço para empreendimentos que integrem diferentes tipos de atividades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O zoneamento favorece a construção de condomínios horizontais, vilas residenciais ou áreas comunitárias, garantindo flexibilidade e adaptabilidade aos projetos que desejarem aproveitar o potencial da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 216,
+          "legenda": "Jardim com árvores e vegetação"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores, incorporadoras e empresas que buscam oportunidades de desenvolvimento imobiliário em uma região em crescimento. Sua localização estratégica e o zoneamento flexível tornam o imóvel uma excelente opção para quem busca procura e infraestrutura."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre as restrições de zoneamento, a documentação do terreno e as possibilidades de desenvolvimento com base na legislação local.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 215,
+      "legenda": "Lote com vegetação densa e cercado por casas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 217,
+      "legenda": "Área verde com árvores e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 218,
+      "legenda": "Terreno com vegetação e árvores",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 216,
+      "legenda": "Jardim com árvores e vegetação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 219,
+      "legenda": "Jardim com casas e árvores",
+      "ambiente": "jardim"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o zoneamento do terreno?",
+      "resposta": "O terreno possui zoneamento ZR-A BG (88% da área) e ZM1-C BG (12% da área), conforme a legislação municipal vigente."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    },
+    {
+      "pergunta": "Tem acesso a vias importantes?",
+      "resposta": "Sim, o terreno está localizado em uma região com acesso fácil a vias principais, rodovias e polos tecnológicos."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno em Barão Geraldo, Campinas, SP com 22.701 m² e zoneamento misto ZR-A BG e ZM1-C BG. Ideal para investimento e desenvolvimento imobiliário. Localização estratégica com acesso a vias importantes, universidades e polos tecnológicos.",
+    "hashtags": [
+      "terrenocampinas",
+      "baraoegeraldo",
+      "investimentoimobiliaria",
+      "zoneamentomisto",
+      "campinasimovel",
+      "zoneamentoa",
+      "empreendimentos",
+      "campinasinvestimento"
+    ]
+  },
+  "versao": "367dcee17aa6",
+  "publicadoEm": "2026-10-28T04:27:05.338Z"
+}

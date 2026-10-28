@@ -1,0 +1,284 @@
+{
+  "codigo": "TE0015",
+  "slug": "terreno-almarias-jarinu-sp-te0015",
+  "titulo": "Terreno de 21.727 m² no Condomínio Almarias em Jarinu/SP",
+  "resumo": "Terreno de 21.727 m² no Condomínio Almarias em Jarinu/SP, com vista para montanhas e vegetação, ideal para quem busca privacidade e contato com a natureza.",
+  "capa": {
+    "foto": 272,
+    "alt": "Terreno com vista para montanhas e vegetação"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 21.727 m² está localizado no Condomínio Almarias, em Jarinu/SP, em uma posição elevada que oferece vista panorâmica para montanhas e vegetação. Ideal para quem busca privacidade, contato com a natureza e um ambiente de alto padrão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área está situada em um condomínio fechado com estrutura de lazer e segurança, a 70 km de São Paulo e 30 km de Campinas. As fotos mostram vegetação densa, gramado e sinalizações do condomínio."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com 21.727 m² em posição elevada",
+        "Vista para montanhas e vegetação",
+        "Bem localizada no condomínio",
+        "Área com gramado e árvores",
+        "Condomínio fechado com estrutura de lazer"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e Vista"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado no Condomínio Almarias, em Jarinu/SP, em uma posição elevada que permite uma vista panorâmica para montanhas e vegetação. As fotos mostram vegetação densa, gramado e sinalizações do condomínio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização estratégica do condomínio permite fácil acesso a São Paulo e Campinas, sem abrir mão da tranquilidade e da qualidade de vida no campo. As imagens revelam a proximidade com a natureza e a topografia adequada para projetos de alto padrão."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 277,
+          "legenda": "Terreno com vista para montanhas e céu azul"
+        },
+        {
+          "foto": 283,
+          "legenda": "Terreno com vegetação e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área e Vegetação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta área aberta com gramado e vegetação densa, ideal para projetos de construção com contato direto com a natureza. As fotos mostram árvores, gramado e sinalizações do condomínio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vegetação é abundante, com árvores em diferentes estágios e gramado em várias partes do terreno. As imagens capturam a área aberta e a presença de sinalizações, como placas com o logotipo do condomínio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 276,
+          "legenda": "Terreno com gramado e árvores espalhadas"
+        },
+        {
+          "foto": 280,
+          "legenda": "Terreno com vegetação e sinalização"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio Almarias"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Condomínio Almarias oferece estrutura de lazer, segurança e portaria, com clube exclusivo para moradores. As fotos mostram a entrada do condomínio com palmeiras e logotipo RUAH, além de estrada com vegetação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio está em meio à natureza, com áreas arborizadas e paisagismo. As imagens revelam o ambiente de tranquilidade e privacidade oferecido pelo empreendimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 266,
+          "legenda": "Entrada de condomínio com palmeiras e logotipo RUAH"
+        },
+        {
+          "foto": 269,
+          "legenda": "Terreno com vegetação e estrada"
+        },
+        {
+          "foto": 271,
+          "legenda": "Terreno com gramado e árvores ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acesso e Estrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está acessível por estrada com vegetação e sinalizações do condomínio, garantindo fácil entrada e localização clara dentro do empreendimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram a estrada que leva ao terreno, com vegetação ao longo do caminho e placas indicativas do condomínio, facilitando o acesso e a identificação do local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 270,
+          "legenda": "Terreno com estrada e vegetação"
+        },
+        {
+          "foto": 281,
+          "legenda": "Terreno com vegetação e estrada"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca privacidade, contato com a natureza e um ambiente de alto padrão. A localização estratégica e a vista panorâmica são destaque para quem valoriza a tranquilidade e a qualidade de vida."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, o tipo de acesso ao condomínio e quais áreas do terreno não aparecem nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 266,
+      "legenda": "Entrada de condomínio com palmeiras e logotipo RUAH",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 268,
+      "legenda": "Anúncio de venda de terreno com placas indicando número e nome da rua",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 269,
+      "legenda": "Terreno com vegetação e estrada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 270,
+      "legenda": "Terreno com estrada e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 271,
+      "legenda": "Terreno com gramado e árvores ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 272,
+      "legenda": "Terreno com vista para montanhas e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 273,
+      "legenda": "Terreno com vista para floresta e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 274,
+      "legenda": "Terreno com vegetação e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 275,
+      "legenda": "Terreno com gramado e árvores em dia ensolarado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 276,
+      "legenda": "Terreno com gramado e árvores espalhadas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 277,
+      "legenda": "Terreno com vista para montanhas e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 278,
+      "legenda": "Terreno com vista para floresta e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 279,
+      "legenda": "Terreno com vegetação e sinalização",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 280,
+      "legenda": "Terreno com vegetação e sinalização",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 281,
+      "legenda": "Terreno com vegetação e estrada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 282,
+      "legenda": "Terreno com árvores e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 283,
+      "legenda": "Terreno com vegetação e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 284,
+      "legenda": "Terreno com vegetação e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 267,
+      "legenda": "Garagem com palmeiras ao lado e céu azul",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem 21.727 m²."
+    },
+    {
+      "pergunta": "Tem vista para montanhas?",
+      "resposta": "Sim, as fotos mostram vista para montanhas e vegetação."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 21.727 m² no Condomínio Almarias em Jarinu/SP, com vista para montanhas e vegetação. Ideal para quem busca privacidade e contato com a natureza. Conheça o imóvel e agende uma visita.",
+    "hashtags": [
+      "terrenojarinu",
+      "almarias",
+      "condominiofechado",
+      "vistaformidavel",
+      "natureza",
+      "campinas",
+      "sp",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "cb4fc37dbfe8",
+  "publicadoEm": "2026-10-28T04:27:05.337Z"
+}

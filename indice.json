@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AR0004",
+      "slug": "terreno-barao-geraldo-campinas-sp-zoneamento-misto-ar0004",
+      "titulo": "Terreno de 22.701 m² em Barão Geraldo, Campinas, SP com zoneamento misto",
+      "resumo": "Terreno de 22.701 m² em Barão Geraldo, Campinas, SP, com zoneamento ZR-A BG e ZM1-C BG, ideal para investimento imobiliário e desenvolvimento de projetos.",
+      "capa": {
+        "foto": 215,
+        "alt": "Terreno com vegetação densa e cercado por casas"
+      },
+      "versao": "367dcee17aa6",
+      "publicadoEm": "2026-10-28T04:27:05.338Z"
+    },
+    {
+      "codigo": "CA0002",
+      "slug": "casa-em-condominio-residencial-jatibela-campinas-sp-ca0002",
+      "titulo": "Casa em condomínio de 4 quartos com piscina e varanda no Residencial Jatibela",
+      "resumo": "Casa em condomínio no Residencial Jatibela com 4 quartos, 4 vagas de garagem, 700m² de área útil e piscina. Ideal para quem busca conforto e sofisticação.",
+      "capa": {
+        "foto": 285,
+        "alt": "Fachada moderna com varanda, piscina e jardim"
+      },
+      "versao": "834ab573730b",
+      "publicadoEm": "2026-10-28T04:27:05.337Z"
+    },
+    {
+      "codigo": "TE0015",
+      "slug": "terreno-almarias-jarinu-sp-te0015",
+      "titulo": "Terreno de 21.727 m² no Condomínio Almarias em Jarinu/SP",
+      "resumo": "Terreno de 21.727 m² no Condomínio Almarias em Jarinu/SP, com vista para montanhas e vegetação, ideal para quem busca privacidade e contato com a natureza.",
+      "capa": {
+        "foto": 272,
+        "alt": "Terreno com vista para montanhas e vegetação"
+      },
+      "versao": "cb4fc37dbfe8",
+      "publicadoEm": "2026-10-28T04:27:05.337Z"
+    },
+    {
+      "codigo": "AR0005",
+      "slug": "terreno-chacara-santa-margarida-campinas-sp-ar0005",
+      "titulo": "Terreno de 22.295 m² em Chácara Santa Margarida, Campinas",
+      "resumo": "Terreno de 22.295 m² em Chácara Santa Margarida, Campinas, ideal para incorporação e desenvolvimento imobiliário.",
+      "capa": {
+        "foto": 252,
+        "alt": "Terreno com vegetação densa e casas vizinhas"
+      },
+      "versao": "479098fcaea0",
+      "publicadoEm": "2026-10-28T04:27:05.337Z"
+    },
+    {
+      "codigo": "TE0003",
+      "slug": "terreno-quinta-da-baroneza-braganca-paulista-sp-te0003",
+      "titulo": "Terreno no condomínio Quinta da Baroneza, Bragança Paulista",
+      "resumo": "Terreno em condomínio fechado com área total de 3.361 m², localizado no bairro Baronesa em Bragança Paulista. Ideal para quem busca exclusividade e qualidade de.",
+      "capa": {
+        "foto": 348,
+        "alt": "Vista aérea de um terreno com gramado, árvores e edifícios"
+      },
+      "versao": "f408cb60ecf7",
+      "publicadoEm": "2026-10-28T04:27:05.336Z"
+    },
+    {
       "codigo": "TE0016",
       "slug": "terreno-almarias-jarinu-sp-te0016",
       "titulo": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu",
@@ -1106,5 +1166,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:22:43.237Z"
+  "atualizadoEm": "2026-10-28T04:27:05.338Z"
 }

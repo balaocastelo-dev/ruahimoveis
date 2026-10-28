@@ -1,0 +1,290 @@
+{
+  "codigo": "TE0003",
+  "slug": "terreno-quinta-da-baroneza-braganca-paulista-sp-te0003",
+  "titulo": "Terreno no condomínio Quinta da Baroneza, Bragança Paulista",
+  "resumo": "Terreno em condomínio fechado com área total de 3.361 m², localizado no bairro Baronesa em Bragança Paulista. Ideal para quem busca exclusividade e qualidade de.",
+  "capa": {
+    "foto": 348,
+    "alt": "Vista aérea de um terreno com gramado, árvores e edifícios"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 3.361 m² está localizado no condomínio Quinta da Baroneza, em Bragança Paulista, e oferece um local de alto padrão. O terreno apresenta topografia suave, com gramado bem manejado e áreas arborizadas, proporcionando um ambiente agradável e acolhedor. A bem localizada e o acesso a infraestrutura completa tornam este imóvel ideal para quem deseja morar em um condomínio luxuoso e bem planejado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram áreas verdes bem cuidadas, casas modernas ao fundo e estradas asfaltadas. O terreno também conta com vista para áreas naturais, como lago e vegetação densa, e está localizado em uma região com infraestrutura condominial completa, incluindo piscinas, quadras de esporte, academia, entre outros."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com topografia suave e gramado bem manejado",
+        "Localizado em condomínio fechado com infraestrutura completa",
+        "Vista para lago e vegetação natural",
+        "Áreas arborizadas e ambientes verdes bem preservados",
+        "Acesso a estradas asfaltadas e sinalização clara"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área do terreno e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta uma topografia suave, com gramado verde bem manejado e áreas arborizadas. As fotos mostram um ambiente natural e acolhedor, com árvores e plantas ao redor, além de casas modernas ao fundo. A área verde ao redor do terreno sugere uma boa integração com a natureza, ideal para quem busca tranquilidade e privacidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos também destacam estradas asfaltadas, com sinalização clara e visibilidade para o condomínio. A área total do terreno é de 3.361 m², proporcionando amplo espaço para construção e aproveitamento do local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 345,
+          "legenda": "Lote com gramado e árvores"
+        },
+        {
+          "foto": 350,
+          "legenda": "Terreno com gramado e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Infraestrutura do condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Quinta da Baroneza oferece uma série de serviços e áreas de lazer, como piscinas, quadras de esporte, academia, campo de golfe, área de churrasqueira e muito mais. As fotos mostram quadras de vôlei de praia, campo de futebol com gramado sintético, quadra de tênis e uma sala de jogos com pista de bowling."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além disso, o condomínio conta com segurança 24 horas, portaria com controle de acesso e infraestrutura para internet. A área de lazer é ampla e bem distribuída, com áreas verdes e equipamentos modernos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 356,
+          "legenda": "Quadra de vôlei de praia em área externa"
+        },
+        {
+          "foto": 357,
+          "legenda": "Campo de futebol com gramado sintético e iluminação"
+        },
+        {
+          "foto": 360,
+          "legenda": "Quadra de tênis com iluminação e pessoas jogando"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vista natural e áreas verdes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno oferece vistas para áreas naturais, como lagos e vegetação densa. As fotos mostram um lago com ponte e caminho ao redor, além de uma paisagem com árvores e vegetação ao fundo. Essas áreas naturais são bem preservadas e oferecem tranquilidade e beleza ao imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno do terreno inclui áreas de preservação ambiental, com vegetação exuberante e caminhos que levam a diferentes pontos do condomínio. Essa integração com a natureza é um dos diferenciais do local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 354,
+          "legenda": "Lago com ponte e vegetação ao redor"
+        },
+        {
+          "foto": 365,
+          "legenda": "Lago com caminho ao redor e vegetação ao fundo"
+        },
+        {
+          "foto": 366,
+          "legenda": "Lago com árvores e casa ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Áreas de lazer e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece diversas áreas de lazer, como quadras de esporte, piscinas, academia, campo de golfe, churrasqueira, brinquedoteca, playground e muito mais. As fotos mostram áreas bem equipadas e mantidas, com estrutura para atividades ao ar livre e internas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além disso, o condomínio conta com segurança 24 horas, portaria 24h, vigilância automóvel e patrimonial, além de infraestrutura para internet e energia elétrica. O terreno está localizado em uma região com acesso a serviços e comodidades modernas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca um local com exclusividade, infraestrutura completa e uma vida em harmonia com a natureza. O condomínio oferece segurança, lazer e comodidades para morar com qualidade de vida. A bem localizada e o acesso a áreas verdes tornam este imóvel uma excelente opção para investir ou morar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o projeto aprovado para o terreno, a documentação do imóvel e quais são as regras do condomínio sobre construções.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 353,
+      "legenda": "Entrada de casa com iluminação noturna e jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 355,
+      "legenda": "Fachada de imóvel rural com palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 354,
+      "legenda": "Lago com ponte e vegetação ao redor",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 365,
+      "legenda": "Lago com caminho ao redor e vegetação ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 366,
+      "legenda": "Lago com árvores e casa ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 345,
+      "legenda": "Lote com gramado e árvores",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 346,
+      "legenda": "Terreno com gramado e árvores ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 347,
+      "legenda": "Mulher em campo aberto com céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 348,
+      "legenda": "Vista aérea de um terreno com gramado, árvores e edifícios",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 349,
+      "legenda": "Vista aérea de casas com telhados de energia solar",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 350,
+      "legenda": "Terreno com gramado e árvores",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 351,
+      "legenda": "Quadro com azulejos azuis e brancos em um jardim",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 361,
+      "legenda": "Pôr do sol em jardim com árvore e cercado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 362,
+      "legenda": "Playground com escorregador e estrutura de madeira",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 363,
+      "legenda": "Pessoas a cavalo em um parque com lago",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 352,
+      "legenda": "Piscina com vista para casa e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 364,
+      "legenda": "Piscina com palmeiras e edifício ao fundo",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 356,
+      "legenda": "Quadra de vôlei de praia em área externa",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 357,
+      "legenda": "Campo de futebol com gramado sintético e iluminação",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 358,
+      "legenda": "Sala de jogos com televisores e pista de bowling",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 359,
+      "legenda": "Golfistas em campo de golfe",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 360,
+      "legenda": "Quadra de tênis com iluminação e pessoas jogando",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a área total do terreno?",
+      "resposta": "O terreno tem área total de 3.361 m²."
+    },
+    {
+      "pergunta": "Tem acesso a estradas asfaltadas?",
+      "resposta": "Sim, o terreno tem acesso a estradas asfaltadas."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno no condomínio Quinta da Baroneza, em Bragança Paulista. Ideal para quem busca exclusividade e qualidade de vida em um ambiente bem localizada. Com áreas verdes, infraestrutura completa e acesso a serviços modernos.",
+    "hashtags": [
+      "terrenobraganca",
+      "condominiofechado",
+      "bragancapaulista",
+      "imovelpremium",
+      "terrenocomlazer",
+      "investimentoinmobiliario",
+      "terrenonatural",
+      "quintadabaronessa"
+    ]
+  },
+  "versao": "f408cb60ecf7",
+  "publicadoEm": "2026-10-28T04:27:05.336Z"
+}
