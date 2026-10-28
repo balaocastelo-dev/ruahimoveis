@@ -1,0 +1,188 @@
+{
+  "codigo": "PR0002",
+  "slug": "predio-comercial-vila-itapura-campinas-sp-pr0002",
+  "titulo": "Prédio comercial de esquina em Vila Itapura, Campinas",
+  "resumo": "Prédio comercial em localização estratégica, com 765 m² de área construída, ideal para escritórios, clínicas, escolas e diversos segmentos.",
+  "capa": {
+    "foto": 469,
+    "alt": "Fachada de prédio comercial em esquina com luzes de trânsito"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este prédio comercial está localizado em uma das avenidas mais movimentadas de Campinas, oferecendo excelente visibilidade e acesso. Com 765 m² de área construída, o imóvel possui três pavimentos e é ideal para escritórios, clínicas, escolas, centros de treinamento, coworkings e empresas de prestação de serviços. A estrutura permite flexibilidade no uso dos espaços, atendendo a diversas necessidades de negócios."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram ambientes vazios, com pisos de mármore, madeira, cerâmica e concreto, além de divisórias de tijolos e janelas com grades. O prédio conta com 8 banheiros e 2 copas, garantindo praticidade para colaboradores e clientes."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Prédio comercial de esquina com excelente visibilidade",
+        "Área construída de 765 m² em terreno de 372 m²",
+        "Três pavimentos com espaços versáteis para diferentes segmentos",
+        "8 banheiros e 2 copas para atender demandas de colaboradores e clientes",
+        "Localização estratégica com alto fluxo de veículos e pedestres"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes comerciais"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram salas vazias com diferentes tipos de piso, como mármore, madeira, cerâmica e concreto. As paredes são brancas e as janelas possuem grades, garantindo segurança. Alguns ambientes têm divisórias de tijolos, que podem ser usadas para separar áreas ou criar espaços funcionais. O teto tem luminárias embutidas, proporcionando boa iluminação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 468,
+          "legenda": "Sala vazia com piso de mármore e divisória de tijolos"
+        },
+        {
+          "foto": 471,
+          "legenda": "Sala vazia com piso de madeira e janelas"
+        },
+        {
+          "foto": 472,
+          "legenda": "Sala vazia com piso de cerâmica e janelas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha está equipada com bancada de granito e armários brancos, oferecendo espaço para preparo e armazenamento. A janela tem cortina, permitindo entrada de luz natural. O piso é de cerâmica, e a área é funcional, ideal para uso em ambientes comerciais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 470,
+          "legenda": "Cozinha com bancada de granito e armários brancos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Garagem e estrutura do prédio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A garagem possui piso de concreto, paredes de tijolinho e sinalização de entrada, facilitando o acesso e a organização. As luzes suspensas e a porta de ferro contribuem para a segurança e a eficiência do local. O prédio tem estrutura sólida e bem conservada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 474,
+          "legenda": "Garagem com parede de tijolinho e sinalização de entrada"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este prédio comercial é ideal para profissionais que buscam instalar ou expandir sua empresa em uma região estratégica de Campinas. Com amplo espaço e estrutura versátil, ele se adapta a diversos segmentos, como escritórios, clínicas, centros de treinamento e coworkings. A localização e a visibilidade são pontos fortes para qualquer tipo de negócio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se há possibilidade de financiamento e quais são os detalhes do condomínio, caso haja.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 469,
+      "legenda": "Fachada de prédio comercial em esquina",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 468,
+      "legenda": "Sala vazia com piso de mármore e divisória de tijolos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 471,
+      "legenda": "Sala vazia com piso de madeira e janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 472,
+      "legenda": "Sala vazia com piso de cerâmica e janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 473,
+      "legenda": "Sala vazia com piso de porcelanato e janela com grade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 475,
+      "legenda": "Sala vazia com piso de concreto e janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 476,
+      "legenda": "Sala vazia com piso de concreto e portas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 470,
+      "legenda": "Cozinha com bancada de granito e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 474,
+      "legenda": "Garagem com parede de tijolinho e sinalização de entrada",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel tem 8 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet ou cozinha completa?",
+      "resposta": "O imóvel possui 2 copas, mas não há área gourmet."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar uma visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Prédio comercial em esquina em Vila Itapura, Campinas. Ideal para escritórios, clínicas, escolas e diversos segmentos. Localização estratégica com excelente visibilidade e acesso.",
+    "hashtags": [
+      "prediocomercialcampinas",
+      "viliaitapuracampinas",
+      "imovelcomercial",
+      "campinas",
+      "investimentoimobiliaria",
+      "ruahinvestimentos",
+      "imovelcampinas",
+      "comerciobonfim"
+    ]
+  },
+  "versao": "4bdb06c3d07f",
+  "publicadoEm": "2026-10-28T04:19:24.105Z"
+}

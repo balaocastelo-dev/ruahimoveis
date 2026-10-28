@@ -1,0 +1,282 @@
+{
+  "codigo": "AP0038",
+  "slug": "apartamento-3-suites-beira-mar-praia-grande-ubatuba-sp-ap0038",
+  "titulo": "Apartamento de 3 suítes beira-mar com vista para o mar na Praia Grande",
+  "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista bem localizada para o mar na Praia Grande, Ubatuba, SP.",
+  "capa": {
+    "foto": 538,
+    "alt": "Piscina com deck de pedra e vista para montanha"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de alto padrão, localizado na Praia Grande em Ubatuba, oferece uma combinação de luxo, conforto e vista bem localizada para o mar. Com 147 m² de área privativa, o imóvel tem 3 suítes, 3 vagas de garagem e ambientes decorados com elegância. A localização beira-mar e o acesso a uma infraestrutura completa de lazer fazem dele uma excelente opção para quem busca qualidade de vida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram detalhes como a varanda com vista para o jardim, a sala de estar com decoração moderna e a cozinha com armários e eletrodomésticos. O condomínio conta com piscinas, academia, salão de festas e outros espaços de lazer, tudo em um ambiente seguro e bem cuidado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com ar-condicionado",
+        "Vista para o mar e localização beira-mar",
+        "3 vagas de garagem cobertas",
+        "Cozinha moderna com armários e eletrodomésticos",
+        "Condomínio com área de lazer completa"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e sala de estar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é ampla e bem distribuída, com uma sala de estar decorada com sofá, TV e decoração moderna. As fotos mostram ambientes com piso claro, iluminação adequada e detalhes como pinturas e quadros que contribuem para o ambiente aconchegante. A sala de jantar também é integrada, com mesa e cadeiras que oferecem conforto para refeições em família ou com convidados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 542,
+          "legenda": "Sala de estar com sofá e TV"
+        },
+        {
+          "foto": 544,
+          "legenda": "Sala de jantar com mesa branca e cadeiras azuis"
+        },
+        {
+          "foto": 545,
+          "legenda": "Sala de estar com sofá e TV"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem equipada, com armários de madeira, bancada escura e eletrodomésticos de qualidade. As fotos mostram detalhes como a ilha, geladeira, micro-ondas e cafeteira. A área de serviço também está bem organizada, com armários e espaço para armazenamento. A cozinha tem uma vista para a varanda, integrando os espaços de preparo e refeição de forma prática."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 546,
+          "legenda": "Cozinha moderna com armários de madeira e geladeira aço inox"
+        },
+        {
+          "foto": 553,
+          "legenda": "Cozinha moderna com ilha e eletrodomésticos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos, com decoração moderna e funcional. Cada quarto tem ar-condicionado e armários de madeira com divisórias e gavetas, garantindo organização e conforto. As fotos mostram detalhes como camas com lençóis brancos, paredes claras e TVs integradas nas paredes. As suítes são especialmente espaçosas, com closets e banheiros bem equipados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 548,
+          "legenda": "Quarto com duas camas e ar condicionado"
+        },
+        {
+          "foto": 550,
+          "legenda": "Quarto com duas camas e ar condicionado"
+        },
+        {
+          "foto": 552,
+          "legenda": "Dobrados em cama de casal com cabeceira de madeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece uma série de espaços de lazer, como piscinas, academia, salão de festas, brinquedoteca e áreas verdes. As fotos destacam a piscina com deck de pedra e vista para a montanha, além do ambiente de lazer com áreas arborizadas. O condomínio também tem portaria 24 horas e aceita animais de estimação, garantindo segurança e conforto para os moradores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 536,
+          "legenda": "Piscina com deck de madeira e vista para montanha"
+        },
+        {
+          "foto": 537,
+          "legenda": "Piscina com deck de pedra e palmeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que desejam morar em um ambiente de alto padrão, com vista para o mar e infraestrutura de lazer completa. O local é excelente para quem busca conforto, privacidade e qualidade de vida em uma das regiões mais desejáveis de Ubatuba."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a disponibilidade de vagas e se há opções de financiamento ou permuta. Também é importante saber sobre a manutenção do condomínio e o que não está presente nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 542,
+      "legenda": "Sala de estar com sofá e TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 543,
+      "legenda": "Sala de estar com sofá e TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 544,
+      "legenda": "Sala de jantar com mesa branca e cadeiras azuis",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 545,
+      "legenda": "Sala de estar com sofá e TV",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 539,
+      "legenda": "Varanda com mesa redonda e cadeiras de vime",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 540,
+      "legenda": "Varanda gourmet com churrasqueira e balcão de mármore",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 541,
+      "legenda": "Varanda com vista para o jardim e prédio",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 547,
+      "legenda": "Varanda com mesa e cadeiras, vista para edifício e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 546,
+      "legenda": "Cozinha moderna com armários de madeira e geladeira aço inox",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 553,
+      "legenda": "Cozinha moderna com ilha e eletrodomésticos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 548,
+      "legenda": "Quarto com duas camas e ar condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 549,
+      "legenda": "Dobradiça de cama com TV na parede",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 550,
+      "legenda": "Quarto com duas camas e ar condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 551,
+      "legenda": "Armário de madeira com gavetas e divisórias",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 552,
+      "legenda": "Dobrados em cama de casal com cabeceira de madeira",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 554,
+      "legenda": "Prateleira de madeira com gavetas e divisórias",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 556,
+      "legenda": "Armário de madeira com divisórias e gavetas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 555,
+      "legenda": "Banheiro com cuba de granito, vaso sanitário e chuveiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 536,
+      "legenda": "Piscina com deck de madeira e vista para montanha",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 537,
+      "legenda": "Piscina com deck de pedra e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 538,
+      "legenda": "Piscina com deck de pedra e vista para montanha",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel tem 3 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a varanda tem churrasqueira, balcão e mesa para refeições."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista para o mar na Praia Grande, Ubatuba, SP. Ideal para quem busca conforto e qualidade de vida. Condomínio com área de lazer completa. Marque a visita agora!",
+    "hashtags": [
+      "apartamentoubatuba",
+      "praiagrande",
+      "condominiofechado",
+      "3suites",
+      "vistamar",
+      "imovelbeiramar",
+      "lazercompleto",
+      "altopadrao"
+    ]
+  },
+  "versao": "4a08a28183eb",
+  "publicadoEm": "2026-10-28T04:19:24.088Z"
+}

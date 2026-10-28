@@ -1,0 +1,347 @@
+{
+  "codigo": "CJ0001",
+  "slug": "sala-comercial-clinica-ortopedica-jardim-guanabara-campinas-cj0001",
+  "titulo": "Sala comercial com estrutura para clínica ortopédica no Jardim Guanabara",
+  "resumo": "Sala comercial no Jardim Guanabara, Campinas, com estrutura para clínica ortopédica, localizada em região com presença de clínicas médicas, ideal para investimento.",
+  "capa": {
+    "foto": 507,
+    "alt": "Fachada branca com jardim bem manejado e árvore de folhas verdes"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel comercial está localizado no Jardim Guanabara, em Campinas, e possui uma estrutura consolidada para funcionamento de clínica ortopédica. O imóvel tem área total de 910 m² e dispõe de 20 vagas de estacionamento, sendo uma opção para investidores que buscam renda com locação ou para profissionais que desejam estabelecer suas atividades na área da saúde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade inclui salas amplas e independentes, uma recepção bem estruturada, área de raio X, espaço para fisioterapia e sala para curativos. A clínica, localizada no mesmo endereço há 30 anos, oferece uma infraestrutura voltada aos serviços de saúde, com potencial para geração de renda."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Estrutura consolidada para clínica ortopédica com 30 anos de funcionamento no mesmo local",
+        "20 vagas de estacionamento para pacientes, acompanhantes e profissionais",
+        "Salas amplas, independentes e equipadas para atendimento médico",
+        "Localização estratégica no Jardim Guanabara, região com presença de clínicas médicas",
+        "Infraestrutura completa com sala de raio X, área de fisioterapia e sala de curativos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e estrutura da clínica"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel inclui uma recepção bem estruturada, salas de atendimento independentes e equipadas para atender aos profissionais e pacientes. As fotos mostram ambientes como ambulatórios com equipamentos médicos, corredores com portas metálicas e áreas com dispenser de água e extintores de incêndio, evidenciando a infraestrutura voltada para a saúde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O espaço também conta com salas de raio X e fisioterapia, além de uma sala de curativos. As fotografias destacam equipamentos como máquinas de radiografia, mesas de exames e armários, indicando a adequação do imóvel para uso profissional."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 508,
+          "legenda": "Ambulatório com equipamentos médicos"
+        },
+        {
+          "foto": 529,
+          "legenda": "Ambulatório com equipamentos médicos"
+        },
+        {
+          "foto": 533,
+          "legenda": "Ambulatório com mesa de consulta e armários"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de estacionamento e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel dispõe de 20 vagas de estacionamento, incluindo 12 vagas para carros, facilitando o acesso de pacientes, acompanhantes e profissionais. As fotos mostram a garagem com rampa de acesso e áreas externas, indicando a infraestrutura para estacionamento adequado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O acesso ao imóvel é facilitado por uma fachada com escadas e portas, como mostrado nas fotos, que destacam a presença de portões, janelas com grades e áreas arborizadas, contribuindo para a segurança e o conforto do local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 518,
+          "legenda": "Garagem com rampa de acesso e área externa"
+        },
+        {
+          "foto": 520,
+          "legenda": "Fachada de casa com portão fechado e janela com grade"
+        },
+        {
+          "foto": 521,
+          "legenda": "Fachada de prédio com escada e árvore"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizado no Jardim Guanabara, o imóvel está inserido em uma região com presença de clínicas médicas, o que caracteriza um local estratégico para investimentos no setor da saúde. As fotos da fachada e do entorno mostram casas com jardins bem manejados e áreas arborizadas, reforçando a qualidade do bairro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno inclui casas e prédios com fachadas brancas, escadas e plantas, indicando um ambiente residencial bem estruturado. O imóvel, embora comercial, se enquadra no contexto de um bairro com infraestrutura e comodidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 516,
+          "legenda": "Fachada de casas com escadas e plantas"
+        },
+        {
+          "foto": 524,
+          "legenda": "Fachada de casas com escadas e plantas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ambientes e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram ambientes como salas de estar com sofás e mesas, corredores com piso de cerâmica e portas abertas, e escritórios com mesas, cadeiras e equipamentos. Esses espaços reforçam a funcionalidade e a organização do imóvel, adequado para uso profissional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também inclui áreas com equipamentos médicos, como máquinas de ultrassonografia e salas de atendimento com mesas de exames, demonstrando sua especialização para o setor da saúde."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 510,
+          "legenda": "Sala de estar com sofás e mesa de centro"
+        },
+        {
+          "foto": 526,
+          "legenda": "Corredor com piso de cerâmica e portas abertas"
+        },
+        {
+          "foto": 527,
+          "legenda": "Sala de aula com mesas dobráveis e cadeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para investidores que buscam renda com locação ou para profissionais da área da saúde que desejam estabelecer suas atividades em um local consolidado. A infraestrutura e a localização estratégica no Jardim Guanabara tornam este imóvel uma opção para quem busca um investimento com histórico e potencial de crescimento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Documentação do imóvel, detalhes sobre o condomínio, e o que não está visível nas fotos, como a situação do aluguel e possíveis restrições.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 506,
+      "legenda": "Fachada de casa com árvore e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 507,
+      "legenda": "Fachada de casa com jardim e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 516,
+      "legenda": "Fachada de casas com escadas e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 517,
+      "legenda": "Fachada de imóvel com escada e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 519,
+      "legenda": "Fachada de prédio com escada e árvore",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 520,
+      "legenda": "Fachada de casa com portão fechado e janela com grade",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 521,
+      "legenda": "Fachada de prédio com escada e árvore",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 522,
+      "legenda": "Fachada de casa com escada e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 523,
+      "legenda": "Fachada de imóvel com escada e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 524,
+      "legenda": "Fachada de casas com escadas e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 510,
+      "legenda": "Sala de estar com sofás e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 512,
+      "legenda": "Sala de estar com sofá e porta aberta para área externa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 513,
+      "legenda": "Sala vazia com janela de grade e porta azul",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 514,
+      "legenda": "Sala vazia com piso de cerâmica e móveis simples",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 515,
+      "legenda": "Sala de estar com cadeiras e mesa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 525,
+      "legenda": "Sala de estar com cadeiras e mesa",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 527,
+      "legenda": "Sala de aula com mesas dobráveis e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 528,
+      "legenda": "Sala de estar com sofá e recepção ao fundo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 532,
+      "legenda": "Sala de massagem com cama de tratamento",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 508,
+      "legenda": "Ambulatório com equipamentos médicos",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 529,
+      "legenda": "Ambulatório com equipamentos médicos",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 533,
+      "legenda": "Ambulatório com mesa de consulta e armários",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 534,
+      "legenda": "Banheiro com pia, espelho e produtos de higiene",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 518,
+      "legenda": "Garagem com rampa de acesso e área externa",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 511,
+      "legenda": "Sala de espera com sofá e recepção",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 509,
+      "legenda": "Corredor de escritório com portas e equipamentos",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 526,
+      "legenda": "Corredor com piso de cerâmica e portas abertas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 530,
+      "legenda": "Entrada de um escritório com sinalização de 'Raio-X' e 'Saída'",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 531,
+      "legenda": "Escritório com mesa, cadeiras e cama de massagem",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 535,
+      "legenda": "Escritório com mesa, cadeira e porta aberta",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de estacionamento tem?",
+      "resposta": "O imóvel possui 20 vagas de estacionamento."
+    },
+    {
+      "pergunta": "Tem área de raio X e fisioterapia?",
+      "resposta": "Sim, o imóvel conta com área de raio X e espaço para fisioterapia."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Sala comercial com estrutura para clínica ortopédica no Jardim Guanabara, Campinas. Ideal para investimento em área da saúde. Localização estratégica e infraestrutura completa. Saiba mais sobre esta oportunidade de investimento.",
+    "hashtags": [
+      "salacomercial",
+      "campinas",
+      "jardimguanabara",
+      "investimentosaude",
+      "clinciaortopedica",
+      "imovelcomercial",
+      "areadesaude",
+      "localizacaoestrategica"
+    ]
+  },
+  "versao": "95eb6951e286",
+  "publicadoEm": "2026-10-28T04:19:24.088Z"
+}

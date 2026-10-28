@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "PR0002",
+      "slug": "predio-comercial-vila-itapura-campinas-sp-pr0002",
+      "titulo": "Prédio comercial de esquina em Vila Itapura, Campinas",
+      "resumo": "Prédio comercial em localização estratégica, com 765 m² de área construída, ideal para escritórios, clínicas, escolas e diversos segmentos.",
+      "capa": {
+        "foto": 469,
+        "alt": "Fachada de prédio comercial em esquina com luzes de trânsito"
+      },
+      "versao": "4bdb06c3d07f",
+      "publicadoEm": "2026-10-28T04:19:24.105Z"
+    },
+    {
+      "codigo": "CA0026",
+      "slug": "casa-condominio-4-quartos-6-vagas-dois-corregos-valinhos-sp-ca0026",
+      "titulo": "Casa em condomínio com 4 suítes e 6 vagas no Dois Córregos, Valinhos",
+      "resumo": "Casa em condomínio no Dois Córregos, Valinhos, com 4 suítes, 6 vagas de garagem, piscina privativa e acabamento de altíssimo padrão.",
+      "capa": {
+        "foto": 451,
+        "alt": "Fachada moderna com piscina e jardim"
+      },
+      "versao": "1e591e68df2e",
+      "publicadoEm": "2026-10-28T04:19:24.105Z"
+    },
+    {
+      "codigo": "AP0038",
+      "slug": "apartamento-3-suites-beira-mar-praia-grande-ubatuba-sp-ap0038",
+      "titulo": "Apartamento de 3 suítes beira-mar com vista para o mar na Praia Grande",
+      "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista bem localizada para o mar na Praia Grande, Ubatuba, SP.",
+      "capa": {
+        "foto": 538,
+        "alt": "Piscina com deck de pedra e vista para montanha"
+      },
+      "versao": "4a08a28183eb",
+      "publicadoEm": "2026-10-28T04:19:24.088Z"
+    },
+    {
+      "codigo": "CJ0001",
+      "slug": "sala-comercial-clinica-ortopedica-jardim-guanabara-campinas-cj0001",
+      "titulo": "Sala comercial com estrutura para clínica ortopédica no Jardim Guanabara",
+      "resumo": "Sala comercial no Jardim Guanabara, Campinas, com estrutura para clínica ortopédica, localizada em região com presença de clínicas médicas, ideal para investimento.",
+      "capa": {
+        "foto": 507,
+        "alt": "Fachada branca com jardim bem manejado e árvore de folhas verdes"
+      },
+      "versao": "95eb6951e286",
+      "publicadoEm": "2026-10-28T04:19:24.088Z"
+    },
+    {
+      "codigo": "TE0020",
+      "slug": "terreno-parque-brasil-500-paulinia-sp-te0020",
+      "titulo": "Terreno de 695 m² no Parque Brasil 500 em Paulínia",
+      "resumo": "Terreno de 695 m² no Parque Brasil 500, localizado na Avenida José Paulino, em Paulínia. Ideal para quem busca área expressiva em região estratégica.",
+      "capa": {
+        "foto": 559,
+        "alt": "Terreno com edifícios, painéis solares e área verde"
+      },
+      "versao": "9a771b614023",
+      "publicadoEm": "2026-10-28T04:19:24.087Z"
+    },
+    {
       "codigo": "TE0002",
       "slug": "terreno-parque-brasil-500-paulinia-sp-te0002",
       "titulo": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia",
@@ -986,5 +1046,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:16:18.045Z"
+  "atualizadoEm": "2026-10-28T04:19:24.105Z"
 }

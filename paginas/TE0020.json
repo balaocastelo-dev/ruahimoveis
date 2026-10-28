@@ -1,0 +1,155 @@
+{
+  "codigo": "TE0020",
+  "slug": "terreno-parque-brasil-500-paulinia-sp-te0020",
+  "titulo": "Terreno de 695 m² no Parque Brasil 500 em Paulínia",
+  "resumo": "Terreno de 695 m² no Parque Brasil 500, localizado na Avenida José Paulino, em Paulínia. Ideal para quem busca área expressiva em região estratégica.",
+  "capa": {
+    "foto": 559,
+    "alt": "Terreno com edifícios, painéis solares e área verde"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 695 m² está localizado na Avenida José Paulino, no Parque Brasil 500, em Paulínia. A área oferece espaço para construção residencial, comercial ou de outra finalidade, dependendo do zoneamento e dos parâmetros urbanísticos da região. A localização é estratégica, com acesso a estabelecimentos comerciais e serviços ao longo da avenida. O entorno conta com infraestrutura urbana e conectividade viária, facilitando o deslocamento para outras partes da cidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Área total de 695 m², ideal para diversos projetos",
+        "Localização no Parque Brasil 500, com infraestrutura urbana",
+        "Vizinhança com comércios e serviços ao longo da avenida",
+        "Acesso a vias importantes e conectividade viária",
+        "Possibilidade de desenvolvimento residencial ou comercial"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está situado na Avenida José Paulino, uma via importante do Parque Brasil 500, em Paulínia. A região é conhecida por sua acessibilidade e pela presença de empreendimentos urbanos. O entorno inclui comércios, serviços e vias que facilitam o deslocamento pelo município. A proximidade de vias de acesso e de outros imóveis indica que a área está em desenvolvimento. O terreno pode ser uma boa opção para quem busca um lote em local estratégico, com potencial para crescimento no longo prazo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 557,
+          "legenda": "Terreno com muro e vegetação"
+        },
+        {
+          "foto": 558,
+          "legenda": "Terreno com muro e vegetação"
+        },
+        {
+          "foto": 561,
+          "legenda": "Terreno com estrada e edifícios ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o terreno com muros, vegetação e áreas de gramado. Há um pôrtico de entrada e uma placa de identificação. A área apresenta vegetação em crescimento e possíveis condições para construção, dependendo do zoneamento local. Além disso, a vista aérea revela a presença de edifícios ao redor, vias de acesso e uma estrutura de construção ao fundo, indicando que a região está em desenvolvimento. A topografia e a orientação do terreno podem ser avaliadas com mais detalhes durante a visita."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 560,
+          "legenda": "Vista aérea de um lote com edifício e rodovia"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Oportunidade para construção"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com 695 m², este terreno oferece espaço para projetos residenciais, comerciais ou mistos. A viabilidade depende de estudos urbanísticos e do zoneamento da região. Recomenda-se verificar os parâmetros urbanísticos, a topografia e as condições documentais antes de definir um projeto. A área também pode ser interessante para investidores que buscam oportunidades de longo prazo, considerando o desenvolvimento do entorno e a infraestrutura disponível."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca um lote em local estratégico, com potencial para desenvolvimento urbano ou rural. Pode ser uma boa opção para quem deseja investir em imóveis com visão de longo prazo ou para quem planeja construir uma residência ou empreendimento comercial."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Verifique os parâmetros urbanísticos e o zoneamento do terreno. Pergunte sobre a topografia e as condições documentais da propriedade. Confirme se há possibilidade de construção residencial ou comercial.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 557,
+      "legenda": "Terreno com muro e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 558,
+      "legenda": "Terreno com muro e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 559,
+      "legenda": "Terreno com edifícios e painéis solares",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 560,
+      "legenda": "Vista aérea de um lote com edifício e rodovia",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 561,
+      "legenda": "Terreno com estrada e edifícios ao fundo",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a área total do terreno?",
+      "resposta": "O terreno tem área total de 695,68 m²."
+    },
+    {
+      "pergunta": "O terreno tem acesso a vias importantes?",
+      "resposta": "Sim, o terreno está localizado na Avenida José Paulino, com acesso a vias importantes e infraestrutura urbana ao redor."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar uma visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 695 m² no Parque Brasil 500, em Paulínia. Localizado na Avenida José Paulino, o imóvel oferece área expressiva em região estratégica com infraestrutura urbana e acesso a vias importantes. Ideal para investimento ou construção de residência ou empreendimento comercial.",
+    "hashtags": [
+      "terrenopaulinia",
+      "imobiliaria",
+      "parquebrasil500",
+      "terrenosparaconstruir",
+      "pauliniaimoveis",
+      "terrenosdisponiveis",
+      "zoneamento",
+      "investimentolongoprazo"
+    ]
+  },
+  "versao": "9a771b614023",
+  "publicadoEm": "2026-10-28T04:19:24.087Z"
+}

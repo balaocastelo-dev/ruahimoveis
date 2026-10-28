@@ -1,0 +1,283 @@
+{
+  "codigo": "CA0026",
+  "slug": "casa-condominio-4-quartos-6-vagas-dois-corregos-valinhos-sp-ca0026",
+  "titulo": "Casa em condomínio com 4 suítes e 6 vagas no Dois Córregos, Valinhos",
+  "resumo": "Casa em condomínio no Dois Córregos, Valinhos, com 4 suítes, 6 vagas de garagem, piscina privativa e acabamento de altíssimo padrão.",
+  "capa": {
+    "foto": 451,
+    "alt": "Fachada moderna com piscina e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no Dois Córregos, em Valinhos, com 4 suítes e 6 vagas de garagem. O imóvel tem área total de 580 m², com acabamento moderno e amplos ambientes integrados. A fachada moderna conta com jardim, piscina e varanda superior. A casa foi construída recentemente e está localizada em um condomínio com segurança 24 horas e estrutura de lazer completa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem salas de estar e jantar integradas, cozinha em conceito aberto com ilha, espaço gourmet e piscina privativa. A casa possui ambientes amplos, iluminação natural e acabamento de altíssimo padrão, ideal para quem busca conforto e sofisticação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 suítes amplas com armários embutidos",
+        "6 vagas de garagem para carros",
+        "Piscina privativa com deck e guarda-sol",
+        "Cozinha integrada com espaço gourmet",
+        "Área social com salas integradas e iluminação natural",
+        "Condomínio com segurança 24 horas e estrutura de lazer"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes integrados"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa reúne sala de estar, sala de jantar e cozinha em conceito aberto, criando um ambiente amplo e acolhedor. A sala de estar tem sofá branco, mesa de centro branca e janelas grandes que trazem luz natural. A sala de jantar está integrada à cozinha, com mesa de madeira e poltronas amarelas, ideal para refeições em família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A integração dos ambientes é um dos pontos fortes do imóvel. A varanda superior, com vista para a área verde, está conectada à sala de estar, oferecendo espaços para relaxar e receber convidados. O imóvel também conta com uma área de serviço com máquina de lavar e piso claro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 453,
+          "legenda": "Sala de estar moderna com sofá branco e mesa de centro branca"
+        },
+        {
+          "foto": 454,
+          "legenda": "Sala de estar integrada à cozinha"
+        },
+        {
+          "foto": 455,
+          "legenda": "Sala de estar integrada à varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem ilha com cadeiras de madeira e está integrada ao espaço gourmet, ideal para preparar refeições e receber convidados. O ambiente tem teto branco, paredes claras e uma bancada escura que contrasta com o piso claro. A cozinha conta com geladeira grande, micro-ondas e estufa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de serviço está localizada em um ambiente com piso claro e máquina de lavar. A porta de acesso à área de serviço está fechada, garantindo privacidade e organização."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 456,
+          "legenda": "Cozinha moderna com ilha e cadeiras de madeira"
+        },
+        {
+          "foto": 463,
+          "legenda": "Lavanderia com máquina de lavar e piso claro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com 4 suítes amplas, todas com armários embutidos e vista para áreas externas. Uma das suítes tem cama com edredom cinza, escritório e vista para a natureza. Outra suíte tem parede azul, cama com lençóis e manta, e porta de vidro com vista para a varanda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso de madeira e janelas com vistas para o exterior. O escritório tem mesa de madeira, cadeiras de rodízio e janela panorâmica, ideal para quem trabalha em casa. A casa também tem um corredor com divisória de madeira e vaso de planta, proporcionando um ambiente moderno e acolhedor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 458,
+          "legenda": "Suite com cama, escritório e vista para a natureza"
+        },
+        {
+          "foto": 459,
+          "legenda": "Quarto com cama, televisão e vista para o exterior"
+        },
+        {
+          "foto": 462,
+          "legenda": "Quarto moderno com armário de correr e vista para varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiros e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros têm box de vidro, piso claro, espelho e lavatório duplo. Um dos banheiros tem uma banca de lavabo e janela, enquanto outro tem uma banheira e towel bar. Todos os banheiros têm teto branco e acabamento moderno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece estrutura de lazer com piscina, salão de festas, salão de jogos, campo de futebol e quadra poliesportiva. A segurança 24 horas e o ambiente bem planejado do condomínio garantem conforto e tranquilidade para toda a família."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 461,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        },
+        {
+          "foto": 465,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        },
+        {
+          "foto": 466,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa em condomínio é ideal para famílias que buscam conforto, sofisticação e segurança. O imóvel tem 4 suítes, 6 vagas de garagem, piscina privativa e acabamento moderno. A localização no condomínio Querência, em Valinhos, oferece acesso a escolas e áreas de lazer."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre documentação do imóvel, detalhes do condomínio e o que não aparece nas fotos, como o estado do sistema de aquecimento e a disponibilidade de internet.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 450,
+      "legenda": "Fachada moderna de casa com garagem e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 451,
+      "legenda": "Fachada moderna com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 453,
+      "legenda": "Sala de estar moderna com sofá branco e mesa de centro branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 454,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 455,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 456,
+      "legenda": "Cozinha moderna com ilha e cadeiras de madeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 463,
+      "legenda": "Lavanderia com máquina de lavar e piso claro",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 459,
+      "legenda": "Quarto com cama, televisão e vista para o exterior",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 462,
+      "legenda": "Quarto moderno com armário de correr e vista para varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 464,
+      "legenda": "Quarto com cama, parede azul e vista para a varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 458,
+      "legenda": "Suite com cama, escritório e vista para a natureza",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 461,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 465,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 466,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 452,
+      "legenda": "Piscina com deck de concreto e guarda-sol",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 457,
+      "legenda": "Corredor moderno com divisória de madeira e vaso de planta",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 460,
+      "legenda": "Escritório moderno com mesa de madeira e cadeiras",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel tem 6 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, o imóvel tem piscina privativa com deck e guarda-sol."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Dois Córregos, Valinhos, com 4 suítes e 6 vagas de garagem. Ambientes integrados, piscina privativa e acabamento moderno. Ideal para quem busca conforto e segurança.",
+    "hashtags": [
+      "casacondominio",
+      "valinhos",
+      "doiscorregos",
+      "4suites",
+      "6vagas",
+      "piscinaprivativa",
+      "imovelnovo",
+      "lazercondominio"
+    ]
+  },
+  "versao": "1e591e68df2e",
+  "publicadoEm": "2026-10-28T04:19:24.105Z"
+}
