@@ -1,0 +1,157 @@
+{
+  "slug": "como-escolher-o-tamanho-do-tapete-da-sala",
+  "tema": "tamanho certo do tapete da sala",
+  "titulo": "Como escolher o tamanho do tapete da sala",
+  "resumo": "O tapete da sala deve ser maior que o sofá e receber ao menos os pés da frente dos móveis. Veja medidas, folgas e os erros mais comuns na escolha.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "tapete",
+    "decoração",
+    "sala de estar",
+    "interiores"
+  ],
+  "capa": {
+    "alt": "Sala de estar com tapete claro grande sob o sofá e as poltronas, mesa de centro de madeira e piso de tábuas aparecendo nas bordas"
+  },
+  "redes": {
+    "legenda": "O erro mais comum na sala? Tapete pequeno demais, perdido no meio do piso. A regra que resolve quase tudo: o tapete passa das laterais do sofá e recebe pelo menos os pés da frente dos móveis. Reunimos as folgas em centímetros, as medidas mais vendidas e um truque com fita crepe para acertar antes de comprar. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "tapete",
+      "decoracao",
+      "saladeestar",
+      "interiores",
+      "designdeinteriores",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Saber **como escolher o tamanho do tapete da sala** faz mais diferença do que a cor ou a estampa. Um tapete pequeno demais parece perdido e deixa o ambiente menor; um grande demais sufoca o piso. A boa notícia é que existem regras simples, usadas por designers de interiores, que funcionam na maioria das salas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta direta: o tapete deve ser mais largo que o sofá, passando um pouco de cada lado, e receber pelo menos os pés da frente do sofá e das poltronas. Ao redor, deixe uma faixa de piso aparente até as paredes. Com essas três medidas em mãos, a escolha fica fácil."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O tapete passa das laterais do sofá, de 15 a 30 cm de cada lado.",
+        "Pelo menos os pés da frente do sofá e das poltronas ficam sobre ele.",
+        "Uma faixa de piso aparente, de 20 a 45 cm, contorna o tapete até as paredes."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "As três regras que resolvem quase tudo"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Mais largo que o sofá.** O Correio Braziliense cita de 15 a 20 cm além de cada lateral; guias de varejo de decoração chegam a cerca de 30 cm. Assim o tapete emoldura o conjunto em vez de ficar escondido embaixo dele.",
+        "**Os pés no lugar certo.** Em sala grande, todos os pés dos móveis ficam sobre o tapete. Em sala média ou apartamento, basta que os pés da frente fiquem sobre ele, entrando uns 20 cm sob o sofá para não haver tropeço na borda.",
+        "**Piso aparente nas bordas.** Deixe de 30 a 45 cm de chão livre até as paredes; em sala pequena, cerca de 20 cm já bastam. Essa moldura dá sensação de amplitude."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um truque antes de comprar: marque o contorno do tapete no chão com fita crepe e deixe por um ou dois dias. Você vê se os móveis cabem, se a circulação continua livre e se a proporção agrada. Mas, se a sala é muito pequena, um tapete que fica só sob a mesa de centro também funciona, desde que não pareça um capacho."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual medida combina com a sua sala"
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas comuns de tapete e quando usar",
+      "colunas": [
+        "Medida",
+        "Sala indicada",
+        "Como os móveis ficam"
+      ],
+      "linhas": [
+        [
+          "1,50 x 2,00 m",
+          "Pequena",
+          "Só a mesa de centro sobre o tapete"
+        ],
+        [
+          "2,00 x 2,50 m",
+          "Média",
+          "Pés da frente do sofá e das poltronas sobre ele"
+        ],
+        [
+          "2,00 x 3,00 m",
+          "Ampla",
+          "Todos os móveis, ou quase todos, sobre ele"
+        ],
+        [
+          "2,50 x 3,50 m ou mais",
+          "Grande ou com sofá de canto",
+          "Conjunto inteiro sobre o tapete"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Medidas de referência do guia da Planner 5D; confira sempre com a planta da sua sala."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "E na sala de jantar?",
+      "texto": "A regra muda: o tapete deve ter cerca de 90 cm a mais que a mesa, no comprimento e na largura, para que as cadeiras continuem sobre o tapete quando alguém se afasta para levantar. Prefira tapete baixo e fácil de limpar, que não prenda os pés das cadeiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O material também conta. Tapetes sintéticos costumam ser mais fáceis de limpar e resistentes ao sol; os felpudos pedem limpeza frequente e podem não ser a melhor escolha em casa com animais. Para outras ideias de decoração, veja [interiores e mobiliário](/blog/categoria/interiores) e o [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma nova casa em Campinas e já imagina onde vai o sofá, a equipe da {{cliente}} pode ajudar a encontrar salas com a proporção que você procura. Em uma linha: meça o sofá, deixe o piso respirar nas bordas e só depois escolha a estampa."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O tapete deve ficar embaixo do sofá?",
+      "resposta": "Em salas médias, o ideal é que pelo menos os pés da frente do sofá e das poltronas fiquem sobre o tapete. Em salas grandes, todos os pés podem ficar sobre ele."
+    },
+    {
+      "pergunta": "Qual o tamanho de tapete mais usado em sala de estar?",
+      "resposta": "Em salas médias, 2,00 x 2,50 m é uma medida comum, porque recebe os pés da frente do sofá e das poltronas. O certo é medir a sala e o sofá antes de comprar."
+    },
+    {
+      "pergunta": "Tapete pequeno deixa a sala menor?",
+      "resposta": "Costuma deixar, porque fragmenta o piso e faz os móveis parecerem soltos. Um tapete que une o conjunto de estar tende a dar sensação de mais espaço."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "O erro do tapete pequeno: como ele faz sua sala parecer menor do que realmente é — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/o-erro-do-tapete-pequeno-como-ele-faz-sua-sala-parecer-menor-do-que-realmente-e/",
+      "data": "janeiro de 2026"
+    },
+    {
+      "nome": "Tamanho de tapete para sala: como escolher a medida ideal — Planner 5D",
+      "url": "https://planner5d.com/blog/pt/tamanho-de-tapete-para-sala/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Area Rug Size and Placement Guide — Bed Bath & Beyond",
+      "url": "https://www.bedbathandbeyond.com/guides/living-room/area-rug-size-and-placement-guide",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Dicas para escolher o tapete ideal — Diário do Nordeste",
+      "url": "https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/ana-karenyna-/dicas-para-escolher-o-tapete-ideal-1.3387127",
+      "data": "julho de 2023"
+    }
+  ]
+}
