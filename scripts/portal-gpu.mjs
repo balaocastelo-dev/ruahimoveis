@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Portal RUAH · páginas dos imóveis escritas pela placa de vídeo do PC (Ollama).
+ * Portal do cliente (a imobiliária) · páginas dos imóveis escritas pela placa de vídeo do PC (Ollama).
  *
  *   node scripts/portal-gpu.mjs [--quantos 999] [--so AP0022,CA0010] [--lote 5] [--sem-publicar] [--fase fotos|texto|tudo]
  *
@@ -25,6 +25,8 @@ const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
 const { lerPagina } = require('../src/portal/validar.js');
 const { avaliarPagina } = require('../src/portal/regua.js');
+// O nome da imobiliária (cliente) vem da configuração (.env: CLIENTE_NOME / EMPRESA).
+const cfg = require('../src/config.js');
 
 const OLLAMA = (process.env.OLLAMA_URL || 'http://127.0.0.1:11434').replace(/\/+$/, '');
 const VISAO = process.env.PORTAL_GPU_VISAO || 'qwen2.5vl:7b';
@@ -106,7 +108,7 @@ function limparLegenda(s) {
 }
 
 // ------------------------------------------------------------ 2. o texto
-const REGRAS = `Você escreve a PÁGINA de um imóvel à venda no portal da RUAH Investimentos Imobiliários (Campinas, SP).
+const REGRAS = `Você escreve a PÁGINA de um imóvel à venda no portal da ${cfg.EMPRESA} (Campinas, SP).
 Escreva SÓ o que a ficha diz e o que as fotos mostram (a lista "fotos" traz o que cada foto mostra). Nada de suposição, nada sobre o bairro além da ficha e do anúncio.
 Do "descricao_do_anuncio" pode usar os FATOS com palavras suas; nunca copie frases e nunca repita exageros de anúncio.
 

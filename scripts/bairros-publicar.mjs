@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Bairros RUAH · a ÚNICA porta de entrada de uma página de bairro no site.
+ * Bairros do cliente (a imobiliária) · a ÚNICA porta de entrada de uma página de bairro no site.
  *
- *   node scripts/bairros-publicar.mjs preparar [--quantos 1]        regras, fila, dados ao vivo e fotos dos imóveis da RUAH no bairro
+ *   node scripts/bairros-publicar.mjs preparar [--quantos 1]        regras, fila, dados ao vivo e fotos dos imóveis do cliente no bairro
  *   node scripts/bairros-publicar.mjs fotos <bairro> "<busca>"      procura fotos no Wikimedia Commons (só licença livre) e baixa para ver
  *   node scripts/bairros-publicar.mjs listar                        a situação da página de cada bairro
  *   node scripts/bairros-publicar.mjs conferir pagina.json          confere formato, régua e a licença de cada foto, sem publicar
@@ -32,6 +32,8 @@ const require = createRequire(import.meta.url);
 const { lerPagina } = require('../src/bairros/validar.js');
 const { avaliarPagina } = require('../src/bairros/regua.js');
 const { RAMO_DE_CONTEUDO: RAMO, DONO_REPO, SLUG } = require('../src/bairros/config.js');
+// O nome da imobiliária (cliente) vem da configuração (.env: CLIENTE_NOME). Os campos *_ruah do dados.json são identificadores técnicos.
+const CLIENTE = require('../src/config.js').CLIENTE_NOME;
 
 const SITE = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
 const PASTA_FILA = path.join(os.tmpdir(), 'bairros');
@@ -118,7 +120,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', 'user.name=Bairros RUAH', '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Bairros ${CLIENTE}`, '-c', 'user.email=imoveisruah@gmail.com'); }
   const rodape = process.env.BAIRROS_RODAPE_DO_COMMIT || process.env.PORTAL_RODAPE_DO_COMMIT;
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape ? `\n\n${rodape}` : ''}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {
@@ -137,7 +139,7 @@ function enviar(pasta, mensagem) {
 const [comando, ...resto] = process.argv.slice(2);
 const opcoes = new Set(resto.filter((a) => a.startsWith('--')));
 const valor = (nome, padrao) => { const i = resto.indexOf(nome); return i >= 0 && resto[i + 1] ? resto[i + 1] : padrao; };
-const ESTADOS = { 'sem-pagina': 'sem página', pedida: 'reescrita pedida pela RUAH', antiga: 'página antiga (mais de um ano)', reprovada: 'reprovada no site', 'sem-arquivo': 'sem arquivo', 'no-ar': 'no ar' };
+const ESTADOS = { 'sem-pagina': 'sem página', pedida: `reescrita pedida pela ${CLIENTE}`, antiga: 'página antiga (mais de um ano)', reprovada: 'reprovada no site', 'sem-arquivo': 'sem arquivo', 'no-ar': 'no ar' };
 const NA_FILA = ['pedida', 'sem-pagina', 'reprovada', 'sem-arquivo', 'antiga'];
 
 function conferir(arquivo, bairros) {
@@ -158,7 +160,7 @@ function conferir(arquivo, bairros) {
   }
   const m = av.medidas;
   console.log(`\n${b.nome} · ${pg.titulo}`);
-  console.log(`/bairros/${pg.slug} · ${m.palavras} palavras · ${m.secoes} seções · ${m.fotos} fotos (${m.commons} do Commons, ${m.deImovel} de imóveis da RUAH) · ${m.perguntas} perguntas · ${m.fontes} fontes · ${m.chamadas} chamada(s)`);
+  console.log(`/bairros/${pg.slug} · ${m.palavras} palavras · ${m.secoes} seções · ${m.fotos} fotos (${m.commons} do Commons, ${m.deImovel} de imóveis da ${CLIENTE}) · ${m.perguntas} perguntas · ${m.fontes} fontes · ${m.chamadas} chamada(s)`);
   if (av.avisos.length) console.log(`Avisos (não impedem; leve a sério):\n- ${av.avisos.join('\n- ')}`);
   if (av.erros.length) sair(`${arquivo} — reprovado:\n- ${[...new Set(av.erros)].join('\n- ')}`);
   return { pg, b };
@@ -200,9 +202,9 @@ if (comando === 'listar' || comando === 'preparar') {
           try { curl(f.url, path.join(dir, `foto-${f.foto}.jpg`)); baixadas += 1; } catch (e) { console.error(`  (não baixou a foto ${f.foto}: ${e.message})`); }
         }
         const nf = baixadas ? folhas(dir, 'foto-*.jpg', 'imoveis-') : 0;
-        console.log(`- ${b.nome} (${b.slug}) · ${b.regiao || 'sem região'} · ${ESTADOS[b.pagina.estado]} · ${b.carteira_ruah.total} imóvel(is) da RUAH com página · ${b.condominios.total} prédio(s)/condomínio(s) na base`);
-        console.log(`    ${baixadas}/${todas.length} fotos de imóveis da RUAH em ${dir}${nf ? ` (+ ${nf} folha(s): imoveis-1.jpg…)` : ''}${fs.existsSync(path.join(dir, 'pagina-anterior.json')) ? ' · tem pagina-anterior.json' : ''}`);
-        if (b.notas_da_ruah) console.log(`    NOTAS DA RUAH (siga): ${b.notas_da_ruah}`);
+        console.log(`- ${b.nome} (${b.slug}) · ${b.regiao || 'sem região'} · ${ESTADOS[b.pagina.estado]} · ${b.carteira_ruah.total} imóvel(is) da ${CLIENTE} com página · ${b.condominios.total} prédio(s)/condomínio(s) na base`);
+        console.log(`    ${baixadas}/${todas.length} fotos de imóveis da ${CLIENTE} em ${dir}${nf ? ` (+ ${nf} folha(s): imoveis-1.jpg…)` : ''}${fs.existsSync(path.join(dir, 'pagina-anterior.json')) ? ' · tem pagina-anterior.json' : ''}`);
+        if (b.notas_da_ruah) console.log(`    NOTAS DA ${CLIENTE.toUpperCase()} (siga): ${b.notas_da_ruah}`);
         if (b.pagina.erros) console.log(`    motivo: ${b.pagina.erros.join(' | ')}`);
         console.log(`    fotos de lugares do bairro: node scripts/bairros-publicar.mjs fotos ${b.slug} "<o que procurar>"`);
       }

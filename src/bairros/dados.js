@@ -1,5 +1,5 @@
 // Bairros · a lista de bairros (tabela `bairros`) e os números AO VIVO de cada
-// um: imóveis da RUAH à venda, prédios e condomínios da base, e o que tem perto.
+// um: imóveis do cliente (a imobiliária) à venda, prédios e condomínios da base, e o que tem perto.
 //
 // O texto da página vem do ramo de conteúdo; estes números vêm do banco a cada
 // renovação da página e nunca são escritos à mão.
@@ -104,7 +104,7 @@ function pertoDo(centro, raio = 1500) {
   return v;
 }
 
-// ------------------------------------------------------------------ imóveis da RUAH
+// ------------------------------------------------------------------ imóveis do cliente (a imobiliária)
 const AMBIENTE_DO_PREDIO = ['fachada', 'condominio', 'vista', 'lazer', 'piscina', 'jardim'];
 
 /** Os imóveis com página no portal, agrupados por bairro. `noAr` vem de portal/fonte. */
@@ -125,7 +125,7 @@ function imoveisPorBairro(noAr) {
   return g;
 }
 
-/** Todas as fotos de imóveis da RUAH à venda no bairro (para quem escreve; com o ambiente quando a página do imóvel diz). */
+/** Todas as fotos de imóveis do cliente à venda no bairro (para quem escreve; com o ambiente quando a página do imóvel diz). */
 function fotosDeImoveis(slug, imoveisAVenda, noAr) {
   const mapa = mapaDeChaves();
   const paginas = new Map((noAr || []).map((x) => [x.imovel.codigo, x.pagina]));

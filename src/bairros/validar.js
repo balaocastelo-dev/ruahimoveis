@@ -5,10 +5,11 @@
 // Página = lista de blocos tipados, nunca HTML:
 //   paragrafo · titulo (nivel 2|3) · resumo · lista · destaque · fotos · chamada
 // e a lista de fotos da página, cada uma com id (f1, f2…), legenda e texto
-// alternativo, vindas do Wikimedia Commons ("commons") ou de um imóvel da RUAH
+// alternativo, vindas do Wikimedia Commons ("commons") ou de um imóvel do cliente
 // à venda no bairro ("imovel_foto", o número da foto no sistema).
 
 const { TEMAS, SLUG, ARQUIVO_COMMONS, ID_FOTO } = require('./config');
+const { CLIENTE_NOME } = require('../config'); // nome da imobiliária, da configuração
 
 const texto = (v) => typeof v === 'string' && v.trim().length > 0;
 const lista = (v) => Array.isArray(v);
@@ -57,7 +58,7 @@ function lerFoto(f, i, erros) {
     return { ...base, commons: t };
   }
   if (Number.isInteger(f.imovel_foto) && f.imovel_foto > 0 && f.commons === undefined) return { ...base, imovel_foto: f.imovel_foto };
-  erros.push(`${onde} (${f.id}): diga a origem com "commons" (arquivo do Wikimedia Commons) OU "imovel_foto" (o número da foto de um imóvel da RUAH no bairro).`);
+  erros.push(`${onde} (${f.id}): diga a origem com "commons" (arquivo do Wikimedia Commons) OU "imovel_foto" (o número da foto de um imóvel da ${CLIENTE_NOME} no bairro).`);
   return null;
 }
 

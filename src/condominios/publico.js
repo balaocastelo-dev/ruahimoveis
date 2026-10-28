@@ -1,7 +1,7 @@
 // Condomínios · página pública de cada condomínio no portal (/condominios/<slug>) e os dados do 3D para o visitante.
-// Mostra só o que é público e da RUAH: nome, bairro, tamanho do prédio (Censo), lazer, o que tem perto, o 3D
-// e os imóveis da RUAH à venda ali. Nada do Radar, do Fisguei, de proprietários ou de concorrentes; sem rua e número.
-// Fica fora do Google (noindex) até a RUAH decidir divulgar (CONDOMINIOS_PUBLICOS=1 no .env/Vercel).
+// Mostra só o que é público e do cliente (a imobiliária): nome, bairro, tamanho do prédio (Censo), lazer, o que tem perto, o 3D
+// e os imóveis do cliente à venda ali. Nada do Radar, do Fisguei, de proprietários ou de concorrentes; sem rua e número.
+// Fica fora do Google (noindex) até a imobiliária decidir divulgar (CONDOMINIOS_PUBLICOS=1 no .env/Vercel).
 const express = require('express');
 const { one, all } = require('../db');
 const paginas = require('../portal/paginas');
@@ -9,6 +9,7 @@ const fonte = require('../portal/fonte');
 const { perto } = require('./perto');
 const { cena3d } = require('./cena3d');
 const G = require('./geo');
+const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
 
 const SLUG = /^[a-z0-9][a-z0-9-]{1,90}$/;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -42,7 +43,7 @@ async function pagina(req, c) {
     c.ano_construcao ? `construído em ${c.ano_construcao}` : null,
   ].filter(Boolean);
   const titulo = `${c.nome}${c.bairro ? ` · ${c.bairro}` : ''}, Campinas`;
-  const descricao = `${c.nome}, ${vertical ? 'prédio residencial' : 'condomínio de casas'} no ${c.bairro || 'Campinas'}${fatos.length ? ` com ${fatos.join(', ')}` : ''}. Veja em 3D, o que tem perto e os imóveis à venda com a RUAH.`;
+  const descricao = `${c.nome}, ${vertical ? 'prédio residencial' : 'condomínio de casas'} no ${c.bairro || 'Campinas'}${fatos.length ? ` com ${fatos.join(', ')}` : ''}. Veja em 3D, o que tem perto e os imóveis à venda com a ${CLIENTE}.`;
   const indexar = process.env.CONDOMINIOS_PUBLICOS === '1' && noAr.length > 0;
   const corpo = `
 <section class="p-hero p-hero-curto">
@@ -51,12 +52,12 @@ async function pagina(req, c) {
   ${fatos.length ? `<p class="p-hero-l">${esc(fatos.join(' · '))}${c.unidades_fonte && /censo/i.test(c.unidades_fonte) ? ' <span class="p-cd-fonte">(Censo 2022, IBGE)</span>' : ''}</p>` : ''}
   <p><a class="p-botao" href="/condominios/${esc(c.slug)}/3d">Explorar o condomínio em 3D</a> <a class="p-botao sec" href="#contato">Quero morar aqui</a></p>
 </section>
-${noAr.length ? `<section class="p-cd-sec"><h2>À venda com a RUAH neste condomínio</h2><div class="p-grade">${noAr.map((x) => paginas.cartao(x)).join('')}</div></section>` : ''}
+${noAr.length ? `<section class="p-cd-sec"><h2>À venda com a ${esc(CLIENTE)} neste condomínio</h2><div class="p-grade">${noAr.map((x) => paginas.cartao(x)).join('')}</div></section>` : ''}
 ${lazer.length ? `<section class="p-cd-sec"><h2>Lazer e estrutura</h2><ul class="p-cd-chips">${lazer.map((l) => `<li>${esc(l)}</li>`).join('')}</ul></section>` : ''}
 ${cats.length ? `<section class="p-cd-sec"><h2>O que tem perto</h2><p class="p-cd-sub">A pé, a partir da portaria.</p><div class="p-cd-perto">${cats.map((cat) => `<div class="p-cd-cat"><h3><span aria-hidden="true">${cat.icone}</span> ${esc(cat.nome)}</h3><ul>${cat.itens.slice(0, 4).map((x) => `<li><span>${esc(x.nome)}</span><span>${x.min} min</span></li>`).join('')}</ul></div>`).join('')}</div><p class="p-cd-sub p-cd-nota">Fonte: ${esc(p.fonte)}.</p></section>` : ''}
 <section class="p-contato" id="contato" aria-labelledby="contato-t">
 <div class="p-contato-txt"><h2 id="contato-t">Quer morar no ${esc(c.nome)}?</h2>
-<p>Deixe seu contato: a RUAH avisa quando surgir um imóvel aqui e mostra as opções parecidas no ${esc(c.bairro || 'bairro')}.</p></div>
+<p>Deixe seu contato: a ${esc(CLIENTE)} avisa quando surgir um imóvel aqui e mostra as opções parecidas no ${esc(c.bairro || 'bairro')}.</p></div>
 <form class="p-form" data-interesse novalidate>
   <input type="hidden" name="condominio" value="${esc(c.slug)}">
   <label class="p-armadilha" aria-hidden="true">Empresa<input name="empresa" tabindex="-1" autocomplete="off"></label>
@@ -64,7 +65,7 @@ ${cats.length ? `<section class="p-cd-sec"><h2>O que tem perto</h2><p class="p-c
   <label class="p-campo"><span>WhatsApp ou telefone</span><input name="telefone" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(19) 99999-9999"></label>
   <label class="p-campo"><span>E-mail <i>(opcional)</i></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
   <label class="p-campo p-largo"><span>Mensagem</span><textarea name="mensagem" rows="3" maxlength="1000">Quero ser avisado quando houver imóvel à venda no ${esc(c.nome)}.</textarea></label>
-  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a RUAH use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
+  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE)} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
   <button class="p-botao p-largo" type="submit">Quero ser avisado</button>
   <p class="p-form-msg p-largo" role="status" aria-live="polite" hidden></p>
 </form></section>`;
@@ -87,9 +88,9 @@ router.get('/condominios/:slug/3d', (req, res, next) => {
   res.redirect(302, `/condominio-3d.html?slug=${encodeURIComponent(c.slug)}${im}`);
 });
 
-// API pública do 3D: só o prédio, o entorno e (se pedir) o andar de um imóvel da RUAH publicado ali.
+// API pública do 3D: só o prédio, o entorno e (se pedir) o andar de um imóvel do cliente publicado ali.
 const api = express.Router();
-// chave do Google Maps para o 3D realista (restrita aos sites da RUAH no console do Google)
+// chave do Google Maps para o 3D realista (restrita aos sites da imobiliária no console do Google)
 // altitude do terreno (Copernicus DEM pelo Open-Meteo) para encaixar o 3D do Google no chão certo
 const elev = new Map();
 api.get('/elevacao', async (req, res) => {

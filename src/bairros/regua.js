@@ -5,10 +5,11 @@
 // `erros` reprovam; `avisos` são recomendações.
 //
 //   avaliarPagina(pagina, bairro, { modo })
-//     bairro = { slug, nome, apelidos: [], fotosImoveis: [ids das fotos de imóveis da RUAH à venda no bairro] }
+//     bairro = { slug, nome, apelidos: [], fotosImoveis: [ids das fotos de imóveis do cliente à venda no bairro] }
 //     modo   = 'publicar' (confere as fotos de imóvel) | 'site' (foto de imóvel vendido não derruba a página)
 
 const { contarPalavras, textoPuro, linksDoTexto, semAcento } = require('../blog/texto');
+const { CLIENTE_NOME } = require('../config'); // nome da imobiliária, da configuração
 
 const PALAVRAS = { minimo: 900, teto: 2600 };
 
@@ -90,7 +91,7 @@ function avaliarPagina(p, bairro, { modo = 'site' } = {}) {
   if (primeira !== -1 && primeira < blocos.length * 0.25) erros.push('A primeira chamada aparece cedo demais: o leitor conhece o bairro antes do convite.');
   for (let i = 1; i < blocos.length; i += 1) if (blocos[i].tipo === 'chamada' && blocos[i - 1].tipo === 'chamada') erros.push('Duas chamadas seguidas.');
 
-  // ---- Links: o leitor não sai do site da RUAH
+  // ---- Links: o leitor não sai do site da imobiliária
   const links = blocos.flatMap((b) => textosComLink(b).flatMap(linksDoTexto));
   if (links.length) erros.push(`A página não leva links no texto (${links.join(', ')}): fontes vão na lista "fontes", pelo nome.`);
 
@@ -110,7 +111,7 @@ function avaliarPagina(p, bairro, { modo = 'site' } = {}) {
   const permitidas = new Set(bairro.fotosImoveis || []);
   if (modo === 'publicar') {
     const fora = deImovel.filter((f) => !permitidas.has(f.imovel_foto)).map((f) => f.imovel_foto);
-    if (fora.length) erros.push(`Foto(s) de imóvel que não são de imóveis da RUAH à venda neste bairro: ${fora.join(', ')}. Use só os números listados no dados.json do bairro.`);
+    if (fora.length) erros.push(`Foto(s) de imóvel que não são de imóveis da ${CLIENTE_NOME} à venda neste bairro: ${fora.join(', ')}. Use só os números listados no dados.json do bairro.`);
   }
 
   // ---- Honestidade
