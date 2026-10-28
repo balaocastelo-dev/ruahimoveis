@@ -18,9 +18,9 @@ app.disable('x-powered-by');
 // IP real do visitante: atrás da Vercel (link online) ou de túnel local (cloudflared).
 app.set('trust proxy', process.env.VERCEL ? 1 : 'loopback');
 
-// Plataforma multi-imobiliária (fase 1): descobre a imobiliária pelo endereço (IMOBILIARIA_HOSTS="host=slug,…";
-// sem mapa, tudo cai em IMOBILIARIA_PADRAO, hoje 'ruah') e roda o resto da requisição dentro dela (AsyncLocalStorage).
-// TODO(fase1 · etapa plataforma): ler os domínios de base.dominios em vez da variável de ambiente.
+// Plataforma multi-imobiliária (fase 1): descobre a imobiliária pelo endereço (IMOBILIARIA_HOSTS="host=slug,…" e,
+// com MULTI=1, o cadastro base.dominios; sem nada, cai em IMOBILIARIA_PADRAO, hoje 'ruah') e roda o resto da requisição
+// dentro dela (AsyncLocalStorage). Na entrada da plataforma (PLATAFORMA_APP_HOSTS) a imobiliária vem da sessão.
 app.use(tenant.middleware);
 
 app.use((req, res, next) => {
@@ -52,6 +52,8 @@ app.use('/api/publico/blog', require('./src/routes/blog').api);
 app.use('/api/publico/condominios', require('./src/condominios/publico').api);
 app.use('/api/publico/bairros', require('./src/routes/bairros').api);
 app.use('/api/publico', publico);
+// Gestor da plataforma (login próprio e "entrar como"); só com MULTI=1.
+app.use('/api/plataforma', require('./src/routes/plataforma'));
 const ABERTAS = new Set(['/setup', '/login', '/logout', '/drive/callback']);
 app.use('/api', (req, res, next) => (ABERTAS.has(req.path) ? next() : exigeLogin(req, res, next)));
 app.use('/api', require('./src/routes/arquivos'));

@@ -11,15 +11,34 @@ const { seedExemplo } = require('../seed');
 
 const r = express.Router();
 
+// ---- plataforma multi-imobiliária (só com MULTI=1) ----
+// login_indice (comum): e-mail → imobiliária, para o login pela entrada da plataforma (app.corretordofuturo.app).
+const tenant = require('../tenant');
+const multi = () => tenant.multi();
+const registro = () => require('../plataforma/registro');
+const imobAtual = () => { const c = tenant.atual(); return c && (c.registro || registro().porSlug(c.slug)); };
+function indexa(usuarioId, email) { const im = multi() && imobAtual(); if (im) registro().indexaLogin(im.id, usuarioId, email); }
+function desindexa(usuarioId) { const im = multi() && imobAtual(); if (im) registro().desindexaLogin(im.id, usuarioId); }
+// e-mail já usado para entrar por outra imobiliária (o login pela plataforma acharia a outra)
+function emailLivre(email) {
+  const im = multi() && imobAtual();
+  if (im && registro().emailEmOutra(email, im.id)) falha(409, 'Este e-mail já é usado para entrar em outra imobiliária da plataforma. Use outro e-mail.');
+}
+
 r.get('/setup', (req, res) => res.json({ precisa: one('SELECT count(*) n FROM usuarios').n === 0, empresa: cfg.EMPRESA }));
 r.post('/setup', (req, res) => {
   if (one('SELECT count(*) n FROM usuarios').n > 0) falha(409, 'O administrador já foi criado. Entre com seu login.');
+  // na plataforma, o primeiro acesso pela tela é só o da imobiliária padrão (instalação nova); as outras
+  // imobiliárias ganham o primeiro administrador pelo gestor da plataforma
+  if (multi() && tenant.atual() && tenant.atual().slug !== tenant.slugPadrao()) falha(409, 'O primeiro acesso desta imobiliária é liberado pelo suporte da plataforma.');
   const { nome, email, senha, exemplo } = req.body || {};
   if (!txt(nome) || !/^\S+@\S+\.\S+$/.test(email || '')) falha(400, 'Informe nome e e-mail válidos.');
   if (!A.senhaValida(senha)) falha(400, 'A senha precisa ter 8 caracteres ou mais, com letras e números.');
+  emailLivre(email);
   const id = Number(run('INSERT INTO usuarios(nome,email,perfil,senha_hash) VALUES(?,?,?,?)', txt(nome, 100), email.trim(), 'adm', A.hashSenha(senha)).lastInsertRowid);
   audit(id, 'setup', 'Administrador criado');
   const extra = exemplo ? seedExemplo() : null;
+  if (multi()) for (const u of all('SELECT id,email FROM usuarios WHERE ativo=1')) indexa(u.id, u.email);
   A.setCookie(res, A.criarSessao(id));
   res.json({ ok: true, exemplo: extra });
 });
@@ -28,12 +47,30 @@ r.post('/login', (req, res) => {
   const { email, senha } = req.body || {};
   const chave = `${req.ip}|${String(email || '').toLowerCase()}`;
   if (!A.podeTentar(chave)) falha(429, 'Muitas tentativas. Aguarde 15 minutos e tente de novo.');
-  const u = one('SELECT * FROM usuarios WHERE email=? AND ativo=1', String(email || '').trim());
-  if (!u || !A.confereSenha(String(senha || ''), u.senha_hash)) { A.registraFalha(chave); falha(401, 'E-mail ou senha incorretos.'); }
+  const recusa = () => { A.registraFalha(chave); falha(401, 'E-mail ou senha incorretos.'); };
+  // Sem MULTI: a imobiliária é a desta instalação. Com MULTI=1: no domínio de uma imobiliária, procura nela;
+  // na entrada da plataforma, o e-mail diz qual é a imobiliária (login_indice).
+  let imob = null;
+  if (multi()) {
+    if (req.hostPlataforma) {
+      const ix = registro().loginPorEmail(email);
+      imob = ix && registro().porId(ix.imobiliaria_id);
+      if (!imob) recusa();
+    } else imob = imobAtual();
+  }
+  const confere = () => {
+    const u = one('SELECT * FROM usuarios WHERE email=? AND ativo=1', String(email || '').trim());
+    if (!u || !A.confereSenha(String(senha || ''), u.senha_hash)) recusa();
+    return u;
+  };
+  const u = imob ? tenant.comImobiliaria(imob, confere) : confere();
+  // imobiliária suspensa/cancelada: senha certa, mas o acesso está fechado (mensagem clara, sem contar como falha)
+  const motivo = imob && registro().motivoBloqueio(imob);
+  if (motivo) falha(403, motivo);
   A.limpaFalhas(chave);
-  A.setCookie(res, A.criarSessao(u.id));
-  audit(u.id, 'login', req.ip);
-  res.json({ ok: true });
+  A.setCookie(res, A.criarSessao(u.id, imob ? { imobiliariaId: Number(imob.id) } : undefined));
+  if (imob) tenant.comImobiliaria(imob, () => audit(u.id, 'login', req.ip)); else audit(u.id, 'login', req.ip);
+  res.json({ ok: true, ...(imob ? { imobiliaria: imob.slug } : {}) });
 });
 r.post('/logout', (req, res) => { A.encerrarSessao(A.lerCookie(req, A.COOKIE)); A.limparCookie(res); res.json({ ok: true }); });
 
@@ -41,6 +78,7 @@ r.post('/logout', (req, res) => { A.encerrarSessao(A.lerCookie(req, A.COOKIE)); 
 r.get('/me', (req, res) => res.json(req.usuario));
 r.post('/me/senha', (req, res) => {
   const { atual, nova } = req.body || {};
+  if (req.usuario.perfil === 'plataforma') falha(400, 'O gestor da plataforma troca a senha pela área da plataforma.');
   const u = one('SELECT * FROM usuarios WHERE id=?', req.usuario.id);
   if (!A.confereSenha(String(atual || ''), u.senha_hash)) falha(400, 'Senha atual incorreta.');
   if (!A.senhaValida(nova)) falha(400, 'A nova senha precisa ter 8 caracteres ou mais, com letras e números.');
@@ -49,6 +87,7 @@ r.post('/me/senha', (req, res) => {
 });
 
 r.post('/me/telefone', (req, res) => {
+  if (req.usuario.perfil === 'plataforma') falha(400, 'O gestor da plataforma não tem celular cadastrado na imobiliária.');
   const t = String((req.body || {}).telefone || '').replace(/\D/g, '');
   if (t && (t.length < 10 || t.length > 13)) falha(400, 'Informe o celular com DDD.');
   run('UPDATE usuarios SET telefone=? WHERE id=?', t || null, req.usuario.id);
@@ -66,7 +105,9 @@ r.post('/usuarios', A.exigePerfil('adm'), (req, res) => {
   if (!['adm', 'gestor', 'corretor'].includes(perfil)) falha(400, 'Perfil inválido.');
   if (!A.senhaValida(senha)) falha(400, 'A senha precisa ter 8 caracteres ou mais, com letras e números.');
   if (one('SELECT id FROM usuarios WHERE email=?', email.trim())) falha(409, 'Já existe um usuário com este e-mail.');
+  emailLivre(email);
   const id = run('INSERT INTO usuarios(nome,email,telefone,perfil,senha_hash) VALUES(?,?,?,?,?)', txt(nome, 100), email.trim(), txt(telefone, 30), perfil, A.hashSenha(senha)).lastInsertRowid;
+  indexa(Number(id), email);
   audit(req.usuario.id, 'usuario_criado', email);
   res.json({ id: Number(id) });
 });
@@ -76,10 +117,13 @@ r.patch('/usuarios/:id', A.exigePerfil('adm'), (req, res) => {
   if (u.id === req.usuario.id && (b.ativo === 0 || (b.perfil && b.perfil !== 'adm'))) falha(400, 'Você não pode desativar ou rebaixar o próprio acesso.');
   if (b.perfil && !['adm', 'gestor', 'corretor'].includes(b.perfil)) falha(400, 'Perfil inválido.');
   if (b.senha && !A.senhaValida(b.senha)) falha(400, 'A senha precisa ter 8 caracteres ou mais, com letras e números.');
+  if (b.ativo !== undefined && b.ativo && !u.ativo) emailLivre(u.email);
   run('UPDATE usuarios SET nome=coalesce(?,nome), telefone=coalesce(?,telefone), perfil=coalesce(?,perfil), ativo=coalesce(?,ativo) WHERE id=?',
     txt(b.nome, 100), txt(b.telefone, 30), b.perfil || null, b.ativo === undefined ? null : (b.ativo ? 1 : 0), u.id);
   if (b.senha) run('UPDATE usuarios SET senha_hash=? WHERE id=?', A.hashSenha(b.senha), u.id);
-  if (b.ativo === 0 || b.senha) run('DELETE FROM sessoes WHERE usuario_id=?', u.id);
+  if (b.ativo === 0 || b.senha) A.encerrarSessoesDoUsuario(u.id);
+  // índice de login da plataforma: desativado sai, reativado volta
+  if (b.ativo !== undefined) { if (b.ativo) indexa(u.id, u.email); else desindexa(u.id); }
   audit(req.usuario.id, 'usuario_alterado', u.email);
   res.json({ ok: true });
 });
