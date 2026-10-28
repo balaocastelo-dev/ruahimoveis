@@ -7,7 +7,7 @@ const mi = (v) => { v = Number(v) || 0; return v >= 1e9 ? 'R$ ' + (v / 1e9).toLo
 const n = (v) => (Number(v) || 0).toLocaleString('pt-BR');
 const quando = (s) => { if (!s) return '—'; const d = new Date(String(s).replace(' ', 'T')); const min = Math.round((Date.now() - d.getTime()) / 60000); if (min < 2) return 'agora'; if (min < 60) return `há ${min} min`; const h = Math.round(min / 60); if (h < 24) return `há ${h} h`; const dd = Math.round(h / 24); return dd < 30 ? `há ${dd} dia${dd > 1 ? 's' : ''}` : d.toLocaleDateString('pt-BR'); };
 const SITU = { ativa: 'Ativa', suspensa: 'Suspensa', implantacao: 'Em implantação' };
-const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel', banco_ciclo: 'rodou o banco de matérias:', materias_dia: 'mudou as matérias por dia de' };
+const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel', banco_ciclo: 'rodou o banco de matérias:', materias_dia: 'mudou as matérias por dia de', lgpd_atendido: 'respondeu o pedido de titular' };
 
 async function api(metodo, url, corpo) {
   const r = await fetch('/gestor-api' + url, { method: metodo, headers: { 'Content-Type': 'application/json', 'X-Gestor': '1' }, body: corpo ? JSON.stringify(corpo) : undefined, credentials: 'same-origin' });
@@ -51,6 +51,10 @@ async function iniciar() {
       <button class="btn" id="b-banco">Buscar prontas e entregar agora</button></div>
       <p class="muted pequeno">Cada matéria vai para uma imobiliária só. A entrega roda sozinha às 20h30 e às 4h30, conforme o plano de cada uma (Essencial 1, Profissional 2, Rede e Fundador 3 por dia).</p>
       <div id="banco"><div class="vazio">Carregando o estoque…</div></div></section>
+    <section class="banco" aria-labelledby="t-lgpd"><div class="cab"><h2 id="t-lgpd">Pedidos de titulares (LGPD)</h2><div class="sp"></div>
+      <a class="btn" href="/privacidade" target="_blank" rel="noopener">Ver a página de privacidade</a></div>
+      <p class="muted pequeno">Pedidos feitos em corretordofuturo.app/privacidade. Prazo de resposta: 15 dias. Pedidos feitos no portal de cada imobiliária ficam no sistema dela (Sistema › Privacidade e LGPD).</p>
+      <div id="lgpd"><div class="vazio">Carregando…</div></div></section>
     <section class="atividade"><h2>Atividade recente</h2><ol id="ativ"></ol></section></main>`;
   $('#b-sair').onclick = async () => { await api('POST', '/logout').catch(() => {}); telaEntrada(); };
   $('#b-senha').onclick = janelaSenha;
@@ -73,10 +77,24 @@ async function carregar() {
   try {
     const [d, ev, bc] = await Promise.all([api('GET', '/imobiliarias'), api('GET', '/eventos'), api('GET', '/banco').catch((e) => ({ erro: e.message }))]);
     DADOS = d; desenhaKpis(); desenhaLista(); desenhaBanco(bc);
+    api('GET', '/lgpd').then(desenhaLgpd).catch((e) => { const a = $('#lgpd'); if (a) a.innerHTML = `<div class="vazio">${esc(e.message)}</div>`; });
     $('#ativ').innerHTML = ev.length ? ev.map((e) => `<li><span class="n">${esc(new Date(e.em.replace(' ', 'T')).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }))}</span><span>${e.acao === 'banco_materias' ? 'Entrega do banco de matérias:' : `Você ${esc(ACAO[e.acao] || e.acao)}`} ${e.imobiliaria ? `<b>${esc(e.imobiliaria)}</b>` : ''}${(e.acao === 'editou' || e.acao.startsWith('banco') || e.acao === 'materias_dia') && e.detalhe ? ` <span class="muted">(${esc(e.detalhe)})</span>` : ''}</span></li>`).join('') : '<li class="muted">Nada ainda.</li>';
   } catch (e) { $('#lista').innerHTML = `<div class="vazio">${esc(e.message)}</div>`; }
 }
 const TIPOS = { principal: 'artigos', noticia: 'notícias', dica: 'dicas' };
+function desenhaLgpd(d) {
+  const alvo = $('#lgpd'); if (!alvo) return;
+  const hoje = new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 10);
+  const dias = (p) => Math.round((new Date(p + 'T12:00') - new Date(hoje + 'T12:00')) / 864e5);
+  const abertos = d.pedidos.filter((p) => p.situacao === 'aberto').length;
+  alvo.innerHTML = `<p class="pequeno"><b>${abertos}</b> aberto(s) · <b>${d.pedidos.length - abertos}</b> respondido(s) · <b>${d.nao_contatar.toLocaleString('pt-BR')}</b> número(s) na lista "não contatar" de toda a plataforma</p>`
+    + (d.pedidos.length ? `<ol class="atividade lgpd-lista">${d.pedidos.map((p) => `<li><span class="n">${esc(p.protocolo)}</span><span><b>${esc(d.tipos[p.tipo] || p.tipo)}</b> · ${esc(p.nome || '')}${p.telefone ? ' · ' + esc(p.telefone) : ''}${p.email ? ' · ' + esc(p.email) : ''}${p.imobiliaria ? ' · sobre ' + esc(p.imobiliaria) : ''}
+      ${p.mensagem ? `<br><span class="muted">${esc(p.mensagem)}</span>` : ''}
+      <br>${p.situacao === 'aberto' ? `<span class="${dias(p.prazo) <= 3 ? 'ruim' : 'muted'}">prazo ${esc(p.prazo.split('-').reverse().join('/'))}${dias(p.prazo) < 0 ? ' · ATRASADO' : ''}</span> <button class="btn sm" data-lgpd="${p.id}" data-prot="${esc(p.protocolo)}">Registrar resposta</button>` : `<span class="muted">respondido em ${esc(p.atendido_em || '')}: ${esc(p.resposta || '')}</span>`}</span></li>`).join('')}</ol>` : '<div class="vazio">Nenhum pedido até agora.</div>');
+  alvo.querySelectorAll('[data-lgpd]').forEach((b) => b.onclick = () => janela(`<h2>Responder ${esc(b.dataset.prot)}</h2><form><label>O que foi feito e respondido ao titular<textarea name="resposta" rows="5" required></textarea></label><div class="acoes"><button type="button" class="btn" data-fecha>Cancelar</button><button class="btn pri" type="submit">Registrar</button></div></form>`, (j) => {
+    $('form', j).onsubmit = async (e) => { e.preventDefault(); try { await api('POST', `/lgpd/${b.dataset.lgpd}/atender`, { resposta: e.target.resposta.value }); j.close(); aviso('Resposta registrada'); carregar(); } catch (er) { aviso(er.message, true); } };
+  }));
+}
 function desenhaBanco(b) {
   const alvo = $('#banco'); if (!alvo) return;
   if (!b || b.erro) { alvo.innerHTML = `<div class="vazio">${esc((b && b.erro) || 'Sem dados do banco.')}</div>`; return; }

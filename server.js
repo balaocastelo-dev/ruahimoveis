@@ -68,6 +68,7 @@ app.use('/api', require('./src/routes/mercado'));
 app.use('/api', require('./src/routes/captacao'));
 // Escritório virtual: os 9 agentes robôs (#/whats), cada um com alma (.soul) e WhatsApp próprio.
 app.use('/api', require('./src/routes/escritorio'));
+app.use('/api', require('./src/routes/lgpd')); // aceite dos termos, pedidos de titulares, não contatar
 // Páginas de bairros: a lista, a situação de cada página e o que a imobiliária (cliente) quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.

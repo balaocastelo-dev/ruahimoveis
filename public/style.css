@@ -1091,3 +1091,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .mk-busca-h{margin:14px 0 8px;font-size:15px}
 .mk-busca-res .mk-linha{flex-wrap:wrap}
 .mk-motivo{margin-top:4px;color:var(--gold);font-weight:600}
+
+/* ---------- LGPD: aceite dos Termos (public/lgpd.js) ---------- */
+.lgpd-veu{position:fixed;inset:0;z-index:200;background:rgb(10 12 14 / .62);display:grid;place-items:center;padding:16px;overflow:auto}
+.lgpd-caixa{background:var(--panel);color:inherit;border:1px solid var(--line);border-radius:16px;max-width:620px;width:100%;padding:24px;box-shadow:0 30px 80px -20px rgb(0 0 0 / .5)}
+.lgpd-caixa h2{margin:6px 0 10px}
+.lgpd-regras{padding-left:20px;line-height:1.6;display:grid;gap:6px;margin:12px 0}
+.lgpd-caixa .chk{margin:14px 0}

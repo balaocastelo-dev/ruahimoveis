@@ -126,6 +126,39 @@ router.get('/imoveis/:slug', async (req, res, next) => {
 });
 router.get('/imoveis/', (req, res) => res.redirect(301, '/imoveis'));
 
+// ------------------------------------------------------------- privacidade e termos (LGPD, 28/10/2026)
+// A imobiliária é a controladora; a plataforma, operadora. Textos em src/lgpd/textos.js.
+function paginaLegal(req, tipo, { aviso = '' } = {}) {
+  const T = require('../lgpd/textos');
+  const secoes = tipo === 'privacidade' ? T.privacidadeCliente() : T.termosCliente();
+  const titulo = tipo === 'privacidade' ? 'Privacidade e seus dados' : 'Termos de uso do site';
+  const lista = tipo === 'privacidade' ? [...secoes, ['pedido', 'Fazer um pedido']] : secoes;
+  const corpo = `<div class="p-legal">
+<p class="p-legal-k">${T.esc(cfg.CLIENTE_NOME)}</p>
+<h1>${titulo}</h1>
+<p class="p-legal-v">Versão de ${T.VIGENCIA}. ${T.esc(T.AVISO_REVISAO)}</p>
+<nav class="p-legal-abas" aria-label="Institucional"><a href="/privacidade"${tipo === 'privacidade' ? ' aria-current="page"' : ''}>Privacidade</a><a href="/termos"${tipo === 'termos' ? ' aria-current="page"' : ''}>Termos de uso</a></nav>
+<div class="p-legal-grade">${T.indice(lista)}<div class="p-legal-texto">${aviso}${T.corpo(secoes)}${tipo === 'privacidade' ? T.formulario('/privacidade/pedido') : ''}</div></div>
+</div>`;
+  return paginas.casca(req, { titulo: `${titulo} · ${cfg.EMPRESA}`, descricao: `${titulo} de ${cfg.EMPRESA}: dados tratados, bases legais da LGPD e os seus direitos.`, caminho: `/${tipo}`, corpo, classe: 'p-pagina-legal' });
+}
+router.get('/privacidade', (req, res) => html(res, paginaLegal(req, 'privacidade')));
+router.get('/termos', (req, res) => html(res, paginaLegal(req, 'termos')));
+router.post('/privacidade/pedido', express.urlencoded({ extended: false, limit: '20kb' }), (req, res) => {
+  const T = require('../lgpd/textos');
+  const b = req.body || {};
+  const falha = (status, msg) => { html(res, paginaLegal(req, 'privacidade', { aviso: `<p class="p-legal-ok p-legal-erro" role="alert">${T.esc(msg)}</p>` }), status); };
+  if (b.empresa) return html(res, paginas.casca(req, { titulo: 'Pedido recebido', descricao: 'Pedido recebido.', caminho: '/privacidade', corpo: '<div class="p-legal"><p class="p-legal-ok" role="status">Pedido recebido.</p></div>', semIndice: true }), 200, { privado: true });
+  if (limite(req, 5)) return falha(429, 'Muitos pedidos seguidos. Tente de novo em alguns minutos.');
+  try {
+    const r = require('../lgpd').registrar({ ...b, declaro: b.declaro === '1' }, 'portal');
+    html(res, paginas.casca(req, { titulo: 'Pedido recebido', descricao: 'Pedido do titular recebido.', caminho: '/privacidade', semIndice: true, classe: 'p-pagina-legal', corpo: `<div class="p-legal"><div class="p-legal-ok" role="status"><strong>Pedido recebido.</strong> Protocolo <b>${T.esc(r.protocolo)}</b>. A ${T.esc(cfg.EMPRESA)} responde até ${T.esc(r.prazo.split('-').reverse().join('/'))}.${['oposicao', 'eliminar'].includes(r.tipo) ? '<br>O telefone informado já entrou na lista "não contatar" desta imobiliária e de todas as que usam o mesmo sistema.' : ''}</div><p><a href="/privacidade">Voltar</a> · <a href="/imoveis">Ver imóveis</a></p></div>` }), 200, { privado: true });
+  } catch (e) {
+    if (!e.status) console.error('[lgpd] pedido no portal:', e.message);
+    falha(e.status || 500, e.status ? e.message : 'Não foi possível registrar agora. Tente de novo em instantes.');
+  }
+});
+
 // ------------------------------------------------------------------ contato
 const hits = new Map();
 function limite(req, max) {

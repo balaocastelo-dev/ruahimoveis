@@ -153,12 +153,15 @@ function bloqueado(tel) {
   if (b) return 'Na lista não contatar: ' + (b.motivo || 'pediu para parar');
   if (one('SELECT 1 FROM leads WHERE telefone=? AND nao_contatar=1', t)) return 'Na lista não contatar do CRM';
   if (one("SELECT 1 FROM proprietarios WHERE nao_contatar=1 AND replace(replace(replace(replace(telefone,' ',''),'-',''),'(',''),')','') LIKE ?", '%' + t.slice(-9))) return 'Proprietário marcado como não contatar';
+  // lista comum da plataforma (LGPD): quem pediu para parar em qualquer imobiliária não recebe de nenhuma
+  if (!require('../lgpd').podeContatar(t)) return 'Pediu para não ser contatado (lista comum da plataforma)';
   return null;
 }
 function bloqueia(tel, motivo) {
   const t = normTel(tel);
   run('INSERT INTO fisguei_bloqueios(telefone,motivo) VALUES(?,?) ON CONFLICT(telefone) DO UPDATE SET motivo=excluded.motivo', t, motivo);
   run(`UPDATE fisguei_contatos SET envio='pulado', erro=? WHERE tipo='tel' AND valor=? AND envio='fila'`, 'Na lista não contatar: ' + motivo, t);
+  if (/parar/i.test(motivo)) require('../lgpd').naoContatar(t, motivo); // PARAR vale para toda a plataforma
 }
 
 // ---------- fila ----------
@@ -173,7 +176,16 @@ function montaTexto(modelo, pessoa, anuncio) {
     .replace(/\{endereco\}/g, endereco(anuncio) + (pessoa.unidade ? ' – ' + pessoa.unidade : ''))
     .replace(/\{bairro\}/g, [anuncio.bairro, anuncio.cidade].filter(Boolean).join(', ') || 'Campinas')
     .replace(/\{valor\}/g, anuncio.valor ? 'R$ ' + Number(anuncio.valor).toLocaleString('pt-BR') : anuncio.aluguel ? 'R$ ' + Number(anuncio.aluguel).toLocaleString('pt-BR') + ' por mês' : '')
-    .replace(/\{tipo\}/g, (anuncio.tipo || 'imóvel').toLowerCase());
+    .replace(/\{tipo\}/g, (anuncio.tipo || 'imóvel').toLowerCase())
+    .replace(/\{privacidade\}/g, linkPrivacidade());
+}
+// LGPD (art. 9º e 10, §2º): toda primeira mensagem diz de onde veio o contato e onde ler os direitos.
+// Modelo antigo ou editado sem o link ganha a linha no fim.
+function linkPrivacidade() { return String(cfg.PUBLIC_URL || cfg.LINK_ONLINE || '').replace(/\/+$/, '') + '/privacidade'; }
+const LINHA_ORIGEM = 'Seu contato veio de dados de anúncio do imóvel e de base de dados imobiliária contratada pela imobiliária. Como tratamos os dados e os seus direitos: {privacidade}';
+function comTransparencia(texto) {
+  if (/\/privacidade\b/.test(texto)) return texto;
+  return texto + '\n\n' + LINHA_ORIGEM.replace('{privacidade}', linkPrivacidade());
 }
 
 // Próximo número a abordar: endereços mais antigos primeiro; dentro do endereço, quem o Fisgar marca como proprietário primeiro.
@@ -191,7 +203,7 @@ function proximo() {
     if (recente) { run(`UPDATE fisguei_contatos SET envio='pulado', erro='Número já abordado nos últimos 30 dias' WHERE id=?`, c.id); continue; }
     const anuncio = one('SELECT * FROM fisguei_anuncios WHERE id=?', c.anuncio_id);
     const aj = ajustes();
-    return { contato: c, anuncio, texto: montaTexto(anuncio.negocio === 'Locação' ? aj.modelo_locacao : aj.modelo, c, anuncio) };
+    return { contato: c, anuncio, texto: comTransparencia(montaTexto(anuncio.negocio === 'Locação' ? aj.modelo_locacao : aj.modelo, c, anuncio)) };
   }
   return null;
 }

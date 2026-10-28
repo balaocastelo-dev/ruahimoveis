@@ -291,6 +291,21 @@ CREATE TABLE IF NOT EXISTS fisguei_bloqueios (
   em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 
+CREATE TABLE IF NOT EXISTS titular_pedidos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  protocolo TEXT UNIQUE NOT NULL,
+  tipo TEXT NOT NULL,
+  nome TEXT, email TEXT, telefone TEXT, telefone_hash TEXT,
+  mensagem TEXT,
+  origem TEXT,
+  situacao TEXT NOT NULL DEFAULT 'aberto',
+  resposta TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  prazo TEXT,
+  atendido_em TEXT,
+  atendido_por INTEGER
+);
+
 CREATE TABLE IF NOT EXISTS auditoria (
   id INTEGER PRIMARY KEY,
   usuario_id INTEGER, acao TEXT NOT NULL, detalhe TEXT,

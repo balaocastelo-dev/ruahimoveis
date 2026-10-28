@@ -151,7 +151,7 @@ const MENU = [
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
-  ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/configuracoes', 'Configurações']]],
+  ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/privacidade', 'Privacidade e LGPD', 'lgpd'], ['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
@@ -163,6 +163,7 @@ function shell() {
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
   atualizaBadge();
+  if (typeof lgpdConfere === 'function') lgpdConfere(); // aceite dos Termos e da Política (public/lgpd.js)
 }
 // Menu lateral vira gaveta no celular e no tablet (botão ☰ na barra do topo)
 function menuAbre(abre) {
@@ -243,6 +244,7 @@ async function rota() {
     else if (p[0] === 'portal') await telaPortal();
     else if (p[0] === 'bairros') await telaBairros(new URLSearchParams(qs || ''));
     else if (p[0] === 'configuracoes') await telaConfig(new URLSearchParams(qs || ''));
+    else if (p[0] === 'privacidade' && typeof telaPrivacidade === 'function') await telaPrivacidade();
     else await telaPainel();
   } catch (e) { if (seq === rotaSeq && document.body.contains(main)) main.innerHTML = `<div class="empty">${esc(e.message)}</div>`; }
   window.scrollTo(0, 0);

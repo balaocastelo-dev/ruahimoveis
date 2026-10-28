@@ -285,6 +285,20 @@ api.post('/imobiliarias/:id/materias', exige(async (req, res) => {
   await q('UPDATE imobiliarias SET materias_dia = $1 WHERE id = $2', [n, Number(req.params.id)]);
   evento(req.gestor.id, Number(req.params.id), 'materias_dia', n === null ? 'pelo plano' : String(n)); res.json({ ok: true });
 }));
+// LGPD: pedidos de titulares feitos em corretordofuturo.app/privacidade (prazo de 15 dias) e a lista comum "não contatar".
+api.get('/lgpd', exige(async (req, res) => {
+  const pedidos = await q(`SELECT id, protocolo, tipo, nome, email, telefone, mensagem, imobiliaria, situacao, resposta,
+    to_char(criado_em AT TIME ZONE 'America/Sao_Paulo','YYYY-MM-DD HH24:MI') criado_em, to_char(prazo AT TIME ZONE 'America/Sao_Paulo','YYYY-MM-DD') prazo,
+    to_char(atendido_em AT TIME ZONE 'America/Sao_Paulo','YYYY-MM-DD HH24:MI') atendido_em
+    FROM titular_pedidos ORDER BY (situacao = 'aberto') DESC, id DESC LIMIT 200`);
+  const n = await um('SELECT count(*)::int n FROM nao_contatar');
+  res.json({ pedidos, nao_contatar: n ? n.n : 0, tipos: require('../lgpd').TIPOS });
+}));
+api.post('/lgpd/:id/atender', exige(async (req, res) => {
+  const resposta = txt(req.body && req.body.resposta, 4000) || falha(400, 'Escreva o que foi feito ou respondido ao titular.');
+  const p = await um(`UPDATE titular_pedidos SET situacao = 'atendido', resposta = $1, atendido_em = now() WHERE id = $2 RETURNING protocolo`, [resposta, Number(req.params.id)]) || falha(404, 'Pedido não encontrado.');
+  evento(req.gestor.id, null, 'lgpd_atendido', p.protocolo); res.json({ ok: true });
+}));
 api.get('/eventos', exige(async (req, res) => res.json(await q(`SELECT e.acao, e.detalhe, e.em, i.nome imobiliaria FROM eventos e LEFT JOIN imobiliarias i ON i.id = e.imobiliaria_id WHERE e.acao <> 'login' ORDER BY e.id DESC LIMIT 30`))));
 api.use((req, res) => res.status(404).json({ erro: 'Não encontrado.' }));
 
@@ -329,4 +343,4 @@ function gestor(req, res, next) {
   res.type('html').send(PAGINA);
 }
 
-module.exports = { gestor, slugDe, cifra, decifra, hashSenha, confere };
+module.exports = { gestor, slugDe, cifra, decifra, hashSenha, confere, consulta: (sql, p) => q(sql, p) };

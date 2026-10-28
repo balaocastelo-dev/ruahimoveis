@@ -582,3 +582,40 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* botão Entrar (área da equipe) no topo do portal */
 .p-nav a.p-nav-entrar{border:1px solid var(--grafite);border-radius:999px;padding:6px 16px;font-weight:600;text-decoration:none}
 .p-nav a.p-nav-entrar:hover{background:var(--grafite);color:var(--cal);text-decoration:none}
+
+/* ---------- Privacidade e Termos (LGPD, 28/10/2026) ---------- */
+.p-legal{max-width:var(--largura);margin:0 auto;padding:48px 20px 80px}
+.p-legal-k{margin:0 0 8px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ouro-escuro)}
+.p-legal h1{font-family:var(--serifa);font-weight:600;font-size:clamp(36px,5vw,56px);line-height:1.05;margin:0 0 10px}
+.p-legal-v{color:var(--pedra);font-size:14px;margin:0 0 18px}
+.p-legal-abas{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 32px}
+.p-legal-abas a{padding:8px 16px;border:1px solid var(--linha);border-radius:999px;text-decoration:none;color:var(--grafite)}
+.p-legal-abas a[aria-current]{background:var(--grafite);color:var(--cal);border-color:var(--grafite)}
+.p-legal-grade{display:grid;grid-template-columns:230px minmax(0,1fr);gap:48px;align-items:start}
+.p-legal .legal-indice{position:sticky;top:20px;font-size:14.5px}
+.p-legal .legal-indice p{margin:0 0 10px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--pedra)}
+.p-legal .legal-indice ol{margin:0;padding:0 0 0 18px;display:grid;gap:7px;color:var(--pedra)}
+.p-legal .legal-indice a{text-decoration:none;color:var(--grafite)}
+.p-legal-texto{max-width:76ch;min-width:0}
+.p-legal .legal-sec{padding:0 0 26px;margin:0 0 26px;border-bottom:1px solid var(--linha);scroll-margin-top:20px}
+.p-legal .legal-sec:last-child{border-bottom:0}
+.p-legal .legal-sec h2{font-family:var(--serifa);font-weight:600;font-size:clamp(26px,3vw,32px);line-height:1.15;margin:0 0 12px}
+.p-legal .legal-sec p,.p-legal .legal-sec li{font-size:17px;line-height:1.7}
+.p-legal .legal-sec ul{padding-left:22px;display:grid;gap:6px}
+.p-legal .legal-tabela{width:100%;border-collapse:collapse;font-size:15px;margin:14px 0;display:block;overflow-x:auto}
+.p-legal .legal-tabela th,.p-legal .legal-tabela td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--linha);min-width:140px}
+.p-legal .legal-tabela th{font-weight:600;background:var(--salvia-claro)}
+.p-legal .legal-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin-top:16px;padding:22px;border:1px solid var(--linha);border-radius:16px;background:var(--papel)}
+.p-legal .legal-form label{display:grid;gap:6px;font-size:14.5px;font-weight:600}
+.p-legal .legal-form .largo{grid-column:1/-1}
+.p-legal .legal-form input,.p-legal .legal-form select,.p-legal .legal-form textarea{font:inherit;font-size:16px;font-weight:400;padding:12px 14px;border:1px solid var(--linha);border-radius:10px;background:var(--cal);color:var(--grafite);width:100%}
+.p-legal .legal-check{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important}
+.p-legal .legal-check input{width:22px;height:22px;flex:none;margin-top:2px}
+.p-legal .legal-form button{min-height:48px;padding:0 26px;border-radius:999px;border:1px solid var(--grafite);background:var(--grafite);color:var(--cal);font:inherit;font-weight:600;cursor:pointer}
+.p-legal .legal-nota{margin:0;font-size:13.5px;color:var(--pedra);font-weight:400}
+.p-legal .legal-armadilha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.p-legal-ok{padding:20px 22px;border-radius:14px;background:var(--salvia-claro);margin:0 0 24px;font-size:17px}
+.p-legal-ok strong{font-family:var(--serifa);font-size:26px;display:block;margin-bottom:4px}
+.p-legal-erro{background:#F8E3DB;color:#6A2716}
+@media (max-width:900px){.p-legal-grade{grid-template-columns:minmax(0,1fr);gap:20px}.p-legal .legal-indice{position:static}}
+@media (max-width:560px){.p-legal .legal-form{grid-template-columns:1fr;padding:16px}}
