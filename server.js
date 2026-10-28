@@ -103,7 +103,10 @@ app.get('/assinar/:token', (req, res) => res.sendFile(path.join(PUB, 'assinar.ht
 // Link interno: o HTML já sai com Open Graph (o WhatsApp não roda o JavaScript) e a capa em /v/<token>/og.jpg.
 app.get('/v/:token/og.jpg', (req, res, next) => { publico.fotoOg(req, res).catch(next); });
 app.get('/v/:token', (req, res, next) => { try { publico.paginaLink(req, res); } catch (e) { next(e); } });
-app.use(express.static(PUB, { index: 'index.html', maxAge: 0 }));
+// A tela do sistema sai pelo Express (não como arquivo estático), para que o domínio da plataforma
+// nunca a entregue: na Vercel, um public/index.html seria servido antes de qualquer regra do servidor.
+app.get(['/', '/index.html'], (req, res) => { res.setHeader('Cache-Control', 'no-cache'); res.sendFile(path.join(PUB, 'app.html')); });
+app.use(express.static(PUB, { index: false, maxAge: 0 }));
 
 // Erros: mensagem clara para o usuário, detalhe só no console.
 app.use((err, req, res, next) => {
