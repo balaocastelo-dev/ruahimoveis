@@ -1,0 +1,331 @@
+{
+  "codigo": "AP0026",
+  "slug": "apartamento-cambui-campinas-4-quartos-vista-centro-convivencia-ap0026",
+  "titulo": "Apartamento de 4 quartos com vista para o Centro de Convivência no Cambuí",
+  "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista bem localizada para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
+  "capa": {
+    "foto": 832,
+    "alt": "Sala de estar com sofá, cadeiras e janelas panorâmicas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de 4 quartos no Edifício São Conrado, no Cambuí, oferece uma excelente qualidade de vida. Localizado em um andar alto, ele tem vista para o Centro de Convivência e recebe luz natural da manhã. A planta do imóvel valoriza espaços amplos, com sala para vários ambientes, varanda integrada e hall de distribuição com armários. O imóvel também conta com iluminação projetada e ambientes modernizados, garantindo conforto desde o primeiro dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio oferece portaria 24 horas, elevadores, salão de festas, academia, áreas verdes e segurança. A localização é estratégica, próxima a restaurantes, supermercados, escolas e hospitais. O imóvel é ideal para quem busca um apartamento amplo, bem iluminado e com acessibilidade a serviços essenciais."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Vista para o Centro de Convivência e incidência de sol da manhã",
+        "Sala com janelas panorâmicas e iluminação embutida",
+        "Varanda integrada com vista para o entorno",
+        "Hall de distribuição com armários e espaços generosos",
+        "Condomínio com portaria 24h, salão de festas e academia"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Espaços sociais e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é ampla e bem distribuída. A sala de estar tem janelas grandes, piso claro e teto com iluminação embutida, criando um ambiente acolhedor. A varanda é integrada e oferece vista para o Centro de Convivência, com mesa de madeira e cadeiras para uso externo. O imóvel também conta com área de serviço com armários e lavanderia, além de banheiro de empregada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 854,
+          "legenda": "Varanda com mesa de madeira e cadeira, vista para edifícios e árvores"
+        },
+        {
+          "foto": 855,
+          "legenda": "Varanda com mesa de madeira e cadeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e áreas de apoio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem equipada, com armários brancos, bancada escura e iluminação natural. Há geladeira, cooktop e lava-louça, além de ilha de apoio. A cozinha também tem vista para o exterior e acesso à área de serviço. O imóvel conta com banheiro social e lavabo, além de espaço para armazenamento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 847,
+          "legenda": "Cozinha moderna com iluminação natural e armários brancos"
+        },
+        {
+          "foto": 853,
+          "legenda": "Cozinha moderna com geladeira, cooktop e armários brancos"
+        },
+        {
+          "foto": 850,
+          "legenda": "Cozinha com geladeira, pia, gabinete branco e chão de porcelanato"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem distribuídos, com piso de madeira e armários de madeira. A suíte principal tem closet e banheiro com pia, vaso sanitário e espelho. Os demais quartos também têm armários e janelas com cortinas. O imóvel ainda conta com um quarto de empregada com banheiro próprio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 837,
+          "legenda": "Quarto com piso de madeira e cortina branca"
+        },
+        {
+          "foto": 843,
+          "legenda": "Quarto com cama e armário"
+        },
+        {
+          "foto": 846,
+          "legenda": "Quarto com cama e armário espelhado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Edifício São Conrado oferece portaria 24 horas, elevadores, salão de festas, academia, áreas verdes e sistema de segurança. O imóvel está localizado no Cambuí, próximo ao Centro de Convivência, com fácil acesso a restaurantes, supermercados, farmácias, escolas e hospitais. A região também permite rápido acesso a diferentes partes da cidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 828,
+          "legenda": "Fachada de prédio com logotipo 'RUAH' e sinalização 'São Conrado 89'"
+        },
+        {
+          "foto": 856,
+          "legenda": "Piscina em telhado de prédio"
+        },
+        {
+          "foto": 844,
+          "legenda": "Corredor com piso de madeira e portas de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e bem localizada. Com vista para o Centro de Convivência, espaço generoso e acesso a serviços essenciais, é uma excelente opção para quem valoriza a qualidade de vida e a praticidade em um bairro tradicional de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há possibilidade de visitas guiadas.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 828,
+      "legenda": "Fachada de prédio com logotipo 'RUAH' e sinalização 'São Conrado 89'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 856,
+      "legenda": "Piscina em telhado de prédio",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 830,
+      "legenda": "Sala de estar com sofá branco e vitrine de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 832,
+      "legenda": "Sala de estar com sofá, cadeiras e janelas panorâmicas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 833,
+      "legenda": "Sala com piso claro e mesa de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 835,
+      "legenda": "Sala de estar com piso de cerâmica e teto com iluminação embutida",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 854,
+      "legenda": "Varanda com mesa de madeira e cadeira, vista para edifícios e árvores",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 855,
+      "legenda": "Varanda com mesa de madeira e cadeiras",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 847,
+      "legenda": "Cozinha moderna com iluminação natural e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 849,
+      "legenda": "Cozinha moderna com balcão de granito preto e televisão",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 850,
+      "legenda": "Cozinha com geladeira, pia, gabinete branco e chão de porcelanato",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 851,
+      "legenda": "Cozinha compacta com bancada de mármore e utensílios",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 852,
+      "legenda": "Cozinha moderna com ilha e utensílios",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 853,
+      "legenda": "Cozinha moderna com geladeira, cooktop e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 837,
+      "legenda": "Quarto com piso de madeira e cortina branca",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 839,
+      "legenda": "Quarto com piso de madeira e janela com cortina",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 840,
+      "legenda": "Quarto com piso de madeira e armário",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 841,
+      "legenda": "Quarto com piso de madeira e janelas com cortinas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 843,
+      "legenda": "Quarto com cama e armário",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 846,
+      "legenda": "Quarto com cama e armário espelhado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 834,
+      "legenda": "Banheiro com vaso sanitário, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 836,
+      "legenda": "Banheiro com vaso sanitário, bidê, prateleira de vidro e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 848,
+      "legenda": "Banheiro com vaso sanitário, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 827,
+      "legenda": "Corredor com banheiro à direita e porta aberta no final",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 829,
+      "legenda": "Corredor com portas e sinalização de emergência",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 831,
+      "legenda": "Corredor com portas fechadas e piso claro",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 838,
+      "legenda": "Corredor com portas e janela com cortina",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 842,
+      "legenda": "Corredor com piso de madeira e portas abertas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 844,
+      "legenda": "Corredor com piso de madeira e portas de vidro",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 845,
+      "legenda": "Corredor com piso de madeira e porta aberta",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel conta com 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "O imóvel não possui área gourmet, mas a varanda pode ser utilizada para refeições externas."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Para marcar a visita, preencha o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 4 quartos no Cambuí, Campinas, com vista para o Centro de Convivência e localização estratégica no Edifício São Conrado. Ideal para quem busca conforto e praticidade em um bairro tradicional.",
+    "hashtags": [
+      "apartamento",
+      "cambui",
+      "campinas",
+      "vista",
+      "saoconrado",
+      "imovel",
+      "ruahinvestimentos",
+      "moradia"
+    ]
+  },
+  "versao": "2810339e28df",
+  "publicadoEm": "2026-10-28T04:08:30.712Z"
+}

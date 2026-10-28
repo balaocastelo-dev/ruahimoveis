@@ -1,0 +1,141 @@
+{
+  "codigo": "CA0017",
+  "slug": "casa-jardim-chapadao-campinas-sp-5-quartos-9-vagas-ca0017",
+  "titulo": "Casa com 5 quartos e 9 vagas no Jardim Chapadão, Campinas",
+  "resumo": "Casa no Jardim Chapadão, Campinas, com 5 quartos, 9 vagas e área total de 1127 m², ideal para clínica de repouso ou residência terapêutica.",
+  "capa": {
+    "foto": 819,
+    "alt": "Fachada de imóvel com entrada e varandas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Você está diante de uma casa no Jardim Chapadão, Campinas, com 5 quartos, 9 vagas e área total de 1127 m². Este imóvel foi projetado com foco em acessibilidade e funcionalidade, ideal para clínica de repouso, residência terapêutica ou centro de saúde integrado. O imóvel conta com elevador interno e ambientes amplos, bem iluminados e planejados para conforto e bem-estar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada exibe varandas com balaustradas e uma placa com logotipo 'RUAH', enquanto carros estacionados na frente destacam o amplo estacionamento. A área externa inclui varanda, churrasqueira e piscina, criando um espaço agradável para lazer supervisionado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa com 5 quartos e 9 vagas de garagem",
+        "Elevador interno para acessibilidade total",
+        "Área externa com varanda, churrasqueira e piscina",
+        "Espaço independente no térreo para consultório médico",
+        "Terreno com casa auxiliar com sala, cozinha e banheiro"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e térreo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O térreo da casa conta com um espaço independente com entrada separada, ideal para consultório médico ou atendimento clínico. A área social inclui uma sala de almoço comunitária, integrada à cozinha ampla e equipada. O ambiente é bem iluminado, com áreas de socialização e despensa bem distribuídas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 820,
+          "legenda": "Fachada de imóvel com loja e escritório"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área externa oferece varanda, churrasqueira e piscina, criando um ambiente agradável para lazer supervisionado. O terreno conta com uma casa auxiliar composta por sala, cozinha e banheiro, ideal para uso administrativo ou moradia de um responsável técnico. A fachada exibe uma placa com logotipo 'RUAH', com varandas e balaustradas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 821,
+          "legenda": "Fachada de imóvel com anúncio de venda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e possuem banheiros privativos, ideais para cuidados prolongados e repouso com dignidade. As áreas de serviço incluem lavanderia e áreas de serviço bem distribuídas, garantindo praticidade e conforto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para profissionais da área da saúde, como clínica de repouso, residência terapêutica ou centro de saúde integrado. Sua estrutura favorece a acessibilidade, com elevador interno, e conta com ambientes amplos e bem planejados para atendimento com excelência e segurança."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, os detalhes do condomínio e quais áreas não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 819,
+      "legenda": "Fachada de imóvel com entrada e varandas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 820,
+      "legenda": "Fachada de imóvel com loja e escritório",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 821,
+      "legenda": "Fachada de imóvel com anúncio de venda",
+      "ambiente": "fachada"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel tem 9 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem elevador?",
+      "resposta": "Sim, o imóvel conta com elevador interno."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa no Jardim Chapadão, Campinas, com 5 quartos e 9 vagas, ideal para clínica de repouso, residência terapêutica ou centro de saúde integrado. O imóvel conta com elevador interno e áreas externas com varanda, churrasqueira e piscina.",
+    "hashtags": [
+      "casaemcampinas",
+      "jardimchapadão",
+      "clinicaemprestada",
+      "imoveisruah",
+      "acessibilidade",
+      "terraparamedicos",
+      "campinasimoveis",
+      "sobradocampinas"
+    ]
+  },
+  "versao": "2f3d6fa9b933",
+  "publicadoEm": "2026-10-28T04:08:30.713Z"
+}

@@ -1,0 +1,340 @@
+{
+  "codigo": "AP0025",
+  "slug": "apartamento-3-suites-varanda-cambui-campinas-ap0025",
+  "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
+  "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e bem localizada.",
+  "capa": {
+    "foto": 866,
+    "alt": "Varanda com sofá e vista para edifícios e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de 231 m² está localizado no coração do Cambuí, uma das regiões mais tradicionais e desejadas de Campinas. Com 3 suítes, 3 vagas de garagem e uma área social integrada, é ideal para quem busca conforto e privacidade. A varanda oferece vista para área verde e é um espaço agradável para relaxar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem um apartamento por andar, hall privativo e ambientes amplos e bem distribuídos. A sala de estar integra-se à varanda, criando um ambiente acolhedor e funcional. Além disso, a cozinha é moderna e bem equipada, com ilha e área de jantar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com armários embutidos",
+        "Varanda com vista para área verde",
+        "3 vagas de garagem",
+        "Sala de estar integrada à varanda",
+        "Cozinha moderna com ilha e armários brancos",
+        "Hall privativo e apartamento por andar"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é ampla e bem distribuída, com sala de estar integrada à varanda. As fotos mostram um ambiente acolhedor, com sofá, poltronas e mesa de centro. A varanda tem vista para área verde e é decorada com mesa redonda e cadeiras de vime, criando um espaço ideal para momentos de relaxamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A iluminação embutida no teto e as paredes claras contribuem para a sensação de amplitude. A varanda também oferece uma vista clara para o entorno, combinando funcionalidade e beleza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 867,
+          "legenda": "Varanda com mesa redonda e cadeiras de vime, vista para edifícios"
+        },
+        {
+          "foto": 868,
+          "legenda": "Varanda com mesa redonda e cadeiras de vime"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna, com armários brancos, bancada escura e iluminação natural. As fotos destacam uma ilha de cozinha e uma janela com vista para o exterior, além de uma exaustor metálico e um teto com luz embutida. A área de serviço é ampla e conta com quarto e banheiro de serviço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também oferece uma lavanderia ampla, com armários e espaço para organização. A cozinha e a área de serviço são funcionais e bem planejadas, atendendo às necessidades do dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 872,
+          "legenda": "Cozinha moderna com iluminação natural e armários brancos"
+        },
+        {
+          "foto": 876,
+          "legenda": "Cozinha moderna com armários brancos e bancada preta"
+        },
+        {
+          "foto": 877,
+          "legenda": "Cozinha moderna com iluminação natural e armários brancos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos, com armários embutidos e ventilação adequada. A suite principal tem um armário branco e uma poltrona com manta vermelha, oferecendo conforto e estilo. Os banheiros têm chuveiro de vidro, janelas e piso de cerâmica, garantindo praticidade e elegância."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento conta com 5 banheiros, incluindo os de serviço. Todos são bem iluminados e têm boa ventilação, contribuindo para um ambiente agradável e funcional."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 885,
+          "legenda": "Suite com armário embutido e poltrona"
+        },
+        {
+          "foto": 883,
+          "legenda": "Banheiro com vaso sanitário e chuveiro de vidro"
+        },
+        {
+          "foto": 884,
+          "legenda": "Banheiro com vaso sanitário e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado no coração do Cambuí, uma região com fácil acesso a restaurantes, cafés, comércios e serviços. A proximidade com pontos de interesse torna a vida no apartamento prática e conveniente. O bairro é conhecido por sua atmosfera tranquila e acolhedora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A bem localizada do imóvel é um dos seus principais diferenciais, combinando comodidade com um ambiente urbano bem planejado. A área externa, visível nas fotos, inclui jardins com plantas e edifícios ao redor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 871,
+          "legenda": "Cozinha moderna com ilha e janela"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e bem localizada. Com 3 suítes, 3 vagas de garagem e uma área social integrada, é uma excelente opção para quem valoriza espaço e funcionalidade. A varanda com vista para área verde oferece um toque de tranquilidade no meio da cidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há outros diferenciais que não estão nas fotos, como armários nos quartos ou possibilidade de personalização.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 857,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 858,
+      "legenda": "Sala de estar com sofá e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 859,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 860,
+      "legenda": "Sala de estar com sofá e poltronas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 861,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 862,
+      "legenda": "Sala de estar com poltronas e mesa redonda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 863,
+      "legenda": "Sala de estar com sofá, mesa e varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 864,
+      "legenda": "Sala de estar com sofá, cadeiras e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 865,
+      "legenda": "Sala de jantar com mesa branca e cadeiras cinza",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 869,
+      "legenda": "Sala de jantar com mesa de mármore e cadeiras de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 870,
+      "legenda": "Sala de jantar com mesa de mármore e cadeiras de vime",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 886,
+      "legenda": "Sala com TV e mesa de apoio",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 866,
+      "legenda": "Varanda com sofá, vista para edifícios e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 867,
+      "legenda": "Varanda com mesa redonda e cadeiras de vime, vista para edifícios",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 868,
+      "legenda": "Varanda com mesa redonda e cadeiras de vime",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 871,
+      "legenda": "Cozinha moderna com ilha e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 872,
+      "legenda": "Cozinha moderna com iluminação natural e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 873,
+      "legenda": "Cozinha moderna com iluminação natural e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 874,
+      "legenda": "Cozinha moderna com ilha e vista para edifício",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 875,
+      "legenda": "Cozinha com ilha e área de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 876,
+      "legenda": "Cozinha moderna com armários brancos e bancada preta",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 877,
+      "legenda": "Cozinha moderna com iluminação natural e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 878,
+      "legenda": "Cozinha com bancada de mármore e prateleiras",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 879,
+      "legenda": "Cozinha com bancada de mármore e gavetas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 880,
+      "legenda": "Cozinha com balcão e janela panorâmica",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 881,
+      "legenda": "Cozinha moderna com bancada preta e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 882,
+      "legenda": "Cozinha com bancada preta e janela panorâmica",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 885,
+      "legenda": "Suite com armário embutido e poltrona",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 883,
+      "legenda": "Banheiro com vaso sanitário e chuveiro de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 884,
+      "legenda": "Banheiro com vaso sanitário e porta de vidro",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o apartamento?",
+      "resposta": "O apartamento possui 3 suítes."
+    },
+    {
+      "pergunta": "Tem varanda?",
+      "resposta": "Sim, o apartamento tem uma varanda com vista para área verde."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar uma visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 231 m² no coração do Cambuí com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto, privacidade e bem localizada em Campinas. Venha conhecer!",
+    "hashtags": [
+      "apartamentocampinas",
+      "cambui",
+      "3suites",
+      "3vagas",
+      "varanda",
+      "campinassp",
+      "imovelparavenda",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "7be19ab85126",
+  "publicadoEm": "2026-10-28T04:08:30.712Z"
+}

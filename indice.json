@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AR0007",
+      "slug": "terreno-chacaras-campos-dos-amarais-campinas-sp-ar0007",
+      "titulo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas",
+      "resumo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas, ideal para investimento e projetos comerciais ou industriais.",
+      "capa": {
+        "foto": 822,
+        "alt": "Terreno com solo desmatado e casas ao fundo"
+      },
+      "versao": "891db87f8385",
+      "publicadoEm": "2026-10-28T04:08:30.713Z"
+    },
+    {
+      "codigo": "CA0017",
+      "slug": "casa-jardim-chapadao-campinas-sp-5-quartos-9-vagas-ca0017",
+      "titulo": "Casa com 5 quartos e 9 vagas no Jardim Chapadão, Campinas",
+      "resumo": "Casa no Jardim Chapadão, Campinas, com 5 quartos, 9 vagas e área total de 1127 m², ideal para clínica de repouso ou residência terapêutica.",
+      "capa": {
+        "foto": 819,
+        "alt": "Fachada de imóvel com entrada e varandas"
+      },
+      "versao": "2f3d6fa9b933",
+      "publicadoEm": "2026-10-28T04:08:30.713Z"
+    },
+    {
+      "codigo": "AP0025",
+      "slug": "apartamento-3-suites-varanda-cambui-campinas-ap0025",
+      "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
+      "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e bem localizada.",
+      "capa": {
+        "foto": 866,
+        "alt": "Varanda com sofá e vista para edifícios e jardim"
+      },
+      "versao": "7be19ab85126",
+      "publicadoEm": "2026-10-28T04:08:30.712Z"
+    },
+    {
+      "codigo": "AP0026",
+      "slug": "apartamento-cambui-campinas-4-quartos-vista-centro-convivencia-ap0026",
+      "titulo": "Apartamento de 4 quartos com vista para o Centro de Convivência no Cambuí",
+      "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista bem localizada para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
+      "capa": {
+        "foto": 832,
+        "alt": "Sala de estar com sofá, cadeiras e janelas panorâmicas"
+      },
+      "versao": "2810339e28df",
+      "publicadoEm": "2026-10-28T04:08:30.712Z"
+    },
+    {
+      "codigo": "SA0001",
+      "slug": "sala-comercial-centro-campinas-sp-sa0001",
+      "titulo": "Sala comercial de 193 m² com 7 vagas na Avenida Orozimbo Maia, Centro, Campinas",
+      "resumo": "Sala comercial de 193 m² em bem localizada no Centro de Campinas. Com 7 vagas de garagem e acabamentos modernos, ideal para escritórios e empresas.",
+      "capa": {
+        "foto": 907,
+        "alt": "Sala de reuniões com vista panorâmica da cidade"
+      },
+      "versao": "a3a4fd2c4fc3",
+      "publicadoEm": "2026-10-28T04:08:30.711Z"
+    },
+    {
       "codigo": "TE0001",
       "slug": "terreno-avenida-dom-nery-valinhos-sp-te0001",
       "titulo": "Terreno de 224 m² com edificação em construção na Avenida Dom Nery, Valinhos",
@@ -806,5 +866,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:05:52.175Z"
+  "atualizadoEm": "2026-10-28T04:08:30.713Z"
 }

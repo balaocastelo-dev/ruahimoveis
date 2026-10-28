@@ -1,0 +1,171 @@
+{
+  "codigo": "AR0007",
+  "slug": "terreno-chacaras-campos-dos-amarais-campinas-sp-ar0007",
+  "titulo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas",
+  "resumo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas, ideal para investimento e projetos comerciais ou industriais.",
+  "capa": {
+    "foto": 822,
+    "alt": "Terreno com solo desmatado e casas ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Terreno de 2.808 m² localizado no bairro Chácaras Campos dos Amarais, em Campinas. A área está situada em uma região estratégica com fácil acesso a principais rodovias e infraestrutura logística da cidade. Ideal para investidores e empresas que buscam uma bem localizada para empreendimentos comerciais, industriais ou de serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno oferece zoneamento C, permitindo diversas possibilidades de utilização conforme a legislação municipal. A área está plana, facilitando a implantação de projetos. As fotos mostram o terreno com solo desmatado, áreas de gramas e casas vizinhas, indicando uma localização em desenvolvimento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno plano com 2.808 m², ideal para diversos empreendimentos",
+        "Localização estratégica com acesso a rodovias e infraestrutura logística",
+        "Zoneamento C, permitindo diferentes tipos de utilização",
+        "Área com vegetação e casas ao redor, em fase de desenvolvimento",
+        "Possibilidade de investimento com"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado no bairro Chácaras Campos dos Amarais, em Campinas, uma região com infraestrutura logística e fácil acesso a rodovias importantes da cidade. As fotos mostram a presença de estradas e sinalização, indicando a acessibilidade da área."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização estratégica é um diferencial para empreendimentos que buscam proximidade com centros de distribuição e transporte. A área ao redor do terreno apresenta vegetação e casas vizinhas, sugerindo um entorno em desenvolvimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 823,
+          "legenda": "Terreno com casas vizinhas e vegetação"
+        },
+        {
+          "foto": 824,
+          "legenda": "Terreno com estrutura em construção e vegetação ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno possui 2.808 m² e está em área plana, facilitando a construção de galpões, centros de distribuição, ou outros projetos. As fotos mostram partes do terreno com gramas, áreas abertas e vegetação ao fundo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O local apresenta estrutura em construção e áreas de areia, sugerindo que a região está em fase de desenvolvimento. A vegetação ao redor e a presença de árvores são visíveis em algumas das imagens, indicando um entorno natural."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 825,
+          "legenda": "Terreno com vegetação e estrutura em construção"
+        },
+        {
+          "foto": 826,
+          "legenda": "Terreno com área em construção e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Oportunidade para investimento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é uma opção para quem busca investir em uma área estratégica em Campinas. O zoneamento C permite diversas formas de utilização, adequando-se a diferentes tipos de projetos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram a área em construção e o entorno com casas e vegetação, sugerindo que a região tem potencial para crescimento. O terreno está disponível para venda."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores e empresas que desejam aproveitar uma área estratégica em Campinas. Seu zoneamento e localização são fatores importantes para quem busca empreender em setores como indústria, comércio ou serviços."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o zoneamento detalhado, as restrições legais para o uso do terreno e a documentação necessária para a compra.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 822,
+      "legenda": "Terreno com solo desmatado e casas ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 823,
+      "legenda": "Terreno com casas vizinhas e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 824,
+      "legenda": "Terreno com estrutura em construção e vegetação ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 825,
+      "legenda": "Terreno com vegetação e estrutura em construção",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 826,
+      "legenda": "Terreno com área em construção e árvores",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o zoneamento do terreno?",
+      "resposta": "O terreno possui Zoneamento C, permitindo diversas possibilidades de utilização conforme a legislação municipal."
+    },
+    {
+      "pergunta": "Tem acesso a rodovias importantes?",
+      "resposta": "Sim, a localização permite fácil acesso a principais rodovias da região."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas. Localização estratégica com acesso a rodovias e infraestrutura logística. Ideal para investimento e projetos comerciais ou industriais. Conheça mais no formulário de contato.",
+    "hashtags": [
+      "terrenocampinas",
+      "investimentoreal",
+      "zoneamento",
+      "logistica",
+      "campinas",
+      "imobiliaria",
+      "terrenoinvestimento",
+      "zoneamentoC"
+    ]
+  },
+  "versao": "891db87f8385",
+  "publicadoEm": "2026-10-28T04:08:30.713Z"
+}

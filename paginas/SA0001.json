@@ -1,0 +1,301 @@
+{
+  "codigo": "SA0001",
+  "slug": "sala-comercial-centro-campinas-sp-sa0001",
+  "titulo": "Sala comercial de 193 m² com 7 vagas na Avenida Orozimbo Maia, Centro, Campinas",
+  "resumo": "Sala comercial de 193 m² em bem localizada no Centro de Campinas. Com 7 vagas de garagem e acabamentos modernos, ideal para escritórios e empresas.",
+  "capa": {
+    "foto": 907,
+    "alt": "Sala de reuniões com vista panorâmica da cidade"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Sala comercial de 193 m², localizada na Avenida Orozimbo Maia, no Centro de Campinas. Ideal para escritórios, consultórios e empresas, oferece ambientes modernos e bem iluminados. Com 7 vagas de garagem, é uma ótima opção para quem busca praticidade e excelente localização."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está pronto para uso imediato, com mobília inclusa, mesas, cadeiras, marcenaria planejada e acabamentos de alto padrão. A vista da cobertura traz ainda mais exclusividade ao ambiente, além de contar com ar-condicionado instalado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "193 m² de área privativa",
+        "7 vagas de garagem",
+        "Mobília inclusa e acabamentos de qualidade",
+        "Vista bem localizada da cidade",
+        "Ar-condicionado instalado",
+        "Localização estratégica na Avenida Orozimbo Maia"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e escritórios"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala comercial é ampla e bem distribuída, com ambientes integrados e acabamentos modernos. As paredes de madeira e o uso de luminárias no teto dão um toque de sofisticação ao ambiente. As fotos mostram poltronas de madeira, mesas de centro e cadeiras de couro, indicando um espaço funcional e aconchegante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O escritório conta com mesas de madeira, cadeiras giratórias e armários planejados, ideal para profissionais e equipes. As divisórias de vidro e a iluminação embutida no teto contribuem para um ambiente bem iluminado e moderno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 887,
+          "legenda": "Sala com poltronas e tapete, janela com persiana e quadro colorido"
+        },
+        {
+          "foto": 888,
+          "legenda": "Sala com parede de madeira, cadeiras e mesa de centro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é compacta e bem equipada, com bancada escura, armários escuros e pia metálica. As fotos mostram uma estante com plantas e uma bancada de mármore, indicando um ambiente prático e estiloso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro é moderno e bem acabado, com piso claro, bancada escura e armários escuros. As fotos destacam o uso de espelho grande, towel racks e uma boa iluminação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 908,
+          "legenda": "Cozinha compacta com bancada, estante e plantas"
+        },
+        {
+          "foto": 911,
+          "legenda": "Banheiro moderno com bancada de mármore e armário escuro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Varanda e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda oferece uma vista panorâmica da cidade, com balaustrada de vidro e piso de concreto. As fotos mostram uma área externa com perspectiva de canto e edifícios ao fundo, ideal para momentos de descanso ou reuniões informais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 913,
+          "legenda": "Varanda com vista panorâmica da cidade"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para profissionais e empresas que buscam um espaço moderno e bem localizado para instalar suas operações. A área social e os escritórios são bem planejados, com acabamentos de qualidade e vista bem localizada."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se há possibilidade de financiamento e quais são os custos do condomínio, se aplicável.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 887,
+      "legenda": "Sala com poltronas e tapete, janela com persiana e quadro colorido",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 888,
+      "legenda": "Sala com parede de madeira, cadeiras e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 889,
+      "legenda": "Sala com parede de madeira e poltronas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 890,
+      "legenda": "Sala com parede de madeira e duas cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 915,
+      "legenda": "Sala com parede de madeira e duas cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 913,
+      "legenda": "Varanda com vista panorâmica da cidade",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 914,
+      "legenda": "Varanda com piso de cerâmica e bancos de madeira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 908,
+      "legenda": "Cozinha compacta com bancada, estante e plantas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 909,
+      "legenda": "Cozinha compacta com pia e armários escuros",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 898,
+      "legenda": "Armários de armazenamento em um corredor",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 910,
+      "legenda": "Banheiro com armários escuros e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 911,
+      "legenda": "Banheiro moderno com bancada de mármore e armário escuro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 912,
+      "legenda": "Banheiro moderno com piso claro e bancada escura",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 891,
+      "legenda": "Escritório moderno com mesas e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 892,
+      "legenda": "Sala de reuniões com mesa de madeira e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 893,
+      "legenda": "Sala de reuniões com mesa e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 894,
+      "legenda": "Escritório moderno com mesas de madeira e cadeiras pretas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 895,
+      "legenda": "Sala de reuniões com mesa de madeira e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 896,
+      "legenda": "Sala de reuniões com mesa longa e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 897,
+      "legenda": "Sala de reuniões com quadro branco e estante",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 899,
+      "legenda": "Escritório moderno com mesas e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 900,
+      "legenda": "Sala de reuniões com mesa e cadeiras",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 901,
+      "legenda": "Corredor de escritório com divisórias e plantas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 902,
+      "legenda": "Escritório com mesa redonda e equipamentos",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 903,
+      "legenda": "Escritório com mesa redonda, telefones e ar condicionado",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 904,
+      "legenda": "Corredor com divisórias de vidro e escritórios",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 905,
+      "legenda": "Escritório com mesa e banco",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 906,
+      "legenda": "Escritório com mesa e banqueta",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 907,
+      "legenda": "Sala de reuniões com vista para a cidade",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 916,
+      "legenda": "Escritório com armário aberto e painel de madeira",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 7 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Não há menção a área gourmet no imóvel."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Sala comercial de 193 m² com 7 vagas de garagem no Centro de Campinas. Ideal para escritórios e empresas. Ambientes modernos e vista bem localizada da cidade. Marque sua visita pelo formulário da página.",
+    "hashtags": [
+      "salacomercial",
+      "campinas",
+      "centrocampinas",
+      "imovelcomercial",
+      "escritorio",
+      "vistapanoramica",
+      "imovelparaempresa"
+    ]
+  },
+  "versao": "a3a4fd2c4fc3",
+  "publicadoEm": "2026-10-28T04:08:30.711Z"
+}
