@@ -84,6 +84,31 @@ async function carregaBase() {
   TIPOS = t.tipos; CART_ETAPAS = t.etapas || []; ORIGENS = t.origens || []; USUARIOS = u.filter((x) => x.ativo !== 0);
   if (typeof mapasCfg === 'function') mapasCfg(); // sabe se a fachada do Google está ligada (reserva das fotos)
 }
+// ---------- ordenar listas: cada botão alterna menor → maior e maior → menor ----------
+// opcoes: [[chave, rótulo, (item) => valor, texto?]]. Sem o dado vai sempre para o fim.
+const ordLer = (nome, padrao) => { try { const v = JSON.parse(localStorage.getItem('ruah.ord.' + nome)); return v && v.k ? v : padrao; } catch { return padrao; } };
+const ordGravar = (nome, v) => { try { localStorage.setItem('ruah.ord.' + nome, JSON.stringify(v)); } catch {} };
+const ordProximo = (atual, k) => (atual.k === k ? { k, d: -atual.d } : { k, d: 1 });
+function ordLista(lista, opcoes, atual) {
+  const o = opcoes.find((x) => x[0] === atual.k); if (!o) return lista;
+  const [, , fn, txt] = o;
+  return lista.map((a, i) => ({ a, i, v: fn(a) })).sort((x, y) => {
+    const fx = x.v === null || x.v === undefined || x.v === '' || Number.isNaN(x.v), fy = y.v === null || y.v === undefined || y.v === '' || Number.isNaN(y.v);
+    if (fx || fy) return fx === fy ? x.i - y.i : fx ? 1 : -1;
+    const r = txt ? String(x.v).localeCompare(String(y.v), 'pt-BR', { sensitivity: 'base', numeric: true }) : x.v - y.v;
+    return r ? r * atual.d : x.i - y.i;
+  }).map((x) => x.a);
+}
+// a barra "Ordenar por" (data-act recebe data-k; quem trata decide como redesenhar)
+function ordBarra(act, opcoes, atual) {
+  return `<div class="ord-barra" role="group" aria-label="Ordenar"><span class="ord-r">Ordenar por</span>${opcoes.map(([k, t, , txt]) => {
+    const on = atual.k === k;
+    const sentido = on ? (atual.d > 0 ? (txt ? 'A → Z' : 'menor → maior') : (txt ? 'Z → A' : 'maior → menor')) : '';
+    return `<button type="button" class="ord-b${on ? ' on' : ''}" data-act="${act}" data-k="${k}" aria-pressed="${on}" title="${on ? sentido + ' · clique para inverter' : 'ordenar por ' + esc(t.toLowerCase())}">${esc(t)}<span class="ord-s" aria-hidden="true">${on ? (atual.d > 0 ? '▲' : '▼') : '↕'}</span>${on ? `<span class="ord-t">${sentido}</span>` : ''}</button>`;
+  }).join('')}</div>`;
+}
+const dataNum = (d) => { if (!d) return null; const t = new Date(String(d).length <= 10 ? d + 'T12:00' : String(d).replace(' ', 'T')).getTime(); return Number.isNaN(t) ? null : t; };
+
 // fotos de um imóvel da carteira: a capa; sem foto, a fachada do prédio/condomínio pelo Google (quando ligada)
 const imFotos = (i) => [i.capa && `/api/arquivos/${i.capa}`, i.condominio_id && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${i.condominio_id}` : null];
 function telaSetup() {

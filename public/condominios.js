@@ -11,8 +11,19 @@ const cdDaCasa = (a) => a.origem === MARCA.cliente || a.origem === 'RUAH';
 const cd3d = (id, imovel) => `/condominio-3d.html?id=${id}${imovel ? '&imovel=' + imovel : ''}`;
 
 // ---------- lista + mapa ----------
+// ordem da lista (no servidor, porque é paginada): o sentido padrão de cada uma vem do servidor
+const CD_ORD_LISTA = [['venda', 'À venda agora'], ['preco', 'Preço médio'], ['unidades', 'Tamanho (unidades)'], ['andares', 'Andares'], ['giro', 'Anúncios em 90 dias'], ['recentes', 'Data de inclusão'], ['nome', 'Nome', null, true]];
+const CD_ORD_PAD = { venda: -1, preco: 1, unidades: -1, andares: -1, giro: -1, recentes: -1, nome: 1 };
+const cdOrdAtual = (f) => ({ k: f.ordem, d: f.dir ? (f.dir === 'asc' ? 1 : -1) : CD_ORD_PAD[f.ordem] || -1 });
+ACT['cd-ord'] = (el) => {
+  const qs = new URLSearchParams(location.hash.split('?')[1] || '');
+  const at = cdOrdAtual({ ordem: qs.get('ordem') || 'venda', dir: qs.get('dir') || '' });
+  const k = el.dataset.k, d = at.k === k ? -at.d : CD_ORD_PAD[k] || 1;
+  qs.set('ordem', k); qs.set('dir', d > 0 ? 'asc' : 'desc'); qs.delete('pagina');
+  navega('#/condominios?' + qs);
+};
 async function telaCondominios(qs) {
-  const f = { q: qs.get('q') || '', tipo: qs.get('tipo') || '', bairro: qs.get('bairro') || '', venda: qs.get('venda') || '', alvo: qs.get('alvo') || '', ordem: qs.get('ordem') || 'venda', pagina: qs.get('pagina') || '1' };
+  const f = { q: qs.get('q') || '', tipo: qs.get('tipo') || '', bairro: qs.get('bairro') || '', venda: qs.get('venda') || '', alvo: qs.get('alvo') || '', ordem: qs.get('ordem') || 'venda', dir: qs.get('dir') || '', pagina: qs.get('pagina') || '1' };
   const link = (o) => '#/condominios?' + new URLSearchParams(Object.fromEntries(Object.entries({ ...f, pagina: '1', ...o }).filter(([, v]) => v)));
   const [l, bairros, alertas] = await Promise.all([api('GET', '/api/condominios?' + new URLSearchParams(f)), api('GET', '/api/condominios/bairros').catch(() => []), api('GET', '/api/condominios/alertas').catch(() => [])]);
   const r = l.resumo || {};
@@ -26,11 +37,12 @@ async function telaCondominios(qs) {
     <input name="q" value="${esc(f.q)}" placeholder="Nome, rua ou CNPJ" style="flex:1;min-width:200px">
     <select name="tipo"><option value="">Todos os tipos</option>${['vertical', 'horizontal', 'indefinido'].map((t) => `<option value="${t}" ${f.tipo === t ? 'selected' : ''}>${CD_TIPO[t][0]}</option>`).join('')}</select>
     <select name="bairro"><option value="">Todos os bairros</option>${bairros.map((b) => `<option ${f.bairro === b ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
-    <select name="ordem">${[['venda', 'Mais à venda agora'], ['giro', 'Mais anúncios em 90 dias'], ['nome', 'Nome'], ['recentes', 'Recém-incluídos']].map(([k, t]) => `<option value="${k}" ${f.ordem === k ? 'selected' : ''}>${t}</option>`).join('')}</select>
+    <input type="hidden" name="ordem" value="${esc(f.ordem)}"><input type="hidden" name="dir" value="${esc(f.dir)}">
     <label class="chk"><input type="checkbox" name="venda" ${f.venda ? 'checked' : ''}> Com imóvel à venda</label>
     <label class="chk"><input type="checkbox" name="alvo" ${f.alvo ? 'checked' : ''}> Prédios-alvo</label>
     <button class="btn pri" type="submit">Buscar</button>
   </form>
+  ${ordBarra('cd-ord', CD_ORD_LISTA, cdOrdAtual(f))}
   <div class="cd-split">
     <div class="cd-lista">${l.itens.length ? l.itens.map((c) => {
       const venda = c.radar + c.fisguei + c.carteira;
@@ -38,7 +50,7 @@ async function telaCondominios(qs) {
         <span class="cd-item-foto">${fotoCadeia([c.foto, c.lat != null && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${c.id}` : null], c.nome, { vazio: ' ' })}</span><div class="cd-item-txt">
         <div class="cd-item-top"><b>${esc(c.nome)}</b>${c.alvo ? '<span class="pill gold" title="Prédio-alvo">alvo</span>' : ''}</div>
         <div class="muted small">${esc(cdEnd(c))}</div>
-        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.giro ? `<span class="pill warn">${c.giro} anúncio(s) em 90 dias</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></div></a>`;
+        <div class="row" style="gap:6px;margin-top:6px;flex-wrap:wrap">${cdTipo(c.tipo)}${venda ? `<span class="pill ok">${venda} à venda</span>` : ''}${c.preco_medio ? `<span class="pill" title="Preço médio dos anúncios">${typeof mkMi === 'function' ? mkMi(c.preco_medio) : brl(c.preco_medio)} em média</span>` : ''}${c.carteira ? `<span class="pill gold">${c.carteira} na carteira</span>` : ''}${c.giro ? `<span class="pill warn">${c.giro} anúncio(s) em 90 dias</span>` : ''}${c.andares ? `<span class="pill info">${c.andares} andares</span>` : ''}${c.unidades ? `<span class="pill info">${c.unidades} unid.</span>` : ''}${!c.lat ? '<span class="pill warn">sem mapa</span>' : ''}</div></div></a>`;
     }).join('') : '<div class="empty">Nenhum condomínio neste filtro.</div>'}
       <div class="row" style="margin-top:10px"><span class="muted small">${l.total.toLocaleString('pt-BR')} condomínio(s) · página ${l.pagina} de ${paginas}</span><span class="sp"></span>
       ${l.pagina > 1 ? `<a class="btn sm" href="${link({ pagina: l.pagina - 1 })}">← Anterior</a>` : ''}${l.pagina < paginas ? `<a class="btn sm" href="${link({ pagina: l.pagina + 1 })}">Próxima →</a>` : ''}</div>

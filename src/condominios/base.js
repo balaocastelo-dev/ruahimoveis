@@ -155,13 +155,22 @@ function alertas({ todos = false } = {}) {
 }
 
 // ------------------------------------------------------------------ lista
+// ordem → [expressão, sentido padrão]. dir 'asc' = menor → maior; 'desc' = maior → menor. Sem o dado vai para o fim.
 const ORDENS = {
-  nome: 'c.nome',
-  venda: '(coalesce(op.n,0)+coalesce(fg.n,0)+coalesce(im.n,0)) DESC, c.nome',
-  recentes: 'c.id DESC',
-  giro: 'coalesce(g.n,0) DESC, (coalesce(op.n,0)+coalesce(fg.n,0)+coalesce(im.n,0)) DESC, c.nome',
+  venda: ['(coalesce(op.n,0)+coalesce(fg.n,0)+coalesce(im.n,0))', 'desc'],
+  preco: ['coalesce(fg.v, op.v, im.v)', 'asc'],
+  unidades: ['c.unidades', 'desc'],
+  andares: ['c.andares', 'desc'],
+  giro: ['coalesce(g.n,0)', 'desc'],
+  nome: ['c.nome', 'asc'],
+  recentes: ['c.id', 'desc'],
 };
-function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', pagina = 1, porPagina = 60 } = {}) {
+function ordemSQL(ordem, dir) {
+  const [ex, pad] = ORDENS[ordem] || ORDENS.venda;
+  const d = (dir === 'asc' || dir === 'desc' ? dir : pad).toUpperCase();
+  return `CASE WHEN ${ex} IS NULL THEN 1 ELSE 0 END, ${ex} ${d}, c.nome`;
+}
+function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', dir, pagina = 1, porPagina = 60 } = {}) {
   const w = ["coalesce(c.tipo,'') <> 'comercial'"], p = [];
   if (q) { w.push('(c.nome_busca LIKE ? OR c.logradouro LIKE ? OR c.cnpj LIKE ?)'); const k = `%${G.chave(q)}%`; p.push(k, `%${q}%`, `%${G.soDigitos(q) || '#'}%`); }
   if (bairro) { w.push('c.bairro LIKE ?'); p.push(`%${bairro}%`); }
@@ -176,7 +185,7 @@ function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', pagina = 1, 
     WHERE ${w.join(' AND ')}`;
   const total = one(`SELECT count(*) n ${de}`, ...p).n;
   const itens = all(`SELECT c.id, c.nome, c.tipo, c.bairro, c.logradouro, c.numero, c.cep, c.lat, c.lon, c.andares, c.torres, c.unidades, c.fontes, c.alvo, c.situacao, c.slug,
-      coalesce(op.n,0) radar, coalesce(fg.n,0) fisguei, coalesce(im.n,0) carteira${ordem === 'giro' ? ', coalesce(g.n,0) giro' : ''} ${de} ORDER BY ${ORDENS[ordem] || ORDENS.venda} LIMIT ? OFFSET ?`,
+      coalesce(op.n,0) radar, coalesce(fg.n,0) fisguei, coalesce(im.n,0) carteira, coalesce(fg.v, op.v, im.v) preco_medio${ordem === 'giro' ? ', coalesce(g.n,0) giro' : ''} ${de} ORDER BY ${ordemSQL(ordem, dir)} LIMIT ? OFFSET ?`,
   ...p, porPagina, (Math.max(1, pagina) - 1) * porPagina);
   const resumo = one(`SELECT count(*) total, sum(CASE WHEN tipo='vertical' THEN 1 ELSE 0 END) verticais, sum(CASE WHEN tipo='horizontal' THEN 1 ELSE 0 END) horizontais,
     sum(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END) no_mapa, sum(alvo) alvos FROM condominios WHERE coalesce(tipo,'') <> 'comercial'`);

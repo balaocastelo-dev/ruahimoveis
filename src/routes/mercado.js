@@ -107,7 +107,7 @@ function agrupa(linhas, campo, kf = G.chave) {
     const geo = o.itens.filter((x) => x.lat);
     const tops = [...o.itens].sort((a, b) => (b.valor || 0) - (a.valor || 0)).slice(0, 4).map((x) => x.id);
     return { chave: o.chave, tops, nome: Object.entries(o.nomes).sort((a, b) => b[1] - a[1] || b[0].length - a[0].length)[0][0], n: o.itens.length, mediana: med(v), m2: med(m2) && Math.round(med(m2)),
-      min: Math.min(...v.filter(Boolean)), max: Math.max(...v.filter(Boolean)), particulares: o.itens.filter((x) => x.anunciante_tipo === 'particular').length,
+      min: Math.min(...v.filter(Boolean)), max: Math.max(...v.filter(Boolean)), particulares: o.itens.filter((x) => x.anunciante_tipo === 'particular').length, area: med(o.itens.map((x) => x.area_util || 0)),
       lat: geo.length ? geo.reduce((s, x) => s + x.lat, 0) / geo.length : null, lon: geo.length ? geo.reduce((s, x) => s + x.lon, 0) / geo.length : null };
   });
 }

@@ -23,6 +23,33 @@ function mkAbas(on, cats) {
     <a href="#/fisguei" class="${on === 'fisguei' ? 'on' : ''}" title="Sinais nos anúncios: queda de preço, particular, abaixo do bairro">Leitura da IA</a><a href="#/radar" class="${on === 'radar' ? 'on' : ''}" title="Anúncios que chegaram pelos portais">Portais</a>${on === 'aprovacoes' ? '<a href="#/radar/aprovacoes" class="on">Aprovações</a>' : ''}</div>`;
 }
 
+// ---------- ordenar: bairros, ruas e imóveis (menor → maior e vice-versa) ----------
+const MK_ORD_GRUPO = [['n', 'Quantidade', (g) => g.n], ['mediana', 'Preço', (g) => g.mediana], ['min', 'Menor preço', (g) => g.min], ['area', 'Área', (g) => g.area], ['m2', 'R$/m²', (g) => g.m2], ['nome', 'Nome', (g) => g.nome, true]];
+const MK_ORD_IM = [['numero', 'Número', (x) => { const n = parseInt(x.numero, 10); return Number.isFinite(n) ? n : null; }], ['valor', 'Preço', (x) => x.valor], ['area', 'Área', (x) => x.area_util],
+  ['m2', 'R$/m²', (x) => (x.valor && x.area_util ? x.valor / x.area_util : null)], ['quartos', 'Quartos', (x) => x.quartos], ['data', 'Data do anúncio', (x) => dataNum(x.publicado_em)], ['anuncios', 'Vezes anunciado', (x) => x.anuncios || 1]];
+const mkOrd = (nivel) => ordLer('mk.' + nivel, nivel === 'im' ? { k: 'numero', d: 1 } : { k: 'n', d: -1 });
+ACT['mk-ord'] = (el) => {
+  const nivel = el.closest('[data-nivel]').dataset.nivel;
+  ordGravar('mk.' + nivel, ordProximo(mkOrd(nivel), el.dataset.k));
+  if (nivel === 'im') mkDesenhaCards(); else mkDesenhaGrupos(nivel);
+};
+function mkDesenhaGrupos(nivel) {
+  const box = $('#mk-grupos'); if (!box) return;
+  const at = mkOrd(nivel), l = ordLista(nivel === 'bairros' ? MK.bairros : MK.ruas, MK_ORD_GRUPO, at);
+  const m2txt = (v) => (v ? `R$ ${v.toLocaleString('pt-BR')}/m²` : '');
+  const capa = (g) => fotoCadeia([g.foto], g.nome, { vazio: g.nome });
+  const bar = `<div data-nivel="${nivel}">${ordBarra('mk-ord', MK_ORD_GRUPO, at)}</div>`;
+  if (nivel === 'bairros') {
+    box.innerHTML = bar + `<div class="mk-grade">${l.map((b) => `<a class="mk-card" href="${MK.link({ bairro: b.chave, rua: '' })}">
+      <div class="mk-capa">${capa(b)}<span class="mk-capa-n">${b.n} imóve${b.n > 1 ? 'is' : 'l'}</span></div>
+      <div class="mk-card-c"><b class="mk-card-nome">${esc(b.nome)}</b>
+      <div class="mk-num">${mkMi(b.mediana)}</div><div class="muted small">mediana${b.m2 ? ' · ' + m2txt(b.m2) : ''}${b.area ? ' · ' + mkArea(b.area) : ''}</div>
+      <div class="muted small">${mkMi(b.min)} a ${mkMi(b.max)}${b.particulares ? ` · ${b.particulares} de particular` : ''}</div></div></a>`).join('')}</div>`;
+  } else {
+    box.innerHTML = bar + `<div class="mk-lista">${l.map((r) => `<a class="mk-linha" href="${MK.link({ rua: r.chave })}"><span class="mk-mini">${capa(r)}</span><div style="flex:1;min-width:0"><b>${esc(r.nome)}</b><div class="muted small">${mkMi(r.min)}${r.max !== r.min ? ' a ' + mkMi(r.max) : ''}${r.m2 ? ' · ' + m2txt(r.m2) : ''}${r.area ? ' · ' + mkArea(r.area) : ''}</div></div><span class="pill ok">${r.n} imóve${r.n > 1 ? 'is' : 'l'}</span><span class="muted">›</span></a>`).join('') || '<div class="empty">Nenhuma rua.</div>'}</div>`;
+  }
+}
+
 // ---------- localizar proprietário (gasta crédito do Fisgar) ----------
 let MK = { l: [], sel: new Set(), cfg: {}, ehLote: false, cred: null, ext: null, porBusca: 4 };
 const MK_SITU = {
@@ -64,7 +91,8 @@ function mkDesenhaCards() {
   const naCart = MK.l.filter((x) => x.situ && x.situ.estado === 'carteira').length;
   box.innerHTML = `<div class="row mk-selbar-top">${livres.length ? `<button type="button" class="btn sm" data-act="mk-todos">${livres.every((x) => MK.sel.has(x.id)) ? 'Desmarcar todos' : `Selecionar os ${livres.length} sem dono`}</button>` : ''}
       <span class="muted small">${MK.l.length} imóve${MK.l.length > 1 ? 'is' : 'l'} nesta rua${naCart ? ` · ${naCart} já na carteira` : ''}</span></div>
-    <div class="imcards">${MK.l.map(mkCartao).join('')}</div>`;
+    <div data-nivel="im">${ordBarra('mk-ord', MK_ORD_IM.filter((o) => !(MK.ehLote && o[0] === 'quartos')), mkOrd('im'))}</div>
+    <div class="imcards">${ordLista(MK.l, MK_ORD_IM, mkOrd('im')).map(mkCartao).join('')}</div>`;
   mkBarra();
 }
 function mkBarra() {
@@ -122,16 +150,14 @@ async function telaMercado(qs, cat = 'casas') {
   const m2txt = (v) => (v ? `R$ ${v.toLocaleString('pt-BR')}/m²` : '');
   const capa = (g) => fotoCadeia([g.foto], g.nome, { vazio: g.nome });
   let corpo = '';
+  MK.link = link;
   if (!f.bairro) {
-    corpo = res.bairros.length ? `<div class="mk-grade">${res.bairros.map((b) => `<a class="mk-card" href="${link({ bairro: b.chave, rua: '' })}">
-      <div class="mk-capa">${capa(b)}<span class="mk-capa-n">${b.n} imóve${b.n > 1 ? 'is' : 'l'}</span></div>
-      <div class="mk-card-c"><b class="mk-card-nome">${esc(b.nome)}</b>
-      <div class="mk-num">${mkMi(b.mediana)}</div><div class="muted small">mediana${b.m2 ? ' · ' + m2txt(b.m2) : ''}</div>
-      <div class="muted small">${mkMi(b.min)} a ${mkMi(b.max)}${b.particulares ? ` · ${b.particulares} de particular` : ''}</div></div></a>`).join('')}</div>`
+    MK.bairros = res.bairros;
+    corpo = res.bairros.length ? '<div id="mk-grupos"></div>'
       : `<div class="empty">Nenhum imóvel nesta vitrine com esse filtro. Experimente "qualquer valor" ou puxe mais anúncios do Fisgar pela extensão (botão "Puxar a lista filtrada").</div>`;
   } else if (!f.rua) {
-    const ruas = await api('GET', '/api/mercado/ruas?' + new URLSearchParams({ ...filtros, bairro: f.bairro }));
-    corpo = `<div class="mk-lista">${ruas.map((r) => `<a class="mk-linha" href="${link({ rua: r.chave })}"><span class="mk-mini">${capa(r)}</span><div style="flex:1;min-width:0"><b>${esc(r.nome)}</b><div class="muted small">${mkMi(r.min)}${r.max !== r.min ? ' a ' + mkMi(r.max) : ''}${r.m2 ? ' · ' + m2txt(r.m2) : ''}</div></div><span class="pill ok">${r.n} imóve${r.n > 1 ? 'is' : 'l'}</span><span class="muted">›</span></a>`).join('') || '<div class="empty">Nenhuma rua.</div>'}</div>`;
+    MK.ruas = await api('GET', '/api/mercado/ruas?' + new URLSearchParams({ ...filtros, bairro: f.bairro }));
+    corpo = MK.ruas.length ? '<div id="mk-grupos"></div>' : '<div class="empty">Nenhuma rua.</div>';
   } else {
     MK.l = await api('GET', '/api/mercado/imoveis?' + new URLSearchParams({ ...filtros, bairro: f.bairro, rua: f.rua }));
     MK.sel = new Set(); MK.qs = new URLSearchParams({ ...filtros, bairro: f.bairro, rua: f.rua });
@@ -155,6 +181,7 @@ async function telaMercado(qs, cat = 'casas') {
   <div class="cd-split"><div>${corpo}</div><div class="cd-mapa-w"><div id="mk-mapa" class="cd-mapa"></div>
     <p class="small muted" style="margin:6px 2px 0"><span class="cd-dot" style="background:#2e7d4f"></span> particular <span class="cd-dot" style="background:#3b6ea8"></span> imobiliária · clique no ponto para abrir</p></div></div>`;
   mapaMercado(qf, f, bairroAt);
+  if ($('#mk-grupos')) mkDesenhaGrupos(f.bairro ? 'ruas' : 'bairros');
   if ($('#mk-cards')) {
     mkDesenhaCards();
     // enquanto houver busca andando, atualiza a situação dos cartões

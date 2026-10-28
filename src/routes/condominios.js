@@ -16,7 +16,7 @@ const condominio = (id) => { const c = one('SELECT * FROM condominios WHERE id=?
 
 r.get('/condominios', (req, res) => {
   const q = req.query;
-  const l = B.listar({ q: txt(q.q, 80), bairro: txt(q.bairro, 60), tipo: ['vertical', 'horizontal', 'indefinido'].includes(q.tipo) ? q.tipo : null, alvo: q.alvo === '1', comVenda: q.venda === '1', ordem: q.ordem, pagina: int(q.pagina) || 1 });
+  const l = B.listar({ q: txt(q.q, 80), bairro: txt(q.bairro, 60), tipo: ['vertical', 'horizontal', 'indefinido'].includes(q.tipo) ? q.tipo : null, alvo: q.alvo === '1', comVenda: q.venda === '1', ordem: q.ordem, dir: q.dir, pagina: int(q.pagina) || 1 });
   // foto de cada condomínio da página: do imóvel da carteira; senão, do anúncio mais recente do Fisguei no prédio
   const ids = (l.itens || []).map((c) => c.id);
   if (ids.length) {
