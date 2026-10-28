@@ -14,7 +14,7 @@ const { one, run, audit } = require('../db');
 const { txt, falha } = require('../util');
 const cfg = require('../config');
 // Origem dos leads das páginas de bairro: "Portal " + nome do cliente + " · bairro" (padrão: "Portal RUAH · bairro").
-const ORIGEM_BAIRRO = `Portal ${cfg.CLIENTE_NOME} · bairro`;
+const ORIGEM_BAIRRO = () => `Portal ${cfg.CLIENTE_NOME} · bairro`; // da imobiliária atendida, lido na hora
 const coord = (v) => { const n = Number(String(v).replace(',', '.')); return Number.isFinite(n) ? n : null; };
 const { normTel } = require('../services/whatsapp');
 const fonte = require('../bairros/fonte');
@@ -185,7 +185,7 @@ api.post('/contato', (req, res) => {
     run(`UPDATE leads SET ultimo_contato=datetime('now','localtime'), email=coalesce(email,?) WHERE id=?`, email, leadId);
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,bairros,busca,ultimo_contato) VALUES(?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-      nome, tel, email, ORIGEM_BAIRRO, 'novo', motivo === 'duvida' ? 'morno' : 'quente', bairro.nome, `${MOTIVOS[motivo]} (${bairro.nome})`).lastInsertRowid);
+      nome, tel, email, ORIGEM_BAIRRO(), 'novo', motivo === 'duvida' ? 'morno' : 'quente', bairro.nome, `${MOTIVOS[motivo]} (${bairro.nome})`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', linhas, null);
   audit(null, 'bairro_contato', `${bairro.slug} · ${motivo} · lead ${leadId}${existente ? ' (já existia)' : ''}`);

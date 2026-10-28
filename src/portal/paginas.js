@@ -7,12 +7,16 @@
 
 const cfg = require('../config');
 const og = require('../og');
-const { AMBIENTES, CHAMADAS } = require('./config');
+const configPortal = require('./config');
+const { AMBIENTES } = configPortal;
 const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = require('../blog/texto');
-const { SITE_CLIENTE, INSTAGRAM_CLIENTE } = require('../blog/categorias');
-// O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
-const CLIENTE = cfg.CLIENTE_NOME;
-const EMPRESA = cfg.EMPRESA;
+// O nome da imobiliária vem da configuração da imobiliária atendida (lido na hora, por requisição):
+// CLIENTE (curto, a marca), EMPRESA (nome completo), site e Instagram dela.
+const CLIENTE = () => cfg.CLIENTE_NOME;
+const EMPRESA = () => cfg.EMPRESA;
+const SITE_CLIENTE = () => cfg.SITE_CLIENTE;
+const INSTAGRAM_CLIENTE = () => cfg.INSTAGRAM_CLIENTE;
+const CHAMADAS = () => configPortal.chamadas();
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -26,12 +30,12 @@ const VERSAO_ASSETS = (() => {
     return h.digest('hex').slice(0, 10);
   } catch { return String(Date.now()); }
 })();
-const { SIGNATURE } = require('./edicoes');
+const edicoes = require('./edicoes');
 
 /** Acima do limite da seleção Signature o valor fica reservado aos membros do clube (página /imoveis/signature). */
-const reservado = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
-const RESERVADO = `${CLIENTE} Signature · valor para membros`;
-const valorTexto = (im) => (reservado(im) ? RESERVADO : im.valor ? reais(im.valor) : 'Sob consulta');
+const reservado = (im) => !!(im && im.valor && im.valor >= edicoes.SIGNATURE.limite);
+const RESERVADO = () => `${CLIENTE()} Signature · valor para membros`;
+const valorTexto = (im) => (reservado(im) ? RESERVADO() : im.valor ? reais(im.valor) : 'Sob consulta');
 
 function rico(texto) {
   const desenhar = (t) => t.map((x) => (x.tipo === 'texto' ? esc(x.valor) : x.tipo === 'negrito' ? `<strong>${desenhar(x.filhos)}</strong>`
@@ -47,7 +51,7 @@ const lugar = (im) => [im.bairro, im.cidade].filter(Boolean).join(', ');
 const fotoUrl = (id) => `/imoveis/foto/${id}`;
 
 function urlBase(req) {
-  const fixo = (process.env.PORTAL_URL || process.env.BLOG_URL || cfg.PUBLIC_URL || '').replace(/\/+$/, '');
+  const fixo = (cfg.PORTAL_URL || cfg.BLOG_URL || cfg.PUBLIC_URL || '').replace(/\/+$/, '');
   return fixo || `${req.protocol}://${req.get('host')}`;
 }
 
@@ -101,7 +105,7 @@ function blocoImagem(base, imagem, largura, altura, tipo) {
 function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false }) {
   const base = urlBase(req);
   const canonico = base + caminho;
-  const zap = whatsapp(null, `Olá! Vim pelo portal da ${CLIENTE} e quero ajuda para encontrar um imóvel.`);
+  const zap = whatsapp(null, `Olá! Vim pelo portal da ${CLIENTE()} e quero ajuda para encontrar um imóvel.`);
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -111,7 +115,7 @@ function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemA
 <meta name="description" content="${esc(descricao)}">
 <link rel="canonical" href="${esc(canonico)}">
 ${semIndice ? '<meta name="robots" content="noindex">' : ''}
-<meta property="og:site_name" content="${esc(EMPRESA)}">
+<meta property="og:site_name" content="${esc(EMPRESA())}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(titulo)}">
@@ -127,7 +131,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <body class="${classe}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="p-topo">
-  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE)}, imóveis à venda"><span class="p-marca-n">${esc(CLIENTE)}</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
+  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE())}, imóveis à venda"><span class="p-marca-n">${esc(CLIENTE())}</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
   <nav class="p-nav" aria-label="Portal">
     <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
@@ -139,8 +143,8 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
-  <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
+  <div><p class="p-rodape-n">${esc(EMPRESA())}</p><p>Imobiliária de venda em Campinas, SP.${cfg.BLOG_CRECI ? ` CRECI ${esc(cfg.BLOG_CRECI)}.` : ''}</p></div>
+  <nav aria-label="${esc(CLIENTE())}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a>${INSTAGRAM_CLIENTE() ? `<a href="${esc(INSTAGRAM_CLIENTE())}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE())}" target="_blank" rel="noopener">Site da ${esc(CLIENTE())}</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>
@@ -158,7 +162,7 @@ function cartao(x, { eager = false } = {}) {
 <p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
 <p class="p-specs">${specs(im, true).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
-<p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
+<p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO()}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
 </div></article>`;
 }
 
@@ -204,14 +208,14 @@ function paginaVitrine(req, lista, guiaDoBairro = null) {
   const filtrado = ['tipo', 'bairro', 'quartos', 'ate', 'de', 'q'].some((k) => q[k]);
   const link = (n) => { const u = new URLSearchParams(Object.entries(q).filter(([k, v]) => k !== 'pagina' && v)); if (n > 1) u.set('pagina', n); const s = u.toString(); return `/imoveis${s ? `?${s}` : ''}`; };
   const grupo = GRUPOS.find((g) => g.slug === q.tipo);
-  const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · ${CLIENTE}` : q.bairro ? `Imóveis à venda no ${q.bairro} · ${CLIENTE}` : `Imóveis à venda em Campinas e região · ${CLIENTE}`;
+  const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · ${CLIENTE()}` : q.bairro ? `Imóveis à venda no ${q.bairro} · ${CLIENTE()}` : `Imóveis à venda em Campinas e região · ${CLIENTE()}`;
 
   const corpo = `
 ${require('./versoes').seletor('vitrine')}
 <section class="p-hero p-hero-foto p-hero-direita">
   <div class="p-hero-fundo" aria-hidden="true"><img src="/portal-assets/hero-castelo.jpg?v=2" srcset="/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=2 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
   <div class="p-hero-txt">
-  <p class="p-sobre">Portal ${esc(CLIENTE)}</p>
+  <p class="p-sobre">Portal ${esc(CLIENTE())}</p>
   <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
   <p class="p-hero-l">${lista.length} imóveis com fotos, ficha completa e uma página para cada um. Encontrou? Fale com o corretor pela própria página.</p>
   </div>
@@ -239,25 +243,25 @@ ${require('./versoes').seletor('vitrine')}
   }];
   const capaOg = daPagina[0] ? og.metaFotoPortal(daPagina[0].pagina.capa.foto) : {};
   return casca(req, {
-    titulo, descricao: `${lista.length} imóveis à venda pela ${CLIENTE} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
+    titulo, descricao: `${lista.length} imóveis à venda pela ${CLIENTE()} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
     caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
   });
 }
 
 function paginaFavoritos(req, lista) {
   const corpo = `
-<section class="p-hero p-hero-curto"><p class="p-sobre">Portal ${esc(CLIENTE)}</p><h1>Seus favoritos</h1>
-<p class="p-hero-l">Os imóveis que você marcou com o coração ficam guardados neste aparelho. Nada é enviado para a ${esc(CLIENTE)} até você pedir contato.</p></section>
+<section class="p-hero p-hero-curto"><p class="p-sobre">Portal ${esc(CLIENTE())}</p><h1>Seus favoritos</h1>
+<p class="p-hero-l">Os imóveis que você marcou com o coração ficam guardados neste aparelho. Nada é enviado para a ${esc(CLIENTE())} até você pedir contato.</p></section>
 <section class="p-resultado" data-favoritos>
   <div class="p-grade">${lista.map((x) => cartao(x)).join('')}</div>
   <div class="p-vazio" data-favoritos-vazio hidden><p>Você ainda não guardou nenhum imóvel. Toque no coração de um imóvel para guardar aqui.</p><a class="p-botao" href="/imoveis">Ver os imóveis</a></div>
 </section>`;
-  return casca(req, { titulo: `Favoritos · ${CLIENTE}`, descricao: `Os imóveis da ${CLIENTE} que você guardou.`, caminho: '/imoveis/favoritos', corpo, classe: 'p-vitrine', semIndice: true });
+  return casca(req, { titulo: `Favoritos · ${CLIENTE()}`, descricao: `Os imóveis da ${CLIENTE()} que você guardou.`, caminho: '/imoveis/favoritos', corpo, classe: 'p-vitrine', semIndice: true });
 }
 
 // --------------------------------------------------------- página do imóvel
 function chamada(tema, im) {
-  const c = CHAMADAS[tema];
+  const c = CHAMADAS()[tema];
   const zap = tema === 'corretor' && whatsapp(im, `Olá! Tenho uma dúvida sobre o imóvel ${im.codigo}.`);
   const href = zap || '#contato';
   return `<aside class="p-chamada"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
@@ -305,7 +309,7 @@ ${im.lazer ? `<p class="p-lazer"><b>Lazer do condomínio:</b> ${esc(im.lazer)}</
 function formulario(im, p) {
   const msg = `Olá! Tenho interesse no imóvel ${im.codigo}: ${p.titulo}.`;
   return `<section class="p-contato" id="contato" aria-labelledby="contato-t">
-<div class="p-contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE)} sobre este imóvel</h2>
+<div class="p-contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE())} sobre este imóvel</h2>
 <p>Deixe seu contato e um corretor responde, em horário comercial, com o que você quiser saber: documentação, condomínio, condições e visita.</p>
 ${whatsapp(im, msg) ? `<p>Prefere conversar agora? <a href="${esc(whatsapp(im, msg))}" target="_blank" rel="noopener">Chame no WhatsApp</a>.</p>` : ''}</div>
 <form class="p-form" data-interesse novalidate>
@@ -320,7 +324,7 @@ ${whatsapp(im, msg) ? `<p>Prefere conversar agora? <a href="${esc(whatsapp(im, m
     <label class="p-campo"><span>Melhor dia</span><input type="date" name="dia"></label>
     <label class="p-campo"><span>Período</span><select name="periodo"><option value="">Tanto faz</option><option>Manhã</option><option>Tarde</option><option>Fim de semana</option></select></label>
   </div>
-  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE)} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
+  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE())} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
   <button class="p-botao p-largo" type="submit">Enviar para o corretor</button>
   <p class="p-form-msg p-largo" role="status" aria-live="polite" hidden></p>
 </form></section>`;
@@ -363,7 +367,7 @@ function paginaImovel(req, x, lista) {
       '@context': 'https://schema.org', '@type': 'RealEstateListing', name: p.titulo, description: p.resumo, url,
       ...(p.publicadoEm ? { datePosted: p.publicadoEm } : {}),
       image: ordem.slice(0, 8).map((f) => `${base}${fotoUrl(f)}`),
-      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: EMPRESA, url: SITE_CLIENTE } } } : {}),
+      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: EMPRESA(), url: SITE_CLIENTE() } } } : {}),
       about: {
         '@type': residencia, name: `${im.tipo} ${im.codigo}`,
         address: { '@type': 'PostalAddress', ...(im.bairro ? { streetAddress: im.bairro } : {}), addressLocality: im.cidade, addressRegion: im.uf, addressCountry: 'BR' },
@@ -416,7 +420,7 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 <aside class="p-lado" aria-label="Valor e contato">
   <div class="p-lado-caixa">
     <p class="p-lado-rot">Valor de venda</p>
-    <p class="p-lado-preco">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
+    <p class="p-lado-preco">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO()}</a>` : esc(valorTexto(im))}</p>
     ${im.valor_condominio || im.iptu ? `<p class="p-lado-taxas">${[im.valor_condominio ? `Condomínio ${esc(reais(im.valor_condominio))}/mês` : '', im.iptu ? `IPTU ${esc(reais(im.iptu))}/ano` : ''].filter(Boolean).join(' · ')}</p>` : ''}
     <a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>
     <a class="p-botao sec" href="#contato" data-contato="visita">Agendar visita</a>
@@ -425,22 +429,22 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
       <button class="p-link" type="button" data-fav="${esc(im.codigo)}" aria-pressed="false">Guardar nos favoritos</button>
       <button class="p-link" type="button" data-compartilhar="${esc(url)}" data-titulo="${esc(p.titulo)}">Compartilhar</button>
     </div>
-    <p class="p-lado-corretor">${im.corretor ? `Corretor: <b>${esc(im.corretor.nome)}</b>` : `Atendimento: <b>Equipe ${esc(CLIENTE)}</b>`} · Cód. ${esc(im.codigo)}</p>
+    <p class="p-lado-corretor">${im.corretor ? `Corretor: <b>${esc(im.corretor.nome)}</b>` : `Atendimento: <b>Equipe ${esc(CLIENTE())}</b>`} · Cód. ${esc(im.codigo)}</p>
   </div>
 </aside>
 </div>
 ${formulario(im, p)}
 ${(() => { const ps = parecidos(x, lista); return ps.length ? `<section class="p-parecidos" aria-labelledby="parecidos"><h2 id="parecidos">Imóveis parecidos</h2><div class="p-grade">${ps.map((y) => cartao(y)).join('')}</div></section>` : ''; })()}
-<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? `${CLIENTE} Signature` : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
+<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? `${CLIENTE()} Signature` : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
 
-  const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE}`;
+  const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE()}`;
   const capaOg = og.metaFotoPortal(capa.foto);
   return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-pagina-imovel' });
 }
 
 function paginaNaoAchada(req) {
   return casca(req, {
-    titulo: `Imóvel não encontrado · ${CLIENTE}`, descricao: 'Este imóvel não está mais à venda ou mudou de endereço.', caminho: req.path, semIndice: true,
+    titulo: `Imóvel não encontrado · ${CLIENTE()}`, descricao: 'Este imóvel não está mais à venda ou mudou de endereço.', caminho: req.path, semIndice: true,
     corpo: '<div class="p-vazio p-vazio-g"><h1>Este imóvel não está aqui</h1><p>Ele pode ter sido vendido, saído do ar ou mudado de endereço.</p><a class="p-botao" href="/imoveis">Ver os imóveis à venda</a></div>',
   });
 }

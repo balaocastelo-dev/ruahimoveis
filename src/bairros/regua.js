@@ -9,7 +9,7 @@
 //     modo   = 'publicar' (confere as fotos de imóvel) | 'site' (foto de imóvel vendido não derruba a página)
 
 const { contarPalavras, textoPuro, linksDoTexto, semAcento } = require('../blog/texto');
-const { CLIENTE_NOME } = require('../config'); // nome da imobiliária, da configuração
+const cfg = require('../config'); // nome da imobiliária (cfg.CLIENTE_NOME), lido na hora
 
 const PALAVRAS = { minimo: 900, teto: 2600 };
 
@@ -111,7 +111,7 @@ function avaliarPagina(p, bairro, { modo = 'site' } = {}) {
   const permitidas = new Set(bairro.fotosImoveis || []);
   if (modo === 'publicar') {
     const fora = deImovel.filter((f) => !permitidas.has(f.imovel_foto)).map((f) => f.imovel_foto);
-    if (fora.length) erros.push(`Foto(s) de imóvel que não são de imóveis da ${CLIENTE_NOME} à venda neste bairro: ${fora.join(', ')}. Use só os números listados no dados.json do bairro.`);
+    if (fora.length) erros.push(`Foto(s) de imóvel que não são de imóveis da ${cfg.CLIENTE_NOME} à venda neste bairro: ${fora.join(', ')}. Use só os números listados no dados.json do bairro.`);
   }
 
   // ---- Honestidade

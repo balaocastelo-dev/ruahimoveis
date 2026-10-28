@@ -7,7 +7,7 @@ const { SLUGS } = require('../blog/categorias');
 const { SLUG } = require('../blog/validar');
 const cfg = require('../config');
 // Origem dos leads do blog: "Blog " + nome do cliente (com a config padrão, "Blog RUAH" como sempre).
-const ORIGEM_BLOG = `Blog ${cfg.CLIENTE_NOME}`;
+const ORIGEM_BLOG = () => `Blog ${cfg.CLIENTE_NOME}`; // da imobiliária atendida, lido na hora
 
 const router = express.Router();
 
@@ -104,7 +104,7 @@ api.post('/contato', (req, res) => {
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,busca,ultimo_contato)
       VALUES(?,?,?,?,?,?,?,datetime('now','localtime'))`,
-    nome, tel, email, ORIGEM_BLOG, 'novo', motivo === 'duvida' ? 'morno' : 'quente', `Veio pelo blog: ${MOTIVOS[motivo]}`).lastInsertRowid);
+    nome, tel, email, ORIGEM_BLOG(), 'novo', motivo === 'duvida' ? 'morno' : 'quente', `Veio pelo blog: ${MOTIVOS[motivo]}`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'blog', linhas, null);
   audit(null, 'blog_contato', `${motivo} · lead ${leadId}${existente ? ' (já existia)' : ''} · ${pagina}`);
