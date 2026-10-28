@@ -3,23 +3,35 @@
   "imob": "ondemorar",
   "fotos": [
    {
-    "arquivo": "ondemorar/36607-1f.jpg",
-    "antigo": "ondemorar/36607-1.jpg",
+    "arquivo": "ondemorar/36607-1h.jpg",
+    "antigos": [
+     "ondemorar/36607-1.jpg",
+     "ondemorar/36607-1f.jpg"
+    ],
     "ambiente": "jardim"
    },
    {
-    "arquivo": "ondemorar/36607-2f.jpg",
-    "antigo": "ondemorar/36607-2.jpg",
+    "arquivo": "ondemorar/36607-2h.jpg",
+    "antigos": [
+     "ondemorar/36607-2.jpg",
+     "ondemorar/36607-2f.jpg"
+    ],
     "ambiente": "piscina"
    },
    {
-    "arquivo": "ondemorar/36607-3f.jpg",
-    "antigo": "ondemorar/36607-3.jpg",
+    "arquivo": "ondemorar/36607-3h.jpg",
+    "antigos": [
+     "ondemorar/36607-3.jpg",
+     "ondemorar/36607-3f.jpg"
+    ],
     "ambiente": "fachada"
    },
    {
-    "arquivo": "ondemorar/36607-4f.jpg",
-    "antigo": "ondemorar/36607-4.jpg",
+    "arquivo": "ondemorar/36607-4h.jpg",
+    "antigos": [
+     "ondemorar/36607-4.jpg",
+     "ondemorar/36607-4f.jpg"
+    ],
     "ambiente": "sala"
    }
   ]
@@ -28,23 +40,35 @@
   "imob": "ondemorar",
   "fotos": [
    {
-    "arquivo": "ondemorar/88342-1f.jpg",
-    "antigo": "ondemorar/88342-1.jpg",
+    "arquivo": "ondemorar/88342-1h.jpg",
+    "antigos": [
+     "ondemorar/88342-1.jpg",
+     "ondemorar/88342-1f.jpg"
+    ],
     "ambiente": "piscina"
    },
    {
-    "arquivo": "ondemorar/88342-2f.jpg",
-    "antigo": "ondemorar/88342-2.jpg",
+    "arquivo": "ondemorar/88342-2h.jpg",
+    "antigos": [
+     "ondemorar/88342-2.jpg",
+     "ondemorar/88342-2f.jpg"
+    ],
     "ambiente": "banheiro"
    },
    {
-    "arquivo": "ondemorar/88342-3f.jpg",
-    "antigo": "ondemorar/88342-3.jpg",
+    "arquivo": "ondemorar/88342-3h.jpg",
+    "antigos": [
+     "ondemorar/88342-3.jpg",
+     "ondemorar/88342-3f.jpg"
+    ],
     "ambiente": "lazer"
    },
    {
-    "arquivo": "ondemorar/88342-4f.jpg",
-    "antigo": "ondemorar/88342-4.jpg",
+    "arquivo": "ondemorar/88342-4h.jpg",
+    "antigos": [
+     "ondemorar/88342-4.jpg",
+     "ondemorar/88342-4f.jpg"
+    ],
     "ambiente": "quarto"
    }
   ]
@@ -53,28 +77,43 @@
   "imob": "ondemorar",
   "fotos": [
    {
-    "arquivo": "ondemorar/91279-1f.jpg",
-    "antigo": "ondemorar/91279-1.jpg",
+    "arquivo": "ondemorar/91279-1h.jpg",
+    "antigos": [
+     "ondemorar/91279-1.jpg",
+     "ondemorar/91279-1f.jpg"
+    ],
     "ambiente": "banheiro"
    },
    {
-    "arquivo": "ondemorar/91279-2f.jpg",
-    "antigo": "ondemorar/91279-2.jpg",
+    "arquivo": "ondemorar/91279-2h.jpg",
+    "antigos": [
+     "ondemorar/91279-2.jpg",
+     "ondemorar/91279-2f.jpg"
+    ],
     "ambiente": "cozinha"
    },
    {
-    "arquivo": "ondemorar/91279-3f.jpg",
-    "antigo": "ondemorar/91279-3.jpg",
+    "arquivo": "ondemorar/91279-3h.jpg",
+    "antigos": [
+     "ondemorar/91279-3.jpg",
+     "ondemorar/91279-3f.jpg"
+    ],
     "ambiente": "lazer"
    },
    {
-    "arquivo": "ondemorar/91279-4f.jpg",
-    "antigo": "ondemorar/91279-4.jpg",
+    "arquivo": "ondemorar/91279-4h.jpg",
+    "antigos": [
+     "ondemorar/91279-4.jpg",
+     "ondemorar/91279-4f.jpg"
+    ],
     "ambiente": "fachada"
    },
    {
-    "arquivo": "ondemorar/91279-5f.jpg",
-    "antigo": "ondemorar/91279-5.jpg",
+    "arquivo": "ondemorar/91279-5h.jpg",
+    "antigos": [
+     "ondemorar/91279-5.jpg",
+     "ondemorar/91279-5f.jpg"
+    ],
     "ambiente": "sala"
    }
   ]
