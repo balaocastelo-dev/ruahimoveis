@@ -1,0 +1,292 @@
+{
+  "codigo": "CA0054",
+  "slug": "casa-comercial-jardim-chapadaocampinas-sp-ca0054",
+  "titulo": "Casa comercial com 4 vagas de garagem no Jardim Chapadão, Campinas",
+  "resumo": "Casa comercial no Jardim Chapadão, Campinas, com 4 vagas de garagem e localização estratégica. Ideal para empreendimentos com visibilidade e acesso facilitado.",
+  "capa": {
+    "foto": 1420,
+    "alt": "Fachada de imóvel com logotipo 'RUAH' e janelas azuis"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel comercial está localizado em uma esquina estratégica da Avenida Andrade Neves, no Jardim Chapadão, Campinas. O imóvel é ideal para quem busca visibilidade e fácil acesso, com grande fluxo de pessoas e veículos ao redor. A fachada apresenta uma estrutura sólida, com janelas azuis e um logotipo visível, combinando modernidade e funcionalidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com 6 salas amplas, banheiros masculino e feminino, cozinha e área de serviço, além de uma edícula, o imóvel oferece versatilidade para diferentes tipos de atividades comerciais e profissionais. A área total do imóvel é de 290 m², com área útil de 205 m², garantindo espaço suficiente para atender às necessidades do seu negócio."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Localização estratégica na Avenida Andrade Neves",
+        "4 vagas de garagem para garantir o estacionamento de clientes e colaboradores",
+        "6 salas amplas para diferentes tipos de atividades comerciais",
+        "Banheiros masculino e feminino para atender a demanda de clientes",
+        "Cozinha e área de serviço integradas para maior praticidade",
+        "Edícula para uso adicional ou armazenamento"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fachada e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do imóvel apresenta uma estrutura sólida e bem conservada, com janelas azuis e logotipos visíveis, conferindo um aspecto moderno e profissional. O acesso ao imóvel é facilitado por uma área de estacionamento e um portão metálico que garante segurança e privacidade. As fotos mostram a fachada com grades metálicas e telhado de telhas, indicando a estrutura robusta e a boa conservação do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1423,
+          "legenda": "Fachada de casa com portão metálico"
+        },
+        {
+          "foto": 1424,
+          "legenda": "Fachada de casa com grades metálicas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e salas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As salas do imóvel são amplas e bem distribuídas, com piso de cerâmica e paredes brancas, criando um ambiente limpo e profissional. As fotos mostram salas vazias com armários de cor clara e janelas com grades, permitindo a entrada de luz natural. As portas estão abertas, facilitando a circulação e a integração dos espaços."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1428,
+          "legenda": "Sala com janela e porta aberta"
+        },
+        {
+          "foto": 1429,
+          "legenda": "Sala vazia com armários e janela"
+        },
+        {
+          "foto": 1436,
+          "legenda": "Sala vazia com piso de azulejos e janela panorâmica"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos, com piso de cerâmica e paredes brancas, ideal para uso como escritórios ou áreas de atendimento. As fotos mostram quartos vazios com janelas com grades, garantindo privacidade e segurança. A área de serviço conta com armários e porta metálica, oferecendo praticidade e organização para o dia a dia do negócio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1430,
+          "legenda": "Quarto vazio com piso de cerâmica"
+        },
+        {
+          "foto": 1431,
+          "legenda": "Quarto vazio com piso de cerâmica e janela com grades"
+        },
+        {
+          "foto": 1432,
+          "legenda": "Área de serviço com armários e porta aberta"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como o imóvel é comercial, não há lazer específico no condomínio. A área externa do imóvel é bem estruturada, com áreas de estacionamento e grades metálicas que garantem a segurança do local. A bem localizada do imóvel, ao lado de hospitais, clínicas e farmácias, traz vantagens para o fluxo de clientes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1421,
+          "legenda": "Fachada de casa com árvore e grades"
+        },
+        {
+          "foto": 1425,
+          "legenda": "Fachada de imóvel com grade e piso de ladrilho"
+        },
+        {
+          "foto": 1426,
+          "legenda": "Fachada lateral de casa com janela protegida e grade"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para profissionais e empreendedores que buscam uma localização estratégica, com visibilidade e acesso facilitado. Com 6 salas amplas, banheiros masculino e feminino, cozinha e área de serviço, o imóvel oferece versatilidade para diferentes tipos de atividades comerciais e profissionais."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado geral das instalações e o que não aparece nas fotos, como o estado da edícula e a possibilidade de expansão do negócio.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1420,
+      "legenda": "Fachada de imóvel com logotipo 'RUAH' e janelas azuis",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1421,
+      "legenda": "Fachada de casa com árvore e grades",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1422,
+      "legenda": "Fachada de imóvel com logotipo 'RUAAH' e telhado de telhas vermelhas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1423,
+      "legenda": "Fachada de casa com portão metálico",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1424,
+      "legenda": "Fachada de casa com grades metálicas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1425,
+      "legenda": "Fachada de imóvel com grade e piso de ladrilho",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1426,
+      "legenda": "Fachada lateral de casa com janela protegida e grade",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1428,
+      "legenda": "Sala com janela e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1429,
+      "legenda": "Sala vazia com armários e janela",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1433,
+      "legenda": "Sala vazia com piso de cerâmica e janela com grades",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1436,
+      "legenda": "Sala vazia com piso de azulejos e janela panorâmica",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1437,
+      "legenda": "Sala com piso azulejado e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1438,
+      "legenda": "Sala com piso de cerâmica e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1439,
+      "legenda": "Sala vazia com piso de azulejos e janela com vista para rua",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1440,
+      "legenda": "Sala com grandes janelas e vista para a rua",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1441,
+      "legenda": "Sala com janela e porta azul",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1427,
+      "legenda": "Varanda com piso de ladrilho e janelas laterais",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1432,
+      "legenda": "Área de serviço com armários e porta aberta",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1434,
+      "legenda": "Área de serviço com armários e porta",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1430,
+      "legenda": "Quarto vazio com piso de cerâmica",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1431,
+      "legenda": "Quarto vazio com piso de cerâmica e janela com grades",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1435,
+      "legenda": "Quarto com piso de cerâmica e janela com grades",
+      "ambiente": "quarto"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel conta com 4 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "O imóvel não possui área gourmet, mas conta com cozinha e área de serviço integradas."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa comercial no Jardim Chapadão, Campinas, com 4 vagas de garagem. Ideal para empreendimentos com visibilidade e acesso facilitado. Localização estratégica na Avenida Andrade Neves, em área com grande fluxo de pessoas e veículos.",
+    "hashtags": [
+      "casacomercial",
+      "campinas",
+      "jardimchapadão",
+      "imovelcomercial",
+      "investimentocomercial",
+      "locaçãocomercial",
+      "negocioscampinas",
+      "imoveisruah"
+    ]
+  },
+  "versao": "851f3b83857f",
+  "publicadoEm": "2026-10-28T03:53:16.264Z"
+}

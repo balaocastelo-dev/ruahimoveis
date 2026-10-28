@@ -1,0 +1,233 @@
+{
+  "codigo": "CA0049",
+  "slug": "casa-jardim-guanabara-campinas-3-quartos-6-vagas-ca0049",
+  "titulo": "Casa com 3 quartos, 6 vagas e terreno amplo no Jardim Guanabara, Campinas",
+  "resumo": "Casa com 3 quartos, 6 vagas e terreno amplo no Jardim Guanabara, em Campinas. Ideal para quem busca espaço, comodidade e infraestrutura urbana.",
+  "capa": {
+    "foto": 1370,
+    "alt": "Fachada de casa com logotipo 'RUAH' e janelas com persianas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa à venda no Jardim Guanabara, em Campinas, com terreno amplo e 6 vagas. Localizada em área tradicional, o imóvel oferece 515,60 m² de terreno e 109,47 m² de área útil. Ideal para quem busca espaço para diferentes necessidades e ambientes bem definidos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade conta com 3 quartos, sala, cozinha e copa, além de uma edícula com um cômodo adicional. A casa oferece uma configuração funcional para a rotina familiar e é uma boa opção para quem valoriza terreno generoso e flexibilidade de uso."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno amplo com 515,60 m²",
+        "6 vagas de garagem para veículos",
+        "Edícula com cômodo adicional",
+        "Ambientes bem definidos e espaçosos",
+        "Localização no Jardim Guanabara, com acesso a comércio e serviços"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno amplo é um dos principais atrativos do imóvel, oferecendo possibilidades de aproveitamento que devem ser analisadas de acordo com a construção existente e as necessidades do comprador. A área externa inclui uma varanda coberta com churrasqueira e um pátio com piso de concreto e paredes de tijolos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1369,
+          "legenda": "Terreno com muro e casa ao fundo"
+        },
+        {
+          "foto": 1371,
+          "legenda": "Patio com casa à esquerda e muro à direita"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Interior da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa possui uma sala com piso de mosaico e fotos na parede, além de uma segunda sala com piso de ladrilho hidráulico e armário vermelho. A cozinha conta com armários brancos, pia, fogão a gás e janela com grade. Os banheiros têm piso de azulejo e janelas com vista para o exterior."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1373,
+          "legenda": "Sala com piso de mosaico e fotos na parede"
+        },
+        {
+          "foto": 1374,
+          "legenda": "Sala com piso de ladrilho hidráulico e armário vermelho"
+        },
+        {
+          "foto": 1377,
+          "legenda": "Cozinha com armários brancos, pia, fogão e janela"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos possuem piso de madeira em xadrez, janelas com grade e luminárias de parede. Um quarto tem piso vermelho e prateleira metálica, enquanto outro apresenta uma cama com cabeceira capitonê. A casa também conta com uma área de serviço com armário e banheiro de empregada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1379,
+          "legenda": "Quarto com cama e janela com vista para o exterior"
+        },
+        {
+          "foto": 1380,
+          "legenda": "Quarto com piso vermelho e prateleira metálica"
+        },
+        {
+          "foto": 1381,
+          "legenda": "Escritório vazio com cadeira de rodas e mesa"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está situado no Jardim Guanabara, bairro tradicional de Campinas, com acesso a comércio, serviços, instituições de ensino e vias importantes da cidade. A localização permite aproveitar a infraestrutura urbana da região e facilita o deslocamento para diferentes pontos do município."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para quem busca uma casa com terreno amplo, 6 vagas de garagem e uma configuração funcional para a rotina familiar. A localização no Jardim Guanabara oferece comodidade e acesso a serviços importantes da cidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado do terreno e quais são as possibilidades de uso da edícula.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1370,
+      "legenda": "Fachada de casa com logotipo 'RUAH' e janelas com persianas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1375,
+      "legenda": "Fachada de casa com escada e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1369,
+      "legenda": "Terreno com muro e casa ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1371,
+      "legenda": "Patio com casa à esquerda e muro à direita",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1373,
+      "legenda": "Sala com piso de mosaico e fotos na parede",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1374,
+      "legenda": "Sala com piso de ladrilho hidráulico e armário vermelho",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1376,
+      "legenda": "Sala com sofá vermelho, poltrona, mesa de centro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1372,
+      "legenda": "Varanda coberta com churrasqueira e porta de entrada",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1377,
+      "legenda": "Cozinha com armários brancos, pia, fogão e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1379,
+      "legenda": "Quarto com cama e janela com vista para o exterior",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1380,
+      "legenda": "Quarto com piso vermelho e prateleira metálica",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1378,
+      "legenda": "Banheiro com papel de parede circular, banheira, pia e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1381,
+      "legenda": "Escritório vazio com cadeira de rodas e mesa",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel possui 6 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "A varanda coberta possui churrasqueira, que pode ser considerada uma área gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    },
+    {
+      "pergunta": "Tem banheiro de empregada?",
+      "resposta": "Sim, o imóvel conta com um banheiro de empregada."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa com terreno amplo e 6 vagas no Jardim Guanabara, em Campinas. Ideal para quem busca espaço e infraestrutura urbana. Saiba mais no link da página.",
+    "hashtags": [
+      "casaamplo",
+      "campinas",
+      "jardimguanabara",
+      "terrenogrande",
+      "imoveis",
+      "vendacampinas",
+      "imovelcompleto",
+      "vagasdegaragem"
+    ]
+  },
+  "versao": "b6eade384861",
+  "publicadoEm": "2026-10-28T03:53:16.265Z"
+}

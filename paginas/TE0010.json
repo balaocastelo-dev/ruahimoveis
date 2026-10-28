@@ -1,0 +1,192 @@
+{
+  "codigo": "TE0010",
+  "slug": "terreno-nova-campinas-campinas-sp-te0010",
+  "titulo": "Terreno de 452 m² em Nova Campinas, com portão eletrônico e edícula",
+  "resumo": "Terreno de 452 m² em Nova Campinas, com portão eletrônico, edícula e topografia favorável. Localização valorizada com infraestrutura completa.",
+  "capa": {
+    "foto": 1382,
+    "alt": "Entrada de propriedade com portão e muro de tijolos"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 452 m² está localizado em Nova Campinas, uma região consolidada de Campinas com infraestrutura completa e fácil acesso a vias importantes. A área já está murada e conta com portão eletrônico, oferecendo segurança e privacidade. Nas fotos, é possível ver a entrada com muro de tijolos, uma estrada pavimentada e um jardim com vegetação. A região é valorizada e tem potencial para desenvolvimento imobiliário, seja para construção de uma residência, um projeto comercial ou uma incorporação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno de 452 m²",
+        "Portão eletrônico instalado",
+        "Edícula nos fundos",
+        "Topografia favorável",
+        "Localização valorizada",
+        "Infraestrutura completa"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno já está murado e conta com portão eletrônico, facilitando o acesso e a segurança. Nas fotos, é possível ver a entrada com muro de tijolos e uma estrada pavimentada. O imóvel também possui uma edícula nos fundos, que pode ser usada como apoio para obra, depósito ou até mesmo como espaço de serviço. A topografia favorece o aproveitamento da área, permitindo diversas possibilidades construtivas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1383,
+          "legenda": "Fachada de casa com jardim e muro de pedra"
+        },
+        {
+          "foto": 1386,
+          "legenda": "Paredes antigas com vegetação ao redor"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área verde e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno tem áreas verdes bem mantidas, com gramas e vegetação ao redor. Nas fotos, é possível ver carros estacionados em jardins com árvores e arbustos. A região é cercada por casas com telhados vermelhos e estradas bem pavimentadas. A vegetação densa ao redor contribui para o aspecto natural do local, oferecendo privacidade e um ambiente agradável."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1384,
+          "legenda": "Jardim com casa e carro estacionado"
+        },
+        {
+          "foto": 1385,
+          "legenda": "Jardim com casa e carro estacionado"
+        },
+        {
+          "foto": 1387,
+          "legenda": "Jardim com vegetação densa e veículo estacionado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Infraestrutura e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização do terreno é estratégica, com acesso fácil a importantes vias da cidade. O bairro conta com supermercados, farmácias, escolas e comércios, garantindo conveniência para quem morar ou investir no local. As fotos mostram a proximidade com casas vizinhas e uma estrada principal que facilita o deslocamento. A região é valorizada e tem um padrão construtivo definido, o que contribui para o do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1389,
+          "legenda": "Lote com casa e área verde"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca construir uma residência, investir em um ativo com ou desenvolver um projeto imobiliário. A localização estratégica, a infraestrutura completa e a topografia favorável tornam o imóvel uma excelente opção para quem deseja aproveitar o crescimento da região de Nova Campinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "dica"
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, a viabilidade urbanística para construções e o que não está visível nas fotos, como a existência de pendências ou restrições legais.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1383,
+      "legenda": "Fachada de casa com jardim e muro de pedra",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1386,
+      "legenda": "Paredes antigas com vegetação ao redor",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1389,
+      "legenda": "Lote com casa e área verde",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1388,
+      "legenda": "Banheiro externo com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1382,
+      "legenda": "Entrada de propriedade com portão e muro",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1384,
+      "legenda": "Jardim com casa e carro estacionado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1385,
+      "legenda": "Jardim com casa e carro estacionado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1387,
+      "legenda": "Jardim com vegetação densa e veículo estacionado",
+      "ambiente": "jardim"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem 452 m² de área total."
+    },
+    {
+      "pergunta": "Tem portão eletrônico?",
+      "resposta": "Sim, o terreno conta com portão eletrônico instalado."
+    },
+    {
+      "pergunta": "Tem edícula?",
+      "resposta": "Sim, há uma edícula nos fundos do terreno."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Preencha o formulário desta página para agendar uma visita."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 452 m² em Nova Campinas, com portão eletrônico, edícula e topografia favorável. Localização valorizada com infraestrutura completa. Ideal para construir, investir ou desenvolver um projeto imobiliário.",
+    "hashtags": [
+      "terrenocampinas",
+      "novacampinas",
+      "investimentoimobiliario",
+      "terrenovalorizado",
+      "construcao",
+      "imoveiscampinas",
+      "areaverde",
+      "portaoneletronico"
+    ]
+  },
+  "versao": "619f8ecb4486",
+  "publicadoEm": "2026-10-28T03:53:16.265Z"
+}

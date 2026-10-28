@@ -1,0 +1,332 @@
+{
+  "codigo": "CA0006",
+  "slug": "casa-em-condominio-alfaville-campinas-sp-ca0006",
+  "titulo": "Casa em condomínio com 3 quartos e 4 vagas no Alphaville, Campinas",
+  "resumo": "Casa em condomínio no Alphaville, Campinas, com 3 quartos, 1 suíte, 4 vagas de garagem e área total de 150 m². Ideal para quem busca conforto e segurança.",
+  "capa": {
+    "foto": 1442,
+    "alt": "Jardim com caminho de pedras e mesa de jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no Alphaville, Campinas, com 3 quartos, 1 suíte e 4 vagas de garagem. O imóvel tem 150 m² de área útil e está localizado em um condomínio fechado com infraestrutura e segurança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel oferece espaços aconchegantes, como sala de estar com sofá, sala de jantar com mesa e cadeiras, e uma varanda com vista para o jardim. O jardim externo é bem cuidado, com gramas, árvores e uma mesa de jardim."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos e 1 suíte",
+        "4 vagas de garagem, sendo 2 cobertas",
+        "Jardim com gramas, árvores e mesa de jardim",
+        "Sala de estar com sofá e plantas",
+        "Cozinha moderna com eletrodomésticos e iluminação natural",
+        "Condomínio fechado com segurança"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é integrada, com sala de estar e jantar. A sala de estar tem um sofá bege e plantas, com janelas com persianas. A sala de jantar possui uma mesa branca e cadeiras de madeira, com iluminação pendente no teto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda tem vista para o jardim e é equipada com uma mesa quadrada e cadeiras brancas. O teto de vidro permite a entrada de luz natural e oferece uma visão agradável para o jardim."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1444,
+          "legenda": "Varanda com vista para o jardim e sala de estar"
+        },
+        {
+          "foto": 1445,
+          "legenda": "Varanda com mesa e cadeiras, jardim e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna, com armários cinza, ilha central e eletrodomésticos como geladeira e micro-ondas. A ilha central conta com um banco de balcão e estante acima da bancada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha possui iluminação natural e piso claro, com bancada de aço inox e estante de utensílios. A área de serviço é funcional, com espaço para armazenamento e fácil acesso."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1447,
+          "legenda": "Cozinha moderna com iluminação natural e eletrodomésticos"
+        },
+        {
+          "foto": 1452,
+          "legenda": "Cozinha moderna com ilha central e eletrodomésticos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com 3 quartos, sendo 1 suíte. O quarto principal tem cama de casal, paredes verdes e luminária no teto. Outro quarto tem duas camas e estante acima das camas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros têm box de vidro, pia de madeira, espelho e toalhas penduradas. Alguns banheiros possuem decoração marinha e cestos de vime, enquanto outros têm banheira e tubulação de água."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1462,
+          "legenda": "Quarto com cama de casal e parede verde"
+        },
+        {
+          "foto": 1464,
+          "legenda": "Banheiro com vaso sanitário, pia com espelho, cestos de vime e decoração marinha"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece segurança e infraestrutura, com acesso fácil às principais rodovias de Campinas. O imóvel está localizado em um ambiente tranquilo e bem planejado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O jardim externo é bem cuidado, com gramas, árvores e caminho de pedras. A área externa também conta com mesa e cadeiras para uso em momentos de lazer."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1443,
+          "legenda": "Jardim com grama, arbustos e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa em condomínio no Alphaville é ideal para famílias que buscam conforto, segurança e qualidade de vida. Com 3 quartos, 1 suíte e 4 vagas de garagem, é uma excelente opção para quem deseja morar em um condomínio fechado com infraestrutura e área verde."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a infraestrutura do condomínio e o que não está visível nas fotos, como o estado do telhado e o sistema de aquecimento.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1446,
+      "legenda": "Sala de jantar com mesa e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1448,
+      "legenda": "Sala de estar com sofá e plantas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1449,
+      "legenda": "Sala de estar com sofá e plantas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1450,
+      "legenda": "Sala de estar com sofá, televisão e escada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1456,
+      "legenda": "Sala de estar com sofá cinza e mesa lateral",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1457,
+      "legenda": "Sala de estar com sofá, mesa lateral e plantas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1458,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1460,
+      "legenda": "Sala de estar com sofá, plantas e luminária",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1444,
+      "legenda": "Varanda com vista para o jardim e sala de estar",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1445,
+      "legenda": "Varanda com mesa e cadeiras, jardim e céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1447,
+      "legenda": "Cozinha moderna com iluminação natural e eletrodomésticos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1451,
+      "legenda": "Cozinha com geladeira, estante e cadeiras vermelhas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1452,
+      "legenda": "Cozinha moderna com ilha central e eletrodomésticos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1459,
+      "legenda": "Cozinha moderna com ilha central e armários cinza",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1461,
+      "legenda": "Dormitório com duas camas e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1462,
+      "legenda": "Quarto com cama de casal e parede verde",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1465,
+      "legenda": "Dobrados em quarto com duas camas e estante acima",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1469,
+      "legenda": "Quarto com armários e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1471,
+      "legenda": "Dobradiça de cama com vista para janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1454,
+      "legenda": "Banheiro com box de vidro e bancada de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1455,
+      "legenda": "Banheiro com box de vidro, pia de madeira, espelho e toalha pendurada",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1464,
+      "legenda": "Banheiro com vaso sanitário, pia com espelho, cestos de vime e decoração marinha",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1466,
+      "legenda": "Banheiro com box de vidro, pia de madeira e toalha pendurada",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1468,
+      "legenda": "Banheiro com vaso sanitário, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1470,
+      "legenda": "Banheiro com box de vidro, pia de madeira, espelho grande e toalhas penduradas",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1442,
+      "legenda": "Jardim com caminho de pedras e mesa de jardim",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1443,
+      "legenda": "Jardim com grama, arbustos e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1453,
+      "legenda": "Escritório com mesa dupla, cadeiras, estante e janela com vista para árvores",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1463,
+      "legenda": "Corredor com armários e janela",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1467,
+      "legenda": "Escritório bem organizado com duas cadeiras e muitos documentos",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 4 vagas de garagem, sendo 2 cobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Não há menção a área gourmet no anúncio, e as fotos não mostram tal área."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Alphaville, Campinas/SP. Com 3 quartos, 1 suíte e 4 vagas de garagem. Ideal para quem busca conforto e segurança. O imóvel tem área total de 150 m² e está localizado em um condomínio fechado com infraestrutura. Venha conhecer!",
+    "hashtags": [
+      "casacondominio",
+      "alfavillecampinas",
+      "imovelcampinas",
+      "vendacampinas",
+      "condominiofechado",
+      "3quartos",
+      "4vagas",
+      "areaverde"
+    ]
+  },
+  "versao": "acbaaa764acb",
+  "publicadoEm": "2026-10-28T03:53:16.263Z"
+}

@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0010",
+      "slug": "terreno-nova-campinas-campinas-sp-te0010",
+      "titulo": "Terreno de 452 m² em Nova Campinas, com portão eletrônico e edícula",
+      "resumo": "Terreno de 452 m² em Nova Campinas, com portão eletrônico, edícula e topografia favorável. Localização valorizada com infraestrutura completa.",
+      "capa": {
+        "foto": 1382,
+        "alt": "Entrada de propriedade com portão e muro de tijolos"
+      },
+      "versao": "619f8ecb4486",
+      "publicadoEm": "2026-10-28T03:53:16.265Z"
+    },
+    {
+      "codigo": "CA0049",
+      "slug": "casa-jardim-guanabara-campinas-3-quartos-6-vagas-ca0049",
+      "titulo": "Casa com 3 quartos, 6 vagas e terreno amplo no Jardim Guanabara, Campinas",
+      "resumo": "Casa com 3 quartos, 6 vagas e terreno amplo no Jardim Guanabara, em Campinas. Ideal para quem busca espaço, comodidade e infraestrutura urbana.",
+      "capa": {
+        "foto": 1370,
+        "alt": "Fachada de casa com logotipo 'RUAH' e janelas com persianas"
+      },
+      "versao": "b6eade384861",
+      "publicadoEm": "2026-10-28T03:53:16.265Z"
+    },
+    {
+      "codigo": "CA0054",
+      "slug": "casa-comercial-jardim-chapadaocampinas-sp-ca0054",
+      "titulo": "Casa comercial com 4 vagas de garagem no Jardim Chapadão, Campinas",
+      "resumo": "Casa comercial no Jardim Chapadão, Campinas, com 4 vagas de garagem e localização estratégica. Ideal para empreendimentos com visibilidade e acesso facilitado.",
+      "capa": {
+        "foto": 1420,
+        "alt": "Fachada de imóvel com logotipo 'RUAH' e janelas azuis"
+      },
+      "versao": "851f3b83857f",
+      "publicadoEm": "2026-10-28T03:53:16.264Z"
+    },
+    {
+      "codigo": "CA0047",
+      "slug": "casa-condominio-3-suites-varanda-gourmet-dos-ortizes-valinhos-sp-ca0047",
+      "titulo": "Casa em condomínio de 3 suítes com varanda gourmet no Dos Ortizes",
+      "resumo": "Casa em condomínio no Dos Ortizes, Valinhos, com 3 suítes, 4 vagas e área gourmet integrada à cozinha, ideal para quem busca conforto e modernidade.",
+      "capa": {
+        "foto": 1396,
+        "alt": "Varanda gourmet com churrasqueira e bancada escura"
+      },
+      "versao": "c99e99ad12cb",
+      "publicadoEm": "2026-10-28T03:53:16.264Z"
+    },
+    {
+      "codigo": "CA0006",
+      "slug": "casa-em-condominio-alfaville-campinas-sp-ca0006",
+      "titulo": "Casa em condomínio com 3 quartos e 4 vagas no Alphaville, Campinas",
+      "resumo": "Casa em condomínio no Alphaville, Campinas, com 3 quartos, 1 suíte, 4 vagas de garagem e área total de 150 m². Ideal para quem busca conforto e segurança.",
+      "capa": {
+        "foto": 1442,
+        "alt": "Jardim com caminho de pedras e mesa de jardim"
+      },
+      "versao": "acbaaa764acb",
+      "publicadoEm": "2026-10-28T03:53:16.263Z"
+    },
+    {
       "codigo": "CA0023",
       "slug": "casa-5-suites-varanda-jardim-chapadao-campinas-sp-ca0023",
       "titulo": "Casa de 5 suítes com varanda e área de lazer no Jardim Chapadão, Campinas",
@@ -506,5 +566,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T03:51:31.339Z"
+  "atualizadoEm": "2026-10-28T03:53:16.266Z"
 }

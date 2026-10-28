@@ -1,0 +1,302 @@
+{
+  "codigo": "CA0047",
+  "slug": "casa-condominio-3-suites-varanda-gourmet-dos-ortizes-valinhos-sp-ca0047",
+  "titulo": "Casa em condomínio de 3 suítes com varanda gourmet no Dos Ortizes",
+  "resumo": "Casa em condomínio no Dos Ortizes, Valinhos, com 3 suítes, 4 vagas e área gourmet integrada à cozinha, ideal para quem busca conforto e modernidade.",
+  "capa": {
+    "foto": 1396,
+    "alt": "Varanda gourmet com churrasqueira e bancada escura"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no bairro Dos Ortizes, em Valinhos, com 3 suítes e 4 vagas de garagem. O imóvel tem 165 m² de área construída, com cômodos bem distribuídos e ambientes integrados. As fotos mostram uma cozinha moderna com ilha, uma sala aconchegante, uma varanda gourmet com churrasqueira e vista para o céu, e um terreno com gramado e piso de tijolos. O imóvel é ideal para quem busca um espaço funcional e moderno, com áreas de lazer e conforto para a família."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com armários de madeira",
+        "4 vagas de garagem",
+        "Cozinha com ilha e bancada escura",
+        "Área gourmet com churrasqueira",
+        "Sala com piso claro e escada moderna",
+        "Terreno com gramado e piso de tijolos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é integrada, com sala de estar com piso claro, escada moderna e vista para a sala. As fotos mostram uma cozinha moderna com ilha central, armários sob medida e bancada escura. A cozinha também possui exaustor metálico, janela com vista e iluminação embutida. A área gourmet é bem iluminada, com churrasqueira, bancada de madeira e teto de madeira, ideal para receber familiares e amigos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1390,
+          "legenda": "Cozinha moderna com ilha e janela"
+        },
+        {
+          "foto": 1393,
+          "legenda": "Cozinha gourmet com ilha e churrasqueira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem distribuídos, com piso de madeira, portas brancas e armários de vidro. Uma das suítes tem piso de madeira e ar condicionado. Os banheiros têm piso claro, box de vidro, pia branca e teto branco, com detalhes como pia de mármore e válvula de água. As fotos mostram que os ambientes são bem iluminados e têm acabamento moderno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1412,
+          "legenda": "Quarto com piso de madeira e papel de parede com borboletas"
+        },
+        {
+          "foto": 1416,
+          "legenda": "Banheiro com box de vidro, vaso sanitário e pia"
+        },
+        {
+          "foto": 1414,
+          "legenda": "Suite com armário de vidro e piso de madeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno da casa tem gramado bem cuidado, piso de tijolos e uma parede branca. As fotos mostram uma varanda com piso de madeira, vista para a natureza e porta de vidro. A área de lazer inclui churrasqueira e bancada escura. O imóvel também tem uma área de serviço com vista para o jardim, e o acesso ao terreno é amplo e bem distribuído."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1400,
+          "legenda": "Patio com parede branca e gramado"
+        },
+        {
+          "foto": 1398,
+          "legenda": "Varanda gourmet com churrasqueira e vista para o céu"
+        },
+        {
+          "foto": 1419,
+          "legenda": "Varanda com piso de madeira e vista para a natureza"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, modernidade e segurança. O condomínio oferece privacidade e infraestrutura, com áreas de lazer e espaços bem planejados. A localização no bairro Dos Ortizes, em Valinhos, garante acesso a serviços e qualidade de vida."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há áreas comuns, como piscina ou academia, que não aparecem nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1400,
+      "legenda": "Patio com parede branca e gramado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1392,
+      "legenda": "Sala de estar com escada e ar condicionado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1405,
+      "legenda": "Sala de estar com piso claro e vista para a rua",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1407,
+      "legenda": "Sala com painel de madeira e janela com vista para plantas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1408,
+      "legenda": "Sala com piso claro e janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1409,
+      "legenda": "Sala de estar com parede de pedra e escada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1410,
+      "legenda": "Sala com piso claro e parede de tijolinho",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1411,
+      "legenda": "Sala com escada moderna e bancada de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1396,
+      "legenda": "Varanda gourmet com churrasqueira e bancada escura",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1398,
+      "legenda": "Varanda gourmet com churrasqueira e vista para o céu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1419,
+      "legenda": "Varanda com piso de madeira e vista para a natureza",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1393,
+      "legenda": "Cozinha gourmet com ilha e churrasqueira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1397,
+      "legenda": "Cozinha gourmet com churrasqueira e bancada de madeira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1399,
+      "legenda": "Cozinha gourmet com ilha e churrasqueira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1390,
+      "legenda": "Cozinha moderna com ilha e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1391,
+      "legenda": "Cozinha moderna com ilha e cooktop",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1394,
+      "legenda": "Cozinha moderna com ilha central e armários de madeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1395,
+      "legenda": "Cozinha gourmet com ilha central e vista para o jardim",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1401,
+      "legenda": "Cozinha moderna com iluminação embutida e bancada escura",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1403,
+      "legenda": "Cozinha moderna com ilha central e armários sob medida",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1412,
+      "legenda": "Quarto com piso de madeira e papel de parede com borboletas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1413,
+      "legenda": "Quarto com janela e papel de parede borboletas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1417,
+      "legenda": "Quarto com piso de madeira, porta branca, janela com grade e armário de vidro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1414,
+      "legenda": "Suite com armário de vidro e piso de madeira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1402,
+      "legenda": "Banheiro com piso claro e porta de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1406,
+      "legenda": "Banheiro com pia de mármore e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1415,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1416,
+      "legenda": "Banheiro com box de vidro, vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1418,
+      "legenda": "Escada com estante de madeira",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 1404,
+      "legenda": "Corredor com escada moderna e vista para a sala",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 4 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a casa possui área gourmet com churrasqueira, bancada e vista para o céu."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Dos Ortizes, Valinhos, com 3 suítes, 4 vagas, área gourmet integrada e terreno com gramado. Ideal para quem busca conforto e modernidade.",
+    "hashtags": [
+      "casacondominio",
+      "valinhos",
+      "dosortizes",
+      "3suites",
+      "areagourmet",
+      "vagas4",
+      "imovelresidencial",
+      "sp"
+    ]
+  },
+  "versao": "c99e99ad12cb",
+  "publicadoEm": "2026-10-28T03:53:16.264Z"
+}
