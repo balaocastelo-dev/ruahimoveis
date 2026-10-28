@@ -7,14 +7,19 @@ const path = require('path');
 const cfg = require('../config');
 const { getConfig, setConfig } = require('../db');
 const F = require('./base');
+const pc = require('../pc');
 
-const PASTA = path.join(cfg.DATA_DIR, 'whatsapp-thiago');
+// Multi-imobiliária: um robô por imobiliária do PC (src/pc.js). Estado, sessão e timers ficam separados por imobiliária;
+// a sessão da RUAH continua em data/whatsapp-thiago e a das novas em data/<slug>/whatsapp-thiago.
+const pasta = () => pc.pastaDados('whatsapp-thiago');
 const TICK_MS = 20e3;
-const st = { estado: 'iniciando', qr: null, numero: null, erro: null, ultimoEnvio: 0, proximoEm: 0, enviando: false };
-let sock = null, B = null, timer = null, reconectando = false;
+const R = pc.estadoPor((slug) => ({ slug, st: { estado: 'iniciando', qr: null, numero: null, erro: null, ultimoEnvio: 0, proximoEm: 0, enviando: false }, sock: null, timer: null, reconectando: false }));
+let B = null;
+let carregaBaileys = () => import('baileys'); // trocado nos testes (test/pc-multi.js)
 
-const log = (...a) => console.log(new Date().toLocaleTimeString('pt-BR'), '[TH-IA-GO]', ...a);
+const log = (...a) => console.log(new Date().toLocaleTimeString('pt-BR'), `[TH-IA-GO${pc.ehRaiz(R().slug) ? '' : ' ' + R().slug}]`, ...a);
 function publica() {
+  const { st } = R();
   try {
     setConfig('fisguei_robo', JSON.stringify({ estado: st.estado, qr: st.qr, numero: st.numero, erro: st.erro, em: new Date().toISOString(),
       ultimo_envio: st.ultimoEnvio ? new Date(st.ultimoEnvio).toISOString() : null, proximo_em: st.proximoEm ? new Date(st.proximoEm).toISOString() : null }));
@@ -25,16 +30,19 @@ const telDoJid = (jid) => String(jid || '').split('@')[0].split(':')[0].replace(
 const jidDoTel = (t) => `${F.normTel(t)}@s.whatsapp.net`;
 
 async function conecta() {
-  if (!B) B = await import('baileys');
+  const r = R(), { st } = r;
+  if (!B) B = await carregaBaileys();
   const pino = (await import('pino')).default;
   const { default: makeWASocket, useMultiFileAuthState, DisconnectReason, fetchLatestBaileysVersion, Browsers } = B;
+  const PASTA = pasta();
   fs.mkdirSync(PASTA, { recursive: true });
   const { state, saveCreds } = await useMultiFileAuthState(PASTA);
   let version;
   try { ({ version } = await fetchLatestBaileysVersion()); } catch { /* usa a versão embutida */ }
-  sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`${cfg.CLIENTE_NOME} TH-IA-GO`), markOnlineOnConnect: false, syncFullHistory: false });
-  sock.ev.on('creds.update', saveCreds);
-  sock.ev.on('connection.update', async (u) => {
+  const sock = r.sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`${cfg.CLIENTE_NOME} TH-IA-GO`), markOnlineOnConnect: false, syncFullHistory: false });
+  // pc.liga: os eventos do Baileys voltam sempre para a imobiliária deste robô (o SQL vai para o schema certo)
+  sock.ev.on('creds.update', pc.liga(saveCreds));
+  sock.ev.on('connection.update', pc.liga(async (u) => {
     if (u.qr) {
       st.estado = 'qr'; st.erro = null;
       try { st.qr = await require('qrcode').toDataURL(u.qr, { margin: 1, width: 320 }); } catch { st.qr = null; }
@@ -51,10 +59,10 @@ async function conecta() {
       st.erro = saiu ? 'O aparelho foi desconectado no celular. Leia o QR code de novo.' : null;
       publica(); log('conexão fechada', codigo || '', saiu ? '(saiu da conta)' : '');
       if (saiu) fs.rmSync(PASTA, { recursive: true, force: true });
-      if (!reconectando) { reconectando = true; setTimeout(() => { reconectando = false; conecta().catch(falhou); }, saiu ? 3e3 : 8e3); }
+      if (!r.reconectando) { r.reconectando = true; setTimeout(() => { r.reconectando = false; conecta().catch(falhou); }, saiu ? 3e3 : 8e3); }
     }
-  });
-  sock.ev.on('messages.upsert', async ({ messages, type }) => {
+  }));
+  sock.ev.on('messages.upsert', pc.liga(async ({ messages, type }) => {
     if (type !== 'notify') return;
     for (const m of messages) {
       try {
@@ -85,16 +93,17 @@ async function conecta() {
         }
       } catch (e) { log('erro ao ler mensagem:', e.message); }
     }
-  });
+  }));
 }
 function falhou(e) {
+  const r = R(), { st } = r;
   st.estado = 'erro'; st.erro = String(e && e.message || e).slice(0, 200); publica(); log('falha:', st.erro);
-  if (!reconectando) { reconectando = true; setTimeout(() => { reconectando = false; conecta().catch(falhou); }, 30e3); }
+  if (!r.reconectando) { r.reconectando = true; setTimeout(() => { r.reconectando = false; conecta().catch(falhou); }, 30e3); }
 }
 
 async function enviaTexto(numero, texto) {
   const jid = jidDoTel(numero);
-  const r = await sock.sendMessage(jid, { text: texto });
+  const r = await R().sock.sendMessage(jid, { text: texto });
   return r && r.key && r.key.id;
 }
 
@@ -103,11 +112,13 @@ async function comando() {
   if (!c) return;
   setConfig('fisguei_robo_cmd', null);
   log('comando:', c);
-  if (c === 'desconectar') { try { await sock.logout(); } catch {} fs.rmSync(PASTA, { recursive: true, force: true }); }
+  const { sock } = R();
+  if (c === 'desconectar') { try { await sock.logout(); } catch {} fs.rmSync(pasta(), { recursive: true, force: true }); }
   if (c === 'reiniciar') { try { sock.end(); } catch {} }
 }
 
 async function volta() {
+  const r = R(), { st } = r;
   if (st.enviando) return;
   st.enviando = true;
   try {
@@ -125,6 +136,7 @@ async function volta() {
     if (a.pausado || !F.dentroDoHorario(a) || F.enviadasHoje() >= a.limite_dia || agora < st.proximoEm) return publica();
     const p = F.proximo();
     if (!p) return publica();
+    const sock = r.sock;
     const [w] = await sock.onWhatsApp(p.contato.valor).catch(() => [null]);
     if (!w || !w.exists) { F.marcaErro(p.contato.id, 'Número sem WhatsApp', 'sem_whatsapp'); st.proximoEm = agora + 5e3; return publica(); }
     try {
@@ -140,12 +152,18 @@ async function volta() {
   finally { st.enviando = false; }
 }
 
+// Chamado dentro do contexto da imobiliária (src/pc.js); uma vez por imobiliária.
 function iniciar() {
   if (process.env.VERCEL || cfg.FISGUEI_ROBO === '0') return;
+  const r = R();
+  if (r.timer) return;
   log('iniciando (a tela Fisguei mostra o QR code se precisar conectar)');
   conecta().catch(falhou);
-  timer = setInterval(volta, TICK_MS);
-  setInterval(publica, 60e3);
+  r.timer = setInterval(volta, TICK_MS);
+  r.timerPublica = setInterval(publica, 60e3);
 }
 
-module.exports = { iniciar, estado: () => ({ ...st }) };
+// só para os testes: troca o Baileys por um simulado e para os timers
+const _teste = { usaBaileys(fn) { carregaBaileys = fn; B = null; }, para() { for (const r of R.todos.values()) { clearInterval(r.timer); clearInterval(r.timerPublica); r.timer = null; } }, pasta, R };
+
+module.exports = { iniciar, estado: () => ({ ...R().st }), _teste };
