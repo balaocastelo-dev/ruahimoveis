@@ -209,3 +209,12 @@ tbody th{font-weight:600}
 .rodape nav a{color:var(--grafite)}
 .rodape-p{grid-column:1/-1;font-size:13px;max-width:72ch}
 @media (max-width:640px){.rodape{grid-template-columns:1fr}}
+
+/* ===== Multitelas (28/10/2026) ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media (pointer:coarse){
+  .cats a{padding:8px 4px;display:inline-block}
+  input,select,textarea{font-size:16px!important}
+}
+@media (min-width:2300px){body{font-size:19px}}
+@media (min-width:1800px){:root{--largura:1320px}}

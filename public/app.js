@@ -124,12 +124,28 @@ const MENU = [
 ];
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
-  $('#root').innerHTML = `<div class="app"><aside class="side">
+  $('#root').innerHTML = `<div class="app"><header class="topbar"><button type="button" class="hamb" data-act="menu" aria-label="Abrir o menu" aria-controls="menu-lateral" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="tb-marca" href="#/painel">RUAH</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span></header>
+    <div class="side-veu" data-act="menu-fecha" aria-hidden="true"></div><aside class="side" id="menu-lateral">
     <div class="brand"><b>RUAH</b><span>Sistema imobiliário</span></div>
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
   atualizaBadge();
+}
+// Menu lateral vira gaveta no celular e no tablet (botão ☰ na barra do topo)
+function menuAbre(abre) {
+  document.body.classList.toggle('menu-aberto', abre);
+  const b = $('.hamb'); if (b) { b.setAttribute('aria-expanded', abre ? 'true' : 'false'); b.setAttribute('aria-label', abre ? 'Fechar o menu' : 'Abrir o menu'); }
+}
+ACT.menu = () => menuAbre(!document.body.classList.contains('menu-aberto'));
+ACT['menu-fecha'] = () => menuAbre(false);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.body.classList.contains('menu-aberto')) menuAbre(false); });
+window.addEventListener('hashchange', () => menuAbre(false));
+// a barra do topo mostra a seção atual e soma os avisos do menu
+function topoAtualiza() {
+  const on = $('#nav a.on'), t = $('#tb-tit'); if (t) t.textContent = on ? on.firstChild.textContent.trim() : '';
+  const n = $$('#nav .ct').filter((b) => !b.hidden).length, c = $('#tb-ct'); if (c) { c.hidden = !n; c.title = 'Há avisos no menu'; }
 }
 async function atualizaBadge() {
   // "Robôs e Fisgar": "!" se o radar ou o robô pararam; senão, o que espera alguém (aprovações + respostas do robô)
@@ -138,10 +154,10 @@ async function atualizaBadge() {
     const alertaRadar = al && al.saude && !al.saude.ok, alertaRobo = f && ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado);
     const n = ((r && r.aprovacoesPendentes) || 0) + ((f && f.precisaCorretor) || 0);
     b.textContent = alertaRadar || alertaRobo ? '!' : n; b.hidden = !alertaRadar && !alertaRobo && !n;
-    b.title = alertaRadar ? 'O radar precisa de atenção' : alertaRobo ? 'O robô TH-IA-GO precisa de atenção' : 'Aprovações e respostas esperando alguém';
+    b.title = alertaRadar ? 'O radar precisa de atenção' : alertaRobo ? 'O robô TH-IA-GO precisa de atenção' : 'Aprovações e respostas esperando alguém'; topoAtualiza();
   });
-  api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; }).catch(() => {});
-  try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; } } catch {}
+  api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; topoAtualiza(); }).catch(() => {});
+  try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; topoAtualiza(); } } catch {}
 }
 function marcaNav(h) {
   $$('#nav a').forEach((a) => {
@@ -151,6 +167,7 @@ function marcaNav(h) {
     const on = hh === n || (pai[n] ? hh.startsWith(n + '/') && hh !== pai[n] : !Object.values(pai).includes(n) && hh.startsWith(n + '/'));
     a.classList.toggle('on', on);
   });
+  topoAtualiza();
 }
 
 // ---------- roteador ----------
@@ -586,14 +603,17 @@ ACT['cancelar-aut'] = (el) => comBotao(null, async () => { if (!confirm('Cancela
 
 // ---------- CRM ----------
 async function telaLeads() {
-  $('#main').innerHTML = `<div class="eyebrow">CRM</div><h1>Funil de vendas</h1><p class="lead">Arraste o cartão para mudar a etapa. ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
+  $('#main').innerHTML = `<div class="eyebrow">CRM</div><h1>Funil de vendas</h1><p class="lead"><span class="so-mouse">Arraste o cartão para mudar a etapa.</span><span class="so-toque">Use "Mover para" no cartão para mudar a etapa; deslize para o lado para ver as outras colunas.</span> ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
   <div class="row" style="margin-bottom:12px"><input class="inp" id="busca-ld" placeholder="Buscar por nome, telefone ou o que procura" style="flex:1;min-width:200px"><button class="btn pri" data-act="novo-lead">+ Novo lead</button></div><div class="kanban" id="kb"></div>`;
   const carrega = async () => {
     const leads = await api('GET', '/api/leads?' + new URLSearchParams({ q: $('#busca-ld').value }));
     $('#kb').innerHTML = ETAPAS.map(([k, l]) => { const c = leads.filter((x) => x.etapa === k); return `<div class="col" data-etapa="${k}"><h4>${l}<span class="mono">${c.length}</span></h4>
       ${c.map((x) => `<div class="lc" draggable="true" data-lead="${x.id}"><b>${esc(x.nome)}</b><div class="muted">${esc(x.busca || tel(x.telefone) || '')}</div>
         <div class="row" style="margin-top:6px;gap:6px"><span class="pill ${TEMP[x.temperatura]}">${esc(x.temperatura)}</span>${x.valor_max ? `<span class="small muted">até ${brl(x.valor_max)}</span>` : ''}</div>
-        <div class="muted small" style="margin-top:4px">${esc(x.origem || '')}${veTudo() ? ' · ' + esc(x.corretor_nome || 'sem corretor') : ''}</div></div>`).join('')}</div>`; }).join('');
+        <div class="muted small" style="margin-top:4px">${esc(x.origem || '')}${veTudo() ? ' · ' + esc(x.corretor_nome || 'sem corretor') : ''}</div>
+        <label class="lc-mover so-toque"><span>Mover para</span><select data-lead="${x.id}" aria-label="Mover ${esc(x.nome)} para outra etapa">${ETAPAS.map(([k2, l2]) => `<option value="${k2}" ${k2 === k ? 'selected' : ''}>${l2}</option>`).join('')}</select></label></div>`).join('')}</div>`; }).join('');
+    $$('.lc-mover').forEach((m) => m.addEventListener('click', (e) => e.stopPropagation()));
+    $$('.lc-mover select').forEach((sel) => sel.addEventListener('change', async () => { try { await api('PATCH', `/api/leads/${sel.dataset.lead}/etapa`, { etapa: sel.value }); toast('Etapa alterada'); carrega(); } catch (er) { toast(er.message, true); } }));
     $$('.lc').forEach((c) => {
       c.addEventListener('click', () => { location.hash = `#/leads/${c.dataset.lead}`; });
       c.addEventListener('dragstart', (e) => { e.dataTransfer.setData('text/plain', c.dataset.lead); c.classList.add('drag'); });
