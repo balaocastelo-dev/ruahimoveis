@@ -22,27 +22,34 @@ const ligado = () => process.env.BLOG_DIARIO !== 'false';
 
 const memoria = new Map(); // caminho -> { quando, valor }
 
+// multi-imobiliária: cada imobiliária tem o seu conteúdo (o endereço do ramo passa a ser configuração dela), então a memória
+// e a cópia em disco são separadas por imobiliária. A padrão continua na pasta de sempre.
+const tenant = require('../tenant');
+const chaveMem = (c) => `${tenant.chaveCache()}|${c}`;
+const pastaDe = () => (tenant.chaveCache() === tenant.padrao().slug ? PASTA : path.join(PASTA, tenant.chaveCache()));
+const limpaMemoria = () => { const p = `${tenant.chaveCache()}|`; for (const k of [...memoria.keys()]) if (k.startsWith(p)) memoria.delete(k); };
+
 function arquivoDeCache(caminho) {
-  return path.join(PASTA, caminho.replace(/[^a-z0-9.-]+/gi, '_'));
+  return path.join(pastaDe(), caminho.replace(/[^a-z0-9.-]+/gi, '_'));
 }
 
 /** Busca no GitHub com cache; devolve null se não existe (404). Sem rede, usa a última cópia. */
 async function buscar(caminho) {
-  const m = memoria.get(caminho);
+  const m = memoria.get(chaveMem(caminho));
   if (m && Date.now() - m.quando < INTERVALO_MS) return m.valor;
   try {
     const r = await fetch(`${base()}/${caminho}?t=${Math.floor(Date.now() / INTERVALO_MS)}`, { signal: AbortSignal.timeout(6000) });
-    if (r.status === 404) { memoria.set(caminho, { quando: Date.now(), valor: null }); return null; }
+    if (r.status === 404) { memoria.set(chaveMem(caminho), { quando: Date.now(), valor: null }); return null; }
     if (!r.ok) throw new Error(`o GitHub respondeu ${r.status}`);
     const valor = await r.json();
-    memoria.set(caminho, { quando: Date.now(), valor });
-    try { fs.mkdirSync(PASTA, { recursive: true }); fs.writeFileSync(arquivoDeCache(caminho), JSON.stringify(valor)); } catch { /* cache é conveniência */ }
+    memoria.set(chaveMem(caminho), { quando: Date.now(), valor });
+    try { fs.mkdirSync(pastaDe(), { recursive: true }); fs.writeFileSync(arquivoDeCache(caminho), JSON.stringify(valor)); } catch { /* cache é conveniência */ }
     return valor;
   } catch (erro) {
-    if (m) { memoria.set(caminho, { quando: Date.now() - INTERVALO_MS + 60_000, valor: m.valor }); return m.valor; }
+    if (m) { memoria.set(chaveMem(caminho), { quando: Date.now() - INTERVALO_MS + 60_000, valor: m.valor }); return m.valor; }
     try {
       const valor = JSON.parse(fs.readFileSync(arquivoDeCache(caminho), 'utf8'));
-      memoria.set(caminho, { quando: Date.now() - INTERVALO_MS + 60_000, valor });
+      memoria.set(chaveMem(caminho), { quando: Date.now() - INTERVALO_MS + 60_000, valor });
       return valor;
     } catch { /* sem cópia */ }
     console.error(new Date().toLocaleString('pt-BR'), `[blog] não consegui ler ${caminho}: ${erro.message}`);
@@ -105,6 +112,6 @@ async function redes(slug) {
   return { legenda: bruto.redes.legenda, hashtags: tags };
 }
 
-function limparCache() { memoria.clear(); }
+function limparCache() { limpaMemoria(); }
 
 module.exports = { listar, obter, situacao, redes, noAr, limparCache };
