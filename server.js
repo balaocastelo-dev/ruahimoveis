@@ -91,7 +91,9 @@ app.get('/condominio-3d.html', (req, res) => {
   res.sendFile(path.join(PUB, 'condominio-3d.html'));
 });
 app.get('/assinar/:token', (req, res) => res.sendFile(path.join(PUB, 'assinar.html')));
-app.get('/v/:token', (req, res) => res.sendFile(path.join(PUB, 'imovel.html')));
+// Link interno: o HTML já sai com Open Graph (o WhatsApp não roda o JavaScript) e a capa em /v/<token>/og.jpg.
+app.get('/v/:token/og.jpg', (req, res, next) => { publico.fotoOg(req, res).catch(next); });
+app.get('/v/:token', (req, res, next) => { try { publico.paginaLink(req, res); } catch (e) { next(e); } });
 app.use(express.static(PUB, { index: 'index.html', maxAge: 0 }));
 
 // Erros: mensagem clara para o usuário, detalhe só no console.
