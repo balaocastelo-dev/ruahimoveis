@@ -1,0 +1,240 @@
+{
+  "slug": "iluminacao-residencial-em-camadas-geral-tarefa-destaque",
+  "tema": "iluminacao residencial em camadas geral tarefa destaque",
+  "titulo": "Iluminação residencial em camadas: geral, de tarefa e de destaque",
+  "resumo": "Iluminação em camadas combina luz geral, de tarefa e de destaque. Veja como planejar cada uma, escolher a cor da luz e acertar sala, cozinha e quarto.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "iluminação",
+    "interiores",
+    "decoração",
+    "projeto"
+  ],
+  "capa": {
+    "alt": "Sala de estar ao anoitecer com luz suave do teto, abajur aceso ao lado da poltrona e quadro iluminado por spot"
+  },
+  "redes": {
+    "legenda": "Por que algumas salas parecem aconchegantes e outras, frias, mesmo com móveis parecidos? Quase sempre a resposta está na luz. A casa bem iluminada usa três camadas: a geral, a de tarefa e a de destaque. Mostramos como combinar cada uma, que cor de luz escolher e o que muda na sala, na cozinha e no quarto. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "iluminacao",
+      "decoracao",
+      "interiores",
+      "arquitetura",
+      "designdeinteriores",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **iluminação residencial em camadas** é o segredo das casas que parecem acolhedoras de noite e práticas de dia. Em vez de depender de um único ponto de luz no meio do teto, o ambiente ganha várias fontes, cada uma com uma função. O resultado é uma sala que muda de clima com um toque e uma cozinha onde se enxerga bem a bancada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ideia se resume a três camadas: a luz geral, que permite circular; a luz de tarefa, que ilumina onde você cozinha, lê ou se arruma; e a luz de destaque, que valoriza um quadro, uma parede ou uma planta. Planejar as três juntas, com a cor de luz certa e comandos separados, é o que transforma o ambiente."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Luz geral garante circulação; luz de tarefa ilumina o trabalho; luz de destaque cria clima.",
+        "Comandos separados para cada camada permitem montar cenas diferentes no mesmo cômodo.",
+        "Luz entre 2700 K e 3000 K costuma deixar a casa mais aconchegante.",
+        "Na luz de destaque, prefira lâmpadas com índice de reprodução de cor acima de 90."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que cada camada de luz faz no ambiente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a American Lighting Association, associação americana do setor de iluminação, a **luz geral**, também chamada de ambiente, é a base: lustres, pendentes, plafons e spots embutidos que deixam o cômodo uniformemente claro. Ela serve para entrar, circular e fazer as atividades do dia a dia sem tropeçar. Sozinha, porém, costuma deixar o ambiente chapado, sem profundidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **luz de tarefa** vai direto à superfície onde algo acontece. É o pendente sobre a ilha da cozinha, a arandela ao lado do espelho do banheiro, a luminária de leitura junto à cabeceira e a luminária de mesa no escritório. Ela precisa estar perto, bem posicionada e sem criar sombra da própria mão ou do corpo sobre o que você faz."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **luz de destaque** é a que chama o olhar. Spots direcionáveis, arandelas e pequenos abajures realçam uma obra de arte, a textura de uma parede de pedra, uma estante ou uma planta grande. É ela que dá profundidade e cria pontos de interesse. Uma mesma luminária pode servir a camadas diferentes, conforme a posição e o tamanho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "As três camadas lado a lado",
+      "colunas": [
+        "Camada",
+        "Para que serve",
+        "Exemplos de peças",
+        "Onde mais aparece"
+      ],
+      "linhas": [
+        [
+          "Geral",
+          "Circular e iluminar o cômodo todo",
+          "Spots embutidos, plafon, lustre, pendente central",
+          "Sala, corredor, quarto"
+        ],
+        [
+          "Tarefa",
+          "Iluminar uma atividade específica",
+          "Pendente sobre bancada, arandela no espelho, luminária de mesa",
+          "Cozinha, banheiro, escritório"
+        ],
+        [
+          "Destaque",
+          "Valorizar objetos e criar clima",
+          "Spot direcionável, arandela, abajur, iluminação de nicho",
+          "Sala, hall, estar íntimo"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "American Lighting Association",
+        "url": "https://alalighting.com/Light-Your-Home/Details/ArtMID/399/ArticleID/700/Light-Learning"
+      }
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem todo ambiente precisa das três camadas com o mesmo peso. Um lavabo pequeno vive bem com uma boa luz junto ao espelho e um ponto suave. Um corredor estreito pede só luz geral bem distribuída. O exagero, com spots demais no teto, costuma deixar o forro com aparência de tabuleiro e a sala cansativa."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como escolher a cor e a qualidade da luz"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cor da luz é medida em **kelvin (K)**, a chamada temperatura de cor. Quanto maior o número, mais branca e fria é a luz; quanto menor, mais amarelada e quente. O guia do fabricante USAI Lighting associa a faixa de 2700 K a 3000 K a ambientes aconchegantes e a de 3500 K a 4000 K a um visual mais moderno e estimulante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, muita gente prefere luz quente nas áreas de descanso, como sala e quarto, e algo mais neutro onde a precisão importa, como bancada de cozinha ou área de serviço. O ponto de cuidado é a coerência: misturar tons muito diferentes no mesmo campo de visão deixa a casa com aparência remendada. Defina um padrão por ambiente e mantenha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outro número que vale olhar é o **índice de reprodução de cor (IRC)**, que mede quão fiel a luz mostra as cores. A American Lighting Association considera acima de 90 excelente e entre 80 e 90 bom. Na luz de destaque, sobre quadros, madeira e tecidos, o IRC alto faz diferença visível: as cores não ficam lavadas nem esverdeadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E, ao comprar lâmpadas de LED, olhe o **fluxo luminoso**, indicado em lm na embalagem, e não os watts. O Departamento de Energia dos Estados Unidos explica que o watt mede o consumo de energia, enquanto o fluxo luminoso mede a quantidade de luz. Como referência, a antiga incandescente de 75 W equivale a cerca de 1.100 lm, entregues hoje por um LED de consumo bem menor."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Teste antes de comprar muitas",
+      "texto": "Compre uma lâmpada de cada temperatura de cor e acenda no próprio cômodo, à noite. A mesma parede pode parecer muito diferente sob 2700 K e sob 4000 K."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como aplicar as camadas em cada cômodo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **sala**, a luz geral pode vir de spots embutidos ou de um lustre, mas o clima nasce das outras camadas. Um abajur ao lado da poltrona de leitura faz o papel de tarefa; um spot sobre o quadro ou uma fita de LED numa estante dão o destaque. À noite, apagar a geral e deixar só as outras duas costuma ser o cenário mais acolhedor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **cozinha**, a luz de tarefa é protagonista. Pendentes sobre a ilha e luz sob os armários superiores iluminam a bancada sem que sua cabeça faça sombra. A luz geral cuida da circulação. Se a cozinha for integrada à sala, comandos separados permitem deixar a bancada apagada durante o jantar, sem perder a vista para o resto do ambiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No **quarto**, a luz geral deve ser suave e, de preferência, regulável. Luminárias de leitura direcionáveis junto à cabeceira deixam um ler enquanto o outro dorme. No **banheiro**, arandelas nas laterais do espelho iluminam o rosto por igual, enquanto uma luz única no teto, logo acima, tende a projetar sombras sob os olhos."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Liste o que acontece em cada cômodo: circular, cozinhar, ler, receber, trabalhar.",
+        "Defina a luz geral pensando na circulação, sem exagerar no número de pontos.",
+        "Coloque a luz de tarefa exatamente sobre cada atividade listada.",
+        "Escolha de um a três elementos para receber luz de destaque.",
+        "Separe os comandos por camada e, se puder, preveja dimmers."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando planejar e o que exige um profissional"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O melhor momento para pensar em camadas é antes da obra ou da compra dos acabamentos, quando ainda dá para prever pontos de luz, tomadas para abajures e circuitos separados. Num imóvel pronto, muito se resolve com luminárias de piso, de mesa e arandelas de tomada, sem quebrar paredes. É uma forma de testar o que funciona antes de mexer no forro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os **dimmers**, que regulam a intensidade, ajudam a criar cenas. O Departamento de Energia americano lembra que a maioria dos LEDs é regulável, mas é preciso escolher lâmpadas compatíveis com o dimmer instalado; do contrário, a luz pode piscar ou zumbir. Confira essa informação na embalagem antes de comprar."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Projeto de iluminação com profissional",
+      "pros": [
+        "Pontos e circuitos pensados junto com o layout dos móveis.",
+        "Escolha coerente de temperatura de cor e de IRC em toda a casa.",
+        "Menos risco de spots em excesso ou de sombras sobre bancadas."
+      ],
+      "contras": [
+        "Exige decidir o mobiliário cedo, antes do forro e da elétrica.",
+        "Mais etapas de projeto antes de a obra começar.",
+        "Peças técnicas, como spots embutidos, são difíceis de trocar depois."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas há um limite claro: criar circuitos, mexer no quadro de energia ou embutir luminárias no forro é trabalho para eletricista habilitado, de preferência com projeto de arquiteto, designer de interiores ou engenheiro. Não faça instalações elétricas por conta própria. A parte que cabe a você é planejar o uso de cada cômodo e testar a cor da luz."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para mais ideias de ambientes, materiais e mobiliário, vale passear pela seção de [interiores e mobiliário](/blog/categoria/interiores) e pelo restante do [blog](/blog). E, se você está procurando um imóvel em Campinas com boa luz e boa planta para pôr essas ideias em prática, a equipe da {{cliente}} pode ajudar na busca."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: uma luz para circular, outra para trabalhar e outra para encantar, cada uma com seu interruptor."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas camadas de luz um cômodo precisa?",
+      "resposta": "O ideal é pensar nas três, mas o peso de cada uma depende do uso. Sala e cozinha costumam aproveitar todas; corredores e lavabos podem viver bem com uma ou duas."
+    },
+    {
+      "pergunta": "Luz quente ou luz fria: qual é melhor para casa?",
+      "resposta": "Luz entre 2700 K e 3000 K costuma ser associada a ambientes aconchegantes, como sala e quarto. Tons mais neutros, perto de 3500 K a 4000 K, aparecem em áreas de trabalho. O mais importante é manter coerência dentro de cada ambiente."
+    },
+    {
+      "pergunta": "O que é IRC e por que ele importa?",
+      "resposta": "É o índice de reprodução de cor, que mostra quão fiel a luz revela as cores. Acima de 90 é considerado excelente. Faz diferença sobretudo em quadros, madeiras e tecidos."
+    },
+    {
+      "pergunta": "Dá para fazer iluminação em camadas sem obra?",
+      "resposta": "Sim, em boa parte. Luminárias de piso e de mesa, arandelas de tomada e fitas de LED em estantes criam as camadas de tarefa e destaque. Mudanças no forro e em circuitos exigem eletricista habilitado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Light Learning — American Lighting Association",
+      "url": "https://alalighting.com/Light-Your-Home/Details/ArtMID/399/ArticleID/700/Light-Learning",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Layers of Light in Residential Spaces — USAI Lighting",
+      "url": "https://www.usailighting.com/contentmgr/showdetails.php/id/51215",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Consumer Guide to Energy-Efficient Lighting — U.S. Department of Energy",
+      "url": "https://www.energy.gov/sites/default/files/2021-08/ES-EE%20Lighting_080921.pdf",
+      "data": "agosto de 2021"
+    }
+  ]
+}

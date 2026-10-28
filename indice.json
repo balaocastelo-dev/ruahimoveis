@@ -9,7 +9,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-28T20:23:18.494Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "iluminacao-residencial-em-camadas-geral-tarefa-destaque",
+      "titulo": "Iluminação residencial em camadas: geral, de tarefa e de destaque",
+      "tema": "iluminacao residencial em camadas geral tarefa destaque",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-28T20:24:36.076Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-28T20:23:18.495Z"
+  "atualizadoEm": "2026-10-28T20:24:36.076Z"
 }
