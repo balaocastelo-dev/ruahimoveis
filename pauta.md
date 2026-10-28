@@ -1,4 +1,4 @@
-# Pauta do blog da ONDEMORAR
+# Pauta do blog do Onde morar?
 
 A fila de assuntos da rotina diária. Cada linha é algo que alguém pesquisa no
 Google ou salva no Instagram porque gosta de casa — e um dia vai comprar ou

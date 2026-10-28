@@ -1,7 +1,7 @@
-# Rotina diária do blog da ONDEMORAR
+# Rotina diária do blog do Onde morar?
 
-O blog da ONDEMORAR.COM (imobiliária de venda em Campinas,
-SP) fica em `/blog` do Sistema ONDEMORAR e publica **três vezes por dia**. Cada
+O blog do Onde morar? (imobiliária de venda em Campinas,
+SP) fica em `/blog` do Sistema Onde morar? e publica **três vezes por dia**. Cada
 execução da rotina faz **uma** publicação — a tarefa que chamou você diz qual:
 
 | Hora | Tipo | O que é |
@@ -12,18 +12,18 @@ execução da rotina faz **uma** publicação — a tarefa que chamou você diz 
 
 **Para que o blog existe:** trazer o curioso das redes sociais (Instagram,
 Facebook) e da busca do Google para o blog — gente que gosta de casa bonita,
-de arquitetura, de morar bem — e, com o tempo, fazer dele um cliente da ONDEMORAR.
+de arquitetura, de morar bem — e, com o tempo, fazer dele um cliente do Onde morar?
 Por isso o texto precisa ser **gostoso de ler e útil de verdade**, e não um
 anúncio. Todo artigo leva uma legenda pronta para as redes (campo `redes`).
 
 **Você escreve na véspera.** As três execuções rodam à noite (por volta das
 19h) e agendam com `publicar --amanha`: o principal aparece às 6h, a notícia
-às 12h e a dica às 18h. De madrugada o PC da ONDEMORAR (placa RTX 4090) faz a foto
+às 12h e a dica às 18h. De madrugada o PC do Onde morar? (placa RTX 4090) faz a foto
 de capa. **Nenhum artigo aparece sem a foto**: se ela atrasar, o artigo espera.
 
 Ninguém lê o artigo antes de ele ir ao ar. Por isso a regra que vale mais do
 que todas: **na dúvida, não afirme**. Um artigo simples e correto ajuda a
-ONDEMORAR; um artigo vistoso com um dado errado prejudica — e no mercado imobiliário
+Onde morar?; um artigo vistoso com um dado errado prejudica — e no mercado imobiliário
 um dado errado pode virar problema com cliente.
 
 ## O que a rotina pode e o que não pode
@@ -39,9 +39,9 @@ de capa) e publicar com `node scripts/blog-publicar.mjs publicar --amanha`.
 - contornar a conferência: se o comando reprova, corrija o artigo; nunca mude
   a régua nem publique por outro caminho; nunca use `--forcar` nem `--atualizar`;
 - mandar mensagem, e-mail ou WhatsApp para alguém, publicar em rede social ou
-  mexer em qualquer outro sistema da ONDEMORAR (imóveis, clientes, radar);
+  mexer em qualquer outro sistema do Onde morar? (imóveis, clientes, radar);
 - falar de um imóvel específico à venda, de cliente, de proprietário ou de
-  valor de imóvel da carteira da ONDEMORAR.
+  valor de imóvel da carteira do Onde morar?
 
 Se algo impedir a publicação (GitHub fora do ar, erro do comando que não é do
 artigo), **pare e relate**. Não improvise outro caminho.
@@ -121,7 +121,7 @@ Um bom assunto é **algo que a pessoa curiosa pesquisa ou salva no Instagram**:
 uma ideia para a casa, uma dúvida antes de comprar, um jeito de viver melhor.
 Quem chega por ele gosta de casa — e um dia vai comprar ou vender uma.
 
-Não serve: assunto de locação (a ONDEMORAR só trabalha com venda), dica jurídica
+Não serve: assunto de locação (o Onde morar? só trabalha com venda), dica jurídica
 ou tributária para um caso concreto (o texto explica a regra geral e manda
 procurar advogado ou contador), "os X imóveis mais caros", listas de produtos
 com preço, ranking de bairros por "melhor" ou "pior" (nenhum bairro é
@@ -154,7 +154,7 @@ rebaixado neste blog), e assunto já coberto (o comando recusa título repetido)
 ## A foto de capa
 
 Todo artigo sai com uma foto de capa: uma fotografia simulada do assunto.
-**Quem faz a foto é o PC da ONDEMORAR**, na placa de vídeo, de madrugada. Você
+**Quem faz a foto é o PC do Onde morar?**, na placa de vídeo, de madrugada. Você
 escreve o pedido; o `publicar --amanha` agenda o artigo e deixa o pedido numa
 fila; o PC gera a foto, um modelo de visão confere (texto, marca, rosto,
 deformação, cena errada) e a foto entra no artigo sozinha. Se a sua cena for
@@ -183,7 +183,7 @@ foto de lugar nenhum. O blog avisa ao leitor que a capa é imagem ilustrativa.
 - **Sem marca nem peça de design famosa pelo nome.** Não escreva o nome de
   designer, de fábrica ou de modelo de móvel ("Eames", "Barcelona chair"):
   descreva o material e a forma ("a lounge chair in walnut and black leather").
-- Nada que passe por foto de um imóvel real da ONDEMORAR, de condomínio conhecido
+- Nada que passe por foto de um imóvel real do Onde morar?, de condomínio conhecido
   de Campinas ou de um lugar identificável. Ambiente genérico e bonito.
 - Construção: canteiro limpo, estrutura, materiais, plantas de arquitetura
   enroladas sobre uma mesa (sem texto legível), sem operários.
@@ -191,11 +191,11 @@ foto de lugar nenhum. O blog avisa ao leitor que a capa é imagem ilustrativa.
 
 O "sem texto, sem logotipo, sem rosto" o PC acrescenta sozinho.
 
-## O que se pode dizer da ONDEMORAR
+## O que se pode dizer do Onde morar?
 
 Só o que está aqui:
 
-- A ONDEMORAR.COM é uma imobiliária em Campinas (SP).
+- O Onde morar? é uma imobiliária em Campinas (SP).
 - Trabalha com a **venda** de imóveis (não faz locação).
 - Atende quem quer comprar e quem quer vender.
 - O atendimento é feito por pessoas da equipe.
@@ -205,7 +205,7 @@ Não invente bairros atendidos, número de imóveis, anos de mercado, prêmio,
 certificação, parceria, prazo de venda nem "garantia". Não fale de
 concorrente nem de outra imobiliária.
 
-A ONDEMORAR aparece **só no fim do artigo** (último parágrafo ou última seção) e
+O Onde morar? aparece **só no fim do artigo** (último parágrafo ou última seção) e
 nas chamadas. Antes disso o texto ensina e inspira, sem vender.
 
 ## Links
@@ -225,7 +225,7 @@ Ao menos dois links para dentro do blog, no meio do texto, só destes:
 
 Ligue para outros artigos sempre que o assunto encostar em um deles.
 
-**O leitor não sai do site da ONDEMORAR.** Nenhum link para fora no texto: nada
+**O leitor não sai do site do Onde morar?** Nenhum link para fora no texto: nada
 de `https://` em parágrafo, lista, tabela ou destaque (a régua reprova). As
 fontes vão só no campo `fontes`; o blog as mostra no fim, citadas pelo nome e
 pelo site, sem link. No texto, cite a origem pelo nome ("segundo a CBIC").
@@ -255,7 +255,7 @@ pelo site, sem link. No texto, cite a origem pelo nome ("segundo a CBIC").
 - `categoria`: `alto-padrao`, `construcao`, `interiores`, `bem-estar`,
   `campinas` ou `noticias`.
 - `formato`: `"dica"` **só na dica**.
-- `publicadoEm` e `autor`: **não preencha** (a assinatura é "Equipe ONDEMORAR").
+- `publicadoEm` e `autor`: **não preencha** (a assinatura é "Equipe Onde morar?").
 - `etiquetas`: de duas a seis, em minúsculas; repita as de artigos parecidos.
 - `redes`: a legenda que leva o curioso ao blog. Abre com um gancho (uma
   pergunta, um dado curioso), entrega uma ideia útil, e convida a ler o resto
@@ -276,13 +276,13 @@ Texto aceita só `**negrito**`, `*itálico*` e `[texto](endereço)`. Nada de HTM
 | `tabela` | `titulo`, `colunas`, `linhas`, `colunaDestaque`, `fonte`, `nota` | Opções lado a lado; toda linha com o mesmo número de células |
 | `pros-contras` | `titulo`, `pros`, `contras` | O que pesa a favor e contra |
 | `destaque` | `tom` (`dica`, `atencao`, `nota`), `titulo`, `texto` | Um alerta ou dica fora do fluxo |
-| `chamada` | `tema` | O convite para falar com a ONDEMORAR. Só o tema: o texto já está escrito |
+| `chamada` | `tema` | O convite para falar com o Onde morar? Só o tema: o texto já está escrito |
 
 Temas de chamada: `comprar` (procura imóvel: abre o contato do blog),
 `vender` (vai vender: abre o contato do blog), `alto-padrao` (ver os imóveis
-à venda na vitrine da ONDEMORAR), `visita` (escolher um imóvel na vitrine e pedir
+à venda na vitrine do Onde morar?), `visita` (escolher um imóvel na vitrine e pedir
 a visita), `blog` (mais textos do blog) e `geral` (dúvida: abre o contato). Não existe chamada para
-Instagram ou outra rede: o leitor não sai do site da ONDEMORAR. Escolha o que continua o
+Instagram ou outra rede: o leitor não sai do site do Onde morar? Escolha o que continua o
 assunto do artigo; o comum é uma no meio e outra no fim.
 
 ## O que a régua cobra
