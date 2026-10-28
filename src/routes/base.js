@@ -89,7 +89,7 @@ r.get('/painel', (req, res) => {
   const u = req.usuario, todos = A.veTudo(u);
   const fI = todos ? '' : ' AND i.corretor_id=' + u.id, fL = todos ? '' : ' AND l.corretor_id=' + u.id;
   const kpis = {
-    imoveis: one(`SELECT count(*) n FROM imoveis i WHERE status NOT IN ('vendido','suspenso')${fI}`).n,
+    imoveis: one(`SELECT count(*) n FROM imoveis i WHERE status NOT IN ('vendido','alugado','suspenso')${fI}`).n,
     publicados: one(`SELECT count(*) n FROM imoveis i WHERE status='publicado'${fI}`).n,
     leads: one(`SELECT count(*) n FROM leads l WHERE etapa NOT IN ('escritura','perdido')${fL}`).n,
     quentes: one(`SELECT count(*) n FROM leads l WHERE temperatura='quente' AND etapa NOT IN ('escritura','perdido')${fL}`).n,

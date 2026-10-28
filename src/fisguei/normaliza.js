@@ -54,15 +54,18 @@ function anuncio(x) {
   const id = x.announce_id || x.id;
   if (!id || !(x.street || x.district || x.zipcode)) return null;
   const venda = numOu(x.buy_price), aluguel = numOu(x.rental_price);
-  if (!venda && aluguel) return { locacao: true }; // a imobiliária (cliente) só trabalha com venda
-  const imgs = Array.isArray(x.images) ? x.images.filter((u) => typeof u === 'string' && /^https:\/\//.test(u)).slice(0, 10) : []; // até 10 fotos: o banco é pequeno
+  if (!venda && !aluguel) return null;
+  // locação também entra (28/10/2026): negocio 'Locação' ou 'Venda e Locação'; o aluguel mensal fica em "aluguel"
+  const soLocacao = !venda && !!aluguel;
+  const imgs = Array.isArray(x.images) ? x.images.filter((u) => typeof u === 'string' && /^https:\/\//.test(u)).slice(0, soLocacao ? 6 : 10) : []; // até 10 fotos (6 na locação): o banco é pequeno
   const ll = x.longlat || {};
   return {
     fisgar_id: String(id),
     portal: portalDasFotos(imgs) || (x.source && x.source !== 'Não definido' ? x.source : null),
     titulo: [x.property_type, x.district].filter(Boolean).join(' · ') || null,
     tipo: x.property_type || null,
-    negocio: venda ? 'Venda' : null,
+    negocio: venda && aluguel ? 'Venda e Locação' : venda ? 'Venda' : 'Locação',
+    aluguel,
     finalidade: x.finality === 0 ? 'Residencial' : x.finality === 1 ? 'Comercial' : null,
     logradouro: x.street || null,
     numero: x.number !== undefined && x.number !== null && String(x.number) !== '0' ? String(x.number) : null,
@@ -140,11 +143,11 @@ function processa(url, json, pedido, opcoes = {}) {
   const caminho = String(url).split('?')[0];
   const dados = json && json.data;
   if (/\/properties\/getAll$/i.test(caminho) && Array.isArray(dados)) {
-    for (const x of dados) { const a = anuncio(x); if (a && !a.locacao && F.salvaAnuncio(a)) r.anuncios++; }
+    for (const x of dados) { const a = anuncio(x); if (a && F.salvaAnuncio(a)) r.anuncios++; }
     return r;
   }
   if (/\/getAllInfoById\//i.test(caminho) && dados && typeof dados === 'object') {
-    const a = anuncio(dados); if (a && !a.locacao && F.salvaAnuncio(a)) r.anuncios++;
+    const a = anuncio(dados); if (a && F.salvaAnuncio(a)) r.anuncios++;
     return r;
   }
   if (/\/owners\/GetPe(ople|rsonInfo)$/i.test(caminho) && dados && Array.isArray(dados.people)) {

@@ -11,7 +11,7 @@ const brl = (v) => (v || v === 0 ? 'R$ ' + Number(v).toLocaleString('pt-BR', { m
 const dataBR = (s) => (s ? new Date(s.replace(' ', 'T')).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '');
 const tel = (t) => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}` : t || ''; };
 
-const STATUS = { captacao: ['Em captação', 'warn'], aguardando_autorizacao: ['Aguardando autorização', 'bad'], publicado: ['Publicado', 'ok'], off_market: ['Off-market', 'info'], vendido: ['Vendido', 'gold'], suspenso: ['Suspenso', 'bad'] };
+const STATUS = { captacao: ['Em captação', 'warn'], aguardando_autorizacao: ['Aguardando autorização', 'bad'], publicado: ['Publicado', 'ok'], off_market: ['Off-market', 'info'], vendido: ['Vendido', 'gold'], alugado: ['Alugado', 'gold'], suspenso: ['Suspenso', 'bad'] };
 const ETAPAS = [['novo', 'Novo'], ['qualificado', 'Qualificado'], ['visita', 'Visita'], ['proposta', 'Proposta'], ['escritura', 'Escritura'], ['perdido', 'Perdido']];
 const TEMP = { quente: 'bad', morno: 'warn', frio: 'info' };
 const stPill = (s) => `<span class="pill ${(STATUS[s] || ['', 'info'])[1]}">${esc((STATUS[s] || [s])[0])}</span>`;
@@ -344,14 +344,17 @@ const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l
       <div class="imtit">${esc(i.tipo)}${imSub(i) ? ' · ' + esc(imSub(i)) : ''}</div>
       <div class="muted small">${esc([i.bairro, i.cidade].filter(Boolean).join(' · '))}</div>
       ${specs.length ? `<div class="imspecs">${specs.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}
-      <div class="imvalor">${brl(i.valor)}</div>${o.carteira ? donoLinha(i) + fichaBarra(i.ficha) : ''}${o.extra ? o.extra(i) : ''}</div></a>${acoes ? `<div class="imacoes">${acoes}</div>` : ''}</div>`;
+      <div class="imvalor">${i.finalidade === 'locacao' ? `${brl(i.valor_locacao)}<span class="muted small"> /mês</span>` : brl(i.valor)}${i.finalidade === 'venda_locacao' && i.valor_locacao ? `<div class="muted small">ou aluguel ${brl(i.valor_locacao)}/mês</div>` : ''}</div>${i.finalidade && i.finalidade !== 'venda' && o.carteira ? `<span class="pill info" style="margin:4px 0">${FINALIDADE[i.finalidade]}</span>` : ''}${o.carteira ? donoLinha(i) + fichaBarra(i.ficha) : ''}${o.extra ? o.extra(i) : ''}</div></a>${acoes ? `<div class="imacoes">${acoes}</div>` : ''}</div>`;
 }).join('')}</div>`;
 // ---------- carteira: filtros ----------
 let CART_F = {}, CART_PORTAL = null;
-const CART_CAMPOS = ['etapa', 'dono', 'ficha', 'exclusivo', 'portal', 'origem', 'corretor', 'status'];
+const FINALIDADE = { venda: 'Venda', locacao: 'Locação', venda_locacao: 'Venda e locação' };
+const CART_CAMPOS = ['neg', 'etapa', 'dono', 'ficha', 'exclusivo', 'portal', 'origem', 'corretor', 'status'];
 function cartFiltra(l) {
   const f = CART_F;
   return l.filter((i) => {
+    if (f.neg === 'venda' && i.finalidade === 'locacao') return false;
+    if (f.neg === 'locacao' && !(i.finalidade === 'locacao' || i.finalidade === 'venda_locacao')) return false;
     if (f.etapa && i.etapa !== f.etapa) return false;
     if (f.status && i.status !== f.status) return false;
     if (f.dono === 'com' && !i.dono) return false;
@@ -389,6 +392,8 @@ function imDesenha() {
   const semEtapa = (() => { const e = CART_F.etapa; CART_F.etapa = ''; const l = cartFiltra(IM_LISTA); CART_F.etapa = e; return l; })();
   const n = (k) => semEtapa.filter((i) => i.etapa === k).length;
   const funil = $('#cart-funil');
+  const segNeg = $('#cart-neg');
+  if (segNeg) segNeg.innerHTML = [['', 'Todos'], ['venda', 'Venda'], ['locacao', 'Locação']].map(([k, t]) => `<button type="button" data-act="cart-neg" data-k="${k}" aria-pressed="${(CART_F.neg || '') === k}">${t}</button>`).join('');
   if (funil) funil.innerHTML = CART_ETAPAS.map(([k, t]) => `<button type="button" class="cart-et${CART_F.etapa === k ? ' on' : ''}" data-act="cart-etapa" data-k="${k}" aria-pressed="${CART_F.etapa === k}"><b>${n(k).toLocaleString('pt-BR')}</b><span>${esc(t)}</span></button>`).join('');
   const fl = $('#cart-filtros'); if (fl) fl.innerHTML = cartFiltrosHTML();
   const l = cartFiltra(IM_LISTA);
@@ -398,6 +403,7 @@ function imDesenha() {
       : '<div class="card"><div class="empty">A carteira está vazia. Escolha imóveis nas vitrines da base (Apartamentos, Casas…) e clique em <b>Localizar proprietário</b>, ou <a href="#/imoveis/novo">cadastre um imóvel</a>.</div></div>';
 }
 const cartGuarda = () => gravaPref('ruah.carteira.filtros', JSON.stringify(CART_F));
+ACT['cart-neg'] = (el) => { CART_F.neg = el.dataset.k; cartGuarda(); imDesenha(); };
 ACT['cart-etapa'] = (el) => { CART_F.etapa = CART_F.etapa === el.dataset.k ? '' : el.dataset.k; cartGuarda(); imDesenha(); };
 ACT['cart-limpa'] = () => { CART_F = {}; cartGuarda(); imDesenha(); };
 document.addEventListener('change', (e) => {
@@ -422,6 +428,7 @@ async function telaImoveis(qs) {
   if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
   $('#main').innerHTML = `<div class="eyebrow">Operação</div><h1>Carteira de imóveis</h1>
   <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado pela consulta de proprietários. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
+  <div class="seg cart-neg" role="group" aria-label="Venda ou locação" id="cart-neg" style="margin-bottom:10px"></div>
   <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
   <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
   <div class="seg" role="group" aria-label="Modo de exibição"><button type="button" data-act="im-modo" data-modo="cards" title="Ver em cards com fotos">▦ Cards</button><button type="button" data-act="im-modo" data-modo="lista" title="Ver em lista">☰ Lista</button></div>
@@ -467,6 +474,8 @@ async function telaImovelForm(id) {
         <label class="f">Status<select name="status">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select></label></div>
       <div class="grid g3"><label class="f">Quartos<input name="quartos" type="number" min="0" value="${v('quartos')}"></label><label class="f">Suítes<input name="suites" type="number" min="0" value="${v('suites')}"></label><label class="f">Vagas<input name="vagas" type="number" min="0" value="${v('vagas')}"></label></div>
       <div class="grid g2"><label class="f">Área útil (m²)<input name="area_util" value="${v('area_util')}" inputmode="decimal"></label><label class="f">Área total (m²)<input name="area_total" value="${v('area_total')}" inputmode="decimal"></label></div>
+      <div class="grid g2"><label class="f">Negócio<select name="finalidade">${Object.entries(FINALIDADE).map(([k, l]) => `<option value="${k}" ${k === (im.finalidade || 'venda') ? 'selected' : ''}>${l}</option>`).join('')}</select></label>
+        <label class="f">Aluguel/mês<input name="valor_locacao" value="${im.valor_locacao ? Number(im.valor_locacao).toLocaleString('pt-BR') : ''}" inputmode="numeric" placeholder="8.500"></label></div>
       <div class="grid g3"><label class="f">Valor de venda<input name="valor" value="${im.valor ? Number(im.valor).toLocaleString('pt-BR') : ''}" inputmode="numeric" placeholder="2.250.000"></label>
         <label class="f">Condomínio/mês<input name="valor_condominio" value="${v('valor_condominio')}" inputmode="decimal"></label><label class="f">IPTU/ano<input name="iptu" value="${v('iptu')}" inputmode="decimal"></label></div>
       <label class="f">Descrição para o anúncio<textarea name="descricao">${v('descricao')}</textarea></label>
@@ -535,7 +544,7 @@ function abaDados(im) {
     <div class="grid g4">${[['Quartos', im.quartos ?? '—'], ['Suítes', im.suites ?? '—'], ['Vagas', im.vagas ?? '—'], ['Área útil', im.area_util ? im.area_util + ' m²' : '—']].map(([a, b]) => `<div class="card kpi"><div class="n" style="font-size:26px">${esc(b)}</div><div class="l">${a}</div></div>`).join('')}</div>
     <div class="card"><h3>Descrição</h3><p style="margin:0;white-space:pre-wrap">${esc(im.descricao || 'Sem descrição.')}</p></div></div>
     <div class="grid" style="gap:16px;align-content:start">
-    <div class="card"><h3>Valores</h3><dl class="dl"><dt>Venda</dt><dd><b>${brl(im.valor)}</b></dd><dt>Valor/m²</dt><dd>${im.valor && im.area_util ? brl(im.valor / im.area_util) : '—'}</dd><dt>Condomínio</dt><dd>${brl(im.valor_condominio)}</dd><dt>IPTU</dt><dd>${brl(im.iptu)}</dd></dl></div>
+    <div class="card"><h3>Valores</h3><dl class="dl"><dt>Negócio</dt><dd>${esc(FINALIDADE[im.finalidade || 'venda'])}</dd>${im.finalidade !== 'locacao' ? `<dt>Venda</dt><dd><b>${brl(im.valor)}</b></dd>` : ''}${im.finalidade && im.finalidade !== 'venda' ? `<dt>Aluguel</dt><dd><b>${brl(im.valor_locacao)}</b>/mês</dd>` : ''}<dt>Valor/m²</dt><dd>${im.valor && im.area_util ? brl(im.valor / im.area_util) : '—'}</dd><dt>Condomínio</dt><dd>${brl(im.valor_condominio)}</dd><dt>IPTU</dt><dd>${brl(im.iptu)}</dd></dl></div>
     <div class="card"><h3>Condomínio</h3><dl class="dl"><dt>Nome</dt><dd>${esc(im.condominio_nome || '—')}</dd><dt>Ano</dt><dd>${esc(im.ano_construcao || '—')}</dd><dt>Lazer</dt><dd>${esc(im.lazer || '—')}</dd><dt>Adm.</dt><dd>${esc(im.administradora || '—')}</dd></dl></div>
     <div class="card"><h3>Proprietário</h3>${p ? `<dl class="dl"><dt>Nome</dt><dd>${esc(p.nome)}</dd><dt>CPF</dt><dd>${esc(p.cpf || '—')}</dd><dt>Telefone</dt><dd>${esc(tel(p.telefone) || '—')}</dd><dt>E-mail</dt><dd>${esc(p.email || '—')}</dd><dt>Origem</dt><dd>${esc(p.origem_dado)}</dd></dl>${p.nao_contatar ? '<span class="pill bad" style="margin-top:8px">não contatar</span>' : ''}` : `<p class="muted" style="margin:0">Não cadastrado. <a href="#/imoveis/${im.id}/editar">Adicionar</a></p>`}
       <div class="row" style="margin-top:10px">${im.exclusivo ? `<span class="pill gold">Exclusivo${im.exclusivo_ate ? ' até ' + new Date(im.exclusivo_ate + 'T12:00').toLocaleDateString('pt-BR') : ''}</span>` : '<span class="pill warn">Sem exclusividade</span>'}</div></div>

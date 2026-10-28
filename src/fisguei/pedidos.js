@@ -248,9 +248,10 @@ function importa(anuncioId, usuario, proximoCodigo) {
   const corretor = usuario && usuario.perfil === 'corretor' ? usuario.id : (a.oportunidade_id && one('SELECT corretor_id FROM oportunidades WHERE id=?', a.oportunidade_id) || {}).corretor_id || (usuario && usuario.id) || null;
   const d = melhorDono(a.id);
   const unidade = d && d.unidade ? d.unidade : (a.complemento && /\d/.test(a.complemento) ? a.complemento.slice(0, 40) : null);
-  const id = Number(run(`INSERT INTO imoveis(codigo,tipo,status,cep,logradouro,numero,unidade,bairro,cidade,uf,lat,lon,condominio_id,quartos,suites,vagas,area_util,area_total,valor,valor_condominio,iptu,descricao,corretor_id)
-    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, codigo, tipo, 'captacao', a.cep, a.logradouro, a.numero, unidade, a.bairro, a.cidade || cfg.CIDADE_PADRAO, a.uf || 'SP', a.lat, a.lon,
-    a.condominio_id || null, a.quartos, a.suites, a.vagas, a.area_util, a.area_total, a.valor, a.valor_condominio, a.iptu, descricao, corretor).lastInsertRowid);
+  const finalidade = a.valor > 0 && a.aluguel > 0 ? 'venda_locacao' : !(a.valor > 0) && a.aluguel > 0 ? 'locacao' : 'venda';
+  const id = Number(run(`INSERT INTO imoveis(codigo,tipo,status,cep,logradouro,numero,unidade,bairro,cidade,uf,lat,lon,condominio_id,quartos,suites,vagas,area_util,area_total,valor,valor_condominio,iptu,descricao,corretor_id,finalidade,valor_locacao)
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, codigo, tipo, 'captacao', a.cep, a.logradouro, a.numero, unidade, a.bairro, a.cidade || cfg.CIDADE_PADRAO, a.uf || 'SP', a.lat, a.lon,
+    a.condominio_id || null, a.quartos, a.suites, a.vagas, a.area_util, a.area_total, a.valor || null, a.valor_condominio, a.iptu, descricao, corretor, finalidade, a.aluguel || null).lastInsertRowid);
   run(`UPDATE fisguei_anuncios SET imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, id, a.id);
   if (a.oportunidade_id) run(`UPDATE oportunidades SET imovel_id=coalesce(imovel_id,?) WHERE id=?`, id, a.oportunidade_id);
   sincronizaDono(a.id);

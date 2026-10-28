@@ -36,11 +36,14 @@ function subtipo(x, cat = categoria(x)) {
 // metragem que importa em cada vitrine: terreno pela área total, o resto pela área útil
 const area = (x, cat) => (cat === 'terrenos' ? x.area_total || x.area_util : x.area_util || x.area_total) || null;
 const catDe = (q) => (CATS[q.cat] ? q.cat : null);
+// Venda ou locação (28/10/2026). Na locação o "valor" das contas é o aluguel mensal e o valor mínimo padrão é zero.
+const ehLoc = (q) => q && q.neg === 'locacao';
+const minPadrao = (q, cat) => (ehLoc(q) ? 0 : cat ? CATS[cat].min : 1000000);
 
 function base(q) {
   const w = [`a.status NOT IN ${FORA}`, "lower(coalesce(a.cidade,'campinas')) LIKE 'campinas%'"], p = [];
   const cat = catDe(q);
-  const min = q.min === undefined ? (cat ? CATS[cat].min : 1000000) : Number(q.min) || 0;
+  const min = q.min === undefined ? minPadrao(q, cat) : Number(q.min) || 0;
   if (min) { w.push('a.valor >= ?'); p.push(min); }
   const max = Number(q.max) || 0; if (max) { w.push('a.valor <= ?'); p.push(max); }
   if (q.tipo) { w.push('a.tipo LIKE ?'); p.push(`%${String(q.tipo).slice(0, 30)}%`); }
@@ -54,7 +57,8 @@ function base(q) {
 // A posição no mapa vem do condomínio ligado. Filtros aplicados aqui (são poucas linhas).
 function doRadar(q) {
   const cat = catDe(q);
-  const min = q.min === undefined || q.min === '' ? (cat ? CATS[cat].min : 1000000) : Number(q.min) || 0;
+  if (ehLoc(q)) return []; // o Radar só traz venda
+  const min = q.min === undefined || q.min === '' ? minPadrao(q, cat) : Number(q.min) || 0;
   const max = Number(q.max) || 0, qt = cat === 'terrenos' || cat === 'comerciais' ? 0 : int(q.quartos || 0);
   const tipo = q.tipo ? sem(String(q.tipo).slice(0, 30)) : '';
   return all(`SELECT -o.id AS id, o.id AS oid, 'op' AS origem, o.tipo, NULL AS finalidade, o.titulo, o.logradouro, o.numero, o.unidade AS complemento, o.bairro,
@@ -154,15 +158,16 @@ function unicos(linhas) {
   return out;
 }
 const CHAVE = 'a.id, a.tipo, a.finalidade, a.titulo, a.logradouro, a.numero, a.area_util, a.area_total, a.quartos, a.valor, a.publicado_em, a.anunciante_tipo, a.anunciante_nome';
+const CHAVE_BASE = CHAVE + ', a.aluguel';
 
-const COLS = 'a.id, a.tipo, a.finalidade, a.titulo, a.area_total, a.logradouro, a.numero, a.complemento, a.bairro, a.valor, a.quartos, a.suites, a.vagas, a.area_util, a.lat, a.lon, a.anunciante_tipo, a.anunciante_nome, a.status, a.fotos, a.condominio_id, a.publicado_em';
+const COLS = 'a.id, a.tipo, a.finalidade, a.titulo, a.area_total, a.logradouro, a.numero, a.complemento, a.bairro, a.valor, a.aluguel, a.negocio, a.quartos, a.suites, a.vagas, a.area_util, a.lat, a.lon, a.anunciante_tipo, a.anunciante_nome, a.status, a.fotos, a.condominio_id, a.publicado_em';
 const refDe = (x) => (x.origem === 'op' ? 'OP-' + String(x.oid).padStart(4, '0') : 'FG-' + String(x.id).padStart(5, '0'));
 const hrefDe = (x) => (x.origem === 'op' ? `#/radar/${x.oid}` : `#/fisguei/${x.id}`);
 const cartao = (x) => {
   // foto: a do próprio anúncio; se não tiver, a de outro anúncio do mesmo imóvel
   const f = [x, ...(x.iguais || [])].map((y) => fotosDe(y.fotos)[0]).find(Boolean) || null;
   const { fotos, iguais, ...y } = x;
-  return { ...y, origem: x.origem || 'fg', foto: f, ref: refDe(x), href: hrefDe(x),
+  return { ...y, origem: x.origem || 'fg', foto: f, ref: refDe(x), href: hrefDe(x), por_mes: x._loc ? 1 : undefined,
     outros: (iguais || []).slice(1).map((o) => ({ id: o.id, ref: refDe(o), href: hrefDe(o), valor: o.valor, anunciante: o.anunciante_nome, portal: o.portal, publicado_em: o.publicado_em })) };
 };
 
@@ -173,7 +178,7 @@ const cartao = (x) => {
 const BASE_MS = Number(process.env.MERCADO_CACHE_S ?? 600) * 1000;
 let BASE = null, RENOVANDO = null;
 // título só serve para os terrenos (terreno em condomínio); trazer de todos deixava a leitura bem mais pesada
-const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, p: b0.p }; };
+const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE_BASE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, p: b0.p }; };
 // Calcula uma vez, sobre a base inteira, qual anúncio é o mesmo imóvel de qual (_g) e a ordem de recência (_ord).
 // Com ~80 mil anúncios, juntar as repetições levava ~3 s a cada filtro; assim cada filtro só agrupa pelos números prontos.
 function marcaGrupos(linhas) {
@@ -181,12 +186,15 @@ function marcaGrupos(linhas) {
   ord.forEach((x, i) => { x._ord = i; });
   unicos(ord).forEach((g, gi) => { for (const y of g.iguais) y._g = gi; });
 }
+// Duas bases: venda (valor = preço) e locação (valor = aluguel mensal). Anúncio "Venda e Locação" aparece nas duas.
+const paraLocacao = (x) => ({ ...x, valor: x.aluguel, _loc: 1 });
 function montaBase(fisguei, radar) {
-  const linhas = [...fisguei, ...radar];
-  for (const x of linhas) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
-  marcaGrupos(linhas);
-  BASE = { em: Date.now(), linhas, memo: new Map() };
-  return linhas;
+  const venda = [...fisguei.filter((x) => x.valor > 0), ...radar];
+  const loc = fisguei.filter((x) => x.aluguel > 0).map(paraLocacao);
+  for (const x of [...venda, ...loc]) { x._cat = categoria(x); x._bairro = G.chave(x.bairro); x._rua = ruaChave(x.logradouro); }
+  marcaGrupos(venda); marcaGrupos(loc);
+  BASE = { em: Date.now(), linhas: venda, loc, memo: new Map() };
+  return venda;
 }
 // leitura sem travar o servidor (só no banco online): conexão própria e assíncrona
 let POOL = null;
@@ -211,11 +219,13 @@ function renova() {
     .catch((e) => console.error('[vitrines] releitura', e.message)).finally(() => { RENOVANDO = null; });
   return RENOVANDO;
 }
-function baseVitrine() {
-  if (BASE && Date.now() - BASE.em < BASE_MS) return BASE.linhas;
-  if (BASE && BASE_MS > 0 && require('../db').PG) { renova(); return BASE.linhas; } // velha: responde já e renova por trás
+function baseVitrine(q) {
+  const pega = () => (ehLoc(q) ? BASE.loc : BASE.linhas);
+  if (BASE && Date.now() - BASE.em < BASE_MS) return pega();
+  if (BASE && BASE_MS > 0 && require('../db').PG) { renova(); return pega(); } // velha: responde já e renova por trás
   const { sql, p } = SQL_BASE();
-  return montaBase(all(sql, ...p), doRadar({ min: '0' }));
+  montaBase(all(sql, ...p), doRadar({ min: '0' }));
+  return pega();
 }
 // chegou anúncio: a base é relida em até 30 s (numa puxada do Fisgar chega página a cada poucos segundos)
 const esqueceBase = () => { if (BASE) BASE.em = Math.min(BASE.em, Date.now() - BASE_MS + 30000); };
@@ -223,7 +233,7 @@ const esqueceBase = () => { if (BASE) BASE.em = Math.min(BASE.em, Date.now() - B
 if (!process.env.VERCEL && process.env.MERCADO_CACHE_S !== '0') setTimeout(() => { try { if (require('../db').PG) renova(); } catch {} }, 15000).unref();
 // respostas prontas, guardadas enquanto a base não muda
 function memo(req, fn) {
-  baseVitrine();
+  baseVitrine(req.query);
   const k = req.path + '?' + new URLSearchParams(req.query).toString();
   const m = BASE.memo;
   if (m.has(k)) return m.get(k);
@@ -233,7 +243,7 @@ function memo(req, fn) {
 }
 // os filtros da tela (valor mínimo e máximo, quartos, tipo, só particular), aplicados em memória
 function filtra(linhas, q, cat = catDe(q)) {
-  const min = q.min !== undefined && q.min !== '' ? Number(q.min) || 0 : cat ? CATS[cat].min : 1000000;
+  const min = q.min !== undefined && q.min !== '' ? Number(q.min) || 0 : minPadrao(q, cat);
   const max = Number(q.max) || 0, qt = cat === 'terrenos' || cat === 'comerciais' ? 0 : int(q.quartos || 0);
   const tipo = q.tipo ? sem(String(q.tipo).slice(0, 30)) : '', part = q.particular === '1';
   return linhas.filter((x) => (!cat || x._cat === cat) && (x.valor || 0) >= min && (!max || x.valor <= max) && (!qt || (x.quartos || 0) >= qt)
@@ -243,9 +253,9 @@ function filtra(linhas, q, cat = catDe(q)) {
 r.get('/mercado/resumo', (req, res) => res.json(memo(req, () => resumo(req))));
 function resumo(req) {
   const cat = catDe(req.query);
-  const tudo = baseVitrine();
+  const tudo = baseVitrine(req.query);
   const categorias = {};
-  for (const k of Object.keys(CATS)) categorias[k] = { nome: CATS[k].nome, n: unicos(filtra(tudo, { min: req.query.min, particular: req.query.particular }, k)).length };
+  for (const k of Object.keys(CATS)) categorias[k] = { nome: CATS[k].nome, n: unicos(filtra(tudo, { min: req.query.min, particular: req.query.particular, neg: req.query.neg }, k)).length };
   const brutos = filtra(tudo, { ...req.query, cat: '' }, cat);
   const daCat = naVitrine(brutos, { ...req.query, sub: '' });
   const subtipos = Object.entries(daCat.reduce((m, x) => { if (x.subtipo) m[x.subtipo] = (m[x.subtipo] || 0) + 1; return m; }, {})).sort((a, b) => b[1] - a[1]).map(([nome, n]) => ({ nome, n }));
@@ -260,12 +270,12 @@ function resumo(req) {
 }
 r.get('/mercado/ruas', (req, res) => res.json(memo(req, () => {
   const k = G.chave(req.query.bairro || '');
-  const l = unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x._bairro === k), req.query));
+  const l = unicos(naVitrine(filtra(baseVitrine(req.query), req.query).filter((x) => x._bairro === k), req.query));
   return capas(agrupa(l, 'logradouro', ruaChave).sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome)));
 })));
 r.get('/mercado/imoveis', (req, res) => {
   const kb = G.chave(req.query.bairro || ''), kr = ruaChave(req.query.rua || '');
-  let sel = filtra(baseVitrine(), req.query);
+  let sel = filtra(baseVitrine(req.query), req.query);
   if (kb) sel = sel.filter((x) => x._bairro === kb);
   if (kr) sel = sel.filter((x) => x._rua === kr);
   sel = sel.slice(0, 3000);
@@ -274,7 +284,7 @@ r.get('/mercado/imoveis', (req, res) => {
   const cheios = [];
   for (let i = 0; i < fg.length; i += 400) { const parte = fg.slice(i, i + 400); cheios.push(...all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)); }
   if (op.size) cheios.push(...doRadar({ min: '0' }).filter((x) => op.has(x.id)));
-  const l = unicos(naVitrine(cheios, req.query));
+  const l = unicos(naVitrine(ehLoc(req.query) ? cheios.map(paraLocacao) : cheios, req.query));
   l.sort((a, b) => (parseInt(a.numero, 10) || 0) - (parseInt(b.numero, 10) || 0) || (b.valor || 0) - (a.valor || 0));
   res.json(situacao(l.slice(0, 600).map(cartao)));
 });
@@ -310,8 +320,8 @@ function situacao(cards) {
 }
 r.get('/mercado/mapa', (req, res) => {
   res.setHeader('Cache-Control', 'private, max-age=120');
-  res.json(memo(req, () => unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x.lat != null), req.query))
-    .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, Math.round((x.valor || 0) / 1000), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.subtipo || x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`])));
+  res.json(memo(req, () => unicos(naVitrine(filtra(baseVitrine(req.query), req.query).filter((x) => x.lat != null), req.query))
+    .map((x) => [x.id, Math.round(x.lat * 1e5) / 1e5, Math.round(x.lon * 1e5) / 1e5, (ehLoc(req.query) ? Math.round((x.valor || 0) / 100) / 10 : Math.round((x.valor || 0) / 1000)), x.anunciante_tipo === 'particular' ? 1 : 0, `${x.subtipo || x.tipo || 'Imóvel'} · ${[x.logradouro, x.numero].filter(Boolean).join(', ')}`])));
 });
 
 // 3D da rua de um imóvel do Fisguei: o mesmo 3D dos condomínios, centrado no imóvel.

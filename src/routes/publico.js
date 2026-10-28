@@ -77,7 +77,7 @@ function contextoLink(token) {
   if (!k) return null;
   const i = one(`SELECT id, codigo, tipo, status, bairro, cidade, logradouro, numero, quartos, suites, vagas, area_util, area_total, valor
     FROM imoveis WHERE id=?`, k.imovel_id);
-  if (!i || ['vendido', 'suspenso'].includes(i.status)) return null;
+  if (!i || ['vendido', 'alugado', 'suspenso'].includes(i.status)) return null;
   const foto = one("SELECT id, nome, mime, tamanho, caminho_local FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id LIMIT 1", i.id);
   return { k, i, foto };
 }
@@ -125,7 +125,7 @@ r.get('/imovel/:token', limite(60), (req, res) => {
   const k = linkValido(req.params.token);
   const i = one(`SELECT i.*, c.nome condominio, c.lazer, u.nome corretor, u.telefone corretor_tel FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id
                  LEFT JOIN usuarios u ON u.id=i.corretor_id WHERE i.id=?`, k.imovel_id);
-  if (!i || ['vendido', 'suspenso'].includes(i.status)) falha(404, 'Este imóvel não está mais disponível.');
+  if (!i || ['vendido', 'alugado', 'suspenso'].includes(i.status)) falha(404, 'Este imóvel não está mais disponível.');
   // O robô de prévia (WhatsApp, Facebook, Telegram…) não é visita de cliente.
   const ua = String(req.headers['user-agent'] || '');
   if (!og.ehPreview(ua)) run('INSERT INTO links_acessos(link_id,ip,user_agent) VALUES(?,?,?)', k.id, req.ip, ua.slice(0, 300));

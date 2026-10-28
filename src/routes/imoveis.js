@@ -18,7 +18,8 @@ const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 25 
 
 const PREFIXO = { 'Apartamento': 'AP', 'Cobertura': 'CB', 'Casa': 'CA', 'Casa em condomínio': 'CC', 'Sobrado': 'SO', 'Sala comercial': 'SL', 'Loja': 'LJ', 'Ponto comercial': 'PT', 'Prédio': 'PR', 'Hotel': 'HO', 'Galpão': 'GA', 'Terreno': 'TE', 'Chácara': 'CH' };
 const TIPOS = Object.keys(PREFIXO);
-const STATUS = ['captacao', 'aguardando_autorizacao', 'publicado', 'off_market', 'vendido', 'suspenso'];
+const STATUS = ['captacao', 'aguardando_autorizacao', 'publicado', 'off_market', 'vendido', 'alugado', 'suspenso'];
+const FINALIDADES = ['venda', 'locacao', 'venda_locacao'];
 
 function proximoCodigo(tipo) {
   const p = PREFIXO[tipo] || 'IM';
@@ -29,7 +30,7 @@ function proximoCodigo(tipo) {
 const SELECT = `SELECT i.*, c.nome condominio_nome, c.ano_construcao, c.lazer, c.administradora, u.nome corretor_nome
   FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id`;
 
-r.get('/tipos', (req, res) => res.json({ tipos: TIPOS, status: STATUS, etapas: carteira.ETAPAS, origens: carteira.ORIGENS }));
+r.get('/tipos', (req, res) => res.json({ tipos: TIPOS, status: STATUS, finalidades: FINALIDADES, etapas: carteira.ETAPAS, origens: carteira.ORIGENS }));
 
 r.get('/endereco', async (req, res) => res.json(await endereco.pesquisar(req.query)));
 
@@ -37,6 +38,8 @@ r.get('/', (req, res) => {
   const u = req.usuario; const p = []; let w = 'WHERE 1=1';
   if (!A.veTudo(u)) { w += ' AND i.corretor_id=?'; p.push(u.id); }
   if (req.query.status) { w += ' AND i.status=?'; p.push(req.query.status); }
+  if (req.query.neg === 'locacao') w += " AND i.finalidade IN ('locacao','venda_locacao')";
+  else if (req.query.neg === 'venda') w += " AND i.finalidade IN ('venda','venda_locacao')";
   if (req.query.q) { w += ' AND (i.codigo LIKE ? OR c.nome LIKE ? OR i.bairro LIKE ? OR i.logradouro LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q, q); }
   const fotos = `${require('../services/fotos-internas').capaSQL('i')} capa,
     (SELECT count(*) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') n_fotos`;
@@ -111,11 +114,13 @@ function salvarProprietario(p, atualId) {
 function campos(b, u) {
   if (b.tipo && !TIPOS.includes(b.tipo)) falha(400, 'Tipo de imóvel inválido.');
   if (b.status && !STATUS.includes(b.status)) falha(400, 'Status inválido.');
+  if (b.finalidade === 'locacao' && !num(b.valor_locacao) && b.status === 'publicado') falha(400, 'Informe o valor do aluguel.');
   const corretor = A.veTudo(u) ? (int(b.corretor_id) || u.id) : u.id;
   return {
     tipo: b.tipo, status: b.status || 'captacao', cep: endereco.soDigitos(b.cep) || null, logradouro: txt(b.logradouro, 150), numero: txt(b.numero, 20), unidade: txt(b.unidade, 40),
     bairro: txt(b.bairro, 80), cidade: txt(b.cidade, 80) || cfg.CIDADE_PADRAO, uf: txt(b.uf, 2) || cfg.UF_PADRAO, lat: num(b.lat), lon: num(b.lon),
     quartos: int(b.quartos), suites: int(b.suites), vagas: int(b.vagas), area_util: num(b.area_util), area_total: num(b.area_total),
+    finalidade: FINALIDADES.includes(b.finalidade) ? b.finalidade : 'venda', valor_locacao: num(b.valor_locacao),
     valor: num(b.valor), valor_condominio: num(b.valor_condominio), iptu: num(b.iptu), descricao: txt(b.descricao, 5000),
     exclusivo: b.exclusivo ? 1 : 0, exclusivo_ate: txt(b.exclusivo_ate, 10), corretor_id: corretor,
   };
@@ -139,7 +144,8 @@ r.post('/', async (req, res) => {
 r.put('/:id', (req, res) => {
   const atual = imovelPermitido(req.usuario, req.params.id);
   const b = req.body || {};
-  const c = campos({ tipo: atual.tipo, ...b }, req.usuario);
+  const c = campos({ tipo: atual.tipo, finalidade: atual.finalidade, ...b }, req.usuario);
+  if (b.valor_locacao === undefined) c.valor_locacao = atual.valor_locacao;
   if (!A.veTudo(req.usuario)) c.corretor_id = atual.corretor_id;
   c.condominio_id = salvarCondominio(b) ?? atual.condominio_id;
   c.proprietario_id = salvarProprietario(b.proprietario, atual.proprietario_id);

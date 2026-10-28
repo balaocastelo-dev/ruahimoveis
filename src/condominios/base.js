@@ -5,6 +5,8 @@ const G = require('./geo');
 
 const ATIVAS_RADAR = "('nova','em_contato','carta_enviada','aguardando_aprovacao')";
 const FORA_FISGUEI = "('descartado','captado')";
+// anúncio que é só de aluguel não conta como "à venda" (28/10/2026: a base passou a ter locação)
+const SO_VENDA = "coalesce(negocio,'Venda') <> 'Locação'";
 
 // ------------------------------------------------------------------ contornos (horizontais) em memória
 let contornos = null, contornosEm = 0;
@@ -179,7 +181,7 @@ function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', dir, pagina 
   if (comVenda) w.push('(coalesce(op.n,0)+coalesce(fg.n,0)+coalesce(im.n,0)) > 0');
   const de = `FROM condominios c
     LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM oportunidades WHERE status IN ${ATIVAS_RADAR} GROUP BY condominio_id) op ON op.condominio_id=c.id
-    LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM fisguei_anuncios WHERE status NOT IN ${FORA_FISGUEI} GROUP BY condominio_id) fg ON fg.condominio_id=c.id
+    LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM fisguei_anuncios WHERE status NOT IN ${FORA_FISGUEI} AND ${SO_VENDA} GROUP BY condominio_id) fg ON fg.condominio_id=c.id
     LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM imoveis WHERE status IN ('publicado','off_market','captacao','aguardando_autorizacao') GROUP BY condominio_id) im ON im.condominio_id=c.id
     ${ordem === 'giro' ? `LEFT JOIN (SELECT condominio_id, count(*) n FROM (SELECT condominio_id FROM oportunidades WHERE criado_em >= datetime('now','localtime','-90 day') UNION ALL SELECT condominio_id FROM fisguei_anuncios WHERE criado_em >= datetime('now','localtime','-90 day')) t GROUP BY condominio_id) g ON g.condominio_id=c.id` : ''}
     WHERE ${w.join(' AND ')}`;
@@ -195,7 +197,7 @@ function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', dir, pagina 
 function pontosMapa() {
   return all(`SELECT c.id, c.nome, c.tipo, c.lat, c.lon, c.alvo,
       (SELECT count(*) FROM oportunidades o WHERE o.condominio_id=c.id AND o.status IN ${ATIVAS_RADAR}) +
-      (SELECT count(*) FROM fisguei_anuncios f WHERE f.condominio_id=c.id AND f.status NOT IN ${FORA_FISGUEI}) +
+      (SELECT count(*) FROM fisguei_anuncios f WHERE f.condominio_id=c.id AND f.status NOT IN ${FORA_FISGUEI} AND ${SO_VENDA}) +
       (SELECT count(*) FROM imoveis i WHERE i.condominio_id=c.id AND i.status IN ('publicado','off_market')) venda
     FROM condominios c WHERE c.lat IS NOT NULL AND coalesce(c.tipo,'') <> 'comercial'`)
     .map((c) => [c.id, Math.round(c.lat * 1e5) / 1e5, Math.round(c.lon * 1e5) / 1e5, c.tipo === 'horizontal' ? 'h' : c.tipo === 'vertical' ? 'v' : 'i', +c.venda || 0, c.alvo ? 1 : 0, c.nome]);
@@ -215,19 +217,21 @@ const dias = (d) => (d ? Math.max(0, Math.round((Date.now() - new Date(String(d)
 
 function numeros(id) {
   const c = one('SELECT * FROM condominios WHERE id=?', id);
-  const carteira = all(`SELECT i.id, i.codigo, i.tipo, i.status, i.unidade, i.quartos, i.suites, i.vagas, i.area_util, i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em,
+  const carteira = all(`SELECT i.id, i.codigo, i.tipo, i.status, i.unidade, i.quartos, i.suites, i.vagas, i.area_util, i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em, i.finalidade, i.valor_locacao,
       (SELECT a.id FROM arquivos a WHERE a.imovel_id=i.id AND a.categoria IN ('Fotos','Fotos internas') ORDER BY CASE WHEN a.categoria='Fotos' THEN 0 ELSE 1 END, a.id LIMIT 1) foto
     FROM imoveis i WHERE i.condominio_id=? ORDER BY i.status, i.valor DESC`, id);
   const radar = all(`SELECT id, portal, link, titulo, tipo, unidade, quartos, vagas, area, valor, valor_anterior, anunciante_tipo, anunciante_nome, publicado_em, criado_em, status, foto
     FROM oportunidades WHERE condominio_id=? ORDER BY criado_em DESC`, id);
-  const fisguei = all(`SELECT f.id, f.portal, f.link, f.titulo, f.tipo, f.complemento, f.quartos, f.vagas, f.area_util, f.valor, f.valor_condominio, f.iptu, f.anunciante_nome, f.anunciante_tipo, f.publicado_em, f.criado_em, f.status, f.fotos,
+  const fisguei = all(`SELECT f.id, f.portal, f.link, f.titulo, f.tipo, f.complemento, f.quartos, f.vagas, f.area_util, f.valor, f.valor_condominio, f.iptu, f.anunciante_nome, f.anunciante_tipo, f.publicado_em, f.criado_em, f.status, f.fotos, f.negocio, f.aluguel,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=f.id) pessoas
     FROM fisguei_anuncios f WHERE f.condominio_id=? ORDER BY f.criado_em DESC`, id);
+  const fisgueiLoc = fisguei.filter((f) => f.aluguel > 0);
+  const fisgueiVenda = fisguei.filter((f) => f.valor > 0 || f.negocio !== 'Locação');
 
   const aVenda = [
-    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: cfg.CLIENTE_NOME, ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: cfg.CLIENTE_NOME, foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
+    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status) && i.finalidade !== 'locacao').map((i) => ({ origem: cfg.CLIENTE_NOME, ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: cfg.CLIENTE_NOME, foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
     ...radar.filter((o) => ['nova', 'em_contato', 'carta_enviada', 'aguardando_aprovacao'].includes(o.status)).map((o) => ({ origem: 'Radar', ref: 'OP-' + String(o.id).padStart(4, '0'), href: `#/radar/${o.id}`, valor: o.valor, area: o.area, quartos: o.quartos, unidade: o.unidade, desde: o.publicado_em || o.criado_em, anunciante: o.anunciante_nome || (o.anunciante_tipo === 'particular' ? 'Particular' : null), portal: o.portal, foto: o.foto || null })),
-    ...fisguei.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.valor, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal, foto: (() => { try { return (JSON.parse(f.fotos || '[]') || [])[0] || null; } catch { return null; } })() })),
+    ...fisgueiVenda.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.valor, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal, foto: (() => { try { return (JSON.parse(f.fotos || '[]') || [])[0] || null; } catch { return null; } })() })),
   ];
   // o mesmo apartamento costuma aparecer no Radar e no Fisguei: junta por valor e área parecidos
   const unicos = [];
@@ -236,10 +240,22 @@ function numeros(id) {
     if (igual) { igual.tambem = [...(igual.tambem || []), a.origem]; continue; }
     unicos.push({ ...a, dias: dias(a.desde) });
   }
+  // para alugar: carteira em locação + anúncios de aluguel do Fisguei (o valor é o aluguel mensal)
+  const fotoDe = (f) => { try { return (JSON.parse(f.fotos || '[]') || [])[0] || null; } catch { return null; } };
+  const aLocarTodos = [
+    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status) && i.finalidade !== 'venda' && i.valor_locacao).map((i) => ({ origem: cfg.CLIENTE_NOME, ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor_locacao, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: cfg.CLIENTE_NOME, foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
+    ...fisgueiLoc.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.aluguel, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal, foto: fotoDe(f) })),
+  ];
+  const aLocar = [];
+  for (const a of aLocarTodos) {
+    const igual = aLocar.find((u) => u.valor && a.valor && Math.abs(u.valor - a.valor) / a.valor < 0.01 && (!u.area || !a.area || Math.abs(u.area - a.area) <= 2));
+    if (igual) { igual.tambem = [...(igual.tambem || []), a.origem]; continue; }
+    aLocar.push({ ...a, dias: dias(a.desde) });
+  }
   const precos = unicos.map((a) => a.valor).filter(Boolean);
   const m2 = unicos.filter((a) => a.valor && a.area > 20).map((a) => a.valor / a.area);
   // histórico (inclui vendidos/retirados) dá o m² de referência quando não há nada à venda
-  const hist = [...carteira.map((i) => [i.valor, i.area_util]), ...radar.map((o) => [o.valor, o.area]), ...fisguei.map((f) => [f.valor, f.area_util])].filter(([v, a]) => v && a > 20);
+  const hist = [...carteira.map((i) => [i.valor, i.area_util]), ...radar.map((o) => [o.valor, o.area]), ...fisgueiVenda.map((f) => [f.valor, f.area_util])].filter(([v, a]) => v && a > 20);
   const taxas = [...carteira.map((i) => i.valor_condominio), ...fisguei.map((f) => f.valor_condominio)].filter((v) => v > 50 && v < 30000);
   const iptus = [...carteira.map((i) => i.iptu), ...fisguei.map((f) => f.iptu)].filter((v) => v > 50);
   const areas = hist.map(([, a]) => a);
@@ -254,8 +270,9 @@ function numeros(id) {
 
   return {
     aVenda: unicos.sort((a, b) => (a.valor || 9e12) - (b.valor || 9e12)),
+    aLocar: aLocar.sort((a, b) => (a.valor || 9e12) - (b.valor || 9e12)),
     resumo: {
-      a_venda: unicos.length,
+      a_venda: unicos.length, a_locar: aLocar.length, aluguel_mediano: med(aLocar.map((a) => a.valor)),
       preco_mediano: med(precos), preco_min: precos.length ? Math.min(...precos) : null, preco_max: precos.length ? Math.max(...precos) : null,
       m2_mediano: med(m2) || null,
       m2_historico: med(hist.map(([v, a]) => v / a)),

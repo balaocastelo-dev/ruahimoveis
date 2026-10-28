@@ -106,22 +106,23 @@ function cdOrdena(lista) {
   }).map((x) => x.a);
 }
 
-function cdTabelaVenda(c, temGeo) {
-  if (!c.aVenda.length) return '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>';
+function cdTabelaVenda(c, temGeo, loc) {
+  const lista = loc ? c.aLocar || [] : c.aVenda;
+  if (!lista.length) return loc ? '<div class="empty">Nenhum anúncio de aluguel neste condomínio agora.</div>' : '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>';
   const th = (k) => {
     const on = cdOrdem.k === k, seta = on ? (cdOrdem.d > 0 ? '▲' : '▼') : '↕';
     const dica = on ? (cdOrdem.d > 0 ? 'do menor para o maior · clique para inverter' : 'do maior para o menor · clique para inverter') : 'ordenar';
     return `<th class="cd-ord${on ? ' on' : ''}" data-ord="${k}" aria-sort="${on ? (cdOrdem.d > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" title="${dica}">${CD_ORDEM[k].t} <span class="cd-seta" aria-hidden="true">${seta}</span></button></th>`;
   };
   return `<table><thead><tr><th></th>${Object.keys(CD_ORDEM).map(th).join('')}${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
-    ${cdOrdena(c.aVenda).map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
-      <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b></td><td>${a.valor && a.area ? cdM2(a.valor / a.area) : '—'}</td>
+    ${cdOrdena(lista).map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
+      <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b>${loc ? '<span class="muted small">/mês</span>' : ''}</td><td>${a.valor && a.area ? (loc ? 'R$ ' + (a.valor / a.area).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + '/m²' : cdM2(a.valor / a.area)) : '—'}</td>
       <td>${a.dias !== null && a.dias !== undefined ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${cdDaCasa(a) ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
   </tbody></table>`;
 }
 
-function ligaOrdemVenda(c, temGeo) {
-  const box = $('#cd-avenda'); if (!box) return;
+function ligaOrdemVenda(c, temGeo, loc) {
+  const box = $(loc ? '#cd-alocar' : '#cd-avenda'); if (!box) return;
   box.addEventListener('click', (e) => {
     const th = e.target.closest('th[data-ord]'); if (!th) return;
     e.preventDefault(); e.stopPropagation();
@@ -129,7 +130,8 @@ function ligaOrdemVenda(c, temGeo) {
     // texto começa em A→Z; número começa do menor; clicar de novo inverte
     cdOrdem = cdOrdem.k === k ? { k, d: -cdOrdem.d } : { k, d: 1 };
     try { localStorage.setItem('ruah.cdOrdem', JSON.stringify(cdOrdem)); } catch {}
-    box.innerHTML = cdTabelaVenda(c, temGeo);
+    box.innerHTML = cdTabelaVenda(c, temGeo, loc);
+    const outro = $(loc ? '#cd-avenda' : '#cd-alocar'); if (outro) outro.innerHTML = cdTabelaVenda(c, temGeo, !loc);
   });
 }
 
@@ -186,6 +188,7 @@ async function telaCondominio(id) {
       </div></div>
   </div>
   <div class="card tbl" style="margin-top:16px"><div class="row" style="padding:10px 10px 0;gap:8px;flex-wrap:wrap"><h2 style="margin:0;flex:1">À venda agora${c.aVenda.length ? ` <span class="muted small">(${c.aVenda.length})</span>` : ''}</h2>${c.aVenda.length > 1 ? '<span class="muted small">Clique no título da coluna para ordenar</span>' : ''}</div><div id="cd-avenda">${cdTabelaVenda(c, temGeo)}</div></div>
+  ${(c.aLocar || []).length ? `<div class="card tbl" style="margin-top:16px"><div class="row" style="padding:10px 10px 0;gap:8px;flex-wrap:wrap"><h2 style="margin:0;flex:1">Para alugar agora <span class="muted small">(${c.aLocar.length})</span></h2>${s.aluguel_mediano ? `<span class="muted small">aluguel mediano ${brl(s.aluguel_mediano)}/mês</span>` : ''}</div><div id="cd-alocar">${cdTabelaVenda(c, temGeo, true)}</div></div>` : ''}
   ${c.carteira.length ? `<div class="row" style="margin:22px 0 12px"><h2 style="margin:0">Na carteira da ${esc(MARCA.cliente)}</h2></div>${imCards(c.carteira.map((i) => ({ ...i, condominio_nome: c.nome, bairro: c.bairro, capa: i.foto })))}` : ''}
   <div class="card" style="margin-top:16px"><div class="row"><h2 style="margin:0;flex:1">O que tem perto</h2><span class="muted small">a pé, a partir da portaria</span></div><div id="cd-perto"><p class="muted">${temGeo ? 'Carregando…' : 'Ajuste a posição no mapa para ver o entorno.'}</p></div></div>
   <div class="grid g2" style="margin-top:16px">
@@ -195,7 +198,7 @@ async function telaCondominio(id) {
       <p class="small muted">Se a imagem não aparecer, o Google não tem Street View exatamente neste ponto. <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${encodeURIComponent(c.lat + ',' + c.lon)}" target="_blank" rel="noopener">Abrir no Google</a></p>` : '<p class="muted">Sem posição no mapa.</p>'}</div>
   </div>`;
   miniMapa(c);
-  ligaOrdemVenda(c, temGeo);
+  ligaOrdemVenda(c, temGeo); ligaOrdemVenda(c, temGeo, true);
   if (temGeo) carregaPerto(c.id);
   // com a chave do Google: foto da fachada no lugar do Street View interativo (guardada; paga uma vez)
   if (temGeo && typeof mapasCfg === 'function') mapasCfg().then((cfg) => {

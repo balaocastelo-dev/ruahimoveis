@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS imoveis (
   codigo text NOT NULL UNIQUE,
   tipo text NOT NULL,
   status text NOT NULL DEFAULT 'captacao'
-    CHECK (status IN ('captacao','aguardando_autorizacao','publicado','off_market','vendido','suspenso')),
+    CHECK (status IN ('captacao','aguardando_autorizacao','publicado','off_market','vendido','alugado','suspenso')),
   cep text, logradouro text, numero text, unidade text, bairro text, cidade text, uf text,
   lat double precision, lon double precision,
   condominio_id integer REFERENCES condominios(id),
@@ -314,3 +314,6 @@ CREATE INDEX IF NOT EXISTS ix_fpr_anuncio ON fisguei_precos(anuncio_id);
 
 -- Fotos internas (fotos do anúncio de origem, só endereço; nunca públicas) — 28/10/2026
 ALTER TABLE arquivos ADD COLUMN IF NOT EXISTS url_externa text;
+-- Locação na carteira (28/10/2026): finalidade venda | locacao | venda_locacao; aluguel mensal em valor_locacao; status 'alugado'
+ALTER TABLE imoveis ADD COLUMN IF NOT EXISTS finalidade text NOT NULL DEFAULT 'venda';
+ALTER TABLE imoveis ADD COLUMN IF NOT EXISTS valor_locacao double precision;

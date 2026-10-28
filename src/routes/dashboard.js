@@ -75,13 +75,13 @@ r.get('/painel/adm', A.exigePerfil('adm', 'gestor'), (req, res) => {
   const corretores = usuarios.filter((u) => u.ativo !== 0);
 
   // ---------- carteira ----------
-  const ativos = imoveis.filter((i) => !['vendido', 'suspenso'].includes(i.status));
+  const ativos = imoveis.filter((i) => !['vendido', 'alugado', 'suspenso'].includes(i.status));
   const aVenda = imoveis.filter((i) => ['publicado', 'off_market'].includes(i.status));
   const porCodigo = Object.fromEntries(imoveis.map((i) => [i.codigo, i]));
   const vendidosNo = vendasAud.filter((v) => no(v.em)).map((v) => porCodigo[String(v.detalhe).split(' ')[0]]).filter(Boolean);
   const vendidosAnt = vendasAud.filter((v) => antes(v.em)).map((v) => porCodigo[String(v.detalhe).split(' ')[0]]).filter(Boolean);
   const m2 = aVenda.filter((i) => i.valor && i.area_util > 10).map((i) => i.valor / i.area_util);
-  const statusOrdem = ['captacao', 'aguardando_autorizacao', 'publicado', 'off_market', 'vendido', 'suspenso'];
+  const statusOrdem = ['captacao', 'aguardando_autorizacao', 'publicado', 'off_market', 'vendido', 'alugado', 'suspenso'];
   const stC = conta(imoveis, (i) => i.status);
   const bairrosC = {};
   for (const i of aVenda) { const b = i.bairro || 'Sem bairro'; (bairrosC[b] ||= { bairro: b, n: 0, vgv: 0 }); bairrosC[b].n++; bairrosC[b].vgv += i.valor || 0; }

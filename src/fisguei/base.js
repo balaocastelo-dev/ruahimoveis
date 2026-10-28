@@ -19,6 +19,11 @@ const MODELO_PADRAO = `Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente vi
   + `Vimos que o imóvel da {endereco} ({bairro}) está à venda e temos interesse em divulgá-lo no portal da ${cfg.CLIENTE_NOME} para vendê-lo, recebendo apenas a comissão quando a venda acontecer.\n\n`
   + 'Você é o(a) proprietário(a) desse imóvel? Pode responder SIM ou NÃO.\n'
   + 'Se preferir não receber mensagens, responda PARAR.';
+// anúncio só de aluguel (28/10/2026)
+const MODELO_LOCACAO_PADRAO = `Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente virtual da ${cfg.EMPRESA}, de Campinas.\n\n`
+  + `Vimos que o imóvel da {endereco} ({bairro}) está para alugar e temos interesse em divulgá-lo no portal da ${cfg.CLIENTE_NOME} e trazer inquilinos, recebendo apenas quando a locação for fechada.\n\n`
+  + 'Você é o(a) proprietário(a) desse imóvel? Pode responder SIM ou NÃO.\n'
+  + 'Se preferir não receber mensagens, responda PARAR.';
 
 // ler: de onde vêm as configurações (padrão: uma consulta por chave; o resumo passa todas lidas de uma vez)
 function ajustes(ler = getConfig) {
@@ -32,6 +37,7 @@ function ajustes(ler = getConfig) {
     hora_fim: Math.min(Math.max(n('fisguei_hora_fim', 19), 8), 21),
     sabado: getConfig('fisguei_sabado') !== '0',
     modelo: getConfig('fisguei_modelo') || MODELO_PADRAO,
+    modelo_locacao: getConfig('fisguei_modelo_locacao') || MODELO_LOCACAO_PADRAO,
     limite_max: LIMITE_MAX, intervalo_min_s: INTERVALO_MIN_S,
   };
 }
@@ -73,7 +79,7 @@ const maisAntiga = (...ds) => ds.filter((d) => d && /^\d{4}-\d{2}-\d{2}/.test(d)
 function salvaAnuncio(a) {
   if (!a || !a.fisgar_id) return null;
   const campos = ['portal', 'link', 'titulo', 'tipo', 'negocio', 'finalidade', 'logradouro', 'numero', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'lat', 'lon',
-    'valor', 'valor_condominio', 'iptu', 'quartos', 'suites', 'banheiros', 'vagas', 'area_util', 'area_total', 'anunciante_nome', 'anunciante_tipo', 'publicado_em', 'fotos'];
+    'valor', 'valor_condominio', 'iptu', 'quartos', 'suites', 'banheiros', 'vagas', 'area_util', 'area_total', 'anunciante_nome', 'anunciante_tipo', 'publicado_em', 'fotos', 'aluguel'];
   const v = campos.map((k) => (a[k] === undefined || a[k] === '' ? null : k === 'fotos' && Array.isArray(a[k]) ? JSON.stringify(a[k].slice(0, 30)) : a[k]));
   const ja = one('SELECT id, valor, criado_em, anunciado_desde FROM fisguei_anuncios WHERE fisgar_id=?', String(a.fisgar_id));
   let id;
@@ -166,7 +172,7 @@ function montaTexto(modelo, pessoa, anuncio) {
     .replace(/\{nome\}/g, nome)
     .replace(/\{endereco\}/g, endereco(anuncio) + (pessoa.unidade ? ' – ' + pessoa.unidade : ''))
     .replace(/\{bairro\}/g, [anuncio.bairro, anuncio.cidade].filter(Boolean).join(', ') || 'Campinas')
-    .replace(/\{valor\}/g, anuncio.valor ? 'R$ ' + Number(anuncio.valor).toLocaleString('pt-BR') : '')
+    .replace(/\{valor\}/g, anuncio.valor ? 'R$ ' + Number(anuncio.valor).toLocaleString('pt-BR') : anuncio.aluguel ? 'R$ ' + Number(anuncio.aluguel).toLocaleString('pt-BR') + ' por mês' : '')
     .replace(/\{tipo\}/g, (anuncio.tipo || 'imóvel').toLowerCase());
 }
 
@@ -184,7 +190,8 @@ function proximo() {
     const recente = one(`SELECT 1 FROM fisguei_mensagens WHERE telefone=? AND direcao='saida' AND criado_em > datetime('now','localtime','-30 day')`, c.valor);
     if (recente) { run(`UPDATE fisguei_contatos SET envio='pulado', erro='Número já abordado nos últimos 30 dias' WHERE id=?`, c.id); continue; }
     const anuncio = one('SELECT * FROM fisguei_anuncios WHERE id=?', c.anuncio_id);
-    return { contato: c, anuncio, texto: montaTexto(ajustes().modelo, c, anuncio) };
+    const aj = ajustes();
+    return { contato: c, anuncio, texto: montaTexto(anuncio.negocio === 'Locação' ? aj.modelo_locacao : aj.modelo, c, anuncio) };
   }
   return null;
 }
@@ -222,7 +229,7 @@ function classifica(texto) {
 const RESPOSTAS = {
   confirmou: `Que ótimo, obrigado por confirmar! 😊 Um corretor da ${cfg.CLIENTE_NOME} vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Para adiantar: se tiver fotos suas do imóvel (as originais, tiradas por você), pode me mandar por aqui. E me diga o melhor horário para o corretor ligar.`,
   negou: 'Obrigado por avisar e desculpe o incômodo! Não vamos mais enviar mensagens sobre esse imóvel.',
-  sem_interesse: `Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender, a ${cfg.CLIENTE_NOME} fica à disposição.`,
+  sem_interesse: `Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender ou alugar, a ${cfg.CLIENTE_NOME} fica à disposição.`,
   parar: `Pronto, você não vai mais receber mensagens da ${cfg.CLIENTE_NOME} neste número. Desculpe o incômodo.`,
 };
 
@@ -319,7 +326,7 @@ function donoNaCarteira(anuncioId) {
 
 module.exports = {
   donoNaCarteira,
-  ROBO, LIMITE_MAX, INTERVALO_MIN_S, MODELO_PADRAO, RESPOSTAS, ref, norm, normTel, primeiroNome, TIPOS_PRIORIDADE,
+  ROBO, LIMITE_MAX, INTERVALO_MIN_S, MODELO_PADRAO, MODELO_LOCACAO_PADRAO, RESPOSTAS, ref, norm, normTel, primeiroNome, TIPOS_PRIORIDADE,
   ajustes, salvaAjustes, dentroDoHorario, agoraSP, enviadasHoje,
   salvaAnuncio, salvaPessoa, bloqueado, bloqueia, montaTexto,
   proximo, marcaEnviado, marcaErro, pendentes, enfileiraResposta, marcaPendente,

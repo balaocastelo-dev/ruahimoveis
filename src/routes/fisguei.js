@@ -164,7 +164,7 @@ r.get('/fisguei', (req, res) => {
   const pag = Math.max(parseInt(req.query.pagina, 10) || 1, 1);
   const { w, p } = filtros(req.query);
   const total = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${w}`, ...p).n;
-  const itens = all(`SELECT a.id, a.fisgar_id, a.tipo, a.negocio, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.valor, a.quartos, a.suites, a.vagas, a.area_util,
+  const itens = all(`SELECT a.id, a.fisgar_id, a.tipo, a.negocio, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.valor, a.aluguel, a.quartos, a.suites, a.vagas, a.area_util,
       a.anunciante_nome, a.anunciante_tipo, a.status, a.pausado, a.oportunidade_id, a.fotos, a.atualizado_em, a.criado_em,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id) AS pessoas,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas,

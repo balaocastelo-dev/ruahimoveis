@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS imoveis (
   codigo TEXT NOT NULL UNIQUE,
   tipo TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'captacao'
-    CHECK (status IN ('captacao','aguardando_autorizacao','publicado','off_market','vendido','suspenso')),
+    CHECK (status IN ('captacao','aguardando_autorizacao','publicado','off_market','vendido','alugado','suspenso')),
   cep TEXT, logradouro TEXT, numero TEXT, unidade TEXT, bairro TEXT, cidade TEXT, uf TEXT,
   lat REAL, lon REAL,
   condominio_id INTEGER REFERENCES condominios(id),
@@ -328,7 +328,10 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'anunciado_desde', 'TEXT'],
   ['leads', 'agente', 'TEXT'],
-  ['arquivos', 'url_externa', 'TEXT']]) {
+  ['arquivos', 'url_externa', 'TEXT'],
+  ['fisguei_anuncios', 'aluguel', 'REAL'],
+  ['imoveis', 'finalidade', "TEXT NOT NULL DEFAULT 'venda'"],
+  ['imoveis', 'valor_locacao', 'REAL']]) {
   if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
 

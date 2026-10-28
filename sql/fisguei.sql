@@ -106,3 +106,7 @@ CREATE INDEX IF NOT EXISTS ix_op_checado ON oportunidades(cond_checado) WHERE co
 
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA ruah TO ruah_app;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA ruah TO ruah_app;
+
+-- Locação (28/10/2026): anúncios de aluguel entram na base; negocio = 'Venda' | 'Locação' | 'Venda e Locação'
+ALTER TABLE fisguei_anuncios ADD COLUMN IF NOT EXISTS aluguel double precision;
+CREATE INDEX IF NOT EXISTS ix_fa_negocio ON fisguei_anuncios(negocio);

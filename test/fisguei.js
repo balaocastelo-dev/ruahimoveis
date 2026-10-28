@@ -50,7 +50,12 @@ const consulta = (doc, nome, extra, fones) => ({
 
   // a extensão manda a lista, a aba Proprietários e duas consultas
   let r = ok(await req('x', 'POST', '/fisguei-api/receber', { itens: [{ url: URL_FISGAR + '/properties/getAll', json: lista }] }, H), 'recebe lista');
-  assert.equal(r.anuncios, 2); console.log('   locação ficou de fora');
+  assert.equal(r.anuncios, 3);
+  const anLoc = one("SELECT negocio, aluguel, valor FROM fisguei_anuncios WHERE fisgar_id='999'");
+  assert.equal(anLoc.negocio, "Locação"); assert.equal(anLoc.aluguel, 3500); assert.equal(anLoc.valor, null); console.log('   locação entra com o aluguel mensal');
+  const vLoc = ok(await req('adm', 'GET', '/api/mercado/resumo?cat=apartamentos&neg=locacao&min=0'), 'vitrine de locação');
+  const vVen = ok(await req('adm', 'GET', '/api/mercado/resumo?cat=apartamentos&min=0'), 'vitrine de venda');
+  assert.equal(vLoc.total, 1); assert.equal(vLoc.mediana, 3500); assert.equal(vVen.total, 1); console.log('   vitrine de locação separada da venda');
   r = ok(await req('x', 'POST', '/fisguei-api/receber', { url: URL_FISGAR + '/owners/GetPeople', pedido: pedidoPessoas, json: pessoas }, H), 'recebe pessoas');
   assert.equal(r.pessoas, 2);
   const c1 = consulta('12345678909', 'ANDRE LUIS ARRUDA', 'CASA 02', [{ phone: '19991407837', type: 'MOBILE', whatsApp: false, score: 2 }, { phone: '1932321111', type: 'LANDLINE', score: 1 }, { phone: '19988887777', type: 'MOBILE', score: 1 }]);

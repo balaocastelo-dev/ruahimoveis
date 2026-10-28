@@ -9,6 +9,10 @@ const MK_CATS = [
 ];
 const MK_FAIXAS = [['0', 'qualquer valor'], ['500000', 'a partir de R$ 500 mil'], ['1000000', 'a partir de R$ 1 mi'], ['2000000', 'a partir de R$ 2 mi'], ['3000000', 'a partir de R$ 3 mi'], ['5000000', 'a partir de R$ 5 mi']];
 const MK_MIN = { apartamentos: '0', casas: '1000000', terrenos: '1000000', comerciais: '1000000' };
+// locação: o valor é o aluguel por mês
+const MK_FAIXAS_LOC = [['0', 'qualquer aluguel'], ['3000', 'a partir de R$ 3 mil/mês'], ['5000', 'a partir de R$ 5 mil/mês'], ['10000', 'a partir de R$ 10 mil/mês'], ['20000', 'a partir de R$ 20 mil/mês'], ['50000', 'a partir de R$ 50 mil/mês']];
+const mkLoc = () => MK.neg === 'locacao';
+const mkPreco = (v) => (mkLoc() ? brl(v) + '/mês' : mkMi(v));
 const mkMi = (v) => (v >= 1e6 ? 'R$ ' + (v / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' mi' : brl(v));
 const mkArea = (v) => (v ? Math.round(v).toLocaleString('pt-BR') + ' m²' : '');
 let MAPAS = null;
@@ -17,9 +21,10 @@ const mapasCfg = () => (MAPAS ? Promise.resolve(MAPAS) : api('GET', '/api/mapas/
 const mkFoto = (x, cfg, alt) => fotoCadeia([x.foto, cfg.fachada && x.lat ? (x.origem === 'op' ? (x.condominio_id ? `/api/fachada?ref=cd${x.condominio_id}` : null) : `/api/fachada?ref=fg${x.id}`) : null], alt);
 
 // abas das vitrines + Condomínios (com a contagem de cada vitrine quando já se sabe)
-function mkAbas(on, cats) {
+function mkAbas(on, cats, neg) {
+  const qn = neg === 'locacao' ? '?neg=locacao' : '';
   const n = (k) => (cats && cats[k] ? ` <span class="mk-ab-n">${(cats[k].n || 0).toLocaleString('pt-BR')}</span>` : '');
-  return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}
+  return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}${qn}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}
     <a href="#/fisguei" class="${on === 'fisguei' ? 'on' : ''}" title="Sinais nos anúncios: queda de preço, particular, abaixo do bairro">Leitura da IA</a><a href="#/radar" class="${on === 'radar' ? 'on' : ''}" title="Anúncios que chegaram pelos portais">Portais</a>${on === 'aprovacoes' ? '<a href="#/radar/aprovacoes" class="on">Aprovações</a>' : ''}</div>`;
 }
 
@@ -43,10 +48,10 @@ function mkDesenhaGrupos(nivel) {
     box.innerHTML = bar + `<div class="mk-grade">${l.map((b) => `<a class="mk-card" href="${MK.link({ bairro: b.chave, rua: '' })}">
       <div class="mk-capa">${capa(b)}<span class="mk-capa-n">${b.n} imóve${b.n > 1 ? 'is' : 'l'}</span></div>
       <div class="mk-card-c"><b class="mk-card-nome">${esc(b.nome)}</b>
-      <div class="mk-num">${mkMi(b.mediana)}</div><div class="muted small">mediana${b.m2 ? ' · ' + m2txt(b.m2) : ''}${b.area ? ' · ' + mkArea(b.area) : ''}</div>
-      <div class="muted small">${mkMi(b.min)} a ${mkMi(b.max)}${b.particulares ? ` · ${b.particulares} de particular` : ''}</div></div></a>`).join('')}</div>`;
+      <div class="mk-num">${mkPreco(b.mediana)}</div><div class="muted small">mediana${b.m2 ? ' · ' + m2txt(b.m2) : ''}${b.area ? ' · ' + mkArea(b.area) : ''}</div>
+      <div class="muted small">${mkPreco(b.min)} a ${mkPreco(b.max)}${b.particulares ? ` · ${b.particulares} de particular` : ''}</div></div></a>`).join('')}</div>`;
   } else {
-    box.innerHTML = bar + `<div class="mk-lista">${l.map((r) => `<a class="mk-linha" href="${MK.link({ rua: r.chave })}"><span class="mk-mini">${capa(r)}</span><div style="flex:1;min-width:0"><b>${esc(r.nome)}</b><div class="muted small">${mkMi(r.min)}${r.max !== r.min ? ' a ' + mkMi(r.max) : ''}${r.m2 ? ' · ' + m2txt(r.m2) : ''}${r.area ? ' · ' + mkArea(r.area) : ''}</div></div><span class="pill ok">${r.n} imóve${r.n > 1 ? 'is' : 'l'}</span><span class="muted">›</span></a>`).join('') || '<div class="empty">Nenhuma rua.</div>'}</div>`;
+    box.innerHTML = bar + `<div class="mk-lista">${l.map((r) => `<a class="mk-linha" href="${MK.link({ rua: r.chave })}"><span class="mk-mini">${capa(r)}</span><div style="flex:1;min-width:0"><b>${esc(r.nome)}</b><div class="muted small">${mkPreco(r.min)}${r.max !== r.min ? ' a ' + mkPreco(r.max) : ''}${r.m2 ? ' · ' + m2txt(r.m2) : ''}${r.area ? ' · ' + mkArea(r.area) : ''}</div></div><span class="pill ok">${r.n} imóve${r.n > 1 ? 'is' : 'l'}</span><span class="muted">›</span></a>`).join('') || '<div class="empty">Nenhuma rua.</div>'}</div>`;
   }
 }
 
@@ -81,8 +86,8 @@ function mkCartao(x) {
     <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small muted">${esc(x.ref)}</span><span class="small muted">${esc(x.publicado_em ? new Date(x.publicado_em + 'T12:00').toLocaleDateString('pt-BR') : '')}</span></div>
       <div class="imtit">${esc(x.subtipo || x.tipo || 'Imóvel')} · nº ${esc(x.numero || 's/n')}</div><div class="muted small">${esc(x.complemento || x.anunciante_nome || '')}</div>
       <div class="imspecs">${specs.filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
-      <div class="imvalor">${brl(x.valor)}</div>
-      ${x.anuncios > 1 ? `<div class="mk-rep" title="${esc(x.outros.map((o) => `${brl(o.valor)} · ${o.anunciante || o.portal || ''}`).join('\n'))}">Anunciado ${x.anuncios} vezes${x.anunciantes > 1 ? ` por ${x.anunciantes} anunciantes` : ''}${x.valor_min !== x.valor_max ? ` · ${mkMi(x.valor_min)} a ${mkMi(x.valor_max)}` : ''}</div>` : ''}</div></a>
+      <div class="imvalor">${brl(x.valor)}${x.por_mes ? '<span class="muted small"> /mês</span>' : ''}</div>
+      ${x.anuncios > 1 ? `<div class="mk-rep" title="${esc(x.outros.map((o) => `${brl(o.valor)} · ${o.anunciante || o.portal || ''}`).join('\n'))}">Anunciado ${x.anuncios} vezes${x.anunciantes > 1 ? ` por ${x.anunciantes} anunciantes` : ''}${x.valor_min !== x.valor_max ? ` · ${mkPreco(x.valor_min)} a ${mkPreco(x.valor_max)}` : ''}</div>` : ''}</div></a>
     <div class="imacoes">${mkAcoes(x)}</div></div>`;
 }
 function mkDesenhaCards() {
@@ -140,8 +145,10 @@ document.addEventListener('change', (e) => {
 async function telaMercado(qs, cat = 'casas') {
   const C = MK_CATS.find((c) => c[0] === cat) || MK_CATS[1];
   const ehLote = cat === 'terrenos', ehCom = cat === 'comerciais';
-  const f = { min: qs.get('min') ?? MK_MIN[cat], sub: qs.get('sub') || '', quartos: qs.get('quartos') || '', particular: qs.get('particular') || '', bairro: qs.get('bairro') || '', rua: qs.get('rua') || '' };
-  const filtros = Object.fromEntries(Object.entries({ cat, min: f.min, sub: f.sub, quartos: ehLote || ehCom ? '' : f.quartos, particular: f.particular }).filter(([, v]) => v !== ''));
+  const neg = qs.get('neg') === 'locacao' ? 'locacao' : '';
+  MK.neg = neg;
+  const f = { neg, min: qs.get('min') ?? (neg ? '0' : MK_MIN[cat]), sub: qs.get('sub') || '', quartos: qs.get('quartos') || '', particular: qs.get('particular') || '', bairro: qs.get('bairro') || '', rua: qs.get('rua') || '' };
+  const filtros = Object.fromEntries(Object.entries({ cat, neg, min: f.min, sub: f.sub, quartos: ehLote || ehCom ? '' : f.quartos, particular: f.particular }).filter(([, v]) => v !== ''));
   const link = (o) => `#/${cat}?` + new URLSearchParams(Object.fromEntries(Object.entries({ ...f, ...o }).filter(([, v]) => v !== '' && v !== null && v !== undefined)));
   const qf = new URLSearchParams(filtros);
   const [res, cfg, cred, pd] = await Promise.all([api('GET', '/api/mercado/resumo?' + qf), mapasCfg(), api('GET', '/api/fisguei/creditos').catch(() => null), api('GET', '/api/fisguei/pedidos').catch(() => null)]);
@@ -164,13 +171,13 @@ async function telaMercado(qs, cat = 'casas') {
     corpo = '<div id="mk-cards"></div>';
   }
   const migalha = `<div class="mk-migalha"><a href="${link({ bairro: '', rua: '' })}">${esc(C[1])} em Campinas</a>${bairroAt ? ` › <a href="${link({ rua: '' })}">${esc(bairroAt.nome)}</a>` : ''}${f.rua ? ` › <b>${esc(f.rua.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase()))}</b>` : ''}</div>`;
-  const abas = mkAbas(cat, res.categorias);
-  $('#main').innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end;gap:12px"><div><div class="eyebrow">Imóveis da base · Campinas</div><h1>${esc(C[1])}</h1></div><div id="mk-topo">${mkTopo()}</div></div>
+  const abas = mkAbas(cat, res.categorias, neg);
+  $('#main').innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end;gap:12px"><div><div class="eyebrow">Imóveis da base · Campinas · ${neg ? 'locação' : 'venda'}</div><h1>${esc(C[1])}${neg ? ' para alugar' : ''}</h1></div><div class="row" style="gap:10px;align-items:center"><div class="seg mk-neg" role="group" aria-label="Venda ou locação"><a class="${neg ? '' : 'on'}" href="${link({ neg: '', min: MK_MIN[cat], bairro: '', rua: '' })}">Venda</a><a class="${neg ? 'on' : ''}" href="${link({ neg: 'locacao', min: '0', bairro: '', rua: '' })}">Locação</a></div><div id="mk-topo">${mkTopo()}</div></div></div>
   ${abas}
   <p class="lead">${esc(C[2])} Escolha o bairro e a rua. Nos imóveis que interessam, clique em <b>Localizar proprietário</b> (ou selecione vários): o Fisgar busca o dono e o imóvel entra sozinho na <a href="#/imoveis">carteira</a>.</p>
-  <div class="grid g4 cd-kpis">${cdKpi(res.total.toLocaleString('pt-BR'), ehLote ? 'terrenos neste filtro' : 'imóveis neste filtro', res.repetidos ? `${res.anuncios.toLocaleString('pt-BR')} anúncios · ${res.repetidos.toLocaleString('pt-BR')} repetidos juntados` : `de ${res.base.toLocaleString('pt-BR')} na base`)}${cdKpi(mkMi(res.mediana), 'valor mediano', res.m2 ? 'mediana ' + m2txt(res.m2) : '')}${cdKpi(res.bairros.length, 'bairros', res.area ? `${ehLote ? 'terreno' : 'área'} mediana ${mkArea(res.area)}` : '')}${cdKpi(res.particulares, 'de particular', res.total ? Math.round((res.particulares / res.total) * 100) + '% do total' : '')}</div>
+  <div class="grid g4 cd-kpis">${cdKpi(res.total.toLocaleString('pt-BR'), ehLote ? 'terrenos neste filtro' : 'imóveis neste filtro', res.repetidos ? `${res.anuncios.toLocaleString('pt-BR')} anúncios · ${res.repetidos.toLocaleString('pt-BR')} repetidos juntados` : `de ${res.base.toLocaleString('pt-BR')} na base`)}${cdKpi(mkPreco(res.mediana), neg ? 'aluguel mediano' : 'valor mediano', res.m2 ? 'mediana ' + m2txt(res.m2) + (neg ? ' por mês' : '') : '')}${cdKpi(res.bairros.length, 'bairros', res.area ? `${ehLote ? 'terreno' : 'área'} mediana ${mkArea(res.area)}` : '')}${cdKpi(res.particulares, 'de particular', res.total ? Math.round((res.particulares / res.total) * 100) + '% do total' : '')}</div>
   <form class="row cd-filtros" data-form="mk-filtro" data-cat="${cat}">
-    <select name="min" aria-label="Valor mínimo">${MK_FAIXAS.map(([v, t]) => `<option value="${v}" ${f.min === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
+    <input type="hidden" name="neg" value="${neg}"><select name="min" aria-label="${neg ? 'Aluguel mínimo' : 'Valor mínimo'}">${(neg ? MK_FAIXAS_LOC : MK_FAIXAS).map(([v, t]) => `<option value="${v}" ${f.min === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
     <select name="sub" aria-label="Tipo"><option value="">Todos os tipos</option>${res.subtipos.map((t) => `<option value="${esc(t.nome)}" ${f.sub === t.nome ? 'selected' : ''}>${esc(t.nome)} (${t.n})</option>`).join('')}${f.sub && !res.subtipos.some((t) => t.nome === f.sub) ? `<option selected value="${esc(f.sub)}">${esc(f.sub)}</option>` : ''}</select>
     ${ehLote || ehCom ? '' : `<select name="quartos" aria-label="Quartos"><option value="">Quartos</option>${[1, 2, 3, 4, 5].map((q) => `<option value="${q}" ${f.quartos === String(q) ? 'selected' : ''}>${q}+ quartos</option>`).join('')}</select>`}
     <label class="chk"><input type="checkbox" name="particular" ${f.particular ? 'checked' : ''}> Só particular</label>
@@ -208,7 +215,7 @@ async function mapaMercado(qf, f, bairroAt) {
   const chaveRua = (t) => t.toUpperCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
   for (const [id, lat, lon, mil, part, rot] of pts) {
     const mk = L.circleMarker([lat, lon], { radius: 5.5, color: '#fff', weight: 1, fillColor: part ? '#2e7d4f' : '#3b6ea8', fillOpacity: 0.85 }).addTo(m);
-    mk.bindTooltip(`${rot} · ${mkMi(mil * 1000)}`); mk.on('click', () => navega(id < 0 ? `#/radar/${-id}` : `#/fisguei/${id}`));
+    mk.bindTooltip(`${rot} · ${mkPreco(mil * 1000)}`); mk.on('click', () => navega(id < 0 ? `#/radar/${-id}` : `#/fisguei/${id}`));
     if (f.rua && chaveRua(rot).includes(f.rua.split(' ').slice(-1)[0])) destaque.push([lat, lon]);
   }
   if (destaque.length) m.fitBounds(destaque, { padding: [40, 40], maxZoom: 17 });

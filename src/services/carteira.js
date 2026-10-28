@@ -11,7 +11,7 @@ const ETAPAS = [
   ['confirmado', 'Dono confirmou'],
   ['autorizado', 'Autorização assinada'],
   ['publicado', 'Publicado'],
-  ['vendido', 'Vendido'],
+  ['vendido', 'Vendido / alugado'],
 ];
 const ORIGENS = [['fisgar', 'Fisgar'], ['radar', 'Portais (Radar)'], ['cadastro', 'Site / cadastro da equipe']];
 
@@ -54,7 +54,7 @@ function enriquece(lista) {
     const doFisgar = d && String(d.origem_dado || '').startsWith('Fisgar');
     const as = assin.get(i.id);
     let etapa = 'sem_dono';
-    if (i.status === 'vendido') etapa = 'vendido';
+    if (i.status === 'vendido' || i.status === 'alugado') etapa = 'vendido';
     else if (i.status === 'publicado' || i.status === 'off_market') etapa = 'publicado';
     else if (as === 'assinado') etapa = 'autorizado';
     else if ((f && f.conf) || (d && !doFisgar)) etapa = 'confirmado';
@@ -67,7 +67,7 @@ function enriquece(lista) {
       ['dono', 'Proprietário', !!d],
       ['telefone', 'Telefone do dono', !!(d && d.telefone)],
       ['endereco', 'Endereço completo (rua, número, CEP)', !!(i.logradouro && i.numero && i.cep)],
-      ['valor', 'Valor', !!i.valor],
+      ['valor', i.finalidade === 'locacao' ? 'Valor do aluguel' : 'Valor', i.finalidade === 'locacao' ? !!i.valor_locacao : i.finalidade === 'venda_locacao' ? !!(i.valor && i.valor_locacao) : !!i.valor],
       ['area', 'Área', !!(i.area_util || i.area_total)],
       ['descricao', `Descrição da ${cfg.CLIENTE_NOME}`, descPropria(i.descricao)],
       ['autorizacao', 'Autorização assinada', as === 'assinado'],
