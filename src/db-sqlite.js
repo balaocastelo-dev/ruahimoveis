@@ -3,12 +3,19 @@ const fs = require('fs');
 const path = require('path');
 const { DatabaseSync } = require('node:sqlite');
 const { DATA_DIR } = require('./config');
+const tenant = require('./tenant');
+const { traduzSqlite, nomeSqlite } = require('./sql-pg');
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 const db = new DatabaseSync(process.env.RUAH_DB || path.join(DATA_DIR, 'ruah.db'));
 db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
 
-db.exec(`
+// Multi-imobiliária: toda a estrutura passa pelo tradutor. Com MULTI desligado (padrão) o SQL sai idêntico;
+// com MULTI=1 as tabelas privadas ganham o prefixo da imobiliária (ruah__imoveis) e as comuns ficam sem prefixo.
+const ex = (sql) => db.exec(traduzSqlite(sql));
+
+function estrutura() {
+ex(`
 CREATE TABLE IF NOT EXISTS usuarios (
   id INTEGER PRIMARY KEY,
   nome TEXT NOT NULL,
@@ -328,10 +335,10 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['fisguei_anuncios', 'condominio_id', 'INTEGER REFERENCES condominios(id) ON DELETE SET NULL'],
   ['fisguei_anuncios', 'anunciado_desde', 'TEXT'],
   ['leads', 'agente', 'TEXT']]) {
-  if (!db.prepare(`PRAGMA table_info(${t})`).all().some((x) => x.name === c)) db.exec(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
+  if (!db.prepare(`PRAGMA table_info(${nomeSqlite(t)})`).all().some((x) => x.name === c)) ex(`ALTER TABLE ${t} ADD COLUMN ${c} ${def}`);
 }
 
-db.exec(`CREATE TABLE IF NOT EXISTS condominio_cache (
+ex(`CREATE TABLE IF NOT EXISTS condominio_cache (
   condominio_id INTEGER NOT NULL REFERENCES condominios(id) ON DELETE CASCADE,
   tipo TEXT NOT NULL, json TEXT NOT NULL, gerado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
   PRIMARY KEY (condominio_id, tipo));
@@ -368,7 +375,7 @@ CREATE TABLE IF NOT EXISTS bairro_commons (
   ok INTEGER NOT NULL DEFAULT 0, motivo TEXT, verificado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 
 // Escritório virtual: conversas, eventos, afazeres e fotos dos agentes robôs.
-db.exec(`CREATE TABLE IF NOT EXISTS agente_mensagens (
+ex(`CREATE TABLE IF NOT EXISTS agente_mensagens (
   id INTEGER PRIMARY KEY, agente TEXT NOT NULL, linha TEXT, telefone TEXT NOT NULL, nome TEXT,
   direcao TEXT NOT NULL CHECK (direcao IN ('entrada','saida','nota')), texto TEXT NOT NULL, status TEXT,
   lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE SET NULL,
@@ -392,10 +399,23 @@ CREATE TABLE IF NOT EXISTS agente_midias (
   anuncio_id INTEGER REFERENCES fisguei_anuncios(id) ON DELETE SET NULL, oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
   lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, mime TEXT, nome TEXT, tamanho INTEGER, legenda TEXT, dados BLOB NOT NULL,
   imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
+}
 
-const one = (sql, ...p) => db.prepare(sql).get(...p);
-const all = (sql, ...p) => db.prepare(sql).all(...p);
-const run = (sql, ...p) => db.prepare(sql).run(...p);
+// Sem MULTI: a estrutura de sempre. Com MULTI=1: a da imobiliária padrão (as outras entram com criaImobiliaria).
+if (tenant.multi()) tenant.comImobiliaria(tenant.atual() || tenant.padrao(), estrutura);
+else estrutura();
+
+// Cria (ou completa) as tabelas privadas de uma imobiliária no SQLite (só com MULTI=1).
+// TODO(fase1 · migração): no Postgres isso vira o script que cria o schema da imobiliária a partir do modelo.
+function criaImobiliaria(slug) {
+  if (!tenant.multi()) throw new Error('criaImobiliaria só funciona com MULTI=1.');
+  tenant.comImobiliaria(slug, estrutura);
+}
+
+const T = traduzSqlite;
+const one = (sql, ...p) => db.prepare(T(sql)).get(...p);
+const all = (sql, ...p) => db.prepare(T(sql)).all(...p);
+const run = (sql, ...p) => db.prepare(T(sql)).run(...p);
 
 function getConfig(k) { const r = one('SELECT valor FROM config WHERE chave=?', k); return r ? r.valor : null; }
 function setConfig(k, v) {
@@ -406,4 +426,4 @@ function audit(usuarioId, acao, detalhe) {
   run('INSERT INTO auditoria(usuario_id,acao,detalhe) VALUES(?,?,?)', usuarioId ?? null, acao, detalhe ? String(detalhe).slice(0, 1000) : null);
 }
 
-module.exports = { db, one, all, run, getConfig, setConfig, audit, PG: false };
+module.exports = { db, one, all, run, getConfig, setConfig, audit, criaImobiliaria, PG: false };

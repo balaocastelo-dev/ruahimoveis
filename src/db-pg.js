@@ -3,6 +3,7 @@
 const path = require('path');
 const { createSyncFn } = require('synckit');
 const traduz = require('./sql-pg');
+const tenant = require('./tenant');
 
 const consulta = createSyncFn(path.join(__dirname, 'pg-worker.js'), { timeout: 45000 });
 
@@ -12,7 +13,9 @@ const paraBuffer = (r) => {
 };
 
 function exec(sql, params) {
-  const t = traduz(sql);
+  // multi-imobiliária: com MULTI=1 o tradutor qualifica cada tabela com o schema da imobiliária do contexto
+  // (sem contexto: IMOBILIARIA_PADRAO, ou erro no modo estrito). Com MULTI desligado nada muda.
+  const t = traduz(sql, tenant.multi() ? tenant.schemaSql() : undefined);
   const p = params.map((v) => (v === undefined ? null : typeof v === 'boolean' ? (v ? 1 : 0) : v));
   const r = consulta(t.text, p);
   if (r && r.erro) {
