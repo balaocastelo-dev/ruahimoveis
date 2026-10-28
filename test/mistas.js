@@ -54,7 +54,12 @@ const ok = (msg) => { n++; console.log('ok ·', msg); };
   ok('migração copia o andamento antigo só para a imobiliária padrão (uma vez); a outra começa vazia');
 
   await certo(A, 'POST', '/api/setup', { nome: 'Adm RUAH', email: 'adm@ruah.com', senha: 'Teste1234' });
-  await certo(B, 'POST', '/api/setup', { nome: 'Adm Outra', email: 'adm@outra.com', senha: 'Teste1234' });
+  // imobiliária nova: o primeiro acesso não é pela tela (/setup); o cadastro e o 1º adm vêm da plataforma
+  const registro = require('../src/plataforma/registro');
+  const outra = registro.porSlug('outra') || registro.criar({ slug: 'outra', nome_curto: 'Outra', empresa: 'Outra Imóveis' });
+  const admB = em('outra', () => Number(run('INSERT INTO usuarios(nome,email,perfil,senha_hash) VALUES(?,?,?,?)', 'Adm Outra', 'adm@outra.com', 'adm', require('../src/auth').hashSenha('Teste1234')).lastInsertRowid));
+  registro.indexaLogin(outra.id, admB, 'adm@outra.com');
+  await certo(B, 'POST', '/api/login', { email: 'adm@outra.com', senha: 'Teste1234' });
   ok('cada imobiliária com o seu administrador (login pelo host)');
 
   // ---------- anúncio comum, andamento privado ----------

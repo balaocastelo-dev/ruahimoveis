@@ -6,7 +6,7 @@
 //   paragrafo · titulo (nivel 2|3) · resumo · lista · tabela · pros-contras · destaque · chamada
 
 const { SLUGS, TEMAS } = require('./categorias');
-const { CLIENTE_NOME } = require('../config'); // nome da imobiliária (autor "Equipe <cliente>")
+const cfg = require('../config'); // nome da imobiliária (autor "Equipe <cliente>"), lido na hora
 
 const texto = (v) => typeof v === 'string' && v.trim().length > 0;
 const lista = (v) => Array.isArray(v);
@@ -129,7 +129,7 @@ function lerArtigo(bruto) {
       capa,
       publicadoEm: new Date(bruto.publicadoEm).toISOString(),
       ...(texto(bruto.atualizadoEm) && Number.isFinite(Date.parse(bruto.atualizadoEm)) ? { atualizadoEm: new Date(bruto.atualizadoEm).toISOString() } : {}),
-      autor: { nome: `Equipe ${CLIENTE_NOME}` },
+      autor: { nome: `Equipe ${cfg.CLIENTE_NOME}` },
       origem: 'diario',
       ...(bruto.formato === 'dica' ? { formato: 'dica' } : {}),
       ...(redes ? { redes } : {}),

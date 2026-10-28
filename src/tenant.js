@@ -8,7 +8,8 @@
 //  - caches em memória com dado privado usam chaveCache() (fisguei/inteligencia, bairros/dados e fonte, blog/diario,
 //    portal/fonte, og, services/drive; routes/mercado separa por schema). Estado de processo (robô do WhatsApp, linhas
 //    dos agentes, monitor de portais) ainda é um só por PC e roda na imobiliária padrão.
-//  - config por imobiliária (CLIENTE_NOME, EMPRESA, chaves) ainda vem do .env; autenticação/sessões na base.
+//  - sql/plataforma.sql (base.imobiliarias, dominios, login_indice, gestores, sessoes…) escrito, NÃO aplicado.
+//  - tela do gestor da plataforma (fase 2); hoje só a API /api/plataforma.
 //  - scripts/migrar-para-online.js e scripts/demo-vitrine.js usam o SQLite direto (fora do tradutor).
 const { AsyncLocalStorage } = require('node:async_hooks');
 
@@ -19,15 +20,16 @@ const multi = () => process.env.MULTI === '1';                 // liga o prefixo
 const estrito = () => process.env.MULTI_ESTRITO === '1';       // tabela fora do mapa ou privada sem imobiliária = erro
 const slugPadrao = () => (process.env.IMOBILIARIA_PADRAO || 'ruah').trim().toLowerCase();
 
-// { slug, schema } a partir de um slug ou de um contexto já montado.
-// TODO(fase1 · etapa plataforma): ler slug→schema de base.imobiliarias; por enquanto o schema é o próprio slug (RUAH = "ruah").
+// { slug, schema, registro? } a partir de um slug, de um contexto já montado ou do registro da imobiliária
+// (linha de base.imobiliarias, ver src/plataforma/registro.js). Só com slug, o schema é o próprio slug (RUAH = "ruah").
 function contexto(x) {
   const slug = typeof x === 'string' ? x.trim().toLowerCase() : x && x.slug;
   const schema = typeof x === 'object' && x && x.schema ? x.schema : slug;
   for (const v of [slug, schema]) {
     if (!SLUG_OK.test(String(v || '')) || String(v).includes('__')) throw new Error(`Imobiliária inválida: ${JSON.stringify(v)}`);
   }
-  return Object.freeze({ slug, schema });
+  const registro = typeof x === 'object' && x ? (x.registro || (x.id != null && 'nome_curto' in x ? x : null)) : null;
+  return Object.freeze(registro ? { slug, schema, registro } : { slug, schema });
 }
 
 const padrao = () => contexto(slugPadrao());
@@ -49,8 +51,18 @@ function schemaSql() {
   return estrito() ? null : padrao().schema;
 }
 
+// Registro completo da imobiliária do contexto (nome, cidade, WhatsApp, blog…), lido de base.imobiliarias.
+// Só com MULTI=1; desligado (ou sem contexto) devolve null e a configuração vem do .env, como sempre.
+function imobiliaria() {
+  if (!multi()) return null;
+  const c = atual();
+  if (!c) return null;
+  if (c.registro) return c.registro;
+  try { return require('./plataforma/registro').porSlug(c.slug); } catch { return null; }
+}
+
 // ---- imobiliária pelo endereço (host) da requisição ----
-// TODO(fase1 · etapa plataforma): trocar pelo cadastro em base.dominios. Formato: IMOBILIARIA_HOSTS="host=slug,host2=slug".
+// Ordem: IMOBILIARIA_HOSTS="host=slug,host2=slug" (env, vale sempre) → base.dominios (só com MULTI=1, cache de 60 s).
 function hostsMap() {
   const m = new Map();
   for (const par of String(process.env.IMOBILIARIA_HOSTS || '').split(',')) {
@@ -59,14 +71,47 @@ function hostsMap() {
   }
   return m;
 }
+const normHost = (host) => String(host || '').trim().toLowerCase().replace(/:\d+$/, '');
+// Só o mapa do env (sem banco): usado com MULTI desligado e pelos testes do tradutor.
 function porHost(host) {
-  const h = String(host || '').trim().toLowerCase().replace(/:\d+$/, '');
-  return contexto(hostsMap().get(h) || slugPadrao());
+  return contexto(hostsMap().get(normHost(host)) || slugPadrao());
+}
+// Entrada da plataforma (login de todas as imobiliárias): aqui a imobiliária vem da sessão, não do host.
+const appHosts = () => new Set(String(process.env.PLATAFORMA_APP_HOSTS || 'app.corretordofuturo.app')
+  .split(',').map((h) => normHost(h)).filter(Boolean));
+// { plataforma: true } | { slug, origem: 'env'|'dominio'|'padrao' }
+function resolveHost(host) {
+  const h = normHost(host);
+  const doEnv = hostsMap().get(h);
+  if (doEnv) return { slug: doEnv, origem: 'env' };
+  if (appHosts().has(h)) return { plataforma: true };
+  const doBanco = multi() ? require('./plataforma/registro').slugDoHost(h) : null;
+  if (doBanco) return { slug: doBanco, origem: 'dominio' };
+  return { slug: slugPadrao(), origem: 'padrao' };
 }
 // Middleware do Express: o resto da requisição roda dentro da imobiliária do host.
+// Com MULTI=1: host da plataforma → imobiliária da sessão (sem sessão, a padrão só para /setup e telas);
+// imobiliária suspensa/cancelada → páginas públicas 404/410 (o login dá a mensagem clara).
 function middleware(req, res, next) {
   let c;
-  try { c = porHost(req.hostname || req.headers.host); } catch (e) { return next(e); }
+  try {
+    if (!multi()) c = porHost(req.hostname || req.headers.host);
+    else {
+      const reg = require('./plataforma/registro');
+      const r = resolveHost(req.hostname || req.headers.host);
+      req.hostPlataforma = !!r.plataforma;
+      if (r.plataforma) {
+        const imob = require('./auth').imobiliariaDaSessao(req);
+        req.imobiliariaDaSessao = !!imob;
+        c = contexto(imob || reg.porSlug(slugPadrao()) || slugPadrao());
+      } else {
+        const imob = reg.porSlug(r.slug);
+        const bloqueio = imob && reg.bloqueioPublico(imob, req.path);
+        if (bloqueio) return res.status(bloqueio).type('text/plain').send(bloqueio === 410 ? 'Esta página não existe mais.' : 'Não encontrado.');
+        c = contexto(imob || r.slug);
+      }
+    }
+  } catch (e) { return next(e); }
   req.imobiliaria = c;
   als.run(c, next);
 }
@@ -79,4 +124,4 @@ function preserva(mw) {
   };
 }
 
-module.exports = { als, atual, chaveCache, comImobiliaria, exige, contexto, padrao, schemaSql, multi, estrito, porHost, hostsMap, middleware, preserva, SLUG_OK };
+module.exports = { als, atual, chaveCache, comImobiliaria, exige, contexto, padrao, schemaSql, multi, estrito, porHost, resolveHost, appHosts, hostsMap, middleware, preserva, imobiliaria, slugPadrao, SLUG_OK };

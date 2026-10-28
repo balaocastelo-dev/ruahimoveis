@@ -26,7 +26,7 @@ eq(PG('SELECT count(*) n FROM fisguei_anuncios a, oportunidades o WHERE a.oportu
   'SELECT count(*) n FROM base.fisguei_anuncios a, "ruah".oportunidades o WHERE a.oportunidade_id=o.id', 'pg · FROM com vírgula');
 eq(PG('INSERT INTO leads(nome,telefone) VALUES(?,?)'), 'INSERT INTO "ruah".leads(nome,telefone) VALUES(?,?)', 'pg · INSERT INTO');
 eq(PG('UPDATE imoveis SET valor=? WHERE imoveis.id=?'), 'UPDATE "ruah".imoveis SET valor=? WHERE imoveis.id=?', 'pg · UPDATE (tabela.coluna intacto)');
-eq(PG('DELETE FROM sessoes WHERE expira_em < ?'), 'DELETE FROM "ruah".sessoes WHERE expira_em < ?', 'pg · DELETE FROM');
+eq(PG('DELETE FROM links_internos WHERE expira_em < ?'), 'DELETE FROM "ruah".links_internos WHERE expira_em < ?', 'pg · DELETE FROM');
 eq(PG('SELECT * FROM leads WHERE id IN (SELECT lead_id FROM visitas WHERE imovel_id IN (SELECT id FROM imoveis)) AND NOT EXISTS (SELECT 1 FROM mensagens m WHERE m.lead_id=leads.id)'),
   'SELECT * FROM "ruah".leads WHERE id IN (SELECT lead_id FROM "ruah".visitas WHERE imovel_id IN (SELECT id FROM "ruah".imoveis)) AND NOT EXISTS (SELECT 1 FROM "ruah".mensagens m WHERE m.lead_id=leads.id)',
   'pg · subconsultas (IN, IN aninhado, NOT EXISTS)');
@@ -74,7 +74,7 @@ eq(LITE('SELECT i.codigo FROM imoveis i LEFT JOIN condominios c ON c.id=i.condom
 eq(LITE('INSERT INTO leads(nome) VALUES(?)'), 'INSERT INTO ruah__leads AS leads(nome) VALUES(?)', 'sqlite · INSERT INTO');
 eq(LITE('UPDATE imoveis SET valor=? WHERE imoveis.id=?'), 'UPDATE ruah__imoveis AS imoveis SET valor=? WHERE imoveis.id=?', 'sqlite · UPDATE');
 eq(LITE('UPDATE OR IGNORE leads SET etapa=?'), 'UPDATE OR IGNORE ruah__leads AS leads SET etapa=?', 'sqlite · UPDATE OR IGNORE');
-eq(LITE('DELETE FROM sessoes WHERE expira_em < ?'), 'DELETE FROM ruah__sessoes AS sessoes WHERE expira_em < ?', 'sqlite · DELETE FROM');
+eq(LITE('DELETE FROM links_internos WHERE expira_em < ?'), 'DELETE FROM ruah__links_internos AS links_internos WHERE expira_em < ?', 'sqlite · DELETE FROM');
 eq(LITE('INSERT OR IGNORE INTO fisguei_bloqueios(telefone) VALUES(?)'), 'INSERT OR IGNORE INTO ruah__fisguei_bloqueios AS fisguei_bloqueios(telefone) VALUES(?)', 'sqlite · INSERT OR IGNORE');
 eq(LITE('INSERT INTO config(chave,valor) VALUES(?,?) ON CONFLICT(chave) DO UPDATE SET valor=excluded.valor WHERE config.valor < ?'),
   'INSERT INTO ruah__config AS config(chave,valor) VALUES(?,?) ON CONFLICT(chave) DO UPDATE SET valor=excluded.valor WHERE config.valor < ?', 'sqlite · ON CONFLICT');

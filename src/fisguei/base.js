@@ -16,7 +16,8 @@ const primeiroNome = (n) => { const p = String(n || '').trim().split(/\s+/)[0] |
 const ref = (id) => 'FG-' + String(id).padStart(5, '0');
 
 // ---------- configuração do robô ----------
-const MODELO_PADRAO = `Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente virtual da ${cfg.EMPRESA}, de Campinas.\n\n`
+// MODELO_PADRAO e RESPOSTAS citam a imobiliária atendida: montados na hora (exportados como getters).
+const modeloPadrao = () => `Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente virtual da ${cfg.EMPRESA}, de Campinas.\n\n`
   + `Vimos que o imóvel da {endereco} ({bairro}) está à venda e temos interesse em divulgá-lo no portal da ${cfg.CLIENTE_NOME} para vendê-lo, recebendo apenas a comissão quando a venda acontecer.\n\n`
   + 'Você é o(a) proprietário(a) desse imóvel? Pode responder SIM ou NÃO.\n'
   + 'Se preferir não receber mensagens, responda PARAR.';
@@ -32,7 +33,7 @@ function ajustes(ler = getConfig) {
     hora_inicio: Math.min(Math.max(n('fisguei_hora_inicio', 9), 7), 20),
     hora_fim: Math.min(Math.max(n('fisguei_hora_fim', 19), 8), 21),
     sabado: getConfig('fisguei_sabado') !== '0',
-    modelo: getConfig('fisguei_modelo') || MODELO_PADRAO,
+    modelo: getConfig('fisguei_modelo') || modeloPadrao(),
     limite_max: LIMITE_MAX, intervalo_min_s: INTERVALO_MIN_S,
   };
 }
@@ -220,12 +221,12 @@ function classifica(texto) {
   return 'outro';
 }
 
-const RESPOSTAS = {
+const respostas = () => ({
   confirmou: `Que ótimo, obrigado por confirmar! 😊 Um corretor da ${cfg.CLIENTE_NOME} vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Para adiantar: se tiver fotos suas do imóvel (as originais, tiradas por você), pode me mandar por aqui. E me diga o melhor horário para o corretor ligar.`,
   negou: 'Obrigado por avisar e desculpe o incômodo! Não vamos mais enviar mensagens sobre esse imóvel.',
   sem_interesse: `Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender, a ${cfg.CLIENTE_NOME} fica à disposição.`,
   parar: `Pronto, você não vai mais receber mensagens da ${cfg.CLIENTE_NOME} neste número. Desculpe o incômodo.`,
-};
+});
 
 function criaOportunidade(anuncio, pessoa, telefone) {
   if (anuncio.oportunidade_id) return anuncio.oportunidade_id;
@@ -264,7 +265,7 @@ function recebida({ telefone, texto, wa_id }) {
     bloqueia(tel, 'pediu PARAR');
     run(`UPDATE fisguei_pessoas SET status='parar' WHERE id=?`, pessoa.id);
     run(`UPDATE fisguei_contatos SET envio='pulado', erro='A pessoa pediu PARAR' WHERE pessoa_id=? AND envio='fila'`, pessoa.id);
-    enfileiraResposta(pessoa.id, tel, RESPOSTAS.parar);
+    enfileiraResposta(pessoa.id, tel, respostas().parar);
     return { tipo };
   }
   if (jaRespondeu) { D.muda(anuncio.id); return { tipo: 'conversa', pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel }; }
@@ -275,20 +276,20 @@ function recebida({ telefone, texto, wa_id }) {
     pulaRestoDoEndereco(anuncio.id, 'O dono já confirmou');
     const opId = criaOportunidade(anuncio, pessoa, tel);
     donoNaCarteira(anuncio.id);
-    enfileiraResposta(pessoa.id, tel, RESPOSTAS.confirmou);
+    enfileiraResposta(pessoa.id, tel, respostas().confirmou);
     return { tipo, oportunidade_id: opId, pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel };
   }
   if (tipo === 'sem_interesse') {
     run(`UPDATE fisguei_pessoas SET status='sem_interesse' WHERE id=?`, pessoa.id);
     D.muda(anuncio.id, "status='sem_interesse'");
     pulaRestoDoEndereco(anuncio.id, 'O dono disse que não tem interesse');
-    enfileiraResposta(pessoa.id, tel, RESPOSTAS.sem_interesse);
+    enfileiraResposta(pessoa.id, tel, respostas().sem_interesse);
     return { tipo };
   }
   if (tipo === 'negou') {
     run(`UPDATE fisguei_pessoas SET status='negou' WHERE id=?`, pessoa.id);
     run(`UPDATE fisguei_contatos SET envio='pulado', erro='A pessoa disse que não é a dona' WHERE pessoa_id=? AND envio='fila'`, pessoa.id);
-    enfileiraResposta(pessoa.id, tel, RESPOSTAS.negou);
+    enfileiraResposta(pessoa.id, tel, respostas().negou);
     fechaSeAcabou(anuncio.id);
     return { tipo };
   }
@@ -320,9 +321,10 @@ function donoNaCarteira(anuncioId) {
 
 module.exports = {
   donoNaCarteira,
-  ROBO, LIMITE_MAX, INTERVALO_MIN_S, MODELO_PADRAO, RESPOSTAS, ref, norm, normTel, primeiroNome, TIPOS_PRIORIDADE,
+  ROBO, LIMITE_MAX, INTERVALO_MIN_S, modeloPadrao, respostas, ref, norm, normTel, primeiroNome, TIPOS_PRIORIDADE,
   ajustes, salvaAjustes, dentroDoHorario, agoraSP, enviadasHoje,
   salvaAnuncio, salvaPessoa, bloqueado, bloqueia, montaTexto,
   proximo, marcaEnviado, marcaErro, pendentes, enfileiraResposta, marcaPendente,
   classifica, recebida, criaOportunidade, pulaRestoDoEndereco, fechaSeAcabou,
 };
+for (const [k, de] of [['MODELO_PADRAO', modeloPadrao], ['RESPOSTAS', respostas]]) Object.defineProperty(module.exports, k, { get: de, enumerable: true });

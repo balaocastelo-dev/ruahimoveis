@@ -9,10 +9,11 @@
 const { CATEGORIAS, capaDaRotina } = require('./categorias');
 const { contarPalavras, linksDoTexto, palavrasDoArtigo, textoPuro, textosDoBloco, textosComLink, semAcento } = require('./texto');
 const cfg = require('../config');
-// O nome da imobiliária vem da configuração; a régua procura por ele (sem acento, sem diferença de maiúsculas).
-const CLIENTE = cfg.CLIENTE_NOME;
+// O nome da imobiliária vem da configuração da imobiliária atendida (lido na hora); a régua procura por ele
+// (sem acento, sem diferença de maiúsculas).
+const CLIENTE = () => cfg.CLIENTE_NOME;
 const escRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-const CLIENTE_CEDO = new RegExp(`(?<![\\p{L}\\d])(a|da|na) ${escRe(semAcento(CLIENTE).toLowerCase())}(?![\\p{L}\\d])`, 'iu');
+const CLIENTE_CEDO = () => new RegExp(`(?<![\\p{L}\\d])(a|da|na) ${escRe(semAcento(CLIENTE()).toLowerCase())}(?![\\p{L}\\d])`, 'iu');
 
 const PRINCIPAL = { minimoDePalavras: 1200, minimoDeSecoes: 4 };
 const NOTICIA = { minimoDePalavras: 350, tetoDePalavras: 750, minimoDeSecoes: 2 };
@@ -157,10 +158,10 @@ function avaliarArtigo(artigo) {
   }
   if (nFontes < 2) erros.push('O artigo precisa de ao menos duas fontes consultadas (campo fontes).');
   if (/(?<![\p{L}])(testamos|medimos|visitamos|em nossos testes|nossa equipe avaliou|nossos clientes)(?![\p{L}])/iu.test(tudo)) {
-    erros.push(`O texto afirma experiência própria da ${CLIENTE}; a rotina não testou nem visitou nada — atribua o dado à fonte.`);
+    erros.push(`O texto afirma experiência própria da ${CLIENTE()}; a rotina não testou nem visitou nada — atribua o dado à fonte.`);
   }
-  if (CLIENTE_CEDO.test(semAcento(blocos.filter((b) => b.tipo !== 'chamada').slice(0, Math.ceil(blocos.length * 0.6)).flatMap(textosDoBloco).join(' ')))) {
-    avisos.push(`A ${CLIENTE} aparece cedo no texto; ela entra só no fim e nas chamadas.`);
+  if (CLIENTE_CEDO().test(semAcento(blocos.filter((b) => b.tipo !== 'chamada').slice(0, Math.ceil(blocos.length * 0.6)).flatMap(textosDoBloco).join(' ')))) {
+    avisos.push(`A ${CLIENTE()} aparece cedo no texto; ela entra só no fim e nas chamadas.`);
   }
   for (const t of tabelas) if (t.linhas.some((l) => l.length !== t.colunas.length)) erros.push('Tabela com linha de tamanho diferente do cabeçalho.');
 

@@ -24,8 +24,8 @@ console.log(`ok · ${achadas.size} tabelas encontradas em ${fontes.length} arqui
 for (const t of COMUNS) assert.ok(!PRIVADAS.has(t), `tabela nas duas listas: ${t}`);
 console.log('ok · nenhuma tabela é comum e privada ao mesmo tempo');
 
-// tabelas classificadas que (ainda) não existem: só as novas da plataforma, criadas na etapa de autenticação
-const previstas = new Set(['imobiliarias', 'dominios', 'login_indice', 'gestores', 'chaves_integracao', 'auditoria_plataforma']);
+// tabelas classificadas que (ainda) não existem: só as previstas da plataforma
+const previstas = new Set(['chaves_integracao']);
 const sobram = Object.keys(MAPA).filter((t) => !achadas.has(t) && !previstas.has(t));
 assert.deepStrictEqual(sobram, [], `Tabelas no mapa que não existem em lugar nenhum: ${sobram.join(', ')}`);
 console.log(`ok · mapa sem tabela fantasma (${previstas.size} previstas para a plataforma)`);

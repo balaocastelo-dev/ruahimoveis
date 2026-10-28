@@ -1,5 +1,6 @@
 // Cadastro inteligente: CEP (ViaCEP), localização (OpenStreetMap) e condomínio já conhecido pelo endereço.
-const { CIDADE_PADRAO, UF_PADRAO, SISTEMA_NOME, CLIENTE_NOME } = require('../config');
+const cfg = require('../config'); // cidade/UF/nome da imobiliária lidos na hora (cfg.*)
+const { SISTEMA_NOME } = cfg;
 
 const UA = `${SISTEMA_NOME.replace(/\s+/g, '')}/1.0 (cadastro de imoveis)`;
 const soDigitos = (s) => String(s || '').replace(/\D/g, '');
@@ -43,7 +44,7 @@ async function osm(logradouro, numero, cidade, uf) {
 
 // Junta tudo e diz de onde veio cada dado (o corretor confere os campos marcados como automáticos).
 async function pesquisar({ cep, logradouro, numero, cidade, uf }) {
-  cidade = cidade || CIDADE_PADRAO; uf = uf || UF_PADRAO;
+  cidade = cidade || cfg.CIDADE_PADRAO; uf = uf || cfg.UF_PADRAO;
   const out = { campos: {}, fontes: {}, avisos: [] };
   const set = (k, v, fonte) => { if (v !== undefined && v !== null && v !== '') { out.campos[k] = v; out.fontes[k] = fonte; } };
 
@@ -74,9 +75,9 @@ async function pesquisar({ cep, logradouro, numero, cidade, uf }) {
     out.condominio = { id: cond.id, nome: cond.nome, tipo: cond.tipo, como: x.como, confianca: x.confianca, unidades: cond.unidades, andares: cond.andares };
     set('condominio_id', cond.id, 'Base de condomínios');
     set('condominio_nome', cond.nome, `Base de condomínios · ${x.como}`);
-    set('ano_construcao', cond.ano_construcao || (cond.abertura ? cond.abertura.slice(0, 4) : null), cond.ano_construcao ? `Cadastro ${CLIENTE_NOME}` : 'CNPJ do condomínio (abertura)');
-    set('lazer', cond.lazer, `Cadastro ${CLIENTE_NOME}`);
-    set('administradora', cond.administradora, `Cadastro ${CLIENTE_NOME}`);
+    set('ano_construcao', cond.ano_construcao || (cond.abertura ? cond.abertura.slice(0, 4) : null), cond.ano_construcao ? `Cadastro ${cfg.CLIENTE_NOME}` : 'CNPJ do condomínio (abertura)');
+    set('lazer', cond.lazer, `Cadastro ${cfg.CLIENTE_NOME}`);
+    set('administradora', cond.administradora, `Cadastro ${cfg.CLIENTE_NOME}`);
     if (cond.lat && !out.campos.lat) { set('lat', cond.lat, 'Base de condomínios'); set('lon', cond.lon, 'Base de condomínios'); }
     if (x.confianca !== 'alta') out.avisos.push(`Condomínio sugerido (${x.como}). Confira o nome antes de salvar.`);
   } else if (g && g.nome_predio) set('condominio_nome', g.nome_predio, 'OpenStreetMap');
