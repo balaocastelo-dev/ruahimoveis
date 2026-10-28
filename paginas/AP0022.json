@@ -1,0 +1,317 @@
+{
+  "codigo": "AP0022",
+  "slug": "apartamento-bonfim-campinas-sp-3-quartos-varanda-gourmet-ap0022",
+  "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
+  "resumo": "Apartamento novo no HM Maxi Bonfim, com 3 quartos, 1 suíte e 1 vaga. Localizado no bairro Bonfim, com vista livre e sol da manhã.",
+  "capa": {
+    "foto": 2021,
+    "alt": "Apartamento alto com vista para o por do sol e área verde ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento novo no HM Maxi Bonfim oferece 3 quartos, 1 suíte e 1 vaga de garagem. Localizado no tradicional bairro Bonfim, ele foi entregue com contrapiso, permitindo que você personalize cada ambiente conforme seu estilo. Com 65 m² de área privativa, a planta é moderna e funcional. O imóvel está em andar alto, com vista livre e recebe o sol da manhã, garantindo ambientes agradáveis durante o dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio HM Maxi Bonfim oferece diversas opções de lazer, como piscinas, quadras poliesportivas, academia e áreas de convivência. Sua localização estratégica facilita o acesso a comércios, escolas, hospitais e ao centro da cidade. Ideal para quem busca um imóvel novo, com e acabamentos personalizados."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Imóvel novo, nunca habitado, entregue no contrapiso.",
+        "Andar alto com vista livre e sol da manhã.",
+        "Condomínio completo com piscinas, academia, quadra poliesportiva e portaria 24h.",
+        "Bem localizada no bairro Bonfim, próximo a comércios e serviços.",
+        "Varanda gourmet com churrasqueira."
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é ampla e bem iluminada, com piso claro e paredes brancas. A sala tem janelas com vista para o exterior e é ideal para receber convidados. A varanda gourmet, com vista para a cidade e edifícios ao redor, possui churrasqueira e é um espaço adequado para refeições ao ar livre."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram que a varanda tem piso claro e balcão de ferro, com uma vista panorâmica que aproveita o sol da manhã. A integração entre a sala e a varanda é bem feita, criando um ambiente acolhedor e moderno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2006,
+          "legenda": "Varanda com vista para a cidade e edifícios"
+        },
+        {
+          "foto": 1997,
+          "legenda": "Sala com piso claro e janela com vista para edifício"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem piso claro e bancada escura, com espaço para armários e equipamentos. As fotos mostram uma mesa de madeira e um ventilador de teto, indicando que o ambiente é funcional e bem distribuído. Os banheiros têm piso claro e bancada escura, com janelas que garantem iluminação natural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são simples, com paredes brancas e teto branco. A foto de um dos banheiros mostra uma pia com válvula de água e um vaso sanitário com tampa. A iluminação é adequada, e o ambiente é limpo e bem conservado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2011,
+          "legenda": "Cozinha com mesas de madeira e balcão de cozinha"
+        },
+        {
+          "foto": 1998,
+          "legenda": "Banheiro com piso claro e bancada escura"
+        },
+        {
+          "foto": 2005,
+          "legenda": "Banheiro com vaso sanitário e pia"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio HM Maxi Bonfim oferece uma série de áreas de lazer, como piscinas, quadras poliesportivas, academia, salão de festas e playground. As fotos mostram a quadra poliesportiva com piso colorido e cercada por grades, bem como o playground colorido com escorregador e balanço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio também tem portaria 24h, segurança interna e uma área verde adjacente. O acesso ao prédio é feito por uma entrada com plantas e logotipo, e o estacionamento subterrâneo oferece conforto e privacidade aos moradores."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 2007,
+          "legenda": "Quadra poliesportiva com piso colorido e cercada por grades"
+        },
+        {
+          "foto": 2012,
+          "legenda": "Galeria de fitness com equipamentos e espelho"
+        },
+        {
+          "foto": 2013,
+          "legenda": "Playground colorido com escorregador e balanço"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para quem busca um imóvel novo, com e flexibilidade para personalizar os acabamentos. Sua localização no bairro Bonfim, próximo a comércios e serviços, torna-o uma excelente opção para famílias e profissionais que desejam conforto e praticidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e quais são os serviços incluídos no valor. Também é importante saber quais áreas do condomínio estão disponíveis para uso dos moradores.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1996,
+      "legenda": "Fachada de prédio com entrada e estacionamento",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2014,
+      "legenda": "Entrada de prédio residencial com plantas e logotipo",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2021,
+      "legenda": "Apartamento com vista para o por do sol",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2024,
+      "legenda": "Entrada de condomínio com estacionamento e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 2009,
+      "legenda": "Terreno com areia e cercado por grades",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1997,
+      "legenda": "Sala com piso claro e janela com vista para edifício",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2004,
+      "legenda": "Sala vazia com porta de vidro e piso claro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2017,
+      "legenda": "Sala com parede de tijolinho e luminária de parede",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2019,
+      "legenda": "Sala infantil com sofás azuis, mesa redonda e decoração colorida",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2020,
+      "legenda": "Sala de reuniões com mesa redonda e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 2006,
+      "legenda": "Varanda com vista para a cidade e edifícios",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 2011,
+      "legenda": "Cozinha com mesas de madeira e balcão de cozinha",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 2001,
+      "legenda": "Quarto vazio com janela e piso claro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 2002,
+      "legenda": "Quarto vazio com piso claro e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1998,
+      "legenda": "Banheiro com piso claro e bancada escura",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2000,
+      "legenda": "Banheiro com vaso sanitário e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2003,
+      "legenda": "Banheiro com janela e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 2005,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1995,
+      "legenda": "Piscina com espreguiadeiras e área de churrasqueira",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2022,
+      "legenda": "Piscina com espreguiadeiras e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 2007,
+      "legenda": "Quadra poliesportiva com piso colorido e cercada por grades",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2012,
+      "legenda": "Galeria de fitness com equipamentos e espelho",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2013,
+      "legenda": "Playground colorido com escorregador e balanço",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2015,
+      "legenda": "Playground colorido com escorregador e balanço",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2016,
+      "legenda": "Galeria de fitness com máquinas de corrida e equipamentos de musculação",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2018,
+      "legenda": "Quadra de beach tennis com rede e raquete",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2023,
+      "legenda": "Playground colorido com escorregador e balanço",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 2008,
+      "legenda": "Garagem com pilares amarelos e vista para o exterior",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1999,
+      "legenda": "Corredor com portas abertas e piso claro",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 2010,
+      "legenda": "Escritório moderno com mesa redonda e cadeiras",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O apartamento possui 1 vaga de garagem coberta."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, o imóvel possui uma varanda gourmet com churrasqueira."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "É possível marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento novo no HM Maxi Bonfim com 3 quartos, 1 suíte e 1 vaga. Localizado no bairro Bonfim, com vista livre e sol da manhã. Condomínio completo com lazer e segurança. Ideal para quem busca um imóvel novo, com.",
+    "hashtags": [
+      "apartamentocampinas",
+      "bonfim",
+      "condominiocompleto",
+      "imovelnovo",
+      "valorizacao",
+      "lazer",
+      "campinassp",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "f9b3c8daddcb",
+  "publicadoEm": "2026-10-28T03:51:20.752Z"
+}

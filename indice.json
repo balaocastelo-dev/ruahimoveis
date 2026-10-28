@@ -2,6 +2,18 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0022",
+      "slug": "apartamento-bonfim-campinas-sp-3-quartos-varanda-gourmet-ap0022",
+      "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
+      "resumo": "Apartamento novo no HM Maxi Bonfim, com 3 quartos, 1 suíte e 1 vaga. Localizado no bairro Bonfim, com vista livre e sol da manhã.",
+      "capa": {
+        "foto": 2021,
+        "alt": "Apartamento alto com vista para o por do sol e área verde ao redor"
+      },
+      "versao": "f9b3c8daddcb",
+      "publicadoEm": "2026-10-28T03:51:20.752Z"
+    },
+    {
       "codigo": "CA0041",
       "slug": "casa-condominio-sobrado-3-quartos-2-suites-quintal-paulinia-ca0041",
       "titulo": "Casa em condomínio com 2 suítes e quintal em Paulínia",
@@ -470,5 +482,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T03:22:30.998Z"
+  "atualizadoEm": "2026-10-28T03:51:20.753Z"
 }
