@@ -6,8 +6,11 @@
 // TODO(fase1 · antes da 2ª imobiliária no ar):
 //  - MULTI=1 no Postgres só depois da migração (schema "base" + tabelas comuns movidas); hoje fica desligado.
 //  - caches em memória que ainda não separam por imobiliária: fisguei/inteligencia.js (CACHE), bairros/dados.js
-//    (cacheLista/cacheCond/cachePerto), bairros/fonte.js e blog/diario.js (memoria). Só routes/mercado.js já separa (BASES).
+//    (cacheLista/cacheCond/cachePerto), bairros/fonte.js, blog/diario.js (memoria) e portal/fonte.js (estado: lista de
+//    imóveis no ar). Só routes/mercado.js já separa (BASES).
 //  - chaves por imobiliária (Google, WhatsApp oficial, Fisgar) ainda vêm do .env (global).
+//  - sql/plataforma.sql (base.imobiliarias, dominios, login_indice, gestores, sessoes…) escrito, NÃO aplicado.
+//  - tela do gestor da plataforma (fase 2); hoje só a API /api/plataforma.
 //  - scripts/migrar-para-online.js e scripts/demo-vitrine.js usam o SQLite direto (fora do tradutor).
 const { AsyncLocalStorage } = require('node:async_hooks');
 
