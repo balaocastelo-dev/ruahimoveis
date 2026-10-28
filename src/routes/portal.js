@@ -87,15 +87,23 @@ router.get('/imoveis/dados.json', async (req, res) => {
   });
 });
 
+// Foto pública guardada só como endereço (não ocupa o banco): só https, e o navegador vai buscar lá.
+function fotoExterna(res, f) {
+  if (!/^https:\/\/[^\s"'<>]+$/i.test(String(f.url_externa))) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=604800');
+  return res.redirect(302, f.url_externa);
+}
 router.get('/imoveis/foto/:id/og.jpg', async (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
   const f = dados.fotoPublica(req.params.id);
   if (!f) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  if (f.url_externa) return fotoExterna(res, f); // foto guardada fora do banco (ex.: imagens ilustrativas da demonstração)
   await og.enviarJpeg(res, f, { publico: true });
 });
 router.get('/imoveis/foto/:id', (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
   const f = dados.fotoPublica(req.params.id);
+  if (f && f.url_externa) return fotoExterna(res, f);
   const buf = f && require('../services/conteudo').ler(f);
   if (!buf) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
   res.setHeader('Content-Type', f.mime);

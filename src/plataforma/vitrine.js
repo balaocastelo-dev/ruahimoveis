@@ -216,17 +216,8 @@ function pagina() {
 let cache = null;
 function vitrine(req, res, next) {
   const host = String(req.hostname || '').toLowerCase();
-  if (APP_HOSTS.has(host)) {
-    if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nDisallow: /\n');
-    // portal, blog, bairros e condomínios do cliente ficam no endereço dele: leva para lá (antes dava "Não encontrado")
-    if (PUBLICAS_DO_CLIENTE.test(req.path)) {
-      const destino = String(process.env.PUBLIC_URL || cfg.PUBLIC_URL || '').replace(/\/+$/, '');
-      if (/^https:\/\//.test(destino) && !destino.includes(host)) return res.redirect(302, destino + req.originalUrl);
-      return res.status(404).type('text/plain').send('Não encontrado.');
-    }
-    res.setHeader('X-Robots-Tag', 'noindex');
-    return next();
-  }
+  // Entrada única da plataforma: login de todas as imobiliárias (src/plataforma/entrada.js).
+  if (APP_HOSTS.has(host)) return require('./entrada').entrada(req, res, next);
   if (!HOSTS.has(String(req.hostname || '').toLowerCase())) return next();
   if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nAllow: /\nSitemap: https://corretordofuturo.app/sitemap.xml\n');
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url></urlset>');

@@ -6,6 +6,8 @@
 //   /imoveis/<endereço>      a página única do imóvel
 
 const cfg = require('../config');
+// Portal de demonstração (PORTAL_DEMONSTRACAO=1): fora do Google e com aviso de imagens ilustrativas.
+const DEMONSTRACAO = /^(1|sim|true)$/i.test(String(process.env.PORTAL_DEMONSTRACAO || '').trim());
 const og = require('../og');
 const { AMBIENTES, CHAMADAS } = require('./config');
 const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = require('../blog/texto');
@@ -111,7 +113,7 @@ function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemA
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descricao)}">
 <link rel="canonical" href="${esc(canonico)}">
-${semIndice ? '<meta name="robots" content="noindex">' : ''}
+${semIndice || DEMONSTRACAO ? '<meta name="robots" content="noindex">' : ''}
 <meta property="og:site_name" content="${esc(EMPRESA)}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="website">
@@ -143,7 +145,8 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <footer class="p-rodape">
   <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
   <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}${SITE_CLIENTE ? `<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a>` : ''}<a href="/entrar" rel="nofollow">Área da equipe</a></nav>
-  <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
+  <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>${DEMONSTRACAO ? `
+  <p class="p-rodape-p"><strong>Portal de demonstração.</strong> As fotos são imagens ilustrativas, criadas para esta demonstração: não mostram os imóveis reais.</p>` : ''}
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>
 </body></html>`;

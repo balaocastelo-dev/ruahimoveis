@@ -35,6 +35,8 @@ app.use(require('./src/plataforma/vitrine').vitrine);
 app.use(require('./src/plataforma/fora-do-ar'));
 // Conta suspensa pelo gestor da plataforma: sistema, portal e blog desta imobiliária mostram o aviso.
 app.use(require('./src/plataforma/suspensa'));
+// Chegada pela entrada da plataforma (app.corretordofuturo.app): troca o passe de 2 minutos por uma sessão normal.
+app.get('/entrar-pela-plataforma', require('./src/plataforma/entrada').trocaPasse);
 
 // Webhook do WhatsApp precisa do corpo bruto: vem antes do parser JSON.
 app.use('/webhook/whatsapp', publico.webhook);
