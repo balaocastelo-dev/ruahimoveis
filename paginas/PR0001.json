@@ -1,0 +1,240 @@
+{
+  "codigo": "PR0001",
+  "slug": "predio-comercial-centro-campinas-sp-pr0001",
+  "titulo": "Prédio comercial com 5 salas em localização estratégica no Centro de Campinas",
+  "resumo": "Prédio comercial no Centro de Campinas com 5 salas, 4 alugadas e 1 disponível, em local estratégico com grande fluxo de pessoas e fácil acesso ao transporte.",
+  "capa": {
+    "foto": 785,
+    "alt": "Fachada de prédio comercial com logotipo da RUAH e assinatura 'Gonçalves Móveis'"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este prédio comercial está localizado no Centro de Campinas, uma região estratégica com alto fluxo de pessoas e fácil acesso a comércio, serviços, bancos e transporte público. O imóvel oferece 5 salas comerciais, das quais 4 estão atualmente alugadas, garantindo receita imediata para quem comprar. A estrutura oferece versatilidade para diferentes tipos de negócios, seja para lojas, escritórios ou outros usos. As fotos mostram a fachada do imóvel, com a assinatura da RUAH e informações sobre venda, além de ambientes internos com piso claro e paredes brancas, destacando a qualidade do acabamento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "5 salas comerciais com 4 alugadas",
+        "Localização estratégica no Centro de Campinas",
+        "Piso claro e paredes brancas em ambientes internos",
+        "Fachada com logotipo da RUAH e assinatura do imóvel",
+        "Acesso facilitado ao transporte público e comércio local"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes principais"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram ambientes internos com piso claro e paredes brancas, indicando um bom acabamento e espaços bem iluminados. Há uma sala com vista para o telhado, sugerindo uma boa integração com a área externa. Além disso, corredores com paredes verdes e portas fechadas são visíveis, demonstrando uma divisão clara entre os espaços. A fachada do prédio apresenta uma entrada e 632, com um painel azul que exibe informações de contato e indica que o imóvel está à venda."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 799,
+          "legenda": "Sala com porta aberta e vista para o telhado"
+        },
+        {
+          "foto": 786,
+          "legenda": "Garagem com escada, cadeira e moto"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de serviço e garagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de serviço é acessada por um portão de ferro, com paredes verdes e piso claro. A garagem apresenta uma escada, uma moto estacionada e luzes suspensas, indicando que o imóvel possui infraestrutura adequada para estacionamento. As fotos também mostram uma garagem com parede branca e piso cinza, reforçando a qualidade dos materiais utilizados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 787,
+          "legenda": "Garagem com parede branca e moto estacionada"
+        },
+        {
+          "foto": 796,
+          "legenda": "Portão de ferro em área de serviço"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiros e quartos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros estão com piso cinza e paredes verdes, com detalhes como vaso sanitário e pia. Alguns ambientes possuem piso claro e paredes de madeira, sugerindo possíveis variações de acabamento. Os quartos apresentam janelas com vista para fora e armários de madeira, indicando espaços bem planejados e confortáveis."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 793,
+          "legenda": "Banheiro vazio com parede verde e piso cinza"
+        },
+        {
+          "foto": 795,
+          "legenda": "Banheiro com vaso sanitário e pia"
+        },
+        {
+          "foto": 788,
+          "legenda": "Quarto com janela e armário"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha do imóvel não descreve detalhes sobre o condomínio ou áreas de lazer, indicando que o foco está no imóvel comercial em si. No entanto, a localização no Centro de Campinas oferece acesso fácil a áreas de lazer e serviços variados, como restaurantes, bancos e transporte público."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 794,
+          "legenda": "Corredor com portas e piso cinza"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este prédio comercial é ideal para investidores que buscam um imóvel com potencial de renda imediata, em uma localização estratégica. Com 4 salas já alugadas, ele oferece um retorno financeiro rápido, além de ser uma opção para expandir o patrimônio. A estrutura também pode ser adaptada para diferentes tipos de negócios, tornando-o versátil e rentável."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se há alguma pendência no condomínio e quais são as possibilidades de uso das salas comerciais.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 785,
+      "legenda": "Loja de móveis com entrada e logotipo da RUAH",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 798,
+      "legenda": "Entrada de imóvel e 632",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 799,
+      "legenda": "Sala com porta aberta e vista para o telhado",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 796,
+      "legenda": "Portão de ferro em área de serviço",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 788,
+      "legenda": "Quarto com janela e armário",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 791,
+      "legenda": "Quarto com janela e armários",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 793,
+      "legenda": "Banheiro vazio com parede verde e piso cinza",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 795,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 797,
+      "legenda": "Banheiro com piso claro e parede de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 786,
+      "legenda": "Garagem com escada, cadeira e moto",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 787,
+      "legenda": "Garagem com parede branca e moto estacionada",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 792,
+      "legenda": "Escada interna de um prédio",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 789,
+      "legenda": "Corredor com paredes verdes e portas fechadas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 790,
+      "legenda": "Corredor com parede verde e teto branco",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 794,
+      "legenda": "Corredor com portas e piso cinza",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas salas comerciais o imóvel possui?",
+      "resposta": "O imóvel possui 5 salas comerciais, das quais 4 estão alugadas."
+    },
+    {
+      "pergunta": "O imóvel possui área de serviço?",
+      "resposta": "Sim, o imóvel possui área de serviço com portão de ferro."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Prédio comercial com 5 salas no Centro de Campinas, ideal para investidores. 4 salas já alugadas, localização estratégica, acesso fácil ao transporte público e comércio. Visite e descubra a oportunidade.",
+    "hashtags": [
+      "prediocomercialcampinas",
+      "investimentoimobiliario",
+      "campinas",
+      "vendaimovel",
+      "imovelcomercial",
+      "centrocampinas",
+      "rendaativa",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "9c4adef346ee",
+  "publicadoEm": "2026-10-28T04:47:20.787Z"
+}

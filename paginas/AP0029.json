@@ -1,0 +1,288 @@
+{
+  "codigo": "AP0029",
+  "slug": "apartamento-4-quartos-3-suites-varanda-gourmet-rossi-antilhas-campinas-ap0029",
+  "titulo": "Apartamento de 4 quartos com 3 suítes e varanda no Condomínio Rossi Antilhas",
+  "resumo": "Apartamento de 4 quartos com 3 suítes no Condomínio Rossi Antilhas, em Campinas. Localizado em frente ao Shopping Dom Pedro, com área social integrada e lazer.",
+  "capa": {
+    "foto": 801,
+    "alt": "Sala de estar integrada à varanda com janelas grandes e orquídeas"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento no Condomínio Rossi Antilhas oferece 4 quartos, 3 suítes e 3 vagas de garagem. Com 181 m² de área útil, o imóvel está localizado em um condomínio com infraestrutura completa, próximo ao Shopping Dom Pedro e com fácil acesso às principais rodovias da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A distribuição do imóvel é moderna e funcional, com living integrado à varanda gourmet, ideal para reuniões e momentos de lazer. O apartamento também conta com um lavabo, armários em todos os ambientes e acabamento de alta qualidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 quartos com 3 suítes e armários",
+        "Living integrado à varanda com vista para a cidade",
+        "3 vagas de garagem cobertas",
+        "Condomínio com piscina, academia e portaria 24h",
+        "Boa localização, próximo ao Shopping Dom Pedro"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é integrada à varanda, criando um ambiente amplo e acolhedor. A varanda conta com mesa redonda e cadeiras de madeira, ideal para refeições e conversas informais. As janelas grandes permitem a entrada de luz natural e oferecem uma vista agradável para a cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O living possui teto alto e acabamento elegante, com destaque para a iluminação embutida e os detalhes decorativos. A varanda pode ser usada como extensão da sala, permitindo momentos de convivência sem limites."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 800,
+          "legenda": "Varanda com mesa redonda e vista para a cidade"
+        },
+        {
+          "foto": 813,
+          "legenda": "Sala de jantar com mesa redonda e vista para varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento conta com 4 quartos, sendo 3 suítes. Os quartos possuem armários embutidos, piso de madeira e janelas com vista para o exterior. A suíte principal inclui armário branco, televisão preta e mesa de cabeceira, oferecendo conforto e privacidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são bem distribuídos, com espaço para mobília e decoração personalizada. Alguns quartos possuem tapete persa e mesas de cabeceira com objetos decorativos, criando um ambiente acolhedor e moderno."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 802,
+          "legenda": "Quarto com cama, mesa de trabalho e janela com vista"
+        },
+        {
+          "foto": 806,
+          "legenda": "Suite com armário embutido, televisão e mesa de cabeceira"
+        },
+        {
+          "foto": 807,
+          "legenda": "Quarto com cama, tapete persa e janela com vista"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem equipada, com bancada escura, armários cinza e iluminação embutida. A área de serviço conta com armários e organização, facilitando o dia a dia dos moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha possui uma ilha com balcão, geladeira grande e banquinhos de bar, ideal para cozinhar ou tomar café. A iluminação e o acabamento contribuem para um ambiente prático e agradável."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 810,
+          "legenda": "Cozinha moderna com bancada escura e iluminação embutida"
+        },
+        {
+          "foto": 811,
+          "legenda": "Cozinha moderna com bancada escura e armários cinza"
+        },
+        {
+          "foto": 812,
+          "legenda": "Cozinha moderna com ilha e balcão"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Condomínio Rossi Antilhas oferece lazer completo, incluindo piscina, churrasqueira, academia equipada, quadra poliesportiva e salão de festas. A portaria funciona 24 horas, garantindo segurança e conforto aos moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio está localizado em uma área tranquila, com fácil acesso a comércios, serviços e ao Shopping Dom Pedro. O entorno conta com áreas verdes e infraestrutura urbana completa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 815,
+          "legenda": "Corredor com porta cinza, decoração floral e mesa branca"
+        },
+        {
+          "foto": 817,
+          "legenda": "Porta de entrada com logotipo 'RUAH' e"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e um estilo de vida moderno. Com boa localização, áreas funcionais e lazer completo, o imóvel é uma excelente opção para quem quer viver em um condomínio de qualidade, próximo a serviços e comodidades."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há áreas do imóvel que não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 801,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 813,
+      "legenda": "Sala de jantar com mesa redonda e vista para varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 818,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 800,
+      "legenda": "Varanda com mesa redonda e vista para a cidade",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 810,
+      "legenda": "Cozinha moderna com bancada escura e iluminação embutida",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 811,
+      "legenda": "Cozinha moderna com bancada escura e armários cinza",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 812,
+      "legenda": "Cozinha moderna com ilha e balcão",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 802,
+      "legenda": "Quarto com cama, mesa de trabalho e janela com vista",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 803,
+      "legenda": "Quarto com cama, mesa de escritório e televisão",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 804,
+      "legenda": "Quarto com cama, armário branco, estante e vista para o exterior",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 805,
+      "legenda": "Quarto com cama e armário branco",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 807,
+      "legenda": "Quarto com cama, tapete persa e janela com vista",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 816,
+      "legenda": "Quarto com cama, janela e mesa de cabeceira",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 806,
+      "legenda": "Suite com armário embutido, televisão e mesa de cabeceira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 808,
+      "legenda": "Banheiro moderno com box de vidro e pia dupla",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 809,
+      "legenda": "Banheiro com box de vidro, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 814,
+      "legenda": "Banheiro moderno com pia, espelho e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 815,
+      "legenda": "Corredor com porta cinza, decoração floral e mesa branca",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 817,
+      "legenda": "Porta de entrada com logotipo 'RUAH' e",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem o imóvel tem?",
+      "resposta": "O imóvel possui 3 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem varanda gourmet?",
+      "resposta": "Sim, o apartamento possui varanda gourmet integrada à sala de estar."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 4 quartos com 3 suítes no Condomínio Rossi Antilhas, em Campinas/SP. Localizado em frente ao Shopping Dom Pedro, com área social integrada e lazer completo. Agende uma visita e descubra seu novo lar!",
+    "hashtags": [
+      "apartamento",
+      "campinas",
+      "rossi",
+      "condominio",
+      "suite",
+      "lazer",
+      "shopping",
+      "imovel"
+    ]
+  },
+  "versao": "bddb599cad06",
+  "publicadoEm": "2026-10-28T04:47:20.787Z"
+}

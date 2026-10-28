@@ -1,0 +1,159 @@
+{
+  "codigo": "CA0018",
+  "slug": "casa-parque-taquaral-campinas-sp-ca0018",
+  "titulo": "Casa de 3 quartos com vista para a lagoa no Parque Taquaral, Campinas",
+  "resumo": "Casa no Parque Taquaral em Campinas, com 3 quartos, 1 suíte, 4 vagas e área total de 360 m². Vista para a lagoa e ambientes integrados.",
+  "capa": {
+    "foto": 1179,
+    "alt": "Fachada de casa com portão de madeira e"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Você está diante de uma casa no Parque Taquaral, em Campinas, com 3 quartos, 1 suíte e 4 vagas de garagem. A fachada tem portão de madeira e. A casa tem área total de 360 m² e área útil de 272 m², ideal para quem busca espaço e conforto. A varanda oferece vista para a lagoa, com piso de ladrilho e plantas em vasos. A sala de estar tem sofá azul, estante preta e luminária suspensa, com tijolos à vista nas paredes. A cozinha tem armários planejados e mesa de mármore, com fogão embutido e coifa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa possui uma suíte com ar condicionado, 2 salas e uma delas com sacada com vista para a lagoa. Há uma área de serviço com lavanderia e 2 cômodos no fundo. O imóvel está em frente à lagoa, com vista permanente e ambientes integrados."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Vista para a lagoa com varanda integrada",
+        "3 quartos com armários e 1 suíte com ar condicionado",
+        "Cozinha planejada com fogão embutido e coifa",
+        "4 vagas de garagem, 2 cobertas",
+        "Área de serviço com lavanderia e 2 cômodos no fundo"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda da casa tem piso de ladrilho e plantas em vasos, com janelas com grades e paredes de tijolinho. A vista para a lagoa é e permanente, com uma sacada que integra a sala de estar. A sala tem sofá azul, estante preta e luminária suspensa, com tijolos à vista nas paredes. Há também uma segunda sala com sofá rosa e tabelão de madeira, com várias fotos na parede e porta de madeira. A sala tem teto alto, janelas com cortinas e luminária pendente, com detalhes de tijolos à vista."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1180,
+          "legenda": "Varanda com piso de ladrilho, plantas e janelas com grades"
+        },
+        {
+          "foto": 1181,
+          "legenda": "Sala de estar com sofá azul e estante preta"
+        },
+        {
+          "foto": 1182,
+          "legenda": "Sala com sofá rosa e muitas fotos na parede"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem mesa de mármore, fogão embutido e coifa, com armários planejados. No fundo da casa, há uma área de serviço com lavanderia e 2 cômodos, ideal para quem busca espaço e praticidade. O imóvel conta com armários nos quartos, banheiro de empregada e lavabo. A cozinha também possui despensa e banheiro de empregada com chuveiro e torneira com aquecimento a gás."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1183,
+          "legenda": "Sala de estar com sofá e mesa de centro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e comodidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os 3 quartos possuem armários, com um deles sendo suíte com ar condicionado. O piso dos quartos é em madeira, enquanto nas salas o piso é frio e na cozinha há granito. Há um escritório no piso inferior, além de uma área com lavanderia e 2 cômodos no fundo. O imóvel tem 2 banheiros, com aquecimento a gás nos chuveiros e torneiras."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa é ideal para famílias que buscam conforto, espaço e uma vista para a lagoa. Com 3 quartos, 1 suíte, 4 vagas de garagem e área total de 360 m², é uma excelente opção para quem quer morar em um bairro tranquilo e bem localizado no Parque Taquaral, em Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado do condomínio, se há outros cômodos no fundo e como marcar a visita.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1179,
+      "legenda": "Fachada de casa com portão de madeira e",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1181,
+      "legenda": "Sala de estar com sofá azul e estante preta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1182,
+      "legenda": "Sala com sofá rosa e muitas fotos na parede",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1183,
+      "legenda": "Sala de estar com sofá e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1180,
+      "legenda": "Varanda com piso de ladrilho, plantas e janelas com grades",
+      "ambiente": "varanda"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "A casa possui 4 vagas de garagem, sendo 2 cobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "A casa não possui área gourmet, mas tem uma varanda com vista para a lagoa."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa no Parque Taquaral, Campinas, com vista para a lagoa e 3 quartos. Ideal para quem busca espaço e conforto. Saiba mais no link da RUAH Investimentos.",
+    "hashtags": [
+      "casacampinas",
+      "parquetaquaral",
+      "imovelcampinas",
+      "vistalagoa",
+      "vendacasa",
+      "campinasimoveis",
+      "ruahinvestimentos",
+      "imoveisparquetaquaral"
+    ]
+  },
+  "versao": "3f82fb1de70f",
+  "publicadoEm": "2026-10-28T04:47:20.786Z"
+}
