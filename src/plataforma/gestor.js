@@ -96,8 +96,15 @@ function variaveis(im, dbUrl, segredo) {
     BLOG_DIARIO_URL: `${VAZIO}/blog`, PORTAL_CONTEUDO_URL: `${VAZIO}/portal`, BAIRROS_CONTEUDO_URL: `${VAZIO}/bairros`,
     IA_MODO: 'desligado', RADAR_PORTAIS: '0', FISGUEI_ROBO: '0', ESCRITORIO: '0', DRIVE_ROOT_NAME: `${im.nome} Imóveis`,
   };
+  if (im.fundo) v.PORTAL_FUNDO = im.fundo; // papel de parede do portal: um lugar-símbolo de Campinas, diferente para cada imobiliária
   if (im.link) { v.PUBLIC_URL = im.link; v.LINK_ONLINE = im.link; }
   return v;
+}
+// Cada imobiliária ganha um papel de parede próprio, pela ordem de criação (a RUAH fica com o Castelo).
+async function comFundo(im) {
+  const r = await um(`SELECT count(*)::int AS n FROM imobiliarias WHERE slug <> 'ruah' AND id < $1`, [im.id]);
+  const { SEQUENCIA } = require('../portal/fundos');
+  return { ...im, fundo: im.slug === 'ruah' ? 'castelo' : SEQUENCIA[((r && r.n) || 0) % SEQUENCIA.length] };
 }
 async function publicaNaVercel(im, vars) {
   const nome = ('imob-' + im.slug).slice(0, 40);
@@ -231,7 +238,7 @@ api.post('/imobiliarias', exige(async (req, res) => {
   let publicada = false, aviso = null;
   if (process.env.VERCEL_TOKEN) {
     try {
-      const p = await publicaNaVercel(im, variaveis(im, dbUrl, segredo));
+      const p = await publicaNaVercel(im, variaveis(await comFundo(im), dbUrl, segredo));
       if (p) { publicada = true; await q(`UPDATE imobiliarias SET vercel_projeto = $1, publicada = 1, situacao = 'ativa' WHERE id = $2`, [p.name, im.id]); }
     } catch (e) { aviso = e.message; }
   }
@@ -244,7 +251,7 @@ api.get('/imobiliarias/:id/instalacao', exige(async (req, res) => {
   if (!im.db_url_cifrada) return res.json({ variaveis: null, aviso: 'Esta imobiliária foi instalada antes do painel: as variáveis estão no projeto dela na Vercel.' });
   const { dbUrl, segredo } = JSON.parse(decifra(im.db_url_cifrada));
   evento(req.gestor.id, im.id, 'viu_instalacao', null);
-  res.json({ variaveis: variaveis(im, dbUrl, segredo), repo: REPO, vercel_automatico: !!process.env.VERCEL_TOKEN });
+  res.json({ variaveis: variaveis(await comFundo(im), dbUrl, segredo), repo: REPO, vercel_automatico: !!process.env.VERCEL_TOKEN });
 }));
 api.post('/imobiliarias/:id/publicada', exige(async (req, res) => {
   const link = txt(req.body && req.body.link, 300);

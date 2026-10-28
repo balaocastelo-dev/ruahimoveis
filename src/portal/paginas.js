@@ -12,6 +12,7 @@ const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = requi
 const { SITE_CLIENTE, INSTAGRAM_CLIENTE } = require('../blog/categorias');
 // O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
 const CLIENTE = cfg.CLIENTE_NOME;
+const FUNDO = require('./fundos').fundoDe(process.env.PORTAL_FUNDO, CLIENTE);
 const EMPRESA = cfg.EMPRESA;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -210,7 +211,7 @@ function paginaVitrine(req, lista, guiaDoBairro = null) {
   const corpo = `
 ${require('./versoes').seletor('vitrine')}
 <section class="p-hero p-hero-foto p-hero-direita">
-  <div class="p-hero-fundo" aria-hidden="true"><img src="/portal-assets/hero-castelo.jpg?v=2" srcset="/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=2 1920w" sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"></div>
+  <div class="p-hero-fundo" aria-hidden="true"><img src="${esc(FUNDO.src)}"${FUNDO.srcset ? ` srcset="${esc(FUNDO.srcset)}" sizes="100vw"` : ''} alt="" width="${FUNDO.largura}" height="${FUNDO.altura}" style="object-position:${esc(FUNDO.posicao)}" fetchpriority="high" decoding="async"></div>
   <div class="p-hero-txt">
   <p class="p-sobre">Portal ${esc(CLIENTE)}</p>
   <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
@@ -225,7 +226,7 @@ ${require('./versoes').seletor('vitrine')}
     <label class="p-campo"><span>Ordem</span><select name="ordem"><option value="">Mais recentes</option><option value="menor-valor"${sel('menor-valor', q.ordem)}>Menor valor</option><option value="maior-valor"${sel('maior-valor', q.ordem)}>Maior valor</option><option value="maior-area"${sel('maior-area', q.ordem)}>Maior área</option></select></label>
     <button class="p-botao" type="submit">Buscar</button>
   </form>
-  <p class="p-hero-credito">Torre do Castelo, Campinas</p>
+  <p class="p-hero-credito">${esc(FUNDO.lugar)}${FUNDO.credito ? ` · <a href="${esc(FUNDO.link)}" target="_blank" rel="noopener nofollow">${esc(FUNDO.credito)}</a>` : ''}</p>
 </section>
 <section class="p-resultado" aria-live="polite">
   ${guiaDoBairro ? `<p class="p-guia">Quer conhecer melhor o bairro? <a href="/bairros/${esc(guiaDoBairro.slug)}">Guia do ${esc(guiaDoBairro.nome)}</a>: história, parques, escolas, comércio e prédios.</p>` : ''}
