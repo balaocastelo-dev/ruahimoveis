@@ -1,0 +1,297 @@
+{
+  "codigo": "BA0003",
+  "slug": "galpao-comercial-vila-marieta-campinas-sp-ba0003",
+  "titulo": "Galpão comercial com 3 vagas de garagem em Vila Marieta, Campinas",
+  "resumo": "Galpão comercial em Vila Marieta, Campinas, com 200m² de área construída e 3 vagas de garagem. Ideal para lojas, escritórios e centros automotivos.",
+  "capa": {
+    "foto": 925,
+    "alt": "Fachada de loja com sinalização 'Auto Peças Flores' e carros estacionados"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão comercial em Vila Marieta, Campinas, é uma excelente opção para quem busca um imóvel versátil em localização estratégica. Com 200m² de área construída e 3 vagas de garagem, o imóvel oferece estrutura adequada para diversos segmentos, como lojas, centros automotivos, clínicas, escritórios e showrooms. Localizado em um corredor comercial importante da cidade, ele tem grande visibilidade e fluxo de veículos e pedestres. A propriedade também conta com uma infraestrutura urbana próxima, facilitando o dia a dia de clientes, fornecedores e colaboradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram a fachada da loja, a garagem com estrutura organizada, a varanda com plantas e o interior com áreas de escritório e loja. O imóvel está pronto para uso imediato e pode ser adaptado conforme a necessidade do negócio."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Galpão com 200m² de área construída e 3 vagas de garagem",
+        "Localização estratégica em corredor comercial de Campinas",
+        "Estrutura adequada para diversos segmentos comerciais",
+        "Fachada com sinalização e visibilidade destacada",
+        "Garagem com prateleiras e áreas organizadas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e fachada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do imóvel traz sinalização clara e é visível de longe, com carros estacionados em frente, indicando o uso comercial do local. A estrutura da fachada apresenta textura e cor que contribuem para a identidade do empreendimento. O acesso ao imóvel é facilitado por uma rua com pavimento de azulejos coloridos, o que reforça a imagem de um local bem mantido."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda do imóvel tem uma estrutura de telhado e paredes de tijolo, com plantas em vasos que adicionam um toque de verde ao ambiente. A vista da varanda mostra o céu azul e uma árvore, sugerindo um espaço que pode ser aproveitado para descanso ou reuniões."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 918,
+          "legenda": "Varanda com plantas e estrutura de telhado"
+        },
+        {
+          "foto": 921,
+          "legenda": "Varanda com parede de concreto e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Áreas internas e garagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O interior do imóvel inclui áreas comerciais com estantes de produtos, caixa registradora e balcão de atendimento. A cozinha também está presente, com geladeira, microondas e mesa de jantar. O banheiro simples, com piso vermelho e janela com grade, é funcional e adequado para uso comercial."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A garagem do imóvel é ampla e bem organizada, com prateleiras metálicas, caixas coloridas e luzes fluorescentes. As fotos mostram que o espaço é aproveitado para armazenamento e pode ser adaptado conforme a necessidade do negócio."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 929,
+          "legenda": "Interior de uma loja com estantes de produtos e caixa registradora"
+        },
+        {
+          "foto": 930,
+          "legenda": "Garagem com prateleiras e caixas organizadas"
+        },
+        {
+          "foto": 936,
+          "legenda": "Banheiro com piso vermelho, janela com grade, armário de madeira e vaso sanitário"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado em Vila Marieta, uma região estratégica de Campinas com acesso fácil a principais avenidas e rodovias. O entorno do galpão inclui comércio, serviços e empresas, o que agrega valor ao imóvel. A infraestrutura urbana ao redor facilita o dia a dia de clientes, fornecedores e colaboradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos indicam que o terreno tem mosaico de pedras e área verde, com um edifício ao fundo que reforça o caráter comercial da região. A localização também permite a instalação ou expansão de negócios com exposição comercial elevada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 924,
+          "legenda": "Terreno com mosaico de pedras e edifício ao fundo"
+        },
+        {
+          "foto": 922,
+          "legenda": "Pavimento de pedra com detalhes de calçada"
+        },
+        {
+          "foto": 923,
+          "legenda": "Pavimento de azulejos coloridos em frente a uma rua com carros e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão comercial é ideal para investidores e empresários que buscam um imóvel em localização estratégica, com estrutura adequada para diversos segmentos. A propriedade é uma excelente opção para quem pretende instalar ou expandir seu negócio em um endereço de destaque, com alto potencial de exposição e procura."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o tipo de uso permitido no local e as possibilidades de adaptação do espaço.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 917,
+      "legenda": "Fachada de loja de peças automotivas com carro estacionado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 925,
+      "legenda": "Fachada de loja com sinalização 'Auto Peças Flores'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 928,
+      "legenda": "Fachada de imóvel com estacionamento e céu azul",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 924,
+      "legenda": "Terreno com mosaico de pedras e edifício ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 938,
+      "legenda": "Sala industrial com estrutura de madeira e iluminação fluorescente",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 939,
+      "legenda": "Sala industrial com estrutura metálica e piso de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 918,
+      "legenda": "Varanda com plantas e estrutura de telhado",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 921,
+      "legenda": "Varanda com parede de concreto e céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 933,
+      "legenda": "Cozinha com geladeira, microondas e mesa de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 934,
+      "legenda": "Cozinha com geladeira, mesa e cadeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 936,
+      "legenda": "Banheiro com piso vermelho, janela com grade, armário de madeira e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 919,
+      "legenda": "Garagem coberta com estacionamento de carros",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 920,
+      "legenda": "Garagem com teto de metal e piso claro",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 930,
+      "legenda": "Garagem com prateleiras e caixas organizadas",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 931,
+      "legenda": "Estacionamento com prateleiras e caixas",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 935,
+      "legenda": "Garagem com prateleiras e caixas organizadas",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 940,
+      "legenda": "Garagem com estantes de produtos e pessoa no fundo",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 941,
+      "legenda": "Garagem com prateleiras e caixas organizadas",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 942,
+      "legenda": "Garagem com prateleiras e caixas organizadas",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 922,
+      "legenda": "Pavimento de pedra com detalhes de calçada",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 923,
+      "legenda": "Pavimento de azulejos coloridos em frente a uma rua com carros e árvores",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 926,
+      "legenda": "Escritório com mesa azul, computador, impressora e ventilador",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 927,
+      "legenda": "Interior de um escritório com prateleiras de produtos e uma mesa azul",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 929,
+      "legenda": "Interior de uma loja com estantes de produtos e caixa registradora",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 932,
+      "legenda": "Interior de uma loja com estantes de produtos e balcão de caixa",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 937,
+      "legenda": "Escritório com mesa, cadeira e divisória azul",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel conta com 3 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet ou cozinha completa?",
+      "resposta": "A propriedade possui uma cozinha com geladeira, microondas e mesa de jantar."
+    },
+    {
+      "pergunta": "Como marcar a visita ao imóvel?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Galpão comercial em Vila Marieta, Campinas, com 200m² de área construída e 3 vagas de garagem. Ideal para lojas, escritórios e centros automotivos. Localização estratégica com acesso fácil a principais vias. Visite e descubra o potencial comercial deste imóvel.",
+    "hashtags": [
+      "galpaocomercial",
+      "vilamarieta",
+      "campinas",
+      "imovelcomercial",
+      "investimento",
+      "negocio",
+      "loja",
+      "espacocomercial"
+    ]
+  },
+  "versao": "9c788c12d159",
+  "publicadoEm": "2026-10-28T04:05:52.175Z"
+}

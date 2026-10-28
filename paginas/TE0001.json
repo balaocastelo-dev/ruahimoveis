@@ -1,0 +1,111 @@
+{
+  "codigo": "TE0001",
+  "slug": "terreno-avenida-dom-nery-valinhos-sp-te0001",
+  "titulo": "Terreno de 224 m² com edificação em construção na Avenida Dom Nery, Valinhos",
+  "resumo": "Terreno de 224 m² na Avenida Dom Nery, Valinhos, com edificação em construção e excelente localização estratégica na região.",
+  "capa": {
+    "foto": 943,
+    "alt": "Terreno com edificação em construção, área verde e acesso à estrada SP-091"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 224 m² está localizado na Avenida Dom Nery, em Valinhos, SP, uma região estratégica com grande. A área oferece visibilidade e acesso facilitado, sendo cercada por comércios, residências e serviços que reforçam a praticidade do local."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade conta com uma edificação em construção, o que sugere que o imóvel já está em fase avançada de desenvolvimento. A localização favorece o rápido deslocamento para vias importantes da cidade, tornando-o uma ótima opção para investimento ou uso comercial."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno de 224 m² em localização estratégica de Valinhos",
+        "Edificação em construção, já em fase avançada",
+        "Acesso à estrada SP-091 e vizinhança com comércios e serviços",
+        "Em região consolidada"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está situado na Avenida Dom Nery, uma das principais vias de Valinhos, o que garante fácil acesso a outras regiões da cidade. A proximidade com a estrada SP-091 facilita o deslocamento, além de permitir conexão com áreas comerciais e residenciais próximas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região é consolidada e apresenta fluxo urbano constante, reforçando a importância do local para investimentos. A proximidade com comércios e serviços oferece praticidade e procura ao imóvel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Edificação em construção"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A foto mostra a edificação em construção no terreno, o que sugere que o imóvel está em fase avançada de desenvolvimento. Isso pode indicar que o projeto está bem estruturado e com infraestrutura em andamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A construção já apresenta alguns elementos visíveis, como a estrutura principal e a área verde, o que pode ser um diferencial para quem busca um imóvel em estágio de desenvolvimento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores que buscam procura no mercado imobiliário e para quem deseja uma área estratégica para empreendimentos comerciais ou residenciais. A localização e o acesso facilitado tornam o imóvel atraente para diferentes perfis de compradores."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o andamento da construção, a documentação do terreno e quais são as possibilidades de uso do imóvel.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 943,
+      "legenda": "Lote com edificação em construção",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "O terreno tem área total de 224 m²."
+    },
+    {
+      "pergunta": "O terreno tem alguma edificação?",
+      "resposta": "Sim, a foto mostra uma edificação em construção no terreno."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 224 m² na Avenida Dom Nery, Valinhos, SP. Localização estratégica com edificação em construção e acesso facilitado. uma opção para investimento na região.",
+    "hashtags": [
+      "terrenovalinhos",
+      "imobiliaria",
+      "investimento",
+      "valinhos",
+      "terreno",
+      "edificacao",
+      "avenidadomnery",
+      "campinas"
+    ]
+  },
+  "versao": "e7db4cb72d55",
+  "publicadoEm": "2026-10-28T04:05:52.175Z"
+}

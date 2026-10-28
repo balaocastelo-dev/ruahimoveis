@@ -1,0 +1,218 @@
+{
+  "codigo": "SL0001",
+  "slug": "loja-comercial-jardim-chapadaocampinas-sp-sl0001",
+  "titulo": "Loja comercial com 8 vagas de garagem no Jardim Chapadão, Campinas",
+  "resumo": "Loja comercial de 735m² no Jardim Chapadão, Campinas, com 8 vagas de garagem, localização estratégica e infraestrutura completa para empresas de diferentes.",
+  "capa": {
+    "foto": 947,
+    "alt": "Fachada de prédio com publicidade imobiliária e veículos na rua"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Loja comercial com área total de 735m², ideal para empresas que buscam amplitude e visibilidade. Localizada no Centro de Campinas, em uma das principais avenidas da cidade, oferece excelente exposição para sua marca. A região conta com infraestrutura completa de comércios, serviços e transporte público, garantindo facilidade para clientes e colaboradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está disponível para venda e possui 8 vagas de garagem, além de um sistema de ar-condicionado, portão eletrônico e câmeras de segurança. A estrutura é pronta para diferentes segmentos de atuação e destaca-se pela alta visibilidade e intenso fluxo de veículos e pedestres."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "8 vagas de garagem para clientes e colaboradores",
+        "Sistema de ar-condicionado e portão eletrônico",
+        "Localização estratégica no Centro de Campinas",
+        "Infraestrutura completa de comércios e serviços ao redor",
+        "Área ampla e flexível para diferentes segmentos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área comercial e escritórios"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com três salas amplas e quatro banheiros, ideal para atender diferentes setores da empresa. As fotos mostram escritórios modernos com mesas de madeira, cadeiras de couro e ar-condicionado, proporcionando um ambiente funcional e confortável. A área social é integrada, com ambientes bem distribuídos e iluminação adequada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As salas possuem uma configuração flexível, com divisórias e mesas que podem ser adaptadas conforme a necessidade da empresa. As fotos ilustram ambientes com luminárias embutidas e janelas com persianas, garantindo privacidade e iluminação natural."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 945,
+          "legenda": "Escritório moderno com mesas de madeira e computadores"
+        },
+        {
+          "foto": 951,
+          "legenda": "Escritório moderno com mesa, cadeiras e quadro branco"
+        },
+        {
+          "foto": 952,
+          "legenda": "Escritório moderno com dois escritórios separados"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Garagem e áreas de apoio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A garagem do imóvel tem piso claro e estrutura organizada, com colunas brancas e armazenamento adequado. As vagas são suficientes para atender clientes e colaboradores com facilidade. As fotos mostram carros estacionados e tanques de apoio, indicando a capacidade de armazenamento e logística."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também possui portão eletrônico e câmeras de segurança, garantindo a proteção do local e dos veículos. Essas características são visíveis nas fotos, destacando a segurança e o cuidado com a infraestrutura."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 953,
+          "legenda": "Garagem com piso claro e armazenamento"
+        },
+        {
+          "foto": 944,
+          "legenda": "Terreno com edificação em construção e logotipo 'RUAAH' na parede"
+        },
+        {
+          "foto": 948,
+          "legenda": "Fachada de prédio com edifício em construção à esquerda e lojas à direita"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizado no Centro de Campinas, o imóvel está situado em uma das principais avenidas da cidade, com alto fluxo de veículos e pedestres. A região possui infraestrutura completa com comércios, bancos, restaurantes e serviços de apoio, facilitando o dia a dia da empresa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos do entorno mostram a proximidade com outras lojas comerciais e a presença de estradas pavimentadas, indicando a acessibilidade e a integração com o centro da cidade. A visibilidade do imóvel é alta, o que favorece a exposição da marca."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 946,
+          "legenda": "Vista aérea de um imóvel com piscina e áreas verdes"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para empresas que buscam uma localização estratégica, visibilidade e infraestrutura pronta para diferentes segmentos. Com área ampla e 8 vagas de garagem, é uma opção para instalar ou expandir um negócio no Centro de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do aluguel do terreno (se aplicável) e o que não aparece nas fotos, como a infraestrutura elétrica e hidráulica.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 947,
+      "legenda": "Fachada de imóvel com publicidade imobiliária",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 948,
+      "legenda": "Fachada de prédio com edifício em construção à esquerda e lojas à direita",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 954,
+      "legenda": "Fachada de imóvel com logotipo 'RUAH' e publicidade de empresa",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 944,
+      "legenda": "Terreno com edificação em construção e logotipo 'RUAAH' na parede",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 946,
+      "legenda": "Vista aérea de um imóvel com piscina e áreas verdes",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 949,
+      "legenda": "Varanda com sofá e almofadas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 950,
+      "legenda": "Varanda com mesa e cadeira, janela e planta",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 953,
+      "legenda": "Garagem com piso claro e armazenamento",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 945,
+      "legenda": "Escritório moderno com mesas de madeira e computadores",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 951,
+      "legenda": "Escritório moderno com mesa, cadeiras e quadro branco",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 952,
+      "legenda": "Escritório moderno com dois escritórios separados",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem o imóvel tem?",
+      "resposta": "O imóvel possui 8 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem sistema de ar-condicionado?",
+      "resposta": "Sim, o imóvel possui sistema de ar-condicionado."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Loja comercial com 735m² no Jardim Chapadão, Campinas, com 8 vagas de garagem e excelente localização no Centro da cidade. Ideal para empresas que buscam visibilidade e infraestrutura completa.",
+    "hashtags": [
+      "lojacomercialcampinas",
+      "campinas",
+      "imobiliaria",
+      "comercio",
+      "jardimchapadão",
+      "lojacomercial",
+      "investimentoimobiliario",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "29136d8d3142",
+  "publicadoEm": "2026-10-28T04:05:52.174Z"
+}

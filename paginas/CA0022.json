@@ -1,0 +1,327 @@
+{
+  "codigo": "CA0022",
+  "slug": "casa-em-condominio-4-quartos-2-suites-piscina-bairro-da-posse-itatiba-ca0022",
+  "titulo": "Casa em condomínio com 4 quartos, 2 suítes e piscina no Bairro da Posse, Itatiba",
+  "resumo": "Casa em condomínio no Bairro da Posse, Itatiba, com 4 quartos, 2 suítes, 5 banheiros e piscina. Ideal para quem busca conforto e estilo de vida.",
+  "capa": {
+    "foto": 1001,
+    "alt": "Piscina com deck de madeira e plantas tropicais"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa em condomínio no Bairro da Posse, Itatiba, oferece um estilo de vida moderno e aconchegante. Com 4 quartos, 2 suítes e 5 banheiros, ela é ideal para famílias que buscam conforto e privacidade. A área social é ampla e bem iluminada, com uma bela piscina e um jardim bem cuidado que complementam o ambiente. A casa está localizada em um terreno amplo, com entrada marcante e uma fachada moderna que combina com o entorno. A varanda gourmet e a churrasqueira são destaque, criando um ambiente ideal para reuniões e momentos de lazer com amigos e familiares."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 quartos e 2 suítes com closet e banheiro privativo",
+        "Piscina com prainha e jacuzzi",
+        "Área externa com jardim e plantas tropicais",
+        "Cozinha moderna com ilha e armários integrados",
+        "Varanda gourmet com churrasqueira e vista para o jardim"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e externa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla, com ambientes bem iluminados e integrados, ideal para receber convidados. A varanda gourmet, com mesa e cadeiras, churrasqueira e vista para o jardim, é um espaço bem localizada para momentos de convivência. A piscina, com deck de madeira e plantas tropicais, é um destaque do imóvel, combinando beleza e funcionalidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1007,
+          "legenda": "Varanda gourmet com churrasqueira e mesa de jantar"
+        },
+        {
+          "foto": 1016,
+          "legenda": "Varanda com vista para o jardim e piscina"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha moderna apresenta bancada de madeira, ilha e armários integrados, com vista para o jardim. A iluminação é agradável, com luminárias pendentes que complementam o design. As fotos mostram uma cozinha bem equipada, com espaço para movimentação e áreas de armazenamento bem organizadas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1011,
+          "legenda": "Cozinha moderna com bancada de madeira e azulejos patchwork"
+        },
+        {
+          "foto": 1014,
+          "legenda": "Cozinha moderna com ilha e pendentes"
+        },
+        {
+          "foto": 1023,
+          "legenda": "Cozinha moderna com cooktop e balcão de madeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No pavimento superior, há 2 suítes com closet e banheiro privativo, garantindo privacidade e conforto para os moradores. Os banheiros são distribuídos estrategicamente, com acabamentos que combinam funcionalidade e estilo. As fotos mostram ambientes bem iluminados e com espaços bem planejados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1006,
+          "legenda": "Fachada moderna com piscina e varanda gourmet"
+        },
+        {
+          "foto": 1010,
+          "legenda": "Fachada de casa com palmeiras e janelas"
+        },
+        {
+          "foto": 1025,
+          "legenda": "Varanda com portão de ferro e janela com grades"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado em um condomínio fechado, com áreas comuns que incluem piscina, jardins e espaços verdes. As fotos ilustram o entorno com plantas e árvores, criando um ambiente agradável e acolhedor. O condomínio oferece segurança e qualidade de vida, com áreas externas bem mantidas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1005,
+          "legenda": "Piscina cercada por plantas e árvores"
+        },
+        {
+          "foto": 1019,
+          "legenda": "Piscina com plantas e arbustos"
+        },
+        {
+          "foto": 1021,
+          "legenda": "Área externa com árvores e cercado"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida moderno. Com áreas de lazer, ambientes integrados e uma bem localizada, é uma opção adequado para quem valoriza qualidade de vida e bem-estar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e se há outros elementos que não aparecem nas fotos, como características do terreno ou detalhes do projeto.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 996,
+      "legenda": "Fachada moderna com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 997,
+      "legenda": "Fachada de casa moderna com entrada e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 998,
+      "legenda": "Fachada de casa moderna com jardim e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 999,
+      "legenda": "Fachada de casa moderna com jardim e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1000,
+      "legenda": "Fachada de casa moderna com garagem e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1002,
+      "legenda": "Fachada moderna de casa com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1003,
+      "legenda": "Fachada moderna com piscina e varanda gourmet",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1006,
+      "legenda": "Fachada moderna com piscina e varanda gourmet",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1010,
+      "legenda": "Fachada de casa com palmeiras e janelas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1007,
+      "legenda": "Varanda gourmet com churrasqueira e mesa de jantar",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1008,
+      "legenda": "Varanda com mesa e cadeiras, churrasqueira e vista para o jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1013,
+      "legenda": "Varanda com bancada de madeira e jardim interno",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1015,
+      "legenda": "Varanda com mesa de jardim e vista para o jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1016,
+      "legenda": "Varanda com vista para o jardim e piscina",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1017,
+      "legenda": "Varanda gourmet com mesa e cadeiras, churrasqueira e vista para a sala",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1018,
+      "legenda": "Varanda com mesa e cadeiras, piscina e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1025,
+      "legenda": "Varanda com portão de ferro e janela com grades",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1012,
+      "legenda": "Cozinha gourmet com vista para piscina e jardim",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1011,
+      "legenda": "Cozinha moderna com bancada de madeira e azulejos patchwork",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1014,
+      "legenda": "Cozinha moderna com ilha e pendentes",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1023,
+      "legenda": "Cozinha moderna com cooktop e balcão de madeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1024,
+      "legenda": "Cozinha moderna com geladeira e cooktop",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1005,
+      "legenda": "Piscina cercada por plantas e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1009,
+      "legenda": "Jardim com arbustos e árvores em frente a uma casa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1019,
+      "legenda": "Piscina com plantas e arbustos",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1020,
+      "legenda": "Jardim com árvore e piscina",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1021,
+      "legenda": "Área externa com árvores e cercado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1022,
+      "legenda": "Portão de ferro em jardim com vegetação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1001,
+      "legenda": "Piscina com deck de madeira e plantas tropicais",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1004,
+      "legenda": "Piscina com deck de madeira e churrasqueira ao fundo",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o imóvel?",
+      "resposta": "O imóvel possui 2 suítes no pavimento superior."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, o imóvel conta com uma piscina com prainha e jacuzzi."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Bairro da Posse, Itatiba, com 4 quartos, 2 suítes, piscina e jardim. Ideal para quem busca conforto e qualidade de vida. Venha conhecer o imóvel e descubra os detalhes que tornam essa propriedade única.",
+    "hashtags": [
+      "casacondominio",
+      "itatiba",
+      "bairrodaposses",
+      "piscina",
+      "suites",
+      "imovel",
+      "qualidadedevida",
+      "ruahinvestimentos"
+    ]
+  },
+  "versao": "2af15164ec88",
+  "publicadoEm": "2026-10-28T04:05:52.173Z"
+}

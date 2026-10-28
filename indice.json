@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0001",
+      "slug": "terreno-avenida-dom-nery-valinhos-sp-te0001",
+      "titulo": "Terreno de 224 m² com edificação em construção na Avenida Dom Nery, Valinhos",
+      "resumo": "Terreno de 224 m² na Avenida Dom Nery, Valinhos, com edificação em construção e excelente localização estratégica na região.",
+      "capa": {
+        "foto": 943,
+        "alt": "Terreno com edificação em construção, área verde e acesso à estrada SP-091"
+      },
+      "versao": "e7db4cb72d55",
+      "publicadoEm": "2026-10-28T04:05:52.175Z"
+    },
+    {
+      "codigo": "BA0003",
+      "slug": "galpao-comercial-vila-marieta-campinas-sp-ba0003",
+      "titulo": "Galpão comercial com 3 vagas de garagem em Vila Marieta, Campinas",
+      "resumo": "Galpão comercial em Vila Marieta, Campinas, com 200m² de área construída e 3 vagas de garagem. Ideal para lojas, escritórios e centros automotivos.",
+      "capa": {
+        "foto": 925,
+        "alt": "Fachada de loja com sinalização 'Auto Peças Flores' e carros estacionados"
+      },
+      "versao": "9c788c12d159",
+      "publicadoEm": "2026-10-28T04:05:52.175Z"
+    },
+    {
+      "codigo": "TE0012",
+      "slug": "terreno-bosques-de-notre-dame-campinas-sp-te0012",
+      "titulo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame em Campinas",
+      "resumo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame, em Campinas, com 75 metros de frente e amplo potencial para construção de chácara ou área de lazer.",
+      "capa": {
+        "foto": 955,
+        "alt": "Portão verde com logotipo de imobiliária e estrada de pedra"
+      },
+      "versao": "8290b04d1d76",
+      "publicadoEm": "2026-10-28T04:05:52.174Z"
+    },
+    {
+      "codigo": "SL0001",
+      "slug": "loja-comercial-jardim-chapadaocampinas-sp-sl0001",
+      "titulo": "Loja comercial com 8 vagas de garagem no Jardim Chapadão, Campinas",
+      "resumo": "Loja comercial de 735m² no Jardim Chapadão, Campinas, com 8 vagas de garagem, localização estratégica e infraestrutura completa para empresas de diferentes.",
+      "capa": {
+        "foto": 947,
+        "alt": "Fachada de prédio com publicidade imobiliária e veículos na rua"
+      },
+      "versao": "29136d8d3142",
+      "publicadoEm": "2026-10-28T04:05:52.174Z"
+    },
+    {
+      "codigo": "CA0022",
+      "slug": "casa-em-condominio-4-quartos-2-suites-piscina-bairro-da-posse-itatiba-ca0022",
+      "titulo": "Casa em condomínio com 4 quartos, 2 suítes e piscina no Bairro da Posse, Itatiba",
+      "resumo": "Casa em condomínio no Bairro da Posse, Itatiba, com 4 quartos, 2 suítes, 5 banheiros e piscina. Ideal para quem busca conforto e estilo de vida.",
+      "capa": {
+        "foto": 1001,
+        "alt": "Piscina com deck de madeira e plantas tropicais"
+      },
+      "versao": "2af15164ec88",
+      "publicadoEm": "2026-10-28T04:05:52.173Z"
+    },
+    {
       "codigo": "BA0004",
       "slug": "galpao-comercial-vila-nova-campinas-sp-ba0004",
       "titulo": "Galpão comercial de 360m² com acesso estratégico na Vila Nova, Campinas",
@@ -746,5 +806,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:02:52.947Z"
+  "atualizadoEm": "2026-10-28T04:05:52.175Z"
 }

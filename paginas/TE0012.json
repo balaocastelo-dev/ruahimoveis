@@ -1,0 +1,188 @@
+{
+  "codigo": "TE0012",
+  "slug": "terreno-bosques-de-notre-dame-campinas-sp-te0012",
+  "titulo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame em Campinas",
+  "resumo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame, em Campinas, com 75 metros de frente e amplo potencial para construção de chácara ou área de lazer.",
+  "capa": {
+    "foto": 955,
+    "alt": "Portão verde com logotipo de imobiliária e estrada de pedra"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame, localizado no bairro Bosques de Notre Dame, em Campinas. Com 75 metros de frente, o imóvel oferece amplo espaço para construção de chácara, área de lazer ou projeto personalizado. O terreno está em uma região valorizada, com fácil acesso aos principais pontos da cidade, combinando sossego e praticidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram vegetação densa, estrada de pedra, portões de entrada e áreas arborizadas, indicando um terreno com boa topografia e potencial construtivo. A localização no condomínio fechado garante privacidade e segurança para quem comprar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno com 20.800 m² e 75 metros de frente",
+        "Excelente topografia e potencial construtivo",
+        "Condomínio fechado arborizado e consolidado",
+        "Bem localizada com acesso fácil à cidade",
+        "Áreas verdes e vegetação abundante"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno de 20.800 m² está localizado no Condomínio Bosque do Notre Dame, com 75 metros de frente. As fotos mostram vegetação densa, gramas secas, árvores altas e áreas abertas, indicando uma boa topografia e condições favoráveis para construção. A vegetação exige cuidados com a manutenção, mas oferece privacidade e beleza natural ao imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A entrada do terreno tem portões verdes, cercas de malha metálica e estradas de pedra ou terra, evidenciando a infraestrutura básica do local. Há áreas com madeira cortada e caminhos de terra, sugerindo que o terreno ainda não está totalmente desenvolvido, mas com potencial para projetos personalizados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 960,
+          "legenda": "Terreno com vegetação e casa ao fundo"
+        },
+        {
+          "foto": 962,
+          "legenda": "Terreno com estrada de terra e vegetação"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno faz parte do Condomínio Bosque do Notre Dame, localizado no bairro Bosques de Notre Dame, em Campinas. O condomínio é consolidado e arborizado, com áreas verdes e infraestrutura que garantem privacidade e segurança. As fotos mostram a entrada do condomínio com portões fechados, placas de sinalização e estradas arborizadas, sugerindo um ambiente de baixa densidade e valorizado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização do terreno facilita o acesso a vias principais da cidade, combinando a tranquilidade do entorno com a praticidade de estar próximo a serviços e infraestrutura urbana. O condomínio é ideal para quem busca um refúgio em meio à natureza, sem abrir mão da conveniência da cidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 956,
+          "legenda": "Terreno com vegetação seca e céu parcialmente nublado"
+        },
+        {
+          "foto": 965,
+          "legenda": "Portão de entrada com placa do condomínio"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca um espaço amplo para construir uma chácara de alto padrão, área de lazer ou projeto personalizado. A localização no condomínio fechado e a vegetação exuberante tornam o imóvel atraente para investidores e famílias que desejam viver em contato com a natureza, mantendo a praticidade de estar perto da cidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, as restrições de uso do solo e o que não aparece nas fotos, como a existência de águas subterrâneas ou pendências com o condomínio.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 955,
+      "legenda": "Portão de entrada com logotipo de imobiliária",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 956,
+      "legenda": "Terreno com vegetação seca e céu parcialmente nublado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 957,
+      "legenda": "Terreno com vegetação e árvores",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 958,
+      "legenda": "Terreno com vegetação e céu nublado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 959,
+      "legenda": "Terreno com cerca e estrutura de construção",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 960,
+      "legenda": "Terreno com vegetação e casa ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 961,
+      "legenda": "Terreno com cerca verde e vegetação ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 962,
+      "legenda": "Terreno com estrada de terra e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 963,
+      "legenda": "Área com vegetação e madeira cortada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 964,
+      "legenda": "Portão verde em terreno com árvore e céu nublado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 965,
+      "legenda": "Portão de entrada com placa do condomínio",
+      "ambiente": "condominio"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem 20.800 m² de área total."
+    },
+    {
+      "pergunta": "Tem acesso ao condomínio?",
+      "resposta": "O terreno está localizado no condomínio fechado Bosque do Notre Dame, com acesso controlado e portões de entrada."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame em Campinas. Amplo espaço para construção de chácara ou área de lazer. bem localizada com acesso fácil à cidade.",
+    "hashtags": [
+      "terrenoemcampinas",
+      "chacaraemcampinas",
+      "terrenolargofrente",
+      "condominiofechado",
+      "campinas",
+      "imobiliariacampinas",
+      "terrenoprivativo",
+      "campinasimoveis"
+    ]
+  },
+  "versao": "8290b04d1d76",
+  "publicadoEm": "2026-10-28T04:05:52.174Z"
+}
