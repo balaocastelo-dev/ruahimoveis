@@ -371,6 +371,11 @@ CREATE TABLE IF NOT EXISTS bairro_commons (
   titulo TEXT PRIMARY KEY, url TEXT, thumb TEXT, largura INTEGER, altura INTEGER, autor TEXT, licenca TEXT, descricao TEXT,
   ok INTEGER NOT NULL DEFAULT 0, motivo TEXT, verificado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 
+// Blog: matérias recebidas do banco de matérias da plataforma (sql/plataforma-banco-materias.sql).
+db.exec(`CREATE TABLE IF NOT EXISTS blog_materias (
+  slug TEXT PRIMARY KEY, titulo TEXT NOT NULL, categoria TEXT NOT NULL, publicado_em TEXT NOT NULL,
+  conteudo TEXT NOT NULL, recebida_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
+
 // Escritório virtual: conversas, eventos, afazeres e fotos dos agentes robôs.
 db.exec(`CREATE TABLE IF NOT EXISTS agente_mensagens (
   id INTEGER PRIMARY KEY, agente TEXT NOT NULL, linha TEXT, telefone TEXT NOT NULL, nome TEXT,

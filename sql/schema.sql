@@ -317,3 +317,7 @@ ALTER TABLE arquivos ADD COLUMN IF NOT EXISTS url_externa text;
 -- Locação na carteira (28/10/2026): finalidade venda | locacao | venda_locacao; aluguel mensal em valor_locacao; status 'alugado'
 ALTER TABLE imoveis ADD COLUMN IF NOT EXISTS finalidade text NOT NULL DEFAULT 'venda';
 ALTER TABLE imoveis ADD COLUMN IF NOT EXISTS valor_locacao double precision;
+-- Blog: matérias recebidas do banco de matérias da plataforma (28/10/2026; entrega em sql/plataforma-banco-materias.sql)
+CREATE TABLE IF NOT EXISTS blog_materias (
+  slug text PRIMARY KEY, titulo text NOT NULL, categoria text NOT NULL, publicado_em text NOT NULL,
+  conteudo text NOT NULL, recebida_em text NOT NULL DEFAULT to_char(now() AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD HH24:MI:SS'));

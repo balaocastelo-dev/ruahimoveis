@@ -14,6 +14,7 @@ const cfg = require('../config');
 const { ENDERECO_DO_RAMO } = require('./categorias');
 const { lerArtigo, lerResumo, SLUG } = require('./validar');
 const { avaliarArtigo } = require('./regua');
+const { minutosDeLeitura } = require('./texto');
 
 const INTERVALO_MS = 10 * 60 * 1000;
 const PASTA = path.join(cfg.DATA_DIR, 'blog-cache');
@@ -53,15 +54,48 @@ async function buscar(caminho) {
 /** No ar = tem foto de capa E a hora marcada já chegou. */
 const noAr = (a, agora = Date.now()) => !!(a.capa && a.capa.src) && Date.parse(a.publicadoEm) <= agora;
 
-/** Os artigos no ar, do mais novo para o mais antigo. */
+// ---------------------------------------------------------- banco de matérias
+// Matérias que esta imobiliária recebeu do banco da plataforma (tabela blog_materias, preenchida pela
+// entrega diária: sql/plataforma-banco-materias.sql). Cada uma é exclusiva desta imobiliária.
+const BANCO_MS = 2 * 60 * 1000;
+let banco = { quando: 0, artigos: new Map() };
+
+function doBanco() {
+  if (Date.now() - banco.quando < BANCO_MS) return banco.artigos;
+  const artigos = new Map();
+  try {
+    const { all } = require('../db');
+    for (const linha of all('SELECT slug, conteudo FROM blog_materias')) {
+      let bruto; try { bruto = JSON.parse(linha.conteudo); } catch { continue; }
+      const lido = lerArtigo(bruto);
+      if (!lido.ok || lido.valor.slug !== linha.slug) { console.error(`[blog] matéria do banco "${linha.slug}" malformada`); continue; }
+      artigos.set(linha.slug, lido.valor);
+    }
+  } catch { /* sem a tabela (instalação antiga): só o ramo */ }
+  banco = { quando: Date.now(), artigos };
+  return artigos;
+}
+function resumoDe(a) {
+  return {
+    slug: a.slug, titulo: a.titulo, resumo: a.resumo, categoria: a.categoria, etiquetas: a.etiquetas || [],
+    capa: a.capa || null, publicadoEm: a.publicadoEm, minutos: minutosDeLeitura(a), ...(a.formato === 'dica' ? { formato: 'dica' } : {}),
+  };
+}
+
+/** Os artigos no ar, do mais novo para o mais antigo (ramo do blog + matérias recebidas do banco). */
 async function listar({ todos = false } = {}) {
   if (!ligado()) return [];
-  let indice;
-  try { indice = await buscar('indice.json'); } catch { return []; }
-  if (!indice || !Array.isArray(indice.artigos)) return [];
   const vistos = new Set();
   const lista = [];
-  for (const linha of indice.artigos) {
+  let indice = null;
+  try { indice = await buscar('indice.json'); } catch { /* ramo fora: segue com o banco */ }
+  const doRamo = indice && Array.isArray(indice.artigos) ? indice.artigos : [];
+  for (const a of doBanco().values()) {
+    if (vistos.has(a.slug)) continue;
+    vistos.add(a.slug);
+    if (todos || noAr(a)) lista.push({ ...resumoDe(a), banco: true });
+  }
+  for (const linha of doRamo) {
     const r = lerResumo(linha);
     if (!r || vistos.has(r.slug)) continue;
     vistos.add(r.slug);
@@ -74,7 +108,15 @@ async function listar({ todos = false } = {}) {
 async function obter(slug) {
   if (!ligado() || !SLUG.test(slug)) return null;
   const lista = await listar();
-  if (!lista.some((a) => a.slug === slug)) return null; // slug inventado não gera pedido ao GitHub
+  const resumo = lista.find((a) => a.slug === slug);
+  if (!resumo) return null; // slug inventado não gera pedido ao GitHub
+  if (resumo.banco) {
+    const a = doBanco().get(slug);
+    if (!a || !noAr(a)) return null;
+    const av = avaliarArtigo(a);
+    if (!av.aprovado) { console.error(`[blog] "${slug}" (banco) fora do ar — reprovado na régua:\n- ${av.erros.join('\n- ')}`); return null; }
+    return a;
+  }
   let bruto;
   try { bruto = await buscar(`artigos/${slug}.json`); } catch { return null; }
   if (!bruto) return null;
@@ -105,6 +147,6 @@ async function redes(slug) {
   return { legenda: bruto.redes.legenda, hashtags: tags };
 }
 
-function limparCache() { memoria.clear(); }
+function limparCache() { memoria.clear(); banco = { quando: 0, artigos: new Map() }; }
 
 module.exports = { listar, obter, situacao, redes, noAr, limparCache };

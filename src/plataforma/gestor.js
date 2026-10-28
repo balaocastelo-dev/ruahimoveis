@@ -166,7 +166,7 @@ api.post('/senha', exige(async (req, res) => {
   evento(req.gestor.id, null, 'senha', null); res.json({ ok: true });
 }));
 
-const COLS = 'id, slug, nome, empresa, contato_nome, contato_email, contato_telefone, link, dominio, vercel_projeto, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, publicada, notas, criado_em, atualizado_em';
+const COLS = 'id, slug, nome, empresa, materias_dia, contato_nome, contato_email, contato_telefone, link, dominio, vercel_projeto, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, publicada, notas, criado_em, atualizado_em';
 api.get('/imobiliarias', exige(async (req, res) => {
   const lista = await q(`SELECT ${COLS} FROM imobiliarias ORDER BY id`);
   { // papel de parede de cada imobiliária (o mesmo do portal dela), para o fundo do cartão
@@ -270,6 +270,21 @@ api.post('/imobiliarias/:id/publicada', exige(async (req, res) => {
     [link, txt(req.body && req.body.vercel_projeto, 100), Number(req.params.id)]);
   evento(req.gestor.id, Number(req.params.id), 'publicada', link); res.json({ ok: true });
 }));
+// Banco de matérias do blog: estoque, entregas e o ciclo (sincronizar o ramo + entregar) na hora.
+const banco = require('./banco');
+api.get('/banco', exige(async (req, res) => res.json(await banco.situacao(q))));
+api.post('/banco/ciclo', exige(async (req, res) => {
+  const r = await banco.ciclo(q);
+  evento(req.gestor.id, null, 'banco_ciclo', `${r.sincronizacao.novas} nova(s) no banco; ${(r.hoje.entregues || []).length + ((r.amanha && r.amanha.entregues) || []).length} entregue(s)`);
+  res.json(r);
+}));
+api.post('/imobiliarias/:id/materias', exige(async (req, res) => {
+  const v = req.body && req.body.materias_dia;
+  const n = v === null || v === '' || v === undefined ? null : Math.round(Number(v));
+  if (n !== null && !(n >= 0 && n <= 3)) falha(400, 'Matérias por dia: de 0 a 3 (vazio = pelo plano).');
+  await q('UPDATE imobiliarias SET materias_dia = $1 WHERE id = $2', [n, Number(req.params.id)]);
+  evento(req.gestor.id, Number(req.params.id), 'materias_dia', n === null ? 'pelo plano' : String(n)); res.json({ ok: true });
+}));
 api.get('/eventos', exige(async (req, res) => res.json(await q(`SELECT e.acao, e.detalhe, e.em, i.nome imobiliaria FROM eventos e LEFT JOIN imobiliarias i ON i.id = e.imobiliaria_id WHERE e.acao <> 'login' ORDER BY e.id DESC LIMIT 30`))));
 api.use((req, res) => res.status(404).json({ erro: 'Não encontrado.' }));
 
@@ -279,8 +294,29 @@ const PAGINA = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><m
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/gestor/gestor.css"></head><body><div id="raiz"></div><script src="/gestor/gestor.js"></script></body></html>`;
 
+// Fora do painel: o ciclo chamado pelo pg_cron (token em plataforma.config 'banco_ciclo_token') e um resumo
+// sem segredo para a rotina que escreve (quantas há em estoque, consumo por dia e temas já usados).
+async function bancoPublico(req, res) {
+  res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+  res.setHeader('Cache-Control', 'no-store');
+  try {
+    if (req.path === '/banco-ciclo') {
+      if (req.method !== 'POST') return res.status(405).json({ erro: 'Use POST.' });
+      const t = await um(`SELECT valor FROM config WHERE chave = 'banco_ciclo_token'`);
+      const dado = String(req.get('x-banco-ciclo') || '');
+      const ok = t && t.valor && dado.length === t.valor.length && crypto.timingSafeEqual(Buffer.from(dado), Buffer.from(t.valor));
+      if (!ok) return res.status(403).json({ erro: 'Sem permissão.' });
+      return res.json(await banco.ciclo(q));
+    }
+    const s = await banco.situacao(q);
+    const nomes = (await q(`SELECT nome FROM imobiliarias`)).map((r) => r.nome);
+    res.json({ livres: s.livres, total_livres: s.total_livres, consumo_dia: s.consumo_dia, dias_de_estoque: s.dias_de_estoque, temas: s.temas, nomes });
+  } catch (e) { res.status(e.status || 500).json({ erro: e.status ? e.message : 'Não foi possível agora.' }); }
+}
+
 function gestor(req, res, next) {
   const host = String(req.hostname || '').toLowerCase();
+  if (HOSTS.has(host) && (req.path === '/banco-ciclo' || req.path === '/banco-materias/situacao.json')) return bancoPublico(req, res);
   const SIM = { '/gestor/dashboard': 'dashboard', '/gestor/projecao': 'projecao' }[req.path.replace(/\/$/, '')];
   const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || !!SIM || req.path.startsWith('/gestor-api/');
   if (!ehGestor) return next();

@@ -82,6 +82,11 @@ const RAMO_DE_CONTEUDO = 'claude/blog-conteudo';
 const DONO_REPO = 'balaocastelo-dev/ruah-imoveis';
 const ENDERECO_DO_RAMO = `https://raw.githubusercontent.com/${DONO_REPO}/refs/heads/${RAMO_DE_CONTEUDO}`;
 
+/** Banco de matérias da plataforma: as capas das matérias que cada imobiliária recebe moram aqui. */
+const RAMO_DO_BANCO = 'plataforma/banco-materias';
+const REPO_DO_BANCO = 'balaocastelo-dev/ruahimoveis';
+const ENDERECO_DO_BANCO = `https://raw.githubusercontent.com/${REPO_DO_BANCO}/refs/heads/${RAMO_DO_BANCO}`;
+
 /** O ramo que ESTA imobiliária lê: cada uma tem o seu (BLOG_DIARIO_URL); sem ele, o da RUAH. */
 const ramoDoBlog = () => (process.env.BLOG_DIARIO_URL || ENDERECO_DO_RAMO).replace(/\/+$/, '');
 
@@ -91,7 +96,7 @@ const enderecoDaCapa = (slug, marca, ext) => `${ramoDoBlog()}/${arquivoDaCapa(sl
 function capaDaRotina(src, slug) {
   if (typeof src !== 'string') return false;
   const sem = (u) => u.replace('/refs/heads/', '/'); // o GitHub aceita os dois jeitos
-  return [...new Set([ramoDoBlog(), ENDERECO_DO_RAMO])].some((ramo) => {
+  return [...new Set([ramoDoBlog(), ENDERECO_DO_RAMO, ENDERECO_DO_BANCO])].some((ramo) => {
     const prefixo = sem(`${ramo}/capas/${slug}-`);
     src = sem(src);
     return src.startsWith(prefixo) && /^[0-9a-f]{8}\.(?:jpg|png)$/.test(src.slice(prefixo.length));
@@ -100,5 +105,5 @@ function capaDaRotina(src, slug) {
 
 module.exports = {
   CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_CLIENTE, INSTAGRAM_CLIENTE, SITE_RUAH, INSTAGRAM_RUAH,
-  RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, ramoDoBlog, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
+  RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, ramoDoBlog, RAMO_DO_BANCO, REPO_DO_BANCO, ENDERECO_DO_BANCO, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
 };

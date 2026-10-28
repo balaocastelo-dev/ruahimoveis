@@ -7,7 +7,7 @@ const mi = (v) => { v = Number(v) || 0; return v >= 1e9 ? 'R$ ' + (v / 1e9).toLo
 const n = (v) => (Number(v) || 0).toLocaleString('pt-BR');
 const quando = (s) => { if (!s) return '—'; const d = new Date(String(s).replace(' ', 'T')); const min = Math.round((Date.now() - d.getTime()) / 60000); if (min < 2) return 'agora'; if (min < 60) return `há ${min} min`; const h = Math.round(min / 60); if (h < 24) return `há ${h} h`; const dd = Math.round(h / 24); return dd < 30 ? `há ${dd} dia${dd > 1 ? 's' : ''}` : d.toLocaleDateString('pt-BR'); };
 const SITU = { ativa: 'Ativa', suspensa: 'Suspensa', implantacao: 'Em implantação' };
-const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel' };
+const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel', banco_ciclo: 'rodou o banco de matérias:', materias_dia: 'mudou as matérias por dia de' };
 
 async function api(metodo, url, corpo) {
   const r = await fetch('/gestor-api' + url, { method: metodo, headers: { 'Content-Type': 'application/json', 'X-Gestor': '1' }, body: corpo ? JSON.stringify(corpo) : undefined, credentials: 'same-origin' });
@@ -47,19 +47,62 @@ async function iniciar() {
       <div class="filtros" role="group" aria-label="Filtrar">${['todas', 'ativa', 'implantacao', 'suspensa'].map((k) => `<button type="button" data-f="${k}" aria-pressed="${FILTRO === k}">${k === 'todas' ? 'Todas' : SITU[k]}</button>`).join('')}</div>
       <button class="btn pri" id="b-nova">+ Nova imobiliária</button></div>
     <div id="lista" class="imobs"><div class="vazio">Carregando os números…</div></div>
+    <section class="banco" aria-labelledby="t-banco"><div class="cab"><h2 id="t-banco">Banco de matérias do blog</h2><div class="sp"></div>
+      <button class="btn" id="b-banco">Buscar prontas e entregar agora</button></div>
+      <p class="muted pequeno">Cada matéria vai para uma imobiliária só. A entrega roda sozinha às 20h30 e às 4h30, conforme o plano de cada uma (Essencial 1, Profissional 2, Rede e Fundador 3 por dia).</p>
+      <div id="banco"><div class="vazio">Carregando o estoque…</div></div></section>
     <section class="atividade"><h2>Atividade recente</h2><ol id="ativ"></ol></section></main>`;
   $('#b-sair').onclick = async () => { await api('POST', '/logout').catch(() => {}); telaEntrada(); };
   $('#b-senha').onclick = janelaSenha;
   $('#b-nova').onclick = janelaNova;
+  $('#b-banco').onclick = async (ev) => {
+    const b = ev.currentTarget; b.disabled = true; b.textContent = 'Rodando…';
+    try {
+      const r = await api('POST', '/banco/ciclo');
+      const n = (r.hoje.entregues || []).length + ((r.amanha && r.amanha.entregues) || []).length;
+      const falta = (r.hoje.faltaram || []).length + ((r.amanha && r.amanha.faltaram) || []).length;
+      aviso(`${r.sincronizacao.novas} nova(s) no banco · ${n} entregue(s)${falta ? ` · ${falta} horário(s) sem matéria` : ''}${r.sincronizacao.erro ? ' · ramo: ' + r.sincronizacao.erro : ''}`, !!falta);
+      carregar();
+    } catch (e) { aviso(e.message, true); }
+    b.disabled = false; b.textContent = 'Buscar prontas e entregar agora';
+  };
   document.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { FILTRO = b.dataset.f; document.querySelectorAll('[data-f]').forEach((x) => x.setAttribute('aria-pressed', x === b)); desenhaLista(); });
   await carregar();
 }
 async function carregar() {
   try {
-    const [d, ev] = await Promise.all([api('GET', '/imobiliarias'), api('GET', '/eventos')]);
-    DADOS = d; desenhaKpis(); desenhaLista();
-    $('#ativ').innerHTML = ev.length ? ev.map((e) => `<li><span class="n">${esc(new Date(e.em.replace(' ', 'T')).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }))}</span><span>Você ${esc(ACAO[e.acao] || e.acao)} ${e.imobiliaria ? `<b>${esc(e.imobiliaria)}</b>` : ''}${e.acao === 'editou' && e.detalhe ? ` <span class="muted">(${esc(e.detalhe)})</span>` : ''}</span></li>`).join('') : '<li class="muted">Nada ainda.</li>';
+    const [d, ev, bc] = await Promise.all([api('GET', '/imobiliarias'), api('GET', '/eventos'), api('GET', '/banco').catch((e) => ({ erro: e.message }))]);
+    DADOS = d; desenhaKpis(); desenhaLista(); desenhaBanco(bc);
+    $('#ativ').innerHTML = ev.length ? ev.map((e) => `<li><span class="n">${esc(new Date(e.em.replace(' ', 'T')).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }))}</span><span>${e.acao === 'banco_materias' ? 'Entrega do banco de matérias:' : `Você ${esc(ACAO[e.acao] || e.acao)}`} ${e.imobiliaria ? `<b>${esc(e.imobiliaria)}</b>` : ''}${(e.acao === 'editou' || e.acao.startsWith('banco') || e.acao === 'materias_dia') && e.detalhe ? ` <span class="muted">(${esc(e.detalhe)})</span>` : ''}</span></li>`).join('') : '<li class="muted">Nada ainda.</li>';
   } catch (e) { $('#lista').innerHTML = `<div class="vazio">${esc(e.message)}</div>`; }
+}
+const TIPOS = { principal: 'artigos', noticia: 'notícias', dica: 'dicas' };
+function desenhaBanco(b) {
+  const alvo = $('#banco'); if (!alvo) return;
+  if (!b || b.erro) { alvo.innerHTML = `<div class="vazio">${esc((b && b.erro) || 'Sem dados do banco.')}</div>`; return; }
+  const l = b.livres || {}, dias = b.dias_de_estoque;
+  const nivel = dias === null ? '' : dias < 3 ? ' ruim' : dias < 7 ? ' atencao' : ' bom';
+  const quando = (iso) => iso ? new Date(iso).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '—';
+  alvo.innerHTML = `<div class="kpis banco-kpis">
+      <div class="kpi${nivel}"><div class="v">${dias === null ? '—' : esc(String(dias).replace('.', ','))}</div><div class="l">dia(s) de estoque${dias !== null && dias < 3 ? ' · escrever mais' : ''}</div></div>
+      <div class="kpi"><div class="v">${n(b.total_livres)}</div><div class="l">prontas no banco · ${Object.entries(TIPOS).map(([k, t]) => `${n(l[k] || 0)} ${t}`).join(' · ')}</div></div>
+      <div class="kpi"><div class="v">${n(b.consumo_dia)}</div><div class="l">entregas por dia</div></div>
+      <div class="kpi"><div class="v">${n(b.entregues)}</div><div class="l">entregues até hoje${b.vencidas ? ` · ${n(b.vencidas)} notícia(s) venceram` : ''}</div></div></div>
+    <div class="banco-grade">
+      <div class="tabela-rolo"><table class="tab"><thead><tr><th>Imobiliária</th><th>Por dia</th><th class="dir">Recebidas</th><th>Última</th></tr></thead><tbody>
+      ${(b.por_imobiliaria || []).map((i) => {
+        const im = ((DADOS && DADOS.imobiliarias) || []).find((x) => x.slug === i.slug);
+        const fixo = im ? im.materias_dia : null;
+        return `<tr><td>${esc(i.nome)}</td><td><select data-mat="${im ? im.id : ''}" aria-label="Matérias por dia de ${esc(i.nome)}" ${im ? '' : 'disabled'}>
+          <option value="" ${fixo === null || fixo === undefined ? 'selected' : ''}>Pelo plano (${n(i.por_dia)})</option>${[0, 1, 2, 3].map((k) => `<option value="${k}" ${fixo === k ? 'selected' : ''}>${k}</option>`).join('')}</select></td>
+          <td class="dir n">${n(i.recebidas)}</td><td class="n">${quando(i.ultima)}</td></tr>`;
+      }).join('') || '<tr><td colspan="4" class="muted">Nenhuma imobiliária ativa.</td></tr>'}</tbody></table></div>
+      <div><h3 class="sub">Últimas entregas</h3><ol class="ultimas">${(b.ultimas || []).map((u) => `<li><span class="n muted">${quando(u.publicar_em)}</span> <b>${esc(u.imobiliaria)}</b> · ${esc(TIPOS[u.tipo] ? TIPOS[u.tipo].replace(/s$/, '') : u.tipo)} · ${esc(u.titulo)}</li>`).join('') || '<li class="muted">Nenhuma ainda. As primeiras saem quando a fábrica entregar matérias prontas.</li>'}</ol></div>
+    </div>`;
+  alvo.querySelectorAll('[data-mat]').forEach((sel) => sel.onchange = async () => {
+    try { await api('POST', `/imobiliarias/${sel.dataset.mat}/materias`, { materias_dia: sel.value === '' ? null : Number(sel.value) }); aviso('Salvo.'); carregar(); }
+    catch (e) { aviso(e.message, true); }
+  });
 }
 function desenhaKpis() {
   const r = DADOS.resumo;
