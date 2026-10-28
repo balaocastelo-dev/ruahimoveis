@@ -1,0 +1,193 @@
+{
+  "codigo": "CA0019",
+  "slug": "casa-condominio-4-quartos-2-suites-caminhos-san-conrado-campinas-sp-ca0019",
+  "titulo": "Casa em condomínio com 4 quartos, 2 suítes e 2 vagas no Caminhos de San Conrado",
+  "resumo": "Casa em condomínio com 4 quartos, 2 suítes, piscina e vista para a natureza no Caminhos de San Conrado, Campinas",
+  "capa": {
+    "foto": 746,
+    "alt": "Fachada de casa com piscina e palmeiras"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Você encontrará uma casa em condomínio no Caminhos de San Conrado, com 4 quartos, 2 suítes e 2 vagas de garagem. Localizada em um terreno com 1.220 m², cercado por áreas verdes, a casa tem 443 m² de área construída e oferece uma combinação de sofisticação e integração com a natureza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma fachada com piscina e palmeiras, uma varanda com mesa de mármore e uma sala integrada à varanda, com vista para jardim e plantas. A área de lazer inclui piscina, sauna, solarium e espaço gourmet completo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Piscina com vista para a mata preservada",
+        "2 suítes, uma com hidromassagem",
+        "Varanda com mesa de mármore e vista para o jardim",
+        "Sala integrada com varanda e lareira",
+        "Área de lazer com churrasqueira e forno de pizza"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes internos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa inclui uma sala de estar integrada com a varanda, com teto alto, janela grande e poltrona de couro. O teto embutido e a estante com objetos decorativos contribuem para um ambiente elegante e acolhedor. A sala de jantar também é integrada à varanda, com mesa de mármore e cadeiras de couro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 750,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 752,
+          "legenda": "Sala de jantar integrada à varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha conta com uma mesa de jantar com toalha branca, geladeira e banco de granito. A janela com vista para árvores traz luz natural para o ambiente. O espaço também inclui aparelhos de cozinha e uma área de serviço bem distribuída."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 754,
+          "legenda": "Cozinha com mesa de jantar e geladeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa possui 4 quartos e 2 suítes. Uma das suítes tem hidromassagem e oferece vista para o jardim. O banheiro da suíte tem banheira, janelas panorâmicas e piso claro, com banqueta integrada. Os ambientes são aconchegantes e bem iluminados."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 753,
+          "legenda": "Banheira com vista para jardim tropical"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de lazer da casa inclui piscina de alvenaria com revestimento em azulejo, sauna, solarium e espaço gourmet completo. Há também um pomar e áreas gramadas com vista para a mata preservada. O terreno de 1.220 m² é cercado pela APA, o que traz um contato direto com a natureza."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa é ideal para quem busca um imóvel com privacidade, contato com a natureza e acabamentos de qualidade. A localização no Condomínio San Conrado e a área de lazer completa tornam o imóvel uma excelente opção para quem valoriza conforto e bem-estar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e o que não aparece nas fotos, como o estado dos armários e a eficiência energética.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 746,
+      "legenda": "Fachada de casa com piscina e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 749,
+      "legenda": "Sala de jantar com vista para varanda e jardim",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 750,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 751,
+      "legenda": "Sala com tapete zebra, planta, estante e lareira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 752,
+      "legenda": "Sala de jantar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 747,
+      "legenda": "Varanda com mesa de mármore e cadeiras azuis",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 748,
+      "legenda": "Varanda com balaustrada de ferro e sofá azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 754,
+      "legenda": "Cozinha com mesa de jantar e geladeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 753,
+      "legenda": "Banheira com vista para jardim tropical",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem a casa?",
+      "resposta": "A casa tem 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a casa tem área gourmet completa com churrasqueira, forno de pizza e fogão a lenha."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Caminhos de San Conrado, com 4 quartos, 2 suítes e área de lazer completa. Vista para a natureza e acabamentos nobres. Ideal para quem busca privacidade e conforto.",
+    "hashtags": [
+      "casacondominio",
+      "campinas",
+      "sanconrado",
+      "arealazer",
+      "suitemassagem",
+      "piscina",
+      "natureza",
+      "imovel"
+    ]
+  },
+  "versao": "98a56a768309",
+  "publicadoEm": "2026-10-28T04:11:28.831Z"
+}

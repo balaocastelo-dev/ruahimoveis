@@ -1,0 +1,302 @@
+{
+  "codigo": "CH0002",
+  "slug": "chacara-6-quartos-agua-da-divisa-itai-sp-ch0002",
+  "titulo": "Chácara com 6 dormitórios em Água da Divisa, Itaí, SP",
+  "resumo": "Chácara de 7.260 m² com 6 dormitórios, localizada às margens da Represa Jurumirim. Ideal para quem busca tranquilidade e contato com a natureza.",
+  "capa": {
+    "foto": 720,
+    "alt": "Casa branca com telhado amarelo em meio a gramado verde e lago"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta chácara de 7.260 m² está localizada às margens da Represa Jurumirim, oferecendo um ambiente tranquilo e cercado pela natureza. Com 6 dormitórios, 3 banheiros e uma casa de caseiro, o imóvel é adequado para famílias que desejam escapar da rotina da cidade. A área externa conta com lago, gramado bem cuidado e vista panorâmica, ideal para momentos de lazer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade inclui uma casa de barco destinada ao lazer, além de uma área de serviço e espaço gourmet. A bem localizada e o ambiente natural tornam este imóvel um refúgio adequado para quem busca conforto e contato com a natureza."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Chácara com 6 dormitórios e área de 7.260 m²",
+        "Localização às margens da Represa Jurumirim",
+        "Espaço gourmet e área de lazer completa",
+        "Casa de caseiro com 3 dormitórios",
+        "Vista panorâmica para lago e vegetação"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e vizinhança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A chácara está localizada em um terreno extenso com gramado bem cuidado, árvores frondosas e lago à vista. As fotos mostram um jardim com área verde, ponte de madeira e lago ao fundo, indicando um ambiente natural e acolhedor. A fachada da casa principal tem varanda e jardim frontal, com telhado amarelo e janela azul, destacando o estilo da construção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A vista aérea da propriedade revela casas, lago e campos, com vegetação densa ao redor. Há ainda uma linha vermelha demarcando o lote, indicando a área total do imóvel. As fotos mostram uma casa de caseiro e uma casa de barco, reforçando o potencial de lazer e convivência."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 725,
+          "legenda": "Vista aérea de uma propriedade com casas, lago e campos"
+        },
+        {
+          "foto": 726,
+          "legenda": "Lote com vista para lago e vegetação"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Interno da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar está integrada à varanda, com teto com moldura e janela grande, permitindo a entrada de luz natural. Há mesa redonda com cadeiras e teto com pendente, sugerindo um ambiente acolhedor e bem distribuído. A cozinha possui geladeira branca, mesa com toalha amarela e porta de vidro para varanda, indicando uma área de serviço funcional e integrada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda conta com churrasqueira, teto de madeira e janela panorâmica, com vista para jardim e lago. As fotos mostram um muro de tijolos e balaustrada preta, reforçando o estilo rústico da área externa. O corredor interno tem piso de cerâmica, portas abertas e paredes brancas, com luz natural e placa da RUAH Investimentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 729,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 730,
+          "legenda": "Cozinha com área de serviço e porta para varanda"
+        },
+        {
+          "foto": 731,
+          "legenda": "Varanda com churrasqueira e vista para o jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Áreas complementares e vista"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A propriedade inclui uma área de lazer com vista para o lago, com terceira foto mostrando uma varanda com vista para jardim e lago. Há também uma vista panorâmica com lagoa, casas e árvores ao fundo, com barco à beira da água, indicando o potencial para esportes náuticos e pesca."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno tem vegetação densa ao redor, com áreas cercadas por árvores e lago à vista. As fotos mostram uma casa em meio ao verde, com jardim bem manejado e vegetação em destaque, reforçando o aspecto natural do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 733,
+          "legenda": "Terrace by the lake with wooden deck and trees"
+        },
+        {
+          "foto": 739,
+          "legenda": "Vista para lago e vegetação"
+        },
+        {
+          "foto": 742,
+          "legenda": "Jardim com casa e vista para a natureza"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam um refúgio em meio à natureza, com espaço para lazer, convivência e momentos de paz. A localização à beira da represa e o ambiente natural fazem dele um excelente investimento para quem valoriza tranquilidade e contato com a natureza."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, como é o condomínio (se houver) e quais são as áreas que não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 719,
+      "legenda": "Fachada de casa com varanda e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 724,
+      "legenda": "Fachada de casa com varanda e janela azul",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 737,
+      "legenda": "Fachada de casa com garagem e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 743,
+      "legenda": "Casa com telhado de telha e jardim frontal",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 744,
+      "legenda": "Fachada de casa com jardim e céu azul",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 728,
+      "legenda": "Vista panorâmica de uma propriedade com lagoa e vegetação",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 733,
+      "legenda": "Terrace by the lake with wooden deck and trees",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 739,
+      "legenda": "Vista para lago e vegetação",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 725,
+      "legenda": "Vista aérea de uma propriedade com casas, lago e campos",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 726,
+      "legenda": "Lote com vista para lago e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 727,
+      "legenda": "Lote com área verde e casas em meio a vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 729,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 731,
+      "legenda": "Varanda com churrasqueira e vista para o jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 732,
+      "legenda": "Varanda com vista para jardim e lago",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 730,
+      "legenda": "Cozinha com área de serviço e porta para varanda",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 720,
+      "legenda": "Jardim com casa à beira da água",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 721,
+      "legenda": "Jardim com vista para o lago e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 722,
+      "legenda": "Jardim com gramado, árvores e lago ao fundo",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 723,
+      "legenda": "Jardim com vista para o lago e ponte flutuante",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 738,
+      "legenda": "Casa em meio a verde com vista para o lago",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 740,
+      "legenda": "Jardim com casa branca e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 741,
+      "legenda": "Jardim com casa e árvore central",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 742,
+      "legenda": "Jardim com casa e vista para a natureza",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 745,
+      "legenda": "Jardim com casa e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 734,
+      "legenda": "Corredor com piso de cerâmica e portas abertas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 735,
+      "legenda": "Corredor com vista para quarto e sala",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 736,
+      "legenda": "Corredor com vista para quartos",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos dormitórios tem?",
+      "resposta": "O imóvel tem 6 dormitórios."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, o imóvel conta com espaço gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Chácara de 7.260 m² com 6 dormitórios, localizada às margens da Represa Jurumirim. Ideal para quem busca tranquilidade e contato com a natureza. A propriedade oferece vista panorâmica, área de lazer e espaço gourmet.",
+    "hashtags": [
+      "chacara",
+      "represa",
+      "lazer",
+      "natureza",
+      "itaí",
+      "sp",
+      "imovel",
+      "ruah"
+    ]
+  },
+  "versao": "8cd0e0bde6d4",
+  "publicadoEm": "2026-10-28T04:11:28.831Z"
+}

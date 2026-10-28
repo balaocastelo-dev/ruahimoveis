@@ -1,0 +1,176 @@
+{
+  "codigo": "AR0003",
+  "slug": "terreno-comercial-barao-geraldo-campinas-sp-ar0003",
+  "titulo": "Terreno comercial de 1.796 m² em Barão Geraldo, Campinas",
+  "resumo": "Terreno comercial de 1.796 m² em Barão Geraldo, Campinas, com zoneamento ZM1-B-BG, ideal para empreendimentos comerciais e empresariais, próximo à Avenida.",
+  "capa": {
+    "foto": 755,
+    "alt": "Terreno comercial com vista para rodovia e construções ao redor"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Terreno comercial à venda em Barão Geraldo, Campinas, com área total de 1.796 m². Localizado em região consolidada e estratégica, próximo à Avenida Zeferino Vaz, o imóvel oferece excelente acesso a rodovias e ao centro da cidade. O zoneamento ZM1-B-BG permite a implantação de empreendimentos comerciais, empresariais e de serviços, conforme a legislação vigente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área está situada em uma região com forte desenvolvimento econômico, perto da Unicamp e do Polo Tecnológico. Com boa visibilidade e infraestrutura ao redor, o terreno é uma opção para investidores e empresas que buscam um local estratégico para novos projetos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Área total de 1.796 m²",
+        "Zoneamento ZM1-B-BG permitindo uso comercial e empresarial",
+        "Próximo à Avenida Zeferino Vaz e rodovias principais",
+        "Localização consolidada com",
+        "Acesso fácil ao centro de Barão Geraldo"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado em uma região estratégica de Barão Geraldo, com fácil acesso às principais vias da cidade, como a Avenida Zeferino Vaz e as Rodovias Dom Pedro I e SP-332. A proximidade com o centro da região e com importantes empresas e instituições favorece o fluxo de pessoas e o do imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área está situada em uma região de desenvolvimento econômico, perto da Unicamp e do Polo Tecnológico, o que contribui para a atratividade do local para empreendimentos comerciais e empresariais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 758,
+          "legenda": "Terreno com vegetação e edifícios ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno apresenta área total de 1.796 m² e está disponível para uso conforme o zoneamento ZM1-B-BG, permitindo atividades comerciais, empresariais e de serviços. As fotos mostram o terreno deserto, com muro de tijolos e vegetação ao redor, indicando que o imóvel está pronto para construção ou adaptação conforme o projeto desejado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área conta com estacionamento e acesso a vias principais, o que facilita o movimento de pessoas e veículos. O terreno também está cercado por construções residenciais e industriais, confirmando a proximidade com a infraestrutura urbana da região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 756,
+          "legenda": "Terreno com muro e edifício ao fundo"
+        },
+        {
+          "foto": 757,
+          "legenda": "Terreno com muro e edifício ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Planta e dimensões"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A planta baixa do terreno está disponível para visualização, mostrando a área total de 1.796 m² com medidas em metros e demarcação clara das áreas. Essa planta pode ser usada como base para projetos e planejamento do uso do terreno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A planta é ilustrativa e ajuda a entender a distribuição do terreno, permitindo que o comprador visualize como o imóvel pode ser utilizado de acordo com as necessidades do empreendimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 759,
+          "legenda": "Planta baixa com área amarela e medidas em metros"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores e empresas que desejam implantar empreendimentos comerciais, empresariais ou de serviços em uma região estratégica de Barão Geraldo. A localização, o zoneamento e o acesso facilitado tornam o imóvel uma boa opção para quem busca um local consolidado com."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, as restrições de uso conforme o zoneamento e quais são as possibilidades de construção ou adaptação do imóvel.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 755,
+      "legenda": "Lote comercial em área urbana com vista para rodovia",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 756,
+      "legenda": "Terreno com muro e edifício ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 757,
+      "legenda": "Terreno com muro e edifício ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 758,
+      "legenda": "Terreno com vegetação e edifícios ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 759,
+      "legenda": "Planta baixa com área amarela e medidas em metros",
+      "ambiente": "planta"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem área total de 1.796 m²."
+    },
+    {
+      "pergunta": "Qual o zoneamento do imóvel?",
+      "resposta": "O zoneamento é ZM1-B-BG, permitindo uso comercial, empresarial e de serviços."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno comercial à venda em Barão Geraldo, Campinas, com área total de 1.796 m². Localização estratégica, próximo à Avenida Zeferino Vaz e com zoneamento ZM1-B-BG. Ideal para empreendimentos comerciais e empresariais.",
+    "hashtags": [
+      "terrenocomercial",
+      "campinas",
+      "baraoegeraldo",
+      "zonamista",
+      "empreendimentos",
+      "investimentoimobiliario",
+      "zoneamento",
+      "campinasimoveis"
+    ]
+  },
+  "versao": "a6071558f46e",
+  "publicadoEm": "2026-10-28T04:11:28.831Z"
+}

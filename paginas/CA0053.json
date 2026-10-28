@@ -1,0 +1,284 @@
+{
+  "codigo": "CA0053",
+  "slug": "casa-terrea-condominio-residencial-sainte-helene-campinas-sp-ca0053",
+  "titulo": "Casa térrea em condomínio fechado no Residencial Sainte Helene, Campinas",
+  "resumo": "Casa térrea em condomínio fechado no Residencial Sainte Helene, com 2 suítes, 2 vagas de garagem e 166 m² de área total, ideal para quem busca conforto e segurança.",
+  "capa": {
+    "foto": 775,
+    "alt": "Entrada de condomínio com portão fechado e fachada de tijolinho."
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa térrea recém-entregue em condomínio fechado no Residencial Sainte Helene, Campinas. Com 166 m² de área total, o imóvel oferece 2 suítes, 2 vagas de garagem e um projeto moderno e funcional. A fachada é moderna, com acabamento em tijolos e portão de entrada. O imóvel é ideal para quem busca conforto, praticidade e segurança em um ambiente bem planejado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com áreas sociais integradas, como a sala de estar com piso claro e janelas grandes, que permitem a entrada de luz natural. O jardim externo oferece um ambiente agradável e bem cuidado, com gramado e áreas de lazer."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "2 suítes com privacidade e conforto.",
+        "2 vagas de garagem para conveniência.",
+        "Condomínio fechado com segurança e infraestrutura.",
+        "Área total de 166 m² com projetos modernos.",
+        "Sala integrada com jardim, ideal para convivência."
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambiente interno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar é ampla e bem iluminada, com piso claro e paredes brancas. A integração entre a sala e o jardim traz um ambiente agradável e funcional. As janelas grandes permitem a entrada de luz natural e a vista para o jardim externo. A área social é ideal para reuniões familiares e recebe visitas com conforto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha apresenta uma bancada escura e janelas panorâmicas, com piso claro e teto branco. O ambiente é moderno e prático, com espaço para armários e área de serviço. A vista para o exterior e a iluminação natural contribuem para um ambiente acolhedor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 761,
+          "legenda": "Sala de estar com piso claro e porta de vidro"
+        },
+        {
+          "foto": 766,
+          "legenda": "Cozinha com bancada escura e janela panorâmica"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos possuem piso de madeira e paredes claras, com janelas que garantem ventilação e iluminação natural. O ambiente é aconchegante e oferece privacidade. Os banheiros são modernos e bem equipados, com chuveiro, pia e bancada. Alguns possuem duas pias e um espaço para banho com banheira, proporcionando conforto e praticidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O design dos quartos e banheiros é funcional, com acabamentos que valorizam a qualidade de vida. Os ambientes são bem planejados, com espaços para armários e armazenamento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 768,
+          "legenda": "Quarto com piso de madeira e janelas"
+        },
+        {
+          "foto": 770,
+          "legenda": "Banheiro moderno com chuveiro e pia"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece infraestrutura de lazer, como quadra de vôlei, churrasqueira e áreas de convivência ao ar livre. O jardim externo tem gramado bem cuidado, bancos, palmeiras e áreas para relaxar. O condomínio também conta com portaria 24 horas, segurança e uma estrutura moderna que valoriza a qualidade de vida dos moradores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno do imóvel é bem planejado, com caminhos de tijolos, gramados e casas modernas. O condomínio oferece um ambiente seguro e tranquilo, ideal para famílias que buscam conforto e privacidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 776,
+          "legenda": "Jardim com sofás verdes e churrasqueira"
+        },
+        {
+          "foto": 781,
+          "legenda": "Entrada de condomínio com casas modernas e gramado"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, segurança e uma infraestrutura moderna. Com 2 suítes, 2 vagas de garagem e um projeto bem planejado, a casa é adequada para quem valoriza o bem-estar e a qualidade de vida em um ambiente moderno e bem localizado no Residencial Sainte Helene."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, detalhes do condomínio, como são os serviços de manutenção e o que não está visível nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 760,
+      "legenda": "Fachada moderna com garagem e janela",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 775,
+      "legenda": "Entrada de condomínio com portão fechado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 778,
+      "legenda": "Quadra de vôlei com rede e muros laterais",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 761,
+      "legenda": "Sala de estar com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 762,
+      "legenda": "Sala vazia com piso de cerâmica e janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 763,
+      "legenda": "Sala de estar com piso claro e janela grande",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 764,
+      "legenda": "Sala com porta de vidro aberta para o jardim",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 774,
+      "legenda": "Sala vazia com piso de madeira e janela preta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 777,
+      "legenda": "Sala de jantar com mesas redondas e cadeiras de couro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 782,
+      "legenda": "Sala de ginástica equipada com diversos aparelhos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 783,
+      "legenda": "Sala de reuniões com mesas redondas e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 766,
+      "legenda": "Cozinha com bancada escura e janela panorâmica",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 784,
+      "legenda": "Cozinha moderna com ilha e cadeiras de bar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 768,
+      "legenda": "Quarto com piso de madeira e janelas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 769,
+      "legenda": "Quarto vazio com piso de madeira e parede branca",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 773,
+      "legenda": "Quarto vazio com piso de madeira e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 770,
+      "legenda": "Banheiro moderno com chuveiro e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 771,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 772,
+      "legenda": "Banheiro com duas pias e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 765,
+      "legenda": "Jardim com grama e parede de tijolinho",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 776,
+      "legenda": "Jardim com sofás verdes e churrasqueira",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 779,
+      "legenda": "Jardim com bancos e palmeiras em frente a edifício moderno",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 780,
+      "legenda": "Escadaria de pedra com mão de ferro e muro de pedra",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 781,
+      "legenda": "Entrada de condomínio com casas modernas e gramado",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 767,
+      "legenda": "Corredor com janelas laterais e porta no final",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área de lazer no condomínio?",
+      "resposta": "Sim, o condomínio oferece quadra de vôlei, churrasqueira e áreas de convivência."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar uma visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea em condomínio fechado no Residencial Sainte Helene, Campinas. Com 2 suítes, 2 vagas de garagem e área total de 166 m². Ideal para quem busca conforto, segurança e qualidade de vida em um ambiente moderno e bem planejado.",
+    "hashtags": [
+      "casacondominio",
+      "campinas",
+      "residencialstehelene",
+      "imoveisnovos",
+      "suitemoderna",
+      "vagasgaragem",
+      "areautil",
+      "lazercondominio"
+    ]
+  },
+  "versao": "343e23b274f6",
+  "publicadoEm": "2026-10-28T04:11:28.830Z"
+}

@@ -1,0 +1,347 @@
+{
+  "codigo": "CA0048",
+  "slug": "casa-4-quartos-area-gourmet-piscina-cidade-universitaria-campinas-ca0048",
+  "titulo": "Casa de 4 quartos com área gourmet e piscina na Cidade Universitária, Campinas",
+  "resumo": "Casa de 4 quartos na Cidade Universitária, Campinas. Com piscina, área gourmet e ambientes amplos. Ideal para quem busca conforto e privacidade.",
+  "capa": {
+    "foto": 693,
+    "alt": "Piscina com deck de pedra e palmeiras ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa de 4 quartos localizada na Cidade Universitária, em Campinas. Com 457 m² de área construída, o imóvel oferece ambientes amplos e bem distribuídos. A localização é estratégica, com acesso fácil à Unicamp, comércios, escolas e vias importantes da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma piscina com deck de pedra, varandas com pérgola e jardins com vegetação exuberante. O imóvel tem áreas de lazer e integração entre os ambientes, ideal para quem busca conforto e privacidade em uma região consolidada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Piscina com deck de pedra e palmeiras ao fundo",
+        "Varandas com mesa redonda e cadeiras brancas",
+        "Jardim com escada de madeira e área verde",
+        "Banheiro com banheira e bancada de granito",
+        "Quartos com cama, estante e televisão"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa tem varandas com integração com o ambiente externo. As fotos mostram varandas com mesa redonda, cadeiras brancas e pérgola de madeira. O teto de madeira e o piso de tijolos trazem um toque rústico à decoração."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda gourmet tem mesa redonda com cadeiras de vime e churrasqueira com teto de madeira. O ambiente é ideal para reuniões familiares ou eventos sociais, com vista para o jardim."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 695,
+          "legenda": "Varanda gourmet com mesa redonda e churrasqueira"
+        },
+        {
+          "foto": 694,
+          "legenda": "Varanda com mesa redonda e cadeiras brancas, cercada por árvores e plantas"
+        },
+        {
+          "foto": 700,
+          "legenda": "Varanda com mesa redonda e cadeiras, teto de madeira, parede de tijolos e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Jardim e área de lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem um jardim com escada de madeira, plantas e área de lazer com mesa e cadeiras. As fotos mostram uma escadaria de madeira em meio à vegetação e uma área com palmeiras e piscina."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O jardim também tem uma escadaria de madeira, bancada de madeira e árvores. Há um espaço com área de lazer, com mesa e cadeiras, ideal para relaxar e aproveitar o clima."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 689,
+          "legenda": "Escada de madeira com vista para área verde e mesa de jardim"
+        },
+        {
+          "foto": 697,
+          "legenda": "Escadaria de madeira em meio a vegetação"
+        },
+        {
+          "foto": 698,
+          "legenda": "Jardim com palmeiras e área de lazer"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos. As fotos mostram quartos com cama, estante de livros, televisão e tapetes coloridos. Alguns quartos têm vista para o exterior e perspectiva para a varanda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros têm banheira, bancada de granito e janelas com persiana. Um dos banheiros tem duas pias, espelho grande e janela com divisórias, enquanto outros têm gabinete duplo e janelas de vidro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 704,
+          "legenda": "Quarto com cama, estante de livros, televisão e tapetes"
+        },
+        {
+          "foto": 706,
+          "legenda": "Quarto com cama, mesa de jantar e televisão"
+        },
+        {
+          "foto": 705,
+          "legenda": "Banheiro com duas pias, espelho grande e janela"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa está localizada na Cidade Universitária, uma região residencial consolidada com infraestrutura completa. Há acesso fácil à Unicamp, comércios, escolas e vias importantes da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A região tem infraestrutura para o dia a dia, com opções de serviços e comércios próximos. A localização também garante tranquilidade e privacidade, características importantes para quem busca um imóvel com qualidade de vida."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 692,
+          "legenda": "Portão de ferro com parede de tijolinho e escada"
+        },
+        {
+          "foto": 696,
+          "legenda": "Fachada de casa com tijolos e janelas protegidas"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa é ideal para famílias que buscam conforto, privacidade e espaços amplos para morar. Com 4 quartos, piscina, área gourmet e jardim, o imóvel oferece tudo o que é necessário para um estilo de vida prático e agradável."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a infraestrutura do condomínio e o que não aparece nas fotos, como a condição do telhado e o estado dos canos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 692,
+      "legenda": "Portão de ferro com parede de tijolinho e escada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 696,
+      "legenda": "Fachada de casa com tijolos e janelas protegidas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 701,
+      "legenda": "Sala com piso de madeira, estante de livros e armário de correr",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 691,
+      "legenda": "Varanda com pérgola e mobiliário externo",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 694,
+      "legenda": "Varanda com mesa redonda e cadeiras brancas, cercada por árvores e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 695,
+      "legenda": "Varanda gourmet com mesa redonda e churrasqueira",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 700,
+      "legenda": "Varanda com mesa redonda e cadeiras, teto de madeira, parede de tijolos e porta de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 711,
+      "legenda": "Varanda com vista para sala e janela",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 717,
+      "legenda": "Varanda com piso de tijolinho, pérgola de madeira e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 716,
+      "legenda": "Área de serviço com máquina de lavar, balcão e plantas",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 718,
+      "legenda": "Corredor de serviço com armários e porta de acesso",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 704,
+      "legenda": "Quarto com cama, estante de livros, televisão e tapetes",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 706,
+      "legenda": "Quarto com cama, mesa de jantar e televisão",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 707,
+      "legenda": "Quarto com cama, armário e porta aberta",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 710,
+      "legenda": "Quarto com cama de casal, televisão, armário de madeira e perspectiva para varanda",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 699,
+      "legenda": "Banheiro com banheira, bancada de granito e janela com persiana",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 702,
+      "legenda": "Banheiro moderno com banheira, box de vidro e janela com persiana",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 705,
+      "legenda": "Banheiro com duas pias, espelho grande e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 708,
+      "legenda": "Banheiro com banheira, gabinete duplo e janelas com grade",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 709,
+      "legenda": "Banheiro com banheira, gabinete duplo e janelas de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 689,
+      "legenda": "Escada de madeira com vista para área verde e mesa de jardim",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 690,
+      "legenda": "Jardim com parede de tijolinho e plantas",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 697,
+      "legenda": "Escadaria de madeira em meio a vegetação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 698,
+      "legenda": "Jardim com palmeiras e área de lazer",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 703,
+      "legenda": "Escadaria de madeira em meio a vegetação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 715,
+      "legenda": "Jardim com plantas em vasos e pérgola",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 693,
+      "legenda": "Piscina com deck de pedra e palmeiras ao fundo",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 712,
+      "legenda": "Escritório com mesa, cadeira e estante de livros",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 713,
+      "legenda": "Escritório com móveis antigos e tapete persa",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 714,
+      "legenda": "Escritório com estantes de livros e tapete persa",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel tem 3 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, há uma área gourmet com churrasqueira, mesa redonda e cadeiras de vime."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 4 quartos com piscina, área gourmet e jardim na Cidade Universitária, Campinas. Ideal para quem busca conforto, privacidade e espaços amplos. Localização estratégica com acesso fácil à Unicamp e comércios.",
+    "hashtags": [
+      "casaemcampinas",
+      "cidadeadministrativa",
+      "cidademoradia",
+      "areaagourmet",
+      "piscinaemcasa",
+      "campinasimoveis",
+      "imoveisruah",
+      "cidadereal"
+    ]
+  },
+  "versao": "82d0a0cfa5ef",
+  "publicadoEm": "2026-10-28T04:11:28.832Z"
+}

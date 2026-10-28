@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0048",
+      "slug": "casa-4-quartos-area-gourmet-piscina-cidade-universitaria-campinas-ca0048",
+      "titulo": "Casa de 4 quartos com área gourmet e piscina na Cidade Universitária, Campinas",
+      "resumo": "Casa de 4 quartos na Cidade Universitária, Campinas. Com piscina, área gourmet e ambientes amplos. Ideal para quem busca conforto e privacidade.",
+      "capa": {
+        "foto": 693,
+        "alt": "Piscina com deck de pedra e palmeiras ao fundo"
+      },
+      "versao": "82d0a0cfa5ef",
+      "publicadoEm": "2026-10-28T04:11:28.832Z"
+    },
+    {
+      "codigo": "AR0003",
+      "slug": "terreno-comercial-barao-geraldo-campinas-sp-ar0003",
+      "titulo": "Terreno comercial de 1.796 m² em Barão Geraldo, Campinas",
+      "resumo": "Terreno comercial de 1.796 m² em Barão Geraldo, Campinas, com zoneamento ZM1-B-BG, ideal para empreendimentos comerciais e empresariais, próximo à Avenida.",
+      "capa": {
+        "foto": 755,
+        "alt": "Terreno comercial com vista para rodovia e construções ao redor"
+      },
+      "versao": "a6071558f46e",
+      "publicadoEm": "2026-10-28T04:11:28.831Z"
+    },
+    {
+      "codigo": "CA0019",
+      "slug": "casa-condominio-4-quartos-2-suites-caminhos-san-conrado-campinas-sp-ca0019",
+      "titulo": "Casa em condomínio com 4 quartos, 2 suítes e 2 vagas no Caminhos de San Conrado",
+      "resumo": "Casa em condomínio com 4 quartos, 2 suítes, piscina e vista para a natureza no Caminhos de San Conrado, Campinas",
+      "capa": {
+        "foto": 746,
+        "alt": "Fachada de casa com piscina e palmeiras"
+      },
+      "versao": "98a56a768309",
+      "publicadoEm": "2026-10-28T04:11:28.831Z"
+    },
+    {
+      "codigo": "CH0002",
+      "slug": "chacara-6-quartos-agua-da-divisa-itai-sp-ch0002",
+      "titulo": "Chácara com 6 dormitórios em Água da Divisa, Itaí, SP",
+      "resumo": "Chácara de 7.260 m² com 6 dormitórios, localizada às margens da Represa Jurumirim. Ideal para quem busca tranquilidade e contato com a natureza.",
+      "capa": {
+        "foto": 720,
+        "alt": "Casa branca com telhado amarelo em meio a gramado verde e lago"
+      },
+      "versao": "8cd0e0bde6d4",
+      "publicadoEm": "2026-10-28T04:11:28.831Z"
+    },
+    {
+      "codigo": "CA0053",
+      "slug": "casa-terrea-condominio-residencial-sainte-helene-campinas-sp-ca0053",
+      "titulo": "Casa térrea em condomínio fechado no Residencial Sainte Helene, Campinas",
+      "resumo": "Casa térrea em condomínio fechado no Residencial Sainte Helene, com 2 suítes, 2 vagas de garagem e 166 m² de área total, ideal para quem busca conforto e segurança.",
+      "capa": {
+        "foto": 775,
+        "alt": "Entrada de condomínio com portão fechado e fachada de tijolinho."
+      },
+      "versao": "343e23b274f6",
+      "publicadoEm": "2026-10-28T04:11:28.830Z"
+    },
+    {
       "codigo": "AR0007",
       "slug": "terreno-chacaras-campos-dos-amarais-campinas-sp-ar0007",
       "titulo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas",
@@ -866,5 +926,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:08:30.713Z"
+  "atualizadoEm": "2026-10-28T04:11:28.832Z"
 }
