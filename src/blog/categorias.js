@@ -82,15 +82,23 @@ const RAMO_DE_CONTEUDO = 'claude/blog-conteudo';
 const DONO_REPO = 'balaocastelo-dev/ruah-imoveis';
 const ENDERECO_DO_RAMO = `https://raw.githubusercontent.com/${DONO_REPO}/refs/heads/${RAMO_DE_CONTEUDO}`;
 
+/** O ramo que ESTA imobiliária lê: cada uma tem o seu (BLOG_DIARIO_URL); sem ele, o da RUAH. */
+const ramoDoBlog = () => (process.env.BLOG_DIARIO_URL || ENDERECO_DO_RAMO).replace(/\/+$/, '');
+
 const arquivoDaCapa = (slug, marca, ext) => `capas/${slug}-${marca}.${ext}`;
-const enderecoDaCapa = (slug, marca, ext) => `${ENDERECO_DO_RAMO}/${arquivoDaCapa(slug, marca, ext)}`;
-/** A capa de artigo da rotina só pode ser o arquivo que o comando gravou para ele. */
+const enderecoDaCapa = (slug, marca, ext) => `${ramoDoBlog()}/${arquivoDaCapa(slug, marca, ext)}`;
+/** A capa de artigo da rotina só pode ser o arquivo que o comando gravou para ele, no ramo do blog desta imobiliária. */
 function capaDaRotina(src, slug) {
-  const prefixo = `${ENDERECO_DO_RAMO}/capas/${slug}-`;
-  return typeof src === 'string' && src.startsWith(prefixo) && /^[0-9a-f]{8}\.(?:jpg|png)$/.test(src.slice(prefixo.length));
+  if (typeof src !== 'string') return false;
+  const sem = (u) => u.replace('/refs/heads/', '/'); // o GitHub aceita os dois jeitos
+  return [...new Set([ramoDoBlog(), ENDERECO_DO_RAMO])].some((ramo) => {
+    const prefixo = sem(`${ramo}/capas/${slug}-`);
+    src = sem(src);
+    return src.startsWith(prefixo) && /^[0-9a-f]{8}\.(?:jpg|png)$/.test(src.slice(prefixo.length));
+  });
 }
 
 module.exports = {
   CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_CLIENTE, INSTAGRAM_CLIENTE, SITE_RUAH, INSTAGRAM_RUAH,
-  RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
+  RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, ramoDoBlog, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
 };

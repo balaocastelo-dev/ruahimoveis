@@ -88,3 +88,16 @@ const ramo = http.createServer((req, res) => {
     process.exit(0);
   } catch (e) { console.error('FALHOU', e.message); process.exit(1); }
 });
+
+// Cada imobiliária lê o próprio ramo do blog: a capa gravada lá tem de ser aceita (senão a matéria some ao clicar).
+{
+  const assert = require('assert');
+  const antes = process.env.BLOG_DIARIO_URL;
+  process.env.BLOG_DIARIO_URL = 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/outra/blog-conteudo';
+  const { capaDaRotina } = require('../src/blog/categorias');
+  assert.ok(capaDaRotina('https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
+  assert.ok(capaDaRotina('https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
+  assert.ok(!capaDaRotina('https://exemplo.com/capas/um-texto-0123abcd.jpg', 'um-texto'));
+  if (antes === undefined) delete process.env.BLOG_DIARIO_URL; else process.env.BLOG_DIARIO_URL = antes;
+  console.log('ok · capa no ramo do blog de cada imobiliária é aceita');
+}
