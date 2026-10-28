@@ -15,6 +15,13 @@ db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
 const ex = (sql) => db.exec(traduzSqlite(sql));
 
 function estrutura() {
+// Sessões: sem MULTI, a tabela de sempre (uma imobiliária, ligada a usuarios). Com MULTI=1 a sessão é COMUM
+// (base.sessoes, com imobiliaria_id e gestor_id) e é criada em plataforma(), mais abaixo.
+if (!tenant.multi()) ex(`CREATE TABLE IF NOT EXISTS sessoes (
+  token_hash TEXT PRIMARY KEY,
+  usuario_id INTEGER NOT NULL REFERENCES usuarios(id) ON DELETE CASCADE,
+  expira_em INTEGER NOT NULL
+);`);
 ex(`
 CREATE TABLE IF NOT EXISTS usuarios (
   id INTEGER PRIMARY KEY,
@@ -25,11 +32,6 @@ CREATE TABLE IF NOT EXISTS usuarios (
   senha_hash TEXT NOT NULL,
   ativo INTEGER NOT NULL DEFAULT 1,
   criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
-);
-CREATE TABLE IF NOT EXISTS sessoes (
-  token_hash TEXT PRIMARY KEY,
-  usuario_id INTEGER NOT NULL REFERENCES usuarios(id) ON DELETE CASCADE,
-  expira_em INTEGER NOT NULL
 );
 CREATE TABLE IF NOT EXISTS tentativas_login (
   chave TEXT PRIMARY KEY, falhas INTEGER NOT NULL, bloqueado_ate INTEGER NOT NULL DEFAULT 0
@@ -401,7 +403,62 @@ CREATE TABLE IF NOT EXISTS agente_midias (
   imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 }
 
+// Plataforma multi-imobiliária: o cadastro das imobiliárias e o login (tabelas COMUNS, sem prefixo).
+// O mesmo no Postgres está em sql/plataforma.sql (schema base). Só são usadas com MULTI=1; sem MULTI ficam vazias.
+function plataforma() {
+ex(`CREATE TABLE IF NOT EXISTS imobiliarias (
+  id INTEGER PRIMARY KEY,
+  slug TEXT NOT NULL UNIQUE,
+  schema TEXT NOT NULL UNIQUE,
+  nome_curto TEXT NOT NULL,
+  empresa TEXT, cidade TEXT, uf TEXT,
+  pais TEXT NOT NULL DEFAULT 'BR', moeda TEXT NOT NULL DEFAULT 'BRL', idioma TEXT NOT NULL DEFAULT 'pt-BR',
+  whatsapp TEXT, site TEXT, instagram TEXT, creci TEXT,
+  blog_nome TEXT, blog_legenda TEXT, blog_url TEXT, portal_url TEXT, public_url TEXT, radar_bairros TEXT,
+  status TEXT NOT NULL DEFAULT 'ativa' CHECK (status IN ('ativa','teste','suspensa','cancelada')),
+  plano TEXT,
+  config TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);
+CREATE TABLE IF NOT EXISTS dominios (
+  host TEXT PRIMARY KEY COLLATE NOCASE,
+  imobiliaria_id INTEGER NOT NULL REFERENCES imobiliarias(id) ON DELETE CASCADE,
+  principal INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS ix_dom_imob ON dominios(imobiliaria_id);
+CREATE TABLE IF NOT EXISTS login_indice (
+  email TEXT PRIMARY KEY COLLATE NOCASE,
+  imobiliaria_id INTEGER NOT NULL REFERENCES imobiliarias(id) ON DELETE CASCADE,
+  usuario_id INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_li_imob ON login_indice(imobiliaria_id, usuario_id);
+CREATE TABLE IF NOT EXISTS gestores (
+  id INTEGER PRIMARY KEY,
+  nome TEXT NOT NULL,
+  email TEXT NOT NULL UNIQUE COLLATE NOCASE,
+  senha_hash TEXT NOT NULL,
+  ativo INTEGER NOT NULL DEFAULT 1,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);
+CREATE TABLE IF NOT EXISTS auditoria_plataforma (
+  id INTEGER PRIMARY KEY,
+  gestor_id INTEGER REFERENCES gestores(id) ON DELETE SET NULL,
+  imobiliaria_id INTEGER REFERENCES imobiliarias(id) ON DELETE SET NULL,
+  acao TEXT NOT NULL, detalhe TEXT, ip TEXT,
+  em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
+);`);
+if (tenant.multi()) ex(`CREATE TABLE IF NOT EXISTS sessoes (
+  token_hash TEXT PRIMARY KEY,
+  imobiliaria_id INTEGER REFERENCES imobiliarias(id) ON DELETE CASCADE,
+  usuario_id INTEGER,
+  gestor_id INTEGER REFERENCES gestores(id) ON DELETE CASCADE,
+  expira_em INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS ix_sess_usuario ON sessoes(imobiliaria_id, usuario_id);`);
+}
+
 // Sem MULTI: a estrutura de sempre. Com MULTI=1: a da imobiliária padrão (as outras entram com criaImobiliaria).
+plataforma();
 if (tenant.multi()) tenant.comImobiliaria(tenant.atual() || tenant.padrao(), estrutura);
 else estrutura();
 

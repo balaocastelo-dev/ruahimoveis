@@ -13,8 +13,12 @@ const COMUNS = [
   'fisguei_anuncios', 'fisguei_precos',
   // proteção contra força bruta no login (chave = e-mail/IP, vale para a plataforma toda)
   'tentativas_login',
-  // tabelas novas da plataforma (ainda não criadas; entram na etapa de autenticação/plataforma)
-  'imobiliarias', 'dominios', 'login_indice', 'gestores', 'chaves_integracao', 'auditoria_plataforma',
+  // plataforma: cadastro das imobiliárias, domínios, índice de login (e-mail → imobiliária), gestores e auditoria
+  'imobiliarias', 'dominios', 'login_indice', 'gestores', 'auditoria_plataforma',
+  // sessões de login: comuns, com imobiliaria_id (e gestor_id para o gestor da plataforma). Cookie ruah_sessao.
+  'sessoes',
+  // prevista (ainda não criada): chaves de integração por imobiliária
+  'chaves_integracao',
 ];
 
 const PRIVADAS = [
@@ -24,9 +28,6 @@ const PRIVADAS = [
   'fisguei_pessoas', 'fisguei_contatos', 'fisguei_mensagens', 'fisguei_pedidos', 'fisguei_bloqueios',
   'agente_mensagens', 'agente_eventos', 'agente_afazeres', 'agente_midias',
   'condominio_alertas', 'config', 'auditoria',
-  // TODO(fase1 · etapa de autenticação): sessoes vai para a base (comum, com imobiliaria_id) junto com login_indice.
-  // Por enquanto continua privada, para o login atual seguir igual.
-  'sessoes',
 ];
 
 const MAPA = Object.freeze(Object.fromEntries([...COMUNS.map((t) => [t, 'comum']), ...PRIVADAS.map((t) => [t, 'privada'])]));
