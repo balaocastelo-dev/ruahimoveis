@@ -39,11 +39,16 @@ function enriquece(lista) {
   for (const a of porIds(`SELECT a.imovel_id, a.id, a.fisgar_id,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=a.id AND p.status='confirmou') AS conf,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=a.id AND p.consultado=1) AS consultadas,
-      (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id WHERE p.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS contato
+      (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id WHERE p.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS contato,
+      (SELECT d.status FROM fisguei_pedidos d WHERE d.anuncio_id=a.id ORDER BY d.id DESC LIMIT 1) AS pedido
     FROM fisguei_anuncios a WHERE a.imovel_id IN (?)`, ids)) {
     const v = fg.get(a.imovel_id) || { ids: [], conf: 0, consultadas: 0, contato: 0, radar: false };
     v.ids.push(a.id); v.conf += Number(a.conf) || 0; v.consultadas += Number(a.consultadas) || 0; v.contato += Number(a.contato) || 0;
     if (String(a.fisgar_id || '').startsWith('op:')) v.radar = true;
+    if (String(a.fisgar_id || '').startsWith('im:')) v.daCarteira = true; // registro criado só para buscar o dono pela carteira
+    // busca de dono no Fisgar: a mais "viva" entre os anúncios do imóvel
+    const PESO = { buscando: 5, fila: 4, escolher: 3, sem_resultado: 2, erro: 1, concluido: 0 };
+    if (a.pedido && (!v.pedido || (PESO[a.pedido] ?? 0) > (PESO[v.pedido.status] ?? 0))) v.pedido = { status: a.pedido, anuncio_id: a.id };
     fg.set(a.imovel_id, v);
   }
   const op = new Set(porIds('SELECT imovel_id FROM oportunidades WHERE imovel_id IN (?)', ids).map((o) => o.imovel_id));
@@ -60,7 +65,7 @@ function enriquece(lista) {
     else if ((f && f.conf) || (d && !doFisgar)) etapa = 'confirmado';
     else if ((f && f.contato) || i.status === 'aguardando_autorizacao' || as === 'pendente') etapa = 'em_contato';
     else if (d) etapa = 'localizado';
-    const origem = f ? (f.radar && !f.consultadas ? 'radar' : 'fisgar') : op.has(i.id) ? 'radar' : 'cadastro';
+    const origem = f && !(f.daCarteira && f.ids.length === 1) ? (f.radar && !f.consultadas ? 'radar' : 'fisgar') : op.has(i.id) ? 'radar' : 'cadastro';
     const nFotos = i.n_fotos ?? (i.fotos ? i.fotos.length : 0);
     const itens = [
       ['fotos', 'Fotos próprias', nFotos > 0],
@@ -77,7 +82,7 @@ function enriquece(lista) {
     return {
       ...i, etapa, origem,
       dono: d ? { nome: d.nome, telefone: d.telefone, origem: d.origem_dado, confirmado: !doFisgar || !!(f && f.conf), nao_contatar: !!d.nao_contatar } : null,
-      fisguei_ids: f ? f.ids : [],
+      fisguei_ids: f ? f.ids : [], busca_dono: f && f.pedido ? f.pedido : null,
       ficha: { pct: Math.round((ok / itens.length) * 100), falta: itens.filter((x) => !x[2]).map((x) => x[1]) },
     };
   });

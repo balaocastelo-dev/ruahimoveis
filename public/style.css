@@ -1082,3 +1082,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .mk-neg a{min-width:64px;justify-content:center}
 /* logo da imobiliária (instalação com tema) */
 .brand-logo{display:block;max-width:100%;height:auto;max-height:54px;margin:0 0 8px}
+
+/* Busca em toda a base (vitrines + carteira), 28/10/2026 */
+.mk-busca{position:relative;display:flex;gap:8px;align-items:center;margin:0 0 12px}
+.mk-busca .inp{flex:1;min-width:0;max-width:none;padding-left:36px}
+.mk-busca-i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:18px;pointer-events:none}
+.mk-busca-res{margin:0 0 16px;border-color:var(--gold)}
+.mk-busca-h{margin:14px 0 8px;font-size:15px}
+.mk-busca-res .mk-linha{flex-wrap:wrap}
+.mk-motivo{margin-top:4px;color:var(--gold);font-weight:600}

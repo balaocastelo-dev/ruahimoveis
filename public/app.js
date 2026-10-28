@@ -331,10 +331,32 @@ const semFotoPortal = (i) => (i.status === 'publicado' && i.n_fotos != null && !
 const etapaPill = (k) => (k ? `<span class="pill ${ETAPA_COR[k] || 'info'}">${esc(etapaNome(k))}</span>` : '');
 const fichaBarra = (f) => (f ? `<span class="cart-ficha${f.pct === 100 ? ' ok' : ''}" title="${esc(f.falta.length ? 'Falta: ' + f.falta.join(', ') : 'Ficha completa')}"><i style="width:${f.pct}%"></i><b>Ficha ${f.pct}%</b></span>` : '');
 const donoLinha = (i) => (i.dono ? `<div class="cart-dono small">Dono: <b>${esc(i.dono.nome)}</b>${i.dono.telefone ? ' · ' + esc(tel(i.dono.telefone)) : ' · <span class="muted">sem telefone</span>'}${i.dono.confirmado ? '' : ' <span class="muted">(a confirmar)</span>'}</div>` : (i.etapa ? '<div class="cart-dono small muted">Sem dados do proprietário</div>' : ''));
+// ---------- localizar proprietário direto da carteira (sem voltar às vitrines da base) ----------
+const BUSCA_DONO = { fila: ['warn', 'Na fila da consulta'], buscando: ['warn', 'Buscando o dono…'], sem_resultado: ['bad', 'A consulta não achou dono'], erro: ['bad', 'A busca falhou'] };
+function cartAcoes(i) {
+  if (i.dono) return '';
+  const b = i.busca_dono;
+  if (b && b.status === 'escolher') return `<a class="btn sm" href="#/fisguei/${b.anuncio_id}" title="Prédio com várias pessoas no endereço: escolha quem consultar">Prédio: escolher quem consultar</a>`;
+  if (b && ['fila', 'buscando'].includes(b.status)) return `<span class="pill ${BUSCA_DONO[b.status][0]}">${BUSCA_DONO[b.status][1]}</span>`;
+  if (!i.logradouro || !i.numero) return `<a class="btn sm" href="#/imoveis/${i.id}/editar" title="A consulta acha o dono pela rua e número">Completar endereço para localizar o dono</a>`;
+  const aviso = b && BUSCA_DONO[b.status] ? `<span class="pill ${BUSCA_DONO[b.status][0]}">${BUSCA_DONO[b.status][1]}</span>` : '';
+  return `${aviso}<button type="button" class="btn sm pri" data-act="cart-loc" data-id="${i.id}" title="Busca o dono pela rua e número na consulta de proprietários (gasta créditos)">${b ? 'Tentar de novo' : 'Localizar proprietário'}</button>`;
+}
+async function cartLocaliza(ids) {
+  if (!ids.length) return;
+  if (ids.length > 1 && !confirm(`Localizar o proprietário de ${ids.length} imóveis da carteira? Cada endereço pode gastar alguns créditos da consulta de proprietários. Quem for achado entra direto na ficha do imóvel.`)) return;
+  const r = ids.length === 1 ? await api('POST', `/api/imoveis/${ids[0]}/localizar-dono`) : await api('POST', '/api/imoveis/localizar-dono', { ids });
+  const partes = [r.criados && `${r.criados} busca(s) na fila`, r.ja && `${r.ja} já estava(m) na fila`, r.sem_endereco && `${r.sem_endereco} sem rua e número`].filter(Boolean);
+  toast((partes.join(' · ') || 'Nada para buscar') + (r.criados ? '. Quando o dono for achado, ele aparece na ficha.' : ''));
+  if (r.criados && !(r.extensao && r.extensao.vivo && r.extensao.fisgar_aberto)) setTimeout(() => toast('A busca acontece quando o Fisgar estiver aberto no Chrome com a extensão.', true), 1200);
+  rota();
+}
+ACT['cart-loc'] = (el) => comBotao(el, () => cartLocaliza([+el.dataset.id]));
+ACT['cart-loc-todos'] = (el) => comBotao(el, () => cartLocaliza(el.dataset.ids.split(',').map(Number)));
 const imTabela = (l) => `<div class="card tbl"><table><thead><tr><th>Código</th><th>Imóvel</th><th>Bairro</th><th class="num">Valor</th><th>Etapa</th><th>Dono</th><th>Ficha</th><th>Corretor</th></tr></thead><tbody>
   ${l.map((i) => `<tr class="click" data-act="ir" data-href="#/imoveis/${i.id}"><td class="mono"><span class="row" style="gap:8px;flex-wrap:nowrap">${miniFoto(i)}${esc(i.codigo)}</span></td><td><b>${esc(i.tipo)}</b><br><span class="muted">${esc(imSub(i))}${i.quartos ? ' · ' + i.quartos + 'q' : ''}${i.area_util ? ' · ' + Math.round(i.area_util) + ' m²' : ''}</span></td>
   <td>${esc(i.bairro)}</td><td class="num">${brl(i.valor)}</td><td>${etapaPill(i.etapa)}${semFotoPortal(i)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}<br><span class="muted small">${STATUS[i.status] ? STATUS[i.status][0] : ''}</span></td>
-  <td class="small">${i.dono ? `${esc(i.dono.nome)}${i.dono.telefone ? '<br><span class="muted">' + esc(tel(i.dono.telefone)) + '</span>' : ''}` : '<span class="muted">—</span>'}</td><td>${fichaBarra(i.ficha)}</td><td>${esc(i.corretor_nome)}</td></tr>`).join('')}</tbody></table></div>`;
+  <td class="small">${i.dono ? `${esc(i.dono.nome)}${i.dono.telefone ? '<br><span class="muted">' + esc(tel(i.dono.telefone)) + '</span>' : ''}` : cartAcoes(i) || '<span class="muted">—</span>'}</td><td>${fichaBarra(i.ficha)}</td><td>${esc(i.corretor_nome)}</td></tr>`).join('')}</tbody></table></div>`;
 // Cards de imóvel com foto, usados em toda parte (lista, painel, lead).
 // o.badge(i): selo sobre a foto · o.extra(i): conteúdo extra no corpo · o.acoes(i): botões abaixo do card · o.mini: cards menores
 const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l.map((i) => {
@@ -401,7 +423,10 @@ function imDesenha() {
   const fl = $('#cart-filtros'); if (fl) fl.innerHTML = cartFiltrosHTML();
   const l = cartFiltra(IM_LISTA);
   const ct = $('#cart-ct'); if (ct) ct.textContent = `${l.length.toLocaleString('pt-BR')} de ${IM_LISTA.length.toLocaleString('pt-BR')} imóve${IM_LISTA.length === 1 ? 'l' : 'is'}${CART_F.portal && !CART_PORTAL ? ' · lendo o portal…' : ''}`;
-  $('#tb-im').innerHTML = l.length ? (modo === 'lista' ? imTabela(l) : imCards(l, { carteira: true }))
+  const semDono = l.filter((i) => !i.dono && i.logradouro && i.numero && !(i.busca_dono && ['fila', 'buscando', 'escolher'].includes(i.busca_dono.status)));
+  const lote = $('#cart-lote');
+  if (lote) lote.innerHTML = semDono.length > 1 ? `<button type="button" class="btn sm" data-act="cart-loc-todos" data-ids="${semDono.slice(0, 200).map((i) => i.id).join(',')}" title="Busca o dono de cada um na consulta de proprietários (gasta créditos)">Localizar proprietário dos ${Math.min(semDono.length, 200)} sem dono</button>` : '';
+  $('#tb-im').innerHTML = l.length ? (modo === 'lista' ? imTabela(l) : imCards(l, { carteira: true, acoes: cartAcoes }))
     : IM_LISTA.length ? '<div class="card"><div class="empty">Nenhum imóvel com esses filtros. <a href="#" data-act="cart-limpa">Limpar filtros</a></div></div>'
       : '<div class="card"><div class="empty">A carteira está vazia. Escolha imóveis nas vitrines da base (Apartamentos, Casas…) e clique em <b>Localizar proprietário</b>, ou <a href="#/imoveis/novo">cadastre um imóvel</a>.</div></div>';
 }
@@ -433,10 +458,10 @@ async function telaImoveis(qs) {
   <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado pela consulta de proprietários. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
   <div class="seg cart-neg" role="group" aria-label="Venda ou locação" id="cart-neg" style="margin-bottom:10px"></div>
   <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
-  <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
+  <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, dono, telefone do dono, condomínio, rua ou bairro" type="search" style="flex:1;min-width:200px;max-width:none">
   <div class="seg" role="group" aria-label="Modo de exibição"><button type="button" data-act="im-modo" data-modo="cards" title="Ver em cards com fotos">▦ Cards</button><button type="button" data-act="im-modo" data-modo="lista" title="Ver em lista">☰ Lista</button></div>
   <a class="btn pri" href="#/imoveis/novo">+ Novo imóvel</a></div>
-  <div class="row cart-filtros" id="cart-filtros"></div><p class="muted small" id="cart-ct" style="margin:6px 0 12px"></p><div id="tb-im"></div>`;
+  <div class="row cart-filtros" id="cart-filtros"></div><div class="row" style="margin:6px 0 12px;justify-content:space-between"><p class="muted small" id="cart-ct" style="margin:0"></p><span id="cart-lote"></span></div><div id="tb-im"></div>`;
   const carrega = async () => {
     IM_LISTA = await api('GET', '/api/imoveis?' + new URLSearchParams({ q: $('#busca-im').value }));
     if ($('#tb-im')) imDesenha();
@@ -549,7 +574,7 @@ function abaDados(im) {
     <div class="grid" style="gap:16px;align-content:start">
     <div class="card"><h3>Valores</h3><dl class="dl"><dt>Negócio</dt><dd>${esc(FINALIDADE[im.finalidade || 'venda'])}</dd>${im.finalidade !== 'locacao' ? `<dt>Venda</dt><dd><b>${brl(im.valor)}</b></dd>` : ''}${im.finalidade && im.finalidade !== 'venda' ? `<dt>Aluguel</dt><dd><b>${brl(im.valor_locacao)}</b>/mês</dd>` : ''}<dt>Valor/m²</dt><dd>${im.valor && im.area_util ? brl(im.valor / im.area_util) : '—'}</dd><dt>Condomínio</dt><dd>${brl(im.valor_condominio)}</dd><dt>IPTU</dt><dd>${brl(im.iptu)}</dd></dl></div>
     <div class="card"><h3>Condomínio</h3><dl class="dl"><dt>Nome</dt><dd>${esc(im.condominio_nome || '—')}</dd><dt>Ano</dt><dd>${esc(im.ano_construcao || '—')}</dd><dt>Lazer</dt><dd>${esc(im.lazer || '—')}</dd><dt>Adm.</dt><dd>${esc(im.administradora || '—')}</dd></dl></div>
-    <div class="card"><h3>Proprietário</h3>${p ? `<dl class="dl"><dt>Nome</dt><dd>${esc(p.nome)}</dd><dt>CPF</dt><dd>${esc(p.cpf || '—')}</dd><dt>Telefone</dt><dd>${esc(tel(p.telefone) || '—')}</dd><dt>E-mail</dt><dd>${esc(p.email || '—')}</dd><dt>Origem</dt><dd>${esc(p.origem_dado)}</dd></dl>${p.nao_contatar ? '<span class="pill bad" style="margin-top:8px">não contatar</span>' : ''}` : `<p class="muted" style="margin:0">Não cadastrado. <a href="#/imoveis/${im.id}/editar">Adicionar</a></p>`}
+    <div class="card"><h3>Proprietário</h3>${p ? `<dl class="dl"><dt>Nome</dt><dd>${esc(p.nome)}</dd><dt>CPF</dt><dd>${esc(p.cpf || '—')}</dd><dt>Telefone</dt><dd>${esc(tel(p.telefone) || '—')}</dd><dt>E-mail</dt><dd>${esc(p.email || '—')}</dd><dt>Origem</dt><dd>${esc(p.origem_dado)}</dd></dl>${p.nao_contatar ? '<span class="pill bad" style="margin-top:8px">não contatar</span>' : ''}` : `<p class="muted" style="margin:0 0 8px">Não cadastrado. <a href="#/imoveis/${im.id}/editar">Adicionar à mão</a> ou localize pela consulta de proprietários:</p><div class="row" style="gap:8px">${cartAcoes({ ...im, dono: null })}</div>`}
       <div class="row" style="margin-top:10px">${im.exclusivo ? `<span class="pill gold">Exclusivo${im.exclusivo_ate ? ' até ' + new Date(im.exclusivo_ate + 'T12:00').toLocaleDateString('pt-BR') : ''}</span>` : '<span class="pill warn">Sem exclusividade</span>'}</div></div>
     ${im.ficha ? `<div class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Ficha</h3>${fichaBarra(im.ficha)}</div>
       ${im.ficha.falta.length ? `<ul class="cart-falta">${im.ficha.falta.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="muted small" style="margin:8px 0 0">Tudo preenchido.</p>'}</div>` : ''}

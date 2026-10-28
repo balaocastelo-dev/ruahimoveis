@@ -80,7 +80,7 @@ function carregaBase() {
   const linhas = all(`SELECT a.id, a.fisgar_id, a.portal, a.tipo, a.finalidade, a.titulo, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.lat, a.lon,
       a.valor, a.valor_condominio, a.iptu, a.quartos, a.suites, a.banheiros, a.vagas, a.area_util, a.area_total, a.anunciante_nome, a.anunciante_tipo,
       a.publicado_em, a.anunciado_desde, substr(a.fotos,1,900) AS fotos, (length(coalesce(a.fotos,'')) - length(replace(coalesce(a.fotos,''),'"http','')))/5 AS fotos_total, a.status, a.pausado, a.oportunidade_id, a.imovel_id, a.condominio_id, a.criado_em, a.atualizado_em
-    FROM fisguei_anuncios a WHERE coalesce(a.negocio,'Venda') <> 'Locação'`); // a leitura (preço x bairro) é da venda; locação fica nas vitrines
+    FROM fisguei_anuncios a WHERE coalesce(a.negocio,'Venda') <> 'Locação' AND coalesce(a.fisgar_id,'') NOT LIKE 'im:%'`); // 'im:' = endereço da carteira, só para buscar o dono // a leitura (preço x bairro) é da venda; locação fica nas vitrines
   const pes = new Map(all(`SELECT anuncio_id, count(*) AS n, coalesce(sum(consultado),0) AS cons, coalesce(sum(CASE WHEN status='confirmou' THEN 1 ELSE 0 END),0) AS conf,
       coalesce(sum(CASE WHEN status='respondeu' THEN 1 ELSE 0 END),0) AS resp FROM fisguei_pessoas GROUP BY anuncio_id`).map((x) => [x.anuncio_id, x]));
   const fila = new Map(all(`SELECT x.anuncio_id, count(*) AS n FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE c.tipo='tel' AND c.envio='fila' GROUP BY x.anuncio_id`).map((x) => [x.anuncio_id, x.n]));

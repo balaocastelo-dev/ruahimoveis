@@ -131,6 +131,39 @@ global.fetch = async (url, op) => {
   assert.ok(cp.bairros.some((b) => /Cambu/i.test(b.nome) && b.radar === 2));
   assert.equal(cp.vitrines.find((v) => v.chave === 'terrenos').n, 2);
 
+  // ---------- busca em toda a base: código, endereço, dono, telefone ----------
+  const m2id = (await req('GET', '/api/mercado/imoveis?bairro=CAMBUI&rua=RUA%20CORONEL%20QUIRINO')).j.find((x) => x.numero === '1200').id;
+  const b1 = ok(await req('GET', '/api/mercado/busca?q=FG-' + String(m2id).padStart(5, '0')), 'busca pelo código FG');
+  assert.equal(b1.imoveis[0].id, m2id); assert.equal(b1.imoveis[0].motivo, 'código'); assert.equal(b1.imoveis[0].vitrine, 'apartamentos'); assert.ok(b1.imoveis[0].situ);
+  const b2 = ok(await req('GET', '/api/mercado/busca?q=' + encodeURIComponent('coronel quirino 1200')), 'busca por rua e número');
+  assert.equal(b2.imoveis.length, 1); assert.equal(b2.imoveis[0].numero, '1200');
+  const pes = run("INSERT INTO fisguei_pessoas(anuncio_id,chave,nome,relacao,consultado) VALUES(?,?,?,?,1)", m2id, 'n:jose', 'JOSE DA SILVA PRADO', 'Possível proprietário').lastInsertRowid;
+  run("INSERT INTO fisguei_contatos(pessoa_id,tipo,valor) VALUES(?,'tel','5519991234567')", pes);
+  const b3 = ok(await req('GET', '/api/mercado/busca?q=' + encodeURIComponent('José da Silva')), 'busca pelo nome do dono (com acento)');
+  assert.equal(b3.imoveis[0].id, m2id); assert.match(b3.imoveis[0].motivo, /^dono: JOSE/);
+  const b4 = ok(await req('GET', '/api/mercado/busca?q=' + encodeURIComponent('(19) 99123-4567')), 'busca pelo telefone do dono');
+  assert.equal(b4.imoveis[0].id, m2id);
+  assert.equal(ok(await req('GET', '/api/mercado/busca?q=zzzqqq'), 'busca sem resultado').imoveis.length, 0);
+
+  // ---------- carteira: buscar pelo dono e localizar o proprietário sem voltar às vitrines ----------
+  const novo = ok(await req('POST', '/api/imoveis', { tipo: 'Casa', status: 'captacao', logradouro: 'Rua das Palmeiras', numero: '77', bairro: 'Taquaral', cidade: 'Campinas', uf: 'SP', valor: 1800000,
+    proprietario: { nome: 'Maria Aparecida Teste', telefone: '(19) 98888-1111' } }), 'imóvel cadastrado na carteira');
+  const imId = novo.id;
+  assert.equal(ok(await req('GET', '/api/imoveis?q=' + encodeURIComponent('Maria Aparecida')), 'carteira: busca pelo nome do dono').length, 1);
+  assert.equal(ok(await req('GET', '/api/imoveis?q=98888'), 'carteira: busca pelo telefone do dono').length, 1);
+  const bc = ok(await req('GET', '/api/mercado/busca?q=' + encodeURIComponent('Maria Aparecida')), 'busca da base acha a carteira');
+  assert.equal(bc.carteira.length, 1); assert.equal(bc.carteira[0].id, imId);
+  const sem = ok(await req('POST', '/api/imoveis', { tipo: 'Casa', status: 'captacao', bairro: 'Cambuí', cidade: 'Campinas', uf: 'SP', valor: 1500000 }), 'imóvel sem endereço');
+  assert.equal((await req('POST', `/api/imoveis/${sem.id}/localizar-dono`)).s, 400, 'sem rua e número não busca');
+  const ld = ok(await req('POST', `/api/imoveis/${imId}/localizar-dono`), 'localizar proprietário pela carteira');
+  assert.equal(ld.criados, 1); assert.ok(ld.anuncio_id);
+  assert.equal((await req('POST', `/api/imoveis/${imId}/localizar-dono`)).j.ja, true, 'não duplica a busca');
+  const fichaC = ok(await req('GET', `/api/imoveis/${imId}`), 'ficha mostra a busca'); assert.equal(fichaC.busca_dono.status, 'fila'); assert.equal(fichaC.origem, 'cadastro');
+  const resumoDepois = ok(await req('GET', '/api/mercado/resumo?min=0'), 'o endereço da carteira não entra nas vitrines');
+  assert.equal(resumoDepois.base, (await req('GET', '/api/mercado/resumo?min=0')).j.base);
+  assert.ok(!(await req('GET', '/api/mercado/busca?q=' + encodeURIComponent('palmeiras 77'))).j.imoveis.length, 'nem na busca da base');
+  const lote = ok(await req('POST', '/api/imoveis/localizar-dono', { ids: [imId, sem.id] }), 'localizar vários pela carteira'); assert.equal(lote.ja, 1); assert.equal(lote.sem_endereco, 1);
+
   srv.close();
   console.log('\nMercado: tudo certo.');
   process.exit(0);

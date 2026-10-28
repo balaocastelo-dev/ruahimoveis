@@ -40,7 +40,17 @@ r.get('/', (req, res) => {
   if (req.query.status) { w += ' AND i.status=?'; p.push(req.query.status); }
   if (req.query.neg === 'locacao') w += " AND i.finalidade IN ('locacao','venda_locacao')";
   else if (req.query.neg === 'venda') w += " AND i.finalidade IN ('venda','venda_locacao')";
-  if (req.query.q) { w += ' AND (i.codigo LIKE ? OR c.nome LIKE ? OR i.bairro LIKE ? OR i.logradouro LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q, q); }
+  if (req.query.q) {
+    // código, condomínio, rua, bairro, nome ou telefone do dono (o da ficha e quem a consulta trouxe para o endereço)
+    const t = String(req.query.q).trim().slice(0, 80), q = `%${t}%`, qs = `%${require('../condominios/geo').semAcento(t)}%`;
+    const d = t.replace(/\D/g, ''), tel = /^[\d\s().+-]+$/.test(t) && d.length >= 5 ? `%${d.replace(/^55(?=\d{10,11}$)/, '').slice(-9)}%` : null;
+    const telSQL = (col) => `replace(replace(replace(replace(replace(coalesce(${col},''),'(',''),')',''),' ',''),'-',''),'+','')`;
+    w += ` AND (i.codigo LIKE ? OR c.nome LIKE ? OR i.bairro LIKE ? OR i.logradouro LIKE ? OR i.unidade LIKE ?
+      OR i.proprietario_id IN (SELECT pr.id FROM proprietarios pr WHERE pr.nome LIKE ? OR pr.nome LIKE ?${tel ? ` OR ${telSQL('pr.telefone')} LIKE ?` : ''})
+      OR i.id IN (SELECT a.imovel_id FROM fisguei_anuncios a JOIN fisguei_pessoas x ON x.anuncio_id=a.id WHERE a.imovel_id IS NOT NULL AND (x.nome LIKE ? OR x.nome LIKE ?))
+      ${tel ? `OR i.id IN (SELECT a.imovel_id FROM fisguei_anuncios a JOIN fisguei_pessoas x ON x.anuncio_id=a.id JOIN fisguei_contatos ct ON ct.pessoa_id=x.id WHERE a.imovel_id IS NOT NULL AND ${telSQL('ct.valor')} LIKE ?)` : ''})`;
+    p.push(q, q, q, q, q, q, qs, ...(tel ? [tel] : []), q, qs, ...(tel ? [tel] : []));
+  }
   const fotos = `${require('../services/fotos-internas').capaSQL('i')} capa,
     (SELECT count(*) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') n_fotos`;
   res.json(carteira.enriquece(all(`${SELECT.replace('SELECT i.*,', 'SELECT i.*, ' + fotos + ',')} ${w} ORDER BY i.atualizado_em DESC LIMIT 3000`, ...p).map(semDono)).map(({ descricao, ...i }) => i));
@@ -63,6 +73,51 @@ r.get('/:id/fisgar', (req, res) => {
   });
 });
 
+// "Localizar proprietário" direto da carteira: o imóvel já está em operação, então não precisa voltar às vitrines da base.
+// Usa o anúncio da base ligado ao imóvel; se não houver, cria um registro só com o endereço (sem valor nem fotos: não aparece
+// nas vitrines) e põe a busca na fila do Fisgar. Quando o Fisgar responde, o dono vai para a ficha (proprietário digitado
+// pela equipe nunca é trocado).
+function localizarDono(im, usuario) {
+  if (!im.logradouro || !im.numero) return { erro: 'sem_endereco' };
+  const P = require('../fisguei/pedidos');
+  let an = one('SELECT id FROM fisguei_anuncios WHERE imovel_id=? ORDER BY id LIMIT 1', im.id);
+  if (!an) {
+    const F = require('../fisguei/base');
+    const slug = String(cfg.CLIENTE_NOME || 'cliente').normalize('NFD').replace(/[^a-z0-9]/gi, '').toLowerCase();
+    const id = F.salvaAnuncio({ fisgar_id: `im:${slug}:${im.id}`, portal: 'Carteira', tipo: im.tipo, negocio: im.finalidade === 'locacao' ? 'Locação' : 'Venda',
+      logradouro: im.logradouro, numero: im.numero, complemento: im.unidade || null, bairro: im.bairro, cidade: im.cidade || cfg.CIDADE_PADRAO, uf: im.uf || 'SP', cep: im.cep || null,
+      lat: im.lat, lon: im.lon, quartos: im.quartos, suites: im.suites, vagas: im.vagas, area_util: im.area_util, area_total: im.area_total, anunciante_tipo: 'desconhecido' });
+    run(`UPDATE fisguei_anuncios SET imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, im.id, id);
+    an = { id };
+  }
+  const out = P.pedeEndereco(an.id, usuario.id);
+  if (out.erro) return { erro: 'sem_endereco' };
+  return { ...out, anuncio_id: an.id };
+}
+const extrasFisgar = () => { const P = require('../fisguei/pedidos'); return { por_busca: 1 + P.limites().max_consultas, creditos: require('../fisguei/inteligencia').creditos(), extensao: P.resumo().extensao }; };
+const SEM_END = 'Preencha a rua e o número do imóvel: a consulta de proprietários acha o dono pelo endereço.';
+r.post('/localizar-dono', (req, res) => {
+  const ids = (Array.isArray(req.body && req.body.ids) ? req.body.ids : []).map((x) => parseInt(x, 10)).filter(Number.isFinite).slice(0, 200);
+  if (!ids.length) falha(400, 'Escolha ao menos um imóvel.');
+  const out = { criados: 0, ja: 0, sem_endereco: 0 };
+  for (const id of ids) {
+    try { imovelPermitido(req.usuario, id); } catch { continue; }
+    const im = one('SELECT * FROM imoveis WHERE id=?', id); if (!im) continue;
+    const r0 = localizarDono(im, req.usuario);
+    if (r0.erro) out.sem_endereco++; else if (r0.ja) out.ja++; else out.criados++;
+  }
+  audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) de proprietário pela carteira`);
+  res.json({ ...out, ...extrasFisgar() });
+});
+r.post('/:id/localizar-dono', (req, res) => {
+  imovelPermitido(req.usuario, req.params.id);
+  const im = one('SELECT * FROM imoveis WHERE id=?', req.params.id);
+  const out = localizarDono(im, req.usuario);
+  if (out.erro) falha(400, SEM_END);
+  audit(req.usuario.id, 'fisguei.buscar', `${im.codigo}: localizar proprietário pela carteira`);
+  res.json({ ...out, criados: out.ja ? 0 : 1, ...extrasFisgar() });
+});
+
 r.get('/:id', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
   const im = one(`${SELECT} WHERE i.id=?`, req.params.id);
@@ -72,7 +127,7 @@ r.get('/:id', (req, res) => {
   const internas = all("SELECT id,nome FROM arquivos WHERE imovel_id=? AND categoria='Fotos internas' ORDER BY id", im.id).map((f) => ({ ...f, interna: true }));
   const fotos = [...proprias, ...internas];
   const [extra] = carteira.enriquece([{ ...im, n_fotos: proprias.length }]);
-  res.json({ ...semDono(im), etapa: extra.etapa, origem: extra.origem, ficha: extra.ficha, fisguei_ids: extra.fisguei_ids, proprietario: dono, fotos, drive_link: im.drive_pasta_id && A.veTudo(req.usuario) ? `https://drive.google.com/drive/folders/${im.drive_pasta_id}` : null });
+  res.json({ ...semDono(im), etapa: extra.etapa, origem: extra.origem, ficha: extra.ficha, fisguei_ids: extra.fisguei_ids, busca_dono: extra.busca_dono, proprietario: dono, fotos, drive_link: im.drive_pasta_id && A.veTudo(req.usuario) ? `https://drive.google.com/drive/folders/${im.drive_pasta_id}` : null });
 });
 
 function salvarCondominio(b) {

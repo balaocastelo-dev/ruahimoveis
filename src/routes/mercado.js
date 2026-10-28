@@ -318,6 +318,111 @@ function situacao(cards) {
     return { ...c, situ };
   });
 }
+// ---------- busca em toda a base: nome, código, dono, telefone, endereço, condomínio ----------
+// Procura nas quatro vitrines de uma vez (e na carteira). Pelo dono: quem o Fisgar trouxe para o endereço e o proprietário
+// da ficha dos imóveis da carteira. Devolve os cartões no mesmo formato das vitrines (com "Localizar proprietário").
+const digitos = (s) => String(s || '').replace(/\D/g, '');
+const TEL_SQL = (col) => `replace(replace(replace(replace(replace(coalesce(${col},''),'(',''),')',''),' ',''),'-',''),'+','')`;
+function idsEmLote(sql, ids) {
+  const out = []; const l = [...ids];
+  for (let i = 0; i < l.length; i += 400) { const parte = l.slice(i, i + 400); out.push(...all(sql.replace('(?)', `(${parte.map(() => '?').join(',')})`), ...parte)); }
+  return out;
+}
+function busca(req) {
+  const q = String(req.query.q || '').replace(/\s+/g, ' ').trim().slice(0, 80);
+  const vazio = { q, imoveis: [], carteira: [], total: 0 };
+  if (q.length < 2) return vazio;
+  const A = require('../auth');
+  const ve = A.veTudo(req.usuario);
+  const loc = ehLoc(req.query);
+  const nota = new Map(); // id do cartão (anúncio > 0, Radar < 0) → { n: relevância, motivo }
+  const marca = (id, n, motivo) => { const v = nota.get(id); if (!v || v.n < n) nota.set(id, { n, motivo }); };
+  const like = `%${q}%`, likeSem = `%${G.semAcento(q)}%`;
+  const d = digitos(q), soNumero = /^[\d\s().+-]+$/.test(q);
+  const telLike = soNumero && d.length >= 5 ? `%${d.replace(/^55(?=\d{10,11}$)/, '').slice(-9)}%` : null;
+
+  // 1) códigos: FG-01234, OP-0012 e o código da carteira (AP0029)
+  let m;
+  if ((m = q.match(/^fg[-\s]?0*(\d{1,7})$/i))) marca(+m[1], 100, 'código');
+  if ((m = q.match(/^op[-\s]?0*(\d{1,7})$/i))) marca(-m[1], 100, 'código');
+
+  // 2) carteira: código, dono (nome ou telefone), condomínio, rua, bairro
+  const pw = [], pp = [];
+  pw.push('i.codigo LIKE ?', 'p.nome LIKE ?', 'p.nome LIKE ?', 'c.nome LIKE ?', 'i.logradouro LIKE ?', 'i.bairro LIKE ?'); pp.push(like, like, likeSem, like, like, like);
+  if (telLike) { pw.push(`${TEL_SQL('p.telefone')} LIKE ?`); pp.push(telLike); }
+  pw.push(`i.id IN (SELECT a.imovel_id FROM fisguei_anuncios a JOIN fisguei_pessoas x ON x.anuncio_id=a.id WHERE a.imovel_id IS NOT NULL AND (x.nome LIKE ? OR x.nome LIKE ?))`); pp.push(like, likeSem);
+  const carteiraRows = all(`SELECT i.id, i.codigo, i.tipo, i.status, i.logradouro, i.numero, i.unidade, i.bairro, i.valor, i.valor_locacao, i.finalidade, i.corretor_id, i.proprietario_id, i.cep,
+      i.area_util, i.area_total, i.descricao, i.atualizado_em, c.nome condominio_nome, u.nome corretor_nome
+    FROM imoveis i LEFT JOIN proprietarios p ON p.id=i.proprietario_id LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
+    WHERE (${pw.join(' OR ')})${ve ? '' : ' AND i.corretor_id=?'} ORDER BY CASE WHEN i.codigo LIKE ? THEN 0 ELSE 1 END, i.atualizado_em DESC LIMIT 40`, ...pp, ...(ve ? [] : [req.usuario.id]), q + '%');
+  const carteira = require('../services/carteira').enriquece(carteiraRows).map(({ descricao, ...i }) => i);
+  // os anúncios da base ligados a esses imóveis também aparecem (já estão na carteira)
+  if (carteira.length) {
+    for (const a of idsEmLote('SELECT id, imovel_id FROM fisguei_anuncios WHERE imovel_id IN (?)', carteira.map((i) => i.id))) {
+      const im = carteira.find((i) => i.id === a.imovel_id); marca(a.id, 60, `na carteira · ${im.codigo}`);
+    }
+    for (const o of idsEmLote('SELECT id, imovel_id FROM oportunidades WHERE imovel_id IN (?)', carteira.map((i) => i.id))) {
+      const im = carteira.find((i) => i.id === o.imovel_id); marca(-o.id, 60, `na carteira · ${im.codigo}`);
+    }
+  }
+
+  // 3) dono que o Fisgar trouxe (nome ou telefone)
+  if (q.length >= 3 && !soNumero) {
+    for (const x of all(`SELECT anuncio_id, nome FROM fisguei_pessoas WHERE nome LIKE ? OR nome LIKE ? ORDER BY consultado DESC LIMIT 300`, like, likeSem)) marca(x.anuncio_id, 80, `dono: ${x.nome}`);
+  }
+  if (telLike) {
+    for (const x of all(`SELECT p.anuncio_id, p.nome FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id WHERE c.tipo='tel' AND ${TEL_SQL('c.valor')} LIKE ? LIMIT 200`, telLike)) marca(x.anuncio_id, 90, `telefone de ${x.nome}`);
+  }
+
+  // 4) condomínio pelo nome
+  const kq = G.chave(q);
+  if (kq.length >= 4 && !soNumero) {
+    const conds = all('SELECT id, nome FROM condominios WHERE nome_busca LIKE ? LIMIT 15', `%${kq}%`);
+    if (conds.length) {
+      for (const a of idsEmLote(`SELECT id, condominio_id FROM fisguei_anuncios WHERE condominio_id IN (?) AND status NOT IN ${FORA}`, conds.map((c) => c.id)).slice(0, 400)) {
+        const c = conds.find((y) => y.id === a.condominio_id); marca(a.id, 50, `condomínio ${c.nome}`);
+      }
+    }
+  }
+
+  // 5) endereço, bairro e anunciante, na base em memória (palavras + número da casa)
+  const palavras = G.chave(q).split(' ').filter((w) => w.length >= 2 && !/^\d+$/.test(w));
+  const numeros = q.match(/\b\d{1,6}\b/g) || [];
+  if (palavras.length && !soNumero) {
+    let n = 0;
+    for (const x of baseVitrine(req.query)) {
+      const txt = G.chave(`${x.logradouro || ''} ${x.bairro || ''} ${x.anunciante_nome || ''} ${x.titulo || ''}`);
+      if (!palavras.every((w) => txt.includes(w))) continue;
+      if (numeros.length && !numeros.includes(G.numero(x.numero))) continue;
+      const naRua = palavras.every((w) => G.chave(x.logradouro).includes(w));
+      marca(x.id, naRua ? (numeros.length ? 70 : 40) : 30, naRua ? 'endereço' : G.chave(x.bairro).includes(palavras[0]) ? 'bairro' : 'anunciante');
+      if (++n >= 600) break;
+    }
+  }
+  if (!nota.size) return { ...vazio, carteira };
+
+  // linhas completas dos anúncios achados (só Campinas, sem os descartados), mais as do Radar
+  const fg = [...nota.keys()].filter((id) => id > 0);
+  const cheios = idsEmLote(`SELECT ${COLS}, a.portal, a.cidade, a.fisgar_id FROM fisguei_anuncios a WHERE a.id IN (?) AND a.status NOT IN ${FORA}`, fg)
+    .filter((x) => !String(x.fisgar_id || '').startsWith('im:') && /^campinas/i.test(x.cidade || 'campinas'))
+    .map(({ cidade, fisgar_id, ...x }) => x);
+  const ops = new Set([...nota.keys()].filter((id) => id < 0));
+  if (ops.size) cheios.push(...doRadar({ min: '0' }).filter((x) => ops.has(x.id)));
+  const linhas = [];
+  for (const x of cheios) {
+    const comAluguel = x.aluguel > 0, comValor = x.valor > 0;
+    if (loc ? comAluguel : !comValor && comAluguel) linhas.push(paraLocacao(x)); else linhas.push(x);
+  }
+  const prontos = linhas.map((x) => { const cat = categoria(x); return { ...x, area_util: area(x, cat), subtipo: subtipo(x, cat), vitrine: cat }; });
+  const l = unicos(prontos);
+  const nDe = (x) => Math.max(...[x, ...(x.iguais || [])].map((y) => (nota.get(y.id) || { n: 0 }).n));
+  const motivoDe = (x) => { const v = [x, ...(x.iguais || [])].map((y) => nota.get(y.id)).filter(Boolean).sort((a, b) => b.n - a.n)[0]; return v ? v.motivo : ''; };
+  l.sort((a, b) => nDe(b) - nDe(a) || (b.valor || 0) - (a.valor || 0));
+  const cards = situacao(l.slice(0, 60).map((x) => ({ ...cartao(x), motivo: motivoDe(x) })));
+  return { q, total: l.length, imoveis: cards, carteira };
+}
+r.get('/mercado/busca', (req, res) => res.json(busca(req)));
+
 r.get('/mercado/mapa', (req, res) => {
   res.setHeader('Cache-Control', 'private, max-age=120');
   res.json(memo(req, () => unicos(naVitrine(filtra(baseVitrine(req.query), req.query).filter((x) => x.lat != null), req.query))
@@ -380,3 +485,4 @@ module.exports.esqueceBase = esqueceBase;
 module.exports.marcaGrupos = marcaGrupos;
 module.exports.categoria = categoria;
 module.exports.subtipo = subtipo;
+module.exports.ruaChave = ruaChave;
