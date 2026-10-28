@@ -11,7 +11,10 @@
     "sala"
   ],
   "capa": {
-    "alt": "Sala de estar com pé-direito alto, janelas altas de vidro, luz natural entrando e um sofá baixo de linho claro"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/banco-teste-pe-direito-alto-b91c4b4c.jpg",
+    "alt": "Sala de estar com pé-direito alto, janelas altas de vidro, luz natural entrando e um sofá baixo de linho claro",
+    "largura": 1600,
+    "altura": 900
   },
   "formato": "dica",
   "redes": {

@@ -1,12 +1,4 @@
 {
   "versao": 1,
-  "pendentes": [
-    {
-      "slug": "banco-teste-pe-direito-alto",
-      "alt": "Sala de estar com pé-direito alto, janelas altas de vidro, luz natural entrando e um sofá baixo de linho claro",
-      "pedido": "A tall double-height living room with large windows, white walls, light wooden floor, linen sofa and green plants, soft daylight, wide-angle interior photography",
-      "categoria": "construcao",
-      "pedidoEm": "2026-10-28T19:20:01.550Z"
-    }
-  ]
+  "pendentes": []
 }
