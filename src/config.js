@@ -28,7 +28,10 @@ module.exports = {
   BASE_URL: env('BASE_URL', process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : `http://localhost:${PORT}`),
   PUBLIC_URL: env('PUBLIC_URL', ''), // URL pública (túnel) para links de assinatura, off-market e webhook
   SECRET_KEY: env('SECRET_KEY'),
-  EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),
+  // Nome do sistema (o produto) e do cliente que usa esta instalação (a imobiliária).
+  SISTEMA_NOME: env('SISTEMA_NOME', 'Herrera HOUSE IA'),
+  CLIENTE_NOME: env('CLIENTE_NOME', 'RUAH'),                       // nome curto da imobiliária (marca no portal, blog, mensagens)
+  EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),      // razão/nome completo da imobiliária
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
 
@@ -43,8 +46,10 @@ module.exports = {
   WA_PHONE_ID: env('WA_PHONE_ID'),
   WA_VERIFY_TOKEN: env('WA_VERIFY_TOKEN'),
   WA_APP_SECRET: env('WA_APP_SECRET'),
-  // Número de WhatsApp da RUAH impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
-  WHATSAPP_RUAH: env('WHATSAPP_RUAH'),
+  // Número de WhatsApp da imobiliária impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
+  // WHATSAPP_RUAH é o nome antigo da variável e continua valendo.
+  WHATSAPP_CLIENTE: env('WHATSAPP_CLIENTE', env('WHATSAPP_RUAH')),
+  get WHATSAPP_RUAH() { return this.WHATSAPP_CLIENTE; },
   CUSTO_MATRICULA: parseFloat(env('CUSTO_MATRICULA', '0')) || 0,
   CUSTO_BIRO: parseFloat(env('CUSTO_BIRO', '0')) || 0,
 

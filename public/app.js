@@ -1,4 +1,6 @@
-/* Sistema RUAH — aplicativo (sem frameworks; todos os dados passam por esc() antes de virar HTML) */
+/* Herrera HOUSE IA — aplicativo (sem frameworks; todos os dados passam por esc() antes de virar HTML) */
+// Marca: nome do sistema e do cliente (imobiliária) vêm do servidor em /marca.js; estes são só os padrões.
+const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH', empresa: 'RUAH Investimentos Imobiliários' }, window.MARCA || {});
 'use strict';
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];

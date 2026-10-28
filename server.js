@@ -84,6 +84,12 @@ app.use(require('./src/routes/portal'));
 app.use(require('./src/routes/bairros'));
 // Página pública de cada condomínio (/condominios/<slug>) e o 3D para o visitante.
 app.use(require('./src/condominios/publico'));
+// Marca: nome do sistema e do cliente desta instalação, lidos pelas telas (window.MARCA) antes do app.js.
+app.get('/marca.js', (req, res) => {
+  const c = require('./src/config');
+  res.type('application/javascript').setHeader('Cache-Control', 'no-cache');
+  res.send(`window.MARCA=${JSON.stringify({ sistema: c.SISTEMA_NOME, cliente: c.CLIENTE_NOME, empresa: c.EMPRESA }).replace(/</g, '\\u003c')};`);
+});
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
 // 3D: o modo realista do Google precisa de WebAssembly (Draco), worker em blob e de falar com tile.googleapis.com.
 app.get('/condominio-3d.html', (req, res) => {
