@@ -2,7 +2,7 @@
 /**
  * Portal RUAH · páginas dos imóveis escritas pela placa de vídeo do PC (Ollama).
  *
- *   node scripts/portal-gpu.mjs [--quantos 999] [--so AP0022,CA0010] [--lote 5] [--sem-publicar]
+ *   node scripts/portal-gpu.mjs [--quantos 999] [--so AP0022,CA0010] [--lote 5] [--sem-publicar] [--fase fotos|texto|tudo]
  *
  * Para cada imóvel da fila (sem página, desatualizada, reprovada):
  *   1. o modelo de visão (PORTAL_GPU_VISAO, padrão qwen2.5vl:7b) olha CADA foto e diz
@@ -115,8 +115,8 @@ PROIBIDO (a página é reprovada automaticamente):
 - rua, número, CEP, número do apartamento/unidade; telefone, e-mail, site, links;
 - "visitamos", "estivemos", "conhecemos pessoalmente", "medimos";
 - número de quartos, suítes ou vagas MAIOR que o da ficha, ou qualquer número desses se a ficha for null; metragem em m² que não seja exatamente area_util ou area_total da ficha (nada de "cozinha de 12 m²");
-- falar do proprietário ou dos moradores; superlativos ("o melhor", "perfeito", "dos sonhos", "magnífico").
-Material, marca, orientação solar, andar e vista só se a ficha ou o anúncio disserem.
+- "oportunidade", "privilegiada", "futuro proprietário", "valorização"; falar do proprietário ou dos moradores; superlativos ("o melhor", "perfeito", "dos sonhos", "magnífico").
+As descrições das fotos vêm de um robô e podem errar o material: diga "piso claro", "bancada escura", nunca "mármore", "granito", "porcelanato", "madeira" sem a ficha ou o anúncio dizerem. Se as fotos parecem de apartamento decorado ou perspectiva e a ficha/anúncio fala em contrapiso ou planta, diga que são imagens ilustrativas/decorado.\nMaterial, marca, orientação solar, andar e vista só se a ficha ou o anúncio disserem.
 
 TOM: segunda pessoa ("você"), frases curtas, como um corretor que conhece o imóvel e não precisa exagerar. O fato vende mais que o adjetivo. Detalhe concreto tirado das fotos em quase toda seção. Fotos poucas ou ruins: escreva menos e mais seco.
 
@@ -149,7 +149,23 @@ function fichaParaModelo(im, fotos) {
 
 const slugify = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 const texto = (v) => String(v || '').replace(/\s+/g, ' ').trim();
-const semLinks = (s) => texto(s).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/https?:\/\/\S+|www\.\S+/g, '').trim();
+const ANUNCIO = [
+  [/\b(?:uma\s+)?(?:excelente|ótima|grande|rara|boa)\s+oportunidade(?:\s+(?:para|de)\b)?/giu, 'uma opção para'],
+  [/\bfuturos?\s+propriet[áa]ri[oa]s?\b/giu, 'quem comprar'], [/\bpropriet[áa]ri[oa]s?\b/giu, 'comprador'],
+  [/\b(?:localiza[çc][ãa]o\s+)?privilegiad[ao]s?\b/giu, 'bem localizada'], [/\bpotencial\s+de\s+valoriza[çc][ãa]o\b/giu, ''],
+  [/\bvaloriza[çc][ãa]o\b/giu, 'procura'], [/\b(?:magn[íi]fic|maravilhos|incr[íi]ve|espetacular|deslumbrante)\w*/giu, 'amplo'],
+  [/\bdos\s+sonhos\b/giu, ''], [/\bperfeit[ao]s?\b/giu, 'adequado'],
+];
+const semLinks = (s) => { let t = texto(s).replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/https?:\/\/\S+|www\.\S+/g, ''); for (const [re, por] of ANUNCIO) t = t.replace(re, por); return t.replace(/\s{2,}/g, ' ').replace(/\s+([,.])/g, '$1').trim(); };
+/** Resumo entre 110 e 165: corta no fim de frase ou de palavra. */
+function ajustarResumo(r) {
+  let t = semLinks(r);
+  if (t.length <= 165) return t;
+  const frases = t.match(/[^.!?]+[.!?]/g) || [];
+  let acc = ''; for (const f of frases) { if ((acc + f).trim().length > 165) break; acc = (acc + f); }
+  acc = acc.trim(); if (acc.length >= 110) return acc;
+  return `${t.slice(0, 162).replace(/[\s,;:]+\S*$/, '')}.`;
+}
 
 function montar(im, fotos, j) {
   const ids = new Set(im.fotos.map((f) => f.foto));
@@ -188,11 +204,11 @@ function montar(im, fotos, j) {
   let slug = slugify(j.slug || j.titulo || `${im.tipo} ${im.bairro} ${im.cidade}`).replace(new RegExp(`-?${im.codigo.toLowerCase()}$`), '').slice(0, 70).replace(/-+$/, '');
   slug = `${slug}-${im.codigo.toLowerCase()}`;
   return {
-    codigo: im.codigo, slug, titulo: texto(j.titulo), resumo: texto(j.resumo),
-    capa: { foto: capa, alt: texto(j.capa && j.capa.alt).length >= 12 ? texto(j.capa.alt) : legenda(capa) },
+    codigo: im.codigo, slug, titulo: semLinks(j.titulo), resumo: ajustarResumo(j.resumo),
+    capa: { foto: capa, alt: semLinks(j.capa && j.capa.alt).length >= 12 ? semLinks(j.capa.alt) : legenda(capa) },
     blocos, galeria,
     perguntas: [].concat(j.perguntas || []).filter((q) => q && texto(q.pergunta) && texto(q.resposta)).slice(0, 5).map((q) => ({ pergunta: texto(q.pergunta), resposta: semLinks(q.resposta) })),
-    redes: { legenda: texto(j.redes && j.redes.legenda).replace(/#\S+/g, '').trim(), hashtags: [].concat((j.redes && j.redes.hashtags) || []).map((h) => String(h).replace(/[^\p{L}\p{N}]/gu, '')).filter((h) => h.length >= 2 && h.length <= 30).slice(0, 10) },
+    redes: { legenda: semLinks(j.redes && j.redes.legenda).replace(/#\S+/g, '').trim(), hashtags: [].concat((j.redes && j.redes.hashtags) || []).map((h) => String(h).replace(/[^\p{L}\p{N}]/gu, '')).filter((h) => h.length >= 2 && h.length <= 30).slice(0, 10) },
   };
 }
 
@@ -208,7 +224,7 @@ async function escrever(im, fotos, dir) {
   const msgs = [{ role: 'system', content: REGRAS }, { role: 'user', content: `Ficha do imóvel e o que cada foto mostra:\n${JSON.stringify(fichaParaModelo(im, fotos), null, 1)}\n\nEscreva a página. Só o JSON.` }];
   let ultimo = null;
   for (let t = 1; t <= 4; t += 1) {
-    const resp = await ollama({ model: TEXTO, think: false, format: 'json', options: { temperature: t === 1 ? 0.6 : 0.4, num_ctx: 16384, num_predict: 4096 }, messages: msgs });
+    const resp = await ollama({ model: TEXTO, think: false, format: 'json', options: { temperature: t === 1 ? 0.6 : 0.4, num_ctx: 10240, num_predict: 3500 }, messages: msgs });
     let j;
     try { j = jsonDe(resp); } catch { msgs.push({ role: 'assistant', content: resp }, { role: 'user', content: 'Isso não é um JSON válido. Devolva só o JSON completo.' }); continue; }
     const pg = montar(im, fotos, j);
@@ -245,21 +261,34 @@ fs.mkdirSync(PASTA, { recursive: true });
 
 let prontos = [];
 const resultado = { publicadas: 0, falharam: [] };
-for (const [n, im] of fila.entries()) {
-  const dir = path.join(PASTA, im.codigo);
-  fs.mkdirSync(dir, { recursive: true });
-  const t0 = Date.now();
-  try {
-    log(`[${n + 1}/${fila.length}] ${im.codigo} · ${im.tipo} · ${im.bairro} · ${im.fotos.length} fotos`);
-    const fotos = await olharFotos(im, dir);
-    const r = await escrever(im, fotos, dir);
-    if (!r || r.falhou || !r.av.ok) { resultado.falharam.push(im.codigo); log(`  ${im.codigo} NÃO passou na régua depois de 4 tentativas.`); continue; }
-    const arq = path.join(dir, 'pagina.json');
-    fs.writeFileSync(arq, `${JSON.stringify(r.pg, null, 2)}\n`);
-    log(`  ${im.codigo} aprovada · ${r.av.medidas.palavras} palavras · ${Math.round((Date.now() - t0) / 1000)} s${r.av.avisos.length ? ` · avisos: ${r.av.avisos.join(' | ').slice(0, 200)}` : ''}`);
-    prontos.push(arq);
-    if (PUBLICAR && prontos.length >= LOTE) { publicar(prontos); resultado.publicadas += prontos.length; prontos = []; }
-  } catch (e) { resultado.falharam.push(im.codigo); log(`  ${im.codigo} erro: ${e.message}`); }
+const FASE = valor('--fase', 'tudo'); // fotos | texto | tudo
+if (FASE !== 'texto') {
+  log('Fase 1: o modelo de visão olha as fotos de todos os imóveis da fila.');
+  for (const [n, im] of fila.entries()) {
+    const dir = path.join(PASTA, im.codigo); fs.mkdirSync(dir, { recursive: true });
+    const t0 = Date.now();
+    try { await olharFotos(im, dir); log(`[fotos ${n + 1}/${fila.length}] ${im.codigo} · ${im.fotos.length} fotos · ${Math.round((Date.now() - t0) / 1000)} s`); }
+    catch (e) { log(`  ${im.codigo} fotos: erro ${e.message}`); }
+  }
+  await ollama({ model: VISAO, keep_alive: 0, messages: [{ role: 'user', content: 'ok' }] }).catch(() => {});
 }
-if (PUBLICAR && prontos.length) { publicar(prontos); resultado.publicadas += prontos.length; }
+if (FASE !== 'fotos') {
+  log('Fase 2: o modelo de texto escreve as páginas.');
+  for (const [n, im] of fila.entries()) {
+    const dir = path.join(PASTA, im.codigo); fs.mkdirSync(dir, { recursive: true });
+    const t0 = Date.now();
+    try {
+      log(`[texto ${n + 1}/${fila.length}] ${im.codigo} · ${im.tipo} · ${im.bairro}`);
+      const fotos = await olharFotos(im, dir);
+      const r = await escrever(im, fotos, dir);
+      if (!r || r.falhou || !r.av.ok) { resultado.falharam.push(im.codigo); log(`  ${im.codigo} NÃO passou na régua depois de 4 tentativas.`); continue; }
+      const arq = path.join(dir, 'pagina.json');
+      fs.writeFileSync(arq, `${JSON.stringify(r.pg, null, 2)}\n`);
+      log(`  ${im.codigo} aprovada · ${r.av.medidas.palavras} palavras · ${Math.round((Date.now() - t0) / 1000)} s${r.av.avisos.length ? ` · avisos: ${r.av.avisos.join(' | ').slice(0, 200)}` : ''}`);
+      prontos.push(arq);
+      if (PUBLICAR && prontos.length >= LOTE) { publicar(prontos); resultado.publicadas += prontos.length; prontos = []; }
+    } catch (e) { resultado.falharam.push(im.codigo); log(`  ${im.codigo} erro: ${e.message}`); }
+  }
+  if (PUBLICAR && prontos.length) { publicar(prontos); resultado.publicadas += prontos.length; }
+}
 log(`FIM · ${resultado.publicadas} enviadas para publicar · ${resultado.falharam.length} sem página (${resultado.falharam.join(', ') || '—'})`);
