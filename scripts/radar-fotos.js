@@ -13,7 +13,7 @@ const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 (async () => {
   // 1) do Fisguei
   let doFg = 0;
-  for (const o of all(`SELECT o.id, (SELECT f.fotos FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos FROM oportunidades o WHERE o.foto IS NULL`)) {
+  for (const o of all(`SELECT o.id, (SELECT f.fotos FROM anuncio_andamento d JOIN fisguei_anuncios f ON f.id=d.anuncio_id WHERE d.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos FROM oportunidades o WHERE o.foto IS NULL`)) {
     let f = null; try { f = (JSON.parse(o.fotos || '[]') || [])[0] || null; } catch {}
     if (f) { run('UPDATE oportunidades SET foto=? WHERE id=?', f, o.id); doFg++; }
   }

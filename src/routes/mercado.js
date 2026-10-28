@@ -5,6 +5,7 @@ const { one, all, run } = require('../db');
 const { falha, int } = require('../util');
 const G = require('../condominios/geo');
 const { cena3d } = require('../condominios/cena3d');
+const AN = require('../fisguei/andamento');
 
 const r = express.Router();
 const FORA = "('descartado')";
@@ -37,8 +38,9 @@ function subtipo(x, cat = categoria(x)) {
 const area = (x, cat) => (cat === 'terrenos' ? x.area_total || x.area_util : x.area_util || x.area_total) || null;
 const catDe = (q) => (CATS[q.cat] ? q.cat : null);
 
+// (status do anúncio = andamento da imobiliária; as consultas que usam base() fazem FROM fisguei_anuncios a ${AN.JOIN})
 function base(q) {
-  const w = [`a.status NOT IN ${FORA}`, "lower(coalesce(a.cidade,'campinas')) LIKE 'campinas%'"], p = [];
+  const w = [`${AN.STATUS} NOT IN ${FORA}`, "lower(coalesce(a.cidade,'campinas')) LIKE 'campinas%'"], p = [];
   const cat = catDe(q);
   const min = q.min === undefined ? (cat ? CATS[cat].min : 1000000) : Number(q.min) || 0;
   if (min) { w.push('a.valor >= ?'); p.push(min); }
@@ -62,7 +64,7 @@ function doRadar(q) {
       o.foto AS fotos, o.condominio_id, coalesce(o.publicado_em, substr(o.criado_em,1,10)) AS publicado_em, o.portal
     FROM oportunidades o LEFT JOIN condominios c ON c.id=o.condominio_id
     WHERE o.status <> 'descartada' AND lower(coalesce(o.cidade,'campinas')) LIKE 'campinas%'
-      AND NOT EXISTS (SELECT 1 FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id)`)
+      AND NOT EXISTS (SELECT 1 FROM anuncio_andamento f WHERE f.oportunidade_id=o.id)`)
     .filter((x) => (x.valor || 0) >= min && (!max || x.valor <= max) && (!qt || (x.quartos || 0) >= qt) && (!tipo || sem(x.tipo).includes(tipo))
       && (q.particular !== '1' || x.anunciante_tipo === 'particular'));
 }
@@ -155,7 +157,7 @@ function unicos(linhas) {
 }
 const CHAVE = 'a.id, a.tipo, a.finalidade, a.titulo, a.logradouro, a.numero, a.area_util, a.area_total, a.quartos, a.valor, a.publicado_em, a.anunciante_tipo, a.anunciante_nome';
 
-const COLS = 'a.id, a.tipo, a.finalidade, a.titulo, a.area_total, a.logradouro, a.numero, a.complemento, a.bairro, a.valor, a.quartos, a.suites, a.vagas, a.area_util, a.lat, a.lon, a.anunciante_tipo, a.anunciante_nome, a.status, a.fotos, a.condominio_id, a.publicado_em';
+const COLS = `a.id, a.tipo, a.finalidade, a.titulo, a.area_total, a.logradouro, a.numero, a.complemento, a.bairro, a.valor, a.quartos, a.suites, a.vagas, a.area_util, a.lat, a.lon, a.anunciante_tipo, a.anunciante_nome, ${AN.STATUS} AS status, a.fotos, a.condominio_id, a.publicado_em`;
 const refDe = (x) => (x.origem === 'op' ? 'OP-' + String(x.oid).padStart(4, '0') : 'FG-' + String(x.id).padStart(5, '0'));
 const hrefDe = (x) => (x.origem === 'op' ? `#/radar/${x.oid}` : `#/fisguei/${x.id}`);
 const cartao = (x) => {
@@ -176,7 +178,7 @@ const tenant = require('../tenant');
 const BASES = new Map(), RENOVANDOS = new Map();
 const chaveBase = () => (tenant.multi() ? tenant.schemaSql() || '' : '');
 // título só serve para os terrenos (terreno em condomínio); trazer de todos deixava a leitura bem mais pesada
-const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a WHERE ${b0.w}`, p: b0.p }; };
+const SQL_BASE = () => { const b0 = base({ min: '0' }); return { sql: `SELECT ${CHAVE.replace('a.titulo', "CASE WHEN a.tipo LIKE '%erreno%' OR a.tipo LIKE '%ote%' THEN a.titulo END AS titulo")}, a.bairro, a.lat, a.lon FROM fisguei_anuncios a ${AN.JOIN} WHERE ${b0.w}`, p: b0.p }; };
 // Calcula uma vez, sobre a base inteira, qual anúncio é o mesmo imóvel de qual (_g) e a ordem de recência (_ord).
 // Com ~80 mil anúncios, juntar as repetições levava ~3 s a cada filtro; assim cada filtro só agrupa pelos números prontos.
 function marcaGrupos(linhas) {
@@ -278,7 +280,7 @@ r.get('/mercado/imoveis', (req, res) => {
   // dados completos (fotos, complemento, vagas…) só dos imóveis desta rua
   const fg = sel.filter((x) => x.id > 0).map((x) => x.id), op = new Map(sel.filter((x) => x.id < 0).map((x) => [x.id, x]));
   const cheios = [];
-  for (let i = 0; i < fg.length; i += 400) { const parte = fg.slice(i, i + 400); cheios.push(...all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)); }
+  for (let i = 0; i < fg.length; i += 400) { const parte = fg.slice(i, i + 400); cheios.push(...all(`SELECT ${COLS}, a.portal FROM fisguei_anuncios a ${AN.JOIN} WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)); }
   if (op.size) cheios.push(...doRadar({ min: '0' }).filter((x) => op.has(x.id)));
   const l = unicos(naVitrine(cheios, req.query));
   l.sort((a, b) => (parseInt(a.numero, 10) || 0) - (parseInt(b.numero, 10) || 0) || (b.valor || 0) - (a.valor || 0));
@@ -291,14 +293,14 @@ function situacao(cards) {
   const porAn = new Map(), porOp = new Map();
   const lote = (ids, fn) => { const l = [...ids]; for (let i = 0; i < l.length; i += 400) fn(l.slice(i, i + 400)); };
   const linhas = [];
-  lote(fgIds, (parte) => linhas.push(...all(`SELECT a.id, a.oportunidade_id, a.imovel_id, i.codigo,
+  lote(fgIds, (parte) => linhas.push(...all(`SELECT a.id, d.oportunidade_id, d.imovel_id, i.codigo,
       (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=a.id ORDER BY p.id DESC LIMIT 1) AS pedido,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas
-    FROM fisguei_anuncios a LEFT JOIN imoveis i ON i.id=a.imovel_id WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)));
-  lote(opIds, (parte) => linhas.push(...all(`SELECT a.id, a.oportunidade_id, a.imovel_id, i.codigo,
-      (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=a.id ORDER BY p.id DESC LIMIT 1) AS pedido,
-      (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas
-    FROM fisguei_anuncios a LEFT JOIN imoveis i ON i.id=a.imovel_id WHERE a.oportunidade_id IN (${parte.map(() => '?').join(',')})`, ...parte)));
+    FROM fisguei_anuncios a ${AN.JOIN} LEFT JOIN imoveis i ON i.id=d.imovel_id WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)));
+  lote(opIds, (parte) => linhas.push(...all(`SELECT d.anuncio_id AS id, d.oportunidade_id, d.imovel_id, i.codigo,
+      (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=d.anuncio_id ORDER BY p.id DESC LIMIT 1) AS pedido,
+      (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=d.anuncio_id AND x.consultado=1) AS consultadas
+    FROM anuncio_andamento d LEFT JOIN imoveis i ON i.id=d.imovel_id WHERE d.oportunidade_id IN (${parte.map(() => '?').join(',')})`, ...parte)));
   for (const x of linhas) { porAn.set(x.id, x); if (x.oportunidade_id) porOp.set(x.oportunidade_id, x); }
   lote(opIds, (parte) => { for (const o of all(`SELECT o.id, o.imovel_id, i.codigo FROM oportunidades o LEFT JOIN imoveis i ON i.id=o.imovel_id WHERE o.id IN (${parte.map(() => '?').join(',')}) AND o.imovel_id IS NOT NULL`, ...parte)) if (!porOp.has(o.id)) porOp.set(o.id, { imovel_id: o.imovel_id, codigo: o.codigo }); });
   const PESO = { buscando: 5, fila: 4, escolher: 3, concluido: 2, sem_resultado: 1, erro: 0 };
@@ -341,7 +343,7 @@ r.get('/mercado/3d/:id', async (req, res) => {
 r.get('/mercado/iguais/:id', (req, res) => {
   const a = one(`SELECT ${CHAVE.replace(/a\./g, '')}, portal FROM fisguei_anuncios WHERE id=?`, int(req.params.id));
   if (!a || !a.logradouro || !G.numero(a.numero)) return res.json([]);
-  const l = all(`SELECT ${CHAVE}, a.portal, a.status FROM fisguei_anuncios a WHERE a.numero=? AND a.id<>? AND a.status NOT IN ${FORA}`, a.numero, a.id)
+  const l = all(`SELECT ${CHAVE}, a.portal, ${AN.STATUS} AS status FROM fisguei_anuncios a ${AN.JOIN} WHERE a.numero=? AND a.id<>? AND ${AN.STATUS} NOT IN ${FORA}`, a.numero, a.id)
     .filter((x) => ruaChave(x.logradouro) === ruaChave(a.logradouro) && familia(x.tipo) === familia(a.tipo) && mesmo(a, x));
   res.json(l.sort(recente).map((o) => ({ id: o.id, valor: o.valor, anunciante: o.anunciante_nome, anunciante_tipo: o.anunciante_tipo, portal: o.portal, publicado_em: o.publicado_em })));
 });
