@@ -118,7 +118,7 @@ PROIBIDO (a página é reprovada automaticamente):
 - "oportunidade", "privilegiada", "futuro proprietário", "valorização"; falar do proprietário ou dos moradores; superlativos ("o melhor", "perfeito", "dos sonhos", "magnífico").
 As descrições das fotos vêm de um robô e podem errar o material: diga "piso claro", "bancada escura", nunca "mármore", "granito", "porcelanato", "madeira" sem a ficha ou o anúncio dizerem. Se as fotos parecem de apartamento decorado ou perspectiva e a ficha/anúncio fala em contrapiso ou planta, diga que são imagens ilustrativas/decorado.\nMaterial, marca, orientação solar, andar e vista só se a ficha ou o anúncio disserem.
 
-TOM: segunda pessoa ("você"), frases curtas, como um corretor que conhece o imóvel e não precisa exagerar. O fato vende mais que o adjetivo. Detalhe concreto tirado das fotos em quase toda seção. Fotos poucas ou ruins: escreva menos e mais seco.
+USO DAS FOTOS: as descrições das fotos são anotações de trabalho. Use só o que importa a quem compra (luz, integração dos ambientes, varanda, bancada, armários, área verde, lazer). NUNCA cite miudezas (tomada, furo, tampa do vaso, válvula, interruptor, lâmpada), nunca escreva palavras em inglês, nunca diga 'a foto mostra'/'as fotos mostram' mais de uma vez na página, e nunca descreva o mesmo ambiente duas vezes.\n\nTOM: segunda pessoa ("você"), frases curtas, como um corretor que conhece o imóvel e não precisa exagerar. O fato vende mais que o adjetivo. Detalhe concreto tirado das fotos em quase toda seção. Fotos poucas ou ruins: escreva menos e mais seco.
 
 Responda SÓ com este JSON:
 {
@@ -151,7 +151,9 @@ const slugify = (s) => semAcento(s).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$
 const texto = (v) => String(v || '').replace(/\s+/g, ' ').trim();
 const ANUNCIO = [
   [/\b(?:uma\s+)?(?:excelente|ótima|grande|rara|boa)\s+oportunidade(?:\s+(?:para|de)\b)?/giu, 'uma opção para'],
-  [/\bfuturos?\s+propriet[áa]ri[oa]s?\b/giu, 'quem comprar'], [/\bpropriet[áa]ri[oa]s?\b/giu, 'comprador'],
+  [/\bpel[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'por quem comprar'], [/\bd[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'de quem comprar'],
+  [/\ba[oa]?\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'a quem comprar'], [/\b[oa]\s+futur[oa]\s+propriet[áa]ri[oa]\b/giu, 'quem comprar'],
+  [/\bfutur[oa]s?\s+propriet[áa]ri[oa]s?\b/giu, 'quem comprar'], [/\bpropriet[áa]ri[oa]s?\b/giu, 'comprador'],
   [/\b(?:localiza[çc][ãa]o\s+)?privilegiad[ao]s?\b/giu, 'bem localizada'], [/\bpotencial\s+de\s+valoriza[çc][ãa]o\b/giu, ''],
   [/\bvaloriza[çc][ãa]o\b/giu, 'procura'], [/\b(?:magn[íi]fic|maravilhos|incr[íi]ve|espetacular|deslumbrante)\w*/giu, 'amplo'],
   [/\bdos\s+sonhos\b/giu, ''], [/\bperfeit[ao]s?\b/giu, 'adequado'],
@@ -177,7 +179,7 @@ function montar(im, fotos, j) {
 
   const blocos = [];
   for (const p of [].concat(j.abertura || []).slice(0, 2)) if (texto(p)) blocos.push({ tipo: 'paragrafo', texto: semLinks(p) });
-  blocos.push({ tipo: 'resumo', titulo: 'Destaques', itens: [].concat(j.destaques || []).map(semLinks).filter(Boolean).slice(0, 7) });
+  blocos.push({ tipo: 'resumo', titulo: 'Destaques', itens: [].concat(j.destaques || []).map(semLinks).filter(Boolean).map((x) => x.charAt(0).toUpperCase() + x.slice(1)).slice(0, 7) });
   const usadas = new Set();
   const secoes = [].concat(j.secoes || []).filter((s) => s && texto(s.titulo)).slice(0, 4);
   for (const s of secoes) {
