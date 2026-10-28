@@ -1,0 +1,298 @@
+{
+  "codigo": "CA0041",
+  "slug": "casa-condominio-sobrado-3-quartos-2-suites-quintal-paulinia-ca0041",
+  "titulo": "Casa em condomínio com 2 suítes e quintal em Paulínia",
+  "resumo": "Sobrado em condomínio na Vila Monte Alegre, em Paulínia: 3 quartos com 2 suítes, 140 m² em terreno de 200 m², quintal gramado, área gourmet e edícula.",
+  "capa": {
+    "foto": 1489,
+    "alt": "Fachada do sobrado branco com detalhes cinza, varanda no andar de cima e gramado na frente"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa é um sobrado em condomínio na Vila Monte Alegre, em Paulínia. Pela ficha, são 140 m² construídos num terreno de 200 m², com 3 quartos, sendo duas suítes, e 2 vagas. O anúncio situa a casa no Condomínio Terras da Estância, Ala Bosque, e informa 4 banheiros e habite-se regularizado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas fotos, a fachada é branca com detalhes cinza, tem varanda no andar de cima e gramado na frente. Por dentro, o térreo é aberto, com escada de guarda-corpo de vidro. Nos fundos fica o que mais chama atenção: um quintal com piso claro, gramado, árvores e uma área gourmet coberta com churrasqueira."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos, sendo duas suítes, em 140 m²",
+        "Terreno de 200 m² com quintal gramado e árvores",
+        "Área gourmet coberta com churrasqueira e pia",
+        "Edícula com quarto e banheiro, segundo o anúncio",
+        "Escada com guarda-corpo de vidro e sacada no andar de cima"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O térreo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar e a de jantar ocupam o mesmo ambiente, com piso claro de porcelanato ou cerâmica e janela grande com cortina. A mesa de jantar fica junto da escada, que tem degraus brancos e guarda-corpo de vidro. Perto da porta de entrada há um lavabo com bancada de granito preto. Uma porta lateral leva ao quintal."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1491,
+          "legenda": "Sala de estar e jantar com a escada de vidro"
+        },
+        {
+          "foto": 1506,
+          "legenda": "Mesa de jantar ao lado da escada e porta para o lavabo"
+        }
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem armários bege com puxadores dourados, em cima e embaixo, bancada de granito preto com cuba dupla e duas janelas sobre a pia. Ao lado dos armários sobra espaço para uma mesa pequena."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos, no andar de cima"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A escada chega a um hall com cortina e guarda-corpo de vidro. Um dos cômodos tem porta de vidro para uma sacada que dá para os fundos. As duas suítes têm banheiro próprio, com revestimento claro que imita mármore, gabinete branco e nicho no box. Um deles tem armário aberto ao longo da parede."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1510,
+          "legenda": "Cômodo com porta de vidro para a sacada"
+        },
+        {
+          "foto": 1515,
+          "legenda": "Banheiro com revestimento marmorizado e gabinete branco"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O quintal e a área gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os fundos têm uma faixa larga de piso claro e outra de gramado, com árvores, uma delas com frutos verdes, e plantas junto ao muro. No fim do terreno fica a área gourmet coberta por telhado, com churrasqueira, pia, fogão e espaço para mesas. Uma das fotos mostra um cômodo com prateleiras e, ao lado, um banheiro: o anúncio fala em edícula com quarto e banheiro. Um corredor lateral, com cerca viva, liga a frente aos fundos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1497,
+          "legenda": "Gramado com árvore e, ao fundo, a churrasqueira"
+        },
+        {
+          "foto": 1499,
+          "legenda": "Área gourmet coberta com churrasqueira, pia e fogão"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família que quer casa em condomínio, com duas suítes e um quintal de verdade para receber, plantar ou deixar as crianças brincarem. A edícula serve de apoio, quarto de hóspedes ou escritório. A ficha lista armários na cozinha, nos quartos, no banheiro e na área de serviço."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio e o lazer que ele oferece, onde ficam as duas vagas, o que a edícula tem por dentro e quais armários ficam na casa.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1489,
+      "legenda": "Fachada do sobrado com varanda no andar de cima e gramado na frente",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1517,
+      "legenda": "Fachada vista da rua, com o caminho de pedra até a porta",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1505,
+      "legenda": "Lateral da frente da casa, com gramado e árvores na calçada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1490,
+      "legenda": "Mesa de jantar redonda e o estar ao fundo, junto à janela",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1491,
+      "legenda": "Sala de estar com sofá, jantar e escada de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1495,
+      "legenda": "Estar e jantar com janela de cortina e porta lateral",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1506,
+      "legenda": "Jantar ao lado da escada e porta para o lavabo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1492,
+      "legenda": "Escada com guarda-corpo de vidro e a porta de entrada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1493,
+      "legenda": "Lavabo com bancada de granito preto e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1494,
+      "legenda": "Cozinha com armários bege, granito preto e cuba dupla",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1514,
+      "legenda": "Escada vista do andar de cima, com aparador no hall",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1508,
+      "legenda": "Hall do andar de cima com cortina e guarda-corpo de vidro",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1509,
+      "legenda": "Chegada da escada ao andar de cima",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1510,
+      "legenda": "Cômodo com sofá e porta de vidro para a sacada",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1511,
+      "legenda": "Sacada com guarda-corpo de vidro voltada para os fundos",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1512,
+      "legenda": "Quarto com cama de casal e armário aberto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1513,
+      "legenda": "Suíte com cômoda e porta para o banheiro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1516,
+      "legenda": "Suíte com cômoda branca e banheiro ao lado",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1515,
+      "legenda": "Banheiro com revestimento marmorizado, nicho e gabinete branco",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1496,
+      "legenda": "Quintal com piso claro, gramado e a área coberta ao fundo",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1497,
+      "legenda": "Gramado com árvore, banco e a churrasqueira ao fundo",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1501,
+      "legenda": "Quintal visto entre os galhos das árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1504,
+      "legenda": "Árvore com frutos verdes junto aos fundos da casa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1498,
+      "legenda": "Fundos da casa vistos da área gourmet, com a sacada de vidro",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1507,
+      "legenda": "Fundos com piso claro, gramado e espreguiçadeira",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1503,
+      "legenda": "Fachada dos fundos com a sacada e plantas junto ao muro",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1499,
+      "legenda": "Área gourmet coberta com churrasqueira, pia e fogão",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1500,
+      "legenda": "Cômodo com prateleiras e, ao lado, um banheiro",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1502,
+      "legenda": "Corredor lateral com cerca viva",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos tem a casa?",
+      "resposta": "A ficha informa 3 quartos, sendo duas suítes, em 140 m² construídos. O anúncio cita ainda uma edícula com quarto e banheiro."
+    },
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "A ficha informa 200 m² de terreno. Nos fundos, as fotos mostram quintal com piso claro, gramado, árvores e área gourmet coberta."
+    },
+    {
+      "pergunta": "Tem churrasqueira?",
+      "resposta": "Sim. As fotos mostram uma área gourmet coberta, nos fundos, com churrasqueira, pia e fogão."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Sobrado em condomínio na Vila Monte Alegre, em Paulínia: 3 quartos com 2 suítes, 140 m² em terreno de 200 m², escada com guarda-corpo de vidro, quintal gramado com árvores, área gourmet com churrasqueira e edícula. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "casapaulinia",
+      "casaemcondominio",
+      "sobrado",
+      "imoveispaulinia",
+      "terrasdaestancia",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "f40b0dfa99ea",
+  "publicadoEm": "2026-10-28T03:22:30.997Z"
+}

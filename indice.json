@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0041",
+      "slug": "casa-condominio-sobrado-3-quartos-2-suites-quintal-paulinia-ca0041",
+      "titulo": "Casa em condomínio com 2 suítes e quintal em Paulínia",
+      "resumo": "Sobrado em condomínio na Vila Monte Alegre, em Paulínia: 3 quartos com 2 suítes, 140 m² em terreno de 200 m², quintal gramado, área gourmet e edícula.",
+      "capa": {
+        "foto": 1489,
+        "alt": "Fachada do sobrado branco com detalhes cinza, varanda no andar de cima e gramado na frente"
+      },
+      "versao": "f40b0dfa99ea",
+      "publicadoEm": "2026-10-28T03:22:30.997Z"
+    },
+    {
+      "codigo": "AP0036",
+      "slug": "apartamento-3-quartos-suite-2-vagas-mansoes-santo-antonio-campinas-ap0036",
+      "titulo": "Apartamento de 3 quartos com suíte no Mansões Santo Antônio",
+      "resumo": "Apartamento de 100 m² no Mansões Santo Antônio, em Campinas: 3 quartos com suíte, 2 vagas, varanda e condomínio com piscina, quadra, playground e academia.",
+      "capa": {
+        "foto": 1520,
+        "alt": "Sala de jantar e estar com mesa de tampo claro, sofá cinza e porta de vidro para a varanda"
+      },
+      "versao": "de64acd072d9",
+      "publicadoEm": "2026-10-28T03:22:30.992Z"
+    },
+    {
       "codigo": "CO0001",
       "slug": "cobertura-3-quartos-suite-piscina-privativa-cambui-campinas-co0001",
       "titulo": "Cobertura de 3 quartos com piscina privativa no Cambuí",
@@ -446,5 +470,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T01:22:13.786Z"
+  "atualizadoEm": "2026-10-28T03:22:30.998Z"
 }

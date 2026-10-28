@@ -1,0 +1,243 @@
+{
+  "codigo": "AP0036",
+  "slug": "apartamento-3-quartos-suite-2-vagas-mansoes-santo-antonio-campinas-ap0036",
+  "titulo": "Apartamento de 3 quartos com suíte no Mansões Santo Antônio",
+  "resumo": "Apartamento de 100 m² no Mansões Santo Antônio, em Campinas: 3 quartos com suíte, 2 vagas, varanda e condomínio com piscina, quadra, playground e academia.",
+  "capa": {
+    "foto": 1520,
+    "alt": "Sala de jantar e estar com mesa de tampo claro, sofá cinza e porta de vidro para a varanda"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento fica no Mansões Santo Antônio, em Campinas. Pela ficha, são 100 m² com 3 quartos, sendo uma suíte, 2 banheiros e 2 vagas de garagem. O prédio é uma torre alta, de fachada bege, com jardim de palmeiras e piso de pedra na área de entrada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram o imóvel em uso, com móveis: sala de estar e jantar no mesmo ambiente, porta de vidro para a varanda, cozinha com armários de madeira e quartos com armários. No condomínio aparecem piscina, quadra, playground, área de churrasqueira coberta e academia."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "100 m² com 3 quartos, sendo uma suíte",
+        "2 vagas de garagem e 2 banheiros",
+        "Sala de estar e jantar integrada, com porta de vidro para a varanda",
+        "Cozinha com armários de madeira, bancada de granito e coifa",
+        "Condomínio com piscina, quadra, playground e academia"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala reúne o estar e o jantar num ambiente só, com piso claro e teto rebaixado em gesso, com sanca curva e luz embutida. Uma parede tem revestimento que imita pedra, e um pendente cor de cobre fica sobre a mesa. No fundo, uma porta de vidro de correr leva à varanda, protegida por tela. Um passa-prato liga a sala à cozinha."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1519,
+          "legenda": "Estar com sofá cinza, mesa de jantar e passa-prato para a cozinha"
+        },
+        {
+          "foto": 1520,
+          "legenda": "Mesa de jantar perto da porta de vidro para a varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem armários de madeira escura em cima e embaixo, bancada de granito com cuba, coifa de inox e uma faixa de pastilhas na parede do fogão. Ela segue em corredor até a área de serviço, que tem tanque, armário com bancada, espaço para a máquina de lavar e janela com tela de proteção."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1526,
+          "legenda": "Cozinha com armários de madeira, bancada de granito e coifa"
+        },
+        {
+          "foto": 1534,
+          "legenda": "Área de serviço com tanque, armário e janela com tela"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os quartos e os banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um corredor com o mesmo piso claro leva aos quartos. Um deles tem ar-condicionado na parede, janela com veneziana e uma porta para outro cômodo. Outro tem armário com portas de espelho e cabeceira de madeira, e um terceiro tem armário branco embutido com nichos. Os banheiros têm bancada de granito bege sobre gabinete de madeira, espelho largo e box de vidro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vista de cima, a área de lazer tem uma piscina grande de formato irregular, com deck de madeira e mesas ao lado, e uma piscina infantil redonda. Há uma área coberta com churrasqueira, segundo o anúncio, jardins com caminhos de pedra, um playground com escorregadores e uma quadra poliesportiva cercada por alambrado. A academia tem aparelhos de musculação e esteiras."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1531,
+          "legenda": "Piscina com deck de madeira e playground, vistos do alto"
+        },
+        {
+          "foto": 1529,
+          "legenda": "Quadra poliesportiva cercada por alambrado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma família que precisa de três quartos e duas vagas e quer lazer no próprio prédio, no Mansões Santo Antônio. A ficha informa que o apartamento é vendido mobiliado, com armários na cozinha, nos quartos e na sala: vale saber exatamente o que fica."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Quais móveis e eletrodomésticos ficam no imóvel, se as vagas são cobertas e independentes, o valor do condomínio e se a varanda tem churrasqueira, já que o anúncio cita varanda gourmet.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1518,
+      "legenda": "Torre de fachada bege com palmeiras e jardim na entrada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1519,
+      "legenda": "Estar com sofá cinza, mesa de jantar e passa-prato para a cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1520,
+      "legenda": "Sala de jantar e estar com porta de vidro para a varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1524,
+      "legenda": "Corredor para os quartos, com piso cerâmico claro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1526,
+      "legenda": "Cozinha com armários de madeira, bancada de granito e coifa",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1527,
+      "legenda": "Cozinha em corredor com acesso à área de serviço",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1534,
+      "legenda": "Área de serviço com tanque, armário e janela com tela",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1521,
+      "legenda": "Quarto com ar-condicionado, janela com veneziana e porta para outro cômodo",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1522,
+      "legenda": "Quarto com armário de portas espelhadas e cabeceira de madeira",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1523,
+      "legenda": "Quarto com armário branco embutido e nichos",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1525,
+      "legenda": "Banheiro com bancada de granito bege, gabinete de madeira e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1528,
+      "legenda": "Banheiro com box de vidro e janela basculante",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1531,
+      "legenda": "Piscina com deck de madeira, área coberta e playground, vistos do alto",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1532,
+      "legenda": "Quadra, jardins e piscina infantil redonda, vistos do alto",
+      "ambiente": "condominio"
+    },
+    {
+      "foto": 1530,
+      "legenda": "Playground com escorregadores e a piscina ao fundo",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1529,
+      "legenda": "Quadra poliesportiva cercada por alambrado",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1533,
+      "legenda": "Academia com aparelhos de musculação e esteiras",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos quartos e vagas tem o apartamento?",
+      "resposta": "A ficha informa 3 quartos, sendo uma suíte, 2 banheiros e 2 vagas de garagem, em 100 m²."
+    },
+    {
+      "pergunta": "O apartamento é vendido com móveis?",
+      "resposta": "A ficha informa que ele é mobiliado, com armários na cozinha, nos quartos e na sala. Confirme com o corretor o que fica no imóvel."
+    },
+    {
+      "pergunta": "O que o condomínio oferece?",
+      "resposta": "As fotos mostram piscina adulto e infantil, quadra poliesportiva, playground, área coberta e academia. O anúncio cita também churrasqueira."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página: um corretor da RUAH entra em contato para combinar o dia e o horário."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 100 m² no Mansões Santo Antônio, em Campinas: 3 quartos com suíte, 2 vagas, sala integrada com porta para a varanda e cozinha com armários. No condomínio, piscina, quadra, playground e academia. Quer conhecer? Chame a RUAH pelo link da bio.",
+    "hashtags": [
+      "apartamentocampinas",
+      "mansoessantoantonio",
+      "imoveiscampinas",
+      "tresquartos",
+      "apartamentoavenda",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "de64acd072d9",
+  "publicadoEm": "2026-10-28T03:22:30.992Z"
+}
