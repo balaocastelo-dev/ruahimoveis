@@ -214,7 +214,7 @@ r.get('/painel/adm', A.exigePerfil('adm', 'gestor'), (req, res) => {
   add('warn', atend.sugestoes, 'resposta(s) da IA esperando aprovação', '#/whats');
   add('warn', leadsK.semCorretor, 'lead(s) ativo(s) sem corretor', '#/leads');
   // captação acontece nas vitrines da base: respostas do robô e donos localizados esperando o primeiro contato
-  const roboEsperando = one(`SELECT count(*) AS n FROM fisguei_anuncios WHERE status IN ('respondeu','confirmado')`).n;
+  const roboEsperando = one(`SELECT count(*) AS n FROM anuncio_andamento WHERE status IN ('respondeu','confirmado')`).n; // andamento da imobiliária
   add('bad', roboEsperando, 'proprietário(s) responderam o robô TH-IA-GO e esperam o corretor', '#/fisguei?etapa=precisa');
   const etapas = require('../services/carteira').enriquece(imoveis.filter((i) => i.proprietario_id && ['captacao', 'aguardando_autorizacao'].includes(i.status)));
   add('warn', etapas.filter((i) => i.etapa === 'localizado').length, 'imóvel(is) com dono localizado esperando o primeiro contato', '#/imoveis?etapa=localizado');

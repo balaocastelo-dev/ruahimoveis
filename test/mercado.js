@@ -120,7 +120,8 @@ global.fetch = async (url, op) => {
   const imR = ok(await req('GET', '/api/mercado/imoveis?cat=apartamentos&bairro=CAMBUI&rua=RUA%20W'), 'apto do Radar na rua');
   assert.equal(imR.length, 1); assert.equal(imR[0].origem, 'op'); assert.match(imR[0].href, /^#\/radar\/\d+$/); assert.match(imR[0].ref, /^OP-/); assert.equal(imR[0].foto, 'https://exemplo.com/apto.jpg');
   const opId = +imR[0].href.split('/').pop();
-  run("INSERT INTO fisguei_anuncios(fisgar_id,tipo,logradouro,numero,bairro,cidade,valor,area_util,status,oportunidade_id) VALUES('w1','Apartamento','Rua W','10','Cambuí','Campinas',900000,120,'captado',?)", opId);
+  const w1 = run("INSERT INTO fisguei_anuncios(fisgar_id,tipo,logradouro,numero,bairro,cidade,valor,area_util) VALUES('w1','Apartamento','Rua W','10','Cambuí','Campinas',900000,120)").lastInsertRowid;
+  run("INSERT INTO anuncio_andamento(anuncio_id,status,oportunidade_id) VALUES(?,'captado',?)", w1, opId); // trabalho da imobiliária
   assert.equal((await req('GET', '/api/mercado/resumo?cat=apartamentos')).j.doRadar, 0, 'já no Fisguei: não repete');
 
   // ---------- painel de captação (Radar + Fisguei) ----------

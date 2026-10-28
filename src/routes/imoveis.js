@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const A = require('../auth');
+const AN = require('../fisguei/andamento');
 const cfg = require('../config');
 const { one, all, run, audit } = require('../db');
 const { falha, num, int, txt, imovelPermitido, cpfValido, fmtCpf, brl } = require('../util');
@@ -47,7 +48,7 @@ const semDono = ({ drive_subpastas, ...i }) => i;
 // O que o Fisgar trouxe sobre o dono deste imóvel (pessoas, telefones e a conversa do robô)
 r.get('/:id/fisgar', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
-  const an = all('SELECT id, status, anunciante_nome, anunciante_tipo, portal FROM fisguei_anuncios WHERE imovel_id=? ORDER BY id', req.params.id);
+  const an = all(`SELECT a.id, ${AN.STATUS} AS status, a.anunciante_nome, a.anunciante_tipo, a.portal FROM anuncio_andamento d JOIN fisguei_anuncios a ON a.id=d.anuncio_id WHERE d.imovel_id=? ORDER BY a.id`, req.params.id);
   const ids = an.map((a) => a.id);
   const pessoas = ids.length ? all(`SELECT p.id, p.anuncio_id, p.nome, p.relacao, p.unidade, p.idade, p.consultado, p.status FROM fisguei_pessoas p WHERE p.anuncio_id IN (${ids.map(() => '?').join(',')}) ORDER BY p.consultado DESC, p.id`, ...ids) : [];
   const pids = pessoas.map((p) => p.id);

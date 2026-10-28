@@ -211,7 +211,7 @@ tela.get('/bairros', async (req, res) => {
 });
 
 function salvar(slug, b) {
-  const atual = one('SELECT * FROM bairros WHERE slug=?', slug);
+  const atual = one(`${dados.LISTA_SQL} WHERE b.slug=?`, slug);
   if (!atual) falha(404, 'Bairro não encontrado.');
   const nome = b.nome !== undefined ? txt(b.nome, 80) : atual.nome;
   if (!nome || nome.length < 2) falha(400, 'Diga o nome do bairro.');
@@ -219,11 +219,18 @@ function salvar(slug, b) {
   const lat = b.lat !== undefined ? (b.lat === null || b.lat === '' ? null : coord(b.lat)) : atual.lat;
   const lon = b.lon !== undefined ? (b.lon === null || b.lon === '' ? null : coord(b.lon)) : atual.lon;
   if ((lat !== null && (lat < -23.2 || lat > -22.6)) || (lon !== null && (lon < -47.4 || lon > -46.8))) falha(400, 'O centro do bairro tem de ficar em Campinas.');
-  run(`UPDATE bairros SET nome=?, regiao=?, apelidos=?, prioridade=?, oculto=?, notas=?, lat=?, lon=?, atualizado_em=datetime('now','localtime') WHERE slug=?`,
-    nome, b.regiao !== undefined ? txt(b.regiao, 60) || null : atual.regiao, apelidos,
-    b.prioridade !== undefined ? Math.max(-9, Math.min(9, Number(b.prioridade) || 0)) : atual.prioridade,
-    b.oculto !== undefined ? (b.oculto ? 1 : 0) : atual.oculto, b.notas !== undefined ? txt(b.notas, 2000) || null : atual.notas, lat, lon, slug);
-  fonte.recalcular();
+  // catálogo (comum): nome, região, apelidos e centro
+  // TODO(fase1 · plataforma): editar o catálogo comum muda para todas as imobiliárias; quando houver a 2ª, restringir a
+  // quem administra a plataforma (a imobiliária só mexe nos próprios ajustes).
+  run(`UPDATE bairros SET nome=?, regiao=?, apelidos=?, lat=?, lon=?, atualizado_em=datetime('now','localtime') WHERE slug=?`,
+    nome, b.regiao !== undefined ? txt(b.regiao, 60) || null : atual.regiao, apelidos, lat, lon, slug);
+  // escolhas da imobiliária (privadas): prioridade, oculto e notas
+  const aj = {};
+  if (b.prioridade !== undefined) aj.prioridade = Math.max(-9, Math.min(9, Number(b.prioridade) || 0));
+  if (b.oculto !== undefined) aj.oculto = b.oculto ? 1 : 0;
+  if (b.notas !== undefined) aj.notas = txt(b.notas, 2000) || null;
+  if (Object.keys(aj).length) dados.ajusta(slug, aj);
+  fonte.recalcular({ todas: true });
 }
 
 tela.post('/bairros', gestor, (req, res) => {
@@ -233,9 +240,10 @@ tela.post('/bairros', gestor, (req, res) => {
   if (one('SELECT 1 x FROM bairros WHERE slug=?', slug)) falha(409, 'Esse bairro já está na lista.');
   const dono = dados.slugDoTexto(nome);
   if (dono) falha(409, `"${nome}" já é apelido de outro bairro da lista (${dados.porSlug(dono).nome}).`);
-  run(`INSERT INTO bairros(slug,nome,regiao,apelidos,origem,notas) VALUES(?,?,?,?,'manual',?)`, slug, nome, txt(req.body.regiao, 60) || null, '', txt(req.body.notas, 2000) || null);
+  run(`INSERT INTO bairros(slug,nome,regiao,apelidos,origem) VALUES(?,?,?,?,'manual')`, slug, nome, txt(req.body.regiao, 60) || null, '');
+  if (txt(req.body.notas, 2000)) dados.ajusta(slug, { notas: txt(req.body.notas, 2000) });
   audit(req.usuario.id, 'bairro_novo', slug);
-  fonte.recalcular();
+  fonte.recalcular({ todas: true });
   res.json({ ok: true, slug });
 });
 tela.put('/bairros/:slug', gestor, (req, res) => {
@@ -256,7 +264,7 @@ tela.post('/bairros/:slug/apelido', gestor, (req, res) => {
 });
 tela.post('/bairros/:slug/reescrever', gestor, (req, res) => {
   if (!dados.porSlug(req.params.slug)) falha(404, 'Bairro não encontrado.');
-  run(`UPDATE bairros SET pedido_em=datetime('now','localtime') WHERE slug=?`, req.params.slug);
+  dados.ajusta(req.params.slug, {}, { pedido: true });
   audit(req.usuario.id, 'bairro_reescrever', req.params.slug);
   fonte.recalcular();
   res.json({ ok: true });

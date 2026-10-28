@@ -7,6 +7,24 @@
 const { one, all, run } = require('../db');
 const { CATALOGO, chaveBairro, slugDe } = require('./catalogo');
 const { distancia } = require('../condominios/geo');
+const tenant = require('../tenant');
+
+// O catálogo de bairros (slug, nome, região, apelidos, centro, origem) é comum a todas as imobiliárias; a prioridade,
+// o "oculto", as notas e o pedido de reescrita são escolhas de cada uma (bairro_ajustes, privada).
+const LISTA_SQL = `SELECT b.slug, b.nome, b.regiao, b.apelidos, b.origem, b.lat, b.lon, b.criado_em,
+    coalesce(j.prioridade,0) AS prioridade, coalesce(j.oculto,0) AS oculto, j.notas, j.pedido_em,
+    CASE WHEN j.atualizado_em > b.atualizado_em OR b.atualizado_em IS NULL THEN j.atualizado_em ELSE b.atualizado_em END AS atualizado_em
+  FROM bairros b LEFT JOIN bairro_ajustes j ON j.slug=b.slug`;
+/** Grava as escolhas da imobiliária sobre um bairro (só os campos informados). pedido: true marca o pedido de reescrita agora. */
+function ajusta(slug, campos = {}, { pedido = false } = {}) {
+  const k = Object.keys(campos).filter((c) => ['prioridade', 'oculto', 'notas'].includes(c));
+  const sets = [...k.map((c) => `${c}=?`), ...(pedido ? ["pedido_em=datetime('now','localtime')"] : []), "atualizado_em=datetime('now','localtime')"];
+  run('INSERT INTO bairro_ajustes(slug) VALUES(?) ON CONFLICT(slug) DO NOTHING', slug);
+  run(`UPDATE bairro_ajustes SET ${sets.join(', ')} WHERE slug=?`, ...k.map((c) => campos[c]), slug);
+}
+// caches por imobiliária (a lista traz os ajustes dela; condomínios e "perto" dependem da lista)
+const porTenant = (m) => { const k = tenant.chaveCache(); if (!m.has(k)) m.set(k, {}); return m.get(k); };
+const CACHES = new Map();
 
 // ------------------------------------------------------------------ a lista
 let semeado = false;
@@ -29,14 +47,16 @@ const lerLinha = (b) => ({
   origem: b.origem || 'manual', lat: b.lat ?? null, lon: b.lon ?? null, atualizadoEm: b.atualizado_em || null,
 });
 
-let cacheLista = null;
 function listar({ ocultos = true } = {}) {
   semear();
-  if (!cacheLista || Date.now() - cacheLista.quando > 60e3) cacheLista = { quando: Date.now(), valor: all('SELECT * FROM bairros ORDER BY nome').map(lerLinha) };
-  return ocultos ? cacheLista.valor : cacheLista.valor.filter((b) => !b.oculto);
+  const C = porTenant(CACHES);
+  if (!C.lista || Date.now() - C.lista.quando > 60e3) C.lista = { quando: Date.now(), valor: all(`${LISTA_SQL} ORDER BY b.nome`).map(lerLinha) };
+  return ocultos ? C.lista.valor : C.lista.valor.filter((b) => !b.oculto);
 }
 const porSlug = (slug) => listar().find((b) => b.slug === slug) || null;
-function limpar() { cacheLista = null; cacheCond = null; cachePerto.clear(); }
+// limpa os caches da imobiliária atual; todas: depois de mexer no catálogo comum (vale para todas as imobiliárias).
+// O "perto" é dado público por coordenada: limpa sempre.
+function limpar({ todas = false } = {}) { if (todas) CACHES.clear(); else CACHES.delete(tenant.chaveCache()); cachePerto.clear(); }
 
 /** chave do nome (e de cada apelido) → slug. Bairro oculto continua reconhecido (não vira "sugestão"). */
 function mapaDeChaves() {
@@ -47,9 +67,9 @@ function mapaDeChaves() {
 const slugDoTexto = (texto, mapa = mapaDeChaves()) => (texto ? mapa.get(chaveBairro(texto)) || null : null);
 
 // ------------------------------------------------------------------ condomínios e prédios (base Receita + IBGE + mapa)
-let cacheCond = null;
 function condominiosPorBairro() {
-  if (cacheCond && Date.now() - cacheCond.quando < 10 * 60e3) return cacheCond.valor;
+  const C = porTenant(CACHES);
+  if (C.cond && Date.now() - C.cond.quando < 10 * 60e3) return C.cond.valor;
   const mapa = mapaDeChaves();
   const grupos = new Map();
   const soltos = new Map(); // nomes de bairro que não estão na lista (para as sugestões)
@@ -59,8 +79,8 @@ function condominiosPorBairro() {
     if (!grupos.has(s)) grupos.set(s, []);
     grupos.get(s).push(c);
   }
-  cacheCond = { quando: Date.now(), valor: { grupos, soltos } };
-  return cacheCond.valor;
+  C.cond = { quando: Date.now(), valor: { grupos, soltos } };
+  return C.cond.valor;
 }
 
 /** O centro do bairro: média dos prédios, sem os pontos que fogem demais (erro de cadastro). */
@@ -90,6 +110,7 @@ function condominiosDo(slug) {
 }
 
 // ------------------------------------------------------------------ o que tem perto (Overture/OSM no banco)
+// (dado público, por coordenada: igual para todas as imobiliárias, então o cache é um só)
 const cachePerto = new Map();
 function pertoDo(centro, raio = 1500) {
   if (!centro) return null;
@@ -167,4 +188,4 @@ function vivo(b, imoveisDoBairro = []) {
   };
 }
 
-module.exports = { listar, porSlug, limpar, mapaDeChaves, slugDoTexto, condominiosDo, imoveisPorBairro, fotosDeImoveis, sugestoes, vivo, centroDe };
+module.exports = { ajusta, LISTA_SQL, listar, porSlug, limpar, mapaDeChaves, slugDoTexto, condominiosDo, imoveisPorBairro, fotosDeImoveis, sugestoes, vivo, centroDe };

@@ -7,6 +7,7 @@ const A = require('../auth');
 const { one, all } = require('../db');
 const G = require('../condominios/geo');
 const M = require('./mercado');
+const AN = require('../fisguei/andamento');
 
 const r = express.Router();
 
@@ -30,16 +31,18 @@ r.get('/captacao/painel', (req, res) => {
   // ---------- consultas ----------
   const ops = all(`SELECT o.id, o.status, o.bairro, o.portal, o.anunciante_tipo, o.valor, o.tipo, o.corretor_id, o.criado_em, o.atualizado_em,
       (SELECT max(em) FROM oportunidade_eventos e WHERE e.oportunidade_id=o.id) ultimo_evento,
-      CASE WHEN EXISTS (SELECT 1 FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id) THEN 1 ELSE 0 END lig FROM oportunidades o
+      CASE WHEN EXISTS (SELECT 1 FROM anuncio_andamento f WHERE f.oportunidade_id=o.id) THEN 1 ELSE 0 END lig FROM oportunidades o
       ${tudo ? '' : 'WHERE o.corretor_id=? OR o.corretor_id IS NULL'}`, ...(tudo ? [] : [u.id]));
   // Fisguei: tudo contado no banco numa consulta só (são dezenas de milhares de anúncios; trazer um por um levava segundos)
-  const GR = all(`SELECT 'st' k, status a, NULL b, count(*) n FROM fisguei_anuncios GROUP BY status
-    UNION ALL SELECT 'ba', bairro, NULL, count(*) FROM fisguei_anuncios WHERE status <> 'descartado' GROUP BY bairro
+  // (status = andamento da imobiliária; sem linha no andamento o anúncio é 'novo')
+  const ST = AN.STATUS, JA = AN.JOIN;
+  const GR = all(`SELECT 'st' k, ${ST} a, NULL b, count(*) n FROM fisguei_anuncios a ${JA} GROUP BY ${ST}
+    UNION ALL SELECT 'ba', a.bairro, NULL, count(*) FROM fisguei_anuncios a ${JA} WHERE ${ST} <> 'descartado' GROUP BY a.bairro
     UNION ALL SELECT 'po', portal, NULL, count(*) FROM fisguei_anuncios GROUP BY portal
     UNION ALL SELECT 'an', anunciante_tipo, NULL, count(*) FROM fisguei_anuncios GROUP BY anunciante_tipo
-    UNION ALL SELECT 'pn', anunciante_tipo, NULL, count(*) FROM fisguei_anuncios WHERE status='novo' GROUP BY anunciante_tipo
+    UNION ALL SELECT 'pn', a.anunciante_tipo, NULL, count(*) FROM fisguei_anuncios a ${JA} WHERE ${ST}='novo' GROUP BY a.anunciante_tipo
     UNION ALL SELECT 'di', substr(criado_em,1,10), NULL, count(*) FROM fisguei_anuncios WHERE criado_em >= ? GROUP BY substr(criado_em,1,10)
-    UNION ALL SELECT 'vi', tipo, finalidade, count(*) FROM fisguei_anuncios WHERE status <> 'descartado' AND lower(coalesce(cidade,'campinas')) LIKE 'campinas%' GROUP BY tipo, finalidade`, ini);
+    UNION ALL SELECT 'vi', a.tipo, a.finalidade, count(*) FROM fisguei_anuncios a ${JA} WHERE ${ST} <> 'descartado' AND lower(coalesce(a.cidade,'campinas')) LIKE 'campinas%' GROUP BY a.tipo, a.finalidade`, ini);
   const grupo = (k) => GR.filter((x) => x.k === k);
   const somaG = (k, f = () => true) => grupo(k).filter(f).reduce((t, x) => t + Number(x.n), 0);
   const fgTotal = somaG('st');
@@ -120,12 +123,12 @@ r.get('/captacao/painel', (req, res) => {
     imobiliaria: somaG('an', (x) => x.a === 'imobiliaria') + ops.filter((o) => o.anunciante_tipo === 'imobiliaria').length };
 
   // ---------- mais novos, com foto ----------
-  const novosFg = all(`SELECT id, tipo, finalidade, bairro, logradouro, numero, valor, quartos, area_util, area_total, anunciante_tipo, status, fotos, criado_em, lat
-      FROM fisguei_anuncios WHERE status NOT IN ('descartado') AND fotos LIKE '["%' ORDER BY CASE WHEN anunciante_tipo='particular' THEN 0 ELSE 1 END, id DESC LIMIT 8`)
+  const novosFg = all(`SELECT a.id, a.tipo, a.finalidade, a.bairro, a.logradouro, a.numero, a.valor, a.quartos, a.area_util, a.area_total, a.anunciante_tipo, ${AN.STATUS} AS status, a.fotos, a.criado_em, a.lat
+      FROM fisguei_anuncios a ${AN.JOIN} WHERE ${AN.STATUS} NOT IN ('descartado') AND a.fotos LIKE '["%' ORDER BY CASE WHEN a.anunciante_tipo='particular' THEN 0 ELSE 1 END, a.id DESC LIMIT 8`)
     .map(({ fotos, ...a }) => ({ ...a, ref: 'FG-' + String(a.id).padStart(5, '0'), foto: capaFg(fotos), subtipo: M.subtipo(a) }));
   const novasOp = all(`SELECT o.id, o.titulo, o.tipo, o.bairro, o.logradouro, o.numero, o.valor, o.status, o.anunciante_tipo, o.portal, o.criado_em, o.imovel_id, o.foto op_foto,
-      (SELECT f.fotos FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos,
-      (SELECT f.id FROM fisguei_anuncios f WHERE f.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fg_id,
+      (SELECT f.fotos FROM anuncio_andamento d JOIN fisguei_anuncios f ON f.id=d.anuncio_id WHERE d.oportunidade_id=o.id ORDER BY f.id LIMIT 1) fotos,
+      (SELECT d.anuncio_id FROM anuncio_andamento d WHERE d.oportunidade_id=o.id ORDER BY d.anuncio_id LIMIT 1) fg_id,
       (SELECT min(a.id) FROM arquivos a WHERE a.imovel_id=o.imovel_id AND a.categoria='Fotos') capa
       FROM oportunidades o WHERE o.status NOT IN ('descartada') ${tudo ? '' : 'AND (o.corretor_id=? OR o.corretor_id IS NULL)'} ORDER BY o.id DESC LIMIT 6`, ...(tudo ? [] : [u.id]))
     .map(({ fotos, op_foto, ...o }) => ({ ...o, ref: 'OP-' + String(o.id).padStart(4, '0'), foto: o.capa ? `/api/arquivos/${o.capa}` : op_foto || capaFg(fotos) }));

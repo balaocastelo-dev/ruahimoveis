@@ -3,6 +3,7 @@
 // escolher o próximo número, entender a resposta e transformar o dono confirmado em oportunidade do Radar.
 const { one, all, run, getConfig, setConfig } = require('../db');
 const cfg = require('../config');
+const D = require('./andamento');
 
 const ROBO = 'TH-IA-GO CORRETOR';
 const LIMITE_MAX = 200;       // teto de mensagens novas por dia, por segurança do número
@@ -134,8 +135,8 @@ function salvaPessoa(anuncioId, p) {
       if (movel) novos += r.changes || 0;
     }
     for (const e of emails) run(`INSERT INTO fisguei_contatos(pessoa_id,tipo,valor,envio) VALUES(?,?,?,'email') ON CONFLICT(pessoa_id,tipo,valor) DO NOTHING`, pes.id, 'email', e);
-    const an = one('SELECT status FROM fisguei_anuncios WHERE id=?', anuncioId);
-    if (an && an.status === 'novo') run(`UPDATE fisguei_anuncios SET status='abordando', atualizado_em=datetime('now','localtime') WHERE id=?`, anuncioId);
+    const an = one(`SELECT ${D.STATUS} AS status FROM fisguei_anuncios a ${D.JOIN} WHERE a.id=?`, anuncioId);
+    if (an && an.status === 'novo') D.muda(anuncioId, "status='abordando'");
   }
   return { id: pes.id, novos };
 }
@@ -174,8 +175,8 @@ function montaTexto(modelo, pessoa, anuncio) {
 function proximo() {
   for (let i = 0; i < 25; i++) {
     const c = one(`SELECT c.id, c.valor, c.pessoa_id, p.nome, p.relacao, p.unidade, a.id AS anuncio_id
-      FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id JOIN fisguei_anuncios a ON a.id=p.anuncio_id
-      WHERE c.tipo='tel' AND c.envio='fila' AND a.pausado=0 AND a.status IN ('novo','abordando','respondeu') AND p.status IN ('pendente','abordando')
+      FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id JOIN fisguei_anuncios a ON a.id=p.anuncio_id ${D.JOIN}
+      WHERE c.tipo='tel' AND c.envio='fila' AND ${D.PAUSADO}=0 AND ${D.STATUS} IN ('novo','abordando','respondeu') AND p.status IN ('pendente','abordando')
       ORDER BY a.id, CASE WHEN p.relacao LIKE '%ropriet%' THEN 0 ELSE 1 END, p.id, c.id LIMIT 1`);
     if (!c) return null;
     const bloq = bloqueado(c.valor);
@@ -183,7 +184,7 @@ function proximo() {
     // o mesmo número aparece em vários endereços: uma abordagem a cada 30 dias, no máximo
     const recente = one(`SELECT 1 FROM fisguei_mensagens WHERE telefone=? AND direcao='saida' AND criado_em > datetime('now','localtime','-30 day')`, c.valor);
     if (recente) { run(`UPDATE fisguei_contatos SET envio='pulado', erro='Número já abordado nos últimos 30 dias' WHERE id=?`, c.id); continue; }
-    const anuncio = one('SELECT * FROM fisguei_anuncios WHERE id=?', c.anuncio_id);
+    const anuncio = D.um(c.anuncio_id);
     return { contato: c, anuncio, texto: montaTexto(ajustes().modelo, c, anuncio) };
   }
   return null;
@@ -237,7 +238,7 @@ function criaOportunidade(anuncio, pessoa, telefone) {
     'desconhecido', anuncio.anunciante_nome, 'em_contato', pessoa.nome, telefone, 'Confirmou pelo WhatsApp (robô TH-IA-GO)', obs, anuncio.publicado_em);
   const opId = r.lastInsertRowid;
   run('INSERT INTO oportunidade_eventos(oportunidade_id,etapa,texto) VALUES(?,?,?)', opId, 'anuncio', `Proprietário confirmado pelo robô TH-IA-GO no WhatsApp (${telefone}). Origem: Fisgar.`);
-  run('UPDATE fisguei_anuncios SET oportunidade_id=? WHERE id=?', opId, anuncio.id);
+  D.muda(anuncio.id, 'oportunidade_id=?', [opId]);
   return opId;
 }
 
@@ -252,7 +253,7 @@ function recebida({ telefone, texto, wa_id }) {
   if (!c) return { ignorado: 'número que o robô não abordou' };
   const tel = c.valor;
   const pessoa = one('SELECT * FROM fisguei_pessoas WHERE id=?', c.pessoa_id);
-  const anuncio = one('SELECT * FROM fisguei_anuncios WHERE id=?', c.anuncio_id);
+  const anuncio = D.um(c.anuncio_id);
   run('INSERT INTO fisguei_mensagens(pessoa_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', pessoa.id, tel, 'entrada', String(texto || '').slice(0, 4000), 'recebida', wa_id || null, pessoa.nome);
   run(`UPDATE fisguei_contatos SET envio='respondeu' WHERE id=?`, c.id);
 
@@ -266,11 +267,11 @@ function recebida({ telefone, texto, wa_id }) {
     enfileiraResposta(pessoa.id, tel, RESPOSTAS.parar);
     return { tipo };
   }
-  if (jaRespondeu) { run(`UPDATE fisguei_anuncios SET atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id); return { tipo: 'conversa', pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel }; }
+  if (jaRespondeu) { D.muda(anuncio.id); return { tipo: 'conversa', pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel }; }
 
   if (tipo === 'confirmou') {
     run(`UPDATE fisguei_pessoas SET status='confirmou' WHERE id=?`, pessoa.id);
-    run(`UPDATE fisguei_anuncios SET status='confirmado', atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id);
+    D.muda(anuncio.id, "status='confirmado'");
     pulaRestoDoEndereco(anuncio.id, 'O dono já confirmou');
     const opId = criaOportunidade(anuncio, pessoa, tel);
     donoNaCarteira(anuncio.id);
@@ -279,7 +280,7 @@ function recebida({ telefone, texto, wa_id }) {
   }
   if (tipo === 'sem_interesse') {
     run(`UPDATE fisguei_pessoas SET status='sem_interesse' WHERE id=?`, pessoa.id);
-    run(`UPDATE fisguei_anuncios SET status='sem_interesse', atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id);
+    D.muda(anuncio.id, "status='sem_interesse'");
     pulaRestoDoEndereco(anuncio.id, 'O dono disse que não tem interesse');
     enfileiraResposta(pessoa.id, tel, RESPOSTAS.sem_interesse);
     return { tipo };
@@ -293,7 +294,7 @@ function recebida({ telefone, texto, wa_id }) {
   }
   // resposta que o robô não entendeu: vai para o corretor
   run(`UPDATE fisguei_pessoas SET status='respondeu' WHERE id=?`, pessoa.id);
-  run(`UPDATE fisguei_anuncios SET status=CASE WHEN status IN ('novo','abordando') THEN 'respondeu' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id);
+  D.muda(anuncio.id, "status=CASE WHEN status IN ('novo','abordando') THEN 'respondeu' ELSE status END");
   return { tipo, pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel };
 }
 
@@ -304,14 +305,14 @@ function pulaRestoDoEndereco(anuncioId, motivo) {
 function fechaSeAcabou(anuncioId) {
   const fila = one(`SELECT count(*) AS n FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id WHERE p.anuncio_id=? AND c.envio IN ('fila','enviado')`, anuncioId).n;
   const conversa = one(`SELECT count(*) AS n FROM fisguei_pessoas WHERE anuncio_id=? AND status IN ('respondeu','confirmou')`, anuncioId).n;
-  if (!fila && !conversa) run(`UPDATE fisguei_anuncios SET status='sem_dono', atualizado_em=datetime('now','localtime') WHERE id=? AND status IN ('abordando','respondeu')`, anuncioId);
+  if (!fila && !conversa && one(`SELECT 1 AS x FROM anuncio_andamento WHERE anuncio_id=? AND status IN ('abordando','respondeu')`, anuncioId)) D.muda(anuncioId, "status='sem_dono'");
 }
 
 // Dono confirmou: o imóvel entra (ou continua) na carteira com ele como proprietário.
 function donoNaCarteira(anuncioId) {
   try {
     const P = require('./pedidos');
-    const a = one('SELECT imovel_id FROM fisguei_anuncios WHERE id=?', anuncioId);
+    const a = one('SELECT imovel_id FROM anuncio_andamento WHERE anuncio_id=?', anuncioId);
     if (a && a.imovel_id) return P.sincronizaDono(anuncioId);
     return P.importa(anuncioId, null, require('../routes/imoveis').ajudantes.proximoCodigo);
   } catch (e) { console.error('[fisguei] dono na carteira', e.message); return null; }

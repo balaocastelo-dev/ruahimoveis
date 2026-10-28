@@ -283,7 +283,8 @@ async function jpegParaPreview(buffer) {
 }
 
 async function enviarJpeg(res, arquivo, { publico = false } = {}) {
-  const chave = `${arquivo.id}:${arquivo.tamanho || 0}:${VERSAO_OG}`;
+  // o id do arquivo se repete entre imobiliárias (cada uma tem a sua tabela arquivos): a chave leva a imobiliária
+  const chave = `${require('./tenant').chaveCache()}:${arquivo.id}:${arquivo.tamanho || 0}:${VERSAO_OG}`;
   let jpeg = cache.get(chave);
   if (!jpeg) {
     const buf = conteudo.ler(arquivo);

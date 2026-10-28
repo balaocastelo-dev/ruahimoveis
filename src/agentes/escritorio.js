@@ -80,7 +80,7 @@ async function processaEntradas(o = {}) {
     if (gr.agente === 'captador') {
       const pid = ultima.pessoa_id || (one('SELECT pessoa_id FROM agente_mensagens WHERE agente=? AND telefone=? AND pessoa_id IS NOT NULL ORDER BY id DESC', gr.agente, gr.telefone) || {}).pessoa_id;
       extra.pessoa = pid ? one('SELECT * FROM fisguei_pessoas WHERE id=?', pid) : null;
-      extra.anuncio = extra.pessoa ? one('SELECT * FROM fisguei_anuncios WHERE id=?', extra.pessoa.anuncio_id) : null;
+      extra.anuncio = extra.pessoa ? require('../fisguei/andamento').um(extra.pessoa.anuncio_id) : null;
       if (!extra.pessoa && !teste) { fecha(); continue; }
       if (extra.pessoa && ['parar', 'negou', 'sem_interesse'].includes(extra.pessoa.status)) { fecha(); continue; }
     }

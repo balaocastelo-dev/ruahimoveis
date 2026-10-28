@@ -232,6 +232,8 @@ CREATE TABLE IF NOT EXISTS fisguei_anuncios (
   anunciante_nome TEXT, anunciante_tipo TEXT NOT NULL DEFAULT 'desconhecido',
   publicado_em TEXT,
   fotos TEXT,
+  -- SEM USO desde a plataforma multi-imobiliária: status/pausado/oportunidade_id/imovel_id/observacoes de cada
+  -- imobiliária ficam em anuncio_andamento (privada). As colunas ficam aqui só para permitir voltar a versão.
   status TEXT NOT NULL DEFAULT 'novo',
   pausado INTEGER NOT NULL DEFAULT 0,
   oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
@@ -241,9 +243,11 @@ CREATE TABLE IF NOT EXISTS fisguei_anuncios (
   atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime'))
 );
 CREATE INDEX IF NOT EXISTS ix_fa_status ON fisguei_anuncios(status);
+-- pessoas e pedidos são da imobiliária (privadas) e apontam para o anúncio comum: RESTRICT, para apagar um anúncio
+-- comum nunca destruir dado privado (bancos antigos do PC mantêm o CASCADE de antes; ninguém apaga anúncio no sistema).
 CREATE TABLE IF NOT EXISTS fisguei_pessoas (
   id INTEGER PRIMARY KEY,
-  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
+  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE RESTRICT,
   chave TEXT NOT NULL,
   fisgar_pessoa_id TEXT,
   nome TEXT NOT NULL,
@@ -280,7 +284,7 @@ CREATE TABLE IF NOT EXISTS fisguei_mensagens (
 CREATE INDEX IF NOT EXISTS ix_fm_tel ON fisguei_mensagens(telefone);
 CREATE TABLE IF NOT EXISTS fisguei_pedidos (
   id INTEGER PRIMARY KEY,
-  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
+  anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE RESTRICT,
   pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE CASCADE,
   tipo TEXT NOT NULL DEFAULT 'endereco',
   status TEXT NOT NULL DEFAULT 'fila',
@@ -322,7 +326,7 @@ for (const [t, c, def] of [['fisguei_anuncios', 'imovel_id', 'INTEGER REFERENCES
   ['condominios', 'contorno', 'TEXT'],
   ['condominios', 'construtora', 'TEXT'],
   ['condominios', 'slug', 'TEXT'],
-  ['condominios', 'alvo', 'INTEGER NOT NULL DEFAULT 0'],
+  ['condominios', 'alvo', 'INTEGER NOT NULL DEFAULT 0'], // sem uso: o prédio-alvo de cada imobiliária está em condominio_alvos
   ['condominios', 'nome_busca', 'TEXT'],
   ['condominios', 'geo_fonte', 'TEXT'],
   ['condominios', 'atualizado_em', 'TEXT'],
@@ -366,6 +370,8 @@ CREATE TABLE IF NOT EXISTS fisguei_precos (
   id INTEGER PRIMARY KEY, anuncio_id INTEGER NOT NULL REFERENCES fisguei_anuncios(id) ON DELETE CASCADE,
   valor REAL NOT NULL, em TEXT NOT NULL DEFAULT (datetime('now','localtime')), fonte TEXT);
 CREATE INDEX IF NOT EXISTS ix_fpr_anuncio ON fisguei_precos(anuncio_id);
+-- bairros: o catálogo é comum; prioridade/oculto/notas/pedido_em ficaram SEM USO (a escolha de cada imobiliária
+-- está em bairro_ajustes) e só continuam aqui para permitir voltar a versão.
 CREATE TABLE IF NOT EXISTS bairros (
   slug TEXT PRIMARY KEY, nome TEXT NOT NULL, regiao TEXT, apelidos TEXT, prioridade INTEGER NOT NULL DEFAULT 0,
   oculto INTEGER NOT NULL DEFAULT 0, notas TEXT, pedido_em TEXT, origem TEXT, lat REAL, lon REAL,
@@ -399,6 +405,45 @@ CREATE TABLE IF NOT EXISTS agente_midias (
   anuncio_id INTEGER REFERENCES fisguei_anuncios(id) ON DELETE SET NULL, oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
   lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, mime TEXT, nome TEXT, tamanho INTEGER, legenda TEXT, dados BLOB NOT NULL,
   imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
+
+// Multi-imobiliária · tabelas mistas: o que cada imobiliária decide sobre um dado comum (anúncio, prédio, bairro).
+// Sem linha aqui = valor padrão (anúncio 'novo' e não pausado, prédio que não é alvo, bairro sem ajuste).
+ex(`CREATE TABLE IF NOT EXISTS anuncio_andamento (
+  anuncio_id INTEGER PRIMARY KEY REFERENCES fisguei_anuncios(id) ON DELETE RESTRICT,
+  status TEXT NOT NULL DEFAULT 'novo',
+  pausado INTEGER NOT NULL DEFAULT 0,
+  oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
+  imovel_id INTEGER REFERENCES imoveis(id) ON DELETE SET NULL,
+  observacoes TEXT,
+  atualizado_em TEXT);
+CREATE INDEX IF NOT EXISTS ix_and_status ON anuncio_andamento(status);
+CREATE INDEX IF NOT EXISTS ix_and_oport ON anuncio_andamento(oportunidade_id) WHERE oportunidade_id IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_and_imovel ON anuncio_andamento(imovel_id) WHERE imovel_id IS NOT NULL;
+CREATE TABLE IF NOT EXISTS condominio_alvos (
+  condominio_id INTEGER PRIMARY KEY REFERENCES condominios(id) ON DELETE RESTRICT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE TABLE IF NOT EXISTS bairro_ajustes (
+  slug TEXT PRIMARY KEY REFERENCES bairros(slug) ON DELETE RESTRICT,
+  prioridade INTEGER NOT NULL DEFAULT 0, oculto INTEGER NOT NULL DEFAULT 0, notas TEXT, pedido_em TEXT, atualizado_em TEXT);`);
+migraMistas();
+}
+
+// Uma vez só, e só na imobiliária padrão (a RUAH, dona dos dados que já estavam nas colunas antigas): copia o trabalho
+// que estava nas tabelas comuns para as privadas. Imobiliária nova começa vazia (nada da RUAH vaza para ela).
+// No Postgres o equivalente é sql/plataforma-mistas.sql.
+function migraMistas() {
+  if (tenant.multi() && tenant.atual() && tenant.atual().slug !== tenant.padrao().slug) return;
+  const q = (sql, ...p) => db.prepare(traduzSqlite(sql)).all(...p);
+  if (q("SELECT 1 FROM config WHERE chave='plataforma_mistas_v1'").length) return;
+  q(`INSERT INTO anuncio_andamento(anuncio_id,status,pausado,oportunidade_id,imovel_id,observacoes,atualizado_em)
+    SELECT id, coalesce(status,'novo'), coalesce(pausado,0), oportunidade_id, imovel_id, observacoes, atualizado_em FROM fisguei_anuncios
+    WHERE (coalesce(status,'novo') <> 'novo' OR coalesce(pausado,0) <> 0 OR oportunidade_id IS NOT NULL OR imovel_id IS NOT NULL OR observacoes IS NOT NULL)
+      AND id NOT IN (SELECT anuncio_id FROM anuncio_andamento)`);
+  q(`INSERT INTO condominio_alvos(condominio_id) SELECT id FROM condominios WHERE alvo=1 AND id NOT IN (SELECT condominio_id FROM condominio_alvos)`);
+  q(`INSERT INTO bairro_ajustes(slug,prioridade,oculto,notas,pedido_em,atualizado_em)
+    SELECT slug, prioridade, oculto, notas, pedido_em, atualizado_em FROM bairros
+    WHERE (prioridade <> 0 OR oculto <> 0 OR notas IS NOT NULL OR pedido_em IS NOT NULL) AND slug NOT IN (SELECT slug FROM bairro_ajustes)`);
+  q("INSERT INTO config(chave,valor) VALUES('plataforma_mistas_v1', datetime('now','localtime'))");
 }
 
 // Sem MULTI: a estrutura de sempre. Com MULTI=1: a da imobiliária padrão (as outras entram com criaImobiliaria).
@@ -426,4 +471,4 @@ function audit(usuarioId, acao, detalhe) {
   run('INSERT INTO auditoria(usuario_id,acao,detalhe) VALUES(?,?,?)', usuarioId ?? null, acao, detalhe ? String(detalhe).slice(0, 1000) : null);
 }
 
-module.exports = { db, one, all, run, getConfig, setConfig, audit, criaImobiliaria, PG: false };
+module.exports = { db, one, all, run, getConfig, setConfig, audit, criaImobiliaria, migraMistas, PG: false };

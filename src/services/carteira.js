@@ -36,11 +36,11 @@ function enriquece(lista) {
     const v = assin.get(a.imovel_id); if (a.status === 'assinado' || !v) assin.set(a.imovel_id, a.status);
   }
   const fg = new Map();
-  for (const a of porIds(`SELECT a.imovel_id, a.id, a.fisgar_id,
+  for (const a of porIds(`SELECT d.imovel_id, a.id, a.fisgar_id,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=a.id AND p.status='confirmou') AS conf,
       (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=a.id AND p.consultado=1) AS consultadas,
       (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas p ON p.id=c.pessoa_id WHERE p.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS contato
-    FROM fisguei_anuncios a WHERE a.imovel_id IN (?)`, ids)) {
+    FROM anuncio_andamento d JOIN fisguei_anuncios a ON a.id=d.anuncio_id WHERE d.imovel_id IN (?)`, ids)) {
     const v = fg.get(a.imovel_id) || { ids: [], conf: 0, consultadas: 0, contato: 0, radar: false };
     v.ids.push(a.id); v.conf += Number(a.conf) || 0; v.consultadas += Number(a.consultadas) || 0; v.contato += Number(a.contato) || 0;
     if (String(a.fisgar_id || '').startsWith('op:')) v.radar = true;

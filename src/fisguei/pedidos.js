@@ -4,6 +4,7 @@
 const { one, all, run, getConfig, setConfig } = require('../db');
 const cfg = require('../config');
 const F = require('./base');
+const D = require('./andamento');
 const normaliza = require('./normaliza');
 
 const CREDITOS_MAX = 300, CONSULTAS_MAX = 10;
@@ -28,14 +29,14 @@ const creditosMes = () => one(`SELECT coalesce(sum(creditos),0) AS n FROM fisgue
 
 // ---------- criar pedidos ----------
 function anuncioDaOportunidade(op) {
-  const ja = one('SELECT id FROM fisguei_anuncios WHERE oportunidade_id=? ORDER BY id LIMIT 1', op.id);
+  const ja = one('SELECT anuncio_id AS id FROM anuncio_andamento WHERE oportunidade_id=? ORDER BY anuncio_id LIMIT 1', op.id);
   if (ja) return ja.id;
   const id = F.salvaAnuncio({
     fisgar_id: 'op:' + op.id, portal: op.portal, link: op.link, titulo: op.titulo, tipo: op.tipo, negocio: 'Venda',
     logradouro: op.logradouro, numero: op.numero, complemento: op.unidade || op.condominio_nome, bairro: op.bairro, cidade: op.cidade || cfg.CIDADE_PADRAO, uf: 'SP',
     valor: op.valor, quartos: op.quartos, vagas: op.vagas, area_util: op.area, anunciante_nome: op.anunciante_nome, anunciante_tipo: op.anunciante_tipo, publicado_em: op.publicado_em,
   });
-  run('UPDATE fisguei_anuncios SET oportunidade_id=? WHERE id=?', op.id, id);
+  D.muda(id, 'oportunidade_id=?', [op.id]);
   return id;
 }
 function pedidoAberto(anuncioId, pessoaId) {
@@ -111,7 +112,7 @@ async function proximo() {
     if (!p) return { pedido: null };
     const pega = run(`UPDATE fisguei_pedidos SET status='buscando', iniciado_em=datetime('now','localtime') WHERE id=? AND status='fila'`, p.id);
     if (!pega.changes) continue;
-    const a = one('SELECT * FROM fisguei_anuncios WHERE id=?', p.anuncio_id);
+    const a = D.um(p.anuncio_id);
     let end = null;
     try { end = await resolveCep(a); } catch { end = null; }
     if (!end) { conclui(p.id, 'erro', { erro: 'Não achei o CEP dessa rua e número. Confira o endereço no Radar.' }); continue; }
@@ -159,7 +160,7 @@ function resultado(id, b) {
   else if (p.tipo === 'endereco' && total && !consultadas) status = 'escolher';
   if (b.sem_credito) status = consultadas ? 'concluido' : 'erro';
   conclui(id, status, { creditos, pessoas: total, consultadas, erro: b.sem_credito ? 'O Fisgar recusou por falta de crédito: ' + (b.aviso || 'sem créditos no plano') : b.aviso || null });
-  if (status === 'sem_resultado') run(`UPDATE fisguei_anuncios SET observacoes=coalesce(observacoes,'') || ? WHERE id=?`, ' O Fisgar não achou dono pelo IPTU neste endereço.', p.anuncio_id);
+  if (status === 'sem_resultado') D.muda(p.anuncio_id, "observacoes=coalesce(observacoes,'') || ?", [' O Fisgar não achou dono pelo IPTU neste endereço.']);
   const carteira = status === 'concluido' ? entraNaCarteira(id) : null;
   return { ok: true, status, creditos, pessoas: total, consultadas, imovel: carteira };
 }
@@ -167,11 +168,11 @@ function resultado(id, b) {
 function situacaoOportunidades(ids) {
   if (!ids.length) return {};
   const out = {};
-  for (const r of all(`SELECT a.id, a.oportunidade_id, a.status,
+  for (const r of all(`SELECT a.id, d.oportunidade_id, ${D.STATUS} AS status,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id) AS pessoas,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas,
       (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=a.id ORDER BY p.id DESC LIMIT 1) AS pedido
-    FROM fisguei_anuncios a WHERE a.oportunidade_id IN (${ids.map(() => '?').join(',')})`, ...ids)) out[r.oportunidade_id] = { ...r, ref: F.ref(r.id) };
+    FROM anuncio_andamento d JOIN fisguei_anuncios a ON a.id=d.anuncio_id WHERE d.oportunidade_id IN (${ids.map(() => '?').join(',')})`, ...ids)) out[r.oportunidade_id] = { ...r, ref: F.ref(r.id) };
   return out;
 }
 
@@ -213,7 +214,7 @@ const origemDono = (d) => (d.status === 'confirmou' ? 'Fisgar (consulta paga) e 
 
 // Liga (ou atualiza) o proprietário da ficha com o que o Fisgar trouxe. Proprietário digitado pela equipe não é trocado.
 function sincronizaDono(anuncioId) {
-  const a = one('SELECT id, imovel_id FROM fisguei_anuncios WHERE id=?', anuncioId);
+  const a = one('SELECT anuncio_id AS id, imovel_id FROM anuncio_andamento WHERE anuncio_id=?', anuncioId);
   if (!a || !a.imovel_id) return null;
   const im = one('SELECT id, proprietario_id FROM imoveis WHERE id=?', a.imovel_id);
   if (!im) return null;
@@ -233,7 +234,7 @@ function sincronizaDono(anuncioId) {
 // Leva o anúncio da base para a carteira (imóveis em operação). Acontece sozinho quando o Fisgar devolve o proprietário
 // ("Localizar proprietário" nas vitrines) e também pelo botão na ficha do Fisguei. As fotos do anúncio são de terceiros: não vão.
 function importa(anuncioId, usuario, proximoCodigo) {
-  const a = one('SELECT * FROM fisguei_anuncios WHERE id=?', anuncioId);
+  const a = D.um(anuncioId);
   if (!a) { const e = new Error('Anúncio não encontrado.'); e.status = 404; throw e; }
   if (a.imovel_id && one('SELECT 1 FROM imoveis WHERE id=?', a.imovel_id)) {
     sincronizaDono(a.id);
@@ -250,7 +251,7 @@ function importa(anuncioId, usuario, proximoCodigo) {
   const id = Number(run(`INSERT INTO imoveis(codigo,tipo,status,cep,logradouro,numero,unidade,bairro,cidade,uf,lat,lon,condominio_id,quartos,suites,vagas,area_util,area_total,valor,valor_condominio,iptu,descricao,corretor_id)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, codigo, tipo, 'captacao', a.cep, a.logradouro, a.numero, unidade, a.bairro, a.cidade || cfg.CIDADE_PADRAO, a.uf || 'SP', a.lat, a.lon,
     a.condominio_id || null, a.quartos, a.suites, a.vagas, a.area_util, a.area_total, a.valor, a.valor_condominio, a.iptu, descricao, corretor).lastInsertRowid);
-  run(`UPDATE fisguei_anuncios SET imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, id, a.id);
+  D.muda(a.id, 'imovel_id=?', [id]);
   if (a.oportunidade_id) run(`UPDATE oportunidades SET imovel_id=coalesce(imovel_id,?) WHERE id=?`, id, a.oportunidade_id);
   sincronizaDono(a.id);
   return { id, codigo };
