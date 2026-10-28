@@ -1,0 +1,158 @@
+{
+  "codigo": "AR0001",
+  "slug": "terreno-hortolandia-zoneamento-industrial-comercial-ar0001",
+  "titulo": "Terreno de 38.000 m² com zoneamento industrial e comercial em Hortolândia",
+  "resumo": "Terreno de 38.000 m² em Hortolândia, SP, com zoneamento industrial e comercial, ideal para investidores e empresas.",
+  "capa": {
+    "foto": 410,
+    "alt": "Lote com dimensões e área total de 38.000 m²"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 38.000 m² está localizado em Hortolândia, na divisa com Monte Mor, SP, e é ideal para investidores e empresas que buscam uma área estratégica para empreendimentos industriais, logísticos ou comerciais. Com zoneamento misto, a área permite diferentes tipos de projetos. O imóvel tem leve aclive, o que favorece a drenagem natural e o aproveitamento do terreno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é bem localizada, com acesso direto à rodovia, facilitando operações logísticas e o fluxo de veículos. A região em que o terreno está situado está em constante expansão econômica e faz parte da Região Metropolitana de Campinas, o que reforça o do local."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "38.000 m² de área total, ideal para projetos de grande porte",
+        "Zoneamento misto (industrial e comercial), permitindo diferentes tipos de empreendimentos",
+        "Acesso direto à rodovia, facilitando logística e deslocamento",
+        "Região em crescimento, com e proximidade a polos industriais"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Características do terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno possui dimensões de 213,9m x 178,3m x 161,9m x 269m, totalizando 38.000 m². As fotos mostram uma área arborizada com vegetação e estrutura agrícola. Há também plantio recente com estrutura de irrigação, indicando que o terreno pode ter sido anteriormente utilizado para atividades rurais. A área apresenta leve aclive, o que pode ser vantajoso para o planejamento de projetos que precisam de drenagem adequada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 406,
+          "legenda": "Terreno com vegetação e estrutura agrícola"
+        },
+        {
+          "foto": 407,
+          "legenda": "Terreno com plantio recente e estrutura de irrigação"
+        },
+        {
+          "foto": 408,
+          "legenda": "Terreno com vegetação e equipamento rural"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está localizado em uma região estratégica, na divisa entre Hortolândia e Monte Mor, SP, e possui acesso direto à rodovia, facilitando o deslocamento e o transporte de mercadorias. A localização está próxima aos principais polos industriais da região de Campinas, o que reforça o potencial de desenvolvimento do imóvel. As fotos mostram a sinalização da RUAH e a estrada de terra, indicando o acesso ao local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 409,
+          "legenda": "Terreno com gramado e céu nublado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Potencial de uso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com zoneamento industrial e comercial, o terreno é ideal para a implantação de indústrias, galpões logísticos, centros de distribuição, atacadistas e outros empreendimentos que demandam localização estratégica. A área pode ser aproveitada para diferentes projetos, graças ao seu tamanho e à versatilidade do zoneamento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para investidores e empresas que buscam uma área estratégica para empreendimentos industriais, logísticos ou comerciais. A bem localizada, o zoneamento misto e o acesso à rodovia tornam o imóvel uma opção para quem deseja expandir operações ou investir no interior paulista."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, as restrições de zoneamento e o que não aparece nas fotos, como possíveis limitações de uso ou condições do solo.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 406,
+      "legenda": "Terreno com vegetação e estrutura agrícola",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 407,
+      "legenda": "Terreno com plantio recente e estrutura de irrigação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 408,
+      "legenda": "Terreno com vegetação e equipamento rural",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 409,
+      "legenda": "Terreno com gramado e céu nublado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 410,
+      "legenda": "Lote com dimensões e área total",
+      "ambiente": "terreno"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho do terreno?",
+      "resposta": "O terreno tem 38.000 m² de área total."
+    },
+    {
+      "pergunta": "Qual o zoneamento do terreno?",
+      "resposta": "O zoneamento é misto, permitindo uso industrial e comercial."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 38.000 m² em Hortolândia, SP, com zoneamento industrial e comercial. Ideal para investidores e empresas. Acesso direto à rodovia e localização estratégica na divisa com Monte Mor.",
+    "hashtags": [
+      "terreno",
+      "hortolandia",
+      "zoneamentoindustrial",
+      "investimento",
+      "empresas",
+      "regiaometropolitanadecampinas",
+      "logistica",
+      "comercial"
+    ]
+  },
+  "versao": "d2f1f2afd7ee",
+  "publicadoEm": "2026-10-28T04:22:43.236Z"
+}

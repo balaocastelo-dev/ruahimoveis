@@ -1,0 +1,200 @@
+{
+  "codigo": "TE0016",
+  "slug": "terreno-almarias-jarinu-sp-te0016",
+  "titulo": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu",
+  "resumo": "Terreno de 20.579 m² no Condomínio Almarias, em Jarinu/SP. Vista para montanhas, localização elevada e estrutura de lazer exclusiva.",
+  "capa": {
+    "foto": 372,
+    "alt": "Pista asfaltada com vista para montanhas e céu azul"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno de 20.579 m² está localizado no Condomínio Almarias, em Jarinu/SP, uma região que combina tranquilidade e acesso a grandes cidades. Sua posição elevada oferece uma vista panorâmica para as montanhas e o verde da natureza. A localização estratégica permite fácil deslocamento para São Paulo e Campinas, sem abrir mão do contato com a natureza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno está em um ponto bem localizada do condomínio, com estrada asfaltada, gramado bem cuidado e vegetação que compõe um cenário de alta qualidade de vida. A área é ideal para quem busca privacidade, segurança e um ambiente de alta sofisticação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Terreno de 20.579 m² com vista para as montanhas",
+        "Localizado no ponto mais alto do condomínio",
+        "Acesso facilitado às principais cidades da região",
+        "Condomínio com clube exclusivo e estrutura de lazer",
+        "Topografia favorável para construções de alto padrão"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vista e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A posição elevada do terreno oferece uma vista permanente para as montanhas e para o verde da natureza. As fotos mostram um horizonte aberto, com céu azul e vegetação exuberante ao longe. A estrada asfaltada que acessa o terreno está bem conservada e conecta ao condomínio fechado, garantindo privacidade e segurança."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 374,
+          "legenda": "Terreno com vista para montanhas e sol brilhante"
+        },
+        {
+          "foto": 375,
+          "legenda": "Terreno com vista para montanhas e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Condomínio Almarias oferece uma estrutura de lazer exclusiva para moradores, incluindo um clube completo. As fotos da entrada do condomínio e da garagem mostram a qualidade da infraestrutura, com portões fechados, palmeiras e sinalização clara. O terreno está em uma área rural, mas com acesso facilitado às cidades."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 368,
+          "legenda": "Entrada de condomínio com palmeiras e logotipo RUAH"
+        },
+        {
+          "foto": 369,
+          "legenda": "Garagem com palmeiras ao lado"
+        },
+        {
+          "foto": 370,
+          "legenda": "Placa 'Vendido' e número '7' em terreno gramado"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área e possibilidades"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com 20.579 m², o terreno tem uma topografia favorável para projetos de alto padrão. As fotos mostram gramado bem cuidado, árvores plantadas e uma pista asfaltada que pode ser usada para caminhadas ou outras atividades. A área permite a construção de uma casa que se integre ao meio ambiente, com privacidade e conexão com a natureza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 367,
+          "legenda": "Terreno com palmeiras e estrada"
+        },
+        {
+          "foto": 371,
+          "legenda": "Terreno com estrada e vegetação"
+        },
+        {
+          "foto": 373,
+          "legenda": "Terreno com estrada e vegetação"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este terreno é ideal para quem busca um espaço de alta privacidade, com vista para a natureza e acesso a cidades importantes. A localização no Condomínio Almarias oferece segurança, infraestrutura e qualidade de vida para quem deseja morar em um ambiente exclusivo e bem planejado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do terreno, as regras do condomínio e quais são as restrições de uso da área.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 368,
+      "legenda": "Entrada de condomínio com palmeiras e logotipo RUAH",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 367,
+      "legenda": "Terreno com palmeiras e estrada",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 370,
+      "legenda": "Placa 'Vendido' e número '7' em terreno gramado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 371,
+      "legenda": "Terreno com estrada e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 372,
+      "legenda": "Pista asfaltada em área rural com vista para montanhas",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 373,
+      "legenda": "Terreno com estrada e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 374,
+      "legenda": "Terreno com vista para montanhas e sol brilhante",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 375,
+      "legenda": "Terreno com vista para montanhas e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 369,
+      "legenda": "Garagem com palmeiras ao lado",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos metros quadrados tem o terreno?",
+      "resposta": "O terreno tem 20.579 m²."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    },
+    {
+      "pergunta": "O terreno tem acesso asfaltado?",
+      "resposta": "Sim, o terreno tem acesso por uma pista asfaltada."
+    }
+  ],
+  "redes": {
+    "legenda": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu/SP. Vista para as montanhas e bem localizada. Ideal para quem busca privacidade e qualidade de vida. Acesso fácil às principais cidades da região.",
+    "hashtags": [
+      "terrenojarinu",
+      "almarias",
+      "terrenovenda",
+      "jarinuimoveis",
+      "campinas",
+      "sp",
+      "natureza",
+      "condominioexclusivo"
+    ]
+  },
+  "versao": "60a1d9519d65",
+  "publicadoEm": "2026-10-28T04:22:43.237Z"
+}

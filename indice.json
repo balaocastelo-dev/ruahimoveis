@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "TE0016",
+      "slug": "terreno-almarias-jarinu-sp-te0016",
+      "titulo": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu",
+      "resumo": "Terreno de 20.579 m² no Condomínio Almarias, em Jarinu/SP. Vista para montanhas, localização elevada e estrutura de lazer exclusiva.",
+      "capa": {
+        "foto": 372,
+        "alt": "Pista asfaltada com vista para montanhas e céu azul"
+      },
+      "versao": "60a1d9519d65",
+      "publicadoEm": "2026-10-28T04:22:43.237Z"
+    },
+    {
+      "codigo": "HO0001",
+      "slug": "hotel-centro-campinas-sp-ho0001",
+      "titulo": "Hotel com 29 suítes e área comercial no Centro de Campinas",
+      "resumo": "Hotel com 29 suítes e área comercial no Centro de Campinas. Localização estratégica e potencial de investimento.",
+      "capa": {
+        "foto": 411,
+        "alt": "Fachada de prédio com loja e escritório"
+      },
+      "versao": "0b7b6cc37f45",
+      "publicadoEm": "2026-10-28T04:22:43.236Z"
+    },
+    {
+      "codigo": "AR0001",
+      "slug": "terreno-hortolandia-zoneamento-industrial-comercial-ar0001",
+      "titulo": "Terreno de 38.000 m² com zoneamento industrial e comercial em Hortolândia",
+      "resumo": "Terreno de 38.000 m² em Hortolândia, SP, com zoneamento industrial e comercial, ideal para investidores e empresas.",
+      "capa": {
+        "foto": 410,
+        "alt": "Lote com dimensões e área total de 38.000 m²"
+      },
+      "versao": "d2f1f2afd7ee",
+      "publicadoEm": "2026-10-28T04:22:43.236Z"
+    },
+    {
+      "codigo": "CA0005",
+      "slug": "casa-em-condominio-4-suites-piscina-residencial-jatibela-campinas-ca0005",
+      "titulo": "Casa em condomínio de 4 suítes com piscina no Residencial Jatibela, Campinas",
+      "resumo": "Casa em condomínio fechado no Residencial Jatibela com 4 suítes, piscina, área gourmet e acabamento moderno. Ideal para quem busca conforto e privacidade em um.",
+      "capa": {
+        "foto": 378,
+        "alt": "Fachada moderna com varanda e logotipo 'RUAH'"
+      },
+      "versao": "c3fd22e0e012",
+      "publicadoEm": "2026-10-28T04:22:43.236Z"
+    },
+    {
+      "codigo": "CA0055",
+      "slug": "casa-em-condominio-vila-hollandia-campinas-sp-ca0055",
+      "titulo": "Casa em condomínio de 5 quartos com área gourmet e piscina no Vila Hollândia",
+      "resumo": "Casa em condomínio no Vila Hollândia, Campinas, com 5 quartos, 4 suítes e 5 vagas de garagem. Destaca-se pela área gourmet, piscina e jardim bem cuidado.",
+      "capa": {
+        "foto": 429,
+        "alt": "Fachada de casa com gramado e palmeiras"
+      },
+      "versao": "63d042683e93",
+      "publicadoEm": "2026-10-28T04:22:43.235Z"
+    },
+    {
       "codigo": "PR0002",
       "slug": "predio-comercial-vila-itapura-campinas-sp-pr0002",
       "titulo": "Prédio comercial de esquina em Vila Itapura, Campinas",
@@ -1046,5 +1106,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:19:24.105Z"
+  "atualizadoEm": "2026-10-28T04:22:43.237Z"
 }

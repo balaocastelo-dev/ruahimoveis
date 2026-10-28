@@ -1,0 +1,298 @@
+{
+  "codigo": "CA0055",
+  "slug": "casa-em-condominio-vila-hollandia-campinas-sp-ca0055",
+  "titulo": "Casa em condomínio de 5 quartos com área gourmet e piscina no Vila Hollândia",
+  "resumo": "Casa em condomínio no Vila Hollândia, Campinas, com 5 quartos, 4 suítes e 5 vagas de garagem. Destaca-se pela área gourmet, piscina e jardim bem cuidado.",
+  "capa": {
+    "foto": 429,
+    "alt": "Fachada de casa com gramado e palmeiras"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no Vila Hollândia, Campinas, com 5 quartos, 4 suítes e 5 vagas de garagem. O imóvel está localizado em uma área com gramado bem manejado e palmeiras, oferecendo um ambiente de alta qualidade. A fachada clara e o jardim externo são elementos que chamam atenção desde a entrada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem uma área de lazer completa, incluindo piscina, área gourmet e jardim. O interior conta com ambientes amplos, como a sala de jantar com mesa redonda e a cozinha ampla com ilha central. A varanda possui janelas de vidro e uma vista para o jardim."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "5 quartos e 4 suítes em área ampla",
+        "Piscina com deck de pedra e jardim tropical",
+        "Varanda gourmet com churrasqueira e vista para o jardim",
+        "Jardim bem manejado com palmeiras e gramado",
+        "Cozinha ampla com ilha central e armários brancos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é integrada e bem iluminada, com a sala de jantar com mesa redonda e cadeiras com encosto verde. O teto de madeira e a tela de TV suspensa reforçam o estilo moderno e acolhedor do ambiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é ampla e está equipada com uma ilha central, banca de granito e janela com vista para a varanda. Os armários brancos com detalhes vermelhos e o ventilador de teto complementam o design funcional e elegante."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 433,
+          "legenda": "Sala de jantar com mesa redonda e cadeiras"
+        },
+        {
+          "foto": 435,
+          "legenda": "Cozinha ampla com ilha central e janela para varanda"
+        },
+        {
+          "foto": 437,
+          "legenda": "Varanda gourmet com mesa de madeira e churrasqueira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem distribuídos, com armários de madeira e pisos de cerâmica ou azulejos. A suite principal possui cama de casal, armários de madeira, teto de madeira e ventilador de teto, oferecendo um ambiente confortável e elegante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os outros quartos também são espaçosos e bem iluminados, com detalhes que reforçam o conforto e a qualidade do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 432,
+          "legenda": "Suite com cama de casal e armários de madeira"
+        },
+        {
+          "foto": 434,
+          "legenda": "Quarto com cama, armário de madeira e ventilador no teto"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e jardim"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de lazer conta com piscina, área gourmet e jardim bem manejado. A piscina tem deck de pedra e está cercada por um jardim tropical com luzes e paredes de pedra, ideal para momentos de relaxamento e convivência em família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O jardim externo tem gramado bem-cortado, palmeiras e caminhos de pedra, com uma mesa de jantar ao ar livre e luminária de jardim. Esses espaços são ideais para reuniões e momentos de lazer."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 441,
+          "legenda": "Piscina com deck de pedra e jardim tropical"
+        },
+        {
+          "foto": 440,
+          "legenda": "Jardim com mesa de jantar ao ar livre e plantas exuberantes"
+        },
+        {
+          "foto": 436,
+          "legenda": "Jardim com grama, arbustos e palmeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado no Vila Hollândia, em Campinas, em uma posição bem localizada no condomínio. A fachada da casa é clara e bem conservada, com gramado e palmeiras que valorizam o ambiente externo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece privacidade e infraestrutura de lazer, com áreas como piscina, churrasqueira e jardins. A localização é ideal para quem busca conforto e qualidade de vida."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 445,
+          "legenda": "Fachada de casa com gramado e palmeiras"
+        },
+        {
+          "foto": 448,
+          "legenda": "Fachada de casa com portão fechado e garagem"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa em condomínio é ideal para famílias que buscam conforto, privacidade e um estilo de vida moderno. A localização, a área de lazer e os espaços amplos são pontos fortes para quem busca um imóvel de alta qualidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do poço artesiano, a manutenção do condomínio e a disponibilidade de áreas externas que não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 429,
+      "legenda": "Fachada de casa com gramado e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 438,
+      "legenda": "Fachada de casa com garagem e janelas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 444,
+      "legenda": "Fachada de casa com entrada e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 445,
+      "legenda": "Fachada de casa com gramado e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 448,
+      "legenda": "Fachada de casa com portão fechado e garagem",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 433,
+      "legenda": "Sala de jantar com mesa redonda e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 431,
+      "legenda": "Varanda com vista para casas vizinhas e palmeiras",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 437,
+      "legenda": "Varanda gourmet com mesa de madeira e churrasqueira",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 435,
+      "legenda": "Cozinha ampla com ilha central e janela para varanda",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 434,
+      "legenda": "Quarto com cama, armário de madeira e ventilador no teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 432,
+      "legenda": "Suite com cama de casal e armários de madeira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 430,
+      "legenda": "Banheiro com piso claro e parede vermelha",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 436,
+      "legenda": "Jardim com grama, arbustos e palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 439,
+      "legenda": "Jardim com grama, caminho de pedra e palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 440,
+      "legenda": "Jardim com mesa de jantar ao ar livre e plantas exuberantes",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 443,
+      "legenda": "Jardim com palmeiras e grama bem-cortada",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 446,
+      "legenda": "Jardim com plantas e árvores em área externa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 447,
+      "legenda": "Jardim com árvores e plantas em área externa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 449,
+      "legenda": "Jardim com árvores e plantas em área externa",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 441,
+      "legenda": "Piscina com deck de pedra e jardim tropical",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 442,
+      "legenda": "Piscina com deck de pedra e jardim tropical",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel tem 5 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, há uma área gourmet com mesa de madeira e churrasqueira."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Vila Hollândia, Campinas, com 5 quartos, 4 suítes e 5 vagas de garagem. Destaca-se pela área gourmet, piscina e jardim bem cuidado. Ideal para quem busca conforto e privacidade.",
+    "hashtags": [
+      "casacondominio",
+      "campinas",
+      "vilaHollandia",
+      "jardim",
+      "piscina",
+      "areaGourmet",
+      "suites",
+      "vagasGaragem"
+    ]
+  },
+  "versao": "63d042683e93",
+  "publicadoEm": "2026-10-28T04:22:43.235Z"
+}

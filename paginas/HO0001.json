@@ -1,0 +1,253 @@
+{
+  "codigo": "HO0001",
+  "slug": "hotel-centro-campinas-sp-ho0001",
+  "titulo": "Hotel com 29 suítes e área comercial no Centro de Campinas",
+  "resumo": "Hotel com 29 suítes e área comercial no Centro de Campinas. Localização estratégica e potencial de investimento.",
+  "capa": {
+    "foto": 411,
+    "alt": "Fachada de prédio com loja e escritório"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este hotel com 29 suítes e área comercial está localizado no Centro de Campinas, em um imóvel com 977 m² de área construída em um terreno de 318 m². O imóvel é dividido em dois pavimentos, com o térreo destinado à área comercial e o superior à estrutura hoteleira. A localização estratégica e o potencial de rentabilidade tornam este imóvel uma opção para investidores e empresários."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do prédio apresenta tons de azul e branco, com lojas e escritórios no térreo, indicando uma boa integração com o comércio local. O imóvel é versátil, podendo ser utilizado como hotel, pousada, hospedagem corporativa ou locação de curta e longa permanência."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "29 suítes prontas para operação",
+        "Área comercial no térreo com diversas possibilidades de uso",
+        "Localização estratégica no Centro de Campinas",
+        "Potencial de rentabilidade e procura patrimonial",
+        "Imóvel com área construída de 977 m²"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e comercial"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O térreo do imóvel é destinado à área comercial, com espaço adequado para recepção, lojas, escritórios, clínicas, restaurantes ou diversos tipos de negócios. As fotos mostram uma fachada com lojas e escritórios, indicando uma boa integração com o comércio local. A área de entrada é bem definida, com escada e plantas decorativas, sugerindo um ambiente acolhedor e funcional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio possui fachada com pintura desgastada e grafites, o que pode indicar a necessidade de reforma. No entanto, a estrutura e a localização são fortes, permitindo diversas opções de uso e investimento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 427,
+          "legenda": "Fachada de prédio com loja e sinalização de aluguel"
+        },
+        {
+          "foto": 428,
+          "legenda": "Fachada de prédio com lojas e grafites"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Estrutura hoteleira e ambientes internos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O pavimento superior do imóvel abriga a estrutura hoteleira, composta por 29 suítes prontas para operação. As fotos de interiores mostram salas com mesas e cadeiras de madeira, decoração com bandeirinhas brasileiras, piso claro e ambientes com iluminação adequada. O uso de madeira e cores neutras sugere um ambiente acolhedor e funcional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As salas de reuniões e de jogos apresentam mesas e cadeiras de madeira, com decoração simples, mas funcional. A integração entre os ambientes é evidente, com áreas de lazer como salas de jogos com bilhar e mesas de jantar, indicando uma boa utilização dos espaços."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 414,
+          "legenda": "Sala de jogos com bilhar e menu de lanchonete"
+        },
+        {
+          "foto": 415,
+          "legenda": "Sala de jogos com bilhar e mesas de jantar"
+        },
+        {
+          "foto": 416,
+          "legenda": "Sala de estar com balcão e geladeira"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado no Centro de Campinas, uma região estratégica com boa infraestrutura e acesso a áreas comerciais e de lazer. As fotos mostram a proximidade de áreas de pedestres, faixas de travessia e sinalizações de trânsito, indicando uma boa integração com o entorno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio possui uma fachada com letreiros de lojas e escritórios, sugerindo uma boa visibilidade e potencial de uso comercial. Apesar da fachada desgastada, o imóvel apresenta uma estrutura sólida, com áreas bem definidas e potencial para reforma e modernização."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 420,
+          "legenda": "Entrada de um prédio com escada e plantas"
+        },
+        {
+          "foto": 421,
+          "legenda": "Entrada de hotel com plantas e mesa redonda"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este hotel com 29 suítes e área comercial é ideal para investidores e empresários que buscam um imóvel com grande potencial de rentabilidade. A localização estratégica no Centro de Campinas, aliada à versatilidade do imóvel, oferece oportunidades para diversos modelos de negócio."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a possibilidade de financiamento e o que não está visível nas fotos, como o estado geral das instalações e a necessidade de reformas.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 411,
+      "legenda": "Fachada de prédio com loja e escritório",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 413,
+      "legenda": "Bar Central com balcão de snacks e bebidas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 420,
+      "legenda": "Entrada de um prédio com escada e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 421,
+      "legenda": "Entrada de hotel com plantas e mesa redonda",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 427,
+      "legenda": "Fachada de prédio com loja e sinalização de aluguel",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 428,
+      "legenda": "Fachada de prédio com lojas e grafites",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 414,
+      "legenda": "Sala de jogos com bilhar e menu de lanchonete",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 416,
+      "legenda": "Sala de estar com balcão e geladeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 417,
+      "legenda": "Sala de reuniões com mesas e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 418,
+      "legenda": "Sala com mesas e cadeiras, decoração com bandeirinhas e equipamentos de som",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 419,
+      "legenda": "Sala com mesa e cadeiras, bandeirinhas brasileiras penduradas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 423,
+      "legenda": "Sala com mesas e cadeiras cobertas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 424,
+      "legenda": "Sala de estar com cadeiras e decoração de bandeirinhas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 425,
+      "legenda": "Sala com mesa coberta e escada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 412,
+      "legenda": "Cozinha com bancada de granito e geladeira",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 426,
+      "legenda": "Cozinha com bancada de granito e cadeiras cobertas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 415,
+      "legenda": "Sala de jogos com bilhar e mesas de jantar",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 422,
+      "legenda": "Corredor com escada e plantas",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o hotel?",
+      "resposta": "O hotel possui 29 suítes prontas para operação."
+    },
+    {
+      "pergunta": "Tem área comercial no imóvel?",
+      "resposta": "Sim, o térreo do imóvel é destinado à área comercial."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Hotel com 29 suítes e área comercial no Centro de Campinas. Localização estratégica e potencial de investimento. Agende a visita e conheça esta oportunidade.",
+    "hashtags": [
+      "hotelcampinas",
+      "investimentoimmobiliario",
+      "campinas",
+      "imovelcomercial",
+      "centrocampinas",
+      "suites",
+      "areautil",
+      "renda"
+    ]
+  },
+  "versao": "0b7b6cc37f45",
+  "publicadoEm": "2026-10-28T04:22:43.236Z"
+}
