@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento no Cambuí, um dos bairros mais valorizados de Campinas, oferece 164 m² de área privativa com 3 suítes, 4 vagas de garagem e uma bem localizada. O imóvel está em um condomínio completo, com piscina climatizada, academia, salão de festas e outros amenities."
+      "texto": "Este apartamento no Cambuí, um dos bairros mais valorizados de Campinas, oferece 164 m² de área privativa com 3 suítes, 4 vagas de garagem e uma boa localização. O imóvel está em um condomínio completo, com piscina climatizada, academia, salão de festas e outros amenities."
     },
     {
       "tipo": "paragrafo",
@@ -150,7 +150,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e uma bem localizada. Com 3 suítes, 4 vagas de garagem e um condomínio completo, ele oferece tudo o que é necessário para uma vida de qualidade no Cambuí."
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e uma boa localização. Com 3 suítes, 4 vagas de garagem e um condomínio completo, ele oferece tudo o que é necessário para uma vida de qualidade no Cambuí."
     },
     {
       "tipo": "destaque",
@@ -308,5 +308,6 @@
     ]
   },
   "versao": "3426903382af",
-  "publicadoEm": "2026-10-28T04:37:58.143Z"
+  "publicadoEm": "2026-10-28T04:37:58.143Z",
+  "atualizadoEm": "2026-10-28T04:40:00.847Z"
 }

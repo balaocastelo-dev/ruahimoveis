@@ -125,7 +125,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A casa está localizada em uma rua sem saída, cercada por árvores exuberantes e a poucos passos do lago e da praia principal do condomínio. A bem localizada oferece privacidade e vista parcial para o campo de golfe. O imóvel está em um condomínio fechado com segurança 24h, portaria e infraestrutura completa."
+      "texto": "A casa está localizada em uma rua sem saída, cercada por árvores exuberantes e a poucos passos do lago e da praia principal do condomínio. A boa localização oferece privacidade e vista parcial para o campo de golfe. O imóvel está em um condomínio fechado com segurança 24h, portaria e infraestrutura completa."
     },
     {
       "tipo": "paragrafo",
@@ -159,7 +159,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida sofisticado. A bem localizada, a área social integrada e a vista para a natureza fazem dele uma excelente opção para quem deseja morar em um ambiente de alta qualidade e exclusividade."
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida sofisticado. A boa localização, a área social integrada e a vista para a natureza fazem dele uma excelente opção para quem deseja morar em um ambiente de alta qualidade e exclusividade."
     },
     {
       "tipo": "destaque",
@@ -335,7 +335,7 @@
     }
   ],
   "redes": {
-    "legenda": "Casa em condomínio de 5 suítes com piscina e vista para a natureza na Quinta da Baroneza II. Ideal para quem busca sofisticação e privacidade. bem localizada com acesso ao lago e ao campo de golfe. Agende sua visita!",
+    "legenda": "Casa em condomínio de 5 suítes com piscina e vista para a natureza na Quinta da Baroneza II. Ideal para quem busca sofisticação e privacidade. Boa localização com acesso ao lago e ao campo de golfe. Agende sua visita!",
     "hashtags": [
       "casacondominio",
       "quintadabaronesa",
@@ -348,5 +348,6 @@
     ]
   },
   "versao": "b7e8423303ac",
-  "publicadoEm": "2026-10-28T04:30:19.645Z"
+  "publicadoEm": "2026-10-28T04:30:19.645Z",
+  "atualizadoEm": "2026-10-28T04:40:00.851Z"
 }

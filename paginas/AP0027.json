@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento novo, localizado no coração do Nova Campinas, oferece 65 m² de área privativa com 2 suítes e ambientes modernos e bem iluminados. A bem localizada permite fácil acesso a serviços, comércios e vias importantes da região."
+      "texto": "Este apartamento novo, localizado no coração do Nova Campinas, oferece 65 m² de área privativa com 2 suítes e ambientes modernos e bem iluminados. A boa localização permite fácil acesso a serviços, comércios e vias importantes da região."
     },
     {
       "tipo": "paragrafo",
@@ -339,5 +339,6 @@
     ]
   },
   "versao": "1e59a1d78bae",
-  "publicadoEm": "2026-10-28T04:35:56.508Z"
+  "publicadoEm": "2026-10-28T04:35:56.508Z",
+  "atualizadoEm": "2026-10-28T04:40:00.848Z"
 }

@@ -2,7 +2,7 @@
   "codigo": "CA0035",
   "slug": "casa-swiss-park-campinas-3-suites-varanda-ca0035",
   "titulo": "Casa em condomínio de 3 suítes com varanda e rooftop no Swiss Park",
-  "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada.",
+  "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e boa localização.",
   "capa": {
     "foto": 1121,
     "alt": "Fachada moderna de casa com varanda e carro estacionado"
@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada. O imóvel tem 208 m² de área útil e conta com um rooftop privativo, elevador privativo e sala de estar integrada à varanda. O Swiss Park é um dos bairros mais valorizados de Campinas, com segurança e infraestrutura completa."
+      "texto": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e boa localização. O imóvel tem 208 m² de área útil e conta com um rooftop privativo, elevador privativo e sala de estar integrada à varanda. O Swiss Park é um dos bairros mais valorizados de Campinas, com segurança e infraestrutura completa."
     },
     {
       "tipo": "paragrafo",
@@ -124,7 +124,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para famílias que buscam conforto, segurança e qualidade de vida. Com bem localizada no Swiss Park, o imóvel oferece acesso fácil a comercios, escolas e rodovias, além de um condomínio fechado com lazer completo."
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, segurança e qualidade de vida. Com boa localização no Swiss Park, o imóvel oferece acesso fácil a comercios, escolas e rodovias, além de um condomínio fechado com lazer completo."
     },
     {
       "tipo": "destaque",
@@ -240,7 +240,7 @@
     }
   ],
   "redes": {
-    "legenda": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada. Ideal para quem busca conforto e estilo de vida moderno.",
+    "legenda": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e boa localização. Ideal para quem busca conforto e estilo de vida moderno.",
     "hashtags": [
       "casaemcondominio",
       "swisspark",
@@ -253,5 +253,6 @@
     ]
   },
   "versao": "d317c5467ea2",
-  "publicadoEm": "2026-10-28T04:02:52.943Z"
+  "publicadoEm": "2026-10-28T04:02:52.943Z",
+  "atualizadoEm": "2026-10-28T04:40:00.852Z"
 }

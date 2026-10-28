@@ -124,7 +124,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este galpão comercial é ideal para investidores e empresários que buscam um imóvel em localização estratégica, com estrutura adequada para diversos segmentos. A propriedade é uma excelente opção para quem pretende instalar ou expandir seu negócio em um endereço de destaque, com alto potencial de exposição e procura."
+      "texto": "Este galpão comercial é ideal para investidores e empresários que buscam um imóvel em localização estratégica, com estrutura adequada para diversos segmentos. A propriedade é uma excelente opção para quem pretende instalar ou expandir seu negócio em um endereço de destaque, com alto potencial de exposição."
     },
     {
       "tipo": "destaque",
@@ -293,5 +293,6 @@
     ]
   },
   "versao": "9c788c12d159",
-  "publicadoEm": "2026-10-28T04:05:52.175Z"
+  "publicadoEm": "2026-10-28T04:05:52.175Z",
+  "atualizadoEm": "2026-10-28T04:40:00.851Z"
 }

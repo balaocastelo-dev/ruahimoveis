@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno de 3.361 m² está localizado no condomínio Quinta da Baroneza, em Bragança Paulista, e oferece um local de alto padrão. O terreno apresenta topografia suave, com gramado bem manejado e áreas arborizadas, proporcionando um ambiente agradável e acolhedor. A bem localizada e o acesso a infraestrutura completa tornam este imóvel ideal para quem deseja morar em um condomínio luxuoso e bem planejado."
+      "texto": "Este terreno de 3.361 m² está localizado no condomínio Quinta da Baroneza, em Bragança Paulista, e oferece um local de alto padrão. O terreno apresenta topografia suave, com gramado bem manejado e áreas arborizadas, proporcionando um ambiente agradável e acolhedor. A boa localização e o acesso a infraestrutura completa tornam este imóvel ideal para quem deseja morar em um condomínio luxuoso e bem planejado."
     },
     {
       "tipo": "paragrafo",
@@ -137,7 +137,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno é ideal para quem busca um local com exclusividade, infraestrutura completa e uma vida em harmonia com a natureza. O condomínio oferece segurança, lazer e comodidades para morar com qualidade de vida. A bem localizada e o acesso a áreas verdes tornam este imóvel uma excelente opção para investir ou morar."
+      "texto": "Este terreno é ideal para quem busca um local com exclusividade, infraestrutura completa e uma vida em harmonia com a natureza. O condomínio oferece segurança, lazer e comodidades para morar com qualidade de vida. A boa localização e o acesso a áreas verdes tornam este imóvel uma excelente opção para investir ou morar."
     },
     {
       "tipo": "destaque",
@@ -273,7 +273,7 @@
     }
   ],
   "redes": {
-    "legenda": "Terreno no condomínio Quinta da Baroneza, em Bragança Paulista. Ideal para quem busca exclusividade e qualidade de vida em um ambiente bem localizada. Com áreas verdes, infraestrutura completa e acesso a serviços modernos.",
+    "legenda": "Terreno no condomínio Quinta da Baroneza, em Bragança Paulista. Ideal para quem busca exclusividade e qualidade de vida em um ambiente bem localizado. Com áreas verdes, infraestrutura completa e acesso a serviços modernos.",
     "hashtags": [
       "terrenobraganca",
       "condominiofechado",
@@ -286,5 +286,6 @@
     ]
   },
   "versao": "f408cb60ecf7",
-  "publicadoEm": "2026-10-28T04:27:05.336Z"
+  "publicadoEm": "2026-10-28T04:27:05.336Z",
+  "atualizadoEm": "2026-10-28T04:40:00.855Z"
 }

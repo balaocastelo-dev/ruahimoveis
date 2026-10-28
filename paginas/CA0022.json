@@ -30,7 +30,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A área social da casa é ampla, com ambientes bem iluminados e integrados, ideal para receber convidados. A varanda gourmet, com mesa e cadeiras, churrasqueira e vista para o jardim, é um espaço bem localizada para momentos de convivência. A piscina, com deck de madeira e plantas tropicais, é um destaque do imóvel, combinando beleza e funcionalidade."
+      "texto": "A área social da casa é ampla, com ambientes bem iluminados e integrados, ideal para receber convidados. A varanda gourmet, com mesa e cadeiras, churrasqueira e vista para o jardim, é um espaço bem localizado para momentos de convivência. A piscina, com deck de madeira e plantas tropicais, é um destaque do imóvel, combinando beleza e funcionalidade."
     },
     {
       "tipo": "fotos",
@@ -134,7 +134,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida moderno. Com áreas de lazer, ambientes integrados e uma bem localizada, é uma opção adequado para quem valoriza qualidade de vida e bem-estar."
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida moderno. Com áreas de lazer, ambientes integrados e uma boa localização, é uma opção adequada para quem valoriza qualidade de vida e bem-estar."
     },
     {
       "tipo": "destaque",
@@ -323,5 +323,6 @@
     ]
   },
   "versao": "2af15164ec88",
-  "publicadoEm": "2026-10-28T04:05:52.173Z"
+  "publicadoEm": "2026-10-28T04:05:52.173Z",
+  "atualizadoEm": "2026-10-28T04:40:00.851Z"
 }

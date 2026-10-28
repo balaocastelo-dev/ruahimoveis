@@ -2,7 +2,7 @@
   "codigo": "AP0038",
   "slug": "apartamento-3-suites-beira-mar-praia-grande-ubatuba-sp-ap0038",
   "titulo": "Apartamento de 3 suítes beira-mar com vista para o mar na Praia Grande",
-  "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista bem localizada para o mar na Praia Grande, Ubatuba, SP.",
+  "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e varanda com vista para o mar na Praia Grande, em Ubatuba, SP.",
   "capa": {
     "foto": 538,
     "alt": "Piscina com deck de pedra e vista para montanha"
@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento de alto padrão, localizado na Praia Grande em Ubatuba, oferece uma combinação de luxo, conforto e vista bem localizada para o mar. Com 147 m² de área privativa, o imóvel tem 3 suítes, 3 vagas de garagem e ambientes decorados com elegância. A localização beira-mar e o acesso a uma infraestrutura completa de lazer fazem dele uma excelente opção para quem busca qualidade de vida."
+      "texto": "Este apartamento de alto padrão, localizado na Praia Grande em Ubatuba, oferece uma combinação de luxo, conforto e vista para o mar. Com 147 m² de área privativa, o imóvel tem 3 suítes, 3 vagas de garagem e ambientes decorados com elegância. A localização beira-mar e o acesso a uma infraestrutura completa de lazer fazem dele uma excelente opção para quem busca qualidade de vida."
     },
     {
       "tipo": "paragrafo",
@@ -265,7 +265,7 @@
     }
   ],
   "redes": {
-    "legenda": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista para o mar na Praia Grande, Ubatuba, SP. Ideal para quem busca conforto e qualidade de vida. Condomínio com área de lazer completa. Marque a visita agora!",
+    "legenda": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e varanda com vista para o mar na Praia Grande, em Ubatuba, SP. Ideal para quem busca conforto e qualidade de vida. Condomínio com área de lazer completa. Marque a visita agora!",
     "hashtags": [
       "apartamentoubatuba",
       "praiagrande",
@@ -278,5 +278,6 @@
     ]
   },
   "versao": "4a08a28183eb",
-  "publicadoEm": "2026-10-28T04:19:24.088Z"
+  "publicadoEm": "2026-10-28T04:19:24.088Z",
+  "atualizadoEm": "2026-10-28T04:40:00.848Z"
 }

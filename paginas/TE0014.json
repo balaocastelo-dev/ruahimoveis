@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A topografia do terreno permite diferentes possibilidades de implantação, ideal para empreendimentos residenciais, comerciais ou de serviços. A localização estratégica e a infraestrutura existente tornam esse imóvel uma boa opção para quem busca um terreno em área consolidada e em constante procura."
+      "texto": "A topografia do terreno permite diferentes possibilidades de implantação, ideal para empreendimentos residenciais, comerciais ou de serviços. A localização estratégica e a infraestrutura existente tornam esse imóvel uma boa opção para quem busca um terreno em área consolidada e consolidada."
     },
     {
       "tipo": "resumo",
@@ -34,7 +34,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O terreno está localizado no Loteamento Residencial Entre Verdes, em Campinas, próximo aos bairros Entre Verdes e San Conrado. A região é conhecida por sua procura e infraestrutura. O imóvel possui acesso a uma avenida asfaltada e também a uma via lateral pavimentada, facilitando o deslocamento e oferecendo maior versatilidade para projetos futuros. A proximidade de vias principais e a boa conectividade com outras áreas da cidade são pontos importantes para quem busca um imóvel com potencial de desenvolvimento."
+      "texto": "O terreno está localizado no Loteamento Residencial Entre Verdes, em Campinas, próximo aos bairros Entre Verdes e San Conrado. A região é conhecida pela infraestrutura. O imóvel possui acesso a uma avenida asfaltada e também a uma via lateral pavimentada, facilitando o deslocamento e oferecendo maior versatilidade para projetos futuros. A proximidade de vias principais e a boa conectividade com outras áreas da cidade são pontos importantes para quem busca um imóvel com potencial de desenvolvimento."
     },
     {
       "tipo": "fotos",
@@ -169,5 +169,6 @@
     ]
   },
   "versao": "0e56753cdc10",
-  "publicadoEm": "2026-10-28T04:16:17.995Z"
+  "publicadoEm": "2026-10-28T04:16:17.995Z",
+  "atualizadoEm": "2026-10-28T04:40:00.856Z"
 }

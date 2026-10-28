@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O imóvel se encontra em uma região com crescente procura imobiliária, cercada por empreendimentos residenciais, condomínios, centros comerciais e polos empresariais. A proximidade com rodovias principais amplia sua atratividade para negócios e investimentos."
+      "texto": "O imóvel se encontra em uma região, cercada por empreendimentos residenciais, condomínios, centros comerciais e polos empresariais. A proximidade com rodovias principais amplia sua atratividade para negócios e investimentos."
     },
     {
       "tipo": "resumo",
@@ -23,7 +23,7 @@
         "Topografia favorável para diferentes tipos de construções",
         "Área de 695 m² com potencial construtivo",
         "Próximo a vias principais e polos empresariais",
-        "Região em constante expansão urbana e procura imobiliária"
+        "Região em constante expansão urbana"
       ],
       "titulo": "Destaques"
     },
@@ -38,7 +38,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Parque Brasil 500 é um bairro planejado e consolidado, cercado por empreendimentos residenciais de alto padrão, centros comerciais e serviços. A região recebe investimentos contínuos em infraestrutura, o que contribui para a procura imobiliária e ao fortalecimento da atividade econômica local."
+      "texto": "O Parque Brasil 500 é um bairro planejado e consolidado, cercado por empreendimentos residenciais de alto padrão, centros comerciais e serviços. A região recebe investimentos contínuos em infraestrutura, o que contribui para o fortalecimento da atividade econômica local."
     },
     {
       "tipo": "titulo",
@@ -95,7 +95,7 @@
     }
   ],
   "redes": {
-    "legenda": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia. Ideal para investidores e empresas que buscam procura e visibilidade. Localizado em uma região em constante expansão urbana.",
+    "legenda": "Terreno de 695 m² em local estratégico no Parque Brasil 500, Paulínia. Ideal para investidores e empresas que buscam visibilidade. Localizado em uma região em constante expansão urbana.",
     "hashtags": [
       "terrenopaulinia",
       "investimentoreal",
@@ -108,5 +108,6 @@
     ]
   },
   "versao": "59a7d5e6e3e9",
-  "publicadoEm": "2026-10-28T04:16:18.044Z"
+  "publicadoEm": "2026-10-28T04:16:18.044Z",
+  "atualizadoEm": "2026-10-28T04:40:00.855Z"
 }

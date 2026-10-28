@@ -2,7 +2,7 @@
   "codigo": "AP0026",
   "slug": "apartamento-cambui-campinas-4-quartos-vista-centro-convivencia-ap0026",
   "titulo": "Apartamento de 4 quartos com vista para o Centro de Convivência no Cambuí",
-  "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista bem localizada para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
+  "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
   "capa": {
     "foto": 832,
     "alt": "Sala de estar com sofá, cadeiras e janelas panorâmicas"
@@ -138,7 +138,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e bem localizada. Com vista para o Centro de Convivência, espaço generoso e acesso a serviços essenciais, é uma excelente opção para quem valoriza a qualidade de vida e a praticidade em um bairro tradicional de Campinas."
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e boa localização. Com vista para o Centro de Convivência, espaço generoso e acesso a serviços essenciais, é uma excelente opção para quem valoriza a qualidade de vida e a praticidade em um bairro tradicional de Campinas."
     },
     {
       "tipo": "destaque",
@@ -327,5 +327,6 @@
     ]
   },
   "versao": "2810339e28df",
-  "publicadoEm": "2026-10-28T04:08:30.712Z"
+  "publicadoEm": "2026-10-28T04:08:30.712Z",
+  "atualizadoEm": "2026-10-28T04:40:00.848Z"
 }

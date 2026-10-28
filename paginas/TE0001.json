@@ -37,7 +37,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A região é consolidada e apresenta fluxo urbano constante, reforçando a importância do local para investimentos. A proximidade com comércios e serviços oferece praticidade e procura ao imóvel."
+      "texto": "A região é consolidada e apresenta fluxo urbano constante, reforçando a importância do local para investimentos. A proximidade com comércios e serviços oferece praticidade."
     },
     {
       "tipo": "titulo",
@@ -63,7 +63,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno é ideal para investidores que buscam procura no mercado imobiliário e para quem deseja uma área estratégica para empreendimentos comerciais ou residenciais. A localização e o acesso facilitado tornam o imóvel atraente para diferentes perfis de compradores."
+      "texto": "Este terreno é ideal para investidores e para quem deseja uma área estratégica para empreendimentos comerciais ou residenciais. A localização e o acesso facilitado tornam o imóvel atraente para diferentes perfis de compradores."
     },
     {
       "tipo": "destaque",
@@ -107,5 +107,6 @@
     ]
   },
   "versao": "e7db4cb72d55",
-  "publicadoEm": "2026-10-28T04:05:52.175Z"
+  "publicadoEm": "2026-10-28T04:05:52.175Z",
+  "atualizadoEm": "2026-10-28T04:40:00.854Z"
 }

@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A área possui vegetação densa e topografia favorável, o que a torna ideal para projetos de desenvolvimento imobiliário como loteamentos, condomínios ou vilas residenciais. Sua bem localizada e o tornam o terreno uma opção para investidores."
+      "texto": "A área possui vegetação densa e topografia favorável, o que a torna ideal para projetos de desenvolvimento imobiliário como loteamentos, condomínios ou vilas residenciais. Sua boa localização e o tornam o terreno uma opção para investidores."
     },
     {
       "tipo": "resumo",
@@ -108,7 +108,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno é ideal para investidores, incorporadoras e empresas que buscam oportunidades de desenvolvimento imobiliário em uma região em crescimento. Sua localização estratégica e o zoneamento flexível tornam o imóvel uma excelente opção para quem busca procura e infraestrutura."
+      "texto": "Este terreno é ideal para investidores, incorporadoras e empresas que buscam oportunidades de desenvolvimento imobiliário em uma região em crescimento. Sua localização estratégica e o zoneamento flexível tornam o imóvel uma excelente opção para quem busca infraestrutura."
     },
     {
       "tipo": "destaque",
@@ -172,5 +172,6 @@
     ]
   },
   "versao": "367dcee17aa6",
-  "publicadoEm": "2026-10-28T04:27:05.338Z"
+  "publicadoEm": "2026-10-28T04:27:05.338Z",
+  "atualizadoEm": "2026-10-28T04:40:00.849Z"
 }

@@ -124,7 +124,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e qualidade de vida em uma região estratégica de Campinas. A bem localizada, combinada com os ambientes amplos e a infraestrutura do condomínio, torna o imóvel uma excelente opção para quem busca um lar moderno e completo."
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e qualidade de vida em uma região estratégica de Campinas. A boa localização, combinada com os ambientes amplos e a infraestrutura do condomínio, torna o imóvel uma excelente opção para quem busca um lar moderno e completo."
     },
     {
       "tipo": "destaque",
@@ -258,5 +258,6 @@
     ]
   },
   "versao": "892fb207b804",
-  "publicadoEm": "2026-10-28T04:35:56.508Z"
+  "publicadoEm": "2026-10-28T04:35:56.508Z",
+  "atualizadoEm": "2026-10-28T04:40:00.846Z"
 }

@@ -109,7 +109,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Como o imóvel é comercial, não há lazer específico no condomínio. A área externa do imóvel é bem estruturada, com áreas de estacionamento e grades metálicas que garantem a segurança do local. A bem localizada do imóvel, ao lado de hospitais, clínicas e farmácias, traz vantagens para o fluxo de clientes."
+      "texto": "Como o imóvel é comercial, não há lazer específico no condomínio. A área externa do imóvel é bem estruturada, com áreas de estacionamento e grades metálicas que garantem a segurança do local. A boa localização do imóvel, ao lado de hospitais, clínicas e farmácias, traz vantagens para o fluxo de clientes."
     },
     {
       "tipo": "fotos",
@@ -288,5 +288,6 @@
     ]
   },
   "versao": "851f3b83857f",
-  "publicadoEm": "2026-10-28T03:53:16.264Z"
+  "publicadoEm": "2026-10-28T03:53:16.264Z",
+  "atualizadoEm": "2026-10-28T04:40:00.853Z"
 }

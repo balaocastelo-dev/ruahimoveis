@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A localização é bem localizada, com acesso direto à rodovia, facilitando operações logísticas e o fluxo de veículos. A região em que o terreno está situado está em constante expansão econômica e faz parte da Região Metropolitana de Campinas, o que reforça o do local."
+      "texto": "A localização é boa, com acesso direto à rodovia, facilitando operações logísticas e o fluxo de veículos. A região em que o terreno está situado está em constante expansão econômica e faz parte da Região Metropolitana de Campinas, o que reforça o do local."
     },
     {
       "tipo": "resumo",
@@ -90,7 +90,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno é ideal para investidores e empresas que buscam uma área estratégica para empreendimentos industriais, logísticos ou comerciais. A bem localizada, o zoneamento misto e o acesso à rodovia tornam o imóvel uma opção para quem deseja expandir operações ou investir no interior paulista."
+      "texto": "Este terreno é ideal para investidores e empresas que buscam uma área estratégica para empreendimentos industriais, logísticos ou comerciais. A boa localização, o zoneamento misto e o acesso à rodovia tornam o imóvel uma opção para quem deseja expandir operações ou investir no interior paulista."
     },
     {
       "tipo": "destaque",
@@ -154,5 +154,6 @@
     ]
   },
   "versao": "d2f1f2afd7ee",
-  "publicadoEm": "2026-10-28T04:22:43.236Z"
+  "publicadoEm": "2026-10-28T04:22:43.236Z",
+  "atualizadoEm": "2026-10-28T04:40:00.849Z"
 }

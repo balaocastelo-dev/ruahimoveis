@@ -11,7 +11,8 @@
         "alt": "Fachada de prédio com palmeiras e várias janelas"
       },
       "versao": "3426903382af",
-      "publicadoEm": "2026-10-28T04:37:58.143Z"
+      "publicadoEm": "2026-10-28T04:37:58.143Z",
+      "atualizadoEm": "2026-10-28T04:40:00.847Z"
     },
     {
       "codigo": "AP0031",
@@ -26,30 +27,6 @@
       "publicadoEm": "2026-10-28T04:35:56.509Z"
     },
     {
-      "codigo": "AP0003",
-      "slug": "apartamento-3-suites-varanda-2-vagas-chacara-da-barra-campinas-ap0003",
-      "titulo": "Apartamento de 3 suítes com varanda e 2 vagas na Chácara da Barra, Campinas",
-      "resumo": "Apartamento de 3 suítes com 153 m² de área total, localizado na Chácara da Barra, em Campinas. Ambientes amplos, com varanda e 2 vagas de garagem.",
-      "capa": {
-        "foto": 1123,
-        "alt": "Edifício moderno com varandas e fachada bege"
-      },
-      "versao": "892fb207b804",
-      "publicadoEm": "2026-10-28T04:35:56.508Z"
-    },
-    {
-      "codigo": "AP0027",
-      "slug": "apartamento-2-suites-vista-nova-campinas-campinas-sp-ap0027",
-      "titulo": "Apartamento de 2 suítes com vista panorâmica no Nova Campinas",
-      "resumo": "Apartamento de 65 m² no centro do Nova Campinas com 2 suítes, vista panorâmica e ambientes modernos e bem iluminados.",
-      "capa": {
-        "foto": 1273,
-        "alt": "Piscina com palmeiras e edifício ao fundo"
-      },
-      "versao": "1e59a1d78bae",
-      "publicadoEm": "2026-10-28T04:35:56.508Z"
-    },
-    {
       "codigo": "AP0028",
       "slug": "apartamento-cambui-campinas-sp-2-quartos-varanda-vista-cidade-ap0028",
       "titulo": "Apartamento de 2 quartos no Cambuí com varanda e vista para a cidade",
@@ -62,16 +39,43 @@
       "publicadoEm": "2026-10-28T04:35:56.508Z"
     },
     {
+      "codigo": "AP0003",
+      "slug": "apartamento-3-suites-varanda-2-vagas-chacara-da-barra-campinas-ap0003",
+      "titulo": "Apartamento de 3 suítes com varanda e 2 vagas na Chácara da Barra, Campinas",
+      "resumo": "Apartamento de 3 suítes com 153 m² de área total, localizado na Chácara da Barra, em Campinas. Ambientes amplos, com varanda e 2 vagas de garagem.",
+      "capa": {
+        "foto": 1123,
+        "alt": "Edifício moderno com varandas e fachada bege"
+      },
+      "versao": "892fb207b804",
+      "publicadoEm": "2026-10-28T04:35:56.508Z",
+      "atualizadoEm": "2026-10-28T04:40:00.846Z"
+    },
+    {
+      "codigo": "AP0027",
+      "slug": "apartamento-2-suites-vista-nova-campinas-campinas-sp-ap0027",
+      "titulo": "Apartamento de 2 suítes com vista panorâmica no Nova Campinas",
+      "resumo": "Apartamento de 65 m² no centro do Nova Campinas com 2 suítes, vista panorâmica e ambientes modernos e bem iluminados.",
+      "capa": {
+        "foto": 1273,
+        "alt": "Piscina com palmeiras e edifício ao fundo"
+      },
+      "versao": "1e59a1d78bae",
+      "publicadoEm": "2026-10-28T04:35:56.508Z",
+      "atualizadoEm": "2026-10-28T04:40:00.848Z"
+    },
+    {
       "codigo": "AD0001",
       "slug": "apartamento-duplex-cambui-campinas-ad0001",
       "titulo": "Apartamento Duplex de 4 quartos no Cambuí, Campinas",
-      "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área bem localizada com fácil acesso a serviços e lazer.",
+      "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área com fácil acesso a serviços e lazer.",
       "capa": {
         "foto": 1240,
         "alt": "Sala de estar com piso de madeira e vista para a cidade"
       },
       "versao": "4937c5e9aa86",
-      "publicadoEm": "2026-10-28T04:35:56.507Z"
+      "publicadoEm": "2026-10-28T04:35:56.507Z",
+      "atualizadoEm": "2026-10-28T04:40:00.845Z"
     },
     {
       "codigo": "CA0052",
@@ -83,7 +87,8 @@
         "alt": "Fachada de casa com garagem e jardim bem manejado"
       },
       "versao": "880a638f71df",
-      "publicadoEm": "2026-10-28T04:34:07.327Z"
+      "publicadoEm": "2026-10-28T04:34:07.327Z",
+      "atualizadoEm": "2026-10-28T04:40:00.853Z"
     },
     {
       "codigo": "CA0001",
@@ -107,7 +112,8 @@
         "alt": "Fachada moderna com piscina e jardim bem cuidado"
       },
       "versao": "dda553a608e0",
-      "publicadoEm": "2026-10-28T04:34:07.326Z"
+      "publicadoEm": "2026-10-28T04:34:07.326Z",
+      "atualizadoEm": "2026-10-28T04:40:00.852Z"
     },
     {
       "codigo": "SO0001",
@@ -131,7 +137,8 @@
         "alt": "Lote com vegetação e casas ao redor"
       },
       "versao": "26536f7e45eb",
-      "publicadoEm": "2026-10-28T04:34:07.324Z"
+      "publicadoEm": "2026-10-28T04:34:07.324Z",
+      "atualizadoEm": "2026-10-28T04:40:00.855Z"
     },
     {
       "codigo": "CA0046",
@@ -167,7 +174,8 @@
         "alt": "Lote com construção em andamento e área verde"
       },
       "versao": "56a379fad68d",
-      "publicadoEm": "2026-10-28T04:30:19.645Z"
+      "publicadoEm": "2026-10-28T04:30:19.645Z",
+      "atualizadoEm": "2026-10-28T04:40:00.850Z"
     },
     {
       "codigo": "CA0004",
@@ -179,7 +187,8 @@
         "alt": "Vista panorâmica de jardim com piscina e céu azul"
       },
       "versao": "b7e8423303ac",
-      "publicadoEm": "2026-10-28T04:30:19.645Z"
+      "publicadoEm": "2026-10-28T04:30:19.645Z",
+      "atualizadoEm": "2026-10-28T04:40:00.851Z"
     },
     {
       "codigo": "CA0003",
@@ -203,7 +212,8 @@
         "alt": "Terreno com vegetação densa e cercado por casas"
       },
       "versao": "367dcee17aa6",
-      "publicadoEm": "2026-10-28T04:27:05.338Z"
+      "publicadoEm": "2026-10-28T04:27:05.338Z",
+      "atualizadoEm": "2026-10-28T04:40:00.849Z"
     },
     {
       "codigo": "CA0002",
@@ -239,7 +249,8 @@
         "alt": "Terreno com vegetação densa e casas vizinhas"
       },
       "versao": "479098fcaea0",
-      "publicadoEm": "2026-10-28T04:27:05.337Z"
+      "publicadoEm": "2026-10-28T04:27:05.337Z",
+      "atualizadoEm": "2026-10-28T04:40:00.850Z"
     },
     {
       "codigo": "TE0003",
@@ -251,7 +262,8 @@
         "alt": "Vista aérea de um terreno com gramado, árvores e edifícios"
       },
       "versao": "f408cb60ecf7",
-      "publicadoEm": "2026-10-28T04:27:05.336Z"
+      "publicadoEm": "2026-10-28T04:27:05.336Z",
+      "atualizadoEm": "2026-10-28T04:40:00.855Z"
     },
     {
       "codigo": "TE0016",
@@ -263,31 +275,8 @@
         "alt": "Pista asfaltada com vista para montanhas e céu azul"
       },
       "versao": "60a1d9519d65",
-      "publicadoEm": "2026-10-28T04:22:43.237Z"
-    },
-    {
-      "codigo": "HO0001",
-      "slug": "hotel-centro-campinas-sp-ho0001",
-      "titulo": "Hotel com 29 suítes e área comercial no Centro de Campinas",
-      "resumo": "Hotel com 29 suítes e área comercial no Centro de Campinas. Localização estratégica e potencial de investimento.",
-      "capa": {
-        "foto": 411,
-        "alt": "Fachada de prédio com loja e escritório"
-      },
-      "versao": "0b7b6cc37f45",
-      "publicadoEm": "2026-10-28T04:22:43.236Z"
-    },
-    {
-      "codigo": "AR0001",
-      "slug": "terreno-hortolandia-zoneamento-industrial-comercial-ar0001",
-      "titulo": "Terreno de 38.000 m² com zoneamento industrial e comercial em Hortolândia",
-      "resumo": "Terreno de 38.000 m² em Hortolândia, SP, com zoneamento industrial e comercial, ideal para investidores e empresas.",
-      "capa": {
-        "foto": 410,
-        "alt": "Lote com dimensões e área total de 38.000 m²"
-      },
-      "versao": "d2f1f2afd7ee",
-      "publicadoEm": "2026-10-28T04:22:43.236Z"
+      "publicadoEm": "2026-10-28T04:22:43.237Z",
+      "atualizadoEm": "2026-10-28T04:40:00.856Z"
     },
     {
       "codigo": "CA0005",
@@ -300,6 +289,32 @@
       },
       "versao": "c3fd22e0e012",
       "publicadoEm": "2026-10-28T04:22:43.236Z"
+    },
+    {
+      "codigo": "AR0001",
+      "slug": "terreno-hortolandia-zoneamento-industrial-comercial-ar0001",
+      "titulo": "Terreno de 38.000 m² com zoneamento industrial e comercial em Hortolândia",
+      "resumo": "Terreno de 38.000 m² em Hortolândia, SP, com zoneamento industrial e comercial, ideal para investidores e empresas.",
+      "capa": {
+        "foto": 410,
+        "alt": "Lote com dimensões e área total de 38.000 m²"
+      },
+      "versao": "d2f1f2afd7ee",
+      "publicadoEm": "2026-10-28T04:22:43.236Z",
+      "atualizadoEm": "2026-10-28T04:40:00.849Z"
+    },
+    {
+      "codigo": "HO0001",
+      "slug": "hotel-centro-campinas-sp-ho0001",
+      "titulo": "Hotel com 29 suítes e área comercial no Centro de Campinas",
+      "resumo": "Hotel com 29 suítes e área comercial no Centro de Campinas. Localização estratégica e potencial de investimento.",
+      "capa": {
+        "foto": 411,
+        "alt": "Fachada de prédio com loja e escritório"
+      },
+      "versao": "0b7b6cc37f45",
+      "publicadoEm": "2026-10-28T04:22:43.236Z",
+      "atualizadoEm": "2026-10-28T04:40:00.854Z"
     },
     {
       "codigo": "CA0055",
@@ -338,18 +353,6 @@
       "publicadoEm": "2026-10-28T04:19:24.105Z"
     },
     {
-      "codigo": "AP0038",
-      "slug": "apartamento-3-suites-beira-mar-praia-grande-ubatuba-sp-ap0038",
-      "titulo": "Apartamento de 3 suítes beira-mar com vista para o mar na Praia Grande",
-      "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e vista bem localizada para o mar na Praia Grande, Ubatuba, SP.",
-      "capa": {
-        "foto": 538,
-        "alt": "Piscina com deck de pedra e vista para montanha"
-      },
-      "versao": "4a08a28183eb",
-      "publicadoEm": "2026-10-28T04:19:24.088Z"
-    },
-    {
       "codigo": "CJ0001",
       "slug": "sala-comercial-clinica-ortopedica-jardim-guanabara-campinas-cj0001",
       "titulo": "Sala comercial com estrutura para clínica ortopédica no Jardim Guanabara",
@@ -360,6 +363,19 @@
       },
       "versao": "95eb6951e286",
       "publicadoEm": "2026-10-28T04:19:24.088Z"
+    },
+    {
+      "codigo": "AP0038",
+      "slug": "apartamento-3-suites-beira-mar-praia-grande-ubatuba-sp-ap0038",
+      "titulo": "Apartamento de 3 suítes beira-mar com vista para o mar na Praia Grande",
+      "resumo": "Apartamento de alto padrão beira-mar com 3 suítes, 3 vagas e varanda com vista para o mar na Praia Grande, em Ubatuba, SP.",
+      "capa": {
+        "foto": 538,
+        "alt": "Piscina com deck de pedra e vista para montanha"
+      },
+      "versao": "4a08a28183eb",
+      "publicadoEm": "2026-10-28T04:19:24.088Z",
+      "atualizadoEm": "2026-10-28T04:40:00.848Z"
     },
     {
       "codigo": "TE0020",
@@ -383,7 +399,8 @@
         "alt": "Terreno com edificação, vegetação e estrada asfaltada"
       },
       "versao": "59a7d5e6e3e9",
-      "publicadoEm": "2026-10-28T04:16:18.044Z"
+      "publicadoEm": "2026-10-28T04:16:18.044Z",
+      "atualizadoEm": "2026-10-28T04:40:00.855Z"
     },
     {
       "codigo": "CA0045",
@@ -431,7 +448,8 @@
         "alt": "Vista aérea de um lote com estrada e casas ao redor"
       },
       "versao": "0e56753cdc10",
-      "publicadoEm": "2026-10-28T04:16:17.995Z"
+      "publicadoEm": "2026-10-28T04:16:17.995Z",
+      "atualizadoEm": "2026-10-28T04:40:00.856Z"
     },
     {
       "codigo": "CA0048",
@@ -479,7 +497,8 @@
         "alt": "Casa branca com telhado amarelo em meio a gramado verde e lago"
       },
       "versao": "8cd0e0bde6d4",
-      "publicadoEm": "2026-10-28T04:11:28.831Z"
+      "publicadoEm": "2026-10-28T04:11:28.831Z",
+      "atualizadoEm": "2026-10-28T04:40:00.854Z"
     },
     {
       "codigo": "CA0053",
@@ -494,18 +513,6 @@
       "publicadoEm": "2026-10-28T04:11:28.830Z"
     },
     {
-      "codigo": "AR0007",
-      "slug": "terreno-chacaras-campos-dos-amarais-campinas-sp-ar0007",
-      "titulo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas",
-      "resumo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas, ideal para investimento e projetos comerciais ou industriais.",
-      "capa": {
-        "foto": 822,
-        "alt": "Terreno com solo desmatado e casas ao fundo"
-      },
-      "versao": "891db87f8385",
-      "publicadoEm": "2026-10-28T04:08:30.713Z"
-    },
-    {
       "codigo": "CA0017",
       "slug": "casa-jardim-chapadao-campinas-sp-5-quartos-9-vagas-ca0017",
       "titulo": "Casa com 5 quartos e 9 vagas no Jardim Chapadão, Campinas",
@@ -518,52 +525,56 @@
       "publicadoEm": "2026-10-28T04:08:30.713Z"
     },
     {
+      "codigo": "AR0007",
+      "slug": "terreno-chacaras-campos-dos-amarais-campinas-sp-ar0007",
+      "titulo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas",
+      "resumo": "Terreno de 2.808 m² em Chácaras Campos dos Amarais, Campinas, ideal para investimento e projetos comerciais ou industriais.",
+      "capa": {
+        "foto": 822,
+        "alt": "Terreno com solo desmatado e casas ao fundo"
+      },
+      "versao": "891db87f8385",
+      "publicadoEm": "2026-10-28T04:08:30.713Z",
+      "atualizadoEm": "2026-10-28T04:40:00.850Z"
+    },
+    {
       "codigo": "AP0025",
       "slug": "apartamento-3-suites-varanda-cambui-campinas-ap0025",
       "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
-      "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e bem localizada.",
+      "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e boa localização.",
       "capa": {
         "foto": 866,
         "alt": "Varanda com sofá e vista para edifícios e jardim"
       },
       "versao": "7be19ab85126",
-      "publicadoEm": "2026-10-28T04:08:30.712Z"
+      "publicadoEm": "2026-10-28T04:08:30.712Z",
+      "atualizadoEm": "2026-10-28T04:40:00.847Z"
     },
     {
       "codigo": "AP0026",
       "slug": "apartamento-cambui-campinas-4-quartos-vista-centro-convivencia-ap0026",
       "titulo": "Apartamento de 4 quartos com vista para o Centro de Convivência no Cambuí",
-      "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista bem localizada para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
+      "resumo": "Apartamento de 4 quartos no Cambuí, Campinas, com vista para o Centro de Convivência e localização estratégica no Edifício São Conrado.",
       "capa": {
         "foto": 832,
         "alt": "Sala de estar com sofá, cadeiras e janelas panorâmicas"
       },
       "versao": "2810339e28df",
-      "publicadoEm": "2026-10-28T04:08:30.712Z"
+      "publicadoEm": "2026-10-28T04:08:30.712Z",
+      "atualizadoEm": "2026-10-28T04:40:00.848Z"
     },
     {
       "codigo": "SA0001",
       "slug": "sala-comercial-centro-campinas-sp-sa0001",
       "titulo": "Sala comercial de 193 m² com 7 vagas na Avenida Orozimbo Maia, Centro, Campinas",
-      "resumo": "Sala comercial de 193 m² em bem localizada no Centro de Campinas. Com 7 vagas de garagem e acabamentos modernos, ideal para escritórios e empresas.",
+      "resumo": "Sala comercial de 193 m² em boa localização no Centro de Campinas. Com 7 vagas de garagem e acabamentos modernos, ideal para escritórios e empresas.",
       "capa": {
         "foto": 907,
         "alt": "Sala de reuniões com vista panorâmica da cidade"
       },
       "versao": "a3a4fd2c4fc3",
-      "publicadoEm": "2026-10-28T04:08:30.711Z"
-    },
-    {
-      "codigo": "TE0001",
-      "slug": "terreno-avenida-dom-nery-valinhos-sp-te0001",
-      "titulo": "Terreno de 224 m² com edificação em construção na Avenida Dom Nery, Valinhos",
-      "resumo": "Terreno de 224 m² na Avenida Dom Nery, Valinhos, com edificação em construção e excelente localização estratégica na região.",
-      "capa": {
-        "foto": 943,
-        "alt": "Terreno com edificação em construção, área verde e acesso à estrada SP-091"
-      },
-      "versao": "e7db4cb72d55",
-      "publicadoEm": "2026-10-28T04:05:52.175Z"
+      "publicadoEm": "2026-10-28T04:08:30.711Z",
+      "atualizadoEm": "2026-10-28T04:40:00.854Z"
     },
     {
       "codigo": "BA0003",
@@ -575,19 +586,21 @@
         "alt": "Fachada de loja com sinalização 'Auto Peças Flores' e carros estacionados"
       },
       "versao": "9c788c12d159",
-      "publicadoEm": "2026-10-28T04:05:52.175Z"
+      "publicadoEm": "2026-10-28T04:05:52.175Z",
+      "atualizadoEm": "2026-10-28T04:40:00.851Z"
     },
     {
-      "codigo": "TE0012",
-      "slug": "terreno-bosques-de-notre-dame-campinas-sp-te0012",
-      "titulo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame em Campinas",
-      "resumo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame, em Campinas, com 75 metros de frente e amplo potencial para construção de chácara ou área de lazer.",
+      "codigo": "TE0001",
+      "slug": "terreno-avenida-dom-nery-valinhos-sp-te0001",
+      "titulo": "Terreno de 224 m² com edificação em construção na Avenida Dom Nery, Valinhos",
+      "resumo": "Terreno de 224 m² na Avenida Dom Nery, Valinhos, com edificação em construção e excelente localização estratégica na região.",
       "capa": {
-        "foto": 955,
-        "alt": "Portão verde com logotipo de imobiliária e estrada de pedra"
+        "foto": 943,
+        "alt": "Terreno com edificação em construção, área verde e acesso à estrada SP-091"
       },
-      "versao": "8290b04d1d76",
-      "publicadoEm": "2026-10-28T04:05:52.174Z"
+      "versao": "e7db4cb72d55",
+      "publicadoEm": "2026-10-28T04:05:52.175Z",
+      "atualizadoEm": "2026-10-28T04:40:00.854Z"
     },
     {
       "codigo": "SL0001",
@@ -602,6 +615,19 @@
       "publicadoEm": "2026-10-28T04:05:52.174Z"
     },
     {
+      "codigo": "TE0012",
+      "slug": "terreno-bosques-de-notre-dame-campinas-sp-te0012",
+      "titulo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame em Campinas",
+      "resumo": "Terreno de 20.800 m² no Condomínio Bosque do Notre Dame, em Campinas, com 75 metros de frente e amplo potencial para construção de chácara ou área de lazer.",
+      "capa": {
+        "foto": 955,
+        "alt": "Portão verde com logotipo de imobiliária e estrada de pedra"
+      },
+      "versao": "8290b04d1d76",
+      "publicadoEm": "2026-10-28T04:05:52.174Z",
+      "atualizadoEm": "2026-10-28T04:40:00.856Z"
+    },
+    {
       "codigo": "CA0022",
       "slug": "casa-em-condominio-4-quartos-2-suites-piscina-bairro-da-posse-itatiba-ca0022",
       "titulo": "Casa em condomínio com 4 quartos, 2 suítes e piscina no Bairro da Posse, Itatiba",
@@ -611,7 +637,8 @@
         "alt": "Piscina com deck de madeira e plantas tropicais"
       },
       "versao": "2af15164ec88",
-      "publicadoEm": "2026-10-28T04:05:52.173Z"
+      "publicadoEm": "2026-10-28T04:05:52.173Z",
+      "atualizadoEm": "2026-10-28T04:40:00.851Z"
     },
     {
       "codigo": "BA0004",
@@ -629,13 +656,14 @@
       "codigo": "CA0009",
       "slug": "casa-condominio-3-suites-rooftop-parque-taquaral-campinas-ca0009",
       "titulo": "Casa em condomínio de 3 suítes com rooftop privativo no Parque Taquaral",
-      "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e bem localizada em Campinas.",
+      "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e boa localização em Campinas.",
       "capa": {
         "foto": 1027,
         "alt": "Fachada moderna de residência com entrada iluminada"
       },
       "versao": "a1ad34a1abce",
-      "publicadoEm": "2026-10-28T04:02:52.946Z"
+      "publicadoEm": "2026-10-28T04:02:52.946Z",
+      "atualizadoEm": "2026-10-28T04:40:00.851Z"
     },
     {
       "codigo": "CA0008",
@@ -659,43 +687,21 @@
         "alt": "Fachada moderna com plantas ornamentais e logotipo RUAH"
       },
       "versao": "f3a19adde8c9",
-      "publicadoEm": "2026-10-28T04:02:52.944Z"
+      "publicadoEm": "2026-10-28T04:02:52.944Z",
+      "atualizadoEm": "2026-10-28T04:40:00.846Z"
     },
     {
       "codigo": "CA0035",
       "slug": "casa-swiss-park-campinas-3-suites-varanda-ca0035",
       "titulo": "Casa em condomínio de 3 suítes com varanda e rooftop no Swiss Park",
-      "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada.",
+      "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e boa localização.",
       "capa": {
         "foto": 1121,
         "alt": "Fachada moderna de casa com varanda e carro estacionado"
       },
       "versao": "d317c5467ea2",
-      "publicadoEm": "2026-10-28T04:02:52.943Z"
-    },
-    {
-      "codigo": "CA0050",
-      "slug": "casa-parque-taquaral-campinas-sp-ca0050",
-      "titulo": "Casa reformada no Parque Taquaral com 4 vagas de garagem e área de serviço",
-      "resumo": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem, área de serviço e estrutura renovada. bem localizada em bairro com infraestrutura urbana.",
-      "capa": {
-        "foto": 1185,
-        "alt": "Fachada de casa com portão azul e logotipo 'RUAH Investimentos Imobiliários'"
-      },
-      "versao": "29c654913ea1",
-      "publicadoEm": "2026-10-28T04:00:05.518Z"
-    },
-    {
-      "codigo": "CA0043",
-      "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0043",
-      "titulo": "Casa em condomínio com 3 suítes, varanda gourmet e vista no Swiss Park",
-      "resumo": "Casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet, 208 m² de área privativa e vista para áreas verdes. bem localizada com infraestrutura completa.",
-      "capa": {
-        "foto": 1172,
-        "alt": "Fachada de casas modernas com jardins verticais e pessoas caminhando"
-      },
-      "versao": "86f39e0b0dbc",
-      "publicadoEm": "2026-10-28T04:00:05.518Z"
+      "publicadoEm": "2026-10-28T04:02:52.943Z",
+      "atualizadoEm": "2026-10-28T04:40:00.852Z"
     },
     {
       "codigo": "CA0021",
@@ -710,6 +716,32 @@
       "publicadoEm": "2026-10-28T04:00:05.518Z"
     },
     {
+      "codigo": "CA0043",
+      "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0043",
+      "titulo": "Casa em condomínio com 3 suítes, varanda gourmet e vista no Swiss Park",
+      "resumo": "Casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet, 208 m² de área privativa e vista para áreas verdes. Boa localização com infraestrutura completa.",
+      "capa": {
+        "foto": 1172,
+        "alt": "Fachada de casas modernas com jardins verticais e pessoas caminhando"
+      },
+      "versao": "86f39e0b0dbc",
+      "publicadoEm": "2026-10-28T04:00:05.518Z",
+      "atualizadoEm": "2026-10-28T04:40:00.852Z"
+    },
+    {
+      "codigo": "CA0050",
+      "slug": "casa-parque-taquaral-campinas-sp-ca0050",
+      "titulo": "Casa reformada no Parque Taquaral com 4 vagas de garagem e área de serviço",
+      "resumo": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem, área de serviço e estrutura renovada. Boa localização em bairro com infraestrutura urbana.",
+      "capa": {
+        "foto": 1185,
+        "alt": "Fachada de casa com portão azul e logotipo 'RUAH Investimentos Imobiliários'"
+      },
+      "versao": "29c654913ea1",
+      "publicadoEm": "2026-10-28T04:00:05.518Z",
+      "atualizadoEm": "2026-10-28T04:40:00.853Z"
+    },
+    {
       "codigo": "TE0019",
       "slug": "terreno-alphaville-dom-pedro-3-campinas-sp-te0019",
       "titulo": "Terreno de 614,23 m² no Alphaville Dom Pedro 3, Campinas",
@@ -719,19 +751,21 @@
         "alt": "Terreno com gramado e casas vizinhas ao entardecer"
       },
       "versao": "6504883fabb5",
-      "publicadoEm": "2026-10-28T04:00:05.517Z"
+      "publicadoEm": "2026-10-28T04:00:05.517Z",
+      "atualizadoEm": "2026-10-28T04:40:00.856Z"
     },
     {
       "codigo": "AP0012",
       "slug": "apartamento-cambui-campinas-3-quartos-varanda-localizacao-privilegiada-ap0012",
-      "titulo": "Apartamento de 3 quartos com varanda e bem localizada no Cambuí, Campinas",
-      "resumo": "Apartamento de 3 quartos no Cambuí, Campinas. bem localizada, ambientes amplos e com área de lazer. Ideal para quem busca conforto e praticidade.",
+      "titulo": "Apartamento de 3 quartos com varanda e boa localização no Cambuí, Campinas",
+      "resumo": "Apartamento de 3 quartos no Cambuí, Campinas. Boa localização, ambientes amplos e com área de lazer. Ideal para quem busca conforto e praticidade.",
       "capa": {
         "foto": 1217,
         "alt": "Varanda com churrasqueira, plantas e muro azulejado"
       },
       "versao": "22c7d266496a",
-      "publicadoEm": "2026-10-28T04:00:05.516Z"
+      "publicadoEm": "2026-10-28T04:00:05.516Z",
+      "atualizadoEm": "2026-10-28T04:40:00.847Z"
     },
     {
       "codigo": "CA0014",
@@ -758,18 +792,6 @@
       "publicadoEm": "2026-10-28T03:56:36.404Z"
     },
     {
-      "codigo": "CA0051",
-      "slug": "casa-3-quartos-varanda-jardim-paraiso-campinas-sp-ca0051",
-      "titulo": "Casa de 3 quartos com varanda e espaço gourmet no Jardim Paraíso, Campinas",
-      "resumo": "Casa no Jardim Paraíso, Campinas, com 3 quartos, 1 suíte, 5 vagas e área gourmet. bem localizada com acesso a comércios e escolas.",
-      "capa": {
-        "foto": 1312,
-        "alt": "Fachada de casa com entrada e jardim"
-      },
-      "versao": "0bfa72a3eefc",
-      "publicadoEm": "2026-10-28T03:56:36.403Z"
-    },
-    {
       "codigo": "BA0001",
       "slug": "galpao-comercial-jardim-paraiso-viracopos-campinas-sp-ba0001",
       "titulo": "Galpão comercial com 3 vagas de garagem no Jardim Paraíso de Viracopos, Campinas",
@@ -780,6 +802,19 @@
       },
       "versao": "8cf2c7feae66",
       "publicadoEm": "2026-10-28T03:56:36.403Z"
+    },
+    {
+      "codigo": "CA0051",
+      "slug": "casa-3-quartos-varanda-jardim-paraiso-campinas-sp-ca0051",
+      "titulo": "Casa de 3 quartos com varanda e espaço gourmet no Jardim Paraíso, Campinas",
+      "resumo": "Casa no Jardim Paraíso, Campinas, com 3 quartos, 1 suíte, 5 vagas e área gourmet. Boa localização com acesso a comércios e escolas.",
+      "capa": {
+        "foto": 1312,
+        "alt": "Fachada de casa com entrada e jardim"
+      },
+      "versao": "0bfa72a3eefc",
+      "publicadoEm": "2026-10-28T03:56:36.403Z",
+      "atualizadoEm": "2026-10-28T04:40:00.853Z"
     },
     {
       "codigo": "AP0032",
@@ -818,18 +853,6 @@
       "publicadoEm": "2026-10-28T03:53:16.265Z"
     },
     {
-      "codigo": "CA0054",
-      "slug": "casa-comercial-jardim-chapadaocampinas-sp-ca0054",
-      "titulo": "Casa comercial com 4 vagas de garagem no Jardim Chapadão, Campinas",
-      "resumo": "Casa comercial no Jardim Chapadão, Campinas, com 4 vagas de garagem e localização estratégica. Ideal para empreendimentos com visibilidade e acesso facilitado.",
-      "capa": {
-        "foto": 1420,
-        "alt": "Fachada de imóvel com logotipo 'RUAH' e janelas azuis"
-      },
-      "versao": "851f3b83857f",
-      "publicadoEm": "2026-10-28T03:53:16.264Z"
-    },
-    {
       "codigo": "CA0047",
       "slug": "casa-condominio-3-suites-varanda-gourmet-dos-ortizes-valinhos-sp-ca0047",
       "titulo": "Casa em condomínio de 3 suítes com varanda gourmet no Dos Ortizes",
@@ -840,6 +863,19 @@
       },
       "versao": "c99e99ad12cb",
       "publicadoEm": "2026-10-28T03:53:16.264Z"
+    },
+    {
+      "codigo": "CA0054",
+      "slug": "casa-comercial-jardim-chapadaocampinas-sp-ca0054",
+      "titulo": "Casa comercial com 4 vagas de garagem no Jardim Chapadão, Campinas",
+      "resumo": "Casa comercial no Jardim Chapadão, Campinas, com 4 vagas de garagem e localização estratégica. Ideal para empreendimentos com visibilidade e acesso facilitado.",
+      "capa": {
+        "foto": 1420,
+        "alt": "Fachada de imóvel com logotipo 'RUAH' e janelas azuis"
+      },
+      "versao": "851f3b83857f",
+      "publicadoEm": "2026-10-28T03:53:16.264Z",
+      "atualizadoEm": "2026-10-28T04:40:00.853Z"
     },
     {
       "codigo": "CA0006",
@@ -1358,5 +1394,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:37:58.144Z"
+  "atualizadoEm": "2026-10-28T04:40:00.857Z"
 }

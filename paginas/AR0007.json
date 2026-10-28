@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Terreno de 2.808 m² localizado no bairro Chácaras Campos dos Amarais, em Campinas. A área está situada em uma região estratégica com fácil acesso a principais rodovias e infraestrutura logística da cidade. Ideal para investidores e empresas que buscam uma bem localizada para empreendimentos comerciais, industriais ou de serviços."
+      "texto": "Terreno de 2.808 m² localizado no bairro Chácaras Campos dos Amarais, em Campinas. A área está situada em uma região estratégica com fácil acesso a principais rodovias e infraestrutura logística da cidade. Ideal para investidores e empresas que buscam uma boa localização para empreendimentos comerciais, industriais ou de serviços."
     },
     {
       "tipo": "paragrafo",
@@ -167,5 +167,6 @@
     ]
   },
   "versao": "891db87f8385",
-  "publicadoEm": "2026-10-28T04:08:30.713Z"
+  "publicadoEm": "2026-10-28T04:08:30.713Z",
+  "atualizadoEm": "2026-10-28T04:40:00.850Z"
 }

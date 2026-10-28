@@ -2,7 +2,7 @@
   "codigo": "AP0025",
   "slug": "apartamento-3-suites-varanda-cambui-campinas-ap0025",
   "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
-  "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e bem localizada.",
+  "resumo": "Apartamento de 231 m² no coração do Cambuí, com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto e boa localização.",
   "capa": {
     "foto": 866,
     "alt": "Varanda com sofá e vista para edifícios e jardim"
@@ -125,7 +125,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A bem localizada do imóvel é um dos seus principais diferenciais, combinando comodidade com um ambiente urbano bem planejado. A área externa, visível nas fotos, inclui jardins com plantas e edifícios ao redor."
+      "texto": "A boa localização do imóvel é um dos seus principais diferenciais, combinando comodidade com um ambiente urbano bem planejado. A área externa, visível nas fotos, inclui jardins com plantas e edifícios ao redor."
     },
     {
       "tipo": "fotos",
@@ -147,7 +147,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e bem localizada. Com 3 suítes, 3 vagas de garagem e uma área social integrada, é uma excelente opção para quem valoriza espaço e funcionalidade. A varanda com vista para área verde oferece um toque de tranquilidade no meio da cidade."
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e boa localização. Com 3 suítes, 3 vagas de garagem e uma área social integrada, é uma excelente opção para quem valoriza espaço e funcionalidade. A varanda com vista para área verde oferece um toque de tranquilidade no meio da cidade."
     },
     {
       "tipo": "destaque",
@@ -323,7 +323,7 @@
     }
   ],
   "redes": {
-    "legenda": "Apartamento de 231 m² no coração do Cambuí com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto, privacidade e bem localizada em Campinas. Venha conhecer!",
+    "legenda": "Apartamento de 231 m² no coração do Cambuí com 3 suítes, 3 vagas e varanda com vista para área verde. Ideal para quem busca conforto, privacidade e boa localização em Campinas. Venha conhecer!",
     "hashtags": [
       "apartamentocampinas",
       "cambui",
@@ -336,5 +336,6 @@
     ]
   },
   "versao": "7be19ab85126",
-  "publicadoEm": "2026-10-28T04:08:30.712Z"
+  "publicadoEm": "2026-10-28T04:08:30.712Z",
+  "atualizadoEm": "2026-10-28T04:40:00.847Z"
 }

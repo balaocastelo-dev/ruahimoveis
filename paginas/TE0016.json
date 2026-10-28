@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O terreno está em um ponto bem localizada do condomínio, com estrada asfaltada, gramado bem cuidado e vegetação que compõe um cenário de alta qualidade de vida. A área é ideal para quem busca privacidade, segurança e um ambiente de alta sofisticação."
+      "texto": "O terreno está em um ponto bem localizado do condomínio, com estrada asfaltada, gramado bem cuidado e vegetação que compõe um cenário de alta qualidade de vida. A área é ideal para quem busca privacidade, segurança e um ambiente de alta sofisticação."
     },
     {
       "tipo": "resumo",
@@ -183,7 +183,7 @@
     }
   ],
   "redes": {
-    "legenda": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu/SP. Vista para as montanhas e bem localizada. Ideal para quem busca privacidade e qualidade de vida. Acesso fácil às principais cidades da região.",
+    "legenda": "Terreno de 20.579 m² no Condomínio Almarias em Jarinu/SP. Vista para as montanhas e boa localização. Ideal para quem busca privacidade e qualidade de vida. Acesso fácil às principais cidades da região.",
     "hashtags": [
       "terrenojarinu",
       "almarias",
@@ -196,5 +196,6 @@
     ]
   },
   "versao": "60a1d9519d65",
-  "publicadoEm": "2026-10-28T04:22:43.237Z"
+  "publicadoEm": "2026-10-28T04:22:43.237Z",
+  "atualizadoEm": "2026-10-28T04:40:00.856Z"
 }

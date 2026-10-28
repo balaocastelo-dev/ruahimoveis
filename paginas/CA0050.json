@@ -2,7 +2,7 @@
   "codigo": "CA0050",
   "slug": "casa-parque-taquaral-campinas-sp-ca0050",
   "titulo": "Casa reformada no Parque Taquaral com 4 vagas de garagem e área de serviço",
-  "resumo": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem, área de serviço e estrutura renovada. bem localizada em bairro com infraestrutura urbana.",
+  "resumo": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem, área de serviço e estrutura renovada. Boa localização em bairro com infraestrutura urbana.",
   "capa": {
     "foto": 1185,
     "alt": "Fachada de casa com portão azul e logotipo 'RUAH Investimentos Imobiliários'"
@@ -226,7 +226,7 @@
     }
   ],
   "redes": {
-    "legenda": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem e área de serviço. bem localizada com infraestrutura urbana. Ideal para uso residencial ou comercial.",
+    "legenda": "Casa reformada no Parque Taquaral, em Campinas, com 4 vagas de garagem e área de serviço. Boa localização com infraestrutura urbana. Ideal para uso residencial ou comercial.",
     "hashtags": [
       "casacampinas",
       "parquetaquaral",
@@ -239,5 +239,6 @@
     ]
   },
   "versao": "29c654913ea1",
-  "publicadoEm": "2026-10-28T04:00:05.518Z"
+  "publicadoEm": "2026-10-28T04:00:05.518Z",
+  "atualizadoEm": "2026-10-28T04:40:00.853Z"
 }

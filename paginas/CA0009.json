@@ -2,7 +2,7 @@
   "codigo": "CA0009",
   "slug": "casa-condominio-3-suites-rooftop-parque-taquaral-campinas-ca0009",
   "titulo": "Casa em condomínio de 3 suítes com rooftop privativo no Parque Taquaral",
-  "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e bem localizada em Campinas.",
+  "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e boa localização em Campinas.",
   "capa": {
     "foto": 1027,
     "alt": "Fachada moderna de residência com entrada iluminada"
@@ -151,7 +151,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para quem busca privacidade, sofisticação e um ambiente moderno em uma bem localizada. Com apenas 8 unidades no condomínio, é uma oportunidade exclusiva para quem valoriza o conforto e a qualidade de vida."
+      "texto": "Este imóvel é ideal para quem busca privacidade, sofisticação e um ambiente moderno em uma boa localização. Com apenas 8 unidades no condomínio, é uma oportunidade exclusiva para quem valoriza o conforto e a qualidade de vida."
     },
     {
       "tipo": "destaque",
@@ -260,5 +260,6 @@
     ]
   },
   "versao": "a1ad34a1abce",
-  "publicadoEm": "2026-10-28T04:02:52.946Z"
+  "publicadoEm": "2026-10-28T04:02:52.946Z",
+  "atualizadoEm": "2026-10-28T04:40:00.851Z"
 }

@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno de 5.020 m² no Parque Taquaral, uma das regiões mais valorizadas de Campinas, está pronto para receber um empreendimento residencial. O imóvel já conta com um projeto aprovado para a implantação de 29 casas, o que facilita e acelera o desenvolvimento do projeto. Localizado em uma área estratégica, próximo a vias importantes, comércios e serviços, ele é uma opção para investidores e construtoras que buscam um empreendimento com potencial de crescimento. A região é consolidada e está em constante procura, o que torna este terreno ainda mais atrativo."
+      "texto": "Este terreno de 5.020 m² no Parque Taquaral, uma das regiões mais valorizadas de Campinas, está pronto para receber um empreendimento residencial. O imóvel já conta com um projeto aprovado para a implantação de 29 casas, o que facilita e acelera o desenvolvimento do projeto. Localizado em uma área estratégica, próximo a vias importantes, comércios e serviços, ele é uma opção para investidores e construtoras que buscam um empreendimento com potencial de crescimento. A região é consolidada e está consolidada, o que torna este terreno ainda mais atrativo."
     },
     {
       "tipo": "resumo",
@@ -18,7 +18,7 @@
         "Terreno com 5.020 m²",
         "Projeto aprovado para 29 casas",
         "Localização no Parque Taquaral",
-        "Área em constante procura",
+        "Área consolidada",
         "Documentação regularizada",
         "Acesso fácil às principais avenidas"
       ],
@@ -31,7 +31,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O terreno está localizado no Parque Taquaral, uma região consolidada e em constante procura em Campinas. Sua localização estratégica oferece fácil acesso a importantes vias de circulação, comércios, serviços e infraestrutura urbana. A proximidade com ações públicas e privadas facilita o desenvolvimento do empreendimento. A região é uma das mais desejadas da cidade, combinando qualidade de vida e mobilidade, o que a torna atrativa para moradores e investidores."
+      "texto": "O terreno está localizado no Parque Taquaral, uma região consolidada em Campinas. Sua localização estratégica oferece fácil acesso a importantes vias de circulação, comércios, serviços e infraestrutura urbana. A proximidade com ações públicas e privadas facilita o desenvolvimento do empreendimento. A região é uma das mais desejadas da cidade, combinando qualidade de vida e mobilidade, o que a torna atrativa para moradores e investidores."
     },
     {
       "tipo": "fotos",
@@ -111,5 +111,6 @@
     ]
   },
   "versao": "26536f7e45eb",
-  "publicadoEm": "2026-10-28T04:34:07.324Z"
+  "publicadoEm": "2026-10-28T04:34:07.324Z",
+  "atualizadoEm": "2026-10-28T04:40:00.855Z"
 }

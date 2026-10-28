@@ -2,7 +2,7 @@
   "codigo": "AD0001",
   "slug": "apartamento-duplex-cambui-campinas-ad0001",
   "titulo": "Apartamento Duplex de 4 quartos no Cambuí, Campinas",
-  "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área bem localizada com fácil acesso a serviços e lazer.",
+  "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área com fácil acesso a serviços e lazer.",
   "capa": {
     "foto": 1240,
     "alt": "Sala de estar com piso de madeira e vista para a cidade"
@@ -185,7 +185,7 @@
     }
   ],
   "redes": {
-    "legenda": "Apartamento duplex no Cambuí com 4 quartos e 200 m². Salas amplas, piso de madeira e cozinha moderna com ilha central. bem localizada no coração do Cambuí, Campinas.",
+    "legenda": "Apartamento duplex no Cambuí com 4 quartos e 200 m². Salas amplas, piso de madeira e cozinha moderna com ilha central. Boa localização no coração do Cambuí, Campinas.",
     "hashtags": [
       "cambui",
       "campinas",
@@ -198,5 +198,6 @@
     ]
   },
   "versao": "4937c5e9aa86",
-  "publicadoEm": "2026-10-28T04:35:56.507Z"
+  "publicadoEm": "2026-10-28T04:35:56.507Z",
+  "atualizadoEm": "2026-10-28T04:40:00.845Z"
 }

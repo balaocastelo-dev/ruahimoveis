@@ -111,7 +111,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e qualidade de vida. Com 3 suítes, 2 vagas de garagem e bem localizada, é uma excelente opção para quem deseja viver em uma das regiões mais valorizadas de Campinas."
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e qualidade de vida. Com 3 suítes, 2 vagas de garagem e boa localização, é uma excelente opção para quem deseja viver em uma das regiões mais valorizadas de Campinas."
     },
     {
       "tipo": "destaque",
@@ -245,5 +245,6 @@
     ]
   },
   "versao": "f3a19adde8c9",
-  "publicadoEm": "2026-10-28T04:02:52.944Z"
+  "publicadoEm": "2026-10-28T04:02:52.944Z",
+  "atualizadoEm": "2026-10-28T04:40:00.846Z"
 }

@@ -90,7 +90,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este terreno é ideal para quem busca construir uma casa em um condomínio de alto padrão, com acesso a áreas de lazer, segurança e bem localizada. É uma opção para quem valoriza a qualidade de vida e a infraestrutura de um empreendimento bem planejado."
+      "texto": "Este terreno é ideal para quem busca construir uma casa em um condomínio de alto padrão, com acesso a áreas de lazer, segurança e boa localização. É uma opção para quem valoriza a qualidade de vida e a infraestrutura de um empreendimento bem planejado."
     },
     {
       "tipo": "destaque",
@@ -169,5 +169,6 @@
     ]
   },
   "versao": "6504883fabb5",
-  "publicadoEm": "2026-10-28T04:00:05.517Z"
+  "publicadoEm": "2026-10-28T04:00:05.517Z",
+  "atualizadoEm": "2026-10-28T04:40:00.856Z"
 }

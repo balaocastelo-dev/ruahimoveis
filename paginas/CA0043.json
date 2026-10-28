@@ -2,7 +2,7 @@
   "codigo": "CA0043",
   "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0043",
   "titulo": "Casa em condomínio com 3 suítes, varanda gourmet e vista no Swiss Park",
-  "resumo": "Casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet, 208 m² de área privativa e vista para áreas verdes. bem localizada com infraestrutura completa.",
+  "resumo": "Casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet, 208 m² de área privativa e vista para áreas verdes. Boa localização com infraestrutura completa.",
   "capa": {
     "foto": 1172,
     "alt": "Fachada de casas modernas com jardins verticais e pessoas caminhando"
@@ -10,7 +10,7 @@
   "blocos": [
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é uma casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet e 208 m² de área privativa. A casa oferece espaços integrados, como a sala de estar com vista para a cozinha e jantar, além de uma varanda com churrasqueira e jacuzzi. A bem localizada do Swiss Park garante acesso a áreas verdes, comércios e serviços."
+      "texto": "Este imóvel é uma casa em condomínio no Swiss Park, com 3 suítes, varanda gourmet e 208 m² de área privativa. A casa oferece espaços integrados, como a sala de estar com vista para a cozinha e jantar, além de uma varanda com churrasqueira e jacuzzi. A boa localização do Swiss Park garante acesso a áreas verdes, comércios e serviços."
     },
     {
       "tipo": "paragrafo",
@@ -112,7 +112,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Swiss Park é um bairro planejado com infraestrutura completa, áreas verdes preservadas, parque botânico, lagos e comércios próximos. O condomínio tem acesso fácil às principais rodovias da região e oferece tranquilidade e segurança. A bem localizada garante conveniência para o dia a dia e excelente."
+      "texto": "O Swiss Park é um bairro planejado com infraestrutura completa, áreas verdes preservadas, parque botânico, lagos e comércios próximos. O condomínio tem acesso fácil às principais rodovias da região e oferece tranquilidade e segurança. A boa localização garante conveniência para o dia a dia e excelente."
     },
     {
       "tipo": "fotos",
@@ -138,7 +138,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Este imóvel é ideal para famílias que buscam conforto, área de lazer e bem localizada. A casa oferece espaços integrados, com suítes, varanda gourmet e vista para áreas verdes. O condomínio inclui infraestrutura completa, como academia, piscina e segurança 24h, garantindo tranquilidade e bem-estar."
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, área de lazer e boa localização. A casa oferece espaços integrados, com suítes, varanda gourmet e vista para áreas verdes. O condomínio inclui infraestrutura completa, como academia, piscina e segurança 24h, garantindo tranquilidade e bem-estar."
     },
     {
       "tipo": "destaque",
@@ -302,5 +302,6 @@
     ]
   },
   "versao": "86f39e0b0dbc",
-  "publicadoEm": "2026-10-28T04:00:05.518Z"
+  "publicadoEm": "2026-10-28T04:00:05.518Z",
+  "atualizadoEm": "2026-10-28T04:40:00.852Z"
 }

@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A propriedade inclui uma casa de barco destinada ao lazer, além de uma área de serviço e espaço gourmet. A bem localizada e o ambiente natural tornam este imóvel um refúgio adequado para quem busca conforto e contato com a natureza."
+      "texto": "A propriedade inclui uma casa de barco destinada ao lazer, além de uma área de serviço e espaço gourmet. A boa localização e o ambiente natural tornam este imóvel um refúgio adequado para quem busca conforto e contato com a natureza."
     },
     {
       "tipo": "resumo",
@@ -298,5 +298,6 @@
     ]
   },
   "versao": "8cd0e0bde6d4",
-  "publicadoEm": "2026-10-28T04:11:28.831Z"
+  "publicadoEm": "2026-10-28T04:11:28.831Z",
+  "atualizadoEm": "2026-10-28T04:40:00.854Z"
 }

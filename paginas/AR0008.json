@@ -14,7 +14,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O terreno apresenta uma área verde bem preservada e está situado em uma região com conectividade urbana. Com uma classificação urbanística ZM1, ele oferece oportunidades para empreendimentos que respeitem as normas locais. A área também conta com vias de acesso bem definidas, o que contribui para sua acessibilidade e procura."
+      "texto": "O terreno apresenta uma área verde bem preservada e está situado em uma região com conectividade urbana. Com uma classificação urbanística ZM1, ele oferece oportunidades para empreendimentos que respeitem as normas locais. A área também conta com vias de acesso bem definidas, o que contribui para sua acessibilidade."
     },
     {
       "tipo": "resumo",
@@ -170,5 +170,6 @@
     ]
   },
   "versao": "56a379fad68d",
-  "publicadoEm": "2026-10-28T04:30:19.645Z"
+  "publicadoEm": "2026-10-28T04:30:19.645Z",
+  "atualizadoEm": "2026-10-28T04:40:00.850Z"
 }
