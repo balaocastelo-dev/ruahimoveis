@@ -1,15 +1,24 @@
 // Condomínios · importa a base de Campinas (CNPJ + Censo 2022 + mapa aberto) e os prédios do 3D para o banco online.
 // Uso (no PC, com DATABASE_URL no .env):
-//   node scripts/condominios-importar.mjs data/condominios/condominios-campinas.json [data/condominios/predios3d_00.jsonl ...]
+//   node scripts/condominios-importar.mjs data/condominios/condominios-campinas.json [data/condominios/predios3d_00.jsonl ...] [--imobiliaria <slug>]
+// A base de prédios/mapa é COMUM (uma vez para todas as imobiliárias). --imobiliaria (padrão IMOBILIARIA_PADRAO || 'ruah')
+// diz em qual imobiliária roda o vínculo do fim (carteira e Radar dela ligados aos prédios).
 // Pode rodar de novo quando a base for atualizada: não apaga nada e não desfaz o que a imobiliária (cliente) editou na ficha.
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 require('../src/config');
+// --imobiliaria <slug>: o resto do script (inclusive depois de await) roda dentro dela (src/pc.js)
+const IMOB = require('../src/pc.js').entra();
 const pg = require('pg');
 
-const [arqBase, ...arqsPredios] = process.argv.slice(2);
+const [arqBase, ...arqsPredios] = IMOB.args.filter((a) => !a.startsWith('--'));
+if (IMOB.args.some((a) => ['--ajuda', '--help', '-h'].includes(a)) || !arqBase) {
+  console.log(`Uso: node scripts/condominios-importar.mjs <condominios.json | -> [predios3d_00.jsonl ...] [--imobiliaria <slug>]
+Imobiliária do vínculo: ${IMOB.slug}`);
+  process.exit(arqBase ? 0 : 2);
+}
 if (!process.env.DATABASE_URL) { console.error('DATABASE_URL não configurada no .env'); process.exit(1); }
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(process.env.DATABASE_URL) ? false : { rejectUnauthorized: false }, max: 4 });
 const chave = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toUpperCase().replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();

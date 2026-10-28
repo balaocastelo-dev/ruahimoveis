@@ -29,11 +29,15 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
+// --imobiliaria <slug>: o resto do script (inclusive depois de await) roda dentro dela (src/pc.js)
+const IMOB = require('../src/pc.js').entra();
 const { lerPagina } = require('../src/bairros/validar.js');
 const { avaliarPagina } = require('../src/bairros/regua.js');
 const { RAMO_DE_CONTEUDO: RAMO, DONO_REPO, SLUG } = require('../src/bairros/config.js');
-// O nome da imobiliária (cliente) vem da configuração (.env: CLIENTE_NOME). Os campos *_ruah do dados.json são identificadores técnicos.
-const CLIENTE = require('../src/config.js').CLIENTE_NOME;
+// O nome da imobiliária (cliente) vem da configuração da imobiliária do contexto, lido na hora (não no topo do módulo).
+// Os campos *_ruah do dados.json são identificadores técnicos.
+const cfg = require('../src/config.js');
+const cliente = () => cfg.CLIENTE_NOME;
 
 const SITE = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
 const PASTA_FILA = path.join(os.tmpdir(), 'bairros');
@@ -120,7 +124,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Bairros ${CLIENTE}`, '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Bairros ${cliente()}`, '-c', 'user.email=imoveisruah@gmail.com'); }
   const rodape = process.env.BAIRROS_RODAPE_DO_COMMIT || process.env.PORTAL_RODAPE_DO_COMMIT;
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape ? `\n\n${rodape}` : ''}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {
@@ -136,10 +140,11 @@ function enviar(pasta, mensagem) {
 }
 
 // ------------------------------------------------------------------ comandos
-const [comando, ...resto] = process.argv.slice(2);
+const [comando, ...resto] = IMOB.args;
+{ const trava = require('../src/pc.js').travaOutra({ slug: IMOB.slug, comando, escreve: ['preparar', 'publicar', 'retirar'], urlEnv: 'PORTAL_URL' }); if (trava) sair(trava, 2); }
 const opcoes = new Set(resto.filter((a) => a.startsWith('--')));
 const valor = (nome, padrao) => { const i = resto.indexOf(nome); return i >= 0 && resto[i + 1] ? resto[i + 1] : padrao; };
-const ESTADOS = { 'sem-pagina': 'sem página', pedida: `reescrita pedida pela ${CLIENTE}`, antiga: 'página antiga (mais de um ano)', reprovada: 'reprovada no site', 'sem-arquivo': 'sem arquivo', 'no-ar': 'no ar' };
+const ESTADOS = { 'sem-pagina': 'sem página', get pedida() { return `reescrita pedida pela ${cliente()}`; }, antiga: 'página antiga (mais de um ano)', reprovada: 'reprovada no site', 'sem-arquivo': 'sem arquivo', 'no-ar': 'no ar' };
 const NA_FILA = ['pedida', 'sem-pagina', 'reprovada', 'sem-arquivo', 'antiga'];
 
 function conferir(arquivo, bairros) {
@@ -160,7 +165,7 @@ function conferir(arquivo, bairros) {
   }
   const m = av.medidas;
   console.log(`\n${b.nome} · ${pg.titulo}`);
-  console.log(`/bairros/${pg.slug} · ${m.palavras} palavras · ${m.secoes} seções · ${m.fotos} fotos (${m.commons} do Commons, ${m.deImovel} de imóveis da ${CLIENTE}) · ${m.perguntas} perguntas · ${m.fontes} fontes · ${m.chamadas} chamada(s)`);
+  console.log(`/bairros/${pg.slug} · ${m.palavras} palavras · ${m.secoes} seções · ${m.fotos} fotos (${m.commons} do Commons, ${m.deImovel} de imóveis da ${cliente()}) · ${m.perguntas} perguntas · ${m.fontes} fontes · ${m.chamadas} chamada(s)`);
   if (av.avisos.length) console.log(`Avisos (não impedem; leve a sério):\n- ${av.avisos.join('\n- ')}`);
   if (av.erros.length) sair(`${arquivo} — reprovado:\n- ${[...new Set(av.erros)].join('\n- ')}`);
   return { pg, b };
@@ -202,9 +207,9 @@ if (comando === 'listar' || comando === 'preparar') {
           try { curl(f.url, path.join(dir, `foto-${f.foto}.jpg`)); baixadas += 1; } catch (e) { console.error(`  (não baixou a foto ${f.foto}: ${e.message})`); }
         }
         const nf = baixadas ? folhas(dir, 'foto-*.jpg', 'imoveis-') : 0;
-        console.log(`- ${b.nome} (${b.slug}) · ${b.regiao || 'sem região'} · ${ESTADOS[b.pagina.estado]} · ${b.carteira_ruah.total} imóvel(is) da ${CLIENTE} com página · ${b.condominios.total} prédio(s)/condomínio(s) na base`);
-        console.log(`    ${baixadas}/${todas.length} fotos de imóveis da ${CLIENTE} em ${dir}${nf ? ` (+ ${nf} folha(s): imoveis-1.jpg…)` : ''}${fs.existsSync(path.join(dir, 'pagina-anterior.json')) ? ' · tem pagina-anterior.json' : ''}`);
-        if (b.notas_da_ruah) console.log(`    NOTAS DA ${CLIENTE.toUpperCase()} (siga): ${b.notas_da_ruah}`);
+        console.log(`- ${b.nome} (${b.slug}) · ${b.regiao || 'sem região'} · ${ESTADOS[b.pagina.estado]} · ${b.carteira_ruah.total} imóvel(is) da ${cliente()} com página · ${b.condominios.total} prédio(s)/condomínio(s) na base`);
+        console.log(`    ${baixadas}/${todas.length} fotos de imóveis da ${cliente()} em ${dir}${nf ? ` (+ ${nf} folha(s): imoveis-1.jpg…)` : ''}${fs.existsSync(path.join(dir, 'pagina-anterior.json')) ? ' · tem pagina-anterior.json' : ''}`);
+        if (b.notas_da_ruah) console.log(`    NOTAS DA ${cliente().toUpperCase()} (siga): ${b.notas_da_ruah}`);
         if (b.pagina.erros) console.log(`    motivo: ${b.pagina.erros.join(' | ')}`);
         console.log(`    fotos de lugares do bairro: node scripts/bairros-publicar.mjs fotos ${b.slug} "<o que procurar>"`);
       }
@@ -295,6 +300,7 @@ if (comando === 'listar' || comando === 'preparar') {
   node scripts/bairros-publicar.mjs listar                          situação da página de cada bairro
   node scripts/bairros-publicar.mjs conferir pagina.json            confere formato, régua e licenças, sem publicar
   node scripts/bairros-publicar.mjs publicar a.json [b.json …]      confere e publica   [--refazer]
-  node scripts/bairros-publicar.mjs retirar <bairro>                tira a página do ar`);
+  node scripts/bairros-publicar.mjs retirar <bairro>                tira a página do ar
+  (qualquer comando)  --imobiliaria <slug>                          roda para aquela imobiliária (desta vez: ${IMOB.slug})`);
   process.exit(comando ? 2 : 0);
 }

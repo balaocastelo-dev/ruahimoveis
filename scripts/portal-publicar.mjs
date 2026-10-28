@@ -8,6 +8,9 @@
  *   node scripts/portal-publicar.mjs publicar a.json [b.json …]   confere e publica (um envio só)
  *   node scripts/portal-publicar.mjs retirar <CÓDIGO>          tira a página do ar
  *
+ *   --imobiliaria <slug>  (qualquer comando; padrão IMOBILIARIA_PADRAO || 'ruah') roda dentro daquela imobiliária.
+ *   Por enquanto só a RUAH tem ramo de conteúdo: para outra, listar/conferir pedem PORTAL_URL e publicar/retirar/preparar recusam.
+ *
  * Antes de publicar, a página passa pelas MESMAS conferências que o site aplica
  * antes de mostrar: o formato (src/portal/validar.js) e a régua
  * (src/portal/regua.js), esta contra a ficha do imóvel AO VIVO, lida do portal
@@ -28,10 +31,12 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
+// --imobiliaria <slug>: o resto do script (inclusive depois de await) roda dentro dela (src/pc.js)
+const IMOB = require('../src/pc.js').entra();
 const { lerPagina } = require('../src/portal/validar.js');
 const { avaliarPagina } = require('../src/portal/regua.js');
 const { RAMO_DE_CONTEUDO: RAMO, DONO_REPO, CODIGO } = require('../src/portal/config.js');
-const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
+const cfg = require('../src/config.js'); // nome da imobiliária (cliente): lido na hora (cfg.CLIENTE_NOME), dentro do contexto
 
 const PORTAL = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
 const PASTA_FILA = path.join(os.tmpdir(), 'portal');
@@ -134,7 +139,8 @@ function enviar(pasta, mensagem) {
 }
 
 // ------------------------------------------------------------------ comandos
-const [comando, ...resto] = process.argv.slice(2);
+const [comando, ...resto] = IMOB.args;
+{ const trava = require('../src/pc.js').travaOutra({ slug: IMOB.slug, comando, escreve: ['preparar', 'publicar', 'retirar'], urlEnv: 'PORTAL_URL' }); if (trava) sair(trava, 2); }
 const opcoes = new Set(resto.filter((a) => a.startsWith('--')));
 const refazer = opcoes.has('--refazer');
 const valor = (nome, padrao) => { const i = resto.indexOf(nome); return i >= 0 && resto[i + 1] ? resto[i + 1] : padrao; };
@@ -259,6 +265,7 @@ if (comando === 'listar' || comando === 'preparar') {
   node scripts/portal-publicar.mjs listar                       situação da página de cada imóvel à venda
   node scripts/portal-publicar.mjs conferir pagina.json         confere formato e régua, sem publicar
   node scripts/portal-publicar.mjs publicar a.json [b.json …]   confere e publica   [--refazer]
-  node scripts/portal-publicar.mjs retirar <CÓDIGO>             tira a página do ar`);
+  node scripts/portal-publicar.mjs retirar <CÓDIGO>             tira a página do ar
+  (qualquer comando)  --imobiliaria <slug>                      roda para aquela imobiliária (desta vez: ${IMOB.slug})`);
   process.exit(comando ? 2 : 0);
 }

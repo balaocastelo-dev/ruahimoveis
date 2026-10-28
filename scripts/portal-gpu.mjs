@@ -3,6 +3,11 @@
  * Portal do cliente (a imobiliária) · páginas dos imóveis escritas pela placa de vídeo do PC (Ollama).
  *
  *   node scripts/portal-gpu.mjs [--quantos 999] [--so AP0022,CA0010] [--lote 5] [--sem-publicar] [--fase fotos|texto|tudo]
+ *                               [--imobiliaria <slug>] [--ajuda]
+ *
+ * --imobiliaria (padrão IMOBILIARIA_PADRAO || 'ruah'): roda dentro daquela imobiliária (nome dela nas regras do texto,
+ * pasta data/<slug>/portal-gpu para as novas). Para outra que não a RUAH: exige PORTAL_URL e --sem-publicar
+ * (o ramo de conteúdo próprio entra na etapa da plataforma).
  *
  * Para cada imóvel da fila (sem página, desatualizada, reprovada):
  *   1. o modelo de visão (PORTAL_GPU_VISAO, padrão qwen2.5vl:7b) olha CADA foto e diz
@@ -23,9 +28,12 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
+// --imobiliaria <slug>: o resto do script (inclusive depois de await) roda dentro dela (src/pc.js)
+const pc = require('../src/pc.js');
+const IMOB = pc.entra();
 const { lerPagina } = require('../src/portal/validar.js');
 const { avaliarPagina } = require('../src/portal/regua.js');
-// O nome da imobiliária (cliente) vem da configuração (.env: CLIENTE_NOME / EMPRESA).
+// O nome da imobiliária (cliente) vem da configuração da imobiliária do contexto, lido na hora (regras()), não no topo.
 const cfg = require('../src/config.js');
 
 const OLLAMA = (process.env.OLLAMA_URL || 'http://127.0.0.1:11434').replace(/\/+$/, '');
@@ -33,14 +41,31 @@ const VISAO = process.env.PORTAL_GPU_VISAO || 'qwen2.5vl:7b';
 const TEXTO = process.env.PORTAL_GPU_TEXTO || 'qwen3:14b';
 const PORTAL = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
 const FOTOS_DE = (process.env.PORTAL_GPU_FOTOS || 'http://localhost:3333').replace(/\/+$/, '');
-const PASTA = path.join(RAIZ, 'data', 'portal-gpu');
+const PASTA = pc.pastaDados('portal-gpu'); // RUAH: data/portal-gpu (como sempre); outras: data/<slug>/portal-gpu
 
-const args = process.argv.slice(2);
+const args = IMOB.args;
 const valor = (n, p) => { const i = args.indexOf(n); return i >= 0 && args[i + 1] ? args[i + 1] : p; };
 const QUANTOS = parseInt(valor('--quantos', '999'), 10);
 const SO = valor('--so', '') ? valor('--so', '').toUpperCase().split(',') : null;
 const LOTE = parseInt(valor('--lote', '5'), 10);
 const PUBLICAR = !args.includes('--sem-publicar');
+const FASE = valor('--fase', 'tudo'); // fotos | texto | tudo
+
+function uso(codigo) {
+  console.log(`Uso:
+  node scripts/portal-gpu.mjs [--quantos 999] [--so AP0022,CA0010] [--lote 5] [--sem-publicar] [--fase fotos|texto|tudo] [--imobiliaria <slug>]
+Imobiliária desta rodada: ${IMOB.slug} · fotos e textos em ${PASTA}`);
+  process.exit(codigo);
+}
+function recusa(msg) { console.error(`\n✗ ${msg}`); process.exit(2); }
+if (args.includes('--ajuda') || args.includes('-h') || args.includes('--help')) uso(0);
+if (!['fotos', 'texto', 'tudo'].includes(FASE)) recusa(`--fase deve ser fotos, texto ou tudo (veio "${FASE}").`);
+for (const [n, v] of [['--quantos', QUANTOS], ['--lote', LOTE]]) if (!Number.isFinite(v) || v < 1) recusa(`${n} precisa ser um número maior que zero.`);
+if (!IMOB.raiz) {
+  const t = pc.travaOutra({ slug: IMOB.slug, comando: 'ler', urlEnv: 'PORTAL_URL' });
+  if (t) recusa(t);
+  if (PUBLICAR) recusa(`Para a imobiliária "${IMOB.slug}" o portal-gpu ainda não publica (o ramo de conteúdo é só da ${pc.slugRaiz().toUpperCase()}): rode com --sem-publicar.`);
+}
 
 const AMB = ['fachada', 'sala', 'cozinha', 'quarto', 'suite', 'banheiro', 'varanda', 'gourmet', 'piscina', 'lazer', 'jardim', 'garagem', 'escritorio', 'servico', 'vista', 'condominio', 'terreno', 'planta', 'outro'];
 const ORDEM = ['fachada', 'vista', 'terreno', 'sala', 'varanda', 'gourmet', 'cozinha', 'servico', 'escritorio', 'quarto', 'suite', 'banheiro', 'jardim', 'piscina', 'lazer', 'garagem', 'condominio', 'planta', 'outro'];
@@ -108,7 +133,7 @@ function limparLegenda(s) {
 }
 
 // ------------------------------------------------------------ 2. o texto
-const REGRAS = `Você escreve a PÁGINA de um imóvel à venda no portal da ${cfg.EMPRESA} (Campinas, SP).
+const regras = () => `Você escreve a PÁGINA de um imóvel à venda no portal da ${cfg.EMPRESA} (Campinas, SP).
 Escreva SÓ o que a ficha diz e o que as fotos mostram (a lista "fotos" traz o que cada foto mostra). Nada de suposição, nada sobre o bairro além da ficha e do anúncio.
 Do "descricao_do_anuncio" pode usar os FATOS com palavras suas; nunca copie frases e nunca repita exageros de anúncio.
 
@@ -227,7 +252,7 @@ function avaliar(pg, im) {
 }
 
 async function escrever(im, fotos, dir) {
-  const msgs = [{ role: 'system', content: REGRAS }, { role: 'user', content: `Ficha do imóvel e o que cada foto mostra:\n${JSON.stringify(fichaParaModelo(im, fotos), null, 1)}\n\nEscreva a página. Só o JSON.` }];
+  const msgs = [{ role: 'system', content: regras() }, { role: 'user', content: `Ficha do imóvel e o que cada foto mostra:\n${JSON.stringify(fichaParaModelo(im, fotos), null, 1)}\n\nEscreva a página. Só o JSON.` }];
   let ultimo = null;
   for (let t = 1; t <= 4; t += 1) {
     const resp = await ollama({ model: TEXTO, think: false, format: 'json', options: { temperature: t === 1 ? 0.6 : 0.4, num_ctx: 10240, num_predict: 3500 }, messages: msgs });
@@ -248,7 +273,7 @@ async function escrever(im, fotos, dir) {
 function publicar(arquivos) {
   if (!arquivos.length) return;
   try {
-    const out = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'portal-publicar.mjs'), 'publicar', ...arquivos], { cwd: RAIZ, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+    const out = execFileSync(process.execPath, [path.join(RAIZ, 'scripts', 'portal-publicar.mjs'), 'publicar', ...arquivos, '--imobiliaria', IMOB.slug], { cwd: RAIZ, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
     log(`PUBLICADAS ${arquivos.length}:${out.split('\n').filter((l) => l.includes('✓')).map((l) => `\n   ${l.trim()}`).join('')}`);
   } catch (e) {
     log(`Falhou ao publicar o lote (${String(e.stderr || e.message).trim().slice(0, 600)}); publicando um a um.`);
@@ -267,7 +292,6 @@ fs.mkdirSync(PASTA, { recursive: true });
 
 let prontos = [];
 const resultado = { publicadas: 0, falharam: [] };
-const FASE = valor('--fase', 'tudo'); // fotos | texto | tudo
 if (FASE !== 'texto') {
   log('Fase 1: o modelo de visão olha as fotos de todos os imóveis da fila.');
   for (const [n, im] of fila.entries()) {

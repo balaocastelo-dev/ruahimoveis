@@ -12,6 +12,9 @@
  *   node scripts/blog-publicar.mjs capa <endereço> --desistir
  *   node scripts/blog-publicar.mjs retirar <endereço>
  *
+ *   --imobiliaria <slug>  (qualquer comando; padrão IMOBILIARIA_PADRAO || 'ruah') roda dentro daquela imobiliária.
+ *   Por enquanto só a RUAH tem ramo de conteúdo: para outra imobiliária só o conferir (local) roda; os outros recusam.
+ *
  * Antes de publicar, o artigo passa pelas MESMAS conferências que o site
  * aplica antes de mostrar: o formato (src/blog/validar.js) e a régua editorial
  * (src/blog/regua.js). Se não passa aqui, não passaria lá.
@@ -40,11 +43,13 @@ import { fileURLToPath } from 'node:url';
 
 const RAIZ = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(import.meta.url);
+// --imobiliaria <slug>: o resto do script (inclusive depois de await) roda dentro dela (src/pc.js)
+const IMOB = require('../src/pc.js').entra();
 const { lerArtigo } = require('../src/blog/validar.js');
 const { avaliarArtigo, tipoDe } = require('../src/blog/regua.js');
 const { minutosDeLeitura, semAcento, diaEmCampinas, FUSO } = require('../src/blog/texto.js');
 const { RAMO_DE_CONTEUDO: RAMO, arquivoDaCapa, enderecoDaCapa } = require('../src/blog/categorias.js');
-const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
+const cfg = require('../src/config.js'); // nome da imobiliária (cliente): lido na hora (cfg.CLIENTE_NOME), dentro do contexto
 
 const SITE = (process.env.BLOG_URL || '').replace(/\/+$/, '');
 
@@ -192,7 +197,8 @@ function conferirPedidoDeCapa(capa) {
 
 // ------------------------------------------------------------------ comandos
 
-const [comando, alvo, ...resto] = process.argv.slice(2);
+const [comando, alvo, ...resto] = IMOB.args;
+{ const trava = require('../src/pc.js').travaOutra({ slug: IMOB.slug, comando, escreve: ['listar', 'preparar', 'publicar', 'pendentes', 'capa', 'retirar'] }); if (trava) sair(trava, 2); }
 const argumentos = [alvo, ...resto].filter((a) => typeof a === 'string');
 const opcoes = new Set(argumentos.filter((a) => a.startsWith('--')).map((a) => a.split('=')[0]));
 const atualizar = opcoes.has('--atualizar');
@@ -459,6 +465,7 @@ if (comando === 'listar') {
   node scripts/blog-publicar.mjs capa <endereço> foto.jpg  prende a foto a um artigo   [--trocar] [--alt "…"]
   node scripts/blog-publicar.mjs capa <endereço> --pedir --alt "…" --pedido "…"
   node scripts/blog-publicar.mjs capa <endereço> --desistir
-  node scripts/blog-publicar.mjs retirar <endereço>        tira um artigo do ar`);
+  node scripts/blog-publicar.mjs retirar <endereço>        tira um artigo do ar
+  (qualquer comando)  --imobiliaria <slug>                 roda para aquela imobiliária (desta vez: ${IMOB.slug})`);
   process.exit(comando ? 2 : 0);
 }

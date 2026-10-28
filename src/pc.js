@@ -152,10 +152,11 @@ function entra(argv = process.argv.slice(2)) {
 }
 
 // Publicação de conteúdo (portal/blog/bairros) só tem ramo e endereço da RUAH por enquanto.
-// Para outra imobiliária: leitura só com o endereço dela explícito; gravar/publicar fica recusado.
+// Para outra imobiliária: comandos de `escreve` (que mexem no ramo de conteúdo) são recusados; os de leitura só rodam
+// com o endereço do site dela explícito em `urlEnv` (sem isso leriam o site da RUAH). Devolve a mensagem de recusa ou null.
 function travaOutra({ slug, comando, escreve = [], urlEnv }) {
   if (ehRaiz(slug) || !comando) return null;
-  if (escreve.includes(comando)) return `"${comando}" ainda publica só no ramo de conteúdo da ${slugRaiz().toUpperCase()}; para a imobiliária "${slug}" o ramo próprio entra na etapa da plataforma. Nada foi feito.`;
+  if (escreve.includes(comando)) return `"${comando}" ainda usa só o ramo de conteúdo da ${slugRaiz().toUpperCase()}; para a imobiliária "${slug}" o ramo próprio entra na etapa da plataforma. Nada foi feito.`;
   if (urlEnv && !process.env[urlEnv]) return `Para a imobiliária "${slug}", diga o endereço do site dela em ${urlEnv} (sem isso eu leria os dados da ${slugRaiz().toUpperCase()}). Nada foi feito.`;
   return null;
 }
