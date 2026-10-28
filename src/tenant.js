@@ -5,8 +5,9 @@
 //
 // TODO(fase1 · antes da 2ª imobiliária no ar):
 //  - MULTI=1 no Postgres só depois da migração (schema "base" + tabelas comuns movidas); hoje fica desligado.
-//  - caches em memória que ainda não separam por imobiliária: fisguei/inteligencia.js (CACHE), bairros/dados.js
-//    (cacheLista/cacheCond/cachePerto), bairros/fonte.js e blog/diario.js (memoria). Só routes/mercado.js já separa (BASES).
+//  - caches em memória com dado privado usam chaveCache() (fisguei/inteligencia, bairros/dados e fonte, blog/diario,
+//    portal/fonte, og, services/drive; routes/mercado separa por schema). Estado de processo (robô do WhatsApp, linhas
+//    dos agentes, monitor de portais) ainda é um só por PC e roda na imobiliária padrão.
 //  - config por imobiliária (CLIENTE_NOME, EMPRESA, chaves) ainda vem do .env; autenticação/sessões na base.
 //  - scripts/migrar-para-online.js e scripts/demo-vitrine.js usam o SQLite direto (fora do tradutor).
 const { AsyncLocalStorage } = require('node:async_hooks');
@@ -37,6 +38,9 @@ function exige() {
   if (!c) { const e = new Error('Nenhuma imobiliária no contexto desta operação.'); e.code = 'SEM_IMOBILIARIA'; throw e; }
   return c;
 }
+// Chave para caches em memória com dado da imobiliária: o slug do contexto (sem contexto, o da padrão).
+// Com MULTI desligado há uma imobiliária só, então a chave é sempre a mesma e o cache se comporta como antes.
+const chaveCache = () => (atual() || padrao()).slug;
 // Schema que o tradutor de SQL deve usar: o do contexto; sem contexto, a imobiliária padrão
 // (assim tudo que está no ar continua igual). No modo estrito, sem contexto devolve null e o tradutor recusa tabela privada.
 function schemaSql() {
@@ -75,4 +79,4 @@ function preserva(mw) {
   };
 }
 
-module.exports = { als, atual, comImobiliaria, exige, contexto, padrao, schemaSql, multi, estrito, porHost, hostsMap, middleware, preserva, SLUG_OK };
+module.exports = { als, atual, chaveCache, comImobiliaria, exige, contexto, padrao, schemaSql, multi, estrito, porHost, hostsMap, middleware, preserva, SLUG_OK };

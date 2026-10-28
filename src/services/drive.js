@@ -32,13 +32,18 @@ async function trocaCodigo(code) {
   const j = await r.json();
   if (!r.ok || !j.refresh_token) throw new Error(j.error_description || j.error || 'O Google não devolveu a autorização. Tente de novo.');
   setConfig('drive_refresh', cifrar(j.refresh_token));
-  cache = { token: j.access_token, exp: Date.now() + (j.expires_in - 60) * 1000 };
+  guardaTok({ token: j.access_token, exp: Date.now() + (j.expires_in - 60) * 1000 });
   setConfig('drive_raiz_id', null);
   try { const sobre = await api('GET', `${API}/about?fields=user(emailAddress,displayName)`); setConfig('drive_email', sobre.user.emailAddress); } catch {}
 }
 
-let cache = { token: null, exp: 0 };
+// token de acesso do Google, um por imobiliária (cada uma conecta o próprio Drive; o refresh fica no config dela)
+const tenant = require('../tenant');
+const TOKENS = new Map();
+const tok = () => TOKENS.get(tenant.chaveCache()) || { token: null, exp: 0 };
+const guardaTok = (t) => TOKENS.set(tenant.chaveCache(), t);
 async function accessToken() {
+  const cache = tok();
   if (cache.token && cache.exp > Date.now()) return cache.token;
   const enc = getConfig('drive_refresh');
   if (!enc) throw new Error('Google Drive não conectado.');
@@ -51,11 +56,11 @@ async function accessToken() {
     if (j.error === 'invalid_grant') desconectar();
     throw new Error('A conexão com o Google expirou. Conecte o Drive de novo em Configurações.');
   }
-  cache = { token: j.access_token, exp: Date.now() + (j.expires_in - 60) * 1000 };
-  return cache.token;
+  guardaTok({ token: j.access_token, exp: Date.now() + (j.expires_in - 60) * 1000 });
+  return j.access_token;
 }
 
-function desconectar() { setConfig('drive_refresh', null); setConfig('drive_email', null); setConfig('drive_raiz_id', null); cache = { token: null, exp: 0 }; }
+function desconectar() { setConfig('drive_refresh', null); setConfig('drive_email', null); setConfig('drive_raiz_id', null); TOKENS.delete(tenant.chaveCache()); }
 
 async function api(method, url, body, extraHeaders = {}) {
   const r = await fetch(url, {

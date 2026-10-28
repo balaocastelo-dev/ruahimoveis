@@ -23,25 +23,32 @@ const base = () => (process.env.PORTAL_CONTEUDO_URL || ENDERECO_DO_RAMO).replace
 const ligado = () => process.env.PORTAL !== 'false';
 
 const memoria = new Map(); // caminho -> { quando, valor }
-const arquivoDeCache = (c) => path.join(PASTA, c.replace(/[^a-z0-9.-]+/gi, '_'));
+
+// multi-imobiliária: cada imobiliária tem o seu conteúdo (o endereço do ramo passa a ser configuração dela), então a memória
+// e a cópia em disco são separadas por imobiliária. A padrão continua na pasta de sempre.
+const tenant = require('../tenant');
+const chaveMem = (c) => `${tenant.chaveCache()}|${c}`;
+const pastaDe = () => (tenant.chaveCache() === tenant.padrao().slug ? PASTA : path.join(PASTA, tenant.chaveCache()));
+const limpaMemoria = () => { const p = `${tenant.chaveCache()}|`; for (const k of [...memoria.keys()]) if (k.startsWith(p)) memoria.delete(k); };
+const arquivoDeCache = (c) => path.join(pastaDe(), c.replace(/[^a-z0-9.-]+/gi, '_'));
 
 /** Busca no GitHub com cache; null se não existe. Sem rede, usa a última cópia. */
 async function buscar(caminho) {
-  const m = memoria.get(caminho);
+  const m = memoria.get(chaveMem(caminho));
   if (m && Date.now() - m.quando < INTERVALO_MS) return m.valor;
   try {
     const r = await fetch(`${base()}/${caminho}?t=${Math.floor(Date.now() / INTERVALO_MS)}`, { signal: AbortSignal.timeout(6000) });
-    if (r.status === 404) { memoria.set(caminho, { quando: Date.now(), valor: null }); return null; }
+    if (r.status === 404) { memoria.set(chaveMem(caminho), { quando: Date.now(), valor: null }); return null; }
     if (!r.ok) throw new Error(`o GitHub respondeu ${r.status}`);
     const valor = await r.json();
-    memoria.set(caminho, { quando: Date.now(), valor });
-    try { fs.mkdirSync(PASTA, { recursive: true }); fs.writeFileSync(arquivoDeCache(caminho), JSON.stringify(valor)); } catch { /* conveniência */ }
+    memoria.set(chaveMem(caminho), { quando: Date.now(), valor });
+    try { fs.mkdirSync(pastaDe(), { recursive: true }); fs.writeFileSync(arquivoDeCache(caminho), JSON.stringify(valor)); } catch { /* conveniência */ }
     return valor;
   } catch (erro) {
-    if (m) { memoria.set(caminho, { quando: Date.now() - INTERVALO_MS + 60_000, valor: m.valor }); return m.valor; }
+    if (m) { memoria.set(chaveMem(caminho), { quando: Date.now() - INTERVALO_MS + 60_000, valor: m.valor }); return m.valor; }
     try {
       const valor = JSON.parse(fs.readFileSync(arquivoDeCache(caminho), 'utf8'));
-      memoria.set(caminho, { quando: Date.now() - INTERVALO_MS + 60_000, valor });
+      memoria.set(chaveMem(caminho), { quando: Date.now() - INTERVALO_MS + 60_000, valor });
       return valor;
     } catch { /* sem cópia */ }
     console.error(new Date().toLocaleString('pt-BR'), `[portal] não consegui ler ${caminho}: ${erro.message}`);
@@ -59,8 +66,9 @@ async function emLotes(itens, n, fn) {
   return saida;
 }
 
-let estado = null; // { quando, valor }
-let calculando = null;
+// estado calculado (o que está no ar), um por imobiliária: { estado: { quando, valor }, calculando }
+const ESTADOS = new Map();
+const est = () => { const k = tenant.chaveCache(); if (!ESTADOS.has(k)) ESTADOS.set(k, { estado: null, calculando: null }); return ESTADOS.get(k); };
 
 /**
  * O estado do portal:
@@ -102,9 +110,10 @@ async function calcular() {
 }
 
 async function obterEstado() {
-  if (estado && Date.now() - estado.quando < ESTADO_MS) return estado.valor;
-  if (!calculando) calculando = calcular().then((v) => { estado = { quando: Date.now(), valor: v }; return v; }).finally(() => { calculando = null; });
-  return calculando;
+  const E = est();
+  if (E.estado && Date.now() - E.estado.quando < ESTADO_MS) return E.estado.valor;
+  if (!E.calculando) E.calculando = calcular().then((v) => { E.estado = { quando: Date.now(), valor: v }; return v; }).finally(() => { E.calculando = null; });
+  return E.calculando;
 }
 
 const noAr = async () => (await obterEstado()).noAr;
@@ -117,6 +126,6 @@ async function situacao() {
   return [...e.situacao.values()];
 }
 
-function limparCache() { memoria.clear(); estado = null; }
+function limparCache() { limpaMemoria(); est().estado = null; }
 
 module.exports = { noAr, porSlug, porCodigo, situacao, obterEstado, limparCache };

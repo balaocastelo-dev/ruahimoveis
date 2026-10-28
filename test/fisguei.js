@@ -94,7 +94,7 @@ const consulta = (doc, nome, extra, fones) => ({
   assert.equal(conf.tipo, 'confirmou'); assert.ok(conf.oportunidade_id);
   const op = one('SELECT * FROM oportunidades WHERE id=?', conf.oportunidade_id);
   assert.equal(op.titular_nome, 'Andre Luis Arruda'); assert.equal(op.titular_telefone, '5519991407837'); assert.equal(op.status, 'em_contato');
-  assert.equal(one('SELECT status FROM fisguei_anuncios WHERE id=?', id).status, 'confirmado');
+  assert.equal(one('SELECT status FROM anuncio_andamento WHERE anuncio_id=?', id).status, 'confirmado'); // andamento da imobiliária
   assert.equal(F.pendentes().length, 2); console.log('ok · SIM vira oportunidade no Radar e respostas automáticas na fila');
   assert.equal(F.recebida({ telefone: '551991407837', texto: 'Pode me ligar amanhã', wa_id: 'in3' }).tipo, 'conversa'); console.log('ok · depois da 1ª resposta o robô não responde sozinho');
   assert.equal(F.recebida({ telefone: '5511900000000', texto: 'oi', wa_id: 'in4' }).ignorado !== undefined, true); console.log('ok · número desconhecido ignorado');

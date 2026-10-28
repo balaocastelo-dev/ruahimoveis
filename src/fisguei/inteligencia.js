@@ -6,6 +6,8 @@
 const { one, all, run, getConfig, setConfig } = require('../db');
 const cfg = require('../config');
 const F = require('./base');
+const D = require('./andamento');
+const tenant = require('../tenant');
 
 const DIA = 864e5;
 const hojeSP = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'America/Sao_Paulo' });
@@ -68,19 +70,23 @@ const SINAIS = {
 };
 const FORA = new Set(['descartado']);
 
-let CACHE = { em: 0, chave: '', base: null };
+// multi-imobiliária: uma base calculada por imobiliária (o andamento, as pessoas e os pedidos são de cada uma)
+const CACHES = new Map();
 function carregaBase() {
   // a base muda devagar (a extensão manda lotes): guarda 45 s para a navegação ficar instantânea
   const marca = one('SELECT count(*) AS n, max(atualizado_em) AS m FROM fisguei_anuncios');
+  const marcaD = one('SELECT count(*) AS n, max(atualizado_em) AS m FROM anuncio_andamento');
   const marcaP = one('SELECT count(*) AS n, max(consultado_em) AS m FROM fisguei_pessoas');
-  const chave = `${marca.n}|${marca.m}|${marcaP.n}|${marcaP.m}`;
-  if (CACHE.base && CACHE.chave === chave && Date.now() - CACHE.em < 45000) return CACHE.base;
+  const chave = `${marca.n}|${marca.m}|${marcaD.n}|${marcaD.m}|${marcaP.n}|${marcaP.m}`;
+  const ten = tenant.chaveCache();
+  const CACHE = CACHES.get(ten);
+  if (CACHE && CACHE.base && CACHE.chave === chave && Date.now() - CACHE.em < 45000) return CACHE.base;
 
   const M = require('../routes/mercado');
   const linhas = all(`SELECT a.id, a.fisgar_id, a.portal, a.tipo, a.finalidade, a.titulo, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.lat, a.lon,
       a.valor, a.valor_condominio, a.iptu, a.quartos, a.suites, a.banheiros, a.vagas, a.area_util, a.area_total, a.anunciante_nome, a.anunciante_tipo,
-      a.publicado_em, a.anunciado_desde, substr(a.fotos,1,900) AS fotos, (length(coalesce(a.fotos,'')) - length(replace(coalesce(a.fotos,''),'"http','')))/5 AS fotos_total, a.status, a.pausado, a.oportunidade_id, a.imovel_id, a.condominio_id, a.criado_em, a.atualizado_em
-    FROM fisguei_anuncios a`);
+      a.publicado_em, a.anunciado_desde, substr(a.fotos,1,900) AS fotos, (length(coalesce(a.fotos,'')) - length(replace(coalesce(a.fotos,''),'"http','')))/5 AS fotos_total, ${D.STATUS} AS status, ${D.PAUSADO} AS pausado, d.oportunidade_id, d.imovel_id, a.condominio_id, a.criado_em, ${D.ATUALIZADO} AS atualizado_em
+    FROM fisguei_anuncios a ${D.JOIN}`);
   const pes = new Map(all(`SELECT anuncio_id, count(*) AS n, coalesce(sum(consultado),0) AS cons, coalesce(sum(CASE WHEN status='confirmou' THEN 1 ELSE 0 END),0) AS conf,
       coalesce(sum(CASE WHEN status='respondeu' THEN 1 ELSE 0 END),0) AS resp FROM fisguei_pessoas GROUP BY anuncio_id`).map((x) => [x.anuncio_id, x]));
   const fila = new Map(all(`SELECT x.anuncio_id, count(*) AS n FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE c.tipo='tel' AND c.envio='fila' GROUP BY x.anuncio_id`).map((x) => [x.anuncio_id, x.n]));
@@ -124,7 +130,7 @@ function carregaBase() {
 
   for (const x of itens) analisa(x, { ref, refCat, refCidade, grupoDe });
   const base = { itens, ativos, ref, geradoEm: new Date().toISOString() };
-  CACHE = { em: Date.now(), chave, base };
+  CACHES.set(ten, { em: Date.now(), chave, base });
   return base;
 }
 
@@ -313,5 +319,5 @@ function pontos(q) {
     .map((x) => ({ id: x.id, lat: x.lat, lon: x.lon, valor: x.valor, nota: x.nota, dono: x.dono, tipo: x.subtipo, bairro: x.bairro_nome, logradouro: x.logradouro, numero: x.numero,
       foto: x.fotos[0] || null, sinais: x.sinais.map((s) => s.id), particular: x.anunciante_tipo === 'particular' }));
 }
-function invalida() { CACHE = { em: 0, chave: '', base: null }; }
+function invalida() { CACHES.delete(tenant.chaveCache()); }
 module.exports = { pontos, creditos, gravaSaldo, gravaPlano, explorar, carregaBase, analisa, invalida, SINAIS };

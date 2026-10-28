@@ -6,10 +6,12 @@
 
 const COMUNS = [
   // prédios, mapa e bairros (dado público, igual para todas as imobiliárias)
+  // (condominios.alvo e bairros.prioridade/oculto/notas/pedido_em ficaram sem uso: a escolha de cada imobiliária está em
+  // condominio_alvos e bairro_ajustes, privadas)
   'condominios', 'condominio_cache', 'predios3d', 'mapa3d', 'pois', 'fachadas', 'bairro_commons', 'bairros',
-  // anúncios vindos dos portais (Fisgar) e o histórico de preço deles
-  // TODO(fase1 · tabelas mistas): fisguei_anuncios tem oportunidade_id/imovel_id/status/observacoes/pausado, que são
-  // trabalho da imobiliária ("andamento do anúncio"); separar numa tabela privada antes de abrir para a 2ª imobiliária.
+  // anúncios vindos dos portais (Fisgar) e o histórico de preço deles. O trabalho de cada imobiliária sobre o anúncio
+  // (status, pausado, oportunidade_id, imovel_id, observacoes) mora na privada anuncio_andamento; as colunas antigas
+  // continuam em fisguei_anuncios só para permitir voltar a versão (ninguém lê nem grava mais nelas).
   'fisguei_anuncios', 'fisguei_precos',
   // proteção contra força bruta no login (chave = e-mail/IP, vale para a plataforma toda)
   'tentativas_login',
@@ -24,6 +26,8 @@ const PRIVADAS = [
   'fisguei_pessoas', 'fisguei_contatos', 'fisguei_mensagens', 'fisguei_pedidos', 'fisguei_bloqueios',
   'agente_mensagens', 'agente_eventos', 'agente_afazeres', 'agente_midias',
   'condominio_alertas', 'config', 'auditoria',
+  // escolhas da imobiliária sobre dados comuns (anúncio, prédio, bairro)
+  'anuncio_andamento', 'condominio_alvos', 'bairro_ajustes',
   // TODO(fase1 · etapa de autenticação): sessoes vai para a base (comum, com imobiliaria_id) junto com login_indice.
   // Por enquanto continua privada, para o login atual seguir igual.
   'sessoes',

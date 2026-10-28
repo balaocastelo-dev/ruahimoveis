@@ -8,6 +8,7 @@ const F = require('../fisguei/base');
 const normaliza = require('../fisguei/normaliza');
 const P = require('../fisguei/pedidos');
 const I = require('../fisguei/inteligencia');
+const D = require('../fisguei/andamento');
 
 // ---------- recebimento (extensão do Chrome) ----------
 // Fica fora de /api: a extensão não tem a sessão do sistema, ela se identifica com a chave gerada na tela do Fisguei.
@@ -83,7 +84,7 @@ function robo() {
 // Uma consulta para as contagens e uma para as configurações (antes eram ~28 idas ao banco; com o banco online
 // longe, a tela e o selo do menu esperavam ~6 s e o servidor ficava parado nesse tempo).
 r.get('/fisguei/resumo', (req, res) => {
-  const cont = Object.fromEntries(all('SELECT status, count(*) AS n FROM fisguei_anuncios GROUP BY status').map((x) => [x.status, x.n]));
+  const cont = Object.fromEntries(all(`SELECT ${D.STATUS} AS status, count(*) AS n FROM fisguei_anuncios a ${D.JOIN} GROUP BY ${D.STATUS}`).map((x) => [x.status, x.n]));
   const c = one(`SELECT
       (SELECT count(DISTINCT anuncio_id) FROM fisguei_pessoas WHERE consultado=1) AS comdono,
       (SELECT count(*) FROM fisguei_pessoas WHERE consultado=1) AS pessoas,
@@ -115,11 +116,11 @@ function filtros(query) {
   const f = String(query.filtro || '');
   const q = F.norm(query.q || '');
   const where = [], p = [];
-  if (f === 'precisa') where.push("a.status IN ('respondeu','confirmado')");
+  if (f === 'precisa') where.push(`${D.STATUS} IN ('respondeu','confirmado')`);
   else if (f === 'com_dono') where.push('EXISTS (SELECT 1 FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1)');
   else if (f === 'sem_dono') where.push('NOT EXISTS (SELECT 1 FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1)');
   else if (f === 'particular') where.push("a.anunciante_tipo='particular'");
-  else if (STATUS.includes(f)) { where.push('a.status=?'); p.push(f); }
+  else if (STATUS.includes(f)) { where.push(`${D.STATUS}=?`); p.push(f); }
   if (q) { where.push('(lower(a.logradouro) LIKE ? OR lower(a.bairro) LIKE ? OR lower(a.anunciante_nome) LIKE ? OR a.cep LIKE ?)'); p.push(`%${q}%`, `%${q}%`, `%${q}%`, `%${q.replace(/\D/g, '') || q}%`); }
   const vmin = Number(query.vmin) || 0, vmax = Number(query.vmax) || 0;
   if (vmin) { where.push('a.valor >= ?'); p.push(vmin); }
@@ -132,7 +133,7 @@ function contagem(q) {
   const out = {};
   for (const f of ['', 'precisa', 'com_dono', 'abordando', 'confirmado', 'sem_dono', 'particular', 'sem_interesse', 'captado']) {
     const { w, p } = filtros({ filtro: f, q });
-    out[f || 'todos'] = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${w}`, ...p).n;
+    out[f || 'todos'] = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${D.JOIN} ${w}`, ...p).n;
   }
   return out;
 }
@@ -157,28 +158,28 @@ r.post('/fisguei/creditos', (req, res) => {
 });
 r.get('/fisguei/mapa', (req, res) => {
   const { w, p } = filtros(req.query);
-  res.json(all(`SELECT a.id, a.lat, a.lon, a.valor, a.status, a.tipo, a.logradouro, a.numero, a.bairro, a.anunciante_tipo FROM fisguei_anuncios a
+  res.json(all(`SELECT a.id, a.lat, a.lon, a.valor, ${D.STATUS} AS status, a.tipo, a.logradouro, a.numero, a.bairro, a.anunciante_tipo FROM fisguei_anuncios a ${D.JOIN}
     ${w ? w + ' AND' : 'WHERE'} a.lat IS NOT NULL AND a.lon IS NOT NULL ORDER BY a.id DESC LIMIT 3000`, ...p));
 });
 r.get('/fisguei', (req, res) => {
   const pag = Math.max(parseInt(req.query.pagina, 10) || 1, 1);
   const { w, p } = filtros(req.query);
-  const total = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${w}`, ...p).n;
+  const total = one(`SELECT count(*) AS n FROM fisguei_anuncios a ${D.JOIN} ${w}`, ...p).n;
   const itens = all(`SELECT a.id, a.fisgar_id, a.tipo, a.negocio, a.logradouro, a.numero, a.complemento, a.bairro, a.cidade, a.cep, a.valor, a.quartos, a.suites, a.vagas, a.area_util,
-      a.anunciante_nome, a.anunciante_tipo, a.status, a.pausado, a.oportunidade_id, a.fotos, a.atualizado_em, a.criado_em,
+      a.anunciante_nome, a.anunciante_tipo, ${D.STATUS} AS status, ${D.PAUSADO} AS pausado, d.oportunidade_id, a.fotos, ${D.ATUALIZADO} AS atualizado_em, a.criado_em,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id) AS pessoas,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas,
       (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE x.anuncio_id=a.id AND c.tipo='tel' AND c.envio='fila') AS na_fila,
       (SELECT count(*) FROM fisguei_contatos c JOIN fisguei_pessoas x ON x.id=c.pessoa_id WHERE x.anuncio_id=a.id AND c.envio IN ('enviado','respondeu')) AS enviadas,
       (SELECT d.status FROM fisguei_pedidos d WHERE d.anuncio_id=a.id ORDER BY d.id DESC LIMIT 1) AS pedido,
       (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.status='confirmou') AS confirmados
-    FROM fisguei_anuncios a ${w} ORDER BY CASE WHEN a.status IN ('respondeu','confirmado') THEN 0 ELSE 1 END, a.atualizado_em DESC, a.id DESC LIMIT ${POR_PAG} OFFSET ?`, ...p, (pag - 1) * POR_PAG);
+    FROM fisguei_anuncios a ${D.JOIN} ${w} ORDER BY CASE WHEN ${D.STATUS} IN ('respondeu','confirmado') THEN 0 ELSE 1 END, ${D.ATUALIZADO} DESC, a.id DESC LIMIT ${POR_PAG} OFFSET ?`, ...p, (pag - 1) * POR_PAG);
   for (const i of itens) { let f0 = null; try { f0 = (JSON.parse(i.fotos || '[]') || [])[0] || null; } catch {} i.foto = f0; delete i.fotos; i.ref = F.ref(i.id); }
   res.json({ total, pagina: pag, paginas: Math.max(Math.ceil(total / POR_PAG), 1), itens, contagem: contagem(req.query.q) });
 });
 
 function anuncio(id) {
-  const a = one('SELECT * FROM fisguei_anuncios WHERE id=?', id);
+  const a = D.um(id);
   if (!a) falha(404, 'Anúncio não encontrado no Fisguei.');
   return a;
 }
@@ -200,13 +201,13 @@ r.get('/fisguei/:id', (req, res) => {
 
 r.post('/fisguei/:id/pausar', (req, res) => {
   const a = anuncio(+req.params.id);
-  run(`UPDATE fisguei_anuncios SET pausado=?, atualizado_em=datetime('now','localtime') WHERE id=?`, req.body && req.body.pausado ? 1 : 0, a.id);
+  D.muda(a.id, 'pausado=?', [req.body && req.body.pausado ? 1 : 0]);
   audit(req.usuario.id, 'fisguei.pausar', `${F.ref(a.id)} ${req.body && req.body.pausado ? 'pausado' : 'retomado'}`);
   res.json({ ok: true });
 });
 r.post('/fisguei/:id/descartar', (req, res) => {
   const a = anuncio(+req.params.id);
-  run(`UPDATE fisguei_anuncios SET status='descartado', atualizado_em=datetime('now','localtime') WHERE id=?`, a.id);
+  D.muda(a.id, "status='descartado'");
   F.pulaRestoDoEndereco(a.id, 'Endereço descartado pelo corretor');
   audit(req.usuario.id, 'fisguei.descartar', F.ref(a.id));
   res.json({ ok: true });
@@ -218,7 +219,7 @@ r.post('/fisguei/:id/captar', (req, res) => {
     FROM fisguei_pessoas p WHERE p.anuncio_id=? ORDER BY CASE p.status WHEN 'confirmou' THEN 0 WHEN 'respondeu' THEN 1 ELSE 2 END, p.id LIMIT 1`, a.id) || { nome: null, tel: null };
   const opId = F.criaOportunidade(a, { nome: p.nome || 'A confirmar', unidade: p.unidade }, p.tel || null);
   run(`UPDATE oportunidades SET corretor_id=coalesce(corretor_id,?) WHERE id=?`, req.usuario.perfil === 'corretor' ? req.usuario.id : null, opId);
-  run(`UPDATE fisguei_anuncios SET status='captado', atualizado_em=datetime('now','localtime') WHERE id=?`, a.id);
+  D.muda(a.id, "status='captado'");
   F.pulaRestoDoEndereco(a.id, 'Já está no Radar com o corretor');
   audit(req.usuario.id, 'fisguei.captar', `${F.ref(a.id)} → OP-${String(opId).padStart(4, '0')}`);
   res.json({ oportunidade_id: opId });
@@ -238,13 +239,13 @@ r.post('/fisguei/pessoas/:pid/status', (req, res) => {
   if (st === 'parar') for (const c of all(`SELECT valor FROM fisguei_contatos WHERE pessoa_id=? AND tipo='tel'`, p.id)) F.bloqueia(c.valor, 'marcado pelo corretor');
   if (st === 'negou' || st === 'parar') { run(`UPDATE fisguei_contatos SET envio='pulado', erro='Marcado pelo corretor' WHERE pessoa_id=? AND envio='fila'`, p.id); F.fechaSeAcabou(a.id); }
   if (st === 'confirmou') {
-    run(`UPDATE fisguei_anuncios SET status='confirmado', atualizado_em=datetime('now','localtime') WHERE id=?`, a.id);
+    D.muda(a.id, "status='confirmado'");
     F.pulaRestoDoEndereco(a.id, 'O dono já confirmou');
     const tel = one(`SELECT valor FROM fisguei_contatos WHERE pessoa_id=? AND tipo='tel' ORDER BY CASE envio WHEN 'respondeu' THEN 0 ELSE 1 END LIMIT 1`, p.id);
     F.criaOportunidade(a, p, tel && tel.valor);
     F.donoNaCarteira(a.id);
   } else if (a.imovel_id) P.sincronizaDono(a.id);
-  if (st === 'sem_interesse') { run(`UPDATE fisguei_anuncios SET status='sem_interesse' WHERE id=?`, a.id); F.pulaRestoDoEndereco(a.id, 'O dono não tem interesse'); }
+  if (st === 'sem_interesse') { D.muda(a.id, "status='sem_interesse'"); F.pulaRestoDoEndereco(a.id, 'O dono não tem interesse'); }
   audit(req.usuario.id, 'fisguei.pessoa', `${F.ref(a.id)} pessoa #${p.id} → ${st}`);
   res.json({ ok: true });
 });
@@ -284,8 +285,8 @@ r.post('/fisguei/localizar', (req, res) => {
   const ids = (Array.isArray(req.body && req.body.ids) ? req.body.ids : []).map((x) => parseInt(x, 10)).filter((x) => Number.isFinite(x) && x !== 0).slice(0, 200);
   if (!ids.length) falha(400, 'Escolha ao menos um imóvel.');
   const out = { criados: 0, ja: 0, sem_endereco: 0, na_carteira: 0 };
-  const naCarteira = (id) => (id > 0 ? one('SELECT 1 FROM fisguei_anuncios a JOIN imoveis i ON i.id=a.imovel_id WHERE a.id=?', id)
-    : one('SELECT 1 FROM oportunidades o JOIN imoveis i ON i.id=o.imovel_id WHERE o.id=?', -id) || one('SELECT 1 FROM fisguei_anuncios a JOIN imoveis i ON i.id=a.imovel_id WHERE a.oportunidade_id=?', -id));
+  const naCarteira = (id) => (id > 0 ? one('SELECT 1 FROM anuncio_andamento d JOIN imoveis i ON i.id=d.imovel_id WHERE d.anuncio_id=?', id)
+    : one('SELECT 1 FROM oportunidades o JOIN imoveis i ON i.id=o.imovel_id WHERE o.id=?', -id) || one('SELECT 1 FROM anuncio_andamento d JOIN imoveis i ON i.id=d.imovel_id WHERE d.oportunidade_id=?', -id));
   const livres = ids.filter((id) => (naCarteira(id) ? (out.na_carteira++, false) : true));
   for (const id of livres.filter((x) => x > 0)) { const p = P.pedeEndereco(id, req.usuario.id); if (p.erro) out.sem_endereco++; else if (p.ja) out.ja++; else out.criados++; }
   const ops = livres.filter((x) => x < 0).map((x) => -x);
