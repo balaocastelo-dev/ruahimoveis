@@ -142,3 +142,17 @@ form.fale textarea { min-height: 96px; resize: vertical; }
 form.fale .nota { grid-column: 1 / -1; margin: 0; font-size: 13.5px; color: var(--cota); }
 
 .rodape { padding: 36px 0 48px; color: var(--cota); font-size: 14px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* por dentro do sistema: capturas reais com dados fictícios, uma aba por tela */
+.telas { margin-top: 8px; }
+.telas-abas { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+.telas-abas button { font: 600 15px/1 var(--f-txt); color: var(--grafite); background: transparent; border: 1.5px solid color-mix(in srgb, var(--cota) 45%, transparent); border-radius: 999px; padding: 11px 16px; cursor: pointer; }
+.telas-abas button[aria-selected="true"] { background: var(--grafite); border-color: var(--grafite); color: var(--papel); }
+@media (max-width: 560px) { .telas-abas { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px 14px; padding: 0 16px; } .telas-abas button { flex: none; } }
+.tela { margin: 0; }
+.tela img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid color-mix(in srgb, var(--cota) 40%, transparent); box-shadow: 0 24px 48px -28px rgb(29 35 33 / .45); background: #f4f2ec; }
+.tela figcaption { margin-top: 12px; color: var(--cota); font-size: 15.5px; }
+.celular-cx { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; margin-top: 40px; max-width: 640px; }
+.celular-cx img { width: 220px; height: auto; border-radius: 28px; border: 6px solid var(--grafite); }
+.celular-cx p { margin: 0; font-size: 18px; }
+@media (max-width: 560px) { .celular-cx { grid-template-columns: 1fr; justify-items: center; text-align: center; } }

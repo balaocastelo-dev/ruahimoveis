@@ -62,6 +62,16 @@ function plantaSvg() {
 </svg>`;
 }
 
+// Capturas do sistema com a imobiliária de demonstração "Casa Prado" (dados fictícios; scripts/demo-vitrine.js).
+const TELAS = [
+  { k: 'painel', nome: 'Painel', h: 1800, alt: 'Painel da imobiliária com a lista do que precisa de atenção e os números do negócio', legenda: 'O que precisa de você hoje e os números do mês, comparados ao mês anterior.' },
+  { k: 'carteira', nome: 'Carteira', h: 1800, alt: 'Carteira de imóveis com as etapas, do dono localizado ao vendido, e a ficha de cada imóvel', legenda: 'Cada imóvel em uma etapa, com o dono, o corretor e quanto da ficha está completa.' },
+  { k: 'crm', nome: 'CRM', h: 1800, alt: 'Funil de vendas com clientes nas etapas novo, qualificado, visita, proposta e escritura', legenda: 'O funil de vendas: de onde veio cada cliente, o que procura e quanto pode pagar.' },
+  { k: 'escritorio', nome: 'Escritório virtual', h: 1800, alt: 'Escritório virtual com os agentes de inteligência artificial e o movimento do dia', legenda: 'Os agentes de IA no WhatsApp, cada um no seu setor, com as respostas esperando aprovação.' },
+  { k: 'ficha', nome: 'Ficha do imóvel', h: 2062, alt: 'Ficha de uma casa com a etapa, o proprietário e o que falta completar', legenda: 'A ficha mostra a etapa do imóvel e o que falta para publicar.' },
+  { k: 'visitas', nome: 'Visitas', h: 1800, alt: 'Agenda de visitas com horários, imóveis, clientes e corretores', legenda: 'A agenda de visitas da equipe, com a avaliação de cada cliente.' },
+];
+
 const PERGUNTAS = [
   ['Preciso trocar o meu site?', 'Não. O portal e o blog ficam no seu domínio, com a sua marca. Se ainda não tiver um domínio, a gente ajuda a registrar.'],
   ['Os dados da minha carteira são só meus?', 'Sim. Imóveis, clientes, proprietários e conversas de cada corretor ou imobiliária ficam separados e ninguém mais vê. A base de anúncios e de condomínios da região é a parte comum.'],
@@ -94,7 +104,7 @@ function pagina() {
 <div class="cx">
 <header class="topo">
   <a class="marca" href="/" aria-label="${nome}, início"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 12 13 4l10 8v11H3Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 23v-7h6v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>${nome}</a>
-  <nav aria-label="Seções"><a href="#comodos">O que tem dentro</a><a href="#para-quem">Para quem</a><a href="#perguntas">Perguntas</a><a class="btn" href="#contato">Fale com a gente</a></nav>
+  <nav aria-label="Seções"><a href="#por-dentro">Por dentro</a><a href="#comodos">O que tem dentro</a><a href="#para-quem">Para quem</a><a href="#perguntas">Perguntas</a><a class="btn" href="#contato">Fale com a gente</a></nav>
 </header>
 
 <main>
@@ -110,6 +120,20 @@ function pagina() {
     <div class="ficha" id="ficha" aria-live="polite"></div>
   </div>
 </div>
+
+<section id="por-dentro" aria-labelledby="t-dentro">
+  <h2 id="t-dentro">Por dentro do sistema</h2>
+  <p class="lead">Telas reais do ${nome}, com uma imobiliária de demonstração: os nomes, telefones e imóveis abaixo são fictícios.</p>
+  <div class="telas" data-telas>
+    <div class="telas-abas" role="tablist" aria-label="Telas do sistema">
+      ${TELAS.map((t, i) => `<button type="button" role="tab" id="aba-${t.k}" aria-controls="tela-${t.k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(t.nome)}</button>`).join('')}
+    </div>
+    ${TELAS.map((t, i) => `<figure class="tela" role="tabpanel" id="tela-${t.k}" aria-labelledby="aba-${t.k}"${i === 0 ? '' : ' hidden'}>
+      <img src="/plataforma/telas/${t.k}.webp" width="2880" height="${t.h}" alt="${esc(t.alt)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
+      <figcaption>${esc(t.legenda)}</figcaption></figure>`).join('\n    ')}
+  </div>
+  <div class="celular-cx"><img src="/plataforma/telas/celular.webp" width="1170" height="2532" alt="O painel do sistema aberto no celular" loading="lazy" decoding="async"><p>Funciona no computador, no tablet e no celular, para o corretor acompanhar tudo da rua.</p></div>
+</section>
 
 <section id="comodos" aria-labelledby="t-comodos">
   <h2 id="t-comodos">Tudo o que uma imobiliária usa, numa casa só</h2>

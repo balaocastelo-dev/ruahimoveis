@@ -37,5 +37,22 @@
     var numero = form.dataset.whatsapp;
     window.open('https://wa.me/' + numero + '?text=' + encodeURIComponent(linhas.join('\n')), '_blank', 'noopener');
   });
+
+  // abas das telas (teclado: setas esquerda/direita)
+  var abas = Array.prototype.slice.call(document.querySelectorAll('.telas-abas [role=tab]'));
+  function abre(aba, foco) {
+    abas.forEach(function (a) {
+      var sel = a === aba;
+      a.setAttribute('aria-selected', sel ? 'true' : 'false'); a.tabIndex = sel ? 0 : -1;
+      var painel = document.getElementById(a.getAttribute('aria-controls')); if (painel) painel.hidden = !sel;
+    });
+    if (foco) aba.focus();
+  }
+  abas.forEach(function (a, i) {
+    a.addEventListener('click', function () { abre(a); });
+    a.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); abre(abas[(i + (e.key === 'ArrowRight' ? 1 : abas.length - 1)) % abas.length], true); }
+    });
+  });
   var ano = document.getElementById('ano'); if (ano) ano.textContent = new Date().getFullYear();
 })();
