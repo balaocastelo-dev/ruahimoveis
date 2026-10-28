@@ -2,6 +2,18 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0021",
+      "slug": "apartamento-3-quartos-varanda-bonfim-campinas-sp-ap0021",
+      "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
+      "resumo": "Apartamento novo no Bonfim, com 3 quartos, 1 suíte, 1 vaga e área útil de 65 m². Varanda com churrasqueira, piso vinílico e vista livre.",
+      "capa": {
+        "foto": 1979,
+        "alt": "Varanda iluminada com vista para área verde e edifícios"
+      },
+      "versao": "aa4f770d83b7",
+      "publicadoEm": "2026-10-28T03:51:24.311Z"
+    },
+    {
       "codigo": "AP0022",
       "slug": "apartamento-bonfim-campinas-sp-3-quartos-varanda-gourmet-ap0022",
       "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
@@ -482,5 +494,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T03:51:20.753Z"
+  "atualizadoEm": "2026-10-28T03:51:24.312Z"
 }

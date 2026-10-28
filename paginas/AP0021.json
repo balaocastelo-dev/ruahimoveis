@@ -1,0 +1,319 @@
+{
+  "codigo": "AP0021",
+  "slug": "apartamento-3-quartos-varanda-bonfim-campinas-sp-ap0021",
+  "titulo": "Apartamento de 3 quartos com varanda gourmet no Bonfim",
+  "resumo": "Apartamento novo no Bonfim, com 3 quartos, 1 suíte, 1 vaga e área útil de 65 m². Varanda com churrasqueira, piso vinílico e vista livre.",
+  "capa": {
+    "foto": 1979,
+    "alt": "Varanda iluminada com vista para área verde e edifícios"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento novo, localizado no condomínio HM Maxi Bonfim, oferece 3 quartos, 1 suíte, 1 vaga de garagem e área útil de 65 m². O imóvel está em andar alto, com vista livre e recebe o sol da manhã. A varanda gourmet está equipada com churrasqueira e tem piso claro. O acabamento inclui piso vinílico Tarkett, aquecedor a gás Rinnai e iluminação em LED, garantindo conforto e modernidade desde o primeiro dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece infraestrutura completa, com piscinas, academia, salão de festas, playground e portaria 24 horas. A localização é estratégica, no coração do bairro Bonfim, próximo a avenidas importantes, comércios e serviços. Um excelente investimento para quem busca qualidade de vida e segurança."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Varanda com churrasqueira e vista panorâmica",
+        "Piso vinílico Tarkett em todos os ambientes",
+        "Aquecedor a gás Rinnai e iluminação em LED",
+        "Condomínio com piscinas, academia e portaria 24h",
+        "Localização no centro do Bonfim, próximo a comércios e serviços"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar tem piso de madeira e paredes brancas, com boa iluminação natural. A varanda é um destaque, com churrasqueira, balcão de ferro e vista para a cidade. O piso claro e as paredes cinza dão um toque moderno ao ambiente. A varanda é ideal para reuniões familiares e amigos, com área gourmet integrada."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1955,
+          "legenda": "Varanda com churrasqueira e vista panorâmica da cidade"
+        },
+        {
+          "foto": 1954,
+          "legenda": "Sala vazia com piso de madeira e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem bancada escura e piso de cerâmica branca. O aquecedor de água Rinnai está instalado, garantindo praticidade. A área de serviço também tem bancada escura e piso de cerâmica, com tubulação de água e boa ventilação. Ambientes funcionais e bem distribuídos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1959,
+          "legenda": "Área de serviço com aquecedor de água e bancada escura"
+        },
+        {
+          "foto": 1967,
+          "legenda": "Cozinha moderna com mesas de madeira e balcão"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso de madeira e janelas com vista para o exterior. O banheiro principal conta com box de vidro, pia com bancada escura e janela, enquanto o segundo banheiro também tem box de vidro e piso claro. Os ambientes são bem iluminados e têm boa ventilação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1958,
+          "legenda": "Quarto com piso de madeira e janela com vista"
+        },
+        {
+          "foto": 1961,
+          "legenda": "Banheiro com box de vidro, vaso sanitário e pia com bancada escura"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio HM Maxi Bonfim oferece diversas áreas de lazer, como piscinas adulto e infantil, academia, quadra poliesportiva, salão de festas, playground, brinquedoteca e espaço gourmet. Há também portaria 24 horas, segurança interna e acesso facilitado a áreas verdes e comércios locais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1962,
+          "legenda": "Piscina com espreguiçadeiras e área de churrasqueira"
+        },
+        {
+          "foto": 1971,
+          "legenda": "Quadra de esportes com pista de atletismo e basquete"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto e praticidade, com áreas bem distribuídas e acabamento moderno. A localização estratégica, no centro do Bonfim, facilita o acesso a serviços, escolas, hospitais e comércios. O condomínio com lazer completo e segurança reforça a qualidade de vida oferecida."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a disponibilidade de financiamento e a possibilidade de utilização do FGTS. Também é importante verificar detalhes sobre o condomínio, como taxas e serviços oferecidos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1952,
+      "legenda": "Entrada principal de um edifício residencial moderno",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1972,
+      "legenda": "Entrada principal de um edifício residencial moderno",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1979,
+      "legenda": "Apartamento com varanda iluminada no entardecer",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1956,
+      "legenda": "Vista panorâmica de edifícios e áreas verdes em um dia ensolarado",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1963,
+      "legenda": "Terreno com areia e cercado por grades",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1954,
+      "legenda": "Sala vazia com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1965,
+      "legenda": "Sala de estar com mesa e cadeiras, brinquedos e lixo",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1970,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1975,
+      "legenda": "Sala com parede de tijolinho e lâmpada de parede",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1977,
+      "legenda": "Sala infantil com decoração colorida e brinquedos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1978,
+      "legenda": "Sala de reuniões com mesa redonda e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1955,
+      "legenda": "Varanda com churrasqueira e vista panorâmica da cidade",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1967,
+      "legenda": "Cozinha moderna com mesas de madeira e balcão",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1959,
+      "legenda": "Área de serviço com aquecedor de água e bancada escura",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1958,
+      "legenda": "Quarto com piso de madeira e janela com vista",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1960,
+      "legenda": "Quarto vazio com piso de madeira e porta aberta para banheiro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1964,
+      "legenda": "Quarto com piso de madeira e janela com vista",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1953,
+      "legenda": "Banheiro com aquecedor de água e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1957,
+      "legenda": "Banheiro com cuba, vaso sanitário e chuveiro de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1961,
+      "legenda": "Banheiro com box de vidro, vaso sanitário e pia com bancada escura",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1962,
+      "legenda": "Piscina com espreguiçadeiras e área de churrasqueira",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1980,
+      "legenda": "Piscina com espreguiçadeiras e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1968,
+      "legenda": "Galeria de fitness com equipamentos e espelho",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1971,
+      "legenda": "Quadra de esportes com pista de atletismo e basquete",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1973,
+      "legenda": "Playground colorido em área externa de condomínio",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1974,
+      "legenda": "Galeria de fitness com máquinas de corrida e equipamentos de musculação",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1976,
+      "legenda": "Quadra de beach tennis com rede e raquete",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1981,
+      "legenda": "Playground colorido com escorregador e balanço",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1969,
+      "legenda": "Garagem com pilares amarelos e vista para o exterior",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1966,
+      "legenda": "Escritório moderno com mesa redonda e cadeiras",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "Tem 1 vaga de garagem coberta."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a varanda tem churrasqueira e é considerada área gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento novo no Bonfim, com 3 quartos, 1 suíte, 1 vaga e área útil de 65 m². Varanda com churrasqueira, piso vinílico e vista livre. Condomínio com lazer completo e localização estratégica no centro do bairro. Excelente opção para quem busca conforto e qualidade de vida.",
+    "hashtags": [
+      "apartamentobonfim",
+      "campinassp",
+      "imovelnovo",
+      "condominiocompleto",
+      "varandagourmet",
+      "investimentocampinas",
+      "imovelprontoparamorar",
+      "lazercompleto"
+    ]
+  },
+  "versao": "aa4f770d83b7",
+  "publicadoEm": "2026-10-28T03:51:24.311Z"
+}
