@@ -101,12 +101,26 @@ const SERVICOS_IMOBILIARIA = {
   escritorio: (slug) => { if (cfg.ESCRITORIO !== '0') abreEscritorio(slug); },
 };
 
-// Rotinas da base comum: uma vez só (no contexto da imobiliária padrão).
+// Rotinas da base comum: agendadas uma vez só (no contexto da imobiliária padrão).
 // A renovação da vitrine (routes/mercado.js) já se agenda sozinha ao carregar o módulo, também uma vez.
+// vincula: um timer só, mas cada rodada passa por TODAS as imobiliárias do PC, uma de cada vez e no contexto de cada uma:
+// desde a separação das tabelas mistas, condominios/base.vincular() grava em privadas (imoveis.condominio_id,
+// oportunidades, condominio_alertas a partir de condominio_alvos). Rodando só na padrão, a carteira e o Radar das outras
+// nunca seriam ligados aos prédios. A conferência dos anúncios do Fisgar (cond_checado) é comum: quem passa primeiro marca.
+function rodadaVincula(slugs, vincular = (...a) => require('./condominios/base').vincular(...a)) {
+  const out = {};
+  for (const slug of slugs) {
+    tenant.comImobiliaria(slug, () => {
+      try { const r = out[slug] = vincular(); if (r && (r.radar || r.fisguei || r.imoveis)) console.log(`[condomínios${ehRaiz(slug) ? '' : ' ' + slug}]`, r); }
+      catch (e) { out[slug] = { erro: e.message }; console.error(`[condomínios${ehRaiz(slug) ? '' : ' ' + slug}]`, e.message); }
+    });
+  }
+  return out;
+}
 const SERVICOS_BASE = {
   // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
-  vincula: () => {
-    const vincula = () => { try { const r = require('./condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
+  vincula: (_slug, slugs = slugsPc({ avisa: () => {} })) => {
+    const vincula = () => rodadaVincula(slugs);
     setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);
   },
 };
@@ -121,7 +135,7 @@ function arranca({ slugs = slugsPc(), imobiliaria = SERVICOS_IMOBILIARIA, base =
   if (slugs.length > 1 || !ehRaiz(slugs[0])) log(`imobiliárias neste PC: ${slugs.join(', ')}`);
   for (const slug of slugs) tenant.comImobiliaria(slug, () => { for (const [nome, fn] of Object.entries(imobiliaria)) roda(slug, nome, fn); });
   const padrao = tenant.padrao().slug;
-  tenant.comImobiliaria(padrao, () => { for (const [nome, fn] of Object.entries(base)) roda(padrao, nome, fn); });
+  tenant.comImobiliaria(padrao, () => { for (const [nome, fn] of Object.entries(base)) roda(padrao, nome, (s) => fn(s, slugs)); });
   return out;
 }
 
@@ -161,4 +175,4 @@ function travaOutra({ slug, comando, escreve = [], urlEnv }) {
   return null;
 }
 
-module.exports = { slugsPc, slugRaiz, ehRaiz, pastaDe, pastaDados, cfgDa, liga, estadoPor, arranca, abreEscritorio, SERVICOS_IMOBILIARIA, SERVICOS_BASE, argImobiliaria, entra, travaOutra };
+module.exports = { slugsPc, slugRaiz, ehRaiz, pastaDe, pastaDados, cfgDa, liga, estadoPor, arranca, rodadaVincula, abreEscritorio, SERVICOS_IMOBILIARIA, SERVICOS_BASE, argImobiliaria, entra, travaOutra };

@@ -104,6 +104,28 @@ const msgWa = (id, texto) => ({ type: 'notify', messages: [{ key: { remoteJid: '
   }
   ok('arranque: serviços da imobiliária uma vez por slug no contexto dele (após await/timer também); rotina comum uma vez só');
 
+  // ---------------------------------------------------------------- vínculo de condomínios: um timer, todas as imobiliárias
+  {
+    // agenda uma vez só, e o arranque entrega a lista das imobiliárias do PC
+    const chamadas = [];
+    pc.arranca({ imobiliaria: {}, base: { vincula: (s, slugs) => chamadas.push({ s, slugs, em: quem() }) } });
+    assert.deepEqual(chamadas, [{ s: 'ruah', slugs: ['ruah', 'outra'], em: 'ruah' }]);
+    // rodada de verdade (condominios/base.vincular): prédio comum; oportunidade em cada imobiliária; prédio-alvo só na outra
+    const cond = Number(D.run(`INSERT INTO condominios(nome,cep,logradouro,numero,bairro,cidade,uf,lat,lon,slug,nome_busca)
+      VALUES('Edifício Teste','13013000','Rua das Flores','100','Cambuí','Campinas','SP',-22.9,-47.06,'edificio-teste','EDIFICIO TESTE')`).lastInsertRowid);
+    for (const slug of ['ruah', 'outra']) em(slug, () => D.run("INSERT INTO oportunidades(portal,link,titulo,tipo,bairro,logradouro,numero,valor,status) VALUES('ZAP',?,'Apto','Apartamento','Cambuí','Rua das Flores','100',800000,'nova')", 'https://exemplo/' + slug));
+    em('outra', () => D.run('INSERT INTO condominio_alvos(condominio_id) VALUES(?)', cond));
+    const r = pc.rodadaVincula(['ruah', 'outra']);
+    assert.equal(r.ruah.radar, 1, JSON.stringify(r)); assert.equal(r.outra.radar, 1, JSON.stringify(r));
+    for (const slug of ['ruah', 'outra']) assert.equal(em(slug, () => D.one('SELECT condominio_id FROM oportunidades').condominio_id), cond);
+    assert.equal(em('outra', () => D.one('SELECT count(*) n FROM condominio_alertas').n), 1);
+    assert.equal(em('ruah', () => D.one('SELECT count(*) n FROM condominio_alertas').n), 0);
+    // uma imobiliária com erro não impede a outra
+    const r2 = pc.rodadaVincula(['ruah', 'outra'], () => { if (quem() === 'ruah') throw new Error('boom'); return { radar: 0 }; });
+    assert.equal(r2.ruah.erro, 'boom'); assert.deepEqual(r2.outra, { radar: 0 });
+  }
+  ok('vínculo de condomínios: agendado uma vez; cada rodada liga carteira/Radar e avisa prédio-alvo de cada imobiliária');
+
   // ---------------------------------------------------------------- escritório: um processo por imobiliária
   {
     const forks = [];
