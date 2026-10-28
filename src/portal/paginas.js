@@ -47,7 +47,8 @@ const reais = (v) => (v ? `R$ ${Math.round(v).toLocaleString('pt-BR')}` : null);
 const metros = (v) => (v ? `${Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} m²` : null);
 const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 const lugar = (im) => [im.bairro, im.cidade].filter(Boolean).join(', ');
-const fotoUrl = (id) => `/imoveis/foto/${id}`;
+// ?v=2: fotos externas passaram a ser entregues pelo próprio site (o redirecionamento antigo ficou guardado nos navegadores).
+const fotoUrl = (id) => `/imoveis/foto/${id}?v=2`;
 
 function urlBase(req) {
   const fixo = (process.env.PORTAL_URL || process.env.BLOG_URL || cfg.PUBLIC_URL || '').replace(/\/+$/, '');
