@@ -1619,5 +1619,80 @@
     "ambiente": "escritorio"
    }
   ]
+ },
+ "10772": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/10772-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/10772-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/10772-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "cademeuap/10772-4.jpg",
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "cademeuap/10772-5.jpg",
+    "ambiente": "lavanderia"
+   }
+  ]
+ },
+ "32118": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/32118-1.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/32118-2.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "cademeuap/32118-3.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "cademeuap/32118-4.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/32118-5.jpg",
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "90017": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/90017-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/90017-2.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "cademeuap/90017-3.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/90017-4.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/90017-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
  }
 }
