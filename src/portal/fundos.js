@@ -5,14 +5,14 @@
 // foto fixa sorteada pelo nome (sempre a mesma para a mesma imobiliária).
 
 const FUNDOS = {
-  castelo: { lugar: 'Torre do Castelo, Campinas', src: '/portal-assets/hero-castelo.jpg?v=2', srcset: '/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=2 1920w', largura: 1920, altura: 1080, posicao: '62% 30%', propria: true },
-  taquaral: { lugar: 'Lagoa do Taquaral, Campinas', arquivo: 'File:Lagoa do Taquaral - panoramio (28).jpg', autor: 'enioprado', licenca: 'CC BY-SA 3.0', largura: 1280, altura: 842, posicao: '50% 45%' },
-  skyline: { lugar: 'Prédios do Centro e do Cambuí, Campinas', arquivo: 'File:Campinas skyline.jpg', autor: 'Elson Júnior', licenca: 'CC BY 2.0', largura: 1280, altura: 937, posicao: '50% 60%' },
-  jequitibas: { lugar: 'Bosque dos Jequitibás, Campinas', arquivo: 'File:Bosque dos Jequitibás.jpg', autor: 'Prefeitura de Campinas', licenca: 'domínio público', largura: 1280, altura: 773, posicao: '50% 50%' },
-  noite: { lugar: 'Campinas à noite', arquivo: 'File:Campinas at night.jpg', autor: 'João Carlos Medau', licenca: 'CC BY 2.0', largura: 1280, altura: 853, posicao: '50% 40%' },
-  catedral: { lugar: 'Catedral Metropolitana, Campinas', arquivo: 'File:Catedral Metropolitana de Campinas - 29.05.2021 01.jpg', autor: 'Parzeus', licenca: 'CC BY-SA 4.0', largura: 1280, altura: 957, posicao: '50% 25%' },
-  estacao: { lugar: 'Estação Cultura, Campinas', arquivo: 'File:Estação Cultura Campinas.jpg', autor: 'Edison Marcon', licenca: 'CC BY-SA 4.0', largura: 1280, altura: 853, posicao: '50% 50%' },
-  cambui: { lugar: 'Cambuí visto do alto, Campinas', arquivo: 'File:Bosque dos Jequitibas Campinas.jpg', autor: 'Leandro R. M. de Marco', licenca: 'CC BY-SA 3.0', largura: 1280, altura: 853, posicao: '50% 55%' },
+  castelo: { lugar: 'Torre do Castelo, Campinas', src: '/portal-assets/hero-castelo.jpg?v=3', srcset: '/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=3 1920w, /portal-assets/hero-castelo-3840.webp?v=1 3840w', largura: 3840, altura: 2160, posicao: '62% 30%', propria: true },
+  taquaral: { lugar: 'Lagoa do Taquaral, Campinas', arquivo: 'File:Lagoa do Taquaral - panoramio (28).jpg', autor: 'enioprado', licenca: 'CC BY-SA 3.0', largura: 3840, altura: 2526, quatroK: true, posicao: '50% 45%' },
+  skyline: { lugar: 'Prédios do Centro e do Cambuí, Campinas', arquivo: 'File:Campinas skyline.jpg', autor: 'Elson Júnior', licenca: 'CC BY 2.0', largura: 3840, altura: 2812, quatroK: true, posicao: '50% 60%' },
+  jequitibas: { lugar: 'Bosque dos Jequitibás, Campinas', arquivo: 'File:Bosque dos Jequitibás.jpg', autor: 'Prefeitura de Campinas', licenca: 'domínio público', largura: 3840, altura: 2318, quatroK: true, posicao: '50% 50%' },
+  noite: { lugar: 'Campinas à noite', arquivo: 'File:Campinas at night.jpg', autor: 'João Carlos Medau', licenca: 'CC BY 2.0', largura: 3840, altura: 2560, quatroK: true, posicao: '50% 40%' },
+  catedral: { lugar: 'Catedral Metropolitana, Campinas', arquivo: 'File:Catedral Metropolitana de Campinas - 29.05.2021 01.jpg', autor: 'Parzeus', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 2872, quatroK: true, posicao: '50% 25%' },
+  estacao: { lugar: 'Estação Cultura, Campinas', arquivo: 'File:Estação Cultura Campinas.jpg', autor: 'Edison Marcon', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 2560, quatroK: true, posicao: '50% 50%' },
+  cambui: { lugar: 'Cambuí visto do alto, Campinas', arquivo: 'File:Bosque dos Jequitibas Campinas.jpg', autor: 'Leandro R. M. de Marco', licenca: 'CC BY-SA 3.0', largura: 3840, altura: 2560, quatroK: true, posicao: '50% 55%' },
 };
 // ordem em que as novas imobiliárias recebem uma foto (o Castelo é da RUAH)
 const SEQUENCIA = ['taquaral', 'skyline', 'jequitibas', 'noite', 'catedral', 'estacao', 'cambui'];
@@ -26,10 +26,12 @@ function sorteiaPorNome(nome) {
 function fundoDe(id, cliente) {
   const chave = FUNDOS[id] ? id : (/^ruah\b/i.test(String(cliente || '').trim()) ? 'castelo' : sorteiaPorNome(cliente));
   const f = FUNDOS[chave];
-  const src = f.src || `/portal-assets/fundos/${chave}.jpg?v=1`;
+  // versões 4K ampliadas com IA (SeedVR2): 1280, 1920 e 3840 px
+  const src = f.src || (f.quatroK ? `/portal-assets/fundos/${chave}-1920.jpg?v=1` : `/portal-assets/fundos/${chave}.jpg?v=1`);
+  const srcset4k = f.quatroK ? `/portal-assets/fundos/${chave}-1280.jpg?v=1 1280w, /portal-assets/fundos/${chave}-1920.jpg?v=1 1920w, /portal-assets/fundos/${chave}-3840.webp?v=1 3840w` : '';
   return {
-    id: chave, lugar: f.lugar, src, srcset: f.srcset || '', largura: f.largura, altura: f.altura, posicao: f.posicao,
-    credito: f.propria ? '' : `Foto: ${f.autor} · ${f.licenca} · Wikimedia Commons`,
+    id: chave, lugar: f.lugar, src, srcset: f.srcset || srcset4k, largura: f.largura, altura: f.altura, posicao: f.posicao,
+    credito: f.propria ? '' : `Foto: ${f.autor} · ${f.licenca} · Wikimedia Commons${f.quatroK ? ' · ampliada com IA' : ''}`,
     link: f.arquivo ? `https://commons.wikimedia.org/wiki/${encodeURI(f.arquivo.replace(/ /g, '_'))}` : '',
   };
 }
