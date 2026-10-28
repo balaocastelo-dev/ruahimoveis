@@ -1,4 +1,12 @@
 {
   "versao": 1,
-  "pendentes": []
+  "pendentes": [
+    {
+      "slug": "vistoria-entrega-das-chaves-imovel-novo-o-que-conferir",
+      "alt": "Apartamento novo e vazio com piso claro, paredes brancas recém-pintadas e luz natural entrando pela janela",
+      "pedido": "An empty brand-new apartment living room just before move-in, with light porcelain floor tiles, freshly painted white walls and a large sliding glass window letting in soft morning daylight. A tape measure, a small glass marble and a clipboard with blank paper rest on the floor near the window. Clean, bright, wide-angle interior architectural photography at eye level.",
+      "categoria": "construcao",
+      "pedidoEm": "2026-10-28T20:23:18.494Z"
+    }
+  ]
 }

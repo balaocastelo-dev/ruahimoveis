@@ -1,5 +1,15 @@
 {
   "versao": 1,
-  "materias": [],
-  "atualizadoEm": "2026-10-28T19:20:22.969Z"
+  "materias": [
+    {
+      "slug": "vistoria-entrega-das-chaves-imovel-novo-o-que-conferir",
+      "titulo": "Vistoria de entrega das chaves: o que conferir no imóvel novo",
+      "tema": "vistoria de entrega das chaves de imovel novo",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-10-28T20:23:18.494Z",
+      "situacao": "esperando-capa"
+    }
+  ],
+  "atualizadoEm": "2026-10-28T20:23:18.495Z"
 }

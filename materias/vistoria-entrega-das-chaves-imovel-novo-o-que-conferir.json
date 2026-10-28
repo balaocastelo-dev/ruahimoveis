@@ -1,0 +1,294 @@
+{
+  "slug": "vistoria-entrega-das-chaves-imovel-novo-o-que-conferir",
+  "tema": "vistoria de entrega das chaves de imovel novo",
+  "titulo": "Vistoria de entrega das chaves: o que conferir no imóvel novo",
+  "resumo": "Vistoria de entrega das chaves passo a passo: o que levar, o que testar em cada cômodo, como anotar ressalvas e quais prazos de garantia valem depois.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "imóvel novo",
+    "vistoria",
+    "garantia",
+    "construção"
+  ],
+  "capa": {
+    "alt": "Apartamento novo e vazio com piso claro, paredes brancas recém-pintadas e luz natural entrando pela janela"
+  },
+  "redes": {
+    "legenda": "Você sabia que uma bolinha de gude ajuda a descobrir se o piso do banheiro escoa para o ralo? A vistoria de entrega das chaves é o momento de testar tomadas, torneiras, janelas e acabamentos antes de assinar qualquer termo. Preparamos um roteiro completo, com o que levar e os prazos de garantia que valem depois. Leia o artigo inteiro no blog (link na bio).",
+    "hashtags": [
+      "imovelnovo",
+      "vistoria",
+      "entregadaschaves",
+      "construcao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **vistoria de entrega das chaves** é o encontro entre o que você comprou no papel e o imóvel de verdade. Depois de meses, às vezes anos, de espera, a vontade é pegar a chave e começar a mudança. Mas é justamente nessa visita, com a casa vazia, que os detalhes aparecem com mais clareza e são corrigidos com menos transtorno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: leve ferramentas simples, teste tudo o que liga, abre, fecha e escoa, compare as medidas com o memorial descritivo e anote cada problema no termo de recebimento. Se houver defeito, assine com ressalvas ou peça nova vistoria. Os prazos de garantia continuam valendo depois, mas o registro feito no dia ajuda muito."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Leve trena, lâmpada, carregador de celular, bolinha de gude e o memorial descritivo.",
+        "Teste elétrica, hidráulica, esquadrias, fechaduras, interfone e o caimento das áreas molhadas.",
+        "Defeito encontrado vai por escrito no termo: assine com ressalvas, nunca dizendo que está tudo aprovado.",
+        "Guarde o manual do proprietário e o termo de garantia: a garantia depende da manutenção indicada neles."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como se preparar antes de chegar ao imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A preparação começa em casa. Separe o contrato, a planta e o **memorial descritivo**, que é o documento em que a construtora lista materiais, acabamentos e medidas prometidos. É contra ele que você vai comparar o que encontrar. Se a vistoria tiver hora marcada, peça tempo suficiente: uma visita apressada de quinze minutos costuma deixar passar justamente o que incomoda depois."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Conselho Regional de Corretores de Imóveis do Espírito Santo (CRECI-ES) sugere um kit simples, que cabe numa bolsa. Nada ali exige conhecimento técnico; o objetivo é testar o imóvel como você vai usá-lo no dia a dia, e não fazer uma perícia de engenharia."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Trena**, para medir os cômodos e comparar com o memorial.",
+        "**Uma lâmpada**, para testar os pontos de luz.",
+        "**Carregador de celular** ou um aparelho pequeno, para testar as tomadas.",
+        "**Uma bolinha de gude**, para ver se o piso das áreas molhadas escoa para o ralo.",
+        "**Caderno ou celular**, para anotar e fotografar cada problema com o cômodo identificado."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma escolha que faz diferença é ir acompanhado. Duas pessoas cobrem o imóvel com mais calma: uma testa, a outra anota. Se você comprou um imóvel grande, de alto padrão ou com muitos sistemas, como aquecimento, automação e piscina, considere contratar um engenheiro ou arquiteto de sua confiança para uma vistoria técnica, com laudo assinado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Vá antes da mudança",
+      "texto": "Com o imóvel vazio, você enxerga piso, rodapé e parede sem móveis na frente. E os reparos ficam mais rápidos para a equipe da construtora, sem caixas no caminho."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que testar em cada cômodo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pense em três perguntas para cada ambiente: funciona, está bem acabado e bate com o prometido? A primeira cobre tudo o que liga, abre e escoa. A segunda olha pintura, rejunte, piso e encaixes. A terceira compara medidas, materiais e equipamentos com o memorial. Siga sempre a mesma ordem, cômodo por cômodo, para não pular nada."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Roteiro rápido da vistoria",
+      "colunas": [
+        "Item",
+        "Como testar",
+        "Sinal de atenção"
+      ],
+      "linhas": [
+        [
+          "Tomadas e luz",
+          "Ligue o carregador e a lâmpada em cada ponto",
+          "Ponto sem energia, interruptor que falha"
+        ],
+        [
+          "Torneiras e descargas",
+          "Abra, feche e acione cada uma",
+          "Vazamento, pouca vazão, ruído forte"
+        ],
+        [
+          "Ralos e caimento",
+          "Solte a bolinha no piso do banheiro e da área de serviço",
+          "Bolinha que para ou rola para longe do ralo"
+        ],
+        [
+          "Revestimentos",
+          "Bata de leve com os dedos nas peças",
+          "Som oco, que pode indicar peça descolando"
+        ],
+        [
+          "Pintura e rejunte",
+          "Olhe com luz rasante, de lado",
+          "Manchas, tonalidade diferente, rejunte irregular"
+        ],
+        [
+          "Portas e janelas",
+          "Abra, feche e tranque todas",
+          "Folha que arrasta, trilho duro, fresta visível"
+        ],
+        [
+          "Interfone",
+          "Ligue para a portaria",
+          "Chiado ou aparelho solto na base"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "CRECI-ES",
+        "url": "https://crecies.gov.br/nove-dicas-para-a-vistoria-na-hora-da-entrega-das-chaves"
+      }
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na cozinha e nos banheiros, abra os registros e deixe a água correr um pouco. Olhe embaixo das pias e dentro dos gabinetes, se houver, à procura de umidade. Nas áreas molhadas, a bolinha de gude é um teste caseiro e eficiente: ela mostra se o piso tem o caimento correto ou se a água vai empoçar num canto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas janelas e portas, repare se as folhas correm sem esforço, se a fechadura gira com a chave certa e se persianas encaixam ao fechar. Nas paredes, procure fissuras, manchas e diferenças de tom. Uma lanterna de celular encostada na parede, com a luz de lado, revela ondulações que a luz do teto esconde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas há um limite claro para o que você testa sozinho. Não abra quadro de energia, não mexa em conexões de gás e não force nada que pareça estrutural. Se algo acender um alerta, como uma trinca extensa, cheiro de gás ou disjuntor que desarma, registre e peça a avaliação da construtora ou de um profissional habilitado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como registrar os problemas no termo de recebimento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O documento mais importante do dia é o **termo de recebimento**, às vezes chamado de termo de vistoria ou de entrega das chaves. Leia antes de assinar. A orientação do CRECI-ES é clara: se houver defeito, não assine o termo como se tudo estivesse aprovado. Assine com ressalvas, descrevendo cada problema, ou peça para remarcar a entrega."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Seja específico nas anotações. Em vez de \"pintura ruim\", escreva \"mancha na parede da janela do quarto 2\". Junte fotos com data e, se possível, numere os itens. Peça uma cópia do termo assinado pelos dois lados. Depois, combine por escrito com a construtora o prazo para os reparos e uma nova visita para conferir o que foi feito."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Assinar o termo no mesmo dia, com defeitos",
+      "pros": [
+        "Você recebe as chaves e pode planejar a mudança.",
+        "As ressalvas escritas registram o que precisa ser corrigido.",
+        "A obra de reparo pode correr enquanto você organiza o resto."
+      ],
+      "contras": [
+        "Sem ressalvas, fica mais difícil provar que o defeito já existia.",
+        "Reparos com a casa ocupada costumam ser mais lentos e incômodos.",
+        "Pressa para assinar faz itens pequenos ficarem de fora."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quais garantias valem depois da entrega"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Assinar o termo não encerra seus direitos. Pelo Código de Defesa do Consumidor, segundo o Idec, o prazo para reclamar de defeito em bem durável é de 90 dias. No defeito aparente, a contagem começa na entrega; no defeito oculto, que só aparece com o uso, começa quando o problema é descoberto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para o que envolve **solidez e segurança** da obra, o Código Civil, no artigo 618, prevê que o construtor responde por cinco anos, pelos materiais e pelo solo. Artigo publicado no portal Migalhas em junho de 2026 lembra que o Superior Tribunal de Justiça trata esse prazo como garantia, e que o pedido de indenização segue outra contagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do lado técnico, a norma **ABNT NBR 17170**, publicada em dezembro de 2022, orienta como as construtoras definem prazos de garantia por sistema. Os prazos são recomendados, não obrigatórios, e valem para projetos protocolados depois de um período de transição. Por isso, o que manda no seu caso é o termo de garantia entregue com o imóvel."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Prazos de garantia recomendados pela NBR 17170 (exemplos)",
+      "colunas": [
+        "Prazo",
+        "Que tipo de item",
+        "Exemplo"
+      ],
+      "linhas": [
+        [
+          "5 anos",
+          "Itens ligados à solidez e segurança",
+          "Fundações, estrutura, contenções"
+        ],
+        [
+          "3 anos",
+          "Itens sem função estrutural, cuja falha não afeta a segurança",
+          "Contrapiso de pisos internos"
+        ],
+        [
+          "1 ano",
+          "Acabamentos, equipamentos e itens expostos ao uso",
+          "Revestimento e sua fixação"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Biblioteca IBAPE Nacional (ABNT NBR 17170)",
+        "url": "https://biblioteca.ibape-nacional.com.br/wp-content/uploads/2023/12/MARIA-ANGELICA-ABNT-NBR-17170-edificacoes.pdf"
+      },
+      "nota": "Prazos de referência. Confira sempre o termo de garantia do seu imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Junto com o termo de garantia vem o **manual de uso, operação e manutenção**, cujo conteúdo segue a norma ABNT NBR 14037. Ele diz o que você precisa fazer e com que frequência: limpar ralos, revisar rejuntes, cuidar das esquadrias. Isso importa porque a garantia não cobre falha causada por uso fora do previsto ou por falta da manutenção indicada."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Caso concreto pede profissional",
+      "texto": "Prazos e responsabilidades dependem do contrato, do tipo de defeito e de quando ele apareceu. Diante de um problema sério, procure um advogado e, se for técnico, um engenheiro ou arquiteto para avaliar e registrar o caso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você quer entender melhor o caminho de quem compra um imóvel novo, vale navegar pelos textos de [construção e casas novas](/blog/categoria/construcao) e pelas demais seções do [blog](/blog). E, se estiver pensando em comprar ou vender um imóvel em Campinas, a equipe da {{cliente}} pode conversar com você e tirar as dúvidas do começo ao fim."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: chegue com calma e com o memorial na mão, teste tudo e não assine sem anotar cada defeito."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso recusar as chaves se encontrar defeitos na vistoria?",
+      "resposta": "Você pode pedir que os defeitos sejam corrigidos e marcar nova vistoria, ou assinar o termo com ressalvas descrevendo cada problema. O que não se recomenda é assinar como se tudo estivesse aprovado. Em situação de impasse, procure um advogado."
+    },
+    {
+      "pergunta": "Vale a pena contratar um engenheiro para a vistoria?",
+      "resposta": "Para a maioria dos apartamentos, um roteiro bem feito já cobre o essencial. Em imóveis grandes, casas ou unidades com muitos sistemas, um engenheiro ou arquiteto enxerga problemas técnicos que passam despercebidos e entrega um laudo assinado."
+    },
+    {
+      "pergunta": "Depois de assinar o termo, ainda posso reclamar?",
+      "resposta": "Sim. Pelo Código de Defesa do Consumidor, o defeito oculto tem prazo contado a partir de quando aparece, e o Código Civil prevê cinco anos para solidez e segurança. Os prazos do termo de garantia também continuam valendo."
+    },
+    {
+      "pergunta": "O que é o manual do proprietário e por que guardá-lo?",
+      "resposta": "É o manual de uso, operação e manutenção do imóvel. Ele lista os cuidados periódicos com cada sistema. Seguir essas orientações é condição para manter a garantia em boa parte dos itens."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Nove dicas para a vistoria na hora da entrega das chaves — CRECI-ES",
+      "url": "https://crecies.gov.br/nove-dicas-para-a-vistoria-na-hora-da-entrega-das-chaves",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Dica do dia: você sabe o que é vício oculto? — Idec",
+      "url": "https://idec.org.br/fique-de-olho/dica-do-dia-voce-sabe-o-que-e-vicio-oculto",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "ABNT NBR 17170: garantias em edificações — Biblioteca IBAPE Nacional",
+      "url": "https://biblioteca.ibape-nacional.com.br/wp-content/uploads/2023/12/MARIA-ANGELICA-ABNT-NBR-17170-edificacoes.pdf",
+      "data": "dezembro de 2023"
+    },
+    {
+      "nome": "Construtora responde por vícios após 5 anos? Veja o que diz o STJ — Migalhas",
+      "url": "https://www.migalhas.com.br/depeso/457524/construtora-responde-por-vicios-apos-5-anos-veja-o-que-diz-o-stj",
+      "data": "junho de 2026"
+    }
+  ]
+}
