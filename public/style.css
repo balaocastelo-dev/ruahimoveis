@@ -915,3 +915,5 @@ fieldset.fx-mais-bairros input[type=search]{width:100%;padding:7px 10px;border:1
 /* ---------- Sistema > Robôs e Fisgar ---------- */
 .rb-topo{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;margin:16px 0}
 @media (max-width:820px){.rb-topo{grid-template-columns:1fr}}
+.imcardw .mk-chk{top:8px;left:8px;width:28px;height:28px}
+.imcardw .mk-chk ~ .imcard .imst{left:44px}
