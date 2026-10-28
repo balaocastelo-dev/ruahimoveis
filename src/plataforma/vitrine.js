@@ -1,7 +1,11 @@
 // Domínio da plataforma (corretordofuturo.app): é a página de vendas do produto Herrera HOUSE IA,
 // nunca o sistema nem o portal de um cliente. Nada de cliente (RUAH ou outro) aparece aqui:
 // as telas são de uma imobiliária de demonstração ("Casa Prado", dados e fotos fictícios; scripts/demo-vitrine.js).
+const path = require('path');
+const express = require('express');
 const cfg = require('../config');
+// Telas, vídeo, CSS e JS da página de vendas saem daqui mesmo (nada depois deste middleware interfere, nem conta suspensa).
+const estaticos = express.static(path.join(__dirname, '..', '..', 'public', 'plataforma'), { maxAge: '7d', fallthrough: true });
 
 const HOSTS = new Set(String(process.env.PLATAFORMA_HOSTS || 'corretordofuturo.app,www.corretordofuturo.app')
   .split(',').map((h) => h.trim().toLowerCase()).filter(Boolean));
@@ -406,7 +410,8 @@ function vitrine(req, res, next) {
   if (!HOSTS.has(String(req.hostname || '').toLowerCase())) return next();
   if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nAllow: /\nSitemap: https://corretordofuturo.app/sitemap.xml\n');
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url></urlset>');
-  if (req.path.startsWith('/plataforma/') || req.path.startsWith('/gestor/')) return next(); // CSS, JS, telas e vídeo da própria página e do painel do gestor
+  if (req.path.startsWith('/plataforma/')) { const orig = req.url; req.url = req.url.slice('/plataforma'.length) || '/'; return estaticos(req, res, () => { req.url = orig; next(); }); }
+  if (req.path.startsWith('/gestor/')) return next(); // painel do gestor
   if (req.method !== 'GET' && req.method !== 'HEAD') return res.status(404).json({ erro: 'Não encontrado.' });
   if (req.path !== '/') return res.redirect(302, '/');
   res.setHeader('Cache-Control', 'public, max-age=300');

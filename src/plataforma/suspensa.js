@@ -11,7 +11,7 @@ function suspensa() {
 }
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 module.exports = function contaSuspensa(req, res, next) {
-  if (/\.(css|js|png|jpe?g|webp|svg|ico|woff2?|map)$/i.test(req.path) || req.path === '/robots.txt') return next();
+  if (/\.(css|js|png|jpe?g|webp|svg|ico|woff2?|map|mp4|webm)$/i.test(req.path) || req.path === '/robots.txt') return next();
   if (!suspensa()) return next();
   if (req.path.startsWith('/api/') || req.path.startsWith('/fisguei-api/') || req.path === '/escritorio-ciclo') return res.status(423).json({ erro: 'Conta suspensa. Fale com a Herrera HOUSE IA.' });
   res.status(503).setHeader('Retry-After', '3600');
