@@ -218,7 +218,12 @@ function vitrine(req, res, next) {
   const host = String(req.hostname || '').toLowerCase();
   if (APP_HOSTS.has(host)) {
     if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nDisallow: /\n');
-    if (PUBLICAS_DO_CLIENTE.test(req.path)) return res.status(404).type('text/plain').send('Não encontrado.');
+    // portal, blog, bairros e condomínios do cliente ficam no endereço dele: leva para lá (antes dava "Não encontrado")
+    if (PUBLICAS_DO_CLIENTE.test(req.path)) {
+      const destino = String(process.env.PUBLIC_URL || cfg.PUBLIC_URL || '').replace(/\/+$/, '');
+      if (/^https:\/\//.test(destino) && !destino.includes(host)) return res.redirect(302, destino + req.originalUrl);
+      return res.status(404).type('text/plain').send('Não encontrado.');
+    }
     res.setHeader('X-Robots-Tag', 'noindex');
     return next();
   }
