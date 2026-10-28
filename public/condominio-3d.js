@@ -2,6 +2,16 @@
 import * as THREE from '/vendor/three/three.module.min.js';
 import { OrbitControls } from '/vendor/three/OrbitControls.js';
 import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
+// Junta geometrias mesmo quando umas têm índice e outras não (ou atributos diferentes): sem isso o 3D travava em "Carregando".
+function unir(lista) {
+  const ok = lista.filter(Boolean);
+  if (!ok.length) return null;
+  const comIndice = ok.some((g) => g.index), todasComIndice = ok.every((g) => g.index);
+  let gs = comIndice && !todasComIndice ? ok.map((g) => (g.index ? g.toNonIndexed() : g)) : ok;
+  const nomes = Object.keys(gs[0].attributes).filter((n) => gs.every((g) => g.attributes[n]));
+  gs = gs.map((g) => { for (const n of Object.keys(g.attributes)) if (!nomes.includes(n)) g.deleteAttribute(n); g.morphAttributes = {}; return g; });
+  return mergeGeometries(gs) || null;
+}
 
 const $ = (s) => document.querySelector(s);
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -234,18 +244,21 @@ function montar() {
   // verde, água, piscinas
   grupoVerde = new THREE.Group();
   const verdes = cena.verdes.filter((v) => v.p.length >= 6).map((v) => planoForma(v.p, 0.04));
-  if (verdes.length) { const m = new THREE.Mesh(mergeGeometries(verdes), MAT.verde); m.receiveShadow = true; grupoVerde.add(m); }
+  const gVerde = verdes.length ? unir(verdes) : null;
+  if (gVerde) { const m = new THREE.Mesh(gVerde, MAT.verde); m.receiveShadow = true; grupoVerde.add(m); }
   const aguas = cena.agua.filter((a) => !a.linha && a.p.length >= 6).map((a) => planoForma(a.p, 0.08));
   const rios = cena.agua.filter((a) => a.linha).map((a) => faixaVia(a.p, a.l)).filter(Boolean);
   const piscinas = (cena.piscinas || []).filter((a) => a.p.length >= 6).map((a) => planoForma(a.p, 0.12));
   const todasAguas = [...aguas, ...rios.map((g) => g.translate(0, 0.08, 0)), ...piscinas];
-  if (todasAguas.length) scene.add(new THREE.Mesh(mergeGeometries(todasAguas), MAT.agua));
+  const gAgua = todasAguas.length ? unir(todasAguas) : null;
+  if (gAgua) scene.add(new THREE.Mesh(gAgua, MAT.agua));
   scene.add(grupoVerde);
 
   // ruas
   grupoVias = new THREE.Group();
   const vias = cena.vias.map((v) => faixaVia(v.p, v.l)).filter(Boolean).map((g) => g.translate(0, 0.06, 0));
-  if (vias.length) { const m = new THREE.Mesh(mergeGeometries(vias), MAT.via); m.receiveShadow = true; grupoVias.add(m); }
+  const gVias = vias.length ? unir(vias) : null;
+  if (gVias) { const m = new THREE.Mesh(gVias, MAT.via); m.receiveShadow = true; grupoVias.add(m); }
   scene.add(grupoVias);
 
   // árvores nas áreas verdes
@@ -283,7 +296,7 @@ function montar() {
     (b.h < 8 && ['house', 'detached', 'residential', 'semidetached_house', 'yes', 'bungalow'].includes(b.tipo) ? telhados : tetos).push(tampa);
     g.dispose();
   });
-  const juntar = (lista, mat) => { if (!lista.length) return; const m = new THREE.Mesh(mergeGeometries(lista), mat); m.castShadow = true; m.receiveShadow = true; scene.add(m); pegaveis.push(m); };
+  const juntar = (lista, mat) => { const g = lista.length ? unir(lista) : null; if (!g) return; const m = new THREE.Mesh(g, mat); m.castShadow = true; m.receiveShadow = true; scene.add(m); pegaveis.push(m); };
   juntar(altas, MAT.paredeAlta); juntar(baixas, MAT.paredeBaixa); juntar(tetos, MAT.teto); juntar(telhados, MAT.telhado);
 
   // o condomínio

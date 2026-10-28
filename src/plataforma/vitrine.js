@@ -1,5 +1,6 @@
 // Domínio da plataforma (corretordofuturo.app): é a página de vendas do produto Herrera HOUSE IA,
-// nunca o sistema nem o portal de um cliente. Nada de cliente (RUAH ou outro) aparece aqui.
+// nunca o sistema nem o portal de um cliente. Nada de cliente (RUAH ou outro) aparece aqui:
+// as telas são de uma imobiliária de demonstração ("Casa Prado", dados e fotos fictícios; scripts/demo-vitrine.js).
 const cfg = require('../config');
 
 const HOSTS = new Set(String(process.env.PLATAFORMA_HOSTS || 'corretordofuturo.app,www.corretordofuturo.app')
@@ -17,25 +18,32 @@ const PUBLICAS_DO_CLIENTE = /^\/(imoveis|blog|bairros|condominios)(\/|$)|^\/(llm
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const telBonito = (n) => { const m = n.match(/^55(\d{2})(\d{4,5})(\d{4})$/); return m ? `(${m[1]}) ${m[2]}-${m[3]}` : n; };
+const T = '/plataforma/telas/';
+
+// Uma captura de tela numa moldura de navegador. `nome` = arquivo em /plataforma/telas (há a versão inteira e a "-m", com metade da largura).
+function janela(nome, alt, { url = 'app.corretordofuturo.app', w = 2880, h = 1800, lazy = true } = {}) {
+  return `<div class="janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span>${esc(url)}</span></div>`
+    + `<img src="${T}${nome}-m.webp" srcset="${T}${nome}-m.webp 1440w, ${T}${nome}.webp 2880w" sizes="(max-width: 1240px) 100vw, 1200px" width="${w}" height="${h}" alt="${esc(alt)}"${lazy ? ' loading="lazy"' : ''} decoding="async"></div>`;
+}
 
 // Cômodos da planta = partes do sistema. x, y, w, h na planta (viewBox 600 x 470).
 const COMODOS = [
-  { k: 'captacao', nome: 'Captação', x: 20, y: 20, w: 200, h: 150, area: 'anúncios e donos',
-    texto: 'Os anúncios da sua região chegam organizados por bairro, rua e prédio. O sistema aponta queda de preço, anúncio novo e venda direta do dono, e localiza o proprietário com um clique, com a consulta paga sob controle.' },
-  { k: 'carteira', nome: 'Carteira', x: 220, y: 20, w: 180, h: 150, area: 'seus imóveis',
-    texto: 'Cada imóvel anda sozinho pelas etapas, do dono localizado até vendido. A ficha mostra o que falta, guarda fotos e documentos e gera a autorização de venda com assinatura eletrônica.' },
-  { k: 'painel', nome: 'Painel', x: 400, y: 20, w: 180, h: 110, area: 'o dia de hoje',
+  { k: 'captacao', nome: 'Radar de captação', x: 20, y: 20, w: 200, h: 150, area: 'anúncios e donos', ir: '#radar',
+    texto: 'Os anúncios da região chegam organizados por bairro, rua e prédio. A leitura da base aponta queda de preço, anúncio novo, imóvel encalhado e venda direta do dono, e o sistema localiza o proprietário com um clique.' },
+  { k: 'carteira', nome: 'Carteira', x: 220, y: 20, w: 180, h: 150, area: 'seus imóveis', ir: '#operacao',
+    texto: 'Cada imóvel anda pelas etapas, do dono localizado até vendido. A ficha mostra o que falta, guarda fotos e documentos e gera a autorização de venda com assinatura eletrônica.' },
+  { k: 'painel', nome: 'Painel', x: 400, y: 20, w: 180, h: 110, area: 'o dia de hoje', ir: '#painel',
     texto: 'Os números do negócio e o que precisa de você hoje: cliente esperando resposta, visita sem confirmar, autorização parada, imóvel sem foto.' },
-  { k: 'condominios', nome: 'Condomínios 3D', x: 400, y: 130, w: 180, h: 140, area: 'prédios e entorno',
-    texto: 'Uma base de prédios e condomínios com andares, unidades, preço do metro e o que tem perto. Mostre ao cliente o andar do apartamento e a vista em 3D.' },
-  { k: 'escritorio', nome: 'Escritório virtual', x: 20, y: 170, w: 230, h: 140, area: 'agentes no WhatsApp',
-    texto: 'Agentes de inteligência artificial no WhatsApp, cada um cuidando de um tipo de imóvel. Respondem, qualificam, marcam visitas e chamam o corretor. Por padrão, sugerem a resposta e esperam a sua aprovação.' },
-  { k: 'crm', nome: 'CRM e visitas', x: 250, y: 170, w: 150, h: 140, area: 'clientes',
+  { k: 'condominios', nome: 'Condomínios 3D', x: 400, y: 130, w: 180, h: 140, area: 'prédios e entorno', ir: '#condominios',
+    texto: 'Os prédios e condomínios da cidade com andares, unidades, preço do metro e o que tem perto. Mostre ao cliente o andar do apartamento e a vista em 3D.' },
+  { k: 'escritorio', nome: 'Escritório virtual', x: 20, y: 170, w: 230, h: 140, area: 'agentes de IA', ir: '#ia',
+    texto: 'Nove agentes de inteligência artificial no WhatsApp, cada um num setor. Respondem, qualificam, marcam visitas e chamam o corretor. Por padrão, sugerem a resposta e esperam a sua aprovação.' },
+  { k: 'crm', nome: 'CRM e visitas', x: 250, y: 170, w: 150, h: 140, area: 'clientes', ir: '#operacao',
     texto: 'Funil de vendas, histórico de cada cliente, cruzamento entre o que o comprador procura e os imóveis da carteira, e a agenda de visitas da equipe.' },
-  { k: 'portal', nome: 'Portal', x: 20, y: 310, w: 190, h: 110, area: 'sua vitrine',
-    texto: 'Uma vitrine com a sua marca e no seu domínio, com uma página escrita para cada imóvel a partir das fotos e da ficha. Quem se interessa vira cliente no seu CRM.' },
-  { k: 'blog', nome: 'Blog e bairros', x: 210, y: 310, w: 190, h: 110, area: 'Google e IAs',
-    texto: 'Textos publicados sozinhos e um guia para cada bairro onde você atua, feitos para o seu nome aparecer quando alguém pesquisa a região.' },
+  { k: 'portal', nome: 'Portal e Signature', x: 20, y: 310, w: 190, h: 110, area: 'sua vitrine', ir: '#portal',
+    texto: 'Uma vitrine com a sua marca e no seu domínio, em três versões: Vitrine, Revista e Signature, a linha reservada para imóveis acima de R$ 10 milhões.' },
+  { k: 'blog', nome: 'Blog e bairros', x: 210, y: 310, w: 190, h: 110, area: 'Google e IAs', ir: '#conteudo',
+    texto: 'Textos publicados sozinhos e um guia para cada bairro onde você atua, feitos para o seu nome aparecer quando alguém pesquisa a região, no Google ou numa IA.' },
 ];
 
 function plantaSvg() {
@@ -47,11 +55,8 @@ function plantaSvg() {
   <text class="area" x="${cx}" y="${cy + 16}" text-anchor="middle">${esc(c.area)}</text></g>`;
   };
   return `<svg class="planta" viewBox="0 0 600 470" role="group" aria-label="Planta do sistema: cada cômodo é uma parte do Herrera HOUSE IA">
-  <g class="divisoria-g">
-    <path class="divisoria" d="M220 20V170 M400 20V420 M400 130H580 M20 170H400 M250 170V310 M20 310H400 M210 310V420 M400 270H580"/>
-  </g>
+  <g class="divisoria-g"><path class="divisoria" d="M220 20V170 M400 20V420 M400 130H580 M20 170H400 M250 170V310 M20 310H400 M210 310V420 M400 270H580"/></g>
   <path class="parede" d="M20 20H580V420H20Z"/>
-  <!-- vãos de porta e folhas -->
   <line class="vao" x1="140" y1="170" x2="176" y2="170"/><path class="porta" d="M140 170A36 36 0 0 1 176 206"/>
   <line class="vao" x1="300" y1="170" x2="336" y2="170"/><path class="porta" d="M336 170A36 36 0 0 0 300 134"/>
   <line class="vao" x1="400" y1="200" x2="400" y2="236"/><path class="porta" d="M400 236A36 36 0 0 1 436 200"/>
@@ -63,105 +68,288 @@ function plantaSvg() {
     <rect x="404" y="274" width="172" height="142" rx="2"/>
     <text x="490" y="338" text-anchor="middle">Entrada</text>
     <text class="area" x="490" y="356" text-anchor="middle">fale com a gente</text></g>
-  <!-- cota -->
   <path class="cota" d="M20 446H580 M20 440V452 M580 440V452"/>
   <text class="cota-txt" x="300" y="463" text-anchor="middle">tudo num sistema só</text>
 </svg>`;
 }
 
-// Capturas do sistema com a imobiliária de demonstração "Casa Prado" (dados fictícios; scripts/demo-vitrine.js).
-const TELAS = [
-  { k: 'painel', nome: 'Painel', h: 1800, alt: 'Painel da imobiliária com a lista do que precisa de atenção e os números do negócio', legenda: 'O que precisa de você hoje e os números do mês, comparados ao mês anterior.' },
-  { k: 'carteira', nome: 'Carteira', h: 1800, alt: 'Carteira de imóveis com as etapas, do dono localizado ao vendido, e a ficha de cada imóvel', legenda: 'Cada imóvel em uma etapa, com o dono, o corretor e quanto da ficha está completa.' },
-  { k: 'crm', nome: 'CRM', h: 1800, alt: 'Funil de vendas com clientes nas etapas novo, qualificado, visita, proposta e escritura', legenda: 'O funil de vendas: de onde veio cada cliente, o que procura e quanto pode pagar.' },
-  { k: 'escritorio', nome: 'Escritório virtual', h: 1800, alt: 'Escritório virtual com os agentes de inteligência artificial e o movimento do dia', legenda: 'Os agentes de IA no WhatsApp, cada um no seu setor, com as respostas esperando aprovação.' },
-  { k: 'ficha', nome: 'Ficha do imóvel', h: 2062, alt: 'Ficha de uma casa com a etapa, o proprietário e o que falta completar', legenda: 'A ficha mostra a etapa do imóvel e o que falta para publicar.' },
-  { k: 'visitas', nome: 'Visitas', h: 1800, alt: 'Agenda de visitas com horários, imóveis, clientes e corretores', legenda: 'A agenda de visitas da equipe, com a avaliação de cada cliente.' },
+// Números da plataforma (base comum de Campinas), não de um cliente.
+const NUMEROS = [
+  [4691, '', 'condomínios e prédios de Campinas, com andares e unidades'],
+  [923, ' mil', 'construções da cidade no 3D'],
+  [92, ' mil', 'anúncios da região lidos e organizados'],
+  [9, '', 'agentes de inteligência artificial no WhatsApp'],
+  [53, '', 'guias de bairro escritos para o Google e as IAs'],
+  [3, '', 'versões do seu portal, da Vitrine à Signature'],
+];
+
+// O escritório virtual: os nove agentes (nomes e limites editáveis em cada imobiliária).
+const AGENTES = [
+  ['TH', 'TH-IA-GO', 'Captação', 'Acha o dono do imóvel anunciado, conversa, pede as fotos originais e a autorização.', '#5fd4bf'],
+  ['An', 'Ana', 'Apartamentos', 'Responde quem procura apartamento, entende o perfil e marca a visita.', '#7fb4ff'],
+  ['Cl', 'Clara', 'Casas', 'Atende casas e casas em condomínio até R$ 2 milhões, com fotos e link do imóvel.', '#ffb38a'],
+  ['He', 'Helena', 'Alto padrão', 'Cuida de casas acima de R$ 2 milhões e apartamentos acima de R$ 3 milhões, com o tom certo.', '#d8b26a'],
+  ['Vi', 'Vicente', 'Off-market', 'Oferece imóveis fora do mercado só por link privado, sempre com a sua aprovação.', '#c9a0ff'],
+  ['Br', 'Bruno', 'Galpões e salas', 'Atende empresas: salas, lojas e barracões, com metragem e vagas na ponta da língua.', '#9be37a'],
+  ['Te', 'Teo', 'Terrenos', 'Responde sobre lotes e terrenos, zoneamento e condomínios fechados.', '#e3d47a'],
+  ['Au', 'Augusto', 'Gerente do dono', 'Manda o resumo das 8h e o relatório das 19h, e avisa o dono do que importa.', '#ff8a8a'],
+  ['Ma', 'Marta', 'Gerente dos corretores', 'Passa a agenda do dia, lembra a visita 60 minutos antes e cobra o que venceu.', '#8ae0ff'],
+];
+
+// Capturas de operação (aba por tela), da imobiliária de demonstração.
+const OPERACAO = [
+  { k: 'carteira', nome: 'Carteira', alt: 'Carteira de imóveis com as etapas, do dono localizado ao vendido, e a ficha de cada imóvel', legenda: 'Cada imóvel numa etapa, com o dono, o corretor e quanto da ficha está completa.' },
+  { k: 'ficha', nome: 'Ficha do imóvel', alt: 'Ficha de um apartamento com as fotos, a etapa, o proprietário e o que falta completar', legenda: 'A ficha mostra a etapa do imóvel, as fotos, o proprietário e o que falta para publicar.' },
+  { k: 'crm', nome: 'CRM', alt: 'Funil de vendas com clientes nas etapas novo, qualificado, visita, proposta e escritura', legenda: 'O funil de vendas: de onde veio cada cliente, o que procura e quanto pode pagar.' },
+  { k: 'visitas', nome: 'Visitas', alt: 'Agenda de visitas com horários, imóveis, clientes e corretores', legenda: 'A agenda de visitas da equipe, com a avaliação de cada cliente.' },
+  { k: 'agente', nome: 'Mesa do agente', alt: 'Mesa de um agente de IA com as conversas do dia e as respostas para aprovar', legenda: 'A mesa de cada agente: conversas, respostas esperando aprovação e o que ele já resolveu.' },
 ];
 
 const PERGUNTAS = [
   ['Preciso trocar o meu site?', 'Não. O portal e o blog ficam no seu domínio, com a sua marca. Se ainda não tiver um domínio, a gente ajuda a registrar.'],
-  ['Os dados da minha carteira são só meus?', 'Sim. Imóveis, clientes, proprietários e conversas de cada corretor ou imobiliária ficam separados e ninguém mais vê. A base de anúncios e de condomínios da região é a parte comum.'],
-  ['Funciona na minha cidade?', 'Começamos por Campinas (SP) e a base de anúncios, prédios e bairros cresce por região. Fale com a gente para saber como está a sua cidade.'],
+  ['Os dados da minha carteira são só meus?', 'Sim. Imóveis, clientes, proprietários e conversas de cada corretor ou imobiliária ficam separados e ninguém mais vê. A base de anúncios, prédios e bairros da região é a parte comum.'],
   ['A inteligência artificial manda mensagem sem eu ver?', 'Por padrão, não: o agente sugere a resposta e você aprova antes de enviar. Você escolhe quais agentes podem responder sozinhos.'],
+  ['De onde vem o 3D dos prédios?', 'De bases públicas de mapas e do Censo do IBGE, com a altura de cada prédio e o número de andares. O sistema destaca o andar do apartamento e mostra o entorno, de dia e de noite.'],
+  ['O que é a Signature?', 'Uma versão reservada do seu portal para imóveis acima de R$ 10 milhões: poucas fotos, texto discreto e valores só para quem entra no Clube Signature, que vira cliente quente no seu CRM.'],
+  ['Funciona na minha cidade?', 'Começamos por Campinas (SP) e a base de anúncios, prédios e bairros cresce por região. Fale com a gente para saber como está a sua cidade.'],
   ['Preciso de um número de WhatsApp para cada agente?', 'Não para começar. Dá para iniciar com um número e separar os agentes depois, conforme o movimento crescer.'],
   ['Quanto custa?', 'Há planos para corretor autônomo e para imobiliária. Fale com a gente e montamos a proposta para o seu tamanho.'],
 ];
+
+const ICONE = {
+  olho: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>',
+  pena: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 4c-8 0-14 6-14 14v2h2c8 0 14-6 14-14V4Z"/><path d="M4 20 14 10"/></svg>',
+  balao: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h8M8 13h5"/></svg>',
+  relogio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  lupa: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg>',
+  chave: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l2 2M15 8l2 2"/></svg>',
+};
 
 function pagina() {
   const nome = esc(cfg.SISTEMA_NOME);
   const email = esc(EMAIL);
   const wa = esc(WHATSAPP);
   const ld = { '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: cfg.SISTEMA_NOME, applicationCategory: 'BusinessApplication', operatingSystem: 'Web',
-    description: 'Sistema imobiliário com inteligência artificial para corretores e imobiliárias: captação, carteira, CRM, agentes no WhatsApp, portal e blog próprios.',
-    url: 'https://corretordofuturo.app/', inLanguage: 'pt-BR' };
+    description: 'Sistema imobiliário com inteligência artificial para corretores e imobiliárias: radar de captação, condomínios em 3D, carteira, CRM, nove agentes de IA no WhatsApp, portal com linha Signature e blog próprios.',
+    url: 'https://corretordofuturo.app/', inLanguage: 'pt-BR', image: 'https://corretordofuturo.app/plataforma/telas/3d-noite.webp' };
   const faq = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: PERGUNTAS.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) };
   const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
   return `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${nome} · sistema imobiliário com inteligência artificial</title>
-<meta name="description" content="Captação, carteira, CRM, agentes de IA no WhatsApp, portal e blog com a sua marca. Para corretores autônomos e imobiliárias.">
+<title>${nome} · o sistema imobiliário com inteligência artificial</title>
+<meta name="description" content="Radar de captação, condomínios em 3D, nove agentes de IA no WhatsApp, carteira, CRM, portal com a linha Signature e blog com a sua marca. Para corretores e imobiliárias.">
 <link rel="canonical" href="https://corretordofuturo.app/">
-<meta property="og:title" content="${nome}"><meta property="og:description" content="O sistema imobiliário com inteligência artificial para corretores e imobiliárias."><meta property="og:url" content="https://corretordofuturo.app/"><meta property="og:type" content="website">
-<meta name="theme-color" content="#e8eae5">
+<meta property="og:title" content="${nome} · o corretor do futuro já tem escritório"><meta property="og:description" content="O sistema imobiliário com inteligência artificial: 3D dos prédios, radar de captação, agentes no WhatsApp e portal com a sua marca."><meta property="og:url" content="https://corretordofuturo.app/"><meta property="og:type" content="website"><meta property="og:image" content="https://corretordofuturo.app/plataforma/telas/3d-noite.webp"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#070b0f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="/plataforma/site.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=IBM+Plex+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="/plataforma/site.css?v=2">
+<link rel="preload" as="image" href="${T}3d-poster.webp">
 <script type="application/ld+json">${json(ld)}</script><script type="application/ld+json">${json(faq)}</script>
 </head><body>
-<div class="cx">
-<header class="topo">
+<header class="topo"><div class="cx">
   <a class="marca" href="/" aria-label="${nome}, início"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 12 13 4l10 8v11H3Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 23v-7h6v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>${nome}</a>
-  <nav aria-label="Seções"><a href="#por-dentro">Por dentro</a><a href="#comodos">O que tem dentro</a><a href="#para-quem">Para quem</a><a href="#perguntas">Perguntas</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn" href="#contato">Fale com a gente</a></nav>
-</header>
+  <nav aria-label="Seções"><a class="sec" href="#ia">Inteligência artificial</a><a class="sec" href="#radar">Radar</a><a class="sec" href="#condominios">3D</a><a class="sec" href="#portal">Portal e Signature</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn pri" href="#contato">Fale com a gente</a></nav>
+</div></header>
 
 <main>
-<div class="abre">
-  <div>
-    <h1>O sistema imobiliário que trabalha enquanto você atende.</h1>
-    <p class="sub">Captação, carteira, atendimento no WhatsApp, portal e blog com a sua marca. Inteligência artificial em cada cômodo, para corretores e imobiliárias.</p>
-    <div class="acoes"><a class="btn pri" href="#contato">Fale com a gente</a><a class="btn" href="#comodos">Ver o que tem dentro</a></div>
-  </div>
-  <div class="planta-cx">
-    ${plantaSvg()}
-    <p class="planta-dica">Toque num cômodo para ver o que ele faz.</p>
-    <div class="ficha" id="ficha" aria-live="polite"></div>
-  </div>
-</div>
-
-<section id="por-dentro" aria-labelledby="t-dentro">
-  <h2 id="t-dentro">Por dentro do sistema</h2>
-  <p class="lead">Telas reais do ${nome}, com uma imobiliária de demonstração: os nomes, telefones e imóveis abaixo são fictícios.</p>
-  <div class="telas" data-telas>
-    <div class="telas-abas" role="tablist" aria-label="Telas do sistema">
-      ${TELAS.map((t, i) => `<button type="button" role="tab" id="aba-${t.k}" aria-controls="tela-${t.k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(t.nome)}</button>`).join('')}
+<div class="escuro abre"><div class="cx">
+  <div class="abre-grade">
+    <div>
+      <p class="kicker">Sistema imobiliário com inteligência artificial</p>
+      <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
+      <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à Signature.</p>
+      <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ia">Conhecer por dentro</a></div>
+      <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
-    ${TELAS.map((t, i) => `<figure class="tela" role="tabpanel" id="tela-${t.k}" aria-labelledby="aba-${t.k}"${i === 0 ? '' : ' hidden'}>
-      <img src="/plataforma/telas/${t.k}.webp" width="2880" height="${t.h}" alt="${esc(t.alt)}" loading="${i === 0 ? 'eager' : 'lazy'}" decoding="async">
+    <div class="palco">
+      <div class="palco-tela">
+        <video autoplay muted loop playsinline preload="metadata" poster="${T}3d-poster.webp" aria-label="Prédio em 3D girando, com o andar do apartamento destacado em dourado">
+          <source src="${T}3d.webm" type="video/webm"><source src="${T}3d.mp4" type="video/mp4"></video>
+        <div class="palco-legenda"><b>Condomínio em 3D</b><span>o andar do apartamento em dourado, o entorno de verdade</span></div>
+      </div>
+      <div class="palco-flutuas">
+        <div class="flutua f1"><b><span class="ponto" style="background:#3ddc84"></span>Ana · Apartamentos</b><i>Respondeu a Larissa e marcou a visita de sábado, 10h.</i></div>
+        <div class="flutua f2"><b>Leitura da base</b><i>Um 3 dormitórios no Cambuí baixou 9% e está abaixo do m² do bairro.</i></div>
+        <div class="flutua f3"><b>Proprietário localizado</b><i>O robô de captação já mandou a primeira mensagem.</i></div>
+      </div>
+    </div>
+  </div>
+  <ul class="numeros" aria-label="O sistema em números">
+    ${NUMEROS.map(([n, suf, txt]) => `<li><strong data-conta="${n}" data-suf="${esc(suf)}">${n.toLocaleString('pt-BR')}${esc(suf)}</strong><span>${esc(txt)}</span></li>`).join('')}
+  </ul>
+</div></div>
+
+<section id="ia" class="escuro ia" aria-labelledby="t-ia"><div class="cx">
+  <p class="kicker">Inteligências artificiais</p>
+  <h2 id="t-ia">Nove agentes que não tiram férias, nem folga no domingo.</h2>
+  <p class="lead">Cada agente cuida de um setor do escritório e conversa pelo WhatsApp. Eles respondem na hora, entendem o que o cliente procura, mandam o imóvel certo, marcam a visita e chamam o corretor quando é a vez dele. Você decide quem responde sozinho e quem sugere a resposta para você aprovar.</p>
+  <ul class="agentes revelar">
+    ${AGENTES.map(([ini, n, setor, txt, cor]) => `<li class="agente"><span class="avatar" style="background:${cor}" aria-hidden="true">${esc(ini)}</span><div><h3>${esc(n)}</h3><span class="setor">${esc(setor)}</span><p>${esc(txt)}</p></div></li>`).join('\n    ')}
+  </ul>
+
+  <div class="duas bloco-ia">
+    <figure class="revelar">${janela('escritorio', 'Escritório virtual com os agentes nas salas de captação, vendas e diretoria, o movimento do dia e as respostas para aprovar', { url: 'app.corretordofuturo.app/#/whats' })}
+      <figcaption>O escritório virtual: cada agente na sua sala, o que aconteceu hoje e o que espera a sua aprovação.</figcaption></figure>
+    <div class="chat revelar" aria-label="Exemplo de conversa com um agente">
+      <div class="chat-topo"><span class="avatar" style="background:#7fb4ff" aria-hidden="true">An</span><div><b>Ana · Apartamentos</b>WhatsApp da imobiliária</div></div>
+      <p class="msg ent">Oi! Vi o apartamento de 3 quartos no Cambuí no site. Aceita financiamento?</p>
+      <p class="msg sug">Oi, Larissa! Aceita sim. São 118 m², 3 quartos e 2 vagas. Quer que eu simule as parcelas ou prefere visitar no sábado?<small>Resposta sugerida pela Ana · esperando aprovação</small></p>
+      <div class="chat-acoes"><span>Editar</span><span class="ok">Aprovar e enviar</span></div>
+      <p class="msg ent">Quero visitar no sábado de manhã.</p>
+      <p class="msg sai">Combinado: sábado às 10h. A Patrícia te encontra na portaria. 😊<small>Visita na agenda · Marta avisou a corretora</small></p>
+    </div>
+  </div>
+
+  <ul class="ia-faz">
+    <li><h3>${ICONE.lupa}Lê a cidade inteira</h3><p>Os anúncios da região passam por uma leitura que aponta queda de preço, imóvel novo, encalhado, abaixo do metro do bairro e venda direta do dono, e explica cada sinal.</p></li>
+    <li><h3>${ICONE.olho}Vê as fotos e escreve</h3><p>A IA olha cada foto do imóvel, reconhece os ambientes e escreve a página do portal a partir das fotos e da ficha, com legenda em cada imagem.</p></li>
+    <li><h3>${ICONE.pena}Publica sozinha</h3><p>O blog ganha textos novos todos os dias e cada bairro tem o seu guia, para a sua imobiliária aparecer no Google e nas respostas das IAs.</p></li>
+    <li><h3>${ICONE.chave}Capta com você</h3><p>O robô de captação fala com o dono do imóvel anunciado, pede as fotos originais e a autorização, e entrega o imóvel na carteira.</p></li>
+    <li><h3>${ICONE.relogio}Cuida da agenda</h3><p>A Marta passa a agenda do dia aos corretores, lembra a visita uma hora antes e cobra o que ficou para trás.</p></li>
+    <li><h3>${ICONE.balao}Presta contas ao dono</h3><p>O Augusto manda o resumo da manhã e o relatório da noite: clientes novos, visitas, propostas e o que precisa de decisão.</p></li>
+  </ul>
+</div></section>
+
+<section id="radar" class="claro" aria-labelledby="t-radar"><div class="cx">
+  <p class="kicker">Radar de captação</p>
+  <h2 id="t-radar">Os imóveis da cidade, lidos e prontos para captar.</h2>
+  <p class="lead">Dezenas de milhares de anúncios da região num mapa só, por bairro, rua e prédio. O sistema junta o mesmo imóvel anunciado por várias imobiliárias, compara com o preço do metro do bairro e mostra onde está a oportunidade.</p>
+  <ul class="sinais" aria-label="Sinais que a leitura aponta">
+    <li class="s-q">↓ <b>Baixou o preço</b></li><li class="s-n">✦ <b>Anúncio novo</b></li><li class="s-a">◆ <b>Abaixo do m² do bairro</b></li>
+    <li class="s-p">☺ <b>Dono anuncia direto</b></li><li class="s-r">⌛ <b>Anunciado há muito tempo</b></li><li class="s-v">⧉ <b>Várias imobiliárias</b></li>
+  </ul>
+  <figure class="revelar">${janela('radar-ia', 'Leitura da base com o mapa dos anúncios coloridos pela situação do proprietário, frases da IA e filtros por sinal', { url: 'app.corretordofuturo.app/#/radar' })}
+    <figcaption>A leitura da base: cada ponto é um anúncio, a cor diz se o dono já foi achado e as frases levam direto aos filtros.</figcaption></figure>
+  <ol class="fluxo">
+    <li><h3>O anúncio aparece</h3><p>Entra na base com bairro, rua, prédio, preço e histórico.</p></li>
+    <li><h3>A leitura aponta</h3><p>Baixou de preço, está abaixo do bairro, é do próprio dono.</p></li>
+    <li><h3>Um clique localiza o dono</h3><p>Consulta com custo controlado e limite por dia.</p></li>
+    <li><h3>O robô conversa</h3><p>O TH-IA-GO apresenta a imobiliária e pede as fotos originais.</p></li>
+    <li><h3>Vira carteira</h3><p>O imóvel entra na carteira na etapa certa, pronto para a autorização.</p></li>
+  </ol>
+</div></section>
+
+<section id="condominios" class="escuro c3d" aria-labelledby="t-3d"><div class="cx">
+  <p class="kicker">Condomínios em 3D</p>
+  <h2 id="t-3d">Mostre o andar, a vista e a vizinhança antes da visita.</h2>
+  <p class="lead">Os prédios e condomínios da cidade com andares, torres e unidades. Abra o 3D, gire, veja o apartamento destacado no andar certo e troque o dia pela noite. A ficha do prédio traz o que está à venda, o preço do metro e o que tem perto.</p>
+  <div class="c3d-grade">
+    <figure class="revelar">${janela('3d-noite', 'Prédio em 3D à noite com as janelas acesas e o andar do apartamento destacado em dourado', { url: 'app.corretordofuturo.app/condominio-3d' })}
+      <figcaption>À noite, com as janelas acesas: o andar do apartamento aparece em dourado.</figcaption></figure>
+    <div class="c3d-lado">
+      <figure class="revelar">${janela('3d-dia', 'O mesmo prédio em 3D durante o dia, com ruas, áreas verdes e a foto de satélite no chão', { url: 'app.corretordofuturo.app/condominio-3d' })}</figure>
+      <figure class="revelar">${janela('cond-ficha', 'Ficha do condomínio com andares, unidades, preço do metro, imóveis à venda e o que tem perto', { url: 'app.corretordofuturo.app/#/condominios' })}</figure>
+    </div>
+  </div>
+  <ul class="fatos">
+    <li><strong>Andar por andar</strong><span>A unidade 182 acende no 18º andar, com a vista daquela altura.</span></li>
+    <li><strong>Raio-X do prédio</strong><span>Andares, torres, unidades, taxa, IPTU e plantas mais comuns.</span></li>
+    <li><strong>O que tem perto</strong><span>Escolas, parques, mercados e hospitais, com a distância a pé.</span></li>
+    <li><strong>Prédio-alvo</strong><span>Marque prédios e seja avisado quando um apartamento entrar à venda.</span></li>
+  </ul>
+  <p class="demo-aviso">Telas de uma imobiliária de demonstração: nomes, imóveis e números fictícios.</p>
+</div></section>
+
+<section id="painel" class="claro" aria-labelledby="t-painel"><div class="cx">
+  <p class="kicker">Painel do dono</p>
+  <h2 id="t-painel">O negócio inteiro numa tela, e o que precisa de você hoje.</h2>
+  <p class="lead">Valor da carteira, vendas, clientes, visitas e captação, comparados com o período anterior. Em cima de tudo, a lista do que não pode esperar.</p>
+  <div class="painel-cx revelar">
+    ${janela('painel', 'Painel da imobiliária com a lista do que precisa de atenção, os números do negócio e os gráficos de clientes e visitas', { url: 'app.corretordofuturo.app/#/painel' })}
+    <p class="marcador m1"><b>Precisa de atenção</b>Cliente esperando no WhatsApp, visita sem confirmar, autorização parada.</p>
+    <p class="marcador m2"><b>Comparado ao mês anterior</b>Cada número mostra se subiu ou caiu.</p>
+    <p class="marcador m3"><b>Funil e equipe</b>Do anúncio à venda, corretor por corretor.</p>
+  </div>
+</div></section>
+
+<section id="operacao" class="claro" aria-labelledby="t-op"><div class="cx">
+  <p class="kicker">Operação</p>
+  <h2 id="t-op">Carteira, ficha, CRM e visitas, conversando entre si.</h2>
+  <p class="lead">O anúncio captado vira imóvel na carteira, o imóvel vira página no portal, quem pergunta pelo portal vira cliente no CRM e é atendido pelos agentes no WhatsApp.</p>
+  <div class="telas" data-abas>
+    <div class="abas" role="tablist" aria-label="Telas do sistema">
+      ${OPERACAO.map((t, i) => `<button type="button" role="tab" id="aba-${t.k}" aria-controls="tela-${t.k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(t.nome)}</button>`).join('')}
+    </div>
+    ${OPERACAO.map((t, i) => `<figure class="painelaba" role="tabpanel" id="tela-${t.k}" aria-labelledby="aba-${t.k}"${i === 0 ? '' : ' hidden'}>${janela(t.k, t.alt)}
       <figcaption>${esc(t.legenda)}</figcaption></figure>`).join('\n    ')}
   </div>
-  <div class="celular-cx"><img src="/plataforma/telas/celular.webp" width="1170" height="2532" alt="O painel do sistema aberto no celular" loading="lazy" decoding="async"><p>Funciona no computador, no tablet e no celular, para o corretor acompanhar tudo da rua.</p></div>
-</section>
+  <div class="celulares" style="margin-top:64px">
+    <figure class="celular"><img src="${T}celular.webp" width="1170" height="2532" alt="O painel do sistema aberto no celular" loading="lazy" decoding="async"><figcaption>O painel no celular</figcaption></figure>
+    <figure class="celular alto"><img src="${T}celular-portal.webp" width="1170" height="2532" alt="O portal da imobiliária aberto no celular" loading="lazy" decoding="async"><figcaption>O portal do cliente</figcaption></figure>
+    <figure class="celular"><img src="${T}celular-3d.webp" width="1170" height="2532" alt="O condomínio em 3D aberto no celular" loading="lazy" decoding="async"><figcaption>O 3D na palma da mão</figcaption></figure>
+  </div>
+</div></section>
 
-<section id="comodos" aria-labelledby="t-comodos">
-  <h2 id="t-comodos">Tudo o que uma imobiliária usa, numa casa só</h2>
-  <p class="lead">Cada parte conversa com as outras: o anúncio captado vira imóvel na carteira, o imóvel vira página no portal, quem pergunta pelo portal vira cliente no CRM e é atendido pelos agentes no WhatsApp.</p>
-  <ul class="legenda">
-    ${COMODOS.map((c) => `<li id="comodo-${c.k}" data-comodo="${c.k}"><h3>${esc(c.nome)}</h3><p>${esc(c.texto)}</p></li>`).join('\n    ')}
+<section id="portal" class="claro" aria-labelledby="t-portal"><div class="cx">
+  <p class="kicker">Portal com a sua marca</p>
+  <h2 id="t-portal">Uma vitrine, três jeitos de apresentar.</h2>
+  <p class="lead">O portal fica no seu domínio, com a sua marca, e cada imóvel ganha uma página escrita a partir das fotos e da ficha. Quem se interessa vira cliente quente no seu CRM, com o imóvel e o horário da visita.</p>
+  <ul class="versoes">
+    <li class="versao revelar"><img src="${T}portal-vitrine-m.webp" width="1440" height="900" alt="Vitrine do portal com busca, filtros e os imóveis em cartões com foto" loading="lazy" decoding="async"><div><span class="tag">Vitrine</span><h3>Para quem busca</h3><p>Busca, filtros por tipo, bairro, quartos e valor, favoritos e uma página completa para cada imóvel.</p></div></li>
+    <li class="versao revelar"><img src="${T}portal-revista-m.webp" width="1440" height="900" alt="A versão Revista do portal, com ensaios sobre morar bem e os imóveis entre os textos" loading="lazy" decoding="async"><div><span class="tag">Revista</span><h3>Para quem sonha</h3><p>Uma edição por mês, com ensaios sobre modos de morar e os imóveis entre os textos, como numa revista de casa.</p></div></li>
+    <li class="versao sig revelar"><img src="${T}portal-signature-m.webp" width="1440" height="900" alt="A linha Signature, escura e dourada, com residências acima de dez milhões" loading="lazy" decoding="async"><div><span class="tag">Signature</span><h3>Para poucos</h3><p>Residências acima de R$ 10 milhões, com menos fotos e mais intenção. Valores só para membros do Clube Signature.</p></div></li>
   </ul>
-</section>
+  <figure class="pagina-imovel revelar">${janela('portal-imovel', 'Página de um apartamento no portal, com mosaico de fotos, o texto escrito pela IA, a ficha e o botão de agendar visita', { url: 'casaprado.com.br/imoveis/apartamento-cambui' })}
+    <figcaption>A página de cada imóvel: mosaico de fotos, texto escrito a partir das fotos, ficha ao vivo e “Agendar visita”, que cai direto no CRM.</figcaption></figure>
+</div></section>
 
-<section id="para-quem" aria-labelledby="t-quem">
-  <h2 id="t-quem">Do corretor que trabalha sozinho à imobiliária com equipe</h2>
+<section class="escuro signature" aria-labelledby="t-sig"><div class="cx">
+  <div class="sig-grade">
+    <div>
+      <p class="kicker ouro-k">Linha Signature</p>
+      <h2 id="t-sig">Residências que não se anunciam.</h2>
+      <p class="lead">Imóvel acima de R$ 10 milhões entra sozinho na Signature e some do portal comum. A apresentação muda de tom: escura, silenciosa, com as fotos escolhidas a dedo.</p>
+      <ul class="sig-lista">
+        <li>Valores reservados aos membros do Clube Signature</li>
+        <li>Cada pedido de acesso vira cliente quente no CRM, com origem “Signature”</li>
+        <li>Visita privada com hora marcada, pedida pela própria página</li>
+        <li>Páginas fora do Google, endereço nunca aparece</li>
+      </ul>
+      <a class="btn ouro" href="#contato">Quero a Signature na minha imobiliária</a>
+    </div>
+    <figure class="revelar">${janela('portal-signature', 'Página inicial da linha Signature com uma residência de luxo em destaque, tipografia clássica e detalhes dourados', { url: 'casaprado.com.br/imoveis/signature' })}
+      <p class="sig-nota">Demonstração com imóveis fictícios e imagens ilustrativas geradas por IA.</p></figure>
+  </div>
+</div></section>
+
+<section id="conteudo" class="claro" aria-labelledby="t-conteudo"><div class="cx">
+  <p class="kicker">Blog e guias de bairro</p>
+  <h2 id="t-conteudo">Seu nome na resposta quando alguém pesquisa o bairro.</h2>
+  <p class="lead">O blog da imobiliária publica sozinho, três vezes por dia, e cada bairro onde você atua ganha um guia completo, com fotos reais, fontes e perguntas frequentes. Tudo leva o leitor para os seus imóveis e para o formulário, nunca para fora do seu site.</p>
+  <ul class="textos">
+    <li class="texto revelar"><span class="quando">Artigo · 6h</span><h3>Varanda gourmet: o que avaliar antes de comprar</h3><p>Ventilação, ponto de gás, carga elétrica e o que o condomínio permite fechar.</p><div class="busca"><span>“vale a pena apartamento com varanda gourmet”</span></div></li>
+    <li class="texto revelar"><span class="quando">Guia de bairro</span><h3>Morar no Cambuí: ruas, escolas, parques e o que custa</h3><p>Um guia completo, com o que tem perto, os prédios do bairro e os imóveis à venda.</p><div class="busca"><span>“como é morar no Cambuí”</span></div></li>
+    <li class="texto revelar"><span class="quando">Dica · 18h</span><h3>Documentos para vender o imóvel sem susto</h3><p>Matrícula, certidões e o que o comprador vai pedir, em linguagem simples.</p><div class="busca"><span>“documentos para vender imóvel”</span></div></li>
+  </ul>
+</div></section>
+
+<section id="comodos" class="claro" aria-labelledby="t-comodos"><div class="cx">
+  <div class="comodos">
+    <div>
+      <p class="kicker">Tudo numa casa só</p>
+      <h2 id="t-comodos">Cada cômodo é uma parte do sistema.</h2>
+      <p class="lead" style="margin-bottom:24px">Toque num cômodo da planta para ver o que ele faz.</p>
+      <div class="ficha" id="ficha" aria-live="polite"></div>
+    </div>
+    <div>${plantaSvg()}<p class="planta-dica">A planta do ${nome}.</p></div>
+  </div>
+  <ul class="vis-oculto legenda-comodos">
+    ${COMODOS.map((c) => `<li data-comodo="${c.k}" data-ir="${c.ir}"><h3>${esc(c.nome)}</h3><p>${esc(c.texto)}</p></li>`).join('\n    ')}
+  </ul>
+</div></section>
+
+<section id="para-quem" class="claro" aria-labelledby="t-quem"><div class="cx">
+  <h2 id="t-quem">Do corretor que trabalha sozinho à imobiliária com equipe.</h2>
   <p class="lead">O mesmo sistema, ajustado ao tamanho de quem usa.</p>
   <div class="dois">
-    <div class="perfil"><h3>Corretor autônomo</h3><p>Você sozinho, com a estrutura de uma imobiliária por trás.</p>
-      <ul><li>Agentes que atendem no WhatsApp enquanto você está em visita</li><li>Portal e blog com o seu nome</li><li>Captação na sua região sem planilha</li></ul></div>
-    <div class="perfil forte"><h3>Imobiliária</h3><p>A equipe toda no mesmo lugar, cada um vendo o que é seu.</p>
-      <ul><li>Perfis de administrador, gestor e corretor</li><li>Carteira em etapas e painel do dono</li><li>Agentes por tipo de imóvel e relatório diário</li></ul></div>
+    <div class="perfil"><h3>Corretor parceiro</h3><p>Você sozinho, com a estrutura de uma imobiliária por trás.</p>
+      <ul><li>Agentes que atendem no WhatsApp enquanto você está em visita</li><li>Portal, Revista e blog com o seu nome</li><li>Radar de captação na sua região, sem planilha</li><li>3D do prédio para impressionar o cliente na primeira conversa</li></ul></div>
+    <div class="perfil forte"><h3>Imobiliária parceira</h3><p>A equipe toda no mesmo lugar, cada um vendo o que é seu.</p>
+      <ul><li>Perfis de administrador, gestor e corretor</li><li>Carteira em etapas e painel do dono</li><li>Nove agentes por setor, com relatório diário</li><li>Linha Signature para o alto padrão</li></ul></div>
   </div>
-</section>
+</div></section>
 
-<section aria-labelledby="t-comeca">
+<section class="claro" aria-labelledby="t-comeca"><div class="cx">
   <h2 id="t-comeca">Como começa</h2>
   <p class="lead">Do primeiro contato ao sistema no ar com a sua marca.</p>
   <ol class="passos">
@@ -169,27 +357,25 @@ function pagina() {
     <li><h3>Montagem</h3><p>Trazemos os seus imóveis, ligamos o seu domínio e os números de WhatsApp.</p></li>
     <li><h3>No ar</h3><p>Portal, blog e agentes funcionando com a sua marca, e você acompanhando pelo painel.</p></li>
   </ol>
-</section>
-
-<section aria-labelledby="t-planos">
-  <div class="planos">
-    <div><h2 id="t-planos">Planos para corretor e para imobiliária</h2><p>O valor depende do tamanho da equipe e da região. Conte como você trabalha e montamos a proposta.</p></div>
-    <div><a class="btn" href="#contato">Pedir uma proposta</a></div>
+  <div class="planos" style="margin-top:72px">
+    <div><h2>Planos para corretor e para imobiliária</h2><p>O valor depende do tamanho da equipe e da região. Conte como você trabalha e montamos a proposta.</p></div>
+    <a class="btn" href="#contato">Pedir uma proposta</a>
   </div>
-</section>
+</div></section>
 
-<section id="perguntas" aria-labelledby="t-perguntas">
+<section id="perguntas" class="claro" aria-labelledby="t-perguntas"><div class="cx">
   <h2 id="t-perguntas">Perguntas</h2>
   <div class="perguntas">
     ${PERGUNTAS.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('\n    ')}
   </div>
-</section>
+</div></section>
 
-<section id="contato" aria-labelledby="t-contato">
+<section id="contato" class="escuro" aria-labelledby="t-contato"><div class="cx">
   <div class="contato">
     <div>
-      <h2 id="t-contato">Fale com a gente</h2>
-      <p class="lead" style="margin-bottom:0">Conte um pouco sobre você e respondemos pelo WhatsApp.</p>
+      <p class="kicker">Fale com a gente</p>
+      <h2 id="t-contato">Vamos montar o seu escritório?</h2>
+      <p class="lead" style="margin-bottom:0">Conte um pouco sobre você e respondemos pelo WhatsApp, com uma demonstração ao vivo.</p>
       <div class="direto">
         <a href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp ${esc(telBonito(WHATSAPP))}</a>
         <a href="mailto:${email}">${email}</a>
@@ -198,18 +384,17 @@ function pagina() {
     <form class="fale" data-whatsapp="${wa}">
       <label>Seu nome<input name="nome" required autocomplete="name"></label>
       <label>Cidade<input name="cidade" required autocomplete="address-level2"></label>
-      <label class="largo">Você é<select name="perfil" required><option value="">Escolha</option><option>Corretor autônomo</option><option>Imobiliária</option><option>Outro</option></select></label>
+      <label class="largo">Você é<select name="perfil" required><option value="">Escolha</option><option>Corretor parceiro</option><option>Imobiliária parceira</option><option>Outro</option></select></label>
       <label class="largo">Mensagem (opcional)<textarea name="mensagem" placeholder="Quantos corretores, quantos imóveis, o que mais incomoda hoje"></textarea></label>
       <p class="nota">Ao enviar, o WhatsApp abre com a sua mensagem pronta. Nada fica gravado nesta página.</p>
       <div class="largo"><button class="btn pri" type="submit">Enviar pelo WhatsApp</button></div>
     </form>
   </div>
-</section>
+</div></section>
 </main>
 
-<footer class="rodape"><span>${nome} · <a href="${APP_URL}">Entrar no sistema</a></span><span>© <span id="ano">${new Date().getFullYear()}</span> · <a href="mailto:${email}">${email}</a></span></footer>
-</div>
-<script src="/plataforma/site.js" defer></script>
+<footer class="rodape"><div class="cx"><span>${nome} · <a href="${APP_URL}">Entrar no sistema</a></span><span>Telas de demonstração com dados fictícios · © <span id="ano">${new Date().getFullYear()}</span> · <a href="mailto:${email}">${email}</a></span></div></footer>
+<script src="/plataforma/site.js?v=2" defer></script>
 </body></html>`;
 }
 
@@ -221,7 +406,7 @@ function vitrine(req, res, next) {
   if (!HOSTS.has(String(req.hostname || '').toLowerCase())) return next();
   if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nAllow: /\nSitemap: https://corretordofuturo.app/sitemap.xml\n');
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url></urlset>');
-  if (req.path.startsWith('/plataforma/') || req.path.startsWith('/gestor/')) return next(); // CSS e JS da própria página e do painel do gestor
+  if (req.path.startsWith('/plataforma/') || req.path.startsWith('/gestor/')) return next(); // CSS, JS, telas e vídeo da própria página e do painel do gestor
   if (req.method !== 'GET' && req.method !== 'HEAD') return res.status(404).json({ erro: 'Não encontrado.' });
   if (req.path !== '/') return res.redirect(302, '/');
   res.setHeader('Cache-Control', 'public, max-age=300');
