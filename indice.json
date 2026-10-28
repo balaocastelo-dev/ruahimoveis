@@ -1,15 +1,5 @@
 {
   "versao": 1,
-  "materias": [
-    {
-      "slug": "banco-teste-pe-direito-alto",
-      "titulo": "Pé-direito alto vale a pena? O que muda na sala",
-      "tema": "pe direito alto na sala",
-      "tipo": "dica",
-      "categoria": "construcao",
-      "criadaEm": "2026-10-28T19:20:01.550Z",
-      "situacao": "pronta"
-    }
-  ],
-  "atualizadoEm": "2026-10-28T19:20:06.897Z"
+  "materias": [],
+  "atualizadoEm": "2026-10-28T19:20:22.969Z"
 }
