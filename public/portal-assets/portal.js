@@ -5,9 +5,11 @@
   'use strict';
   var $ = function (s, el) { return (el || document).querySelector(s); };
   var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
+  // Nome da imobiliária (cliente): o servidor escreve no topo da página (.p-marca-n), vindo da configuração.
+  var CLIENTE = ((document.querySelector('.p-marca-n') || {}).textContent || '').trim() || 'RUAH';
 
   // ------------------------------------------------------------ favoritos
-  var CHAVE = 'ruah-favoritos';
+  var CHAVE = 'ruah-favoritos'; // identificador técnico (guarda os favoritos já salvos): não trocar
   function lerFavs() { try { var v = JSON.parse(localStorage.getItem(CHAVE) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
   function gravarFavs(l) { try { localStorage.setItem(CHAVE, JSON.stringify(l)); } catch (e) { /* aparelho sem armazenamento */ } }
   function pintarFavs() {
@@ -141,7 +143,7 @@
       .then(function (r) {
         if (!r.ok) throw new Error(r.j && r.j.erro || 'Não foi possível enviar.');
         form.closest('.p-contato').classList.add('enviado');
-        aviso(d.visita ? 'Pedido de visita enviado. Um corretor da RUAH vai confirmar o dia e o horário com você.' : 'Recebemos seu contato. Um corretor da RUAH responde em breve, em horário comercial.');
+        aviso(d.visita ? 'Pedido de visita enviado. Um corretor da ' + CLIENTE + ' vai confirmar o dia e o horário com você.' : 'Recebemos seu contato. Um corretor da ' + CLIENTE + ' responde em breve, em horário comercial.');
       })
       .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo ou fale pelo WhatsApp.', true); botao.disabled = false; botao.textContent = 'Enviar para o corretor'; });
   });
@@ -173,9 +175,9 @@
       .then(function (r) {
         if (!r.ok) throw new Error(r.j && r.j.erro || 'Não foi possível enviar.');
         formB.closest('.p-contato').classList.add('enviado');
-        aviso(d.motivo === 'vender' ? 'Recebemos seu contato. Um corretor da RUAH vai falar com você sobre o seu imóvel.' : 'Recebemos seu contato. Um corretor da RUAH responde em breve, em horário comercial.');
+        aviso(d.motivo === 'vender' ? 'Recebemos seu contato. Um corretor da ' + CLIENTE + ' vai falar com você sobre o seu imóvel.' : 'Recebemos seu contato. Um corretor da ' + CLIENTE + ' responde em breve, em horário comercial.');
       })
-      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a RUAH'; });
+      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a ' + CLIENTE; });
   });
 
   // ------------------------------------------------------------ Clube Signature: pedir acesso aos valores
