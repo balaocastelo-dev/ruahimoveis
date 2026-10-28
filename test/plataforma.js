@@ -24,6 +24,14 @@ const G = require('../src/plataforma/gestor');
   r = await fetch(base + '/gestor-api/imobiliarias', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{}' }); assert.equal(r.status, 403); console.log('ok · pedido sem o cabeçalho do painel é recusado');
   r = await fetch(base.replace('127.0.0.1', 'localhost') + '/gestor'); assert.equal(r.status, 200);
 
+  // página inicial: sem usuários ainda (primeiro acesso) é o sistema; depois, o portal com o botão Entrar
+  r = await fetch(base + '/'); assert.ok(/app\.js|MARCA|marca\.js/.test(await r.text()), 'primeiro acesso abre o sistema');
+  require('../src/db').run("INSERT INTO usuarios(nome,email,perfil,senha_hash) VALUES('A','a@a.com','adm','x')");
+  r = await fetch(base + '/'); let t = await r.text(); assert.ok(/ir\.js/.test(t) && !/marca\.js/.test(t), 'visitante vai para o portal');
+  r = await fetch(base + '/entrar'); assert.ok(/marca\.js/.test(await r.text()), '/entrar abre o sistema');
+  r = await fetch(base + '/imoveis'); t = await r.text(); assert.ok(/href="\/entrar"/.test(t), 'portal tem o botão Entrar');
+  console.log('ok · página inicial = portal com "Entrar"; /entrar abre o sistema');
+
   // conta suspensa
   r = await fetch(base + '/imoveis'); assert.notEqual(r.status, 503);
   setConfig('plataforma_suspensa', '1'); require('../src/plataforma/suspensa').limpa();

@@ -109,7 +109,21 @@ app.get('/v/:token/og.jpg', (req, res, next) => { publico.fotoOg(req, res).catch
 app.get('/v/:token', (req, res, next) => { try { publico.paginaLink(req, res); } catch (e) { next(e); } });
 // A tela do sistema sai pelo Express (não como arquivo estático), para que o domínio da plataforma
 // nunca a entregue: na Vercel, um public/index.html seria servido antes de qualquer regra do servidor.
-app.get(['/', '/index.html'], (req, res) => { res.setHeader('Cache-Control', 'no-cache'); res.sendFile(path.join(PUB, 'app.html')); });
+// Página inicial = portal de imóveis (/imoveis), com o botão "Entrar". Quem já está logado (ou abriu um link
+// do sistema, /#/...) vai para o sistema; /entrar abre sempre a tela de entrada. Na entrada da plataforma
+// (app.corretordofuturo.app) e sem nenhum usuário ainda (primeiro acesso), a raiz continua sendo o sistema.
+const telaDoSistema = (req, res) => { res.setHeader('Cache-Control', 'no-cache'); res.sendFile(path.join(PUB, 'app.html')); };
+app.get('/entrar', telaDoSistema);
+app.get(['/', '/index.html'], (req, res) => {
+  const { APP_HOSTS } = require('./src/plataforma/vitrine');
+  let logado = false, semUsuarios = false;
+  try { logado = !!require('./src/auth').usuarioDaSessao(req); } catch {}
+  if (!logado) { try { semUsuarios = !require('./src/db').one('SELECT 1 AS x FROM usuarios LIMIT 1'); } catch {} }
+  if (logado || semUsuarios || APP_HOSTS.has(String(req.hostname || '').toLowerCase())) return telaDoSistema(req, res);
+  // o endereço depois do # não chega ao servidor: a página decide (com #/... vai para /entrar, senão para /imoveis)
+  res.setHeader('Cache-Control', 'no-cache');
+  res.type('html').send('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Imóveis</title><meta name="robots" content="noindex"><script src="/ir.js"></script><noscript><meta http-equiv="refresh" content="0;url=/imoveis"></noscript></head><body><a href="/imoveis">Ver os imóveis</a></body></html>');
+});
 app.use(express.static(PUB, { index: false, maxAge: 0 }));
 
 // Erros: mensagem clara para o usuário, detalhe só no console.

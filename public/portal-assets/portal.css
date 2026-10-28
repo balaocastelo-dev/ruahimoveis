@@ -577,3 +577,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 }
 @media (min-width:1800px){:root{--largura:1400px}}
 @media (min-width:2300px){:root{--largura:1560px}body{font-size:18px}}
+
+/* botão Entrar (área da equipe) no topo do portal */
+.p-nav a.p-nav-entrar{border:1px solid var(--grafite);border-radius:999px;padding:6px 16px;font-weight:600;text-decoration:none}
+.p-nav a.p-nav-entrar:hover{background:var(--grafite);color:var(--cal);text-decoration:none}

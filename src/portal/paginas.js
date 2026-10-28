@@ -135,12 +135,13 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
     <a href="/blog">${esc(cfg.BLOG_NOME)}</a>
     ${zap ? `<a class="p-nav-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
+    <a class="p-nav-entrar" href="/entrar" rel="nofollow">Entrar</a>
   </nav>
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
   <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
+  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}${SITE_CLIENTE ? `<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a>` : ''}<a href="/entrar" rel="nofollow">Área da equipe</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>

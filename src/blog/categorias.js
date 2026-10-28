@@ -21,7 +21,8 @@ const nomeDaCategoria = (slug) => (CATEGORIAS.find((c) => c.slug === slug) || {}
 
 // Site e Instagram da imobiliária. SITE_CLIENTE / INSTAGRAM_CLIENTE no .env; SITE_RUAH / INSTAGRAM_RUAH (nomes antigos) continuam valendo.
 const envDe = (...nomes) => { for (const n of nomes) { const v = (process.env[n] || '').trim(); if (v) return v; } return ''; };
-const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH') || 'https://www.ruahimobiliaria.com.br';
+// site próprio da imobiliária: só a RUAH tem um padrão; as outras só se configurarem SITE_CLIENTE (senão o rodapé não mostra o link)
+const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH') || (/^ruah$/i.test(process.env.CLIENTE_NOME || 'RUAH') ? 'https://www.ruahimobiliaria.com.br' : '');
 const INSTAGRAM_CLIENTE = envDe('INSTAGRAM_CLIENTE', 'INSTAGRAM_RUAH');
 const SITE_RUAH = SITE_CLIENTE, INSTAGRAM_RUAH = INSTAGRAM_CLIENTE; // apelidos antigos
 
