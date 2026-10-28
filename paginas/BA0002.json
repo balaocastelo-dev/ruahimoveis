@@ -1,0 +1,323 @@
+{
+  "codigo": "BA0002",
+  "slug": "galpao-jardim-santa-genebra-campinas-sp-ba0002",
+  "titulo": "Galpão com 4.000m² de área construída no Jardim Santa Genebra, Campinas",
+  "resumo": "Galpão com 4.000m² de área construída no Jardim Santa Genebra, Campinas. Ideal para indústrias, centros de distribuição e operações logísticas.",
+  "capa": {
+    "foto": 125,
+    "alt": "Fachada de prédio industrial com logotipo 'RUAH' e céu azul com sol brilhante"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão com 4.000m² de área construída está localizado no Jardim Santa Genebra, Campinas. Com 7.200m² de terreno, ele é ideal para indústrias, centros de distribuição, operações logísticas, centros corporativos e instituições de ensino. A propriedade possui três salões amplos, 20 salas para diferentes setores e áreas para circulação, estacionamento e expansão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sua localização estratégica, próxima a grandes indústrias como Luxottica e Arcor, facilita o acesso às principais vias da região e a integração com importantes polos industriais e comerciais. O imóvel é versátil e oferece estrutura e funcionalidade para empresas que valorizam posicionamento estratégico para suas operações."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Área construída de 4.000m² com três salões amplos",
+        "20 salas distribuídas para diferentes setores administrativos e operacionais",
+        "Localização estratégica, próxima a indústrias importantes",
+        "Espaço adequado para centros de distribuição e operações logísticas",
+        "Terreno com 7.200m² e áreas verdes ao redor"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e fachada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do imóvel é moderna e apresenta uma estrutura curva com janelas retangulares. As fotos mostram a fachada com gramado e palmeiras ao redor, além de uma placa de venda visível. O terreno contém áreas verdes, estradas paralelas e prédios industriais ao redor, indicando uma infraestrutura bem desenvolvida na região."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 114,
+          "legenda": "Fachada de edifício com gramado e palmeiras"
+        },
+        {
+          "foto": 126,
+          "legenda": "Piscina em jardim com palmeiras e céu azul"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área interna e estrutura do imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel possui salas amplos com pisos de mármore preto e branco, tetos com iluminação direta e paredes brancas. A foto da sala mostra um piso xadrez e colunas brancas, indicando uma estrutura moderna e funcional. Há corredores com piso de mármore preto e branco e paredes cinza, revelando um ambiente moderno e adequado para operações industriais e comerciais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 128,
+          "legenda": "Sala com piso xadrez e colunas brancas"
+        },
+        {
+          "foto": 130,
+          "legenda": "Corredor moderno com piso de mármore preto e branco"
+        },
+        {
+          "foto": 132,
+          "legenda": "Sala vazia com piso preto e branco e teto com ventilação"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiros e escritórios"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos, com pisos de mármore preto, divisórias de vidro e bancadas de mármore branco. Alguns ambientes possuem luz natural e espelhos grandes. Além disso, há escritórios com divisórias de tijolos azuis e portas de vidro, indicando uma infraestrutura adequada para setores administrativos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 134,
+          "legenda": "Banheiro moderno com piso de mármore preto e bancadas de mármore branco"
+        },
+        {
+          "foto": 136,
+          "legenda": "Escritório com porta de vidro e divisória de tijolos azuis"
+        },
+        {
+          "foto": 137,
+          "legenda": "Banheiro com bancada de mármore e divisórias de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e acesso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está situado em uma região com acesso fácil às principais vias da cidade, próximo a indústrias importantes. As fotos mostram estradas com sinalização de direção, indicando uma boa infraestrutura viária e logística. A localização estratégica favorece o transporte e a integração com polos industriais e comerciais."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 124,
+          "legenda": "Interseção de ruas com sinalização de direção"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão é ideal para empresas que buscam espaço, infraestrutura e localização estratégica. Com 4.000m² de área construída e 7.200m² de terreno, ele é adequado para indústrias, centros de distribuição, operações logísticas e instituições de ensino. A propriedade oferece estrutura e funcionalidade para empresas que valorizam posicionamento estratégico para suas operações."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, as características do condomínio e quais detalhes não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 114,
+      "legenda": "Fachada de edifício com gramado e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 118,
+      "legenda": "Fachada de edifício com gramado e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 125,
+      "legenda": "Fachada de prédio industrial com logotipo 'RUAH' e céu azul com sol brilhante",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 127,
+      "legenda": "Fachada de edifício com entrada e janelas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 131,
+      "legenda": "Fachada de imóvel com logotipo 'RUAH' e palmeiras ao lado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 141,
+      "legenda": "Fachada de edifício com vidros e revestimento de mármore preto e branco",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 115,
+      "legenda": "Vista aérea de um lote com estradas, prédios e áreas verdes",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 116,
+      "legenda": "Terreno com edifício e palmeiras",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 117,
+      "legenda": "Terreno com cerca e vegetação",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 119,
+      "legenda": "Terreno com gramado e árvores em frente a uma propriedade",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 120,
+      "legenda": "Terreno com gramado e árvores em dia ensolarado",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 121,
+      "legenda": "Terreno com grama, palmeiras e edifício ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 123,
+      "legenda": "Pista de caminhada ao lado de uma estrada com palmeiras e céu azul",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 128,
+      "legenda": "Sala com piso xadrez e colunas brancas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 132,
+      "legenda": "Sala vazia com piso preto e branco e teto com ventilação",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 133,
+      "legenda": "Sala com grandes janelas e piso de cerâmica",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 139,
+      "legenda": "Sala vazia com piso de mármore preto e branco",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 142,
+      "legenda": "Sala vazia com piso de ladrilho e bancada escura",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 134,
+      "legenda": "Banheiro moderno com piso de mármore preto e bancadas de mármore branco",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 135,
+      "legenda": "Banheiro com divisórias de vidro e piso de mármore preto",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 137,
+      "legenda": "Banheiro com bancada de mármore e divisórias de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 138,
+      "legenda": "Banheiro com piso xadrez preto e branco, bancadas escuras e divisórias",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 140,
+      "legenda": "Banheiro com parede branca e piso escuro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 126,
+      "legenda": "Piscina em jardim com palmeiras e céu azul",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 143,
+      "legenda": "Garagem vazia com piso de ardósia e estrutura metálica",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 122,
+      "legenda": "Pista de ciclismo ao lado de uma estrada com palmeiras e céu azul",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 124,
+      "legenda": "Interseção de ruas com sinalização de direção",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 129,
+      "legenda": "Entrada do escritório com logo 'RUAH' e sinalização 'SAÍDA'",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 130,
+      "legenda": "Corredor moderno com piso de mármore preto e branco",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 136,
+      "legenda": "Escritório com porta de vidro e divisória de tijolos azuis",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de estacionamento tem?",
+      "resposta": "A ficha do imóvel não menciona o número de vagas de estacionamento."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "A ficha do imóvel não menciona a existência de uma área gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Galpão com 4.000m² de área construída no Jardim Santa Genebra, Campinas. Ideal para indústrias, centros de distribuição e operações logísticas. Localização estratégica, próximo a grandes indústrias. Acesse o link para mais informações.",
+    "hashtags": [
+      "galpao",
+      "campinas",
+      "industria",
+      "logistica",
+      "imovel",
+      "terreno",
+      "jardimsantagenebra",
+      "ruah"
+    ]
+  },
+  "versao": "5a865b4241c7",
+  "publicadoEm": "2026-10-28T04:30:19.646Z"
+}

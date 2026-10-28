@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0046",
+      "slug": "casa-em-condominio-6-suites-quinta-da-baroneza-braganca-paulista-ca0046",
+      "titulo": "Casa em condomínio com 6 suítes e área de lazer completa na Quinta da Baroneza",
+      "resumo": "Casa em condomínio na Quinta da Baroneza II com 6 suítes, 4 vagas de garagem e área de lazer completa, ideal para quem busca privacidade e conforto.",
+      "capa": {
+        "foto": 148,
+        "alt": "Vista panorâmica da casa com piscina e jardim"
+      },
+      "versao": "148cd3202623",
+      "publicadoEm": "2026-10-28T04:30:19.646Z"
+    },
+    {
+      "codigo": "BA0002",
+      "slug": "galpao-jardim-santa-genebra-campinas-sp-ba0002",
+      "titulo": "Galpão com 4.000m² de área construída no Jardim Santa Genebra, Campinas",
+      "resumo": "Galpão com 4.000m² de área construída no Jardim Santa Genebra, Campinas. Ideal para indústrias, centros de distribuição e operações logísticas.",
+      "capa": {
+        "foto": 125,
+        "alt": "Fachada de prédio industrial com logotipo 'RUAH' e céu azul com sol brilhante"
+      },
+      "versao": "5a865b4241c7",
+      "publicadoEm": "2026-10-28T04:30:19.646Z"
+    },
+    {
+      "codigo": "AR0008",
+      "slug": "terreno-parque-taquaral-campinas-sp-ar0008",
+      "titulo": "Terreno de 6.040 m² no Parque Taquaral, Campinas",
+      "resumo": "Terreno de 6.040 m² no Parque Taquaral, Campinas, com acesso a importantes eixos urbanos da cidade. Ideal para investidores e empresas.",
+      "capa": {
+        "foto": 204,
+        "alt": "Lote com construção em andamento e área verde"
+      },
+      "versao": "56a379fad68d",
+      "publicadoEm": "2026-10-28T04:30:19.645Z"
+    },
+    {
+      "codigo": "CA0004",
+      "slug": "casa-quinta-da-baroneza-ii-braganca-paulista-sp-ca0004",
+      "titulo": "Casa em condomínio de 5 suítes com piscina e vista na Quinta da Baroneza II",
+      "resumo": "Casa em condomínio na Quinta da Baroneza II com 5 suítes, piscina com borda infinita e vista para a natureza. Ideal para quem busca sofisticação e privacidade.",
+      "capa": {
+        "foto": 182,
+        "alt": "Vista panorâmica de jardim com piscina e céu azul"
+      },
+      "versao": "b7e8423303ac",
+      "publicadoEm": "2026-10-28T04:30:19.645Z"
+    },
+    {
+      "codigo": "CA0003",
+      "slug": "casa-condominio-chacaras-alto-nova-campinas-campinas-sp-ca0003",
+      "titulo": "Casa de 6 suítes em condomínio fechado com área de lazer completa em Campinas",
+      "resumo": "Casa em condomínio fechado com 6 suítes, 5 vagas de garagem e 1.150m² de área construída, localizada no Condomínio Chácaras do Alto da Nova Campinas, em.",
+      "capa": {
+        "foto": 212,
+        "alt": "Quadra de tênis com vista para a casa e piscina ao fundo"
+      },
+      "versao": "2da5f68e61ff",
+      "publicadoEm": "2026-10-28T04:30:19.643Z"
+    },
+    {
       "codigo": "AR0004",
       "slug": "terreno-barao-geraldo-campinas-sp-zoneamento-misto-ar0004",
       "titulo": "Terreno de 22.701 m² em Barão Geraldo, Campinas, SP com zoneamento misto",
@@ -1166,5 +1226,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:27:05.338Z"
+  "atualizadoEm": "2026-10-28T04:30:19.646Z"
 }

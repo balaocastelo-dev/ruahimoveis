@@ -1,0 +1,352 @@
+{
+  "codigo": "CA0004",
+  "slug": "casa-quinta-da-baroneza-ii-braganca-paulista-sp-ca0004",
+  "titulo": "Casa em condomínio de 5 suítes com piscina e vista na Quinta da Baroneza II",
+  "resumo": "Casa em condomínio na Quinta da Baroneza II com 5 suítes, piscina com borda infinita e vista para a natureza. Ideal para quem busca sofisticação e privacidade.",
+  "capa": {
+    "foto": 182,
+    "alt": "Vista panorâmica de jardim com piscina e céu azul"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma casa em condomínio na Quinta da Baroneza II, com 5 suítes, 9 vagas de garagem e área total de 3.200 m². Localizada em uma rua nobre e arborizada, esta residência combina arquitetura contemporânea com integração plena com a natureza. A piscina com borda infinita e a área gourmet são destaque, oferecendo conforto e elegância para receber. A casa também possui vista parcial para o campo de golfe e está cercada por árvores exuberantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa está situada em uma rua sem saída, cercada por árvores e a poucos passos do lago e da praia principal do condomínio. O imóvel tem área social com piso de granito, quartos com piso de madeira maciça e um elevador privativo que conecta a garagem às áreas sociais e íntimas. A área externa conta com um jardim bem manejado, vegetação densa e uma vista panorâmica para a natureza."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casa em condomínio com 5 suítes e 9 vagas de garagem",
+        "Piscina com borda infinita e jacuzzi para seis pessoas",
+        "Pisos de granito em área social e madeira maciça nos quartos",
+        "Vista para o campo de golfe e jardim exuberante",
+        "Elevador privativo com acesso direto da garagem",
+        "Área gourmet completa e integrada à piscina"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e totalmente integrada, conectando os ambientes sociais à área gourmet e à piscina. As varandas oferecem vistas panorâmicas para a natureza, com jardim verde ao fundo e piso claro que complementa a decoração. As paredes são bege e as portas de vidro permitem a entrada da luz natural, criando um ambiente aconchegante e moderno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda tem piso claro, paredes com painéis de madeira e vista para árvores e céu. Ela também conta com uma piscina transparente e uma porta de vidro que permite a integração com o ambiente interno. A varanda é um espaço ideal para relaxar e aproveitar a natureza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 174,
+          "legenda": "Varanda com piscina e vista para a natureza"
+        },
+        {
+          "foto": 179,
+          "legenda": "Varanda com jardim e vista para a natureza"
+        },
+        {
+          "foto": 186,
+          "legenda": "Varanda com vista para a natureza e piscina"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e área íntima"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos possuem piso de madeira maciça e excelente iluminação natural, com vistas para o jardim. A decoração é elegante, com paredes claras e luminárias embutidas. Cada quarto tem uma boa ventilação e está posicionado para oferecer conforto e privacidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O banheiro dos quartos tem box de vidro, piso claro e bancada de mármore. Ele é bem iluminado e conta com janelas que permitem a entrada de luz natural. O chuveiro de vidro e a cuba dupla dão um toque de modernidade e praticidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 188,
+          "legenda": "Banheiro moderno com bancada dupla e chuveiro de vidro"
+        },
+        {
+          "foto": 195,
+          "legenda": "Banheiro moderno com cuba dupla e box de vidro"
+        },
+        {
+          "foto": 199,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece uma série de lazeres, como campo de golfe, lago, churrasqueira, academia e área de convivência. A casa está localizada perto da praia principal do condomínio e do lago, garantindo momentos de relaxamento e convivência com a natureza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terreno de 3.200 m² inclui jardim com gramado verde e árvores exuberantes, além de uma área de lazer com vista para a natureza. O condomínio possui segurança 24h, portaria, circuito de TV e infraestrutura completa para morar com tranquilidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 177,
+          "legenda": "Jardim com casa e gramado"
+        },
+        {
+          "foto": 192,
+          "legenda": "Jardim com gramado verde e árvores"
+        },
+        {
+          "foto": 200,
+          "legenda": "Jardim com árvores e vegetação verde"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Localização e entorno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa está localizada em uma rua sem saída, cercada por árvores exuberantes e a poucos passos do lago e da praia principal do condomínio. A bem localizada oferece privacidade e vista parcial para o campo de golfe. O imóvel está em um condomínio fechado com segurança 24h, portaria e infraestrutura completa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O entorno do imóvel inclui áreas verdes bem manejadas, com gramado verde e vegetação densa. A proximidade do lago e da praia principal do condomínio garante acesso a espaços de lazer e convivência com a natureza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 175,
+          "legenda": "Fachada de casa moderna com gramado e árvores"
+        },
+        {
+          "foto": 176,
+          "legenda": "Fachada moderna com portas de madeira e janelas grandes"
+        },
+        {
+          "foto": 201,
+          "legenda": "Sala com piso de madeira e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e um estilo de vida sofisticado. A bem localizada, a área social integrada e a vista para a natureza fazem dele uma excelente opção para quem deseja morar em um ambiente de alta qualidade e exclusividade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, as características do condomínio e o que não aparece nas fotos, como a área de serviço e o acesso ao lago.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 175,
+      "legenda": "Fachada de casa moderna com gramado e árvores",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 176,
+      "legenda": "Fachada moderna com portas de madeira e janelas grandes",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 182,
+      "legenda": "Vista panorâmica de jardim e céu",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 183,
+      "legenda": "Sala vazia com piso de madeira e parede branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 184,
+      "legenda": "Sala vazia com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 185,
+      "legenda": "Sala vazia com piso de madeira e parede branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 187,
+      "legenda": "Sala vazia com piso de madeira e parede branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 189,
+      "legenda": "Sala vazia com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 191,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 193,
+      "legenda": "Sala vazia com piso de madeira e portas fechadas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 194,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 196,
+      "legenda": "Sala vazia com piso de madeira e tom de parede neutro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 197,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 198,
+      "legenda": "Sala vazia com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 201,
+      "legenda": "Sala com piso de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 174,
+      "legenda": "Varanda com piscina e vista para a natureza",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 179,
+      "legenda": "Varanda com jardim e vista para a natureza",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 186,
+      "legenda": "Varanda com vista para a natureza e piscina",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 178,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 180,
+      "legenda": "Banheiro com vaso sanitário preto e parede de granito",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 188,
+      "legenda": "Banheiro moderno com bancada dupla e chuveiro de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 195,
+      "legenda": "Banheiro moderno com cuba dupla e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 199,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 177,
+      "legenda": "Jardim com casa e gramado",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 192,
+      "legenda": "Jardim com gramado verde e árvores",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 200,
+      "legenda": "Jardim com árvores e vegetação verde",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 181,
+      "legenda": "Porta de elevador com logotipo 'RUAH' e vista para varanda",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 190,
+      "legenda": "Corredor com piso de madeira e iluminação embutida",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 202,
+      "legenda": "Corredor com piso de madeira e teto de vigas expostas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 203,
+      "legenda": "Corredor com piso de madeira e janelas laterais",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 9 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, o imóvel tem uma piscina com borda infinita e jacuzzi."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio de 5 suítes com piscina e vista para a natureza na Quinta da Baroneza II. Ideal para quem busca sofisticação e privacidade. bem localizada com acesso ao lago e ao campo de golfe. Agende sua visita!",
+    "hashtags": [
+      "casacondominio",
+      "quintadabaronesa",
+      "braganca",
+      "5suites",
+      "piscina",
+      "vista",
+      "sp",
+      "imovel"
+    ]
+  },
+  "versao": "b7e8423303ac",
+  "publicadoEm": "2026-10-28T04:30:19.645Z"
+}

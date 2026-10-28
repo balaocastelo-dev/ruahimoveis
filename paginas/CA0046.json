@@ -1,0 +1,331 @@
+{
+  "codigo": "CA0046",
+  "slug": "casa-em-condominio-6-suites-quinta-da-baroneza-braganca-paulista-ca0046",
+  "titulo": "Casa em condomínio com 6 suítes e área de lazer completa na Quinta da Baroneza",
+  "resumo": "Casa em condomínio na Quinta da Baroneza II com 6 suítes, 4 vagas de garagem e área de lazer completa, ideal para quem busca privacidade e conforto.",
+  "capa": {
+    "foto": 148,
+    "alt": "Vista panorâmica da casa com piscina e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizada no condomínio Quinta da Baroneza II, esta casa em condomínio oferece 6 suítes, 4 vagas de garagem e uma estrutura de lazer completa. A proposta combina modernidade, conforto e integração com a natureza, com ambientes amplos e uma área externa com piscina, jardim e áreas de convivência. Ideal para quem busca privacidade e um estilo de vida elevado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa está situada em um dos condomínios residenciais de campo mais exclusivos do Brasil, com infraestrutura completa e natureza preservada ao redor. As fotos mostram uma fachada moderna, piscina com borda infinita, jardim bem manejado e áreas de lazer como quadra de vôlei, campo de golfe e quadra de tênis."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "6 suítes com acabamento de alta qualidade",
+        "Piscina com prainha e borda infinita",
+        "Garagem coberta para 4 carros",
+        "Área de lazer com academia, spa e quadra de tênis",
+        "Bem localizada dentro do condomínio Quinta da Baroneza II"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integração"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa apresenta um living e jantar integrados, com ambientes amplos e uma vista para o jardim. As fotos mostram uma varanda com piso claro, vidraças panorâmicas e uma estrutura de madeira, ideal para refeições ao ar livre. O design moderno e a integração com o exterior são destaque, com uma sensação de amplitude e conforto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 154,
+          "legenda": "Varanda com vista para o jardim e céu azul"
+        },
+        {
+          "foto": 155,
+          "legenda": "Varanda com vista para jardim e céu azul"
+        },
+        {
+          "foto": 156,
+          "legenda": "Varanda coberta com deck de madeira e piscina"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área de lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece uma série de áreas de lazer, como quadra de vôlei de praia, campo de futebol com gramado sintético, quadra de tênis e campo de golfe. As fotos destacam uma quadra de areia com rede de vôlei, um campo de futebol com iluminação e uma quadra de tênis com luzes. Além disso, o condomínio conta com piscinas, spa, academia e áreas verdes preservadas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 163,
+          "legenda": "Quadra de vôlei de praia em área externa"
+        },
+        {
+          "foto": 164,
+          "legenda": "Campo de futebol com gramado sintético e iluminação"
+        },
+        {
+          "foto": 167,
+          "legenda": "Quadra de tênis com iluminação e pessoas jogando"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Jardim e vista externa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está cercado por um jardim bem manejado, com gramado verde, árvores e áreas de convivência. As fotos mostram um lago com ponte, um pôr do sol em um banco de madeira, e uma vista panorâmica com piscina, jardim e céu azul. A natureza ao redor complementa o ambiente, proporcionando tranquilidade e elegância."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 161,
+          "legenda": "Lago com ponte e vegetação ao redor"
+        },
+        {
+          "foto": 168,
+          "legenda": "Pôr do sol em jardim com árvore e banco"
+        },
+        {
+          "foto": 172,
+          "legenda": "Lago com caminho ao redor e vegetação ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Quinta da Baroneza II oferece infraestrutura completa, com segurança 24h, portaria, áreas de lazer, e acesso a serviços como academia, spa, quadras e áreas verdes. As fotos mostram a fachada moderna, o jardim bem cuidado e a vista panorâmica da casa, destacando o ambiente de alta qualidade e privacidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 151,
+          "legenda": "Jardim com grama, arbustos e estrutura moderna"
+        },
+        {
+          "foto": 160,
+          "legenda": "Fachada de imóvel com iluminação noturna e jardim bem manejado"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam privacidade, conforto e um estilo de vida elevado. A estrutura de lazer, a qualidade dos ambientes e a localização dentro do condomínio são fatores que tornam a proposta atraente para quem valoriza a conexão com a natureza e comodidades de alto padrão."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, as regras do condomínio e quais áreas não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 144,
+      "legenda": "Fachada moderna com piscina e gramado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 145,
+      "legenda": "Fachada moderna de casa com jardim e palmeiras",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 146,
+      "legenda": "Fachada moderna com logotipo 'RUAAH' e gramado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 147,
+      "legenda": "Fachada moderna com portão de madeira e gramado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 149,
+      "legenda": "Fachada moderna com piscina e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 150,
+      "legenda": "Fachada moderna com piscina e gramado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 160,
+      "legenda": "Fachada de imóvel com iluminação noturna e jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 162,
+      "legenda": "Fachada de imóvel rural com palmeiras e céu nublado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 148,
+      "legenda": "Vista panorâmica de casa com piscina e jardim",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 152,
+      "legenda": "Vista panorâmica de jardim e piscina",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 153,
+      "legenda": "Vista panorâmica de casa com piscina e jardim",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 161,
+      "legenda": "Lago com ponte e vegetação ao redor",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 172,
+      "legenda": "Lago com caminho ao redor e vegetação ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 173,
+      "legenda": "Lago com árvores e casa ao fundo",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 154,
+      "legenda": "Varanda com vista para o jardim e céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 155,
+      "legenda": "Varanda com vista para jardim e céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 156,
+      "legenda": "Varanda coberta com deck de madeira e piscina",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 157,
+      "legenda": "Varanda coberta com teto de madeira e vista para o jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 151,
+      "legenda": "Jardim com grama, arbustos e estrutura moderna",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 158,
+      "legenda": "Quadro com azulejos azuis e brancos em um jardim",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 168,
+      "legenda": "Pôr do sol em jardim com árvore e banco",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 169,
+      "legenda": "Playground com escorregador e estrutura de madeira",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 170,
+      "legenda": "Pessoas a cavalo em um jardim com lago",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 159,
+      "legenda": "Piscina com vista para casa e palmeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 171,
+      "legenda": "Piscina com palmeiras e edifício ao fundo",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 163,
+      "legenda": "Quadra de vôlei de praia em área externa",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 164,
+      "legenda": "Campo de futebol com gramado sintético e iluminação",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 165,
+      "legenda": "Sala de jogos com televisores e pista de bowling",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 166,
+      "legenda": "Golfistas em campo de golfe",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 167,
+      "legenda": "Quadra de tênis com iluminação e pessoas jogando",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o imóvel?",
+      "resposta": "O imóvel possui 6 suítes."
+    },
+    {
+      "pergunta": "Tem área de lazer?",
+      "resposta": "Sim, o imóvel conta com área de lazer completa, incluindo piscina, spa, academia, quadras e áreas verdes."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio com 6 suítes, 4 vagas de garagem e área de lazer completa na Quinta da Baroneza II. Um imóvel que combina modernidade, conforto e integração com a natureza. Ideal para quem busca privacidade e um estilo de vida elevado.",
+    "hashtags": [
+      "casacondominio",
+      "bragancapaulista",
+      "quintadabaroneza",
+      "6suites",
+      "arealazer",
+      "imovelexclusivo",
+      "condominiofechado",
+      "natureza"
+    ]
+  },
+  "versao": "148cd3202623",
+  "publicadoEm": "2026-10-28T04:30:19.646Z"
+}

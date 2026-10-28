@@ -1,0 +1,141 @@
+{
+  "codigo": "CA0003",
+  "slug": "casa-condominio-chacaras-alto-nova-campinas-campinas-sp-ca0003",
+  "titulo": "Casa de 6 suítes em condomínio fechado com área de lazer completa em Campinas",
+  "resumo": "Casa em condomínio fechado com 6 suítes, 5 vagas de garagem e 1.150m² de área construída, localizada no Condomínio Chácaras do Alto da Nova Campinas, em.",
+  "capa": {
+    "foto": 212,
+    "alt": "Quadra de tênis com vista para a casa e piscina ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Você está diante de uma casa de altíssimo padrão em construção, localizada no Condomínio Chácaras do Alto da Nova Campinas, em Campinas. Com 1.150m² de área construída, ela conta com 6 suítes, 5 vagas de garagem e um terreno de 5.185m². A casa oferece um projeto arquitetônico que combina sofisticação e conforto, com áreas dedicadas a lazer, como uma piscina com deck, quadra de tênis e área verde extensa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel é ideal para quem busca um espaço amplo e privado, com acabamento completo e opção de personalização durante a construção. O condomínio oferece segurança 24 horas, contato com a natureza e fácil acesso às principais regiões de Campinas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "6 suítes com acabamento diferenciado",
+        "5 vagas de garagem cobertas",
+        "Piscina com deck e área de lazer completa",
+        "Condomínio fechado com segurança 24 horas",
+        "Projeto personalizável durante a construção"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e integrada, com living espaçoso, home theater e área gourmet. O imóvel também conta com uma adega e uma academia, permitindo que o morador aproveite o conforto e a sofisticação do espaço. A piscina, com deck de madeira e espreguiçadeiras, é um dos pontos mais atraentes da área externa, combinando conforto e beleza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 211,
+          "legenda": "Piscina com deck de madeira e espreguiçadeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel está localizado no Condomínio Chácaras do Alto da Nova Campinas, que oferece segurança 24 horas, privacidade e contato com a natureza. O empreendimento conta com áreas verdes extensas, quadra de tênis e outras opções de lazer. O condomínio está situado em uma região estratégica, com fácil acesso às principais vias e áreas de Campinas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 213,
+          "legenda": "Planta baixa de um imóvel com piscina e áreas verdes"
+        },
+        {
+          "foto": 214,
+          "legenda": "Planta baixa de uma residência com vista para o terreno"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam um espaço amplo, moderno e seguro, com áreas dedicadas ao lazer e convivência. A localização do condomínio e o projeto arquitetônico fazem dele uma excelente opção para quem busca conforto, privacidade e qualidade de vida."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre o prazo de entrega do imóvel, as opções de personalização durante a obra e o que está incluído no acabamento completo.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 211,
+      "legenda": "Piscina com deck de madeira e espreguiçadeiras",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 212,
+      "legenda": "Quadra de tênis com vista para a casa",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 213,
+      "legenda": "Planta baixa de um imóvel com piscina e áreas verdes",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 214,
+      "legenda": "Planta baixa de uma residência com vista para o terreno",
+      "ambiente": "planta"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem a casa?",
+      "resposta": "A casa possui 6 suítes, incluindo uma suíte master privativa no pavimento superior."
+    },
+    {
+      "pergunta": "Tem área de lazer no condomínio?",
+      "resposta": "Sim, o condomínio conta com piscina, quadra de tênis, área verde e outras opções de lazer."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de altíssimo padrão em construção no Condomínio Chácaras do Alto da Nova Campinas, em Campinas. Com 6 suítes e área de lazer completa, ideal para quem busca conforto e privacidade. Conheça mais e agende sua visita.",
+    "hashtags": [
+      "casacondominio",
+      "campinas",
+      "imoveis",
+      "chacarascampinas",
+      "lazer",
+      "suites",
+      "construcao",
+      "condominiofechado"
+    ]
+  },
+  "versao": "2da5f68e61ff",
+  "publicadoEm": "2026-10-28T04:30:19.643Z"
+}
