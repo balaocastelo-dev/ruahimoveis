@@ -50,19 +50,19 @@
     },
     {
       "id": "f8",
-      "legenda": "Edifício no Cambuí com apartamento da ONDEMORAR à venda",
+      "legenda": "Edifício no Cambuí com apartamento do Onde morar? à venda",
       "alt": "Fachada de edifício residencial alto com varandas e tijolo aparente na base",
       "imovel_foto": 659
     },
     {
       "id": "f9",
-      "legenda": "Prédio residencial com palmeiras na entrada, com unidade da ONDEMORAR à venda",
+      "legenda": "Prédio residencial com palmeiras na entrada, com unidade do Onde morar? à venda",
       "alt": "Torre residencial branca com varandas e palmeiras altas na frente",
       "imovel_foto": 635
     },
     {
       "id": "f10",
-      "legenda": "Edifício alto do bairro visto da calçada, com apartamento da ONDEMORAR à venda",
+      "legenda": "Edifício alto do bairro visto da calçada, com apartamento do Onde morar? à venda",
       "alt": "Edifício de muitos andares fotografado de baixo, com gradil verde na frente",
       "imovel_foto": 828
     },
@@ -130,7 +130,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Cambuí é, antes de tudo, um bairro de apartamentos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 440 prédios residenciais no bairro, alguns com mais de 30 andares. Há de tudo: edifícios antigos com plantas amplas, prédios das décadas de 1980 e 1990 e lançamentos recentes com apartamentos compactos e lazer completo."
+      "texto": "O Cambuí é, antes de tudo, um bairro de apartamentos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 440 prédios residenciais no bairro, alguns com mais de 30 andares. Há de tudo: edifícios antigos com plantas amplas, prédios das décadas de 1980 e 1990 e lançamentos recentes com apartamentos compactos e lazer completo."
     },
     {
       "tipo": "paragrafo",
@@ -193,7 +193,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Cambuí concentra uma das maiores ofertas de bares, restaurantes e cafés de Campinas. A base de pontos de interesse usada pela ONDEMORAR registra centenas de restaurantes e cafés num raio de 1,5 km do centro do bairro, de casas tradicionais a endereços novos de cozinha autoral, japonesa e italiana."
+      "texto": "O Cambuí concentra uma das maiores ofertas de bares, restaurantes e cafés de Campinas. A base de pontos de interesse usada pelo Onde morar? registra centenas de restaurantes e cafés num raio de 1,5 km do centro do bairro, de casas tradicionais a endereços novos de cozinha autoral, japonesa e italiana."
     },
     {
       "tipo": "paragrafo",
@@ -282,11 +282,11 @@
     },
     {
       "pergunta": "O Cambuí tem mais casas ou prédios?",
-      "resposta": "Prédios. A base de condomínios da ONDEMORAR identifica cerca de 440 edifícios residenciais no bairro, alguns com mais de 30 andares, além de casas e sobrados em ruas internas."
+      "resposta": "Prédios. A base de condomínios do Onde morar? identifica cerca de 440 edifícios residenciais no bairro, alguns com mais de 30 andares, além de casas e sobrados em ruas internas."
     },
     {
       "pergunta": "Como ver os imóveis à venda no Cambuí?",
-      "resposta": "Os imóveis que a ONDEMORAR tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
+      "resposta": "Os imóveis que o Onde morar? tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
     }
   ],
   "fontes": [
@@ -311,7 +311,7 @@
       "site": "cmu.unicamp.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

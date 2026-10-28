@@ -26,13 +26,13 @@
     },
     {
       "id": "f4",
-      "legenda": "Vista aérea com o terreno da ONDEMORAR à venda na Vila Santa Isabel destacado em vermelho",
+      "legenda": "Vista aérea com o terreno do Onde morar? à venda na Vila Santa Isabel destacado em vermelho",
       "alt": "Imagem de satélite com quadras de casas à direita, uma área verde contornada em vermelho e uma rodovia à esquerda",
       "imovel_foto": 258
     },
     {
       "id": "f5",
-      "legenda": "Terreno arborizado da ONDEMORAR à venda na Vila Santa Isabel",
+      "legenda": "Terreno arborizado do Onde morar? à venda na Vila Santa Isabel",
       "alt": "Área gramada com árvores de copa larga e céu claro ao fundo",
       "imovel_foto": 265
     },
@@ -107,7 +107,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Vila Santa Isabel é, antes de tudo, um bairro de casas. O estudo do Instituto de Geociências descreve uma mistura de moradias de porte médio e popular, comércio e serviços de pequeno porte e trechos de paisagem ainda rural. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 24 condomínios no bairro, quase todos pequenos, somando perto de 180 unidades."
+      "texto": "A Vila Santa Isabel é, antes de tudo, um bairro de casas. O estudo do Instituto de Geociências descreve uma mistura de moradias de porte médio e popular, comércio e serviços de pequeno porte e trechos de paisagem ainda rural. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 24 condomínios no bairro, quase todos pequenos, somando perto de 180 unidades."
     },
     {
       "tipo": "paragrafo",
@@ -182,7 +182,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Para compras maiores e serviços especializados, o caminho natural é o centro de Barão Geraldo, ao longo da Avenida Albino J. B. de Oliveira, antiga Estrada dos Fazendeiros. A base de lugares da ONDEMORAR registra poucos serviços de saúde num raio de 1,5 km do bairro; vale conferir, antes da mudança, qual centro de saúde atende o seu endereço."
+      "texto": "Para compras maiores e serviços especializados, o caminho natural é o centro de Barão Geraldo, ao longo da Avenida Albino J. B. de Oliveira, antiga Estrada dos Fazendeiros. A base de lugares do Onde morar? registra poucos serviços de saúde num raio de 1,5 km do bairro; vale conferir, antes da mudança, qual centro de saúde atende o seu endereço."
     },
     {
       "tipo": "titulo",

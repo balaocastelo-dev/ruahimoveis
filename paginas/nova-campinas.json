@@ -38,25 +38,25 @@
     },
     {
       "id": "f6",
-      "legenda": "Casa com venda pela ONDEMORAR no Nova Campinas, em rua com calçada de pedra portuguesa",
+      "legenda": "Casa com venda pelo Onde morar? no Nova Campinas, em rua com calçada de pedra portuguesa",
       "alt": "Casa térrea de muro baixo ondulado em rua arborizada com calçada de mosaico",
       "imovel_foto": 1143
     },
     {
       "id": "f7",
-      "legenda": "Terreno à venda pela ONDEMORAR no Nova Campinas, em esquina arborizada",
+      "legenda": "Terreno à venda pelo Onde morar? no Nova Campinas, em esquina arborizada",
       "alt": "Esquina com muro baixo, gradil branco, jardim e árvores, com prédios ao fundo",
       "imovel_foto": 1382
     },
     {
       "id": "f8",
-      "legenda": "Piscina de condomínio com apartamento da ONDEMORAR à venda no Nova Campinas",
+      "legenda": "Piscina de condomínio com apartamento do Onde morar? à venda no Nova Campinas",
       "alt": "Piscina longa com palmeiras ao lado de um edifício residencial de varandas envidraçadas",
       "imovel_foto": 1273
     },
     {
       "id": "f9",
-      "legenda": "Jardim de condomínio novo do bairro, com unidade da ONDEMORAR à venda",
+      "legenda": "Jardim de condomínio novo do bairro, com unidade do Onde morar? à venda",
       "alt": "Área externa com canteiros, gramado e rampa, cercada por torres residenciais altas",
       "imovel_foto": 1627
     }
@@ -146,7 +146,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A mudança mais recente é a verticalização. Segundo reportagem do ACidadeON com a PUC-Campinas, o Plano Diretor de 2018 flexibilizou a ocupação do solo, e o bairro recebeu ao menos 12 novos empreendimentos desde 2024. A base de condomínios da ONDEMORAR identifica cerca de 30 condomínios no bairro, a maioria prédios baixos ou recentes."
+      "texto": "A mudança mais recente é a verticalização. Segundo reportagem do ACidadeON com a PUC-Campinas, o Plano Diretor de 2018 flexibilizou a ocupação do solo, e o bairro recebeu ao menos 12 novos empreendimentos desde 2024. A base de condomínios do Onde morar? identifica cerca de 30 condomínios no bairro, a maioria prédios baixos ou recentes."
     },
     {
       "tipo": "fotos",
@@ -313,7 +313,7 @@
       "site": "novometro.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

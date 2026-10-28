@@ -14,13 +14,13 @@
     },
     {
       "id": "f2",
-      "legenda": "Prédio com apartamento da ONDEMORAR à venda no Mansões Santo Antônio",
+      "legenda": "Prédio com apartamento do Onde morar? à venda no Mansões Santo Antônio",
       "alt": "Fachada de prédio cinza com detalhes laranja e marquise de entrada na calçada",
       "imovel_foto": 1696
     },
     {
       "id": "f3",
-      "legenda": "Torre residencial do bairro com apartamento da ONDEMORAR à venda",
+      "legenda": "Torre residencial do bairro com apartamento do Onde morar? à venda",
       "alt": "Edifício alto de varandas visto de baixo, com palmeiras e jardim na frente",
       "imovel_foto": 1518
     },
@@ -32,7 +32,7 @@
     },
     {
       "id": "f5",
-      "legenda": "Playground sob pergolado em condomínio com imóvel da ONDEMORAR à venda",
+      "legenda": "Playground sob pergolado em condomínio com imóvel do Onde morar? à venda",
       "alt": "Brinquedos infantis sob pergolado metálico entre torres residenciais",
       "imovel_foto": 1724
     },
@@ -112,7 +112,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O perfil hoje é de **condomínios verticais**. A base de condomínios da ONDEMORAR identifica cerca de 34 condomínios no bairro, quase todos de prédios, que somam perto de 3 mil unidades; o mais alto tem 19 andares. A Rua Jasmim, segundo um guia de imobiliária local, foi a primeira a receber edifícios. Outras ruas com condomínios são a Rua Adelino Martins, a Rua Hermantino Coelho, a Rua Nelson Alaite e a Rua José Luiz Camargo Moreira."
+      "texto": "O perfil hoje é de **condomínios verticais**. A base de condomínios do Onde morar? identifica cerca de 34 condomínios no bairro, quase todos de prédios, que somam perto de 3 mil unidades; o mais alto tem 19 andares. A Rua Jasmim, segundo um guia de imobiliária local, foi a primeira a receber edifícios. Outras ruas com condomínios são a Rua Adelino Martins, a Rua Hermantino Coelho, a Rua Nelson Alaite e a Rua José Luiz Camargo Moreira."
     },
     {
       "tipo": "fotos",
@@ -305,7 +305,7 @@
       "site": "en.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

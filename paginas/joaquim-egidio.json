@@ -152,7 +152,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Morar em Joaquim Egídio é morar em casa. Não há prédios: a moradia se divide entre as casas do núcleo antigo, chácaras na área rural e **condomínios fechados de casas**, que fizeram a população do distrito crescer nos últimos anos. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022, identifica apenas três condomínios no distrito, todos horizontais."
+      "texto": "Morar em Joaquim Egídio é morar em casa. Não há prédios: a moradia se divide entre as casas do núcleo antigo, chácaras na área rural e **condomínios fechados de casas**, que fizeram a população do distrito crescer nos últimos anos. A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022, identifica apenas três condomínios no distrito, todos horizontais."
     },
     {
       "tipo": "fotos",
@@ -294,7 +294,7 @@
     },
     {
       "pergunta": "Joaquim Egídio tem prédios?",
-      "resposta": "Não. A moradia é de casas no núcleo antigo, chácaras e condomínios horizontais. A base de condomínios da ONDEMORAR identifica três condomínios no distrito, todos de casas."
+      "resposta": "Não. A moradia é de casas no núcleo antigo, chácaras e condomínios horizontais. A base de condomínios do Onde morar? identifica três condomínios no distrito, todos de casas."
     },
     {
       "pergunta": "O que fazer em Joaquim Egídio no fim de semana?",
@@ -355,7 +355,7 @@
       "site": "pt.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

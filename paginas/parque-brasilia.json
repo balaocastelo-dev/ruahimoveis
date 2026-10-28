@@ -45,7 +45,7 @@
       "itens": [
         "Bairro residencial de Campinas, vizinho do Jardim Flamboyant e do Jardim Alto da Barra",
         "Casas, sobrados, casas em condomínio e prédios de até cerca de 11 andares",
-        "A base da ONDEMORAR identifica cerca de 14 condomínios e 565 unidades no bairro",
+        "A base do Onde morar? identifica cerca de 14 condomínios e 565 unidades no bairro",
         "As ruas eram numeradas no loteamento e ganharam nomes a partir do fim dos anos 1970",
         "Shopping Iguatemi Campinas a cerca de 1,2 km do centro do bairro",
         "Avenida Doutor Bernardo Kaplan é uma das vias que cortam o bairro"
@@ -82,7 +82,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 14 condomínios no Parque Brasília, com aproximadamente 565 unidades. A maioria é vertical, e o prédio mais alto da base tem 11 andares. Não é um bairro de torres muito altas: a escala é de edifícios médios ao lado de casas e sobrados."
+      "texto": "A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 14 condomínios no Parque Brasília, com aproximadamente 565 unidades. A maioria é vertical, e o prédio mais alto da base tem 11 andares. Não é um bairro de torres muito altas: a escala é de edifícios médios ao lado de casas e sobrados."
     },
     {
       "tipo": "paragrafo",
@@ -101,7 +101,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O comércio do dia a dia fica nas ruas do bairro e nas vizinhas. A base de pontos de interesse usada pela ONDEMORAR, com dados do OpenStreetMap e do Overture Maps, registra num raio de 1,5 km do centro do bairro cerca de 36 mercados e padarias, mais de 100 restaurantes, lanchonetes e cafés, cerca de 18 farmácias e serviços de saúde e agências de bancos como Santander e Itaú."
+      "texto": "O comércio do dia a dia fica nas ruas do bairro e nas vizinhas. A base de pontos de interesse usada pelo Onde morar?, com dados do OpenStreetMap e do Overture Maps, registra num raio de 1,5 km do centro do bairro cerca de 36 mercados e padarias, mais de 100 restaurantes, lanchonetes e cafés, cerca de 18 farmácias e serviços de saúde e agências de bancos como Santander e Itaú."
     },
     {
       "tipo": "paragrafo",
@@ -203,7 +203,7 @@
     },
     {
       "pergunta": "O Parque Brasília tem mais casas ou apartamentos?",
-      "resposta": "Tem os dois. A base da ONDEMORAR identifica cerca de 14 condomínios, a maioria de prédios de até cerca de 11 andares, e os anúncios mostram também muitas casas e casas em condomínio."
+      "resposta": "Tem os dois. A base do Onde morar? identifica cerca de 14 condomínios, a maioria de prédios de até cerca de 11 andares, e os anúncios mostram também muitas casas e casas em condomínio."
     },
     {
       "pergunta": "Qual shopping fica perto do Parque Brasília?",
@@ -240,7 +240,7 @@
       "site": "comochegar.com"
     },
     {
-      "nome": "Base de condomínios e pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
+      "nome": "Base de condomínios e pontos de interesse do Onde morar?: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
     }
   ],
   "redes": {

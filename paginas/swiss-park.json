@@ -26,13 +26,13 @@
     },
     {
       "id": "f4",
-      "legenda": "Rua de condomínio no Swiss Park com casa da ONDEMORAR à venda",
+      "legenda": "Rua de condomínio no Swiss Park com casa do Onde morar? à venda",
       "alt": "Esquina de rua interna de condomínio com sobrados amarelos, jardim e calçada",
       "imovel_foto": 477
     },
     {
       "id": "f5",
-      "legenda": "Fachada de casa em condomínio com unidade da ONDEMORAR à venda no Swiss Park",
+      "legenda": "Fachada de casa em condomínio com unidade do Onde morar? à venda no Swiss Park",
       "alt": "Sobrado claro com telhado de telhas e jardim florido na frente, em rua de condomínio",
       "imovel_foto": 478
     },
@@ -126,7 +126,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Pelos números da incorporadora, o bairro soma 4.808 lotes residenciais e 212 comerciais, 17 lagos paisagísticos e cerca de 1 milhão de m² de área verde preservada. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022, identifica alguns condomínios verticais no bairro, o mais alto com cerca de sete andares: o Swiss Park é, antes de tudo, um bairro de casas."
+      "texto": "Pelos números da incorporadora, o bairro soma 4.808 lotes residenciais e 212 comerciais, 17 lagos paisagísticos e cerca de 1 milhão de m² de área verde preservada. A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022, identifica alguns condomínios verticais no bairro, o mais alto com cerca de sete andares: o Swiss Park é, antes de tudo, um bairro de casas."
     },
     {
       "tipo": "fotos",
@@ -192,7 +192,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Entre as escolas citadas nas proximidades está a **Fundação Bradesco**, a cerca de 600 metros do centro do bairro pela base da ONDEMORAR, e o Colégio RDS Swiss, segundo o guia do portal Chaves na Mão. Para compras maiores, as imobiliárias citam o Shopping Campinas e o Hipermercado Carrefour, além dos shoppings Parque Dom Pedro e Iguatemi, mais distantes."
+      "texto": "Entre as escolas citadas nas proximidades está a **Fundação Bradesco**, a cerca de 600 metros do centro do bairro pela base do Onde morar?, e o Colégio RDS Swiss, segundo o guia do portal Chaves na Mão. Para compras maiores, as imobiliárias citam o Shopping Campinas e o Hipermercado Carrefour, além dos shoppings Parque Dom Pedro e Iguatemi, mais distantes."
     },
     {
       "tipo": "paragrafo",
@@ -322,7 +322,7 @@
       "site": "fbcimoveis.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

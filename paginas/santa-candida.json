@@ -14,7 +14,7 @@
     },
     {
       "id": "f2",
-      "legenda": "Portão de condomínio de casas no Santa Cândida, com casa da ONDEMORAR à venda",
+      "legenda": "Portão de condomínio de casas no Santa Cândida, com casa do Onde morar? à venda",
       "alt": "Portão branco de condomínio com casas de telhado cinza e árvores floridas na calçada",
       "imovel_foto": 1875
     },
@@ -57,7 +57,7 @@
       "itens": [
         "Bairro residencial de Campinas, registrado como Parque Rural Fazenda Santa Cândida",
         "Vizinho do Parque das Universidades, sede do Campus I da PUC-Campinas, e das Mansões Santo Antônio",
-        "Condomínios de casas e de prédios: a base da ONDEMORAR identifica cerca de 70 condomínios no bairro",
+        "Condomínios de casas e de prédios: a base do Onde morar? identifica cerca de 70 condomínios no bairro",
         "Foi a primeira sede do Laboratório Nacional de Luz Síncrotron, entre 1986 e o fim dos anos 1980",
         "Abriga a Ilum Escola de Ciência, faculdade pública e gratuita do CNPEM, aberta em 2022",
         "Perto da Rodovia Dom Pedro I e do Shopping Parque Dom Pedro"
@@ -94,7 +94,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Santa Cândida mistura condomínios de casas e de prédios. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 70 condomínios no bairro, divididos quase meio a meio entre verticais e horizontais, com perto de 1.650 unidades. O prédio mais alto da base tem 24 andares. Entre os horizontais predominam vilas pequenas, de 10 a 50 casas."
+      "texto": "O Santa Cândida mistura condomínios de casas e de prédios. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 70 condomínios no bairro, divididos quase meio a meio entre verticais e horizontais, com perto de 1.650 unidades. O prédio mais alto da base tem 24 andares. Entre os horizontais predominam vilas pequenas, de 10 a 50 casas."
     },
     {
       "tipo": "paragrafo",
@@ -139,7 +139,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de pontos de interesse usada pela ONDEMORAR registra cerca de 14 escolas e instituições de ensino num raio de 1,5 km do centro do bairro. A lista com nomes e tempo a pé aparece na seção ao vivo desta página."
+      "texto": "A base de pontos de interesse usada pelo Onde morar? registra cerca de 14 escolas e instituições de ensino num raio de 1,5 km do centro do bairro. A lista com nomes e tempo a pé aparece na seção ao vivo desta página."
     },
     {
       "tipo": "titulo",
@@ -233,7 +233,7 @@
     },
     {
       "pergunta": "O Santa Cândida tem mais casas ou prédios?",
-      "resposta": "Os dois, quase meio a meio. A base de condomínios da ONDEMORAR identifica cerca de 70 condomínios no bairro, entre vilas de casas e prédios de até 24 andares."
+      "resposta": "Os dois, quase meio a meio. A base de condomínios do Onde morar? identifica cerca de 70 condomínios no bairro, entre vilas de casas e prédios de até 24 andares."
     },
     {
       "pergunta": "Qual faculdade fica no Santa Cândida?",
@@ -245,7 +245,7 @@
     },
     {
       "pergunta": "Como ver os imóveis à venda no Santa Cândida?",
-      "resposta": "Os imóveis que a ONDEMORAR tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
+      "resposta": "Os imóveis que o Onde morar? tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
     }
   ],
   "fontes": [
@@ -286,7 +286,7 @@
       "site": "imovelweb.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

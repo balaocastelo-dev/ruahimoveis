@@ -100,7 +100,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Flamboyant é, sobretudo, um bairro de apartamentos em prédios de porte médio. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 edifícios residenciais no bairro, com pouco mais de 700 unidades no total. Quase todos têm entre três e sete andares; o mais alto chega a doze."
+      "texto": "O Flamboyant é, sobretudo, um bairro de apartamentos em prédios de porte médio. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 edifícios residenciais no bairro, com pouco mais de 700 unidades no total. Quase todos têm entre três e sete andares; o mais alto chega a doze."
     },
     {
       "tipo": "paragrafo",
@@ -249,7 +249,7 @@
     },
     {
       "pergunta": "O Jardim Flamboyant tem mais casas ou apartamentos?",
-      "resposta": "Predominam apartamentos. A base de condomínios da ONDEMORAR identifica cerca de 50 prédios residenciais no bairro, quase todos de três a sete andares, e há também casas e sobrados."
+      "resposta": "Predominam apartamentos. A base de condomínios do Onde morar? identifica cerca de 50 prédios residenciais no bairro, quase todos de três a sete andares, e há também casas e sobrados."
     },
     {
       "pergunta": "Quais escolas ficam no Jardim Flamboyant?",
@@ -306,7 +306,7 @@
       "site": "guiamapa.com"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

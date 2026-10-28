@@ -160,7 +160,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Bosque é um bairro de prédios de médio porte. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 75 condomínios no bairro, quase todos verticais, com perto de 2.500 apartamentos. O edifício mais alto da base tem 22 andares, e a maioria fica entre 6 e 18."
+      "texto": "O Bosque é um bairro de prédios de médio porte. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 75 condomínios no bairro, quase todos verticais, com perto de 2.500 apartamentos. O edifício mais alto da base tem 22 andares, e a maioria fica entre 6 e 18."
     },
     {
       "tipo": "paragrafo",
@@ -174,7 +174,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O dia a dia se resolve a pé. A base de pontos de interesse usada pela ONDEMORAR registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos e é atualizada automaticamente."
+      "texto": "O dia a dia se resolve a pé. A base de pontos de interesse usada pelo Onde morar? registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista os lugares mais próximos e é atualizada automaticamente."
     },
     {
       "tipo": "chamada",
@@ -191,7 +191,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base usada pela ONDEMORAR conta mais de cem escolas, de educação infantil a cursos livres, num raio de 1,5 km. A lista das mais próximas, com o tempo de caminhada, aparece na seção ao vivo desta página."
+      "texto": "A base usada pelo Onde morar? conta mais de cem escolas, de educação infantil a cursos livres, num raio de 1,5 km. A lista das mais próximas, com o tempo de caminhada, aparece na seção ao vivo desta página."
     },
     {
       "tipo": "titulo",
@@ -258,7 +258,7 @@
     },
     {
       "pergunta": "O bairro Bosque tem mais prédios ou casas?",
-      "resposta": "Prédios. A base de condomínios da ONDEMORAR identifica cerca de 75 condomínios no bairro, quase todos verticais, além de casas e sobrados em várias ruas."
+      "resposta": "Prédios. A base de condomínios do Onde morar? identifica cerca de 75 condomínios no bairro, quase todos verticais, além de casas e sobrados em várias ruas."
     },
     {
       "pergunta": "Pode construir prédio alto perto do Bosque dos Jequitibás?",
@@ -303,7 +303,7 @@
       "site": "escol.as"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

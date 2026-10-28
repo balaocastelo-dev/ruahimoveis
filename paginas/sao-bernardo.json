@@ -69,7 +69,7 @@
       "itens": [
         "Bairro residencial de Campinas, também chamado de Vila São Bernardo",
         "Ocupação iniciada por volta dos anos 1940",
-        "Casas e sobrados ao lado de cerca de 50 condomínios, quase todos prédios, segundo a base da ONDEMORAR",
+        "Casas e sobrados ao lado de cerca de 50 condomínios, quase todos prédios, segundo a base do Onde morar?",
         "Cortado pela Avenida das Amoreiras, que tem faixas exclusivas do BRT Ouro Verde",
         "Praças Professor Paulo José Otaviano, Prof. Joaquim Orias Sylos e a Praça de Esportes Argemiro Roque",
         "Perto de Ponte Preta, Jardim do Trevo, Vila São Jorge, Vila Aurocan e Jardim Primavera"
@@ -100,7 +100,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Os imóveis variam bastante. Nas ruas internas predominam casas e sobrados; perto das avenidas aparecem os prédios. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022, identifica cerca de 50 condomínios no bairro, 44 deles verticais, somando perto de 1.500 unidades. A maioria dos prédios tem entre 3 e 8 andares; o mais alto chega a 16."
+      "texto": "Os imóveis variam bastante. Nas ruas internas predominam casas e sobrados; perto das avenidas aparecem os prédios. A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022, identifica cerca de 50 condomínios no bairro, 44 deles verticais, somando perto de 1.500 unidades. A maioria dos prédios tem entre 3 e 8 andares; o mais alto chega a 16."
     },
     {
       "tipo": "fotos",
@@ -147,7 +147,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Na educação, o bairro tem berçários e escolas particulares como o **Colégio Doctus** e a rede **Decisão-Objetivo**. A base de pontos da ONDEMORAR, feita com dados do OpenStreetMap e da Overture, lista cerca de 30 escolas num raio de 1,5 km, entre elas a **E.E José Maria Matosinho** e a **EMEF Professor Geny Rodriguez**. Por perto há também faculdades e cursos, como a Unip, a UniMetrocamp e o Centro Kennedy."
+      "texto": "Na educação, o bairro tem berçários e escolas particulares como o **Colégio Doctus** e a rede **Decisão-Objetivo**. A base de pontos do Onde morar?, feita com dados do OpenStreetMap e da Overture, lista cerca de 30 escolas num raio de 1,5 km, entre elas a **E.E José Maria Matosinho** e a **EMEF Professor Geny Rodriguez**. Por perto há também faculdades e cursos, como a Unip, a UniMetrocamp e o Centro Kennedy."
     },
     {
       "tipo": "paragrafo",
@@ -246,7 +246,7 @@
     },
     {
       "pergunta": "O São Bernardo tem mais casas ou apartamentos?",
-      "resposta": "Tem os dois. As ruas internas têm muitas casas e sobrados, e a base da ONDEMORAR identifica cerca de 50 condomínios no bairro, quase todos prédios, a maioria de 3 a 8 andares."
+      "resposta": "Tem os dois. As ruas internas têm muitas casas e sobrados, e a base do Onde morar? identifica cerca de 50 condomínios no bairro, quase todos prédios, a maioria de 3 a 8 andares."
     },
     {
       "pergunta": "Quais escolas ficam no São Bernardo?",
@@ -304,7 +304,7 @@
     }
   ],
   "redes": {
-    "legenda": "São Bernardo, em Campinas: bairro residencial que nasceu nos anos 1940, com ruas de nomes de estados e cidades paulistas, praças de vizinhança, comércio a pé e o BRT na Avenida das Amoreiras. No guia da ONDEMORAR você vê a história, as escolas, os acessos e para quem o bairro faz sentido. Link na bio.",
+    "legenda": "São Bernardo, em Campinas: bairro residencial que nasceu nos anos 1940, com ruas de nomes de estados e cidades paulistas, praças de vizinhança, comércio a pé e o BRT na Avenida das Amoreiras. No guia do Onde morar? você vê a história, as escolas, os acessos e para quem o bairro faz sentido. Link na bio.",
     "hashtags": [
       "saobernardo",
       "campinas",

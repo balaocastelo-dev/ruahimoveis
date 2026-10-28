@@ -105,7 +105,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, a maior parte deles verticais, com aproximadamente 1.400 unidades no total. Os prédios mais altos da base chegam a 16 andares, e boa parte dos condomínios tem poucos pavimentos, ao lado de conjuntos maiores com perto de 200 apartamentos."
+      "texto": "A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, a maior parte deles verticais, com aproximadamente 1.400 unidades no total. Os prédios mais altos da base chegam a 16 andares, e boa parte dos condomínios tem poucos pavimentos, ao lado de conjuntos maiores com perto de 200 apartamentos."
     },
     {
       "tipo": "fotos",
@@ -173,7 +173,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro e o entorno têm escolas de educação infantil, ensino fundamental e médio. Uma das referências públicas é a Escola Estadual Julio Mesquita, na Rua Daniel Cesario de Andrade, no Jardim Oliveiras, que oferece os anos finais do ensino fundamental, o ensino médio e educação profissional, segundo o cadastro escolar. A base da ONDEMORAR mostra a escola a cerca de 400 metros do centro da Vila Marieta."
+      "texto": "O bairro e o entorno têm escolas de educação infantil, ensino fundamental e médio. Uma das referências públicas é a Escola Estadual Julio Mesquita, na Rua Daniel Cesario de Andrade, no Jardim Oliveiras, que oferece os anos finais do ensino fundamental, o ensino médio e educação profissional, segundo o cadastro escolar. A base do Onde morar? mostra a escola a cerca de 400 metros do centro da Vila Marieta."
     },
     {
       "tipo": "paragrafo",
@@ -244,7 +244,7 @@
     },
     {
       "pergunta": "A Vila Marieta tem mais casas ou prédios?",
-      "resposta": "Tem os dois. Há casas em quadras pequenas e cerca de 35 condomínios, segundo a base da ONDEMORAR, a maioria verticais e com no máximo 16 andares."
+      "resposta": "Tem os dois. Há casas em quadras pequenas e cerca de 35 condomínios, segundo a base do Onde morar?, a maioria verticais e com no máximo 16 andares."
     },
     {
       "pergunta": "Quais escolas ficam perto da Vila Marieta?",
@@ -289,7 +289,7 @@
       "site": "prp.unicamp.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

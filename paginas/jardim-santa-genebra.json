@@ -20,7 +20,7 @@
     },
     {
       "id": "f3",
-      "legenda": "Galpão comercial com venda pela ONDEMORAR no Jardim Santa Genebra",
+      "legenda": "Galpão comercial com venda pelo Onde morar? no Jardim Santa Genebra",
       "alt": "Edifício comercial baixo com fachada de vidro curva, palmeiras e gramado na frente",
       "imovel_foto": 114
     },
@@ -117,7 +117,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro tem perfil residencial. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no Jardim Santa Genebra, quase todos verticais, que somam perto de 1.900 unidades. Entre os nomes da base estão os residenciais Lumini I, II e III, o Residencial Luxemburgo, o Residencial Colline Suisse e o Edifício Santa Genebra I."
+      "texto": "O bairro tem perfil residencial. A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no Jardim Santa Genebra, quase todos verticais, que somam perto de 1.900 unidades. Entre os nomes da base estão os residenciais Lumini I, II e III, o Residencial Luxemburgo, o Residencial Colline Suisse e o Edifício Santa Genebra I."
     },
     {
       "tipo": "paragrafo",
@@ -132,7 +132,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A ONDEMORAR tem à venda no bairro, no momento, um galpão comercial, o que mostra que o Jardim Santa Genebra também tem imóveis de uso não residencial nas bordas das avenidas. A seção *o que tem perto*, mais abaixo nesta página, lista os serviços mais próximos com o tempo a pé e é atualizada automaticamente."
+      "texto": "O Onde morar? tem à venda no bairro, no momento, um galpão comercial, o que mostra que o Jardim Santa Genebra também tem imóveis de uso não residencial nas bordas das avenidas. A seção *o que tem perto*, mais abaixo nesta página, lista os serviços mais próximos com o tempo a pé e é atualizada automaticamente."
     },
     {
       "tipo": "chamada",
@@ -149,7 +149,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A vizinhança com a **Unicamp** é a maior vantagem nesse ponto: pela base de pontos de interesse usada pela ONDEMORAR, a Faculdade de Ciências Médicas fica a cerca de 500 metros do centro do bairro. O guia do QuintoAndar cita ainda a proximidade com a PUC-Campinas e a Facamp, e a EMEI Presidente Arthur Bernardes entre os pontos de interesse da região."
+      "texto": "A vizinhança com a **Unicamp** é a maior vantagem nesse ponto: pela base de pontos de interesse usada pelo Onde morar?, a Faculdade de Ciências Médicas fica a cerca de 500 metros do centro do bairro. O guia do QuintoAndar cita ainda a proximidade com a PUC-Campinas e a Facamp, e a EMEI Presidente Arthur Bernardes entre os pontos de interesse da região."
     },
     {
       "tipo": "fotos",
@@ -168,7 +168,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O comércio mais próximo está na **Avenida Albino José Barbosa de Oliveira**, onde começam as vias do bairro e que leva ao centro de Barão Geraldo. Segundo a base de pontos de interesse usada pela ONDEMORAR, num raio de 1,5 km há mais de 20 mercados e padarias, cerca de 90 restaurantes e cafés, além de bancos, postos de combustível e academias. O QuintoAndar menciona farmácias, salões de beleza e pequenos mercados dentro do próprio bairro."
+      "texto": "O comércio mais próximo está na **Avenida Albino José Barbosa de Oliveira**, onde começam as vias do bairro e que leva ao centro de Barão Geraldo. Segundo a base de pontos de interesse usada pelo Onde morar?, num raio de 1,5 km há mais de 20 mercados e padarias, cerca de 90 restaurantes e cafés, além de bancos, postos de combustível e academias. O QuintoAndar menciona farmácias, salões de beleza e pequenos mercados dentro do próprio bairro."
     },
     {
       "tipo": "paragrafo",
@@ -300,7 +300,7 @@
       "site": "escol.as"
     },
     {
-      "nome": "Base de condomínios e pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios e pontos de interesse do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

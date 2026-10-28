@@ -149,7 +149,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Guanabara mistura casas térreas e sobrados com prédios residenciais, a maioria de altura média. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.800 apartamentos no total. O prédio mais alto da base tem 21 andares, e muitos edifícios ficam entre 7 e 16."
+      "texto": "O Guanabara mistura casas térreas e sobrados com prédios residenciais, a maioria de altura média. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.800 apartamentos no total. O prédio mais alto da base tem 21 andares, e muitos edifícios ficam entre 7 e 16."
     },
     {
       "tipo": "fotos",
@@ -164,7 +164,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pela ONDEMORAR registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
+      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pelo Onde morar? registra mais de cem mercados e padarias e mais de 300 restaurantes e cafés. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
     },
     {
       "tipo": "chamada",
@@ -196,7 +196,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Guanabara é conhecido pela grande concentração de consultórios médicos, e o Hospital Renascença aparece entre os pontos de referência do bairro. A base de pontos de interesse da ONDEMORAR registra mais de 140 serviços de saúde num raio de 1,5 km, entre clínicas, laboratórios e farmácias, além de agências bancárias e postos de combustível nas avenidas."
+      "texto": "O Guanabara é conhecido pela grande concentração de consultórios médicos, e o Hospital Renascença aparece entre os pontos de referência do bairro. A base de pontos de interesse do Onde morar? registra mais de 140 serviços de saúde num raio de 1,5 km, entre clínicas, laboratórios e farmácias, além de agências bancárias e postos de combustível nas avenidas."
     },
     {
       "tipo": "titulo",
@@ -260,7 +260,7 @@
     },
     {
       "pergunta": "O Guanabara tem mais casas ou prédios?",
-      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 60 condomínios no bairro, quase todos prédios, com perto de 1.800 apartamentos, ao lado de muitas casas e sobrados nas ruas internas."
+      "resposta": "Tem os dois. A base de condomínios do Onde morar? identifica cerca de 60 condomínios no bairro, quase todos prédios, com perto de 1.800 apartamentos, ao lado de muitas casas e sobrados nas ruas internas."
     },
     {
       "pergunta": "Quais escolas ficam no Guanabara?",
@@ -309,7 +309,7 @@
       "site": "melhorescola.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

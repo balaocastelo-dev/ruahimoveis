@@ -120,7 +120,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Chácara Primavera é um bairro de perfil misto. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro: perto de 30 horizontais, de casas e sobrados, e cerca de 14 verticais, que somam por volta de 1.400 unidades. O prédio mais alto da base tem 18 andares."
+      "texto": "A Chácara Primavera é um bairro de perfil misto. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro: perto de 30 horizontais, de casas e sobrados, e cerca de 14 verticais, que somam por volta de 1.400 unidades. O prédio mais alto da base tem 18 andares."
     },
     {
       "tipo": "paragrafo",
@@ -260,7 +260,7 @@
     },
     {
       "pergunta": "A Chácara Primavera tem mais casas ou apartamentos?",
-      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 60 condomínios no bairro, perto de 30 de casas e cerca de 14 de prédios, que concentram a maior parte das unidades."
+      "resposta": "Tem os dois. A base de condomínios do Onde morar? identifica cerca de 60 condomínios no bairro, perto de 30 de casas e cerca de 14 de prédios, que concentram a maior parte das unidades."
     },
     {
       "pergunta": "Qual a distância da Chácara Primavera até a Lagoa do Taquaral?",
@@ -309,7 +309,7 @@
       "site": "openstreetmap.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

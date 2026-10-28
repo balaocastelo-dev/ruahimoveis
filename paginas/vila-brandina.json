@@ -38,13 +38,13 @@
     },
     {
       "id": "f6",
-      "legenda": "Rua residencial da Vila Brandina, com terreno da ONDEMORAR à venda",
+      "legenda": "Rua residencial da Vila Brandina, com terreno do Onde morar? à venda",
       "alt": "Muro branco com portão de correr e portão de pedestre, casas e palmeiras ao fundo, calçada larga",
       "imovel_foto": 1890
     },
     {
       "id": "f7",
-      "legenda": "Vista aérea de uma quadra de casas da Vila Brandina, com o terreno da ONDEMORAR marcado",
+      "legenda": "Vista aérea de uma quadra de casas da Vila Brandina, com o terreno do Onde morar? marcado",
       "alt": "Foto aérea de casas com telhado de cerâmica, piscinas e uma avenida arborizada ao lado de um lote vazio marcado em vermelho",
       "imovel_foto": 1891
     }
@@ -106,7 +106,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A ocupação mistura dois perfis. Nas ruas internas predominam casas de padrão alto, em quadras arborizadas. Perto do shopping e das avenidas aparecem os condomínios de prédios. A base de condomínios da ONDEMORAR, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 20 condomínios no bairro, a maioria verticais, com pouco mais de mil unidades no total; o prédio mais alto tem 19 andares."
+      "texto": "A ocupação mistura dois perfis. Nas ruas internas predominam casas de padrão alto, em quadras arborizadas. Perto do shopping e das avenidas aparecem os condomínios de prédios. A base de condomínios do Onde morar?, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 20 condomínios no bairro, a maioria verticais, com pouco mais de mil unidades no total; o prédio mais alto tem 19 andares."
     },
     {
       "tipo": "paragrafo",
@@ -204,7 +204,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Em escolas, o mesmo guia aponta opções de ensino fundamental e médio na região e cita o Colégio Graal Kids. O mapa de serviços da ONDEMORAR, feito com dados do OpenStreetMap, também registra a Escola Estadual Alberto Medaljon a cerca de 500 metros do centro do bairro. Vale sempre conferir vagas e proposta pedagógica direto com cada escola."
+      "texto": "Em escolas, o mesmo guia aponta opções de ensino fundamental e médio na região e cita o Colégio Graal Kids. O mapa de serviços do Onde morar?, feito com dados do OpenStreetMap, também registra a Escola Estadual Alberto Medaljon a cerca de 500 metros do centro do bairro. Vale sempre conferir vagas e proposta pedagógica direto com cada escola."
     },
     {
       "tipo": "titulo",
@@ -290,7 +290,7 @@
       "site": "en.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios e mapa de serviços da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios e mapa de serviços do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

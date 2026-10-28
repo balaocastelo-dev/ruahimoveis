@@ -54,7 +54,7 @@
         "Muitas ruas têm nomes de cidades paulistas, dados por lei de 1957",
         "Cortado pela Avenida das Amoreiras, uma das vias mais longas da cidade",
         "Tem o Terminal BRT Campos Elíseos, em operação desde janeiro de 2024",
-        "Predomínio de casas e prédios baixos, de até 7 andares, segundo a base da ONDEMORAR",
+        "Predomínio de casas e prédios baixos, de até 7 andares, segundo a base do Onde morar?",
         "Conta com Centro de Saúde municipal que leva o nome do bairro"
       ],
       "titulo": "O Campos Elíseos em poucas linhas"
@@ -89,7 +89,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Campos Elíseos é, acima de tudo, um bairro de casas. As ruas foram traçadas em loteamentos dos anos 1950 e 1970, e a paisagem é de sobrados, casas térreas e pequenos prédios. A base de condomínios da ONDEMORAR identifica cerca de 36 condomínios no bairro, a maior parte verticais, mas todos baixos: o mais alto tem 7 andares. Somados, eles reúnem em torno de 500 unidades."
+      "texto": "O Campos Elíseos é, acima de tudo, um bairro de casas. As ruas foram traçadas em loteamentos dos anos 1950 e 1970, e a paisagem é de sobrados, casas térreas e pequenos prédios. A base de condomínios do Onde morar? identifica cerca de 36 condomínios no bairro, a maior parte verticais, mas todos baixos: o mais alto tem 7 andares. Somados, eles reúnem em torno de 500 unidades."
     },
     {
       "tipo": "paragrafo",
@@ -97,7 +97,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O comércio é de bairro e fica perto de casa. O levantamento de lugares usado pela ONDEMORAR, feito com dados do OpenStreetMap e do Overture Maps, encontra cerca de 50 mercados, padarias e empórios e perto de 80 restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro. Postos de combustível e serviços se concentram nas avenidas principais."
+      "texto": "O comércio é de bairro e fica perto de casa. O levantamento de lugares usado pelo Onde morar?, feito com dados do OpenStreetMap e do Overture Maps, encontra cerca de 50 mercados, padarias e empórios e perto de 80 restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro. Postos de combustível e serviços se concentram nas avenidas principais."
     },
     {
       "tipo": "fotos",
@@ -164,7 +164,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Quem tem filhos encontra escolas públicas e particulares a poucos minutos. O levantamento de lugares usado pela ONDEMORAR aponta cerca de 30 escolas num raio de 1,5 km do centro do bairro. Entre as particulares, o **Colégio Alicerce** fica na Rua Benedito Rodrigues Gouveia, dentro do Jardim Campos Elíseos, e atende da creche ao ensino fundamental."
+      "texto": "Quem tem filhos encontra escolas públicas e particulares a poucos minutos. O levantamento de lugares usado pelo Onde morar? aponta cerca de 30 escolas num raio de 1,5 km do centro do bairro. Entre as particulares, o **Colégio Alicerce** fica na Rua Benedito Rodrigues Gouveia, dentro do Jardim Campos Elíseos, e atende da creche ao ensino fundamental."
     },
     {
       "tipo": "paragrafo",
@@ -263,7 +263,7 @@
       "site": "escol.as"
     },
     {
-      "nome": "Base de condomínios e de lugares da ONDEMORAR: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
+      "nome": "Base de condomínios e de lugares do Onde morar?: Receita Federal, IBGE Censo 2022, OpenStreetMap e Overture Maps"
     }
   ],
   "redes": {

@@ -44,13 +44,13 @@
     },
     {
       "id": "f7",
-      "legenda": "Jardim de casa com a ONDEMORAR à venda na Cidade Universitária",
+      "legenda": "Jardim de casa com o Onde morar? à venda na Cidade Universitária",
       "alt": "Quintal com escada de madeira subindo entre plantas, árvores altas e mesa de jardim",
       "imovel_foto": 689
     },
     {
       "id": "f8",
-      "legenda": "Varanda com pergolado de casa à venda pela ONDEMORAR no bairro",
+      "legenda": "Varanda com pergolado de casa à venda pelo Onde morar? no bairro",
       "alt": "Casa de tijolo aparente com pergolado de madeira, cadeiras de varanda e janelas de vidro no andar de cima",
       "imovel_foto": 691
     }
@@ -108,7 +108,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 170 condomínios no bairro, quase todos verticais e baixos: o mais alto tem cinco andares. São, em boa parte, prédios de kitnets. Entre os horizontais, a base registra o Residencial Sapucaia e a associação de moradores da cohousing sênior Vila Conviver."
+      "texto": "A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 170 condomínios no bairro, quase todos verticais e baixos: o mais alto tem cinco andares. São, em boa parte, prédios de kitnets. Entre os horizontais, a base registra o Residencial Sapucaia e a associação de moradores da cohousing sênior Vila Conviver."
     },
     {
       "tipo": "paragrafo",
@@ -160,7 +160,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A vizinhança com a Unicamp é o que define o bairro. O campus fica a poucos minutos a pé de boa parte das ruas, e espaços como o Ciclo Básico e o Restaurante Universitário, o bandejão, estão a cerca de 300 a 450 metros do centro do bairro, segundo o levantamento de lugares próximos da ONDEMORAR."
+      "texto": "A vizinhança com a Unicamp é o que define o bairro. O campus fica a poucos minutos a pé de boa parte das ruas, e espaços como o Ciclo Básico e o Restaurante Universitário, o bandejão, estão a cerca de 300 a 450 metros do centro do bairro, segundo o levantamento de lugares próximos do Onde morar?"
     },
     {
       "tipo": "fotos",
@@ -197,7 +197,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "No dia a dia, clínicas, consultórios e farmácias se espalham pelo entorno do campus. O levantamento da ONDEMORAR conta cerca de 27 serviços de saúde num raio de 1,5 km do centro do bairro."
+      "texto": "No dia a dia, clínicas, consultórios e farmácias se espalham pelo entorno do campus. O levantamento do Onde morar? conta cerca de 27 serviços de saúde num raio de 1,5 km do centro do bairro."
     },
     {
       "tipo": "titulo",
@@ -210,7 +210,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "No transporte coletivo, o levantamento da ONDEMORAR aponta o Terminal Barão Geraldo a cerca de 1,3 km do centro do bairro. O guia da Unicamp recomenda checar os horários antes, porque os ônibus da região nem sempre passam com regularidade."
+      "texto": "No transporte coletivo, o levantamento do Onde morar? aponta o Terminal Barão Geraldo a cerca de 1,3 km do centro do bairro. O guia da Unicamp recomenda checar os horários antes, porque os ônibus da região nem sempre passam com regularidade."
     },
     {
       "tipo": "titulo",
@@ -294,7 +294,7 @@
       "site": "pt.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

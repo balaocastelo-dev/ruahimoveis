@@ -44,19 +44,19 @@
     },
     {
       "id": "f7",
-      "legenda": "Sobrado de esquina no Taquaral, com casa da ONDEMORAR à venda",
+      "legenda": "Sobrado de esquina no Taquaral, com casa do Onde morar? à venda",
       "alt": "Sobrado claro de dois andares com gradil azul numa esquina, com árvores e calçada de pedra portuguesa",
       "imovel_foto": 1184
     },
     {
       "id": "f8",
-      "legenda": "Casa térrea no Taquaral com imóvel da ONDEMORAR à venda",
+      "legenda": "Casa térrea no Taquaral com imóvel do Onde morar? à venda",
       "alt": "Fachada de casa térrea verde com dois portões de garagem brancos e telhado de telha cerâmica",
       "imovel_foto": 1876
     },
     {
       "id": "f9",
-      "legenda": "Casa de tijolo aparente no Taquaral, com imóvel da ONDEMORAR à venda",
+      "legenda": "Casa de tijolo aparente no Taquaral, com imóvel do Onde morar? à venda",
       "alt": "Muro e portão de madeira escura diante de um sobrado de tijolo aparente, numa rua ensolarada",
       "imovel_foto": 1179
     }
@@ -116,7 +116,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro: pouco mais de 50 verticais e pouco mais de 20 horizontais, somando em torno de 3.300 unidades. O maior em número de apartamentos é o Condomínio Jardins do Taquaral, e o prédio mais alto da base tem 31 andares."
+      "texto": "A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro: pouco mais de 50 verticais e pouco mais de 20 horizontais, somando em torno de 3.300 unidades. O maior em número de apartamentos é o Condomínio Jardins do Taquaral, e o prédio mais alto da base tem 31 andares."
     },
     {
       "tipo": "fotos",
@@ -196,7 +196,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro tem escolas públicas e particulares. Guias de moradia citam a **Escola Estadual Adalberto Nascimento**, o **Colégio Progresso**, com uma unidade bilíngue no Taquaral, e o **Colégio Farroupilha**. A base de pontos de interesse usada pela ONDEMORAR registra perto de 60 escolas, cursos e institutos num raio de 1,5 km do centro do bairro, e a lista das mais próximas aparece na seção ao vivo desta página."
+      "texto": "O bairro tem escolas públicas e particulares. Guias de moradia citam a **Escola Estadual Adalberto Nascimento**, o **Colégio Progresso**, com uma unidade bilíngue no Taquaral, e o **Colégio Farroupilha**. A base de pontos de interesse usada pelo Onde morar? registra perto de 60 escolas, cursos e institutos num raio de 1,5 km do centro do bairro, e a lista das mais próximas aparece na seção ao vivo desta página."
     },
     {
       "tipo": "paragrafo",
@@ -275,7 +275,7 @@
     },
     {
       "pergunta": "O Taquaral tem mais casas ou prédios?",
-      "resposta": "Mais casas e sobrados, com condomínios horizontais e prédios. A base de condomínios da ONDEMORAR identifica cerca de 85 condomínios no bairro, pouco mais de 50 deles verticais."
+      "resposta": "Mais casas e sobrados, com condomínios horizontais e prédios. A base de condomínios do Onde morar? identifica cerca de 85 condomínios no bairro, pouco mais de 50 deles verticais."
     }
   ],
   "fontes": [
@@ -312,7 +312,7 @@
       "site": "go-astronomy.com"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

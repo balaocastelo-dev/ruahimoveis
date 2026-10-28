@@ -32,7 +32,7 @@
     },
     {
       "id": "f5",
-      "legenda": "Prédio de esquina com imóvel da ONDEMORAR à venda na Vila Itapura",
+      "legenda": "Prédio de esquina com imóvel do Onde morar? à venda na Vila Itapura",
       "alt": "Prédio comercial de três andares em esquina, com faixa de pedestres e palmeiras na avenida ao lado",
       "imovel_foto": 469
     },
@@ -117,7 +117,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Vila Itapura de hoje é, sobretudo, um bairro de apartamentos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 prédios residenciais no bairro, somando perto de 1.800 unidades, o mais alto com cerca de 20 andares. Entre eles ainda resistem casas antigas, muitas com jardim na frente."
+      "texto": "A Vila Itapura de hoje é, sobretudo, um bairro de apartamentos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 prédios residenciais no bairro, somando perto de 1.800 unidades, o mais alto com cerca de 20 andares. Entre eles ainda resistem casas antigas, muitas com jardim na frente."
     },
     {
       "tipo": "fotos",
@@ -181,7 +181,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A região tem escolas públicas e particulares, da educação infantil ao ensino médio. A **Escola Estadual Dona Castorina Cavalheiro** aparece entre os pontos de referência do bairro, e o tradicional **Colégio Imaculada** fica nas imediações. No ensino superior, a PUC-Campinas e outras faculdades ficam a uma distância curta, e a base de pontos de interesse da ONDEMORAR registra unidades de ensino superior a poucos minutos a pé do centro do bairro."
+      "texto": "A região tem escolas públicas e particulares, da educação infantil ao ensino médio. A **Escola Estadual Dona Castorina Cavalheiro** aparece entre os pontos de referência do bairro, e o tradicional **Colégio Imaculada** fica nas imediações. No ensino superior, a PUC-Campinas e outras faculdades ficam a uma distância curta, e a base de pontos de interesse do Onde morar? registra unidades de ensino superior a poucos minutos a pé do centro do bairro."
     },
     {
       "tipo": "paragrafo",
@@ -205,7 +205,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Pelas avenidas Orosimbo Maia e Brasil se chega às rodovias Dom Pedro I e Anhanguera. Várias linhas de ônibus passam pelo bairro, e a Rodoviária de Campinas fica a pouco mais de 1 km do centro da Vila Itapura, segundo a base de pontos de interesse usada pela ONDEMORAR. O Terminal Mercado está a cerca de 1 km."
+      "texto": "Pelas avenidas Orosimbo Maia e Brasil se chega às rodovias Dom Pedro I e Anhanguera. Várias linhas de ônibus passam pelo bairro, e a Rodoviária de Campinas fica a pouco mais de 1 km do centro da Vila Itapura, segundo a base de pontos de interesse usada pelo Onde morar? O Terminal Mercado está a cerca de 1 km."
     },
     {
       "tipo": "titulo",
@@ -264,7 +264,7 @@
     },
     {
       "pergunta": "A Vila Itapura tem mais casas ou prédios?",
-      "resposta": "Prédios. A base de condomínios da ONDEMORAR identifica cerca de 50 edifícios residenciais no bairro, com perto de 1.800 unidades, além de casas antigas entre eles."
+      "resposta": "Prédios. A base de condomínios do Onde morar? identifica cerca de 50 edifícios residenciais no bairro, com perto de 1.800 unidades, além de casas antigas entre eles."
     },
     {
       "pergunta": "Vila Itapura e Guanabara são o mesmo bairro?",
@@ -301,7 +301,7 @@
       "site": "commons.wikimedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

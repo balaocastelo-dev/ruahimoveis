@@ -8,19 +8,19 @@
   "fotos": [
     {
       "id": "f1",
-      "legenda": "Casa com imóvel da ONDEMORAR à venda no Alphaville Campinas, com sobrados vizinhos e mata ao fundo",
+      "legenda": "Casa com imóvel do Onde morar? à venda no Alphaville Campinas, com sobrados vizinhos e mata ao fundo",
       "alt": "Piscina com borda de vidro em primeiro plano e, atrás, casas brancas de telhado vermelho entre árvores altas",
       "imovel_foto": 222
     },
     {
       "id": "f2",
-      "legenda": "Quintal com piscina e jardim de casa da ONDEMORAR à venda no bairro",
+      "legenda": "Quintal com piscina e jardim de casa do Onde morar? à venda no bairro",
       "alt": "Piscina estreita ao lado de deque de madeira, gramado e palmeiras, com a lateral da casa à direita",
       "imovel_foto": 221
     },
     {
       "id": "f3",
-      "legenda": "Jardim de casa em condomínio com imóvel da ONDEMORAR à venda no Alphaville Campinas",
+      "legenda": "Jardim de casa em condomínio com imóvel do Onde morar? à venda no Alphaville Campinas",
       "alt": "Gramado e canteiro de pedras ao lado de uma varanda envidraçada com mesa e cadeiras",
       "imovel_foto": 1442
     },
@@ -51,7 +51,7 @@
       "itens": [
         "Bairro de condomínios residenciais fechados, criado pela Alphaville Urbanismo",
         "Campinas foi, em 1994, a primeira cidade fora da Grande São Paulo a receber o modelo Alphaville",
-        "Predominam casas em condomínio horizontal; a base da ONDEMORAR registra só um prédio alto",
+        "Predominam casas em condomínio horizontal; a base do Onde morar? registra só um prédio alto",
         "Tem clube próprio, o Alphaville Campinas Clube, com piscinas, quadras e academia",
         "Fica perto de Barão Geraldo, onde estão a Unicamp e um campus da PUC-Campinas",
         "O acesso de carro é feito pela região da Rodovia Dom Pedro I (SP-065)",
@@ -83,7 +83,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Alphaville Campinas é um bairro de casas. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de oito condomínios no bairro, quase todos horizontais. A exceção é um edifício de 20 andares. Os condomínios seguem o padrão descrito pelos guias imobiliários: construções com regras urbanísticas rígidas, lotes grandes e poucas casas por quadra."
+      "texto": "O Alphaville Campinas é um bairro de casas. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de oito condomínios no bairro, quase todos horizontais. A exceção é um edifício de 20 andares. Os condomínios seguem o padrão descrito pelos guias imobiliários: construções com regras urbanísticas rígidas, lotes grandes e poucas casas por quadra."
     },
     {
       "tipo": "fotos",
@@ -230,7 +230,7 @@
     },
     {
       "pergunta": "O Alphaville Campinas tem prédios?",
-      "resposta": "Poucos. A base de condomínios da ONDEMORAR identifica cerca de oito condomínios no bairro, quase todos de casas, e um único edifício alto, de 20 andares."
+      "resposta": "Poucos. A base de condomínios do Onde morar? identifica cerca de oito condomínios no bairro, quase todos de casas, e um único edifício alto, de 20 andares."
     },
     {
       "pergunta": "Quais escolas ficam no Alphaville Campinas?",
@@ -275,7 +275,7 @@
       "site": "apto.vc"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

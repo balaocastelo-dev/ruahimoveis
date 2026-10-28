@@ -50,19 +50,19 @@
     },
     {
       "id": "f8",
-      "legenda": "Sobrado com venda pela ONDEMORAR no Jardim Chapadão",
+      "legenda": "Sobrado com venda pelo Onde morar? no Jardim Chapadão",
       "alt": "Sobrado verde com sacada branca, portão de madeira branco e palmeiras na frente",
       "imovel_foto": 1472
     },
     {
       "id": "f9",
-      "legenda": "Casa de dois andares no Jardim Chapadão, com venda pela ONDEMORAR",
+      "legenda": "Casa de dois andares no Jardim Chapadão, com venda pelo Onde morar?",
       "alt": "Sobrado claro com telhado inclinado e portão de garagem na frente, ao lado de um muro de pedra",
       "imovel_foto": 966
     },
     {
       "id": "f10",
-      "legenda": "Casa térrea de esquina no Jardim Chapadão, à venda pela ONDEMORAR",
+      "legenda": "Casa térrea de esquina no Jardim Chapadão, à venda pelo Onde morar?",
       "alt": "Casa térrea com telhado de telhas vermelhas, jardim gramado e calçada arborizada numa esquina",
       "imovel_foto": 1084
     }
@@ -83,7 +83,7 @@
         "Tem origem numa antiga fazenda de café; a urbanização ganhou força depois da chegada do quartel do Exército, nos anos 1950",
         "A Torre do Castelo, de 27 metros, foi erguida entre 1936 e 1940 e é tombada pelo Condepacc desde 2008",
         "A Pedreira do Chapadão, oficialmente Praça Ulysses Guimarães, foi inaugurada como área de lazer em 1994",
-        "Mistura casas e sobrados com prédios: a base da ONDEMORAR identifica cerca de 60 condomínios, quase todos verticais",
+        "Mistura casas e sobrados com prédios: a base do Onde morar? identifica cerca de 60 condomínios, quase todos verticais",
         "Faz divisa com Bonfim, Jardim Eulina, Vila Nova, Guanabara e Jardim IV Centenário"
       ],
       "titulo": "O Jardim Chapadão em poucas linhas"
@@ -157,7 +157,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O comércio é um dos pontos fortes. Há farmácias, bancos, lojas, restaurantes, padarias e postos de combustível, boa parte concentrada nas avenidas que saem da praça. A base de pontos de interesse da ONDEMORAR registra mais de cem restaurantes e cafés e cerca de 45 mercados e padarias num raio de 1,5 km do centro do bairro."
+      "texto": "O comércio é um dos pontos fortes. Há farmácias, bancos, lojas, restaurantes, padarias e postos de combustível, boa parte concentrada nas avenidas que saem da praça. A base de pontos de interesse do Onde morar? registra mais de cem restaurantes e cafés e cerca de 45 mercados e padarias num raio de 1,5 km do centro do bairro."
     },
     {
       "tipo": "titulo",
@@ -170,7 +170,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Os imóveis misturam casas térreas, sobrados e prédios. A base de condomínios da ONDEMORAR, feita com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.500 unidades no total. A maioria dos prédios tem entre 5 e 15 andares, e o mais alto chega a 19. Em volta deles, as casas ainda ocupam boa parte das ruas."
+      "texto": "Os imóveis misturam casas térreas, sobrados e prédios. A base de condomínios do Onde morar?, feita com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos verticais, com perto de 1.500 unidades no total. A maioria dos prédios tem entre 5 e 15 andares, e o mais alto chega a 19. Em volta deles, as casas ainda ocupam boa parte das ruas."
     },
     {
       "tipo": "fotos",
@@ -225,7 +225,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro tem muitas escolas infantis e creches, além de escolas particulares e públicas, como o Colégio Doctus. A base de pontos de interesse da ONDEMORAR lista cerca de 35 escolas num raio de 1,5 km, e a seção ao vivo desta página mostra as mais próximas com o tempo a pé."
+      "texto": "O bairro tem muitas escolas infantis e creches, além de escolas particulares e públicas, como o Colégio Doctus. A base de pontos de interesse do Onde morar? lista cerca de 35 escolas num raio de 1,5 km, e a seção ao vivo desta página mostra as mais próximas com o tempo a pé."
     },
     {
       "tipo": "paragrafo",
@@ -244,7 +244,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Praça 23 de Outubro funciona como um entroncamento: pela Avenida Andrade Neves se chega ao Centro, e as avenidas João Erbolato e Dr. Alberto Sarmento ligam o bairro às regiões vizinhas. Há várias linhas de ônibus e pontos de táxi. Pela base da ONDEMORAR, a Rodoviária Dr. Barbosa de Barros fica a cerca de 1,5 km do centro do bairro. Quem pedala deve saber que a estrutura para bicicleta é limitada."
+      "texto": "A Praça 23 de Outubro funciona como um entroncamento: pela Avenida Andrade Neves se chega ao Centro, e as avenidas João Erbolato e Dr. Alberto Sarmento ligam o bairro às regiões vizinhas. Há várias linhas de ônibus e pontos de táxi. Pela base do Onde morar?, a Rodoviária Dr. Barbosa de Barros fica a cerca de 1,5 km do centro do bairro. Quem pedala deve saber que a estrutura para bicicleta é limitada."
     },
     {
       "tipo": "paragrafo",
@@ -297,7 +297,7 @@
     },
     {
       "pergunta": "O Jardim Chapadão tem mais casas ou prédios?",
-      "resposta": "Os dois. A base da ONDEMORAR identifica cerca de 60 condomínios, quase todos prédios, com até 19 andares, mas casas e sobrados ainda ocupam boa parte das ruas."
+      "resposta": "Os dois. A base do Onde morar? identifica cerca de 60 condomínios, quase todos prédios, com até 19 andares, mas casas e sobrados ainda ocupam boa parte das ruas."
     }
   ],
   "fontes": [
@@ -334,7 +334,7 @@
       "site": "en.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

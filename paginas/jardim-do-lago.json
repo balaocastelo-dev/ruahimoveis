@@ -52,7 +52,7 @@
         "Bairro da Região Sul de Campinas, às margens da Rodovia Anhanguera",
         "Abriga o Campinas Shopping, inaugurado em 1994, com Poupatempo e Detran",
         "Mistura de casas, sobrados e condomínios de apartamentos de 2 e 3 quartos",
-        "A base de condomínios da ONDEMORAR identifica cerca de 30 prédios residenciais no bairro",
+        "A base de condomínios do Onde morar? identifica cerca de 30 prédios residenciais no bairro",
         "Principais avenidas: das Amoreiras e John Boyd Dunlop",
         "Acesso rápido às rodovias Anhanguera, Santos Dumont e Lix da Cunha"
       ],
@@ -92,7 +92,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 condomínios no bairro e nos loteamentos ligados a ele, dos quais por volta de 30 são prédios, somando perto de 4 mil unidades. O mais alto tem cerca de 20 andares, mas a maioria fica entre 3 e 7 pavimentos. Os maiores conjuntos, como o Residencial Torres da Espanha e os Residenciais Vilas do Taubaté, passam de 100 apartamentos cada."
+      "texto": "A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 50 condomínios no bairro e nos loteamentos ligados a ele, dos quais por volta de 30 são prédios, somando perto de 4 mil unidades. O mais alto tem cerca de 20 andares, mas a maioria fica entre 3 e 7 pavimentos. Os maiores conjuntos, como o Residencial Torres da Espanha e os Residenciais Vilas do Taubaté, passam de 100 apartamentos cada."
     },
     {
       "tipo": "paragrafo",
@@ -192,7 +192,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Na lista de bairros da Região Sul, o Jardim do Lago divide espaço com o **Parque Oziel**, o **Jardim Icaraí** e a **Vila Teixeira**. A base de pontos próximos usada pela ONDEMORAR, com dados do OpenStreetMap, localiza o Parque Oziel a cerca de 500 metros do centro do bairro. Pela Avenida das Amoreiras chega-se ao **Jardim Novo Campos Elíseos**, bairro que deu limite ao trecho batizado em 1957."
+      "texto": "Na lista de bairros da Região Sul, o Jardim do Lago divide espaço com o **Parque Oziel**, o **Jardim Icaraí** e a **Vila Teixeira**. A base de pontos próximos usada pelo Onde morar?, com dados do OpenStreetMap, localiza o Parque Oziel a cerca de 500 metros do centro do bairro. Pela Avenida das Amoreiras chega-se ao **Jardim Novo Campos Elíseos**, bairro que deu limite ao trecho batizado em 1957."
     },
     {
       "tipo": "titulo",
@@ -237,7 +237,7 @@
     },
     {
       "pergunta": "O Jardim do Lago tem mais casas ou prédios?",
-      "resposta": "Tem os dois. Casas e sobrados dividem as ruas com condomínios de apartamentos, em geral de poucos andares; a base da ONDEMORAR identifica cerca de 30 prédios residenciais no bairro."
+      "resposta": "Tem os dois. Casas e sobrados dividem as ruas com condomínios de apartamentos, em geral de poucos andares; a base do Onde morar? identifica cerca de 30 prédios residenciais no bairro."
     },
     {
       "pergunta": "Como chegar a Viracopos saindo do Jardim do Lago?",
@@ -286,7 +286,7 @@
       "site": "pt.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

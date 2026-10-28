@@ -139,7 +139,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Hoje o bairro tem duas paisagens lado a lado. Nas ruas mais antigas, predominam casas térreas, sobrados e vilas operárias. Nos terrenos maiores, surgiram condomínios verticais, alguns bem altos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos de prédios, com cerca de 2.600 unidades; o mais alto tem 31 andares."
+      "texto": "Hoje o bairro tem duas paisagens lado a lado. Nas ruas mais antigas, predominam casas térreas, sobrados e vilas operárias. Nos terrenos maiores, surgiram condomínios verticais, alguns bem altos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 60 condomínios no bairro, quase todos de prédios, com cerca de 2.600 unidades; o mais alto tem 31 andares."
     },
     {
       "tipo": "paragrafo",
@@ -190,7 +190,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro tem escolas particulares de educação infantil ao ensino médio, como o **Colégio Objetivo Vila Industrial** e o **Renovatus**, e também ensino superior: o **UniMetrocamp** e a **ESAMC** têm unidades na Vila Industrial. Na base de pontos de interesse usada pela ONDEMORAR, há cerca de 55 escolas e cursos num raio de 1,5 km do centro do bairro."
+      "texto": "O bairro tem escolas particulares de educação infantil ao ensino médio, como o **Colégio Objetivo Vila Industrial** e o **Renovatus**, e também ensino superior: o **UniMetrocamp** e a **ESAMC** têm unidades na Vila Industrial. Na base de pontos de interesse usada pelo Onde morar?, há cerca de 55 escolas e cursos num raio de 1,5 km do centro do bairro."
     },
     {
       "tipo": "titulo",
@@ -199,7 +199,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de pontos de interesse da ONDEMORAR registra, a cerca de 800 metros do centro do bairro, o **Hospital Municipal Dr. Mário Gatti** e o Hospital Geral de Campinas. A unidade de Campinas do Hospital de Amor, ligado ao Hospital de Câncer de Barretos, aparece a distância parecida. Farmácias e clínicas se espalham pelas ruas do bairro e do Centro."
+      "texto": "A base de pontos de interesse do Onde morar? registra, a cerca de 800 metros do centro do bairro, o **Hospital Municipal Dr. Mário Gatti** e o Hospital Geral de Campinas. A unidade de Campinas do Hospital de Amor, ligado ao Hospital de Câncer de Barretos, aparece a distância parecida. Farmácias e clínicas se espalham pelas ruas do bairro e do Centro."
     },
     {
       "tipo": "titulo",
@@ -277,7 +277,7 @@
     },
     {
       "pergunta": "A Vila Industrial tem mais casas ou prédios?",
-      "resposta": "Os dois. As ruas antigas têm casas e vilas operárias, e a base de condomínios da ONDEMORAR identifica cerca de 60 condomínios, quase todos verticais, com cerca de 2.600 unidades."
+      "resposta": "Os dois. As ruas antigas têm casas e vilas operárias, e a base de condomínios do Onde morar? identifica cerca de 60 condomínios, quase todos verticais, com cerca de 2.600 unidades."
     }
   ],
   "fontes": [
@@ -318,7 +318,7 @@
       "site": "buser.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

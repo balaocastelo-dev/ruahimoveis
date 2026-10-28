@@ -141,11 +141,11 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Há poucos prédios. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de uma dúzia de condomínios no bairro, a maioria horizontal, com perto de 430 unidades no total e nenhum edifício acima de cinco andares. Entre eles estão os residenciais da série Novo Horizonte."
+      "texto": "Há poucos prédios. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de uma dúzia de condomínios no bairro, a maioria horizontal, com perto de 430 unidades no total e nenhum edifício acima de cinco andares. Entre eles estão os residenciais da série Novo Horizonte."
     },
     {
       "tipo": "paragrafo",
-      "texto": "O dia a dia é de bairro: padarias, mercados, lanchonetes e pizzarias espalhados pelas ruas principais. A base de pontos de interesse usada pela ONDEMORAR registra cerca de meia dúzia de mercados e padarias num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista esses lugares com o tempo a pé e é atualizada automaticamente."
+      "texto": "O dia a dia é de bairro: padarias, mercados, lanchonetes e pizzarias espalhados pelas ruas principais. A base de pontos de interesse usada pelo Onde morar? registra cerca de meia dúzia de mercados e padarias num raio de 1,5 km do centro do bairro. A seção *o que tem perto*, mais abaixo nesta página, lista esses lugares com o tempo a pé e é atualizada automaticamente."
     },
     {
       "tipo": "chamada",
@@ -305,7 +305,7 @@
       "site": "benditoguia.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

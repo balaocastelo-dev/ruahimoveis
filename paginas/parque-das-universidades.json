@@ -107,7 +107,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro é essencialmente residencial. A base de condomínios da ONDEMORAR identifica cerca de 60 condomínios ali, perto de 40 verticais e 20 horizontais, somando por volta de 780 unidades, nenhum com mais de três andares. A mesma base registra associações de moradores para as partes Sul e Norte do Parque das Universidades."
+      "texto": "O bairro é essencialmente residencial. A base de condomínios do Onde morar? identifica cerca de 60 condomínios ali, perto de 40 verticais e 20 horizontais, somando por volta de 780 unidades, nenhum com mais de três andares. A mesma base registra associações de moradores para as partes Sul e Norte do Parque das Universidades."
     },
     {
       "tipo": "paragrafo",
@@ -214,7 +214,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Quem procura um perfil parecido costuma comparar o bairro com Barão Geraldo e com a Santa Cândida, que têm guias próprios no site da ONDEMORAR. A diferença está na escala: o Parque das Universidades é menor, mais residencial e mais colado à PUC."
+      "texto": "Quem procura um perfil parecido costuma comparar o bairro com Barão Geraldo e com a Santa Cândida, que têm guias próprios no site do Onde morar? A diferença está na escala: o Parque das Universidades é menor, mais residencial e mais colado à PUC."
     },
     {
       "tipo": "titulo",
@@ -245,7 +245,7 @@
     },
     {
       "pergunta": "Que tipo de imóvel existe no Parque das Universidades?",
-      "resposta": "Casas de dois a seis quartos, estúdios, quitinetes e apartamentos em prédios baixos. A base da ONDEMORAR identifica cerca de 60 condomínios no bairro, nenhum com mais de três andares."
+      "resposta": "Casas de dois a seis quartos, estúdios, quitinetes e apartamentos em prédios baixos. A base do Onde morar? identifica cerca de 60 condomínios no bairro, nenhum com mais de três andares."
     },
     {
       "pergunta": "Qual faculdade fica no Parque das Universidades?",
@@ -310,7 +310,7 @@
       "site": "cepsbrasil.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

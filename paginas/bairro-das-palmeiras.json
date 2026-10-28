@@ -120,7 +120,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Bairro das Palmeiras é, antes de tudo, um bairro de casas. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio. São, em geral, vilas e residenciais pequenos, de algumas dezenas de casas, como o Condomínio Forest Hill Village, o Residencial Porto Veneza, o Residencial Village Campestre e o Residencial Outeiro das Palmeiras."
+      "texto": "O Bairro das Palmeiras é, antes de tudo, um bairro de casas. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio. São, em geral, vilas e residenciais pequenos, de algumas dezenas de casas, como o Condomínio Forest Hill Village, o Residencial Porto Veneza, o Residencial Village Campestre e o Residencial Outeiro das Palmeiras."
     },
     {
       "tipo": "paragrafo",
@@ -128,7 +128,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Para as compras do dia a dia, a base de pontos de interesse usada pela ONDEMORAR registra um supermercado Pão de Açúcar a menos de 200 metros do centro do bairro, farmácias a poucos minutos e um hipermercado Carrefour a cerca de 1 km. Restaurantes e cafés aparecem às dezenas num raio de 1,5 km, boa parte deles ao redor da Hípica e dos shoppings."
+      "texto": "Para as compras do dia a dia, a base de pontos de interesse usada pelo Onde morar? registra um supermercado Pão de Açúcar a menos de 200 metros do centro do bairro, farmácias a poucos minutos e um hipermercado Carrefour a cerca de 1 km. Restaurantes e cafés aparecem às dezenas num raio de 1,5 km, boa parte deles ao redor da Hípica e dos shoppings."
     },
     {
       "tipo": "chamada",
@@ -191,7 +191,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de pontos de interesse da ONDEMORAR registra perto de dez escolas num raio de 1,5 km, entre escolas de educação infantil, bilíngues e de ensino regular. Como a oferta muda, vale confirmar vagas, etapas de ensino e trajeto antes de decidir pelo imóvel."
+      "texto": "A base de pontos de interesse do Onde morar? registra perto de dez escolas num raio de 1,5 km, entre escolas de educação infantil, bilíngues e de ensino regular. Como a oferta muda, vale confirmar vagas, etapas de ensino e trajeto antes de decidir pelo imóvel."
     },
     {
       "tipo": "titulo",
@@ -241,7 +241,7 @@
     },
     {
       "pergunta": "O bairro tem mais casas ou prédios?",
-      "resposta": "Casas. A base de condomínios da ONDEMORAR identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio."
+      "resposta": "Casas. A base de condomínios do Onde morar? identifica cerca de 25 condomínios no bairro, quase todos horizontais, e apenas um prédio."
     },
     {
       "pergunta": "A Sociedade Hípica de Campinas fica no Bairro das Palmeiras?",
@@ -290,7 +290,7 @@
       "site": "commons.wikimedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

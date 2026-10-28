@@ -123,7 +123,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Botafogo é um bairro de contrastes na paisagem: há trechos densamente verticalizados e outros sem nenhum prédio alto, com casas e sobrados antigos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro, quase todos prédios, somando perto de 3.400 apartamentos. Os edifícios costumam ter de 7 a 16 andares, e o mais alto da base chega a 22."
+      "texto": "O Botafogo é um bairro de contrastes na paisagem: há trechos densamente verticalizados e outros sem nenhum prédio alto, com casas e sobrados antigos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 85 condomínios no bairro, quase todos prédios, somando perto de 3.400 apartamentos. Os edifícios costumam ter de 7 a 16 andares, e o mais alto da base chega a 22."
     },
     {
       "tipo": "fotos",
@@ -279,7 +279,7 @@
     },
     {
       "pergunta": "O Botafogo tem mais prédios ou casas?",
-      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 85 condomínios no bairro, quase todos prédios, mas há trechos inteiros de casas, sem edifícios altos."
+      "resposta": "Tem os dois. A base de condomínios do Onde morar? identifica cerca de 85 condomínios no bairro, quase todos prédios, mas há trechos inteiros de casas, sem edifícios altos."
     }
   ],
   "fontes": [
@@ -312,7 +312,7 @@
       "site": "melhorescola.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

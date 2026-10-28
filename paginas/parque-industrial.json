@@ -100,7 +100,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro tem ruas de casas térreas e sobrados, avenidas com canteiro central arborizado e, em alguns trechos, prédios residenciais. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 18 condomínios no bairro, a maioria verticais, somando perto de 850 unidades. O mais alto da base tem 17 andares, e o maior conjunto reúne cerca de 320 apartamentos."
+      "texto": "O bairro tem ruas de casas térreas e sobrados, avenidas com canteiro central arborizado e, em alguns trechos, prédios residenciais. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 18 condomínios no bairro, a maioria verticais, somando perto de 850 unidades. O mais alto da base tem 17 andares, e o maior conjunto reúne cerca de 320 apartamentos."
     },
     {
       "tipo": "fotos",
@@ -111,7 +111,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Entre os nomes que aparecem tanto na base da ONDEMORAR quanto em guias de moradia estão o **Residencial Vita Parque**, o **Happy Patriani**, o **Veredas Patriani** e o **Brisas Bella Cittá**. Avaliações de moradores reunidas pelo QuintoAndar destacam o comércio que se faz a pé, a proximidade do trabalho e a facilidade de chegar a outros bairros; entre as queixas, aparece o barulho de motos em alguns horários."
+      "texto": "Entre os nomes que aparecem tanto na base do Onde morar? quanto em guias de moradia estão o **Residencial Vita Parque**, o **Happy Patriani**, o **Veredas Patriani** e o **Brisas Bella Cittá**. Avaliações de moradores reunidas pelo QuintoAndar destacam o comércio que se faz a pé, a proximidade do trabalho e a facilidade de chegar a outros bairros; entre as queixas, aparece o barulho de motos em alguns horários."
     },
     {
       "tipo": "paragrafo",
@@ -128,7 +128,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A escola mais ligada à história do bairro é a **Escola Estadual Felipe Cantusio**, herdeira do antigo grupo escolar. A base de pontos de interesse usada pela ONDEMORAR também registra a **EMEF Professor Vicente Rao**, da rede municipal, e colégios particulares de educação infantil e ensino fundamental a poucas quadras."
+      "texto": "A escola mais ligada à história do bairro é a **Escola Estadual Felipe Cantusio**, herdeira do antigo grupo escolar. A base de pontos de interesse usada pelo Onde morar? também registra a **EMEF Professor Vicente Rao**, da rede municipal, e colégios particulares de educação infantil e ensino fundamental a poucas quadras."
     },
     {
       "tipo": "paragrafo",
@@ -236,7 +236,7 @@
     },
     {
       "pergunta": "O Parque Industrial tem mais casas ou prédios?",
-      "resposta": "Tem os dois. Há muitas casas e sobrados, e a base de condomínios da ONDEMORAR identifica cerca de 18 condomínios, a maioria de prédios, com perto de 850 unidades."
+      "resposta": "Tem os dois. Há muitas casas e sobrados, e a base de condomínios do Onde morar? identifica cerca de 18 condomínios, a maioria de prédios, com perto de 850 unidades."
     },
     {
       "pergunta": "Passa BRT no Parque Industrial?",
@@ -281,7 +281,7 @@
       "site": "doctoralia.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

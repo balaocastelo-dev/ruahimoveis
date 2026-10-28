@@ -44,13 +44,13 @@
     },
     {
       "id": "f7",
-      "legenda": "Casa térrea com imóvel da ONDEMORAR à venda no Jardim Nossa Senhora Auxiliadora",
+      "legenda": "Casa térrea com imóvel do Onde morar? à venda no Jardim Nossa Senhora Auxiliadora",
       "alt": "Casa térrea com muro bege, portão branco, árvore na calçada de pedra portuguesa e telhado de madeira vermelha",
       "imovel_foto": 1768
     },
     {
       "id": "f8",
-      "legenda": "Rua do bairro, em frente a casa com imóvel da ONDEMORAR à venda",
+      "legenda": "Rua do bairro, em frente a casa com imóvel do Onde morar? à venda",
       "alt": "Rua residencial com muros brancos, portão de grade, calçada de pedra portuguesa e ipê florido",
       "imovel_foto": 1725
     }
@@ -68,7 +68,7 @@
       "tipo": "resumo",
       "itens": [
         "Bairro residencial da região central de Campinas, vizinho do Taquaral",
-        "Casas térreas e sobrados, com cerca de 16 prédios residenciais segundo a base da ONDEMORAR",
+        "Casas térreas e sobrados, com cerca de 16 prédios residenciais segundo a base do Onde morar?",
         "Ruas com nomes de escritores e navegadores portugueses, definidos por lei municipal de 1957",
         "Fica perto da Lagoa do Taquaral, no Parque Portugal, e do antigo Kartódromo, hoje área de lazer",
         "Tem a Escola Estadual Professor Aníbal de Freitas, na Rua Primeiro de Março",
@@ -106,7 +106,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O bairro é, antes de tudo, de casas. Nas ruas internas aparecem casas térreas e sobrados com muro na frente, e as fotos dos imóveis mostram calçadas de pedra portuguesa. As duas casas que a ONDEMORAR tem à venda no bairro mostram bem esse perfil: construções de terreno próprio, com quintal e garagem."
+      "texto": "O bairro é, antes de tudo, de casas. Nas ruas internas aparecem casas térreas e sobrados com muro na frente, e as fotos dos imóveis mostram calçadas de pedra portuguesa. As duas casas que o Onde morar? tem à venda no bairro mostram bem esse perfil: construções de terreno próprio, com quintal e garagem."
     },
     {
       "tipo": "fotos",
@@ -117,7 +117,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Os prédios existem, mas são poucos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 edifícios residenciais no bairro, com algo perto de 480 apartamentos no total. Há prédios baixos, de dois ou três andares, e torres mais recentes; a mais alta registrada tem 31 andares."
+      "texto": "Os prédios existem, mas são poucos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 edifícios residenciais no bairro, com algo perto de 480 apartamentos no total. Há prédios baixos, de dois ou três andares, e torres mais recentes; a mais alta registrada tem 31 andares."
     },
     {
       "tipo": "paragrafo",
@@ -245,7 +245,7 @@
     },
     {
       "pergunta": "O bairro tem mais casas ou prédios?",
-      "resposta": "Casas. A base de condomínios da ONDEMORAR identifica cerca de 16 prédios residenciais no bairro, o maior com 31 andares; o restante é formado por casas térreas e sobrados."
+      "resposta": "Casas. A base de condomínios do Onde morar? identifica cerca de 16 prédios residenciais no bairro, o maior com 31 andares; o restante é formado por casas térreas e sobrados."
     },
     {
       "pergunta": "Quais escolas ficam no Jardim Nossa Senhora Auxiliadora?",
@@ -253,7 +253,7 @@
     },
     {
       "pergunta": "Como ver as casas à venda no Jardim Nossa Senhora Auxiliadora?",
-      "resposta": "Os imóveis que a ONDEMORAR tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
+      "resposta": "Os imóveis que o Onde morar? tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber opções que ainda não estão no portal, use o formulário no fim da página."
     }
   ],
   "fontes": [
@@ -302,7 +302,7 @@
       "site": "quintoandar.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

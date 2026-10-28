@@ -62,7 +62,7 @@
     },
     {
       "id": "f10",
-      "legenda": "Torre do Residencial Idea, prédio com apartamentos da ONDEMORAR à venda no Centro",
+      "legenda": "Torre do Residencial Idea, prédio com apartamentos do Onde morar? à venda no Centro",
       "alt": "Edifício residencial alto com varandas envidraçadas, fotografado de baixo entre palmeiras",
       "imovel_foto": 2054
     },
@@ -89,7 +89,7 @@
         "Abriga a Catedral Metropolitana, concluída em 1883 e feita de taipa de pilão",
         "Tem o Mercado Municipal, de 1908, revitalizado em obra concluída em 2025",
         "A Rua 13 de Maio é calçadão de pedestres e eixo do comércio popular",
-        "Perfil de apartamentos: a base da ONDEMORAR identifica cerca de 590 condomínios no bairro",
+        "Perfil de apartamentos: a base do Onde morar? identifica cerca de 590 condomínios no bairro",
         "Concentra o Terminal Central, o Terminal Mercado e fica perto da rodoviária",
         "A Estação Cultura deve receber uma parada do Trem Intercidades, com operação prevista para 2031"
       ],
@@ -193,7 +193,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A mesma série de obras prevê, em etapas seguintes, novo piso na Praça Ruy Barbosa e no entorno da Catedral. Em volta ficam galerias, lojas, bancos e serviços, e a base de pontos de interesse da ONDEMORAR registra centenas de restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro."
+      "texto": "A mesma série de obras prevê, em etapas seguintes, novo piso na Praça Ruy Barbosa e no entorno da Catedral. Em volta ficam galerias, lojas, bancos e serviços, e a base de pontos de interesse do Onde morar? registra centenas de restaurantes, lanchonetes e cafés num raio de 1,5 km do centro do bairro."
     },
     {
       "tipo": "chamada",
@@ -235,7 +235,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Centro é um bairro de apartamentos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 590 condomínios no bairro, quase todos verticais, que somam mais de 17 mil unidades. Há edifícios residenciais de 10 a 25 andares das décadas de 1940 a 1970 e lançamentos recentes com lazer e apartamentos compactos."
+      "texto": "O Centro é um bairro de apartamentos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 590 condomínios no bairro, quase todos verticais, que somam mais de 17 mil unidades. Há edifícios residenciais de 10 a 25 andares das décadas de 1940 a 1970 e lançamentos recentes com lazer e apartamentos compactos."
     },
     {
       "tipo": "paragrafo",
@@ -265,7 +265,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Morar no Centro é morar ao lado dos principais terminais de ônibus da cidade. O **Terminal Central** e o **Terminal Mercado** ficam na região, e a rodoviária está a menos de 1 km do centro do bairro, segundo a base de pontos de interesse da ONDEMORAR."
+      "texto": "Morar no Centro é morar ao lado dos principais terminais de ônibus da cidade. O **Terminal Central** e o **Terminal Mercado** ficam na região, e a rodoviária está a menos de 1 km do centro do bairro, segundo a base de pontos de interesse do Onde morar?"
     },
     {
       "tipo": "paragrafo",
@@ -318,11 +318,11 @@
     },
     {
       "pergunta": "O Centro de Campinas tem mais casas ou prédios?",
-      "resposta": "Prédios. A base de condomínios da ONDEMORAR identifica cerca de 590 condomínios no bairro, quase todos verticais, com mais de 17 mil unidades."
+      "resposta": "Prédios. A base de condomínios do Onde morar? identifica cerca de 590 condomínios no bairro, quase todos verticais, com mais de 17 mil unidades."
     },
     {
       "pergunta": "Como ver os imóveis à venda no Centro de Campinas?",
-      "resposta": "Os imóveis que a ONDEMORAR tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
+      "resposta": "Os imóveis que o Onde morar? tem à venda no bairro aparecem nesta página, com fotos e ficha. Para receber outras opções, use o formulário no fim da página."
     }
   ],
   "fontes": [
@@ -363,7 +363,7 @@
       "site": "en.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

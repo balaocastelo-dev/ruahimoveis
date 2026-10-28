@@ -14,7 +14,7 @@
     },
     {
       "id": "f2",
-      "legenda": "Vista aérea de uma quadra do bairro, com o lote da ONDEMORAR à venda marcado em vermelho",
+      "legenda": "Vista aérea de uma quadra do bairro, com o lote do Onde morar? à venda marcado em vermelho",
       "alt": "Foto aérea de casas com telhados e piscinas, árvores e um terreno vazio contornado em vermelho",
       "imovel_foto": 2101
     },
@@ -105,7 +105,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Há também prédios. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 15 condomínios no bairro, nove deles verticais, com até 12 andares. Entre os nomes registrados estão o Condomínio Place Vendome, o Place des Vosges, o Residencial Ville Neuve II, o Cyrela Legacy Paineiras e o Reserva Botanique, além de condomínios horizontais de casas, como o residencial ligado à Rua Carlo Macchi."
+      "texto": "Há também prédios. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 15 condomínios no bairro, nove deles verticais, com até 12 andares. Entre os nomes registrados estão o Condomínio Place Vendome, o Place des Vosges, o Residencial Ville Neuve II, o Cyrela Legacy Paineiras e o Reserva Botanique, além de condomínios horizontais de casas, como o residencial ligado à Rua Carlo Macchi."
     },
     {
       "tipo": "paragrafo",
@@ -141,7 +141,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O vizinho mais conhecido do bairro é o **Shopping Iguatemi Campinas**, na Avenida Iguatemi, 777, na Vila Brandina. Aberto em 1980, ele chegou a 356 lojas depois da ampliação de 2015, que acrescentou 104 lojas. Pela base de pontos de interesse usada pela ONDEMORAR, o shopping fica a menos de 1 km do centro do Jardim das Paineiras, uma caminhada de cerca de dez minutos."
+      "texto": "O vizinho mais conhecido do bairro é o **Shopping Iguatemi Campinas**, na Avenida Iguatemi, 777, na Vila Brandina. Aberto em 1980, ele chegou a 356 lojas depois da ampliação de 2015, que acrescentou 104 lojas. Pela base de pontos de interesse usada pelo Onde morar?, o shopping fica a menos de 1 km do centro do Jardim das Paineiras, uma caminhada de cerca de dez minutos."
     },
     {
       "tipo": "fotos",
@@ -244,7 +244,7 @@
     },
     {
       "pergunta": "O Jardim das Paineiras tem mais casas ou prédios?",
-      "resposta": "Casas. A base de condomínios da ONDEMORAR identifica cerca de 15 condomínios no bairro, nove deles prédios de até 12 andares; o resto do bairro é formado por casas em lotes amplos."
+      "resposta": "Casas. A base de condomínios do Onde morar? identifica cerca de 15 condomínios no bairro, nove deles prédios de até 12 andares; o resto do bairro é formado por casas em lotes amplos."
     },
     {
       "pergunta": "O Shopping Iguatemi fica no Jardim das Paineiras?",
@@ -293,7 +293,7 @@
       "site": "cepsbrasil.com.br"
     },
     {
-      "nome": "Base de condomínios e de pontos de interesse da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios e de pontos de interesse do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

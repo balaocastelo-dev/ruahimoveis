@@ -64,7 +64,7 @@
         "Bairro pequeno de Campinas, na parte alta, vizinho do Guanabara, da Vila Nova e do Jardim Nossa Senhora Auxiliadora",
         "Cerca de 18 logradouros, entre eles a Avenida Brasil e a Rua Eduardo Lane",
         "Ruas abertas sem nome receberam denominação por leis municipais de 1949 e 1950",
-        "A base da ONDEMORAR identifica cerca de 16 condomínios, quase todos prédios, o mais alto com 26 andares",
+        "A base do Onde morar? identifica cerca de 16 condomínios, quase todos prédios, o mais alto com 26 andares",
         "Campus Campinas do Mackenzie fica na Avenida Brasil, a poucas quadras",
         "Avenida Brasil liga a região central à região norte da cidade"
       ],
@@ -77,7 +77,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Jardim Brasil ocupa um pedaço da parte alta da cidade, perto da Vila Nova e do Jardim Nossa Senhora Auxiliadora, e é citado entre os bairros pequenos que cercam o Guanabara, ao lado da Vila Angelino Rossi, da Vila Itapura e da Vila Eliza. Na divisão usada pela base da ONDEMORAR, ele aparece na região central."
+      "texto": "O Jardim Brasil ocupa um pedaço da parte alta da cidade, perto da Vila Nova e do Jardim Nossa Senhora Auxiliadora, e é citado entre os bairros pequenos que cercam o Guanabara, ao lado da Vila Angelino Rossi, da Vila Itapura e da Vila Eliza. Na divisão usada pela base do Onde morar?, ele aparece na região central."
     },
     {
       "tipo": "paragrafo",
@@ -117,7 +117,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Jardim Brasil mistura casas térreas e sobrados com prédios residenciais. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 condomínios no bairro, quase todos verticais, com perto de 770 unidades no total. Há prédios baixos, de seis ou sete andares, e torres recentes de 16 a 26 andares."
+      "texto": "O Jardim Brasil mistura casas térreas e sobrados com prédios residenciais. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 16 condomínios no bairro, quase todos verticais, com perto de 770 unidades no total. Há prédios baixos, de seis ou sete andares, e torres recentes de 16 a 26 andares."
     },
     {
       "tipo": "paragrafo",
@@ -132,7 +132,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pela ONDEMORAR, feita com dados do OpenStreetMap e do Overture Maps, registra mais de 90 mercados e padarias, mais de 250 restaurantes e cafés e mais de 100 serviços de saúde. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
+      "texto": "A rotina se resolve sem ir longe. Num raio de 1,5 km do centro do bairro, a base de pontos de interesse usada pelo Onde morar?, feita com dados do OpenStreetMap e do Overture Maps, registra mais de 90 mercados e padarias, mais de 250 restaurantes e cafés e mais de 100 serviços de saúde. A seção *o que tem perto*, mais abaixo nesta página, lista os mais próximos com o tempo a pé."
     },
     {
       "tipo": "paragrafo",
@@ -193,7 +193,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Na rede estadual, a **Escola Estadual Professor Aníbal de Freitas** funciona na Rua Primeiro de Março, também no Jardim Guanabara. A base de pontos de interesse da ONDEMORAR registra cerca de 70 escolas num raio de 1,5 km, entre escolas infantis, colégios e cursos."
+      "texto": "Na rede estadual, a **Escola Estadual Professor Aníbal de Freitas** funciona na Rua Primeiro de Março, também no Jardim Guanabara. A base de pontos de interesse do Onde morar? registra cerca de 70 escolas num raio de 1,5 km, entre escolas infantis, colégios e cursos."
     },
     {
       "tipo": "titulo",
@@ -264,7 +264,7 @@
     },
     {
       "pergunta": "O Jardim Brasil tem prédios ou casas?",
-      "resposta": "Os dois. A base da ONDEMORAR identifica cerca de 16 condomínios, quase todos verticais, o mais alto com 26 andares, ao lado de casas e sobrados."
+      "resposta": "Os dois. A base do Onde morar? identifica cerca de 16 condomínios, quase todos verticais, o mais alto com 26 andares, ao lado de casas e sobrados."
     },
     {
       "pergunta": "Como sair do Jardim Brasil para Barão Geraldo?",
@@ -301,7 +301,7 @@
       "site": "commons.wikimedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps"
     }
   ],
   "redes": {

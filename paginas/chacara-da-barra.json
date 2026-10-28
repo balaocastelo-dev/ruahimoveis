@@ -104,7 +104,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Os prédios existem, mas em escala menor. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, em sua maioria edifícios pequenos, de três a sete andares e poucas dezenas de apartamentos, além de alguns condomínios de casas e de empreendimentos mais recentes e mais altos perto da Norte-Sul."
+      "texto": "Os prédios existem, mas em escala menor. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 35 condomínios no bairro, em sua maioria edifícios pequenos, de três a sete andares e poucas dezenas de apartamentos, além de alguns condomínios de casas e de empreendimentos mais recentes e mais altos perto da Norte-Sul."
     },
     {
       "tipo": "paragrafo",
@@ -218,7 +218,7 @@
     },
     {
       "pergunta": "A Chácara da Barra tem muitos prédios?",
-      "resposta": "Tem prédios, mas em escala menor que o Cambuí. A base da ONDEMORAR identifica cerca de 35 condomínios no bairro, a maioria edifícios pequenos, de três a sete andares, entre muitas casas."
+      "resposta": "Tem prédios, mas em escala menor que o Cambuí. A base do Onde morar? identifica cerca de 35 condomínios no bairro, a maioria edifícios pequenos, de três a sete andares, entre muitas casas."
     },
     {
       "pergunta": "Que área de lazer pública existe na Chácara da Barra?",
@@ -259,7 +259,7 @@
       "site": "searchassociates.com"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

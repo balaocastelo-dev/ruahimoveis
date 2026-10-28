@@ -70,7 +70,7 @@
         "Bairro pequeno ao sul do Centro de Campinas, vizinho do Jardim Proença",
         "Aparece na lista de bairros da Região Sul da cidade",
         "Já existia em 1973, quando um decreto deu nome a uma rua da Vila Lemos",
-        "Perfil de casas, sobrados e prédios baixos, de até 7 andares na base da ONDEMORAR",
+        "Perfil de casas, sobrados e prédios baixos, de até 7 andares na base do Onde morar?",
         "Abriga a creche municipal CEI Lions Clube Campinas Norte e a escola da Pestalozzi",
         "Acesso principal pela Avenida Princesa D'Oeste"
       ],
@@ -137,7 +137,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Vila Lemos é, sobretudo, um bairro de casas e de prédios pequenos. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 17 condomínios no bairro, a maioria verticais, com perto de 160 unidades no total. O mais alto tem 7 andares, bem diferente das torres do vizinho Jardim Proença."
+      "texto": "A Vila Lemos é, sobretudo, um bairro de casas e de prédios pequenos. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 17 condomínios no bairro, a maioria verticais, com perto de 160 unidades no total. O mais alto tem 7 andares, bem diferente das torres do vizinho Jardim Proença."
     },
     {
       "tipo": "paragrafo",
@@ -166,7 +166,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de pontos de interesse usada pela ONDEMORAR registra dezenas de escolas, creches e centros educativos num raio de 1,5 km do centro do bairro. A lista com o tempo a pé até cada uma aparece na seção ao vivo desta página."
+      "texto": "A base de pontos de interesse usada pelo Onde morar? registra dezenas de escolas, creches e centros educativos num raio de 1,5 km do centro do bairro. A lista com o tempo a pé até cada uma aparece na seção ao vivo desta página."
     },
     {
       "tipo": "titulo",
@@ -175,7 +175,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O centro de saúde municipal mais próximo na base da ONDEMORAR é o **CS Paranapanema**. Em setembro de 2026, a Prefeitura informou que a unidade ficaria fechada de 40 a 60 dias para consertar telhado, calhas e rede elétrica, danificados por um temporal em 30 de agosto. No período, acolhimento e odontologia passaram ao CS Orosimbo Maia. Antes de se mudar, confirme qual unidade atende o seu endereço."
+      "texto": "O centro de saúde municipal mais próximo na base do Onde morar? é o **CS Paranapanema**. Em setembro de 2026, a Prefeitura informou que a unidade ficaria fechada de 40 a 60 dias para consertar telhado, calhas e rede elétrica, danificados por um temporal em 30 de agosto. No período, acolhimento e odontologia passaram ao CS Orosimbo Maia. Antes de se mudar, confirme qual unidade atende o seu endereço."
     },
     {
       "tipo": "paragrafo",
@@ -255,7 +255,7 @@
     },
     {
       "pergunta": "A Vila Lemos tem mais casas ou prédios?",
-      "resposta": "Predominam casas e sobrados. A base de condomínios da ONDEMORAR identifica cerca de 17 condomínios no bairro, com perto de 160 unidades, e nenhum passa de 7 andares."
+      "resposta": "Predominam casas e sobrados. A base de condomínios do Onde morar? identifica cerca de 17 condomínios no bairro, com perto de 160 unidades, e nenhum passa de 7 andares."
     },
     {
       "pergunta": "Quais escolas ficam na Vila Lemos?",
@@ -308,7 +308,7 @@
       "site": "commons.wikimedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

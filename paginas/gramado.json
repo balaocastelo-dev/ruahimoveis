@@ -8,19 +8,19 @@
   "fotos": [
     {
       "id": "f1",
-      "legenda": "Vista da varanda de casa da ONDEMORAR à venda no Gramado, com palmeiras e casas vizinhas",
+      "legenda": "Vista da varanda de casa do Onde morar? à venda no Gramado, com palmeiras e casas vizinhas",
       "alt": "Varanda com piso de cerâmica e gradil preto, com vista para jardim gramado, palmeiras altas e casas ao fundo",
       "imovel_foto": 316
     },
     {
       "id": "f2",
-      "legenda": "Casa em condomínio com imóvel da ONDEMORAR à venda no Gramado, vista do jardim",
+      "legenda": "Casa em condomínio com imóvel do Onde morar? à venda no Gramado, vista do jardim",
       "alt": "Casa de dois andares com pergolado de madeira, piscina azul e palmeiras na frente",
       "imovel_foto": 315
     },
     {
       "id": "f3",
-      "legenda": "Fundos de casa da ONDEMORAR à venda no Gramado, com piscina e jardim",
+      "legenda": "Fundos de casa do Onde morar? à venda no Gramado, com piscina e jardim",
       "alt": "Piscina com borda de pedra diante de casa branca com terraço e palmeiras",
       "imovel_foto": 332
     },
@@ -63,7 +63,7 @@
       "itens": [
         "Bairro da Região Leste de Campinas, com nome oficial de Sítios de Recreio Gramado",
         "Perfil de casas em condomínios horizontais, sem prédios altos",
-        "A base da ONDEMORAR identifica cerca de 20 condomínios horizontais no bairro",
+        "A base do Onde morar? identifica cerca de 20 condomínios horizontais no bairro",
         "Ruas com nome de árvores, como Alameda das Tipuanas e Alameda das Palmeiras",
         "O Gramado Mall, aberto em 2002, reúne mais de 30 lojas e serviços",
         "A Rodovia Dom Pedro I passa a cerca de 1 km do centro do bairro"
@@ -96,7 +96,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Gramado é um bairro de casas. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 23 condomínios no bairro, dos quais 20 são horizontais e nenhum é vertical. São núcleos pequenos, de 6 a pouco mais de 20 casas cada, que somam perto de 190 unidades nos condomínios com dado disponível."
+      "texto": "O Gramado é um bairro de casas. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de 23 condomínios no bairro, dos quais 20 são horizontais e nenhum é vertical. São núcleos pequenos, de 6 a pouco mais de 20 casas cada, que somam perto de 190 unidades nos condomínios com dado disponível."
     },
     {
       "tipo": "paragrafo",
@@ -111,7 +111,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O ritmo é de bairro residencial afastado do movimento: as alamedas internas servem quase só a quem mora ali, e o comércio fica concentrado em poucos pontos. Pela base de pontos de interesse usada pela ONDEMORAR, num raio de 1,5 km do centro do bairro há poucos mercados, restaurantes e academias, quase todos agrupados no entorno do Gramado Mall. Para a maior parte das compras, o morador usa o carro."
+      "texto": "O ritmo é de bairro residencial afastado do movimento: as alamedas internas servem quase só a quem mora ali, e o comércio fica concentrado em poucos pontos. Pela base de pontos de interesse usada pelo Onde morar?, num raio de 1,5 km do centro do bairro há poucos mercados, restaurantes e academias, quase todos agrupados no entorno do Gramado Mall. Para a maior parte das compras, o morador usa o carro."
     },
     {
       "tipo": "chamada",
@@ -237,7 +237,7 @@
     },
     {
       "pergunta": "O Gramado tem prédios ou só casas?",
-      "resposta": "Praticamente só casas. A base de condomínios da ONDEMORAR identifica cerca de 20 condomínios horizontais no bairro e nenhum prédio residencial."
+      "resposta": "Praticamente só casas. A base de condomínios do Onde morar? identifica cerca de 20 condomínios horizontais no bairro e nenhum prédio residencial."
     },
     {
       "pergunta": "O que tem no Gramado Mall?",
@@ -282,7 +282,7 @@
       "site": "openstreetmap.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

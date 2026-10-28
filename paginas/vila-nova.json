@@ -38,13 +38,13 @@
     },
     {
       "id": "f6",
-      "legenda": "Avenida da Vila Nova com galpões e comércio; à direita, galpão da ONDEMORAR à venda",
+      "legenda": "Avenida da Vila Nova com galpões e comércio; à direita, galpão do Onde morar? à venda",
       "alt": "Avenida de mão dupla com carros, postes e fachadas de galpões comerciais, com prédios residenciais ao fundo",
       "imovel_foto": 1050
     },
     {
       "id": "f7",
-      "legenda": "Galpão comercial com imóvel da ONDEMORAR à venda na Vila Nova",
+      "legenda": "Galpão comercial com imóvel do Onde morar? à venda na Vila Nova",
       "alt": "Fachada de galpão de dois pavimentos com duas portas de enrolar abertas e calçada de pedras",
       "imovel_foto": 1040
     }
@@ -130,7 +130,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no bairro, quase todos prédios, com menos de mil unidades no total. A maioria tem até 15 andares. Na Avenida Imperatriz Leopoldina ficam, por exemplo, os edifícios Imperatriz, um retrato desse padrão de prédio de porte médio."
+      "texto": "A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 45 condomínios no bairro, quase todos prédios, com menos de mil unidades no total. A maioria tem até 15 andares. Na Avenida Imperatriz Leopoldina ficam, por exemplo, os edifícios Imperatriz, um retrato desse padrão de prédio de porte médio."
     },
     {
       "tipo": "fotos",
@@ -229,7 +229,7 @@
     },
     {
       "pergunta": "A Vila Nova tem mais casas ou prédios?",
-      "resposta": "Tem os dois. A base de condomínios da ONDEMORAR identifica cerca de 45 condomínios no bairro, quase todos prédios de até 15 andares, ao lado de casas e de galpões comerciais nas avenidas."
+      "resposta": "Tem os dois. A base de condomínios do Onde morar? identifica cerca de 45 condomínios no bairro, quase todos prédios de até 15 andares, ao lado de casas e de galpões comerciais nas avenidas."
     },
     {
       "pergunta": "Qual parque fica perto da Vila Nova?",
@@ -262,7 +262,7 @@
       "site": "commons.wikimedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

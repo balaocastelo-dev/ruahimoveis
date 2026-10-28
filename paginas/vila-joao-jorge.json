@@ -57,7 +57,7 @@
       "itens": [
         "Bairro pequeno da Zona Sul de Campinas, perto do Centro",
         "Abriga o Hospital Samaritano Campinas, fundado em 1980, com pronto-socorro 24 horas",
-        "Perfil residencial, com cerca de dez condomínios na base da ONDEMORAR, quase todos verticais",
+        "Perfil residencial, com cerca de dez condomínios na base do Onde morar?, quase todos verticais",
         "Vizinho da Ponte Preta, do Estádio Moisés Lucarelli e da Avenida da Saudade",
         "A rodoviária de Campinas fica a menos de 1 km, na Vila Industrial",
         "Comércio de bairro, com padarias, mercados e churrascarias no entorno imediato"
@@ -71,7 +71,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Vila João Jorge está na Região Sul de Campinas, no trecho entre o Centro e os bairros da Ponte Preta e do Swift. Pelos dados de mapa usados pela ONDEMORAR, o Terminal Central de ônibus fica a cerca de 1 km do centro do bairro, e a rodoviária, a pouco mais de 800 metros. A Avenida da Saudade, onde ficam a Câmara Municipal e o Colégio Dom Barreto, passa a poucas quadras."
+      "texto": "A Vila João Jorge está na Região Sul de Campinas, no trecho entre o Centro e os bairros da Ponte Preta e do Swift. Pelos dados de mapa usados pelo Onde morar?, o Terminal Central de ônibus fica a cerca de 1 km do centro do bairro, e a rodoviária, a pouco mais de 800 metros. A Avenida da Saudade, onde ficam a Câmara Municipal e o Colégio Dom Barreto, passa a poucas quadras."
     },
     {
       "tipo": "paragrafo",
@@ -96,7 +96,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A Vila João Jorge mistura casas térreas e sobrados com prédios de média altura. A base de condomínios da ONDEMORAR, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de dez condomínios no bairro, oito deles verticais, somando perto de 470 unidades. O prédio mais alto da base tem 17 andares; a maior parte fica entre 5 e 12."
+      "texto": "A Vila João Jorge mistura casas térreas e sobrados com prédios de média altura. A base de condomínios do Onde morar?, montada com o cadastro da Receita Federal e o Censo 2022 do IBGE, identifica cerca de dez condomínios no bairro, oito deles verticais, somando perto de 470 unidades. O prédio mais alto da base tem 17 andares; a maior parte fica entre 5 e 12."
     },
     {
       "tipo": "paragrafo",
@@ -149,7 +149,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Na **Avenida da Saudade** ficam a sede da **Câmara Municipal de Campinas** e o **Colégio Dom Barreto**, escola particular e filantrópica que atende da creche ao ensino médio. Pelos dados de mapa da ONDEMORAR, o colégio está a cerca de 300 metros do centro da Vila João Jorge."
+      "texto": "Na **Avenida da Saudade** ficam a sede da **Câmara Municipal de Campinas** e o **Colégio Dom Barreto**, escola particular e filantrópica que atende da creche ao ensino médio. Pelos dados de mapa do Onde morar?, o colégio está a cerca de 300 metros do centro da Vila João Jorge."
     },
     {
       "tipo": "fotos",
@@ -223,7 +223,7 @@
     },
     {
       "pergunta": "A Vila João Jorge fica perto da rodoviária?",
-      "resposta": "Sim. Pelos dados de mapa usados pela ONDEMORAR, a rodoviária de Campinas, na Vila Industrial, fica a pouco mais de 800 metros do centro do bairro, e o Terminal Central, a cerca de 1 km."
+      "resposta": "Sim. Pelos dados de mapa usados pelo Onde morar?, a rodoviária de Campinas, na Vila Industrial, fica a pouco mais de 800 metros do centro do bairro, e o Terminal Central, a cerca de 1 km."
     },
     {
       "pergunta": "Tem escola perto da Vila João Jorge?",
@@ -276,7 +276,7 @@
       "site": "buser.com.br"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022, Overture Maps e OpenStreetMap"
     }
   ],
   "redes": {

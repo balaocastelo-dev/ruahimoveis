@@ -72,7 +72,7 @@
         "Nasceu nas terras da antiga Fazenda Proença, uma das primeiras sesmarias da cidade",
         "Abriga a Casa Grande e Tulha, tombada por Condepacc, Condephaat e Iphan",
         "Vizinho dos estádios Brinco de Ouro (Guarani) e Moisés Lucarelli (Ponte Preta)",
-        "A base da ONDEMORAR identifica cerca de 80 condomínios no bairro, quase todos verticais"
+        "A base do Onde morar? identifica cerca de 80 condomínios no bairro, quase todos verticais"
       ],
       "titulo": "O Jardim Proença em poucas linhas"
     },
@@ -131,7 +131,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de condomínios da ONDEMORAR, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 80 condomínios no bairro, quase todos verticais, que somam em torno de 1.500 apartamentos. O prédio mais alto da base tem 18 andares, mas boa parte dos edifícios tem entre 6 e 16 pavimentos. Há desde prédios pequenos, com menos de dez unidades, até torres com mais de 60 apartamentos."
+      "texto": "A base de condomínios do Onde morar?, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 80 condomínios no bairro, quase todos verticais, que somam em torno de 1.500 apartamentos. O prédio mais alto da base tem 18 andares, mas boa parte dos edifícios tem entre 6 e 16 pavimentos. Há desde prédios pequenos, com menos de dez unidades, até torres com mais de 60 apartamentos."
     },
     {
       "tipo": "paragrafo",
@@ -148,11 +148,11 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Dentro do bairro fica a **Escola Estadual Professor José Vilagelin Neto**, na Rua Dom Luiz Antonio de Souza, que oferece os anos finais do ensino fundamental e o ensino médio, segundo o cadastro escolar público. O levantamento de lugares da ONDEMORAR, com dados do OpenStreetMap e da Overture Maps, conta cerca de 70 escolas de todos os tipos num raio de 1,5 km do centro do bairro, de educação infantil a cursos livres."
+      "texto": "Dentro do bairro fica a **Escola Estadual Professor José Vilagelin Neto**, na Rua Dom Luiz Antonio de Souza, que oferece os anos finais do ensino fundamental e o ensino médio, segundo o cadastro escolar público. O levantamento de lugares do Onde morar?, com dados do OpenStreetMap e da Overture Maps, conta cerca de 70 escolas de todos os tipos num raio de 1,5 km do centro do bairro, de educação infantil a cursos livres."
     },
     {
       "tipo": "paragrafo",
-      "texto": "O comércio do dia a dia se concentra ao longo das avenidas, com padarias, mercados, farmácias, agências bancárias e restaurantes. No mesmo raio de 1,5 km, o levantamento da ONDEMORAR aponta mais de 70 mercados e padarias, cerca de 160 restaurantes e cafés e quase 50 pontos ligados à saúde, como clínicas e farmácias. Para compras maiores, o Centro de Campinas fica perto."
+      "texto": "O comércio do dia a dia se concentra ao longo das avenidas, com padarias, mercados, farmácias, agências bancárias e restaurantes. No mesmo raio de 1,5 km, o levantamento do Onde morar? aponta mais de 70 mercados e padarias, cerca de 160 restaurantes e cafés e quase 50 pontos ligados à saúde, como clínicas e farmácias. Para compras maiores, o Centro de Campinas fica perto."
     },
     {
       "tipo": "titulo",
@@ -237,11 +237,11 @@
     },
     {
       "pergunta": "O Jardim Proença tem mais casas ou prédios?",
-      "resposta": "Tem os dois. A base da ONDEMORAR identifica cerca de 80 condomínios no bairro, quase todos verticais, mas as ruas internas ainda têm muitas casas e sobrados."
+      "resposta": "Tem os dois. A base do Onde morar? identifica cerca de 80 condomínios no bairro, quase todos verticais, mas as ruas internas ainda têm muitas casas e sobrados."
     },
     {
       "pergunta": "Quais escolas ficam no Jardim Proença?",
-      "resposta": "No bairro fica a Escola Estadual Professor José Vilagelin Neto, com anos finais do fundamental e ensino médio. Num raio de 1,5 km, o levantamento da ONDEMORAR conta cerca de 70 escolas de vários tipos."
+      "resposta": "No bairro fica a Escola Estadual Professor José Vilagelin Neto, com anos finais do fundamental e ensino médio. Num raio de 1,5 km, o levantamento do Onde morar? conta cerca de 70 escolas de vários tipos."
     }
   ],
   "fontes": [
@@ -270,7 +270,7 @@
       "site": "escol.as"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal e IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps",
+      "nome": "Base de condomínios do Onde morar?: Receita Federal e IBGE Censo 2022; lugares: OpenStreetMap e Overture Maps",
       "site": "ruahimoveis.vercel.app"
     }
   ],

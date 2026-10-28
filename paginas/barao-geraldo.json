@@ -155,7 +155,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "Barão Geraldo é, antes de tudo, um lugar de casas. Um estudo de pesquisadoras da PUC-Campinas sobre o distrito mostra que a maior parte das construções ao longo do eixo principal tem um ou dois pavimentos, e que os prédios mais altos aparecem no setor mais antigo. A base de condomínios da ONDEMORAR, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos, o mais alto com cerca de 12 andares."
+      "texto": "Barão Geraldo é, antes de tudo, um lugar de casas. Um estudo de pesquisadoras da PUC-Campinas sobre o distrito mostra que a maior parte das construções ao longo do eixo principal tem um ou dois pavimentos, e que os prédios mais altos aparecem no setor mais antigo. A base de condomínios do Onde morar?, montada com dados da Receita Federal e do Censo 2022 do IBGE, identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos, o mais alto com cerca de 12 andares."
     },
     {
       "tipo": "paragrafo",
@@ -262,7 +262,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "A base de pontos de interesse usada pela ONDEMORAR registra um terminal de ônibus no distrito. Ainda assim, boa parte dos moradores depende do carro, e os horários de entrada e saída das universidades concentram trânsito nas avenidas de acesso."
+      "texto": "A base de pontos de interesse usada pelo Onde morar? registra um terminal de ônibus no distrito. Ainda assim, boa parte dos moradores depende do carro, e os horários de entrada e saída das universidades concentram trânsito nas avenidas de acesso."
     },
     {
       "tipo": "titulo",
@@ -311,7 +311,7 @@
     },
     {
       "pergunta": "Barão Geraldo tem mais casas ou prédios?",
-      "resposta": "Casas. A maior parte das construções tem um ou dois pavimentos, e a base de condomínios da ONDEMORAR identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos ou horizontais."
+      "resposta": "Casas. A maior parte das construções tem um ou dois pavimentos, e a base de condomínios do Onde morar? identifica cerca de 70 condomínios no distrito, a maioria de prédios baixos ou horizontais."
     },
     {
       "pergunta": "Quando acontece a feira de Barão Geraldo?",
@@ -360,7 +360,7 @@
       "site": "en.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {

@@ -102,7 +102,7 @@
     },
     {
       "tipo": "paragrafo",
-      "texto": "O Parque Prado é, antes de tudo, um bairro de apartamentos em condomínio. A base de condomínios da ONDEMORAR, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 15 condomínios no bairro, quase todos verticais, que somam por volta de 1.200 unidades. As torres variam de prédios baixos, de quatro andares, a edifícios de mais de 20 pavimentos."
+      "texto": "O Parque Prado é, antes de tudo, um bairro de apartamentos em condomínio. A base de condomínios do Onde morar?, feita com dados da Receita Federal e do Censo 2022, identifica cerca de 15 condomínios no bairro, quase todos verticais, que somam por volta de 1.200 unidades. As torres variam de prédios baixos, de quatro andares, a edifícios de mais de 20 pavimentos."
     },
     {
       "tipo": "fotos",
@@ -316,7 +316,7 @@
       "site": "pt.wikipedia.org"
     },
     {
-      "nome": "Base de condomínios da ONDEMORAR: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
+      "nome": "Base de condomínios do Onde morar?: Receita Federal, IBGE Censo 2022 e OpenStreetMap"
     }
   ],
   "redes": {
