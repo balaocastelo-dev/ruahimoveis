@@ -121,26 +121,26 @@ ${blocoImagem(base, imagem, imagemLargura, imagemAltura, imagemTipo)}
 <meta name="theme-color" content="#FBFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
-<link rel="stylesheet" href="/portal-assets/portal.css?v=${VERSAO_ASSETS}">
+<link rel="stylesheet" href="/portal-assets/portal.css?v=${VERSAO_ASSETS}">${require('../tema').head()}
 ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('\n')}
 </head>
 <body class="${classe}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="p-topo">
-  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE)}, imóveis à venda"><span class="p-marca-n">${esc(CLIENTE)}</span><span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
+  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE)}, imóveis à venda">${require('../tema').logo(CLIENTE, 'p-marca-logo') || `<span class="p-marca-n">${esc(CLIENTE)}</span>`}<span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
   <nav class="p-nav" aria-label="Portal">
     <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
     <a href="/imoveis/favoritos"${req.path === '/imoveis/favoritos' ? ' aria-current="page"' : ''}>Favoritos <span class="p-fav-n" data-fav-n hidden></span></a>
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
-    <a href="/blog">Blog Sopro</a>
+    <a href="/blog">Blog ${esc(process.env.BLOG_NOME || 'Sopro')}</a>
     ${zap ? `<a class="p-nav-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
   </nav>
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
   <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog Sopro</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
+  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog ${esc(process.env.BLOG_NOME || 'Sopro')}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>

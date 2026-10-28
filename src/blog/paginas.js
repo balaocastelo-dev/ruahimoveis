@@ -119,13 +119,13 @@ ${imagem ? `<meta property="og:image" content="${esc(imagem)}"><meta name="twitt
 <meta name="theme-color" content="#FBFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
-<link rel="stylesheet" href="/blog-assets/blog.css">
+<link rel="stylesheet" href="/blog-assets/blog.css">${require('../tema').head()}
 ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('\n')}
 </head>
 <body class="${classe}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="topo">
-  <a class="marca" href="/blog"><span class="marca-n">${esc(NOME)}</span><span class="marca-l">${esc(LEGENDA)}</span></a>
+  <a class="marca" href="/blog">${require('../tema').logo(CLIENTE, 'marca-logo')}<span class="marca-n">${esc(NOME)}</span><span class="marca-l">${esc(LEGENDA)}</span></a>
   <nav class="cats" aria-label="Categorias">${CATEGORIAS.map((c) => `<a href="/blog/categoria/${c.slug}"${req.path === `/blog/categoria/${c.slug}` ? ' aria-current="page"' : ''}>${esc(c.nome)}</a>`).join('')}</nav>
 </header>
 <main id="conteudo">${corpo}</main>
@@ -255,7 +255,7 @@ function llms(req, { imoveis = [], bairros = [], artigos = [] }) {
   const linhas = [
     `# ${EMPRESA}`,
     '',
-    '> Imobiliária de venda em Campinas (SP). Publica guias completos dos bairros de Campinas (como é morar, parques, escolas, comércio, prédios e condomínios, com números atualizados), a página de cada imóvel à venda e o blog Sopro, sobre casa, arquitetura e bem-estar.',
+    '> Imobiliária de venda em Campinas (SP). Publica guias completos dos bairros de Campinas (como é morar, parques, escolas, comércio, prédios e condomínios, com números atualizados), a página de cada imóvel à venda e o blog ' + NOME + ', sobre casa, arquitetura e bem-estar.',
     '',
     `Os números das páginas (imóveis à venda, valores, áreas, prédios e o que tem perto) vêm do sistema da ${CLIENTE} ao vivo. Para falar com a ${CLIENTE}, use o formulário de qualquer página.`,
     '',
@@ -271,7 +271,7 @@ function llms(req, { imoveis = [], bairros = [], artigos = [] }) {
     linhas.push('');
   }
   if (artigos.length) {
-    linhas.push('## Blog Sopro', '');
+    linhas.push('## Blog ' + NOME, '');
     for (const a of artigos.slice(0, 60)) linhas.push(`- [${a.titulo}](${base}/blog/${a.slug})`);
     linhas.push('');
   }

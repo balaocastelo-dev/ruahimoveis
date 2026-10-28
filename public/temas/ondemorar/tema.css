@@ -1,0 +1,30 @@
+/* ONDEMORAR.COM · tema do portal e do blog: colorido, jovem, de blocos.
+   Azul-noite no texto, creme no fundo, cores vivas nas ações. Fredoka nos títulos, Nunito no texto. */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap");
+:root{
+  --cal:#FFF8EE; --papel:#FFFFFF; --grafite:#1B1340; --pedra:#5B5577; --linha:#ECE3F5;
+  --ouro:#3D7BFF; --ouro-escuro:#2457D6; --salvia:#8E5BFF; --salvia-claro:#F1EAFF; --zap:#1FA75A;
+  --serifa:"Fredoka", "Nunito", "Segoe UI", system-ui, sans-serif;
+  --texto:"Nunito", "Segoe UI", system-ui, sans-serif;
+  --raio:16px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --cal:#120C2B; --papel:#1B1340; --grafite:#F6F2FF; --pedra:#B9B2D6; --linha:#2E2560;
+  --ouro:#6FA0FF; --ouro-escuro:#9DBDFF; --salvia:#B794FF; --salvia-claro:#231A4D; --zap:#3DCB7A}}
+body{background-image:radial-gradient(circle at 8% 0%, rgba(255,200,0,.10), transparent 32%), radial-gradient(circle at 92% 6%, rgba(61,123,255,.10), transparent 30%)}
+/* logo no topo */
+.p-marca{align-items:center}
+.p-marca-logo{height:46px;width:auto;display:block}
+.marca-logo{height:clamp(54px,9vw,82px);width:auto;display:block}
+@media (max-width:640px){.p-marca-logo{height:34px}}
+/* títulos arredondados, um pouco mais pesados */
+h1,h2,h3,.p-hero h1,.marca-n{font-weight:700!important;letter-spacing:-.01em!important}
+.marca-n{font-size:clamp(30px,5vw,44px)!important}
+/* botões e cartões com cara de jogo: cantos redondos e sombra de bloco */
+button,.btn,.p-btn,input[type=submit],a.p-btn,.p-cta{border-radius:14px!important}
+.p-btn,.btn-pri,a.p-btn,button[type=submit]{box-shadow:0 4px 0 rgba(27,19,64,.25)}
+.p-card,.cartao,.card,article.c{border-radius:18px!important;overflow:hidden}
+/* faixa de cores sob o topo, como os blocos do logo */
+.p-topo::after,.topo::after{content:"";display:block;height:6px;width:100%;margin-top:14px;border-radius:6px;
+  background:linear-gradient(90deg,#FF3B5C 0 11%,#FF8A00 11% 22%,#FFC800 22% 33%,#2ED573 33% 44%,#00C2FF 44% 55%,#3D7BFF 55% 66%,#8E5BFF 66% 77%,#FF4FB8 77% 88%,#FF3B5C 88%)}
+.p-topo{flex-wrap:wrap}

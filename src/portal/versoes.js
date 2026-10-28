@@ -85,7 +85,7 @@ ${outros.length ? `<div class="p-grade r-grade">${outros.map((y) => cartao(y)).j
 function leituras(artigos) {
   if (!artigos.length) return '';
   return `<section class="r-sopro" aria-labelledby="sopro-t" data-revelar>
-<p class="r-chapeu">Do blog Sopro</p>
+<p class="r-chapeu">Do blog ${esc(process.env.BLOG_NOME || 'Sopro')}</p>
 <h2 id="sopro-t">Leituras para a casa</h2>
 <div class="r-sopro-grade">${artigos.map((a) => `<article class="r-art">
 <a href="/blog/${esc(a.slug)}" class="r-art-img">${a.capa && a.capa.src ? `<img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt || '')}" width="1600" height="900" loading="lazy" decoding="async">` : ''}</a>
@@ -94,7 +94,7 @@ function leituras(artigos) {
 <p>${esc(cortar(a.resumo || '', 140))}</p>
 <p class="r-art-meta">${esc(dataPorExtenso(a.publicadoEm))}${a.minutos ? `, ${a.minutos} min de leitura` : ''}</p>
 </article>`).join('')}</div>
-<a class="r-ler" href="/blog">Todos os textos do Sopro <span aria-hidden="true">→</span></a>
+<a class="r-ler" href="/blog">Todos os textos do ${esc(process.env.BLOG_NOME || 'Sopro')} <span aria-hidden="true">→</span></a>
 </section>`;
 }
 

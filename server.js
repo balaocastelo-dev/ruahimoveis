@@ -91,7 +91,7 @@ app.use(require('./src/condominios/publico'));
 app.get('/marca.js', (req, res) => {
   const c = require('./src/config');
   res.type('application/javascript').setHeader('Cache-Control', 'no-cache');
-  res.send(`window.MARCA=${JSON.stringify({ sistema: c.SISTEMA_NOME, cliente: c.CLIENTE_NOME, empresa: c.EMPRESA }).replace(/</g, '\\u003c')};`);
+  res.send(`window.MARCA=${JSON.stringify({ sistema: c.SISTEMA_NOME, cliente: c.CLIENTE_NOME, empresa: c.EMPRESA, tema: c.TEMA, logo: c.LOGO_URL, icone: c.ICONE_URL }).replace(/</g, '\\u003c')};`);
 });
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
 // 3D: o modo realista do Google precisa de WebAssembly (Draco), worker em blob e de falar com tile.googleapis.com.

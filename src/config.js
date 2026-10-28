@@ -33,6 +33,10 @@ module.exports = {
   SISTEMA_NOME: env('SISTEMA_NOME', 'Herrera HOUSE IA'),
   CLIENTE_NOME,                                                   // nome curto da imobiliária (marca no portal, blog, mensagens)
   EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),      // razão/nome completo da imobiliária
+  // Identidade visual da imobiliária (opcional): logo e tema (pasta public/temas/<TEMA>, com tema.css, logo.svg e icone.svg)
+  TEMA: env('TEMA').replace(/[^a-z0-9-]/gi, ''),
+  get LOGO_URL() { return env('LOGO_URL') || (this.TEMA ? `/temas/${this.TEMA}/logo.svg` : ''); },
+  get ICONE_URL() { return env('ICONE_URL') || (this.TEMA ? `/temas/${this.TEMA}/icone.svg` : ''); },
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
 

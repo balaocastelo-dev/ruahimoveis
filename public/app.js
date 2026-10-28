@@ -2,6 +2,8 @@
 // Marca: nome do sistema e do cliente (imobiliária) vêm do servidor em /marca.js; estes são só os padrões.
 const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH', empresa: 'RUAH Investimentos Imobiliários' }, window.MARCA || {});
 'use strict';
+if (MARCA.icone) { const l = document.createElement('link'); l.rel = 'icon'; l.type = 'image/svg+xml'; l.href = MARCA.icone; document.head.appendChild(l); }
+if (MARCA.cliente) document.title = MARCA.sistema + ' · ' + MARCA.cliente;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -134,7 +136,7 @@ FORM.setup = async (f) => {
 function telaLogin() {
   clearInterval(poll);
   $('#root').innerHTML = `<div class="auth"><form class="card" data-form="login">
-    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Sistema imobiliário</span></div>
+    <div class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></div>
     <label class="f">E-mail<input name="email" type="email" required autocomplete="username"></label>
     <label class="f">Senha<input name="senha" type="password" required autocomplete="current-password"></label>
     <button class="btn pri" type="submit">Entrar</button>
@@ -156,7 +158,7 @@ function shell() {
   $('#root').innerHTML = `<div class="app"><header class="topbar"><button type="button" class="hamb" data-act="menu" aria-label="Abrir o menu" aria-controls="menu-lateral" aria-expanded="false"><span></span><span></span><span></span></button>
     <a class="tb-marca" href="#/painel">${esc(MARCA.sistema)}</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span></header>
     <div class="side-veu" data-act="menu-fecha" aria-hidden="true"></div><aside class="side" id="menu-lateral">
-    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Sistema imobiliário</span></div>
+    <div class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></div>
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;

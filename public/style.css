@@ -1080,3 +1080,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .seg a+a{border-left:1px solid var(--line)}
 .seg a.on{background:var(--gold);color:#1b1c1e;font-weight:600}
 .mk-neg a{min-width:64px;justify-content:center}
+/* logo da imobiliária (instalação com tema) */
+.brand-logo{display:block;max-width:100%;height:auto;max-height:54px;margin:0 0 8px}
