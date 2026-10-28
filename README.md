@@ -1,6 +1,6 @@
-# Sistema RUAH
+# Herrera HOUSE IA
 
-Sistema interno da RUAH Investimentos Imobiliários (Campinas-SP), feito para substituir as funções do Kenlo e do Fisgar. Roda no PC do escritório e na rede local (celular dos corretores).
+Sistema imobiliário com IA, feito para substituir as funções do Kenlo e do Fisgar. O 1º cliente (esta instalação) é a RUAH Investimentos Imobiliários (Campinas-SP); o nome do sistema e o da imobiliária vêm da configuração (`SISTEMA_NOME`, `CLIENTE_NOME`, `EMPRESA` no `.env`). Roda no PC do escritório e na rede local (celular dos corretores).
 
 ## O que tem
 
@@ -14,7 +14,7 @@ Sistema interno da RUAH Investimentos Imobiliários (Campinas-SP), feito para su
 
 ## Como rodar
 
-Requer Node.js 22.13 ou mais novo (Windows). Dê dois cliques em `INICIAR-RUAH.ps1` (ou no atalho "Sistema RUAH"). Ele instala os componentes, cria o `.env` com chaves aleatórias, faz backup diário do banco e abre o navegador em http://localhost:3333.
+Requer Node.js 22.13 ou mais novo (Windows). Dê dois cliques em `INICIAR-RUAH.ps1` (ou no atalho "Herrera HOUSE IA"). Ele instala os componentes, cria o `.env` com chaves aleatórias, faz backup diário do banco e abre o navegador em http://localhost:3333.
 
 Configuração de Google Drive, WhatsApp, endereço público, IA e radar automático: veja `COMO-CONFIGURAR.txt`.
 

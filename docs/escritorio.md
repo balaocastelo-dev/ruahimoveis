@@ -22,7 +22,7 @@ Os limites de valor mudam em "Regras do escritório".
 
 - Padrão no código: `src/agentes/almas/NN-<agente>.soul` (cabeçalho `---` + texto em Markdown).
 - Editável na mesa do agente > **Alma (.soul)** (salva no banco, vale no PC e no link). "Voltar ao padrão" volta para o arquivo.
-- O sistema junta sozinho à alma, a cada mensagem: catálogo do setor (só imóveis da RUAH), ficha do lead, o que ele pediu no portal,
+- O sistema junta sozinho à alma, a cada mensagem: catálogo do setor (só imóveis da imobiliária), ficha do lead, o que ele pediu no portal,
   a conversa, a data/hora e o formato da resposta (JSON com `mensagem` e `acoes`). Essa parte não fica na alma.
 
 ## Ações que os agentes usam no sistema

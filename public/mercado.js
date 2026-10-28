@@ -1,4 +1,4 @@
-/* Sistema RUAH — Apartamentos, Casas, Terrenos e Salas comerciais/barracões: imóveis à venda em Campinas já na base (Fisguei), por Bairro → Rua → Imóvel (carregado depois do fisguei.js) */
+/* Herrera HOUSE IA — Apartamentos, Casas, Terrenos e Salas comerciais/barracões: imóveis à venda em Campinas já na base (Fisguei), por Bairro → Rua → Imóvel (carregado depois do fisguei.js) */
 'use strict';
 // As quatro vitrines da base (Apartamentos, Casas, Terrenos, Salas comerciais e barracões) + o atalho para Condomínios.
 const MK_CATS = [

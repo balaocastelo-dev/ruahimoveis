@@ -88,7 +88,7 @@ async function resolveCep(a) {
   const rua = String(a.logradouro || '').replace(/^(rua|r\.|avenida|av\.|alameda|al\.|travessa|estrada|rodovia)\s+/i, '').trim();
   if (rua.length < 3) return null;
   const url = `https://viacep.com.br/ws/${encodeURIComponent(uf)}/${encodeURIComponent(cidade)}/${encodeURIComponent(rua)}/json/`;
-  const r = await fetch(url, { headers: { 'User-Agent': 'SistemaRUAH/1.0' }, signal: AbortSignal.timeout(8000) });
+  const r = await fetch(url, { headers: { 'User-Agent': `${cfg.SISTEMA_NOME.replace(/\s+/g, '')}/1.0` }, signal: AbortSignal.timeout(8000) });
   if (!r.ok) return null;
   const lista = await r.json();
   if (!Array.isArray(lista) || !lista.length) return null;
@@ -243,7 +243,7 @@ function importa(anuncioId, usuario, proximoCodigo) {
   const codigo = proximoCodigo(tipo);
   const descricao = [`Veio da base (${F.ref(a.id)}) em ${new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}, com o proprietário localizado no Fisgar.`,
     a.anunciante_nome ? `Anunciado antes por: ${a.anunciante_nome}${a.anunciante_tipo === 'imobiliaria' ? ' (imobiliária)' : ''}.` : '',
-    'Fotos: tirar fotos próprias da RUAH ou pedir as originais ao dono (as do anúncio são de terceiros e não foram copiadas).'].filter(Boolean).join('\n');
+    `Fotos: tirar fotos próprias da ${cfg.CLIENTE_NOME} ou pedir as originais ao dono (as do anúncio são de terceiros e não foram copiadas).`].filter(Boolean).join('\n');
   const corretor = usuario && usuario.perfil === 'corretor' ? usuario.id : (a.oportunidade_id && one('SELECT corretor_id FROM oportunidades WHERE id=?', a.oportunidade_id) || {}).corretor_id || (usuario && usuario.id) || null;
   const d = melhorDono(a.id);
   const unidade = d && d.unidade ? d.unidade : (a.complemento && /\d/.test(a.complemento) ? a.complemento.slice(0, 40) : null);

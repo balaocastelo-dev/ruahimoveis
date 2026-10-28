@@ -1,11 +1,11 @@
 # Portal de imóveis — o site do visitante
 
-O portal público da RUAH fica em `/imoveis` do Sistema RUAH (online: https://ruahimoveis.vercel.app/imoveis;
+O portal público da imobiliária (o cliente, hoje a RUAH) fica em `/imoveis` do Herrera HOUSE IA (online: https://ruahimoveis.vercel.app/imoveis;
 no PC: http://localhost:3333/imoveis). Sem login. Montado em 26/10/2026 no mesmo esquema do blog Sopro
 (guia `BLOG-AUTONOMO-COMO-RECRIAR.md`).
 
 O visitante vê os imóveis, filtra, guarda favoritos, abre a **página única** de cada imóvel, fala com o corretor
-(formulário ou WhatsApp) e pede visita. Todo contato vira lead no CRM com origem **Portal RUAH**.
+(formulário ou WhatsApp) e pede visita. Todo contato vira lead no CRM com origem **Portal RUAH** ("Portal " + nome do cliente).
 
 ## A regra que não muda
 
@@ -24,7 +24,7 @@ a página sai do ar até ser reescrita.
 | Comando | `scripts/portal-publicar.mjs` | Única porta de entrada: `preparar` (fila + fotos em /tmp/portal), `conferir`, `publicar`, `listar`, `retirar`. |
 | Ramo de conteúdo | `claude/portal-conteudo` em `balaocastelo-dev/ruahimoveis` | `indice.json`, `paginas/<CÓDIGO>.json` e `ROTINA.md` (as regras de quem escreve). |
 | Para quem escreve | `/imoveis/dados.json` | A ficha, as fotos e o estado da página de cada imóvel à venda. |
-| Rotina na nuvem | tarefa agendada "Portal RUAH - páginas dos imóveis" | Pega os próximos da fila, olha as fotos, escreve, confere e publica. |
+| Rotina na nuvem | tarefa agendada "Portal RUAH - páginas dos imóveis" (do cliente RUAH) | Pega os próximos da fila, olha as fotos, escreve, confere e publica. |
 | Contato | `POST /api/publico/portal/interesse` | Lead quente no CRM (mesmo telefone não duplica), interação com o imóvel, a mensagem e o pedido de visita. Armadilha de robô e limite por IP. |
 | Tela no sistema | menu Conteúdo › Portal de imóveis | A situação da página de cada imóvel e "Copiar legenda" para as redes. |
 
@@ -36,12 +36,12 @@ Estados da página: **no ar**; **desatualizada** (no ar, mas a ficha ou as fotos
 ```
 PORTAL=true          # false tira todos os imóveis do portal sem apagar nada
 PORTAL_URL=          # endereço público (domínio). Vazio = o de quem acessa. O comando usa https://ruahimoveis.vercel.app
-WHATSAPP_RUAH=       # botão "Falar no WhatsApp" quando o imóvel não tem corretor com celular
+WHATSAPP_CLIENTE=    # (ou o nome antigo WHATSAPP_RUAH) botão "Falar no WhatsApp" quando o imóvel não tem corretor com celular
 BLOG_CRECI=          # aparece no rodapé
 ```
 
 O corretor aparece com nome e WhatsApp quando o imóvel está com um usuário de perfil **corretor** que tem telefone.
-Sem isso, a página mostra "Equipe RUAH" e o botão usa `WHATSAPP_RUAH`; sem número, fica só o formulário.
+Sem isso, a página mostra "Equipe RUAH" (Equipe + nome do cliente) e o botão usa `WHATSAPP_CLIENTE`; sem número, fica só o formulário.
 
 ## Parar, pausar, tirar do ar
 

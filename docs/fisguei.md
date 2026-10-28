@@ -1,6 +1,6 @@
 # Fisguei
 
-Página `#/fisguei` (também `/fisguei`) do Sistema RUAH. Traz para dentro do sistema os anúncios e proprietários que a equipe abre no Fisgar e põe o robô **TH-IA-GO CORRETOR** para perguntar pelo WhatsApp se a pessoa é a dona do imóvel.
+Página `#/fisguei` (também `/fisguei`) do Herrera HOUSE IA. Traz para dentro do sistema os anúncios e proprietários que a equipe abre no Fisgar e põe o robô **TH-IA-GO CORRETOR** para perguntar pelo WhatsApp se a pessoa é a dona do imóvel.
 
 ## Como os dados chegam
 
@@ -10,7 +10,7 @@ Página `#/fisguei` (também `/fisguei`) do Sistema RUAH. Traz para dentro do si
    - `owners/GetPeople` (aba Proprietários) → `fisguei_pessoas`;
    - `owners/GetPersonInfo` (botão Consultar, o que gasta crédito no Fisgar) → telefones e e-mails em `fisguei_contatos`.
 3. Envia em lotes para `POST /fisguei-api/receber` com o cabeçalho `X-Fisguei-Chave` (gerada em Fisguei → Gerar chave; o banco guarda só o hash).
-4. `src/fisguei/normaliza.js` traduz o formato do Fisgar. Anúncio só de locação fica de fora (a RUAH só vende). O CPF/CNPJ que o Fisgar devolve **não é gravado**: vira um hash para reconhecer a mesma pessoa.
+4. `src/fisguei/normaliza.js` traduz o formato do Fisgar. Anúncio só de locação fica de fora (a imobiliária cliente, a RUAH, só vende). O CPF/CNPJ que o Fisgar devolve **não é gravado**: vira um hash para reconhecer a mesma pessoa.
 
 ## Robô TH-IA-GO CORRETOR
 

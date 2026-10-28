@@ -1,4 +1,4 @@
-/* Sistema RUAH — Robôs e Fisgar (Sistema): créditos, robô do WhatsApp, buscas de dono e extensão. A antiga tela de captação
+/* Herrera HOUSE IA — Robôs e Fisgar (Sistema): créditos, robô do WhatsApp, buscas de dono e extensão. A antiga tela de captação
    (painel Radar + Fisguei) saiu: a captação acontece nas vitrines da base. Carregado depois do painel.js. */
 'use strict';
 

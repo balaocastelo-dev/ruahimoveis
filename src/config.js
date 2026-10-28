@@ -18,6 +18,7 @@ if (fs.existsSync(envPath)) {
 const env = (k, d = '') => (process.env[k] ?? d).trim();
 
 const PORT = parseInt(env('PORT', '3333'), 10);
+const CLIENTE_NOME = env('CLIENTE_NOME', 'RUAH'); // nome curto da imobiliária (cliente desta instalação)
 
 module.exports = {
   ROOT,
@@ -28,7 +29,10 @@ module.exports = {
   BASE_URL: env('BASE_URL', process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : `http://localhost:${PORT}`),
   PUBLIC_URL: env('PUBLIC_URL', ''), // URL pública (túnel) para links de assinatura, off-market e webhook
   SECRET_KEY: env('SECRET_KEY'),
-  EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),
+  // Nome do sistema (o produto) e do cliente que usa esta instalação (a imobiliária).
+  SISTEMA_NOME: env('SISTEMA_NOME', 'Herrera HOUSE IA'),
+  CLIENTE_NOME,                                                   // nome curto da imobiliária (marca no portal, blog, mensagens)
+  EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),      // razão/nome completo da imobiliária
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
 
@@ -36,15 +40,17 @@ module.exports = {
   GOOGLE_CLIENT_ID: env('GOOGLE_CLIENT_ID'),
   GOOGLE_CLIENT_SECRET: env('GOOGLE_CLIENT_SECRET'),
   DRIVE_ROOT_FOLDER_ID: env('DRIVE_ROOT_FOLDER_ID'), // opcional: ID de uma pasta ou Drive compartilhado
-  DRIVE_ROOT_NAME: env('DRIVE_ROOT_NAME', 'RUAH Imóveis'),
+  DRIVE_ROOT_NAME: env('DRIVE_ROOT_NAME', `${CLIENTE_NOME} Imóveis`),
 
   // WhatsApp Cloud API (oficial)
   WA_TOKEN: env('WA_TOKEN'),
   WA_PHONE_ID: env('WA_PHONE_ID'),
   WA_VERIFY_TOKEN: env('WA_VERIFY_TOKEN'),
   WA_APP_SECRET: env('WA_APP_SECRET'),
-  // Número de WhatsApp da RUAH impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
-  WHATSAPP_RUAH: env('WHATSAPP_RUAH'),
+  // Número de WhatsApp da imobiliária impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
+  // WHATSAPP_RUAH é o nome antigo da variável e continua valendo.
+  WHATSAPP_CLIENTE: env('WHATSAPP_CLIENTE') || env('WHATSAPP_RUAH'),
+  get WHATSAPP_RUAH() { return this.WHATSAPP_CLIENTE; },
   CUSTO_MATRICULA: parseFloat(env('CUSTO_MATRICULA', '0')) || 0,
   CUSTO_BIRO: parseFloat(env('CUSTO_BIRO', '0')) || 0,
 
@@ -56,7 +62,7 @@ module.exports = {
   RADAR_ALERTA_MAX_HORAS: env('RADAR_ALERTA_MAX_HORAS', '24'),
   RADAR_PORTAIS: env('RADAR_PORTAIS', '1'),            // monitor direto dos portais (0 desliga)
   RADAR_PORTAIS_MIN: env('RADAR_PORTAIS_MIN', '60'),   // de quantos em quantos minutos (mínimo 30)
-  RADAR_BAIRROS: env('RADAR_BAIRROS', ''),             // bairros vigiados, separados por vírgula (vazio = os 11 da RUAH)
+  RADAR_BAIRROS: env('RADAR_BAIRROS', ''),             // bairros vigiados, separados por vírgula (vazio = os 11 bairros padrão do cliente)
 
   // Fisguei: robô TH-IA-GO CORRETOR (WhatsApp pelo QR code). Roda só no PC; 0 desliga.
   FISGUEI_ROBO: env('FISGUEI_ROBO', '1'),

@@ -1,8 +1,9 @@
 # Blog da RUAH ("Sopro") - tarefa da FOTO DE CAPA (pasta \RUAH\). Criado pelo Claude em 26/10/2026.
-# Roda o scripts\capa_blog_ruah.py do Sistema RUAH, que usa o gerador do Balao
+# Roda o scripts\capa_blog_ruah.py do Herrera HOUSE IA (instalacao do cliente RUAH), que usa o gerador do Balao
 # (C:\Users\user\balao-content-factory\publisher\capa_blog.py) na RTX 4090.
 # Horarios fora das rodadas do Balao (22h00 e 5h30): 22h40 e 4h40. A rotina escreve
 # as 19h e agenda os artigos para 6h, 12h e 18h do dia seguinte.
+# O nome da pasta e da tarefa (\RUAH\Capa do blog RUAH) nao muda: a tarefa ja instalada depende dele.
 # Para desligar:  Disable-ScheduledTask -TaskPath '\RUAH\' -TaskName 'Capa do blog RUAH'
 # Para remover:   Unregister-ScheduledTask -TaskPath '\RUAH\' -TaskName 'Capa do blog RUAH' -Confirm:$false
 $ErrorActionPreference = 'Stop'

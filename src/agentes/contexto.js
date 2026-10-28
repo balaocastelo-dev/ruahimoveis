@@ -1,6 +1,7 @@
 // O que o sistema mostra a cada agente antes de ele responder: catálogo do setor, ficha do cliente,
 // histórico da conversa, números do dia (gerentes) e o formato da resposta (ações que ele pode usar).
 const { one, all } = require('../db');
+const cfg = require('../config');
 const B = require('./base');
 
 const brl = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') : 'valor sob consulta');
@@ -34,7 +35,7 @@ function linhaImovel(i, links, off) {
   const desc = String(i.descricao || '').replace(/\s+/g, ' ').slice(0, 220);
   return `- ${i.codigo}: ${i.tipo}${!off && i.cond ? ' no ' + i.cond : ''}${i.bairro ? `, ${off ? 'região de ' : ''}${i.bairro}` : ''}; `
     + `${i.quartos ? i.quartos + ' quartos' : ''}${i.suites ? ` (${i.suites} suítes)` : ''}${i.vagas ? `, ${i.vagas} vagas` : ''}${area ? `, ${Math.round(area)} m²` : ''}; ${brl(i.valor)}`
-    + `${i.valor_condominio ? `; condomínio ${brl(i.valor_condominio)}/mês` : ''}${i.exclusivo ? '; exclusividade RUAH' : ''}`
+    + `${i.valor_condominio ? `; condomínio ${brl(i.valor_condominio)}/mês` : ''}${i.exclusivo ? `; exclusividade ${cfg.CLIENTE_NOME}` : ''}`
     + `${!off && links[i.codigo] ? '; tem página no portal' : ''}${desc ? `\n    Descrição: ${desc}` : ''}`;
 }
 
@@ -135,7 +136,7 @@ async function montar(slug, telefone, extra = {}) {
   const aj = B.ajustes(slug);
   const g = B.geral();
   const agora = agoraSP();
-  const partes = [`Agora: ${diaSemana()}, ${agora.texto} (horário de Brasília). Você está no WhatsApp ${B.ehTeste(telefone) ? '(CONVERSA DE TESTE feita pela equipe RUAH na tela do sistema; responda como se fosse real)' : ''}.`];
+  const partes = [`Agora: ${diaSemana()}, ${agora.texto} (horário de Brasília). Você está no WhatsApp ${B.ehTeste(telefone) ? `(CONVERSA DE TESTE feita pela equipe ${cfg.CLIENTE_NOME} na tela do sistema; responda como se fosse real)` : ''}.`];
   partes.push(`Seu nome: ${aj.nome}. Seu cargo: ${a.cargo}.`);
   let tipoAcoes = a.tipo === 'interno' ? slug : a.tipo;
 
@@ -145,7 +146,7 @@ async function montar(slug, telefone, extra = {}) {
     const cat = catalogoDoSetor(slug, lead, g);
     partes.push(`LIMITES DOS SETORES: casas até ${brl(g.limite_casas)} são da Clara; acima disso, Helena (alto padrão). Apartamentos a partir de ${brl(g.limite_alto_apto)} são da Helena; abaixo, Ana.`);
     partes.push(`OUTROS AGENTES (para "transferir"): ${B.AGENTES.filter((x) => x.tipo === 'cliente' && x.slug !== slug).map((x) => `"${x.slug}" = ${B.ajustes(x.slug).nome}, ${x.setor}`).join('; ')}.`);
-    partes.push(`CATÁLOGO DO SEU SETOR (${cat.length} imóvel(is) da RUAH; só estes existem para você):\n${cat.length ? cat.map((i) => linhaImovel(i, links, slug === 'offmarket')).join('\n') : '(nenhum imóvel no seu setor agora: anote o perfil e diga que o corretor avisa quando entrar algo)'}`);
+    partes.push(`CATÁLOGO DO SEU SETOR (${cat.length} imóvel(is) da ${cfg.CLIENTE_NOME}; só estes existem para você):\n${cat.length ? cat.map((i) => linhaImovel(i, links, slug === 'offmarket')).join('\n') : '(nenhum imóvel no seu setor agora: anote o perfil e diga que o corretor avisa quando entrar algo)'}`);
     if (lead) {
       const visitas = all(`SELECT v.data_hora,v.status,i.codigo FROM visitas v JOIN imoveis i ON i.id=v.imovel_id WHERE v.lead_id=? AND v.status IN ('agendada','confirmada') ORDER BY v.data_hora`, lead.id);
       const corretor = lead.corretor_id ? one('SELECT nome FROM usuarios WHERE id=?', lead.corretor_id) : null;
@@ -176,7 +177,7 @@ async function montar(slug, telefone, extra = {}) {
   if (slug === 'gerente-corretores') {
     const u = extra.usuario || (B.ehTeste(telefone) ? one("SELECT id,nome FROM usuarios WHERE ativo=1 AND perfil='corretor' ORDER BY id LIMIT 1") : null);
     if (u) partes.push(`QUEM ESTÁ FALANDO: o corretor ${u.nome}.\nAGENDA DELE (do sistema):\n${textoAgenda(agendaDoCorretor(u.id))}`);
-    else partes.push('QUEM ESTÁ FALANDO: não é um corretor cadastrado com este celular. Diga com educação que este é um canal interno da equipe RUAH.');
+    else partes.push(`QUEM ESTÁ FALANDO: não é um corretor cadastrado com este celular. Diga com educação que este é um canal interno da equipe ${cfg.CLIENTE_NOME}.`);
     tipoAcoes = 'gerente-corretores';
   }
 

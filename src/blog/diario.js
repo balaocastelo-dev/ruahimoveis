@@ -1,4 +1,4 @@
-// Blog RUAH · lê os artigos do ramo de conteúdo no GitHub.
+// Blog do cliente (a imobiliária) · lê os artigos do ramo de conteúdo no GitHub.
 //
 // Publicar um artigo não reinstala o sistema: é um arquivo novo no ramo
 // `claude/blog-conteudo`. O sistema olha o ramo a cada 10 minutos (cache), e

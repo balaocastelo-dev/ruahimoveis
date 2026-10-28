@@ -1,4 +1,4 @@
-// Importa os imóveis raspados do site antigo (ruahimobiliaria.com.br) para o Sistema RUAH.
+// Importa os imóveis raspados do site antigo (ruahimobiliaria.com.br) para o Herrera HOUSE IA (instalação do cliente RUAH).
 // Lê data/raspagem/imoveis.json e as fotos em data/raspagem/fotos/<ref>/.
 // Uso (no PC, com DATABASE_URL no .env para ir direto ao banco online):
 //   node scripts/importar-raspagem.js            → importa / atualiza

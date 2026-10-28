@@ -2,7 +2,10 @@
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const token = location.pathname.split('/').pop();
 const app = document.getElementById('app');
-const topo = (emp) => `<div class="brand"><b style="font-family:var(--f-display);font-size:34px;letter-spacing:.08em;color:var(--gold)">RUAH</b><span class="muted small">${esc(emp || '')}</span></div>`;
+// Página pública: a marca mostrada é a da imobiliária (cliente), não a do sistema.
+const CLIENTE = (window.MARCA || {}).cliente || 'RUAH';
+document.title = `Assinatura · ${CLIENTE}`;
+const topo = (emp) => `<div class="brand"><b style="font-family:var(--f-display);font-size:34px;letter-spacing:.08em;color:var(--gold)">${esc(CLIENTE)}</b><span class="muted small">${esc(emp || '')}</span></div>`;
 
 (async () => {
   const r = await fetch(`/api/publico/assinatura/${encodeURIComponent(token)}`);
@@ -54,7 +57,7 @@ const topo = (emp) => `<div class="brand"><b style="font-family:var(--f-display)
         body: JSON.stringify({ nome: f.nome.value, cpf: f.cpf.value, aceite: f.aceite.checked, assinatura_png: cv.toDataURL('image/png') }) });
       const j = await r2.json().catch(() => ({}));
       if (!r2.ok) throw new Error(j.erro || 'Não foi possível assinar.');
-      app.innerHTML = topo(d.empresa) + `<div class="card"><h2>Assinado ✓</h2><p>Documento assinado em ${esc(j.assinado_em)}. O corretor da RUAH já recebeu o PDF. Obrigado!</p></div>`;
+      app.innerHTML = topo(d.empresa) + `<div class="card"><h2>Assinado ✓</h2><p>Documento assinado em ${esc(j.assinado_em)}. O corretor da ${esc(CLIENTE)} já recebeu o PDF. Obrigado!</p></div>`;
     } catch (er) { erro.textContent = er.message; b.disabled = false; b.textContent = 'Assinar documento'; }
   });
 })();

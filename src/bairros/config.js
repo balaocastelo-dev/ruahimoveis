@@ -2,34 +2,36 @@
 //
 // Mesmo esquema do blog Sopro e do portal de imóveis:
 //   - a página é um JSON de blocos tipados (nunca HTML), num ramo do GitHub
-//     (`claude/bairros-conteudo` do repositório público ruahimoveis);
+//     (`claude/bairros-conteudo` do repositório público ruahimoveis — identificador técnico, não trocar);
 //   - quem escreve é uma tarefa agendada do Claude, que pesquisa o bairro,
 //     escolhe fotos reais e escreve um guia completo;
 //   - uma régua em código confere no comando de publicar E de novo no site;
-//   - os NÚMEROS ao vivo (imóveis da RUAH, prédios, o que tem perto) não vêm do
+//   - os NÚMEROS ao vivo (imóveis do cliente, prédios, o que tem perto) não vêm do
 //     texto: o site monta essas seções a partir do banco.
 //
 // As fotos são reais e de duas origens:
-//   - fotos de imóveis da RUAH à venda no bairro (fachada, prédio, vista);
+//   - fotos de imóveis do cliente (a imobiliária) à venda no bairro (fachada, prédio, vista);
 //   - fotos de lugares do bairro no Wikimedia Commons, só com licença livre
 //     (domínio público, CC0, CC BY, CC BY-SA), com autor e licença na página.
 //     A licença é conferida no próprio Commons, não no que a página diz.
+
+const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
 
 /** As chamadas: o texto é escrito AQUI; a página só escolhe o tema. */
 const CHAMADAS = {
   imoveis: {
     titulo: 'Quer morar aqui?',
-    texto: 'Veja os imóveis que a RUAH tem à venda neste bairro, com fotos e ficha completa.',
+    texto: `Veja os imóveis que a ${CLIENTE} tem à venda neste bairro, com fotos e ficha completa.`,
     rotulo: 'Ver imóveis no bairro',
   },
   contato: {
     titulo: 'Procurando imóvel nesta região?',
-    texto: 'Conte o que você procura e um corretor da RUAH responde com opções, inclusive as que ainda não estão no portal.',
-    rotulo: 'Falar com a RUAH',
+    texto: `Conte o que você procura e um corretor da ${CLIENTE} responde com opções, inclusive as que ainda não estão no portal.`,
+    rotulo: `Falar com a ${CLIENTE}`,
   },
   vender: {
     titulo: 'Tem um imóvel no bairro?',
-    texto: 'A RUAH avalia e vende imóveis nesta região. Deixe seu contato e um corretor explica como funciona.',
+    texto: `A ${CLIENTE} avalia e vende imóveis nesta região. Deixe seu contato e um corretor explica como funciona.`,
     rotulo: 'Quero vender',
   },
 };

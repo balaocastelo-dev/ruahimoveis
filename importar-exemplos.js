@@ -1,4 +1,4 @@
-// Importa alguns imóveis do site da RUAH (ruahimobiliaria.com.br) como exemplos.
+// Herrera HOUSE IA: importa alguns imóveis do site do cliente RUAH (ruahimobiliaria.com.br) como exemplos.
 // Uso (na pasta do sistema):  node importar-exemplos.js
 // Pode rodar de novo: imóveis já importados são pulados.
 const { one, run, audit } = require('./src/db');
@@ -32,7 +32,7 @@ const v = (x) => (Array.isArray(x) ? x[0] : x) || null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function baixarTexto(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Sistema RUAH - importacao de exemplos)' } });
+  const r = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (Herrera HOUSE IA - importacao de exemplos)' } });
   if (!r.ok) throw new Error('HTTP ' + r.status);
   return r.text();
 }

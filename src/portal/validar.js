@@ -1,4 +1,4 @@
-// Portal RUAH · confere o FORMATO de uma página de imóvel que chega de fora do
+// Portal do cliente (a imobiliária) · confere o FORMATO de uma página de imóvel que chega de fora do
 // código (um JSON do ramo de conteúdo). Devolve uma página íntegra ou a lista do
 // que está errado; nunca uma página pela metade. O CONTEÚDO quem julga é a régua.
 //

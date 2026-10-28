@@ -1,4 +1,4 @@
-// Fisguei → RUAH · roda dentro da página do Fisgar.
+// Fisguei → Herrera HOUSE IA · roda dentro da página do Fisgar.
 // Só observa as respostas que o próprio painel recebe (lista de anúncios, ficha, proprietários e consulta)
 // e repassa uma cópia para a extensão. Não faz nenhuma chamada nova e não gasta créditos.
 (() => {

@@ -1,4 +1,4 @@
-// Portal RUAH · a régua da página do imóvel, em forma de código.
+// Portal do cliente (a imobiliária) · a régua da página do imóvel, em forma de código.
 //
 // Ninguém lê a página antes de ela ir ao ar. Por isso o texto pode MENOS do que
 // um anúncio revisado, e quem garante é esta régua — aplicada no comando de

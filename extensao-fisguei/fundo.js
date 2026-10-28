@@ -1,4 +1,4 @@
-// Fisguei → RUAH · envia ao Sistema RUAH o que a página do Fisgar recebeu (em lotes, com nova tentativa se falhar).
+// Fisguei → Herrera HOUSE IA · envia ao Herrera HOUSE IA o que a página do Fisgar recebeu (em lotes, com nova tentativa se falhar).
 const PADRAO = 'https://ruahimoveis.vercel.app';
 let fila = [];
 let enviando = false;

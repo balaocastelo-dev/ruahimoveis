@@ -1,4 +1,4 @@
-/* Sistema RUAH — Fisguei: anúncios e proprietários do Fisgar + robô TH-IA-GO CORRETOR (carregado depois do app.js) */
+/* Herrera HOUSE IA — Fisguei: anúncios e proprietários do Fisgar + robô TH-IA-GO CORRETOR (carregado depois do app.js) */
 'use strict';
 const FG_ST = {
   novo: ['Sem proprietário', 'info'], abordando: ['Robô abordando', 'warn'], respondeu: ['Respondeu · corretor', 'bad'],
@@ -29,7 +29,7 @@ function carregaLeaflet() {
 // ---------- robô ----------
 function cartaoRobo(r) {
   const rb = r.robo || {}; const aj = r.ajustes || {};
-  const nomes = { conectado: ['ok', 'Conectado'], qr: ['warn', 'Esperando leitura do QR code'], reconectando: ['warn', 'Reconectando…'], iniciando: ['warn', 'Iniciando…'], desconectado: ['bad', 'Desconectado'], erro: ['bad', 'Com erro'], desligado: ['bad', 'Desligado (PC da RUAH sem o sistema aberto)'] };
+  const nomes = { conectado: ['ok', 'Conectado'], qr: ['warn', 'Esperando leitura do QR code'], reconectando: ['warn', 'Reconectando…'], iniciando: ['warn', 'Iniciando…'], desconectado: ['bad', 'Desconectado'], erro: ['bad', 'Com erro'], desligado: ['bad', `Desligado (PC da ${MARCA.cliente} sem o sistema aberto)`] };
   const [cls, txt] = nomes[rb.estado] || ['info', rb.estado || '—'];
   const prox = rb.proximo_em && new Date(rb.proximo_em) > new Date() ? new Date(rb.proximo_em).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }) : null;
   const situacao = aj.pausado ? '<span class="pill bad">pausado</span>'
@@ -41,8 +41,8 @@ function cartaoRobo(r) {
     <div style="flex:1;min-width:240px"><b>TH-IA-GO CORRETOR</b> <span class="pill ${cls}">${esc(txt)}</span> ${situacao}
       <div class="small muted" style="margin-top:4px">${rb.numero ? `WhatsApp ${esc(tel(rb.numero))} · ` : ''}<b>${r.hoje}</b> de ${aj.limite_dia} abordagens hoje · ${r.fila} número(s) na fila · uma a cada ~${Math.round(aj.intervalo_s / 60 * 10) / 10} min</div>
       ${rb.erro ? `<div class="small" style="margin-top:4px"><span class="pill bad">${esc(rb.erro)}</span></div>` : ''}
-      ${rb.estado === 'desligado' ? '<div class="small muted" style="margin-top:4px">O robô roda no PC da RUAH. Abra o "Sistema RUAH" pelo atalho da Área de Trabalho e mantenha o PC ligado.</div>' : ''}
-      ${rb.estado === 'qr' && rb.qr ? `<div class="fg-qr"><img src="${esc(rb.qr)}" alt="QR code do WhatsApp" width="220" height="220"><div class="small"><b>Para conectar:</b><ol style="margin:6px 0;padding-left:18px"><li>Abra o WhatsApp do celular da RUAH</li><li>Toque em <b>⋮</b> → <b>Aparelhos conectados</b> → <b>Conectar um aparelho</b></li><li>Aponte a câmera para este QR code</li></ol><span class="muted">O código muda a cada 20 segundos; a tela atualiza sozinha.</span></div></div>` : ''}
+      ${rb.estado === 'desligado' ? '<div class="small muted" style="margin-top:4px">O robô roda no PC da ' + esc(MARCA.cliente) + '. Abra o "' + esc(MARCA.sistema) + '" pelo atalho da Área de Trabalho e mantenha o PC ligado.</div>' : ''}
+      ${rb.estado === 'qr' && rb.qr ? `<div class="fg-qr"><img src="${esc(rb.qr)}" alt="QR code do WhatsApp" width="220" height="220"><div class="small"><b>Para conectar:</b><ol style="margin:6px 0;padding-left:18px"><li>Abra o WhatsApp do celular da ${esc(MARCA.cliente)}</li><li>Toque em <b>⋮</b> → <b>Aparelhos conectados</b> → <b>Conectar um aparelho</b></li><li>Aponte a câmera para este QR code</li></ol><span class="muted">O código muda a cada 20 segundos; a tela atualiza sozinha.</span></div></div>` : ''}
     </div>
     ${veTudo() ? `<div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn sm ${aj.pausado ? 'pri' : ''}" data-act="fg-pausa" data-p="${aj.pausado ? 0 : 1}">${aj.pausado ? 'Retomar robô' : 'Pausar robô'}</button><button class="btn sm" data-act="fg-ajustes">Ajustes e mensagem</button>${rb.estado === 'conectado' ? '<button class="btn sm" data-act="fg-cmd" data-c="desconectar">Desconectar WhatsApp</button>' : ''}</div>` : ''}
   </div></div>`;
@@ -71,7 +71,7 @@ function cartaoExtensao(r) {
   const ult = r.ultimoRecebimento ? new Date(r.ultimoRecebimento) : null;
   const ha = ult ? Math.round((Date.now() - ult.getTime()) / 60000) : null;
   return `<div class="card" style="margin-top:14px"><div class="row" style="gap:10px;flex-wrap:wrap">
-    <div style="flex:1;min-width:240px"><b>Extensão "Fisguei → RUAH" no Chrome</b>
+    <div style="flex:1;min-width:240px"><b>Extensão "Fisguei → ${esc(MARCA.sistema)}" no Chrome</b>
       <div class="small muted">Tudo que você abre no Fisgar (lista de anúncios, ficha e cada proprietário consultado) entra aqui sozinho. ${r.chave ? (ult ? `Último envio ${ha < 1 ? 'agora há pouco' : ha < 60 ? `há ${ha} min` : 'em ' + esc(ult.toLocaleString('pt-BR'))}.` : 'Ainda não chegou nada da extensão.') : '<b>Gere a chave para ligar a extensão.</b>'}</div></div>
     ${veTudo() ? `<button class="btn sm" data-act="fg-chave">${r.chave ? 'Gerar nova chave' : 'Gerar chave da extensão'}</button>` : ''}<button class="btn sm" data-act="fg-instalar">Como instalar</button></div></div>`;
 }
@@ -86,7 +86,7 @@ ACT['fg-chave'] = (el) => comBotao(el, async () => {
 ACT['fg-instalar'] = () => modal(`<h2>Instalar a extensão no Chrome</h2>
   <ol><li>No Chrome, abra <b class="mono">chrome://extensions</b> e ligue o <b>Modo do desenvolvedor</b> (canto superior direito).</li>
   <li>Clique em <b>Carregar sem compactação</b> e escolha a pasta <b class="mono">Área de Trabalho\\Sistema RUAH\\extensao-fisguei</b>.</li>
-  <li>Clique no ícone de quebra-cabeça e fixe o <b>Fisguei → RUAH</b>.</li>
+  <li>Clique no ícone de quebra-cabeça e fixe o <b>Fisguei → ${esc(MARCA.sistema)}</b>.</li>
   <li>Clique no ícone do Fisguei, cole o endereço do sistema e a chave (botão <b>Gerar chave</b> nesta tela) e toque em <b>Salvar e testar</b>.</li>
   <li>Pronto: use o Fisgar normalmente. Cada proprietário que você consultar lá aparece aqui e entra na fila do robô.</li></ol>
   <p class="small muted">A extensão só lê as telas do painel do Fisgar que você abre; não clica em nada e não gasta créditos sozinha.</p>
@@ -101,7 +101,7 @@ async function telaFisguei(qs) {
   const link = (o) => '#/fisguei?' + new URLSearchParams({ filtro, q, vista, ...o }).toString();
   $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Anúncios e proprietários (Fisguei)</h1>
   ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
-  <p class="lead">Os anúncios e proprietários que vocês abrem no Fisgar viram a base da RUAH. Quando chega o telefone de um possível dono, o robô <b>TH-IA-GO CORRETOR</b> chama no WhatsApp perguntando, com educação, se a pessoa é a proprietária. Quem responde SIM vai direto para o Radar com o corretor.</p>
+  <p class="lead">Os anúncios e proprietários que vocês abrem no Fisgar viram a base da ${esc(MARCA.cliente)}. Quando chega o telefone de um possível dono, o robô <b>TH-IA-GO CORRETOR</b> chama no WhatsApp perguntando, com educação, se a pessoa é a proprietária. Quem responde SIM vai direto para o Radar com o corretor.</p>
   ${cartaoRobo(r)}${cartaoBusca(pd)}${cartaoExtensao(r)}
   <div class="grid g4" style="margin-top:14px">
     <div class="card kpi"><div class="n">${r.anuncios}</div><div class="l">Anúncios na base</div></div>

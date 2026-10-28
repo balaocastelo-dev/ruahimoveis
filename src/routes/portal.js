@@ -1,4 +1,4 @@
-// Portal RUAH · rotas públicas (sem login).
+// Portal do cliente (a imobiliária) · rotas públicas (sem login).
 //   /imoveis                    vitrine com busca e filtros
 //   /imoveis/favoritos          favoritos do visitante (guardados no aparelho)
 //   /imoveis/<endereço>         a página única do imóvel  (/imoveis/AP0029 leva até ela)
@@ -16,6 +16,10 @@ const clube = require('../portal/clube');
 const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
 const og = require('../og');
+const cfg = require('../config');
+// Origens dos leads do portal: "Portal " + nome do cliente (com a config padrão, "Portal RUAH" como sempre).
+const ORIGEM_PORTAL = `Portal ${cfg.CLIENTE_NOME}`;
+const ORIGEM_SIGNATURE = `${cfg.CLIENTE_NOME} Signature`;
 
 const router = express.Router();
 
@@ -162,7 +166,7 @@ api.post('/interesse', async (req, res) => {
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,corretor_id,tipo_desejado,bairros,busca,ultimo_contato)
       VALUES(?,?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-    nome, tel, email, 'Portal RUAH', visita ? 'visita' : 'novo', 'quente', one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null,
+    nome, tel, email, ORIGEM_PORTAL, visita ? 'visita' : 'novo', 'quente', one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null,
     im.tipo, im.bairro, `Veio pelo portal: ${im.codigo}`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', linhas, null);
@@ -170,7 +174,7 @@ api.post('/interesse', async (req, res) => {
   res.json({ ok: true });
 });
 
-// Clube Signature: o pedido de acesso vira lead QUENTE (origem "RUAH Signature") e o aparelho recebe o cookie que mostra os valores.
+// Clube Signature: o pedido de acesso vira lead QUENTE (origem "<cliente> Signature") e o aparelho recebe o cookie que mostra os valores.
 api.post('/signature', (req, res) => {
   const b = req.body || {};
   if (b.empresa) return res.json({ ok: true });
@@ -181,7 +185,7 @@ api.post('/signature', (req, res) => {
   const im = CODIGO.test(codigo) ? dados.imovelAVenda(codigo) : null;
   const s = im && versoes.selecao([im])[0];
   const texto = [
-    `Pediu acesso ao Clube Signature (valores da seleção RUAH Signature)${s ? ` pela residência ${im.codigo} · ${s.titulo} — /imoveis/signature/${im.codigo.toLowerCase()}` : ''}. O acesso aos valores foi liberado no aparelho dele.`,
+    `Pediu acesso ao Clube Signature (valores da seleção ${ORIGEM_SIGNATURE})${s ? ` pela residência ${im.codigo} · ${s.titulo} — /imoveis/signature/${im.codigo.toLowerCase()}` : ''}. O acesso aos valores foi liberado no aparelho dele.`,
     d.email ? `E-mail: ${d.email}` : '',
   ].filter(Boolean).join('\n');
   const existente = one('SELECT * FROM leads WHERE telefone=?', d.tel);
@@ -192,7 +196,7 @@ api.post('/signature', (req, res) => {
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,corretor_id,tipo_desejado,bairros,busca,ultimo_contato)
       VALUES(?,?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-    d.nome, d.tel, d.email, 'RUAH Signature', 'novo', 'quente', im ? one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null : null,
+    d.nome, d.tel, d.email, ORIGEM_SIGNATURE, 'novo', 'quente', im ? one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null : null,
     im ? im.tipo : null, im ? im.bairro : null, `Clube Signature${im ? `: ${im.codigo}` : ''} · imóveis acima de R$ 10 milhões`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', texto, null);
@@ -223,7 +227,7 @@ function interesseCondominio(req, res, b) {
   if (existente) { leadId = existente.id; run(`UPDATE leads SET ultimo_contato=datetime('now','localtime'), email=coalesce(email,?) WHERE id=?`, d.email, leadId); }
   else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,tipo_desejado,bairros,busca,ultimo_contato) VALUES(?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-      d.nome, d.tel, d.email, 'Portal RUAH · condomínio', 'novo', 'morno', c.tipo === 'horizontal' ? 'Casa em condomínio' : 'Apartamento', c.bairro, `Condomínio ${c.nome}`).lastInsertRowid);
+      d.nome, d.tel, d.email, `${ORIGEM_PORTAL} · condomínio`, 'novo', 'morno', c.tipo === 'horizontal' ? 'Casa em condomínio' : 'Apartamento', c.bairro, `Condomínio ${c.nome}`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', texto, null);
   audit(null, 'portal_interesse_condominio', `${c.nome} · lead ${leadId}`);

@@ -12,6 +12,9 @@ const express = require('express');
 const A = require('../auth');
 const { one, run, audit } = require('../db');
 const { txt, falha } = require('../util');
+const cfg = require('../config');
+// Origem dos leads das páginas de bairro: "Portal " + nome do cliente + " · bairro" (padrão: "Portal RUAH · bairro").
+const ORIGEM_BAIRRO = `Portal ${cfg.CLIENTE_NOME} · bairro`;
 const coord = (v) => { const n = Number(String(v).replace(',', '.')); return Number.isFinite(n) ? n : null; };
 const { normTel } = require('../services/whatsapp');
 const fonte = require('../bairros/fonte');
@@ -80,6 +83,8 @@ router.get('/bairros/dados.json', async (req, res) => {
     const s = e.situacao.get(b.slug) || {};
     const v = dados.vivo(b, porBairro.get(b.slug) || []);
     const fotos = dados.fotosDeImoveis(b.slug, aVenda, noArImoveis).map((im) => ({ ...im, fotos: im.fotos.map((f) => ({ ...f, url: `${base}${portalPaginas.fotoUrl(f.foto)}` })) }));
+    // Os nomes de campo com "ruah" (notas_da_ruah, carteira_ruah, imoveis_da_ruah) são o contrato do dados.json
+    // lido pelo scripts/bairros-publicar.mjs e pela tarefa agendada: identificadores técnicos, não trocar.
     return {
       slug: b.slug, nome: b.nome, regiao: b.regiao, apelidos: b.apelidos, prioridade: b.prioridade, notas_da_ruah: b.notas || null,
       pagina: { estado: s.estado || 'sem-pagina', ...(s.titulo ? { titulo: s.titulo, endereco: `/bairros/${b.slug}` } : {}), ...(s.publicadoEm ? { publicadoEm: s.publicadoEm } : {}), ...(s.erros ? { erros: s.erros } : {}), ...(b.pedidoEm ? { reescrita_pedida_em: b.pedidoEm } : {}) },
@@ -180,7 +185,7 @@ api.post('/contato', (req, res) => {
     run(`UPDATE leads SET ultimo_contato=datetime('now','localtime'), email=coalesce(email,?) WHERE id=?`, email, leadId);
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,bairros,busca,ultimo_contato) VALUES(?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-      nome, tel, email, 'Portal RUAH · bairro', 'novo', motivo === 'duvida' ? 'morno' : 'quente', bairro.nome, `${MOTIVOS[motivo]} (${bairro.nome})`).lastInsertRowid);
+      nome, tel, email, ORIGEM_BAIRRO, 'novo', motivo === 'duvida' ? 'morno' : 'quente', bairro.nome, `${MOTIVOS[motivo]} (${bairro.nome})`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', linhas, null);
   audit(null, 'bairro_contato', `${bairro.slug} · ${motivo} · lead ${leadId}${existente ? ' (já existia)' : ''}`);

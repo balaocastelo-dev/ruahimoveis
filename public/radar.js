@@ -1,4 +1,4 @@
-/* Sistema RUAH — Radar de captação (carregado depois do app.js; usa os mesmos utilitários) */
+/* Herrera HOUSE IA — Radar de captação (carregado depois do app.js; usa os mesmos utilitários) */
 'use strict';
 const OP_ST = { nova: ['Nova', 'info'], em_contato: ['Em contato', 'warn'], carta_enviada: ['Carta enviada', 'gold'], aguardando_aprovacao: ['Aguardando aprovação', 'bad'], captada: ['Captada', 'ok'], descartada: ['Descartada', 'bad'] };
 const PRIO = { alta: ['alta', 'bad'], media: ['média', 'warn'], baixa: ['baixa', 'info'], nao_abordar: ['não abordar', 'gold'] };
@@ -13,7 +13,7 @@ async function telaRadar(qs) {
   const n = (k) => r.porStatus[k] || 0;
   $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Oportunidades (Radar)</h1>
   ${typeof capAbas === 'function' ? capAbas('radar') : ''}
-  <p class="lead">Imóveis à venda por particulares que podem virar exclusividade da RUAH. A ordem é sempre do grátis para o pago: contato do anúncio, carta com QR code, placa/portaria e, só com aprovação, matrícula e birô.</p>
+  <p class="lead">Imóveis à venda por particulares que podem virar exclusividade da ${esc(MARCA.cliente)}. A ordem é sempre do grátis para o pago: contato do anúncio, carta com QR code, placa/portaria e, só com aprovação, matrícula e birô.</p>
   ${avisoSaude(al, true)}${painelAlertas(al)}
   ${veTudo() && r.aprovacoesPendentes ? `<div class="banner warn"><b>${r.aprovacoesPendentes}</b> pedido(s) de consulta paga esperando aprovação. <a href="#/radar/aprovacoes">Revisar agora</a></div>` : ''}
   <div class="grid g4">
@@ -172,7 +172,7 @@ async function telaOp(id) {
       ${!fechado ? `<form class="grid" style="gap:8px" data-form="op-evento" data-id="${o.id}" data-etapa="anuncio"><div class="grid g2"><label class="f">Resultado<select name="resultado"><option value="atendeu_interessado">Falou com o dono: tem interesse</option><option value="nao_atendeu">Não atendeu / sem resposta</option><option value="atendeu_sem_interesse">Falou com o dono: sem interesse</option><option value="nao_e_dono">Não é o dono (corretor ou terceiro)</option><option value="outro">Outro</option></select></label><label class="f">Detalhe<input name="texto"></label></div><div><button class="btn sm" type="submit">Registrar</button></div></form>` : ''}`
       : '<p class="muted small" style="margin:0">O anúncio não tem telefone. Siga para a carta.</p>')}
     ${passo(2, 'Carta ao proprietário · grátis', o.carta_enviada_em ? 'ok' : o.logradouro && o.numero ? 'atual' : 'off', o.logradouro && o.numero ? `
-      <p class="small" style="margin:0">Carta endereçada ao "proprietário(a)" da unidade, com QR code para o WhatsApp${o.carta_sem_telefone ? '. <b style="color:var(--bad)">Falta o número de WhatsApp: preencha WHATSAPP_RUAH no .env ou o telefone do corretor em Configurações.</b>' : ' da RUAH. Quando o dono responde, a mensagem cai aqui sozinha (pela referência ' + esc(o.ref) + ').'}</p>
+      <p class="small" style="margin:0">Carta endereçada ao "proprietário(a)" da unidade, com QR code para o WhatsApp${o.carta_sem_telefone ? '. <b style="color:var(--bad)">Falta o número de WhatsApp: preencha WHATSAPP_CLIENTE no .env ou o telefone do corretor em Configurações.</b>' : ' da ' + esc(MARCA.cliente) + '. Quando o dono responde, a mensagem cai aqui sozinha (pela referência ' + esc(o.ref) + ').'}</p>
       ${o.carta_enviada_em ? `<p class="small" style="margin:0"><span class="pill ok">enviada em ${new Date(o.carta_enviada_em + 'T12:00').toLocaleDateString('pt-BR')}</span></p>` : ''}
       ${!fechado && !o.bloqueio && o.anunciante_tipo !== 'imobiliaria' ? `<div class="row"><a class="btn sm pri" href="/api/radar/${o.id}/carta.pdf" target="_blank" rel="noopener">Gerar carta (PDF)</a>
         <form class="row" data-form="carta-enviada" data-id="${o.id}" style="gap:6px"><select class="inp" name="como" style="width:auto"><option>Correio</option><option>Entregue em mãos</option><option>Deixada na portaria</option></select><input class="inp" name="custo" placeholder="Custo R$" style="width:100px" inputmode="decimal"><button class="btn sm" type="submit">Marcar como enviada</button></form></div>` : ''}`

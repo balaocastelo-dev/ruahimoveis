@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Portal RUAH · a ÚNICA porta de entrada de uma página de imóvel no portal.
+ * Portal do cliente (a imobiliária) · a ÚNICA porta de entrada de uma página de imóvel no portal.
  *
  *   node scripts/portal-publicar.mjs preparar [--quantos 4]   regras, fila e as fotos dos próximos imóveis
  *   node scripts/portal-publicar.mjs listar                   a situação da página de cada imóvel
@@ -31,6 +31,7 @@ const require = createRequire(import.meta.url);
 const { lerPagina } = require('../src/portal/validar.js');
 const { avaliarPagina } = require('../src/portal/regua.js');
 const { RAMO_DE_CONTEUDO: RAMO, DONO_REPO, CODIGO } = require('../src/portal/config.js');
+const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
 
 const PORTAL = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
 const PASTA_FILA = path.join(os.tmpdir(), 'portal');
@@ -117,7 +118,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', 'user.name=Portal RUAH', '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Portal ${cfg.CLIENTE_NOME}`, '-c', 'user.email=imoveisruah@gmail.com'); }
   const rodape = process.env.PORTAL_RODAPE_DO_COMMIT || process.env.BLOG_RODAPE_DO_COMMIT;
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape ? `\n\n${rodape}` : ''}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {

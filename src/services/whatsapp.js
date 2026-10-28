@@ -59,9 +59,9 @@ function vinculaCarta(lead, texto) {
   const jaTem = one("SELECT 1 FROM oportunidade_eventos WHERE oportunidade_id=? AND etapa='carta' AND texto LIKE ?", op.id, `%lead #${lead.id}%`);
   if (jaTem) return;
   run('INSERT INTO oportunidade_eventos(oportunidade_id,etapa,texto) VALUES(?,?,?)', op.id, 'carta', `Proprietário respondeu à carta pelo WhatsApp (lead #${lead.id}, ${lead.telefone}).`);
-  run(`UPDATE oportunidades SET titular_telefone=coalesce(titular_telefone,?), titular_origem=coalesce(titular_origem,'Respondeu à carta da RUAH'),
-       status=CASE WHEN status IN ('nova','carta_enviada','em_contato') THEN 'em_contato' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`, lead.telefone, op.id);
-  run(`UPDATE leads SET origem='Carta RUAH (captação)', corretor_id=coalesce(?,corretor_id) WHERE id=?`, op.corretor_id, lead.id);
+  run(`UPDATE oportunidades SET titular_telefone=coalesce(titular_telefone,?), titular_origem=coalesce(titular_origem,?),
+       status=CASE WHEN status IN ('nova','carta_enviada','em_contato') THEN 'em_contato' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`, lead.telefone, `Respondeu à carta da ${cfg.CLIENTE_NOME}`, op.id);
+  run('UPDATE leads SET origem=?, corretor_id=coalesce(?,corretor_id) WHERE id=?', `Carta ${cfg.CLIENTE_NOME} (captação)`, op.corretor_id, lead.id);
   run('INSERT INTO interacoes(lead_id,tipo,texto) VALUES(?,?,?)', lead.id, 'sistema', `Respondeu à carta de captação OP-${String(op.id).padStart(4, '0')}. É um PROPRIETÁRIO, não comprador.`);
 }
 
@@ -95,9 +95,9 @@ async function gerarSugestao(leadId) {
   run(`DELETE FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, leadId);
   if (cfg.IA_MODO === 'automatico') {
     const env = await enviarTexto(lead.telefone, texto);
-    run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', leadId, lead.telefone, 'saida', texto, env.status, env.wa_id, 'IA RUAH');
+    run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', leadId, lead.telefone, 'saida', texto, env.status, env.wa_id, `IA ${cfg.SISTEMA_NOME}`);
   } else {
-    run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,autor) VALUES(?,?,?,?,?,?)', leadId, lead.telefone, 'sugestao', texto, 'aguardando aprovação', 'IA RUAH');
+    run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,autor) VALUES(?,?,?,?,?,?)', leadId, lead.telefone, 'sugestao', texto, 'aguardando aprovação', `IA ${cfg.SISTEMA_NOME}`);
   }
   return texto;
 }
@@ -108,7 +108,7 @@ function processaWebhook(payload) {
     const v = ch.value || {};
     const nomes = Object.fromEntries((v.contacts || []).map((c) => [c.wa_id, c.profile && c.profile.name]));
     for (const m of v.messages || []) {
-      const texto = m.type === 'text' ? m.text.body : `[${m.type} recebido — abra no celular da RUAH]`;
+      const texto = m.type === 'text' ? m.text.body : `[${m.type} recebido — abra no celular da ${cfg.CLIENTE_NOME}]`;
       tarefas.push(recebida({ telefone: m.from, nome: nomes[m.from], texto, wa_id: m.id }));
     }
     for (const s of v.statuses || []) run('UPDATE mensagens SET status=? WHERE wa_id=?', s.status, s.id);

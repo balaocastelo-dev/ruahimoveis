@@ -1,4 +1,4 @@
--- Sistema RUAH · banco online (Postgres / Supabase), schema "ruah".
+-- Herrera HOUSE IA · banco online (Postgres / Supabase), schema "ruah" = instalação do cliente RUAH (o nome do schema não muda).
 -- Datas ficam como TEXTO 'AAAA-MM-DD HH:MM:SS' no horário de Brasília, igual à versão local (SQLite).
 CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA extensions;
 CREATE SCHEMA IF NOT EXISTS ruah;

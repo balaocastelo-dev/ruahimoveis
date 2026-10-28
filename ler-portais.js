@@ -7,6 +7,6 @@ const portais = require('./src/services/portais');
   console.log(testar ? 'TESTE (não grava)\n' : 'BUSCA\n');
   const r = await portais.ler({ testar, log: (t) => console.log('  ' + t) });
   for (const a of r.encontrados || []) console.log(`  · ${a.titulo} | ${a.bairro} | ${a.valor ? 'R$ ' + a.valor.toLocaleString('pt-BR') : 's/ valor'} | ${a.anunciante_tipo}\n    ${a.link}`);
-  console.log(`\nAnúncios lidos: ${r.lidos} · Campinas: ${r.campinas} · nos bairros da RUAH: ${r.alvo} · novas: ${r.novas} · na fila: ${r.fila}${r.erro ? '\nERRO: ' + r.erro : ''}`);
+  console.log(`\nAnúncios lidos: ${r.lidos} · Campinas: ${r.campinas} · nos bairros da imobiliária: ${r.alvo} · novas: ${r.novas} · na fila: ${r.fila}${r.erro ? '\nERRO: ' + r.erro : ''}`);
   process.exit(r.erro ? 1 : 0);
 })();

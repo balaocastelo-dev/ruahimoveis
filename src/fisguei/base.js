@@ -15,8 +15,8 @@ const primeiroNome = (n) => { const p = String(n || '').trim().split(/\s+/)[0] |
 const ref = (id) => 'FG-' + String(id).padStart(5, '0');
 
 // ---------- configuração do robô ----------
-const MODELO_PADRAO = 'Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente virtual da RUAH Investimentos Imobiliários, de Campinas.\n\n'
-  + 'Vimos que o imóvel da {endereco} ({bairro}) está à venda e temos interesse em divulgá-lo no portal da RUAH para vendê-lo, recebendo apenas a comissão quando a venda acontecer.\n\n'
+const MODELO_PADRAO = `Olá, {nome}! Tudo bem? Aqui é o TH-IA-GO, assistente virtual da ${cfg.EMPRESA}, de Campinas.\n\n`
+  + `Vimos que o imóvel da {endereco} ({bairro}) está à venda e temos interesse em divulgá-lo no portal da ${cfg.CLIENTE_NOME} para vendê-lo, recebendo apenas a comissão quando a venda acontecer.\n\n`
   + 'Você é o(a) proprietário(a) desse imóvel? Pode responder SIM ou NÃO.\n'
   + 'Se preferir não receber mensagens, responda PARAR.';
 
@@ -220,10 +220,10 @@ function classifica(texto) {
 }
 
 const RESPOSTAS = {
-  confirmou: 'Que ótimo, obrigado por confirmar! 😊 Um corretor da RUAH vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Para adiantar: se tiver fotos suas do imóvel (as originais, tiradas por você), pode me mandar por aqui. E me diga o melhor horário para o corretor ligar.',
+  confirmou: `Que ótimo, obrigado por confirmar! 😊 Um corretor da ${cfg.CLIENTE_NOME} vai falar com você em breve para explicar como funciona a divulgação no nosso portal. Para adiantar: se tiver fotos suas do imóvel (as originais, tiradas por você), pode me mandar por aqui. E me diga o melhor horário para o corretor ligar.`,
   negou: 'Obrigado por avisar e desculpe o incômodo! Não vamos mais enviar mensagens sobre esse imóvel.',
-  sem_interesse: 'Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender, a RUAH fica à disposição.',
-  parar: 'Pronto, você não vai mais receber mensagens da RUAH neste número. Desculpe o incômodo.',
+  sem_interesse: `Entendido, obrigado pelo retorno! Não vamos insistir. Se um dia quiser vender, a ${cfg.CLIENTE_NOME} fica à disposição.`,
+  parar: `Pronto, você não vai mais receber mensagens da ${cfg.CLIENTE_NOME} neste número. Desculpe o incômodo.`,
 };
 
 function criaOportunidade(anuncio, pessoa, telefone) {

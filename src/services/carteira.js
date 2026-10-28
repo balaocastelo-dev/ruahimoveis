@@ -2,6 +2,7 @@
 // Tudo é calculado a partir dos dados que já existem (proprietário, robô do Fisguei, assinatura, status), então não há
 // coluna nova para manter em dia: o imóvel muda de etapa sozinho quando algo acontece.
 const { all } = require('../db');
+const cfg = require('../config');
 
 const ETAPAS = [
   ['sem_dono', 'Sem dono'],
@@ -68,7 +69,7 @@ function enriquece(lista) {
       ['endereco', 'Endereço completo (rua, número, CEP)', !!(i.logradouro && i.numero && i.cep)],
       ['valor', 'Valor', !!i.valor],
       ['area', 'Área', !!(i.area_util || i.area_total)],
-      ['descricao', 'Descrição da RUAH', descPropria(i.descricao)],
+      ['descricao', `Descrição da ${cfg.CLIENTE_NOME}`, descPropria(i.descricao)],
       ['autorizacao', 'Autorização assinada', as === 'assinado'],
       ['corretor', 'Corretor responsável', !!i.corretor_id],
     ];

@@ -1,4 +1,4 @@
-/* Sistema RUAH — Movimento (estilo "Dashboard V18")
+/* Herrera HOUSE IA — Movimento (estilo "Dashboard V18")
    Só animação: as cores continuam as do style.css. Nada aqui muda dados ou regras do sistema.
    - entrada em cascata dos cards, listas, tabelas e kanban a cada tela;
    - números dos indicadores contando do zero;

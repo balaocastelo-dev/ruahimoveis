@@ -1,4 +1,4 @@
-// Blog RUAH · confere o FORMATO de um artigo que chega de fora do código (um
+// Blog do cliente (a imobiliária) · confere o FORMATO de um artigo que chega de fora do código (um
 // JSON do ramo de conteúdo). Devolve um artigo íntegro ou a lista do que está
 // errado; nunca um artigo pela metade. O CONTEÚDO quem julga é a régua.
 //
@@ -6,6 +6,7 @@
 //   paragrafo · titulo (nivel 2|3) · resumo · lista · tabela · pros-contras · destaque · chamada
 
 const { SLUGS, TEMAS } = require('./categorias');
+const { CLIENTE_NOME } = require('../config'); // nome da imobiliária (autor "Equipe <cliente>")
 
 const texto = (v) => typeof v === 'string' && v.trim().length > 0;
 const lista = (v) => Array.isArray(v);
@@ -128,7 +129,7 @@ function lerArtigo(bruto) {
       capa,
       publicadoEm: new Date(bruto.publicadoEm).toISOString(),
       ...(texto(bruto.atualizadoEm) && Number.isFinite(Date.parse(bruto.atualizadoEm)) ? { atualizadoEm: new Date(bruto.atualizadoEm).toISOString() } : {}),
-      autor: { nome: 'Equipe RUAH' },
+      autor: { nome: `Equipe ${CLIENTE_NOME}` },
       origem: 'diario',
       ...(bruto.formato === 'dica' ? { formato: 'dica' } : {}),
       ...(redes ? { redes } : {}),

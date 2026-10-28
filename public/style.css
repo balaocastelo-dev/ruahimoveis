@@ -1,4 +1,4 @@
-/* Sistema RUAH — mesmo visual do protótipo aprovado */
+/* Herrera HOUSE IA — mesmo visual do protótipo aprovado */
 :root{
   --bg:#f6f5f2; --panel:#ffffff; --ink:#22252a; --muted:#6b6f76; --line:#e4e1da;
   --gold:#a8823c; --gold-soft:#f3ead9; --slate:#2c3036; --slate-ink:#f1eee8;
@@ -23,7 +23,7 @@ a{color:var(--gold)}
 .app{display:grid;grid-template-columns:232px 1fr;min-height:100%}
 .side{background:var(--slate);color:var(--slate-ink);padding:20px 16px;display:flex;flex-direction:column;gap:16px;position:sticky;top:0;height:100vh;overflow:auto}
 .brand{display:flex;flex-direction:column;gap:2px}
-.brand b{font-family:var(--f-display);font-size:30px;letter-spacing:.08em;font-weight:700;color:var(--gold)}
+.brand b{font-family:var(--f-display);font-size:23px;line-height:1.1;letter-spacing:.03em;font-weight:700;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis} /* nome do sistema (longo): cabe no menu de 232px */
 .brand span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7}
 .who{font-size:12px;background:rgba(255,255,255,.06);border-radius:8px;padding:8px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .who b{display:block;font-size:13px}
@@ -123,7 +123,7 @@ legend{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--
 
 .auth{min-height:100%;display:grid;place-items:center;padding:24px 16px;background:var(--slate)}
 .auth .card{max-width:420px;width:100%;display:grid;gap:12px;padding:26px}
-.auth .brand b{font-size:40px}
+.auth .brand b{font-size:clamp(26px,8vw,34px);white-space:normal}
 .copybox{display:flex;gap:8px}
 .copybox input{flex:1;min-width:0}
 
@@ -942,7 +942,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .menu-aberto .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg)}
   .menu-aberto .hamb span:nth-child(2){opacity:0}
   .menu-aberto .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-  .tb-marca{font-family:var(--f-display);font-size:24px;font-weight:700;letter-spacing:.08em;color:var(--gold);text-decoration:none;line-height:1}
+  .tb-marca{font-family:var(--f-display);font-size:19px;font-weight:700;letter-spacing:.02em;color:var(--gold);text-decoration:none;line-height:1;white-space:nowrap;flex:none}
   .tb-tit{flex:1;min-width:0;font-size:14px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left:10px;border-left:1px solid rgba(255,255,255,.18)}
   .tb-ct{width:10px;height:10px;border-radius:50%;background:var(--bad);box-shadow:0 0 0 3px rgba(166,61,50,.3);flex:none}
   .side{position:fixed!important;top:0!important;left:0;bottom:0;height:100%!important;width:min(300px,86vw);margin:0!important;border-radius:0 22px 22px 0!important;z-index:61;

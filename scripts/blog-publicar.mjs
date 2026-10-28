@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Blog RUAH · a ÚNICA porta de entrada de um artigo no blog.
+ * Blog do cliente (a imobiliária) · a ÚNICA porta de entrada de um artigo no blog.
  *
  *   node scripts/blog-publicar.mjs preparar [--amanha]
  *   node scripts/blog-publicar.mjs listar
@@ -44,6 +44,7 @@ const { lerArtigo } = require('../src/blog/validar.js');
 const { avaliarArtigo, tipoDe } = require('../src/blog/regua.js');
 const { minutosDeLeitura, semAcento, diaEmCampinas, FUSO } = require('../src/blog/texto.js');
 const { RAMO_DE_CONTEUDO: RAMO, arquivoDaCapa, enderecoDaCapa } = require('../src/blog/categorias.js');
+const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
 
 const SITE = (process.env.BLOG_URL || '').replace(/\/+$/, '');
 
@@ -93,7 +94,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', 'user.name=Blog RUAH', '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Blog ${cfg.CLIENTE_NOME}`, '-c', 'user.email=imoveisruah@gmail.com'); }
   const rodape = process.env.BLOG_RODAPE_DO_COMMIT ? `\n\n${process.env.BLOG_RODAPE_DO_COMMIT}` : '';
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {

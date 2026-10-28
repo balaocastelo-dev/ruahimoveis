@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Foto de capa do blog da RUAH ("Sopro"), feita na RTX 4090 do PC, sem serviço pago.
+Foto de capa do blog da RUAH ("Sopro"; RUAH = o cliente desta instalação do Herrera HOUSE IA), feita na RTX 4090 do PC, sem serviço pago.
 
 Reaproveita o gerador do blog da Balão, que já está instalado e testado no PC:
   C:\\Users\\user\\balao-content-factory\\publisher\\capa_blog.py
 (Flux no ComfyUI local + conferência por um modelo de visão do Ollama, que lista
 texto, marca, rosto e defeito; só passa foto com todas as listas vazias.)
 
-Este arquivo só troca o que é da RUAH:
+Este arquivo só troca o que é do cliente (RUAH):
   - a fila: capas/pendentes.json no ramo claude/blog-conteudo do ruah-imoveis;
   - o repositório onde a foto é presa ao artigo (node scripts/blog-publicar.mjs capa);
   - o reforço do pedido: fotografia de arquitetura e interiores, sem gente, sem placa;
@@ -25,7 +25,8 @@ nunca tira o pedido da fila sem foto.
   python capa_blog_ruah.py --conferir foto.jpg "a cena em inglês"
 
 Instalação da tarefa (22h40 e 4h40): scripts\\instalar_tarefa_capa_ruah.ps1.
-Escrito em 26/10/2026 (Claude, projeto MEU KENLO / Sistema RUAH).
+Escrito em 26/10/2026 (Claude, projeto MEU KENLO / Herrera HOUSE IA).
+O nome do arquivo e o da tarefa do Windows (\\RUAH\\Capa do blog RUAH) não mudam: a tarefa instalada no PC depende deles.
 """
 import os, sys, time
 from pathlib import Path

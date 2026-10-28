@@ -1,6 +1,9 @@
-// Sopro · o blog da RUAH. Busca na lista, barra de leitura, sumário e "copiar link".
+// Sopro · o blog da imobiliária (cliente). Busca na lista, barra de leitura, sumário e "copiar link".
 (function () {
   'use strict';
+  // nome da imobiliária (cliente): vem do og:site_name que o servidor escreve ("Sopro · <cliente>")
+  var siteName = (document.querySelector('meta[property="og:site_name"]') || {}).content || '';
+  var CLIENTE = siteName.split(' · ').pop() || 'RUAH';
 
   // Busca: filtra os cartões já na página, sem ir ao servidor.
   var busca = document.getElementById('busca');
@@ -86,9 +89,9 @@
       .then(function (r) {
         if (!r.ok) throw new Error(r.j && r.j.erro || 'Não foi possível enviar.');
         form.classList.add('enviado');
-        aviso('Recebemos seu contato. Um corretor da RUAH responde em breve, em horário comercial.');
+        aviso('Recebemos seu contato. Um corretor da ' + CLIENTE + ' responde em breve, em horário comercial.');
         botao.textContent = 'Enviado';
       })
-      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a RUAH'; });
+      .catch(function (err) { aviso(err.message || 'Não foi possível enviar. Tente de novo.', true); botao.disabled = false; botao.textContent = 'Enviar para a ' + CLIENTE; });
   });
 })();
