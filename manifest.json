@@ -1477,5 +1477,76 @@
     "ambiente": "sala"
    }
   ]
+ },
+ "1937": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/1937-1.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/1937-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/1937-3.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/1937-4.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/1937-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "36720": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/36720-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/36720-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/36720-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/36720-4.jpg",
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "86818": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/86818-1.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/86818-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/86818-3.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/86818-4.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/86818-5.jpg",
+    "ambiente": "varanda"
+   }
+  ]
  }
 }
