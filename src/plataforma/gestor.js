@@ -338,7 +338,7 @@ function gestor(req, res, next) {
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.setHeader('Cache-Control', 'no-store');
   if (req.path.startsWith('/gestor-api/')) { req.url = req.url.replace(/^\/gestor-api/, ''); return api(req, res, next); }
-  if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js')
+  if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js').replace('/gestor/gestor.css">', '/gestor/gestor.css"><link rel="stylesheet" href="/gestor/bi.css">')
     .replace(/<title>[^<]*<\/title>/, `<title>${SIM === 'dashboard' ? 'Dashboard' : 'Projeção'} · Painel do gestor</title>`));
   res.type('html').send(PAGINA);
 }
