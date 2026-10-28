@@ -41,7 +41,7 @@ r.get('/condominios/bairros', (req, res) => res.json(all("SELECT bairro, count(*
 r.get('/condominios/:id', (req, res) => {
   const c = condominio(req.params.id);
   const { contorno, ...resto } = c;
-  res.json({ ...resto, tem_contorno: !!contorno, ...B.numeros(c.id) });
+  res.json({ ...resto, alvo: B.ehAlvo(c.id) ? 1 : 0, tem_contorno: !!contorno, ...B.numeros(c.id) });
 });
 r.get('/condominios/:id/perto', async (req, res) => res.json(await perto(condominio(req.params.id)) || { categorias: [] }));
 r.get('/condominios/:id/3d', async (req, res) => {
@@ -72,7 +72,7 @@ r.put('/condominios/:id', (req, res) => {
     if (k === 'nome') { set.push('nome_busca=?'); vals.push(G.chave(v)); }
     if (k === 'unidades' && !('unidades_fonte' in b)) { set.push('unidades_fonte=?'); vals.push(`Informado pela ${cfg.CLIENTE_NOME}`); }
   }
-  if ('alvo' in b) { set.push('alvo=?'); vals.push(b.alvo ? 1 : 0); }
+  const mexeuAlvo = 'alvo' in b; // prédio-alvo: escolha da imobiliária (condominio_alvos), não do prédio comum
   let mexeuPosicao = false;
   if ('lat' in b && 'lon' in b) {
     const la = num(b.lat), lo = num(b.lon);
@@ -80,8 +80,9 @@ r.put('/condominios/:id', (req, res) => {
     set.push('lat=?', 'lon=?', "geo_fonte='ajustado'"); vals.push(la, lo); mexeuPosicao = true;
   }
   if ('osm_ref' in b) { set.push('osm_ref=?'); vals.push(txt(b.osm_ref, 40)); }
-  if (!set.length) falha(400, 'Nada para salvar.');
-  run(`UPDATE condominios SET ${set.join(',')}, atualizado_em=datetime('now','localtime') WHERE id=?`, ...vals, c.id);
+  if (!set.length && !mexeuAlvo) falha(400, 'Nada para salvar.');
+  if (mexeuAlvo) B.marcaAlvo(c.id, !!b.alvo);
+  if (set.length) run(`UPDATE condominios SET ${set.join(',')}, atualizado_em=datetime('now','localtime') WHERE id=?`, ...vals, c.id);
   if (mexeuPosicao) { apagaCache(c.id); B.limpaCache(); }
   audit(req.usuario.id, 'condominio_alterado', `${c.id} ${c.nome}`);
   res.json({ ok: true });

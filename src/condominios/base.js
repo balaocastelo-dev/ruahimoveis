@@ -2,9 +2,17 @@
 const { one, all, run } = require('../db');
 const cfg = require('../config');
 const G = require('./geo');
+const AN = require('../fisguei/andamento');
 
 const ATIVAS_RADAR = "('nova','em_contato','carta_enviada','aguardando_aprovacao')";
 const FORA_FISGUEI = "('descartado','captado')";
+// Prédio-alvo é escolha de cada imobiliária (tabela privada condominio_alvos); condominios.alvo ficou sem uso.
+const ALVO = '(CASE WHEN EXISTS (SELECT 1 FROM condominio_alvos ca WHERE ca.condominio_id=c.id) THEN 1 ELSE 0 END)';
+const ehAlvo = (id) => !!one('SELECT 1 AS x FROM condominio_alvos WHERE condominio_id=?', id);
+function marcaAlvo(id, sim) {
+  if (sim) run('INSERT INTO condominio_alvos(condominio_id) VALUES(?) ON CONFLICT(condominio_id) DO NOTHING', id);
+  else run('DELETE FROM condominio_alvos WHERE condominio_id=?', id);
+}
 
 // ------------------------------------------------------------------ contornos (horizontais) em memória
 let contornos = null, contornosEm = 0;
@@ -63,8 +71,8 @@ function reconhecer({ cep, numero, logradouro, lat, lon, condominio_nome, bairro
 // Cada anúncio é conferido uma vez (cond_checado); "tudo" refaz a conferência de todos.
 // Anúncio novo em prédio-alvo vira alerta (condominio_alertas) para o Painel e a tela de Condomínios.
 function alertar(condId, origem, refId, texto) {
-  const c = one('SELECT alvo, nome FROM condominios WHERE id=?', condId);
-  if (!c || !c.alvo) return;
+  const c = one('SELECT nome FROM condominios WHERE id=?', condId);
+  if (!c || !ehAlvo(condId)) return;
   run('INSERT INTO condominio_alertas(condominio_id,origem,ref_id,texto) VALUES(?,?,?,?) ON CONFLICT(origem,ref_id) DO NOTHING', condId, origem, refId, `${texto} em ${c.nome}`);
 }
 const brl = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') : 'valor não informado');
@@ -72,7 +80,7 @@ const brl = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') : 'valor n
 // (antes eram várias consultas por anúncio e, com milhares de anúncios novos, o servidor ficava parado por muito tempo).
 // Mesma ordem do reconhecer(): CEP e número, rua e número, ponto dentro do contorno, até 40 m, nome do condomínio.
 function reconhecedor() {
-  const conds = all("SELECT id, nome, cep, numero, logradouro, lat, lon, situacao, alvo FROM condominios WHERE coalesce(tipo,'') <> 'comercial' OR tipo IS NULL");
+  const conds = all(`SELECT c.id, c.nome, c.cep, c.numero, c.logradouro, c.lat, c.lon, c.situacao, ${ALVO} AS alvo FROM condominios c WHERE coalesce(c.tipo,'') <> 'comercial' OR c.tipo IS NULL`);
   const porCep = new Map(), porNum = new Map(), grade = new Map(), porId = new Map();
   const cel = (la, lo) => `${Math.round(la * 1000)}|${Math.round(lo * 1000)}`;
   const tira = (k) => k.replace(/^(RUA|R|AVENIDA|AV|ALAMEDA|AL|TRAVESSA|TV|PRACA|ESTRADA|ROD|RODOVIA) /, '');
@@ -133,7 +141,7 @@ function vincular({ tudo = false, limite = 20000 } = {}) {
   }
   for (const [tabela, sql, origem, ativo] of [
     ['oportunidades', `SELECT id, logradouro, numero, bairro, condominio_nome, valor, tipo, status FROM oportunidades WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, 'radar', (x) => ['nova', 'em_contato'].includes(x.status)],
-    ['fisguei_anuncios', `SELECT id, cep, logradouro, numero, bairro, lat, lon, titulo, valor, tipo, status FROM fisguei_anuncios WHERE ${tudo ? '1=1' : 'cond_checado=0'} ORDER BY id DESC LIMIT ?`, 'fisguei', (x) => !['descartado', 'captado'].includes(x.status)],
+    ['fisguei_anuncios', `SELECT a.id, a.cep, a.logradouro, a.numero, a.bairro, a.lat, a.lon, a.titulo, a.valor, a.tipo, ${AN.STATUS} AS status FROM fisguei_anuncios a ${AN.JOIN} WHERE ${tudo ? '1=1' : 'a.cond_checado=0'} ORDER BY a.id DESC LIMIT ?`, 'fisguei', (x) => !['descartado', 'captado'].includes(x.status)],
   ]) {
     const achados = [], sem = [];
     for (const a of all(sql, limite)) {
@@ -166,27 +174,29 @@ function listar({ q, bairro, tipo, alvo, comVenda, ordem = 'venda', pagina = 1, 
   if (q) { w.push('(c.nome_busca LIKE ? OR c.logradouro LIKE ? OR c.cnpj LIKE ?)'); const k = `%${G.chave(q)}%`; p.push(k, `%${q}%`, `%${G.soDigitos(q) || '#'}%`); }
   if (bairro) { w.push('c.bairro LIKE ?'); p.push(`%${bairro}%`); }
   if (tipo) { w.push('c.tipo=?'); p.push(tipo); }
-  if (alvo) w.push('c.alvo=1');
+  if (alvo) w.push(`${ALVO}=1`);
   if (comVenda) w.push('(coalesce(op.n,0)+coalesce(fg.n,0)+coalesce(im.n,0)) > 0');
   const de = `FROM condominios c
     LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM oportunidades WHERE status IN ${ATIVAS_RADAR} GROUP BY condominio_id) op ON op.condominio_id=c.id
-    LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM fisguei_anuncios WHERE status NOT IN ${FORA_FISGUEI} GROUP BY condominio_id) fg ON fg.condominio_id=c.id
+    LEFT JOIN (SELECT a.condominio_id, count(*) n, avg(a.valor) v FROM fisguei_anuncios a ${AN.JOIN} WHERE ${AN.STATUS} NOT IN ${FORA_FISGUEI} GROUP BY a.condominio_id) fg ON fg.condominio_id=c.id
     LEFT JOIN (SELECT condominio_id, count(*) n, avg(valor) v FROM imoveis WHERE status IN ('publicado','off_market','captacao','aguardando_autorizacao') GROUP BY condominio_id) im ON im.condominio_id=c.id
     ${ordem === 'giro' ? `LEFT JOIN (SELECT condominio_id, count(*) n FROM (SELECT condominio_id FROM oportunidades WHERE criado_em >= datetime('now','localtime','-90 day') UNION ALL SELECT condominio_id FROM fisguei_anuncios WHERE criado_em >= datetime('now','localtime','-90 day')) t GROUP BY condominio_id) g ON g.condominio_id=c.id` : ''}
     WHERE ${w.join(' AND ')}`;
   const total = one(`SELECT count(*) n ${de}`, ...p).n;
-  const itens = all(`SELECT c.id, c.nome, c.tipo, c.bairro, c.logradouro, c.numero, c.cep, c.lat, c.lon, c.andares, c.torres, c.unidades, c.fontes, c.alvo, c.situacao, c.slug,
+  const itens = all(`SELECT c.id, c.nome, c.tipo, c.bairro, c.logradouro, c.numero, c.cep, c.lat, c.lon, c.andares, c.torres, c.unidades, c.fontes, ${ALVO} AS alvo, c.situacao, c.slug,
       coalesce(op.n,0) radar, coalesce(fg.n,0) fisguei, coalesce(im.n,0) carteira${ordem === 'giro' ? ', coalesce(g.n,0) giro' : ''} ${de} ORDER BY ${ORDENS[ordem] || ORDENS.venda} LIMIT ? OFFSET ?`,
   ...p, porPagina, (Math.max(1, pagina) - 1) * porPagina);
   const resumo = one(`SELECT count(*) total, sum(CASE WHEN tipo='vertical' THEN 1 ELSE 0 END) verticais, sum(CASE WHEN tipo='horizontal' THEN 1 ELSE 0 END) horizontais,
-    sum(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END) no_mapa, sum(alvo) alvos FROM condominios WHERE coalesce(tipo,'') <> 'comercial'`);
+    sum(CASE WHEN lat IS NOT NULL THEN 1 ELSE 0 END) no_mapa,
+    (SELECT count(*) FROM condominio_alvos ca JOIN condominios x ON x.id=ca.condominio_id WHERE coalesce(x.tipo,'') <> 'comercial') alvos
+    FROM condominios WHERE coalesce(tipo,'') <> 'comercial'`);
   return { total, pagina: +pagina, porPagina, itens, resumo };
 }
 
 function pontosMapa() {
-  return all(`SELECT c.id, c.nome, c.tipo, c.lat, c.lon, c.alvo,
+  return all(`SELECT c.id, c.nome, c.tipo, c.lat, c.lon, ${ALVO} AS alvo,
       (SELECT count(*) FROM oportunidades o WHERE o.condominio_id=c.id AND o.status IN ${ATIVAS_RADAR}) +
-      (SELECT count(*) FROM fisguei_anuncios f WHERE f.condominio_id=c.id AND f.status NOT IN ${FORA_FISGUEI}) +
+      (SELECT count(*) FROM fisguei_anuncios a ${AN.JOIN} WHERE a.condominio_id=c.id AND ${AN.STATUS} NOT IN ${FORA_FISGUEI}) +
       (SELECT count(*) FROM imoveis i WHERE i.condominio_id=c.id AND i.status IN ('publicado','off_market')) venda
     FROM condominios c WHERE c.lat IS NOT NULL AND coalesce(c.tipo,'') <> 'comercial'`)
     .map((c) => [c.id, Math.round(c.lat * 1e5) / 1e5, Math.round(c.lon * 1e5) / 1e5, c.tipo === 'horizontal' ? 'h' : c.tipo === 'vertical' ? 'v' : 'i', +c.venda || 0, c.alvo ? 1 : 0, c.nome]);
@@ -211,9 +221,9 @@ function numeros(id) {
     FROM imoveis i WHERE i.condominio_id=? ORDER BY i.status, i.valor DESC`, id);
   const radar = all(`SELECT id, portal, link, titulo, tipo, unidade, quartos, vagas, area, valor, valor_anterior, anunciante_tipo, anunciante_nome, publicado_em, criado_em, status, foto
     FROM oportunidades WHERE condominio_id=? ORDER BY criado_em DESC`, id);
-  const fisguei = all(`SELECT f.id, f.portal, f.link, f.titulo, f.tipo, f.complemento, f.quartos, f.vagas, f.area_util, f.valor, f.valor_condominio, f.iptu, f.anunciante_nome, f.anunciante_tipo, f.publicado_em, f.criado_em, f.status, f.fotos,
-      (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=f.id) pessoas
-    FROM fisguei_anuncios f WHERE f.condominio_id=? ORDER BY f.criado_em DESC`, id);
+  const fisguei = all(`SELECT a.id, a.portal, a.link, a.titulo, a.tipo, a.complemento, a.quartos, a.vagas, a.area_util, a.valor, a.valor_condominio, a.iptu, a.anunciante_nome, a.anunciante_tipo, a.publicado_em, a.criado_em, ${AN.STATUS} AS status, a.fotos,
+      (SELECT count(*) FROM fisguei_pessoas p WHERE p.anuncio_id=a.id) pessoas
+    FROM fisguei_anuncios a ${AN.JOIN} WHERE a.condominio_id=? ORDER BY a.criado_em DESC`, id);
 
   const aVenda = [
     ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: cfg.CLIENTE_NOME, ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: cfg.CLIENTE_NOME, foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
@@ -266,4 +276,4 @@ function numeros(id) {
   };
 }
 
-module.exports = { LAZER, reconhecer, vincular, alertas, listar, pontosMapa, numeros, limpaCache, ATIVAS_RADAR, FORA_FISGUEI };
+module.exports = { ehAlvo, marcaAlvo, LAZER, reconhecer, vincular, alertas, listar, pontosMapa, numeros, limpaCache, ATIVAS_RADAR, FORA_FISGUEI };
