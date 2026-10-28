@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node --disable-warning=ExperimentalWarning server.js",
-    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js",
+    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js && node test/plataforma.js",
     "portal": "node scripts/portal-publicar.mjs",
     "blog": "node scripts/blog-publicar.mjs"
   },

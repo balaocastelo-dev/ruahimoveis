@@ -225,7 +225,7 @@ function vitrine(req, res, next) {
   if (!HOSTS.has(String(req.hostname || '').toLowerCase())) return next();
   if (req.path === '/robots.txt') return res.type('text/plain').send('User-agent: *\nAllow: /\nSitemap: https://corretordofuturo.app/sitemap.xml\n');
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url></urlset>');
-  if (req.path.startsWith('/plataforma/')) return next(); // CSS e JS da própria página
+  if (req.path.startsWith('/plataforma/') || req.path.startsWith('/gestor/')) return next(); // CSS e JS da própria página e do painel do gestor
   if (req.method !== 'GET' && req.method !== 'HEAD') return res.status(404).json({ erro: 'Não encontrado.' });
   if (req.path !== '/') return res.redirect(302, '/');
   res.setHeader('Cache-Control', 'public, max-age=300');

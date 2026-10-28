@@ -27,8 +27,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Painel do gestor da plataforma (corretordofuturo.app/gestor): as imobiliárias clientes.
+app.use(require('./src/plataforma/gestor').gestor);
 // Domínio da plataforma (corretordofuturo.app): vitrine do produto, nunca o sistema ou o portal de um cliente.
 app.use(require('./src/plataforma/vitrine').vitrine);
+// Conta suspensa pelo gestor da plataforma: sistema, portal e blog desta imobiliária mostram o aviso.
+app.use(require('./src/plataforma/suspensa'));
 
 // Webhook do WhatsApp precisa do corpo bruto: vem antes do parser JSON.
 app.use('/webhook/whatsapp', publico.webhook);
