@@ -1,13 +1,13 @@
-/* Sistema RUAH — Escritório virtual: 9 agentes robôs, cada um com alma (.soul), setor e WhatsApp próprio (carregado depois do app.js) */
+/* Herrera HOUSE IA — Escritório virtual: 9 agentes robôs, cada um com alma (.soul), setor e WhatsApp próprio (carregado depois do app.js) */
 'use strict';
 const EV_LINHA = {
   conectado: ['ok', 'No ar'], qr: ['warn', 'Esperando o QR code'], reconectando: ['warn', 'Reconectando'], iniciando: ['warn', 'Iniciando'],
   desconectado: ['bad', 'Desconectado'], erro: ['bad', 'Com erro'], parada: ['info', 'Sem número'], desligado: ['bad', 'PC desligado'],
 };
 const EV_ZONAS = [
-  ['Sala de captação', 'Acha o dono e traz o imóvel para a RUAH', ['captador']],
+  ['Sala de captação', 'Acha o dono e traz o imóvel para a ' + MARCA.cliente, ['captador']],
   ['Salão de vendas', 'Um corretor robô por setor, atendendo pelo WhatsApp', ['apartamentos', 'comerciais', 'terrenos', 'casas', 'alto-padrao', 'offmarket']],
-  ['Diretoria', 'Quem coordena o escritório e fala com as pessoas da RUAH', ['gerente', 'gerente-corretores']],
+  ['Diretoria', 'Quem coordena o escritório e fala com as pessoas da ' + MARCA.cliente, ['gerente', 'gerente-corretores']],
 ];
 const EV_EVENTO = { visita: '📅', chamou_corretor: '🔔', transferiu: '↪', respondeu: '💬', foto: '📷', captacao: '🏠', afazer: '📌', feito: '✅', relatorio: '📊', manha: '☀️', agenda: '🗓', alerta: '⚡', aviso: '📣', atribuido: '🧭', aprovado: '👍', alma: '✍️', erro: '⚠️', lembrete: '⏰' };
 const evPill = (e) => { const [c, t] = EV_LINHA[e] || ['info', e || '—']; return `<span class="pill ${c}">${esc(t)}</span>`; };
@@ -25,7 +25,7 @@ async function telaEscritorio() {
   const pcAviso = !p.nuvem && !p.vivo ? `<div class="banner warn"><b>O cérebro dos agentes ainda depende do PC.</b> Coloque a chave do Gemini na <a href="#/whats/config">Configuração geral</a> e eles passam a pensar na nuvem, com o PC desligado.</div>`
     : !p.nuvem && p.ia === false ? `<div class="banner warn"><b>A IA local (Ollama) não respondeu no PC.</b> Coloque a chave do Gemini na <a href="#/whats/config">Configuração geral</a> para não depender do PC.</div>`
     : p.nuvem && p.ia === false ? `<div class="banner warn"><b>O Gemini não respondeu no último ciclo${p.cerebro.erro ? ': ' + esc(p.cerebro.erro) : ''}.</b> Confira a chave na <a href="#/whats/config">Configuração geral</a>.</div>`
-    : p.nuvem && !p.vivo ? `<div class="banner info"><b>Cérebro na nuvem funcionando.</b> As linhas de WhatsApp ficam no PC da RUAH: com ele desligado, as respostas esperam na fila e saem quando ele ligar. A conversa de teste funciona normalmente.</div>`
+    : p.nuvem && !p.vivo ? `<div class="banner info"><b>Cérebro na nuvem funcionando.</b> As linhas de WhatsApp ficam no PC da ${esc(MARCA.cliente)}: com ele desligado, as respostas esperam na fila e saem quando ele ligar. A conversa de teste funciona normalmente.</div>`
     : p.pausado ? '<div class="banner warn"><b>Escritório em pausa:</b> ninguém responde até você retomar.</div>' : '';
   const selo = `<span class="ev-pc ${p.nuvem ? 'on' : p.vivo ? 'on' : ''}"><i></i>${p.nuvem ? `Cérebro na nuvem · ${esc(p.modelo || 'Gemini')}` : p.vivo ? `Cérebro no PC · ${esc(p.modelo || '')}` : 'Cérebro desligado'}</span>
     <span class="ev-pc ${p.vivo ? 'on' : ''}"><i></i>${p.vivo ? 'WhatsApp no PC ligado' : 'WhatsApp no PC desligado'}</span>`;
@@ -193,7 +193,7 @@ function evAbaAlma(a) {
     <div class="card ev-alma-ajuda"><h3>Como a alma funciona</h3>
       <p class="small">A alma é o jeito de ser do agente: quem ele é, como fala, o que faz, o que nunca faz e quando chama uma pessoa. Escreva como se estivesse treinando um corretor novo.</p>
       <p class="small"><b>O sistema junta sozinho, a cada mensagem:</b></p>
-      <ul class="small"><li>${a.tipo === 'cliente' ? 'o catálogo do setor (só imóveis da RUAH, com valor e página do portal)' : a.slug === 'captador' ? 'o imóvel do Fisguei, a pessoa, a conversa e as fotos que ela já mandou' : a.slug === 'gerente' ? 'os números do dia (leads, visitas, captação, robôs, pendências)' : 'a agenda, os afazeres e os leads quentes do corretor que está falando'}</li>
+      <ul class="small"><li>${a.tipo === 'cliente' ? 'o catálogo do setor (só imóveis da ' + esc(MARCA.cliente) + ', com valor e página do portal)' : a.slug === 'captador' ? 'o imóvel do Fisguei, a pessoa, a conversa e as fotos que ela já mandou' : a.slug === 'gerente' ? 'os números do dia (leads, visitas, captação, robôs, pendências)' : 'a agenda, os afazeres e os leads quentes do corretor que está falando'}</li>
       ${a.tipo === 'cliente' ? '<li>a ficha do cliente no CRM e o que ele pediu no portal</li>' : ''}<li>a conversa até agora e a data e hora</li><li>as ações que ele pode usar no sistema (${a.tipo === 'cliente' ? 'atualizar perfil, marcar visita, mandar link, transferir para outro agente, chamar corretor' : a.slug === 'captador' ? 'registrar a captação, chamar corretor' : 'criar e fechar afazeres'})</li></ul>
       <p class="small">Essa parte não fica na alma, então editar a alma não quebra a ligação com o sistema.</p>
       <p class="small muted">Arquivo padrão no código: <span class="mono">${esc(a.alma_arquivo)}</span>. A versão salva aqui vale para o PC e para o link.</p>
@@ -213,10 +213,10 @@ function evAbaWhats(a) {
   if (a.slug === 'captador') corpo = `<p class="small">O TH-IA-GO usa o número do robô do Fisguei (a linha de abordagem dos proprietários). Para conectar, trocar o número ou ajustar horário, limite e intervalo, use o cartão do robô no Fisguei.</p>
     ${qr}<div class="row" style="gap:6px"><a class="btn pri" href="#/fisguei">Abrir o robô no Fisguei</a></div>`;
   else if (!propria) corpo = `<p>${esc(a.nome)} usa o número de <b>${esc(a.linha_nome)}</b>. Quem escreve nesse número é atendido por quem cuida daquele cliente (ou pelo setor do pedido).</p><div class="row"><a class="btn" href="#/whats/agente/${a.linha}/whatsapp">Ver a linha de ${esc(a.linha_nome)}</a></div>`;
-  else corpo = `${qr}${ls.estado === 'conectado' ? `<p>Conectado no número <b>${esc(tel(ls.numero))}</b>.${a.usam_esta_linha.length ? ` Também atendem por este número: ${esc(a.usam_esta_linha.join(', '))}.` : ''}</p>` : ls.estado === 'desligado' ? '<p>O PC da RUAH está desligado (ou sem o sistema aberto). A linha liga quando o PC voltar.</p>' : ls.estado === 'parada' ? `<p>${esc(a.nome)} ainda não tem número. Separe um chip (ou um número de WhatsApp Business) só para ${esc(a.nome)}, clique em <b>Conectar</b> e leia o QR code que vai aparecer aqui.</p>` : ls.erro ? `<p style="color:var(--bad)">${esc(ls.erro)}</p>` : ''}
+  else corpo = `${qr}${ls.estado === 'conectado' ? `<p>Conectado no número <b>${esc(tel(ls.numero))}</b>.${a.usam_esta_linha.length ? ` Também atendem por este número: ${esc(a.usam_esta_linha.join(', '))}.` : ''}</p>` : ls.estado === 'desligado' ? '<p>O PC da ' + esc(MARCA.cliente) + ' está desligado (ou sem o sistema aberto). A linha liga quando o PC voltar.</p>' : ls.estado === 'parada' ? `<p>${esc(a.nome)} ainda não tem número. Separe um chip (ou um número de WhatsApp Business) só para ${esc(a.nome)}, clique em <b>Conectar</b> e leia o QR code que vai aparecer aqui.</p>` : ls.erro ? `<p style="color:var(--bad)">${esc(ls.erro)}</p>` : ''}
     ${a.pode_editar ? `<div class="row" style="gap:6px">${['parada', 'desconectado', 'erro', 'desligado'].includes(ls.estado) ? '<button class="btn pri" data-act="ev-linha" data-c="conectar">Conectar (gerar QR code)</button>' : ''}${['conectado', 'reconectando', 'qr'].includes(ls.estado) ? '<button class="btn" data-act="ev-linha" data-c="reiniciar">Reiniciar</button><button class="btn" data-act="ev-linha" data-c="desconectar">Desconectar este número</button>' : ''}</div>` : ''}`;
   $('#ev-aba').innerHTML = `<div class="grid g2" style="align-items:start"><div class="card"><div class="row"><h2 style="margin:0">Linha de WhatsApp</h2><span class="sp"></span>${evPill(ls.estado)}</div>${corpo}</div>
-    <div class="card"><h3>Bom saber</h3><ul class="small"><li>A conexão é pelo QR code (aparelho conectado), igual ao WhatsApp Web, e roda no PC da RUAH.</li><li>Use um número separado para cada agente que vai falar com clientes. Se preferir, um agente pode usar o número de outro (aba Ajustes).</li>
+    <div class="card"><h3>Bom saber</h3><ul class="small"><li>A conexão é pelo QR code (aparelho conectado), igual ao WhatsApp Web, e roda no PC da ${esc(MARCA.cliente)}.</li><li>Use um número separado para cada agente que vai falar com clientes. Se preferir, um agente pode usar o número de outro (aba Ajustes).</li>
     <li>WhatsApp não oficial pode ser bloqueado se mandar muitas mensagens para quem não conhece o número. Os agentes de venda só respondem quem escreveu (ou quem deixou contato no portal); a abordagem fria fica só com o TH-IA-GO, com limite por dia.</li><li>Quem responder PARAR não recebe mais nada.</li></ul></div></div>`;
   if (ls.estado !== 'conectado' && propria) poll = setInterval(async () => { if (!$('#ev-aba')) return clearInterval(poll); try { const n = await api('GET', `/api/escritorio/${a.slug}`); if (n.linha_estado.estado !== ls.estado || n.linha_estado.qr !== ls.qr) { clearInterval(poll); telaMesa(a.slug, 'whatsapp'); } } catch {} }, 5000);
 }
@@ -263,7 +263,7 @@ function evAbaAjustes(a) {
 FORM['ev-ajustes'] = async (f) => { const o = formJSON(f); await api('PUT', `/api/escritorio/${location.hash.split('/')[3]}`, o); toast('Ajustes salvos'); rota(); };
 function evLigacoes(a) {
   const L = {
-    cliente: ['<b>Quem chega:</b> quem escreve no número dele e quem deixa contato no portal ou no blog sobre um imóvel do setor.', '<b>O que ele vê:</b> os imóveis da carteira da RUAH do setor (com valor, área e página do portal), a ficha do cliente no CRM e a conversa.',
+    cliente: ['<b>Quem chega:</b> quem escreve no número dele e quem deixa contato no portal ou no blog sobre um imóvel do setor.', '<b>O que ele vê:</b> os imóveis da carteira da ' + esc(MARCA.cliente) + ' do setor (com valor, área e página do portal), a ficha do cliente no CRM e a conversa.',
       '<b>O que ele faz:</b> atualiza o perfil do lead, marca visita (a Marta avisa o corretor), manda a página do imóvel, passa o cliente para outro agente e chama o corretor quando precisa de gente.', '<b>Onde aparece:</b> CRM e funil, Conversas, Visitas e o painel do dono.'],
     captacao: ['<b>Quem chega:</b> os proprietários que o robô do Fisguei abordou e responderam.', '<b>O que ele vê:</b> o anúncio e o endereço do Fisguei, quem é a pessoa, a conversa e as fotos que ela já mandou.',
       '<b>O que ele faz:</b> pede as fotos originais e a autorização de uso, anota interesse e melhor horário na oportunidade do Radar e chama o corretor.', '<b>Onde aparece:</b> Radar + Fisguei, fotos na mesa dele (e no imóvel quando for captado), alerta para o dono.'],
@@ -300,7 +300,7 @@ async function telaEscritorioConfig() {
       <div class="ev-func">
         <div class="${ia.provedor === 'gemini' ? 'on' : ''}"><b>Cérebro</b><span>${ia.provedor === 'gemini' ? `Na nuvem (Gemini)${p.cerebro.em ? ' · último ciclo ' + dataBR(p.cerebro.em.replace('T', ' ').slice(0, 19)) : ''}` : 'No PC (sem chave do Gemini)'}</span></div>
         <div class="${ia.provedor === 'gemini' ? 'on' : ''}"><b>Conversa de teste, aprovações, relatório do dono, lembretes</b><span>${ia.provedor === 'gemini' ? 'Na nuvem, a qualquer hora' : 'Dependem do PC ligado'}</span></div>
-        <div class="${p.vivo ? 'on' : ''}"><b>Linhas de WhatsApp (QR code)</b><span>No PC da RUAH${p.vivo ? ', ligado agora' : ', desligado agora'}. Com o PC desligado, as mensagens esperam na fila e saem quando ele ligar.</span></div>
+        <div class="${p.vivo ? 'on' : ''}"><b>Linhas de WhatsApp (QR code)</b><span>No PC da ${esc(MARCA.cliente)}${p.vivo ? ', ligado agora' : ', desligado agora'}. Com o PC desligado, as mensagens esperam na fila e saem quando ele ligar.</span></div>
       </div>
       <p class="small muted">Para as linhas também saírem do PC, dá para usar um serviço de WhatsApp na nuvem (Z-API, W-API) ou um servidor próprio. Fica para quando você decidir.</p></div>
     <form class="card grid" data-form="ev-regras" style="gap:10px"><h2 style="margin:0">Regras do escritório</h2>

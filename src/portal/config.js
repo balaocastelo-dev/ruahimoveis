@@ -1,4 +1,4 @@
-// Portal RUAH · ambientes, chamadas e o endereço do ramo de conteúdo.
+// Portal do cliente (a imobiliária) · ambientes, chamadas e o endereço do ramo de conteúdo.
 //
 // O portal mostra os imóveis à venda (status "publicado") com uma PÁGINA ÚNICA
 // para cada um, escrita a partir das fotos e da ficha do imóvel. Segue o mesmo
@@ -10,6 +10,8 @@
 // Os NÚMEROS (valor, áreas, quartos) nunca vêm do texto: vêm do banco, ao vivo.
 
 /** Onde está cada foto. A galeria do imóvel é filtrada por estes ambientes. */
+const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
+
 const AMBIENTES = {
   fachada: 'Fachada',
   sala: 'Salas',
@@ -40,12 +42,12 @@ const AMBIENTES = {
 const CHAMADAS = {
   visita: {
     titulo: 'Quer conhecer pessoalmente?',
-    texto: 'Escolha o melhor período e a equipe da RUAH confirma a visita com você.',
+    texto: `Escolha o melhor período e a equipe da ${CLIENTE} confirma a visita com você.`,
     rotulo: 'Agendar visita',
   },
   interesse: {
     titulo: 'Gostou deste imóvel?',
-    texto: 'Deixe seu contato e um corretor da RUAH responde com as informações que você precisar.',
+    texto: `Deixe seu contato e um corretor da ${CLIENTE} responde com as informações que você precisar.`,
     rotulo: 'Tenho interesse',
   },
   corretor: {

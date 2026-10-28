@@ -1,11 +1,13 @@
-/* Sistema RUAH — Condomínios: a base de prédios e condomínios de Campinas, a ficha com os números cruzados e o 3D (carregado depois do app.js e do fisguei.js) */
+/* Herrera HOUSE IA — Condomínios: a base de prédios e condomínios de Campinas, a ficha com os números cruzados e o 3D (carregado depois do app.js e do fisguei.js) */
 'use strict';
 const CD_TIPO = { vertical: ['Prédio', 'info'], horizontal: ['Condomínio de casas', 'ok'], indefinido: ['A confirmar', 'gold'], comercial: ['Comercial', 'bad'] };
 const cdTipo = (t) => `<span class="pill ${(CD_TIPO[t] || CD_TIPO.indefinido)[1]}">${esc((CD_TIPO[t] || CD_TIPO.indefinido)[0])}</span>`;
 const cdEnd = (c) => [[c.logradouro, c.numero].filter(Boolean).join(', '), c.bairro].filter(Boolean).join(' · ') || 'Endereço a confirmar';
 const cdM2 = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') + '/m²' : '—');
-const cdFontes = (f) => String(f || '').split(',').filter(Boolean).map((x) => ({ cnpj: 'CNPJ (Receita)', osm: 'Mapa aberto', ruah: 'Cadastro RUAH' }[x] || x)).join(' · ');
+const cdFontes = (f) => String(f || '').split(',').filter(Boolean).map((x) => ({ cnpj: 'CNPJ (Receita)', osm: 'Mapa aberto', ruah: 'Cadastro ' + MARCA.cliente }[x] || x)).join(' · ');
 const cdKpi = (n, l, sub) => `<div class="card kpi"><div class="n">${n}</div><div class="l">${esc(l)}</div>${sub ? `<div class="small muted" style="margin-top:2px">${sub}</div>` : ''}</div>`;
+// imóvel da carteira da própria imobiliária: o servidor manda origem = nome do cliente ('RUAH' nos dados antigos)
+const cdDaCasa = (a) => a.origem === MARCA.cliente || a.origem === 'RUAH';
 const cd3d = (id, imovel) => `/condominio-3d.html?id=${id}${imovel ? '&imovel=' + imovel : ''}`;
 
 // ---------- lista + mapa ----------
@@ -16,7 +18,7 @@ async function telaCondominios(qs) {
   const r = l.resumo || {};
   const paginas = Math.max(1, Math.ceil(l.total / l.porPagina));
   $('#main').innerHTML = `<div class="eyebrow">Imóveis da base · Campinas</div><h1>Condomínios</h1>${typeof mkAbas === 'function' ? mkAbas('condominios') : ''}
-  <p class="lead">Os prédios e condomínios residenciais de Campinas, juntando o CNPJ da Receita, o mapa aberto e os cadastros da RUAH. Cada um cruza a carteira, o Radar e o Fisguei: quem está vendendo, por quanto e por qual imobiliária.</p>
+  <p class="lead">Os prédios e condomínios residenciais de Campinas, juntando o CNPJ da Receita, o mapa aberto e os cadastros da ${esc(MARCA.cliente)}. Cada um cruza a carteira, o Radar e o Fisguei: quem está vendendo, por quanto e por qual imobiliária.</p>
   ${alertas.length ? `<div class="card cd-alertas"><div class="row"><h2 style="margin:0;flex:1">Anúncios novos em prédios-alvo</h2><button class="btn sm" data-act="cd-visto">Marcar como vistos</button></div>
     <div class="list" style="margin-top:8px">${alertas.slice(0, 8).map((a) => `<a class="item click" href="${a.href}" style="text-decoration:none;color:inherit"><span class="pill ${a.origem === 'radar' ? 'info' : 'ok'}">${a.origem === 'radar' ? 'Radar' : 'Fisguei'}</span><span style="flex:1">${esc(a.texto)}</span><span class="muted small">${dataBR(a.criado_em)}</span></a>`).join('')}</div></div>` : ''}
   <div class="grid g4 cd-kpis">${cdKpi((r.total || 0).toLocaleString('pt-BR'), 'condomínios na base')}${cdKpi((r.verticais || 0).toLocaleString('pt-BR'), 'prédios')}${cdKpi((r.horizontais || 0).toLocaleString('pt-BR'), 'condomínios de casas')}${cdKpi((r.alvos || 0).toLocaleString('pt-BR'), 'prédios-alvo', '<a href="' + link({ alvo: '1' }) + '">ver</a>')}</div>
@@ -108,7 +110,7 @@ async function telaCondominio(id) {
       ${c.razao_social ? `<dt>Razão social</dt><dd>${esc(c.razao_social)}</dd>` : ''}
     </dl>${s.lazer.length ? `<h3 style="margin-top:14px">Lazer e estrutura</h3><div class="row" style="gap:6px;flex-wrap:wrap">${s.lazer.map((x) => `<span class="pill info">${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin:6px 0 0">Lido das descrições dos anúncios do prédio.</p>` : ''}</div>
     <div class="card"><h2>Captação no prédio</h2>
-      <div class="grid g3" style="gap:10px">${cdKpi(s.proprietarios_conhecidos, 'possíveis donos conhecidos')}${cdKpi(s.donos_confirmados, 'donos confirmados')}${cdKpi(s.vendidos_ruah, 'vendidos pela RUAH')}</div>
+      <div class="grid g3" style="gap:10px">${cdKpi(s.proprietarios_conhecidos, 'possíveis donos conhecidos')}${cdKpi(s.donos_confirmados, 'donos confirmados')}${cdKpi(s.vendidos_ruah, 'vendidos pela ' + MARCA.cliente)}</div>
       ${s.imobiliarias.length ? `<h3 style="margin-top:14px">Imobiliárias anunciando aqui</h3><div class="list">${s.imobiliarias.map((x) => `<div class="item"><span style="flex:1">${esc(x.nome)}</span><span class="pill info">${x.n}</span></div>`).join('')}</div>` : '<p class="muted small" style="margin-top:12px">Nenhuma imobiliária concorrente anunciando neste prédio agora.</p>'}
       <div class="row" style="gap:6px;margin-top:14px;flex-wrap:wrap">
         ${c.fisguei.length ? `<a class="btn sm" href="#/fisguei?q=${encodeURIComponent(c.logradouro || c.nome)}">Ver no Fisguei (${c.fisguei.length})</a>` : ''}
@@ -117,14 +119,14 @@ async function telaCondominio(id) {
       </div></div>
   </div>
   <div class="card tbl" style="margin-top:16px"><h2 style="padding:10px 10px 0">À venda agora</h2>${c.aVenda.length ? `<table><thead><tr><th></th><th>Origem</th><th>Unidade</th><th>Quartos</th><th>Área</th><th>Valor</th><th>R$/m²</th><th>Anunciado há</th><th>Quem anuncia</th>${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
-    ${c.aVenda.map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${a.origem === 'RUAH' ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
+    ${c.aVenda.map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
       <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b></td><td>${a.valor && a.area ? cdM2(a.valor / a.area) : '—'}</td>
-      <td>${a.dias !== null ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${a.origem === 'RUAH' ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
+      <td>${a.dias !== null ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${cdDaCasa(a) ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
   </tbody></table>` : '<div class="empty">Nada à venda neste condomínio no Radar, no Fisguei ou na carteira agora. Bom momento para marcar como prédio-alvo e ser avisado do próximo anúncio.</div>'}</div>
-  ${c.carteira.length ? `<div class="row" style="margin:22px 0 12px"><h2 style="margin:0">Na carteira da RUAH</h2></div>${imCards(c.carteira.map((i) => ({ ...i, condominio_nome: c.nome, bairro: c.bairro, capa: i.foto })))}` : ''}
+  ${c.carteira.length ? `<div class="row" style="margin:22px 0 12px"><h2 style="margin:0">Na carteira da ${esc(MARCA.cliente)}</h2></div>${imCards(c.carteira.map((i) => ({ ...i, condominio_nome: c.nome, bairro: c.bairro, capa: i.foto })))}` : ''}
   <div class="card" style="margin-top:16px"><div class="row"><h2 style="margin:0;flex:1">O que tem perto</h2><span class="muted small">a pé, a partir da portaria</span></div><div id="cd-perto"><p class="muted">${temGeo ? 'Carregando…' : 'Ajuste a posição no mapa para ver o entorno.'}</p></div></div>
   <div class="grid g2" style="margin-top:16px">
-    <div class="card"><div class="row"><h2 style="margin:0;flex:1">Mapa</h2>${c.geo_fonte ? `<span class="muted small">posição: ${esc({ osm: 'mapa aberto', numero: 'endereço exato', rua: 'aproximada pela rua', cep: 'aproximada pelo CEP', ajustado: 'ajustada pela RUAH', cadastro: 'cadastro do imóvel' }[c.geo_fonte] || c.geo_fonte)}</span>` : ''}</div>
+    <div class="card"><div class="row"><h2 style="margin:0;flex:1">Mapa</h2>${c.geo_fonte ? `<span class="muted small">posição: ${esc({ osm: 'mapa aberto', numero: 'endereço exato', rua: 'aproximada pela rua', cep: 'aproximada pelo CEP', ajustado: 'ajustada pela ' + MARCA.cliente, cadastro: 'cadastro do imóvel' }[c.geo_fonte] || c.geo_fonte)}</span>` : ''}</div>
       <div id="cd-mini" class="cd-mini"></div><p class="small muted" style="margin:6px 0 0">Arraste o marcador para corrigir a posição do condomínio.</p></div>
     <div class="card"><h2>Street View</h2>${temGeo ? `<div class="fg-frame" data-fachada="cd${c.id}"><iframe title="Street View" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?layer=c&cbll=${encodeURIComponent(c.lat + ',' + c.lon)}&cbp=11,0,0,0,0&hl=pt-BR&output=svembed"></iframe></div>
       <p class="small muted">Se a imagem não aparecer, o Google não tem Street View exatamente neste ponto. <a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${encodeURIComponent(c.lat + ',' + c.lon)}" target="_blank" rel="noopener">Abrir no Google</a></p>` : '<p class="muted">Sem posição no mapa.</p>'}</div>
@@ -184,7 +186,7 @@ FORM['cd-editar'] = async (f) => { await api('PUT', `/api/condominios/${f.datase
 ACT['cd-vizinhos'] = async (b) => {
   const c = await api('GET', '/api/condominios/' + b.dataset.id);
   const s = c.resumo; const m2 = s.m2_mediano || s.m2_historico;
-  const txt = `Olá! Aqui é da RUAH Investimentos Imobiliários.\n\nAcompanhamos de perto o ${c.nome}${c.bairro ? ', no ' + c.bairro : ''}.${s.a_venda ? ` Hoje há ${s.a_venda} unidade(s) à venda no prédio` : ''}${m2 ? `${s.a_venda ? ', com' : ' O'} m² em torno de ${cdM2(m2)}` : ''}.\n\nSe você pensa em vender ou só quer saber quanto vale o seu apartamento hoje, fazemos uma avaliação sem compromisso.\n\nPara não receber mais mensagens, responda PARAR.`;
+  const txt = `Olá! Aqui é da ${MARCA.empresa}.\n\nAcompanhamos de perto o ${c.nome}${c.bairro ? ', no ' + c.bairro : ''}.${s.a_venda ? ` Hoje há ${s.a_venda} unidade(s) à venda no prédio` : ''}${m2 ? `${s.a_venda ? ', com' : ' O'} m² em torno de ${cdM2(m2)}` : ''}.\n\nSe você pensa em vender ou só quer saber quanto vale o seu apartamento hoje, fazemos uma avaliação sem compromisso.\n\nPara não receber mais mensagens, responda PARAR.`;
   modal(`<h2>Mensagem para os vizinhos</h2><p class="muted small">Para usar com proprietários que já autorizaram contato (carta, portaria ou WhatsApp com quem respondeu). Os números vêm da ficha.</p>
     <textarea style="width:100%;min-height:220px" readonly>${esc(txt)}</textarea>
     <div class="row" style="margin-top:10px"><button class="btn pri" data-act="copiar" data-txt="${esc(txt)}">Copiar</button><button class="btn" data-fecha>Fechar</button></div>`);

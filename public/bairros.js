@@ -1,4 +1,4 @@
-/* Sistema RUAH — Conteúdo › Páginas de bairros: a lista de bairros, a fila de quem escreve e o que a RUAH quer em cada página. */
+/* Herrera HOUSE IA — Conteúdo › Páginas de bairros: a lista de bairros, a fila de quem escreve e o que a imobiliária (cliente) quer em cada página. */
 'use strict';
 
 const BR_ESTADO = {
@@ -26,7 +26,7 @@ async function telaBairros(q) {
   const aba = (f, t) => `<a class="btn sm ${filtro === f ? 'pri' : ''}" href="#/bairros?f=${f}">${t}</a>`;
 
   $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Páginas de bairros</h1>
-  <p class="lead">Um guia completo para cada bairro de Campinas, feito para ser encontrado no Google e citado pelas IAs. Uma tarefa automática pesquisa o bairro, escolhe fotos reais (de imóveis da RUAH no bairro e de lugares do bairro, com licença livre) e escreve a página; a régua confere antes de publicar. Os números da página (imóveis da RUAH à venda, prédios, o que tem perto) são atualizados sozinhos. Aqui você decide quais bairros entram, a ordem da fila e o que a página deve dizer.</p>
+  <p class="lead">Um guia completo para cada bairro de Campinas, feito para ser encontrado no Google e citado pelas IAs. Uma tarefa automática pesquisa o bairro, escolhe fotos reais (de imóveis da ${esc(MARCA.cliente)} no bairro e de lugares do bairro, com licença livre) e escreve a página; a régua confere antes de publicar. Os números da página (imóveis da ${esc(MARCA.cliente)} à venda, prédios, o que tem perto) são atualizados sozinhos. Aqui você decide quais bairros entram, a ordem da fila e o que a página deve dizer.</p>
   <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px">
     <div class="card kpi"><div class="n">${n((b) => BR_NOAR.includes(b.estado))}</div><div class="l">páginas no ar</div></div>
     <div class="card kpi"><div class="n">${fila.length}</div><div class="l">na fila para escrever</div></div>
@@ -39,8 +39,8 @@ async function telaBairros(q) {
     <span class="sp"></span>${aba('todos', 'Todos')}${aba('noar', 'No ar')}${aba('fila', 'Fila')}${aba('ocultos', 'Ocultos')}
     <form data-form="br-busca" style="display:flex;gap:6px"><input name="q" value="${esc(q.get('q') || '')}" placeholder="Procurar bairro" style="width:180px"><input type="hidden" name="f" value="${esc(filtro)}"></form>
   </div>
-  ${fila.length ? `<p class="muted small" style="margin:0 0 12px">Próximos da fila: ${fila.slice(0, 5).map((b, i) => `<b>${i + 1}. ${esc(b.nome)}</b>`).join(' · ')}. A ordem segue: reescrita pedida, depois prioridade, imóveis da RUAH no bairro e número de prédios.</p>` : ''}
-  <div class="card tbl"><table><thead><tr><th>Bairro</th><th>Região</th><th title="Imóveis da RUAH à venda no bairro">Imóveis</th><th title="Condomínios e prédios na base">Prédios</th><th>Página</th><th>Prioridade</th><th></th></tr></thead><tbody>
+  ${fila.length ? `<p class="muted small" style="margin:0 0 12px">Próximos da fila: ${fila.slice(0, 5).map((b, i) => `<b>${i + 1}. ${esc(b.nome)}</b>`).join(' · ')}. A ordem segue: reescrita pedida, depois prioridade, imóveis da ${esc(MARCA.cliente)} no bairro e número de prédios.</p>` : ''}
+  <div class="card tbl"><table><thead><tr><th>Bairro</th><th>Região</th><th title="Imóveis da ${esc(MARCA.cliente)} à venda no bairro">Imóveis</th><th title="Condomínios e prédios na base">Prédios</th><th>Página</th><th>Prioridade</th><th></th></tr></thead><tbody>
   ${vis.map((b) => {
     const [c, t] = BR_ESTADO[b.estado] || ['info', b.estado];
     const noar = BR_NOAR.includes(b.estado);
@@ -59,7 +59,7 @@ async function telaBairros(q) {
   </tbody></table></div>
   ${pode && BR.sugestoes.length ? `<div class="card" style="margin-top:16px"><h2 style="margin-top:0">Bairros dos cadastros que não estão na lista</h2>
   <p class="muted small">Nomes de bairro dos imóveis da carteira e da base de condomínios que não batem com nenhum bairro da lista. Adicione como bairro novo ou diga de qual bairro é (vira um "também conhecido como" e os imóveis e prédios passam a contar lá).</p>
-  <div class="list">${BR.sugestoes.map((s) => `<div class="item" style="flex-wrap:wrap;align-items:center"><div style="flex:1;min-width:200px"><div class="t">${esc(s.nome)}</div><div class="muted small">${s.imoveis ? `${s.imoveis} imóvel(is) da RUAH` : ''}${s.imoveis && s.condominios ? ' · ' : ''}${s.condominios ? `${s.condominios} condomínio(s) na base` : ''}</div></div>
+  <div class="list">${BR.sugestoes.map((s) => `<div class="item" style="flex-wrap:wrap;align-items:center"><div style="flex:1;min-width:200px"><div class="t">${esc(s.nome)}</div><div class="muted small">${s.imoveis ? `${s.imoveis} imóvel(is) da ${esc(MARCA.cliente)}` : ''}${s.imoveis && s.condominios ? ' · ' : ''}${s.condominios ? `${s.condominios} condomínio(s) na base` : ''}</div></div>
     <button class="btn sm" data-act="br-sug-novo" data-nome="${esc(s.nome)}">Adicionar como bairro</button>
     <select data-sug="${esc(s.nome)}" style="max-width:200px"><option value="">É do bairro…</option>${l.map((b) => `<option value="${esc(b.slug)}">${esc(b.nome)}</option>`).join('')}</select><button class="btn sm" data-act="br-sug-apelido" data-nome="${esc(s.nome)}">Ligar</button></div>`).join('')}</div></div>` : ''}`;
 }

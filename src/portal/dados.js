@@ -1,4 +1,4 @@
-// Portal RUAH · os imóveis à venda, lidos do banco AO VIVO.
+// Portal do cliente (a imobiliária) · os imóveis à venda, lidos do banco AO VIVO.
 //
 // Entra no portal o imóvel com status "publicado" e ao menos uma foto. Nunca
 // saem daqui: endereço (rua, número, unidade, CEP, coordenadas), proprietário,
@@ -29,7 +29,7 @@ function montar(i, fotos) {
     valor: Number(i.valor) > 0 ? Number(i.valor) : null, valor_condominio: Number(i.valor_condominio) > 0 ? Number(i.valor_condominio) : null,
     iptu: Number(i.iptu) > 0 ? Number(i.iptu) : null, descricao: i.descricao || '',
     fotos, criado_em: i.criado_em, atualizado_em: i.atualizado_em,
-    // Corretor só aparece com nome se é corretor de verdade e tem telefone; senão, "Equipe RUAH".
+    // Corretor só aparece com nome se é corretor de verdade e tem telefone; senão, "Equipe <cliente>" (cfg.CLIENTE_NOME).
     corretor: i.corretor_perfil === 'corretor' && i.corretor_tel ? { nome: i.corretor_nome, telefone: i.corretor_tel } : null,
   };
   im.versao = versaoDe(im, fotos);

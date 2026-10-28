@@ -1,4 +1,4 @@
-// Portal RUAH · junta as páginas escritas (ramo do GitHub) com a ficha AO VIVO
+// Portal do cliente (a imobiliária) · junta as páginas escritas (ramo do GitHub) com a ficha AO VIVO
 // (banco) e decide o que está no ar.
 //
 // Publicar uma página não reinstala o sistema: é um arquivo novo no ramo

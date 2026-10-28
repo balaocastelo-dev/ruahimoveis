@@ -1,15 +1,18 @@
-// Blog RUAH · as páginas públicas, montadas no servidor (o Google lê o texto
+// Blog do cliente (a imobiliária) · as páginas públicas, montadas no servidor (o Google lê o texto
 // direto do HTML, sem depender de JavaScript).
 
 const cfg = require('../config');
-const { CATEGORIAS, CHAMADAS, nomeDaCategoria, SITE_RUAH } = require('./categorias');
+const { CATEGORIAS, CHAMADAS, nomeDaCategoria, SITE_CLIENTE } = require('./categorias');
 const { lerTextoRico, montarSumario, dataPorExtenso, minutosDeLeitura, cortar } = require('./texto');
 
 const NOME = process.env.BLOG_NOME || 'Sopro';
-const LEGENDA = process.env.BLOG_LEGENDA || 'Casa, arquitetura e bem-estar, pela RUAH';
+// O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
+const CLIENTE = cfg.CLIENTE_NOME;
+const EMPRESA = cfg.EMPRESA;
+const LEGENDA = process.env.BLOG_LEGENDA || `Casa, arquitetura e bem-estar, pela ${CLIENTE}`;
 
 /** Só ficam clicáveis os endereços do próprio blog. */
-const linkDaRuah = (href) => (href.startsWith('/') && !href.startsWith('//')) || href.startsWith('#');
+const linkDoSite = (href) => (href.startsWith('/') && !href.startsWith('//')) || href.startsWith('#');
 
 /** "cbic.org.br" a partir do endereço da fonte, para citar sem link. */
 const siteDe = (url) => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return ''; } };
@@ -21,15 +24,15 @@ function rico(texto) {
     if (t.tipo === 'texto') return esc(t.valor);
     if (t.tipo === 'negrito') return `<strong>${desenhar(t.filhos)}</strong>`;
     if (t.tipo === 'italico') return `<em>${desenhar(t.filhos)}</em>`;
-    // O leitor não sai do site da RUAH: link para fora vira texto comum (a fonte fica listada no fim, sem link).
-    if (!linkDaRuah(t.href)) return desenhar(t.filhos);
+    // O leitor não sai do site da imobiliária: link para fora vira texto comum (a fonte fica listada no fim, sem link).
+    if (!linkDoSite(t.href)) return desenhar(t.filhos);
     return `<a href="${esc(t.href)}">${desenhar(t.filhos)}</a>`;
   }).join('');
   return desenhar(lerTextoRico(texto));
 }
 
 function linkDaChamada(c) {
-  // Tudo fica dentro do site da RUAH: a vitrine do portal, o próprio blog ou o contato do blog.
+  // Tudo fica dentro do site da imobiliária: a vitrine do portal, o próprio blog ou o contato do blog.
   if (c.acao === 'portal') return '/imoveis';
   if (c.acao === 'blog') return '/blog';
   return '#contato';
@@ -63,12 +66,12 @@ ${b.nota || b.fonte ? `<p class="nota">${b.nota ? rico(b.nota) : ''}${b.fonte ? 
   }
 }
 
-/** O contato do blog: o leitor fala com a RUAH sem sair do site (vira lead no CRM). */
+/** O contato do blog: o leitor fala com a imobiliária sem sair do site (vira lead no CRM). */
 function formularioDeContato(req) {
   const pagina = (/^\/blog\/([a-z0-9-]+)$/.exec(req.path) || [])[1] || '';
   return `<section class="contato" id="contato" aria-labelledby="contato-t">
-<div class="contato-txt"><h2 id="contato-t">Fale com a RUAH</h2>
-<p>Quer comprar, vender ou tirar uma dúvida? Deixe seu contato e um corretor responde em horário comercial. Para ver os imóveis à venda, abra a <a href="/imoveis">vitrine da RUAH</a>.</p></div>
+<div class="contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE)}</h2>
+<p>Quer comprar, vender ou tirar uma dúvida? Deixe seu contato e um corretor responde em horário comercial. Para ver os imóveis à venda, abra a <a href="/imoveis">vitrine da ${esc(CLIENTE)}</a>.</p></div>
 <form class="contato-form" data-contato-blog novalidate>
   <input type="hidden" name="pagina" value="${esc(pagina === 'categoria' ? '' : pagina)}">
   <label class="armadilha" aria-hidden="true">Empresa<input name="empresa" tabindex="-1" autocomplete="off"></label>
@@ -81,8 +84,8 @@ function formularioDeContato(req) {
   <label class="campo"><span>WhatsApp ou telefone</span><input name="telefone" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(19) 99999-9999"></label>
   <label class="campo largo"><span>E-mail <i>(opcional)</i></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
   <label class="campo largo"><span>Mensagem <i>(opcional)</i></span><textarea name="mensagem" rows="3" maxlength="1000" placeholder="O que você procura: bairro, tipo de imóvel, quartos…"></textarea></label>
-  <label class="aceite largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a RUAH use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
-  <button class="botao largo" type="submit">Enviar para a RUAH</button>
+  <label class="aceite largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE)} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
+  <button class="botao largo" type="submit">Enviar para a ${esc(CLIENTE)}</button>
   <p class="contato-msg largo" role="status" aria-live="polite" hidden></p>
 </form></section>`;
 }
@@ -106,7 +109,7 @@ function casca(req, { titulo, descricao, caminho, imagem, tipoOg = 'website', ld
 <meta name="description" content="${esc(descricao)}">
 <link rel="canonical" href="${esc(canonico)}">
 <link rel="alternate" type="application/rss+xml" title="${esc(NOME)}" href="${esc(base)}/blog/rss.xml">
-<meta property="og:site_name" content="${esc(NOME)} · RUAH">
+<meta property="og:site_name" content="${esc(NOME)} · ${esc(CLIENTE)}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="${tipoOg}">
 <meta property="og:title" content="${esc(titulo)}">
@@ -128,8 +131,8 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <main id="conteudo">${corpo}</main>
 ${formularioDeContato(req)}
 <footer class="rodape">
-  <div><p class="rodape-n">RUAH Investimentos Imobiliários</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="RUAH"><a href="/imoveis">Imóveis à venda</a><a href="#contato" data-motivo="duvida">Fale com a RUAH</a><a href="/blog/rss.xml">RSS</a></nav>
+  <div><p class="rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
+  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="#contato" data-motivo="duvida">Fale com a ${esc(CLIENTE)}</a><a href="/blog/rss.xml">RSS</a></nav>
   <p class="rodape-p">Os textos deste blog são informativos e não substituem a orientação de arquiteto, engenheiro, advogado ou contador. As capas são imagens ilustrativas geradas por IA.</p>
 </footer>
 <script src="/blog-assets/blog.js" defer></script>
@@ -150,17 +153,17 @@ function cartao(a, grande = false) {
 function paginaInicial(req, artigos, categoria = null) {
   const cat = categoria && CATEGORIAS.find((c) => c.slug === categoria);
   const [primeiro, ...resto] = artigos;
-  const titulo = cat ? `${cat.nome} · ${NOME}, o blog da RUAH` : `${NOME}: ${LEGENDA}`;
-  const descricao = cat ? cat.descricao : 'Arquitetura, casas novas, mobiliário, bem-estar e o mercado de imóveis em Campinas, num blog da RUAH Investimentos Imobiliários.';
+  const titulo = cat ? `${cat.nome} · ${NOME}, o blog da ${CLIENTE}` : `${NOME}: ${LEGENDA}`;
+  const descricao = cat ? cat.descricao : `Arquitetura, casas novas, mobiliário, bem-estar e o mercado de imóveis em Campinas, num blog da ${EMPRESA}.`;
   const vazio = `<div class="vazio"><p>${cat ? 'Ainda não há textos nesta categoria.' : 'Os primeiros textos chegam em breve.'}</p><a href="/blog">Ver todos os textos</a></div>`;
   const corpo = `
-${cat ? `<header class="cab-cat"><h1>${esc(cat.nome)}</h1><p>${esc(cat.descricao)}</p></header>` : '<h1 class="oculto">' + esc(`${NOME}, o blog da RUAH`) + '</h1>'}
+${cat ? `<header class="cab-cat"><h1>${esc(cat.nome)}</h1><p>${esc(cat.descricao)}</p></header>` : '<h1 class="oculto">' + esc(`${NOME}, o blog da ${CLIENTE}`) + '</h1>'}
 ${primeiro ? cartao(primeiro, true) : vazio}
 ${resto.length ? `<section class="lista-art" aria-label="Mais textos">
 <div class="busca"><label for="busca">Procurar no blog</label><input id="busca" type="search" placeholder="Piscina, mármore, Sousas…" autocomplete="off"></div>
 <div class="grade">${resto.map((a) => cartao(a)).join('')}</div><p class="sem-resultado" hidden>Nada encontrado. Tente outra palavra.</p></section>` : ''}`;
   const base = urlBase(req);
-  const ld = [{ '@context': 'https://schema.org', '@type': 'Blog', name: NOME, description: descricao, url: `${base}/blog`, publisher: { '@type': 'RealEstateAgent', name: 'RUAH Investimentos Imobiliários', url: SITE_RUAH, address: { '@type': 'PostalAddress', addressLocality: 'Campinas', addressRegion: 'SP', addressCountry: 'BR' } } }];
+  const ld = [{ '@context': 'https://schema.org', '@type': 'Blog', name: NOME, description: descricao, url: `${base}/blog`, publisher: { '@type': 'RealEstateAgent', name: EMPRESA, url: SITE_CLIENTE, address: { '@type': 'PostalAddress', addressLocality: 'Campinas', addressRegion: 'SP', addressCountry: 'BR' } } }];
   return casca(req, { titulo, descricao, caminho: cat ? `/blog/categoria/${cat.slug}` : '/blog', imagem: primeiro && primeiro.capa && primeiro.capa.src, ld, corpo, classe: 'inicio' });
 }
 
@@ -175,8 +178,8 @@ function paginaArtigo(req, a, relacionados) {
       '@context': 'https://schema.org', '@type': noticia ? 'NewsArticle' : 'BlogPosting',
       headline: a.titulo, description: a.resumo, image: a.capa ? [a.capa.src] : undefined,
       datePublished: a.publicadoEm, dateModified: a.atualizadoEm || a.publicadoEm,
-      author: { '@type': 'Organization', name: 'Equipe RUAH', url: SITE_RUAH },
-      publisher: { '@type': 'Organization', name: 'RUAH Investimentos Imobiliários', url: SITE_RUAH },
+      author: { '@type': 'Organization', name: `Equipe ${CLIENTE}`, url: SITE_CLIENTE },
+      publisher: { '@type': 'Organization', name: EMPRESA, url: SITE_CLIENTE },
       mainEntityOfPage: url, keywords: a.etiquetas.join(', '), inLanguage: 'pt-BR',
     },
     {
@@ -195,7 +198,7 @@ function paginaArtigo(req, a, relacionados) {
   <a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a>
   <h1>${esc(a.titulo)}</h1>
   <p class="linha-fina">${esc(a.resumo)}</p>
-  <p class="meta">Por Equipe RUAH. <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>${a.atualizadoEm ? `, atualizado em ${dataPorExtenso(a.atualizadoEm)}` : ''}. Leitura de ${minutos} min.</p>
+  <p class="meta">Por Equipe ${esc(CLIENTE)}. <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>${a.atualizadoEm ? `, atualizado em ${dataPorExtenso(a.atualizadoEm)}` : ''}. Leitura de ${minutos} min.</p>
 </header>
 ${a.capa ? `<figure class="capa"><img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt)}" width="${a.capa.largura || 1600}" height="${a.capa.altura || 900}" fetchpriority="high"><figcaption>Imagem ilustrativa gerada por IA.</figcaption></figure>` : ''}
 <div class="art-corpo">
@@ -220,7 +223,7 @@ function rss(req, artigos) {
   const x = (s) => esc(s);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel>
-<title>${x(NOME)}, o blog da RUAH</title><link>${x(base)}/blog</link><description>${x(LEGENDA)}</description><language>pt-BR</language>
+<title>${x(NOME)}, o blog da ${x(CLIENTE)}</title><link>${x(base)}/blog</link><description>${x(LEGENDA)}</description><language>pt-BR</language>
 <atom:link href="${x(base)}/blog/rss.xml" rel="self" type="application/rss+xml"/>
 ${artigos.slice(0, 30).map((a) => `<item><title>${x(a.titulo)}</title><link>${x(base)}/blog/${a.slug}</link><guid>${x(base)}/blog/${a.slug}</guid><pubDate>${new Date(a.publicadoEm).toUTCString()}</pubDate><description>${x(a.resumo)}</description><category>${x(nomeDaCategoria(a.categoria))}</category></item>`).join('\n')}
 </channel></rss>`;
@@ -250,11 +253,11 @@ function robots(req) {
 function llms(req, { imoveis = [], bairros = [], artigos = [] }) {
   const base = urlBase(req);
   const linhas = [
-    '# RUAH Investimentos Imobiliários',
+    `# ${EMPRESA}`,
     '',
     '> Imobiliária de venda em Campinas (SP). Publica guias completos dos bairros de Campinas (como é morar, parques, escolas, comércio, prédios e condomínios, com números atualizados), a página de cada imóvel à venda e o blog Sopro, sobre casa, arquitetura e bem-estar.',
     '',
-    'Os números das páginas (imóveis à venda, valores, áreas, prédios e o que tem perto) vêm do sistema da RUAH ao vivo. Para falar com a RUAH, use o formulário de qualquer página.',
+    `Os números das páginas (imóveis à venda, valores, áreas, prédios e o que tem perto) vêm do sistema da ${CLIENTE} ao vivo. Para falar com a ${CLIENTE}, use o formulário de qualquer página.`,
     '',
   ];
   if (bairros.length) {

@@ -1,4 +1,4 @@
-/* Sistema RUAH — Painel do administrador (adm e gestor). Carregado depois do app.js e do radar.js.
+/* Herrera HOUSE IA — Painel do administrador (adm e gestor). Carregado depois do app.js e do radar.js.
    Tudo vem de /api/painel/adm numa chamada; os gráficos são HTML puro (sem bibliotecas). */
 'use strict';
 

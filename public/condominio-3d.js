@@ -1,10 +1,13 @@
-// Sistema RUAH · condomínio em 3D: o prédio, o andar do apartamento e o entorno (prédios, ruas, verde, satélite e o que tem perto).
+// Herrera HOUSE IA · condomínio em 3D: o prédio, o andar do apartamento e o entorno (prédios, ruas, verde, satélite e o que tem perto).
 import * as THREE from '/vendor/three/three.module.min.js';
 import { OrbitControls } from '/vendor/three/OrbitControls.js';
 import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Marca (/marca.js): o 3D também abre pelo portal público, então o topo mostra a imobiliária (cliente).
+const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH' }, window.MARCA || {});
+if ($('#marca-cliente')) $('#marca-cliente').textContent = MARCA.cliente;
 const qs = new URLSearchParams(location.search);
 const ID = qs.get('id'), IMOVEL = qs.get('imovel'), SLUG = qs.get('slug'), FG = qs.get('fg');
 const PUBLICO = !!SLUG;
@@ -19,7 +22,7 @@ let D, cena, alvo, ANDAR_H = 3;
 async function carregar() {
   const r = await fetch(URL_DADOS, { credentials: 'same-origin' });
   let j = null; try { j = await r.json(); } catch {}
-  if (r.status === 401) throw new Error('Entre no Sistema RUAH nesta mesma janela do navegador e abra o 3D de novo.');
+  if (r.status === 401) throw new Error(`Entre no ${MARCA.sistema} nesta mesma janela do navegador e abra o 3D de novo.`);
   if (!r.ok) throw new Error((j && j.erro) || `Erro ${r.status}`);
   return j;
 }
@@ -465,7 +468,7 @@ renderer.domElement.addEventListener('pointerup', async (e) => {
 // ------------------------------------------------------------------ interface
 function interface_() {
   const c = D.condominio;
-  document.title = `${c.nome} em 3D · RUAH`;
+  document.title = `${c.nome} em 3D · ${MARCA.cliente}`;
   $('#nome').textContent = c.nome;
   $('#endereco').textContent = [[c.logradouro, c.numero].filter(Boolean).join(', '), c.bairro, 'Campinas'].filter(Boolean).join(' · ');
   const tot = cena.alvo.andares;

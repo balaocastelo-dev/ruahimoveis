@@ -1,4 +1,4 @@
-// Portal RUAH · favoritos, filtros, galeria em tela cheia, fotos por ambiente,
+// Portal do cliente (a imobiliária) · favoritos, filtros, galeria em tela cheia, fotos por ambiente,
 // formulário de interesse e "compartilhar". Tudo funciona sem este arquivo
 // (a página vem pronta do servidor); ele só deixa a navegação mais confortável.
 (function () {

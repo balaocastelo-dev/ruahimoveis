@@ -1,10 +1,13 @@
-// Blog RUAH · rotas públicas (sem login): /blog, /blog/<artigo>,
+// Blog do cliente (a imobiliária) · rotas públicas (sem login): /blog, /blog/<artigo>,
 // /blog/categoria/<categoria>, /blog/rss.xml, /sitemap.xml e /robots.txt.
 const express = require('express');
 const diario = require('../blog/diario');
 const paginas = require('../blog/paginas');
 const { SLUGS } = require('../blog/categorias');
 const { SLUG } = require('../blog/validar');
+const cfg = require('../config');
+// Origem dos leads do blog: "Blog " + nome do cliente (com a config padrão, "Blog RUAH" como sempre).
+const ORIGEM_BLOG = `Blog ${cfg.CLIENTE_NOME}`;
 
 const router = express.Router();
 
@@ -30,7 +33,7 @@ function relacionados(artigo, todos) {
 }
 
 router.get('/robots.txt', (req, res) => res.type('text/plain').send(paginas.robots(req)));
-// Para as IAs (ChatGPT, Claude, Perplexity…): o mapa do que a RUAH publica, em texto simples.
+// Para as IAs (ChatGPT, Claude, Perplexity…): o mapa do que a imobiliária publica, em texto simples.
 router.get('/llms.txt', async (req, res) => {
   const [imoveis, bairros, artigos] = await Promise.all([require('../portal/fonte').noAr().catch(() => []), require('../bairros/fonte').noAr().catch(() => []), diario.listar().catch(() => [])]);
   res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=3600');
@@ -61,7 +64,7 @@ router.get('/blog/:slug', async (req, res, next) => {
 router.get(['/blog/', '/blog/categoria'], (req, res) => res.redirect(301, '/blog'));
 
 // ------------------------------------------------------------------ contato
-// O leitor fala com a RUAH sem sair do blog: o formulário vira lead no CRM (origem "Blog RUAH").
+// O leitor fala com a imobiliária sem sair do blog: o formulário vira lead no CRM (origem "Blog <cliente>").
 const { one, run, audit } = require('../db');
 const { txt } = require('../util');
 const { normTel } = require('../services/whatsapp');
@@ -101,7 +104,7 @@ api.post('/contato', (req, res) => {
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,busca,ultimo_contato)
       VALUES(?,?,?,?,?,?,?,datetime('now','localtime'))`,
-    nome, tel, email, 'Blog RUAH', 'novo', motivo === 'duvida' ? 'morno' : 'quente', `Veio pelo blog: ${MOTIVOS[motivo]}`).lastInsertRowid);
+    nome, tel, email, ORIGEM_BLOG, 'novo', motivo === 'duvida' ? 'morno' : 'quente', `Veio pelo blog: ${MOTIVOS[motivo]}`).lastInsertRowid);
   }
   run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'blog', linhas, null);
   audit(null, 'blog_contato', `${motivo} · lead ${leadId}${existente ? ' (já existia)' : ''} · ${pagina}`);

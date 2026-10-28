@@ -5,6 +5,8 @@ const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH', empr
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+// Sugestão escrita pela IA: 'IA RUAH' nos registros antigos, 'IA <nome do sistema>' nos novos.
+const autorDaIA = (a) => !a || a === 'IA RUAH' || /^IA( |$)/.test(a);
 const brl = (v) => (v || v === 0 ? 'R$ ' + Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 0 }) : '—');
 const dataBR = (s) => (s ? new Date(s.replace(' ', 'T')).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '');
 const tel = (t) => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}` : t || ''; };
@@ -86,7 +88,7 @@ async function carregaBase() {
 const imFotos = (i) => [i.capa && `/api/arquivos/${i.capa}`, i.condominio_id && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${i.condominio_id}` : null];
 function telaSetup() {
   $('#root').innerHTML = `<div class="auth"><form class="card" data-form="setup">
-    <div class="brand"><b>RUAH</b><span>Primeiro acesso</span></div>
+    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Primeiro acesso</span></div>
     <p class="muted" style="margin:0">Crie o usuário administrativo. Ele cadastra os corretores depois.</p>
     <label class="f">Seu nome<input name="nome" required autocomplete="name"></label>
     <label class="f">E-mail (login)<input name="email" type="email" required autocomplete="username"></label>
@@ -107,7 +109,7 @@ FORM.setup = async (f) => {
 function telaLogin() {
   clearInterval(poll);
   $('#root').innerHTML = `<div class="auth"><form class="card" data-form="login">
-    <div class="brand"><b>RUAH</b><span>Sistema imobiliário</span></div>
+    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Sistema imobiliário</span></div>
     <label class="f">E-mail<input name="email" type="email" required autocomplete="username"></label>
     <label class="f">Senha<input name="senha" type="password" required autocomplete="current-password"></label>
     <button class="btn pri" type="submit">Entrar</button>
@@ -127,9 +129,9 @@ const MENU = [
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
   $('#root').innerHTML = `<div class="app"><header class="topbar"><button type="button" class="hamb" data-act="menu" aria-label="Abrir o menu" aria-controls="menu-lateral" aria-expanded="false"><span></span><span></span><span></span></button>
-    <a class="tb-marca" href="#/painel">RUAH</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span></header>
+    <a class="tb-marca" href="#/painel">${esc(MARCA.sistema)}</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span></header>
     <div class="side-veu" data-act="menu-fecha" aria-hidden="true"></div><aside class="side" id="menu-lateral">
-    <div class="brand"><b>RUAH</b><span>Sistema imobiliário</span></div>
+    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Sistema imobiliário</span></div>
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
@@ -227,7 +229,7 @@ async function telaPortal() {
   const ordem = ['reprovada', 'sem-arquivo', 'sem-pagina', 'desatualizada', 'no-ar'];
   l.sort((a, b) => ordem.indexOf(a.estado) - ordem.indexOf(b.estado) || String(a.codigo).localeCompare(b.codigo));
   $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Portal de imóveis</h1>
-  <p class="lead">O portal público mostra os imóveis com status <b>publicado</b> e foto. Cada um ganha uma página única, escrita a partir das fotos e da ficha por uma tarefa automática; o imóvel só aparece depois que a página passa na conferência. Valor, áreas e quartos vêm sempre da ficha, ao vivo: se a ficha mudar e o texto passar a discordar, a página sai do ar e é reescrita. Quem clica em "Tenho interesse" ou "Agendar visita" entra no CRM com origem <b>Portal RUAH</b>.</p>
+  <p class="lead">O portal público mostra os imóveis com status <b>publicado</b> e foto. Cada um ganha uma página única, escrita a partir das fotos e da ficha por uma tarefa automática; o imóvel só aparece depois que a página passa na conferência. Valor, áreas e quartos vêm sempre da ficha, ao vivo: se a ficha mudar e o texto passar a discordar, a página sai do ar e é reescrita. Quem clica em "Tenho interesse" ou "Agendar visita" entra no CRM com origem <b>Portal ${esc(MARCA.cliente)}</b>.</p>
   <div class="row" style="margin-bottom:16px;flex-wrap:wrap"><a class="btn pri" href="/imoveis" target="_blank" rel="noopener">Abrir o portal</a>
   <span class="pill ok">${n('no-ar') + n('desatualizada')} no ar</span><span class="pill warn">${n('sem-pagina')} esperando página</span>${n('reprovada') + n('sem-arquivo') ? `<span class="pill bad">${n('reprovada') + n('sem-arquivo')} fora do ar</span>` : ''}</div>
   ${l.length ? `<div class="card"><div class="list">${l.map((x) => { const [c, t] = NOME[x.estado] || ['info', x.estado]; const no = x.estado === 'no-ar' || x.estado === 'desatualizada'; return `<div class="item" style="flex-wrap:wrap">
@@ -342,7 +344,7 @@ function cartFiltra(l) {
     return true;
   });
 }
-const FALTAS = ['Fotos próprias', 'Proprietário', 'Telefone do dono', 'Endereço completo (rua, número, CEP)', 'Valor', 'Área', 'Descrição da RUAH', 'Autorização assinada', 'Corretor responsável'];
+const FALTAS = ['Fotos próprias', 'Proprietário', 'Telefone do dono', 'Endereço completo (rua, número, CEP)', 'Valor', 'Área', `Descrição da ${MARCA.cliente}`, 'Autorização assinada', 'Corretor responsável'];
 function cartFiltrosHTML() {
   const f = CART_F, sel = (k, v) => (f[k] === v ? 'selected' : '');
   const opt = (k, l) => l.map(([v, t]) => `<option value="${esc(v)}" ${sel(k, v)}>${esc(t)}</option>`).join('');
@@ -394,7 +396,7 @@ async function telaImoveis(qs) {
   const veio = qs && CART_CAMPOS.filter((k) => qs.get(k));
   if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
   $('#main').innerHTML = `<div class="eyebrow">Operação</div><h1>Carteira de imóveis</h1>
-  <p class="lead">Os imóveis em operação: os da RUAH e os que vieram das vitrines da base quando o proprietário foi localizado no Fisgar. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
+  <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado no Fisgar. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
   <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
   <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
   <div class="seg" role="group" aria-label="Modo de exibição"><button type="button" data-act="im-modo" data-modo="cards" title="Ver em cards com fotos">▦ Cards</button><button type="button" data-act="im-modo" data-modo="lista" title="Ver em lista">☰ Lista</button></div>
@@ -454,7 +456,7 @@ async function telaImovelForm(id) {
     </fieldset>
     <fieldset><legend>Responsável e exclusividade</legend>
       ${veTudo() ? `<label class="f">Corretor responsável<select name="corretor_id">${opcoesUsuarios(im.corretor_id, 'Escolha')}</select></label>` : ''}
-      <div class="grid g2"><label class="chk"><input type="checkbox" name="exclusivo" ${im.exclusivo ? 'checked' : ''}> Exclusividade RUAH</label><label class="f">Exclusivo até<input type="date" name="exclusivo_ate" value="${v('exclusivo_ate')}"></label></div>
+      <div class="grid g2"><label class="chk"><input type="checkbox" name="exclusivo" ${im.exclusivo ? 'checked' : ''}> Exclusividade ${esc(MARCA.cliente)}</label><label class="f">Exclusivo até<input type="date" name="exclusivo_ate" value="${v('exclusivo_ate')}"></label></div>
     </fieldset></div>
   </div>
   <div class="row"><button class="btn pri" type="submit">${id ? 'Salvar alterações' : 'Salvar imóvel'}</button><span class="muted small">${id ? '' : 'Ao salvar, o sistema cria a pasta no Google Drive (se conectado) e procura compradores que combinam.'}</span></div>
@@ -586,7 +588,7 @@ async function abaAutorizacao(im) {
     <label class="chk"><input type="checkbox" name="exclusivo" checked> Com exclusividade</label>
     <label class="f">Observações (opcional)<textarea name="observacoes"></textarea></label>
     <button class="btn pri" type="submit" ${p && p.cpf ? '' : 'disabled'}>Gerar e criar link de assinatura</button>
-    <p class="muted small" style="margin:0">O texto é um modelo inicial: peça ao advogado da RUAH para revisar antes de usar com clientes.</p></form>
+    <p class="muted small" style="margin:0">O texto é um modelo inicial: peça ao advogado da ${esc(MARCA.cliente)} para revisar antes de usar com clientes.</p></form>
   <div class="card"><h3>Autorizações</h3><div id="aut-novo"></div>${l.length ? `<div class="list">${l.map((a) => `<div class="item" style="flex-direction:column;align-items:stretch"><div class="row">
     <span class="pill ${a.status === 'assinado' ? 'ok' : a.status === 'pendente' ? 'warn' : 'bad'}">${esc(a.status)}</span><span class="small">${a.prazo_dias} dias · ${String(a.comissao_pct).replace('.', ',')}% · ${a.exclusivo ? 'exclusiva' : 'sem exclusividade'}</span><span class="sp"></span><span class="muted small">${dataBR(a.criado_em)}</span></div>
     ${a.status === 'assinado' ? `<div class="small">Assinada por <b>${esc(a.assinante_nome)}</b> em ${esc(a.assinado_em)}${a.pdf_arquivo_id ? ` · <a href="/api/arquivos/${a.pdf_arquivo_id}" target="_blank" rel="noopener">Abrir PDF</a>` : ''}</div>` : ''}
@@ -632,7 +634,7 @@ async function telaLeads() {
 }
 const camposLead = (l = {}) => `
   <div class="grid g2"><label class="f">Nome<input name="nome" required value="${esc(l.nome || '')}"></label><label class="f">Telefone (WhatsApp)<input name="telefone" value="${esc(tel(l.telefone))}" inputmode="tel"></label></div>
-  <div class="grid g2"><label class="f">E-mail<input name="email" type="email" value="${esc(l.email || '')}"></label><label class="f">Origem<input name="origem" list="origens" value="${esc(l.origem || '')}"><datalist id="origens">${['Site RUAH', 'WhatsApp', 'ZAP Imóveis', 'Imovelweb', 'Chaves na Mão', 'Google Ads', 'Instagram', 'Indicação', 'Placa'].map((o) => `<option>${o}</option>`).join('')}</datalist></label></div>
+  <div class="grid g2"><label class="f">E-mail<input name="email" type="email" value="${esc(l.email || '')}"></label><label class="f">Origem<input name="origem" list="origens" value="${esc(l.origem || '')}"><datalist id="origens">${['Site ' + MARCA.cliente, 'WhatsApp', 'ZAP Imóveis', 'Imovelweb', 'Chaves na Mão', 'Google Ads', 'Instagram', 'Indicação', 'Placa'].map((o) => `<option>${esc(o)}</option>`).join('')}</datalist></label></div>
   <label class="f">O que procura (texto livre)<input name="busca" value="${esc(l.busca || '')}" placeholder="4 quartos perto do Dom Pedro"></label>
   <div class="grid g4"><label class="f">Tipo<select name="tipo_desejado"><option value="">Qualquer</option>${TIPOS.map((t) => `<option ${t === l.tipo_desejado ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select></label>
     <label class="f">Quartos mín.<input name="quartos_min" type="number" min="0" value="${esc(l.quartos_min ?? '')}"></label><label class="f">Vagas mín.<input name="vagas_min" type="number" min="0" value="${esc(l.vagas_min ?? '')}"></label>
@@ -694,7 +696,7 @@ async function carregaConversa(leadId, silencioso) {
   box.innerHTML = `<div class="row"><b>${esc(d.lead.nome)}</b><span class="muted small">${esc(tel(d.lead.telefone))}</span><span class="sp"></span><a class="btn sm" href="#/leads/${d.lead.id}">Ficha do lead</a></div>
     <div class="chat" id="chat" style="margin-top:10px">${msgs.map((m) => `<div class="msg ${m.direcao}">${esc(m.texto)}<small>${esc(m.autor || '')} · ${dataBR(m.criado_em)}${m.direcao === 'saida' ? ' · ' + esc(m.status || '') : ''}</small></div>`).join('') || '<span class="muted small">Sem mensagens.</span>'}</div>
     ${d.lead.nao_contatar ? '<div class="banner warn" style="margin-top:10px">Este cliente pediu para não receber mensagens.</div>' : `
-    ${sug ? `<div class="sug" style="margin-top:10px"><span class="small"><b>Sugestão ${esc(sug.autor && sug.autor !== 'IA RUAH' ? 'de ' + sug.autor : 'da IA')}</b> · confira antes de enviar</span><textarea class="inp" id="sugtxt" rows="3">${esc(sug.texto)}</textarea>
+    ${sug ? `<div class="sug" style="margin-top:10px"><span class="small"><b>Sugestão ${esc(autorDaIA(sug.autor) ? 'da IA' : 'de ' + sug.autor)}</b> · confira antes de enviar</span><textarea class="inp" id="sugtxt" rows="3">${esc(sug.texto)}</textarea>
       <div class="row"><button class="btn pri sm" data-act="aprovar" data-id="${leadId}">Aprovar e enviar</button><button class="btn sm" data-act="sugerir" data-id="${leadId}">Gerar outra</button></div></div>`
       : `<div class="row" style="margin-top:8px"><button class="btn sm" data-act="sugerir" data-id="${leadId}">Pedir sugestão à IA</button></div>`}
     <form class="copybox" data-form="enviar" data-id="${leadId}" style="margin-top:10px"><input class="inp" id="wmsg" name="texto" placeholder="Escrever mensagem…" autocomplete="off" required><button class="btn pri" type="submit">Enviar</button></form>`}`;
@@ -737,7 +739,7 @@ async function telaConfig(qs) {
     <div class="card"><div class="row"><h3 style="margin:0">Google Drive</h3><span class="sp"></span>${dv.conectado ? '<span class="pill ok">conectado</span>' : '<span class="pill warn">desconectado</span>'}</div>
       ${dv.conectado ? `<p class="small">Conta: <b>${esc(dv.conta || '—')}</b><br>Pasta raiz: ${esc(dv.raiz)}<br>Arquivos só no PC: <b>${dv.pendentes}</b></p>
         <div class="row">${dv.pendentes && veTudo() ? '<button class="btn sm pri" data-act="drive-pendentes">Enviar pendentes</button>' : ''}${adm ? '<button class="btn sm danger" data-act="drive-sair">Desconectar</button>' : ''}</div>`
-      : dv.configurado ? `<p class="small">Clique para entrar com a conta Google da RUAH e autorizar o sistema a criar as pastas dos imóveis.</p>${adm ? '<button class="btn pri sm" data-act="drive-conectar">Conectar Google Drive</button>' : '<p class="muted small">Peça ao administrativo.</p>'}`
+      : dv.configurado ? `<p class="small">Clique para entrar com a conta Google da ${esc(MARCA.cliente)} e autorizar o sistema a criar as pastas dos imóveis.</p>${adm ? '<button class="btn pri sm" data-act="drive-conectar">Conectar Google Drive</button>' : '<p class="muted small">Peça ao administrativo.</p>'}`
       : `<p class="small">Falta configurar o acesso do Google no arquivo <span class="mono">.env</span> (GOOGLE_CLIENT_ID e GOOGLE_CLIENT_SECRET). O passo a passo está no arquivo <b>COMO-CONFIGURAR.txt</b>.</p><p class="small">URI de redirecionamento para cadastrar no Google:<br><span class="mono">${esc(dv.redirect)}</span></p>`}</div>
     <div class="card"><div class="row"><h3 style="margin:0">WhatsApp</h3><span class="sp"></span>${ig.whatsapp.modo === 'oficial' ? '<span class="pill ok">API oficial</span>' : '<span class="pill warn">simulado</span>'}</div>
       <p class="small">${ig.whatsapp.modo === 'oficial' ? `Webhook: <span class="mono">${esc(ig.whatsapp.webhook)}</span><br>Assinatura da Meta: ${ig.whatsapp.segredo ? '<b>verificada</b>' : '<b style="color:var(--bad)">falta WA_APP_SECRET — webhooks recusados</b>'}` : 'Sem as credenciais da Cloud API no .env, o sistema funciona em modo de teste. O passo a passo está no COMO-CONFIGURAR.txt.'}</p></div>
@@ -750,7 +752,7 @@ async function telaConfig(qs) {
     <div class="card"><div class="row"><h2 style="margin:0">Usuários</h2><span class="sp"></span>${adm ? '<button class="btn pri sm" data-act="novo-usuario">+ Novo usuário</button>' : ''}</div>
       <div class="tbl" style="margin-top:10px"><table><thead><tr><th>Nome</th><th>Login</th><th>Perfil</th><th>Situação</th>${adm ? '<th></th>' : ''}</tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.nome)}</td><td class="mono">${esc(u.email || '')}</td><td>${esc(u.perfil)}</td><td>${u.ativo === 0 ? '<span class="pill bad">inativo</span>' : '<span class="pill ok">ativo</span>'}</td>
         ${adm ? `<td style="white-space:nowrap">${u.id !== ME.id ? `<button class="btn sm" data-act="reset-senha" data-id="${u.id}">Nova senha</button> <button class="btn sm ${u.ativo ? 'danger' : ''}" data-act="ativo" data-id="${u.id}" data-v="${u.ativo ? 0 : 1}">${u.ativo ? 'Desativar' : 'Ativar'}</button>` : '<span class="muted small">você</span>'}</td>` : ''}</tr>`).join('')}</tbody></table></div></div>
-    <div class="grid" style="gap:16px;align-content:start"><form class="card grid" data-form="meu-telefone" style="gap:10px"><h2 style="margin:0">Meu WhatsApp</h2><p class="muted small" style="margin:0">Vai no QR code das cartas de captação quando a RUAH não tiver um número central (WHATSAPP_RUAH).</p><label class="f">Celular com DDD<input name="telefone" inputmode="tel" value="${esc(tel(ME.telefone || ''))}"></label><div><button class="btn" type="submit">Salvar</button></div></form>
+    <div class="grid" style="gap:16px;align-content:start"><form class="card grid" data-form="meu-telefone" style="gap:10px"><h2 style="margin:0">Meu WhatsApp</h2><p class="muted small" style="margin:0">Vai no QR code das cartas de captação quando a ${esc(MARCA.cliente)} não tiver um número central (WHATSAPP_CLIENTE no .env).</p><label class="f">Celular com DDD<input name="telefone" inputmode="tel" value="${esc(tel(ME.telefone || ''))}"></label><div><button class="btn" type="submit">Salvar</button></div></form>
     <form class="card grid" data-form="minha-senha" style="gap:10px;align-content:start"><h2 style="margin:0">Minha senha</h2><label class="f">Senha atual<input type="password" name="atual" required autocomplete="current-password"></label><label class="f">Nova senha<input type="password" name="nova" required minlength="8" autocomplete="new-password"></label><div><button class="btn" type="submit">Trocar senha</button></div></form></div>
   </div>
   ${adm ? `<div class="card" style="margin-top:16px"><h2>Registro de atividades</h2><div class="tbl" style="max-height:320px;overflow:auto"><table><thead><tr><th>Quando</th><th>Quem</th><th>Ação</th><th>Detalhe</th></tr></thead><tbody>${au.slice(0, 80).map((a) => `<tr><td class="mono">${dataBR(a.em)}</td><td>${esc(a.nome || 'Sistema / público')}</td><td>${esc(a.acao)}</td><td class="small">${esc(a.detalhe || '')}</td></tr>`).join('')}</tbody></table></div></div>` : ''}`;
@@ -761,10 +763,10 @@ ACT['drive-pendentes'] = (el) => comBotao(el, async () => { const r = await api(
 ACT['novo-usuario'] = () => modal(`<h2>Novo usuário</h2><form data-form="novo-usuario" class="grid" style="gap:12px"><label class="f">Nome<input name="nome" required></label>
   <div class="grid g2"><label class="f">E-mail (login)<input name="email" type="email" required></label><label class="f">Telefone<input name="telefone" inputmode="tel"></label></div>
   <div class="grid g2"><label class="f">Perfil<select name="perfil"><option value="corretor">Corretor (vê só os seus)</option><option value="gestor">Gestor (vê tudo)</option><option value="adm">Administrativo (vê tudo e gerencia usuários)</option></select></label>
-  <label class="f">Senha inicial<input name="senha" required minlength="8" value="${'Ruah' + Math.random().toString().slice(2, 8)}"></label></div>
+  <label class="f">Senha inicial<input name="senha" required minlength="8" value="${'Casa' + Math.random().toString().slice(2, 8)}"></label></div>
   <p class="muted small" style="margin:0">Passe a senha ao corretor e peça para trocar no primeiro acesso.</p><div class="row"><span class="sp"></span><button type="button" class="btn" data-fecha>Cancelar</button><button class="btn pri" type="submit">Criar</button></div></form>`);
 FORM['novo-usuario'] = async (f) => { await api('POST', '/api/usuarios', formJSON(f)); fechaModal(); await carregaBase(); toast('Usuário criado'); rota(); };
-ACT['reset-senha'] = (el) => modal(`<h2>Nova senha</h2><form data-form="reset-senha" data-id="${el.dataset.id}" class="grid" style="gap:12px"><label class="f">Nova senha<input name="senha" required minlength="8" value="${'Ruah' + Math.random().toString().slice(2, 8)}"></label><p class="muted small" style="margin:0">A pessoa será desconectada e entra com a nova senha.</p><div class="row"><span class="sp"></span><button type="button" class="btn" data-fecha>Cancelar</button><button class="btn pri" type="submit">Salvar</button></div></form>`);
+ACT['reset-senha'] = (el) => modal(`<h2>Nova senha</h2><form data-form="reset-senha" data-id="${el.dataset.id}" class="grid" style="gap:12px"><label class="f">Nova senha<input name="senha" required minlength="8" value="${'Casa' + Math.random().toString().slice(2, 8)}"></label><p class="muted small" style="margin:0">A pessoa será desconectada e entra com a nova senha.</p><div class="row"><span class="sp"></span><button type="button" class="btn" data-fecha>Cancelar</button><button class="btn pri" type="submit">Salvar</button></div></form>`);
 FORM['reset-senha'] = async (f) => { await api('PATCH', `/api/usuarios/${f.dataset.id}`, formJSON(f)); fechaModal(); toast('Senha alterada'); };
 ACT.ativo = (el) => comBotao(el, async () => { await api('PATCH', `/api/usuarios/${el.dataset.id}`, { ativo: +el.dataset.v }); await carregaBase(); rota(); });
 FORM['meu-telefone'] = async (f) => { await api('POST', '/api/me/telefone', formJSON(f)); ME = await api('GET', '/api/me'); toast('WhatsApp salvo'); };

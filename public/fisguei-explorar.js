@@ -1,4 +1,4 @@
-/* Sistema RUAH — Fisguei inteligente: a base de anúncios do Fisgar em cartões, com filtros, sinais de oportunidade,
+/* Herrera HOUSE IA — Fisguei inteligente: a base de anúncios do Fisgar em cartões, com filtros, sinais de oportunidade,
    saldo de créditos do Fisgar e uma prévia lateral de cada imóvel. Carregado depois do fisguei.js (substitui a tela da lista). */
 'use strict';
 
@@ -39,7 +39,7 @@ async function telaFisguei(qs) {
     <header class="fx-topo">
       <div class="fx-titulo">
         <h1>Imóveis do Fisgar</h1>
-        <p>${fxN(r.anuncios)} anúncios de Campinas na base da RUAH. A leitura abaixo aponta onde vale gastar crédito primeiro: quem baixou o preço, quem anuncia sozinho, quem está barato para o bairro.</p>
+        <p>${fxN(r.anuncios)} anúncios de Campinas na base da ${esc(MARCA.cliente)}. A leitura abaixo aponta onde vale gastar crédito primeiro: quem baixou o preço, quem anuncia sozinho, quem está barato para o bairro.</p>
         <div class="fx-saude" id="fx-saude">${fxSaude(r, pd)}</div>
       </div>
       <div id="fx-cred">${fxCreditos(cr)}</div>

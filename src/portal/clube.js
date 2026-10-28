@@ -1,7 +1,7 @@
-// Clube Signature · o acesso aos valores dos imóveis da seleção RUAH Signature.
+// Clube Signature · o acesso aos valores dos imóveis da seleção Signature do cliente ("<cliente> Signature").
 //
 // O visitante pede para entrar (nome, telefone, e-mail opcional e o aceite):
-// vira lead QUENTE no CRM com origem "RUAH Signature" e o aparelho dele recebe
+// vira lead QUENTE no CRM com origem "<cliente> Signature" (hoje "RUAH Signature") e o aparelho dele recebe
 // um cookie assinado (HMAC com a SECRET_KEY) que libera os valores por 180 dias.
 // O cookie só guarda o número do lead e a validade; nada pessoal.
 // As páginas que leem o cookie nunca ficam no cache da Vercel (private, no-store).
@@ -9,7 +9,7 @@
 const crypto = require('crypto');
 const { SECRET_KEY } = require('../config');
 
-const NOME = 'ruah_signature';
+const NOME = 'ruah_signature'; // identificador técnico do cookie: não trocar (derruba os acessos já liberados)
 const DIAS = 180;
 const SEGURO = process.env.VERCEL ? '; Secure' : '';
 

@@ -1,4 +1,4 @@
-// Portal RUAH · o texto das versões "Revista" e "Signature" da vitrine.
+// Portal do cliente (a imobiliária) · o texto das versões "Revista" e "Signature" da vitrine.
 //
 // Revista (/imoveis/revista): ensaios no estilo do blog Sopro, com os imóveis
 // do portal entre os textos. Os ensaios falam de modos de morar, nunca de um
@@ -13,6 +13,12 @@
 // mesmo assim, com as primeiras fotos e a ficha.
 // Regras: nunca rua, número, unidade ou CEP; nada de foto aérea com contorno
 // (mostra onde fica); perspectiva de obra sempre marcada como ilustrativa.
+// O nome da imobiliária entra pela configuração (cfg.CLIENTE_NOME), nunca escrito no texto.
+
+const cfg = require('../config');
+const CLIENTE = cfg.CLIENTE_NOME;
+// A linha fina do ensaio de abertura explica o nome "Ruah" (sopro, em hebraico): só vale para esse nome.
+const NOME_E_SOPRO = /^ruah$/i.test(String(CLIENTE).trim());
 
 const CASAS = ['Casa', 'Casa em condomínio', 'Sobrado', 'Chácara', 'Sítio'];
 const APARTAMENTOS = ['Apartamento', 'Cobertura', 'Flat'];
@@ -24,11 +30,13 @@ const CAPITULOS = [
     id: 'a-casa-que-respira',
     chapeu: 'Ensaio de abertura',
     titulo: 'A casa que respira',
-    linhaFina: 'Ruah, em hebraico, é sopro. Talvez seja a melhor palavra para o que se procura numa casa: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.',
+    linhaFina: NOME_E_SOPRO
+      ? 'Ruah, em hebraico, é sopro. Talvez seja a melhor palavra para o que se procura numa casa: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.'
+      : 'Sopro talvez seja a melhor palavra para o que se procura numa casa: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.',
     paragrafos: [
       'Há casas que se entendem pela planta e há casas que se entendem pelo corpo. As primeiras impressionam no papel; as segundas, na primeira manhã. O que separa uma da outra raramente está no número de metros quadrados. Está no modo como a janela enquadra a árvore, na sombra que o beiral desenha na varanda às quatro da tarde, no silêncio que sobra quando a porta se fecha.',
       'No interior paulista, de verão longo e inverno seco, a casa que respira é quase uma questão de bom senso: ventilação cruzada, pé-direito generoso, varandas profundas, um jardim que refresca o chão em volta. Não é tendência de revista. É o jeito antigo, e ainda o mais inteligente, de morar bem por aqui.',
-      'Nesta edição, a RUAH reuniu imóveis da sua carteira em torno dessa ideia simples. Não são listas de atributos. São convites para imaginar como seria a vida dentro de cada um.',
+      `Nesta edição, a ${CLIENTE} reuniu imóveis da sua carteira em torno dessa ideia simples. Não são listas de atributos. São convites para imaginar como seria a vida dentro de cada um.`,
     ],
     citacao: 'O luxo verdadeiro é o espaço que sobra entre as coisas.',
     vitrine: 'Casas desta edição',
@@ -41,7 +49,7 @@ const CAPITULOS = [
     linhaFina: 'Morar no alto é trocar o quintal pelo céu. Em troca, a cidade vira paisagem e o fim de tarde passa a fazer parte da decoração.',
     paragrafos: [
       'O apartamento bem resolvido não tenta imitar uma casa. Ele assume o que tem de melhor: a vista, a praticidade, a tranquilidade de quem pode viajar sem pensar duas vezes. A varanda deixa de ser corredor externo e vira sala; a cozinha se abre para o living; os quartos ficam do lado do silêncio.',
-      'Na hora de escolher, vale olhar além do acabamento. A orientação solar define a luz de cada cômodo ao longo do dia. O andar muda a relação com o barulho da rua. A planta diz como a família vai se encontrar, ou se recolher, dentro de casa. São perguntas que o corretor da RUAH responde com calma, na visita.',
+      `Na hora de escolher, vale olhar além do acabamento. A orientação solar define a luz de cada cômodo ao longo do dia. O andar muda a relação com o barulho da rua. A planta diz como a família vai se encontrar, ou se recolher, dentro de casa. São perguntas que o corretor da ${CLIENTE} responde com calma, na visita.`,
     ],
     citacao: 'Uma boa janela vale mais do que um metro a mais de sala.',
     vitrine: 'Apartamentos desta edição',
@@ -78,8 +86,8 @@ const CAPITULOS = [
 const CARTA = {
   titulo: 'Carta da edição',
   paragrafos: [
-    'Esta é a vitrine da RUAH em forma de revista: menos filtro, mais leitura. Os imóveis aparecem entre os textos como apareceriam numa conversa sobre casas, cada um com a sua página completa, fotos por ambiente e a ficha conferida.',
-    'Se preferir procurar por bairro, valor ou número de quartos, a vitrine completa continua a um toque daqui. E se quiser conhecer algum imóvel pessoalmente, é só pedir pela página dele: um corretor da RUAH confirma a visita com você.',
+    `Esta é a vitrine da ${CLIENTE} em forma de revista: menos filtro, mais leitura. Os imóveis aparecem entre os textos como apareceriam numa conversa sobre casas, cada um com a sua página completa, fotos por ambiente e a ficha conferida.`,
+    `Se preferir procurar por bairro, valor ou número de quartos, a vitrine completa continua a um toque daqui. E se quiser conhecer algum imóvel pessoalmente, é só pedir pela página dele: um corretor da ${CLIENTE} confirma a visita com você.`,
   ],
 };
 
@@ -99,9 +107,9 @@ const SIGNATURE = {
     texto: 'Os valores das residências da seleção ficam reservados aos membros. A adesão é sem custo e o acesso é liberado neste aparelho assim que você envia o pedido.',
     beneficios: [
       'Os valores de todas as residências da seleção',
-      'Visitas privadas, com hora marcada e atendimento pessoal da RUAH',
+      `Visitas privadas, com hora marcada e atendimento pessoal da ${CLIENTE}`,
       'Aviso quando uma nova residência entrar na seleção',
-      'Sigilo: seus dados ficam só com a RUAH',
+      `Sigilo: seus dados ficam só com a ${CLIENTE}`,
     ],
   },
   /** A curadoria de cada residência. `fotos`: id da foto + legenda, na ordem em que aparecem. */

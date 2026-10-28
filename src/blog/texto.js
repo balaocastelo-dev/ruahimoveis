@@ -1,4 +1,4 @@
-// Blog RUAH · leitura do texto de um artigo: a marcação mínima, a contagem de
+// Blog do cliente (a imobiliária) · leitura do texto de um artigo: a marcação mínima, a contagem de
 // palavras, o tempo de leitura e o sumário. Adaptado do blog da Balão
 // (lib/blog/texto.ts). Fica sem dependências para servir ao site, à régua e ao
 // comando de publicar.
