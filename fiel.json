@@ -1,0 +1,82 @@
+{
+ "36607": {
+  "imob": "ondemorar",
+  "fotos": [
+   {
+    "arquivo": "ondemorar/36607-1f.jpg",
+    "antigo": "ondemorar/36607-1.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "ondemorar/36607-2f.jpg",
+    "antigo": "ondemorar/36607-2.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "ondemorar/36607-3f.jpg",
+    "antigo": "ondemorar/36607-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "ondemorar/36607-4f.jpg",
+    "antigo": "ondemorar/36607-4.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "88342": {
+  "imob": "ondemorar",
+  "fotos": [
+   {
+    "arquivo": "ondemorar/88342-1f.jpg",
+    "antigo": "ondemorar/88342-1.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "ondemorar/88342-2f.jpg",
+    "antigo": "ondemorar/88342-2.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "ondemorar/88342-3f.jpg",
+    "antigo": "ondemorar/88342-3.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "ondemorar/88342-4f.jpg",
+    "antigo": "ondemorar/88342-4.jpg",
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "91279": {
+  "imob": "ondemorar",
+  "fotos": [
+   {
+    "arquivo": "ondemorar/91279-1f.jpg",
+    "antigo": "ondemorar/91279-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "ondemorar/91279-2f.jpg",
+    "antigo": "ondemorar/91279-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "ondemorar/91279-3f.jpg",
+    "antigo": "ondemorar/91279-3.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "ondemorar/91279-4f.jpg",
+    "antigo": "ondemorar/91279-4.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "ondemorar/91279-5f.jpg",
+    "antigo": "ondemorar/91279-5.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ }
+}
