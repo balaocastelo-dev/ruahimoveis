@@ -87,11 +87,31 @@ router.get('/imoveis/dados.json', async (req, res) => {
   });
 });
 
-// Foto pública guardada só como endereço (não ocupa o banco): só https, e o navegador vai buscar lá.
-function fotoExterna(res, f) {
-  if (!/^https:\/\/[^\s"'<>]+$/i.test(String(f.url_externa))) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
-  res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=604800');
-  return res.redirect(302, f.url_externa);
+// Foto pública guardada só como endereço (não ocupa o banco). O site busca a imagem no servidor e entrega
+// ele mesmo, com cache longo na Vercel: o navegador do visitante nunca precisa alcançar o endereço de origem
+// (raw.githubusercontent.com é bloqueado em algumas redes e navegadores).
+const fotosExternas = new Map();
+async function fotoExterna(res, f) {
+  const url = String(f.url_externa || '');
+  if (!/^https:\/\/[^\s"'<>]+$/i.test(url)) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  let item = fotosExternas.get(url);
+  if (!item) {
+    try {
+      const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
+      const tipo = r.headers.get('content-type') || '';
+      if (!r.ok || !/^image\//.test(tipo)) throw new Error(`origem respondeu ${r.status} ${tipo}`);
+      item = { tipo, buf: Buffer.from(await r.arrayBuffer()) };
+      if (fotosExternas.size > 120) fotosExternas.delete(fotosExternas.keys().next().value);
+      fotosExternas.set(url, item);
+    } catch (e) {
+      console.error('[portal] foto externa', e.message);
+      res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(502);
+    }
+  }
+  res.setHeader('Content-Type', item.tipo);
+  res.setHeader('Cache-Control', 'public, max-age=604800, s-maxage=2592000, immutable');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  return res.end(item.buf);
 }
 router.get('/imoveis/foto/:id/og.jpg', async (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
