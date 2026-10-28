@@ -6,6 +6,14 @@ const { parse } = require('node-html-parser');
 const cfg = require('../config');
 const { one, all, run, getConfig, setConfig, audit } = require('../db');
 const ia = require('./ia');
+const pc = require('../pc');
+const tenant = require('../tenant');
+
+// Multi-imobiliária: um leitor por imobiliária do PC (src/pc.js), cada um com o seu Gmail e o seu estado.
+// A RUAH lê RADAR_EMAIL/RADAR_EMAIL_SENHA como sempre; as outras, RADAR_EMAIL_<SLUG>/RADAR_EMAIL_SENHA_<SLUG> (pc.cfgDa).
+const EST = pc.estadoPor(() => ({ emAndamento: null, timer: null }));
+let Imap = ImapFlow; // trocado nos testes (test/pc-multi.js)
+const C = (k, padrao) => pc.cfgDa(k, padrao);
 
 const PORTAIS = [
   { nome: 'OLX', dominios: ['olx.com.br'], anuncio: /^https?:\/\/([a-z0-9-]+\.)?olx\.com\.br\/.+-(\d{8,})(?:[/?#]|$)/i },
@@ -16,8 +24,8 @@ const PORTAIS = [
 ];
 const CIDADES = 'Campinas|Valinhos|Vinhedo|Paulínia|Sumaré|Hortolândia|Indaiatuba|Jaguariúna|Americana|Itatiba|Monte Mor|Nova Odessa|Santa Bárbara d.Oeste|Cosmópolis|Pedreira';
 
-const configurado = () => !!(cfg.RADAR_EMAIL && cfg.RADAR_EMAIL_SENHA);
-const intervaloMin = () => Math.max(5, parseInt(cfg.RADAR_INTERVALO_MIN, 10) || 10);
+const configurado = () => !!(C('RADAR_EMAIL') && C('RADAR_EMAIL_SENHA'));
+const intervaloMin = () => Math.max(5, parseInt(C('RADAR_INTERVALO_MIN', '10'), 10) || 10);
 const dominioDe = (s) => (String(s || '').match(/@([a-z0-9.-]+)/i) || [])[1]?.toLowerCase() || '';
 const casa = (dom, lista) => lista.some((d) => dom === d || dom.endsWith('.' + d));
 const portalDoDominio = (dom) => PORTAIS.find((p) => casa(dom, p.dominios));
@@ -192,7 +200,7 @@ function registra(a, quando) {
 function salvaStatus(s) { setConfig('alertas_status', JSON.stringify(s)); }
 const json = (k, d) => { try { return JSON.parse(getConfig(k) || 'null') || d; } catch { return d; } };
 // Vigia do radar: o sistema avisa quando os portais param de mandar alertas ou a leitura para.
-const maxHoras = () => Math.max(6, parseInt(cfg.RADAR_ALERTA_MAX_HORAS, 10) || 24);
+const maxHoras = () => Math.max(6, parseInt(C('RADAR_ALERTA_MAX_HORAS', '24'), 10) || 24);
 function saude(s) {
   const agora = Date.now();
   const porPortal = json('alertas_por_portal', {});
@@ -208,7 +216,7 @@ function saude(s) {
   if (minLeitura !== null && minLeitura > intervaloMin() * 3 + 5) problemas.push({ tipo: 'parado', texto: `A leitura automática parou: a última foi há ${Math.round(minLeitura / 60) >= 1 ? Math.round(minLeitura / 60) + ' h' : Math.round(minLeitura) + ' min'}. O sistema está aberto?` });
   if (horasSemAlerta !== null && horasSemAlerta >= maxHoras()) problemas.push({ tipo: 'silencio', texto: ultimoAlerta
     ? `Nenhum alerta dos portais chega há ${horasSemAlerta} h (o último foi em ${new Date(ultimoAlerta).toLocaleString('pt-BR')}). Confira os alertas no ZAP, Viva Real e OLX.`
-    : `Nenhum alerta dos portais chegou em ${horasSemAlerta} h desde que o radar foi ligado. Confira se os alertas do ZAP, Viva Real e OLX estão ativos e mandando para ${cfg.RADAR_EMAIL}.` });
+    : `Nenhum alerta dos portais chegou em ${horasSemAlerta} h desde que o radar foi ligado. Confira se os alertas do ZAP, Viva Real e OLX estão ativos e mandando para ${C('RADAR_EMAIL')}.` });
   for (const [nome, p] of Object.entries(porPortal)) {
     if ((p.vazios || 0) >= 3) problemas.push({ tipo: 'leitura', texto: `Os últimos ${p.vazios} e-mails do ${nome} vieram sem nenhum anúncio reconhecido. O formato do e-mail pode ter mudado: rode "node ler-alertas.js --testar --dias 3".` });
   }
@@ -216,7 +224,7 @@ function saude(s) {
 }
 function status() {
   const s = json('alertas_status', null);
-  return { configurado: configurado(), email: cfg.RADAR_EMAIL || null, pasta: cfg.RADAR_EMAIL_PASTA || 'INBOX', intervalo_min: intervaloMin(), rodando: !!emAndamento, ultima: s, saude: saude(s),
+  return { configurado: configurado(), email: C('RADAR_EMAIL') || null, pasta: C('RADAR_EMAIL_PASTA', 'INBOX') || 'INBOX', intervalo_min: intervaloMin(), rodando: !!EST().emAndamento, ultima: s, saude: saude(s),
     hoje: one("SELECT count(*) n FROM oportunidade_eventos WHERE texto LIKE 'Encontrada automaticamente%' AND date(em)=date('now','localtime')").n };
 }
 function anotaPortal(nome, quando, nAnuncios, boasVindas) {
@@ -228,26 +236,30 @@ function anotaPortal(nome, quando, nAnuncios, boasVindas) {
   pp[nome] = p; setConfig('alertas_por_portal', JSON.stringify(pp));
 }
 
-let emAndamento = null;
 // testar=true: só mostra o que encontraria, sem gravar.  dias: relê os últimos N dias.
 // Um pedido feito durante uma leitura espera ela terminar (antes o "Reler 7 dias" era engolido).
+// Uma leitura em andamento por imobiliária (a de uma não segura a da outra).
 function ler(opcoes = {}) {
-  if (emAndamento) {
-    if (!opcoes.dias && !opcoes.testar) return emAndamento;
-    return emAndamento.catch(() => {}).then(() => ler(opcoes));
+  const e = EST();
+  if (e.emAndamento) {
+    if (!opcoes.dias && !opcoes.testar) return e.emAndamento;
+    return e.emAndamento.catch(() => {}).then(() => ler(opcoes));
   }
-  emAndamento = lerAgora(opcoes).finally(() => { emAndamento = null; });
-  return emAndamento;
+  e.emAndamento = lerAgora(opcoes).finally(() => { e.emAndamento = null; });
+  return e.emAndamento;
 }
 
 async function lerAgora({ testar = false, dias = null, log = () => {} } = {}) {
   if (!configurado()) throw new Error('E-mail do radar não configurado (RADAR_EMAIL e RADAR_EMAIL_SENHA no .env).');
   const r = { em: new Date().toISOString(), ok: false, emails: 0, ignorados: 0, anuncios: 0, novas: 0, precos: 0, repetidos: 0, erro: null, encontrados: [] };
-  const client = new ImapFlow({ host: 'imap.gmail.com', port: 993, secure: true, auth: { user: cfg.RADAR_EMAIL, pass: String(cfg.RADAR_EMAIL_SENHA).replace(/\s+/g, '') }, logger: false, socketTimeout: 60000, connectionTimeout: 20000, greetingTimeout: 15000 });
+  const PASTA = C('RADAR_EMAIL_PASTA', 'INBOX') || 'INBOX';
+  const client = new Imap({ host: 'imap.gmail.com', port: 993, secure: true, auth: { user: C('RADAR_EMAIL'), pass: String(C('RADAR_EMAIL_SENHA')).replace(/\s+/g, '') }, logger: false, socketTimeout: 60000, connectionTimeout: 20000, greetingTimeout: 15000 });
+  // erro do socket fora de um await (ex.: queda no meio da leitura): só registra, na imobiliária certa (o await falha junto)
+  if (typeof client.on === 'function') client.on('error', pc.liga((e) => console.error(new Date().toLocaleTimeString('pt-BR'), `[radar ${tenant.atual() ? tenant.atual().slug : '?'}] IMAP:`, e && e.message || e)));
   let usaIA = null;
   try {
     await client.connect();
-    const lock = await client.getMailboxLock(cfg.RADAR_EMAIL_PASTA || 'INBOX', { readOnly: true });
+    const lock = await client.getMailboxLock(PASTA, { readOnly: true });
     try {
       const mb = client.mailbox;
       const validade = String(mb.uidValidity);
@@ -296,7 +308,7 @@ async function lerAgora({ testar = false, dias = null, log = () => {} } = {}) {
       : /CONNECT_TIMEOUT|GREETING_TIMEOUT|ENOTFOUND|ECONNREFUSED|ETIMEDOUT/.test(String(e.code || e.message))
         ? 'Não consegui conectar ao Gmail (imap.gmail.com). Confira a internet ou se o antivírus/firewall bloqueia a porta 993.'
         : /Mailbox doesn't exist|NONEXISTENT/i.test(String(e.responseText || e.message))
-          ? `A pasta "${cfg.RADAR_EMAIL_PASTA}" não existe no Gmail. Confira RADAR_EMAIL_PASTA no .env.`
+          ? `A pasta "${PASTA}" não existe no Gmail. Confira RADAR_EMAIL_PASTA no .env.`
           : `Falha ao ler o e-mail: ${e.message}`;
   } finally {
     try { await client.logout(); } catch { /* já fechado */ }
@@ -309,15 +321,19 @@ async function lerAgora({ testar = false, dias = null, log = () => {} } = {}) {
   return r;
 }
 
-let timer = null;
+// Chamado dentro do contexto da imobiliária (src/pc.js); uma vez por imobiliária.
 function iniciar() {
-  if (!configurado() || timer) return;
+  const e = EST();
+  if (!configurado() || e.timer) return;
   if (!getConfig('alertas_inicio')) setConfig('alertas_inicio', new Date().toISOString());
   const roda = () => ler().catch(() => { /* erro fica no status */ });
-  setTimeout(roda, 20000);
-  timer = setInterval(roda, intervaloMin() * 60000);
-  timer.unref?.();
-  console.log(`  Radar automático: lendo ${cfg.RADAR_EMAIL} a cada ${intervaloMin()} min.`);
+  e.primeira = setTimeout(roda, 20000);
+  e.timer = setInterval(roda, intervaloMin() * 60000);
+  e.timer.unref?.();
+  console.log(`  Radar automático: lendo ${C('RADAR_EMAIL')} a cada ${intervaloMin()} min.`);
 }
 
-module.exports = { configurado, status, saude, anotaPortal, ler, iniciar, anunciosDoEmail, extraiCampos, remetenteConfiavel, cabecalhos, registra, PORTAIS };
+// só para os testes: troca o cliente IMAP por um simulado e para os timers
+const _teste = { usaImap(x) { Imap = x || ImapFlow; }, para() { for (const e of EST.todos.values()) { clearTimeout(e.primeira); clearInterval(e.timer); e.timer = null; } }, EST };
+
+module.exports = { _teste, configurado, status, saude, anotaPortal, ler, iniciar, anunciosDoEmail, extraiCampos, remetenteConfiavel, cabecalhos, registra, PORTAIS };

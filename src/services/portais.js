@@ -11,6 +11,11 @@ const zlib = require('zlib');
 const cfg = require('../config');
 const { getConfig, setConfig, audit } = require('../db');
 const alertas = require('./alertas');
+const pc = require('../pc');
+
+// Multi-imobiliária: um monitor por imobiliária do PC (src/pc.js), com estado próprio e os bairros dela.
+// A RUAH lê RADAR_BAIRROS/RADAR_PORTAIS/RADAR_PORTAIS_MIN como sempre; as outras, RADAR_BAIRROS_<SLUG> etc. (pc.cfgDa).
+const EST = pc.estadoPor(() => ({ rodando: null, timer: null }));
 
 const UA = `Mozilla/5.0 (compatible; ${cfg.SISTEMA_NOME.replace(/\s+/g, '')}-Radar/1.0; +https://ruahimobiliaria.com.br)`;
 const BASE = 'https://www.chavesnamao.com.br';
@@ -19,9 +24,9 @@ const DETALHES_POR_RODADA = 25; // anúncios novos abertos por rodada (o resto f
 
 const slug = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 const BAIRROS_PADRAO = 'Cambuí, Nova Campinas, Guanabara, Bosque, Taquaral, Barão Geraldo, Alphaville, Swiss Park, Gramado, Sousas, Joaquim Egídio';
-const bairros = () => (cfg.RADAR_BAIRROS || BAIRROS_PADRAO).split(',').map((b) => b.trim()).filter(Boolean).map((nome) => ({ nome, slug: slug(nome) }));
-const ligado = () => cfg.RADAR_PORTAIS !== '0';
-const intervaloMin = () => Math.max(30, parseInt(cfg.RADAR_PORTAIS_MIN, 10) || 60);
+const bairros = () => (pc.cfgDa('RADAR_BAIRROS') || BAIRROS_PADRAO).split(',').map((b) => b.trim()).filter(Boolean).map((nome) => ({ nome, slug: slug(nome) }));
+const ligado = () => pc.cfgDa('RADAR_PORTAIS', '1') !== '0';
+const intervaloMin = () => Math.max(30, parseInt(pc.cfgDa('RADAR_PORTAIS_MIN', '60'), 10) || 60);
 const TIPOS = [['casa-em-condominio', 'Casa em condomínio'], ['cobertura', 'Cobertura'], ['apartamento', 'Apartamento'], ['casa', 'Casa']];
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 const json = (k, d) => { try { return JSON.parse(getConfig(k) || 'null') || d; } catch { return d; } };
@@ -74,12 +79,11 @@ async function detalhe(url) {
   return { titulo: pagina.name || null, descricao: pagina.description || '', foto: pagina.primaryImageOfPage?.url || null, anunciante, nome };
 }
 
-let rodando = null;
 function status() {
   const s = json('portais_status', null);
   const fila = json('portais_fila', []);
   const parado = s && ligado() && (Date.now() - new Date(s.em).getTime()) / 60000 > intervaloMin() * 3 + 10;
-  return { ligado: ligado(), intervalo_min: intervaloMin(), rodando: !!rodando, ultima: s, fila: fila.length, parado, fontes: ['Chaves na Mão'], bairros: bairros().map((b) => b.nome),
+  return { ligado: ligado(), intervalo_min: intervaloMin(), rodando: !!EST().rodando, ultima: s, fila: fila.length, parado, fontes: ['Chaves na Mão'], bairros: bairros().map((b) => b.nome),
     bloqueados: ['ZAP Imóveis', 'Viva Real', 'OLX', 'Imovelweb'] };
 }
 
@@ -156,19 +160,24 @@ async function lerAgora({ log = () => {}, testar = false } = {}) {
 }
 
 function ler(opcoes = {}) {
-  if (rodando) return rodando;
-  rodando = lerAgora(opcoes).finally(() => { rodando = null; });
-  return rodando;
+  const e = EST();
+  if (e.rodando) return e.rodando;
+  e.rodando = lerAgora(opcoes).finally(() => { e.rodando = null; });
+  return e.rodando;
 }
 
-let timer = null;
+// Chamado dentro do contexto da imobiliária (src/pc.js); uma vez por imobiliária.
 function iniciar() {
-  if (!ligado() || timer) return;
+  const e = EST();
+  if (!ligado() || e.timer) return;
   const roda = () => ler().catch(() => { /* erro fica no status */ });
-  setTimeout(roda, 45000);
-  timer = setInterval(roda, intervaloMin() * 60000);
-  timer.unref?.();
+  e.primeira = setTimeout(roda, 45000);
+  e.timer = setInterval(roda, intervaloMin() * 60000);
+  e.timer.unref?.();
   console.log(`  Monitor direto dos portais: Chaves na Mão a cada ${intervaloMin()} min.`);
 }
 
-module.exports = { status, ler, iniciar, doEndereco, detalhe, bairros };
+// só para os testes: para os timers
+const _teste = { para() { for (const e of EST.todos.values()) { clearTimeout(e.primeira); clearInterval(e.timer); e.timer = null; } }, EST };
+
+module.exports = { status, ler, iniciar, doEndereco, detalhe, bairros, _teste };
