@@ -1,0 +1,311 @@
+{
+  "codigo": "AP0031",
+  "slug": "apartamento-3-suites-cambui-campinas-ap0031",
+  "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
+  "resumo": "Apartamento no Cambuí, em Campinas, com 3 suítes, 3 vagas e área total de 170 m². Localizado no Edifício Bordeaux, com piscina, elevador e condomínio moderno.",
+  "capa": {
+    "foto": 682,
+    "alt": "Sala com grandes janelas e vista para edifícios"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento no Edifício Bordeaux, no Cambuí, em Campinas, oferece 3 suítes, 3 vagas de garagem e área total de 170 m². Localizado no primeiro andar, o imóvel combina praticidade e conforto, com acabamentos modernos e espaços amplos. O Cambuí é um bairro valorizado por sua infraestrutura urbana, com opções de restaurantes, cafés e serviços."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento conta com uma varanda com vista para a cidade e árvores, além de ambientes com piso claro e paredes brancas, transmitindo um ar de modernidade e clareza. Os banheiros possuem piso claro, armários brancos e chuveiro de vidro, enquanto a cozinha tem bancada de granito e janela panorâmica."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com armários e piso de madeira",
+        "Varanda com vista para a cidade",
+        "Cozinha moderna com bancada de granito e janela panorâmica",
+        "Banheiros com piso claro e box de vidro",
+        "Condomínio com piscina, elevador e academia"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar é ampla, com piso claro, paredes brancas e grandes janelas que trazem luz natural. A varanda está integrada, com piso claro e balaustrada de vidro, oferecendo uma vista panorâmica da cidade e de árvores. Essa área é ideal para momentos de relaxamento e socialização."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 683,
+          "legenda": "Varanda com vista para edifícios e árvores"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna, com bancada de granito, armários brancos e janela panorâmica que traz luz natural. A área de serviço conta com armários e piso claro, facilitando a rotina doméstica. O espaço está bem distribuído, com todos os equipamentos necessários à disposição."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 685,
+          "legenda": "Cozinha moderna com bancada de granito e armários brancos"
+        },
+        {
+          "foto": 686,
+          "legenda": "Cozinha moderna com bancada de granito e janela panorâmica"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos, com piso de madeira, paredes brancas e armários embutidos. Cada quarto possui janelas que permitem a entrada de luz natural e ventilam o ambiente. Os banheiros estão equipados com piso claro, box de vidro, cuba branca e chuveiro, além de armários brancos que oferecem armazenamento organizado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 661,
+          "legenda": "Quarto com piso de madeira e janela preta"
+        },
+        {
+          "foto": 672,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condomínio e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Edifício Bordeaux oferece lazer como piscina e elevador, além de uma infraestrutura moderna. O Cambuí é um bairro consolidado, com acesso fácil a restaurantes, cafés, mercados e serviços. A localização é estratégica, combinando conforto urbano com qualidade de vida."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 659,
+          "legenda": "Fachada de edifício moderno com varandas"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam conforto, privacidade e praticidade em um bairro valorizado de Campinas. Com 3 suítes, 3 vagas e áreas bem planejadas, o imóvel atende a necessidades de quem busca um espaço moderno e funcional."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Confirme os acabamentos finais, o estado dos armários e se há possibilidade de personalização. Pergunte sobre o valor do condomínio e quais são as regras do prédio.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 659,
+      "legenda": "Fachada de edifício moderno com varandas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 680,
+      "legenda": "Sala vazia com piso claro e grandes janelas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 682,
+      "legenda": "Sala vazia com grandes janelas e vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 684,
+      "legenda": "Sala vazia com piso claro e teto branco",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 683,
+      "legenda": "Varanda com vista para edifícios e árvores",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 685,
+      "legenda": "Cozinha moderna com bancada de granito e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 686,
+      "legenda": "Cozinha moderna com bancada de granito e janela panorâmica",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 687,
+      "legenda": "Cozinha com balcão e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 688,
+      "legenda": "Cozinha moderna com balcão e vista para o céu",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 661,
+      "legenda": "Quarto com piso de madeira e janela preta",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 663,
+      "legenda": "Quarto com piso de madeira e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 666,
+      "legenda": "Quarto com piso de madeira e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 667,
+      "legenda": "Quarto vazio com piso de madeira e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 670,
+      "legenda": "Quarto com piso de madeira e armário branco",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 671,
+      "legenda": "Quarto com piso de madeira e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 679,
+      "legenda": "Quarto vazio com porta fechada e piso claro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 664,
+      "legenda": "Banheiro com Cuba, vaso sanitário e chuveiro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 665,
+      "legenda": "Banheiro com porta de vidro e armário branco",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 672,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 674,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 675,
+      "legenda": "Banheiro com piso claro, bancada branca, espelho, torneiras, chuveiro e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 677,
+      "legenda": "Banheiro com vaso sanitário, cuba e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 678,
+      "legenda": "Banheiro com vaso sanitário, pia e espelho",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 681,
+      "legenda": "Banheiro com piso claro e armário branco",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 660,
+      "legenda": "Corredor com armários e porta fechada",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 662,
+      "legenda": "Corredor com piso de madeira e parede branca",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 668,
+      "legenda": "Corredor com piso de madeira e parede branca",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 669,
+      "legenda": "Corredor com piso de madeira e armários",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 673,
+      "legenda": "Corredor com armário branco e piso de madeira",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 676,
+      "legenda": "Corredor com armários e porta fechada",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O apartamento possui 3 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem varanda?",
+      "resposta": "Sim, o apartamento tem uma varanda com vista para a cidade."
+    },
+    {
+      "pergunta": "Como marcar uma visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento no Cambuí, Campinas, com 3 suítes e 3 vagas. Localizado no Edifício Bordeaux, com piscina, elevador e condomínio moderno. Ideal para quem busca conforto e praticidade.",
+    "hashtags": [
+      "apartamento",
+      "cambui",
+      "campinas",
+      "edificio",
+      "3suites",
+      "condominio",
+      "imobiliaria",
+      "ruah"
+    ]
+  },
+  "versao": "d7ec076ec0de",
+  "publicadoEm": "2026-10-28T04:35:56.509Z"
+}

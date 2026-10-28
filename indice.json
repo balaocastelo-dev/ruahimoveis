@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "AP0031",
+      "slug": "apartamento-3-suites-cambui-campinas-ap0031",
+      "titulo": "Apartamento de 3 suítes com varanda no Cambuí, Campinas",
+      "resumo": "Apartamento no Cambuí, em Campinas, com 3 suítes, 3 vagas e área total de 170 m². Localizado no Edifício Bordeaux, com piscina, elevador e condomínio moderno.",
+      "capa": {
+        "foto": 682,
+        "alt": "Sala com grandes janelas e vista para edifícios"
+      },
+      "versao": "d7ec076ec0de",
+      "publicadoEm": "2026-10-28T04:35:56.509Z"
+    },
+    {
+      "codigo": "AP0003",
+      "slug": "apartamento-3-suites-varanda-2-vagas-chacara-da-barra-campinas-ap0003",
+      "titulo": "Apartamento de 3 suítes com varanda e 2 vagas na Chácara da Barra, Campinas",
+      "resumo": "Apartamento de 3 suítes com 153 m² de área total, localizado na Chácara da Barra, em Campinas. Ambientes amplos, com varanda e 2 vagas de garagem.",
+      "capa": {
+        "foto": 1123,
+        "alt": "Edifício moderno com varandas e fachada bege"
+      },
+      "versao": "892fb207b804",
+      "publicadoEm": "2026-10-28T04:35:56.508Z"
+    },
+    {
+      "codigo": "AP0027",
+      "slug": "apartamento-2-suites-vista-nova-campinas-campinas-sp-ap0027",
+      "titulo": "Apartamento de 2 suítes com vista panorâmica no Nova Campinas",
+      "resumo": "Apartamento de 65 m² no centro do Nova Campinas com 2 suítes, vista panorâmica e ambientes modernos e bem iluminados.",
+      "capa": {
+        "foto": 1273,
+        "alt": "Piscina com palmeiras e edifício ao fundo"
+      },
+      "versao": "1e59a1d78bae",
+      "publicadoEm": "2026-10-28T04:35:56.508Z"
+    },
+    {
+      "codigo": "AP0028",
+      "slug": "apartamento-cambui-campinas-sp-2-quartos-varanda-vista-cidade-ap0028",
+      "titulo": "Apartamento de 2 quartos no Cambuí com varanda e vista para a cidade",
+      "resumo": "Apartamento de 2 quartos no Cambuí, Campinas, com varanda, vista para a cidade e acabamento moderno. Ideal para quem busca conforto e estilo de vida urbano.",
+      "capa": {
+        "foto": 1053,
+        "alt": "Sala de jantar com mesa redonda e vista para a cidade"
+      },
+      "versao": "43b3adcc0cbc",
+      "publicadoEm": "2026-10-28T04:35:56.508Z"
+    },
+    {
+      "codigo": "AD0001",
+      "slug": "apartamento-duplex-cambui-campinas-ad0001",
+      "titulo": "Apartamento Duplex de 4 quartos no Cambuí, Campinas",
+      "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área bem localizada com fácil acesso a serviços e lazer.",
+      "capa": {
+        "foto": 1240,
+        "alt": "Sala de estar com piso de madeira e vista para a cidade"
+      },
+      "versao": "4937c5e9aa86",
+      "publicadoEm": "2026-10-28T04:35:56.507Z"
+    },
+    {
       "codigo": "CA0052",
       "slug": "casa-em-condominio-swiss-park-campinas-sp-ca0052",
       "titulo": "Casa em condomínio de 4 suítes com varanda gourmet no Swiss Park",
@@ -1286,5 +1346,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:34:07.327Z"
+  "atualizadoEm": "2026-10-28T04:35:56.509Z"
 }

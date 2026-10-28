@@ -1,0 +1,202 @@
+{
+  "codigo": "AD0001",
+  "slug": "apartamento-duplex-cambui-campinas-ad0001",
+  "titulo": "Apartamento Duplex de 4 quartos no Cambuí, Campinas",
+  "resumo": "Apartamento duplex no Cambuí com 4 quartos, 2 suítes e 200 m². Localizado em área bem localizada com fácil acesso a serviços e lazer.",
+  "capa": {
+    "foto": 1240,
+    "alt": "Sala de estar com piso de madeira e vista para a cidade"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento duplex no Cambuí oferece 200 m² de área total, distribuídos em dois pavimentos. Com 4 quartos e 2 suítes, o imóvel é ideal para quem busca espaço, privacidade e praticidade. A planta versátil permite diferentes composições de ambientes, com salas amplas e bem iluminadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizado no coração do Cambuí, o imóvel está próximo a restaurantes, cafés, supermercados e escolas. As fotos mostram ambientes integrados, como a sala de estar com piso de madeira e vista para a cidade, e a cozinha moderna com ilha central."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Apartamento duplex com 200 m²",
+        "4 quartos e 2 suítes",
+        "Salas amplas e bem distribuídas",
+        "Cozinha funcional com ilha central",
+        "2 vagas de garagem",
+        "Bem localizada no Cambuí"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e living"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento tem salas amplas e bem iluminadas, com piso de madeira e teto com iluminação direta. As fotos mostram uma sala de estar com mesa de lâmpada e luminária suspensa, combinando conforto e modernidade. A escada de madeira no corredor conecta os dois pavimentos, permitindo uma distribuição de ambientes funcional e elegante."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1241,
+          "legenda": "Sala de estar com piso de madeira e escada"
+        },
+        {
+          "foto": 1242,
+          "legenda": "Corredor com escada de madeira e varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso de madeira e iluminação embutida no teto. Um dos quartos apresenta cama com cabeceira texturizada, armários brancos e televisão na parede. Os banheiros são modernos, com box de vidro, bancada escura e piso claro. A iluminação é feita por luminárias e espelhos grandes, contribuindo para um ambiente limpo e bem distribuído."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1243,
+          "legenda": "Quarto com cama, armários e televisão"
+        },
+        {
+          "foto": 1244,
+          "legenda": "Banheiro moderno com box de vidro e bancada escura"
+        },
+        {
+          "foto": 1245,
+          "legenda": "Banheiro moderno com chuveiro de vidro e piso claro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem ilha central com banco de granito, geladeira branca e janela com vista para o exterior. A área de serviço conta com máquina de lavar, secador de roupa e banheiro com vaso sanitário. O piso claro e o banco de madeira dão um toque prático e moderno à área."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1248,
+          "legenda": "Cozinha moderna com ilha central e área de jantar"
+        },
+        {
+          "foto": 1249,
+          "legenda": "Área de serviço com máquina de lavar, secador de roupa e banheiro"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam espaço, privacidade e um local com infraestrutura completa. A localização no Cambuí facilita o acesso a serviços, escolas e áreas de lazer, tornando-o uma excelente opção para moradia ou investimento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, a disponibilidade de vagas e o que não aparece nas fotos, como a área de lazer do condomínio.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1240,
+      "legenda": "Sala de estar com piso de madeira e vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1241,
+      "legenda": "Sala de estar com piso de madeira e escada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1248,
+      "legenda": "Cozinha moderna com ilha central e área de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1249,
+      "legenda": "Área de serviço com máquina de lavar, secador de roupa e banheiro",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1243,
+      "legenda": "Quarto com cama, armários e televisão",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1244,
+      "legenda": "Banheiro moderno com box de vidro e bancada escura",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1245,
+      "legenda": "Banheiro moderno com chuveiro de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1246,
+      "legenda": "Banheiro com piso claro e parede branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1242,
+      "legenda": "Corredor com escada de madeira e varanda",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1247,
+      "legenda": "Corredor com armário branco, espelho e portas",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "As fotos não mostram uma área gourmet específica, mas a cozinha tem ilha central, o que pode ser aproveitado para esse uso."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento duplex no Cambuí com 4 quartos e 200 m². Salas amplas, piso de madeira e cozinha moderna com ilha central. bem localizada no coração do Cambuí, Campinas.",
+    "hashtags": [
+      "cambui",
+      "campinas",
+      "apartamento",
+      "duplex",
+      "imovel",
+      "venda",
+      "investimento",
+      "moradia"
+    ]
+  },
+  "versao": "4937c5e9aa86",
+  "publicadoEm": "2026-10-28T04:35:56.507Z"
+}

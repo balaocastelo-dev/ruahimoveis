@@ -1,0 +1,331 @@
+{
+  "codigo": "AP0028",
+  "slug": "apartamento-cambui-campinas-sp-2-quartos-varanda-vista-cidade-ap0028",
+  "titulo": "Apartamento de 2 quartos no Cambuí com varanda e vista para a cidade",
+  "resumo": "Apartamento de 2 quartos no Cambuí, Campinas, com varanda, vista para a cidade e acabamento moderno. Ideal para quem busca conforto e estilo de vida urbano.",
+  "capa": {
+    "foto": 1053,
+    "alt": "Sala de jantar com mesa redonda e vista para a cidade"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de 2 quartos no bairro Cambuí, em Campinas, oferece um ambiente moderno e bem iluminado. Com vista para a cidade, a sala de jantar é um destaque, com mesa redonda e luminária pendente. O imóvel está localizado em um condomínio com lazer completo, incluindo piscina, churrasqueira e elevador. A planta é versátil, permitindo adaptações conforme as necessidades do morador."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento tem área total de 89 m² e está situado em um empreendimento moderno, Trend Home & Design. A cozinha é planejada, com iluminação LED e ilha central, integrada à sala de estar. O imóvel conta com duas vagas de garagem e um depósito privativo, garantindo praticidade e comodidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Vista para a cidade a partir da sala de jantar",
+        "Cozinha moderna com ilha central e eletrodomésticos integrados",
+        "Planta versátil e adaptável",
+        "Condomínio com piscina, churrasqueira e elevador",
+        "Duas vagas de garagem cobertas e demarcadas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e sala de estar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social do apartamento é integrada, com sala de estar e sala de jantar unidas, criando um ambiente amplo e acolhedor. O sofá branco e a mesa redonda são destaque, combinando com as paredes neutras e a iluminação embutida. A sala tem acesso à varanda, onde há poltronas de couro e divisórias de vidro, ideal para momentos de relaxamento e convivência."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1057,
+          "legenda": "Sala de estar moderna com sofá branco e televisão"
+        },
+        {
+          "foto": 1066,
+          "legenda": "Varanda com poltronas de couro e divisórias de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna e bem equipada, com iluminação LED e armários de cor clara. A ilha central é um ponto central de uso, com bancada escura e espaço para preparo de refeições. A cozinha é integrada à sala de jantar, permitindo uma maior flexibilidade no uso do espaço. A área de serviço conta com armários e espaço para armazenamento, garantindo praticidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1054,
+          "legenda": "Cozinha moderna com iluminação LED e ilha central"
+        },
+        {
+          "foto": 1071,
+          "legenda": "Cozinha moderna com iluminação LED e ilha central"
+        },
+        {
+          "foto": 1073,
+          "legenda": "Cozinha moderna com iluminação embutida e armários cinza"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O apartamento possui duas suítes, cada uma com armários de madeira e acabamento moderno. A suíte master tem um closet espaçoso e uma área com iluminação embutida. As camas são de qualidade, com mesas de cabeceira e telas de TV integradas. O ambiente é aconchegante e bem iluminado, com paredes claras e detalhes de decoração."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1065,
+          "legenda": "Suite com closet de vidro e poltrona de couro"
+        },
+        {
+          "foto": 1067,
+          "legenda": "Suite moderna com cama de casal e mesa de cabeceira"
+        },
+        {
+          "foto": 1069,
+          "legenda": "Suite com armário de madeira e TV pendurada"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiros e área de lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos, com piso claro e acabamento de qualidade. O box de vidro, espelho grande e iluminação embutida garantem um ambiente limpo e funcional. O condomínio oferece lazer completo, com piscina, churrasqueira e elevador, ideal para quem busca conforto e bem-estar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1060,
+          "legenda": "Banheiro moderno com piso claro e armário de madeira"
+        },
+        {
+          "foto": 1061,
+          "legenda": "Banheiro moderno com box de vidro e piso claro"
+        },
+        {
+          "foto": 1070,
+          "legenda": "Banheiro moderno com parede texturizada e espelhos"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para famílias que buscam um estilo de vida urbano, com praticidade e conforto. A localização no Cambuí, um dos bairros mais desejados de Campinas, oferece acesso a gastronomia, conveniências e áreas verdes. O imóvel é versátil, com planta adaptável, e conta com um condomínio moderno e bem equipado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, detalhes do condomínio e se há possibilidade de personalização da planta.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1053,
+      "legenda": "Sala de jantar com mesa redonda e vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1055,
+      "legenda": "Sala de jantar com mesa redonda e vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1056,
+      "legenda": "Sala de jantar com mesa redonda e cadeiras brancas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1057,
+      "legenda": "Sala de estar moderna com sofá branco e televisão",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1077,
+      "legenda": "Sala de estar integrada à cozinha gourmet",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1079,
+      "legenda": "Sala com bar e estantes de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1080,
+      "legenda": "Sala com bar e vitrine de taças",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1081,
+      "legenda": "Sala de estar integrada à cozinha",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1082,
+      "legenda": "Sala de estar com sofá branco, televisão e estantes iluminadas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1066,
+      "legenda": "Varanda com poltronas de couro e divisórias de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1054,
+      "legenda": "Cozinha moderna com iluminação LED e ilha central",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1058,
+      "legenda": "Cozinha moderna com ilha central e vista para a sala",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1059,
+      "legenda": "Cozinha moderna com ilha e iluminação LED",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1071,
+      "legenda": "Cozinha moderna com iluminação LED e ilha central",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1072,
+      "legenda": "Cozinha moderna com iluminação LED e armários cinza",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1073,
+      "legenda": "Cozinha moderna com iluminação embutida e armários cinza",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1074,
+      "legenda": "Cozinha moderna com iluminação LED e eletrodomésticos integrados",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1075,
+      "legenda": "Cozinha moderna com iluminação LED e plantas",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1076,
+      "legenda": "Cozinha moderna com ilha central e armários pretos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1078,
+      "legenda": "Cozinha moderna com iluminação LED e balcão de bar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1065,
+      "legenda": "Suite com closet de vidro e poltrona de couro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1067,
+      "legenda": "Suite moderna com cama de casal e mesa de cabeceira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1068,
+      "legenda": "Suite moderna com duas camas e bancada de madeira",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1069,
+      "legenda": "Suite com armário de madeira e TV pendurada",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1060,
+      "legenda": "Banheiro moderno com piso claro e armário de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1061,
+      "legenda": "Banheiro moderno com box de vidro e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1062,
+      "legenda": "Banheiro moderno com box de vidro e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1063,
+      "legenda": "Banheiro moderno com box de vidro e iluminação embutida",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1064,
+      "legenda": "Banheiro com box de vidro, vaso sanitário e piso claro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1070,
+      "legenda": "Banheiro moderno com parede texturizada e espelhos",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui duas vagas de garagem cobertas e demarcadas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Não há menção à área gourmet, mas a cozinha é integrada à sala de jantar, oferecendo uma área funcional para refeições."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 2 quartos no Cambuí, Campinas, com vista para a cidade e acabamento moderno. Ideal para quem busca conforto e estilo de vida urbano. Condomínio com piscina, churrasqueira e elevador. Agende sua visita!",
+    "hashtags": [
+      "apartamentocampinas",
+      "cambui",
+      "imovelparavenda",
+      "condominiomoderno",
+      "vistaparacidade",
+      "campinassp",
+      "imovelcampinas",
+      "vendadeapartamento"
+    ]
+  },
+  "versao": "43b3adcc0cbc",
+  "publicadoEm": "2026-10-28T04:35:56.508Z"
+}

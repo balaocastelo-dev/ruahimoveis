@@ -1,0 +1,343 @@
+{
+  "codigo": "AP0027",
+  "slug": "apartamento-2-suites-vista-nova-campinas-campinas-sp-ap0027",
+  "titulo": "Apartamento de 2 suítes com vista panorâmica no Nova Campinas",
+  "resumo": "Apartamento de 65 m² no centro do Nova Campinas com 2 suítes, vista panorâmica e ambientes modernos e bem iluminados.",
+  "capa": {
+    "foto": 1273,
+    "alt": "Piscina com palmeiras e edifício ao fundo"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento novo, localizado no coração do Nova Campinas, oferece 65 m² de área privativa com 2 suítes e ambientes modernos e bem iluminados. A bem localizada permite fácil acesso a serviços, comércios e vias importantes da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos destacam a qualidade dos materiais, como o piso claro, as janelas grandes e a vista panorâmica da cidade. O imóvel está pronto para morar e combina funcionalidade com um design que valoriza a luz natural e a integração dos ambientes."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Vista panorâmica da cidade através de janelas grandes e persianas abertas.",
+        "Piso claro e paredes brancas em todos os ambientes.",
+        "Cozinha com bancada de granito e janela panorâmica.",
+        "Banheiro com piso claro, cuba de granito e janela.",
+        "Sala de estar com sofá, mesa de centro e janela com cortina branca."
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e sala de estar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar apresenta um design moderno com piso claro, paredes brancas e janelas grandes que permitem a entrada de luz natural. A vista para a cidade é um destaque, combinando com a decoração minimalista e a integração com a varanda, caso exista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma sala vazia com estrutura de alta qualidade, incluindo janelas com persianas abertas, portas de madeira e detalhes como a assinatura da empresa em algumas paredes."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1275,
+          "legenda": "Sala com vista para a cidade"
+        },
+        {
+          "foto": 1280,
+          "legenda": "Sala vazia com piso de cerâmica e parede branca"
+        },
+        {
+          "foto": 1296,
+          "legenda": "Sala de estar com sofá curvo e janela com cortina branca"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é moderna, com ilha central, armários de madeira e bancada de granito. As janelas panorâmicas proporcionam vista para a cidade, integrando o ambiente com o exterior. A iluminação é agradável e o espaço é funcional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos destacam detalhes como a banca de granito, o sistema de aquecimento de água e a janela com vista. A cozinha tem um design que valoriza o uso do espaço e a praticidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1277,
+          "legenda": "Cozinha com vista para a cidade"
+        },
+        {
+          "foto": 1281,
+          "legenda": "Cozinha com bancada de granito e pia"
+        },
+        {
+          "foto": 1302,
+          "legenda": "Cozinha moderna com ilha central e vista para varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso claro, paredes brancas e janelas com vista. A iluminação natural é aproveitada para criar um ambiente aconchegante e acolhedor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos, com piso claro, cuba de granito e janela que permite ventilação natural. A decoração é minimalista e os detalhes são bem pensados para o conforto do morador."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1279,
+          "legenda": "Quarto vazio com porta de madeira e tomada"
+        },
+        {
+          "foto": 1284,
+          "legenda": "Banheiro com piso claro e janela com vista"
+        },
+        {
+          "foto": 1292,
+          "legenda": "Banheiro com piso claro, cuba de granito, vaso sanitário e janela"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Halma 199 oferece uma série de áreas de lazer, incluindo piscina, academia, espaço pet, playground e horta. As fotos do condomínio destacam a piscina com palmeiras e a estrutura geral do empreendimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O empreendimento está localizado em uma região com fácil acesso a serviços, comércios e vias importantes. A qualidade da infraestrutura do condomínio complementa o conforto oferecido pelo apartamento."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1288,
+          "legenda": "Vista panorâmica da cidade através da janela"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento é ideal para quem busca um imóvel novo, bem localizado e com qualidade de acabamento. A área social e os quartos são aconchegantes, enquanto o condomínio oferece lazer e comodidade. A vista panorâmica e a iluminação natural tornam o imóvel atraente para famílias e profissionais que valorizam o conforto e a praticidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e os detalhes que não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1274,
+      "legenda": "Vista panorâmica da cidade com edifícios e céu nublado",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1288,
+      "legenda": "Vista panorâmica da cidade através da janela",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 1275,
+      "legenda": "Sala com vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1276,
+      "legenda": "Sala vazia com vista para a cidade",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1278,
+      "legenda": "Sala vazia com piso claro e janela com vista",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1280,
+      "legenda": "Sala vazia com piso de cerâmica e parede branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1282,
+      "legenda": "Sala vazia com piso claro e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1289,
+      "legenda": "Sala vazia com porta fechada e janela",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1290,
+      "legenda": "Sala vazia com piso claro e janela com vista",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1294,
+      "legenda": "Sala de estar com sofá, cadeiras e mesa de centro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1295,
+      "legenda": "Sala de estar com mesa de jantar e poltronas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1296,
+      "legenda": "Sala de estar com sofá curvo e janela com cortina branca",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1297,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1298,
+      "legenda": "Sala de jantar com mesa redonda e pendentes de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1277,
+      "legenda": "Cozinha com vista para a cidade",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1281,
+      "legenda": "Cozinha com bancada de granito e pia",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1283,
+      "legenda": "Cozinha com balcão e janela",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1299,
+      "legenda": "Cozinha moderna com ilha e vista para varanda",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1300,
+      "legenda": "Cozinha moderna com ilha e pendentes",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1301,
+      "legenda": "Cozinha moderna com ilha central e pendentes",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1302,
+      "legenda": "Cozinha moderna com ilha central e vista para varanda",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1279,
+      "legenda": "Quarto vazio com porta de madeira e tomada",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1287,
+      "legenda": "Quarto vazio com piso claro e janela com vista",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1284,
+      "legenda": "Banheiro com piso claro e janela com vista",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1285,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1286,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1291,
+      "legenda": "Banheiro vazio com porta aberta",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1292,
+      "legenda": "Banheiro com piso claro, cuba de granito, vaso sanitário e janela",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1293,
+      "legenda": "Banheiro com vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1273,
+      "legenda": "Piscina com palmeiras e edifício ao fundo",
+      "ambiente": "piscina"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel possui 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "As fotos não mostram uma área gourmet específica, mas a cozinha tem um design moderno e funcional."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Novo apartamento no centro do Nova Campinas com 2 suítes, vista panorâmica e ambientes modernos. Ideal para quem busca qualidade de vida e praticidade. Conheça mais no site da RUAH Investimentos Imobiliários.",
+    "hashtags": [
+      "apartamentonovacampinas",
+      "campinassp",
+      "imovelnovo",
+      "vistapanorâmica",
+      "ruahinvestimentos",
+      "condomíniohalma",
+      "suítes",
+      "lazer"
+    ]
+  },
+  "versao": "1e59a1d78bae",
+  "publicadoEm": "2026-10-28T04:35:56.508Z"
+}
