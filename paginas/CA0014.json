@@ -1,0 +1,282 @@
+{
+  "codigo": "CA0014",
+  "slug": "casa-3-suites-area-gourmet-jardim-chapadao-campinas-ca0014",
+  "titulo": "Casa de 3 suítes com área gourmet no Jardim Chapadão, Campinas",
+  "resumo": "Casa de 3 suítes no Jardim Chapadão, com 390m² de terreno e 296m² de área construída, ideal para quem busca conforto e espaços amplos.",
+  "capa": {
+    "foto": 1269,
+    "alt": "Patio com piso de pedras e plantas em vasos"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa no Jardim Chapadão oferece 390m² de terreno e 296m² de área construída, ideal para quem busca conforto e espaços amplos. Com 3 suítes, a residência é adequado para famílias que desejam privacidade e comodidade. O imóvel conta com áreas sociais integradas, como uma sala de estar aconchegante e uma cozinha moderna com ilha central. A área externa inclui uma churrasqueira, ideal para reuniões e momentos de lazer com amigos e familiares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram ambientes bem distribuídos e acabados com atenção aos detalhes, como armários brancos, bancadas de granito e pisos claros em vários cômodos. A casa também possui uma varanda com plantas e uma lavanderia com máquina de lavar e secar, reforçando a praticidade do imóvel."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com armários e ar condicionado",
+        "Cozinha moderna com ilha e armários brancos",
+        "Área externa com churrasqueira e jardim",
+        "Lavanderia com máquina de lavar e secar",
+        "Pisos claros e acabamento cuidadoso em todos os ambientes"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e cozinha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa conta com uma sala de estar aconchegante, com sofá cinza, poltronas de madeira e uma mesa de centro de vidro. As fotos mostram ambientes integrados, com piso claro e iluminação adequada. A cozinha é moderna, com ilha central, armários brancos e bancada de granito. A exaustor metálico, geladeira e micro-ondas estão presentes, reforçando a praticidade do imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos também mostram uma cozinha com pia de dois lances e uma estante com utensílios. A iluminação do teto e a organização dos armários são destacadas, indicando um espaço funcional e bem planejado."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1250,
+          "legenda": "Cozinha moderna com ilha central e armários brancos"
+        },
+        {
+          "foto": 1251,
+          "legenda": "Cozinha moderna com armários brancos e bancada de granito"
+        },
+        {
+          "foto": 1268,
+          "legenda": "Sala de jantar com mesa redonda e cadeiras brancas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são amplos e bem iluminados, com cama, armários e ar condicionado. As fotos mostram detalhes como piso com padrão geométrico, janelas com persianas e espelhos grandes. A suíte principal possui armário de vidro e teto com moldura, reforçando o conforto e o estilo do imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos e bem distribuídos, com piso de cerâmica texturizada, bancadas de mármore e box de vidro. As fotos destacam espelhos grandes, toalete e produtos de higiene dispostos de forma organizada. A iluminação e o acabamento são de alta qualidade, contribuindo para o conforto diário."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1252,
+          "legenda": "Suite com armário de vidro e ar condicionado"
+        },
+        {
+          "foto": 1256,
+          "legenda": "Banheiro moderno com piso de cerâmica texturizada e bancada de mármore"
+        },
+        {
+          "foto": 1259,
+          "legenda": "Banheiro com parede listrada e piso de mosaico"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área externa e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área externa da casa é ideal para lazer, com uma churrasqueira e jardim bem cuidado. As fotos mostram um patio com piso de pedras, plantas em vasos e gramados bem mantidos. A varanda conta com piso claro, portas de vidro e plantas, criando um ambiente aconchegante e integrado ao exterior."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O jardim também possui caminho de pedra e árvores, reforçando o contato com a natureza. A varanda e a área externa são espaços ideais para receber visitas ou aproveitar o ar livre, combinando funcionalidade e beleza."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1260,
+          "legenda": "Varanda com plantas e chão de ardósia"
+        },
+        {
+          "foto": 1270,
+          "legenda": "Jardim com caminho de pedra e grama"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e espaços amplos. Com 3 suítes, área social integrada e áreas externas bem planejadas, a casa oferece tudo o que é necessário para uma vida de qualidade. O acabamento cuidado e os ambientes bem distribuídos reforçam a praticidade e o estilo do imóvel."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se o terreno possui áreas comuns e o que não está incluso nas fotos, como o estado do telhado ou o sistema de aquecimento.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1261,
+      "legenda": "Sala de estar com estantes e espelhos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1263,
+      "legenda": "Sala de estar com sofá cinza e poltronas de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1267,
+      "legenda": "Sala com TV, guitarra, foto e mesa de jogos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1268,
+      "legenda": "Sala de jantar com mesa redonda e cadeiras brancas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1258,
+      "legenda": "Varanda com piso de cerâmica, lixeira, plantas e porta de vidro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1260,
+      "legenda": "Varanda com plantas e chão de ardósia",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1250,
+      "legenda": "Cozinha moderna com ilha central e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1251,
+      "legenda": "Cozinha moderna com armários brancos e bancada de granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1254,
+      "legenda": "Cozinha com ilha e vista para o mar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1272,
+      "legenda": "Lavanderia com máquina de lavar e secar",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1253,
+      "legenda": "Quarto com cama, espelho, janela com persiana e ar condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1257,
+      "legenda": "Quarto com cama, mesa de trabalho e televisão",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1262,
+      "legenda": "Quarto com cama, escrivaninha, prateleira e quadro de avisos",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1266,
+      "legenda": "Quarto com cama, cadeira, estante e ar condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1252,
+      "legenda": "Suite com armário de vidro e ar condicionado",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1256,
+      "legenda": "Banheiro moderno com piso de cerâmica texturizada e bancada de mármore",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1259,
+      "legenda": "Banheiro com parede listrada e piso de mosaico",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1264,
+      "legenda": "Banheiro moderno com parede texturizada e janela com veneziana",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1265,
+      "legenda": "Banheiro com box de vidro e pia dupla",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1271,
+      "legenda": "Banheiro moderno com box de vidro e pia branca",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1269,
+      "legenda": "Patio com piso de pedras e plantas",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1270,
+      "legenda": "Jardim com caminho de pedra e grama",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1255,
+      "legenda": "Corredor com bancada de madeira e quadros na parede",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel possui 7 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, o imóvel conta com uma churrasqueira, ideal para reuniões e momentos de lazer."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Marque a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 3 suítes no Jardim Chapadão, com 390m² de terreno e área social integrada. Ideal para famílias que buscam conforto e espaços amplos. Venha conhecer!",
+    "hashtags": [
+      "casa3suites",
+      "jardimchapadao",
+      "campinas",
+      "imovelresidencial",
+      "areaexterna",
+      "garagem7vagas",
+      "churrasqueira",
+      "imovelcampinas"
+    ]
+  },
+  "versao": "0750d9d07c08",
+  "publicadoEm": "2026-10-28T03:56:36.404Z"
+}

@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0014",
+      "slug": "casa-3-suites-area-gourmet-jardim-chapadao-campinas-ca0014",
+      "titulo": "Casa de 3 suítes com área gourmet no Jardim Chapadão, Campinas",
+      "resumo": "Casa de 3 suítes no Jardim Chapadão, com 390m² de terreno e 296m² de área construída, ideal para quem busca conforto e espaços amplos.",
+      "capa": {
+        "foto": 1269,
+        "alt": "Patio com piso de pedras e plantas em vasos"
+      },
+      "versao": "0750d9d07c08",
+      "publicadoEm": "2026-10-28T03:56:36.404Z"
+    },
+    {
+      "codigo": "CA0042",
+      "slug": "casa-terrea-contemporanea-3-suites-piscina-jardim-regente-indaiatuba-s-ca0042",
+      "titulo": "Casa Térrea Contemporânea com 3 Suítes e Piscina no Jardim Regente",
+      "resumo": "Casa térrea contemporânea com 3 suítes, piscina e acabamentos de alto padrão no Jardim Regente, Indaiatuba. Ideal para quem busca conforto e sofisticação.",
+      "capa": {
+        "foto": 1222,
+        "alt": "Fachada moderna com entrada coberta, portão de madeira, jardim com palmeiras e piso de pedra"
+      },
+      "versao": "cfa5efb2f676",
+      "publicadoEm": "2026-10-28T03:56:36.404Z"
+    },
+    {
+      "codigo": "CA0051",
+      "slug": "casa-3-quartos-varanda-jardim-paraiso-campinas-sp-ca0051",
+      "titulo": "Casa de 3 quartos com varanda e espaço gourmet no Jardim Paraíso, Campinas",
+      "resumo": "Casa no Jardim Paraíso, Campinas, com 3 quartos, 1 suíte, 5 vagas e área gourmet. bem localizada com acesso a comércios e escolas.",
+      "capa": {
+        "foto": 1312,
+        "alt": "Fachada de casa com entrada e jardim"
+      },
+      "versao": "0bfa72a3eefc",
+      "publicadoEm": "2026-10-28T03:56:36.403Z"
+    },
+    {
+      "codigo": "BA0001",
+      "slug": "galpao-comercial-jardim-paraiso-viracopos-campinas-sp-ba0001",
+      "titulo": "Galpão comercial com 3 vagas de garagem no Jardim Paraíso de Viracopos, Campinas",
+      "resumo": "Galpão comercial com 309 m² de área útil e 358 m² de terreno, localizado na Avenida das Amoreiras, em Campinas.",
+      "capa": {
+        "foto": 1303,
+        "alt": "Fachada de galpão com sinalização 'Adesicar' e 'Motors', portão fechado e carro estacionado"
+      },
+      "versao": "8cf2c7feae66",
+      "publicadoEm": "2026-10-28T03:56:36.403Z"
+    },
+    {
+      "codigo": "AP0032",
+      "slug": "apartamento-3-suites-varanda-gourmet-vila-bella-campinas-ap0032",
+      "titulo": "Apartamento de 3 suítes com varanda gourmet no Loteamento Vila Bella, Campinas",
+      "resumo": "Apartamento com 3 suítes, varanda gourmet e área social integrada no Loteamento Residencial Vila Bella, em Campinas. Ideal para quem busca conforto e praticidade.",
+      "capa": {
+        "foto": 1340,
+        "alt": "Sala de estar integrada à cozinha e jantar com mesa de jantar e cortinas brancas"
+      },
+      "versao": "900d2e4ac201",
+      "publicadoEm": "2026-10-28T03:56:36.402Z"
+    },
+    {
       "codigo": "TE0010",
       "slug": "terreno-nova-campinas-campinas-sp-te0010",
       "titulo": "Terreno de 452 m² em Nova Campinas, com portão eletrônico e edícula",
@@ -566,5 +626,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T03:53:16.266Z"
+  "atualizadoEm": "2026-10-28T03:56:36.404Z"
 }

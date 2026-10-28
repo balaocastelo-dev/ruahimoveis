@@ -1,0 +1,173 @@
+{
+  "codigo": "BA0001",
+  "slug": "galpao-comercial-jardim-paraiso-viracopos-campinas-sp-ba0001",
+  "titulo": "Galpão comercial com 3 vagas de garagem no Jardim Paraíso de Viracopos, Campinas",
+  "resumo": "Galpão comercial com 309 m² de área útil e 358 m² de terreno, localizado na Avenida das Amoreiras, em Campinas.",
+  "capa": {
+    "foto": 1303,
+    "alt": "Fachada de galpão com sinalização 'Adesicar' e 'Motors', portão fechado e carro estacionado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão comercial está situado na Avenida das Amoreiras, no Jardim Paraíso de Viracopos, Campinas, uma região estratégica com alto fluxo de veículos e pedestres. Com 358 m² de terreno e 309 m² de área construída, ele oferece um espaço amplo e versátil para diversos tipos de negócios, como comércio, logística, oficinas e depósitos. A estrutura funcional e a visibilidade do imóvel são destaque para quem busca um local de fácil acesso e potencial de crescimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do imóvel traz sinalizações de empresas, como 'Adesicar' e 'Motors', e o portão está fechado, sugerindo que o imóvel está disponível para uso imediato. A área externa tem carros estacionados, o que demonstra a facilidade de acesso e o potencial de movimento no local."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Localização estratégica na Avenida das Amoreiras",
+        "Área total de 358 m² com 309 m² de área útil",
+        "3 vagas de garagem disponíveis",
+        "Estrutura funcional para adaptações de negócio",
+        "Fácil acesso a vias principais de Campinas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fachada e localização"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A fachada do galpão é marcante, com sinalizações de empresas e uma placa com o número '981'. A estrutura tem uma fachada preta com logotipos em tons de branco e amarelo, e uma janela quadrada que destaca a simplicidade do design. A presença de um carro estacionado no local reforça a praticidade e a acessibilidade do imóvel, que está situado em uma avenida com grande movimento de veículos e pedestres."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1306,
+          "legenda": "Fachada de imóvel com logotipo 'Adesicar' e número de telefone"
+        },
+        {
+          "foto": 1307,
+          "legenda": "Fachada de imóvel com logotipo 'RUAH' e estacionamento"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Garagem e terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A garagem do imóvel apresenta um piso sujo, com resíduos espalhados, indicando a necessidade de limpeza e manutenção. O teto metálico e as luzes fluorescentes reforçam o caráter industrial do local. O terreno, por sua vez, tem um anúncio de venda visível com o número de telefone e edifícios residenciais ao fundo, demonstrando a integração com o entorno. Folhagens e fios elétricos ao redor do terreno mostram a proximidade com áreas verdes e a infraestrutura existente no local."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1304,
+          "legenda": "Garagem com piso sujo e lixo espalhado"
+        },
+        {
+          "foto": 1305,
+          "legenda": "Terreno com anúncio de venda e edifícios ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Condições e potencial do imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel apresenta características que indicam um uso industrial ou comercial, com estrutura sólida e espaço amplo para adaptações. A foto da fachada com grafite e a loja 'Aoesicar' à esquerda sugerem a proximidade com outros empreendimentos e a integração com o comércio local. O imóvel tem potencial para ser transformado em um espaço funcional, seja para lojas, oficinas ou depósitos, graças ao terreno amplo e à localização estratégica."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1308,
+          "legenda": "Fachada de prédio com grafite e loja 'Aoesicar' à esquerda"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este galpão é ideal para investidores e empresários que buscam um local com alto potencial de rentabilidade e fácil acesso a vias principais de Campinas. Sua estrutura oferece flexibilidade para adaptações conforme a necessidade do negócio, seja para comércio, logística ou serviços. A localização estratégica no Jardim Paraíso de Viracopos garante visibilidade e movimento, contribuindo para o crescimento do empreendimento."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o estado geral da estrutura e quais melhorias podem ser feitas. Além disso, é importante saber quais áreas externas estão incluídas no terreno e se há restrições de uso.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1303,
+      "legenda": "Fachada de imóvel com sinalização 'Adesicar' e 'Motors'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1306,
+      "legenda": "Fachada de imóvel com logotipo 'Adesicar' e número de telefone",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1307,
+      "legenda": "Fachada de imóvel com logotipo 'RUAH' e estacionamento",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1308,
+      "legenda": "Fachada de prédio com grafite e loja 'Aoesicar' à esquerda",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1305,
+      "legenda": "Terreno com anúncio de venda e edifícios ao fundo",
+      "ambiente": "terreno"
+    },
+    {
+      "foto": 1304,
+      "legenda": "Garagem com piso sujo e lixo espalhado",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem o imóvel tem?",
+      "resposta": "O imóvel possui 3 vagas de garagem."
+    },
+    {
+      "pergunta": "Qual o tamanho do terreno e da área construída?",
+      "resposta": "O terreno tem 358 m² e a área construída é de 309,28 m²."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Galpão comercial com 358 m² de terreno e 309 m² de área construída, localizado na Avenida das Amoreiras, no Jardim Paraíso de Viracopos, Campinas. Ideal para negócios como comércio, logística e oficinas. Visibilidade e fácil acesso são grandes vantagens do imóvel.",
+    "hashtags": [
+      "galpao",
+      "campinas",
+      "comercio",
+      "investimento",
+      "logistica",
+      "jardimparaíso",
+      "terrenogrande",
+      "areautil"
+    ]
+  },
+  "versao": "8cf2c7feae66",
+  "publicadoEm": "2026-10-28T03:56:36.403Z"
+}

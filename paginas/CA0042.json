@@ -1,0 +1,271 @@
+{
+  "codigo": "CA0042",
+  "slug": "casa-terrea-contemporanea-3-suites-piscina-jardim-regente-indaiatuba-s-ca0042",
+  "titulo": "Casa Térrea Contemporânea com 3 Suítes e Piscina no Jardim Regente",
+  "resumo": "Casa térrea contemporânea com 3 suítes, piscina e acabamentos de alto padrão no Jardim Regente, Indaiatuba. Ideal para quem busca conforto e sofisticação.",
+  "capa": {
+    "foto": 1222,
+    "alt": "Fachada moderna com entrada coberta, portão de madeira, jardim com palmeiras e piso de pedra"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa térrea contemporânea está localizada no Jardim Regente, em Indaiatuba, e oferece um espaço de 140 m² de área construída em um lote de 200 m². Com 3 suítes, piscina privativa e acabamentos modernos, o imóvel combina funcionalidade e elegância em um único pavimento. A fachada imponente, com revestimentos nobres e paisagismo, traz um toque de requinte desde o primeiro contato."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os ambientes são integrados, com iluminação natural e acabamentos que valorizam cada detalhe. A sala de estar é ampla e moderna, integrada à cozinha planejada, enquanto a área externa conta com uma piscina privativa e um quintal bem cuidado, ideal para momentos de lazer."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com acabamento de alto padrão",
+        "Sala e cozinha integradas com iluminação embutida",
+        "Piscina privativa e área externa com paisagismo",
+        "Fachada contemporânea com revestimentos nobres",
+        "Cozinha moderna com ilha e armários brancos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área Social e Integração dos Ambientes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar é um dos pontos fortes deste imóvel, com paredes de madeira e iluminação embutida que traz um ambiente moderno e acolhedor. A integração com a cozinha planejada cria um espaço amplo e funcional, ideal para receber convidados. As fotos mostram uma mesa branca e uma porta de vidro que permitem a entrada de luz natural e a integração com a varanda."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1225,
+          "legenda": "Sala com parede de madeira e porta de vidro"
+        },
+        {
+          "foto": 1226,
+          "legenda": "Sala com parede de madeira e porta aberta para varanda"
+        },
+        {
+          "foto": 1235,
+          "legenda": "Sala com piso claro e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e Serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha moderna conta com armários brancos e de madeira, uma ilha central e uma bancada de granito. As fotos destacam a janela panorâmica que oferece vista para o exterior e o fogão a gás, além de um forno embutido e armários suspensos que trazem praticidade e elegância ao espaço."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1227,
+          "legenda": "Cozinha moderna com ilha central e armários brancos"
+        },
+        {
+          "foto": 1228,
+          "legenda": "Cozinha moderna com armários brancos e madeira, janela panorâmica e fogão a gás"
+        },
+        {
+          "foto": 1229,
+          "legenda": "Cozinha moderna com armários de madeira e bancada de granito"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área Externa e Piscina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área externa conta com uma piscina privativa, cercada por um deck de madeira e cercada por plantas e jardim. As fotos mostram uma vista panorâmica da piscina, com paredes brancas e um ambiente bem iluminado. O quintal foi pensado para integrar os ambientes internos e externos, proporcionando uma área de lazer agradável."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1230,
+          "legenda": "Piscina com deck de madeira e parede de plantas"
+        },
+        {
+          "foto": 1231,
+          "legenda": "Piscina com deck de madeira e jardim"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Suítes e Banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As suítes são espaçosas e bem acabadas, com armários embutidos e piso claro. A suíte master tem uma varanda com vista para a piscina e banheiro com acabamento moderno, incluindo cuba suspenso e nichos. As fotos destacam o uso de materiais claros e a qualidade dos acabamentos."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1233,
+          "legenda": "Suite com armários embutidos e piso claro"
+        },
+        {
+          "foto": 1236,
+          "legenda": "Suite com varanda e vista para piscina"
+        },
+        {
+          "foto": 1237,
+          "legenda": "Banheiro moderno com cuba suspenso e nichos"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, espaço e acabamentos modernos. Com 3 suítes, área social integrada e uma piscina privativa, o imóvel oferece um estilo de vida sofisticado. A localização no Jardim Regente, em Indaiatuba, garante acessibilidade e tranquilidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o tipo de condomínio e se há outros elementos que não aparecem nas fotos, como o tipo de revestimento no chão ou materiais usados em áreas externas.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1222,
+      "legenda": "Fachada moderna com entrada coberta e portão de madeira",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1223,
+      "legenda": "Entrada moderna com porta de madeira e logotipo 'RUAH'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1224,
+      "legenda": "Sala com parede de madeira e rack suspenso",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1225,
+      "legenda": "Sala com parede de madeira e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1226,
+      "legenda": "Sala com parede de madeira e porta aberta para varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1234,
+      "legenda": "Sala com armários e nichos de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1235,
+      "legenda": "Sala com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1227,
+      "legenda": "Cozinha moderna com ilha central e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1228,
+      "legenda": "Cozinha moderna com armários brancos e madeira, janela panorâmica e fogão a gás",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1229,
+      "legenda": "Cozinha moderna com armários de madeira e bancada de granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1233,
+      "legenda": "Suite com armários embutidos e piso claro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1236,
+      "legenda": "Suite com varanda e vista para piscina",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1232,
+      "legenda": "Banheiro moderno com gabinete de madeira e cuba suspenso",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1237,
+      "legenda": "Banheiro moderno com cuba suspenso e nichos",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1230,
+      "legenda": "Piscina com deck de madeira e parede de plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1231,
+      "legenda": "Piscina com deck de madeira e jardim",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1238,
+      "legenda": "Corredor com iluminação embutida e portas fechadas",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1239,
+      "legenda": "Corredor com portas e iluminação embutida",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas suítes tem o imóvel?",
+      "resposta": "O imóvel possui 3 suítes."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, o imóvel conta com uma piscina privativa."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa térrea contemporânea com 3 suítes, piscina e acabamentos de alto padrão no Jardim Regente, Indaiatuba. Conheça de perto esta oportunidade de morar com conforto e estilo moderno.",
+    "hashtags": [
+      "casaeterrea",
+      "indaiatuba",
+      "jardimregente",
+      "3suites",
+      "piscina",
+      "acabamentosnobres",
+      "sp",
+      "imoveis"
+    ]
+  },
+  "versao": "cfa5efb2f676",
+  "publicadoEm": "2026-10-28T03:56:36.404Z"
+}

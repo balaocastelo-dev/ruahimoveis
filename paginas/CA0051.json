@@ -1,0 +1,335 @@
+{
+  "codigo": "CA0051",
+  "slug": "casa-3-quartos-varanda-jardim-paraiso-campinas-sp-ca0051",
+  "titulo": "Casa de 3 quartos com varanda e espaço gourmet no Jardim Paraíso, Campinas",
+  "resumo": "Casa no Jardim Paraíso, Campinas, com 3 quartos, 1 suíte, 5 vagas e área gourmet. bem localizada com acesso a comércios e escolas.",
+  "capa": {
+    "foto": 1312,
+    "alt": "Fachada de casa com entrada e jardim"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa no bairro Jardim Paraíso, em Campinas, com 3 quartos, 1 suíte e 5 vagas de garagem. A casa oferece espaços amplos, como salas, quartos e uma varanda com vista para o jardim. Na cozinha, há uma ilha e forno de tijolo, indicando uma área gourmet aconchegante. A fachada da casa tem uma entrada com portão branco e jardim com plantas, mostrando um entorno bem cuidado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é estratégica, próximo a escolas, supermercados, padarias e outros comércios. A casa tem características como adega, churrasqueira, edícula e quintal, tornando-a ideal para quem busca um imóvel com espaço e comodidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 quartos com armários e ventilação adequada",
+        "Espaço gourmet com ilha e forno de tijolo",
+        "5 vagas de garagem amplas",
+        "Jardim com plantas e área arborizada",
+        "Sala com parede de tijolinho e iluminação aconchegante"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes internos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar tem piso claro e janelas arqueadas, permitindo uma boa entrada de luz natural. As paredes são amarelas e têm molduras no teto, adicionando um toque decorativo. Há uma varanda com portas de vidro e ferro, oferecendo vista para o exterior e integrando o ambiente interno com o externo. A iluminação é feita com luminárias pendentes e luz de parede, criando um ambiente acolhedor."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1322,
+          "legenda": "Sala com janela arco e varanda"
+        },
+        {
+          "foto": 1326,
+          "legenda": "Sala com parede de tijolinho e chão de porcelanato"
+        },
+        {
+          "foto": 1327,
+          "legenda": "Sala com piso claro e janelas arqueadas"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem armários brancos e uma bancada de granito, com espaço para ilha e forno de tijolo, mostrando uma área gourmet. Há uma parede de tijolos, que pode ser usada para cozinhar ou armazenar utensílios. A área de serviço tem um armário branco com gavetas e nichos, e uma lavanderia com balcão e torneira, facilitando o dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1310,
+          "legenda": "Cozinha gourmet com ilha e forno de tijolo"
+        },
+        {
+          "foto": 1336,
+          "legenda": "Cozinha com armários brancos e bancada de granito"
+        },
+        {
+          "foto": 1337,
+          "legenda": "Armário branco com gavetas e nichos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos têm piso claro e paredes brancas, com armários de madeira e ventilador de teto. A suíte tem uma vista para o jardim e uma prateleira para armazenamento. Todos os quartos têm janelas com grades, garantindo segurança e boa ventilação."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1311,
+          "legenda": "Quarto com parede branca e janela"
+        },
+        {
+          "foto": 1333,
+          "legenda": "Armário de madeira com portas duplas e ventilador de teto"
+        },
+        {
+          "foto": 1334,
+          "legenda": "Quarto com piso claro e prateleiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e áreas externas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa tem um jardim com plantas e árvores, além de um quintal e uma churrasqueira. A varanda tem uma coluna metálica, plantas em vasos e um balcão de ferro, permitindo uma área para refeições externas. A fachada tem uma entrada com arco e portão branco, com uma parede de tijolos que contrasta com o restante da casa."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1318,
+          "legenda": "Jardim com plantas, pedras e árvores em frente a parede branca"
+        },
+        {
+          "foto": 1314,
+          "legenda": "Varanda com parede branca e balcão de ferro"
+        },
+        {
+          "foto": 1325,
+          "legenda": "Varanda com janela de vidro e grade"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa casa é ideal para famílias que buscam espaço, conforto e uma localização estratégica no Jardim Paraíso. Com 3 quartos, 5 vagas e uma área gourmet, ela oferece tudo o que se espera de um imóvel completo. A integração entre os ambientes e o entorno bem cuidado tornam o imóvel ainda mais atraente."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, as características do condomínio e detalhes que não estão visíveis nas fotos, como o estado do telhado e o tipo de fundação.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1312,
+      "legenda": "Fachada de casa com entrada e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1313,
+      "legenda": "Entrada de uma casa com arco e parede de tijolos",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1321,
+      "legenda": "Sala com parede de tijolinho e chandelier",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1322,
+      "legenda": "Sala com janela arco e varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1323,
+      "legenda": "Sala vazia com piso claro e lustre",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1324,
+      "legenda": "Sala com janela grande e cortina cinza",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1326,
+      "legenda": "Sala com parede de tijolinho e chão de porcelanato",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1327,
+      "legenda": "Sala com piso claro e janelas arqueadas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1328,
+      "legenda": "Sala vazia com piso claro e lustre",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1330,
+      "legenda": "Sala com piso claro e porta de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1309,
+      "legenda": "Varanda com piso de cerâmica e janela com grades",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1314,
+      "legenda": "Varanda com parede branca e balcão de ferro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1315,
+      "legenda": "Varanda com plantas e janela com persiana",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1316,
+      "legenda": "Varanda com piso de cerâmica e parede cinza",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1317,
+      "legenda": "Varanda com portas de vidro e ferro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1325,
+      "legenda": "Varanda com janela de vidro e grade",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1331,
+      "legenda": "Varanda com portão de ferro e chandelier",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1310,
+      "legenda": "Cozinha gourmet com ilha e forno de tijolo",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1336,
+      "legenda": "Cozinha com armários brancos e bancada de granito",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1337,
+      "legenda": "Armário branco com gavetas e nichos",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1338,
+      "legenda": "Lavanderia com balcão e torneira",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1311,
+      "legenda": "Quarto com parede branca e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1333,
+      "legenda": "Armário de madeira com portas duplas e ventilador de teto",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1334,
+      "legenda": "Quarto com piso claro e prateleiras",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1335,
+      "legenda": "Armário de madeira com gavetas e portas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1329,
+      "legenda": "Banheiro com vaso sanitário e pia de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1318,
+      "legenda": "Jardim com plantas, pedras e árvores em frente a parede branca",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1319,
+      "legenda": "Corredor com porta fechada e escada de madeira",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1320,
+      "legenda": "Escada de madeira com balaustrada de madeira e parede vermelha",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 1332,
+      "legenda": "Corredor com portas fechadas e piso claro",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "Tem 5 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, a cozinha tem uma ilha e forno de tijolo, indicando uma área gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa à venda no Jardim Paraíso, Campinas, com 3 quartos, 5 vagas e espaço gourmet. bem localizada perto de comércios e escolas. Saiba mais sobre essa oportunidade no site da RUAH Investimentos Imobiliários.",
+    "hashtags": [
+      "casaemcampinas",
+      "jardimparaiso",
+      "imovelcomercial",
+      "areagourmet",
+      "vendacampinas",
+      "ruahimobiliaria",
+      "campinasimoveis",
+      "3quartos"
+    ]
+  },
+  "versao": "0bfa72a3eefc",
+  "publicadoEm": "2026-10-28T03:56:36.403Z"
+}
