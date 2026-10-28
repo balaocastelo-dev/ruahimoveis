@@ -72,7 +72,7 @@
   }
 
   // ---------- gráficos (SVG feitos à mão) ----------
-  function barras(dados, { altura = 260, largBarra = 34, gap = 14, rotulo, dica, valorTopo = true, empilha = true }) {
+  function barras(dados, { altura = 260, largBarra = 34, gap = 14, rotulo, dica, valorTopo = true, empilha = true, marca = null }) {
     const max = Math.max(1, ...dados.map((d) => d.mensal + d.comissao));
     const largura = dados.length * (largBarra + gap) + gap + 8;
     const area = altura - 46;
@@ -82,11 +82,13 @@
       const x = gap + i * (largBarra + gap) + 8;
       const hM = (d.mensal / max) * area, hC = (d.comissao / max) * area;
       const base = 18 + area;
-      return `<g class="g-barra"><title>${esc(dica(d))}</title>
+      const novo = marca ? marca(d, i) : '';
+      return `<g class="g-barra" style="--i:${i}"><title>${esc(dica(d))}</title>
         <rect x="${x}" y="${base - hM}" width="${largBarra}" height="${Math.max(0, hM)}" class="g-mensal" rx="2"/>
         <rect x="${x}" y="${base - hM - hC}" width="${largBarra}" height="${Math.max(0, hC)}" class="g-comissao" rx="2"/>
         ${valorTopo ? `<text x="${x + largBarra / 2}" y="${base - hM - hC - 6}" class="g-valor" text-anchor="middle">${esc(curto(d.mensal + d.comissao))}</text>` : ''}
-        <text x="${x + largBarra / 2}" y="${altura - 8}" class="g-eixo" text-anchor="middle">${esc(rotulo(d, i))}</text></g>`;
+        <text x="${x + largBarra / 2}" y="${altura - 8}" class="g-eixo" text-anchor="middle">${esc(rotulo(d, i))}</text>
+        ${novo ? `<g class="g-nova" transform="translate(${x + largBarra / 2} ${base - hM - hC - (valorTopo ? 30 : 12)})"><circle r="11"/><text text-anchor="middle" dy="4">${esc(novo)}</text></g>` : ''}</g>`;
     }).join('');
     return `<svg class="grafico" width="${largura}" height="${altura}" viewBox="0 0 ${largura} ${altura}" role="img" aria-label="Faturamento">${linhas}${bs}</svg>`;
   }
@@ -112,7 +114,7 @@
       <nav class="sim-nav">${link('/gestor', 'Imobiliárias', 'imobs')}${link('/gestor/dashboard', 'Dashboard', 'dashboard')}${link('/gestor/projecao', 'Projeção 10 anos', 'projecao')}</nav>
       <div class="sp"></div><span class="muted pequeno">${esc(eu.nome || '')}</span></div></header>`;
   }
-  const kpi = (rot, val, sub = '') => `<div class="sim-kpi"><span class="muted pequeno">${rot}</span><b class="n">${val}</b>${sub ? `<span class="muted pequeno">${sub}</span>` : ''}</div>`;
+  const kpi = (rot, val, sub = '', num = null, fmt = 'curto') => `<div class="sim-kpi"><span class="muted pequeno">${rot}</span><b class="n"${num != null ? ` data-v="${num}" data-f="${fmt}"` : ''}>${val}</b>${sub ? `<span class="muted pequeno">${sub}</span>` : ''}</div>`;
 
   function dashboard() {
     const anos = Number(P.anos_historia);
@@ -138,22 +140,33 @@
       <p class="muted">Como estaria o caixa da Herrera HOUSE IA hoje, ${anos} anos depois da primeira imobiliária. Cada venda rende ${brl(ganhoPorVenda())} à plataforma (${brl(P.ticket)} × ${P.comissao}% × ${P.parte}%), mais ${brl(P.mensalidade)} por mês de cada imobiliária.</p>
       ${premissas()}
       <section class="sim-kpis">
-        ${kpi(`Faturamento no ano ${anos}`, curto(ultimo.total), penultimo ? `${cresc >= 0 ? '+' : ''}${cresc.toFixed(0)}% sobre o ano ${anos - 1}` : '')}
-        ${kpi('Faturamento acumulado', curto(total), `${anos} anos`)}
-        ${kpi('Receita por mês hoje', curto(ultMes.total), `${curto(ultMes.mensal)} de mensalidades`)}
-        ${kpi(`Vendas no ano ${anos}`, int(ultimo.vendas), `${int(vendas)} no total`)}
-        ${kpi(`VGV intermediado no ano ${anos}`, curto(ultimo.vgv), 'valor dos imóveis vendidos')}
-        ${kpi('Imobiliárias ativas', int(ultMes.imobs), `${brl(ultMes.total / Math.max(1, ultMes.imobs))} por mês cada`)}
+        ${kpi(`Faturamento no ano ${anos}`, curto(ultimo.total), penultimo ? `${cresc >= 0 ? '+' : ''}${cresc.toFixed(0)}% sobre o ano ${anos - 1}` : '', ultimo.total)}
+        ${kpi('Faturamento acumulado', curto(total), `${anos} anos`, total)}
+        ${kpi('Receita por mês hoje', curto(ultMes.total), `${curto(ultMes.mensal)} de mensalidades`, ultMes.total)}
+        ${kpi(`Vendas no ano ${anos}`, int(ultimo.vendas), `${int(vendas)} no total`, ultimo.vendas, 'int')}
+        ${kpi(`VGV intermediado no ano ${anos}`, curto(ultimo.vgv), 'valor dos imóveis vendidos', ultimo.vgv)}
+        ${kpi('Imobiliárias ativas', int(ultMes.imobs), `${brl(ultMes.total / Math.max(1, ultMes.imobs))} por mês cada`, ultMes.imobs, 'int')}
       </section>
       <section class="sim-bloco"><div class="sim-cab"><h2>Faturamento por ano</h2><span class="sim-leg"><i class="l-comissao"></i>parte das vendas <i class="l-mensal"></i>mensalidades</span></div>
-        <div class="sim-rolagem">${barras(A, { largBarra: 72, gap: 40, rotulo: (d) => `Ano ${d.ano}`, dica: (d) => `Ano ${d.ano}: ${brl(d.total)} (vendas ${brl(d.comissao)} + mensalidades ${brl(d.mensal)}), ${int(d.vendas)} vendas, ${d.imobs} imobiliárias` })}</div></section>
+        <div class="sim-rolagem">${barras(A, { largBarra: 72, gap: 40, marca: () => `+${int(P.novas_por_ano)}`, rotulo: (d) => `Ano ${d.ano}`, dica: (d) => `Ano ${d.ano}: ${brl(d.total)} (vendas ${brl(d.comissao)} + mensalidades ${brl(d.mensal)}), ${int(d.vendas)} vendas, ${d.imobs} imobiliárias` })}</div></section>
       <section class="sim-bloco"><div class="sim-cab"><h2>Mês a mês</h2><span class="muted pequeno">${anos * 12} meses · role para o lado</span></div>
-        <div class="sim-rolagem">${barras(meses, { altura: 220, largBarra: 12, gap: 5, valorTopo: false, rotulo: (d) => d.mes === 0 ? `Ano ${d.ano}` : '', dica: (d) => `Ano ${d.ano}, ${MESES[d.mes]}: ${brl(d.total)} · ${d.vendas.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} vendas · ${d.imobs} imobiliárias` })}</div></section>
+        <div class="sim-rolagem">${barras(meses, { altura: 220, largBarra: 12, gap: 5, valorTopo: false, marca: (d) => (d.mes === 0 ? `+${int(P.novas_por_ano)}` : ''), rotulo: (d) => d.mes === 0 ? `Ano ${d.ano}` : '', dica: (d) => `Ano ${d.ano}, ${MESES[d.mes]}: ${brl(d.total)} · ${d.vendas.toLocaleString('pt-BR', { maximumFractionDigits: 1 })} vendas · ${d.imobs} imobiliárias` })}</div></section>
       <section class="sim-bloco"><h2>Ano a ano</h2>${tabelaAnos(A)}</section>
       <section class="sim-bloco"><h2>Por imobiliária</h2><div class="sim-tab"><table><thead><tr><th>Imobiliária</th><th>Entrou</th><th>Vendas no ano ${anos}</th><th>Vendas no total</th><th>Rendeu à plataforma</th></tr></thead><tbody>
         ${imobs.map((i) => `<tr><td>${esc(i.nome)}</td><td>ano ${i.ent}</td><td class="n">${int(i.ultimoAno)}</td><td class="n">${int(i.vend)}</td><td class="n">${brl(i.tot)}</td></tr>`).join('')}
       </tbody></table></div><p class="muted pequeno">Nomes apenas para ilustrar a ordem de entrada; os números são da simulação, não do banco.</p></section>
     </main>`;
+  }
+  function linhaDoTempo(anos, hoje) {
+    const n = Math.max(1, Number(P.novas_por_ano));
+    let h = '', i = 0;
+    for (let ano = 1; ano <= anos; ano++) {
+      const quem = [];
+      for (let k = (ano - 1) * n + 1; k <= ano * n; k++) quem.push(nomeDa(k));
+      const futuro = ano > hoje;
+      h += `<div class="sim-ano ${futuro ? 'futuro' : ''}" style="--i:${i++}"><span class="muted pequeno">Ano ${ano}</span>${quem.map((q) => `<b>${esc(q)}</b>`).join('')}<span class="sim-tag">${futuro ? 'a captar' : 'no sistema'}</span><span class="muted pequeno">${int(vendasNoAno(1) * n)} venda(s) no 1º ano</span></div>`;
+    }
+    return h;
   }
   function tabelaAnos(A, desde = 1) {
     return `<div class="sim-tab"><table><thead><tr><th>Ano</th><th>Imobiliárias</th><th>Vendas</th><th>VGV</th><th>Parte das vendas</th><th>Mensalidades</th><th>Faturamento</th><th>Acumulado</th></tr></thead><tbody>
@@ -173,17 +186,20 @@
       <p class="muted">Continua o mesmo ritmo: ${int(P.novas_por_ano)} imobiliária(s) nova(s) por ano, cada uma seguindo a rampa de vendas (${esc(rampa().join(', '))}) e, depois dela, ${Number(P.crescimento_depois)}% ao ano.</p>
       ${premissas()}
       <section class="sim-kpis">
-        ${kpi(`Faturamento nos próximos ${proj} anos`, curto(soma), `${int(futuros.reduce((s, a) => s + a.vendas, 0))} vendas`)}
-        ${kpi(`Ano ${prim.ano}`, curto(prim.total), `${prim.imobs} imobiliárias`)}
-        ${kpi(`Ano ${ult.ano}`, curto(ult.total), `${imobsFim} imobiliárias`)}
+        ${kpi(`Faturamento nos próximos ${proj} anos`, curto(soma), `${int(futuros.reduce((s, a) => s + a.vendas, 0))} vendas`, soma)}
+        ${kpi(`Ano ${prim.ano}`, curto(prim.total), `${prim.imobs} imobiliárias`, prim.total)}
+        ${kpi(`Ano ${ult.ano}`, curto(ult.total), `${imobsFim} imobiliárias`, ult.total)}
+        ${kpi('Imobiliárias no fim', int(imobsFim), `+${int(imobsFim - (A[hist - 1] ? A[hist - 1].imobs : 0))} novas em ${proj} anos (${int(P.novas_por_ano)} por ano)`, imobsFim, 'int')}
         ${kpi(`Receita por mês no fim do ano ${ult.ano}`, curto(mesesF[mesesF.length - 1].total), `${curto(mesesF[mesesF.length - 1].mensal)} de mensalidades`)}
         ${kpi(`VGV intermediado no ano ${ult.ano}`, curto(ult.vgv), `${int(ult.vendas)} vendas no ano`)}
-        ${kpi('Acumulado desde o ano 1', curto(ult.acumulado), `${hist + proj} anos`)}
+        ${kpi('Acumulado desde o ano 1', curto(ult.acumulado), `${hist + proj} anos`, ult.acumulado)}
       </section>
+      <section class="sim-bloco"><div class="sim-cab"><h2>Captação: ${int(P.novas_por_ano)} imobiliária(s) nova(s) por ano</h2><span class="muted pequeno">as de hoje e as que ainda vamos captar</span></div>
+        <div class="sim-rolagem"><div class="sim-linha">${linhaDoTempo(hist + proj, hist)}</div></div></section>
       <section class="sim-bloco"><div class="sim-cab"><h2>Por ano</h2><span class="sim-leg"><i class="l-comissao"></i>parte das vendas <i class="l-mensal"></i>mensalidades</span></div>
-        <div class="sim-rolagem">${barras(futuros, { largBarra: 64, gap: 30, rotulo: (d) => `Ano ${d.ano}`, dica: (d) => `Ano ${d.ano}: ${brl(d.total)} · ${int(d.vendas)} vendas · ${d.imobs} imobiliárias` })}</div></section>
+        <div class="sim-rolagem">${barras(futuros, { largBarra: 64, gap: 30, marca: () => `+${int(P.novas_por_ano)}`, rotulo: (d) => `Ano ${d.ano}`, dica: (d) => `Ano ${d.ano}: ${brl(d.total)} · ${int(d.vendas)} vendas · ${d.imobs} imobiliárias` })}</div></section>
       <section class="sim-bloco"><div class="sim-cab"><h2>Mês a mês</h2><span class="muted pequeno">${proj * 12} meses · role para o lado</span></div>
-        <div class="sim-rolagem" id="rolagem-meses">${barras(mesesF, { altura: 280, largBarra: 16, gap: 6, valorTopo: false, rotulo: (d) => d.mes === 0 ? `Ano ${d.ano}` : (d.mes === 6 ? 'jul' : ''), dica: (d) => `Ano ${d.ano}, ${MESES[d.mes]}: ${brl(d.total)} · ${d.imobs} imobiliárias` })}</div></section>
+        <div class="sim-rolagem" id="rolagem-meses">${barras(mesesF, { altura: 280, largBarra: 16, gap: 6, valorTopo: false, marca: (d) => (d.mes === 0 ? `+${int(P.novas_por_ano)}` : ''), rotulo: (d) => d.mes === 0 ? `Ano ${d.ano}` : (d.mes === 6 ? 'jul' : ''), dica: (d) => `Ano ${d.ano}, ${MESES[d.mes]}: ${brl(d.total)} · ${d.imobs} imobiliárias` })}</div></section>
       <section class="sim-bloco"><h2>Ano a ano</h2>${tabelaAnos(A, hist + 1)}</section>
     </main>`;
   }
@@ -200,10 +216,54 @@
       P[k] = v; salvar(); const y = window.scrollY; desenha(eu); window.scrollTo(0, y);
     });
     $('#b-padrao').onclick = () => { P = { ...PADRAO }; salvar(); desenha(eu); };
+    try { anima(); } catch (e) { console.warn('animação', e); }
   }
 
-  fetch('/gestor-api/eu', { credentials: 'same-origin' }).then((r) => (r.ok ? r.json() : null)).then((eu) => {
+  // ---------- movimento ----------
+  const calmo = () => window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function anima() {
+    if (calmo()) return;
+    // números contando do zero
+    document.querySelectorAll('.sim-kpi b[data-v]').forEach((el, i) => {
+      const alvo = Number(el.dataset.v), fmt = el.dataset.f === 'int' ? int : curto;
+      const dur = 1400 + i * 120, ini = performance.now();
+      const passo = (t) => {
+        const p = Math.min(1, (t - ini) / dur), e = 1 - Math.pow(1 - p, 3);
+        el.textContent = fmt(alvo * e);
+        if (p < 1) requestAnimationFrame(passo); else el.textContent = fmt(alvo);
+      };
+      requestAnimationFrame(passo);
+    });
+    // gráficos mês a mês: passeiam do começo ao fim uma vez e voltam para o início
+    document.querySelectorAll('.sim-rolagem').forEach((r) => {
+      const max = r.scrollWidth - r.clientWidth;
+      if (max < 40 || !r.querySelector('.grafico')) return;
+      let ini = null; const dur = Math.min(9000, 1500 + max * 2.2);
+      let parou = false; const para = () => { parou = true; };
+      r.addEventListener('pointerdown', para, { once: true }); r.addEventListener('wheel', para, { once: true, passive: true });
+      setTimeout(() => {
+        const ida = (t) => {
+          if (parou) return; ini = ini ?? t;
+          const p = Math.min(1, (t - ini) / dur), e = p < .5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+          r.scrollLeft = max * e;
+          if (p < 1) requestAnimationFrame(ida); else if (PAGINA !== 'projecao') setTimeout(() => !parou && r.scrollTo({ left: 0, behavior: 'smooth' }), 1200);
+        };
+        requestAnimationFrame(ida);
+      }, 1200);
+    });
+    // a imobiliária nova "pisca" de tempos em tempos
+    let k = 0;
+    clearInterval(window.__simPulso);
+    window.__simPulso = setInterval(() => {
+      const nos = document.querySelectorAll('.g-nova');
+      if (!nos.length) return;
+      nos.forEach((n) => n.classList.remove('pulsa'));
+      const n = nos[k++ % nos.length]; void n.getBBox; n.classList.add('pulsa');
+    }, 900);
+  }
+
+  fetch('/gestor-api/eu', { credentials: 'same-origin' }).then((r) => (r.ok ? r.json() : null), () => null).then((eu) => {
     if (!eu) { location.href = '/gestor'; return; }
     desenha(eu);
-  }).catch(() => { location.href = '/gestor'; });
+  });
 })();

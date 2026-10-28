@@ -156,3 +156,20 @@ legend{font-size:12px;font-weight:600;color:var(--suave);padding:0 6px;text-tran
 .sub{font-family:var(--titulo);font-size:16px;margin:0 0 8px}
 .ultimas{list-style:none;margin:0;padding:0;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio)}
 .ultimas li{padding:9px 14px;border-bottom:1px solid var(--linha);font-size:14px} .ultimas li:last-child{border-bottom:0}
+/* movimento dos painéis de simulação */
+@keyframes sim-cresce{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes sim-surge{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sim-pulso{0%{transform:scale(1)}40%{transform:scale(1.45)}100%{transform:scale(1)}}
+.g-barra rect{transform-box:fill-box;transform-origin:50% 100%;animation:sim-cresce .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0) * 18ms)}
+.g-barra .g-valor,.g-barra .g-nova{animation:sim-surge .6s ease both;animation-delay:calc(var(--i,0) * 18ms + .6s)}
+.g-nova circle{fill:var(--ok)}.g-nova text{fill:#fff;font:700 10px var(--mono)}
+.g-nova.pulsa circle{transform-box:fill-box;transform-origin:center;animation:sim-pulso .8s ease}
+.sim-kpi{animation:sim-surge .6s ease both}.sim-kpi:nth-child(2){animation-delay:.08s}.sim-kpi:nth-child(3){animation-delay:.16s}.sim-kpi:nth-child(4){animation-delay:.24s}.sim-kpi:nth-child(5){animation-delay:.32s}.sim-kpi:nth-child(6){animation-delay:.4s}.sim-kpi:nth-child(7){animation-delay:.48s}
+.sim-bloco{animation:sim-surge .7s ease both;animation-delay:.3s}
+.sim-linha{display:flex;gap:10px;min-width:max-content;padding:4px 2px}
+.sim-ano{display:flex;flex-direction:column;gap:2px;min-width:132px;padding:12px;border:1px solid var(--linha);border-radius:10px;background:var(--fundo);animation:sim-surge .5s ease both;animation-delay:calc(var(--i,0) * 70ms + .3s)}
+.sim-ano b{font-family:var(--titulo);font-size:15px}
+.sim-ano .sim-tag{align-self:flex-start;margin-top:4px;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;background:var(--ok-claro);color:var(--ok)}
+.sim-ano.futuro{border-style:dashed;border-color:var(--acao)}
+.sim-ano.futuro .sim-tag{background:var(--acao-clara);color:var(--acao)}
+@media (prefers-reduced-motion:reduce){.g-barra rect,.g-barra .g-valor,.g-barra .g-nova,.sim-kpi,.sim-bloco,.sim-ano{animation:none}}
