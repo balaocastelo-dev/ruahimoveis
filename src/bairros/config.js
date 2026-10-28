@@ -15,27 +15,29 @@
 //     (domínio público, CC0, CC BY, CC BY-SA), com autor e licença na página.
 //     A licença é conferida no próprio Commons, não no que a página diz.
 
-const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
+const cfg = require('../config');
+// nome da imobiliária atendida, lido na hora (cada requisição pode ser de uma imobiliária diferente)
+const CLIENTE = () => cfg.CLIENTE_NOME;
 
 /** As chamadas: o texto é escrito AQUI; a página só escolhe o tema. */
-const CHAMADAS = {
+const chamadas = () => ({
   imoveis: {
     titulo: 'Quer morar aqui?',
-    texto: `Veja os imóveis que a ${CLIENTE} tem à venda neste bairro, com fotos e ficha completa.`,
+    texto: `Veja os imóveis que a ${CLIENTE()} tem à venda neste bairro, com fotos e ficha completa.`,
     rotulo: 'Ver imóveis no bairro',
   },
   contato: {
     titulo: 'Procurando imóvel nesta região?',
-    texto: `Conte o que você procura e um corretor da ${CLIENTE} responde com opções, inclusive as que ainda não estão no portal.`,
-    rotulo: `Falar com a ${CLIENTE}`,
+    texto: `Conte o que você procura e um corretor da ${CLIENTE()} responde com opções, inclusive as que ainda não estão no portal.`,
+    rotulo: `Falar com a ${CLIENTE()}`,
   },
   vender: {
     titulo: 'Tem um imóvel no bairro?',
-    texto: `A ${CLIENTE} avalia e vende imóveis nesta região. Deixe seu contato e um corretor explica como funciona.`,
+    texto: `A ${CLIENTE()} avalia e vende imóveis nesta região. Deixe seu contato e um corretor explica como funciona.`,
     rotulo: 'Quero vender',
   },
-};
-const TEMAS = new Set(Object.keys(CHAMADAS));
+});
+const TEMAS = new Set(Object.keys(chamadas()));
 
 /** Licenças aceitas para as fotos do Commons (o nome curto que o Commons informa). */
 const LICENCAS_OK = /^(?:CC0(?:\s1\.0)?|Public domain|PD(?:[- ].*)?|CC BY(?:-SA)? (?:1\.0|2\.0|2\.5|3\.0|4\.0)(?:\s[a-z]{2,3})?)$/i;
@@ -51,4 +53,5 @@ const ARQUIVO_COMMONS = /^File:[^#<>[\]|{}\n]{3,240}\.(?:jpe?g|png|webp|tiff?)$/
 /** Id de foto dentro da página: f1, f2… */
 const ID_FOTO = /^f\d{1,3}$/;
 
-module.exports = { CHAMADAS, TEMAS, licencaAceita, RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, SLUG, ARQUIVO_COMMONS, ID_FOTO };
+module.exports = { chamadas, TEMAS, licencaAceita, RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, SLUG, ARQUIVO_COMMONS, ID_FOTO };
+Object.defineProperty(module.exports, 'CHAMADAS', { get: chamadas, enumerable: true }); // da imobiliária atual, lido na hora

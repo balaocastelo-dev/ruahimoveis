@@ -9,7 +9,7 @@
 // à venda no bairro ("imovel_foto", o número da foto no sistema).
 
 const { TEMAS, SLUG, ARQUIVO_COMMONS, ID_FOTO } = require('./config');
-const { CLIENTE_NOME } = require('../config'); // nome da imobiliária, da configuração
+const cfg = require('../config'); // nome da imobiliária (cfg.CLIENTE_NOME), lido na hora
 
 const texto = (v) => typeof v === 'string' && v.trim().length > 0;
 const lista = (v) => Array.isArray(v);
@@ -58,7 +58,7 @@ function lerFoto(f, i, erros) {
     return { ...base, commons: t };
   }
   if (Number.isInteger(f.imovel_foto) && f.imovel_foto > 0 && f.commons === undefined) return { ...base, imovel_foto: f.imovel_foto };
-  erros.push(`${onde} (${f.id}): diga a origem com "commons" (arquivo do Wikimedia Commons) OU "imovel_foto" (o número da foto de um imóvel da ${CLIENTE_NOME} no bairro).`);
+  erros.push(`${onde} (${f.id}): diga a origem com "commons" (arquivo do Wikimedia Commons) OU "imovel_foto" (o número da foto de um imóvel da ${cfg.CLIENTE_NOME} no bairro).`);
   return null;
 }
 

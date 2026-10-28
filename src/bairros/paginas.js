@@ -5,14 +5,16 @@
 //   /bairros/<bairro>   o guia do bairro: texto pesquisado, fotos reais, números ao vivo,
 //                       imóveis do cliente (a imobiliária) no bairro, o que tem perto, prédios e perguntas
 
-const { CHAMADAS } = require('./config');
+const configBairros = require('./config');
 const { lerTextoRico, montarSumario, dataPorExtenso } = require('../blog/texto');
 const portal = require('../portal/paginas');
 const commons = require('./commons');
 const cfg = require('../config');
-// O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
-const CLIENTE = cfg.CLIENTE_NOME;
-const EMPRESA = cfg.EMPRESA;
+// O nome da imobiliária vem da configuração da imobiliária atendida (lido na hora, por requisição):
+// CLIENTE (curto, a marca) e EMPRESA (nome completo).
+const CLIENTE = () => cfg.CLIENTE_NOME;
+const EMPRESA = () => cfg.EMPRESA;
+const CHAMADAS = () => configBairros.chamadas();
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -38,7 +40,7 @@ async function fotosValidas(x, fotosPublicas) {
   const saida = new Map();
   await Promise.all(x.pagina.fotos.map(async (f) => {
     if (f.imovel_foto) {
-      if (fotosPublicas.has(f.imovel_foto)) saida.set(f.id, { ...f, src: portal.fotoUrl(f.imovel_foto), credito: `Foto: ${EMPRESA}`, ver: String(f.imovel_foto) });
+      if (fotosPublicas.has(f.imovel_foto)) saida.set(f.id, { ...f, src: portal.fotoUrl(f.imovel_foto), credito: `Foto: ${EMPRESA()}`, ver: String(f.imovel_foto) });
       return;
     }
     let c = null;
@@ -53,7 +55,7 @@ function figura(f, { eager = false } = {}) {
 }
 
 function chamada(tema, temImoveis) {
-  const c = CHAMADAS[tema];
+  const c = CHAMADAS()[tema];
   const href = tema === 'imoveis' ? (temImoveis ? '#imoveis' : '/imoveis') : '#contato';
   return `<aside class="p-chamada"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
 <a class="p-botao" href="${href}"${tema === 'imoveis' ? '' : ` data-motivo="${tema === 'vender' ? 'vender' : 'comprar'}"`}>${esc(c.rotulo)}</a></aside>`;
@@ -78,7 +80,7 @@ function bloco(b, ids, ctx) {
 // ------------------------------------------------------------------ partes ao vivo
 function numeros(b, v) {
   const itens = [];
-  if (v.carteira.total) itens.push([mil(v.carteira.total), v.carteira.total === 1 ? `imóvel da ${CLIENTE} à venda` : `imóveis da ${CLIENTE} à venda`]);
+  if (v.carteira.total) itens.push([mil(v.carteira.total), v.carteira.total === 1 ? `imóvel da ${CLIENTE()} à venda` : `imóveis da ${CLIENTE()} à venda`]);
   if (v.condominios.verticais) itens.push([mil(v.condominios.verticais), v.condominios.verticais === 1 ? 'prédio residencial' : 'prédios residenciais']);
   if (v.condominios.horizontais) itens.push([mil(v.condominios.horizontais), v.condominios.horizontais === 1 ? 'condomínio de casas' : 'condomínios de casas']);
   if (v.condominios.unidades >= 50) itens.push([mil(v.condominios.unidades), 'unidades nesses prédios (Censo 2022)']);
@@ -89,12 +91,12 @@ function numeros(b, v) {
   }
   if (!itens.length) return '';
   return `<section class="b-numeros" aria-labelledby="numeros-t"><h2 id="numeros-t" class="b-rot">${esc(b.nome)} em números</h2><ul>${itens.slice(0, 8).map(([n, t]) => `<li><b>${esc(n)}</b><span>${esc(t)}</span></li>`).join('')}</ul>
-<p class="b-nota-viva">Atualizado sozinho a partir da carteira da ${esc(CLIENTE)}, da base de condomínios (Receita Federal e IBGE) e de mapas abertos (Overture e OpenStreetMap), num raio de 1,5 km do centro do bairro.</p></section>`;
+<p class="b-nota-viva">Atualizado sozinho a partir da carteira da ${esc(CLIENTE())}, da base de condomínios (Receita Federal e IBGE) e de mapas abertos (Overture e OpenStreetMap), num raio de 1,5 km do centro do bairro.</p></section>`;
 }
 
 function imoveis(b, lista) {
   if (!lista.length) return '';
-  return `<section class="p-cd-sec" id="imoveis" aria-labelledby="imoveis-t"><h2 id="imoveis-t">Imóveis da ${esc(CLIENTE)} à venda no ${esc(b.nome)}</h2>
+  return `<section class="p-cd-sec" id="imoveis" aria-labelledby="imoveis-t"><h2 id="imoveis-t">Imóveis da ${esc(CLIENTE())} à venda no ${esc(b.nome)}</h2>
 <p class="p-cd-sub">${lista.every((x) => x.fotoDoPredio.dePredio) ? 'A foto de cada cartão mostra o prédio ou a casa por fora. ' : ''}Cada imóvel tem página própria com todas as fotos e a ficha; valores atualizados.</p>
 <div class="p-grade">${lista.map((x) => `<article class="p-cartao" data-codigo="${esc(x.imovel.codigo)}">
 <a class="p-cartao-img" href="/imoveis/${esc(x.pagina.slug)}"><img src="${portal.fotoUrl(x.fotoDoPredio.foto)}" alt="${esc(x.fotoDoPredio.legenda)}" width="1280" height="853" loading="lazy" decoding="async"><span class="p-cartao-n">${x.imovel.fotos.length} fotos</span></a>
@@ -117,14 +119,14 @@ function predios(b, v) {
   if (!c.total) return '';
   const publicos = process.env.CONDOMINIOS_PUBLICOS === '1';
   return `<section class="p-cd-sec" aria-labelledby="predios-t"><h2 id="predios-t">Prédios e condomínios do ${esc(b.nome)}</h2>
-<p class="p-cd-sub">${plural(c.total, 'condomínio residencial', 'condomínios residenciais')} na base da ${esc(CLIENTE)}${c.verticais ? `, ${plural(c.verticais, 'prédio', 'prédios')}` : ''}${c.horizontais ? ` e ${plural(c.horizontais, 'condomínio de casas', 'condomínios de casas')}` : ''}. Alguns dos nomes:</p>
+<p class="p-cd-sub">${plural(c.total, 'condomínio residencial', 'condomínios residenciais')} na base da ${esc(CLIENTE())}${c.verticais ? `, ${plural(c.verticais, 'prédio', 'prédios')}` : ''}${c.horizontais ? ` e ${plural(c.horizontais, 'condomínio de casas', 'condomínios de casas')}` : ''}. Alguns dos nomes:</p>
 ${c.nomes.length ? `<ul class="p-cd-chips">${c.nomes.slice(0, 30).map((x) => `<li>${publicos && x.slug ? `<a href="/condominios/${esc(x.slug)}">${esc(x.nome)}</a>` : esc(x.nome)}${x.andares ? ` <span class="b-total">${x.andares} andares</span>` : ''}</li>`).join('')}</ul>` : ''}
-<p class="p-cd-sub p-cd-nota">Fonte: cadastro de condomínios da Receita Federal, Censo 2022 (IBGE) e OpenStreetMap. Quer saber se há unidade à venda num deles? <a href="#contato" data-motivo="comprar">Pergunte à ${esc(CLIENTE)}</a>.</p></section>`;
+<p class="p-cd-sub p-cd-nota">Fonte: cadastro de condomínios da Receita Federal, Censo 2022 (IBGE) e OpenStreetMap. Quer saber se há unidade à venda num deles? <a href="#contato" data-motivo="comprar">Pergunte à ${esc(CLIENTE())}</a>.</p></section>`;
 }
 
 function formulario(b) {
   return `<section class="p-contato" id="contato" aria-labelledby="contato-t">
-<div class="p-contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE)} sobre o ${esc(b.nome)}</h2>
+<div class="p-contato-txt"><h2 id="contato-t">Fale com a ${esc(CLIENTE())} sobre o ${esc(b.nome)}</h2>
 <p>Procurando imóvel no bairro, querendo vender o seu ou com alguma dúvida sobre a região? Deixe seu contato e um corretor responde em horário comercial.</p></div>
 <form class="p-form" data-bairro-contato novalidate>
   <input type="hidden" name="bairro" value="${esc(b.slug)}">
@@ -134,8 +136,8 @@ function formulario(b) {
   <label class="p-campo"><span>WhatsApp ou telefone</span><input name="telefone" required inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(19) 99999-9999"></label>
   <label class="p-campo p-largo"><span>E-mail <i>(opcional)</i></span><input name="email" type="email" autocomplete="email" maxlength="120"></label>
   <label class="p-campo p-largo"><span>Mensagem</span><textarea name="mensagem" rows="3" maxlength="1000" placeholder="Ex.: procuro apartamento de 3 quartos perto do parque"></textarea></label>
-  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE)} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
-  <button class="p-botao p-largo" type="submit">Enviar para a ${esc(CLIENTE)}</button>
+  <label class="p-check p-largo"><input type="checkbox" name="aceite" value="1" required> Concordo que a ${esc(CLIENTE())} use estes dados só para falar comigo sobre imóveis. Posso pedir para sair a qualquer momento.</label>
+  <button class="p-botao p-largo" type="submit">Enviar para a ${esc(CLIENTE())}</button>
   <p class="p-form-msg p-largo" role="status" aria-live="polite" hidden></p>
 </form></section>`;
 }
@@ -160,8 +162,8 @@ async function paginaBairro(req, x, ctx) {
       '@context': 'https://schema.org', '@type': 'Article', headline: p.titulo, description: p.resumo, url, inLanguage: 'pt-BR',
       ...(p.publicadoEm ? { datePublished: p.publicadoEm } : {}), ...(data ? { dateModified: data } : {}),
       ...(capa ? { image: fotos.slice(0, 6).map((f) => `${base}${f.src}`) } : {}),
-      author: { '@type': 'Organization', name: EMPRESA, url: `${base}/imoveis` },
-      publisher: { '@type': 'RealEstateAgent', name: EMPRESA, url: `${base}/imoveis`, areaServed: 'Campinas, SP' },
+      author: { '@type': 'Organization', name: EMPRESA(), url: `${base}/imoveis` },
+      publisher: { '@type': 'RealEstateAgent', name: EMPRESA(), url: `${base}/imoveis`, areaServed: 'Campinas, SP' },
       about: {
         '@type': 'Place', name: `${b.nome}, Campinas`, ...(b.apelidos.length ? { alternateName: b.apelidos.slice(0, 5) } : {}),
         address: { '@type': 'PostalAddress', addressLocality: 'Campinas', addressRegion: 'SP', addressCountry: 'BR' },
@@ -204,9 +206,9 @@ ${numeros(b, v)}
 </div>
 <aside class="p-lado" aria-label="Imóveis e contato">
   <div class="p-lado-caixa">
-    <p class="p-lado-rot">Imóveis da ${esc(CLIENTE)} no bairro</p>
+    <p class="p-lado-rot">Imóveis da ${esc(CLIENTE())} no bairro</p>
     <p class="p-lado-preco">${v.carteira.total ? mil(v.carteira.total) : 'Sob consulta'}</p>
-    ${v.carteira.total && v.carteira.menor ? `<p class="p-lado-taxas">${v.carteira.menor === v.carteira.maior ? `A partir de ${esc(reais(v.carteira.menor))}` : `De ${esc(reais(v.carteira.menor))} a ${esc(reais(v.carteira.maior))}`}</p>` : `<p class="p-lado-taxas">Conte o que procura: a ${esc(CLIENTE)} busca para você.</p>`}
+    ${v.carteira.total && v.carteira.menor ? `<p class="p-lado-taxas">${v.carteira.menor === v.carteira.maior ? `A partir de ${esc(reais(v.carteira.menor))}` : `De ${esc(reais(v.carteira.menor))} a ${esc(reais(v.carteira.maior))}`}</p>` : `<p class="p-lado-taxas">Conte o que procura: a ${esc(CLIENTE())} busca para você.</p>`}
     ${lista.length ? '<a class="p-botao" href="#imoveis">Ver os imóveis</a>' : '<a class="p-botao" href="/imoveis">Ver todos os imóveis</a>'}
     <a class="p-botao sec" href="#contato" data-motivo="comprar">Procuro imóvel aqui</a>
     <a class="p-botao sec" href="#contato" data-motivo="vender">Quero vender no bairro</a>
@@ -223,11 +225,11 @@ ${vizinhos.length ? `<section class="p-cd-sec" aria-labelledby="vizinhos-t"><h2 
 <section class="b-fontes" aria-label="Fontes e créditos">
   <p><b>Fontes consultadas:</b> ${p.fontes.map((f) => `${esc(f.nome)}${f.site ? ` (${esc(f.site)})` : ''}`).join('; ')}.</p>
   <p><b>Fotos:</b> ${fotos.map((f) => `${esc(f.legenda)} — ${esc(f.credito)}`).join('; ')}. As fotos do Wikimedia Commons são usadas conforme a licença indicada, sem alteração.</p>
-  <p>Texto escrito pela equipe de conteúdo da ${esc(CLIENTE)} a partir de fontes públicas. Números da seção "em números" e a lista de imóveis são atualizados automaticamente.</p>
+  <p>Texto escrito pela equipe de conteúdo da ${esc(CLIENTE())} a partir de fontes públicas. Números da seção "em números" e a lista de imóveis são atualizados automaticamente.</p>
 </section>`;
 
   return portal.casca(req, {
-    titulo: `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE}`, descricao: p.resumo, caminho: `/bairros/${b.slug}`,
+    titulo: `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE()}`, descricao: p.resumo, caminho: `/bairros/${b.slug}`,
     imagem: capa ? capa.src : null, ld, corpo, classe: 'p-pagina-imovel b-pagina',
   });
 }
@@ -248,22 +250,22 @@ function paginaLista(req, lista, capas) {
   const ordem = [...grupos.keys()].sort((a, c) => (REGIOES.indexOf(a) + 1 || 99) - (REGIOES.indexOf(c) + 1 || 99));
   const ancora = (r) => r.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-');
   const corpo = `
-<section class="p-hero p-hero-curto"><p class="p-sobre">Guias de bairro · ${esc(CLIENTE)}</p><h1>Bairros de Campinas</h1>
-<p class="p-hero-l">Como é morar em cada bairro: história, parques, escolas, comércio, acesso, prédios e condomínios, com fotos reais e os imóveis que a ${esc(CLIENTE)} tem à venda em cada um.</p>
+<section class="p-hero p-hero-curto"><p class="p-sobre">Guias de bairro · ${esc(CLIENTE())}</p><h1>Bairros de Campinas</h1>
+<p class="p-hero-l">Como é morar em cada bairro: história, parques, escolas, comércio, acesso, prédios e condomínios, com fotos reais e os imóveis que a ${esc(CLIENTE())} tem à venda em cada um.</p>
 ${ordem.length > 1 ? `<nav class="b-regioes" aria-label="Regiões">${ordem.map((r) => `<a href="#${ancora(r)}">${esc(r)}</a>`).join('')}</nav>` : ''}</section>
 ${lista.length ? ordem.map((r) => `<section class="p-cd-sec" id="${ancora(r)}" aria-labelledby="r-${ancora(r)}"><h2 id="r-${ancora(r)}">${esc(r)}</h2><div class="b-lista">${grupos.get(r).map((x) => cartaoBairro(x, capas.get(x.bairro.slug))).join('')}</div></section>`).join('')
     : '<div class="p-vazio"><p>Os guias dos bairros chegam em breve.</p><a class="p-botao" href="/imoveis">Ver os imóveis à venda</a></div>'}`;
-  const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `Bairros de Campinas · guias da ${CLIENTE}`, numberOfItems: lista.length, itemListElement: lista.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: `${base}/bairros/${x.bairro.slug}`, name: x.pagina.titulo })) }];
+  const ld = [{ '@context': 'https://schema.org', '@type': 'ItemList', name: `Bairros de Campinas · guias da ${CLIENTE()}`, numberOfItems: lista.length, itemListElement: lista.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: `${base}/bairros/${x.bairro.slug}`, name: x.pagina.titulo })) }];
   return portal.casca(req, {
-    titulo: `Bairros de Campinas: guia para escolher onde morar · ${CLIENTE}`, caminho: '/bairros', ld, corpo, classe: 'p-vitrine b-pagina',
-    descricao: `Guias completos dos bairros de Campinas: como é morar, parques, escolas, comércio, prédios e os imóveis à venda pela ${CLIENTE} em cada um.`,
+    titulo: `Bairros de Campinas: guia para escolher onde morar · ${CLIENTE()}`, caminho: '/bairros', ld, corpo, classe: 'p-vitrine b-pagina',
+    descricao: `Guias completos dos bairros de Campinas: como é morar, parques, escolas, comércio, prédios e os imóveis à venda pela ${CLIENTE()} em cada um.`,
     imagem: lista.length && capas.get(lista[0].bairro.slug) ? capas.get(lista[0].bairro.slug).src : null,
   });
 }
 
 function paginaNaoAchada(req) {
   return portal.casca(req, {
-    titulo: `Bairro não encontrado · ${CLIENTE}`, descricao: 'Este guia de bairro ainda não existe ou mudou de endereço.', caminho: req.path, semIndice: true, classe: 'b-pagina',
+    titulo: `Bairro não encontrado · ${CLIENTE()}`, descricao: 'Este guia de bairro ainda não existe ou mudou de endereço.', caminho: req.path, semIndice: true, classe: 'b-pagina',
     corpo: '<div class="p-vazio p-vazio-g"><h1>Este bairro ainda não tem guia</h1><p>Os guias dos bairros de Campinas estão sendo escritos aos poucos.</p><a class="p-botao" href="/bairros">Ver os bairros</a></div>',
   });
 }

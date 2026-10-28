@@ -10,7 +10,8 @@
 // Os NÚMEROS (valor, áreas, quartos) nunca vêm do texto: vêm do banco, ao vivo.
 
 /** Onde está cada foto. A galeria do imóvel é filtrada por estes ambientes. */
-const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
+const cfg = require('../config');
+const CLIENTE = () => cfg.CLIENTE_NOME; // nome da imobiliária atendida, lido na hora
 
 const AMBIENTES = {
   fachada: 'Fachada',
@@ -39,15 +40,15 @@ const AMBIENTES = {
  * tema; o botão leva ao formulário da própria página (vira lead no CRM) ou ao
  * WhatsApp do corretor.
  */
-const CHAMADAS = {
+const chamadas = () => ({
   visita: {
     titulo: 'Quer conhecer pessoalmente?',
-    texto: `Escolha o melhor período e a equipe da ${CLIENTE} confirma a visita com você.`,
+    texto: `Escolha o melhor período e a equipe da ${CLIENTE()} confirma a visita com você.`,
     rotulo: 'Agendar visita',
   },
   interesse: {
     titulo: 'Gostou deste imóvel?',
-    texto: `Deixe seu contato e um corretor da ${CLIENTE} responde com as informações que você precisar.`,
+    texto: `Deixe seu contato e um corretor da ${CLIENTE()} responde com as informações que você precisar.`,
     rotulo: 'Tenho interesse',
   },
   corretor: {
@@ -55,8 +56,8 @@ const CHAMADAS = {
     texto: 'Fale com o corretor responsável. O atendimento é feito por pessoas.',
     rotulo: 'Falar com o corretor',
   },
-};
-const TEMAS = new Set(Object.keys(CHAMADAS));
+});
+const TEMAS = new Set(Object.keys(chamadas()));
 
 /** O ramo do GitHub onde ficam as páginas. O repositório é público: leitura sem senha. */
 const RAMO_DE_CONTEUDO = 'claude/portal-conteudo';
@@ -68,4 +69,5 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const CODIGO = /^[A-Z]{1,4}-?[A-Z]{0,4}\d{2,6}$/;
 const slugTerminaNoCodigo = (slug, codigo) => SLUG.test(slug) && slug.endsWith(`-${String(codigo).toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
 
-module.exports = { AMBIENTES, CHAMADAS, TEMAS, RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, SLUG, CODIGO, slugTerminaNoCodigo };
+module.exports = { AMBIENTES, chamadas, TEMAS, RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, SLUG, CODIGO, slugTerminaNoCodigo };
+Object.defineProperty(module.exports, 'CHAMADAS', { get: chamadas, enumerable: true }); // da imobiliária atual, lido na hora
