@@ -37,7 +37,7 @@ Os limites de valor mudam em "Regras do escritório".
 
 ## WhatsApp
 
-- Cada agente conecta um número pelo QR code (mesa > WhatsApp > Conectar). Sessão em `data\whatsapp-agente-<agente>` no PC.
+- Cada agente conecta um número pelo QR code (mesa > WhatsApp > Conectar). Sessão em `data\whatsapp-agente-<agente>` no PC (outra imobiliária do mesmo PC: `data\<slug>\whatsapp-agente-<agente>`, num processo das linhas só dela).
 - Um agente pode usar o número de outro (mesa > Ajustes). O TH-IA-GO usa sempre a linha do robô do Fisguei; ninguém mais usa essa linha.
 - Quem escreve num número: dono → Augusto; corretor → Marta; cliente com agente na mesma linha → esse agente; senão, o dono da linha.
 - PARAR bloqueia o cliente. Lead novo do portal/blog vai para o agente do setor, que manda a primeira mensagem (se "puxar conversa" estiver ligado).

@@ -15,7 +15,7 @@ Página `#/fisguei` (também `/fisguei`) do Herrera HOUSE IA. Traz para dentro d
 ## Robô TH-IA-GO CORRETOR
 
 - `src/fisguei/robo.js`, biblioteca Baileys (WhatsApp por aparelho conectado). Roda **só no PC** (na Vercel fica desligado); `FISGUEI_ROBO=0` no `.env` desliga.
-- Sessão em `data\whatsapp-thiago`. O QR code aparece na tela Fisguei (gravado no banco, então dá para ler de qualquer lugar).
+- Sessão em `data\whatsapp-thiago` (outra imobiliária do mesmo PC, via `IMOBILIARIAS_PC`: `data\<slug>\whatsapp-thiago`). O QR code aparece na tela Fisguei (gravado no banco, então dá para ler de qualquer lugar).
 - Fila (`src/fisguei/base.js`): endereços mais antigos primeiro; dentro do endereço, quem o IPTU aponta como proprietário primeiro; só celular (fixo fica guardado); confere se o número tem WhatsApp antes de mandar.
 - Segurança do número: intervalo mínimo de 60 s (padrão 90 s, com variação), limite por dia (padrão 80, teto 200), horário 9h–19h, seg a sáb, domingo nunca. Um número não é abordado de novo em 30 dias, mesmo que apareça em outro endereço.
 - Respostas: **SIM** → dono confirmado, endereço vira oportunidade no Radar (status em contato) e o resto da fila do endereço para; **NÃO** → pessoa sai da fila; **não tenho interesse / já vendi** → endereço sai da abordagem; **PARAR** → número na lista não contatar (`fisguei_bloqueios`). Qualquer outra resposta vai para o corretor ("Precisa do corretor"). Depois da primeira resposta o robô só reage a PARAR; o corretor conversa pela própria tela (a mensagem sai pela linha do robô).
