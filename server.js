@@ -9,6 +9,7 @@ if (!cfg.SECRET_KEY || cfg.SECRET_KEY.length < 32) {
   process.exit(1);
 }
 
+const tenant = require('./src/tenant');
 const { mesmaOrigem, exigeLogin } = require('./src/auth');
 const publico = require('./src/routes/publico');
 
@@ -16,6 +17,11 @@ const app = express();
 app.disable('x-powered-by');
 // IP real do visitante: atrás da Vercel (link online) ou de túnel local (cloudflared).
 app.set('trust proxy', process.env.VERCEL ? 1 : 'loopback');
+
+// Plataforma multi-imobiliária (fase 1): descobre a imobiliária pelo endereço (IMOBILIARIA_HOSTS="host=slug,…";
+// sem mapa, tudo cai em IMOBILIARIA_PADRAO, hoje 'ruah') e roda o resto da requisição dentro dela (AsyncLocalStorage).
+// TODO(fase1 · etapa plataforma): ler os domínios de base.dominios em vez da variável de ambiente.
+app.use(tenant.middleware);
 
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -118,7 +124,9 @@ app.use((err, req, res, next) => {
 
 if (require.main === module) {
   const host = process.env.HOST || '0.0.0.0';
-  app.listen(cfg.PORT, host, () => {
+  // processos do PC (radar, portais, robô, escritório, vínculo de condomínios, mercado) rodam na imobiliária padrão
+  // TODO(fase1 · etapa plataforma): um ciclo por imobiliária ativa, quando houver mais de uma no mesmo PC.
+  app.listen(cfg.PORT, host, () => tenant.comImobiliaria(tenant.padrao(), () => {
     const nets = require('os').networkInterfaces();
     const ips = Object.values(nets).flat().filter((n) => n && n.family === 'IPv4' && !n.internal).map((n) => n.address);
     console.log('\n  ==============================================');
@@ -148,7 +156,7 @@ if (require.main === module) {
     // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
     const vincula = () => { try { const r = require('./src/condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
     setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);
-  });
+  }));
 }
 
 module.exports = app;

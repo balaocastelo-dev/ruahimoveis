@@ -172,7 +172,8 @@ r.get('/:id/arquivos', async (req, res) => {
   res.json({ subpastas: drive.SUBPASTAS, arquivos: [...locais, ...soNoDrive], drive: drive.status(), aviso: avisoDrive });
 });
 
-r.post('/:id/arquivos', upload.array('arquivos', 30), async (req, res) => {
+// tenant.preserva: o multer chama next() fora da cadeia assíncrona e perderia a imobiliária da requisição
+r.post('/:id/arquivos', require('../tenant').preserva(upload.array('arquivos', 30)), async (req, res) => {
   const im = imovelPermitido(req.usuario, req.params.id);
   const categoria = req.body.categoria;
   if (!drive.SUBPASTAS.includes(categoria)) falha(400, 'Escolha a pasta de destino.');
