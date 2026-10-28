@@ -5,7 +5,7 @@ const cfg = require('../config');
 const { CATEGORIAS, CHAMADAS, nomeDaCategoria, SITE_CLIENTE } = require('./categorias');
 const { lerTextoRico, montarSumario, dataPorExtenso, minutosDeLeitura, cortar } = require('./texto');
 
-const NOME = process.env.BLOG_NOME || 'Sopro';
+const NOME = cfg.BLOG_NOME;
 // O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
 const CLIENTE = cfg.CLIENTE_NOME;
 const EMPRESA = cfg.EMPRESA;

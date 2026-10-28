@@ -85,7 +85,7 @@ ${outros.length ? `<div class="p-grade r-grade">${outros.map((y) => cartao(y)).j
 function leituras(artigos) {
   if (!artigos.length) return '';
   return `<section class="r-sopro" aria-labelledby="sopro-t" data-revelar>
-<p class="r-chapeu">Do blog ${esc(process.env.BLOG_NOME || 'Sopro')}</p>
+<p class="r-chapeu">Do ${esc(cfg.BLOG_NOME)}</p>
 <h2 id="sopro-t">Leituras para a casa</h2>
 <div class="r-sopro-grade">${artigos.map((a) => `<article class="r-art">
 <a href="/blog/${esc(a.slug)}" class="r-art-img">${a.capa && a.capa.src ? `<img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt || '')}" width="1600" height="900" loading="lazy" decoding="async">` : ''}</a>
@@ -94,7 +94,7 @@ function leituras(artigos) {
 <p>${esc(cortar(a.resumo || '', 140))}</p>
 <p class="r-art-meta">${esc(dataPorExtenso(a.publicadoEm))}${a.minutos ? `, ${a.minutos} min de leitura` : ''}</p>
 </article>`).join('')}</div>
-<a class="r-ler" href="/blog">Todos os textos do ${esc(process.env.BLOG_NOME || 'Sopro')} <span aria-hidden="true">→</span></a>
+<a class="r-ler" href="/blog">Todos os textos do ${esc(cfg.BLOG_NOME)} <span aria-hidden="true">→</span></a>
 </section>`;
 }
 
@@ -143,7 +143,7 @@ ${capa ? `<section class="r-capa" aria-label="Capa da edição">
   <a class="r-capa-img" href="/imoveis/${capa.pagina.slug}"><img src="${fotoUrl(capa.pagina.capa.foto)}" alt="${esc(capa.pagina.capa.alt)}" width="1280" height="853" fetchpriority="high" decoding="async"></a>
   <div class="r-capa-t">
     <p class="r-chapeu">Nesta edição</p>
-    <ol class="r-indice">${caps.map((k, i) => `<li><a href="#${k.c.id}"><span>${String(i + 1).padStart(2, '0')}</span>${esc(k.c.titulo)}</a></li>`).join('')}${blog.length ? '<li><a href="#sopro-t"><span>+</span>Leituras do Sopro</a></li>' : ''}<li><a href="#r-sig-t"><span>✦</span>${esc(CLIENTE)} Signature</a></li></ol>
+    <ol class="r-indice">${caps.map((k, i) => `<li><a href="#${k.c.id}"><span>${String(i + 1).padStart(2, '0')}</span>${esc(k.c.titulo)}</a></li>`).join('')}${blog.length ? '<li><a href="#sopro-t"><span>+</span>Leituras do ${esc(cfg.BLOG_NOME)}</a></li>' : ''}<li><a href="#r-sig-t"><span>✦</span>${esc(CLIENTE)} Signature</a></li></ol>
     <p class="r-capa-cred">Na capa: <a href="/imoveis/${capa.pagina.slug}">${esc(capa.pagina.titulo)}</a></p>
   </div>
 </section>` : ''}

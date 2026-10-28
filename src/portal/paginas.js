@@ -133,14 +133,14 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
     <a href="/imoveis/favoritos"${req.path === '/imoveis/favoritos' ? ' aria-current="page"' : ''}>Favoritos <span class="p-fav-n" data-fav-n hidden></span></a>
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
-    <a href="/blog">Blog ${esc(process.env.BLOG_NOME || 'Sopro')}</a>
+    <a href="/blog">${esc(cfg.BLOG_NOME)}</a>
     ${zap ? `<a class="p-nav-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
   </nav>
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
   <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
-  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">Blog ${esc(process.env.BLOG_NOME || 'Sopro')}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
+  <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>

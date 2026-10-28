@@ -150,7 +150,7 @@ const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
+  ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
   ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
@@ -276,7 +276,7 @@ ACT['portal-legenda'] = async (el) => {
 async function telaBlog() {
   const d = await api('GET', '/api/blog');
   const situ = (a) => (a.noAr ? '<span class="pill ok">no ar</span>' : a.esperandoFoto ? '<span class="pill warn">esperando a foto</span>' : '<span class="pill info">agendado</span>');
-  $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Blog Sopro</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>${esc(MARCA.blog || MARCA.cliente + ' Blog')}</h1>
   <p class="lead">Três textos por dia, escritos e conferidos sozinhos: artigo às 6h, notícia às 12h e dica às 18h. Cada um só aparece no blog com a foto de capa, feita de madrugada na placa de vídeo. Use "Copiar legenda" para postar no Instagram e no Facebook.</p>
   <div class="row" style="margin-bottom:16px"><a class="btn pri" href="/blog" target="_blank" rel="noopener">Abrir o blog</a><span class="muted small">${d.fotosNaFila ? `${d.fotosNaFila} foto(s) na fila da placa de vídeo` : 'Nenhuma foto na fila'}</span></div>
   ${d.artigos.length ? `<div class="card"><div class="list">${d.artigos.map((a) => `<div class="item" style="flex-wrap:wrap">

@@ -92,7 +92,7 @@ async function vercel(caminho, metodo = 'GET', corpo) {
 function variaveis(im, dbUrl, segredo) {
   const v = {
     DATABASE_URL: dbUrl, SECRET_KEY: segredo, CLIENTE_NOME: im.nome, EMPRESA: im.empresa || im.nome,
-    BLOG_NOME: `Blog ${im.nome}`, BLOG_LEGENDA: `Casa, bairro e jeito de morar, pela ${im.empresa || im.nome}`,
+    BLOG_NOME: `${im.nome} Blog`, BLOG_LEGENDA: `Casa, bairro e jeito de morar, pela ${im.empresa || im.nome}`,
     BLOG_DIARIO_URL: `${VAZIO}/blog`, PORTAL_CONTEUDO_URL: `${VAZIO}/portal`, BAIRROS_CONTEUDO_URL: `${VAZIO}/bairros`,
     IA_MODO: 'desligado', RADAR_PORTAIS: '0', FISGUEI_ROBO: '0', ESCRITORIO: '0', DRIVE_ROOT_NAME: `${im.nome} Imóveis`,
   };

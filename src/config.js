@@ -37,6 +37,8 @@ module.exports = {
   TEMA: env('TEMA').replace(/[^a-z0-9-]/gi, ''),
   get LOGO_URL() { return env('LOGO_URL') || (this.TEMA ? `/temas/${this.TEMA}/logo.svg` : ''); },
   get ICONE_URL() { return env('ICONE_URL') || (this.TEMA ? `/temas/${this.TEMA}/icone.svg` : ''); },
+  // Nome do blog: o da imobiliária + "Blog" (ex.: RUAH Blog); BLOG_NOME troca.
+  get BLOG_NOME() { return env('BLOG_NOME') || `${CLIENTE_NOME} Blog`; },
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
 
