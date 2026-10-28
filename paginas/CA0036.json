@@ -1,0 +1,322 @@
+{
+  "codigo": "CA0036",
+  "slug": "casa-condominio-quinta-da-baroneza-braganca-paulista-sp-ca0036",
+  "titulo": "Casa em condomínio com 6 quartos e 12 vagas no Condomínio Quinta da Baroneza",
+  "resumo": "Casa em condomínio no Condomínio Quinta da Baroneza, com 6 quartos, 5 suítes, 12 vagas e área total de 5000 m², com ambientes amplos e integrados.",
+  "capa": {
+    "foto": 84,
+    "alt": "Fachada moderna com escadaria e jardim bem manejado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa em condomínio no Condomínio Quinta da Baroneza é um verdadeiro imóvel de alto padrão, com área total de 5000 m² e 2000 m² de área útil. Localizada em um terreno amplo e bem cuidado, a residência tem uma fachada moderna com escadaria e jardim. O imóvel destaca-se por sua arquitetura elegante e pela integração entre os espaços internos e a natureza ao redor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa conta com 6 quartos, 5 suítes, 12 vagas de garagem e uma infraestrutura completa, incluindo piscina, academia, adega e área de lazer. O imóvel foi projetado para oferecer conforto, privacidade e elegância, com ambientes amplos e bem distribuídos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "6 quartos com suítes de alto padrão",
+        "12 vagas de garagem para conforto e praticidade",
+        "Área social integrada com sala de estar, lareira e biblioteca",
+        "Piscina aquecida e área de lazer completa",
+        "Infraestrutura com academia, adega e espaço gourmet",
+        "Terreno amplo com jardim e vista panorâmica"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e ambientes integrados"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é um dos pontos mais chamativos do imóvel, com salas amplas e integradas. A sala de estar tem teto alto, janelas grandes e persianas que permitem uma ampla entrada de luz natural. O ambiente é decorado com tapetes e móveis que combinam elegância e conforto. A sala também conta com uma lareira e uma biblioteca, criando um espaço ideal para momentos de relaxamento e leitura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de jantar é outro destaque, com mesa preta e cadeiras de couro, além de uma luminária moderna que adiciona um toque de sofisticação. A sala está integrada à varanda, permitindo uma vista amplo para o jardim e o ambiente externo."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 87,
+          "legenda": "Sala de estar com vista para a natureza"
+        },
+        {
+          "foto": 95,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 100,
+          "legenda": "Sala de jantar com mesa de vidro e cadeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Suítes e áreas de descanso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As suítes são espaçosos e bem distribuídos, com camas king size, janelas grandes e vistas para o jardim. Cada quarto tem uma decoração aconchegante, com tapetes coloridos, mesas de cabeceira e iluminação embutida. A suíte master é especialmente destacada por sua amplitude e pela vista panorâmica para o exterior."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também conta com uma suíte infantil posicionada estratégicamente ao lado da suíte da babá, facilitando o dia a dia da família. Todos os quartos possuem armários embutidos e acabamentos de alta qualidade, garantindo conforto e privacidade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 86,
+          "legenda": "Suite ampla com vista para varanda e jardim"
+        },
+        {
+          "foto": 90,
+          "legenda": "Suite luxuosa com cama king size e vista para jardim"
+        },
+        {
+          "foto": 91,
+          "legenda": "Suite luxuosa com vista para jardim e tapetes coloridos"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e infraestrutura"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel conta com uma infraestrutura completa, ideal para quem busca conforto e diversão. Há uma piscina aquecida integrada ao paisagismo, espaço gourmet com churrasqueira, academia privativa, sala de jogos e uma adega com inspiração italiana. O imóvel também tem uma sauna, solarium e área de serviço completa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece uma série de lazeres, como academia, quadra de tênis, campo de golfe e área verde. A casa também tem uma infraestrutura para caseiro, com dois dormitórios, banheiro e copa, garantindo total suporte à operação da propriedade."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 103,
+          "legenda": "Sala de jogos com mesa de ping-pong"
+        },
+        {
+          "foto": 104,
+          "legenda": "Vista para piscina com iluminação azul"
+        },
+        {
+          "foto": 108,
+          "legenda": "Varanda com sofá, mesa redonda e estrutura de bambu"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam um ambiente de alto padrão, com conforto, privacidade e elegância. A casa é adequado para quem valoriza uma vida de luxo, com áreas de lazer completas e uma infraestrutura que atende a todas as necessidades."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, detalhes do condomínio e se há áreas que não aparecem nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 84,
+      "legenda": "Fachada moderna com escadaria e jardim bem manejado",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 102,
+      "legenda": "Casa de madeira com varanda e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 105,
+      "legenda": "Fachada moderna com varanda e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 110,
+      "legenda": "Fachada moderna com entrada e jardim",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 104,
+      "legenda": "Vista para piscina com iluminação azul",
+      "ambiente": "vista"
+    },
+    {
+      "foto": 87,
+      "legenda": "Sala de estar com vista para a natureza",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 88,
+      "legenda": "Sala de estar com perspectiva ampla e moderna",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 89,
+      "legenda": "Sala de estar com estantes, lareira e escada",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 93,
+      "legenda": "Sala de estar com sofá branco e televisão",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 95,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 96,
+      "legenda": "Sala de jantar com mesa preta e cadeiras marrom",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 99,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 100,
+      "legenda": "Sala de jantar com mesa de vidro e cadeiras",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 101,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 112,
+      "legenda": "Sala com teto de madeira e parede de tijolos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 108,
+      "legenda": "Varanda com sofá, mesa redonda e estrutura de bambu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 109,
+      "legenda": "Varanda com deck de bambu e vista para o lago",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 98,
+      "legenda": "Área de serviço com máquina de lavar e secar",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 85,
+      "legenda": "Dobrados em quarto com duas camas e tapete persa",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 86,
+      "legenda": "Suite ampla com vista para varanda e jardim",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 90,
+      "legenda": "Suite luxuosa com cama king size e vista para jardim",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 91,
+      "legenda": "Suite luxuosa com vista para jardim e tapetes coloridos",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 92,
+      "legenda": "Suite com cama de casal e vista para jardim",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 94,
+      "legenda": "Banheiro com bancada de mármore e espelho grande",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 106,
+      "legenda": "Banheiro moderno com bancada de madeira e espelho grande",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 113,
+      "legenda": "Banheiro moderno com bancada de mármore e iluminação embutida",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 97,
+      "legenda": "Jardim com grama, arbustos e palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 111,
+      "legenda": "Escadaria de pedra em jardim com árvores e céu azul",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 103,
+      "legenda": "Sala de jogos com mesa de ping-pong",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 107,
+      "legenda": "Sala de jogos com mesa de ping-pong e mesa redonda",
+      "ambiente": "lazer"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel tem 12 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, o imóvel possui área gourmet completa."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Condomínio Quinta da Baroneza com 6 quartos, 5 suítes, 12 vagas e área total de 5000 m². Ambientes amplos, integração com a natureza e infraestrutura completa. Um imóvel de alto padrão ideal para famílias que buscam conforto e elegância.",
+    "hashtags": [
+      "casacondominio",
+      "quintadabaronessa",
+      "braganca",
+      "altopadrao",
+      "6quartos",
+      "5suites",
+      "12vagas",
+      "imovel"
+    ]
+  },
+  "versao": "457f0410f9e1",
+  "publicadoEm": "2026-10-28T04:45:23.043Z"
+}

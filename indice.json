@@ -2,6 +2,42 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CA0036",
+      "slug": "casa-condominio-quinta-da-baroneza-braganca-paulista-sp-ca0036",
+      "titulo": "Casa em condomínio com 6 quartos e 12 vagas no Condomínio Quinta da Baroneza",
+      "resumo": "Casa em condomínio no Condomínio Quinta da Baroneza, com 6 quartos, 5 suítes, 12 vagas e área total de 5000 m², com ambientes amplos e integrados.",
+      "capa": {
+        "foto": 84,
+        "alt": "Fachada moderna com escadaria e jardim bem manejado"
+      },
+      "versao": "457f0410f9e1",
+      "publicadoEm": "2026-10-28T04:45:23.043Z"
+    },
+    {
+      "codigo": "AR0006",
+      "slug": "terreno-vila-santa-isabel-campinas-sp-ar0006",
+      "titulo": "Terreno de 35.000 m² em Vila Santa Isabel, Campinas",
+      "resumo": "Terreno de 35.000 m² em Vila Santa Isabel, Campinas. Localização estratégica, topografia plana e zoneamento flexível para diversos usos.",
+      "capa": {
+        "foto": 258,
+        "alt": "Terreno com vegetação e estrutura residencial ao fundo"
+      },
+      "versao": "77aae02fa685",
+      "publicadoEm": "2026-10-28T04:45:23.042Z"
+    },
+    {
+      "codigo": "CA0012",
+      "slug": "casa-4-suites-piscina-area-gourmet-jardim-chapadaocampinas-sp-ca0012",
+      "titulo": "Casa de 4 suítes com piscina e área gourmet no Jardim Chapadão, Campinas",
+      "resumo": "Casa de alto padrão no Jardim Chapadão, com 4 suítes, piscina, varanda gourmet e área de lazer. Ideal para famílias que buscam conforto e espaços amplos.",
+      "capa": {
+        "foto": 966,
+        "alt": "Casa com garagem fechada e portão metálico"
+      },
+      "versao": "dd0adcfe85a9",
+      "publicadoEm": "2026-10-28T04:45:23.041Z"
+    },
+    {
       "codigo": "AP0023",
       "slug": "apartamento-cambui-campinas-3-suites-varanda-ap0023",
       "titulo": "Apartamento de 3 suítes com varanda e vista no Cambuí, Campinas",
@@ -1394,5 +1430,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:40:00.857Z"
+  "atualizadoEm": "2026-10-28T04:45:23.043Z"
 }

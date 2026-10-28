@@ -1,0 +1,315 @@
+{
+  "codigo": "CA0012",
+  "slug": "casa-4-suites-piscina-area-gourmet-jardim-chapadaocampinas-sp-ca0012",
+  "titulo": "Casa de 4 suítes com piscina e área gourmet no Jardim Chapadão, Campinas",
+  "resumo": "Casa de alto padrão no Jardim Chapadão, com 4 suítes, piscina, varanda gourmet e área de lazer. Ideal para famílias que buscam conforto e espaços amplos.",
+  "capa": {
+    "foto": 966,
+    "alt": "Casa com garagem fechada e portão metálico"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa de alto padrão no Jardim Chapadão, com 4 suítes, piscina e varanda gourmet. O imóvel oferece espaços amplos e bem distribuídos, com área de lazer integrada à área social. A fachada é clara e bem conservada, com garagem fechada e portão metálico. O imóvel é ideal para quem busca conforto, privacidade e qualidade de vida em um bairro tranquilo de Campinas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "4 suítes, incluindo suíte master com varanda e hidromassagem",
+        "Área social integrada com sala para três ambientes e varanda gourmet",
+        "Piscina com prainha e sistema de aquecimento",
+        "Edícula com quarto e banheiro",
+        "Sótãos para ampliação de uso",
+        "Cozinha completa com armários Formaplas"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda gourmet"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é ampla e bem integrada, com sala para três ambientes e varanda gourmet. As fotos mostram uma varanda com vista para telhados e paisagem verde, além de piscina com prainha e tela de proteção. A varanda possui piso claro, bancada escura e armários modernos, criando um ambiente funcional para receber convidados. A integração entre os espaços é um dos pontos fortes da casa, com portas de vidro que permitem a entrada de luz natural."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 967,
+          "legenda": "Varanda com piscina e tela de proteção"
+        },
+        {
+          "foto": 968,
+          "legenda": "Varanda com vista para telhados e paisagem"
+        },
+        {
+          "foto": 974,
+          "legenda": "Varanda com piscina e vista para o céu"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Suítes e áreas privativas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As suítes da casa são espaçosas e bem distribuídas, com suíte master que conta com closet, banheira de hidromassagem e varanda privativa. As fotos destacam a suíte com armário de correr, gaveteiro branco e piso claro. Além disso, há outras suítes com armários suspenso e janelas com persianas. A casa também possui um escritório, lavabo e lavanderia com banheiro de apoio, ideal para quem precisa de áreas funcionais bem separadas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 970,
+          "legenda": "Suite com armário e gaveteiro"
+        },
+        {
+          "foto": 980,
+          "legenda": "Quarto com mesa de jogos e armário suspenso"
+        },
+        {
+          "foto": 987,
+          "legenda": "Quarto com armários e porta de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha, áreas de serviço e lazer"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha é completa, com bancada escura, armários brancos e janela com persiana. A área de serviço conta com armários e banheiro de apoio. Para o lazer, a casa possui uma piscina com prainha, iluminação e sistema de aquecimento, cercada por uma varanda com vista para o céu. As fotos mostram a piscina com revestimento verde e azul, além de uma área de lazer com plantas e pedras. Há também um sótão e uma edícula com quarto e banheiro, aumentando as possibilidades de uso do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 976,
+          "legenda": "Cozinha com bancada de granito e porta de vidro"
+        },
+        {
+          "foto": 990,
+          "legenda": "Cozinha moderna com bancada escura e armários brancos"
+        },
+        {
+          "foto": 986,
+          "legenda": "Piscina com algas e casa ao fundo"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Espaços e dimensões"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem área útil de 428 m² e área total de 459 m², com distribuição de ambientes que proporcionam conforto e praticidade. As fotos mostram a estrutura da casa, com ambientes amplos e bem iluminados, além de áreas externas com piscina e varanda gourmet. O imóvel é ideal para quem busca um espaço de vida moderno e bem planejado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta casa é ideal para famílias que buscam conforto, privacidade e espaços amplos. Com 4 suítes, piscina, varanda gourmet e áreas de lazer integradas, o imóvel oferece tudo o que se espera de uma residência de alto padrão. A localização no Jardim Chapadão garante um ambiente tranquilo, com áreas verdes e acesso fácil a serviços da região."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se há restrições no condomínio e quais são os pontos que não foram mostrados nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 966,
+      "legenda": "Casa com garagem fechada e portão metálico",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 971,
+      "legenda": "Fachada de casa com janela e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 972,
+      "legenda": "Sala de estar com árvore de Natal",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 973,
+      "legenda": "Sala vazia com porta aberta e varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 983,
+      "legenda": "Sala com tela de projeção e porta aberta",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 967,
+      "legenda": "Varanda com piscina e tela de proteção",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 968,
+      "legenda": "Varanda com vista para telhados e paisagem",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 974,
+      "legenda": "Varanda com piscina e vista para o céu",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 975,
+      "legenda": "Varanda com piso de ladrilho e portão de ferro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 992,
+      "legenda": "Varanda com grade de proteção e vista para o interior do apartamento",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 993,
+      "legenda": "Varanda com vista para casas vizinhas e céu azul",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 995,
+      "legenda": "Varanda com plantas e pedras",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 976,
+      "legenda": "Cozinha com bancada de granito e porta de vidro",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 990,
+      "legenda": "Cozinha moderna com bancada escura e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 980,
+      "legenda": "Quarto com mesa de jogos e armário suspenso",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 987,
+      "legenda": "Quarto com armários e porta de vidro",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 988,
+      "legenda": "Quarto com armário e janela",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 994,
+      "legenda": "Quarto com armário branco e janela com persiana",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 970,
+      "legenda": "Suite com armário e gaveteiro",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 977,
+      "legenda": "Banheiro com box de vidro e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 979,
+      "legenda": "Banheiro com box de vidro e vaso sanitário",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 985,
+      "legenda": "Banheiro com box de vidro, vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 991,
+      "legenda": "Banheiro com box de vidro, vaso sanitário e pia",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 969,
+      "legenda": "Piscina cercada por varanda com vista para casa vizinha",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 986,
+      "legenda": "Piscina com algas e casa ao fundo",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 989,
+      "legenda": "Piscina com revestimento verde e azul",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 978,
+      "legenda": "Corredor com portas fechadas e perspectiva para sala",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 981,
+      "legenda": "Corredor com escada e árvore de Natal",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 982,
+      "legenda": "Corredor com portas e janela",
+      "ambiente": "outro"
+    },
+    {
+      "foto": 984,
+      "legenda": "Corredor com árvore de Natal e vista para a piscina",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel conta com 4 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem piscina?",
+      "resposta": "Sim, a casa possui uma piscina com prainha e sistema de aquecimento."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário de contato disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa de 4 suítes com piscina e área gourmet no Jardim Chapadão, Campinas. Ideal para quem busca conforto e espaços amplos. Conheça mais e marque sua visita!",
+    "hashtags": [
+      "casaaltopadrao",
+      "campinasimoveis",
+      "jardimchapadaocampinas",
+      "piscinacasa",
+      "suitescampinas",
+      "imoveisrural",
+      "campinas",
+      "suitemaster"
+    ]
+  },
+  "versao": "dd0adcfe85a9",
+  "publicadoEm": "2026-10-28T04:45:23.041Z"
+}
