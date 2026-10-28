@@ -258,11 +258,11 @@ async function telaPortal() {
   $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Portal de imóveis</h1>
   <p class="lead">O portal público mostra os imóveis com status <b>publicado</b> e foto. Cada um ganha uma página única, escrita a partir das fotos e da ficha por uma tarefa automática; o imóvel só aparece depois que a página passa na conferência. Valor, áreas e quartos vêm sempre da ficha, ao vivo: se a ficha mudar e o texto passar a discordar, a página sai do ar e é reescrita. Quem clica em "Tenho interesse" ou "Agendar visita" entra no CRM com origem <b>Portal ${esc(MARCA.cliente)}</b>.</p>
   <div class="row" style="margin-bottom:16px;flex-wrap:wrap"><a class="btn pri" href="/imoveis" target="_blank" rel="noopener">Abrir o portal</a>
-  <span class="pill ok">${n('no-ar') + n('desatualizada')} no ar</span><span class="pill warn">${n('sem-pagina')} esperando página</span>${n('reprovada') + n('sem-arquivo') ? `<span class="pill bad">${n('reprovada') + n('sem-arquivo')} fora do ar</span>` : ''}</div>
-  ${l.length ? `<div class="card"><div class="list">${l.map((x) => { const [c, t] = NOME[x.estado] || ['info', x.estado]; const no = x.estado === 'no-ar' || x.estado === 'desatualizada'; return `<div class="item" style="flex-wrap:wrap">
-    <div style="flex:1;min-width:240px"><div class="t"><span class="mono">${esc(x.codigo)}</span> · ${no ? `<a href="/imoveis/${esc(x.slug)}" target="_blank" rel="noopener">${esc(x.titulo)}</a>` : esc(x.titulo || x.tipo)}</div>
+  <span class="pill ok">${n('no-ar') + n('desatualizada') + l.filter((x) => x.automatica).length} no ar</span><span class="pill warn">${n('sem-pagina')} esperando página</span>${n('reprovada') + n('sem-arquivo') ? `<span class="pill bad">${n('reprovada') + n('sem-arquivo')} fora do ar</span>` : ''}</div>
+  ${l.length ? `<div class="card"><div class="list">${l.map((x) => { const [c, t] = x.automatica ? ['info', 'no ar · página automática (a escrita vem depois)'] : NOME[x.estado] || ['info', x.estado]; const no = x.estado === 'no-ar' || x.estado === 'desatualizada' || !!x.automatica; const slugLink = x.automatica ? x.slugAutomatica : x.slug; return `<div class="item" style="flex-wrap:wrap">
+    <div style="flex:1;min-width:240px"><div class="t"><span class="mono">${esc(x.codigo)}</span> · ${no ? `<a href="/imoveis/${esc(slugLink)}" target="_blank" rel="noopener">${esc(x.titulo)}</a>` : esc(x.titulo || x.tipo)}</div>
     <div class="muted small">${esc(x.tipo)} · ${esc([x.bairro, x.cidade].filter(Boolean).join(', '))} · ${x.fotos} fotos${x.erros ? ` · <span title="${esc(x.erros.join(' | '))}">${esc(x.erros[0])}</span>` : ''}</div></div>
-    <span class="pill ${c}">${t}</span>${no ? `<button class="btn sm" data-act="portal-legenda" data-codigo="${esc(x.codigo)}">Copiar legenda</button>` : ''}</div>`; }).join('')}</div></div>`
+    <span class="pill ${c}">${t}</span>${no && !x.automatica ? `<button class="btn sm" data-act="portal-legenda" data-codigo="${esc(x.codigo)}">Copiar legenda</button>` : ''}</div>`; }).join('')}</div></div>`
     : '<div class="card"><div class="empty">Nenhum imóvel com status publicado e foto.</div></div>'}`;
 }
 ACT['portal-legenda'] = async (el) => {
@@ -415,7 +415,7 @@ document.addEventListener('change', (e) => {
   imDesenha();
 });
 async function cartPortal() {
-  try { const l = await api('GET', '/api/portal'); CART_PORTAL = new Set(l.filter((x) => x.estado === 'no-ar' || x.estado === 'desatualizada').map((x) => x.codigo)); } catch { CART_PORTAL = new Set(); }
+  try { const l = await api('GET', '/api/portal'); CART_PORTAL = new Set(l.filter((x) => ['no-ar', 'desatualizada'].includes(x.estado) || x.automatica).map((x) => x.codigo)); } catch { CART_PORTAL = new Set(); }
   if ($('#tb-im')) imDesenha();
 }
 ACT['ver-foto'] = (el) => {

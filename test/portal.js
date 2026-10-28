@@ -110,7 +110,14 @@ const ramo = http.createServer((req, res) => {
 
     // ---- sem página, não aparece
     const salvo = pagina; pagina = null; fonte.limparCache();
-    assert.ok(!(await get('/imoveis')).t.includes(modelo.titulo.slice(0, 30))); console.log('ok · sem página aprovada, o imóvel não aparece');
+    assert.ok(!(await get('/imoveis')).t.includes(modelo.titulo.slice(0, 30)));
+    { // publicado sem página escrita: entra com a página automática (ficha + fotos próprias), sem endereço
+      const sa = (await fonte.situacao()).find((x) => x.codigo === 'CA9001');
+      assert.ok(sa.automatica && sa.estado === 'sem-pagina', JSON.stringify(sa));
+      const pa = await get('/imoveis/' + sa.slugAutomatica); assert.equal(pa.s, 200);
+      assert.ok(!/Rua Secreta|Secreta, 77/.test(pa.t), 'endereço vazou'); assert.ok(/foto/.test(pa.t));
+      console.log('ok · sem página escrita, o imóvel publicado entra com a página automática (sem endereço)');
+    }
     pagina = { ...salvo, versao: d.versao }; fonte.limparCache();
 
     // ---- formulário → lead no CRM

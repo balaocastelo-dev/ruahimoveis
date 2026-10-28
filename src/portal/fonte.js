@@ -97,6 +97,18 @@ async function calcular() {
     s.estado = pg.versao && pg.versao !== im.versao ? 'desatualizada' : 'no-ar';
     noAr.push({ imovel: im, pagina: pg });
   });
+  // publicado sem página escrita aprovada: entra na hora com a página automática (só ficha e fotos próprias)
+  const { paginaAutomatica } = require('./automatica');
+  const comPagina = new Set(noAr.map((x) => x.imovel.codigo));
+  for (const im of imoveis) {
+    if (comPagina.has(im.codigo)) continue;
+    const pg = paginaAutomatica(im);
+    if (!pg.slug || slugs.has(pg.slug)) continue;
+    slugs.add(pg.slug);
+    const s = situacao.get(im.codigo);
+    s.automatica = true; s.slugAutomatica = pg.slug; s.titulo = s.titulo || pg.titulo; // estado continua (a rotina escreve a página)
+    noAr.push({ imovel: im, pagina: pg });
+  }
   noAr.sort((a, b) => Date.parse(b.pagina.publicadoEm || 0) - Date.parse(a.pagina.publicadoEm || 0) || b.imovel.id - a.imovel.id);
   return { noAr, situacao, imoveis };
 }
