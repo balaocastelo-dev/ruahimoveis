@@ -101,6 +101,8 @@ const msgWa = (id, texto) => ({ type: 'notify', messages: [{ key: { remoteJid: '
     // um serviço que falha não impede os outros nem a outra imobiliária
     const r2 = pc.arranca({ slugs: ['ruah', 'outra'], imobiliaria: { quebra: () => { throw new Error('boom'); }, bom: () => {} }, base: {} });
     assert.equal(r2.falhas.length, 2); assert.equal(r2.iniciados.length, 2);
+    // 'outra' não tem cadastro em base.imobiliarias: o arranque avisa (nome sairia do .env da padrão); a RUAH não
+    assert.equal(r2.avisos.length, 1); assert.match(r2.avisos[0], /"outra" sem cadastro/);
   }
   ok('arranque: serviços da imobiliária uma vez por slug no contexto dele (após await/timer também); rotina comum uma vez só');
 
@@ -235,8 +237,17 @@ const msgWa = (id, texto) => ({ type: 'notify', messages: [{ key: { remoteJid: '
     pc.arranca({ imobiliaria: { portais: pc.SERVICOS_IMOBILIARIA.portais }, base: {} });
     assert.deepEqual([...portais._teste.EST.todos.keys()].sort(), ['outra', 'ruah']);
     portais._teste.para();
+    // imobiliária com cadastro na plataforma (base.imobiliarias): bairros e nome vêm do cadastro, não do .env da RUAH
+    const reg = require('../src/plataforma/registro');
+    reg.criar({ slug: 'terceira', nome_curto: 'Terceira Imóveis', radar_bairros: 'Barão Geraldo' });
+    D.criaImobiliaria('terceira');
+    assert.deepEqual(em('terceira', () => portais.bairros()).map((b) => b.nome), ['Barão Geraldo']);
+    assert.equal(em('terceira', () => cfg.CLIENTE_NOME), 'Terceira Imóveis');
+    assert.equal(em('terceira', () => pc.cfgDa('RADAR_EMAIL')), '');                   // credencial nunca herdada
+    assert.equal(em('ruah', () => require('../src/services/alertas').configurado()), true);
+    assert.equal(em('terceira', () => require('../src/services/alertas').configurado()), false);
   }
-  ok('monitor dos portais: bairros, estado e timer por imobiliária');
+  ok('monitor dos portais: bairros, estado e timer por imobiliária; cadastro da plataforma vale para as novas');
 
   // ---------------------------------------------------------------- scripts: --imobiliaria
   {

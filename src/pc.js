@@ -45,15 +45,19 @@ function pastaDe(slug, ...partes) {
 const pastaDados = (...partes) => pastaDe(atualOuPadrao().slug, ...partes);
 
 // ---- configuração dos serviços do PC por imobiliária ----
-// A imobiliária da raiz (RUAH) lê como sempre (cfg.X, que a frente de autenticação vai tornar getter por contexto).
-// As outras leem X_<SLUG> do ambiente (ex.: RADAR_EMAIL_OUTRA) e, sem isso, o valor padrão dado aqui, nunca o da RUAH:
-// assim uma imobiliária nova nunca lê o Gmail nem vigia os bairros de outra por engano.
-// TODO(fase1 · etapa plataforma): ler de base.chaves_integracao / config da imobiliária.
+// A imobiliária da raiz (RUAH) lê como sempre: cfg.X (getter por contexto quando X já é por imobiliária em config.js).
+// As outras: X_<SLUG> do ambiente (ex.: RADAR_EMAIL_OUTRA); sem isso, se X já é por imobiliária em config.js (ex.:
+// RADAR_BAIRROS, que vem do cadastro em base.imobiliarias), o valor do cadastro; senão o padrão dado aqui. Nunca o .env
+// da RUAH: uma imobiliária nova nunca lê o Gmail nem vigia os bairros de outra por engano.
+// TODO(fase1 · etapa plataforma): credenciais (RADAR_EMAIL/SENHA) em base.chaves_integracao.
+const porImobiliaria = (chave) => { const d = Object.getOwnPropertyDescriptor(cfg, chave); return !!(d && d.get); };
 function cfgDa(chave, padraoOutras = '') {
   const c = atualOuPadrao();
   if (ehRaiz(c.slug)) return cfg[chave];
   const v = process.env[`${chave}_${c.slug.toUpperCase()}`];
-  return v === undefined ? padraoOutras : String(v).trim();
+  if (v !== undefined) return String(v).trim();
+  if (porImobiliaria(chave) && tenant.atual()) { const x = cfg[chave]; if (x !== undefined && x !== null && String(x).trim() !== '') return String(x).trim(); }
+  return padraoOutras;
 }
 
 // ---- contexto preso a callbacks ----
@@ -127,13 +131,18 @@ const SERVICOS_BASE = {
 
 // Sobe tudo. Devolve { slugs, iniciados: [{ slug, servico }], falhas: [...] } (usado pelos testes).
 function arranca({ slugs = slugsPc(), imobiliaria = SERVICOS_IMOBILIARIA, base = SERVICOS_BASE } = {}) {
-  const out = { slugs, iniciados: [], falhas: [] };
+  const out = { slugs, iniciados: [], falhas: [], avisos: [] };
   const roda = (slug, nome, fn) => {
     try { fn(slug); out.iniciados.push({ slug, servico: nome }); }
     catch (e) { out.falhas.push({ slug, servico: nome, erro: e.message }); console.error(`[PC] ${nome} (${slug}) não subiu:`, e.message); }
   };
   if (slugs.length > 1 || !ehRaiz(slugs[0])) log(`imobiliárias neste PC: ${slugs.join(', ')}`);
-  for (const slug of slugs) tenant.comImobiliaria(slug, () => { for (const [nome, fn] of Object.entries(imobiliaria)) roda(slug, nome, fn); });
+  for (const slug of slugs) tenant.comImobiliaria(slug, () => {
+    // sem cadastro em base.imobiliarias, config.js devolve o .env (que é da imobiliária padrão): nome errado nas mensagens
+    if (tenant.multi() && slug !== tenant.padrao().slug && !tenant.imobiliaria()) out.avisos.push(`imobiliária "${slug}" sem cadastro na plataforma: nome e textos sairiam com os dados do .env.`);
+    for (const [nome, fn] of Object.entries(imobiliaria)) roda(slug, nome, fn);
+  });
+  for (const a of out.avisos) console.error('[PC] atenção:', a);
   const padrao = tenant.padrao().slug;
   tenant.comImobiliaria(padrao, () => { for (const [nome, fn] of Object.entries(base)) roda(padrao, nome, (s) => fn(s, slugs)); });
   return out;
