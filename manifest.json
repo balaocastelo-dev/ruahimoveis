@@ -676,5 +676,735 @@
     "ambiente": "cozinha"
    }
   ]
+ },
+ "7943": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/7943-1.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/7943-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/7943-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/7943-4.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/7943-5.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "10159": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/10159-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/10159-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/10159-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/10159-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/10159-5.jpg",
+    "ambiente": "varanda"
+   }
+  ]
+ },
+ "11058": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/11058-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/11058-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/11058-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/11058-4.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "16489": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/16489-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/16489-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/16489-3.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/16489-4.jpg",
+    "ambiente": "lazer"
+   }
+  ]
+ },
+ "16674": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/16674-1.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/16674-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/16674-3.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/16674-4.jpg",
+    "ambiente": "lavanderia"
+   },
+   {
+    "arquivo": "lumen/16674-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "16986": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/16986-1.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/16986-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/16986-3.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/16986-4.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/16986-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "17372": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/17372-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/17372-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/17372-3.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "lumen/17372-4.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/17372-5.jpg",
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "19402": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/19402-1.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/19402-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/19402-3.jpg",
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "lumen/19402-4.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/19402-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "22946": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/22946-1.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/22946-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/22946-3.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/22946-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/22946-5.jpg",
+    "ambiente": "varanda"
+   }
+  ]
+ },
+ "23247": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/23247-1.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/23247-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/23247-3.jpg",
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "lumen/23247-4.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/23247-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "25433": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/25433-1.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/25433-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/25433-3.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/25433-4.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/25433-5.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "28082": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/28082-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/28082-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/28082-3.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/28082-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/28082-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "31775": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/31775-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/31775-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/31775-3.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/31775-4.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/31775-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "31804": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/31804-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/31804-2.jpg",
+    "ambiente": "lavanderia"
+   },
+   {
+    "arquivo": "lumen/31804-3.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/31804-4.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "34106": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/34106-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/34106-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/34106-3.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/34106-4.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/34106-5.jpg",
+    "ambiente": "vista"
+   }
+  ]
+ },
+ "34726": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/34726-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/34726-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/34726-3.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/34726-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/34726-5.jpg",
+    "ambiente": "lazer"
+   }
+  ]
+ },
+ "35128": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/35128-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/35128-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/35128-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/35128-4.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/35128-5.jpg",
+    "ambiente": "escritorio"
+   }
+  ]
+ },
+ "36443": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/36443-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/36443-2.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/36443-3.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/36443-4.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/36443-5.jpg",
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "80938": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/80938-1.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/80938-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/80938-3.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/80938-4.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83527": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/83527-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/83527-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/83527-3.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/83527-4.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/83527-5.jpg",
+    "ambiente": "lavanderia"
+   }
+  ]
+ },
+ "83982": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/83982-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/83982-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/83982-4.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/83982-5.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/83982-2.jpg",
+    "ambiente": "varanda"
+   }
+  ]
+ },
+ "85382": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/85382-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/85382-2.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/85382-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/85382-4.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "86081": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/86081-1.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/86081-2.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/86081-3.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/86081-4.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/86081-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "86091": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/86091-1.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/86091-2.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/86091-3.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/86091-4.jpg",
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/86091-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "86513": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/86513-1.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/86513-2.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/86513-3.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/86513-4.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/86513-5.jpg",
+    "ambiente": "jardim"
+   }
+  ]
+ },
+ "87655": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/87655-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/87655-2.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/87655-3.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/87655-4.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/87655-5.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "88350": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/88350-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "lumen/88350-2.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/88350-3.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/88350-4.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "lumen/88350-5.jpg",
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "90099": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/90099-1.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/90099-2.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/90099-3.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/90099-4.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/90099-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "90220": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/90220-1.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/90220-2.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/90220-3.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "lumen/90220-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "lumen/90220-5.jpg",
+    "ambiente": "vista"
+   }
+  ]
+ },
+ "90451": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/90451-1.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/90451-2.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/90451-3.jpg",
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "lumen/90451-4.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "lumen/90451-5.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
  }
 }
