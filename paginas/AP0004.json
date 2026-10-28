@@ -1,0 +1,249 @@
+{
+  "codigo": "AP0004",
+  "slug": "apartamento-3-suites-chacara-da-barra-campinas-sp-ap0004",
+  "titulo": "Apartamento de 3 suítes com 127 m² de área útil na Chácara da Barra, Campinas",
+  "resumo": "Apartamento de 3 suítes com 127 m² de área útil, localizado na Chácara da Barra, em Campinas. Ambientes amplos, iluminação natural e 2 vagas de garagem.",
+  "capa": {
+    "foto": 1086,
+    "alt": "Fachada moderna com plantas ornamentais e logotipo RUAH"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Este apartamento de 3 suítes está localizado na Chácara da Barra, uma das regiões mais valorizadas de Campinas. Com 127 m² de área útil e 153 m² de área total, o imóvel oferece espaços amplos e bem distribuídos, ideal para quem busca conforto e praticidade no dia a dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os ambientes são integrados e bem iluminados, proporcionando um ambiente agradável para receber visitas. O imóvel conta com 2 vagas de garagem cobertas e está localizado em um condomínio fechado, próximo a comercios, serviços e conveniências."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes com privacidade e comodidade",
+        "Ambientes amplos e bem iluminados",
+        "2 vagas de garagem cobertas",
+        "Bem localizada na Chácara da Barra",
+        "Condomínio fechado com área de lazer"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar e jantar estão integradas, com mesas redondas e cadeiras de madeira, proporcionando um ambiente acolhedor e funcional. As janelas com persianas e luminárias suspensas garantem a entrada de luz natural e um clima agradável."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala infantil colorida, com quadro negro, mesa de jogos e estantes coloridas, é um espaço ideal para crianças, enquanto a sala de estar com sofá cinza e mesa redonda oferece um ambiente elegante para receber visitas."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1090,
+          "legenda": "Sala de jantar com mesas redondas e cadeiras de madeira"
+        },
+        {
+          "foto": 1096,
+          "legenda": "Sala infantil colorida com quadro negro e mesa de jogos"
+        },
+        {
+          "foto": 1097,
+          "legenda": "Sala de estar com mesa redonda e sofá cinza"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de serviço conta com prateleiras coloridas e caixas organizadas, facilitando o dia a dia. A cozinha, embora não esteja presente nas fotos, é parte da planta do imóvel e está integrada à área de serviço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área de lazer inclui uma piscina com espreguiçadeiras e guarda-sóis, além de uma galeria de fitness com equipamentos modernos. Há também uma área de lazer para cães com obstáculos e gramado, ideal para pets."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1092,
+          "legenda": "Área de entrega com prateleiras coloridas e caixas"
+        },
+        {
+          "foto": 1088,
+          "legenda": "Piscina com espreguiçadeiras e guarda-sóis"
+        },
+        {
+          "foto": 1100,
+          "legenda": "Galeria de fitness moderna com equipamentos de alta qualidade"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio oferece diversas áreas de lazer, como piscina, playground, área de fitness e galeria de ginástica. As fotos mostram uma piscina com espreguiçadeiras, uma área de lazer para cães e uma galeria de fitness com equipamentos modernos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio está localizado em uma área arborizada, com fachadas modernas e plantas ornamentais. As fotos ilustram a entrada do condomínio com o logotipo RUAH e a fachada do edifício com varandas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, privacidade e qualidade de vida. Com 3 suítes, 2 vagas de garagem e bem localizada, é uma excelente opção para quem deseja viver em uma das regiões mais valorizadas de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e quais áreas não estão presentes nas fotos, como a cozinha e o banheiro.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1086,
+      "legenda": "Entrada de condomínio com plantas e logotipo 'RUAH'",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1087,
+      "legenda": "Apartamentos com varandas em edifício moderno",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1090,
+      "legenda": "Sala de jantar com mesas redondas e cadeiras de madeira",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1096,
+      "legenda": "Sala infantil colorida com quadro negro e mesa de jogos",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1097,
+      "legenda": "Sala de estar com mesa redonda e sofá cinza",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1102,
+      "legenda": "Sala de estar com sofás rosa e mesa lateral",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1093,
+      "legenda": "Minimercado com geladeira, prateleiras e balcão",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1092,
+      "legenda": "Área de entrega com prateleiras coloridas e caixas",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1099,
+      "legenda": "Banheiro com bancada de madeira e logotipo 'RUAAH' em azul",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1088,
+      "legenda": "Piscina com espreguiçadeiras e guarda-sóis",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1089,
+      "legenda": "Piscina com espreguiadeiras e plantas",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1095,
+      "legenda": "Playground com brinquedos coloridos e estrutura de madeira",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1098,
+      "legenda": "Área de lazer para cães com obstáculos e gramado",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1100,
+      "legenda": "Galeria de fitness moderna com equipamentos de alta qualidade",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1101,
+      "legenda": "Área de lazer com equipamentos de ginástica ao ar livre",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1103,
+      "legenda": "Galeria de ginástica com equipamentos e mural de ginasta",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1094,
+      "legenda": "Garagem com carro branco e sinalização 'Car Wash' e 'RUAH Investimentos Imobiliários'",
+      "ambiente": "garagem"
+    },
+    {
+      "foto": 1104,
+      "legenda": "Planta baixa de apartamento com suítes, varanda gourmet e cozinha",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 1091,
+      "legenda": "Escritório moderno com estúdio de gravação e mesa de reuniões",
+      "ambiente": "outro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel possui 2 vagas de garagem cobertas."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "A área gourmet não está presente nas fotos, mas a planta do imóvel indica que há uma varanda gourmet."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita preenchendo o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Apartamento de 3 suítes com 127 m² de área útil na Chácara da Barra, Campinas. Ambientes amplos, iluminação natural e 2 vagas de garagem. Condomínio fechado com áreas de lazer. Agende sua visita e conheça este imóvel.",
+    "hashtags": [
+      "apartamentochacaradabarra",
+      "campinasimovel",
+      "3suites",
+      "vagasgaragem",
+      "condominiofechado",
+      "imovelruah",
+      "campinassp",
+      "imovelrural"
+    ]
+  },
+  "versao": "f3a19adde8c9",
+  "publicadoEm": "2026-10-28T04:02:52.944Z"
+}

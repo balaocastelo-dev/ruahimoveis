@@ -1,0 +1,134 @@
+{
+  "codigo": "CA0008",
+  "slug": "casa-jardim-chapadao-campinas-sp-ca0008",
+  "titulo": "Casa com 3 quartos, 5 vagas e área externa ampla no Jardim Chapadão, Campinas",
+  "resumo": "Casa com 3 quartos, 5 vagas e área externa no Jardim Chapadão, Campinas. Localização estratégica e ambientes amplos.",
+  "capa": {
+    "foto": 1084,
+    "alt": "Fachada de casa com portão metálico e muro branco"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Localizada em uma das regiões mais valorizadas do Castelo, esta casa oferece uma opção para moradia ou uso comercial. Com localização estratégica, perto da EsPCEx e do Supermercado Pague Menos, o imóvel tem boa visibilidade e acesso fácil."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa conta com 3 quartos, além de área de serviço, varanda e dependência completa. A área externa é ampla, comportando até 6 veículos, e inclui uma garagem subterrânea, garantindo praticidade e conforto."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Localização estratégica, perto da EsPCEx e do Pague Menos",
+        "Garagem subterrânea e área externa com capacidade para 6 veículos",
+        "Ambientes amplos e bem distribuídos",
+        "Sala de estar e escritório integrados"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e garagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A entrada da casa tem uma fachada com muro branco e portão metálico. A garagem subterrânea tem portão cinza e piso laranja, com teto bege e parede branca, garantindo um ambiente limpo e funcional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área externa é ampla e bem organizada. Há uma área pavimentada, jardim com plantas e luminária branca, o que contribui para o conforto e beleza do espaço."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1083,
+          "legenda": "Garagem com portão cinza e parede branca"
+        },
+        {
+          "foto": 1085,
+          "legenda": "Fachada de prédio com jardim e luminária"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Distribuição interna"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A casa tem 3 quartos, além de banheiro social, cozinha, área de serviço e varanda. A distribuição dos ambientes é funcional, com salas e escritório integrados para maior conforto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha e a área de serviço são bem organizadas, com armários e espaço adequado para armazenamento. A varanda oferece área para aproveitar o ambiente externo."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para quem busca uma localização estratégica, seja para moradia ou uso comercial. Com fácil acesso a pontos importantes da região, o imóvel é uma excelente opção para investidores ou profissionais que desejam um endereço de destaque."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, detalhes do condomínio (se houver) e sobre o que não aparece nas fotos, como a condição do telhado e o estado do quintal.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1084,
+      "legenda": "Fachada de casa com portão e muro",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1085,
+      "legenda": "Fachada de prédio com jardim e luminária",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1083,
+      "legenda": "Garagem com portão cinza e parede branca",
+      "ambiente": "garagem"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem?",
+      "resposta": "O imóvel tem 5 vagas de garagem, incluindo uma garagem subterrânea."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Não há menção a área gourmet no anúncio ou nas fotos."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Para marcar a visita, utilize o formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa com 3 quartos, 5 vagas e área externa ampla no Jardim Chapadão, Campinas. Localização estratégica e ambientes amplos. Ideal para moradia ou uso comercial.",
+    "hashtags": [
+      "casaemcampinas",
+      "jardimchapadao",
+      "imoveisemcampinas",
+      "investimentocampinas",
+      "vendacasa",
+      "campinasimoveis",
+      "areaexterna",
+      "vagasdegaragem"
+    ]
+  },
+  "versao": "50cfed3cf9bf",
+  "publicadoEm": "2026-10-28T04:02:52.945Z"
+}

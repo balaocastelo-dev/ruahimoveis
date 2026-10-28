@@ -2,6 +2,66 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "BA0004",
+      "slug": "galpao-comercial-vila-nova-campinas-sp-ba0004",
+      "titulo": "Galpão comercial de 360m² com acesso estratégico na Vila Nova, Campinas",
+      "resumo": "Galpão comercial de 360m², localizado em via movimentada na Vila Nova, Campinas. Ideal para negócios que buscam visibilidade, acesso fácil e zoneamento ZC2.",
+      "capa": {
+        "foto": 1043,
+        "alt": "Fachada de imóvel com parede de tijolinho e varanda"
+      },
+      "versao": "c063c0afbf56",
+      "publicadoEm": "2026-10-28T04:02:52.946Z"
+    },
+    {
+      "codigo": "CA0009",
+      "slug": "casa-condominio-3-suites-rooftop-parque-taquaral-campinas-ca0009",
+      "titulo": "Casa em condomínio de 3 suítes com rooftop privativo no Parque Taquaral",
+      "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e bem localizada em Campinas.",
+      "capa": {
+        "foto": 1027,
+        "alt": "Fachada moderna de residência com entrada iluminada"
+      },
+      "versao": "a1ad34a1abce",
+      "publicadoEm": "2026-10-28T04:02:52.946Z"
+    },
+    {
+      "codigo": "CA0008",
+      "slug": "casa-jardim-chapadao-campinas-sp-ca0008",
+      "titulo": "Casa com 3 quartos, 5 vagas e área externa ampla no Jardim Chapadão, Campinas",
+      "resumo": "Casa com 3 quartos, 5 vagas e área externa no Jardim Chapadão, Campinas. Localização estratégica e ambientes amplos.",
+      "capa": {
+        "foto": 1084,
+        "alt": "Fachada de casa com portão metálico e muro branco"
+      },
+      "versao": "50cfed3cf9bf",
+      "publicadoEm": "2026-10-28T04:02:52.945Z"
+    },
+    {
+      "codigo": "AP0004",
+      "slug": "apartamento-3-suites-chacara-da-barra-campinas-sp-ap0004",
+      "titulo": "Apartamento de 3 suítes com 127 m² de área útil na Chácara da Barra, Campinas",
+      "resumo": "Apartamento de 3 suítes com 127 m² de área útil, localizado na Chácara da Barra, em Campinas. Ambientes amplos, iluminação natural e 2 vagas de garagem.",
+      "capa": {
+        "foto": 1086,
+        "alt": "Fachada moderna com plantas ornamentais e logotipo RUAH"
+      },
+      "versao": "f3a19adde8c9",
+      "publicadoEm": "2026-10-28T04:02:52.944Z"
+    },
+    {
+      "codigo": "CA0035",
+      "slug": "casa-swiss-park-campinas-3-suites-varanda-ca0035",
+      "titulo": "Casa em condomínio de 3 suítes com varanda e rooftop no Swiss Park",
+      "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada.",
+      "capa": {
+        "foto": 1121,
+        "alt": "Fachada moderna de casa com varanda e carro estacionado"
+      },
+      "versao": "d317c5467ea2",
+      "publicadoEm": "2026-10-28T04:02:52.943Z"
+    },
+    {
       "codigo": "CA0050",
       "slug": "casa-parque-taquaral-campinas-sp-ca0050",
       "titulo": "Casa reformada no Parque Taquaral com 4 vagas de garagem e área de serviço",
@@ -686,5 +746,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-28T04:00:05.519Z"
+  "atualizadoEm": "2026-10-28T04:02:52.947Z"
 }

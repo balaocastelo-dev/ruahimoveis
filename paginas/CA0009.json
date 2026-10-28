@@ -1,0 +1,264 @@
+{
+  "codigo": "CA0009",
+  "slug": "casa-condominio-3-suites-rooftop-parque-taquaral-campinas-ca0009",
+  "titulo": "Casa em condomínio de 3 suítes com rooftop privativo no Parque Taquaral",
+  "resumo": "Casa em condomínio no Parque Taquaral, com 3 suítes, 232 m² de área útil, rooftop privativo e bem localizada em Campinas.",
+  "capa": {
+    "foto": 1027,
+    "alt": "Fachada moderna de residência com entrada iluminada"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Você quer morar em um condomínio exclusivo, com apenas 8 unidades, no Parque Taquaral, uma das regiões mais valorizadas de Campinas? Este imóvel oferece privacidade, sofisticação e acabamentos de alta qualidade. Com 232 m² de área útil, a casa dispõe de 3 suítes, sendo duas com espaço para closet, e uma área social integrada que valoriza a convivência familiar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram uma fachada moderna com garagem coberta, uma sala integrada à varanda com jardim, uma cozinha com ilha de mármore e um rooftop privativo com churrasqueira, pia gourmet e área para spa. O imóvel ainda conta com infraestrutura para climatização e carregamento de veículos elétricos, tudo pensado para oferecer conforto e modernidade."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Condomínio exclusivo com apenas 8 unidades",
+        "Rooftop privativo com churrasqueira e pia gourmet",
+        "3 suítes com espaço para closet",
+        "Cozinha integrada com ilha de mármore",
+        "Área social integrada e funcional",
+        "Infraestrutura para climatização e carregamento de veículos elétricos"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A área social da casa é integrada, ampliando a sensação de espaço e funcionalidade. As fotos mostram uma sala de estar com sofá bege, tela preta com arte e varanda com jardim. A varanda conta com bancada de cozinha, estantes de vidro e porta de vidro, criando um ambiente agradável para momentos de relaxamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A varanda também possui uma vista para o jardim com grama, combinando natureza e conforto. A iluminação e os detalhes da decoração reforçam o estilo moderno e sofisticado do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1028,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 1031,
+          "legenda": "Varanda com bancada de cozinha e jardim"
+        },
+        {
+          "foto": 1039,
+          "legenda": "Varanda com sofá, cadeiras e mesa de centro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e áreas de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha moderna conta com ilha de mármore, armários brancos e teto com iluminação embutida. As fotos mostram uma mesa de jantar com cadeiras, tela de TV na parede e ventilador de teto, indicando um ambiente funcional e acolhedor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O piso claro e os armários de cor clara contribuem para a sensação de amplitude. A cozinha está integrada à área de serviço, facilitando o dia a dia."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1029,
+          "legenda": "Cozinha moderna com ilha de mármore e armários brancos"
+        },
+        {
+          "foto": 1030,
+          "legenda": "Cozinha moderna com ilha e mesa de jantar"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e suítes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os quartos são espaçosos e bem iluminados, com cama confortável, televisão na parede e plantas. As suítes contam com armários de canto, cama com cabeceira de madeira e piso claro, garantindo conforto e estilo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A foto da suite mostra um ambiente com estante com livros e plantas, enquanto outra mostra um quarto com escrivaninha e janela com cortina, ideal para quem busca praticidade e conforto."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1032,
+          "legenda": "Suite moderna com cama confortável e TV na parede"
+        },
+        {
+          "foto": 1034,
+          "legenda": "Quarto moderno com cama, televisão e plantas"
+        },
+        {
+          "foto": 1036,
+          "legenda": "Suite com armário e vista para cama"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Banheiros e acabamentos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos, com bancada de mármore, prateleiras de madeira e armários brancos. A foto mostra um banheiro com piso de mármore e janela com vista, reforçando o padrão de acabamento do imóvel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os detalhes como maçanetas pretas e iluminação apropriada contribuem para um ambiente elegante e funcional."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1033,
+          "legenda": "Banheiro moderno com bancada de mármore e prateleiras de madeira"
+        },
+        {
+          "foto": 1035,
+          "legenda": "Banheiro moderno com piso de mármore e armário branco"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para quem busca privacidade, sofisticação e um ambiente moderno em uma bem localizada. Com apenas 8 unidades no condomínio, é uma oportunidade exclusiva para quem valoriza o conforto e a qualidade de vida."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, se há infraestrutura para carregamento de veículos elétricos e quais são os detalhes do condomínio, como áreas de lazer e segurança.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1026,
+      "legenda": "Fachada moderna de casas com garagem coberta e plantas",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1027,
+      "legenda": "Fachada moderna de residência com entrada iluminada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1028,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1031,
+      "legenda": "Varanda com bancada de cozinha e jardim",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1039,
+      "legenda": "Varanda com sofá, cadeiras e mesa de centro",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1038,
+      "legenda": "Gourmet com churrasqueira, mesa de jantar e televisão",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1029,
+      "legenda": "Cozinha moderna com ilha de mármore e armários brancos",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1030,
+      "legenda": "Cozinha moderna com ilha e mesa de jantar",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1034,
+      "legenda": "Quarto moderno com cama, televisão e plantas",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1037,
+      "legenda": "Quarto moderno com cama de casal e escrivaninha",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1032,
+      "legenda": "Suite moderna com cama confortável e TV na parede",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1036,
+      "legenda": "Suite com armário e vista para cama",
+      "ambiente": "suite"
+    },
+    {
+      "foto": 1033,
+      "legenda": "Banheiro moderno com bancada de mármore e prateleiras de madeira",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1035,
+      "legenda": "Banheiro moderno com piso de mármore e armário branco",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas de garagem tem o imóvel?",
+      "resposta": "O imóvel tem 2 vagas de garagem."
+    },
+    {
+      "pergunta": "O imóvel tem área gourmet?",
+      "resposta": "Sim, o imóvel tem um rooftop privativo com churrasqueira, pia gourmet e área para spa."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário disponível nesta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Parque Taquaral com 3 suítes, 232 m² de área útil e rooftop privativo. Condomínio exclusivo com apenas 8 unidades. Ideal para quem busca privacidade e sofisticação em uma das regiões mais valorizadas de Campinas.",
+    "hashtags": [
+      "casacondominio",
+      "parquetaquaral",
+      "campinas",
+      "3suites",
+      "rooftopgourmet",
+      "imovelcampinas",
+      "condominioexclusivo",
+      "suitemoderna"
+    ]
+  },
+  "versao": "a1ad34a1abce",
+  "publicadoEm": "2026-10-28T04:02:52.946Z"
+}

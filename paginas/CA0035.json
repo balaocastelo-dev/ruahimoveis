@@ -1,0 +1,257 @@
+{
+  "codigo": "CA0035",
+  "slug": "casa-swiss-park-campinas-3-suites-varanda-ca0035",
+  "titulo": "Casa em condomínio de 3 suítes com varanda e rooftop no Swiss Park",
+  "resumo": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada.",
+  "capa": {
+    "foto": 1121,
+    "alt": "Fachada moderna de casa com varanda e carro estacionado"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada. O imóvel tem 208 m² de área útil e conta com um rooftop privativo, elevador privativo e sala de estar integrada à varanda. O Swiss Park é um dos bairros mais valorizados de Campinas, com segurança e infraestrutura completa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As fotos mostram a sala de estar com janela panorâmica e luminárias pendentes, a cozinha integrada com varanda e a varanda gourmet com mesa redonda e iluminação suave. O imóvel é ideal para quem busca conforto, praticidade e um estilo de vida moderno em um ambiente de alto padrão."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "3 suítes amplas com excelente acabamento",
+        "Rooftop privativo com vista para o entorno",
+        "Sala de estar integrada à varanda",
+        "Cozinha moderna com iluminação e armários",
+        "Área gourmet com mesa redonda e sofá"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Área social e integração dos ambientes"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala de estar e jantar estão integradas, com piso claro e luminárias pendentes que iluminam o ambiente. As janelas panorâmicas permitem a entrada de luz natural e oferecem vista para o jardim. A varanda está conectada à sala de jantar, com mesa redonda, cadeiras e iluminação suave, criando um ambiente aconchegante e moderno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha também está integrada, com mesa de jantar e armários que facilitam o uso do espaço. A varanda gourmet complementa a área de alimentação, com sofá e iluminação que valorizam o ambiente."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1105,
+          "legenda": "Sala de estar integrada à varanda"
+        },
+        {
+          "foto": 1106,
+          "legenda": "Sala de jantar com mesas e cadeiras brancas"
+        },
+        {
+          "foto": 1109,
+          "legenda": "Cozinha moderna com mesa de jantar e varanda"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Áreas de lazer e condomínio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O condomínio Lausanne Swiss Park Residence oferece áreas de lazer completas, como piscina, academia, campo de futebol sintético e pista de beach tennis. As fotos mostram a piscina com espreguiçadeiras, a academia moderna com equipamentos de fitness e o campo de futebol cercado por palmeiras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel também conta com um rooftop privativo, ideal para momentos de relaxamento e contemplação. A segurança do condomínio é reforçada por portaria 24h e guarita de segurança."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1107,
+          "legenda": "Gym moderno com equipamentos de fitness"
+        },
+        {
+          "foto": 1108,
+          "legenda": "Piscina com infláveis e área de lazer ao ar livre"
+        },
+        {
+          "foto": 1119,
+          "legenda": "Campo de futebol sintético cercado por palmeiras"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Detalhes internos e acabamentos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os banheiros são modernos, com box de vidro, piso de mármore e duas pias. A varanda gourmet também conta com jacuzzi e mesas para refeições. As fotos mostram o ambiente com luminárias pendentes e plantas decorativas, reforçando o estilo de vida moderno e sofisticado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel tem 3 suítes, todas amplas e com acabamentos de alta qualidade. O elevador privativo facilita o acesso aos diferentes andares, enquanto a área de serviço e a garagem com 2 vagas completam a funcionalidade do imóvel."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1111,
+          "legenda": "Banheiro moderno com box de vidro e piso de mármore"
+        },
+        {
+          "foto": 1112,
+          "legenda": "Varanda com jacuzzi, mesa redonda e plantas"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem este imóvel faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Este imóvel é ideal para famílias que buscam conforto, segurança e qualidade de vida. Com bem localizada no Swiss Park, o imóvel oferece acesso fácil a comercios, escolas e rodovias, além de um condomínio fechado com lazer completo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "Pergunte sobre a documentação do imóvel, o valor do condomínio e quais áreas não estão visíveis nas fotos.",
+      "titulo": "O que perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1116,
+      "legenda": "Fachada de casas modernas com jardins verticais",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1121,
+      "legenda": "Fachada moderna de casa com garagem e varanda",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1105,
+      "legenda": "Sala de estar integrada à varanda",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1106,
+      "legenda": "Sala de jantar com mesas e cadeiras brancas",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1110,
+      "legenda": "Varanda gourmet com mesa redonda, sofá e iluminação suave",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1112,
+      "legenda": "Varanda com jacuzzi, mesa redonda e plantas",
+      "ambiente": "varanda"
+    },
+    {
+      "foto": 1109,
+      "legenda": "Cozinha moderna com mesa de jantar e varanda",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1111,
+      "legenda": "Banheiro moderno com box de vidro e piso de mármore",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1119,
+      "legenda": "Campo de futebol sintético cercado por palmeiras",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1122,
+      "legenda": "Jogadores de beach tennis em ação",
+      "ambiente": "jardim"
+    },
+    {
+      "foto": 1108,
+      "legenda": "Piscina com infláveis e área de lazer ao ar livre",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1117,
+      "legenda": "Piscina com espreguiçadeiras e mesa de jantar",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1107,
+      "legenda": "Gym moderno com equipamentos de fitness",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1118,
+      "legenda": "Galeria de fitness com máquinas de corrida e equipamentos",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1120,
+      "legenda": "Gym moderno com equipamentos de fitness",
+      "ambiente": "lazer"
+    },
+    {
+      "foto": 1113,
+      "legenda": "Planta baixa de uma casa com descrição dos ambientes",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 1114,
+      "legenda": "Planta baixa de um apartamento com suítes e áreas comuns",
+      "ambiente": "planta"
+    },
+    {
+      "foto": 1115,
+      "legenda": "Planta baixa de um imóvel com áreas internas e externas",
+      "ambiente": "planta"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas vagas tem?",
+      "resposta": "O imóvel tem 2 vagas de garagem."
+    },
+    {
+      "pergunta": "Tem área gourmet?",
+      "resposta": "Sim, o imóvel conta com uma área gourmet integrada à varanda."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Você pode marcar a visita pelo formulário desta página."
+    }
+  ],
+  "redes": {
+    "legenda": "Casa em condomínio no Swiss Park com 3 suítes, 2 vagas e área gourmet. Condomínio fechado com lazer completo e bem localizada. Ideal para quem busca conforto e estilo de vida moderno.",
+    "hashtags": [
+      "casaemcondominio",
+      "swisspark",
+      "campinas",
+      "3suites",
+      "areautil208",
+      "condominiolausanne",
+      "varandagourmet",
+      "lazercompleto"
+    ]
+  },
+  "versao": "d317c5467ea2",
+  "publicadoEm": "2026-10-28T04:02:52.943Z"
+}
