@@ -124,8 +124,8 @@ app.use((err, req, res, next) => {
 
 if (require.main === module) {
   const host = process.env.HOST || '0.0.0.0';
-  // processos do PC (radar, portais, robô, escritório, vínculo de condomínios, mercado) rodam na imobiliária padrão
-  // TODO(fase1 · etapa plataforma): um ciclo por imobiliária ativa, quando houver mais de uma no mesmo PC.
+  // processos do PC: os da imobiliária (radar, portais, robô, escritório) sobem uma vez por imobiliária de IMOBILIARIAS_PC,
+  // cada um no contexto dela; os da base comum (vínculo de condomínios) uma vez só. Ver src/pc.js.
   app.listen(cfg.PORT, host, () => tenant.comImobiliaria(tenant.padrao(), () => {
     const nets = require('os').networkInterfaces();
     const ips = Object.values(nets).flat().filter((n) => n && n.family === 'IPv4' && !n.internal).map((n) => n.address);
@@ -135,27 +135,7 @@ if (require.main === module) {
     ips.forEach((ip) => console.log(`   Na rede (celular): http://${ip}:${cfg.PORT}`));
     console.log('   Para parar: feche esta janela');
     console.log('  ==============================================\n');
-    // Radar automático (alertas por e-mail e monitor dos portais) roda no PC;
-    // com o banco online, o que ele encontra aparece também no link da Vercel.
-    require('./src/services/alertas').iniciar();
-    require('./src/services/portais').iniciar();
-    // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
-    require('./src/fisguei/robo').iniciar();
-    // Escritório virtual: as linhas de WhatsApp dos agentes rodam num processo à parte (o site pesado não trava o WhatsApp).
-    // O cérebro roda na nuvem quando há chave do Gemini; sem chave, roda nesse processo com a IA local.
-    if (cfg.ESCRITORIO !== '0') {
-      // o processo das linhas fecha sozinho quando o site fecha (canal entre os dois se rompe), então nunca ficam duas cópias
-      const abre = () => {
-        const p = require('child_process').fork(path.join(__dirname, 'src/agentes/servico.js'), [], { execArgv: ['--disable-warning=ExperimentalWarning'] });
-        p.on('exit', (c) => { console.error(new Date().toLocaleTimeString('pt-BR'), '[escritório] processo das linhas saiu (código', c + '); reabrindo em 10 s'); setTimeout(abre, 10e3); });
-        abre.atual = p;
-      };
-      process.on('exit', () => { try { abre.atual && abre.atual.kill(); } catch {} });
-      abre();
-    }
-    // Condomínios: liga anúncios novos do Radar/Fisguei aos prédios e avisa dos prédios-alvo (a cada 10 min).
-    const vincula = () => { try { const r = require('./src/condominios/base').vincular(); if (r.radar || r.fisguei) console.log('[condomínios]', r); } catch (e) { console.error('[condomínios]', e.message); } };
-    setTimeout(vincula, 60e3); setInterval(vincula, 10 * 60e3);
+    require('./src/pc').arranca();
   }));
 }
 
