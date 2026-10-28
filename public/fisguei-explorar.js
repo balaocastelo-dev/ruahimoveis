@@ -34,7 +34,7 @@ async function telaFisguei(qs) {
   const [r, pd, cr] = await Promise.all([api('GET', '/api/fisguei/resumo'), api('GET', '/api/fisguei/pedidos'), api('GET', '/api/fisguei/creditos'), typeof mapasCfg === 'function' ? mapasCfg() : null]);
   FX.resumo = r; FX.pedidos = pd; FX.cred = cr;
   $('#main').innerHTML = `<div class="fx">
-    <div class="eyebrow">Captação · Radar + Fisguei</div>
+    <div class="eyebrow">Imóveis da base</div>
     ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
     <header class="fx-topo">
       <div class="fx-titulo">
@@ -256,7 +256,7 @@ function fxCard(a, i = 0) {
       <div class="fx-specs">${[a.quartos && `${a.quartos} qto${a.quartos > 1 ? 's' : ''}`, a.suites && `${a.suites} suíte${a.suites > 1 ? 's' : ''}`, a.vagas && `${a.vagas} vaga${a.vagas > 1 ? 's' : ''}`, a.area && `${fxN(Math.round(a.area))} m²`].filter(Boolean).map((s) => `<span>${esc(s)}</span>`).join('')}</div>
       <div class="fx-dono ${dn[1]}"><i></i>${esc(dn[0])}${a.consultadas ? ` · ${a.consultadas} consultado(s)` : a.pessoas ? ` · ${a.pessoas} na lista` : ''}${a.anunciante_tipo === 'particular' ? '' : a.anunciante_nome ? `<span class="fx-anun">${esc(a.anunciante_nome)}</span>` : ''}</div>
     </div>
-    <div class="fx-acao">${podeBuscar ? `<button type="button" class="fx-btn ouro" data-act="fx-buscar" data-id="${a.id}">Buscar dono · 1 crédito</button>`
+    <div class="fx-acao">${podeBuscar ? `<button type="button" class="fx-btn ouro" data-act="fx-buscar" data-id="${a.id}">Localizar proprietário</button>`
       : busca ? '<span class="fx-btn espera">Buscando o dono no Fisgar…</span>'
       : `<button type="button" class="fx-btn" data-act="fx-abre" data-id="${a.id}">${esc(a.passo || 'Ver detalhes')}</button>`}</div>
   </article>`;
@@ -297,7 +297,7 @@ ACT['fx-foto'] = (el, e) => {
 ACT['fx-buscar'] = (el) => comBotao(el, async () => {
   await api('POST', '/api/fisguei/buscar-anuncios', { ids: [+el.dataset.id] });
   const a = FX.itens.find((x) => x.id === +el.dataset.id); if (a) a.pedido = 'fila';
-  fxTroca(+el.dataset.id); toast('Na fila: o robô busca o dono no Fisgar em instantes (precisa do Fisgar aberto no Chrome).');
+  fxTroca(+el.dataset.id); toast('Na fila: quando o Fisgar devolver o dono, o imóvel entra na carteira (precisa do Fisgar aberto no Chrome).');
   fxAtualizaStatus();
 });
 function fxTroca(id) {
@@ -318,7 +318,7 @@ function fxBarraSel() {
   const b = $('#fx-sel'); const n = FX.sel.size;
   b.hidden = !n; if (!n) return;
   const buscaveis = FX.itens.filter((x) => FX.sel.has(x.id) && x.logradouro && x.numero && x.dono === 'nenhum' && !['fila', 'buscando'].includes(x.pedido)).length;
-  b.innerHTML = `<b>${n} selecionado${n > 1 ? 's' : ''}</b><button type="button" class="btn sm pri" data-act="fx-sel-buscar" ${buscaveis ? '' : 'disabled'}>Buscar dono de ${buscaveis} · até ${buscaveis * (1 + (FX.pedidos && FX.pedidos.limites ? FX.pedidos.limites.max_consultas : 3))} créditos</button><button type="button" class="btn sm" data-act="fx-sel-limpa">Desmarcar</button>`;
+  b.innerHTML = `<b>${n} selecionado${n > 1 ? 's' : ''}</b><button type="button" class="btn sm pri" data-act="fx-sel-buscar" ${buscaveis ? '' : 'disabled'}>Localizar proprietário de ${buscaveis} · até ${buscaveis * (1 + (FX.pedidos && FX.pedidos.limites ? FX.pedidos.limites.max_consultas : 3))} créditos</button><button type="button" class="btn sm" data-act="fx-sel-limpa">Desmarcar</button>`;
 }
 ACT['fx-sel-limpa'] = () => { FX.sel.clear(); $$('[data-fx-sel]').forEach((c) => { c.checked = false; c.closest('.fx-card').classList.remove('sel'); }); fxBarraSel(); };
 ACT['fx-sel-buscar'] = (el) => comBotao(el, async () => {
@@ -371,7 +371,7 @@ function fxGavetaHTML(a, d, i) {
       ${a.historico && a.historico.length > 1 ? fxHistorico(a.historico) : ''}
       <div class="fx-g-nota"><span class="fx-g-n">${a.nota}</span><div><b>Por que este imóvel aparece aqui</b>${a.sinais.length ? `<ul>${a.sinais.map((s) => `<li class="s-${s.id}">${esc(s.texto)}</li>`).join('')}</ul>` : '<p class="small muted">Nenhum sinal forte: preço dentro do bairro e anunciado por imobiliária.</p>'}</div></div>
       <div class="fx-g-acoes">
-        ${a.logradouro && a.numero && a.dono === 'nenhum' && !busca ? `<button type="button" class="btn pri" data-act="fx-buscar" data-id="${a.id}">Buscar dono no Fisgar · 1 crédito</button>` : busca ? '<span class="pill warn">Buscando o dono no Fisgar…</span>' : ''}
+        ${a.logradouro && a.numero && a.dono === 'nenhum' && !busca ? `<button type="button" class="btn pri" data-act="fx-buscar" data-id="${a.id}">Localizar proprietário no Fisgar</button>` : busca ? '<span class="pill warn">Buscando o dono no Fisgar…</span>' : ''}
         ${a.oportunidade_id ? `<a class="btn" href="#/radar/${a.oportunidade_id}">Abrir no Radar</a>` : `<button type="button" class="btn ${a.dono === 'confirmado' ? 'pri' : ''}" data-act="fx-captar" data-id="${a.id}">Levar para o Radar</button>`}
         ${a.imovel_id ? `<a class="btn" href="#/imoveis/${a.imovel_id}">Na carteira</a>` : ''}
         <a class="btn" href="#/fisguei/${a.id}">Ficha completa</a>
@@ -382,7 +382,7 @@ function fxGavetaHTML(a, d, i) {
       <div class="fx-g-donos">${!pessoas ? '<span class="fx-sk-l"></span><span class="fx-sk-l"></span>' : pessoas.length ? pessoas.map((p) => `<div class="fx-g-p"><div><b>${esc(p.nome)}</b> ${fgPill(p.status, PES_ST)}<div class="small muted">${esc([p.relacao, p.unidade, p.idade ? p.idade + ' anos' : ''].filter(Boolean).join(' · '))}</div>
           <div class="small">${p.contatos.filter((c) => c.tipo === 'tel').map((c) => `<span class="mono">${esc(tel(c.valor))}</span> ${fgPill(c.envio, ENV_ST)}`).join(' &nbsp; ') || (p.consultado ? '<span class="muted">sem telefone</span>' : '<span class="muted">ainda não consultado</span>')}</div></div>
           ${!p.consultado ? `<button type="button" class="btn sm" data-act="fx-consultar" data-id="${p.id}" data-a="${a.id}">Consultar · 1 crédito</button>` : ''}</div>`).join('')
-        : `<p class="small muted">${a.logradouro && a.numero ? 'Ninguém buscado ainda. “Buscar dono no Fisgar” traz os possíveis proprietários pelo IPTU e os telefones; o robô TH-IA-GO faz o primeiro contato.' : 'O anúncio não traz o número do imóvel: confirme o endereço no portal antes de buscar o dono.'}</p>`}</div>
+        : `<p class="small muted">${a.logradouro && a.numero ? 'Ninguém buscado ainda. “Localizar proprietário” traz os possíveis donos pelo IPTU e os telefones; o imóvel entra na carteira e o robô TH-IA-GO faz o primeiro contato.' : 'O anúncio não traz o número do imóvel: confirme o endereço no portal antes de buscar o dono.'}</p>`}</div>
       <h3>Ficha</h3>
       <dl class="fx-g-ficha">${[['Quartos', a.quartos], ['Suítes', a.suites], ['Vagas', a.vagas], ['Área', a.area ? fxN(Math.round(a.area)) + ' m²' : null], ['Condomínio', d && d.anuncio.valor_condominio ? brl(d.anuncio.valor_condominio) : null], ['IPTU', d && d.anuncio.iptu ? brl(d.anuncio.iptu) : null], ['Anunciante', a.anunciante_nome], ['Tipo de anunciante', { particular: 'Particular', imobiliaria: 'Imobiliária' }[a.anunciante_tipo]]].filter(([, v]) => v || v === 0).map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
       ${a.repetido ? `<h3>Outros anúncios do mesmo imóvel</h3><div class="fx-g-rep">${a.repetido.ids.map((x) => `<a href="#/fisguei/${x}">${esc('FG-' + String(x).padStart(5, '0'))}</a>`).join('')}<span class="small muted">de ${fxMi(a.repetido.min)} a ${fxMi(a.repetido.max)}</span></div>` : ''}

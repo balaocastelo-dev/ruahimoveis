@@ -11,7 +11,7 @@ async function telaRadar(qs) {
   const st = qs.get('status') || '';
   const [l, r, al] = await Promise.all([api('GET', '/api/radar?' + new URLSearchParams({ status: st })), api('GET', '/api/radar/resumo'), api('GET', '/api/radar/alertas').catch(() => null)]);
   const n = (k) => r.porStatus[k] || 0;
-  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Oportunidades (Radar)</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Oportunidades (Radar)</h1>
   ${typeof capAbas === 'function' ? capAbas('radar') : ''}
   <p class="lead">Imóveis à venda por particulares que podem virar exclusividade da RUAH. A ordem é sempre do grátis para o pago: contato do anúncio, carta com QR code, placa/portaria e, só com aprovação, matrícula e birô.</p>
   ${avisoSaude(al, true)}${painelAlertas(al)}
@@ -30,7 +30,7 @@ async function telaRadar(qs) {
       <td>${prioPill(o.prioridade)}</td>
       <td class="click" data-act="ir" data-href="#/radar/${o.id}" style="cursor:pointer"><span class="mono" style="color:var(--gold)">${esc(o.ref)}</span> <b>${esc(o.titulo || o.condominio_nome || o.tipo || 'Sem título')}</b><br><span class="muted small">${esc(o.portal || '')}${o.anunciante_tipo === 'particular' ? ' · particular' : o.anunciante_tipo === 'imobiliaria' ? ' · imobiliária' : ''}${o.prioridade.motivos.length ? ' · ' + esc(o.prioridade.motivos.join(', ')) : ''}</span>${o.bloqueio ? '<br><span class="pill bad">não contatar</span>' : ''}</td>
       <td>${esc(endOp(o) || '—')}<br><span class="muted small">${esc(o.bairro || '')}</span></td><td class="num">${brl(o.valor)}</td><td>${opPill(o.status)}</td><td>${esc(o.corretor_nome || 'livre')}</td><td class="fg-op" data-op="${o.id}" data-end="${o.logradouro && o.numero ? 1 : 0}"></td></tr>`).join('')}</tbody></table></div>
-    <div class="row" style="margin-top:12px"><span class="muted small" id="sel-n">Nenhuma selecionada</span><button class="btn" data-act="cartas-lote">Gerar cartas das selecionadas (PDF)</button><button class="btn" data-act="cartas-enviadas">Marcar selecionadas como enviadas</button><span class="sp"></span><button class="btn pri" data-act="fg-buscar-lista" title="O robô busca no Fisgar o dono de cada anúncio desta lista que tem rua e número (gasta créditos do Fisgar)">Buscar dados no Fisgar (lista toda)</button></div>`
+    <div class="row" style="margin-top:12px"><span class="muted small" id="sel-n">Nenhuma selecionada</span><button class="btn" data-act="cartas-lote">Gerar cartas das selecionadas (PDF)</button><button class="btn" data-act="cartas-enviadas">Marcar selecionadas como enviadas</button><span class="sp"></span><button class="btn pri" data-act="fg-buscar-lista" title="O robô busca no Fisgar o dono de cada anúncio desta lista que tem rua e número (gasta créditos do Fisgar)">Localizar proprietário (lista toda)</button></div>`
     : `<div class="empty">Nada aqui. As oportunidades chegam pelo radar automático.</div>`}`;
   const atualiza = () => { const n0 = $$('.sel-op:checked').length; const el = $('#sel-n'); if (el) el.textContent = n0 ? `${n0} selecionada(s)` : 'Nenhuma selecionada'; };
   $$('.sel-op').forEach((c) => c.addEventListener('change', atualiza));
@@ -217,7 +217,7 @@ ACT['op-reabrir'] = (el) => comBotao(el, async () => { await api('POST', `/api/r
 async function telaAprovacoes() {
   if (!veTudo()) { $('#main').innerHTML = '<div class="empty">Só o gestor e o administrativo aprovam consultas pagas.</div>'; return; }
   const l = await api('GET', '/api/radar/aprovacoes');
-  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Aprovar consultas pagas</h1>${typeof capAbas === 'function' ? capAbas('aprovacoes') : ''}
+  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Aprovar consultas pagas</h1>${typeof capAbas === 'function' ? capAbas('aprovacoes') : ''}
   <p class="lead">Matrícula e birô custam dinheiro e envolvem dados pessoais. Aprove só quando os caminhos grátis já foram tentados e o imóvel justifica.</p>
   ${l.length ? `<div class="list">${l.map((a) => `<div class="item" style="flex-wrap:wrap"><div style="flex:1;min-width:240px"><div class="t"><span class="mono" style="color:var(--gold)">${esc(a.ref)}</span> ${a.tipo === 'matricula' ? 'Matrícula' : 'Birô de dados'} · ${esc(a.titulo || a.condominio_nome || '')}</div>
     <div class="muted small">${esc([a.logradouro, a.numero, a.unidade].filter(Boolean).join(', '))} · ${brl(a.valor)} · pedido por ${esc(a.solicitante || '')}${a.custo_estimado ? ' · custo ' + brl(a.custo_estimado) : ''}</div>${a.justificativa ? `<div class="small">“${esc(a.justificativa)}”</div>` : ''}</div>

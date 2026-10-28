@@ -19,8 +19,95 @@ const mkFoto = (x, cfg, alt) => fotoCadeia([x.foto, cfg.fachada && x.lat ? (x.or
 // abas das vitrines + Condomínios (com a contagem de cada vitrine quando já se sabe)
 function mkAbas(on, cats) {
   const n = (k) => (cats && cats[k] ? ` <span class="mk-ab-n">${(cats[k].n || 0).toLocaleString('pt-BR')}</span>` : '');
-  return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}</div>`;
+  return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}
+    <a href="#/fisguei" class="${on === 'fisguei' ? 'on' : ''}" title="Sinais nos anúncios: queda de preço, particular, abaixo do bairro">Leitura da IA</a><a href="#/radar" class="${on === 'radar' ? 'on' : ''}" title="Anúncios que chegaram pelos portais">Portais</a>${on === 'aprovacoes' ? '<a href="#/radar/aprovacoes" class="on">Aprovações</a>' : ''}</div>`;
 }
+
+// ---------- localizar proprietário (gasta crédito do Fisgar) ----------
+let MK = { l: [], sel: new Set(), cfg: {}, ehLote: false, cred: null, ext: null, porBusca: 4 };
+const MK_SITU = {
+  fila: ['warn', 'Na fila do Fisgar'], buscando: ['warn', 'Buscando no Fisgar…'], sem_resultado: ['bad', 'O Fisgar não achou dono'],
+  concluido: ['info', 'Fisgar respondeu'], erro: ['bad', 'A busca falhou'],
+};
+function mkAcoes(x) {
+  const s = x.situ || { estado: 'livre' };
+  if (s.estado === 'carteira') return `<a class="btn sm mk-cart" href="#/imoveis/${s.imovel_id}">✓ Na carteira · ${esc(s.codigo)}</a>`;
+  if (s.estado === 'escolher') return `<a class="btn sm" href="#/fisguei/${s.anuncio_id}">Prédio: escolher quem consultar</a>`;
+  if (s.estado === 'sem_endereco') return '<span class="muted small">Sem número no anúncio: o Fisgar precisa de rua e número.</span>';
+  if (s.estado === 'livre' || s.estado === 'erro' || s.estado === 'sem_resultado') {
+    const [c, t] = MK_SITU[s.estado] || [];
+    return `${t ? `<span class="pill ${c}">${t}</span>` : ''}<button type="button" class="btn sm pri" data-act="mk-loc" data-id="${x.id}" title="Busca o dono no Fisgar: até ${MK.porBusca} créditos">${s.estado === 'livre' ? 'Localizar proprietário' : 'Tentar de novo'}</button>`;
+  }
+  if (s.estado === 'concluido') return `<a class="btn sm" href="#/fisguei/${s.anuncio_id}">Ver o que o Fisgar trouxe</a>`;
+  const [c, t] = MK_SITU[s.estado] || ['info', s.estado];
+  return `<span class="pill ${c}">${t}</span>`;
+}
+const mkLivre = (x) => !x.situ || ['livre', 'erro', 'sem_resultado'].includes(x.situ.estado);
+function mkCartao(x) {
+  const m2txt = (v) => (v ? `R$ ${v.toLocaleString('pt-BR')}/m²` : '');
+  const specs = MK.ehLote ? [x.area_util && `${mkArea(x.area_util)} de terreno`, x.valor && x.area_util ? m2txt(Math.round(x.valor / x.area_util)) : '']
+    : [x.quartos && `${x.quartos} quartos`, x.suites && `${x.suites} suítes`, x.vagas && `${x.vagas} vagas`, x.area_util && mkArea(x.area_util)];
+  const livre = mkLivre(x) && x.situ && x.situ.estado !== 'sem_endereco';
+  return `<div class="imcardw com-acoes${MK.sel.has(x.id) ? ' mk-on' : ''}" data-mkid="${x.id}">${livre ? `<label class="mk-chk" title="Selecionar para localizar o dono"><input type="checkbox" data-mksel="${x.id}" ${MK.sel.has(x.id) ? 'checked' : ''} aria-label="Selecionar ${esc(x.ref)}"></label>` : ''}<a class="imcard" href="${x.href || '#/fisguei/' + x.id}">
+    <div class="imfoto">${mkFoto(x, MK.cfg, `${x.subtipo || x.tipo || 'Imóvel'} na ${x.logradouro || ''}`)}
+      <span class="imst">${x.anunciante_tipo === 'particular' ? '<span class="pill ok">particular</span>' : x.anunciante_tipo === 'imobiliaria' ? '<span class="pill info">imobiliária</span>' : ''}${x.origem === 'op' ? '<span class="pill warn" title="Veio do Radar (portais)">Radar</span>' : ''}</span>${x.subtipo ? `<span class="imbadge"><span class="pill gold">${esc(x.subtipo)}</span></span>` : ''}</div>
+    <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small muted">${esc(x.ref)}</span><span class="small muted">${esc(x.publicado_em ? new Date(x.publicado_em + 'T12:00').toLocaleDateString('pt-BR') : '')}</span></div>
+      <div class="imtit">${esc(x.subtipo || x.tipo || 'Imóvel')} · nº ${esc(x.numero || 's/n')}</div><div class="muted small">${esc(x.complemento || x.anunciante_nome || '')}</div>
+      <div class="imspecs">${specs.filter(Boolean).map((t) => `<span>${esc(t)}</span>`).join('')}</div>
+      <div class="imvalor">${brl(x.valor)}</div>
+      ${x.anuncios > 1 ? `<div class="mk-rep" title="${esc(x.outros.map((o) => `${brl(o.valor)} · ${o.anunciante || o.portal || ''}`).join('\n'))}">Anunciado ${x.anuncios} vezes${x.anunciantes > 1 ? ` por ${x.anunciantes} anunciantes` : ''}${x.valor_min !== x.valor_max ? ` · ${mkMi(x.valor_min)} a ${mkMi(x.valor_max)}` : ''}</div>` : ''}</div></a>
+    <div class="imacoes">${mkAcoes(x)}</div></div>`;
+}
+function mkDesenhaCards() {
+  const box = $('#mk-cards'); if (!box) return;
+  const livres = MK.l.filter((x) => mkLivre(x) && x.situ && x.situ.estado !== 'sem_endereco');
+  const naCart = MK.l.filter((x) => x.situ && x.situ.estado === 'carteira').length;
+  box.innerHTML = `<div class="row mk-selbar-top">${livres.length ? `<button type="button" class="btn sm" data-act="mk-todos">${livres.every((x) => MK.sel.has(x.id)) ? 'Desmarcar todos' : `Selecionar os ${livres.length} sem dono`}</button>` : ''}
+      <span class="muted small">${MK.l.length} imóve${MK.l.length > 1 ? 'is' : 'l'} nesta rua${naCart ? ` · ${naCart} já na carteira` : ''}</span></div>
+    <div class="imcards">${MK.l.map(mkCartao).join('')}</div>`;
+  mkBarra();
+}
+function mkBarra() {
+  let b = $('#mk-sel');
+  if (!MK.sel.size) { if (b) b.remove(); return; }
+  if (!b) { b = document.createElement('div'); b.id = 'mk-sel'; b.className = 'mk-sel'; $('#main').appendChild(b); }
+  const n = MK.sel.size, max = n * MK.porBusca;
+  b.innerHTML = `<b>${n} selecionado${n > 1 ? 's' : ''}</b><span class="muted small">até ${max.toLocaleString('pt-BR')} crédito${max > 1 ? 's' : ''}${MK.cred ? ` · saldo ${MK.cred.saldo.toLocaleString('pt-BR')}` : ''}</span>
+    <button type="button" class="btn sm" data-act="mk-limpa">Limpar</button><button type="button" class="btn pri" data-act="mk-loc-sel">Localizar proprietário</button>`;
+}
+function mkTopo() {
+  const c = MK.cred, e = MK.ext || {};
+  const ex = !e.vivo ? ['bad', 'Extensão sem contato'] : !e.fisgar_aberto ? ['warn', 'Abra o Fisgar no Chrome'] : ['ok', 'Fisgar aberto'];
+  return `<a class="mk-cred" href="#/robos" title="Créditos e robôs"><span class="mk-cred-n">${c ? c.saldo.toLocaleString('pt-BR') : '—'}</span><span>créditos no Fisgar${c ? ` · ${c.gasto_hoje} hoje` : ''}</span><span class="fx-s ${ex[0]}"><i></i>${ex[1]}</span></a>`;
+}
+async function mkLocaliza(ids) {
+  if (!ids.length) return;
+  const max = ids.length * MK.porBusca;
+  if (ids.length > 1 && !confirm(`Localizar o proprietário de ${ids.length} imóveis? Pode gastar até ${max} créditos do Fisgar (1 pela lista de pessoas do endereço e até ${MK.porBusca - 1} por pessoa consultada). Quem o Fisgar achar entra na carteira sozinho.`)) return;
+  const r = await api('POST', '/api/fisguei/localizar', { ids });
+  MK.porBusca = r.por_busca || MK.porBusca; MK.cred = r.creditos || MK.cred; MK.ext = r.extensao || MK.ext;
+  const partes = [r.criados && `${r.criados} busca(s) na fila do Fisgar`, r.ja && `${r.ja} já estava(m) na fila`, r.na_carteira && `${r.na_carteira} já na carteira`, r.sem_endereco && `${r.sem_endereco} sem número`].filter(Boolean);
+  toast(partes.join(' · ') + (r.criados ? '. Quando o dono voltar, o imóvel entra na carteira.' : ''));
+  if (r.criados && !(r.extensao && r.extensao.vivo && r.extensao.fisgar_aberto)) toast('A busca acontece quando o Fisgar estiver aberto no Chrome com a extensão.', true);
+  ids.forEach((id) => MK.sel.delete(id));
+  for (const x of MK.l) if (ids.includes(x.id) && mkLivre(x) && x.situ.estado !== 'sem_endereco') x.situ = { estado: 'fila' };
+  mkDesenhaCards();
+  const t = $('#mk-topo'); if (t) t.innerHTML = mkTopo();
+}
+ACT['mk-loc'] = (el) => mkLocaliza([+el.dataset.id]);
+ACT['mk-loc-sel'] = () => mkLocaliza([...MK.sel]);
+ACT['mk-limpa'] = () => { MK.sel.clear(); mkDesenhaCards(); };
+ACT['mk-todos'] = () => {
+  const livres = MK.l.filter((x) => mkLivre(x) && x.situ && x.situ.estado !== 'sem_endereco');
+  if (livres.every((x) => MK.sel.has(x.id))) livres.forEach((x) => MK.sel.delete(x.id)); else livres.forEach((x) => MK.sel.add(x.id));
+  mkDesenhaCards();
+};
+document.addEventListener('change', (e) => {
+  const id = e.target && e.target.dataset && e.target.dataset.mksel; if (!id) return;
+  if (e.target.checked) MK.sel.add(+id); else MK.sel.delete(+id);
+  const w = e.target.closest('.imcardw'); if (w) w.classList.toggle('mk-on', e.target.checked);
+  mkBarra();
+});
 
 async function telaMercado(qs, cat = 'casas') {
   const C = MK_CATS.find((c) => c[0] === cat) || MK_CATS[1];
@@ -29,7 +116,8 @@ async function telaMercado(qs, cat = 'casas') {
   const filtros = Object.fromEntries(Object.entries({ cat, min: f.min, sub: f.sub, quartos: ehLote || ehCom ? '' : f.quartos, particular: f.particular }).filter(([, v]) => v !== ''));
   const link = (o) => `#/${cat}?` + new URLSearchParams(Object.fromEntries(Object.entries({ ...f, ...o }).filter(([, v]) => v !== '' && v !== null && v !== undefined)));
   const qf = new URLSearchParams(filtros);
-  const [res, cfg] = await Promise.all([api('GET', '/api/mercado/resumo?' + qf), mapasCfg()]);
+  const [res, cfg, cred, pd] = await Promise.all([api('GET', '/api/mercado/resumo?' + qf), mapasCfg(), api('GET', '/api/fisguei/creditos').catch(() => null), api('GET', '/api/fisguei/pedidos').catch(() => null)]);
+  MK.cfg = cfg; MK.ehLote = ehLote; MK.cred = cred; MK.ext = pd && pd.extensao; if (pd && pd.limites) MK.porBusca = 1 + pd.limites.max_consultas;
   const bairroAt = f.bairro && res.bairros.find((b) => b.chave === f.bairro);
   const m2txt = (v) => (v ? `R$ ${v.toLocaleString('pt-BR')}/m²` : '');
   const capa = (g) => fotoCadeia([g.foto], g.nome, { vazio: g.nome });
@@ -45,25 +133,15 @@ async function telaMercado(qs, cat = 'casas') {
     const ruas = await api('GET', '/api/mercado/ruas?' + new URLSearchParams({ ...filtros, bairro: f.bairro }));
     corpo = `<div class="mk-lista">${ruas.map((r) => `<a class="mk-linha" href="${link({ rua: r.chave })}"><span class="mk-mini">${capa(r)}</span><div style="flex:1;min-width:0"><b>${esc(r.nome)}</b><div class="muted small">${mkMi(r.min)}${r.max !== r.min ? ' a ' + mkMi(r.max) : ''}${r.m2 ? ' · ' + m2txt(r.m2) : ''}</div></div><span class="pill ok">${r.n} imóve${r.n > 1 ? 'is' : 'l'}</span><span class="muted">›</span></a>`).join('') || '<div class="empty">Nenhuma rua.</div>'}</div>`;
   } else {
-    const l = await api('GET', '/api/mercado/imoveis?' + new URLSearchParams({ ...filtros, bairro: f.bairro, rua: f.rua }));
-    corpo = `<div class="imcards">${l.map((x) => {
-      const specs = ehLote ? [x.area_util && `${mkArea(x.area_util)} de terreno`, x.valor && x.area_util ? m2txt(Math.round(x.valor / x.area_util)) : '']
-        : [x.quartos && `${x.quartos} quartos`, x.suites && `${x.suites} suítes`, x.vagas && `${x.vagas} vagas`, x.area_util && mkArea(x.area_util)];
-      return `<div class="imcardw"><a class="imcard" href="${x.href || '#/fisguei/' + x.id}">
-      <div class="imfoto">${mkFoto(x, cfg, `${x.subtipo || x.tipo || 'Imóvel'} na ${x.logradouro || ''}`)}
-        <span class="imst">${x.anunciante_tipo === 'particular' ? '<span class="pill ok">particular</span>' : x.anunciante_tipo === 'imobiliaria' ? '<span class="pill info">imobiliária</span>' : ''}${x.origem === 'op' ? '<span class="pill warn" title="Veio do Radar (portais)">Radar</span>' : ''}</span>${x.subtipo ? `<span class="imbadge"><span class="pill gold">${esc(x.subtipo)}</span></span>` : ''}</div>
-      <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small muted">${esc(x.ref)}</span><span class="small muted">${esc(x.publicado_em ? new Date(x.publicado_em + 'T12:00').toLocaleDateString('pt-BR') : '')}</span></div>
-        <div class="imtit">${esc(x.subtipo || x.tipo || 'Imóvel')} · nº ${esc(x.numero || 's/n')}</div><div class="muted small">${esc(x.complemento || x.anunciante_nome || '')}</div>
-        <div class="imspecs">${specs.filter(Boolean).map((s) => `<span>${esc(s)}</span>`).join('')}</div>
-        <div class="imvalor">${brl(x.valor)}</div>
-        ${x.anuncios > 1 ? `<div class="mk-rep" title="${esc(x.outros.map((o) => `${brl(o.valor)} · ${o.anunciante || o.portal || ''}`).join('\n'))}">Anunciado ${x.anuncios} vezes${x.anunciantes > 1 ? ` por ${x.anunciantes} anunciantes` : ''}${x.valor_min !== x.valor_max ? ` · ${mkMi(x.valor_min)} a ${mkMi(x.valor_max)}` : ''}</div>` : ''}</div></a></div>`;
-    }).join('')}</div>`;
+    MK.l = await api('GET', '/api/mercado/imoveis?' + new URLSearchParams({ ...filtros, bairro: f.bairro, rua: f.rua }));
+    MK.sel = new Set(); MK.qs = new URLSearchParams({ ...filtros, bairro: f.bairro, rua: f.rua });
+    corpo = '<div id="mk-cards"></div>';
   }
   const migalha = `<div class="mk-migalha"><a href="${link({ bairro: '', rua: '' })}">${esc(C[1])} em Campinas</a>${bairroAt ? ` › <a href="${link({ rua: '' })}">${esc(bairroAt.nome)}</a>` : ''}${f.rua ? ` › <b>${esc(f.rua.toLowerCase().replace(/(^|\s)\S/g, (c) => c.toUpperCase()))}</b>` : ''}</div>`;
   const abas = mkAbas(cat, res.categorias);
-  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base · Campinas</div><h1>${esc(C[1])}</h1>
+  $('#main').innerHTML = `<div class="row" style="justify-content:space-between;align-items:flex-end;gap:12px"><div><div class="eyebrow">Imóveis da base · Campinas</div><h1>${esc(C[1])}</h1></div><div id="mk-topo">${mkTopo()}</div></div>
   ${abas}
-  <p class="lead">${esc(C[2])} Escolha o bairro, a rua e o imóvel: a ficha abre com as fotos, a fachada, o 3D da rua e os proprietários.</p>
+  <p class="lead">${esc(C[2])} Escolha o bairro e a rua. Nos imóveis que interessam, clique em <b>Localizar proprietário</b> (ou selecione vários): o Fisgar busca o dono e o imóvel entra sozinho na <a href="#/imoveis">carteira</a>.</p>
   <div class="grid g4 cd-kpis">${cdKpi(res.total.toLocaleString('pt-BR'), ehLote ? 'terrenos neste filtro' : 'imóveis neste filtro', res.repetidos ? `${res.anuncios.toLocaleString('pt-BR')} anúncios · ${res.repetidos.toLocaleString('pt-BR')} repetidos juntados` : `de ${res.base.toLocaleString('pt-BR')} na base`)}${cdKpi(mkMi(res.mediana), 'valor mediano', res.m2 ? 'mediana ' + m2txt(res.m2) : '')}${cdKpi(res.bairros.length, 'bairros', res.area ? `${ehLote ? 'terreno' : 'área'} mediana ${mkArea(res.area)}` : '')}${cdKpi(res.particulares, 'de particular', res.total ? Math.round((res.particulares / res.total) * 100) + '% do total' : '')}</div>
   <form class="row cd-filtros" data-form="mk-filtro" data-cat="${cat}">
     <select name="min" aria-label="Valor mínimo">${MK_FAIXAS.map(([v, t]) => `<option value="${v}" ${f.min === v ? 'selected' : ''}>${t}</option>`).join('')}</select>
@@ -77,6 +155,20 @@ async function telaMercado(qs, cat = 'casas') {
   <div class="cd-split"><div>${corpo}</div><div class="cd-mapa-w"><div id="mk-mapa" class="cd-mapa"></div>
     <p class="small muted" style="margin:6px 2px 0"><span class="cd-dot" style="background:#2e7d4f"></span> particular <span class="cd-dot" style="background:#3b6ea8"></span> imobiliária · clique no ponto para abrir</p></div></div>`;
   mapaMercado(qf, f, bairroAt);
+  if ($('#mk-cards')) {
+    mkDesenhaCards();
+    // enquanto houver busca andando, atualiza a situação dos cartões
+    poll = setInterval(async () => {
+      if (!$('#mk-cards') || !MK.l.some((x) => x.situ && ['fila', 'buscando'].includes(x.situ.estado))) return;
+      try {
+        const novo = await api('GET', '/api/mercado/imoveis?' + MK.qs);
+        const mapa = new Map(novo.map((x) => [x.id, x.situ]));
+        let mudou = false;
+        for (const x of MK.l) { const s2 = mapa.get(x.id); if (s2 && JSON.stringify(s2) !== JSON.stringify(x.situ)) { x.situ = s2; mudou = true; } }
+        if (mudou) mkDesenhaCards();
+      } catch {}
+    }, 15000);
+  }
 }
 FORM['mk-filtro'] = async (fm) => { const d = formJSON(fm); navega(`#/${fm.dataset.cat || 'casas'}?` + new URLSearchParams(Object.fromEntries(Object.entries({ ...d, particular: d.particular ? '1' : '' }).filter(([, v]) => v !== '' && v !== undefined)))); };
 

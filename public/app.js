@@ -12,7 +12,7 @@ const ETAPAS = [['novo', 'Novo'], ['qualificado', 'Qualificado'], ['visita', 'Vi
 const TEMP = { quente: 'bad', morno: 'warn', frio: 'info' };
 const stPill = (s) => `<span class="pill ${(STATUS[s] || ['', 'info'])[1]}">${esc((STATUS[s] || [s])[0])}</span>`;
 
-let ME = null, TIPOS = [], USUARIOS = [], poll = null;
+let ME = null, TIPOS = [], CART_ETAPAS = [], ORIGENS = [], USUARIOS = [], poll = null;
 const veTudo = () => ME && (ME.perfil === 'adm' || ME.perfil === 'gestor');
 
 // ---------- utilidades ----------
@@ -77,7 +77,7 @@ async function inicio() {
 }
 async function carregaBase() {
   const [t, u] = await Promise.all([api('GET', '/api/imoveis/tipos'), api('GET', '/api/usuarios')]);
-  TIPOS = t.tipos; USUARIOS = u.filter((x) => x.ativo !== 0);
+  TIPOS = t.tipos; CART_ETAPAS = t.etapas || []; ORIGENS = t.origens || []; USUARIOS = u.filter((x) => x.ativo !== 0);
   if (typeof mapasCfg === 'function') mapasCfg(); // sabe se a fachada do Google está ligada (reserva das fotos)
 }
 // fotos de um imóvel da carteira: a capa; sem foto, a fachada do prédio/condomínio pelo Google (quando ligada)
@@ -116,12 +116,11 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 
 // ---------- moldura ----------
 const MENU = [
-  ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
-  ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Captação', [['#/captacao', 'Radar + Fisguei', 'capt']]],
+  ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
+  ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', 'Blog Sopro']]],
-  ['Sistema', [['#/configuracoes', 'Configurações']]],
+  ['Sistema', [['#/robos', 'Robôs e Fisgar', 'capt'], ['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
@@ -133,7 +132,7 @@ function shell() {
   atualizaBadge();
 }
 async function atualizaBadge() {
-  // Radar + Fisguei dividem o mesmo item do menu: "!" se algo parou; senão, o que espera alguém (aprovações + respostas do robô)
+  // "Robôs e Fisgar": "!" se o radar ou o robô pararam; senão, o que espera alguém (aprovações + respostas do robô)
   Promise.all([veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null, veTudo() ? api('GET', '/api/radar/alertas').catch(() => null) : null, api('GET', '/api/fisguei/resumo').catch(() => null)]).then(([r, al, f]) => {
     const b = $('#badge-capt'); if (!b) return;
     const alertaRadar = al && al.saude && !al.saude.ok, alertaRobo = f && ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado);
@@ -148,7 +147,7 @@ function marcaNav(h) {
   $$('#nav a').forEach((a) => {
     const n = a.dataset.nav;
     const pai = { '#/imoveis': '#/imoveis/novo' };
-    const hh = /^#\/(radar|fisguei)(\/|$)/.test(h) ? '#/captacao' : /^#\/whats\//.test(h) ? '#/whats' : h; // Radar e Fisguei moram dentro de "Radar + Fisguei"
+    const hh = /^#\/whats\//.test(h) ? '#/whats' : h;
     const on = hh === n || (pai[n] ? hh.startsWith(n + '/') && hh !== pai[n] : !Object.values(pai).includes(n) && hh.startsWith(n + '/'));
     a.classList.toggle('on', on);
   });
@@ -170,7 +169,7 @@ async function rota() {
     if (p[0] === 'imoveis' && p[1] === 'novo') await telaImovelForm();
     else if (p[0] === 'imoveis' && p[1] && p[2] === 'editar') await telaImovelForm(+p[1]);
     else if (p[0] === 'imoveis' && p[1]) await telaFicha(+p[1], p[2] || 'dados');
-    else if (p[0] === 'imoveis') await telaImoveis();
+    else if (p[0] === 'imoveis') await telaImoveis(new URLSearchParams(qs || ''));
     else if (p[0] === 'leads' && p[1]) await telaLead(+p[1]);
     else if (p[0] === 'leads') await telaLeads();
     else if (p[0] === 'whats' && p[1] === 'agente' && p[2]) await telaMesa(p[2], p[3] || 'mesa');
@@ -188,7 +187,8 @@ async function rota() {
     else if (p[0] === 'fisguei') await telaFisguei(new URLSearchParams(qs || ''));
     else if (p[0] === 'mercado') { location.replace('#/casas' + (qs ? '?' + qs : '')); return; }
     else if (['apartamentos', 'casas', 'terrenos', 'comerciais'].includes(p[0])) await telaMercado(new URLSearchParams(qs || ''), p[0]);
-    else if (p[0] === 'captacao') await telaCaptacao(new URLSearchParams(qs || ''));
+    else if (p[0] === 'captacao') { location.replace('#/apartamentos'); return; } // a captação agora é feita direto nas vitrines da base
+    else if (p[0] === 'robos') await telaRobos();
     else if (p[0] === 'condominios' && p[1]) await telaCondominio(+p[1]);
     else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
@@ -276,9 +276,16 @@ const gravaPref = (k, v) => { try { localStorage.setItem(k, v); } catch { /* sem
 let IM_LISTA = [];
 const miniFoto = (x) => `<span class="minifoto">${fotoCadeia(imFotos(x), '', { vazio: ' ' })}</span>`;
 const imSub = (i) => i.condominio_nome || i.condominio || [i.logradouro, i.numero].filter(Boolean).join(', ');
-const imTabela = (l) => `<div class="card tbl"><table><thead><tr><th>Código</th><th>Imóvel</th><th>Bairro</th><th class="num">Valor</th><th>Status</th><th>Corretor</th></tr></thead><tbody>
+// etapa do imóvel na carteira (calculada no servidor a partir do dono, do robô, da assinatura e do status)
+const ETAPA_COR = { sem_dono: 'bad', localizado: 'info', em_contato: 'warn', confirmado: 'ok', autorizado: 'gold', publicado: 'ok', vendido: 'gold' };
+const etapaNome = (k) => (CART_ETAPAS.find((e) => e[0] === k) || [k, k])[1];
+const etapaPill = (k) => (k ? `<span class="pill ${ETAPA_COR[k] || 'info'}">${esc(etapaNome(k))}</span>` : '');
+const fichaBarra = (f) => (f ? `<span class="cart-ficha${f.pct === 100 ? ' ok' : ''}" title="${esc(f.falta.length ? 'Falta: ' + f.falta.join(', ') : 'Ficha completa')}"><i style="width:${f.pct}%"></i><b>Ficha ${f.pct}%</b></span>` : '');
+const donoLinha = (i) => (i.dono ? `<div class="cart-dono small">Dono: <b>${esc(i.dono.nome)}</b>${i.dono.telefone ? ' · ' + esc(tel(i.dono.telefone)) : ' · <span class="muted">sem telefone</span>'}${i.dono.confirmado ? '' : ' <span class="muted">(a confirmar)</span>'}</div>` : (i.etapa ? '<div class="cart-dono small muted">Sem dados do proprietário</div>' : ''));
+const imTabela = (l) => `<div class="card tbl"><table><thead><tr><th>Código</th><th>Imóvel</th><th>Bairro</th><th class="num">Valor</th><th>Etapa</th><th>Dono</th><th>Ficha</th><th>Corretor</th></tr></thead><tbody>
   ${l.map((i) => `<tr class="click" data-act="ir" data-href="#/imoveis/${i.id}"><td class="mono"><span class="row" style="gap:8px;flex-wrap:nowrap">${miniFoto(i)}${esc(i.codigo)}</span></td><td><b>${esc(i.tipo)}</b><br><span class="muted">${esc(imSub(i))}${i.quartos ? ' · ' + i.quartos + 'q' : ''}${i.area_util ? ' · ' + Math.round(i.area_util) + ' m²' : ''}</span></td>
-  <td>${esc(i.bairro)}</td><td class="num">${brl(i.valor)}</td><td>${stPill(i.status)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}</td><td>${esc(i.corretor_nome)}</td></tr>`).join('')}</tbody></table></div>`;
+  <td>${esc(i.bairro)}</td><td class="num">${brl(i.valor)}</td><td>${etapaPill(i.etapa)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}<br><span class="muted small">${STATUS[i.status] ? STATUS[i.status][0] : ''}</span></td>
+  <td class="small">${i.dono ? `${esc(i.dono.nome)}${i.dono.telefone ? '<br><span class="muted">' + esc(tel(i.dono.telefone)) + '</span>' : ''}` : '<span class="muted">—</span>'}</td><td>${fichaBarra(i.ficha)}</td><td>${esc(i.corretor_nome)}</td></tr>`).join('')}</tbody></table></div>`;
 // Cards de imóvel com foto, usados em toda parte (lista, painel, lead).
 // o.badge(i): selo sobre a foto · o.extra(i): conteúdo extra no corpo · o.acoes(i): botões abaixo do card · o.mini: cards menores
 const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l.map((i) => {
@@ -286,18 +293,76 @@ const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l
   const acoes = o.acoes ? o.acoes(i) : '';
   return `<div class="imcardw${acoes ? ' com-acoes' : ''}"><a class="imcard" href="${o.href ? o.href(i) : '#/imoveis/' + i.id}">
     <div class="imfoto">${fotoCadeia(imFotos(i), `${i.tipo} ${i.codigo}`)}
-      <span class="imst">${stPill(i.status)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}</span>${o.badge ? `<span class="imbadge">${o.badge(i)}</span>` : ''}${i.n_fotos > 1 ? `<span class="imnf">📷 ${i.n_fotos}</span>` : ''}</div>
+      <span class="imst">${i.etapa ? etapaPill(i.etapa) : stPill(i.status)}${i.exclusivo ? ' <span class="pill gold">exclusivo</span>' : ''}</span>${o.badge ? `<span class="imbadge">${o.badge(i)}</span>` : ''}${i.n_fotos > 1 ? `<span class="imnf">📷 ${i.n_fotos}</span>` : ''}</div>
     <div class="imcorpo"><div class="row" style="justify-content:space-between;gap:8px"><span class="mono small muted">${esc(i.codigo)}</span><span class="small muted">${esc(i.corretor_nome || '')}</span></div>
       <div class="imtit">${esc(i.tipo)}${imSub(i) ? ' · ' + esc(imSub(i)) : ''}</div>
       <div class="muted small">${esc([i.bairro, i.cidade].filter(Boolean).join(' · '))}</div>
       ${specs.length ? `<div class="imspecs">${specs.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}
-      <div class="imvalor">${brl(i.valor)}</div>${o.extra ? o.extra(i) : ''}</div></a>${acoes ? `<div class="imacoes">${acoes}</div>` : ''}</div>`;
+      <div class="imvalor">${brl(i.valor)}</div>${o.carteira ? donoLinha(i) + fichaBarra(i.ficha) : ''}${o.extra ? o.extra(i) : ''}</div></a>${acoes ? `<div class="imacoes">${acoes}</div>` : ''}</div>`;
 }).join('')}</div>`;
+// ---------- carteira: filtros ----------
+let CART_F = {}, CART_PORTAL = null;
+const CART_CAMPOS = ['etapa', 'dono', 'ficha', 'exclusivo', 'portal', 'origem', 'corretor', 'status'];
+function cartFiltra(l) {
+  const f = CART_F;
+  return l.filter((i) => {
+    if (f.etapa && i.etapa !== f.etapa) return false;
+    if (f.status && i.status !== f.status) return false;
+    if (f.dono === 'com' && !i.dono) return false;
+    if (f.dono === 'sem' && i.dono) return false;
+    if (f.dono === 'tel' && !(i.dono && i.dono.telefone)) return false;
+    if (f.dono === 'confirmado' && !(i.dono && i.dono.confirmado)) return false;
+    if (f.ficha === 'completa' && i.ficha.pct < 100) return false;
+    if (f.ficha === 'incompleta' && i.ficha.pct === 100) return false;
+    if (f.ficha && f.ficha.startsWith('falta:') && !i.ficha.falta.includes(f.ficha.slice(6))) return false;
+    if (f.exclusivo === 'sim' && !i.exclusivo) return false;
+    if (f.exclusivo === 'nao' && i.exclusivo) return false;
+    if (f.origem && i.origem !== f.origem) return false;
+    if (f.corretor && String(i.corretor_id || '') !== f.corretor) return false;
+    if (f.portal && CART_PORTAL) { const no = CART_PORTAL.has(i.codigo); if ((f.portal === 'sim') !== no) return false; }
+    return true;
+  });
+}
+const FALTAS = ['Fotos próprias', 'Proprietário', 'Telefone do dono', 'Endereço completo (rua, número, CEP)', 'Valor', 'Área', 'Descrição da RUAH', 'Autorização assinada', 'Corretor responsável'];
+function cartFiltrosHTML() {
+  const f = CART_F, sel = (k, v) => (f[k] === v ? 'selected' : '');
+  const opt = (k, l) => l.map(([v, t]) => `<option value="${esc(v)}" ${sel(k, v)}>${esc(t)}</option>`).join('');
+  return `<select class="inp" data-cart="dono" aria-label="Dados do dono">${opt('dono', [['', 'Dados do dono: todos'], ['com', 'Com dados do dono'], ['sem', 'Sem dados do dono'], ['tel', 'Com telefone do dono'], ['confirmado', 'Dono confirmado']])}</select>
+    <select class="inp" data-cart="ficha" aria-label="Ficha">${opt('ficha', [['', 'Ficha: todas'], ['completa', 'Ficha completa'], ['incompleta', 'Ficha incompleta'], ...FALTAS.map((x) => ['falta:' + x, 'Falta: ' + x.toLowerCase()])])}</select>
+    <select class="inp" data-cart="exclusivo" aria-label="Exclusividade">${opt('exclusivo', [['', 'Exclusividade: todos'], ['sim', 'Com exclusividade'], ['nao', 'Sem exclusividade']])}</select>
+    <select class="inp" data-cart="portal" aria-label="Portal">${opt('portal', [['', 'Portal: todos'], ['sim', 'Com página no portal'], ['nao', 'Sem página no portal']])}</select>
+    <select class="inp" data-cart="origem" aria-label="Origem">${opt('origem', [['', 'Origem: todas'], ...ORIGENS])}</select>
+    <select class="inp" data-cart="status" aria-label="Status">${opt('status', [['', 'Status: todos'], ...Object.entries(STATUS).map(([k, [l]]) => [k, l])])}</select>
+    ${veTudo() ? `<select class="inp" data-cart="corretor" aria-label="Corretor">${opt('corretor', [['', 'Corretor: todos'], ...USUARIOS.map((u) => [String(u.id), u.nome])])}</select>` : ''}
+    ${CART_CAMPOS.some((k) => f[k]) ? '<button type="button" class="btn sm" data-act="cart-limpa">Limpar filtros</button>' : ''}`;
+}
 function imDesenha() {
   const modo = lerPref('ruah.imoveis.modo', 'cards');
   document.querySelectorAll('[data-act="im-modo"]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.modo === modo)));
-  $('#tb-im').innerHTML = IM_LISTA.length ? (modo === 'lista' ? imTabela(IM_LISTA) : imCards(IM_LISTA))
-    : '<div class="card"><div class="empty">Nenhum imóvel encontrado. <a href="#/imoveis/novo">Cadastrar o primeiro</a></div></div>';
+  // funil de etapas (conta sem o filtro de etapa)
+  const semEtapa = (() => { const e = CART_F.etapa; CART_F.etapa = ''; const l = cartFiltra(IM_LISTA); CART_F.etapa = e; return l; })();
+  const n = (k) => semEtapa.filter((i) => i.etapa === k).length;
+  const funil = $('#cart-funil');
+  if (funil) funil.innerHTML = CART_ETAPAS.map(([k, t]) => `<button type="button" class="cart-et${CART_F.etapa === k ? ' on' : ''}" data-act="cart-etapa" data-k="${k}" aria-pressed="${CART_F.etapa === k}"><b>${n(k).toLocaleString('pt-BR')}</b><span>${esc(t)}</span></button>`).join('');
+  const fl = $('#cart-filtros'); if (fl) fl.innerHTML = cartFiltrosHTML();
+  const l = cartFiltra(IM_LISTA);
+  const ct = $('#cart-ct'); if (ct) ct.textContent = `${l.length.toLocaleString('pt-BR')} de ${IM_LISTA.length.toLocaleString('pt-BR')} imóve${IM_LISTA.length === 1 ? 'l' : 'is'}${CART_F.portal && !CART_PORTAL ? ' · lendo o portal…' : ''}`;
+  $('#tb-im').innerHTML = l.length ? (modo === 'lista' ? imTabela(l) : imCards(l, { carteira: true }))
+    : IM_LISTA.length ? '<div class="card"><div class="empty">Nenhum imóvel com esses filtros. <a href="#" data-act="cart-limpa">Limpar filtros</a></div></div>'
+      : '<div class="card"><div class="empty">A carteira está vazia. Escolha imóveis nas vitrines da base (Apartamentos, Casas…) e clique em <b>Localizar proprietário</b>, ou <a href="#/imoveis/novo">cadastre um imóvel</a>.</div></div>';
+}
+const cartGuarda = () => gravaPref('ruah.carteira.filtros', JSON.stringify(CART_F));
+ACT['cart-etapa'] = (el) => { CART_F.etapa = CART_F.etapa === el.dataset.k ? '' : el.dataset.k; cartGuarda(); imDesenha(); };
+ACT['cart-limpa'] = () => { CART_F = {}; cartGuarda(); imDesenha(); };
+document.addEventListener('change', (e) => {
+  const k = e.target && e.target.dataset && e.target.dataset.cart; if (!k) return;
+  CART_F[k] = e.target.value; cartGuarda();
+  if (k === 'portal' && e.target.value && !CART_PORTAL) cartPortal();
+  imDesenha();
+});
+async function cartPortal() {
+  try { const l = await api('GET', '/api/portal'); CART_PORTAL = new Set(l.filter((x) => x.estado === 'no-ar' || x.estado === 'desatualizada').map((x) => x.codigo)); } catch { CART_PORTAL = new Set(); }
+  if ($('#tb-im')) imDesenha();
 }
 ACT['ver-foto'] = (el) => {
   const fotos = [...el.closest('.fotos').querySelectorAll('img')].map((i) => i.getAttribute('src'));
@@ -305,19 +370,23 @@ ACT['ver-foto'] = (el) => {
 };
 ACT['im-modo'] = (el) => { gravaPref('ruah.imoveis.modo', el.dataset.modo); if ($('#tb-im')) imDesenha(); };
 
-async function telaImoveis() {
-  $('#main').innerHTML = `<div class="eyebrow">Carteira</div><h1>Imóveis</h1>
-  <div class="row" style="margin-bottom:12px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
-  <select class="inp" id="filtro-st" style="width:auto"><option value="">Todos os status</option>${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}">${l}</option>`).join('')}</select>
+async function telaImoveis(qs) {
+  try { CART_F = JSON.parse(lerPref('ruah.carteira.filtros', '{}')) || {}; } catch { CART_F = {}; }
+  const veio = qs && CART_CAMPOS.filter((k) => qs.get(k));
+  if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
+  $('#main').innerHTML = `<div class="eyebrow">Operação</div><h1>Carteira de imóveis</h1>
+  <p class="lead">Os imóveis em operação: os da RUAH e os que vieram das vitrines da base quando o proprietário foi localizado no Fisgar. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
+  <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
+  <div class="row" style="margin:12px 0 8px"><input class="inp" id="busca-im" placeholder="Buscar por código, condomínio, rua ou bairro" style="flex:1;min-width:200px;max-width:none">
   <div class="seg" role="group" aria-label="Modo de exibição"><button type="button" data-act="im-modo" data-modo="cards" title="Ver em cards com fotos">▦ Cards</button><button type="button" data-act="im-modo" data-modo="lista" title="Ver em lista">☰ Lista</button></div>
-  <a class="btn pri" href="#/imoveis/novo">+ Novo imóvel</a></div><div id="tb-im"></div>`;
+  <a class="btn pri" href="#/imoveis/novo">+ Novo imóvel</a></div>
+  <div class="row cart-filtros" id="cart-filtros"></div><p class="muted small" id="cart-ct" style="margin:6px 0 12px"></p><div id="tb-im"></div>`;
   const carrega = async () => {
-    const q = new URLSearchParams({ q: $('#busca-im').value, status: $('#filtro-st').value });
-    IM_LISTA = await api('GET', '/api/imoveis?' + q);
+    IM_LISTA = await api('GET', '/api/imoveis?' + new URLSearchParams({ q: $('#busca-im').value }));
     if ($('#tb-im')) imDesenha();
   };
   let t; $('#busca-im').addEventListener('input', () => { clearTimeout(t); t = setTimeout(carrega, 250); });
-  $('#filtro-st').addEventListener('change', carrega);
+  if (CART_F.portal) cartPortal();
   await carrega();
 }
 
@@ -403,7 +472,7 @@ async function telaFicha(id, aba) {
   const im = await api('GET', `/api/imoveis/${id}`);
   const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda']];
   $('#main').innerHTML = `<a class="btn sm" href="#/imoveis">← Imóveis</a>
-  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><div class="eyebrow mono">${esc(im.codigo)}</div>
+  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><div class="eyebrow mono">${esc(im.codigo)} ${etapaPill(im.etapa)}</div>
     <h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1></div>
     <select class="inp" style="width:auto" data-status-imovel="${im.id}">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select>
     ${im.condominio_id ? `<a class="btn" href="#/condominios/${im.condominio_id}">Condomínio</a><a class="btn" href="/condominio-3d.html?id=${im.condominio_id}&imovel=${im.id}" target="_blank" rel="noopener">Ver no 3D</a>` : ''}
@@ -424,7 +493,26 @@ function abaDados(im) {
     <div class="card"><h3>Condomínio</h3><dl class="dl"><dt>Nome</dt><dd>${esc(im.condominio_nome || '—')}</dd><dt>Ano</dt><dd>${esc(im.ano_construcao || '—')}</dd><dt>Lazer</dt><dd>${esc(im.lazer || '—')}</dd><dt>Adm.</dt><dd>${esc(im.administradora || '—')}</dd></dl></div>
     <div class="card"><h3>Proprietário</h3>${p ? `<dl class="dl"><dt>Nome</dt><dd>${esc(p.nome)}</dd><dt>CPF</dt><dd>${esc(p.cpf || '—')}</dd><dt>Telefone</dt><dd>${esc(tel(p.telefone) || '—')}</dd><dt>E-mail</dt><dd>${esc(p.email || '—')}</dd><dt>Origem</dt><dd>${esc(p.origem_dado)}</dd></dl>${p.nao_contatar ? '<span class="pill bad" style="margin-top:8px">não contatar</span>' : ''}` : `<p class="muted" style="margin:0">Não cadastrado. <a href="#/imoveis/${im.id}/editar">Adicionar</a></p>`}
       <div class="row" style="margin-top:10px">${im.exclusivo ? `<span class="pill gold">Exclusivo${im.exclusivo_ate ? ' até ' + new Date(im.exclusivo_ate + 'T12:00').toLocaleDateString('pt-BR') : ''}</span>` : '<span class="pill warn">Sem exclusividade</span>'}</div></div>
+    ${im.ficha ? `<div class="card"><div class="row" style="justify-content:space-between"><h3 style="margin:0">Ficha</h3>${fichaBarra(im.ficha)}</div>
+      ${im.ficha.falta.length ? `<ul class="cart-falta">${im.ficha.falta.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="muted small" style="margin:8px 0 0">Tudo preenchido.</p>'}</div>` : ''}
+    ${im.fisguei_ids && im.fisguei_ids.length ? '<div class="card" id="ficha-fisgar"><h3>Dados do Fisgar</h3><p class="muted small">Carregando…</p></div>' : ''}
   </div></div>`;
+  if (im.fisguei_ids && im.fisguei_ids.length) fichaFisgar(im);
+}
+// pessoas e telefones que o Fisgar trouxe para este endereço, com a situação de cada uma no robô
+const FG_PESSOA = { pendente: ['info', 'na fila do robô'], abordando: ['warn', 'robô chamou'], respondeu: ['warn', 'respondeu'], confirmou: ['ok', 'confirmou que é o dono'], negou: ['bad', 'não é o dono'], sem_interesse: ['bad', 'sem interesse'], parar: ['bad', 'pediu para parar'] };
+const FG_ENVIO = { fila: 'na fila', enviado: 'mensagem enviada', respondeu: 'respondeu', pulado: 'não será chamado', fixo: 'fixo' };
+async function fichaFisgar(im) {
+  let d; try { d = await api('GET', `/api/imoveis/${im.id}/fisgar`); } catch { return; }
+  const el = $('#ficha-fisgar'); if (!el) return;
+  const a = d.anuncios[0];
+  el.innerHTML = `<div class="row" style="justify-content:space-between"><h3 style="margin:0">Dados do Fisgar</h3>${a ? `<a class="btn sm" href="#/fisguei/${a.id}">Anúncio e conversa</a>` : ''}</div>
+    <p class="muted small" style="margin:6px 0 10px">${a ? `${esc(a.ref)}${a.anunciante_nome ? ' · anunciado por ' + esc(a.anunciante_nome) : ''}${a.anunciante_tipo === 'particular' ? ' (particular)' : ''}` : ''}</p>
+    ${d.pessoas.length ? `<div class="list">${d.pessoas.map((p) => { const [c, t] = FG_PESSOA[p.status] || ['info', p.status]; const tels = p.contatos.filter((x) => x.tipo === 'tel');
+      return `<div class="item" style="flex-wrap:wrap;align-items:flex-start"><div style="flex:1;min-width:160px"><div class="t">${esc(p.nome)}</div>
+        <div class="muted small">${esc([p.relacao, p.unidade, p.idade ? p.idade + ' anos' : ''].filter(Boolean).join(' · '))}</div>
+        ${tels.length ? `<div class="small" style="margin-top:4px">${tels.map((x) => `${esc(tel(x.valor))} <span class="muted">(${esc(FG_ENVIO[x.envio] || x.envio)})</span>`).join('<br>')}</div>` : p.consultado ? '<div class="muted small">sem telefone</div>' : '<div class="muted small">não consultado (sem gastar crédito)</div>'}</div>
+        <span class="pill ${c}">${esc(t)}</span></div>`; }).join('')}</div>` : '<p class="muted small">O Fisgar ainda não trouxe ninguém para este endereço.</p>'}`;
 }
 async function abaArquivos(im) {
   const d = await api('GET', `/api/imoveis/${im.id}/arquivos`);

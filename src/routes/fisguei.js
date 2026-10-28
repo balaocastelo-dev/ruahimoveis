@@ -242,7 +242,8 @@ r.post('/fisguei/pessoas/:pid/status', (req, res) => {
     F.pulaRestoDoEndereco(a.id, 'O dono já confirmou');
     const tel = one(`SELECT valor FROM fisguei_contatos WHERE pessoa_id=? AND tipo='tel' ORDER BY CASE envio WHEN 'respondeu' THEN 0 ELSE 1 END LIMIT 1`, p.id);
     F.criaOportunidade(a, p, tel && tel.valor);
-  }
+    F.donoNaCarteira(a.id);
+  } else if (a.imovel_id) P.sincronizaDono(a.id);
   if (st === 'sem_interesse') { run(`UPDATE fisguei_anuncios SET status='sem_interesse' WHERE id=?`, a.id); F.pulaRestoDoEndereco(a.id, 'O dono não tem interesse'); }
   audit(req.usuario.id, 'fisguei.pessoa', `${F.ref(a.id)} pessoa #${p.id} → ${st}`);
   res.json({ ok: true });
@@ -276,6 +277,22 @@ r.post('/fisguei/buscar-anuncios', (req, res) => {
   for (const id of ids) { const p = P.pedeEndereco(id, req.usuario.id); if (p.erro) out.sem_endereco++; else if (p.ja) out.ja++; else out.criados++; }
   audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) pela tela de cartões`);
   res.json({ ...out, creditos: I.creditos() });
+});
+// "Localizar proprietário" nas vitrines da base: ids positivos são anúncios do Fisguei, negativos são oportunidades do Radar.
+// Cada endereço vira uma busca que a extensão executa no Fisgar; quando o dono volta, o imóvel entra na carteira sozinho.
+r.post('/fisguei/localizar', (req, res) => {
+  const ids = (Array.isArray(req.body && req.body.ids) ? req.body.ids : []).map((x) => parseInt(x, 10)).filter((x) => Number.isFinite(x) && x !== 0).slice(0, 200);
+  if (!ids.length) falha(400, 'Escolha ao menos um imóvel.');
+  const out = { criados: 0, ja: 0, sem_endereco: 0, na_carteira: 0 };
+  const naCarteira = (id) => (id > 0 ? one('SELECT 1 FROM fisguei_anuncios a JOIN imoveis i ON i.id=a.imovel_id WHERE a.id=?', id)
+    : one('SELECT 1 FROM oportunidades o JOIN imoveis i ON i.id=o.imovel_id WHERE o.id=?', -id) || one('SELECT 1 FROM fisguei_anuncios a JOIN imoveis i ON i.id=a.imovel_id WHERE a.oportunidade_id=?', -id));
+  const livres = ids.filter((id) => (naCarteira(id) ? (out.na_carteira++, false) : true));
+  for (const id of livres.filter((x) => x > 0)) { const p = P.pedeEndereco(id, req.usuario.id); if (p.erro) out.sem_endereco++; else if (p.ja) out.ja++; else out.criados++; }
+  const ops = livres.filter((x) => x < 0).map((x) => -x);
+  if (ops.length) { const o = P.pedeOportunidades(ops, req.usuario.id); out.criados += o.criados; out.ja += o.ja; out.sem_endereco += o.sem_endereco; }
+  audit(req.usuario.id, 'fisguei.buscar', `${out.criados} busca(s) de proprietário pelas vitrines da base`);
+  const lim = P.limites();
+  res.json({ ...out, por_busca: 1 + lim.max_consultas, creditos: I.creditos(), extensao: P.resumo().extensao });
 });
 r.post('/fisguei/:id/buscar', (req, res) => {
   const a = anuncio(+req.params.id);

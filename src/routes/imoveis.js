@@ -10,6 +10,7 @@ const { falha, num, int, txt, imovelPermitido, cpfValido, fmtCpf, brl } = requir
 const endereco = require('../services/endereco');
 const drive = require('../services/drive');
 const match = require('../services/match');
+const carteira = require('../services/carteira');
 
 const r = express.Router();
 r.use(A.exigeLogin);
@@ -28,7 +29,7 @@ function proximoCodigo(tipo) {
 const SELECT = `SELECT i.*, c.nome condominio_nome, c.ano_construcao, c.lazer, c.administradora, u.nome corretor_nome
   FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id`;
 
-r.get('/tipos', (req, res) => res.json({ tipos: TIPOS, status: STATUS }));
+r.get('/tipos', (req, res) => res.json({ tipos: TIPOS, status: STATUS, etapas: carteira.ETAPAS, origens: carteira.ORIGENS }));
 
 r.get('/endereco', async (req, res) => res.json(await endereco.pesquisar(req.query)));
 
@@ -39,16 +40,33 @@ r.get('/', (req, res) => {
   if (req.query.q) { w += ' AND (i.codigo LIKE ? OR c.nome LIKE ? OR i.bairro LIKE ? OR i.logradouro LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q, q); }
   const fotos = `(SELECT min(id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa,
     (SELECT count(*) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') n_fotos`;
-  res.json(all(`${SELECT.replace('SELECT i.*,', 'SELECT i.*, ' + fotos + ',')} ${w} ORDER BY i.atualizado_em DESC LIMIT 500`, ...p).map(semDono));
+  res.json(carteira.enriquece(all(`${SELECT.replace('SELECT i.*,', 'SELECT i.*, ' + fotos + ',')} ${w} ORDER BY i.atualizado_em DESC LIMIT 3000`, ...p).map(semDono)).map(({ descricao, ...i }) => i));
 });
 const semDono = ({ drive_subpastas, ...i }) => i;
+
+// O que o Fisgar trouxe sobre o dono deste imóvel (pessoas, telefones e a conversa do robô)
+r.get('/:id/fisgar', (req, res) => {
+  imovelPermitido(req.usuario, req.params.id);
+  const an = all('SELECT id, status, anunciante_nome, anunciante_tipo, portal FROM fisguei_anuncios WHERE imovel_id=? ORDER BY id', req.params.id);
+  const ids = an.map((a) => a.id);
+  const pessoas = ids.length ? all(`SELECT p.id, p.anuncio_id, p.nome, p.relacao, p.unidade, p.idade, p.consultado, p.status FROM fisguei_pessoas p WHERE p.anuncio_id IN (${ids.map(() => '?').join(',')}) ORDER BY p.consultado DESC, p.id`, ...ids) : [];
+  const pids = pessoas.map((p) => p.id);
+  const contatos = pids.length ? all(`SELECT pessoa_id, tipo, valor, envio FROM fisguei_contatos WHERE pessoa_id IN (${pids.map(() => '?').join(',')}) ORDER BY id`, ...pids) : [];
+  const pedidos = ids.length ? all(`SELECT anuncio_id, status, creditos, erro, coalesce(concluido_em, criado_em) AS em FROM fisguei_pedidos WHERE anuncio_id IN (${ids.map(() => '?').join(',')}) ORDER BY id DESC LIMIT 5`, ...ids) : [];
+  const ref = (id) => 'FG-' + String(id).padStart(5, '0');
+  res.json({
+    anuncios: an.map((a) => ({ ...a, ref: ref(a.id) })), pedidos,
+    pessoas: pessoas.map((p) => ({ ...p, contatos: contatos.filter((c) => c.pessoa_id === p.id).map(({ pessoa_id, ...c }) => c) })),
+  });
+});
 
 r.get('/:id', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
   const im = one(`${SELECT} WHERE i.id=?`, req.params.id);
   const dono = im.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', im.proprietario_id) : null;
   const fotos = all("SELECT id,nome FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id", im.id);
-  res.json({ ...semDono(im), proprietario: dono, fotos, drive_link: im.drive_pasta_id && A.veTudo(req.usuario) ? `https://drive.google.com/drive/folders/${im.drive_pasta_id}` : null });
+  const [extra] = carteira.enriquece([{ ...im, n_fotos: fotos.length }]);
+  res.json({ ...semDono(im), etapa: extra.etapa, origem: extra.origem, ficha: extra.ficha, fisguei_ids: extra.fisguei_ids, proprietario: dono, fotos, drive_link: im.drive_pasta_id && A.veTudo(req.usuario) ? `https://drive.google.com/drive/folders/${im.drive_pasta_id}` : null });
 });
 
 function salvarCondominio(b) {

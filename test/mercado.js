@@ -52,6 +52,9 @@ global.fetch = async (url, op) => {
   assert.equal((await req('GET', '/api/mercado/resumo?particular=1')).j.total, 2);
   const ruas = ok(await req('GET', '/api/mercado/ruas?bairro=CAMBUI'), 'ruas do bairro'); assert.equal(ruas[0].nome, 'Rua Coronel Quirino'); assert.equal(ruas[0].n, 2);
   const im = ok(await req('GET', '/api/mercado/imoveis?bairro=CAMBUI&rua=RUA%20CORONEL%20QUIRINO'), 'imóveis da rua'); assert.deepEqual(im.map((x) => x.numero), ['1000', '1200']);
+  assert.ok(im.every((x) => x.situ && x.situ.estado === 'livre')); console.log('   cartões prontos para localizar o proprietário');
+  const loc = ok(await req('POST', '/api/fisguei/localizar', { ids: [im[0].id] }), 'localizar proprietário pela vitrine'); assert.equal(loc.criados, 1);
+  const im2 = ok(await req('GET', '/api/mercado/imoveis?bairro=CAMBUI&rua=RUA%20CORONEL%20QUIRINO'), 'situação depois do pedido'); assert.equal(im2.find((x) => x.id === im[0].id).situ.estado, 'fila');
   assert.equal(im[0].anuncios, 2); assert.equal(im[0].valor_min, 1450000); assert.equal(im[0].outros.length, 1);
   const ig = ok(await req('GET', `/api/mercado/iguais/${im[0].id}`), 'outros anúncios do mesmo imóvel'); assert.equal(ig.length, 1);
   assert.equal(im[0].foto, 'https://exemplo.com/f.jpg'); assert.match(im[0].ref, /^FG-/);

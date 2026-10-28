@@ -99,7 +99,7 @@ async function telaFisguei(qs) {
   const [r, l, pd] = await Promise.all([api('GET', '/api/fisguei/resumo'), vista === 'lista' ? api('GET', '/api/fisguei?' + params) : Promise.resolve(null), api('GET', '/api/fisguei/pedidos')]);
   const n = (k) => r.porStatus[k] || 0;
   const link = (o) => '#/fisguei?' + new URLSearchParams({ filtro, q, vista, ...o }).toString();
-  $('#main').innerHTML = `<div class="eyebrow">Captação · Radar + Fisguei</div><h1>Anúncios e proprietários (Fisguei)</h1>
+  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Anúncios e proprietários (Fisguei)</h1>
   ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
   <p class="lead">Os anúncios e proprietários que vocês abrem no Fisgar viram a base da RUAH. Quando chega o telefone de um possível dono, o robô <b>TH-IA-GO CORRETOR</b> chama no WhatsApp perguntando, com educação, se a pessoa é a proprietária. Quem responde SIM vai direto para o Radar com o corretor.</p>
   ${cartaoRobo(r)}${cartaoBusca(pd)}${cartaoExtensao(r)}
@@ -173,8 +173,8 @@ async function telaFisgueiAnuncio(id, aba) {
     <div>${fgPill(a.status)}${a.pausado ? ' <span class="pill bad">robô pausado aqui</span>' : ''}</div></div>
   <div class="row" style="gap:6px;margin:10px 0 14px;flex-wrap:wrap">
     ${d.oportunidade ? `<a class="btn pri" href="#/radar/${d.oportunidade.id}">Abrir no Radar (OP-${String(d.oportunidade.id).padStart(4, '0')})</a>` : `<button class="btn pri" data-act="fg-captar" data-id="${id}">Levar para o Radar</button>`}
-    ${d.imovel ? `<a class="btn" href="#/imoveis/${d.imovel.id}">Imóvel na carteira (${esc(d.imovel.codigo)})</a>` : `<button class="btn" data-act="fg-importar" data-id="${id}" title="Cria o imóvel em captação na carteira com os dados do anúncio e o dono confirmado">Importar para a base</button>`}
-    ${a.logradouro && a.numero ? `<button class="btn" data-act="fg-buscar" data-id="${id}" title="O robô busca o dono no Fisgar (gasta crédito)">Buscar dados no Fisgar</button>` : ''}
+    ${d.imovel ? `<a class="btn" href="#/imoveis/${d.imovel.id}">Imóvel na carteira (${esc(d.imovel.codigo)})</a>` : `<button class="btn" data-act="fg-importar" data-id="${id}" title="Leva para a carteira com os dados do anúncio e o melhor proprietário encontrado (sem as fotos de terceiros)">Levar para a carteira</button>`}
+    ${a.logradouro && a.numero ? `<button class="btn" data-act="fg-buscar" data-id="${id}" title="Busca o dono no Fisgar (gasta crédito); quando volta, o imóvel entra na carteira">Localizar proprietário</button>` : ''}
     <button class="btn" data-act="fg-pausar" data-id="${id}" data-p="${a.pausado ? 0 : 1}">${a.pausado ? 'Retomar robô neste endereço' : 'Pausar robô neste endereço'}</button>
     ${a.status !== 'descartado' ? `<button class="btn" data-act="fg-descartar" data-id="${id}">Descartar</button>` : ''}
   </div>
@@ -230,9 +230,9 @@ function cartaoBusca(pd) {
   const estado = !ext.vivo ? '<span class="pill bad">extensão sem contato · abra o Chrome com o Fisgar</span>' : !ext.fisgar_aberto ? '<span class="pill warn">abra o Fisgar numa aba do Chrome</span>' : '<span class="pill ok">pronto: Fisgar aberto</span>';
   return `<div class="card" style="margin-top:14px"><div class="row" style="gap:10px;flex-wrap:wrap;align-items:flex-start">
     <div class="fg-avatar" aria-hidden="true" style="background:var(--info)">🔎</div>
-    <div style="flex:1;min-width:240px"><b>Robô Buscar dados (Fisgar)</b> ${estado}
+    <div style="flex:1;min-width:240px"><b>Busca de proprietários (Fisgar)</b> ${estado}
       <div class="small muted" style="margin-top:4px"><b>${pd.fila}</b> endereço(s) na fila${pd.buscando ? ' · 1 buscando agora' : ''} · <b>${pd.creditos_hoje}</b> de ${lim.creditos_dia} créditos hoje · ${pd.creditos_mes} no mês (estimado) · consulta sozinho até ${lim.max_consultas} dono(s) por endereço${pd.escolher ? ` · <b>${pd.escolher}</b> esperando você escolher quem consultar` : ''}</div>
-      ${pd.ultimos.length ? `<div class="small" style="margin-top:6px">${pd.ultimos.slice(0, 4).map((u) => `<a href="#/fisguei/${u.anuncio_id}" style="margin-right:10px">${esc([u.logradouro, u.numero].filter(Boolean).join(', '))}</a>${fgPill(u.status, PED_ST)}${u.consultadas ? ` <span class="muted">${u.consultadas} consultado(s)</span>` : ''}`).join('<br>')}</div>` : '<div class="small muted" style="margin-top:6px">No Radar, clique em <b>Buscar dados no Fisgar</b> em um anúncio (ou na lista toda).</div>'}
+      ${pd.ultimos.length ? `<div class="small" style="margin-top:6px">${pd.ultimos.slice(0, 4).map((u) => `<a href="#/fisguei/${u.anuncio_id}" style="margin-right:10px">${esc([u.logradouro, u.numero].filter(Boolean).join(', '))}</a>${fgPill(u.status, PED_ST)}${u.consultadas ? ` <span class="muted">${u.consultadas} consultado(s)</span>` : ''}`).join('<br>')}</div>` : '<div class="small muted" style="margin-top:6px">Nas vitrines da base, clique em <b>Localizar proprietário</b> (ou selecione vários).</div>'}
     </div>
     ${veTudo() ? '<button class="btn sm" data-act="fg-limites">Limite de créditos</button>' : ''}</div></div>`;
 }
@@ -244,17 +244,17 @@ function linhaPedidos(peds) {
 }
 ACT['fg-limites'] = async () => {
   const l = (await api('GET', '/api/fisguei/pedidos')).limites;
-  modal(`<h2>Robô Buscar dados · créditos</h2><form data-form="fg-limites">
+  modal(`<h2>Busca de proprietários · créditos</h2><form data-form="fg-limites">
     <div class="grid g2"><label class="f">Créditos do Fisgar por dia (máx. ${l.creditos_max})<input name="creditos_dia" type="number" min="1" max="${l.creditos_max}" value="${l.creditos_dia}"></label>
     <label class="f">Consultar sozinho até quantos donos por endereço (máx. ${l.consultas_max})<input name="max_consultas" type="number" min="0" max="${l.consultas_max}" value="${l.max_consultas}"></label></div>
     <p class="small muted" style="margin:0">O plano tem 2.200 créditos por mês (cerca de 70 por dia). Cada busca de endereço gasta 1 e cada pessoa consultada gasta 1 — a não ser que alguém do plano já tenha consultado antes. Endereço com mais possíveis donos que o limite (prédio, condomínio) espera você escolher quem consultar.</p>
     <div class="row"><span class="sp"></span><button type="button" class="btn" data-fecha>Cancelar</button><button class="btn pri" type="submit">Salvar</button></div></form>`);
 };
 FORM['fg-limites'] = async (f) => { await api('POST', '/api/fisguei/pedidos/limites', formJSON(f)); fechaModal(); toast('Limite salvo'); rota(); };
-ACT['fg-buscar'] = (el) => comBotao(el, async () => { const r = await api('POST', `/api/fisguei/${el.dataset.id}/buscar`); toast(r.ja ? 'Já está na fila do Fisgar' : 'Na fila do robô: busca em instantes (precisa do Fisgar aberto no Chrome)'); rota(); });
+ACT['fg-buscar'] = (el) => comBotao(el, async () => { const r = await api('POST', `/api/fisguei/${el.dataset.id}/buscar`); toast(r.ja ? 'Já está na fila do Fisgar' : 'Na fila: quando o Fisgar devolver o dono, o imóvel entra na carteira (precisa do Fisgar aberto no Chrome)'); rota(); });
 ACT['fg-consultar'] = (el) => comBotao(el, async () => { await api('POST', `/api/fisguei/pessoas/${el.dataset.id}/consultar`); toast('Na fila do robô (1 crédito)'); rota(); });
 ACT['fg-importar'] = (el) => comBotao(el, async () => {
-  if (!confirm('Criar este imóvel na carteira, em captação? Os dados do anúncio e o dono confirmado vão junto. As fotos do anúncio original NÃO são copiadas.')) return;
+  if (!confirm('Levar este imóvel para a carteira? Os dados do anúncio e o melhor proprietário encontrado vão junto. As fotos do anúncio original NÃO são copiadas.')) return;
   const r = await api('POST', `/api/fisguei/${el.dataset.id}/importar`); toast(r.ja ? `Já estava na carteira (${r.codigo})` : `Imóvel ${r.codigo} criado`); navega('#/imoveis/' + r.id);
 });
 
@@ -266,7 +266,7 @@ async function fgDecoraRadar() {
   for (const c of cels) {
     const m = mapa[c.dataset.op];
     c.innerHTML = m ? `<a href="#/fisguei/${m.id}" class="small">${fgPill(m.pedido || m.status, m.pedido ? PED_ST : FG_ST)}${m.consultadas ? `<br><span class="muted">${m.consultadas} dono(s) com telefone</span>` : ''}</a>`
-      : c.dataset.end === '1' ? `<button class="btn sm" data-act="fg-buscar-op" data-id="${c.dataset.op}" title="Busca o dono no Fisgar (gasta crédito)">Buscar dados</button>` : '<span class="muted small">sem nº</span>';
+      : c.dataset.end === '1' ? `<button class="btn sm" data-act="fg-buscar-op" data-id="${c.dataset.op}" title="Busca o dono no Fisgar (gasta crédito)">Localizar dono</button>` : '<span class="muted small">sem nº</span>';
   }
 }
 async function fgCartaoOp() {
@@ -275,7 +275,7 @@ async function fgCartaoOp() {
   let m = null; try { m = (await api('GET', '/api/fisguei/radar?ids=' + id))[id]; } catch {}
   el.innerHTML = `<div class="card" style="margin-bottom:12px"><div class="row" style="gap:10px;flex-wrap:wrap"><div style="flex:1;min-width:220px"><b>Dono pelo Fisgar</b> ${m ? fgPill(m.pedido || m.status, m.pedido ? PED_ST : FG_ST) : ''}
     <div class="small muted">${m ? `${m.pessoas} pessoa(s) ligadas ao endereço, ${m.consultadas} com telefone. O robô TH-IA-GO chama os celulares no WhatsApp.` : el.dataset.end === '1' ? 'O robô busca no Fisgar quem é o dono deste endereço (gasta crédito) e traz os telefones para o Fisguei.' : 'Precisa de rua e número para buscar no Fisgar.'}</div></div>
-    ${m ? `<a class="btn" href="#/fisguei/${m.id}">Abrir no Fisguei (${esc(m.ref)})</a>` : ''}${el.dataset.end === '1' && (!m || !['fila', 'buscando'].includes(m.pedido)) ? `<button class="btn pri" data-act="fg-buscar-op" data-id="${id}">${m ? 'Buscar de novo' : 'Buscar dados no Fisgar'}</button>` : ''}</div></div>`;
+    ${m ? `<a class="btn" href="#/fisguei/${m.id}">Abrir no Fisguei (${esc(m.ref)})</a>` : ''}${el.dataset.end === '1' && (!m || !['fila', 'buscando'].includes(m.pedido)) ? `<button class="btn pri" data-act="fg-buscar-op" data-id="${id}">${m ? 'Buscar de novo' : 'Localizar proprietário'}</button>` : ''}</div></div>`;
 }
 ACT['fg-buscar-op'] = (el) => comBotao(el, async () => {
   const r = await api('POST', '/api/fisguei/buscar', { oportunidade_ids: [el.dataset.id] });

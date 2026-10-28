@@ -213,15 +213,20 @@ r.get('/painel/adm', A.exigePerfil('adm', 'gestor'), (req, res) => {
   add('warn', visitasK.naoConfirmadasAmanha, 'visita(s) de hoje ou amanhã ainda não confirmada(s)', '#/visitas');
   add('warn', atend.sugestoes, 'resposta(s) da IA esperando aprovação', '#/whats');
   add('warn', leadsK.semCorretor, 'lead(s) ativo(s) sem corretor', '#/leads');
-  add('warn', radar.livres, 'oportunidade(s) nova(s) do radar sem corretor', '#/radar');
+  // captação acontece nas vitrines da base: respostas do robô e donos localizados esperando o primeiro contato
+  const roboEsperando = one(`SELECT count(*) AS n FROM fisguei_anuncios WHERE status IN ('respondeu','confirmado')`).n;
+  add('bad', roboEsperando, 'proprietário(s) responderam o robô TH-IA-GO e esperam o corretor', '#/fisguei?etapa=precisa');
+  const etapas = require('../services/carteira').enriquece(imoveis.filter((i) => i.proprietario_id && ['captacao', 'aguardando_autorizacao'].includes(i.status)));
+  add('warn', etapas.filter((i) => i.etapa === 'localizado').length, 'imóvel(is) com dono localizado esperando o primeiro contato', '#/imoveis?etapa=localizado');
+  add('info', etapas.filter((i) => i.etapa === 'confirmado').length, 'dono(s) confirmado(s): falta a autorização de venda', '#/imoveis?etapa=confirmado');
   add('warn', docs.pendentes7, 'autorização(ões) de venda sem assinatura há mais de 7 dias', '#/imoveis');
   const vencendo = ativos.filter((i) => i.exclusivo && i.exclusivo_ate && dia(i.exclusivo_ate) >= hoje && dia(i.exclusivo_ate) <= em(30));
   add('warn', vencendo.length, 'exclusividade(s) vencendo nos próximos 30 dias', '#/imoveis');
   add('warn', ativos.filter((i) => i.exclusivo && i.exclusivo_ate && dia(i.exclusivo_ate) < hoje).length, 'exclusividade(s) já vencida(s): renovar ou retirar', '#/imoveis');
-  add('info', aVenda.filter((i) => !i.fotos).length, 'imóvel(is) à venda sem foto (não aparecem no portal)', '#/imoveis');
+  add('info', aVenda.filter((i) => !i.fotos).length, 'imóvel(is) à venda sem foto (não aparecem no portal)', '#/imoveis?ficha=falta:Fotos próprias');
   add('info', aVenda.filter((i) => !i.tem_desc).length, 'imóvel(is) à venda sem descrição', '#/imoveis');
   add('info', imoveis.filter((i) => ['captacao', 'aguardando_autorizacao'].includes(i.status) && i.atualizado_em < horaSP(30)).length, 'imóvel(is) parado(s) em captação há mais de 30 dias', '#/imoveis');
-  add('info', ativos.filter((i) => !i.proprietario_id).length, 'imóvel(is) sem proprietário cadastrado', '#/imoveis');
+  add('info', ativos.filter((i) => !i.proprietario_id).length, 'imóvel(is) sem proprietário cadastrado', '#/imoveis?dono=sem');
   add('info', ativos.filter((i) => !i.corretor_id).length, 'imóvel(is) sem corretor responsável', '#/imoveis');
 
   res.json({

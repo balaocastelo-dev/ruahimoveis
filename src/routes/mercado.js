@@ -258,8 +258,38 @@ r.get('/mercado/imoveis', (req, res) => {
   if (op.size) cheios.push(...doRadar({ min: '0' }).filter((x) => op.has(x.id)));
   const l = unicos(naVitrine(cheios, req.query));
   l.sort((a, b) => (parseInt(a.numero, 10) || 0) - (parseInt(b.numero, 10) || 0) || (b.valor || 0) - (a.valor || 0));
-  res.json(l.slice(0, 600).map(cartao));
+  res.json(situacao(l.slice(0, 600).map(cartao)));
 });
+// Em que pé está cada cartão: na carteira, buscando o dono no Fisgar, esperando escolha (prédio), sem resultado ou livre.
+function situacao(cards) {
+  const fgIds = new Set(), opIds = new Set();
+  for (const c of cards) for (const x of [c, ...(c.outros || [])]) { if (x.id > 0) fgIds.add(x.id); else if (x.id < 0) opIds.add(-x.id); }
+  const porAn = new Map(), porOp = new Map();
+  const lote = (ids, fn) => { const l = [...ids]; for (let i = 0; i < l.length; i += 400) fn(l.slice(i, i + 400)); };
+  const linhas = [];
+  lote(fgIds, (parte) => linhas.push(...all(`SELECT a.id, a.oportunidade_id, a.imovel_id, i.codigo,
+      (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=a.id ORDER BY p.id DESC LIMIT 1) AS pedido,
+      (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas
+    FROM fisguei_anuncios a LEFT JOIN imoveis i ON i.id=a.imovel_id WHERE a.id IN (${parte.map(() => '?').join(',')})`, ...parte)));
+  lote(opIds, (parte) => linhas.push(...all(`SELECT a.id, a.oportunidade_id, a.imovel_id, i.codigo,
+      (SELECT p.status FROM fisguei_pedidos p WHERE p.anuncio_id=a.id ORDER BY p.id DESC LIMIT 1) AS pedido,
+      (SELECT count(*) FROM fisguei_pessoas x WHERE x.anuncio_id=a.id AND x.consultado=1) AS consultadas
+    FROM fisguei_anuncios a LEFT JOIN imoveis i ON i.id=a.imovel_id WHERE a.oportunidade_id IN (${parte.map(() => '?').join(',')})`, ...parte)));
+  for (const x of linhas) { porAn.set(x.id, x); if (x.oportunidade_id) porOp.set(x.oportunidade_id, x); }
+  lote(opIds, (parte) => { for (const o of all(`SELECT o.id, o.imovel_id, i.codigo FROM oportunidades o LEFT JOIN imoveis i ON i.id=o.imovel_id WHERE o.id IN (${parte.map(() => '?').join(',')}) AND o.imovel_id IS NOT NULL`, ...parte)) if (!porOp.has(o.id)) porOp.set(o.id, { imovel_id: o.imovel_id, codigo: o.codigo }); });
+  const PESO = { buscando: 5, fila: 4, escolher: 3, concluido: 2, sem_resultado: 1, erro: 0 };
+  return cards.map((c) => {
+    const ss = [c, ...(c.outros || [])].map((x) => (x.id > 0 ? porAn.get(x.id) : porOp.get(-x.id))).filter(Boolean);
+    const cart = ss.find((x) => x.imovel_id && x.codigo);
+    let situ;
+    if (cart) situ = { estado: 'carteira', imovel_id: cart.imovel_id, codigo: cart.codigo };
+    else {
+      const p = ss.filter((x) => x.pedido).sort((a, b) => (PESO[b.pedido] ?? 0) - (PESO[a.pedido] ?? 0))[0];
+      situ = p ? { estado: p.pedido, anuncio_id: p.id } : { estado: c.logradouro && c.numero ? 'livre' : 'sem_endereco' };
+    }
+    return { ...c, situ };
+  });
+}
 r.get('/mercado/mapa', (req, res) => {
   res.setHeader('Cache-Control', 'private, max-age=120');
   res.json(memo(req, () => unicos(naVitrine(filtra(baseVitrine(), req.query).filter((x) => x.lat != null), req.query))

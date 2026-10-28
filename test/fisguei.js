@@ -134,6 +134,17 @@ const consulta = (doc, nome, extra, fones) => ({
     pessoas: { pedido: JSON.stringify({ search: { type: 'IPTU_ADDRESS', key: px.pedido.key } }), json: gente, cobrado: true },
     consultas: [{ pedido: JSON.stringify({ search: { key: { type: 'DOCUMENT', document: '11122233344', addresses: [{ number: 135, zipcode: 13098319, iptuMatch: true }], name: 'MARIA DONA' } } }), json: info, cobrado: true }] }, H), 'extensão devolve o resultado');
   assert.equal(res.status, 'concluido'); assert.equal(res.creditos, 2); assert.equal(res.consultadas, 1);
+  // dono localizado: o imóvel entra sozinho na carteira, com o proprietário do Fisgar na ficha
+  assert.ok(res.imovel && res.imovel.codigo); console.log('ok · dono localizado leva o imóvel para a carteira');
+  const naCart = ok(await req('cor', 'GET', '/api/imoveis/' + res.imovel.id), 'ficha do imóvel na carteira');
+  assert.equal(naCart.proprietario.nome, 'Maria Dona'); assert.equal(naCart.proprietario.telefone, '5519955554444'); assert.ok(/ainda não confirmou/.test(naCart.proprietario.origem_dado));
+  assert.equal(naCart.etapa, 'localizado'); assert.equal(naCart.origem, 'fisgar'); assert.ok(naCart.ficha.falta.includes('Fotos próprias'));
+  const lCart = ok(await req('cor', 'GET', '/api/imoveis'), 'lista da carteira');
+  assert.equal(lCart.find((i) => i.id === res.imovel.id).etapa, 'localizado'); console.log('   etapa "dono localizado" na lista');
+  const fgCart = ok(await req('cor', 'GET', `/api/imoveis/${res.imovel.id}/fisgar`), 'dados do Fisgar na ficha');
+  assert.equal(fgCart.pessoas.length, 2); assert.ok(fgCart.pessoas[0].contatos.some((c) => c.valor === '5519955554444'));
+  const loc = ok(await req('cor', 'POST', '/api/fisguei/localizar', { ids: [-op2.id] }), 'localizar de novo pela vitrine');
+  assert.equal(loc.criados, 0); assert.equal(loc.na_carteira, 1); console.log('   quem já está na carteira não gasta crédito de novo');
   const sit = ok(await req('cor', 'GET', `/api/fisguei/radar?ids=${op2.id}`), 'situação no Radar')[op2.id];
   assert.equal(sit.consultadas, 1); assert.equal(sit.pessoas, 2);
   const ficha3 = ok(await req('cor', 'GET', '/api/fisguei/' + sit.id), 'ficha do endereço buscado');
@@ -165,6 +176,11 @@ const consulta = (doc, nome, extra, fones) => ({
   const im2 = ok(await req('cor', 'POST', `/api/fisguei/${id}/importar`), 'importa endereço com dono confirmado');
   const pr = one('SELECT p.* FROM imoveis i JOIN proprietarios p ON p.id=i.proprietario_id WHERE i.id=?', im2.id);
   assert.equal(pr.nome, 'Andre Luis Arruda'); assert.ok(/Fisgar/.test(pr.origem_dado)); console.log('ok · dono confirmado vira proprietário (origem do dado anotada)');
+  assert.equal(ok(await req('adm', 'GET', '/api/imoveis/' + im2.id), 'etapa do confirmado').etapa, 'confirmado'); console.log('   etapa "dono confirmou"');
+  // proprietário digitado pela equipe não é trocado pelo Fisgar
+  run("UPDATE proprietarios SET origem_dado='Informado pelo proprietário', nome='Nome Certo' WHERE id=?", pr.id);
+  require('../src/fisguei/pedidos').sincronizaDono(id);
+  assert.equal(one('SELECT nome FROM proprietarios WHERE id=?', pr.id).nome, 'Nome Certo'); console.log('ok · dono cadastrado à mão fica como está');
   global.fetch = fetch0;
 
   srv.close();

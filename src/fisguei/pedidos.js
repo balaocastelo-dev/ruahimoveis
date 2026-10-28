@@ -160,7 +160,8 @@ function resultado(id, b) {
   if (b.sem_credito) status = consultadas ? 'concluido' : 'erro';
   conclui(id, status, { creditos, pessoas: total, consultadas, erro: b.sem_credito ? 'O Fisgar recusou por falta de crédito: ' + (b.aviso || 'sem créditos no plano') : b.aviso || null });
   if (status === 'sem_resultado') run(`UPDATE fisguei_anuncios SET observacoes=coalesce(observacoes,'') || ? WHERE id=?`, ' O Fisgar não achou dono pelo IPTU neste endereço.', p.anuncio_id);
-  return { ok: true, status, creditos, pessoas: total, consultadas };
+  const carteira = status === 'concluido' ? entraNaCarteira(id) : null;
+  return { ok: true, status, creditos, pessoas: total, consultadas, imovel: carteira };
 }
 
 function situacaoOportunidades(ids) {
@@ -196,31 +197,77 @@ const TIPO_IMOVEL = [[/cobertura/, 'Cobertura'], [/apartamento|apto|flat|studio|
   [/terreno|lote/, 'Terreno'], [/chacara|sitio|fazenda|haras/, 'Chácara'], [/casa/, 'Casa']];
 const tipoImovel = (t) => { const n = F.norm(t); const m = TIPO_IMOVEL.find(([re]) => re.test(n)); return m ? m[1] : 'Casa'; };
 
+// Quem fica como proprietário na ficha: quem confirmou pelo WhatsApp; senão o melhor consultado no Fisgar
+// (possível proprietário pelo IPTU primeiro, depois cônjuge/morador), sempre com telefone quando houver.
+function melhorDono(anuncioId) {
+  const l = all(`SELECT p.*, (SELECT c.valor FROM fisguei_contatos c WHERE c.pessoa_id=p.id AND c.tipo='tel' ORDER BY CASE c.envio WHEN 'respondeu' THEN 0 WHEN 'enviado' THEN 1 ELSE 2 END, c.id LIMIT 1) AS tel,
+      (SELECT c.valor FROM fisguei_contatos c WHERE c.pessoa_id=p.id AND c.tipo='email' ORDER BY c.id LIMIT 1) AS email
+    FROM fisguei_pessoas p WHERE p.anuncio_id=? AND p.status NOT IN ('negou','parar')`, anuncioId);
+  if (!l.length) return null;
+  const nota = (x) => (x.status === 'confirmou' ? 0 : 10) + (x.consultado ? 0 : 5) + (x.tel ? 0 : 2) + F.TIPOS_PRIORIDADE(x.relacao);
+  return l.sort((a, b) => nota(a) - nota(b) || a.id - b.id)[0];
+}
+const ORIGEM_FISGAR = 'Fisgar';
+const origemDono = (d) => (d.status === 'confirmou' ? 'Fisgar (consulta paga) e confirmou pelo WhatsApp que é o dono'
+  : `Fisgar (consulta paga): ${d.relacao || 'pessoa ligada ao endereço'}, ainda não confirmou`);
+
+// Liga (ou atualiza) o proprietário da ficha com o que o Fisgar trouxe. Proprietário digitado pela equipe não é trocado.
+function sincronizaDono(anuncioId) {
+  const a = one('SELECT id, imovel_id FROM fisguei_anuncios WHERE id=?', anuncioId);
+  if (!a || !a.imovel_id) return null;
+  const im = one('SELECT id, proprietario_id FROM imoveis WHERE id=?', a.imovel_id);
+  if (!im) return null;
+  const d = melhorDono(a.id);
+  if (!d) return null;
+  const atual = im.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', im.proprietario_id) : null;
+  if (atual && !String(atual.origem_dado || '').startsWith(ORIGEM_FISGAR)) return atual.id;
+  if (atual) {
+    run('UPDATE proprietarios SET nome=?, telefone=coalesce(?,telefone), email=coalesce(?,email), origem_dado=? WHERE id=?', d.nome, d.tel || null, d.email || null, origemDono(d), atual.id);
+    return atual.id;
+  }
+  const pid = Number(run('INSERT INTO proprietarios(nome,telefone,email,origem_dado) VALUES(?,?,?,?)', d.nome, d.tel || null, d.email || null, origemDono(d)).lastInsertRowid);
+  run(`UPDATE imoveis SET proprietario_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, pid, im.id);
+  return pid;
+}
+
+// Leva o anúncio da base para a carteira (imóveis em operação). Acontece sozinho quando o Fisgar devolve o proprietário
+// ("Localizar proprietário" nas vitrines) e também pelo botão na ficha do Fisguei. As fotos do anúncio são de terceiros: não vão.
 function importa(anuncioId, usuario, proximoCodigo) {
   const a = one('SELECT * FROM fisguei_anuncios WHERE id=?', anuncioId);
   if (!a) { const e = new Error('Anúncio não encontrado.'); e.status = 404; throw e; }
-  if (a.imovel_id && one('SELECT 1 FROM imoveis WHERE id=?', a.imovel_id)) return { id: a.imovel_id, ja: true, codigo: one('SELECT codigo FROM imoveis WHERE id=?', a.imovel_id).codigo };
-  const dono = one(`SELECT p.*, (SELECT c.valor FROM fisguei_contatos c WHERE c.pessoa_id=p.id AND c.tipo='tel' ORDER BY CASE c.envio WHEN 'respondeu' THEN 0 ELSE 1 END, c.id LIMIT 1) AS tel,
-      (SELECT c.valor FROM fisguei_contatos c WHERE c.pessoa_id=p.id AND c.tipo='email' ORDER BY c.id LIMIT 1) AS email
-    FROM fisguei_pessoas p WHERE p.anuncio_id=? AND p.status='confirmou' ORDER BY p.id LIMIT 1`, a.id);
-  let proprietarioId = null;
-  if (dono) {
-    proprietarioId = Number(run('INSERT INTO proprietarios(nome,telefone,email,origem_dado) VALUES(?,?,?,?)', dono.nome, dono.tel || null, dono.email || null,
-      'Fisgar (consulta paga) e confirmou pelo WhatsApp que é o dono').lastInsertRowid);
+  if (a.imovel_id && one('SELECT 1 FROM imoveis WHERE id=?', a.imovel_id)) {
+    sincronizaDono(a.id);
+    return { id: a.imovel_id, ja: true, codigo: one('SELECT codigo FROM imoveis WHERE id=?', a.imovel_id).codigo };
   }
   const tipo = tipoImovel(a.tipo);
   const codigo = proximoCodigo(tipo);
-  const descricao = [`Importado do Fisguei (${F.ref(a.id)}) em ${new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}.`,
+  const descricao = [`Veio da base (${F.ref(a.id)}) em ${new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' })}, com o proprietário localizado no Fisgar.`,
     a.anunciante_nome ? `Anunciado antes por: ${a.anunciante_nome}${a.anunciante_tipo === 'imobiliaria' ? ' (imobiliária)' : ''}.` : '',
-    'Fotos: tirar fotos próprias da RUAH (as do anúncio original são de terceiros e não foram copiadas).'].filter(Boolean).join('\n');
-  const corretor = usuario.perfil === 'corretor' ? usuario.id : (a.oportunidade_id && one('SELECT corretor_id FROM oportunidades WHERE id=?', a.oportunidade_id) || {}).corretor_id || usuario.id;
-  const unidade = dono && dono.unidade ? dono.unidade : null;
-  const id = Number(run(`INSERT INTO imoveis(codigo,tipo,status,cep,logradouro,numero,unidade,bairro,cidade,uf,lat,lon,quartos,suites,vagas,area_util,area_total,valor,valor_condominio,iptu,descricao,corretor_id,proprietario_id)
+    'Fotos: tirar fotos próprias da RUAH ou pedir as originais ao dono (as do anúncio são de terceiros e não foram copiadas).'].filter(Boolean).join('\n');
+  const corretor = usuario && usuario.perfil === 'corretor' ? usuario.id : (a.oportunidade_id && one('SELECT corretor_id FROM oportunidades WHERE id=?', a.oportunidade_id) || {}).corretor_id || (usuario && usuario.id) || null;
+  const d = melhorDono(a.id);
+  const unidade = d && d.unidade ? d.unidade : (a.complemento && /\d/.test(a.complemento) ? a.complemento.slice(0, 40) : null);
+  const id = Number(run(`INSERT INTO imoveis(codigo,tipo,status,cep,logradouro,numero,unidade,bairro,cidade,uf,lat,lon,condominio_id,quartos,suites,vagas,area_util,area_total,valor,valor_condominio,iptu,descricao,corretor_id)
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`, codigo, tipo, 'captacao', a.cep, a.logradouro, a.numero, unidade, a.bairro, a.cidade || cfg.CIDADE_PADRAO, a.uf || 'SP', a.lat, a.lon,
-    a.quartos, a.suites, a.vagas, a.area_util, a.area_total, a.valor, a.valor_condominio, a.iptu, descricao, corretor, proprietarioId).lastInsertRowid);
+    a.condominio_id || null, a.quartos, a.suites, a.vagas, a.area_util, a.area_total, a.valor, a.valor_condominio, a.iptu, descricao, corretor).lastInsertRowid);
   run(`UPDATE fisguei_anuncios SET imovel_id=?, atualizado_em=datetime('now','localtime') WHERE id=?`, id, a.id);
   if (a.oportunidade_id) run(`UPDATE oportunidades SET imovel_id=coalesce(imovel_id,?) WHERE id=?`, id, a.oportunidade_id);
+  sincronizaDono(a.id);
   return { id, codigo };
 }
+// Depois que o Fisgar respondeu: com alguém consultado (telefone na mão), o imóvel entra na carteira sozinho.
+function entraNaCarteira(pedidoId) {
+  const p = one('SELECT * FROM fisguei_pedidos WHERE id=?', pedidoId);
+  if (!p) return null;
+  const tem = one('SELECT count(*) AS n FROM fisguei_pessoas WHERE anuncio_id=? AND consultado=1', p.anuncio_id).n;
+  if (!tem) return null;
+  const u = p.criado_por ? one('SELECT id, perfil FROM usuarios WHERE id=?', p.criado_por) : null;
+  try {
+    const { proximoCodigo } = require('../routes/imoveis').ajudantes;
+    const out = importa(p.anuncio_id, u, proximoCodigo);
+    if (!out.ja) { const { audit } = require('../db'); audit(u ? u.id : null, 'imovel_criado', `${out.codigo} (proprietário localizado no Fisgar, ${F.ref(p.anuncio_id)})`); }
+    return out;
+  } catch (e) { console.error('[fisguei] levar para a carteira', e.message); return null; }
+}
 
-module.exports = { limites, salvaLimites, creditosHoje, pedeOportunidades, pedeEndereco, pedePessoa, proximo, resultado, resumo, marcaExtensao, situacaoOportunidades, importa, tipoImovel, resolveCep, trechoServe };
+module.exports = { melhorDono, sincronizaDono, entraNaCarteira, limites, salvaLimites, creditosHoje, pedeOportunidades, pedeEndereco, pedePessoa, proximo, resultado, resumo, marcaExtensao, situacaoOportunidades, importa, tipoImovel, resolveCep, trechoServe };

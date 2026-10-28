@@ -273,6 +273,7 @@ function recebida({ telefone, texto, wa_id }) {
     run(`UPDATE fisguei_anuncios SET status='confirmado', atualizado_em=datetime('now','localtime') WHERE id=?`, anuncio.id);
     pulaRestoDoEndereco(anuncio.id, 'O dono já confirmou');
     const opId = criaOportunidade(anuncio, pessoa, tel);
+    donoNaCarteira(anuncio.id);
     enfileiraResposta(pessoa.id, tel, RESPOSTAS.confirmou);
     return { tipo, oportunidade_id: opId, pessoa_id: pessoa.id, anuncio_id: anuncio.id, telefone: tel };
   }
@@ -306,8 +307,19 @@ function fechaSeAcabou(anuncioId) {
   if (!fila && !conversa) run(`UPDATE fisguei_anuncios SET status='sem_dono', atualizado_em=datetime('now','localtime') WHERE id=? AND status IN ('abordando','respondeu')`, anuncioId);
 }
 
+// Dono confirmou: o imóvel entra (ou continua) na carteira com ele como proprietário.
+function donoNaCarteira(anuncioId) {
+  try {
+    const P = require('./pedidos');
+    const a = one('SELECT imovel_id FROM fisguei_anuncios WHERE id=?', anuncioId);
+    if (a && a.imovel_id) return P.sincronizaDono(anuncioId);
+    return P.importa(anuncioId, null, require('../routes/imoveis').ajudantes.proximoCodigo);
+  } catch (e) { console.error('[fisguei] dono na carteira', e.message); return null; }
+}
+
 module.exports = {
-  ROBO, LIMITE_MAX, INTERVALO_MIN_S, MODELO_PADRAO, RESPOSTAS, ref, norm, normTel, primeiroNome,
+  donoNaCarteira,
+  ROBO, LIMITE_MAX, INTERVALO_MIN_S, MODELO_PADRAO, RESPOSTAS, ref, norm, normTel, primeiroNome, TIPOS_PRIORIDADE,
   ajustes, salvaAjustes, dentroDoHorario, agoraSP, enviadasHoje,
   salvaAnuncio, salvaPessoa, bloqueado, bloqueia, montaTexto,
   proximo, marcaEnviado, marcaErro, pendentes, enfileiraResposta, marcaPendente,

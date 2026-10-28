@@ -1,11 +1,12 @@
-/* Sistema RUAH — Captação: Radar + Fisguei numa tela só (painel no topo e as listas nas abas). Carregado depois do painel.js. */
+/* Sistema RUAH — Robôs e Fisgar (Sistema): créditos, robô do WhatsApp, buscas de dono e extensão. A antiga tela de captação
+   (painel Radar + Fisguei) saiu: a captação acontece nas vitrines da base. Carregado depois do painel.js. */
 'use strict';
 
 // Abas comuns ao painel, ao Radar e ao Fisguei
 function capAbas(on) {
-  const abas = [['painel', '#/captacao', 'Painel'], ['radar', '#/radar', 'Oportunidades (Radar)'], ['fisguei', '#/fisguei', 'Anúncios e proprietários (Fisguei)']];
-  if (veTudo()) abas.push(['aprovacoes', '#/radar/aprovacoes', 'Aprovações']);
-  return `<div class="tabs cap-abas">${abas.map(([k, h, t]) => `<a href="${h}" class="${on === k ? 'on' : ''}">${t}</a>`).join('')}</div>`;
+  // Radar e Fisguei agora moram dentro dos Imóveis da base: as mesmas abas das vitrines
+  if (typeof mkAbas === 'function') return mkAbas(on);
+  return '';
 }
 
 // Gráfico de colunas por dia com várias séries lado a lado: [{nome, cor, valores}]
@@ -98,5 +99,29 @@ async function telaCaptacao() {
   poll = setInterval(async () => {
     if (location.hash.split('?')[0] !== '#/captacao') return;
     try { const rr = await api('GET', '/api/fisguei/resumo'); const el = $('#fg-robo'); if (el) el.outerHTML = cartaoRobo(rr); } catch {}
+  }, 10000);
+}
+
+// ---------- Sistema > Robôs e Fisgar ----------
+async function telaRobos() {
+  const [r, pd, cr, rr] = await Promise.all([api('GET', '/api/fisguei/resumo'), api('GET', '/api/fisguei/pedidos'), api('GET', '/api/fisguei/creditos'),
+    veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null]);
+  const al = veTudo() ? await api('GET', '/api/radar/alertas').catch(() => null) : null;
+  $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Robôs e Fisgar</h1>
+  <p class="lead">Tudo o que trabalha sozinho para a captação: os créditos do Fisgar, a busca de proprietários (a extensão do Chrome executa no Fisgar o que vocês pedem nas vitrines), o robô TH-IA-GO no WhatsApp e o radar dos portais.</p>
+  <div id="rb-radar">${al && typeof avisoSaude === 'function' ? avisoSaude(al, false) : ''}</div>
+  ${r.precisaCorretor ? `<div class="banner warn"><b>${r.precisaCorretor}</b> resposta(s) de proprietário esperando o corretor. <a href="#/fisguei?etapa=precisa">Ver agora</a></div>` : ''}
+  ${rr && rr.aprovacoesPendentes ? `<div class="banner warn"><b>${rr.aprovacoesPendentes}</b> pedido(s) de matrícula/birô esperando aprovação. <a href="#/radar/aprovacoes">Revisar</a></div>` : ''}
+  <div class="rb-topo"><div id="fx-cred">${typeof fxCreditos === 'function' ? fxCreditos(cr) : ''}</div>
+    <div class="card"><h3>Atalhos</h3><div class="list">
+      <a class="item click" href="#/apartamentos"><div class="t">Vitrines da base</div><span class="muted small">escolher imóveis e localizar o proprietário</span></a>
+      <a class="item click" href="#/fisguei"><div class="t">Leitura da IA</div><span class="muted small">quedas de preço, particulares, abaixo do bairro</span></a>
+      <a class="item click" href="#/imoveis"><div class="t">Carteira de imóveis</div><span class="muted small">os que já têm dono localizado</span></a>
+      ${veTudo() ? '<a class="item click" href="#/radar/aprovacoes"><div class="t">Aprovações</div><span class="muted small">consultas pagas (matrícula e birô)</span></a>' : ''}</div></div></div>
+  ${cartaoBusca(pd)}${cartaoRobo(r)}${cartaoExtensao(r)}`;
+  FX = Object.assign(FX || {}, { cred: cr, resumo: r, pedidos: pd }); // "Corrigir saldo" usa o mesmo estado da Leitura da IA
+  poll = setInterval(async () => {
+    if (location.hash !== '#/robos') return;
+    try { const x = await api('GET', '/api/fisguei/resumo'); const el = $('#fg-robo'); if (el) el.outerHTML = cartaoRobo(x); } catch {}
   }, 10000);
 }
