@@ -281,12 +281,15 @@ const PAGINA = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><m
 
 function gestor(req, res, next) {
   const host = String(req.hostname || '').toLowerCase();
-  const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || req.path.startsWith('/gestor-api/');
+  const SIM = { '/gestor/dashboard': 'dashboard', '/gestor/projecao': 'projecao' }[req.path.replace(/\/$/, '')];
+  const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || !!SIM || req.path.startsWith('/gestor-api/');
   if (!ehGestor) return next();
   if (!HOSTS.has(host)) return res.status(404).type('text/plain').send('Não encontrado.');
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.setHeader('Cache-Control', 'no-store');
   if (req.path.startsWith('/gestor-api/')) { req.url = req.url.replace(/^\/gestor-api/, ''); return api(req, res, next); }
+  if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js')
+    .replace(/<title>[^<]*<\/title>/, `<title>${SIM === 'dashboard' ? 'Dashboard' : 'Projeção'} · Painel do gestor</title>`));
   res.type('html').send(PAGINA);
 }
 

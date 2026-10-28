@@ -39,7 +39,7 @@ function telaEntrada() {
 let DADOS = null, FILTRO = 'todas', EU = null;
 async function iniciar() {
   try { EU = await api('GET', '/eu'); } catch { return; }
-  $('#raiz').innerHTML = `<header class="topo"><div class="topo-in"><div class="marca">Herrera HOUSE IA<span>Painel do gestor</span></div><div class="sp"></div>
+  $('#raiz').innerHTML = `<header class="topo"><div class="topo-in"><div class="marca">Herrera HOUSE IA<span>Painel do gestor</span></div><nav class="sim-nav"><a class="btn sm pri" href="/gestor">Imobiliárias</a><a class="btn sm" href="/gestor/dashboard">Dashboard</a><a class="btn sm" href="/gestor/projecao">Projeção 10 anos</a></nav><div class="sp"></div>
     <span class="muted pequeno">${esc(EU.nome)}</span><button class="btn sm" id="b-senha">Trocar senha</button><button class="btn sm" id="b-sair">Sair</button></div></header>
     <main><h1>Imobiliárias</h1><p class="muted">Cada imobiliária tem o sistema, o portal e o blog dela, com banco separado. A base de condomínios e o 3D são comuns.</p>
     <div id="kpis" class="kpis"></div>
