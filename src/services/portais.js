@@ -12,7 +12,7 @@ const cfg = require('../config');
 const { getConfig, setConfig, audit } = require('../db');
 const alertas = require('./alertas');
 
-const UA = 'Mozilla/5.0 (compatible; SistemaRUAH-Radar/1.0; +https://ruahimobiliaria.com.br)';
+const UA = `Mozilla/5.0 (compatible; ${cfg.SISTEMA_NOME.replace(/\s+/g, '')}-Radar/1.0; +https://ruahimobiliaria.com.br)`;
 const BASE = 'https://www.chavesnamao.com.br';
 const PAUSA_MS = 4000;          // entre uma página e outra do mesmo portal
 const DETALHES_POR_RODADA = 25; // anúncios novos abertos por rodada (o resto fica na fila)
@@ -115,7 +115,7 @@ async function lerAgora({ log = () => {}, testar = false } = {}) {
         naFila.add(a.id);
       }
       if (!testar) vistos[mapa.url] = mapa.lastmod;
-      log(`${mapa.url.split('/').pop()}: ${urls.length} anúncios no Brasil, ${r.alvo} nos bairros da RUAH até agora`);
+      log(`${mapa.url.split('/').pop()}: ${urls.length} anúncios no Brasil, ${r.alvo} nos bairros da ${cfg.CLIENTE_NOME} até agora`);
     }
     // abre os novos aos poucos (mais novos primeiro)
     fila.sort((x, y) => +y.id - +x.id);

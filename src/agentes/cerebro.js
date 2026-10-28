@@ -25,9 +25,11 @@ function lerResposta(txt) {
 
 // Monta o pedido completo: alma + sistema. A parte do sistema (contexto e formato) não é editável na tela.
 async function pensar(slug, telefone, extra = {}) {
-  const alma = require('./catalogo').lerAlma(B.alma(slug)).corpo;
+  // A alma (do arquivo ou editada na tela, com {empresa}/{cliente}/{sistema}) é resolvida aqui, sempre.
+  const C = require('./catalogo');
+  const alma = C.resolverAlma(C.lerAlma(B.alma(slug)).corpo);
   const contexto = await X.montar(slug, telefone, extra);
-  const sistema = `${alma}\n\n=====================================\nO QUE O SISTEMA DA RUAH SABE AGORA (dados reais, não invente nada além disto)\n=====================================\n${contexto}`;
+  const sistema = `${alma}\n\n=====================================\nO QUE O SISTEMA DA ${cfg.CLIENTE_NOME.toUpperCase()} SABE AGORA (dados reais, não invente nada além disto)\n=====================================\n${contexto}`;
   const pedido = extra.pedido || 'Responda à última mensagem da PESSOA (ou siga a instrução do SISTEMA, se a última for do sistema), seguindo sua alma e o formato JSON.';
   const bruto = await perguntaIA(sistema, pedido);
   return lerResposta(bruto);
@@ -149,7 +151,7 @@ async function aplicar(slug, telefone, acoes, extra = {}) {
         if (!txt) continue;
         if (an.oportunidade_id) run('INSERT INTO oportunidade_eventos(oportunidade_id,etapa,texto) VALUES(?,?,?)', an.oportunidade_id, 'contato', `TH-IA-GO: ${txt}`);
         B.evento(slug, 'captacao', `${extra.pessoa.nome}: ${txt}`, `fg${an.id || ''}`);
-        if (a.interesse === 'sim') avisaDono(`🏠 Proprietário quer vender com a RUAH: ${extra.pessoa.nome} · ${an.tipo || 'imóvel'} no ${an.bairro || ''}${an.valor ? ' · ' + X.brl(an.valor) : ''}.`, `dono:captacao:${extra.pessoa.id}`);
+        if (a.interesse === 'sim') avisaDono(`🏠 Proprietário quer vender com a ${cfg.CLIENTE_NOME}: ${extra.pessoa.nome} · ${an.tipo || 'imóvel'} no ${an.bairro || ''}${an.valor ? ' · ' + X.brl(an.valor) : ''}.`, `dono:captacao:${extra.pessoa.id}`);
         feitas.push('captação registrada');
       }
 

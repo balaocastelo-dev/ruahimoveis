@@ -1,8 +1,8 @@
 {
-  "name": "sistema-ruah",
+  "name": "herrera-house-ia",
   "version": "1.0.0",
   "private": true,
-  "description": "Sistema RUAH Investimentos Imobiliários - Fase 1",
+  "description": "Herrera HOUSE IA — sistema imobiliário com IA (1º cliente: RUAH Investimentos Imobiliários)",
   "main": "server.js",
   "type": "commonjs",
   "engines": {

@@ -8,7 +8,7 @@ function pdfAutorizacao(a) {
     const partes = []; doc.on('data', (c) => partes.push(c)); doc.on('end', () => resolve(Buffer.concat(partes))); doc.on('error', reject);
     const ouro = '#8a6a2c';
 
-    doc.fillColor(ouro).font('Helvetica-Bold').fontSize(16).text('RUAH', { characterSpacing: 3 });
+    doc.fillColor(ouro).font('Helvetica-Bold').fontSize(16).text(cfg.CLIENTE_NOME, { characterSpacing: 3 });
     doc.fillColor('#555').font('Helvetica').fontSize(9).text(cfg.EMPRESA);
     doc.moveDown(1.2);
 
@@ -42,7 +42,7 @@ function pdfAutorizacao(a) {
       ['Hash SHA-256 do texto', a.conteudo_hash], ['Método', 'Assinatura eletrônica simples (link individual + aceite + assinatura desenhada), conforme MP 2.200-2/2001, art. 10, § 2º.'],
     ];
     campos.forEach(([k, v]) => { doc.font('Helvetica-Bold').text(k, { continued: true }).font('Helvetica').text(`: ${v || '—'}`); doc.moveDown(0.3); });
-    doc.moveDown(1).fontSize(8.5).fillColor('#666').text('Para conferir a integridade, compare o hash acima com o hash do texto gravado no Sistema RUAH. Qualquer alteração no texto gera um hash diferente.');
+    doc.moveDown(1).fontSize(8.5).fillColor('#666').text(`Para conferir a integridade, compare o hash acima com o hash do texto gravado no ${cfg.SISTEMA_NOME}. Qualquer alteração no texto gera um hash diferente.`);
     doc.end();
   });
 }

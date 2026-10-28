@@ -1,7 +1,9 @@
-// Escritório virtual: os 9 agentes robôs da RUAH, cada um com setor, alma (.soul) e linha de WhatsApp.
+// Escritório virtual: os 9 agentes robôs da imobiliária (cliente), cada um com setor, alma (.soul) e linha de WhatsApp.
 // A alma padrão fica em src/agentes/almas/<NN>-<slug>.soul; a versão editada na tela fica no banco.
+// As almas usam {empresa}, {cliente} e {sistema}: resolverAlma() troca pelos nomes da config na hora de montar o prompt.
 const fs = require('fs');
 const path = require('path');
+const cfg = require('../config');
 
 const AGENTES = [
   { slug: 'captador', n: 1, nome: 'TH-IA-GO', cargo: 'Captador de oportunidades', tipo: 'captacao', sigla: 'TH', cor: '#a8823c',
@@ -45,4 +47,12 @@ function lerAlma(texto) {
   return { cabecalho: cab, corpo: (m ? m[2] : t).trim() };
 }
 
-module.exports = { AGENTES, POR_SLUG, CLIENTE, almaPadrao, arquivoAlma, lerAlma };
+// Troca os marcadores da alma pelos nomes desta instalação (vale para a alma do arquivo e para a editada na tela).
+function resolverAlma(texto) {
+  return String(texto || '')
+    .split('{empresa}').join(cfg.EMPRESA)
+    .split('{cliente}').join(cfg.CLIENTE_NOME)
+    .split('{sistema}').join(cfg.SISTEMA_NOME);
+}
+
+module.exports = { AGENTES, POR_SLUG, CLIENTE, almaPadrao, arquivoAlma, lerAlma, resolverAlma };

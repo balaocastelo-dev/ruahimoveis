@@ -69,7 +69,7 @@ function descricaoImovel(i, endereco) {
 
 function tagsLink({ titulo, descricao, url, imagem, largura, altura }) {
   const linhas = [
-    '<meta property="og:site_name" content="RUAH">',
+    `<meta property="og:site_name" content="${esc(cfg.CLIENTE_NOME)}">`,
     '<meta property="og:locale" content="pt_BR">',
     '<meta property="og:type" content="website">',
     `<meta property="og:title" content="${esc(titulo)}">`,

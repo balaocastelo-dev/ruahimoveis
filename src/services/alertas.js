@@ -57,7 +57,7 @@ async function resolveLink(url, portal) {
     if (PORTAIS.some((p) => p.anuncio.test(canon))) return canon;
     if (!/^https:\/\//i.test(u)) return null;
     try {
-      const r = await fetch(u, { method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(8000), headers: { 'User-Agent': 'Mozilla/5.0 (Sistema RUAH - leitor de alertas)' } });
+      const r = await fetch(u, { method: 'GET', redirect: 'manual', signal: AbortSignal.timeout(8000), headers: { 'User-Agent': `Mozilla/5.0 (${cfg.SISTEMA_NOME} - leitor de alertas)` } });
       try { r.body?.cancel(); } catch { /* sem corpo */ }
       const loc = r.headers.get('location');
       if (!loc || r.status < 300 || r.status > 399) return null;

@@ -4,7 +4,7 @@
 const { one, run } = require('../db');
 
 const chave = () => (process.env.GOOGLE_MAPS_KEY || '').trim();
-// a chave é restrita aos sites da RUAH no Google: a chamada do servidor se apresenta como o site
+// a chave é restrita aos sites do cliente no Google: a chamada do servidor se apresenta como o site
 const CAB = { Referer: (process.env.PUBLIC_URL || 'https://ruahimoveis.vercel.app').replace(/\/?$/, '/') };
 const ligado = () => !!chave();
 const rumo = (la1, lo1, la2, lo2) => {

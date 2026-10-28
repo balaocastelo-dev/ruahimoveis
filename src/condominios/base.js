@@ -1,5 +1,6 @@
 // Condomínios · reconhecer pelo endereço/mapa, ligar imóveis/Radar/Fisguei e calcular os números de cada prédio.
 const { one, all, run } = require('../db');
+const cfg = require('../config');
 const G = require('./geo');
 
 const ATIVAS_RADAR = "('nova','em_contato','carta_enviada','aguardando_aprovacao')";
@@ -215,7 +216,7 @@ function numeros(id) {
     FROM fisguei_anuncios f WHERE f.condominio_id=? ORDER BY f.criado_em DESC`, id);
 
   const aVenda = [
-    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: 'RUAH', ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: 'RUAH', foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
+    ...carteira.filter((i) => ['publicado', 'off_market'].includes(i.status)).map((i) => ({ origem: 'RUAH', ref: i.codigo, href: `#/imoveis/${i.id}`, valor: i.valor, area: i.area_util, quartos: i.quartos, unidade: i.unidade, desde: i.criado_em, anunciante: cfg.CLIENTE_NOME, foto: i.foto ? `/api/arquivos/${i.foto}` : null })),
     ...radar.filter((o) => ['nova', 'em_contato', 'carta_enviada', 'aguardando_aprovacao'].includes(o.status)).map((o) => ({ origem: 'Radar', ref: 'OP-' + String(o.id).padStart(4, '0'), href: `#/radar/${o.id}`, valor: o.valor, area: o.area, quartos: o.quartos, unidade: o.unidade, desde: o.publicado_em || o.criado_em, anunciante: o.anunciante_nome || (o.anunciante_tipo === 'particular' ? 'Particular' : null), portal: o.portal, foto: o.foto || null })),
     ...fisguei.filter((f) => !['descartado', 'captado'].includes(f.status)).map((f) => ({ origem: 'Fisguei', ref: 'FG-' + String(f.id).padStart(5, '0'), href: `#/fisguei/${f.id}`, valor: f.valor, area: f.area_util, quartos: f.quartos, unidade: f.complemento, desde: f.publicado_em || f.criado_em, anunciante: f.anunciante_nome || (f.anunciante_tipo === 'particular' ? 'Particular' : null), portal: f.portal, foto: (() => { try { return (JSON.parse(f.fotos || '[]') || [])[0] || null; } catch { return null; } })() })),
   ];

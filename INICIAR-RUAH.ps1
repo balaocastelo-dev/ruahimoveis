@@ -1,18 +1,19 @@
 ﻿# ==========================================================
-#  SISTEMA RUAH - iniciar (um clique)
+#  HERRERA HOUSE IA - iniciar (um clique)
+#  (instalação do cliente RUAH; o nome deste arquivo não muda)
 #  - confere o Node.js, instala dependências na 1a vez
 #  - cria o .env com chave secreta aleatória
 #  - faz backup diário do banco
 #  - sobe o sistema e abre o navegador
 # ==========================================================
 $ErrorActionPreference = 'Stop'
-$Host.UI.RawUI.WindowTitle = 'Sistema RUAH - servidor (feche para parar)'
+$Host.UI.RawUI.WindowTitle = 'Herrera HOUSE IA - servidor (feche para parar)'
 Set-Location -LiteralPath $PSScriptRoot
 
 function Linha($t, $c = 'Gray') { Write-Host $t -ForegroundColor $c }
 Linha ''
 Linha '  =========================================' DarkYellow
-Linha '    SISTEMA RUAH  -  iniciando...' Yellow
+Linha '    HERRERA HOUSE IA  -  iniciando...' Yellow
 Linha '  =========================================' DarkYellow
 
 # 1) Node.js 22.13 ou mais novo
@@ -76,7 +77,8 @@ if (Test-Path 'data\ruah.db') {
 }
 
 # 5) Atalho na Área de Trabalho
-$atalho = Join-Path ([Environment]::GetFolderPath('Desktop')) 'Sistema RUAH.lnk'
+$desktop = [Environment]::GetFolderPath('Desktop')
+$atalho = Join-Path $desktop 'Herrera HOUSE IA.lnk'
 if (-not (Test-Path $atalho)) {
   $ws = New-Object -ComObject WScript.Shell
   $s = $ws.CreateShortcut($atalho)
@@ -85,7 +87,8 @@ if (-not (Test-Path $atalho)) {
   $s.WorkingDirectory = $PSScriptRoot
   $s.IconLocation = "$env:WINDIR\System32\shell32.dll,19"
   $s.Save()
-  Linha '  [ok] Atalho "Sistema RUAH" criado na Área de Trabalho' Green
+  Remove-Item -LiteralPath (Join-Path $desktop 'Sistema RUAH.lnk') -ErrorAction SilentlyContinue
+  Linha '  [ok] Atalho "Herrera HOUSE IA" criado na Área de Trabalho' Green
 }
 
 # 6) Ollama (IA local) - só avisa

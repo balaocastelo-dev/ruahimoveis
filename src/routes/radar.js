@@ -153,7 +153,7 @@ r.get('/radar/cartas.pdf', async (req, res) => {
   if (!itens.length) falha(400, 'Nenhuma das oportunidades escolhidas pode receber carta (sem endereço, de imobiliária ou na lista não contatar).');
   const pdf = await carta.pdfCartas(itens);
   res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', `inline; filename="cartas-ruah-${new Date().toISOString().slice(0, 10)}.pdf"`);
+  res.setHeader('Content-Disposition', `inline; filename="cartas-${(cfg.CLIENTE_NOME.normalize('NFD').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').toLowerCase() || 'cliente')}-${new Date().toISOString().slice(0, 10)}.pdf"`);
   res.end(pdf);
 });
 
@@ -174,7 +174,7 @@ r.post('/radar', (req, res) => {
 
 r.get('/radar/:id', (req, res) => {
   const op = permitida(req.usuario, req.params.id);
-  const telCarta = cfg.WHATSAPP_RUAH || (op.corretor_id && (one('SELECT telefone FROM usuarios WHERE id=?', op.corretor_id) || {}).telefone);
+  const telCarta = cfg.WHATSAPP_CLIENTE || (op.corretor_id && (one('SELECT telefone FROM usuarios WHERE id=?', op.corretor_id) || {}).telefone);
   res.json({
     ...comExtras(op), motivos_descarte: MOTIVOS,
     corretor_nome: op.corretor_id ? one('SELECT nome FROM usuarios WHERE id=?', op.corretor_id).nome : null,
@@ -337,7 +337,7 @@ r.post('/radar/:id/converter', (req, res) => {
   const condId = ajudantes.salvarCondominio({ condominio_nome: op.condominio_nome, logradouro: op.logradouro, numero: op.numero, bairro: op.bairro, cidade: op.cidade, uf: cfg.UF_PADRAO });
   const donoNome = op.titular_nome || (op.anunciante_tipo === 'particular' && op.anunciante_nome) || 'Proprietário (confirmar nome)';
   const donoTel = op.titular_telefone || (op.anunciante_tipo === 'particular' ? op.telefone_anuncio : null);
-  const origem = op.titular_origem || (op.anunciante_tipo === 'particular' ? `Anúncio do próprio proprietário${op.portal ? ' (' + op.portal + ')' : ''}` : 'Resposta à carta da RUAH');
+  const origem = op.titular_origem || (op.anunciante_tipo === 'particular' ? `Anúncio do próprio proprietário${op.portal ? ' (' + op.portal + ')' : ''}` : `Resposta à carta da ${cfg.CLIENTE_NOME}`);
   const donoId = Number(run('INSERT INTO proprietarios(nome,telefone,origem_dado) VALUES(?,?,?)', donoNome, donoTel, origem).lastInsertRowid);
   const codigo = ajudantes.proximoCodigo(tipo);
   const imId = Number(run(`INSERT INTO imoveis(codigo,tipo,status,logradouro,numero,unidade,bairro,cidade,uf,condominio_id,quartos,vagas,area_util,valor,corretor_id,proprietario_id,descricao)

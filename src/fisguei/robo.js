@@ -1,4 +1,4 @@
-// Robô TH-IA-GO CORRETOR: WhatsApp ligado pelo QR code (aparelho conectado), roda só no PC da RUAH.
+// Robô TH-IA-GO CORRETOR: WhatsApp ligado pelo QR code (aparelho conectado), roda só no PC da imobiliária (cliente).
 // - mostra o QR code na tela /fisguei (gravado no banco, então aparece também no link online);
 // - aborda os números da fila do Fisguei, um de cada vez, com intervalo, horário comercial e limite por dia;
 // - lê as respostas e passa para o Fisguei (SIM vira oportunidade no Radar, NÃO e PARAR saem da fila).
@@ -32,13 +32,13 @@ async function conecta() {
   const { state, saveCreds } = await useMultiFileAuthState(PASTA);
   let version;
   try { ({ version } = await fetchLatestBaileysVersion()); } catch { /* usa a versão embutida */ }
-  sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows('RUAH TH-IA-GO'), markOnlineOnConnect: false, syncFullHistory: false });
+  sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`${cfg.CLIENTE_NOME} TH-IA-GO`), markOnlineOnConnect: false, syncFullHistory: false });
   sock.ev.on('creds.update', saveCreds);
   sock.ev.on('connection.update', async (u) => {
     if (u.qr) {
       st.estado = 'qr'; st.erro = null;
       try { st.qr = await require('qrcode').toDataURL(u.qr, { margin: 1, width: 320 }); } catch { st.qr = null; }
-      publica(); log('QR code novo: abra a tela Fisguei e leia com o WhatsApp da RUAH (Aparelhos conectados).');
+      publica(); log(`QR code novo: abra a tela Fisguei e leia com o WhatsApp da ${cfg.CLIENTE_NOME} (Aparelhos conectados).`);
     }
     if (u.connection === 'open') {
       st.estado = 'conectado'; st.qr = null; st.erro = null; st.numero = telDoJid(sock.user && sock.user.id);
@@ -69,7 +69,7 @@ async function conecta() {
         const msg = m.message.ephemeralMessage ? m.message.ephemeralMessage.message : m.message;
         const texto = msg.conversation || (msg.extendedTextMessage && msg.extendedTextMessage.text)
           || (msg.buttonsResponseMessage && msg.buttonsResponseMessage.selectedDisplayText)
-          || (msg.imageMessage ? `[foto] ${msg.imageMessage.caption || ''}` : msg.audioMessage ? '[áudio — ouça no celular da RUAH]' : msg.documentMessage ? '[documento]' : '[mensagem]');
+          || (msg.imageMessage ? `[foto] ${msg.imageMessage.caption || ''}` : msg.audioMessage ? `[áudio — ouça no celular da ${cfg.CLIENTE_NOME}]` : msg.documentMessage ? '[documento]' : '[mensagem]');
         const r = F.recebida({ telefone: telDoJid(pn), texto, wa_id: m.key.id });
         if (!r.ignorado) log('resposta de', telDoJid(pn).slice(-4), '→', r.tipo);
         // Escritório virtual: fotos originais do dono ficam guardadas; conversa depois da 1ª resposta vai para o agente TH-IA-GO

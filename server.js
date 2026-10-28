@@ -1,11 +1,11 @@
-// Sistema RUAH · Fase 1 — servidor local.
+// Herrera HOUSE IA · Fase 1 — servidor local.
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const cfg = require('./src/config');
 
 if (!cfg.SECRET_KEY || cfg.SECRET_KEY.length < 32) {
-  console.error('\n[ERRO] SECRET_KEY ausente no arquivo .env. Rode o INICIAR-RUAH.ps1 para gerar a configuração.\n');
+  console.error(`\n[ERRO] ${cfg.SISTEMA_NOME}: SECRET_KEY ausente no arquivo .env. Rode o INICIAR-RUAH.ps1 para gerar a configuração.\n`);
   process.exit(1);
 }
 
@@ -33,7 +33,7 @@ app.use('/webhook/whatsapp', publico.webhook);
 // Escritório virtual: ciclo do cérebro na nuvem (agendador do Supabase a cada minuto + aviso do PC quando chega mensagem).
 app.post('/escritorio-ciclo', require('./src/routes/escritorio').ciclo);
 
-// Extensão do Chrome "Fisguei → RUAH": entra com a chave própria (fora de /api, sem sessão).
+// Extensão do Chrome "Fisguei → Herrera HOUSE IA": entra com a chave própria (fora de /api, sem sessão).
 app.use('/fisguei-api', require('./src/routes/fisguei').receber);
 
 app.use(express.json({ limit: '1mb' }));
@@ -57,7 +57,7 @@ app.use('/api', require('./src/routes/mercado'));
 app.use('/api', require('./src/routes/captacao'));
 // Escritório virtual: os 9 agentes robôs (#/whats), cada um com alma (.soul) e WhatsApp próprio.
 app.use('/api', require('./src/routes/escritorio'));
-// Páginas de bairros: a lista, a situação de cada página e o que a RUAH quer em cada uma.
+// Páginas de bairros: a lista, a situação de cada página e o que a imobiliária (cliente) quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.
 app.get('/api/blog', async (req, res) => res.json(await require('./src/blog/diario').situacao()));
@@ -116,7 +116,7 @@ if (require.main === module) {
     const nets = require('os').networkInterfaces();
     const ips = Object.values(nets).flat().filter((n) => n && n.family === 'IPv4' && !n.internal).map((n) => n.address);
     console.log('\n  ==============================================');
-    console.log('   SISTEMA RUAH  ·  rodando');
+    console.log(`   ${cfg.SISTEMA_NOME.toUpperCase()}  ·  rodando`);
     console.log(`   Neste PC:        ${cfg.BASE_URL}`);
     ips.forEach((ip) => console.log(`   Na rede (celular): http://${ip}:${cfg.PORT}`));
     console.log('   Para parar: feche esta janela');

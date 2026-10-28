@@ -1,4 +1,4 @@
-// Carta ao proprietário: PDF A4 com QR code que abre o WhatsApp da RUAH já com a referência do imóvel.
+// Carta ao proprietário: PDF A4 com QR code que abre o WhatsApp da imobiliária (cliente) já com a referência do imóvel.
 // Não precisa do nome do dono: vai endereçada ao "proprietário(a)" da unidade. Quem responde, responde por vontade própria.
 const PDFDocument = require('pdfkit');
 const QRCode = require('qrcode');
@@ -12,17 +12,17 @@ const enderecoLinha = (op) => [op.logradouro, op.numero].filter(Boolean).join(',
 function linkWhatsapp(op, telefone) {
   const n = telWa(telefone);
   if (!n) return null;
-  const txt = `Olá! Recebi a carta da RUAH sobre o imóvel ${enderecoLinha(op) || op.condominio_nome || ''} (ref. ${ref(op)}). Gostaria de conversar sobre a venda.`;
+  const txt = `Olá! Recebi a carta da ${cfg.CLIENTE_NOME} sobre o imóvel ${enderecoLinha(op) || op.condominio_nome || ''} (ref. ${ref(op)}). Gostaria de conversar sobre a venda.`;
   return `https://wa.me/${n}?text=${encodeURIComponent(txt)}`;
 }
 
 async function paginaCarta(doc, op, corretor) {
   const ouro = '#8a6a2c';
-  const telefone = cfg.WHATSAPP_RUAH || (corretor && corretor.telefone);
+  const telefone = cfg.WHATSAPP_CLIENTE || (corretor && corretor.telefone);
   const link = linkWhatsapp(op, telefone);
   const L = doc.page.margins.left, W = doc.page.width - L - doc.page.margins.right;
 
-  doc.fillColor(ouro).font('Helvetica-Bold').fontSize(20).text('RUAH', L, 56, { characterSpacing: 4 });
+  doc.fillColor(ouro).font('Helvetica-Bold').fontSize(20).text(cfg.CLIENTE_NOME, L, 56, { characterSpacing: 4 });
   doc.fillColor('#555').font('Helvetica').fontSize(9).text(cfg.EMPRESA);
   doc.moveDown(2.2);
 
@@ -45,14 +45,14 @@ async function paginaCarta(doc, op, corretor) {
     doc.image(png, L, y, { width: 120 });
   }
   const tx = link ? L + 140 : L;
-  doc.font('Helvetica-Bold').fontSize(12).fillColor(ouro).text(link ? 'Aponte a câmera do celular' : 'Fale com a RUAH', tx, y + 8, { width: W - (tx - L) });
+  doc.font('Helvetica-Bold').fontSize(12).fillColor(ouro).text(link ? 'Aponte a câmera do celular' : `Fale com a ${cfg.CLIENTE_NOME}`, tx, y + 8, { width: W - (tx - L) });
   doc.font('Helvetica').fontSize(10.5).fillColor('#222').text(link ? 'e fale com a gente direto no WhatsApp. A mensagem já vai com a referência do seu imóvel.' : '', { width: W - (tx - L) });
   doc.moveDown(0.5);
   if (telefone) doc.font('Helvetica-Bold').fontSize(11).fillColor('#111').text(`WhatsApp: ${formataTel(telefone)}`, { width: W - (tx - L) });
   if (corretor) doc.font('Helvetica').fontSize(10).fillColor('#444').text(`Corretor(a): ${corretor.nome}`, { width: W - (tx - L) });
   doc.font('Helvetica').fontSize(9).fillColor('#777').text(`Referência: ${ref(op)}`, { width: W - (tx - L) });
 
-  doc.font('Helvetica').fontSize(8).fillColor('#888').text('Não quer receber contato da RUAH? Envie PARAR para o WhatsApp acima e o seu endereço sai da nossa lista.',
+  doc.font('Helvetica').fontSize(8).fillColor('#888').text(`Não quer receber contato da ${cfg.CLIENTE_NOME}? Envie PARAR para o WhatsApp acima e o seu endereço sai da nossa lista.`,
     L, doc.page.height - doc.page.margins.bottom - 24, { width: W, align: 'center' });
 }
 function formataTel(t) { const d = soDigitos(t).replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}` : t; }

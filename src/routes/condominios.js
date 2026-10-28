@@ -2,6 +2,7 @@
 const express = require('express');
 const A = require('../auth');
 const { one, all, run, audit } = require('../db');
+const cfg = require('../config');
 const { falha, num, int, txt } = require('../util');
 const B = require('../condominios/base');
 const G = require('../condominios/geo');
@@ -69,7 +70,7 @@ r.put('/condominios/:id', (req, res) => {
     if (t === 'int' && v !== null && (v < 0 || v > 5000)) falha(400, `Valor inválido em ${k}.`);
     set.push(`${k}=?`); vals.push(v);
     if (k === 'nome') { set.push('nome_busca=?'); vals.push(G.chave(v)); }
-    if (k === 'unidades' && !('unidades_fonte' in b)) { set.push('unidades_fonte=?'); vals.push('Informado pela RUAH'); }
+    if (k === 'unidades' && !('unidades_fonte' in b)) { set.push('unidades_fonte=?'); vals.push(`Informado pela ${cfg.CLIENTE_NOME}`); }
   }
   if ('alvo' in b) { set.push('alvo=?'); vals.push(b.alvo ? 1 : 0); }
   let mexeuPosicao = false;

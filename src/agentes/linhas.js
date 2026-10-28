@@ -37,7 +37,7 @@ async function conecta(slug) {
   const { state, saveCreds } = await useMultiFileAuthState(pasta(slug));
   let version; try { ({ version } = await fetchLatestBaileysVersion()); } catch { /* versão embutida */ }
   l.abrindo = false;
-  const sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`RUAH ${C.POR_SLUG[slug].nome}`), markOnlineOnConnect: false, syncFullHistory: false });
+  const sock = makeWASocket({ auth: state, version, logger: pino({ level: 'silent' }), browser: Browsers.windows(`${cfg.CLIENTE_NOME} ${C.POR_SLUG[slug].nome}`), markOnlineOnConnect: false, syncFullHistory: false });
   l.sock = sock;
   sock.ev.on('creds.update', saveCreds);
   sock.ev.on('connection.update', async (u) => {

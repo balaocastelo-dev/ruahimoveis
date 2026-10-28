@@ -2,6 +2,7 @@
 // Augusto (gerente) → dono: resumo da manhã, relatório do fim do dia, alertas na hora.
 // Marta (gerente dos corretores) → cada corretor: agenda da manhã, lembrete antes da visita, lead novo, afazer vencendo.
 const { one, all, run } = require('../db');
+const cfg = require('../config');
 const B = require('./base');
 const X = require('./contexto');
 const { avisaCorretor, avisaDono, urlBase } = require('./cerebro');
@@ -18,7 +19,7 @@ function relatorioDoDia() {
   const d = X.numerosDoDia();
   const g = B.geral();
   const nLeads = d.leads.reduce((s, x) => s + x.n, 0);
-  const L = [`📊 *Relatório do dia · RUAH* (${dm(X.agoraSP().texto)})`, ''];
+  const L = [`📊 *Relatório do dia · ${cfg.CLIENTE_NOME}* (${dm(X.agoraSP().texto)})`, ''];
   const decidir = [];
   if (d.aprovar) decidir.push(`${d.aprovar} resposta(s) dos robôs esperando aprovação`);
   if (d.semResposta) decidir.push(`${d.semResposta} cliente(s) sem resposta há mais de 2 h`);
@@ -41,7 +42,7 @@ function relatorioDoDia() {
 function resumoDaManha() {
   const d = X.numerosDoDia();
   const g = B.geral();
-  const L = [`☀️ Bom dia${g.dono_nome ? ', ' + g.dono_nome.split(' ')[0] : ''}! Agenda da RUAH para hoje:`];
+  const L = [`☀️ Bom dia${g.dono_nome ? ', ' + g.dono_nome.split(' ')[0] : ''}! Agenda da ${cfg.CLIENTE_NOME} para hoje:`];
   L.push(d.visitasHoje.length ? d.visitasHoje.map((v) => `• ${hm(v.data_hora)} ${v.codigo} · ${v.cliente} · ${v.corretor || 'sem corretor'} (${v.status})`).join('\n') : '• Nenhuma visita marcada para hoje.');
   const pend = [];
   if (d.aprovar) pend.push(`${d.aprovar} resposta(s) dos robôs para aprovar`);

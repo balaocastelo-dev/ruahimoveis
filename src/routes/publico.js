@@ -91,8 +91,8 @@ function paginaLink(req, res) {
   const origem = og.origemPublica(req);
   const tokenOk = /^[A-Za-z0-9_-]{6,80}$/.test(tok);
   const url = tokenOk && origem ? `${origem}/v/${tok}` : (origem ? `${origem}/v/` : '');
-  let titulo = 'Imóvel · RUAH';
-  let descricao = 'Apresentação exclusiva RUAH.';
+  let titulo = `Imóvel · ${cfg.CLIENTE_NOME}`;
+  let descricao = `Apresentação exclusiva ${cfg.CLIENTE_NOME}.`;
   let imagem = null, largura = null, altura = null;
   const ctx = tokenOk ? contextoLink(tok) : null;
   if (ctx) {

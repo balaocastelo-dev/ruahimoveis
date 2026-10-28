@@ -39,7 +39,7 @@ async function entrada({ linha, telefone, nome, texto, wa_id }) {
       run('UPDATE leads SET nao_contatar=1 WHERE id=?', lead.id);
       run('INSERT INTO interacoes(lead_id,tipo,texto) VALUES(?,?,?)', lead.id, 'sistema', 'Cliente pediu PARAR no WhatsApp: incluído na lista não contatar.');
       run('UPDATE agente_mensagens SET processada=1 WHERE id=?', id);
-      B.enfileiraSaida({ agente: q.agente, telefone, texto: 'Pronto, você não vai mais receber mensagens da RUAH neste número. Desculpe o incômodo.', lead_id: lead.id, aprovar: false });
+      B.enfileiraSaida({ agente: q.agente, telefone, texto: `Pronto, você não vai mais receber mensagens da ${cfg.CLIENTE_NOME} neste número. Desculpe o incômodo.`, lead_id: lead.id, aprovar: false });
     }
     return;
   }
@@ -161,7 +161,7 @@ function atribuiLeads() {
     if (g.puxar_conversa && doSite && desde && l.criado_em >= desde && !one('SELECT 1 FROM agente_mensagens WHERE telefone=?', l.telefone)) {
       const pedido = one(`SELECT texto FROM interacoes WHERE lead_id=? AND tipo IN ('portal','blog') ORDER BY id DESC`, l.id);
       B.registraEntrada({ agente: s, telefone: l.telefone, nome: l.nome, direcao: 'nota', lead_id: l.id,
-        texto: `Este cliente deixou o contato no ${l.origem}${pedido ? ': ' + pedido.texto.replace(/\s+/g, ' ').slice(0, 400) : ''}. Mande a PRIMEIRA mensagem: cumprimente pelo primeiro nome, diga que é da RUAH e que recebeu o pedido dele no site, e faça uma pergunta para entender o que ele procura.` });
+        texto: `Este cliente deixou o contato no ${l.origem}${pedido ? ': ' + pedido.texto.replace(/\s+/g, ' ').slice(0, 400) : ''}. Mande a PRIMEIRA mensagem: cumprimente pelo primeiro nome, diga que é da ${cfg.CLIENTE_NOME} e que recebeu o pedido dele no site, e faça uma pergunta para entender o que ele procura.` });
     }
   }
 }

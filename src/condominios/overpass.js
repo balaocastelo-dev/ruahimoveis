@@ -9,7 +9,7 @@ async function overpass(q, ms = 25000) {
     try {
       const r = await fetch(url, {
         method: 'POST',
-        headers: { 'User-Agent': 'SistemaRUAH/1.0 (imoveisruah@gmail.com)', Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'User-Agent': 'HerreraHOUSEIA/1.0 (imoveisruah@gmail.com)', Accept: 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'data=' + encodeURIComponent(q), signal: AbortSignal.timeout(ms),
       });
       if (!r.ok) throw new Error(`HTTP ${r.status}`);

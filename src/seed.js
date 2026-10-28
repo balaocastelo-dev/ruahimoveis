@@ -1,6 +1,7 @@
 // Dados de exemplo (opcional, escolhido no primeiro acesso). Tudo marcado como "Exemplo" para apagar depois.
 const crypto = require('crypto');
 const { run, one } = require('./db');
+const cfg = require('./config');
 const { hashSenha } = require('./auth');
 
 function senhaTemp() { return 'Ruah' + crypto.randomInt(100000, 999999) + crypto.randomBytes(2).toString('hex'); }
@@ -30,7 +31,7 @@ function seedExemplo() {
     Number(run(`INSERT INTO leads(nome,telefone,origem,etapa,temperatura,corretor_id,busca,tipo_desejado,quartos_min,vagas_min,valor_max,bairros,ultimo_contato) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
       nome, tel, origem, etapa, temp, corr, busca, tipo, q, v, valor, bairros).lastInsertRowid);
   const l1 = lead('Fernanda (Exemplo)', '5519900000001', 'ZAP Imóveis', 'qualificado', 'quente', marina, '4 quartos, 3 vagas, até 2,4 mi', 'Apartamento', 4, 3, 2400000, 'Mansões Santo Antônio, Dom Pedro');
-  lead('Carlos (Exemplo)', '5519900000002', 'Site RUAH', 'novo', 'quente', marina, '4 quartos perto do Dom Pedro', 'Apartamento', 4, 2, 2500000, 'Dom Pedro');
+  lead('Carlos (Exemplo)', '5519900000002', `Site ${cfg.CLIENTE_NOME}`, 'novo', 'quente', marina, '4 quartos perto do Dom Pedro', 'Apartamento', 4, 2, 2500000, 'Dom Pedro');
   lead('André (Exemplo)', '5519900000003', 'Imovelweb', 'visita', 'morno', rafael, 'Apto 3 quartos no Cambuí', 'Apartamento', 3, 2, 1400000, 'Cambuí');
   lead('Investidor (Exemplo)', '5519900000004', 'Indicação', 'novo', 'morno', rafael, 'Alto padrão para renda', null, 3, null, 5000000, null);
 

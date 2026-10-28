@@ -1,7 +1,7 @@
 // Cadastro inteligente: CEP (ViaCEP), localização (OpenStreetMap) e condomínio já conhecido pelo endereço.
-const { CIDADE_PADRAO, UF_PADRAO } = require('../config');
+const { CIDADE_PADRAO, UF_PADRAO, SISTEMA_NOME, CLIENTE_NOME } = require('../config');
 
-const UA = 'SistemaRUAH/1.0 (cadastro de imoveis)';
+const UA = `${SISTEMA_NOME.replace(/\s+/g, '')}/1.0 (cadastro de imoveis)`;
 const soDigitos = (s) => String(s || '').replace(/\D/g, '');
 
 async function getJson(url, ms = 7000) {
@@ -67,16 +67,16 @@ async function pesquisar({ cep, logradouro, numero, cidade, uf }) {
       }
     } catch { out.avisos.push('Mapa indisponível agora; a localização fica para depois.'); }
   }
-  // Base de condomínios de Campinas (CNPJ + mapa + cadastros da RUAH): pelo CEP e número, pela rua ou pelo ponto no mapa.
+  // Base de condomínios de Campinas (CNPJ + mapa + cadastros da imobiliária): pelo CEP e número, pela rua ou pelo ponto no mapa.
   const x = require('../condominios/base').reconhecer({ cep: out.campos.cep || cep, numero, logradouro: L, lat: g && g.lat, lon: g && g.lon, bairro: out.campos.bairro });
   const cond = x.condominio;
   if (cond) {
     out.condominio = { id: cond.id, nome: cond.nome, tipo: cond.tipo, como: x.como, confianca: x.confianca, unidades: cond.unidades, andares: cond.andares };
     set('condominio_id', cond.id, 'Base de condomínios');
     set('condominio_nome', cond.nome, `Base de condomínios · ${x.como}`);
-    set('ano_construcao', cond.ano_construcao || (cond.abertura ? cond.abertura.slice(0, 4) : null), cond.ano_construcao ? 'Cadastro RUAH' : 'CNPJ do condomínio (abertura)');
-    set('lazer', cond.lazer, 'Cadastro RUAH');
-    set('administradora', cond.administradora, 'Cadastro RUAH');
+    set('ano_construcao', cond.ano_construcao || (cond.abertura ? cond.abertura.slice(0, 4) : null), cond.ano_construcao ? `Cadastro ${CLIENTE_NOME}` : 'CNPJ do condomínio (abertura)');
+    set('lazer', cond.lazer, `Cadastro ${CLIENTE_NOME}`);
+    set('administradora', cond.administradora, `Cadastro ${CLIENTE_NOME}`);
     if (cond.lat && !out.campos.lat) { set('lat', cond.lat, 'Base de condomínios'); set('lon', cond.lon, 'Base de condomínios'); }
     if (x.confianca !== 'alta') out.avisos.push(`Condomínio sugerido (${x.como}). Confira o nome antes de salvar.`);
   } else if (g && g.nome_predio) set('condominio_nome', g.nome_predio, 'OpenStreetMap');

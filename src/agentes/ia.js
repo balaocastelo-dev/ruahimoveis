@@ -95,7 +95,7 @@ async function testar(modelo) {
   } catch { /* segue para o teste */ }
   const a = bruto(); const inicio = Date.now();
   try {
-    const t = await gemini('Você é um teste de conexão. Responda só com JSON.', 'Devolva {"ok":true,"frase":"uma frase curta em português dizendo que o escritório da RUAH está pronto"}', { modelo: modelo || ajustes().modelo, timeout: 30000 });
+    const t = await gemini('Você é um teste de conexão. Responda só com JSON.', `Devolva {"ok":true,"frase":"uma frase curta em português dizendo que o escritório da ${cfg.CLIENTE_NOME} está pronto"}`, { modelo: modelo || ajustes().modelo, timeout: 30000 });
     let frase = ''; try { frase = JSON.parse(t).frase || ''; } catch { frase = t.slice(0, 200); }
     Object.assign(a, { teste_ok: true, teste_msg: `${frase} (${((Date.now() - inicio) / 1000).toFixed(1)} s)`, testado_em: new Date().toISOString() });
   } catch (e) { Object.assign(a, { teste_ok: false, teste_msg: e.message, testado_em: new Date().toISOString() }); }

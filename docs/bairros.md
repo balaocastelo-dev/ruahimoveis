@@ -1,6 +1,6 @@
 # Guias de bairro — uma página de SEO para cada bairro de Campinas
 
-Público, sem login: `/bairros` (lista por região) e `/bairros/<bairro>` (o guia). Online: https://ruahimoveis.vercel.app/bairros.
+Público, sem login: `/bairros` (lista por região) e `/bairros/<bairro>` (o guia). Online (instalação do cliente RUAH no Herrera HOUSE IA): https://ruahimoveis.vercel.app/bairros.
 Montado em 27/10/2026 no mesmo esquema do blog Sopro e do portal de imóveis.
 
 Cada guia é um texto completo (900 a 2.600 palavras) pesquisado em fontes públicas, com fotos reais, e feito para o
@@ -13,15 +13,15 @@ perguntas frequentes, fontes, dados estruturados (`Article` + `Place` com coorde
 | Parte | De onde vem |
 |---|---|
 | Texto, fotos escolhidas, perguntas, fontes | ramo `claude/bairros-conteudo` (escrito pela tarefa agendada, conferido pela régua) |
-| "<Bairro> em números" | banco, ao vivo: imóveis da RUAH à venda, prédios e condomínios (Receita + Censo 2022), o que tem perto (Overture/OSM) |
-| Imóveis da RUAH no bairro | portal, ao vivo; a foto do cartão é a da **fachada/condomínio** (ambiente da galeria do imóvel) |
+| "<Bairro> em números" | banco, ao vivo: imóveis da imobiliária (cliente RUAH) à venda, prédios e condomínios (Receita + Censo 2022), o que tem perto (Overture/OSM) |
+| Imóveis da imobiliária no bairro | portal, ao vivo; a foto do cartão é a da **fachada/condomínio** (ambiente da galeria do imóvel) |
 | O que tem perto | tabela `pois`, num raio de 1,5 km do centro do bairro (média dos prédios, ou o centro manual) |
 | Prédios e condomínios | base de condomínios; com `CONDOMINIOS_PUBLICOS=1` os nomes viram link para a página pública de cada um |
-| Formulário | lead no CRM, origem **Portal RUAH · bairro**, com o bairro em "bairros" e o motivo (comprar, vender, dúvida) |
+| Formulário | lead no CRM, origem **Portal RUAH · bairro** ("Portal " + nome do cliente), com o bairro em "bairros" e o motivo (comprar, vender, dúvida) |
 
 ## As fotos
 
-- **Imóveis da RUAH**: fotos de fachada/condomínio dos imóveis à venda no bairro (`/imoveis/foto/<n>`). Se o imóvel
+- **Imóveis da imobiliária**: fotos de fachada/condomínio dos imóveis à venda no bairro (`/imoveis/foto/<n>`). Se o imóvel
   sair de venda, a foto some da página sozinha.
 - **Lugares do bairro**: Wikimedia Commons, **só licença livre** (domínio público, CC0, CC BY, CC BY-SA; nada de NC/ND,
   nada menor que 800 px). A licença e o autor são lidos no próprio Commons (tabela `bairro_commons`, revista a cada
@@ -40,9 +40,9 @@ perguntas frequentes, fontes, dados estruturados (`Article` + `Place` com coorde
 | Junta tudo | `src/bairros/fonte.js` (lê o ramo a cada 10 min; cópia em `data/bairros-cache`) |
 | Formato e régua | `src/bairros/validar.js`, `src/bairros/regua.js` (no comando e no site) |
 | Comando | `scripts/bairros-publicar.mjs`: `preparar`, `fotos`, `conferir`, `publicar`, `listar`, `retirar` |
-| Para quem escreve | `/bairros/dados.json` (a fila em ordem, números ao vivo, fotos dos imóveis com o ambiente, notas da RUAH) |
+| Para quem escreve | `/bairros/dados.json` (a fila em ordem, números ao vivo, fotos dos imóveis com o ambiente, notas da imobiliária) |
 | Regras de quem escreve | `ROTINA.md` no ramo `claude/bairros-conteudo` |
-| Tarefa agendada | "Bairros RUAH - guias dos bairros" (texto em `docs/bairros-tarefa.md`) |
+| Tarefa agendada | "Bairros RUAH - guias dos bairros" (do cliente RUAH; texto em `docs/bairros-tarefa.md`) |
 | Tela | Conteúdo › Páginas de bairros (`public/bairros.js`) |
 
 ## A tela "Páginas de bairros"
@@ -50,7 +50,7 @@ perguntas frequentes, fontes, dados estruturados (`Article` + `Place` com coorde
 Adm e gestor editam; corretor só vê.
 
 - Situação de cada bairro: **no ar**, **na fila**, **no ar · reescrita pedida**, **no ar · será revista** (mais de um ano),
-  **fora do ar · será refeita** (reprovada), **oculto**. Mostra a posição na fila, imóveis da RUAH e prédios do bairro.
+  **fora do ar · será refeita** (reprovada), **oculto**. Mostra a posição na fila, imóveis da imobiliária e prédios do bairro.
 - **Prioridade** (− / +): muda a ordem da fila.
 - **Editar**: nome, região, "também conhecido como" (apelidos), **notas para quem escreve** (o que a página deve contar),
   centro do bairro.
@@ -63,7 +63,7 @@ Adm e gestor editam; corretor só vê.
 ## Ordem da fila
 
 Reescrita pedida → sem página / reprovada → página com mais de um ano; dentro de cada grupo: prioridade, imóveis da
-RUAH no bairro, número de prédios, nome.
+imobiliária no bairro, número de prédios, nome.
 
 ## Configuração
 

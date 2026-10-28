@@ -4,6 +4,7 @@
 //   mesmo imóvel anunciado várias vezes · proprietário já achado · resposta do dono.
 // Também guarda e calcula o saldo de créditos do Fisgar.
 const { one, all, run, getConfig, setConfig } = require('../db');
+const cfg = require('../config');
 const F = require('./base');
 
 const DIA = 864e5;
@@ -157,7 +158,7 @@ function analisa(x, ctx) {
       const onde = base.cidade ? `Campinas para ${String(x.subtipo || 'esse tipo').toLowerCase()} (${base.n} anúncios)` : `${x.bairro_nome} (${base.n} anúncios comparáveis)`;
       // só sinaliza comparando com o próprio bairro (a mediana da cidade mistura regiões muito diferentes)
       if (d <= -30 && !base.cidade) s.push({ id: 'abaixo', forca: Math.min(1, (-d - 20) / 35), pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${Math.abs(d).toLocaleString('pt-BR')}% abaixo da mediana de ${onde}: preço para vender rápido (confira a área no anúncio).` });
-      else if (d >= 50 && !base.cidade) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da RUAH.` });
+      else if (d >= 50 && !base.cidade) s.push({ id: 'acima', forca: 0.2, pct: d, texto: `R$ ${Math.round(x.m2).toLocaleString('pt-BR')}/m², ${d.toLocaleString('pt-BR')}% acima da mediana de ${onde}: tende a encalhar; bom argumento para uma avaliação da ${cfg.CLIENTE_NOME}.` });
     }
   }
   if (x.anunciante_tipo === 'particular') s.push({ id: 'particular', forca: 1, texto: 'Anúncio de particular, sem imobiliária no meio: o caminho mais curto até a exclusividade.' });

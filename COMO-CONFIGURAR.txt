@@ -1,9 +1,10 @@
-﻿SISTEMA RUAH - FASE 1 - COMO USAR E CONFIGURAR
-================================================
+﻿HERRERA HOUSE IA - FASE 1 - COMO USAR E CONFIGURAR
+(instalação do cliente RUAH Investimentos Imobiliários)
+==================================================
 
 INICIAR
 -------
-Dê dois cliques em "Sistema RUAH" na Área de Trabalho (ou clique com o botão direito
+Dê dois cliques em "Herrera HOUSE IA" na Área de Trabalho (ou clique com o botão direito
 em INICIAR-RUAH.ps1 > Executar com o PowerShell). A janela preta é o servidor:
 deixe aberta enquanto usa. Para parar, feche a janela.
 
@@ -28,14 +29,14 @@ PARTE 1 - GOOGLE DRIVE (pasta automática por imóvel)
 ----------------------------------------------------
 Faça uma vez, com a conta Google da RUAH:
 
-1. Acesse https://console.cloud.google.com e crie um projeto chamado "Sistema RUAH".
+1. Acesse https://console.cloud.google.com e crie um projeto chamado "Herrera HOUSE IA".
 2. Menu "APIs e serviços" > "Biblioteca" > procure "Google Drive API" > Ativar.
 3. "APIs e serviços" > "Tela de consentimento OAuth" (Google Auth Platform):
    - Se a RUAH usa Google Workspace (e-mail @ruahimobiliaria.com.br pago): escolha "Interno".
    - Se usa Gmail comum: escolha "Externo", preencha nome e e-mail, e em "Público-alvo"
      clique em "PUBLICAR APLICATIVO" (colocar em produção). Em modo "Teste" o Google
      desconecta o sistema a cada 7 dias. Na hora de conectar vai aparecer o aviso
-     "app não verificado": clique em Avançado > Acessar Sistema RUAH. É normal para uso interno.
+     "app não verificado": clique em Avançado > Acessar Herrera HOUSE IA. É normal para uso interno.
 4. "Credenciais" (Clientes) > "Criar credenciais" > "ID do cliente OAuth"
    - Tipo: Aplicativo da Web
    - URIs de redirecionamento autorizados:  http://localhost:3333/api/drive/callback
@@ -124,7 +125,8 @@ A cascata é sempre do grátis para o pago:
      gestor ou do administrativo. O custo fica registrado e aparece o custo por captação.
 
 Configuração no .env (opcional):
-  WHATSAPP_RUAH=19999999999   número central impresso no QR code das cartas.
+  WHATSAPP_CLIENTE=19999999999  número central da imobiliária impresso no QR code das cartas
+                              (o nome antigo WHATSAPP_RUAH continua valendo).
                               Vazio = celular do corretor (Configurações > Meu WhatsApp).
   CUSTO_MATRICULA=  e  CUSTO_BIRO=   valores de referência sugeridos no pedido.
 
@@ -142,7 +144,7 @@ confirma que vieram mesmo do portal (proteção contra e-mail falso).
 1. SENHA DE APP do Gmail (uma vez):
    - Entre em https://myaccount.google.com com a conta imoveisruah@gmail.com.
    - Segurança > "Verificação em duas etapas": ative (é obrigatório para a senha de app).
-   - Abra https://myaccount.google.com/apppasswords , dê o nome "Sistema RUAH" e clique em Criar.
+   - Abra https://myaccount.google.com/apppasswords , dê o nome "Herrera HOUSE IA" e clique em Criar.
    - Aparece uma senha de 16 letras. Copie.
 2. No arquivo .env (pasta do sistema), preencha:
       RADAR_EMAIL=imoveisruah@gmail.com

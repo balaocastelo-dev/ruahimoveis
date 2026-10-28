@@ -1,7 +1,7 @@
 // Condomínios · importa a base de Campinas (CNPJ + Censo 2022 + mapa aberto) e os prédios do 3D para o banco online.
 // Uso (no PC, com DATABASE_URL no .env):
 //   node scripts/condominios-importar.mjs data/condominios/condominios-campinas.json [data/condominios/predios3d_00.jsonl ...]
-// Pode rodar de novo quando a base for atualizada: não apaga nada e não desfaz o que a RUAH editou na ficha.
+// Pode rodar de novo quando a base for atualizada: não apaga nada e não desfaz o que a imobiliária (cliente) editou na ficha.
 import fs from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
@@ -16,7 +16,7 @@ const chave = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').to
 
 const COLS = ['nome', 'tipo', 'cnpj', 'razao_social', 'situacao', 'abertura', 'cep', 'logradouro', 'numero', 'complemento', 'bairro', 'cidade', 'uf',
   'lat', 'lon', 'geo_fonte', 'fontes', 'osm_ref', 'andares', 'torres', 'unidades', 'unidades_fonte', 'contorno', 'numeracao', 'sem_nome', 'slug', 'nome_busca'];
-// campos que a RUAH edita na ficha: só preenche se estiverem vazios
+// campos que a imobiliária edita na ficha: só preenche se estiverem vazios
 const SO_SE_VAZIO = new Set(['andares', 'torres', 'unidades', 'unidades_fonte', 'osm_ref']);
 
 async function base(arq) {
@@ -44,7 +44,7 @@ async function base(arq) {
       process.stdout.write(`\r  ${Math.min(i + 250, lista.length)}/${lista.length}`);
     }
     console.log('');
-    // condomínios antigos (cadastros da RUAH sem endereço) ganham slug e nome de busca
+    // condomínios antigos (cadastros da imobiliária sem endereço) ganham slug e nome de busca
     await c.query(`UPDATE condominios SET nome_busca = upper(nome) WHERE nome_busca IS NULL`);
     const r = await c.query(`SELECT id, nome FROM condominios WHERE slug IS NULL`);
     for (const x of r.rows) await c.query('UPDATE condominios SET slug=$1, fontes=coalesce(fontes,$2) WHERE id=$3', [`${chave(x.nome).toLowerCase().replace(/ /g, '-')}-${x.id}`, 'ruah', x.id]);
