@@ -2,6 +2,30 @@
   "versao": 1,
   "paginas": [
     {
+      "codigo": "CO0001",
+      "slug": "cobertura-3-quartos-suite-piscina-privativa-cambui-campinas-co0001",
+      "titulo": "Cobertura de 3 quartos com piscina privativa no Cambuí",
+      "resumo": "Cobertura de 125 m² no Cambuí, em Campinas: 3 quartos com suíte, sala com piso de pedra, cozinha com ilha de granito e terraço com piscina privativa.",
+      "capa": {
+        "foto": 1539,
+        "alt": "Sala com sofá cinza e piso claro de pedra, com portas de vidro abertas para o terraço"
+      },
+      "versao": "5c697b9ef782",
+      "publicadoEm": "2026-10-28T01:22:13.786Z"
+    },
+    {
+      "codigo": "PT0002",
+      "slug": "ponto-comercial-esquina-terreno-505m2-vila-maria-campinas-pt0002",
+      "titulo": "Ponto comercial de esquina com salão coberto na Vila Maria",
+      "resumo": "Ponto comercial de esquina na Vila Maria, em Campinas: 505,5 m² de terreno, 269,3 m² construídos, salão coberto, cozinha e estrutura de antigo restaurante.",
+      "capa": {
+        "foto": 1549,
+        "alt": "Esquina com calçada de pedra portuguesa, muro baixo vermelho, jardim e quiosques de telhado de barro"
+      },
+      "versao": "70b177a0cc50",
+      "publicadoEm": "2026-10-28T01:22:13.781Z"
+    },
+    {
       "codigo": "CA0028",
       "slug": "casa-comercial-3-vagas-jardim-bonfim-campinas-ca0028",
       "titulo": "Casa comercial no Jardim Bonfim, em Campinas, com 3 vagas",
@@ -422,5 +446,5 @@
       "publicadoEm": "2026-10-26T15:21:48.983Z"
     }
   ],
-  "atualizadoEm": "2026-10-27T23:21:45.923Z"
+  "atualizadoEm": "2026-10-28T01:22:13.786Z"
 }

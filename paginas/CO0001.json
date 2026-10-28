@@ -1,0 +1,207 @@
+{
+  "codigo": "CO0001",
+  "slug": "cobertura-3-quartos-suite-piscina-privativa-cambui-campinas-co0001",
+  "titulo": "Cobertura de 3 quartos com piscina privativa no Cambuí",
+  "resumo": "Cobertura de 125 m² no Cambuí, em Campinas: 3 quartos com suíte, sala com piso de pedra, cozinha com ilha de granito e terraço com piscina privativa.",
+  "capa": {
+    "foto": 1539,
+    "alt": "Sala com sofá cinza e piso claro de pedra, com portas de vidro abertas para o terraço"
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Esta cobertura fica no Cambuí, em Campinas, no Edifício Xapuri, segundo o anúncio. A ficha informa 125 m², 3 quartos, sendo uma suíte, e uma vaga de garagem. O que mais chama atenção nas fotos é o terraço: ele se abre direto da sala por portas de vidro e tem bancada de granito, cooktop e uma piscina privativa redonda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O imóvel aparece mobiliado e em uso, com cozinha planejada, banheiros com gabinete colorido e aparelhos de ar-condicionado. O anúncio fala em quatro aparelhos, dois banheiros e vaga coberta."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "125 m² com 3 quartos, sendo uma suíte",
+        "Terraço com piscina privativa, aberto para a sala",
+        "Sala com piso claro de pedra e painel de madeira escura",
+        "Cozinha planejada com ilha de granito preto",
+        "Ar-condicionado em quatro ambientes, segundo o anúncio",
+        "Uma vaga de garagem coberta"
+      ],
+      "titulo": "Destaques"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sala e terraço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sala tem piso claro de pedra, com veios bege, e uma parede revestida por painel de madeira escura com nichos para livros. De um lado, portas de vidro de correr com persianas levam ao terraço. Do outro, uma abertura larga dá para um cômodo com sofá laranja e ar-condicionado, usado hoje como sala íntima."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No terraço, parte da cobertura é de vidro. Ali ficam uma bancada de granito preto com cuba, banquetas e luminária pendente, e, num nível mais alto, a piscina redonda, com vasos e um cacto junto aos muros de grade quadriculada. Em outra parede há uma segunda bancada de granito com cuba de inox e cooktop de quatro bocas. Ao redor aparecem prédios do bairro."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1541,
+          "legenda": "Piscina privativa redonda no terraço, com vasos junto à grade"
+        },
+        {
+          "foto": 1542,
+          "legenda": "Terraço com bancada de granito preto, banquetas e cobertura de vidro"
+        }
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cozinha e lavanderia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cozinha tem armários brancos com nichos de madeira, portas de vidro jateado e bancadas de granito preto. Uma ilha do mesmo granito serve de mesa para refeições rápidas, com banquetas e pendentes pretos por cima. As paredes têm pastilhas em preto, branco e cinza, e as fotos mostram fogão com coifa e janela com persiana. A lavanderia tem tanque de inox sobre granito e espaço para a máquina de lavar."
+    },
+    {
+      "tipo": "fotos",
+      "fotos": [
+        {
+          "foto": 1535,
+          "legenda": "Cozinha com armários brancos, pastilhas e ilha de granito preto"
+        }
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quartos e banheiros"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O cômodo do sofá laranja, ao lado da sala, tem armário com portas de correr, janela de alumínio e ar-condicionado. Outro cômodo é usado como escritório, com piso amadeirado e uma porta de correr pintada de vermelho. Os banheiros têm cuba de apoio sobre tampo claro, box de vidro e gabinetes coloridos: um verde e outro laranja. Um deles tem a parede do box em pastilhas claras. Os demais quartos não aparecem nas fotos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem faz sentido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem quer morar no Cambuí sem abrir mão de uma área externa própria. Um casal ou uma família pequena aproveita bem o terraço com piscina, e o cômodo de escritório atende quem trabalha em casa."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "texto": "O valor do condomínio, se os móveis e os aparelhos de ar-condicionado ficam, como é a manutenção da piscina e se a vaga é fixa.",
+      "titulo": "O que vale perguntar ao corretor"
+    }
+  ],
+  "galeria": [
+    {
+      "foto": 1536,
+      "legenda": "Fachada do prédio, com portão gradeado e palmeiras na entrada",
+      "ambiente": "fachada"
+    },
+    {
+      "foto": 1539,
+      "legenda": "Sala com piso de pedra e portas de vidro abertas para o terraço",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1538,
+      "legenda": "Sala com painel de madeira escura e passagem para o cômodo de sofá laranja",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1540,
+      "legenda": "A sala vista do terraço, através das portas de vidro",
+      "ambiente": "sala"
+    },
+    {
+      "foto": 1541,
+      "legenda": "Piscina privativa redonda no terraço, com vasos junto à grade",
+      "ambiente": "piscina"
+    },
+    {
+      "foto": 1542,
+      "legenda": "Terraço com bancada de granito preto, banquetas e cobertura de vidro",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1543,
+      "legenda": "Bancada de granito com cuba de inox e cooktop de quatro bocas",
+      "ambiente": "gourmet"
+    },
+    {
+      "foto": 1535,
+      "legenda": "Cozinha com armários brancos, pastilhas e ilha de granito preto",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1537,
+      "legenda": "Armários com portas de vidro jateado e nichos de madeira na cozinha",
+      "ambiente": "cozinha"
+    },
+    {
+      "foto": 1547,
+      "legenda": "Lavanderia com tanque de inox e máquina de lavar",
+      "ambiente": "servico"
+    },
+    {
+      "foto": 1544,
+      "legenda": "Cômodo com sofá laranja, armário de portas de correr e ar-condicionado",
+      "ambiente": "quarto"
+    },
+    {
+      "foto": 1548,
+      "legenda": "Cômodo usado como escritório, com porta de correr vermelha",
+      "ambiente": "escritorio"
+    },
+    {
+      "foto": 1545,
+      "legenda": "Banheiro com cuba de apoio, gabinete verde e box de vidro",
+      "ambiente": "banheiro"
+    },
+    {
+      "foto": 1546,
+      "legenda": "Banheiro com gabinete laranja e box com pastilhas claras",
+      "ambiente": "banheiro"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A piscina é privativa?",
+      "resposta": "Sim. Segundo o anúncio, a piscina é da cobertura, e as fotos mostram ela no terraço, ao lado da sala."
+    },
+    {
+      "pergunta": "Quantos quartos e vagas?",
+      "resposta": "A ficha informa 3 quartos, sendo uma suíte, e uma vaga de garagem, coberta segundo o anúncio."
+    },
+    {
+      "pergunta": "Tem ar-condicionado?",
+      "resposta": "O anúncio fala em quatro aparelhos de ar-condicionado, e as fotos mostram um deles no cômodo do sofá laranja, ao lado da sala."
+    },
+    {
+      "pergunta": "Como marcar a visita?",
+      "resposta": "Use o formulário desta página e um corretor da RUAH entra em contato para combinar o dia."
+    }
+  ],
+  "redes": {
+    "legenda": "Cobertura no Cambuí, em Campinas, com terraço e piscina privativa logo na saída da sala. São 125 m² com 3 quartos, sendo uma suíte, cozinha planejada com ilha de granito, piso de pedra na sala e uma vaga coberta. Quer conhecer? Fale com a RUAH e agende sua visita.",
+    "hashtags": [
+      "coberturacampinas",
+      "cambui",
+      "campinas",
+      "piscinaprivativa",
+      "imoveiscampinas",
+      "ruahimobiliaria"
+    ]
+  },
+  "versao": "5c697b9ef782",
+  "publicadoEm": "2026-10-28T01:22:13.786Z"
+}
