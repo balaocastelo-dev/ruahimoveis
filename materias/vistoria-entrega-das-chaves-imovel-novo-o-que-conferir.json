@@ -11,7 +11,10 @@
     "construção"
   ],
   "capa": {
-    "alt": "Apartamento novo e vazio com piso claro, paredes brancas recém-pintadas e luz natural entrando pela janela"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/vistoria-entrega-das-chaves-imovel-novo-o-que-conferir-93d88ebf.jpg",
+    "alt": "Apartamento novo e vazio com piso claro, paredes brancas recém-pintadas e luz natural entrando pela janela",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Você sabia que uma bolinha de gude ajuda a descobrir se o piso do banheiro escoa para o ralo? A vistoria de entrega das chaves é o momento de testar tomadas, torneiras, janelas e acabamentos antes de assinar qualquer termo. Preparamos um roteiro completo, com o que levar e os prazos de garantia que valem depois. Leia o artigo inteiro no blog (link na bio).",

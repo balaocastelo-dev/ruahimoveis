@@ -8,7 +8,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-28T20:23:18.494Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "iluminacao-residencial-em-camadas-geral-tarefa-destaque",
@@ -56,5 +56,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-28T23:36:29.020Z"
+  "atualizadoEm": "2026-10-29T02:17:23.038Z"
 }
