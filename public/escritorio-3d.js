@@ -1150,6 +1150,8 @@ function balao(ag, emoji, texto, tipo = '') {
   setTimeout(() => b.classList.add('sobe'), texto ? 7000 : 2600);
   setTimeout(() => b.remove(), texto ? 8600 : 4200);
 }
+// O shell entrega apenas mensagens das conversas do usuário autenticado.
+window.jg3dChatBalao = (slug, texto) => { if (vivo()) balao(E.agentes[slug], '💬', String(texto || '').slice(0, 160)); };
 function enfileira(item, abertura) {
   if (!vivo() || !item || !item.texto) return;
   item.texto = String(item.texto).replace(/\s+/g, ' ').slice(0, 110); item.abertura = !!abertura;

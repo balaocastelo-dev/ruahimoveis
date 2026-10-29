@@ -141,7 +141,7 @@ async function montar(slug, telefone, extra = {}) {
   let tipoAcoes = a.tipo === 'interno' ? slug : a.tipo;
 
   if (a.tipo === 'cliente') {
-    const lead = extra.lead || (B.ehTeste(telefone) ? null : one('SELECT * FROM leads WHERE telefone LIKE ? ORDER BY id DESC', B.padraoTel(telefone)));
+    const lead = extra.lead || (B.ehTeste(telefone) || B.ehChat(telefone) ? null : one('SELECT * FROM leads WHERE telefone LIKE ? ORDER BY id DESC', B.padraoTel(telefone)));
     const links = await linksPortal();
     const cat = catalogoDoSetor(slug, lead, g);
     partes.push(`LIMITES DOS SETORES: casas até ${brl(g.limite_casas)} são da Clara; acima disso, Helena (alto padrão). Apartamentos a partir de ${brl(g.limite_alto_apto)} são da Helena; abaixo, Ana.`);
@@ -182,8 +182,9 @@ async function montar(slug, telefone, extra = {}) {
   }
 
   const hist = historico(slug, telefone);
-  if (a.tipo !== 'captacao' && hist.length) partes.push(`CONVERSA ATÉ AGORA:\n${hist.map((m) => `${m.direcao === 'entrada' ? 'PESSOA' : m.direcao === 'nota' ? 'SISTEMA' : 'VOCÊ'}: ${m.texto}`).join('\n')}`);
+  if ((a.tipo !== 'captacao' || B.ehChat(telefone)) && hist.length) partes.push(`CONVERSA ATÉ AGORA:\n${hist.map((m) => `${m.direcao === 'entrada' ? 'PESSOA (' + m.autor + ')' : m.direcao === 'nota' ? 'SISTEMA' : 'VOCÊ'}: ${m.texto}`).join('\n')}`);
   partes.push(formato(tipoAcoes));
+  if (B.ehChat(telefone)) partes.push(`CANAL INTERNO: esta conversa é no chat da equipe, com ${extra.chatUsuario?.nome || 'um colega'}, e não no WhatsApp de um cliente. Não procure nem divulgue telefones de clientes. Responda com sua alma e o contexto disponível. As ações de CRM não são executadas neste chat. Para um pedido explícito de trabalho no seu PC virtual, use a ação {"tipo":"tarefa_pc","pedido":"descrição completa"}. O resultado chegará nesta conversa; não afirme que a tarefa já foi feita.`);
   return partes.join('\n\n');
 }
 

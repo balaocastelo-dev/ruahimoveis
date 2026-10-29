@@ -66,7 +66,7 @@ function evMesaCard(a) {
     <p class="ev-res">${esc(a.resumo)}</p>
     <div class="ev-linha-n">${a.linha !== a.slug ? `☎ usa a linha de ${esc(a.linha_nome)}` : ls.numero ? `☎ <span class="mono">${esc(tel(ls.numero))}</span>` : '☎ conecte um número pelo QR code'}</div>
     <div class="ev-stats"><span><b>${a.hoje.conversas}</b>conversas</span><span><b>${a.hoje.enviadas}</b>enviadas</span><span class="${a.aprovar ? 'q' : ''}"><b>${a.aprovar}</b>aprovar</span>${a.leads !== null ? `<span><b>${a.leads}</b>leads</span>` : ''}</div>
-    <div class="ev-mesa-pe">${ultimo}<span class="ev-modo">${a.ajustes.modo === 'automatico' ? 'automático' : 'sugere'}</span></div></a>`;
+    <div class="ev-mesa-pe">${ultimo}<span class="ev-modo">${a.ajustes.modo === 'automatico' ? 'automático' : 'sugere'}</span></div><span class="btn sm" role="button" tabindex="0" data-act="chat-robo" data-slug="${esc(a.slug)}">Conversar</span></a>`;
 }
 function evFeed(l, porSlug) {
   if (!l.length) return '<div class="empty">Quando os agentes começarem a trabalhar, tudo o que eles fizerem aparece aqui.</div>';
@@ -107,7 +107,7 @@ async function telaMesa(slug, aba = 'mesa') {
     <div style="flex:1;min-width:0"><h1 style="margin:0">${esc(a.nome)}</h1><div class="eyebrow depois">Agente ${a.n} · ${esc(a.setor)}</div><p class="lead" style="margin:2px 0 0">${esc(a.cargo)} — ${esc(a.resumo)}</p></div>
     <div class="ev-cab-st">${evPill(a.ajustes.ativo ? ls.estado : 'parada')}<span class="small muted">${a.linha !== a.slug ? `usa a linha de ${esc(a.linha_nome)}` : ls.numero ? esc(tel(ls.numero)) : 'sem número'}</span>
       <span class="small muted">${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}${a.ajustes.alma_editada ? ' · alma editada' : ''}</span>
-      <button class="btn pri sm" data-act="pc-abre" data-slug="${esc(a.slug)}">🖥️ Abrir o PC de ${esc(a.nome)}</button></div></div>
+      <button class="btn pri sm" data-act="chat-robo" data-slug="${esc(a.slug)}">Conversar</button><button class="btn sm" data-act="pc-abre" data-slug="${esc(a.slug)}">🖥️ Abrir o PC de ${esc(a.nome)}</button></div></div>
   <div class="tabs">${EV_ABAS.map(([k, l]) => `<a href="#/whats/agente/${a.slug}/${k}" class="${aba === k ? 'on' : ''}">${l}${k === 'mesa' && a.aprovar ? ` <span class="pill bad">${a.aprovar}</span>` : ''}</a>`).join('')}</div>
   <div id="ev-aba"></div>`;
   const f = { mesa: evAbaMesa, conversas: evAbaConversas, alma: evAbaAlma, whatsapp: evAbaWhats, teste: evAbaTeste, ajustes: evAbaAjustes }[aba] || evAbaMesa;

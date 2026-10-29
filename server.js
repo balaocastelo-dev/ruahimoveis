@@ -69,6 +69,7 @@ app.use('/api', require('./src/routes/radar'));
 app.use('/api', require('./src/routes/fisguei').api);
 app.use('/api', require('./src/routes/dashboard'));
 app.use('/api', require('./src/routes/base'));
+app.use('/api', require('./src/routes/chat'));
 app.use('/api', require('./src/routes/condominios'));
 app.use('/api', require('./src/routes/mercado'));
 app.use('/api', require('./src/routes/captacao'));

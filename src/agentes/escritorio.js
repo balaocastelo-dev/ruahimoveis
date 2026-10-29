@@ -62,16 +62,22 @@ async function processaEntradas(o = {}) {
   for (const gr of grupos) {
     if (o.ate && Date.now() > o.ate) break; // a função da nuvem tem tempo limitado: o resto fica para o próximo ciclo
     const teste = B.ehTeste(gr.telefone);
+    const chat = B.ehChat(gr.telefone);
     const quando = new Date(String(gr.quando).replace(' ', 'T') + '-03:00');
     const ultDir = (one('SELECT direcao FROM agente_mensagens WHERE id=?', gr.ultimo) || {}).direcao;
-    if (!teste && ultDir === 'entrada' && quando > corte) continue;
+    if (!teste && !chat && ultDir === 'entrada' && quando > corte) continue;
     const fecha = () => run(`UPDATE agente_mensagens SET processada=1 WHERE agente=? AND telefone=? AND processada=0 AND id<=?`, gr.agente, gr.telefone, gr.ultimo);
     const aj = B.ajustes(gr.agente);
     if (!aj.ativo) { fecha(); continue; }
     const ultima = one('SELECT * FROM agente_mensagens WHERE id=?', gr.ultimo);
     const extra = {};
+    if (chat) {
+      extra.chatUsuario = require('../chat').usuarioEntrada(ultima);
+      if (!extra.chatUsuario) { fecha(); continue; }
+      extra.timeout = Math.max(1, (o.ate || Date.now() + 40000) - Date.now());
+    }
     const ag = B.POR_SLUG[gr.agente];
-    if (ag.tipo === 'cliente' && !teste) {
+    if (ag.tipo === 'cliente' && !teste && !chat) {
       extra.lead = ultima.lead_id ? one('SELECT * FROM leads WHERE id=?', ultima.lead_id) : one('SELECT * FROM leads WHERE telefone LIKE ? ORDER BY id DESC', B.padraoTel(gr.telefone));
       if (extra.lead && extra.lead.nao_contatar) { fecha(); continue; }
     }
@@ -81,10 +87,14 @@ async function processaEntradas(o = {}) {
       const pid = ultima.pessoa_id || (one('SELECT pessoa_id FROM agente_mensagens WHERE agente=? AND telefone=? AND pessoa_id IS NOT NULL ORDER BY id DESC', gr.agente, gr.telefone) || {}).pessoa_id;
       extra.pessoa = pid ? one('SELECT * FROM fisguei_pessoas WHERE id=?', pid) : null;
       extra.anuncio = extra.pessoa ? one('SELECT * FROM fisguei_anuncios WHERE id=?', extra.pessoa.anuncio_id) : null;
-      if (!extra.pessoa && !teste) { fecha(); continue; }
+      if (!extra.pessoa && !teste && !chat) { fecha(); continue; }
       if (extra.pessoa && ['parar', 'negou', 'sem_interesse'].includes(extra.pessoa.status)) { fecha(); continue; }
     }
 
+    if (chat) {
+      extra.usuario = extra.chatUsuario;
+      extra.quem = ['adm', 'gestor'].includes(extra.usuario.perfil) ? 'dono' : 'outro';
+    }
     // atalhos sem IA: "feito 12" do corretor e "relatório" do dono
     const t = String(ultima.texto || '').trim();
     const feito = t.match(/^(feito|ok|pronto|conclu[ií]do)\s*#?\s*(\d{1,6})\b/i);
@@ -107,6 +117,10 @@ async function processaEntradas(o = {}) {
     iaOk = true;
     try {
       const r = await cerebro.pensar(gr.agente, gr.telefone, extra);
+      if (chat && /^tarefa\s*:/i.test(r.mensagem)) {
+        r.acoes.push({ tipo: 'tarefa_pc', pedido: r.mensagem.replace(/^tarefa\s*:/i, '').trim() });
+        r.mensagem = 'Vou executar a tarefa no meu PC e trazer o resultado aqui.';
+      }
       const ap = await cerebro.aplicar(gr.agente, gr.telefone, r.acoes, extra);
       const lead = extra.lead || null;
       if (r.mensagem) B.enfileiraSaida({ agente: gr.agente, telefone: gr.telefone, texto: r.mensagem, lead_id: lead && lead.id, pessoa_id: extra.pessoa && extra.pessoa.id, nome: lead ? lead.nome : extra.pessoa ? extra.pessoa.nome : ultima.nome });
@@ -116,6 +130,7 @@ async function processaEntradas(o = {}) {
     } catch (e) {
       log('erro ao responder:', e.message);
       B.evento(gr.agente, 'erro', `Não consegui responder (final ${String(gr.telefone).slice(-4)}): ${e.message}`);
+      if (chat) B.enfileiraSaida({ agente: gr.agente, telefone: gr.telefone, texto: 'Não consegui responder agora. Tente novamente em instantes.' });
     }
     fecha();
   }
@@ -196,7 +211,11 @@ async function cicloCerebro(o = {}) {
     await processaEntradas({ ate: inicio + prazo, telefone: o.telefone });
     if (o.rotinas !== false && Date.now() - ultimaRotinaNuvem > 50e3) { ultimaRotinaNuvem = Date.now(); rotinas.rodar(); }
   } catch (e) { erro = e.message; log('erro no ciclo:', e.message); }
-  finally { soltaTrava(); statusCerebro({ ms: Date.now() - inicio, erro }); }
+    finally {
+      soltaTrava(); statusCerebro({ ms: Date.now() - inicio, erro });
+      // A migração Postgres é aplicada separadamente; não interrompe o escritório antigo.
+      try { require('../chat').espelha(); } catch (e) { if (!/does not exist|no such table/i.test(e.message)) log('chat:', e.message); }
+    }
   return { ok: !erro, ms: Date.now() - inicio, erro };
 }
 

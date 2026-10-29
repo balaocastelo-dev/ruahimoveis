@@ -11,7 +11,7 @@ const limpa = (s, n = 300) => String(s ?? '').replace(/\s+/g, ' ').trim().slice(
 
 const ia = require('./ia');
 const iaDisponivel = () => ia.disponivel();
-const perguntaIA = (sistema, pedido) => ia.perguntar(sistema, pedido);
+const perguntaIA = (sistema, pedido, opcoes) => ia.perguntar(sistema, pedido, opcoes);
 
 function lerResposta(txt) {
   let o = null;
@@ -31,7 +31,7 @@ async function pensar(slug, telefone, extra = {}) {
   const contexto = await X.montar(slug, telefone, extra);
   const sistema = `${alma}\n\n=====================================\nO QUE O SISTEMA DA ${cfg.CLIENTE_NOME.toUpperCase()} SABE AGORA (dados reais, não invente nada além disto)\n=====================================\n${contexto}`;
   const pedido = extra.pedido || 'Responda à última mensagem da PESSOA (ou siga a instrução do SISTEMA, se a última for do sistema), seguindo sua alma e o formato JSON.';
-  const bruto = await perguntaIA(sistema, pedido);
+  const bruto = await perguntaIA(sistema, pedido, { timeout: extra.timeout });
   return lerResposta(bruto);
 }
 
@@ -68,6 +68,14 @@ async function aplicar(slug, telefone, acoes, extra = {}) {
     const tipo = String(a.tipo || '');
     try {
       if (teste) { feitas.push(`(teste) ${tipo}: ${limpa(JSON.stringify(a), 200)}`); B.evento(slug, 'teste', `Na conversa de teste, faria: ${tipo} ${limpa(JSON.stringify(a), 200)}`); continue; }
+      if (B.ehChat(telefone)) {
+        // O chat não representa um cliente. Só delega tarefas ao PC; CRM continua nos canais existentes.
+        if (tipo === 'tarefa_pc') {
+          const id = require('../chat').criaTarefa(slug, telefone, a.pedido, extra.chatUsuario);
+          if (id) feitas.push(`tarefa #${id}`);
+        }
+        continue;
+      }
 
       if (tipo === 'atualizar_perfil' && lead) {
         const n = (v) => (Number.isFinite(+v) && +v > 0 ? +v : null);

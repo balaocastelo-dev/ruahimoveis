@@ -80,7 +80,7 @@ async function disponivel() {
   if (process.env.VERCEL) return false; // na nuvem, sem chave não há cérebro
   try { const r = await fetch(`${cfg.OLLAMA_URL}/api/tags`, { signal: AbortSignal.timeout(2500) }); return r.ok; } catch { return false; }
 }
-const perguntar = (sistema, pedido) => (naNuvem() ? gemini(sistema, pedido) : ollama(sistema, pedido));
+const perguntar = (sistema, pedido, opcoes = {}) => (naNuvem() ? gemini(sistema, pedido, opcoes) : ollama(sistema, pedido));
 
 // Lista os modelos da chave (para a tela escolher) e faz uma pergunta curta de teste.
 async function testar(modelo) {

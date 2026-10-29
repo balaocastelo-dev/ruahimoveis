@@ -8,6 +8,7 @@ const normTel = (t) => { let d = String(t || '').replace(/\D/g, ''); if (d.lengt
 const mesmoTel = (a, b) => { const x = normTel(a), y = normTel(b); if (!x || !y) return false; return x === y || (x.slice(-8) === y.slice(-8) && x.slice(2, 4) === y.slice(2, 4)); };
 const padraoTel = (t) => { const d = normTel(t); return d.length >= 12 ? d.slice(0, 4) + '%' + d.slice(-8) : d; };
 const ehTeste = (t) => String(t || '').startsWith('teste-');
+const ehChat = (t) => /^chat-[1-9]\d*-[a-z-]+$/.test(String(t || ''));
 const json = (s, d) => { try { return s ? JSON.parse(s) : d; } catch { return d; } };
 
 // ---------- ajustes ----------
@@ -192,7 +193,7 @@ const jaFeito = (chave) => !!one('SELECT 1 FROM agente_eventos WHERE chave=?', c
 function registraEntrada({ agente, linha, telefone, nome, texto, wa_id, lead_id = null, pessoa_id = null, direcao = 'entrada' }) {
   if (wa_id && one('SELECT 1 FROM agente_mensagens WHERE wa_id=?', wa_id)) return null;
   const r = run(`INSERT INTO agente_mensagens(agente,linha,telefone,nome,direcao,texto,status,lead_id,pessoa_id,wa_id,autor,processada) VALUES(?,?,?,?,?,?,?,?,?,?,?,0)`,
-    agente, linha || linhaDe(agente), ehTeste(telefone) ? telefone : normTel(telefone), nome || null, direcao, String(texto || '').slice(0, 4000), direcao === 'nota' ? 'nota' : 'recebida',
+    agente, linha || linhaDe(agente), ehTeste(telefone) || ehChat(telefone) ? telefone : normTel(telefone), nome || null, direcao, String(texto || '').slice(0, 4000), direcao === 'nota' ? 'nota' : 'recebida',
     lead_id, pessoa_id, wa_id || null, direcao === 'nota' ? 'sistema' : nome || 'Cliente');
   return Number(r.lastInsertRowid);
 }
@@ -201,9 +202,9 @@ function registraEntrada({ agente, linha, telefone, nome, texto, wa_id, lead_id 
 function enfileiraSaida({ agente, telefone, texto, lead_id = null, pessoa_id = null, autor = null, aprovar = null, nome = null }) {
   const a = ajustes(agente);
   const teste = ehTeste(telefone);
-  const status = teste ? 'teste' : (aprovar === true || (aprovar === null && a.modo !== 'automatico')) ? 'aprovar' : 'fila';
+  const status = ehChat(telefone) ? 'enviada' : teste ? 'teste' : (aprovar === true || (aprovar === null && a.modo !== 'automatico')) ? 'aprovar' : 'fila';
   const r = run(`INSERT INTO agente_mensagens(agente,linha,telefone,nome,direcao,texto,status,lead_id,pessoa_id,autor,processada) VALUES(?,?,?,?,?,?,?,?,?,?,1)`,
-    agente, linhaDe(agente), teste ? telefone : normTel(telefone), nome, 'saida', String(texto).slice(0, 4000), status, lead_id, pessoa_id, autor || `${a.nome} (robô)`);
+    agente, ehChat(telefone) ? 'chat' : linhaDe(agente), teste || ehChat(telefone) ? telefone : normTel(telefone), nome, 'saida', String(texto).slice(0, 4000), status, lead_id, pessoa_id, autor || `${a.nome} (robô)`);
   const id = Number(r.lastInsertRowid);
   // a sugestão aparece também na conversa do CRM (WhatsApp > Conversas), para aprovar por lá
   if (status === 'aprovar' && lead_id) {
@@ -214,7 +215,7 @@ function enfileiraSaida({ agente, telefone, texto, lead_id = null, pessoa_id = n
 }
 
 module.exports = {
-  ...C, normTel, mesmoTel, padraoTel, ehTeste, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, estadoLinha, comando,
+  ...C, normTel, mesmoTel, padraoTel, ehTeste, ehChat, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, estadoLinha, comando,
   categoria, setorDoImovel, setorDaBusca, setorDoLead, imovelDoLead, quemAtende, corretorPorTelefone, leadDoCliente, proximoCorretor,
   evento, jaFeito, registraEntrada, enfileiraSaida,
 };

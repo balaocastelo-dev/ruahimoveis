@@ -443,6 +443,34 @@ CREATE TABLE IF NOT EXISTS social_cliques (
   em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
 CREATE INDEX IF NOT EXISTS ix_sc_post ON social_cliques(post_id);`);
 
+// Chat interno. PK própria + índices parciais: uma PK composta não aceita NULL no Postgres.
+db.exec(`CREATE TABLE IF NOT EXISTS chat_conversas (
+  id INTEGER PRIMARY KEY, tipo TEXT NOT NULL CHECK (tipo IN ('direta','sala')), titulo TEXT,
+  criado_por INTEGER NOT NULL REFERENCES usuarios(id), par TEXT UNIQUE,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), ultima_em TEXT, ultima_texto TEXT,
+  ultima_id INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS chat_participantes (
+  id INTEGER PRIMARY KEY, conversa_id INTEGER NOT NULL REFERENCES chat_conversas(id) ON DELETE CASCADE,
+  usuario_id INTEGER REFERENCES usuarios(id), agente TEXT,
+  lido_ate INTEGER NOT NULL DEFAULT 0, silenciado INTEGER NOT NULL DEFAULT 0 CHECK (silenciado IN (0,1)),
+  CHECK ((usuario_id IS NOT NULL AND agente IS NULL) OR (usuario_id IS NULL AND agente IS NOT NULL)));
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cp_usuario ON chat_participantes(conversa_id,usuario_id) WHERE usuario_id IS NOT NULL;
+CREATE UNIQUE INDEX IF NOT EXISTS ux_cp_agente ON chat_participantes(conversa_id,agente) WHERE agente IS NOT NULL;
+CREATE INDEX IF NOT EXISTS ix_cp_usuario ON chat_participantes(usuario_id,conversa_id);
+CREATE TABLE IF NOT EXISTS chat_mensagens (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, conversa_id INTEGER NOT NULL REFERENCES chat_conversas(id) ON DELETE CASCADE,
+  de_usuario INTEGER REFERENCES usuarios(id), de_agente TEXT,
+  tipo TEXT NOT NULL DEFAULT 'texto' CHECK (tipo IN ('texto','audio','arquivo','sistema')), texto TEXT,
+  arquivo_id INTEGER REFERENCES arquivos(id), agente_mensagem_id INTEGER UNIQUE,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  CHECK ((de_usuario IS NOT NULL AND de_agente IS NULL) OR (de_usuario IS NULL AND de_agente IS NOT NULL) OR (tipo='sistema' AND de_usuario IS NULL AND de_agente IS NULL)));
+CREATE INDEX IF NOT EXISTS ix_cm_conversa ON chat_mensagens(conversa_id,id);
+CREATE INDEX IF NOT EXISTS ix_cm_criado ON chat_mensagens(criado_em);
+CREATE TRIGGER IF NOT EXISTS chat_ultima AFTER INSERT ON chat_mensagens BEGIN
+  UPDATE chat_conversas SET ultima_id=NEW.id, ultima_em=NEW.criado_em, ultima_texto=substr(NEW.texto,1,240)
+    WHERE id=NEW.conversa_id AND ultima_id<NEW.id;
+END;`);
+
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);
 const run = (sql, ...p) => db.prepare(sql).run(...p);

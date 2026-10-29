@@ -135,6 +135,7 @@ FORM.setup = async (f) => {
 };
 function telaLogin() {
   clearInterval(poll);
+  if (typeof chatPara === 'function') chatPara();
   $('#root').innerHTML = `<main class="auth"><form class="card" data-form="login">
     <h1 class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></h1>
     <label class="f">E-mail<input name="email" type="email" required autocomplete="username"></label>
@@ -147,7 +148,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 
 // ---------- moldura ----------
 const MENU = [
-  ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
+  ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
@@ -156,13 +157,14 @@ const MENU = [
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
   $('#root').innerHTML = `<div class="app"><header class="topbar"><button type="button" class="hamb" data-act="menu" aria-label="Abrir o menu" aria-controls="menu-lateral" aria-expanded="false"><span></span><span></span><span></span></button>
-    <a class="tb-marca" href="#/painel">${esc(MARCA.sistema)}</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span></header>
+    <a class="tb-marca" href="#/painel">${esc(MARCA.sistema)}</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span><a class="chat-sino" id="chat-sino" href="#/chat" aria-label="Mensagens"><span aria-hidden="true">♧</span><span class="chat-nao-lidas" id="chat-contador" hidden></span></a></header>
     <div class="side-veu" data-act="menu-fecha" aria-hidden="true"></div><aside class="side" id="menu-lateral">
     <div class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></div>
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
   atualizaBadge();
+  if (typeof chatInicia === 'function') chatInicia();
   if (typeof lgpdConfere === 'function') lgpdConfere(); // aceite dos Termos e da Política (public/lgpd.js)
 }
 // Menu lateral vira gaveta no celular e no tablet (botão ☰ na barra do topo)
@@ -222,6 +224,7 @@ async function rota() {
     else if (p[0] === 'imoveis') await telaImoveis(new URLSearchParams(qs || ''));
     else if (p[0] === 'leads' && p[1]) await telaLead(+p[1]);
     else if (p[0] === 'leads') await telaLeads();
+    else if (p[0] === 'chat') await telaChat(p[1] ? +p[1] : null);
     else if (p[0] === 'whats' && p[1] === 'agente' && p[2]) await telaMesa(p[2], p[3] || 'mesa');
     else if (p[0] === 'whats' && p[1] === 'conversas') await telaWhats(null);
     else if (p[0] === 'whats' && p[1] === 'config') await telaEscritorioConfig();
