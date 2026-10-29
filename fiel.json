@@ -371,5 +371,132 @@
     "ambiente": "escritorio"
    }
   ]
+ },
+ "10772": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/10772-1h.jpg",
+    "antigos": [
+     "cademeuap/10772-1.jpg",
+     "cademeuap/10772-1f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/10772-2h.jpg",
+    "antigos": [
+     "cademeuap/10772-2.jpg",
+     "cademeuap/10772-2f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/10772-3h.jpg",
+    "antigos": [
+     "cademeuap/10772-3.jpg",
+     "cademeuap/10772-3f.jpg"
+    ],
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "cademeuap/10772-4h.jpg",
+    "antigos": [
+     "cademeuap/10772-4.jpg",
+     "cademeuap/10772-4f.jpg"
+    ],
+    "ambiente": "escritorio"
+   }
+  ]
+ },
+ "32118": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/32118-1h.jpg",
+    "antigos": [
+     "cademeuap/32118-1.jpg",
+     "cademeuap/32118-1f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/32118-2h.jpg",
+    "antigos": [
+     "cademeuap/32118-2.jpg",
+     "cademeuap/32118-2f.jpg"
+    ],
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "cademeuap/32118-3h.jpg",
+    "antigos": [
+     "cademeuap/32118-3.jpg",
+     "cademeuap/32118-3f.jpg"
+    ],
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "cademeuap/32118-4h.jpg",
+    "antigos": [
+     "cademeuap/32118-4.jpg",
+     "cademeuap/32118-4f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/32118-5h.jpg",
+    "antigos": [
+     "cademeuap/32118-5.jpg",
+     "cademeuap/32118-5f.jpg"
+    ],
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "90017": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/90017-1h.jpg",
+    "antigos": [
+     "cademeuap/90017-1.jpg",
+     "cademeuap/90017-1f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/90017-2h.jpg",
+    "antigos": [
+     "cademeuap/90017-2.jpg",
+     "cademeuap/90017-2f.jpg"
+    ],
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "cademeuap/90017-3h.jpg",
+    "antigos": [
+     "cademeuap/90017-3.jpg",
+     "cademeuap/90017-3f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/90017-4h.jpg",
+    "antigos": [
+     "cademeuap/90017-4.jpg",
+     "cademeuap/90017-4f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/90017-5h.jpg",
+    "antigos": [
+     "cademeuap/90017-5.jpg",
+     "cademeuap/90017-5f.jpg"
+    ],
+    "ambiente": "area_gourmet"
+   }
+  ]
  }
 }
