@@ -85,7 +85,8 @@ Os limites de valor mudam em "Regras do escritório".
   nove normais em 512² e três panoramas em 2048×768 (qualidade 84), gerados a partir dos PNGs do Flux.
   `python scripts/preparar-cenario.py C:/Users/user/demo-herrera/cenario` refaz os arquivos com Pillow/numpy: corrige a iluminação
   ampla, espelha para repetir sem cortes e calcula normais por Sobel sobre luminância desfocada. Provas repetidas 2×2 e métricas
-  ficam em `data/cenario-qa/`. `server.js` aplica cache de **7 dias** a essa pasta, como aos humanos e ao three.js.
+  ficam em `data/cenario-qa/`. `server.js` aplica cache de **7 dias** a essa pasta, como aos humanos e ao three.js;
+  `vercel.json` repete a regra para os arquivos estáticos servidos diretamente pela Vercel.
 - **Cidade e horário:** céu físico `Sky`, sol direcional e panorama cilíndrico atrás da fachada (`-z`), com transições entre dia,
   tarde e noite, estrelas e luz nas janelas. Os prédios próximos deixam o horizonte fotográfico visível; o chão externo fica
   abaixo da imagem para não cortá-la. Horários seguem o relógio local do navegador (dia 6h30–16h30; tarde 16h30–19h e 5h30–6h30).

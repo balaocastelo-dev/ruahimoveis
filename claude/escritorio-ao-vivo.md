@@ -9,7 +9,7 @@ Roteiro original: [docs/tarefa-cenario-3d.md](../docs/tarefa-cenario-3d.md).
 `docs/wip/escritorio-3d-cenario-novo.js` foi integrado e corrigido; o arquivo em `public/` é agora a versão de referência.
 
 - Nove materiais fotográficos em 1024² com normais tangentes em 512², mais panoramas dia/tarde/noite em 2048×768.
-  Total: 21 JPGs, 1,73 MB, em `public/plataforma/cenario/`, com cache de 7 dias.
+  Total: 21 JPGs, 1,73 MB, em `public/plataforma/cenario/`, com cache de 7 dias no Express e nos headers de `vercel.json`.
 - Conversão reproduzível: `python scripts/preparar-cenario.py C:/Users/user/demo-herrera/cenario`
   (Pillow/numpy). Usa espelhamento e Sobel; provas 2×2 ficam em `data/cenario-qa/`.
 - Móveis com cantos arredondados, cadeiras estofadas, plantas recortadas, luminárias e monitores emissivos.
