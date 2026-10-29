@@ -91,6 +91,18 @@ const clima = async (page, hora, nome) => {
   ok(await page.evaluate(() => !window.jg3dEstado().tour && !window.jg3dEstado().apres && window.jg3dEstado().controls.enabled), 'ESC sai do tour e devolve controle da câmera');
   await pausa(page);
 
+  // O clima soma-se ao horário e usa somente cor quando o movimento é reduzido.
+  await page.evaluate(() => window.__tempo({ temperature_2m: 19, weather_code: 3, is_day: 1 }));
+  ok(await page.evaluate(() => { const e = window.jg3dEstado(); return e.tempoEstado === 'nublado' && e.sol.intensity < 2.2 && e.nuvens.material.opacity > 0; }), 'nublado reduz sol e esbranquiça o céu');
+  await page.evaluate(() => window.__tempo({ temperature_2m: 18, weather_code: 63, is_day: 1 }));
+  await page.waitForFunction(() => window.jg3dEstado().gotas?.planos.every((p) => p.visible));
+  ok(await page.evaluate(() => { const e = window.jg3dEstado(); return e.panoramas.dia.material.color.r < 1 && document.querySelector('#j3-temperatura').textContent.includes('18'); }), 'chuva anima os vidros, escurece a cidade e mostra temperatura');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.waitForFunction(() => window.jg3dEstado().gotas.planos.every((p) => !p.visible));
+  ok(true, 'movimento reduzido desliga as gotas');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.evaluate(() => window.__tempo({})); await pausa(page);
+
   // Aproxima a câmera para conferir as texturas e a cadeira com o humano.
   await page.evaluate(() => { const e = window.jg3dEstado(); window.__clima(12, true); e.camera.position.set(-5, 3.4, 3); e.controls.target.set(-3, 0.9, -1.8); e.controls.update(); });
   await page.waitForTimeout(800);

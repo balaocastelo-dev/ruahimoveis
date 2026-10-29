@@ -143,6 +143,12 @@ Os limites de valor mudam em "Regras do escritório".
    com voo, luz e marca no chão, legendas PT/EN/日本語 e 9 segundos por parada. ◀/▶ ou setas pulam etapas;
    ESC encerra. Ao completar, volta à órbita de apresentação. Abrir lugar, PC ou modo andar encerra o tour;
    movimento reduzido aplica a câmera imediatamente. Não altera humanos, animações ou colisões.
+4. **Clima de Campinas:** `/api/publico/clima` consulta Open-Meteo no servidor, sem chave, com timeout de 5 segundos,
+   cache em memória de 15 minutos (inclusive falhas) e compartilhamento de requisições simultâneas. Falhas devolvem `{}`.
+   O relógio usa `America/Sao_Paulo` independentemente do navegador; a temperatura aparece junto dele. Códigos da
+   [Open-Meteo](https://open-meteo.com/en/docs) modulam sol, céu e cidade sem substituir o ciclo dia/tarde/noite.
+   Chuva usa um canvas 256² compartilhado por dois vidros, limitado a 12 fps. Celular e movimento reduzido só mudam
+   cores; recursos e intervalo são descartados ao sair. CSP e dependências permanecem as mesmas.
 
 ### Verificação
 

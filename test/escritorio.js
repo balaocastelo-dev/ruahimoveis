@@ -50,6 +50,13 @@ const ia = http.createServer((req, res) => {
   };
   const ok = (cond, msg) => { assert.ok(cond, msg); console.log('ok ·', msg); };
 
+  const fetchOriginal = global.fetch;
+  global.fetch = (url, opcoes) => String(url).startsWith('https://api.open-meteo.com/')
+    ? Promise.resolve({ ok: true, json: async () => ({ current: { temperature_2m: 24, weather_code: 3, is_day: 1 } }) }) : fetchOriginal(url, opcoes);
+  const tempoPublico = await req('GET', '/api/publico/clima');
+  ok(tempoPublico.temperature_2m === 24 && tempoPublico.weather_code === 3, 'clima: rota pública funciona sem sessão e consulta no servidor');
+  global.fetch = fetchOriginal;
+
   await req('POST', '/api/setup', { nome: 'Gestor', email: 'g@r.com', senha: 'Teste1234', exemplo: true });
 
   // 1) escritório com 9 agentes e almas padrão

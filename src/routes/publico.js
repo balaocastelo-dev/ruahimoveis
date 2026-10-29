@@ -13,6 +13,11 @@ const og = require('../og');
 
 const r = express.Router();
 
+r.get('/clima', async (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  res.json(await require('../services/clima').clima());
+});
+
 // limite simples por IP para as rotas públicas
 const hits = new Map();
 function limite(max) {

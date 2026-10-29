@@ -154,6 +154,8 @@ const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 const celular = () => matchMedia('(max-width: 720px)').matches;
 const lerp = (a, b, k) => a + (b - a) * k;
 const suave = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+const FUSO = 'America/Sao_Paulo';
+const horaCampinas = (a = new Date()) => { const [h, m] = a.toLocaleTimeString('en-GB', { timeZone: FUSO, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).split(':').map(Number); return h + m / 60; };
 
 // ====================================================================== tela
 export async function telaEscritorio3D() {
@@ -210,6 +212,7 @@ export async function telaEscritorio3D() {
   E.relogio = setInterval(relogio, 20000);
   E.ssaver = setInterval(() => { if (vivo()) Object.values(E.agentes).forEach((ag) => ag.tela && !ag.tela.externa && telaPinta(ag)); }, 30000);
   E.tvIntervalo = setInterval(() => { if (vivo()) { E.tvFotos = !E.tvFotos; tvPinta(); } }, 8000);
+  atualizaTempo(); E.tempoIntervalo = setInterval(atualizaTempo, 15 * 60e3);
   document.addEventListener('fullscreenchange', redimensiona);
   document.addEventListener('keydown', tecla);
   if (!reduz()) setTimeout(() => { if (E === meu) { $('#j3-dica').classList.add('ve'); setTimeout(() => $('#j3-dica') && $('#j3-dica').classList.remove('ve'), 7000); } }, 2500);
@@ -222,6 +225,7 @@ function para() {
   const e = E; E = null;
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
   clearInterval(e.tvIntervalo);
+  clearInterval(e.tempoIntervalo);
   if (e.andar) { try { e.andar.desmonta(); } catch {} }
   if (e.ro) e.ro.disconnect();
   document.removeEventListener('fullscreenchange', redimensiona);
@@ -299,7 +303,7 @@ ACT['j3-apres'] = () => { if (E) { if (E.tour || E.apres) terminaTour(); else in
 function hud() {
   if (!E) return;
   const langs = [['pt', 'PT'], ['en', 'EN'], ['ja', '日本語']];
-  $('#j3-hud').innerHTML = `<div class="jg-vivo"><i></i>${esc(t('vivo'))}</div><div class="jg-relogio"><b id="j3-hora">--:--</b><span id="j3-data"></span></div><span class="sp"></span>
+  $('#j3-hud').innerHTML = `<div class="jg-vivo"><i></i>${esc(t('vivo'))}</div><div class="jg-relogio"><b><span id="j3-hora">--:--</span> <span id="j3-temperatura" title="Campinas · Open-Meteo"></span></b><span id="j3-data"></span></div><span class="sp"></span>
     <div class="jg-num"><b id="j3-n-acoes">0</b><span>${esc(t('acoes'))}</span></div>
     <div class="jg-num"><b id="j3-n-conv">0</b><span>${esc(t('conversas'))}</span></div>
     <div class="jg-num"><b id="j3-n-env">0</b><span>${esc(t('enviadas'))}</span></div>
@@ -318,12 +322,17 @@ function hud() {
 }
 function relogio() {
   if (!vivo()) return;
-  const a = new Date(); const h = a.getHours() + a.getMinutes() / 60;
+  const a = new Date(); const h = horaCampinas(a);
   const loc = LANG === 'ja' ? 'ja-JP' : LANG === 'en' ? 'en-US' : 'pt-BR';
-  $('#j3-hora').textContent = a.toLocaleTimeString(loc, { hour: '2-digit', minute: '2-digit' });
-  $('#j3-data').textContent = a.toLocaleDateString(loc, { weekday: 'short', day: '2-digit', month: 'short' });
+  $('#j3-hora').textContent = a.toLocaleTimeString(loc, { timeZone: FUSO, hour: '2-digit', minute: '2-digit' });
+  $('#j3-data').textContent = a.toLocaleDateString(loc, { timeZone: FUSO, weekday: 'short', day: '2-digit', month: 'short' });
+  $('#j3-temperatura').textContent = Number.isFinite(E.tempoReal?.temperature_2m) ? `· ${Math.round(E.tempoReal.temperature_2m)} °C` : '';
   E.hora = h;
   climaAlvo(h);
+}
+async function atualizaTempo() {
+  const meu = E;
+  try { const d = await api('GET', '/api/publico/clima'); if (vivo() && E === meu) { E.tempoReal = d; relogio(); } } catch { if (E === meu && vivo()) { E.tempoReal = {}; relogio(); } }
 }
 function numeros(d) {
   if (!d || !d.totais || !vivo()) return;
@@ -399,7 +408,7 @@ function montaCena() {
   E.clima = { solI: 2.4, hemiI: 0.7, exp: 1.0, pratI: 0, cidade: 0, sol: new THREE.Color(0xfff1dc), hemiCeu: new THREE.Color(0xcfe0f5), hemiChao: new THREE.Color(0xa68a66), solPos: new THREE.Vector3(-9, 16, -13), ceuSol: new THREE.Vector3(-0.35, 0.62, -0.7), turb: 5, ray: 1.4, estrelas: 0, fog: new THREE.Color(0xdbe9f5) };
   cena.fog = new THREE.Fog(0xdbe9f5, 75, 300);
   montaEfeitos();
-  climaAlvo(new Date().getHours() + new Date().getMinutes() / 60, true);
+  climaAlvo(horaCampinas(), true);
 
   // eventos de interação
   E.escuta = {};
@@ -708,7 +717,7 @@ function tvPinta() {
   x.fillStyle = g; x.fillRect(0, 0, 1024, 576);
   x.textBaseline = 'middle'; x.textAlign = 'left';
   x.fillStyle = '#7fe0c8'; x.font = '700 28px "DM Sans", system-ui, sans-serif'; x.fillText(t('painel').toUpperCase(), 56, 64);
-  x.fillStyle = '#9aa3ad'; x.font = '500 26px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillText(`${MARCA.cliente || ''}  ·  ${new Date().toLocaleTimeString(LANG === 'ja' ? 'ja-JP' : LANG === 'en' ? 'en-US' : 'pt-BR', { hour: '2-digit', minute: '2-digit' })}`, 968, 64);
+  x.fillStyle = '#9aa3ad'; x.font = '500 26px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillText(`${MARCA.cliente || ''}  ·  ${new Date().toLocaleTimeString(LANG === 'ja' ? 'ja-JP' : LANG === 'en' ? 'en-US' : 'pt-BR', { timeZone: FUSO, hour: '2-digit', minute: '2-digit' })}`, 968, 64);
   x.fillStyle = '#ff5c5c'; x.beginPath(); x.arc(968 - x.measureText(`${MARCA.cliente || ''}  ·  00:00`).width - 26, 64, 9, 0, Math.PI * 2); x.fill();
   if (E.tvFotos) {
     x.fillStyle = '#15181d'; x.fillRect(32, 25, 600, 78);
@@ -838,6 +847,8 @@ function constroiCidade(cena) {
   // céu físico (Preetham) — o sol vai com a hora
   const ceu = new Sky(); ceu.scale.setScalar(480); ceu.renderOrder = -3; cena.add(ceu); E.ceu = ceu.material;
   Object.assign(E.ceu.uniforms.turbidity, { value: 6 }); E.ceu.uniforms.rayleigh.value = 1.6; E.ceu.uniforms.mieCoefficient.value = 0.006; E.ceu.uniforms.mieDirectionalG.value = 0.8;
+  const nuvens = new THREE.Mesh(new THREE.SphereGeometry(440, 24, 12), new THREE.MeshBasicMaterial({ color: 0xc9cfd3, transparent: true, opacity: 0, side: THREE.BackSide, depthWrite: false, fog: false }));
+  nuvens.renderOrder = -2.5; cena.add(nuvens); E.nuvens = nuvens;
   // estrelas
   const n = 700; const pos = new Float32Array(n * 3); let s = 5; const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
   for (let i = 0; i < n; i++) { const a = rnd() * Math.PI * 2, e = 0.08 + rnd() * 1.3; pos[i * 3] = Math.cos(a) * Math.cos(e) * 380; pos[i * 3 + 1] = Math.sin(e) * 380; pos[i * 3 + 2] = Math.sin(a) * Math.cos(e) * 380; }
@@ -891,7 +902,18 @@ function climaAlvo(h, agora) {
   if (h >= 6.5 && h < 16.5) a = { solI: 2.2, hemiI: 0.7, exp: 0.95, pratI: 0, cidade: 0, estrelas: 0, sol: C(0xfff3e0), hemiCeu: C(0xcfe0f5), hemiChao: C(0xa68a66), solPos: new THREE.Vector3(-9, 16, -13), fog: C(0xd9e8f4), ceuSol: new THREE.Vector3(-0.35, 0.62, -0.7), turb: 5, ray: 1.4 };
   else if ((h >= 16.5 && h < 19) || (h >= 5.5 && h < 6.5)) a = { solI: 2.4, hemiI: 0.55, exp: 1.05, pratI: 14, cidade: 0.3, estrelas: 0, sol: C(0xffb36e), hemiCeu: C(0xf5c9a0), hemiChao: C(0x8a6a4e), solPos: new THREE.Vector3(16, 4.5, -13), fog: C(0xf1c2a0), ceuSol: new THREE.Vector3(0.75, 0.08, -0.65), turb: 9, ray: 3.2 };
   else a = { solI: 0.25, hemiI: 0.4, exp: 1.0, pratI: 18, cidade: 0.75, estrelas: 0.9, sol: C(0x8ea4ff), hemiCeu: C(0x303c5e), hemiChao: C(0x2a1c12), solPos: new THREE.Vector3(-6, 14, -10), fog: C(0x141a2c), ceuSol: new THREE.Vector3(-0.3, -0.12, -0.9), turb: 2, ray: 0.2 };
-  E.alvo = a; E.modoCeu = a.estrelas > 0.5 ? 'noite' : a.cidade > 0 ? 'tarde' : 'dia';
+  E.modoCeu = a.estrelas > 0.5 ? 'noite' : a.cidade > 0 ? 'tarde' : 'dia';
+  const codigo = E.tempoReal?.weather_code;
+  E.tempoEstado = [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82, 95, 96, 97, 99].includes(codigo) ? 'chuva'
+    : [2, 3, 45, 48, 71, 73, 75, 77, 85, 86].includes(codigo) ? 'nublado' : 'limpo';
+  a.nuvens = E.tempoEstado === 'chuva' ? 1 : E.tempoEstado === 'nublado' ? 0.65 : 0;
+  a.escuro = E.tempoEstado === 'chuva' ? 0.45 : E.tempoEstado === 'nublado' ? 0.15 : 0;
+  if (a.nuvens) {
+    a.solI *= 1 - a.nuvens * 0.8; a.hemiI *= 1 - a.nuvens * 0.18; a.estrelas *= 1 - a.nuvens;
+    a.sol.lerp(C(0xd7dce0), a.nuvens); a.hemiCeu.lerp(C(E.modoCeu === 'noite' ? 0x414959 : 0xd4d8dc), a.nuvens);
+    a.fog.lerp(C(E.modoCeu === 'noite' ? 0x171c25 : 0xb8c2cd), a.nuvens); a.turb = 15; a.ray = 0.5;
+  }
+  E.clima.nuvens ??= 0; E.clima.escuro ??= 0; E.alvo = a;
   if (agora) { for (const k of Object.keys(a)) { if (a[k] && a[k].isColor) E.clima[k].copy(a[k]); else if (a[k] && a[k].isVector3) E.clima[k].copy(a[k]); else E.clima[k] = a[k]; } aplicaClima(); }
 }
 const suaveDegrau = (a, b, x) => { const k = THREE.MathUtils.clamp((x - a) / (b - a), 0, 1); return k * k * (3 - 2 * k); };
@@ -904,7 +926,9 @@ function aplicaClima() {
   E.cupulas.forEach((m) => { m.material.emissiveIntensity = c.pratI / 25; });
   if (E.ceu && E.ceu.uniforms) { E.ceu.uniforms.sunPosition.value.copy(c.ceuSol); E.ceu.uniforms.turbidity.value = c.turb; E.ceu.uniforms.rayleigh.value = c.ray; }
   E.cena.fog.color.copy(c.fog);
-  E.predios.material.emissiveIntensity = c.cidade; E.predios.material.color.setScalar(1 - c.cidade * 0.75);
+  E.predios.material.emissiveIntensity = c.cidade; E.predios.material.color.setScalar((1 - c.cidade * 0.75) * (1 - c.escuro));
+  E.nuvens.material.opacity = c.nuvens * 0.8; E.nuvens.material.color.copy(c.fog);
+  for (const m of Object.values(E.panoramas || {})) m.material.color.setScalar(1 - c.escuro);
   E.estrelas.material.opacity = c.estrelas;
   if (E.panoramas) { const x = c.cidade; E.panoramas.dia.material.opacity = 1 - suaveDegrau(0, 0.3, x); E.panoramas.tarde.material.opacity = suaveDegrau(0, 0.3, x) * (1 - suaveDegrau(0.3, 0.75, x)); E.panoramas.noite.material.opacity = suaveDegrau(0.3, 0.75, x); }
   E.leds.forEach((m) => { m.material.emissiveIntensity = 0.6 + c.pratI / 30; });
@@ -913,10 +937,34 @@ function aplicaClima() {
 function interpolaClima(dt) {
   const c = E.clima, a = E.alvo; if (!a || !a.sol) return;
   const k = Math.min(1, dt * 0.9);
-  for (const n of ['solI', 'hemiI', 'exp', 'pratI', 'cidade', 'estrelas', 'turb', 'ray']) c[n] = lerp(c[n], a[n], k);
+  for (const n of ['solI', 'hemiI', 'exp', 'pratI', 'cidade', 'estrelas', 'turb', 'ray', 'nuvens', 'escuro']) c[n] = lerp(c[n], a[n], k);
   for (const n of ['sol', 'hemiCeu', 'hemiChao', 'fog']) c[n].lerp(a[n], k);
   c.solPos.lerp(a.solPos, k); c.ceuSol.lerp(a.ceuSol, k);
   aplicaClima();
+}
+
+// Uma textura pequena, compartilhada pelos dois vidros e atualizada no máximo a 12 fps.
+function chuvaNoVidro(agora) {
+  const animar = E.tempoEstado === 'chuva' && !reduz() && !celular();
+  if (!animar) { E.gotas?.planos.forEach((p) => { p.visible = false; }); return; }
+  if (!E.gotas) {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 256;
+    const tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+    const mat = new THREE.MeshBasicMaterial({ map: tx, transparent: true, depthWrite: false, opacity: 0.65, side: THREE.DoubleSide });
+    const geo = new THREE.PlaneGeometry(6.2, SALA.H - 0.25);
+    const planos = [-5.5, 5.5].map((x) => { const p = new THREE.Mesh(geo, mat); p.position.set(x, (SALA.H - 0.25) / 2 + 0.12, -SALA.Z + 0.025); E.cena.add(p); return p; });
+    E.gotas = { cv, tx, planos, ultimo: 0 };
+  }
+  const g = E.gotas; g.planos.forEach((p) => { p.visible = true; });
+  if (agora - g.ultimo < 1000 / 12) return; g.ultimo = agora;
+  const ctx = g.cv.getContext('2d'); ctx.clearRect(0, 0, 256, 256);
+  for (let i = 0; i < 32; i++) {
+    const x = (i * 79 + 13) % 256, y = (i * 37 + agora * (0.012 + i % 4 * 0.006)) % 290 - 20;
+    const grad = ctx.createLinearGradient(0, y - 16, 0, y + 5); grad.addColorStop(0, '#d9eeff00'); grad.addColorStop(1, '#d9eeffaa');
+    ctx.strokeStyle = grad; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x + 1, y - 16); ctx.lineTo(x, y); ctx.stroke();
+    ctx.fillStyle = '#e8f5ff99'; ctx.beginPath(); ctx.ellipse(x, y, 1.5, 3, 0, 0, Math.PI * 2); ctx.fill();
+  }
+  g.tx.needsUpdate = true;
 }
 
 
@@ -1132,7 +1180,7 @@ function telaPinta(ag) {
   x.fillStyle = 'rgba(255,255,255,.06)'; x.beginPath(); x.roundRect(22, 22, W - 44, H - 44, 14); x.fill();
   x.fillStyle = ag.cor; x.beginPath(); x.roundRect(22, 22, W - 44, 46, [14, 14, 0, 0]); x.fill();
   x.fillStyle = '#fff'; x.font = '700 20px "DM Sans", system-ui, sans-serif'; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText(`${ag.nome} · WhatsApp`, 42, 45);
-  x.font = '500 15px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillStyle = 'rgba(255,255,255,.8)'; x.fillText(new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }), W - 42, 45);
+  x.font = '500 15px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillStyle = 'rgba(255,255,255,.8)'; x.fillText(new Date().toLocaleTimeString('pt-BR', { timeZone: FUSO, hour: '2-digit', minute: '2-digit' }), W - 42, 45);
   if (ag.dados.ultimas?.length) {
     ag.dados.ultimas.slice(-3).forEach((m, i) => {
       const saida = m.direcao === 'saida', bx = saida ? 108 : 40, by = 80 + i * 64;
@@ -1223,6 +1271,7 @@ function quadro(agoraMs) {
   if (!vivo()) return para();
   const dt = Math.min(0.05, (agoraMs - (E.ultimo || agoraMs)) / 1000); E.ultimo = agoraMs; E.tempo += dt;
   interpolaClima(dt);
+  chuvaNoVidro(agoraMs);
   if (E.tour && agoraMs >= E.tour.proxima) tourParada(E.tour.indice + 1);
   // andando dentro do escritório: o módulo cuida do personagem e da câmera
   if (E.andando && E.andar) {
