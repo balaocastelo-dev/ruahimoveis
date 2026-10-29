@@ -1,0 +1,244 @@
+{
+  "slug": "energia-solar-em-casa-quando-compensa-e-o-que-considerar",
+  "tema": "energia solar residencial quando compensa instalar",
+  "titulo": "Energia solar em casa: quando compensa e o que considerar antes",
+  "resumo": "Energia solar em casa compensa mais com bom telhado, pouca sombra e consumo alto de dia. Entenda a Lei 14.300, os créditos de energia e o que olhar antes da obra.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "energia solar",
+    "construção",
+    "casa nova",
+    "sustentabilidade",
+    "eficiência energética"
+  ],
+  "capa": {
+    "alt": "Telhado cerâmico de uma casa térrea com fileiras de painéis solares sob céu azul e jardim arborizado ao redor"
+  },
+  "redes": {
+    "legenda": "Vale a pena colocar placa solar em casa? Depende menos da moda e mais do seu telhado: face norte, pouca sombra e estrutura em bom estado fazem a diferença. E as regras mudaram com a Lei 14.300, que alterou a forma como a energia que sobra vira crédito na conta. No blog, explicamos quando compensa e o que conferir antes de assinar. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "energiasolar",
+      "casasustentavel",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "eficienciaenergetica",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pesquisa **energia solar em casa** normalmente quer duas coisas: pagar menos na conta de luz e saber se o investimento faz sentido para o próprio telhado. A tecnologia ficou comum nos bairros residenciais, e a pergunta deixou de ser se ela funciona para ser em que casa ela compensa de verdade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: costuma compensar quando o telhado recebe sol direto boa parte do dia, a estrutura aguenta o peso, o consumo da casa é relevante e você pretende ficar no imóvel por anos. A conta nunca zera, e as regras da Lei 14.300 mudam o peso da energia que vai para a rede. Por isso, a decisão pede números do seu caso."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O sistema mais comum é ligado à rede: o que sobra de dia vira crédito para usar depois, com validade de 60 meses.",
+        "A Lei 14.300, de 2022, criou uma transição: sistemas pedidos depois do prazo pagam aos poucos parte da tarifa de distribuição sobre a energia compensada.",
+        "Telhado voltado para o norte, sem sombra de árvores ou prédios, é o que mais produz no Brasil.",
+        "Projeto e instalação exigem responsável técnico e aprovação da distribuidora; não é obra para fazer por conta própria."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como funciona a energia solar ligada à rede e o que você ganha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na maioria das casas, os painéis fotovoltaicos (que transformam luz em eletricidade) ficam ligados à rede da distribuidora. Durante o dia, a casa usa a energia que produz. O que sobra segue para a rede e vira crédito em quilowatt-hora. À noite ou em dias nublados, a casa puxa energia da rede e desconta desses créditos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse mecanismo se chama Sistema de Compensação de Energia Elétrica. Pela Lei 14.300, os créditos expiram 60 meses depois do faturamento em que foram gerados. A mesma lei define microgeração como sistema de até 75 kW de potência instalada, faixa em que cabem com folga as instalações residenciais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A adesão já é grande. Segundo levantamento da Absolar, a associação do setor, divulgado em março de 2025, mais de 5 milhões de imóveis no país tinham geração própria, e as residências respondiam por cerca de 69% deles. São Paulo aparecia entre os estados com mais unidades."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o ganho tem limite. Mesmo com produção alta, a conta continua trazendo uma cobrança mínima da distribuidora e encargos que não se compensam com créditos. Quem espera conta zerada costuma se frustrar; o mais realista é pensar em uma redução importante, que varia conforme o consumo, a tarifa e a produção do telhado."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a Lei 14.300 mudou e por que a data do pedido importa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Lei 14.300, sancionada em janeiro de 2022, é o marco legal da micro e minigeração distribuída. Ela garantiu as regras antigas até 31 de dezembro de 2045 para quem já tinha sistema ou protocolou o pedido de acesso na distribuidora em até 12 meses depois da publicação. Quem pediu depois entrou numa regra de transição."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nessa transição, a energia compensada passa a pagar uma parte crescente das componentes da tarifa ligadas à distribuição. A lei escalonou essa parte ano a ano, e a partir de 2029 passa a valer a regra geral prevista no artigo 17. Na prática, compensar energia ficou um pouco menos vantajoso a cada ano."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Parcela das componentes de distribuição paga sobre a energia compensada (sistemas fora da regra antiga)",
+      "colunas": [
+        "Ano",
+        "Parcela prevista na Lei 14.300"
+      ],
+      "linhas": [
+        [
+          "2025",
+          "45%"
+        ],
+        [
+          "2026",
+          "60%"
+        ],
+        [
+          "2027",
+          "75%"
+        ],
+        [
+          "2028",
+          "90%"
+        ],
+        [
+          "A partir de 2029",
+          "Regra geral do artigo 17 da lei"
+        ]
+      ],
+      "nota": "Fonte: texto da Lei 14.300/2022, artigo 27, publicado pelo Ministério de Minas e Energia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O efeito prático: quanto mais da energia produzida a casa consome na hora, menos ela depende da compensação e menos sente essa mudança. Uma família que fica em casa de dia, usa ar-condicionado à tarde ou tem piscina aquecida tende a aproveitar melhor o sistema do que uma casa vazia o dia todo."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Regra geral, não conselho para o seu caso",
+      "texto": "Este texto resume a lei. Enquadramento, prazos e cobrança na conta dependem do seu pedido e da distribuidora; para um caso concreto, consulte a distribuidora e, se precisar, um advogado ou contador."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como saber se o seu telhado e a sua casa servem para energia solar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No hemisfério Sul, a face do telhado voltada para o norte é a que recebe mais sol ao longo do ano, e por isso costuma produzir mais. Faces leste e oeste também funcionam, com rendimento menor. Um guia da Enel X sobre preparo da casa lembra de outro ponto: árvores e prédios vizinhos que fazem sombra derrubam a produção."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Olhe a orientação:** descubra para onde aponta cada água do telhado; norte é o ideal, leste e oeste são aceitáveis.",
+        "**Procure sombras:** observe o telhado de manhã e à tarde; uma árvore ou caixa-d'água pode sombrear parte dos painéis.",
+        "**Confira a estrutura:** telhas quebradas, madeiramento antigo ou infiltração devem ser resolvidos antes, porque os painéis ficam ali por muitos anos.",
+        "**Identifique o tipo de telha:** cerâmica, metálica e fibrocimento aceitam o sistema, cada uma com um tipo de fixação.",
+        "**Separe as contas de luz:** o histórico de consumo de doze meses é a base para dimensionar o sistema sem exagero."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem todo telhado vale o esforço. Uma casa muito sombreada, com pouca área livre ou com telhado que precisará ser trocado em breve tende a ter retorno pior. Em condomínio de casas, ainda é preciso conferir o regulamento sobre fachada e cobertura. Para mais conteúdo sobre obra e projeto, veja [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Energia solar em casa: o que pesa a favor e contra",
+      "pros": [
+        "Reduz de forma relevante a parte da conta ligada ao consumo de energia",
+        "Créditos valem por 60 meses e cobrem a noite e os dias nublados",
+        "Painéis exigem pouca manutenção no dia a dia",
+        "Tecnologia difundida, com muitas empresas e profissionais no mercado"
+      ],
+      "contras": [
+        "Investimento inicial alto, com retorno que leva anos",
+        "A conta não zera: cobrança mínima e encargos continuam",
+        "Regras de compensação ficaram menos vantajosas para novos pedidos",
+        "Sombra, telhado ruim ou mudança de casa em pouco tempo reduzem o benefício"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que conferir antes de contratar a instalação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A instalação passa pela distribuidora. O caminho geral, descrito em guia da Embrapa sobre geração distribuída de pequeno porte, é este: um projeto feito por responsável técnico, a solicitação de acesso com a documentação, o parecer da distribuidora com as condições técnicas e, depois, a ligação com a medição adequada. Documentação incompleta faz o pedido voltar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por envolver elétrica e estrutura de cobertura, a obra exige engenheiro ou técnico habilitado, com ART (Anotação de Responsabilidade Técnica). Não mexa no quadro elétrico nem suba no telhado para instalar por conta própria: o risco de choque, queda e incêndio é real, e uma ligação irregular pode ser recusada pela distribuidora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de comparar propostas, peça a estimativa de produção mensal, as garantias de painéis, inversor e serviço, quem cuida do pedido na distribuidora e como fica a manutenção. Desconfie de promessa de conta zerada ou de retorno certo: produção e economia dependem do clima, da sombra e das tarifas, que mudam com o tempo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir leva vantagem: dá para prever no projeto a face do telhado para o norte, a área livre e o espaço para o inversor. Na compra de um imóvel que já tem o sistema, vale pedir os documentos da aprovação e as contas recentes. Mais leituras sobre a casa estão na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas e quer avaliar telhado, sol e espaço para energia solar em cada visita, a equipe da {{cliente}} pode acompanhar você nessa busca e ajudar a comparar os imóveis com calma."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: energia solar compensa quando o telhado é bom, o sol bate sem sombra e a casa consome boa parte da energia na hora em que ela é gerada."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Energia solar zera a conta de luz?",
+      "resposta": "Normalmente não. Mesmo com boa produção, a conta mantém uma cobrança mínima da distribuidora e encargos que os créditos não abatem. O que costuma acontecer é uma redução importante da parte ligada ao consumo."
+    },
+    {
+      "pergunta": "Quanto tempo valem os créditos de energia solar?",
+      "resposta": "Pela Lei 14.300, os créditos expiram 60 meses depois do faturamento em que foram gerados. Eles servem para abater o consumo da noite, dos dias nublados e dos meses de menor produção."
+    },
+    {
+      "pergunta": "Ainda vale a pena instalar energia solar depois da Lei 14.300?",
+      "resposta": "Pode valer, mas a conta mudou: novos sistemas pagam uma parte crescente da tarifa de distribuição sobre a energia compensada. Casas que consomem boa parte da energia durante o dia sentem menos essa mudança. Uma simulação com o seu consumo é o melhor caminho."
+    },
+    {
+      "pergunta": "Telhado voltado para o sul serve para energia solar?",
+      "resposta": "No Brasil, a face sul é a que recebe menos sol, então rende menos. Leste e oeste funcionam razoavelmente, e o norte é o ideal. Um projetista avalia se a produção compensa em cada caso."
+    },
+    {
+      "pergunta": "Posso instalar os painéis sozinho?",
+      "resposta": "Não é recomendado. A instalação envolve elétrica e estrutura do telhado, exige responsável técnico com ART e passa pela aprovação da distribuidora. Uma ligação feita por conta própria traz risco de acidente e pode ser recusada."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Lei nº 14.300, de 6 de janeiro de 2022 (marco legal da micro e minigeração distribuída) — Ministério de Minas e Energia",
+      "url": "https://www.gov.br/mme/pt-br/acesso-a-informacao/legislacao/leis/lei-n-14-300-2022.pdf",
+      "data": "janeiro de 2022"
+    },
+    {
+      "nome": "Geração distribuída de energia solar ultrapassa marca de 5 milhões de imóveis no país — Folha de Pernambuco (dados da Absolar)",
+      "url": "https://www.folhape.com.br/economia/geracao-distribuida-de-energia-solar-ultrapassa-marca-de-5-milhoes-de/399266/",
+      "data": "março de 2025"
+    },
+    {
+      "nome": "Geração Distribuída de Pequeno Porte: Guia de Informações (Documentos 481) — Embrapa Clima Temperado",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1111073/1/DOCUMENTO481GeracaoDistribuidadePequenoPorte.pdf",
+      "data": "fevereiro de 2019"
+    },
+    {
+      "nome": "Checklist: prepare sua casa para receber um sistema de energia solar — Enel X",
+      "url": "https://www.enelx.com/content/dam/local-brazil/artigos/ENEL%20X_Checklist%20Prepare%20Sua%20Casa%20Para%20Receber%20Um%20Sistema%20de%20Energia%20Solar.pdf",
+      "data": "outubro de 2026"
+    }
+  ]
+}
