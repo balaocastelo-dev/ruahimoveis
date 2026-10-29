@@ -49,25 +49,35 @@ function salva(b = {}, quem) {
   return ajustes();
 }
 
+// O Gemini às vezes responde 503 ("high demand") ou 429 por alguns segundos. Em vez de o robô ficar
+// calado, tentamos de novo duas vezes (1,2 s e 3 s) — cabe no orçamento de 40 s do ciclo do escritório.
+const ESPERA_NOVA_TENTATIVA = [1200, 3000];
+const dormir = (ms) => new Promise((r) => setTimeout(r, ms));
 async function gemini(sistema, pedido, o = {}) {
   const k = chave(); const modelo = o.modelo || ajustes().modelo;
-  const r = await fetch(`${API}/models/${encodeURIComponent(modelo)}:generateContent`, {
-    method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': k },
-    body: JSON.stringify({
-      systemInstruction: { parts: [{ text: sistema }] },
-      contents: [{ role: 'user', parts: [{ text: pedido }] }],
-      generationConfig: { temperature: 0.35, maxOutputTokens: 1200, responseMimeType: 'application/json' },
-    }),
-    signal: AbortSignal.timeout(o.timeout || 40000),
-  });
-  const j = await r.json().catch(() => ({}));
-  if (origem() === 'central') {
-    const u = j.usageMetadata || {};
-    central.anota({ modelo, entrada: u.promptTokenCount || 0, saida: u.candidatesTokenCount || 0, erro: !r.ok });
+  let r, j;
+  for (let tentativa = 0; ; tentativa++) {
+    r = await fetch(`${API}/models/${encodeURIComponent(modelo)}:generateContent`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': k },
+      body: JSON.stringify({
+        systemInstruction: { parts: [{ text: sistema }] },
+        contents: [{ role: 'user', parts: [{ text: pedido }] }],
+        generationConfig: { temperature: 0.35, maxOutputTokens: 1200, responseMimeType: 'application/json' },
+      }),
+      signal: AbortSignal.timeout(o.timeout || 40000),
+    });
+    j = await r.json().catch(() => ({}));
+    if (origem() === 'central') {
+      const u = j.usageMetadata || {};
+      central.anota({ modelo, entrada: u.promptTokenCount || 0, saida: u.candidatesTokenCount || 0, erro: !r.ok });
+    }
+    const vaiTentarDeNovo = !r.ok && (r.status === 429 || r.status >= 500) && tentativa < ESPERA_NOVA_TENTATIVA.length;
+    if (!vaiTentarDeNovo) break;
+    await dormir(ESPERA_NOVA_TENTATIVA[tentativa]);
   }
   if (!r.ok) {
     const msg = (j.error && j.error.message) || `HTTP ${r.status}`;
-    const e = new Error(r.status === 400 && /API key/i.test(msg) ? 'Chave do Gemini recusada pelo Google.' : r.status === 404 ? `O modelo "${modelo}" não existe para essa chave.` : r.status === 429 ? 'Limite de uso do Gemini atingido (tente de novo em alguns minutos ou aumente a cota).' : `Gemini: ${msg}`);
+    const e = new Error(r.status === 400 && /API key/i.test(msg) ? 'Chave do Gemini recusada pelo Google.' : r.status === 404 ? `O modelo "${modelo}" não existe para essa chave.` : r.status === 429 ? 'Limite de uso do Gemini atingido (tente de novo em alguns minutos ou aumente a cota).' : r.status === 503 ? 'O Gemini está sobrecarregado agora (tentei três vezes). Tente de novo em alguns minutos.' : `Gemini: ${msg}`);
     e.status = r.status; throw e;
   }
   const c = j.candidates && j.candidates[0];
