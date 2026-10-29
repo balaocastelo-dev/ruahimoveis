@@ -56,8 +56,5 @@ GRANT EXECUTE ON FUNCTION plataforma.anota_ia_uso(text, integer, integer, boolea
 
 COMMIT;
 
--- PENDENTE (29/10/2026, fim da tarde): a versão acima da anota_ia_uso ainda NÃO foi aplicada no banco —
--- o pedido de confirmação do Supabase ficou sem resposta. A que está lá funciona certo para as
--- imobiliárias na Vercel (papéis <slug>_app); só erra quando a chamada vem do PC com o usuário postgres,
--- que fica registrado como "postgres". Reaplicar este arquivo resolve, e apagar a linha de teste:
---   DELETE FROM plataforma.ia_uso WHERE modelo = 'teste-cofre';
+-- Aplicado em 29/10/2026. Falta só apagar a linha de teste daquele dia (o Supabase pediu confirmação e
+-- ninguém respondeu):  DELETE FROM plataforma.ia_uso WHERE modelo = 'teste-cofre';

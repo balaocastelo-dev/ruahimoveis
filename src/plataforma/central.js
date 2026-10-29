@@ -13,7 +13,7 @@ const cfg = require('../config');
 const MINUTOS = 5 * 60e3;          // releitura da chave (serve para trocar a chave sem publicar de novo)
 const MINUTOS_ERRO = 60e3;         // sem banco/sem chave: tenta de novo mais rápido
 let POOL = null;
-let CACHE = { chave: '', modelo: '', estacao: '', em: 0, erro: null };
+let CACHE = { chave: '', modelo: '', estacao: '', anthropic: '', anthropicModelo: '', preferido: '', em: 0, erro: null };
 let CARREGANDO = null;
 let EU = null;                     // slug (schema) desta imobiliária, para a conta do consumo
 
@@ -55,7 +55,9 @@ async function carregar() {
       const m = (await lePlataforma()) || lePeloProprioBanco();
       if (!m) { CACHE = { ...CACHE, em: Date.now(), erro: 'sem acesso ao cofre da plataforma' }; return CACHE; }
       CACHE = { chave: String(m.ia_central || '').trim(), modelo: String(m.ia_central_modelo || '').trim(),
-        estacao: String(m.estacao_chave || '').trim(), em: Date.now(), erro: null };
+        estacao: String(m.estacao_chave || '').trim(),
+        anthropic: String(m.ia_central_anthropic || '').trim(), anthropicModelo: String(m.ia_central_anthropic_modelo || '').trim(),
+        preferido: String(m.ia_central_preferido || '').trim().toLowerCase(), em: Date.now(), erro: null };
     } catch (e) {
       CACHE = { ...CACHE, em: Date.now(), erro: e.message };
     }
@@ -67,7 +69,7 @@ async function carregar() {
 /** Caminho 1: conexão própria da plataforma (PLATAFORMA_DATABASE_URL), quando o projeto a tem. */
 async function lePlataforma() {
   const p = pool(); if (!p) return null;
-  const { rows } = await p.query("SELECT chave, valor FROM config WHERE chave IN ('ia_central','ia_central_modelo','estacao_chave')");
+  const { rows } = await p.query("SELECT chave, valor FROM config WHERE chave IN ('ia_central','ia_central_modelo','estacao_chave','ia_central_anthropic','ia_central_anthropic_modelo','ia_central_preferido')");
   return Object.fromEntries(rows.map((r) => [r.chave, r.valor]));
 }
 /** Caminho 2: o banco da própria imobiliária. Todos os schemas moram no mesmo Postgres, e plataforma.cofre_central()
@@ -85,7 +87,13 @@ const chave = () => CACHE.chave || '';
 const modelo = () => CACHE.modelo || '';
 /** Chave única da estação dos PCs virtuais, igual à chave de IA: a plataforma mantém, a imobiliária usa de graça. */
 const estacaoChave = () => CACHE.estacao || '';
+/** Chave da Anthropic (Claude) do cofre central, e o modelo escolhido para ela. */
+const anthropic = () => CACHE.anthropic || '';
+const anthropicModelo = () => CACHE.anthropicModelo || '';
+/** Qual cérebro central prefere-se quando há os dois ('anthropic' | 'gemini'); vazio = o melhor disponível. */
+const preferido = () => CACHE.preferido || '';
 const estado = () => ({ tem_chave: !!CACHE.chave, modelo: CACHE.modelo || null, tem_estacao: !!CACHE.estacao,
+  tem_anthropic: !!CACHE.anthropic, anthropic_modelo: CACHE.anthropicModelo || null, preferido: CACHE.preferido || null,
   lida_em: CACHE.em ? new Date(CACHE.em).toISOString() : null, erro: CACHE.erro });
 
 /** Soma o que esta imobiliária gastou do cérebro central (um upsert por chamada, por dia e modelo). */
@@ -113,4 +121,4 @@ async function anota({ modelo: mod, entrada = 0, saida = 0, erro = false }) {
   } catch { /* medir o consumo nunca pode derrubar o atendimento */ }
 }
 
-module.exports = { carregar, chave, modelo, estacaoChave, estado, anota, eu, euSync };
+module.exports = { carregar, chave, modelo, estacaoChave, anthropic, anthropicModelo, preferido, estado, anota, eu, euSync };

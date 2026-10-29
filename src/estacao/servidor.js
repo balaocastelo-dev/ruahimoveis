@@ -52,19 +52,22 @@ const PROVEDORES = {
 };
 function iaBruta() { return json(getConfig('estacao_ia'), {}); }
 function iaChave() { const b = iaBruta(); if (b.chave) return IA.decifra(b.chave) || ''; return ''; }
+// A chave do cérebro central que serve para operar o PC: Claude primeiro (é o melhor nisso), Gemini depois.
+const chaveDoEscritorio = (provedor) => (provedor === 'anthropic' ? IA.chaveClaude() : provedor === 'gemini' ? IA.chave() : '');
 function iaAjustes() {
   const b = iaBruta();
-  // sem nada escolhido: usa o Gemini do escritório se houver chave; senão a IA local do PC
-  const provedor = PROVEDORES[b.provedor] ? b.provedor : IA.chave() ? 'gemini' : 'ollama';
+  // sem nada escolhido: Claude do cofre central se houver, senão o Gemini do escritório, senão a IA local do PC
+  const provedor = PROVEDORES[b.provedor] ? b.provedor : IA.chaveClaude() ? 'anthropic' : IA.chave() ? 'gemini' : 'ollama';
   const p = PROVEDORES[provedor];
-  const k = iaChave() || (provedor === 'gemini' ? IA.chave() : '');
-  return { provedor, provedor_nome: p.nome, modelo: b.modelo || p.modelo, base_url: b.base_url || p.base_url || null,
-    tem_chave: !!k, chave_final: k ? k.slice(-4) : null, usa_chave_do_escritorio: provedor === 'gemini' && !iaChave() && !!IA.chave(),
+  const k = iaChave() || chaveDoEscritorio(provedor);
+  const modeloPadrao = provedor === 'anthropic' ? IA.modeloClaude() : p.modelo;
+  return { provedor, provedor_nome: p.nome, modelo: b.modelo || modeloPadrao, base_url: b.base_url || p.base_url || null,
+    tem_chave: !!k, chave_final: k ? k.slice(-4) : null, usa_chave_do_escritorio: !iaChave() && !!chaveDoEscritorio(provedor),
     precisa_chave: provedor !== 'ollama', testado_em: b.testado_em || null, teste_ok: b.teste_ok ?? null, teste_msg: b.teste_msg || null };
 }
 function iaParaEstacao() {
   const a = iaAjustes();
-  return { provedor: a.provedor, modelo: a.modelo, base_url: a.base_url, chave: iaChave() || (a.provedor === 'gemini' ? IA.chave() : '') };
+  return { provedor: a.provedor, modelo: a.modelo, base_url: a.base_url, chave: iaChave() || chaveDoEscritorio(a.provedor) };
 }
 function iaSalva(b = {}, quem) {
   const a = iaBruta();

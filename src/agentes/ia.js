@@ -1,14 +1,18 @@
-// Cérebro dos agentes: Gemini (Google, na nuvem) quando há chave; sem chave, a IA local do PC (Ollama).
-// A chave vem, nesta ordem: a da própria imobiliária (Configuração geral, cifrada no banco dela) →
-// a CENTRAL da plataforma (uma só para todas, de graça para a imobiliária; src/plataforma/central.js)
-// → GEMINI_API_KEY do ambiente. A tela só recebe os 4 últimos dígitos.
+// Cérebro dos agentes: Claude (Anthropic) ou Gemini (Google) na nuvem; sem chave nenhuma, a IA local do PC (Ollama).
+// As chaves vêm, nesta ordem: a da própria imobiliária (Configuração geral, cifrada no banco dela) →
+// as CENTRAIS da plataforma (uma de cada, para todas, de graça para a imobiliária; src/plataforma/central.js)
+// → GEMINI_API_KEY / ANTHROPIC_API_KEY do ambiente. A tela só recebe os 4 últimos dígitos.
+// Com as duas disponíveis, usa o Claude e cai no Gemini se ele falhar (o contrário se 'ia_central_preferido'
+// disser 'gemini'). O consumo de cada imobiliária é somado em plataforma.ia_uso pelo nome do modelo.
 const crypto = require('crypto');
 const cfg = require('../config');
 const { getConfig, setConfig } = require('../db');
 const central = require('../plataforma/central');
 
 const MODELO_PADRAO = 'gemini-flash-latest';
+const MODELO_CLAUDE_PADRAO = 'claude-sonnet-5-5';
 const API = process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1beta'; // a troca de endereço serve só para os testes
+const API_ANTHROPIC = process.env.ANTHROPIC_API_URL || 'https://api.anthropic.com/v1';
 
 // Chave de cifra comum ao PC e ao link (os dois usam o mesmo banco; o SECRET_KEY pode ser diferente em cada um).
 const segredo = () => crypto.createHash('sha256').update('ruah-escritorio-ia:' + (process.env.DATABASE_URL || cfg.DATABASE_URL || cfg.SECRET_KEY)).digest();
@@ -25,16 +29,32 @@ function bruto() { try { return JSON.parse(getConfig('escritorio_ia') || '{}'); 
 function propria() { const b = bruto(); return (b.chave && decifra(b.chave)) || ''; }
 function chave() { return propria() || central.chave() || process.env.GEMINI_API_KEY || ''; }
 function origem() { return propria() ? 'propria' : central.chave() ? 'central' : process.env.GEMINI_API_KEY ? 'ambiente' : null; }
+/** Claude: a chave é sempre da plataforma (ou do ambiente, no PC) — a imobiliária não configura nada. */
+function chaveClaude() { return central.anthropic() || process.env.ANTHROPIC_API_KEY || ''; }
+function origemClaude() { return central.anthropic() ? 'central' : process.env.ANTHROPIC_API_KEY ? 'ambiente' : null; }
+const modeloClaude = () => central.anthropicModelo() || MODELO_CLAUDE_PADRAO;
+/** Quem atende primeiro: 'claude', 'gemini' ou 'ollama'. A chave própria da imobiliária (Gemini) vem antes de tudo. */
+function provedor() {
+  if (propria()) return 'gemini';
+  if (central.preferido() === 'gemini' && chave()) return 'gemini';
+  if (chaveClaude()) return 'claude';
+  if (chave()) return 'gemini';
+  return 'ollama';
+}
 /** Garante a chave central lida (cache de 5 min). Chamar antes de decidir o cérebro nos caminhos async. */
 const carregarCentral = () => central.carregar().catch(() => null);
 function ajustes() {
-  const b = bruto(); const k = chave(); const o = origem();
-  return { provedor: k ? 'gemini' : 'ollama', modelo: b.modelo || central.modelo() || MODELO_PADRAO, tem_chave: !!k, chave_final: k ? k.slice(-4) : null,
+  const b = bruto(); const k = chave(); const o = origem(); const p = provedor();
+  const kc = chaveClaude();
+  return { provedor: p, modelo: p === 'claude' ? modeloClaude() : b.modelo || central.modelo() || MODELO_PADRAO,
+    tem_chave: !!(k || kc), chave_final: (p === 'claude' ? kc : k) ? (p === 'claude' ? kc : k).slice(-4) : null,
+    claude: { tem_chave: !!kc, modelo: kc ? modeloClaude() : null, chave_final: kc ? kc.slice(-4) : null, origem: origemClaude() },
+    gemini: { tem_chave: !!k, modelo: b.modelo || central.modelo() || MODELO_PADRAO, chave_final: k ? k.slice(-4) : null, origem: o },
     origem: o, central: central.estado(), propria: !!propria(),
     chave_quebrada: !!(b.chave && !decifra(b.chave)), testado_em: b.testado_em || null, teste_ok: b.teste_ok ?? null, teste_msg: b.teste_msg || null,
     ollama_modelo: cfg.OLLAMA_MODEL };
 }
-const naNuvem = () => !!chave();
+const naNuvem = () => !!(chave() || chaveClaude());
 
 function salva(b = {}, quem) {
   const a = bruto();
@@ -84,6 +104,39 @@ async function gemini(sistema, pedido, o = {}) {
   return (c && c.content && c.content.parts || []).map((p) => p.text || '').join('').trim();
 }
 
+// Claude (Anthropic). A API não tem "responseMimeType", então o pedido de JSON vai no texto e as cercas
+// de código são tiradas da resposta. Mesma política de tentar de novo em 429/5xx do Gemini.
+async function claude(sistema, pedido, o = {}) {
+  const k = chaveClaude(); const modelo = o.modelo || modeloClaude();
+  let r, j;
+  for (let tentativa = 0; ; tentativa++) {
+    r = await fetch(`${API_ANTHROPIC}/messages`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-api-key': k, 'anthropic-version': '2023-06-01' },
+      body: JSON.stringify({
+        model: modelo, max_tokens: o.max_tokens || 1500, temperature: 0.35,
+        system: `${sistema}\n\nResponda SOMENTE com o JSON pedido, sem texto antes ou depois e sem cercas de código.`,
+        messages: [{ role: 'user', content: pedido }],
+      }),
+      signal: AbortSignal.timeout(o.timeout || 40000),
+    });
+    j = await r.json().catch(() => ({}));
+    const u = j.usage || {};
+    central.anota({ modelo, entrada: u.input_tokens || 0, saida: u.output_tokens || 0, erro: !r.ok });
+    const vaiTentarDeNovo = !r.ok && (r.status === 429 || r.status >= 500) && tentativa < ESPERA_NOVA_TENTATIVA.length;
+    if (!vaiTentarDeNovo) break;
+    await dormir(ESPERA_NOVA_TENTATIVA[tentativa]);
+  }
+  if (!r.ok) {
+    const msg = (j.error && j.error.message) || `HTTP ${r.status}`;
+    const e = new Error(r.status === 401 ? 'Chave da Anthropic recusada.' : r.status === 404 ? `O modelo "${modelo}" não existe para essa chave.`
+      : r.status === 429 ? 'Limite de uso da Anthropic atingido (tente de novo em alguns minutos).' : `Claude: ${msg}`);
+    e.status = r.status; throw e;
+  }
+  const txt = (j.content || []).map((c) => c.text || '').join('').trim();
+  return txt.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/, '').trim();
+}
+
 async function ollama(sistema, pedido) {
   const r = await fetch(`${cfg.OLLAMA_URL}/api/chat`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -103,11 +156,38 @@ async function disponivel() {
   if (process.env.VERCEL) return false; // na nuvem, sem chave não há cérebro
   try { const r = await fetch(`${cfg.OLLAMA_URL}/api/tags`, { signal: AbortSignal.timeout(2500) }); return r.ok; } catch { return false; }
 }
-const perguntar = (sistema, pedido, opcoes = {}) => (naNuvem() ? gemini(sistema, pedido, opcoes) : ollama(sistema, pedido));
+async function perguntar(sistema, pedido, opcoes = {}) {
+  const p = provedor();
+  if (p === 'ollama') return ollama(sistema, pedido);
+  if (p === 'claude') {
+    try { return await claude(sistema, pedido, opcoes); }
+    catch (e) {
+      if (!chave()) throw e;                       // sem Gemini de reserva, o erro é o erro
+      console.warn('Claude falhou, indo no Gemini:', e.message);
+      return gemini(sistema, pedido, opcoes);
+    }
+  }
+  try { return await gemini(sistema, pedido, opcoes); }
+  catch (e) {
+    if (!chaveClaude()) throw e;
+    console.warn('Gemini falhou, indo no Claude:', e.message);
+    return claude(sistema, pedido, opcoes);
+  }
+}
 
 // Lista os modelos da chave (para a tela escolher) e faz uma pergunta curta de teste.
 async function testar(modelo) {
   const k = chave();
+  if (!k && chaveClaude()) {                       // só Claude configurado: testa o Claude
+    const a = bruto(); const inicio = Date.now();
+    try {
+      const t = await claude('Você é um teste de conexão.', `Devolva {"ok":true,"frase":"uma frase curta em português dizendo que o escritório da ${cfg.CLIENTE_NOME} está pronto"}`, { modelo: modelo || modeloClaude(), timeout: 30000 });
+      let frase = ''; try { frase = JSON.parse(t).frase || ''; } catch { frase = t.slice(0, 200); }
+      Object.assign(a, { teste_ok: true, teste_msg: `${frase} (${((Date.now() - inicio) / 1000).toFixed(1)} s)`, testado_em: new Date().toISOString() });
+    } catch (e) { Object.assign(a, { teste_ok: false, teste_msg: e.message, testado_em: new Date().toISOString() }); }
+    setConfig('escritorio_ia', JSON.stringify(a));
+    return { ...ajustes(), modelos: [{ id: modeloClaude(), nome: 'Claude ' + modeloClaude() }] };
+  }
   if (!k) { const e = new Error('Cole a chave da API do Gemini primeiro.'); e.status = 400; throw e; }
   let modelos = [];
   try {
@@ -126,4 +206,4 @@ async function testar(modelo) {
   return { ...ajustes(), modelos };
 }
 
-module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO, cifra, decifra, chave, origem, carregarCentral };
+module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO, MODELO_CLAUDE_PADRAO, cifra, decifra, chave, chaveClaude, modeloClaude, provedor, origem, origemClaude, carregarCentral };
