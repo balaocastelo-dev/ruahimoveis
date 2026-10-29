@@ -111,7 +111,7 @@ async function telaEscritorioJogo2D() {
   document.addEventListener('keydown', jgTecla);
   // Abertura: repassa as últimas ações para o escritório não começar parado.
   d.eventos.forEach((e, i) => setTimeout(() => { if (JG_ESTADO === meu0) jgEnfileira(jgDeEvento(e), true); }, 900 + i * 1500));
-  if (!d.eventos.length) setTimeout(() => jgBalao(JG_ESTADO.agentes['gerente-corretores'], '👀', 'Esperando o primeiro cliente do dia…', 'leve'), 1500);
+  if (!d.eventos.length) setTimeout(() => { if (JG_ESTADO === meu0) jgBalao(JG_ESTADO.agentes['gerente-corretores'], '👀', 'Esperando o primeiro cliente do dia…', 'leve'); }, 1500);
   let n = 0; const meu = JG_ESTADO;
   const iv = setInterval(async () => {
     if (JG_ESTADO !== meu) return clearInterval(iv);

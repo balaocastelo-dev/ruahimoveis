@@ -75,3 +75,45 @@ Os limites de valor mudam em "Regras do escritório".
 - Para refazer os GLB: `rb/converte.py` (Blender como módulo `bpy` 5.2 + `rb/otimiza.mjs` com gltf-transform) a partir do repositório
   `microsoft/Microsoft-Rocketbox` (sparse checkout só dos personagens usados). O conversor re-amostra as animações do Rocketbox pelas
   matrizes locais absolutas (o descanso dos arquivos de animação não é a A-pose) e deixa só rotações + posição do Pelvis.
+
+### Cenário fotográfico (29/10/2026)
+
+- **Materiais e móveis:** piso e tampos de carvalho, nogueira, reboco, concreto, mármore, tecidos e tapetes com cor sRGB e
+  normal maps tangentes RGB. Cantos arredondados nos tampos e estofados, cadeiras com braços e rodízios, canecas, teclados,
+  luminárias e plantas recortadas. A laje termina 2 cm abaixo do piso para evitar sobreposição ao aproximar a câmera.
+- **Texturas:** 21 JPGs em `public/plataforma/cenario/`, total de 1.731.693 bytes (1,73 MB). São nove cores em 1024² (qualidade 86),
+  nove normais em 512² e três panoramas em 2048×768 (qualidade 84), gerados a partir dos PNGs do Flux.
+  `python scripts/preparar-cenario.py C:/Users/user/demo-herrera/cenario` refaz os arquivos com Pillow/numpy: corrige a iluminação
+  ampla, espelha para repetir sem cortes e calcula normais por Sobel sobre luminância desfocada. Provas repetidas 2×2 e métricas
+  ficam em `data/cenario-qa/`. `server.js` aplica cache de **7 dias** a essa pasta, como aos humanos e ao three.js.
+- **Cidade e horário:** céu físico `Sky`, sol direcional e panorama cilíndrico atrás da fachada (`-z`), com transições entre dia,
+  tarde e noite, estrelas e luz nas janelas. Os prédios próximos deixam o horizonte fotográfico visível; o chão externo fica
+  abaixo da imagem para não cortá-la. Horários seguem o relógio local do navegador (dia 6h30–16h30; tarde 16h30–19h e 5h30–6h30).
+- **Efeitos:** `RenderPass → GTAOPass → UnrealBloomPass → OutputPass`, render target HDR com até 4 amostras MSAA, ACES e exposição
+  aplicada por `E.exposicao`. Bloom: threshold 0,9, strength 0,3, radius 0,4. Ambiente HDR reduzido a 0,2 para preservar os materiais.
+  Sombra solar em 4096 px no desktop e 2048 no celular, limitada à capacidade da GPU. O GTAO usa meia resolução e ignora vidros,
+  caixas de clique e planos recortados. No celular (até 720 px) não é criado; abaixo de 25 fps nos primeiros 3 segundos de medição,
+  é desativado automaticamente. Bloom e OutputPass continuam ativos.
+- **Ciclo de vida:** redimensionamento atualiza composer/GTAO; sair da tela descarta passes, render targets, sombras, texturas e
+  materiais. O 3D pode ser reaberto após o 2D. O balão inicial do 2D verifica se ainda pertence à cena aberta antes de aparecer.
+  GLBs, animações, posições dos humanos, API, HUD e ganchos dos PCs virtuais continuam os mesmos.
+
+### Verificar o cenário antes de publicar
+
+```powershell
+node test/escritorio.js
+node test/escritorio-3d.cjs
+```
+
+O segundo comando inicia sozinho o servidor local com API simulada, usa `playwright-core` e Chrome instalado com SwiftShader,
+aguarda os nove humanos e todas as texturas, captura dia/tarde/noite, detalhe e celular, e verifica câmera, HUD, monitor externo,
+duplo clique, descarte, reabertura 3D/2D, redimensionamento e redução automática do GTAO. `CHROME_PATH` permite outro executável
+Chromium. Capturas e `render.json` ficam em `data/cenario-qa/` (fora do Git). FPS de SwiftShader é uma medida do renderizador por
+software, não um benchmark de GPU do usuário.
+
+Para explorar manualmente: `node docs/wip/servidor-teste.cjs` serve `http://127.0.0.1:8766/teste-3d.html`. O parâmetro `quiet=1`
+pausa a atividade espontânea para comparar imagens. Só esse servidor expõe `window.__clima(hora, true)` para testar horários;
+produção continua seguindo o relógio. O comando `node docs/wip/shot3d.cjs URL ARQUIVO.png 6000` faz uma captura avulsa.
+
+Publicação: commits pequenos em `main` e `git push origin main`, que aciona os projetos ligados ao repositório na Vercel.
+Conferir o deploy e `https://ondemorar.corretordofuturo.app/#/whats/ao-vivo` com sessão autenticada.
