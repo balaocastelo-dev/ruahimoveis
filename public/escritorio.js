@@ -57,6 +57,8 @@ async function telaEscritorio() {
   poll = setInterval(evAtualiza, 8000);
   atualizaBadge();
 }
+// como escrever a linha que o agente usa (o número do sistema é o mesmo para todos)
+const evLinhaTexto = (a) => (a.linha === a.linha_sistema ? `número do sistema (${a.linha_nome})` : `usa a linha de ${a.linha_nome}`);
 function evMesaCard(a) {
   const ls = a.linha_estado; const trabalhando = ls.estado === 'conectado' && a.ajustes.ativo;
   const ultimo = a.ultimo ? `<span class="ev-ult">${EV_EVENTO[a.ultimo.tipo] || '•'} ${esc(a.ultimo.texto)}</span>` : '<span class="ev-ult muted">Ainda sem atividade</span>';
@@ -64,7 +66,7 @@ function evMesaCard(a) {
     <div class="ev-mesa-topo"><span class="ev-n">${a.n}</span>${evPill(a.ajustes.ativo ? ls.estado : 'parada').replace('Sem número', a.ajustes.ativo ? 'Sem número' : 'Desligado')}</div>
     <div class="ev-mesa-id">${evAvatar(a, trabalhando ? 'pulsa' : '')}<div><b>${esc(a.nome)}</b><span>${esc(a.cargo)}</span></div></div>
     <p class="ev-res">${esc(a.resumo)}</p>
-    <div class="ev-linha-n">${a.linha !== a.slug ? `☎ usa a linha de ${esc(a.linha_nome)}` : ls.numero ? `☎ <span class="mono">${esc(tel(ls.numero))}</span>` : '☎ conecte um número pelo QR code'}</div>
+    <div class="ev-linha-n">${a.linha !== a.slug ? `☎ ${esc(evLinhaTexto(a))}` : ls.numero ? `☎ <span class="mono">${esc(tel(ls.numero))}</span>` : '☎ conecte um número pelo QR code'}</div>
     <div class="ev-stats"><span><b>${a.hoje.conversas}</b>conversas</span><span><b>${a.hoje.enviadas}</b>enviadas</span><span class="${a.aprovar ? 'q' : ''}"><b>${a.aprovar}</b>aprovar</span>${a.leads !== null ? `<span><b>${a.leads}</b>leads</span>` : ''}</div>
     <div class="ev-mesa-pe">${ultimo}<span class="ev-modo">${a.ajustes.modo === 'automatico' ? 'automático' : 'sugere'}</span></div><span class="btn sm" role="button" tabindex="0" data-act="chat-robo" data-slug="${esc(a.slug)}">Conversar</span></a>`;
 }
@@ -105,7 +107,7 @@ async function telaMesa(slug, aba = 'mesa') {
   $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a>
   <div class="ev-cab" style="--c:${esc(a.cor)}">${evAvatar(a, ls.estado === 'conectado' && a.ajustes.ativo ? 'grande pulsa' : 'grande')}
     <div style="flex:1;min-width:0"><h1 style="margin:0">${esc(a.nome)}</h1><div class="eyebrow depois">Agente ${a.n} · ${esc(a.setor)}</div><p class="lead" style="margin:2px 0 0">${esc(a.cargo)} — ${esc(a.resumo)}</p></div>
-    <div class="ev-cab-st">${evPill(a.ajustes.ativo ? ls.estado : 'parada')}<span class="small muted">${a.linha !== a.slug ? `usa a linha de ${esc(a.linha_nome)}` : ls.numero ? esc(tel(ls.numero)) : 'sem número'}</span>
+    <div class="ev-cab-st">${evPill(a.ajustes.ativo ? ls.estado : 'parada')}<span class="small muted">${a.linha !== a.slug ? esc(evLinhaTexto(a)) : ls.numero ? esc(tel(ls.numero)) : 'sem número'}</span>
       <span class="small muted">${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}${a.ajustes.alma_editada ? ' · alma editada' : ''}</span>
       <button class="btn pri sm" data-act="chat-robo" data-slug="${esc(a.slug)}">Conversar</button><button class="btn sm" data-act="pc-abre" data-slug="${esc(a.slug)}">🖥️ Abrir o PC de ${esc(a.nome)}</button></div></div>
   <div class="tabs">${EV_ABAS.map(([k, l]) => `<a href="#/whats/agente/${a.slug}/${k}" class="${aba === k ? 'on' : ''}">${l}${k === 'mesa' && a.aprovar ? ` <span class="pill bad">${a.aprovar}</span>` : ''}</a>`).join('')}</div>
@@ -248,7 +250,7 @@ function evAbaWhatsQr(a) {
   let corpo;
   if (a.slug === 'captador') corpo = `<p class="small">O TH-IA-GO usa o número do robô do Fisguei (a linha de abordagem dos proprietários). Para conectar, trocar o número ou ajustar horário, limite e intervalo, use o cartão do robô no Fisguei.</p>
     ${qr}<div class="row" style="gap:6px"><a class="btn pri" href="#/fisguei">Abrir o robô no Fisguei</a></div>`;
-  else if (!propria) corpo = `<p>${esc(a.nome)} usa o número de <b>${esc(a.linha_nome)}</b>. Quem escreve nesse número é atendido por quem cuida daquele cliente (ou pelo setor do pedido).</p><div class="row"><a class="btn" href="#/whats/agente/${a.linha}/whatsapp">Ver a linha de ${esc(a.linha_nome)}</a></div>`;
+  else if (!propria) corpo = `<p>${esc(a.nome)} atende pelo ${a.linha === a.linha_sistema ? `<b>número do sistema</b> (a linha de ${esc(a.linha_nome)}), o mesmo de todos os agentes — não precisa de QR code novo` : `número de <b>${esc(a.linha_nome)}</b>`}. Quem escreve nesse número é atendido por quem cuida daquele cliente (ou pelo setor do pedido).</p><div class="row"><a class="btn" href="#/whats/agente/${a.linha}/whatsapp">Ver a linha de ${esc(a.linha_nome)}</a></div>`;
   else corpo = `${qr}${ls.estado === 'conectado' ? `<p>Conectado no número <b>${esc(tel(ls.numero))}</b>.${a.usam_esta_linha.length ? ` Também atendem por este número: ${esc(a.usam_esta_linha.join(', '))}.` : ''}</p>` : ls.estado === 'desligado' ? '<p>O PC da ' + esc(MARCA.cliente) + ' está desligado (ou sem o sistema aberto). A linha liga quando o PC voltar.</p>' : ls.estado === 'parada' ? `<p>${esc(a.nome)} ainda não tem número. Separe um chip (ou um número de WhatsApp Business) só para ${esc(a.nome)}, clique em <b>Conectar</b> e leia o QR code que vai aparecer aqui.</p>` : ls.erro ? `<p style="color:var(--bad)">${esc(ls.erro)}</p>` : ''}
     ${a.pode_editar ? `<div class="row" style="gap:6px">${['parada', 'desconectado', 'erro', 'desligado'].includes(ls.estado) ? '<button class="btn pri" data-act="ev-linha" data-c="conectar">Conectar (gerar QR code)</button>' : ''}${['conectado', 'reconectando', 'qr'].includes(ls.estado) ? '<button class="btn" data-act="ev-linha" data-c="reiniciar">Reiniciar</button><button class="btn" data-act="ev-linha" data-c="desconectar">Desconectar este número</button>' : ''}</div>` : ''}`;
   $('#ev-aba').innerHTML = `<div class="grid g2" style="align-items:start"><div class="card"><div class="row"><h2 style="margin:0">Linha de WhatsApp</h2><span class="sp"></span>${evPill(ls.estado)}</div>${corpo}</div>
@@ -292,7 +294,7 @@ function evAbaAjustes(a) {
     <fieldset class="ev-modos"><legend class="small">Como ele responde</legend>
       <label class="ev-op"><input type="radio" name="modo" value="sugerir" ${a.ajustes.modo !== 'automatico' ? 'checked' : ''}><span><b>Sugere e espera aprovação</b><span class="muted small">A resposta aparece em "Para aprovar" e nas Conversas do CRM. Um corretor ou o gestor aprova (e pode editar) antes de sair.</span></span></label>
       <label class="ev-op"><input type="radio" name="modo" value="automatico" ${a.ajustes.modo === 'automatico' ? 'checked' : ''}><span><b>Responde sozinho</b><span class="muted small">Sai na hora pelo WhatsApp. Link privado do off-market sempre passa por aprovação.</span></span></label></fieldset>
-    ${a.slug === 'captador' ? '' : `<label class="f">Número de WhatsApp<select class="inp" name="linha"><option value="propria" ${a.linha === a.slug ? 'selected' : ''}>Número próprio (QR code na aba WhatsApp)</option>${a.linhas_possiveis.map((x) => `<option value="${x.slug}" ${a.ajustes.linha === x.slug ? 'selected' : ''}>Usar o número de ${esc(x.nome)}</option>`).join('')}</select></label>`}
+    ${a.slug === 'captador' ? '' : `<label class="f">Número de WhatsApp<select class="inp" name="linha"><option value="sistema" ${a.ajustes.linha === 'sistema' ? 'selected' : ''}>Número do sistema — um QR code para todos (${esc(a.linha_sistema_nome)})</option><option value="propria" ${a.ajustes.linha === 'propria' ? 'selected' : ''}>Número próprio (QR code na aba WhatsApp)</option>${a.linhas_possiveis.map((x) => `<option value="${x.slug}" ${a.ajustes.linha === x.slug ? 'selected' : ''}>Usar o número de ${esc(x.nome)}</option>`).join('')}</select></label>`}
     <div class="row"><span class="sp"></span><button class="btn pri" type="submit">Salvar</button></div></form>
     <div class="card"><h3>Como ${esc(a.nome)} se liga ao sistema</h3>${evLigacoes(a)}</div></div>`;
 }

@@ -104,10 +104,10 @@ const ia = http.createServer((req, res) => {
   ok(one(`SELECT 1 FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, lead.id), 'sugestão aparece na conversa do CRM');
   ok(one(`SELECT 1 FROM agente_mensagens WHERE agente='gerente-corretores' AND direcao='saida' AND texto LIKE '%Visita marcada pelo robô%'`), 'Marta avisa o corretor da visita');
 
-  // 5) aprovação e envio pela linha da Ana
+  // 5) aprovação e envio pelo número do sistema (um QR para todos os agentes)
   await req('POST', `/api/escritorio/saidas/${sug.id}/aprovar`, { texto: sug.texto + ' 😊' });
   await E.enviaSaidas();
-  ok(enviadas.some((m) => m.linha === 'apartamentos' && m.texto.endsWith('😊')), 'aprovada e enviada pelo WhatsApp da Ana');
+  ok(enviadas.some((m) => m.linha === B.linhaSistema() && m.texto.endsWith('😊')), 'aprovada e enviada pelo número do sistema');
   ok(one(`SELECT 1 FROM mensagens WHERE lead_id=? AND direcao='saida'`, lead.id) && !one(`SELECT 1 FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, lead.id), 'envio registrado no CRM');
 
   // 6) transferência: cliente quer terreno → Teo assume
@@ -145,8 +145,15 @@ const ia = http.createServer((req, res) => {
   ok(t.acoes.length >= 1 && !one(`SELECT 1 FROM visitas WHERE data_hora='2099-02-01 10:00'`), 'ação do teste só simulada');
 
   // 11) linhas e ajustes
+  ok(B.linhaDe('casas') === B.linhaSistema() && B.linhaDe('terrenos') === B.linhaSistema() && B.linhasEmUso().size === 1,
+    'todos os agentes no mesmo número do sistema: uma sessão só');
+  await req('PUT', '/api/escritorio/alto-padrao', { linha: 'propria' });
   await req('PUT', '/api/escritorio/offmarket', { linha: 'alto-padrao', modo: 'automatico' });
   ok(B.linhaDe('offmarket') === 'alto-padrao' && B.ajustes('offmarket').modo === 'automatico', 'agente usando a linha de outro');
+  ok(B.linhasEmUso().size === 2, 'quem escolheu número próprio ganha a segunda sessão');
+  await req('PUT', '/api/escritorio/alto-padrao', { linha: 'sistema' });
+  ok(B.linhaDe('offmarket') === B.linhaSistema(), 'apontar para quem usa o número do sistema cai no número do sistema');
+  await req('PUT', '/api/escritorio/offmarket', { linha: 'sistema' });
   const mesa = await req('GET', '/api/escritorio/gerente-corretores');
   ok(mesa.equipe.length >= 2, 'mesa da Marta mostra a equipe');
   await req('GET', '/api/escritorio/captador');

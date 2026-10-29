@@ -43,7 +43,9 @@ function ajustes(slug) {
   return {
     ativo: s.ativo === undefined ? true : !!s.ativo,
     modo: ['sugerir', 'automatico'].includes(s.modo) ? s.modo : a.tipo === 'interno' ? 'automatico' : 'sugerir',
-    linha: s.linha && (s.linha === 'propria' || C.POR_SLUG[s.linha]) ? s.linha : 'propria',
+    // 'sistema' (padrão) = o número único do sistema, um QR só para todos; 'propria' = número só dele;
+    // ou o slug de outro agente. Decisão do Thiago (29/10, noite): ninguém pede QR novo.
+    linha: s.linha && (s.linha === 'propria' || s.linha === 'sistema' || C.POR_SLUG[s.linha]) ? s.linha : 'sistema',
     nome: s.nome || a.nome,
     alma: typeof s.alma === 'string' && s.alma.trim() ? s.alma : null,
     alma_em: s.alma_em || null, alma_por: s.alma_por || null,
@@ -60,8 +62,8 @@ function salvaAjustes(slug, b = {}, usuario) {
   if (b.ativo !== undefined) n.ativo = !!b.ativo;
   if (b.modo !== undefined) n.modo = b.modo === 'automatico' ? 'automatico' : 'sugerir';
   if (b.linha !== undefined) {
-    if (b.linha !== 'propria' && (!C.POR_SLUG[b.linha] || b.linha === slug)) { const e = new Error('Linha inválida.'); e.status = 400; throw e; }
-    if (slug === 'captador' && b.linha !== 'propria') { const e = new Error('O TH-IA-GO usa sempre a linha do robô do Fisguei.'); e.status = 400; throw e; }
+    if (!['propria', 'sistema'].includes(b.linha) && (!C.POR_SLUG[b.linha] || b.linha === slug)) { const e = new Error('Linha inválida.'); e.status = 400; throw e; }
+    if (slug === 'captador' && !['propria', 'sistema'].includes(b.linha)) { const e = new Error('O TH-IA-GO usa sempre a linha do robô do Fisguei.'); e.status = 400; throw e; }
     if (b.linha === 'captador') { const e = new Error('A linha do TH-IA-GO é só da captação (abordagem de proprietários). Escolha outra.'); e.status = 400; throw e; }
     n.linha = b.linha;
   }
@@ -78,11 +80,37 @@ function salvaAjustes(slug, b = {}, usuario) {
 }
 const alma = (slug) => ajustes(slug).alma || C.almaPadrao(slug);
 
-// Linha (número de WhatsApp) que o agente usa: a própria ou a de outro agente.
-function linhaDe(slug) {
+// ---------- linha do sistema: UM número de WhatsApp para todos os agentes ----------
+// Pedido do Thiago (29/10/2026, noite): "todos devem usar o mesmo QR do sistema sem depender de um novo".
+// Qual agente carrega essa sessão fica em config.linha_sistema (padrão: o gerente geral). O TH-IA-GO é a
+// exceção de sempre: ele usa o número do robô do Fisguei, que é só para abordar proprietários.
+const LINHA_SISTEMA_PADRAO = 'gerente';
+function linhaSistema() {
+  const s = getConfig('linha_sistema');
+  return s && C.POR_SLUG[s] && s !== 'captador' ? s : LINHA_SISTEMA_PADRAO;
+}
+// Linha (número de WhatsApp) que o agente usa: a do sistema, a própria ou a de outro agente.
+// Resolve em cadeia (quem aponta para alguém que usa o número do sistema também cai no do sistema).
+function linhaDe(slug, prof = 0) {
+  if (slug === 'captador') return slug;
   const a = ajustes(slug);
-  if (a.linha === 'propria') return slug;
-  return ajustes(a.linha).linha === 'propria' ? a.linha : slug;
+  // WhatsApp Web roda no PC virtual do próprio agente: nesse canal a linha é sempre a dele
+  if (a.canal === 'web') return slug;
+  if (a.linha === 'propria' || prof > 3) return slug;
+  const alvo = a.linha === 'sistema' ? linhaSistema() : a.linha;
+  if (!C.POR_SLUG[alvo] || alvo === slug || alvo === 'captador') return slug;
+  return linhaDe(alvo, prof + 1);
+}
+/** Linhas (sessões de WhatsApp) que o sistema realmente precisa abrir no PC. */
+function linhasEmUso() {
+  const l = new Set();
+  for (const a of C.AGENTES) {
+    if (a.slug === 'captador') continue;          // o robô do Fisguei cuida dessa
+    const aj = ajustes(a.slug);
+    if (!aj.ativo || aj.canal === 'web') continue; // desligado, ou atende pelo WhatsApp Web do PC virtual
+    l.add(linhaDe(a.slug));
+  }
+  return l;
 }
 
 // ---------- estado das linhas (gravado pelo PC, lido pela tela) ----------
@@ -215,7 +243,7 @@ function enfileiraSaida({ agente, telefone, texto, lead_id = null, pessoa_id = n
 }
 
 module.exports = {
-  ...C, normTel, mesmoTel, padraoTel, ehTeste, ehChat, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, estadoLinha, comando,
+  ...C, normTel, mesmoTel, padraoTel, ehTeste, ehChat, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, linhaSistema, linhasEmUso, estadoLinha, comando,
   categoria, setorDoImovel, setorDaBusca, setorDoLead, imovelDoLead, quemAtende, corretorPorTelefone, leadDoCliente, proximoCorretor,
   evento, jaFeito, registraEntrada, enfileiraSaida,
 };
