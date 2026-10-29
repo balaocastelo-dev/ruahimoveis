@@ -1,4 +1,12 @@
 {
   "versao": 1,
-  "pendentes": []
+  "pendentes": [
+    {
+      "slug": "ventilacao-cruzada-o-que-e-e-como-saber-se-a-casa-tem",
+      "alt": "Sala clara com janelas abertas em paredes opostas, cortinas leves de linho balançando com a brisa e plantas no canto",
+      "pedido": "A bright, airy living room with tall open windows on two opposite walls, sheer white linen curtains gently lifted by a breeze. Light oak floor, a low beige sofa, a woven jute rug and a large potted plant near the window. Soft morning daylight, green garden visible through both windows. Interior design photography, wide angle, eye level.",
+      "categoria": "bem-estar",
+      "pedidoEm": "2026-10-29T11:33:04.646Z"
+    }
+  ]
 }
