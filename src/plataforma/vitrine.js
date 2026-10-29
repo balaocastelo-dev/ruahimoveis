@@ -129,9 +129,12 @@ function aoVivo() {
 }
 
 // Uma captura de tela numa moldura de navegador. `nome` = arquivo em /plataforma/telas (há a versão inteira e a "-m", com metade da largura).
+// Telas refeitas ganham ?v= para o navegador não mostrar a versão antiga guardada.
+const TELA_VERSAO = { escritorio: 2, agente: 2 };
 function janela(nome, alt, { url = 'app.corretordofuturo.app', w = 2880, h = 1800, lazy = true } = {}) {
+  const v = TELA_VERSAO[nome] ? `?v=${TELA_VERSAO[nome]}` : '';
   return `<div class="janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span>${esc(url)}</span></div>`
-    + `<img src="${T}${nome}-m.webp" srcset="${T}${nome}-m.webp 1440w, ${T}${nome}.webp 2880w" sizes="(max-width: 1240px) 100vw, 1200px" width="${w}" height="${h}" alt="${esc(alt)}"${lazy ? ' loading="lazy"' : ''} decoding="async"></div>`;
+    + `<img src="${T}${nome}-m.webp${v}" srcset="${T}${nome}-m.webp${v} 1440w, ${T}${nome}.webp${v} 2880w" sizes="(max-width: 1240px) 100vw, 1200px" width="${w}" height="${h}" alt="${esc(alt)}"${lazy ? ' loading="lazy"' : ''} decoding="async"></div>`;
 }
 
 // Cômodos da planta = partes do sistema. x, y, w, h na planta (viewBox 600 x 470).
