@@ -224,6 +224,7 @@ async function rota() {
     else if (p[0] === 'whats' && p[1] === 'agente' && p[2]) await telaMesa(p[2], p[3] || 'mesa');
     else if (p[0] === 'whats' && p[1] === 'conversas') await telaWhats(null);
     else if (p[0] === 'whats' && p[1] === 'config') await telaEscritorioConfig();
+    else if (p[0] === 'whats' && p[1] === 'ao-vivo') await telaEscritorioJogo();
     else if (p[0] === 'whats' && p[1]) await telaWhats(+p[1]);
     else if (p[0] === 'whats') await telaEscritorio();
     else if (p[0] === 'visitas') await telaVisitas();

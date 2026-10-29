@@ -55,6 +55,20 @@ const ia = http.createServer((req, res) => {
   ok(esc.agentes.length === 9, '9 agentes na planta');
   ok(esc.agentes.every((a) => B.alma(a.slug).length > 500), 'todas as almas padrão (.soul) carregadas');
 
+  // 1b) escritório ao vivo (modo jogo): ponto de partida, eventos novos e ações da equipe viram balão
+  const v0 = await req('GET', '/api/escritorio/ao-vivo?full=1');
+  ok(v0.agentes.length === 9 && v0.totais && typeof v0.ev === 'number' && typeof v0.au === 'number', 'ao vivo: 9 agentes, números e ponto de partida');
+  B.evento('casas', 'visita', 'Visita marcada na casa de teste');
+  const db0 = require('../src/db');
+  db0.audit(null, 'portal_interesse', 'AP0001 · lead 1 · visita');
+  db0.audit(null, 'login', '127.0.0.1');
+  const v1 = await req('GET', `/api/escritorio/ao-vivo?ev=${v0.ev}&au=${v0.au}`);
+  ok(v1.eventos.some((e) => e.agente === 'casas' && e.tipo === 'visita'), 'ao vivo: evento novo do agente chega');
+  ok(v1.sistema.some((x) => x.emoji === '📅' && /AP0001/.test(x.texto)), 'ao vivo: pedido de visita do portal vira balão');
+  ok(!JSON.stringify(v1.sistema).includes('127.0.0.1'), 'ao vivo: nada de IP no balão');
+  const v2 = await req('GET', `/api/escritorio/ao-vivo?ev=${v1.ev}&au=${v1.au}`);
+  ok(!v2.eventos.length && !v2.sistema.length, 'ao vivo: não repete o que já mostrou');
+
   // 2) setores
   ok(B.setorDoImovel({ tipo: 'Apartamento', valor: 900000, status: 'publicado' }) === 'apartamentos', 'apartamento → Ana');
   ok(B.setorDoImovel({ tipo: 'Apartamento', valor: 3500000, status: 'publicado' }) === 'alto-padrao', 'apartamento de luxo → Helena');

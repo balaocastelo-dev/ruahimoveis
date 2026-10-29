@@ -143,6 +143,83 @@ r.get('/escritorio/midias/:id', (req, res) => {
 r.post('/escritorio/midias/:id/imovel', gestor, async (req, res) => res.json(await M.paraImovel(+req.params.id, req.usuario.id)));
 
 // ---------- mesa de um agente ----------
+// ---------- escritório ao vivo (modo jogo, #/whats/ao-vivo) ----------
+// Leve para ser chamado a cada poucos segundos: eventos novos dos agentes + o que a equipe e os clientes fizeram no sistema.
+// ?ev=<último id de agente_eventos>&au=<último id de auditoria>&full=1 (lista dos agentes e números do dia).
+const COD = (t) => (String(t || '').match(/\b[A-Z]{2,3}-?\d{3,5}\b/) || [''])[0];
+const primeiroNome = (n) => String(n || '').trim().split(/\s+/)[0] || '';
+function setorDoCodigo(cod, g) {
+  if (!cod) return null;
+  const im = one('SELECT tipo,valor,status FROM imoveis WHERE codigo=?', cod);
+  return im ? B.setorDoImovel(im, g) : null;
+}
+// Ações da auditoria que viram balão: [agente, emoji, texto]. Sem nome de cliente, telefone ou IP.
+function acaoDoSistema(a, g) {
+  const d = String(a.detalhe || ''); const cod = COD(d); const quem = primeiroNome(a.nome);
+  const por = quem ? ` · ${quem}` : '';
+  switch (a.acao) {
+    case 'login': return quem ? ['porta', '👋', `${quem} chegou no escritório`] : null;
+    case 'imovel_criado': return ['captador', '🏠', `${cod || 'Imóvel novo'} entrou na carteira${por}`];
+    case 'imovel_alterado': return ['gerente-corretores', '✏️', `Ficha do ${cod || 'imóvel'} atualizada${por}`];
+    case 'imovel_status': {
+      const st = (d.split('→')[1] || '').trim();
+      if (st === 'vendido') return ['gerente', '🎉', `${cod} VENDIDO!${por}`];
+      if (st === 'alugado') return ['gerente', '🎉', `${cod} alugado!${por}`];
+      if (st === 'publicado') return [setorDoCodigo(cod, g) || 'gerente-corretores', '🌐', `${cod} publicado no portal${por}`];
+      return ['gerente-corretores', '🔁', `${cod} mudou para ${st || 'outra etapa'}${por}`];
+    }
+    case 'arquivos_enviados': { const n = +(d.split('·')[2] || '').trim() || 0; const cat = (d.split('·')[1] || '').trim();
+      return ['captador', '📷', `${n || ''} ${/foto/i.test(cat) ? 'foto(s)' : 'arquivo(s)'} novas no ${cod}${por}`.trim()]; }
+    case 'portal_interesse': return [setorDoCodigo(cod, g) || 'apartamentos', /visita/.test(d) ? '📅' : '🙋', /visita/.test(d) ? `Pedido de visita no ${cod} pelo portal` : `Cliente novo interessado no ${cod}`];
+    case 'portal_interesse_condominio': return ['apartamentos', '🏢', 'Cliente quer morar num condomínio da base'];
+    case 'signature_clube': return ['alto-padrao', '🥂', 'Novo membro no Clube signature'];
+    case 'blog_contato': return ['gerente-corretores', '📰', 'Contato novo pelo blog'];
+    case 'bairro_contato': return ['gerente-corretores', '🗺️', 'Contato novo por um guia de bairro'];
+    case 'autorizacao_gerada': return ['captador', '✍️', `Autorização de venda do ${cod} pronta para assinar${por}`];
+    case 'autorizacao_assinada': return ['gerente', '🖋️', `Autorização do ${cod} assinada pelo dono!`];
+    case 'fisguei.buscar': { const n = +(d.match(/^(\d+) busca/) || [])[1]; return ['captador', '🔎', n ? `${n} busca(s) de proprietário na fila${por}` : `Procurando o dono do ${cod || 'imóvel'}${por}`]; }
+    case 'fisguei.consultar': return ['captador', '🔎', `Consultando proprietário na base${por}`];
+    case 'fisguei.captar': case 'radar_captado': return ['captador', '🎯', `Oportunidade captada${cod ? ': ' + cod : ''}${por}`];
+    case 'lgpd_pedido': return ['gerente', '🛡️', 'Pedido de privacidade (LGPD) recebido'];
+    default: return null;
+  }
+}
+r.get('/escritorio/ao-vivo', (req, res) => {
+  const u = req.usuario; const g = B.geral();
+  const ev0 = +req.query.ev || 0; const au0 = +req.query.au || 0; const inicio = !ev0 && !au0;
+  const ev = inicio
+    ? all(`SELECT id,agente,tipo,texto,criado_em FROM agente_eventos WHERE tipo NOT IN ('teste') ORDER BY id DESC LIMIT 6`).reverse()
+    : all(`SELECT id,agente,tipo,texto,criado_em FROM agente_eventos WHERE id>? AND tipo NOT IN ('teste') ORDER BY id LIMIT 30`, ev0);
+  let sistema = []; let au = au0;
+  if (A.veTudo(u)) {
+    const l = inicio
+      ? all(`SELECT a.id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id ORDER BY a.id DESC LIMIT 1`)
+      : all(`SELECT a.id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id WHERE a.id>? ORDER BY a.id LIMIT 30`, au0);
+    for (const a of l) {
+      au = Math.max(au, a.id);
+      if (inicio) continue; // na abertura só marca o ponto de partida
+      const x = acaoDoSistema(a, g);
+      if (x) sistema.push({ id: a.id, agente: x[0], emoji: x[1], texto: x[2], criado_em: a.em });
+    }
+  }
+  const out = { ev: ev.length ? ev[ev.length - 1].id : ev0, au, eventos: ev, sistema, agora: new Date().toISOString() };
+  if (req.query.full) {
+    const hoje = Object.fromEntries(all(`SELECT agente, count(DISTINCT CASE WHEN direcao='entrada' THEN telefone END) conversas,
+      sum(CASE WHEN direcao='saida' AND status='enviada' THEN 1 ELSE 0 END) enviadas, sum(CASE WHEN direcao='saida' AND status='aprovar' THEN 1 ELSE 0 END) aprovar
+      FROM agente_mensagens WHERE ${H('criado_em')} AND telefone NOT LIKE 'teste-%' GROUP BY agente`).map((x) => [x.agente, x]));
+    const aprovar = Object.fromEntries(all(`SELECT agente, count(*) n FROM agente_mensagens WHERE direcao='saida' AND status='aprovar' GROUP BY agente`).map((x) => [x.agente, +x.n || 0]));
+    out.agentes = B.AGENTES.map((a) => {
+      const aj = B.ajustes(a.slug); const est = B.estadoLinha(B.linhaDe(a.slug)); const h = hoje[a.slug] || {};
+      return { slug: a.slug, n: a.n, nome: aj.nome, cargo: a.cargo, cor: a.cor, tipo: a.tipo, ativo: !!aj.ativo, modo: aj.modo,
+        estado: est.estado, conversas: +h.conversas || 0, enviadas: +h.enviadas || 0, aprovar: aprovar[a.slug] || 0 };
+    });
+    out.totais = { conversas: out.agentes.reduce((s, a) => s + a.conversas, 0), enviadas: out.agentes.reduce((s, a) => s + a.enviadas, 0),
+      aprovar: out.agentes.reduce((s, a) => s + a.aprovar, 0), no_ar: out.agentes.filter((a) => a.estado === 'conectado').length,
+      acoes: (one(`SELECT count(*) n FROM agente_eventos WHERE ${H('criado_em')}`) || {}).n || 0 };
+  }
+  res.json(out);
+});
+
 r.get('/escritorio/:slug', (req, res) => {
   const a = agenteOu404(req.params.slug); const u = req.usuario;
   const aj = B.ajustes(a.slug);

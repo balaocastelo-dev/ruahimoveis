@@ -36,6 +36,7 @@ async function telaEscritorio() {
   $('#main').innerHTML = `<div class="ev-topo"><div><div class="eyebrow">Atendimento</div><h1>Escritório virtual</h1>
     <p class="lead">Nove agentes robôs, cada um com um setor, um número de WhatsApp (QR code) e uma <b>alma</b> — o arquivo <span class="mono">.soul</span> com as instruções de como ele pensa e fala. Eles atendem clientes, buscam donos de imóveis e mantêm o dono e os corretores informados.</p></div>
     <div class="ev-topo-acoes">${selo}
+      <a class="btn jg-entra" href="#/whats/ao-vivo">🎮 Ver o escritório ao vivo</a>
       <a class="btn" href="#/whats/conversas">Conversas do CRM</a>${d.pode_editar ? '<a class="btn pri" href="#/whats/config">Configuração geral</a>' : ''}</div></div>
   ${pcAviso}
   <div class="ev-kpis">
