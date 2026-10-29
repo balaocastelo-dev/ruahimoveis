@@ -5,7 +5,7 @@ const token = location.pathname.split('/').pop();
 const app = document.getElementById('app');
 // Link off-market é da imobiliária: a marca mostrada é a do cliente, não a do sistema.
 const CLIENTE = (window.MARCA || {}).cliente || 'RUAH';
-const topo = `<div class="row"><b style="font-family:var(--f-display);font-size:30px;letter-spacing:.08em;color:var(--gold)">${esc(CLIENTE)}</b><span class="sp"></span><span class="pill info">Apresentação exclusiva</span></div>`;
+const topo = `<div class="row"><b style="font-family:var(--f-display);font-size:30px;letter-spacing:.08em;color:var(--gold-ink)">${esc(CLIENTE)}</b><span class="sp"></span><span class="pill info">Apresentação exclusiva</span></div>`;
 
 (async () => {
   const r = await fetch(`/api/publico/imovel/${encodeURIComponent(token)}`);
@@ -20,7 +20,7 @@ const topo = `<div class="row"><b style="font-family:var(--f-display);font-size:
     <p class="lead" style="margin:0">${d.endereco ? esc(d.endereco) + ' · ' : ''}<b style="font-size:20px;color:var(--ink)">${brl(d.valor)}</b></p></div>
   <div class="grid g4">${[['Quartos', d.quartos], ['Suítes', d.suites], ['Vagas', d.vagas], ['Área útil', d.area_util ? d.area_util + ' m²' : null]].map(([a, b]) => `<div class="card kpi"><div class="n" style="font-size:26px">${esc(b ?? '—')}</div><div class="l">${a}</div></div>`).join('')}</div>
   <div class="grid g21"><div class="card"><h3>Sobre o imóvel</h3><p style="white-space:pre-wrap;margin:0">${esc(d.descricao || 'Fale com o corretor para mais detalhes.')}</p>${d.lazer ? `<h3 style="margin-top:14px">Lazer do condomínio</h3><p style="margin:0">${esc(d.lazer)}</p>` : ''}</div>
-    <div class="card dark"><h3 style="color:var(--gold)">Fale com ${esc(d.corretor || 'a ' + CLIENTE)}</h3>${tels ? `<p style="margin:0 0 10px">${esc(d.corretor_tel)}</p><a class="btn pri" href="https://wa.me/${tels.startsWith('55') ? tels : '55' + tels}?text=${encodeURIComponent('Olá! Vi o imóvel ' + d.codigo + ' e gostaria de agendar uma visita.')}" target="_blank" rel="noopener">Chamar no WhatsApp</a>` : '<p>Responda a mensagem do corretor para agendar.</p>'}
+    <div class="card dark"><h3 style="color:var(--gold-ink)">Fale com ${esc(d.corretor || 'a ' + CLIENTE)}</h3>${tels ? `<p style="margin:0 0 10px">${esc(d.corretor_tel)}</p><a class="btn pri" href="https://wa.me/${tels.startsWith('55') ? tels : '55' + tels}?text=${encodeURIComponent('Olá! Vi o imóvel ' + d.codigo + ' e gostaria de agendar uma visita.')}" target="_blank" rel="noopener">Chamar no WhatsApp</a>` : '<p>Responda a mensagem do corretor para agendar.</p>'}
       <dl class="dl" style="margin-top:14px"><dt style="color:inherit;opacity:.7">Condomínio</dt><dd>${brl(d.valor_condominio)}</dd><dt style="color:inherit;opacity:.7">IPTU</dt><dd>${brl(d.iptu)}</dd></dl>
       <p class="small" style="opacity:.7;margin-bottom:0">Link válido até ${esc(new Date(d.expira_em.replace(' ', 'T')).toLocaleDateString('pt-BR'))}.</p></div></div>`;
   let atual = 0;

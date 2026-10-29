@@ -42,7 +42,7 @@ const capCardFg = (a) => `<div class="imcardw"><a class="imcard" href="#/fisguei
 const capCardOp = (o) => `<div class="imcardw"><a class="imcard" href="#/radar/${o.id}">
   <div class="imfoto">${fotoCadeia([o.foto, o.fg_id && MAPAS && MAPAS.fachada ? `/api/fachada?ref=fg${o.fg_id}` : null], o.titulo || o.tipo || 'Oportunidade')}
     <span class="imst">${opPill(o.status)}</span>${o.anunciante_tipo === 'particular' ? '<span class="imbadge"><span class="pill ok">particular</span></span>' : ''}</div>
-  <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small" style="color:var(--gold)">${esc(o.ref)}</span><span class="small muted">${esc(o.portal || '')}</span></div>
+  <div class="imcorpo"><div class="row" style="justify-content:space-between"><span class="mono small" style="color:var(--gold-ink)">${esc(o.ref)}</span><span class="small muted">${esc(o.portal || '')}</span></div>
     <div class="imtit">${esc(o.titulo || o.tipo || 'Oportunidade')}</div>
     <div class="muted small">${esc([[o.logradouro, o.numero].filter(Boolean).join(', '), o.bairro].filter(Boolean).join(' · ') || 'Endereço a descobrir')}</div>
     <div class="imvalor">${brl(o.valor)}</div></div></a></div>`;

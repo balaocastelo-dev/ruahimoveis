@@ -605,7 +605,7 @@ button.fx-s{cursor:pointer;font-weight:600}
 .fx-seg button{all:unset;cursor:pointer;padding:6px 11px;border-radius:8px;font-size:13px;display:inline-flex;gap:6px;align-items:baseline;white-space:nowrap}
 .fx-seg button span{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
 .fx-seg button[aria-pressed="true"]{background:var(--slate);color:var(--slate-ink)}
-.fx-seg button[aria-pressed="true"] span{color:var(--gold-ink)}
+.fx-seg button[aria-pressed="true"] span{color:#d9b56e}
 .fx-seg button:focus-visible{outline:2px solid var(--gold)}
 .fx-ordem select{padding:7px 10px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-size:13px}
 .fx-vista{margin-left:0}
@@ -737,7 +737,7 @@ fieldset.fx-mais-bairros input[type=search]{width:100%;padding:7px 10px;border:1
 .fx-hist figcaption{display:flex;gap:12px;flex-wrap:wrap;font-size:11.5px;color:var(--muted)}
 .fx-hist figcaption b{color:var(--ink)}
 .fx-g-nota{display:grid;grid-template-columns:54px 1fr;gap:12px;margin:16px 0 0;padding:12px;border-radius:14px;background:var(--gold-soft)}
-.fx-g-n{width:54px;height:54px;border-radius:50%;background:var(--slate);color:var(--gold-ink);display:grid;place-items:center;font-family:var(--f-display);font-size:24px;font-weight:700}
+.fx-g-n{width:54px;height:54px;border-radius:50%;background:var(--slate);color:#d9b56e;display:grid;place-items:center;font-family:var(--f-display);font-size:24px;font-weight:700}
 .fx-g-nota ul{margin:6px 0 0;padding-left:18px;display:grid;gap:5px;font-size:13px}
 .fx-g-nota li.s-queda::marker{color:var(--bad)} .fx-g-nota li.s-abaixo::marker,.fx-g-nota li.s-particular::marker{color:var(--ok)}
 .fx-g-acoes{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
@@ -1342,3 +1342,4 @@ a{text-underline-offset:.18em}
 @media (max-width:760px){.rs-cal{display:none}.rs-lista{display:block}.rs-nav h2{min-width:0;font-size:22px}.rs-artes figure{width:62vw}.rs-artes figure.rs-g{width:78vw}}
 @media (min-width:761px) and (max-width:1100px){.rs-pn{display:none}.rs-dia{min-height:96px}}
 .ev-kpi.quente span{color:color-mix(in srgb,var(--ink) 78%,var(--gold-ink))}
+.fx-cats button[aria-pressed="true"] span{color:#1b1c1e;opacity:1}
