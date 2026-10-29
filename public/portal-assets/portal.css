@@ -474,9 +474,9 @@ body.p-sig{
 .s-hero-foto{object-fit:contain}
 .s-hero-fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,13,.66) 0%,rgba(14,14,13,.3) 38%,rgba(14,14,13,0) 62%),linear-gradient(180deg,rgba(14,14,13,0) 0%,rgba(14,14,13,0) 55%,rgba(14,14,13,.82) 100%)}
 .s-hero-aviso{position:absolute;top:12px;right:14px;z-index:1;font-size:11px;letter-spacing:.06em;color:rgba(244,239,230,.88);background:rgba(14,14,13,.45);padding:4px 10px;border-radius:999px}
-@media (max-width:759px){
+@media (max-width:1099px){
   .s-hero,.s-hero-im{display:block;min-height:0;margin-top:12px}
-  .s-hero-fundo{position:relative;inset:auto;z-index:0;aspect-ratio:3/2}
+  .s-hero-fundo{position:relative;inset:auto;z-index:0;aspect-ratio:3/2;max-height:78vh}
   .s-hero-fundo::after{background:linear-gradient(180deg,rgba(14,14,13,0) 70%,rgba(14,14,13,.6) 100%)}
   .s-hero-txt{padding:26px 20px 44px}
 }
