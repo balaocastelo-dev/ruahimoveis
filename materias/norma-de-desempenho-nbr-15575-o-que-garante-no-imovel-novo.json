@@ -1,0 +1,258 @@
+{
+  "slug": "norma-de-desempenho-nbr-15575-o-que-garante-no-imovel-novo",
+  "tema": "norma de desempenho nbr 15575 para quem compra imovel novo",
+  "titulo": "Norma de desempenho NBR 15575: o que ela garante no imóvel novo",
+  "resumo": "A NBR 15575 define quanto cada parte do imóvel novo deve durar e o mínimo de conforto acústico, térmico e de luz. Veja o que ela cobre e o que pedir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "imóvel novo",
+    "construção",
+    "norma técnica",
+    "compra"
+  ],
+  "capa": {
+    "alt": "Estrutura de concreto de um edifício residencial em construção, com lajes aparentes e luz suave do fim da tarde"
+  },
+  "redes": {
+    "legenda": "Você sabia que existe uma norma que diz quanto tempo a estrutura, o telhado e o encanamento de um imóvel novo devem durar? É a NBR 15575, a norma de desempenho. Ela também fixa um mínimo de isolamento de som entre vizinhos e de luz natural nos cômodos. Explicamos o que ela cobre, o que fica de fora e os documentos que vale pedir antes de assinar. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "imovelnovo",
+      "construcao",
+      "engenharia",
+      "arquitetura",
+      "casanova",
+      "apartamentonovo",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem compra um imóvel novo costuma olhar o acabamento, a planta e a vista. Mas existe uma regra técnica que fala de algo menos visível e mais importante: a **norma de desempenho NBR 15575**, da ABNT, a Associação Brasileira de Normas Técnicas. Ela diz o que uma moradia precisa entregar em durabilidade e conforto ao longo dos anos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em poucas palavras: a norma fixa quanto tempo cada sistema do imóvel deve durar com a manutenção correta, define um mínimo de isolamento de som, de conforto térmico e de luz natural, e distribui responsabilidades entre quem projeta, quem constrói, quem fabrica e quem mora. Saber disso ajuda você a fazer as perguntas certas antes de comprar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Vale para edificações residenciais com projeto protocolado na prefeitura a partir de 19 de julho de 2013; não vale para reformas.",
+        "Define a vida útil de projeto (VUP) de cada sistema: na tabela mínima, 50 anos para a estrutura.",
+        "Tem três níveis de desempenho, mínimo, intermediário e superior, que a construtora pode declarar.",
+        "A durabilidade prometida depende de manutenção: o morador tem papel nisso, guiado pelo manual do imóvel."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando a norma vale para o imóvel que você está olhando"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A série se chama *Edificações habitacionais — Desempenho* e entrou em vigor em 19 de julho de 2013. Segundo o material de perguntas e respostas da CBIC, a Câmara Brasileira da Indústria da Construção, o que conta é a data em que o projeto foi protocolado na prefeitura, e não a data do alvará ou do início da obra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, quase todo prédio ou casa lançado nos últimos anos já nasceu sob essa regra. A mesma fonte lembra que ela não se aplica a reformas, a *retrofit* (a modernização de um prédio antigo) nem a edificações provisórias. Um apartamento usado de 2005, portanto, não pode ser cobrado pelos critérios dela, mesmo que tenha sido reformado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma tem seis partes: requisitos gerais, sistemas estruturais, sistemas de pisos, vedações verticais internas e externas (paredes e fachadas), coberturas e sistemas hidrossanitários, que são água, esgoto e águas pluviais. Cada parte diz o que o sistema precisa cumprir e como medir, o que permite comparar imóveis com critérios objetivos, e não só pela impressão da visita."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o texto não é estático. Em 2021, a CBIC informou a aprovação de emendas que revisaram a parte de desempenho térmico, e o catálogo de normas técnicas registra uma nova edição da Parte 1 em dezembro de 2025. Por isso, o engenheiro ou arquiteto que avaliar um imóvel vai checar qual versão valia na data de protocolo daquele projeto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quanto cada parte do imóvel deve durar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O conceito central é a **vida útil de projeto**, ou VUP: o tempo para o qual cada sistema foi pensado, desde que receba a manutenção prevista. Uma comunicação técnica do IPT, o Instituto de Pesquisas Tecnológicas de São Paulo, reproduz a tabela de VUP da norma em três níveis. Os valores abaixo são os da versão de 2013 apresentada ali."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Vida útil de projeto (VUP) por sistema, em anos",
+      "colunas": [
+        "Sistema",
+        "Mínimo",
+        "Intermediário",
+        "Superior"
+      ],
+      "linhas": [
+        [
+          "Estrutura",
+          "50",
+          "63",
+          "75"
+        ],
+        [
+          "Vedação vertical externa (fachada)",
+          "40",
+          "50",
+          "60"
+        ],
+        [
+          "Vedação vertical interna",
+          "20",
+          "25",
+          "30"
+        ],
+        [
+          "Cobertura",
+          "20",
+          "25",
+          "30"
+        ],
+        [
+          "Hidrossanitário",
+          "20",
+          "25",
+          "30"
+        ],
+        [
+          "Pisos internos",
+          "13",
+          "17",
+          "20"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Tabela da NBR 15575 (versão de 2013) reproduzida em comunicação técnica do IPT de 2017. Valores mínimos de cada nível, considerando a manutenção prevista no manual do imóvel. Confira com um profissional a edição da norma aplicável ao seu caso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vida útil não é o mesmo que garantia. A CBIC explica que a VUP é uma expectativa técnica de durabilidade, enquanto a garantia é o prazo em que a construtora responde por defeitos, e que os prazos de garantia do anexo da norma têm caráter de recomendação. Os direitos de quem compra vêm também da lei; para um caso concreto, procure um advogado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "A durabilidade depende de você também",
+      "texto": "A VUP só vale se a manutenção for feita. Segundo a CBIC, cabe ao morador usar o imóvel como previsto, não mudar o uso nem as cargas sem autorização e fazer e registrar a manutenção preventiva descrita no manual de uso, operação e manutenção."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Mínimo, intermediário ou superior: como ler o que a construtora declara"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Todo imóvel sob a norma precisa atingir pelo menos o nível mínimo. Os níveis intermediário e superior são opcionais e podem variar por sistema: a CBIC dá o exemplo de um prédio com piso no mínimo de isolamento de ruído de impacto e fachada no intermediário. Quando a construtora declara um nível acima do mínimo, essa informação deve constar no memorial e no projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dois exemplos ajudam a entender o que muda no dia a dia. O primeiro é o som: a norma mede o isolamento ao ruído aéreo entre apartamentos e o ruído de impacto, como passos e objetos caindo no andar de cima. O segundo é a luz natural, avaliada pelo fator de luz diurna, que compara a luz dentro do cômodo com a de fora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela tabela reproduzida pelo IPT, em salas, quartos e cozinhas esse fator vai de 0,50% no nível mínimo a 0,75% no superior. Parece pouco, mas é a diferença entre acender a luz no meio da tarde ou não. Já para o conforto térmico, a norma compara a temperatura interna com a externa nos dias mais quentes e mais frios do ano."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Imóvel com nível intermediário ou superior declarado",
+      "pros": [
+        "Critério objetivo para comparar silêncio, luz e durabilidade entre imóveis parecidos.",
+        "Sistemas pensados para durar mais, o que tende a reduzir reparos grandes ao longo dos anos.",
+        "A promessa fica registrada no memorial, o que facilita cobrar depois."
+      ],
+      "contras": [
+        "Nem toda construtora declara o nível de cada sistema, e o nível mínimo já é obrigatório.",
+        "Nível superior em um sistema não significa o mesmo nos outros: é preciso ler item por item.",
+        "Conferir o desempenho real exige ensaio e laudo de profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas cuidado com expressões genéricas. A CBIC observa que um material descrito apenas como algo que \"atende a NBR 15575\" não é uma especificação válida: o que vale é o desempenho do sistema completo, medido pelo método da norma. Para outros temas de obra e de imóvel novo, veja a seção de [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que pedir antes de assinar e depois de receber as chaves"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Você não precisa ser engenheiro para usar a norma a seu favor. Basta pedir os documentos certos e guardar tudo. Se algo parecer fora do lugar, a avaliação técnica cabe a um engenheiro ou arquiteto com ART ou RRT, que são os registros de responsabilidade técnica desses profissionais nos seus conselhos."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Memorial descritivo:** veja se ele informa o nível de desempenho de cada sistema e a vida útil de projeto prevista.",
+        "**Data de protocolo do projeto:** ela indica se a norma se aplica e qual edição valia na época.",
+        "**Manual de uso, operação e manutenção:** a construtora deve entregá-lo; ele diz o que fazer, com que frequência e o que não fazer no imóvel.",
+        "**Termos de garantia:** confira os prazos por sistema e as condições, como a manutenção registrada.",
+        "**Registro da manutenção:** guarde notas e relatórios; no condomínio, acompanhe o plano de manutenção das áreas comuns."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a norma não substitui a vistoria nem a análise do contrato. Ela é uma régua técnica: diz o que é aceitável e como medir. Questões de prazo, vício oculto ou responsabilidade dependem também da lei e do contrato, e cada caso pede um advogado. Em imóvel de padrão mais alto, os temas de [alto padrão](/blog/categoria/alto-padrao) trazem outros pontos de atenção."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura um imóvel novo em Campinas e quer entender o que está comprando antes de decidir, a equipe da {{cliente}} pode ajudar a separar as opções e a reunir os documentos para a sua avaliação. Mais ideias sobre casa e arquitetura estão no [blog](/blog). Em uma linha: peça o memorial, guarde o manual e cuide da manutenção."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "A NBR 15575 vale para imóvel usado?",
+      "resposta": "Ela vale para edificações residenciais cujo projeto foi protocolado na prefeitura a partir de 19 de julho de 2013. Imóveis anteriores, reformas e retrofit não são avaliados por ela."
+    },
+    {
+      "pergunta": "Vida útil de projeto é a mesma coisa que garantia?",
+      "resposta": "Não. A vida útil de projeto é a durabilidade esperada de cada sistema com a manutenção correta. A garantia é o prazo em que a construtora responde por defeitos; em caso concreto, consulte um advogado."
+    },
+    {
+      "pergunta": "Quanto tempo a estrutura de um prédio novo deve durar pela norma?",
+      "resposta": "Na tabela mínima da versão de 2013, reproduzida pelo IPT, a vida útil de projeto da estrutura é de 50 anos, desde que a manutenção prevista seja feita."
+    },
+    {
+      "pergunta": "Como saber o nível de desempenho do imóvel?",
+      "resposta": "Peça o memorial descritivo e o projeto: quando a construtora declara um nível acima do mínimo, ele deve estar registrado ali. A conferência do desempenho real exige ensaio feito por profissional habilitado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Dúvidas sobre a Norma de Desempenho: especialistas respondem — CBIC",
+      "url": "https://cbic.org.br/wp-content/uploads/2017/11/Duvidas_Sobre_a_Norma_de_Desempenho_Especialistas_Respondem_2014.pdf",
+      "data": "2014"
+    },
+    {
+      "nome": "Norma de desempenho (NBR 15575) e as patologias das obras públicas — IPT",
+      "url": "https://escriba.ipt.br/pdf/173893.pdf",
+      "data": "setembro de 2017"
+    },
+    {
+      "nome": "Série de normas NBR 15575 — Target Normas",
+      "url": "https://www.normas.com.br/visualizar/artigo-tecnico/2001/serie-de-normas-nbr-15575",
+      "data": "julho de 2013"
+    },
+    {
+      "nome": "Concluída a análise da consulta nacional da Norma de Desempenho — CBIC",
+      "url": "https://cbic.org.br/inovacao/?p=6607",
+      "data": "janeiro de 2021"
+    },
+    {
+      "nome": "NBR 15575-1 Edificações habitacionais — Desempenho — Parte 1 — Target",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/40674/nbr15575-1-edificacoes-habitacionais-desempenho-parte-1-requisitos-gerais",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Setor terá novas regras em julho — CBIC",
+      "url": "https://cbic.org.br/setor-tera-novas-regras-em-julho/",
+      "data": "abril de 2013"
+    }
+  ]
+}
