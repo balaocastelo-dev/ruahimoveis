@@ -2130,5 +2130,235 @@
     "ambiente": "fachada"
    }
   ]
+ },
+ "82130": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/82130-1h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/82130-2h.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/82130-3h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/82130-4h.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "casaprado/82130-5h.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "82708": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/82708-1h.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/82708-2h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/82708-4h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/82708-5h.jpg",
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "83477": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/83477-1h.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/83477-2h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/83477-3h.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "casaprado/83477-4h.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "casaprado/83477-5h.jpg",
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "84398": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/84398-1h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/84398-2h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/84398-3h.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/84398-4h.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "casaprado/84398-5h.jpg",
+    "ambiente": "escritorio"
+   }
+  ]
+ },
+ "86140": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/86140-1h.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/86140-2h.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "casaprado/86140-3h.jpg",
+    "ambiente": "lavanderia"
+   },
+   {
+    "arquivo": "casaprado/86140-4h.jpg",
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "casaprado/86140-5h.jpg",
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "87610": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/87610-1h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/87610-2h.jpg",
+    "ambiente": "terreno"
+   },
+   {
+    "arquivo": "casaprado/87610-3h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/87610-4h.jpg",
+    "ambiente": "sala"
+   }
+  ]
+ },
+ "88568": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/88568-1h.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "casaprado/88568-3h.jpg",
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/88568-4h.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "casaprado/88568-5h.jpg",
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "88841": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/88841-1h.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "casaprado/88841-2h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/88841-3h.jpg",
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "casaprado/88841-4h.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/88841-5h.jpg",
+    "ambiente": "terreno"
+   }
+  ]
+ },
+ "89224": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/89224-1h.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/89224-2h.jpg",
+    "ambiente": "comercial"
+   },
+   {
+    "arquivo": "casaprado/89224-3h.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/89224-5h.jpg",
+    "ambiente": "lavanderia"
+   }
+  ]
+ },
+ "89820": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/89820-1h.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/89820-2h.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "casaprado/89820-3h.jpg",
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "casaprado/89820-5h.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
  }
 }
