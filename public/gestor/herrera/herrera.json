@@ -1,70 +1,383 @@
 {
- "versao": 0,
+ "versao": 1,
+ "voz": "Thiago Herrera (voz clonada, perfil 3 - energetica)",
  "clips": {
   "01-boas-vindas": {
    "imagem": "palco",
    "texto": "Fala, tudo bem? Eu sou o Herrera, e vou te acompanhar em cada passo pra colocar uma imobiliária nova no ar. É rapidinho: eu explico, você faz, e o sistema confere tudo na hora. No final, a imobiliária sai com portal, blog, redes sociais e inteligência artificial funcionando. Bora começar?",
-   "frases": []
+   "frases": [
+    {
+     "texto": "Fala, tudo bem?",
+     "inicio": 0.0,
+     "fim": 1.61
+    },
+    {
+     "texto": "Eu sou o Herrera, e vou te acompanhar em cada passo pra colocar uma imobiliária nova no ar.",
+     "inicio": 1.83,
+     "fim": 7.1
+    },
+    {
+     "texto": "É rapidinho: eu explico, você faz, e o sistema confere tudo na hora.",
+     "inicio": 7.32,
+     "fim": 11.38
+    },
+    {
+     "texto": "No final, a imobiliária sai com portal, blog, redes sociais e inteligência artificial funcionando.",
+     "inicio": 11.6,
+     "fim": 17.25
+    },
+    {
+     "texto": "Bora começar?",
+     "inicio": 17.47,
+     "fim": 18.57
+    }
+   ],
+   "duracao": 19.07,
+   "video": "/gestor/herrera/01-boas-vindas.mp4",
+   "poster": "/gestor/herrera/01-boas-vindas.webp"
   },
   "02-dados": {
    "imagem": "holograma",
-   "texto": "Primeiro passo: os dados da imobiliária.",
-   "frases": []
+   "texto": "Primeiro passo: os dados da imobiliária. Coloca o nome da marca, do jeito que o cliente conhece, e o nome completo da empresa. Depois escolhe o plano. O plano define o ritmo de tudo: quantas matérias de blog por dia, quantos posts nas redes por semana e quantas consultas de proprietário por mês. Na dúvida, começa pelo Profissional.",
+   "frases": [
+    {
+     "texto": "Primeiro passo: os dados da imobiliária.",
+     "inicio": 0.0,
+     "fim": 2.5
+    },
+    {
+     "texto": "Coloca o nome da marca, do jeito que o cliente conhece, e o nome completo da empresa.",
+     "inicio": 2.72,
+     "fim": 7.42
+    },
+    {
+     "texto": "Depois escolhe o plano.",
+     "inicio": 7.64,
+     "fim": 9.04
+    },
+    {
+     "texto": "O plano define o ritmo de tudo: quantas matérias de blog por dia, quantos posts nas redes por semana e quantas consultas de proprietário por mês.",
+     "inicio": 9.26,
+     "fim": 17.65
+    },
+    {
+     "texto": "Na dúvida, começa pelo Profissional.",
+     "inicio": 17.87,
+     "fim": 20.16
+    }
+   ],
+   "duracao": 20.66,
+   "video": "/gestor/herrera/02-dados.mp4",
+   "poster": "/gestor/herrera/02-dados.webp"
   },
   "03-administrador": {
    "imagem": "mesa",
-   "texto": "Agora o administrador.",
-   "frases": []
+   "texto": "Agora o administrador. É a pessoa que vai entrar primeiro no sistema e cadastrar a equipe. Usa o e-mail dela e cria uma senha inicial forte, com pelo menos oito caracteres. Ela troca no primeiro acesso. E um detalhe importante: eu nunca peço senha de banco, de Facebook ou de Instagram. Isso fica sempre com a imobiliária.",
+   "frases": [
+    {
+     "texto": "Agora o administrador.",
+     "inicio": 0.0,
+     "fim": 1.39
+    },
+    {
+     "texto": "É a pessoa que vai entrar primeiro no sistema e cadastrar a equipe.",
+     "inicio": 1.61,
+     "fim": 5.47
+    },
+    {
+     "texto": "Usa o e-mail dela e cria uma senha inicial forte, com pelo menos oito caracteres. Ela troca no primeiro acesso.",
+     "inicio": 5.69,
+     "fim": 12.49
+    },
+    {
+     "texto": "E um detalhe importante: eu nunca peço senha de banco, de Facebook ou de Instagram.",
+     "inicio": 12.71,
+     "fim": 17.03
+    },
+    {
+     "texto": "Isso fica sempre com a imobiliária.",
+     "inicio": 17.25,
+     "fim": 19.04
+    }
+   ],
+   "duracao": 19.54,
+   "video": "/gestor/herrera/03-administrador.mp4",
+   "poster": "/gestor/herrera/03-administrador.webp"
   },
   "04-publicar": {
    "imagem": "holograma",
-   "texto": "Hora de publicar!",
-   "frases": []
+   "texto": "Hora de publicar! Quando você clica em criar, a plataforma monta o banco próprio da imobiliária e já entrega mais de noventa mil anúncios, os condomínios e o 3D da cidade. O sistema sobe sozinho no endereço com o nome dela, ponto corretor do futuro ponto app. Leva um ou dois minutinhos. Eu aviso aqui quando estiver respondendo.",
+   "frases": [
+    {
+     "texto": "Hora de publicar!",
+     "inicio": 0.0,
+     "fim": 1.51
+    },
+    {
+     "texto": "Quando você clica em criar, a plataforma monta o banco próprio da imobiliária e já entrega mais de noventa mil anúncios, os condomínios e o 3D da cidade.",
+     "inicio": 1.73,
+     "fim": 11.14
+    },
+    {
+     "texto": "O sistema sobe sozinho no endereço com o nome dela, ponto corretor do futuro ponto app.",
+     "inicio": 11.36,
+     "fim": 16.67
+    },
+    {
+     "texto": "Leva um ou dois minutinhos. Eu aviso aqui quando estiver respondendo.",
+     "inicio": 16.89,
+     "fim": 20.89
+    }
+   ],
+   "duracao": 21.39,
+   "video": "/gestor/herrera/04-publicar.mp4",
+   "poster": "/gestor/herrera/04-publicar.webp"
   },
   "05-marca": {
    "imagem": "holograma",
-   "texto": "Agora deixa com a cara dela.",
-   "frases": []
+   "texto": "Agora deixa com a cara dela. Pede o logo em boa qualidade, de preferência com fundo transparente, e as cores da marca. Com isso, o portal, o blog e as artes das redes saem com a identidade da imobiliária. E cada uma ainda ganha uma foto de capa de um lugar símbolo da cidade.",
+   "frases": [
+    {
+     "texto": "Agora deixa com a cara dela.",
+     "inicio": 0.0,
+     "fim": 1.56
+    },
+    {
+     "texto": "Pede o logo em boa qualidade, de preferência com fundo transparente, e as cores da marca.",
+     "inicio": 1.78,
+     "fim": 7.3
+    },
+    {
+     "texto": "Com isso, o portal, o blog e as artes das redes saem com a identidade da imobiliária.",
+     "inicio": 7.52,
+     "fim": 12.62
+    },
+    {
+     "texto": "E cada uma ainda ganha uma foto de capa de um lugar símbolo da cidade.",
+     "inicio": 12.84,
+     "fim": 16.67
+    }
+   ],
+   "duracao": 17.17,
+   "video": "/gestor/herrera/05-marca.mp4",
+   "poster": "/gestor/herrera/05-marca.webp"
   },
   "06-gemini": {
    "imagem": "mesa",
-   "texto": "Vamos pegar a chave da inteligência artificial, o Gemini.",
-   "frases": []
+   "texto": "Vamos pegar a chave da inteligência artificial, o Gemini. Abre o site aistudio ponto google ponto com e entra com a conta Google da imobiliária. Clica em Get API key e depois em Create API key. Copia a chave, que começa com as letras A, I, Z, A, e cola aqui. Eu testo na hora. É essa chave que faz os agentes responderem os clientes, mesmo com o computador desligado.",
+   "frases": [
+    {
+     "texto": "Vamos pegar a chave da inteligência artificial, o Gemini.",
+     "inicio": 0.0,
+     "fim": 2.72
+    },
+    {
+     "texto": "Abre o site aistudio ponto google ponto com e entra com a conta Google da imobiliária.",
+     "inicio": 2.94,
+     "fim": 8.05
+    },
+    {
+     "texto": "Clica em Get API key e depois em Create API key.",
+     "inicio": 8.27,
+     "fim": 10.96
+    },
+    {
+     "texto": "Copia a chave, que começa com as letras A, I, Z, A, e cola aqui. Eu testo na hora.",
+     "inicio": 11.18,
+     "fim": 15.4
+    },
+    {
+     "texto": "É essa chave que faz os agentes responderem os clientes, mesmo com o computador desligado.",
+     "inicio": 15.62,
+     "fim": 20.87
+    }
+   ],
+   "duracao": 21.37,
+   "video": "/gestor/herrera/06-gemini.mp4",
+   "poster": "/gestor/herrera/06-gemini.webp"
   },
   "07-google-maps": {
    "imagem": "mesa",
-   "texto": "Agora a chave do Google Maps.",
-   "frases": []
+   "texto": "Agora a chave do Google Maps, que liga o 3D realista e as fotos de fachada. No console do Google Cloud, cria um projeto e ativa duas APIs: Map Tiles e Street View Static. Depois, em Credenciais, cria a chave. Muito importante: restringe a chave ao endereço da imobiliária, assim ninguém usa por fora. Cola aqui que eu testo.",
+   "frases": [
+    {
+     "texto": "Agora a chave do Google Maps, que liga o 3D realista e as fotos de fachada.",
+     "inicio": 0.0,
+     "fim": 4.29
+    },
+    {
+     "texto": "No console do Google Cloud, cria um projeto e ativa duas APIs: Map Tiles e Street View Static.",
+     "inicio": 4.51,
+     "fim": 10.13
+    },
+    {
+     "texto": "Depois, em Credenciais, cria a chave.",
+     "inicio": 10.35,
+     "fim": 12.53
+    },
+    {
+     "texto": "Muito importante: restringe a chave ao endereço da imobiliária, assim ninguém usa por fora.",
+     "inicio": 12.75,
+     "fim": 18.34
+    },
+    {
+     "texto": "Cola aqui que eu testo.",
+     "inicio": 18.56,
+     "fim": 19.96
+    }
+   ],
+   "duracao": 20.46,
+   "video": "/gestor/herrera/07-google-maps.mp4",
+   "poster": "/gestor/herrera/07-google-maps.webp"
   },
   "08-facebook-instagram": {
    "imagem": "holograma",
-   "texto": "Redes sociais!",
-   "frases": []
+   "texto": "Redes sociais! Confere duas coisas: o Instagram precisa ser conta profissional e estar ligado à Página do Facebook da imobiliária. Depois, no sistema dela, em Redes e publicações, aba Contas, clica em Conectar com o Facebook. Abre a tela oficial do Facebook, a pessoa entra e autoriza. Pronto! E a senha do Facebook? Fica só com a imobiliária. Nós nunca vemos. E os posts começam a sair sozinhos.",
+   "frases": [
+    {
+     "texto": "Redes sociais!",
+     "inicio": 0.0,
+     "fim": 1.23
+    },
+    {
+     "texto": "Confere duas coisas: o Instagram precisa ser conta profissional e estar ligado à Página do Facebook da imobiliária.",
+     "inicio": 1.45,
+     "fim": 8.18
+    },
+    {
+     "texto": "Depois, no sistema dela, em Redes e publicações, aba Contas, clica em Conectar com o Facebook.",
+     "inicio": 8.4,
+     "fim": 14.2
+    },
+    {
+     "texto": "Abre a tela oficial do Facebook, a pessoa entra e autoriza. Pronto!",
+     "inicio": 14.42,
+     "fim": 18.26
+    },
+    {
+     "texto": "E a senha do Facebook? Fica só com a imobiliária. Nós nunca vemos. E os posts começam a sair sozinhos.",
+     "inicio": 18.48,
+     "fim": 24.17
+    }
+   ],
+   "duracao": 24.67,
+   "video": "/gestor/herrera/08-facebook-instagram.mp4",
+   "poster": "/gestor/herrera/08-facebook-instagram.webp"
   },
   "09-google-meu-negocio": {
    "imagem": "mesa",
-   "texto": "Agora o Google Meu Negócio.",
-   "frases": []
+   "texto": "Agora o Google Meu Negócio, que coloca a imobiliária nas buscas e no mapa do Google. Na mesma aba Contas, clica em Conectar o Google Meu Negócio e entra com a conta que administra o perfil da empresa. Pronto: os imóveis passam a aparecer lá toda semana, com o botão Saiba mais.",
+   "frases": [
+    {
+     "texto": "Agora o Google Meu Negócio, que coloca a imobiliária nas buscas e no mapa do Google.",
+     "inicio": 0.0,
+     "fim": 4.6
+    },
+    {
+     "texto": "Na mesma aba Contas, clica em Conectar o Google Meu Negócio e entra com a conta que administra o perfil da empresa.",
+     "inicio": 4.82,
+     "fim": 11.52
+    },
+    {
+     "texto": "Pronto: os imóveis passam a aparecer lá toda semana, com o botão Saiba mais.",
+     "inicio": 11.74,
+     "fim": 16.4
+    }
+   ],
+   "duracao": 16.9,
+   "video": "/gestor/herrera/09-google-meu-negocio.mp4",
+   "poster": "/gestor/herrera/09-google-meu-negocio.webp"
   },
   "10-whatsapp": {
    "imagem": "holograma",
-   "texto": "Por último, o WhatsApp dos agentes.",
-   "frases": []
+   "texto": "Por último, o WhatsApp dos agentes. Cada agente do escritório virtual pode ter um número próprio. Separa um chip para cada setor. Abre a mesa do agente, clica em Conectar e lê o QR code com o celular do chip, em Aparelhos conectados. Aí os agentes atendem, agendam visitas e chamam o corretor quando precisa.",
+   "frases": [
+    {
+     "texto": "Por último, o WhatsApp dos agentes.",
+     "inicio": 0.0,
+     "fim": 2.27
+    },
+    {
+     "texto": "Cada agente do escritório virtual pode ter um número próprio. Separa um chip para cada setor.",
+     "inicio": 2.49,
+     "fim": 8.02
+    },
+    {
+     "texto": "Abre a mesa do agente, clica em Conectar e lê o QR code com o celular do chip, em Aparelhos conectados.",
+     "inicio": 8.24,
+     "fim": 14.42
+    },
+    {
+     "texto": "Aí os agentes atendem, agendam visitas e chamam o corretor quando precisa.",
+     "inicio": 14.64,
+     "fim": 18.96
+    }
+   ],
+   "duracao": 19.46,
+   "video": "/gestor/herrera/10-whatsapp.mp4",
+   "poster": "/gestor/herrera/10-whatsapp.webp"
   },
   "11-pronto": {
    "imagem": "palco",
-   "texto": "Prontinho!",
-   "frases": []
+   "texto": "Prontinho! A imobiliária está no ar, com portal, blog, revista, redes sociais e inteligência artificial trabalhando. Agora é só entregar o acesso para o administrador. Qualquer dúvida, é só me chamar aqui. Bora vender!",
+   "frases": [
+    {
+     "texto": "Prontinho!",
+     "inicio": 0.0,
+     "fim": 0.99
+    },
+    {
+     "texto": "A imobiliária está no ar, com portal, blog, revista, redes sociais e inteligência artificial trabalhando.",
+     "inicio": 1.21,
+     "fim": 7.32
+    },
+    {
+     "texto": "Agora é só entregar o acesso para o administrador.",
+     "inicio": 7.54,
+     "fim": 10.19
+    },
+    {
+     "texto": "Qualquer dúvida, é só me chamar aqui. Bora vender!",
+     "inicio": 10.41,
+     "fim": 13.19
+    }
+   ],
+   "duracao": 13.69,
+   "video": "/gestor/herrera/11-pronto.mp4",
+   "poster": "/gestor/herrera/11-pronto.webp"
   },
   "12-deu-certo": {
    "imagem": "palco",
    "texto": "Deu certo! Pode seguir pro próximo passo.",
-   "frases": []
+   "frases": [
+    {
+     "texto": "Deu certo! Pode seguir pro próximo passo.",
+     "inicio": 0.0,
+     "fim": 2.32
+    }
+   ],
+   "duracao": 2.82,
+   "video": "/gestor/herrera/12-deu-certo.mp4",
+   "poster": "/gestor/herrera/12-deu-certo.webp"
   },
   "13-nao-deu": {
    "imagem": "mesa",
-   "texto": "Hum, não funcionou.",
-   "frases": []
+   "texto": "Hum, não funcionou. Dá uma conferida no que eu falei e tenta de novo.",
+   "frases": [
+    {
+     "texto": "Hum, não funcionou.",
+     "inicio": 0.0,
+     "fim": 1.54
+    },
+    {
+     "texto": "Dá uma conferida no que eu falei e tenta de novo.",
+     "inicio": 1.76,
+     "fim": 4.66
+    }
+   ],
+   "duracao": 5.16,
+   "video": "/gestor/herrera/13-nao-deu.mp4",
+   "poster": "/gestor/herrera/13-nao-deu.webp"
   }
  }
 }
