@@ -117,5 +117,132 @@
     "ambiente": "sala"
    }
   ]
+ },
+ "1937": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/1937-1h.jpg",
+    "antigos": [
+     "lumen/1937-1.jpg",
+     "lumen/1937-1f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "lumen/1937-2h.jpg",
+    "antigos": [
+     "lumen/1937-2.jpg",
+     "lumen/1937-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/1937-3h.jpg",
+    "antigos": [
+     "lumen/1937-3.jpg",
+     "lumen/1937-3f.jpg"
+    ],
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/1937-4h.jpg",
+    "antigos": [
+     "lumen/1937-4.jpg",
+     "lumen/1937-4f.jpg"
+    ],
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/1937-5h.jpg",
+    "antigos": [
+     "lumen/1937-5.jpg",
+     "lumen/1937-5f.jpg"
+    ],
+    "ambiente": "cozinha"
+   }
+  ]
+ },
+ "36720": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/36720-1h.jpg",
+    "antigos": [
+     "lumen/36720-1.jpg",
+     "lumen/36720-1f.jpg"
+    ],
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "lumen/36720-2h.jpg",
+    "antigos": [
+     "lumen/36720-2.jpg",
+     "lumen/36720-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/36720-3h.jpg",
+    "antigos": [
+     "lumen/36720-3.jpg",
+     "lumen/36720-3f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/36720-4h.jpg",
+    "antigos": [
+     "lumen/36720-4.jpg",
+     "lumen/36720-4f.jpg"
+    ],
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "86818": {
+  "imob": "lumen",
+  "fotos": [
+   {
+    "arquivo": "lumen/86818-1h.jpg",
+    "antigos": [
+     "lumen/86818-1.jpg",
+     "lumen/86818-1f.jpg"
+    ],
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "lumen/86818-2h.jpg",
+    "antigos": [
+     "lumen/86818-2.jpg",
+     "lumen/86818-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "lumen/86818-3h.jpg",
+    "antigos": [
+     "lumen/86818-3.jpg",
+     "lumen/86818-3f.jpg"
+    ],
+    "ambiente": "jardim"
+   },
+   {
+    "arquivo": "lumen/86818-4h.jpg",
+    "antigos": [
+     "lumen/86818-4.jpg",
+     "lumen/86818-4f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "lumen/86818-5h.jpg",
+    "antigos": [
+     "lumen/86818-5.jpg",
+     "lumen/86818-5f.jpg"
+    ],
+    "ambiente": "varanda"
+   }
+  ]
  }
 }
