@@ -198,7 +198,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-10-29T23:24:29.055Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "como-escolher-a-cor-da-parede-sem-errar",
+      "titulo": "Como escolher a cor da parede sem errar",
+      "tema": "como escolher a cor da parede",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-29T23:25:11.252Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-29T23:24:29.055Z"
+  "atualizadoEm": "2026-10-29T23:25:11.253Z"
 }

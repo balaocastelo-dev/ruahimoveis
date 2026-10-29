@@ -1,0 +1,133 @@
+{
+  "slug": "como-escolher-a-cor-da-parede-sem-errar",
+  "tema": "como escolher a cor da parede",
+  "formato": "dica",
+  "titulo": "Como escolher a cor da parede sem errar",
+  "resumo": "Escolher a cor da parede fica mais fácil quando você olha a luz do cômodo, testa amostras grandes e pensa na proporção das cores. Veja o passo a passo.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "cores",
+    "pintura",
+    "interiores",
+    "decoração",
+    "iluminação"
+  ],
+  "capa": {
+    "alt": "Sala com parede pintada em verde-sálvia suave, sofá de linho cru, aparador de madeira e luz natural entrando por uma janela lateral"
+  },
+  "redes": {
+    "legenda": "Sabia que a mesma tinta pode parecer outra cor em cada parede da casa? A luz que entra pela janela, a lâmpada e até o brilho do acabamento mudam o tom. Antes de comprar o galão, teste amostras grandes e observe em horários diferentes. No blog, mostramos o passo a passo para escolher a cor da parede sem arrependimento. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "coresdaparede",
+      "pintura",
+      "decoracao",
+      "interiores",
+      "designdeinteriores",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pesquisa **como escolher a cor da parede** quase sempre já passou pela cena: a amostra parecia perfeita na loja e, depois de pintada, a parede ficou mais escura, mais fria ou mais intensa do que o esperado. A culpa raramente é da tinta; quase sempre é da luz e do tamanho da amostra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: comece pela luz do cômodo, defina o papel da parede no conjunto e só então escolha o tom, testando amostras grandes em mais de uma parede e em horários diferentes. Com esse roteiro, o risco de repintar cai muito."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A luz natural e a das lâmpadas mudam a cor percebida ao longo do dia.",
+        "No Brasil, cômodos voltados para o norte recebem mais sol; os voltados para o sul, luz mais fria e indireta.",
+        "A regra 60-30-10 ajuda a equilibrar parede, móveis e objetos.",
+        "Teste amostras grandes, em paredes diferentes, de manhã, à tarde e à noite."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a cor muda depois de pintada e como ler a luz do cômodo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada tinta reflete uma parte da luz que recebe. A revista Homes & Gardens explica essa medida, chamada LRV (sigla em inglês para valor de reflexão da luz), numa escala de 0, o preto que absorve tudo, a 100, o branco puro. Quanto mais alto o número, mais clara a parede parece e mais luz ela devolve ao ambiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas reflexão só ajuda quando há luz para refletir. Num cômodo escuro, um branco de valor alto pode parecer acinzentado. Nesses casos, melhorar a iluminação costuma render mais do que clarear a tinta, e uma cor profunda pode até ser a escolha mais bonita, criando um ambiente intimista em sala de jantar ou escritório."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A orientação das janelas também conta, e aqui vale um cuidado: guias estrangeiros falam do hemisfério norte. No Brasil a lógica se inverte. Fachadas voltadas para o norte recebem sol direto boa parte do dia; as voltadas para o sul ficam com luz mais fria e constante; a do oeste fica dourada no fim da tarde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As lâmpadas completam o quadro. Segundo a JC Licht, lâmpadas de temperatura de cor mais baixa, medida em kelvin, deixam a luz quente e amarelada; as de valor mais alto puxam para o azul. O índice de reprodução de cor (IRC) indica o quanto a lâmpada mostra a cor fiel. Por isso, teste a tinta com a iluminação que você vai usar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Passo a passo para decidir a cor antes de comprar a tinta"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Observe a luz:** anote para onde a janela está voltada e em que horário você mais usa o cômodo.",
+        "**Defina a proporção:** pela regra 60-30-10, cerca de 60% da cor vem de paredes e peças grandes, 30% de cortinas e estofados e 10% de objetos de destaque.",
+        "**Escolha o papel da parede:** fundo neutro para móveis marcantes ou protagonista num cômodo de mobiliário simples.",
+        "**Teste grande:** pinte amostras de bom tamanho, em pelo menos duas paredes, e veja de manhã, à tarde e à noite.",
+        "**Pense no acabamento:** quanto mais brilho, mais luz a parede reflete e mais aparecem as imperfeições."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra 60-30-10, lembrada pelo blog da Planner 5D, é um ponto de partida, não uma obrigação. Uma casa minimalista pode funcionar com uma cor dominante e quase nada além; um ambiente eclético pede mais liberdade. Para ver combinações de móveis e materiais, passeie por [Interiores e mobiliário](/blog/categoria/interiores) e pelo [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel e quer avaliar como a luz de cada cômodo vai receber as cores que você imagina, a equipe da {{cliente}} acompanha a visita com você e ajuda a olhar a orientação das janelas. Escolha a cor depois de entender a luz, nunca antes."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a cor de parede que deixa o ambiente maior?",
+      "resposta": "Tons claros, que refletem mais luz, costumam ampliar a sensação de espaço, desde que o cômodo tenha boa iluminação. Num ambiente escuro, melhorar a luz pesa mais do que a tinta."
+    },
+    {
+      "pergunta": "Por que a cor da parede ficou diferente da amostra?",
+      "resposta": "A amostra pequena, vista sob a luz da loja, engana. A luz natural do cômodo, a temperatura de cor das lâmpadas e o brilho do acabamento mudam o tom percebido."
+    },
+    {
+      "pergunta": "Quantas cores usar num mesmo ambiente?",
+      "resposta": "A regra 60-30-10 sugere uma cor dominante, uma secundária e uma de destaque. É uma referência flexível: ambientes minimalistas funcionam com menos cores."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "What is Light Reflective Value and why is it important when choosing paint colors? — Homes & Gardens",
+      "url": "https://homesandgardens.com/interior-design/what-is-light-reflective-value",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "How lighting affects paint color — JC Licht",
+      "url": "https://jclicht.com/blogs/our-blog/how-lighting-affects-paint-color",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "A regra 60-30-10 e como usá-la no design de interiores — Planner 5D",
+      "url": "https://planner5d.com/blog/pt/regra-60-30-10/",
+      "data": "outubro de 2026"
+    }
+  ]
+}
