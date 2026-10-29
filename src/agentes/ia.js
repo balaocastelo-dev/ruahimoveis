@@ -35,9 +35,8 @@ function origemClaude() { return central.anthropic() ? 'central' : process.env.A
 const modeloClaude = () => central.anthropicModelo() || MODELO_CLAUDE_PADRAO;
 /** Quem atende primeiro: 'claude', 'gemini' ou 'ollama'. A chave própria da imobiliária (Gemini) vem antes de tudo. */
 function provedor() {
-  if (propria()) return 'gemini';
   if (central.preferido() === 'gemini' && chave()) return 'gemini';
-  if (chaveClaude()) return 'claude';
+  if (chaveClaude()) return 'claude';            // decisão do Thiago (29/10): o Claude atende primeiro
   if (chave()) return 'gemini';
   return 'ollama';
 }
@@ -114,7 +113,7 @@ async function claude(sistema, pedido, o = {}) {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-api-key': k, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
-        model: modelo, max_tokens: o.max_tokens || 1500, temperature: 0.35,
+        model: modelo, max_tokens: o.max_tokens || 1500,   // sem temperature: os modelos novos do Claude a recusam
         system: `${sistema}\n\nResponda SOMENTE com o JSON pedido, sem texto antes ou depois e sem cercas de código.`,
         messages: [{ role: 'user', content: pedido }],
       }),

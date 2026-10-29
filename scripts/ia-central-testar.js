@@ -23,7 +23,8 @@ const fim = (k) => (k ? '…' + String(k).slice(-4) : 'nenhuma');
   console.log('  leitura  :', e.erro ? 'ERRO: ' + e.erro : 'ok', '| imobiliária:', central.euSync());
 
   const a = IA.ajustes();
-  console.log('\nquem atende aqui:', a.provedor, '| modelo:', a.modelo, '| chave', fim(a.chave_final ? 'xxxx' + a.chave_final : ''));
+  console.log('\nquem atende aqui:', a.provedor, '| modelo:', a.modelo, '| chave …' + (a.chave_final || '?'),
+    '| reserva:', a.provedor === 'claude' ? (a.gemini.tem_chave ? 'Gemini ' + a.gemini.modelo : 'nenhuma') : (a.claude.tem_chave ? 'Claude ' + a.claude.modelo : 'nenhuma'));
   if (a.provedor === 'ollama') { console.log('Sem chave nenhuma: nada a testar na nuvem.'); process.exit(1); }
 
   const t0 = Date.now();
