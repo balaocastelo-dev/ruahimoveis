@@ -11,6 +11,7 @@
    esqueleto: sentado à mesa, digitando, andando, bebendo café, lendo papel, acenando. As animações vêm em dois arquivos
    partilhados (pessoas/anim-m.glb e anim-f.glb). Se um GLB não carregar, entra o boneco estilizado antigo (fazBoneco). */
 import { LUGAR_TELA, painelLugar, fechaPainelLugar } from '/escritorio-lugares.js';
+import { criaSom } from '/escritorio-som.js';
 import * as THREE from '/vendor/three/three.module.min.js';
 import { OrbitControls } from '/vendor/three/OrbitControls.js';
 import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
@@ -52,21 +53,21 @@ let LANG = 'pt';
 try { const l = localStorage.getItem('jg3d-lang'); if (T[l]) LANG = l; } catch {}
 const t = (k) => (T[LANG] && T[LANG][k]) || T.pt[k] || k;
 
-Object.assign(T.pt, { apres: 'Apresentar', anterior: 'Parada anterior', proxima: 'Próxima parada',
+Object.assign(T.pt, { somLigar: 'Ligar som ambiente', somDesligar: 'Desligar som ambiente', somReduzido: 'Som desativado: movimento reduzido', apres: 'Apresentar', anterior: 'Parada anterior', proxima: 'Próxima parada',
   tour_entrada: 'Bem-vindo ao escritório. Aqui você acompanha os agentes e as ações da equipe ao vivo.',
   tour_captacao: 'TH-IA-GO procura oportunidades e conversa com proprietários. As captações chegam ao Radar para a equipe acompanhar.',
   tour_vendas: 'Cada agente atende um setor da carteira pelo WhatsApp. As mesas mostram a atividade e dão acesso ao PC de cada agente.',
   tour_diretoria: 'Augusto e Marta coordenam o escritório. Relatórios, visitas e afazeres ajudam a equipe a organizar o dia.',
   tour_mural: 'O mural reúne as oportunidades de captação. Clique nele para abrir o Radar dentro do escritório.',
   tour_tv: 'A TV mostra os números do dia e os imóveis que chegaram hoje. Clique para abrir o painel do sistema.' });
-Object.assign(T.en, { apres: 'Present', anterior: 'Previous stop', proxima: 'Next stop',
+Object.assign(T.en, { somLigar: 'Enable ambient sound', somDesligar: 'Mute ambient sound', somReduzido: 'Sound disabled: reduced motion', apres: 'Present', anterior: 'Previous stop', proxima: 'Next stop',
   tour_entrada: 'Welcome to the office. Follow the agents and your team’s activities as they happen.',
   tour_captacao: 'TH-IA-GO finds opportunities and talks to property owners. New sourcing opportunities reach Radar for the team to follow up.',
   tour_vendas: 'Each agent handles a property sector on WhatsApp. The desks show their activity and open each agent’s PC.',
   tour_diretoria: 'Augusto and Marta coordinate the office. Reports, visits and tasks help the team organize the day.',
   tour_mural: 'The board brings sourcing opportunities together. Click it to open Radar inside the office.',
   tour_tv: 'The TV shows today’s numbers and newly added properties. Click to open the system dashboard.' });
-Object.assign(T.ja, { apres: '案内を開始', anterior: '前の場所', proxima: '次の場所',
+Object.assign(T.ja, { somLigar: '環境音をオン', somDesligar: '環境音をオフ', somReduzido: '動きを減らす設定のため消音', apres: '案内を開始', anterior: '前の場所', proxima: '次の場所',
   tour_entrada: 'オフィスへようこそ。エージェントとチームの活動をリアルタイムで確認できます。',
   tour_captacao: 'TH-IA-GOは物件を探し、オーナーと会話します。新しい案件はRadarに集まり、チームが対応します。',
   tour_vendas: '各エージェントが担当分野の物件をWhatsAppで案内します。デスクで活動を確認し、各自のPCを開けます。',
@@ -178,6 +179,10 @@ export async function telaEscritorio3D() {
   </div>`;
   const raiz = $('#j3');
   E = { raiz, ev: d.ev, au: d.au, agentes: {}, fila: [], rodando: false, overlays: [], idleDesde: performance.now(), apres: false, totais: d.totais || {}, voo: null, tempo: 0, dados: d, hover: null };
+  const estadoSom = E;
+  E.som = criaSom({ reduz, digitando: () => E === estadoSom && Object.values(E.agentes).some((a) => a.digita > 0 && !a.dorme), mudou: () => { if (E === estadoSom) somBotao(); } });
+  E.gestoSom = () => E === estadoSom && E.som.gesto();
+  raiz.addEventListener('pointerdown', E.gestoSom); raiz.addEventListener('keydown', E.gestoSom);
   hud();
   try {
     montaCena();
@@ -226,6 +231,7 @@ function para() {
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
   clearInterval(e.tvIntervalo);
   clearInterval(e.tempoIntervalo);
+  e.raiz.removeEventListener('pointerdown', e.gestoSom); e.raiz.removeEventListener('keydown', e.gestoSom); e.som?.fecha();
   if (e.andar) { try { e.andar.desmonta(); } catch {} }
   if (e.ro) e.ro.disconnect();
   document.removeEventListener('fullscreenchange', redimensiona);
@@ -298,6 +304,12 @@ ACT['j3-andar'] = async () => {
   } catch (e) { console.warn('andar:', e); toast('Não deu para entrar no escritório agora.', true); }
 };
 ACT['j3-apres'] = () => { if (E) { if (E.tour || E.apres) terminaTour(); else iniciaTour(); } };
+ACT['j3-som'] = () => E?.som.alterna();
+function somBotao() {
+  const b = $('#j3-som'); if (!b || !E?.som) return;
+  b.textContent = E.som.ligado ? '🔊' : '🔇'; b.disabled = reduz(); b.setAttribute('aria-pressed', String(E.som.ligado));
+  b.title = t(reduz() ? 'somReduzido' : E.som.ligado ? 'somDesligar' : 'somLigar'); b.setAttribute('aria-label', b.title);
+}
 
 // ---------- HUD, ticker, relógio, números ----------
 function hud() {
@@ -311,6 +323,7 @@ function hud() {
     <span class="j3-seg j3-lang">${langs.map(([k, n]) => `<button class="${k === LANG ? 'on' : ''}" data-act="j3-lang" data-lang="${k}">${n}</button>`).join('')}</span>
     <span class="j3-seg"><button class="on" title="${esc(t('ver3d'))}">3D</button><button data-act="jg-modo" data-modo="2d" title="${esc(t('ver2d'))}">2D</button></span>
     <button class="jg-bt j3-andar-bt" data-act="j3-andar" title="${esc(t('entrar'))}">🚶</button>
+    <button class="jg-bt" id="j3-som" data-act="j3-som"></button>
     <button class="jg-bt j3-apres ${E.apres || E.tour ? 'on' : ''}" data-act="j3-apres" title="${esc(t('apres'))}">▶ ${esc(t('apres'))}</button>
     <button class="jg-bt" data-act="j3-cheia" title="${esc(t('cheia'))}">⛶</button>`;
   const tk = $('#j3-ticker');
@@ -319,6 +332,7 @@ function hud() {
   relogio();
   E.raiz.classList.toggle('em-tour', !!E.tour); tourLegenda();
   numeros({ totais: E.totais });
+  somBotao();
 }
 function relogio() {
   if (!vivo()) return;
@@ -1272,6 +1286,7 @@ function quadro(agoraMs) {
   const dt = Math.min(0.05, (agoraMs - (E.ultimo || agoraMs)) / 1000); E.ultimo = agoraMs; E.tempo += dt;
   interpolaClima(dt);
   chuvaNoVidro(agoraMs);
+  E.som?.atualiza();
   if (E.tour && agoraMs >= E.tour.proxima) tourParada(E.tour.indice + 1);
   // andando dentro do escritório: o módulo cuida do personagem e da câmera
   if (E.andando && E.andar) {
@@ -1403,6 +1418,7 @@ window.jg3dChatBalao = (slug, texto) => { if (vivo()) balao(E.agentes[slug], '�
 function enfileira(item, abertura) {
   if (!vivo() || !item || !item.texto) return;
   item.texto = String(item.texto).replace(/\s+/g, ' ').slice(0, 110); item.abertura = !!abertura;
+  if (!abertura && !item.festa) E.som?.acao(['🙋', '🏢', '🥂', '📰', '🗺️'].includes(item.emoji) ? 'lead' : 'acao');
   E.fila.push(item);
   if (!E.rodando) roda();
 }
@@ -1415,7 +1431,7 @@ async function executa(it) {
   ticker(it);
   if (it.agente === 'porta') return visitante(it);
   const ag = E.agentes[it.agente]; if (!ag) return;
-  if (it.festa) festa();
+  if (it.festa) festa(!it.abertura);
   if (ag.ocupado || !it.vai || reduz() || ag.dorme) { balao(ag, it.emoji, it.texto, it.alerta ? 'alerta' : it.festa ? 'festa' : ''); digita(ag); return; }
   ag.ocupado = true;
   balao(ag, it.emoji, it.texto, it.festa ? 'festa' : '');
@@ -1471,8 +1487,9 @@ async function visitante(it) {
     E && E.cena.remove(b.g); baloes.remove(); if (b.rosto) b.rosto.material.map.dispose(); if (E) E.visitante = null;
   }
 }
-function festa() {
+function festa(comSom = false) {
   const c = $('#j3-confete'); if (!c || reduz()) return;
+  if (comSom) E.som?.acao('venda');
   const cores = ['#e8c36a', '#3ddc84', '#ff8a8a', '#7fb4ff', '#c9a0ff', '#ffb38a'];
   c.innerHTML = Array.from({ length: 90 }, (_, i) => `<i style="left:${Math.random() * 100}%;background:${cores[i % cores.length]};animation-delay:${(Math.random() * 0.8).toFixed(2)}s;animation-duration:${(2.4 + Math.random() * 1.6).toFixed(2)}s;transform:rotate(${Math.random() * 360}deg)"></i>`).join('');
   setTimeout(() => { if (c) c.innerHTML = ''; }, 4800);

@@ -149,6 +149,10 @@ Os limites de valor mudam em "Regras do escritório".
    [Open-Meteo](https://open-meteo.com/en/docs) modulam sol, céu e cidade sem substituir o ciclo dia/tarde/noite.
    Chuva usa um canvas 256² compartilhado por dois vidros, limitado a 12 fps. Celular e movimento reduzido só mudam
    cores; recursos e intervalo são descartados ao sair. CSP e dependências permanecem as mesmas.
+5. **Som opcional:** botão 🔇/🔊, inicialmente desligado, preferência `jg3d-som`. O contexto WebAudio só abre após
+   gesto do usuário. Ruído filtrado produz teclas quando agentes digitam; osciladores geram ding de ação, telefone
+   de lead e acorde junto ao confete de venda. Volume baixo, sem arquivos, sem sons no histórico inicial ou na aba
+   oculta. Movimento reduzido impede ativação e silencia imediatamente. Sair fecha contexto, fontes e intervalo.
 
 ### Verificação
 

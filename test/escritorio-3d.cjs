@@ -51,11 +51,28 @@ const clima = async (page, hora, nome) => {
     p.on('requestfailed', (r) => { if (!r.failure()?.errorText.includes('ERR_ABORTED')) falhas.push(`${r.failure()?.errorText} ${r.url()}`); });
   };
   monitora(page);
+  await page.addInitScript(() => {
+    const Audio = window.AudioContext;
+    window.AudioContext = class extends Audio { constructor(...args) { super(...args); window.__audio = this; window.__notas = 0; }
+      createOscillator() { window.__notas++; return super.createOscillator(); }
+    };
+  });
   await page.goto(base + '/teste-3d.html?quiet=1');
   await pronto(page); await pausa(page);
   await page.waitForFunction(() => Object.values(window.jg3dEstado().agentes).every((a) => Math.abs(a.b.corpo.position.y + 0.3) < 0.02), null, { timeout: 90000 });
   ok(true, '9 GLBs e 21 texturas carregados');
   ok(await page.locator('#j3-hud').isVisible(), 'HUD visível');
+  ok(await page.evaluate(() => !window.__audio && !window.jg3dEstado().som.ligado), 'som desligado e sem contexto antes do gesto');
+  await page.click('#j3-som');
+  await page.waitForFunction(() => window.__audio?.state === 'running');
+  await page.evaluate(() => window.jg3dEstado().som.acao('lead'));
+  ok(await page.evaluate(() => window.__notas === 4 && localStorage.getItem('jg3d-som') === '1'), 'som sintetiza telefone e guarda preferência');
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.waitForFunction(() => !window.jg3dEstado().som.ligado && window.__audio.state === 'suspended');
+  ok(await page.locator('#j3-som').isDisabled(), 'movimento reduzido silencia e bloqueia som');
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.waitForFunction(() => !document.querySelector('#j3-som').disabled);
+  await page.click('#j3-som'); await page.click('#j3-som');
   await page.waitForFunction(() => window.jg3dEstado().desempenho.fps !== null);
   // Composição completa, inclusive AO, mesmo se o software tiver acionado a redução.
   await page.evaluate(() => { const e = window.jg3dEstado(); e.gtao.enabled = true; });
@@ -194,6 +211,7 @@ const clima = async (page, hora, nome) => {
   await page.locator('[data-act="jg-modo"][data-modo="2d"]').click();
   await page.waitForSelector('#jg');
   ok(await page.evaluate(() => !window.jg3dEstado() && window.__descartados.length === 4), 'troca para 2D descarta composer e passes');
+  ok(await page.evaluate(() => window.__audio.state === 'closed'), 'sair do 3D fecha o contexto de áudio');
   await page.locator('[data-act="jg-modo"][data-modo="3d"]').click();
   await pronto(page); await pausa(page);
   ok(await page.evaluate(() => window.jg3dEstado().texturas.size === 21), 'reabre 3D com materiais, texturas e 9 humanos');
