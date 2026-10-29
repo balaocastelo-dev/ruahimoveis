@@ -1343,3 +1343,5 @@ a{text-underline-offset:.18em}
 @media (min-width:761px) and (max-width:1100px){.rs-pn{display:none}.rs-dia{min-height:96px}}
 .ev-kpi.quente span{color:color-mix(in srgb,var(--ink) 78%,var(--gold-ink))}
 .fx-cats button[aria-pressed="true"] span{color:#1b1c1e;opacity:1}
+/* superfícies escuras no tema claro: o dourado de texto volta a ser claro */
+.side,.topbar,.fx-cred,.fx-seg button[aria-pressed="true"],.perfil-escuro{--gold-ink:#d9b56e}
