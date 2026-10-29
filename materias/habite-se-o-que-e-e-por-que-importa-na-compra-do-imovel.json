@@ -1,0 +1,233 @@
+{
+  "slug": "habite-se-o-que-e-e-por-que-importa-na-compra-do-imovel",
+  "tema": "habite se o que e e por que importa na compra",
+  "titulo": "Habite-se: o que é e por que ele importa na compra do imóvel",
+  "resumo": "Habite-se é o documento da prefeitura que atesta a obra concluída conforme o projeto. Entenda por que ele pesa no registro, no financiamento e na revenda.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "habite-se",
+    "documentação",
+    "compra",
+    "imóvel novo",
+    "construção"
+  ],
+  "capa": {
+    "alt": "Casa térrea recém-construída com fachada clara, jardim recém-plantado e caminho de pedra até a porta de entrada"
+  },
+  "redes": {
+    "legenda": "Obra pronta ainda não é imóvel pronto. Quem diz isso, na prática, é o habite-se: o documento da prefeitura que confirma que a construção seguiu o projeto aprovado. Sem ele, a casa pode constar só como terreno na matrícula, o banco costuma recusar o financiamento e a revenda fica mais difícil. No blog, explicamos o que é, quem emite e como conferir antes de fechar negócio. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "habitese",
+      "documentacao",
+      "imovelnovo",
+      "comprarimovel",
+      "construcao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pesquisa o que é **habite-se** normalmente está perto de uma decisão: comprar um apartamento recém-entregue, fechar negócio numa casa construída há poucos anos ou receber as chaves de um imóvel comprado na planta. A palavra aparece em contratos e conversas com o banco, e muita gente só descobre sua importância quando algo trava no cartório."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o habite-se é o documento emitido pela prefeitura que atesta que a obra foi concluída de acordo com o projeto aprovado e que o imóvel pode ser ocupado. É com ele que a construção é registrada na matrícula. Sem esse passo, o comprador pode adquirir, no papel, apenas um terreno."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O habite-se é emitido pela prefeitura depois da obra concluída e, em geral, de uma vistoria.",
+        "Ele é a base para averbar a construção na matrícula do imóvel, no cartório de registro.",
+        "Sem habite-se e sem averbação, financiamento, registro e revenda costumam travar.",
+        "Antes de comprar, confira a matrícula atualizada e confirme a situação na prefeitura."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que é o habite-se e quem emite o documento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome oficial muda de cidade para cidade: certificado de conclusão de obra, auto de conclusão, carta de habitação ou alvará de utilização são algumas das variações citadas em artigo publicado no portal Jus. A função, porém, é a mesma. O município confirma que aquilo que foi construído corresponde ao projeto que ele aprovou e que a edificação atende às regras locais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o glossário do portal Portas, o pedido é feito depois que a obra termina, por quem tem o alvará de construção: o proprietário, o construtor ou a incorporadora. Num lançamento, a obtenção do documento é responsabilidade da incorporadora. A prefeitura analisa o pedido e costuma fazer uma vistoria para conferir se a obra seguiu o projeto, podendo exigir ajustes antes de emitir o certificado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os documentos pedidos variam conforme o código de obras de cada cidade. Entre os mais comuns, aparecem o projeto aprovado, o alvará de construção, o registro do responsável técnico pela obra (a ART, do engenheiro, ou o RRT, do arquiteto) e comprovantes das concessionárias de água, esgoto e energia. Quando o tipo de edificação exige, entra também o auto de vistoria do Corpo de Bombeiros, o AVCB."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prazo também depende do município. Em reportagem de 2026, o Portas mostrou que algumas prefeituras já aceitam o pedido pela internet e que há cidades que substituem a vistoria presencial por relatório fotográfico. Por isso, quem vai construir em Campinas ou em qualquer outra cidade faz bem em consultar o órgão de urbanismo local logo no começo da obra, e não só no fim."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que o habite-se pesa tanto na hora de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto central é a matrícula, a ficha do imóvel no cartório de registro de imóveis. A construção só passa a constar ali por meio da **averbação**, uma anotação feita pelo cartório, e o habite-se é o documento principal para isso. Sem a averbação, a matrícula pode continuar descrevendo apenas o terreno, e é isso que o comprador registra em seu nome."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Daí vêm os efeitos práticos. Os bancos costumam exigir a construção regularizada para aceitar o imóvel como garantia, então a falta do documento tende a bloquear o financiamento. Em muitas cidades, as ligações definitivas de água, luz e esgoto dependem dele. E, na hora de vender, o próximo comprador enfrentará as mesmas barreiras, o que reduz o número de interessados."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "O que muda com e sem o habite-se",
+      "colunas": [
+        "Situação",
+        "Com habite-se e construção averbada",
+        "Sem habite-se"
+      ],
+      "linhas": [
+        [
+          "Matrícula",
+          "Descreve o terreno e a construção",
+          "Pode descrever só o terreno"
+        ],
+        [
+          "Financiamento",
+          "O imóvel pode servir de garantia ao banco",
+          "O banco costuma recusar"
+        ],
+        [
+          "Ocupação",
+          "Autorizada pela prefeitura",
+          "Irregular, com risco de multa"
+        ],
+        [
+          "Ligações definitivas",
+          "Água, luz e esgoto sem entrave",
+          "Podem depender da regularização"
+        ],
+        [
+          "Revenda",
+          "Segue o caminho normal",
+          "Público menor e negociação mais difícil"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Resumo a partir do glossário do Portas e de artigo do portal Jus; as regras variam por município."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há ainda um efeito menos lembrado: depois que a obra é concluída e regularizada, o IPTU passa a considerar a área construída, e não só o terreno, como aponta o artigo do Jus. Isso não é um problema, apenas um custo a prever. Para entender outros cuidados com imóvel novo, vale percorrer os textos de [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Imóvel na planta, novo ou usado: o que olhar em cada caso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "**Na planta**, o habite-se é uma etapa que a incorporadora precisa cumprir antes da entrega. Vale ler no contrato como ele aparece no cronograma e o que acontece se atrasar. A expressão \"entrega das chaves\" nem sempre coincide com a emissão do documento, e é ele que permite individualizar as unidades e seguir com o registro e o repasse do financiamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "**No imóvel novo pronto**, a pergunta é direta: o habite-se já saiu e a construção já está averbada na matrícula? Se a resposta for não, o glossário do Portas trata a ausência como sinal de alerta. Não significa, necessariamente, que haja algo errado com a obra, mas o comprador precisa entender o motivo e o prazo antes de assinar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "**No imóvel usado**, a situação mais comum é outra: a casa tem habite-se, mas passou depois por ampliações que nunca foram aprovadas, como uma edícula, um andar a mais ou a área gourmet coberta. A área real fica maior do que a registrada. Regularizar costuma exigir projeto, responsável técnico e novo processo na prefeitura, e esse trabalho entra na negociação."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Comprar um imóvel que ainda precisa ser regularizado",
+      "pros": [
+        "Pode haver mais margem de negociação, já que o público interessado é menor.",
+        "Quando a pendência é simples, a regularização costuma ser um processo conhecido na prefeitura.",
+        "O comprador pode combinar no contrato quem arca com o processo e as taxas."
+      ],
+      "contras": [
+        "Financiamento bancário normalmente fica fora de alcance até a regularização.",
+        "Prazo e custo dependem do município e podem crescer com exigências da vistoria.",
+        "Se a construção não puder ser aprovada como está, pode ser preciso adaptar ou demolir partes.",
+        "Até a averbação, o registro em nome do comprador pode cobrir só o terreno."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Existem exceções previstas em lei federal. O Portas cita a Lei nº 13.865/2019, que, em certas condições, dispensa o habite-se para averbar casas térreas de uso residencial em áreas de baixa renda, concluídas há mais de cinco anos. São regras específicas, que não valem para a maioria das compras e precisam ser verificadas com o cartório."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como conferir o habite-se antes de fechar negócio"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Peça a matrícula atualizada** no cartório de registro de imóveis e veja se a construção aparece averbada, com a área construída.",
+        "**Compare a área da matrícula com a real**: medida diferente costuma indicar ampliação não regularizada.",
+        "**Consulte a prefeitura** sobre o certificado de conclusão, multas, embargos ou processos em aberto.",
+        "**No condomínio novo**, confirme se o habite-se do empreendimento saiu e se as unidades já foram individualizadas.",
+        "**Leve tudo a um profissional**: advogado especializado ou o próprio cartório podem dizer se a documentação permite o registro e o financiamento."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Cada caso é um caso",
+      "texto": "Este texto explica a regra geral. Documentação de imóvel envolve leis municipais e procedimentos de cartório que mudam de cidade para cidade. Antes de assinar, consulte um advogado, o cartório de registro de imóveis e, se houver obra a regularizar, um engenheiro ou arquiteto responsável."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A boa notícia é que, conferida com antecedência, a documentação raramente surpreende. Ela entra na conta junto com localização, planta e estado de conservação. Para seguir lendo sobre compra e construção, visite a [página inicial do blog](/blog). E se você está procurando um imóvel em Campinas, a equipe da {{cliente}} pode ajudar a separar as opções e a reunir os documentos para análise."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: antes de se apaixonar pela casa, confira se a matrícula conta a mesma história que você vê na visita."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Habite-se e averbação são a mesma coisa?",
+      "resposta": "Não. O habite-se é emitido pela prefeitura e atesta que a obra foi concluída conforme o projeto. A averbação é feita pelo cartório de registro de imóveis e anota a construção na matrícula, usando o habite-se como documento principal."
+    },
+    {
+      "pergunta": "Dá para financiar um imóvel sem habite-se?",
+      "resposta": "Normalmente não. Os bancos costumam exigir a construção regularizada e averbada para aceitar o imóvel como garantia. Cada instituição tem suas regras, por isso vale consultar o banco antes de avançar na negociação."
+    },
+    {
+      "pergunta": "Quem tira o habite-se num prédio novo?",
+      "resposta": "Em empreendimentos vendidos na planta, a obtenção do documento é responsabilidade da incorporadora. Ela faz o pedido à prefeitura depois de concluir a obra, e a emissão abre caminho para a individualização das unidades e o registro."
+    },
+    {
+      "pergunta": "Como saber se uma casa usada tem habite-se?",
+      "resposta": "Peça a matrícula atualizada no cartório e veja se a construção está averbada com a área correta. Depois, confirme na prefeitura se não há pendências. Se a área real for maior do que a registrada, houve ampliação que precisa ser regularizada."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Habite-se (glossário imobiliário) — Portas",
+      "url": "https://portas.com.br/glossario-imobiliario/habite-se/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Habite-se: o que é, quanto custa e como tirar — Portas",
+      "url": "https://portas.com.br/mercado-imobiliario/habite-se/",
+      "data": "julho de 2026, atualizado em outubro de 2026"
+    },
+    {
+      "nome": "Habite-se: um dos principais documentos de regularidade imobiliária de imóveis edificados — Jus",
+      "url": "https://jus.com.br/artigos/89536/habite-se-um-dos-principais-documentos-de-regularidade-imobiliaria-de-imoveis-edificados",
+      "data": "março de 2021"
+    }
+  ]
+}
