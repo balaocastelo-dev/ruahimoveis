@@ -322,7 +322,10 @@ function montar() {
   { const t = new THREE.Vector3(); box.getSize(t); tamanhoAlvo = Math.hypot(t.x, t.z); }
   alturaAlvo = Math.max(6, box.max.y);
   topoAlvo.set(baseAlvo.x, alturaAlvo, baseAlvo.z);
-  const torre = predios.filter((b) => b.alvo).sort((a, b) => b.h - a.h)[0];
+  // a torre do andar: entre as partes do condomínio com a altura máxima (±3 m), a de maior planta
+  // (sem isso, um pedaço fino do contorno podia ser o escolhido e a faixa dourada sumia dentro do prédio)
+  const alvosP = predios.filter((b) => b.alvo), hMax = Math.max(0, ...alvosP.map((b) => b.h));
+  const torre = alvosP.filter((b) => b.h >= hMax - 3).sort((a, b) => areaP(b.p) - areaP(a.p))[0];
   poligonoAlvo = torre ? torre.p : null;
 
   // rótulo do condomínio
