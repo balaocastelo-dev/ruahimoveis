@@ -3951,5 +3951,423 @@
     "ambiente": "banheiro"
    }
   ]
+ },
+ "6759": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/6759-1h.jpg",
+    "antigos": [
+     "cademeuap/6759-1.jpg",
+     "cademeuap/6759-1f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/6759-2h.jpg",
+    "antigos": [
+     "cademeuap/6759-2.jpg",
+     "cademeuap/6759-2f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/6759-3h.jpg",
+    "antigos": [
+     "cademeuap/6759-3.jpg",
+     "cademeuap/6759-3f.jpg"
+    ],
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "cademeuap/6759-4h.jpg",
+    "antigos": [
+     "cademeuap/6759-4.jpg",
+     "cademeuap/6759-4f.jpg"
+    ],
+    "ambiente": "garagem"
+   },
+   {
+    "arquivo": "cademeuap/6759-5h.jpg",
+    "antigos": [
+     "cademeuap/6759-5.jpg",
+     "cademeuap/6759-5f.jpg"
+    ],
+    "ambiente": "lavanderia"
+   }
+  ]
+ },
+ "10175": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/10175-1h.jpg",
+    "antigos": [
+     "cademeuap/10175-1.jpg",
+     "cademeuap/10175-1f.jpg"
+    ],
+    "ambiente": "area_gourmet"
+   },
+   {
+    "arquivo": "cademeuap/10175-2h.jpg",
+    "antigos": [
+     "cademeuap/10175-2.jpg",
+     "cademeuap/10175-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/10175-3h.jpg",
+    "antigos": [
+     "cademeuap/10175-3.jpg",
+     "cademeuap/10175-3f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/10175-4h.jpg",
+    "antigos": [
+     "cademeuap/10175-4.jpg",
+     "cademeuap/10175-4f.jpg"
+    ],
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "16444": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/16444-1h.jpg",
+    "antigos": [
+     "cademeuap/16444-1.jpg",
+     "cademeuap/16444-1f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/16444-2h.jpg",
+    "antigos": [
+     "cademeuap/16444-2.jpg",
+     "cademeuap/16444-2f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/16444-3h.jpg",
+    "antigos": [
+     "cademeuap/16444-3.jpg",
+     "cademeuap/16444-3f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/16444-4h.jpg",
+    "antigos": [
+     "cademeuap/16444-4.jpg",
+     "cademeuap/16444-4f.jpg"
+    ],
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "cademeuap/16444-5h.jpg",
+    "antigos": [
+     "cademeuap/16444-5.jpg",
+     "cademeuap/16444-5f.jpg"
+    ],
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "18062": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/18062-1h.jpg",
+    "antigos": [
+     "cademeuap/18062-1.jpg",
+     "cademeuap/18062-1f.jpg"
+    ],
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "cademeuap/18062-2h.jpg",
+    "antigos": [
+     "cademeuap/18062-2.jpg",
+     "cademeuap/18062-2f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/18062-3h.jpg",
+    "antigos": [
+     "cademeuap/18062-3.jpg",
+     "cademeuap/18062-3f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/18062-4h.jpg",
+    "antigos": [
+     "cademeuap/18062-4.jpg",
+     "cademeuap/18062-4f.jpg"
+    ],
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "18676": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/18676-1h.jpg",
+    "antigos": [
+     "cademeuap/18676-1.jpg",
+     "cademeuap/18676-1f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/18676-2h.jpg",
+    "antigos": [
+     "cademeuap/18676-2.jpg",
+     "cademeuap/18676-2f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/18676-3h.jpg",
+    "antigos": [
+     "cademeuap/18676-3.jpg",
+     "cademeuap/18676-3f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/18676-4h.jpg",
+    "antigos": [
+     "cademeuap/18676-4.jpg",
+     "cademeuap/18676-4f.jpg"
+    ],
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "cademeuap/18676-5h.jpg",
+    "antigos": [
+     "cademeuap/18676-5.jpg",
+     "cademeuap/18676-5f.jpg"
+    ],
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "21227": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/21227-1h.jpg",
+    "antigos": [
+     "cademeuap/21227-1.jpg",
+     "cademeuap/21227-1f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/21227-2h.jpg",
+    "antigos": [
+     "cademeuap/21227-2.jpg",
+     "cademeuap/21227-2f.jpg"
+    ],
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "cademeuap/21227-3h.jpg",
+    "antigos": [
+     "cademeuap/21227-3.jpg",
+     "cademeuap/21227-3f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/21227-4h.jpg",
+    "antigos": [
+     "cademeuap/21227-4.jpg",
+     "cademeuap/21227-4f.jpg"
+    ],
+    "ambiente": "varanda"
+   }
+  ]
+ },
+ "22661": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/22661-1h.jpg",
+    "antigos": [
+     "cademeuap/22661-1.jpg",
+     "cademeuap/22661-1f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/22661-2h.jpg",
+    "antigos": [
+     "cademeuap/22661-2.jpg",
+     "cademeuap/22661-2f.jpg"
+    ],
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "cademeuap/22661-3h.jpg",
+    "antigos": [
+     "cademeuap/22661-3.jpg",
+     "cademeuap/22661-3f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/22661-4h.jpg",
+    "antigos": [
+     "cademeuap/22661-4.jpg",
+     "cademeuap/22661-4f.jpg"
+    ],
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "24645": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/24645-1h.jpg",
+    "antigos": [
+     "cademeuap/24645-1.jpg",
+     "cademeuap/24645-1f.jpg"
+    ],
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "cademeuap/24645-2h.jpg",
+    "antigos": [
+     "cademeuap/24645-2.jpg",
+     "cademeuap/24645-2f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/24645-3h.jpg",
+    "antigos": [
+     "cademeuap/24645-3.jpg",
+     "cademeuap/24645-3f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/24645-4h.jpg",
+    "antigos": [
+     "cademeuap/24645-4.jpg",
+     "cademeuap/24645-4f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/24645-5h.jpg",
+    "antigos": [
+     "cademeuap/24645-5.jpg",
+     "cademeuap/24645-5f.jpg"
+    ],
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "27105": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/27105-1h.jpg",
+    "antigos": [
+     "cademeuap/27105-1.jpg",
+     "cademeuap/27105-1f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/27105-2h.jpg",
+    "antigos": [
+     "cademeuap/27105-2.jpg",
+     "cademeuap/27105-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/27105-3h.jpg",
+    "antigos": [
+     "cademeuap/27105-3.jpg",
+     "cademeuap/27105-3f.jpg"
+    ],
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "cademeuap/27105-4h.jpg",
+    "antigos": [
+     "cademeuap/27105-4.jpg",
+     "cademeuap/27105-4f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "cademeuap/27105-5h.jpg",
+    "antigos": [
+     "cademeuap/27105-5.jpg",
+     "cademeuap/27105-5f.jpg"
+    ],
+    "ambiente": "varanda"
+   }
+  ]
+ },
+ "32515": {
+  "imob": "cademeuap",
+  "fotos": [
+   {
+    "arquivo": "cademeuap/32515-1h.jpg",
+    "antigos": [
+     "cademeuap/32515-1.jpg",
+     "cademeuap/32515-1f.jpg"
+    ],
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "cademeuap/32515-2h.jpg",
+    "antigos": [
+     "cademeuap/32515-2.jpg",
+     "cademeuap/32515-2f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "cademeuap/32515-3h.jpg",
+    "antigos": [
+     "cademeuap/32515-3.jpg",
+     "cademeuap/32515-3f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "cademeuap/32515-4h.jpg",
+    "antigos": [
+     "cademeuap/32515-4.jpg",
+     "cademeuap/32515-4f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "cademeuap/32515-5h.jpg",
+    "antigos": [
+     "cademeuap/32515-5.jpg",
+     "cademeuap/32515-5f.jpg"
+    ],
+    "ambiente": "banheiro"
+   }
+  ]
  }
 }
