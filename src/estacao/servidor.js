@@ -14,22 +14,32 @@ const C = require('../plataforma/central');
 
 const json = (s, d) => { try { return s ? JSON.parse(s) : d; } catch { return d; } };
 const agora = () => new Date().toISOString();
-// A chave da estação: gerada na tela (fica cifrada no banco) ou posta nas variáveis do projeto (ESTACAO_ID + ESTACAO_CHAVE).
-// A chave da estação, em ordem: a própria da imobiliária (gerada na tela, cifrada no banco) → a CENTRAL da
-// plataforma (plataforma.config 'estacao_chave': o Thiago mantém uma só e toda imobiliária usa de graça, como a
-// chave de IA) → a variável do projeto (ESTACAO_ID + ESTACAO_CHAVE). Com a central, o id é o próprio schema.
-const estacao = () => {
+// A chave da estação pode vir de três lugares, e TODAS valem ao mesmo tempo (a estação pode estar
+// configurada de qualquer uma das formas, e trocar de forma não pode derrubar o PC de ninguém):
+//   1. a própria da imobiliária, gerada na tela (cifrada no banco, em config.estacao);
+//   2. a variável do projeto (ESTACAO_ID + ESTACAO_CHAVE);
+//   3. a CENTRAL da plataforma (plataforma.config 'estacao_chave'): o Thiago mantém uma só e toda
+//      imobiliária usa de graça, como a chave de IA. Nesse caso o id é o próprio schema.
+// Qual delas a estação usa de fato só se sabe quando ela bate aqui: a batida guarda a reconhecida em
+// ULTIMA, e é com essa que assinamos o passe da tela — senão a tela abriria o PC com a chave errada.
+let ULTIMA = null;
+function chavesEstacao() {
+  const l = [];
   const e = json(getConfig('estacao'), {});
-  if (e.chave) return e;
-  if (C.estacaoChave()) return { id: C.euSync(), central: true };
-  if (process.env.ESTACAO_CHAVE) return { id: process.env.ESTACAO_ID || 'imob', env: true };
-  return e;
+  if (e.chave) { const k = IA.decifra(e.chave); if (k) l.push({ k, info: e }); }
+  if (process.env.ESTACAO_CHAVE) l.push({ k: process.env.ESTACAO_CHAVE, info: { id: process.env.ESTACAO_ID || 'imob', env: true } });
+  const c = C.estacaoChave();
+  if (c) l.push({ k: c, info: { id: C.euSync(), central: true } });
+  return l;
+}
+const combina = (a, b) => !!a && !!b && a.length === b.length && crypto.timingSafeEqual(Buffer.from(a), Buffer.from(b));
+const escolhida = () => {
+  const l = chavesEstacao();
+  if (ULTIMA && l.some((x) => x.k === ULTIMA.k)) return ULTIMA;   // a que a estação está usando mesmo
+  return l[0] || null;
 };
-const chaveEstacao = () => {
-  const e = json(getConfig('estacao'), {});
-  if (e.chave) return IA.decifra(e.chave);
-  return C.estacaoChave() || process.env.ESTACAO_CHAVE || null;
-};
+const estacao = () => (escolhida() ? escolhida().info : json(getConfig('estacao'), {}));
+const chaveEstacao = () => (escolhida() ? escolhida().k : null);
 const status = () => json(getConfig('estacao_status'), {});
 const online = (s = status()) => !!(s.em && Date.now() - new Date(s.em).getTime() < 60e3);
 
@@ -164,8 +174,10 @@ const est = express.Router();
 est.use(express.json({ limit: '2mb' }));
 est.use(async (req, res, next) => {
   await C.carregar();
-  const k = chaveEstacao(); const v = String(req.get('x-estacao') || '');
-  if (!k || v.length !== k.length || !crypto.timingSafeEqual(Buffer.from(v), Buffer.from(k))) return res.status(401).json({ erro: 'Chave da estação inválida.' });
+  const v = String(req.get('x-estacao') || '');
+  const achou = chavesEstacao().find((x) => combina(v, x.k));
+  if (!achou) return res.status(401).json({ erro: 'Chave da estação inválida.' });
+  ULTIMA = achou;
   next();
 });
 function agentesParaEstacao() {
