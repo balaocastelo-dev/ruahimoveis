@@ -1,0 +1,150 @@
+{
+  "slug": "como-iluminar-um-quadro-em-casa-sem-danificar-a-obra",
+  "tema": "como iluminar um quadro em casa",
+  "formato": "dica",
+  "titulo": "Como iluminar um quadro em casa sem danificar a obra",
+  "resumo": "Iluminar um quadro em casa pede luz suave, sem sol direto e sem calor. Veja quanta luz cada tipo de obra aguenta, qual lâmpada usar e onde pendurar.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "arte em casa",
+    "iluminação",
+    "decoração",
+    "interiores"
+  ],
+  "capa": {
+    "alt": "Parede de sala em tom quente com uma pintura abstrata emoldurada, iluminada de forma suave por um spot no teto"
+  },
+  "redes": {
+    "legenda": "Sabia que a luz que valoriza um quadro também pode desbotar a obra com o tempo? Sol direto, lâmpada quente colada na moldura e parede úmida são os vilões mais comuns. Museus seguem limites de luz para cada tipo de material, e dá para levar essa lógica para a sala de casa. No blog, mostramos quanta luz cada obra aguenta, qual lâmpada escolher e onde pendurar. Leia no blog (link na bio).",
+    "hashtags": [
+      "arteemcasa",
+      "iluminacao",
+      "decoracao",
+      "interiores",
+      "designdeinteriores",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura **como iluminar um quadro em casa** quer que a obra apareça bem à noite, com cores fiéis e sem reflexo. A dúvida faz sentido: uma pintura ou gravura mal iluminada some na parede, e a luz forte demais, além de ofuscar, vai desbotando os pigmentos aos poucos, sem que se perceba no dia a dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: use luz indireta ou um spot no teto, com lâmpada LED de boa reprodução de cor, mantenha a obra longe do sol direto e de fontes de calor e dose a intensidade conforme o material. Papel e aquarela pedem bem menos luz do que uma pintura a óleo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Luz desbota por intensidade vezes tempo: metade da luz ou metade das horas é metade do dano.",
+        "Obras em papel, aquarelas e fotografias pedem luz baixa; óleo aguenta mais.",
+        "LED é a escolha mais segura: pouco calor e pouca radiação ultravioleta.",
+        "Evite sol direto, parede externa úmida e luminária presa colada à moldura."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quanta luz cada tipo de obra aguenta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Canadian Conservation Institute, órgão do governo do Canadá dedicado à conservação de acervos, explica que o dano da luz é cumulativo: depende da intensidade multiplicada pelo tempo de exposição. A luz do dia comum chega a cerca de 30.000 lux (lux é a medida de quanta luz chega a uma superfície) e pode desbotar pigmentos muito sensíveis em poucos dias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os museus agrupam as obras pela sensibilidade. A tabela abaixo resume os limites indicados pela Museums Galleries Scotland, entidade que orienta os museus escoceses. Em casa ninguém precisa de luxímetro, mas a referência ajuda a decidir onde pôr cada peça: a gravura frágil vai para a parede mais protegida, e a escultura de pedra pode ficar perto da janela."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Luz máxima recomendada por tipo de material",
+      "colunas": [
+        "Sensibilidade",
+        "Exemplos",
+        "Luz máxima"
+      ],
+      "linhas": [
+        [
+          "Muito sensível",
+          "Desenhos, gravuras, aquarelas, fotografias coloridas, tecidos",
+          "50 lux"
+        ],
+        [
+          "Moderada",
+          "Pintura a óleo e têmpera, madeira, laca, fotografia em preto e branco atual",
+          "200 lux"
+        ],
+        [
+          "Pouco sensível",
+          "Pedra, cerâmica, metal e vidro",
+          "300 lux"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Limites da Museums Galleries Scotland. Para comparação, uma sala de escritório comum fica perto de 500 lux, segundo o Canadian Conservation Institute."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem tem uma obra de valor afetivo ou financeiro, vale também o vidro ou acrílico com filtro ultravioleta na moldura, recomendado pelo instituto canadense. Mas atenção: o filtro corta o ultravioleta, não a luz visível. Ele ajuda, mas não autoriza deixar a gravura exposta ao sol da tarde. Mais ideias de decoração estão em [Interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual luminária usar e onde pendurar o quadro"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Prefira LED:** segundo os dois guias consultados, emite pouco calor e pouca radiação ultravioleta, ao contrário das lâmpadas halógenas e incandescentes.",
+        "**Escolha boa reprodução de cor:** o índice IRC (ou CRI) mostra quão fiéis as cores ficam; quanto mais perto de 100, melhor.",
+        "**Spot no teto ou trilho, a distância:** ilumina por igual e mantém o calor longe. A arandela presa à moldura raramente funciona bem, porque ilumina de forma desigual e pode aquecer a obra.",
+        "**Use dimmer:** permite baixar a luz quando ninguém está olhando o quadro e reduz a exposição acumulada.",
+        "**Fuja do sol direto:** cortina, persiana ou película nas janelas reduzem a luz que chega às paredes."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lugar também importa. O instituto canadense recomenda evitar paredes externas, que ficam mais frias e podem acumular umidade, além de saídas de ar e aquecedores. Umidade entre 40% e 60% e temperatura entre 16 °C e 25 °C são o ambiente indicado para pinturas. Banheiro e cozinha, com vapor e variação de temperatura, não são bons lugares para obras delicadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a instalação pedir novo ponto de luz no teto ou um trilho, chame um eletricista qualificado: não mexa na fiação por conta própria. Se você está procurando um imóvel com paredes generosas e boa luz para a sua coleção, outros textos estão na [página inicial do blog](/blog), e a equipe da {{cliente}} pode ajudar a encontrar a casa certa em Campinas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: luz suave de LED, longe do sol e do calor, e na medida que o material da obra aguenta."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso pendurar um quadro na parede que recebe sol?",
+      "resposta": "Não é recomendado, principalmente para obras em papel, aquarelas e fotografias. A luz do dia é muito intensa e desbota os pigmentos com o tempo. Se não houver outra parede, controle a entrada de sol com cortina ou película."
+    },
+    {
+      "pergunta": "Qual lâmpada é melhor para iluminar um quadro?",
+      "resposta": "O LED costuma ser a melhor escolha, porque esquenta pouco e emite pouca radiação ultravioleta. Procure um modelo com índice de reprodução de cor alto, para que as cores da obra apareçam fiéis."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Environmental Guidelines for Paintings (CCI Notes 10/4) — Canadian Conservation Institute",
+      "url": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/environmental-display-guidelines-paintings.html",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Conservation and lighting — Museums Galleries Scotland",
+      "url": "https://www.museumsgalleriesscotland.org.uk/advice-article/conservation-and-lighting/",
+      "data": "outubro de 2026"
+    }
+  ]
+}
