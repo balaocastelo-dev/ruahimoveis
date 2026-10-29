@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   res.setHeader('Referrer-Policy', 'same-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' wss://*.trycloudflare.com wss://*.corretordofuturo.app ws://127.0.0.1:* ws://localhost:*; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' blob: wss://*.trycloudflare.com wss://*.corretordofuturo.app ws://127.0.0.1:* ws://localhost:*; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"); // blob: = texturas dos humanos 3D (GLTFLoader lê as imagens embutidas por blob:)
   next();
 });
 
