@@ -22,10 +22,15 @@ const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julh
 // Fotos com versão em alta definição (ampliadas a partir da original, em public/portal-assets/signature/<id>-1920.jpg e -2560.jpg).
 const HD = new Set([174]);
 /** A imagem de fundo do topo: alta definição quando existe, senão a foto do banco. */
+// Capa sem zoom e sem corte: a foto aparece inteira em qualquer tela (celular, tablet, PC); o espaço que sobra
+// nas laterais é preenchido pela própria foto desfocada. Nos portais de demonstração usa a versão em alta e sem
+// carimbo (rota /imoveis/foto/:id/capa) e avisa em texto, fora da foto, que a imagem é ilustrativa.
+const DEMONSTRACAO = /^(1|sim|true)$/i.test(String(process.env.PORTAL_DEMONSTRACAO || ''));
 function fundo(foto) {
-  const src = fotoUrl(foto);
   const hd = HD.has(foto) ? `/portal-assets/signature/${foto}` : null;
-  return `<div class="s-hero-fundo" aria-hidden="true"><img src="${hd ? `${hd}-1920.jpg` : src}"${hd ? ` srcset="${hd}-1920.jpg 1920w, ${hd}-2560.jpg 2560w" sizes="100vw" width="2560" height="1706"` : ' width="1280" height="853"'} alt="" fetchpriority="high" decoding="async"></div>`;
+  const src = hd ? `${hd}-1920.jpg` : `/imoveis/foto/${foto}/capa?v=1`;
+  const extra = hd ? ` srcset="${hd}-1920.jpg 1920w, ${hd}-2560.jpg 2560w" sizes="100vw" width="2560" height="1706"` : ' width="1920" height="1280"';
+  return `<div class="s-hero-fundo" aria-hidden="true"><img class="s-hero-desfoque" src="${src}" alt="" decoding="async"><img class="s-hero-foto" src="${src}"${extra} alt="" fetchpriority="high" decoding="async">${DEMONSTRACAO ? '<span class="s-hero-aviso">Imagem ilustrativa</span>' : ''}</div>`;
 }
 
 const ehSignature = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);

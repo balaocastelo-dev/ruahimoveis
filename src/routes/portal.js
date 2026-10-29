@@ -91,28 +91,47 @@ router.get('/imoveis/dados.json', async (req, res) => {
 // ele mesmo, com cache longo na Vercel: o navegador do visitante nunca precisa alcançar o endereço de origem
 // (raw.githubusercontent.com é bloqueado em algumas redes e navegadores).
 const fotosExternas = new Map();
-async function fotoExterna(res, f) {
-  const url = String(f.url_externa || '');
-  if (!/^https:\/\/[^\s"'<>]+$/i.test(url)) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+async function buscarExterna(url, avisar = true) {
+  if (!/^https:\/\/[^\s"'<>]+$/i.test(url)) return null;
   let item = fotosExternas.get(url);
-  if (!item) {
-    try {
-      const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
-      const tipo = r.headers.get('content-type') || '';
-      if (!r.ok || !/^image\//.test(tipo)) throw new Error(`origem respondeu ${r.status} ${tipo}`);
-      item = { tipo, buf: Buffer.from(await r.arrayBuffer()) };
-      if (fotosExternas.size > 120) fotosExternas.delete(fotosExternas.keys().next().value);
-      fotosExternas.set(url, item);
-    } catch (e) {
-      console.error('[portal] foto externa', e.message);
-      res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(502);
-    }
+  if (item) return item;
+  try {
+    const r = await fetch(url, { signal: AbortSignal.timeout(15000) });
+    const tipo = r.headers.get('content-type') || '';
+    if (!r.ok || !/^image\//.test(tipo)) throw new Error(`origem respondeu ${r.status} ${tipo}`);
+    item = { tipo, buf: Buffer.from(await r.arrayBuffer()) };
+    if (fotosExternas.size > 120) fotosExternas.delete(fotosExternas.keys().next().value);
+    fotosExternas.set(url, item);
+    return item;
+  } catch (e) {
+    if (avisar) console.error('[portal] foto externa', e.message);
+    return null;
   }
+}
+function enviarExterna(res, item, cache = 'public, max-age=604800, s-maxage=2592000, immutable') {
+  if (!item) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(502); }
   res.setHeader('Content-Type', item.tipo);
-  res.setHeader('Cache-Control', 'public, max-age=604800, s-maxage=2592000, immutable');
+  res.setHeader('Cache-Control', cache);
   res.setHeader('X-Content-Type-Options', 'nosniff');
   return res.end(item.buf);
 }
+async function fotoExterna(res, f) {
+  const url = String(f.url_externa || '');
+  if (!/^https:\/\/[^\s"'<>]+$/i.test(url)) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  return enviarExterna(res, await buscarExterna(url));
+}
+// Capa (topo da página Signature e do imóvel): a versão em alta e sem carimbo (<id>-<n>c.jpg), quando existe.
+// Enquanto ela não existe, entrega a foto normal com cache curto, para a capa nova aparecer assim que publicada.
+router.get('/imoveis/foto/:id/capa', async (req, res) => {
+  if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
+  const f = dados.fotoPublica(req.params.id);
+  if (!f) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  if (!f.url_externa) return res.redirect(302, `/imoveis/foto/${f.id}?v=2`);
+  const url = String(f.url_externa);
+  const limpa = /h\.jpg$/i.test(url) ? await buscarExterna(url.replace(/h\.jpg$/i, 'c.jpg'), false) : null;
+  if (limpa) return enviarExterna(res, limpa);
+  return enviarExterna(res, await buscarExterna(url), 'public, max-age=300, s-maxage=300');
+});
 router.get('/imoveis/foto/:id/og.jpg', async (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
   const f = dados.fotoPublica(req.params.id);

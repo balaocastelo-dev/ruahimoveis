@@ -465,12 +465,21 @@ body.p-sig{
 .p-sig .p-campo input:focus,.p-sig .p-campo textarea:focus{border-color:var(--ouro)}
 .p-sig .p-rodape{border-top-color:var(--linha)}
 .s-sobre{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--salvia);margin:0 0 14px;font-weight:400}
-.s-hero{position:relative;min-height:min(88vh,860px);display:flex;align-items:flex-end;margin-top:22px;overflow:hidden;isolation:isolate}
-.s-hero-fundo{position:absolute;inset:0;z-index:-1}
-.s-hero-fundo img{width:100%;height:100%;object-fit:cover;animation:s-zoom 26s ease-out both}
-.s-hero-fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,13,.72) 0%,rgba(14,14,13,.38) 42%,rgba(14,14,13,0) 70%),linear-gradient(180deg,rgba(14,14,13,.1) 0%,rgba(14,14,13,.2) 45%,rgba(14,14,13,.9) 100%)}
-@keyframes s-zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.s-hero-fundo img{animation:none}}
+/* Capa: a foto inteira, sem zoom e sem corte, em qualquer tela. A altura acompanha a proporção da foto (3:2);
+   em telas mais largas que isso, as laterais são preenchidas pela própria foto desfocada. */
+.s-hero{position:relative;min-height:min(88vh,860px,66.667vw);display:flex;align-items:flex-end;margin-top:22px;overflow:hidden;isolation:isolate}
+.s-hero-fundo{position:absolute;inset:0;z-index:-1;background:#0e0e0d}
+.s-hero-fundo img{position:absolute;inset:0;width:100%;height:100%}
+.s-hero-desfoque{object-fit:cover;filter:blur(34px) brightness(.5) saturate(1.1);transform:scale(1.15)}
+.s-hero-foto{object-fit:contain}
+.s-hero-fundo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,14,13,.66) 0%,rgba(14,14,13,.3) 38%,rgba(14,14,13,0) 62%),linear-gradient(180deg,rgba(14,14,13,0) 0%,rgba(14,14,13,0) 55%,rgba(14,14,13,.82) 100%)}
+.s-hero-aviso{position:absolute;top:12px;right:14px;z-index:1;font-size:11px;letter-spacing:.06em;color:rgba(244,239,230,.88);background:rgba(14,14,13,.45);padding:4px 10px;border-radius:999px}
+@media (max-width:759px){
+  .s-hero,.s-hero-im{display:block;min-height:0;margin-top:12px}
+  .s-hero-fundo{position:relative;inset:auto;z-index:0;aspect-ratio:3/2}
+  .s-hero-fundo::after{background:linear-gradient(180deg,rgba(14,14,13,0) 70%,rgba(14,14,13,.6) 100%)}
+  .s-hero-txt{padding:26px 20px 44px}
+}
 .s-hero-txt{max-width:1240px;width:100%;margin:0 auto;padding:0 20px 72px}
 .s-hero h1{font-family:var(--serifa);font-weight:300;font-style:italic;font-size:clamp(46px,7.4vw,104px);line-height:.98;letter-spacing:-.01em;margin:0 0 22px;max-width:14ch;color:#F4EFE6;text-wrap:balance}
 .s-hero-l{font-size:clamp(16.5px,1.6vw,19px);line-height:1.65;color:#D9D2C6;max-width:52ch;margin:0 0 28px}
@@ -528,7 +537,7 @@ body.p-sig{
 /* residência */
 .s-trilha{max-width:1240px;margin:18px auto 0;padding:0 20px}
 .s-trilha,.s-trilha a{color:var(--pedra)}
-.s-hero-im{min-height:min(82vh,780px)}
+.s-hero-im{min-height:min(82vh,780px,66.667vw)}
 .s-hero-im h1{font-size:clamp(40px,6vw,84px);max-width:18ch}
 .s-legenda-capa{max-width:1240px;margin:10px auto 0;padding:0 20px;font-size:13px;color:var(--pedra);font-style:italic}
 .s-im-corpo{max-width:1240px;margin:0 auto;padding:80px 20px 40px;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:64px;align-items:start}
