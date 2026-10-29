@@ -1480,3 +1480,23 @@ a{text-underline-offset:.18em}
   .j3-dica{display:none}
 }
 @media (prefers-reduced-motion:reduce){.j3-nome .zz,.j3-baloes .jg-balao,.j3-carregando i{animation:none!important}}
+
+/* Andar dentro do escritório 3D (public/escritorio-andar.js) */
+.j3-andar{position:absolute;inset:0;pointer-events:none;z-index:6}
+.j3-andar[hidden]{display:none}
+.j3a-ajuda{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);background:rgba(16,18,22,.82);color:#e9edf2;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 16px;font-size:12.5px;letter-spacing:.01em;backdrop-filter:blur(8px);max-width:min(92%,760px);text-align:center}
+.j3a-ajuda b{font-weight:500}
+.j3a-prompt{position:absolute;left:50%;bottom:62px;transform:translateX(-50%);background:rgba(201,169,111,.95);color:#1b1a17;border-radius:12px;padding:9px 16px;font-size:14px;font-weight:600;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);pointer-events:auto;cursor:pointer;display:flex;gap:8px;align-items:center;animation:j3a-sobe .18s ease-out}
+.j3a-prompt[hidden]{display:none}
+.j3a-prompt b{background:#1b1a17;color:#f3e7cf;border-radius:6px;padding:2px 9px;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px}
+.j3a-prompt span{font-weight:700}
+@keyframes j3a-sobe{from{opacity:0;transform:translateX(-50%) translateY(6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+.j3a-sair{position:absolute;right:14px;top:62px;pointer-events:auto;background:rgba(16,18,22,.82);color:#e9edf2;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px;font-size:12.5px;cursor:pointer;backdrop-filter:blur(8px)}
+.j3a-sair:hover{background:rgba(32,36,44,.92)}
+.j3a-alavanca{position:absolute;left:26px;bottom:90px;width:112px;height:112px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);pointer-events:none}
+.j3a-alavanca i{position:absolute;inset:34px;border-radius:50%;background:rgba(255,255,255,.22)}
+.j3a-alavanca[hidden]{display:none}
+.j3-com-andar .j3-dica,.j3-com-andar .j3-ticker{opacity:.25;transition:opacity .3s}
+.j3-com-andar .j3-dica:hover,.j3-com-andar .j3-ticker:hover{opacity:1}
+.jg-bt.j3-andar-bt.on{background:#c9a96f;color:#1b1a17;border-color:#c9a96f}
+@media (max-width:720px){.j3a-ajuda{font-size:11px;bottom:10px;padding:6px 12px}.j3a-prompt{bottom:54px}}

@@ -20,6 +20,7 @@ const VERSAO = '1.0.0';
 const ROOT = path.join(__dirname, '..', '..', '..');
 const CFG = process.env.ESTACAO_CONFIG || path.join(ROOT, 'data', 'estacao.json');
 const LIGADOS = path.join(path.dirname(CFG), 'estacao-ligados.json');
+const APAGADOS = path.join(path.dirname(CFG), 'estacao-apagados.json');
 const log = (...a) => console.log(new Date().toLocaleTimeString('pt-BR'), '[estação]', ...a);
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -28,9 +29,12 @@ const OPC = { pasta: conf.pasta || path.join(os.homedir(), 'HerreraAgentes'), ch
 const PORTA = conf.porta || 3434;
 let urlPublica = conf.url_publica || null; // com túnel, vem do cloudflared
 
-const lerLigados = () => { try { return new Set(JSON.parse(fs.readFileSync(LIGADOS, 'utf8'))); } catch { return new Set(); } };
-const ligados = lerLigados();
-const salvaLigados = () => { try { fs.writeFileSync(LIGADOS, JSON.stringify([...ligados], null, 1)); } catch {} };
+const lerSet = (arq) => { try { return new Set(JSON.parse(fs.readFileSync(arq, 'utf8'))); } catch { return new Set(); } };
+const salvaSet = (arq, s) => { try { fs.writeFileSync(arq, JSON.stringify([...s], null, 1)); } catch {} };
+const ligados = lerSet(LIGADOS);            // "nunca desliga": quem já foi ligado volta ligado
+const apagados = lerSet(APAGADOS);          // desligados de propósito no painel do PC: só voltam quando alguém ligar
+const salvaLigados = () => salvaSet(LIGADOS, ligados);
+const salvaApagados = () => salvaSet(APAGADOS, apagados);
 
 // ---------- imobiliárias ----------
 class Imob {
@@ -47,18 +51,32 @@ class Imob {
     return this.pcs[slug];
   }
   agente(slug) { return this.cfg.agentes.find((a) => a.slug === slug); }
-  async ligaPc(slug, motivo) {
+  // forca = ordem explícita de alguém (botão Ligar, Reiniciar, tarefa). Sem forçar, um PC desligado
+  // no painel continua desligado: abrir a janela dele ou o monitor da mesa não o liga de novo.
+  async ligaPc(slug, motivo, forca = false) {
     const pc = this.pc(slug);
     const k = `${this.id}/${slug}`;
+    if (apagados.has(k)) {
+      if (!forca) throw new Error('Este PC está desligado. Clique em "Ligar este PC" no painel dele.');
+      apagados.delete(k); salvaApagados();
+    }
     if (!ligados.has(k)) { ligados.add(k); salvaLigados(); }
-    if (!pc.ligado) { log(k, 'ligando', motivo ? `(${motivo})` : ''); await pc.liga(); }
+    if (!pc.ligado) { log(k, 'ligando', motivo ? `(${motivo})` : ''); pc.parado = false; await pc.liga(); }
     return pc;
+  }
+  async desligaPc(slug, motivo) {
+    const k = `${this.id}/${slug}`;
+    if (!apagados.has(k)) { apagados.add(k); salvaApagados(); }
+    if (ligados.has(k)) { ligados.delete(k); salvaLigados(); }
+    log(k, 'desligando', motivo ? `(${motivo})` : '');
+    if (this.pcs[slug]) await this.pcs[slug].desliga();
   }
   // WhatsApp Web nos agentes que usam esse canal (e só neles)
   async garanteWhatsApps() {
     for (const a of this.cfg.agentes) {
       const pc = this.pcs[a.slug];
       if (a.canal !== 'web' || !a.ativo) { continue; }
+      if (apagados.has(`${this.id}/${a.slug}`)) continue;   // desligado no painel: fica desligado, sem reclamar
       const p = await this.ligaPc(a.slug, 'WhatsApp Web').catch((e) => { log(a.slug, e.message); return null; });
       if (!p) continue;
       if (!p.wa) p.wa = new WhatsAppWeb(p, (m) => this.post('/estacao-api/wa-entrada', { linha: a.slug, ...m }));
@@ -89,7 +107,7 @@ class Imob {
     this.tarefas.set(t.id, ctl);
     (async () => {
       try {
-        const pc = await this.ligaPc(t.agente, `tarefa #${t.id}`);
+        const pc = await this.ligaPc(t.agente, `tarefa #${t.id}`, true);
         while (pc.tarefa) await espera(3000); // uma tarefa por vez em cada PC
         log(`${this.id}/${t.agente}`, `tarefa #${t.id}:`, t.pedido.slice(0, 80));
         await executa(pc, this, t, () => ctl.cancelada);
@@ -108,8 +126,8 @@ class Imob {
   }
   async comando(c) {
     const k = `${this.id}/${c.agente}`;
-    if (c.comando === 'desligar') { ligados.delete(k); salvaLigados(); if (this.pcs[c.agente]) await this.pcs[c.agente].desliga(); return; }
-    const pc = await this.ligaPc(c.agente, c.comando);
+    if (c.comando === 'desligar') { await this.desligaPc(c.agente, 'painel do PC'); return; }
+    const pc = await this.ligaPc(c.agente, c.comando, true);
     if (c.comando === 'reiniciar') { await pc.desliga(); pc.parado = false; await pc.liga(); }
     if (c.comando === 'abrir_whatsapp') { if (!pc.wa) pc.wa = new WhatsAppWeb(pc, (m) => this.post('/estacao-api/wa-entrada', { linha: c.agente, ...m })); await pc.wa.garante(); const p = pc.wa.pagina; if (p) await pc.ativar(p); }
     if (c.comando === 'ler_whatsapp' && pc.wa) log(k, 'não lidas passadas ao escritório:', await pc.wa.lerNaoLidas());
@@ -191,8 +209,8 @@ async function inicia() {
   tunel();
   for (const im of IMOBS) {
     await im.carregaConfig().then(() => log(im.id, 'ok:', im.cfg.empresa)).catch((e) => log(im.id, 'config falhou:', e.message));
-    // "nunca desliga": quem já foi ligado volta ligado
-    for (const k of ligados) { const [id, slug] = k.split('/'); if (id === im.id) im.ligaPc(slug, 'volta automática').catch((e) => log(k, e.message)); }
+    // "nunca desliga": quem já foi ligado volta ligado (menos os desligados de propósito no painel)
+    for (const k of ligados) { const [id, slug] = k.split('/'); if (id === im.id && !apagados.has(k)) im.ligaPc(slug, 'volta automática').catch((e) => log(k, e.message)); }
   }
   setInterval(batidas, 8000); batidas();
   setInterval(() => IMOBS.forEach((im) => im.garanteWhatsApps().catch((e) => log(im.id, 'whatsapp:', e.message))), 30000);

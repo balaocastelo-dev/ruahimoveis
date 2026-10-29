@@ -73,6 +73,14 @@ process.env.ESTACAO_ID = 'teste-1'; process.env.ESTACAO_CHAVE = 'est_chave_de_te
   await req('POST', '/api/estacao/comando', { agente: 'casas', comando: 'ler_whatsapp' });
   const b4 = await est('POST', '/estacao-api/batida', { agentes: {} });
   ok(b4.comandos.some((c) => c.agente === 'casas' && c.comando === 'ler_whatsapp'), 'comando "ler não lidas" chega à estação');
+  await req('POST', '/api/estacao/comando', { agente: 'casas', comando: 'desligar' });
+  const b4b = await est('POST', '/estacao-api/batida', { agentes: { casas: { ligado: false, aba: null } } });
+  ok(b4b.comandos.some((c) => c.agente === 'casas' && c.comando === 'desligar'), 'desligar o PC pelo painel chega à estação');
+  await req('POST', '/api/estacao/comando', { agente: 'casas', comando: 'ligar' });
+  const b4c = await est('POST', '/estacao-api/batida', { agentes: { casas: { ligado: false, aba: null } } });
+  ok(b4c.comandos.some((c) => c.agente === 'casas' && c.comando === 'ligar'), 'ligar o PC pelo painel chega à estação');
+  const est1 = await req('GET', '/api/estacao');
+  ok(est1.agentes.casas && est1.agentes.casas.ligado === false, 'a tela sabe que o PC do agente está desligado');
   const t2 = await req('POST', '/api/estacao/tarefas', { agente: 'terrenos', pedido: 'Pesquisar terrenos em Sousas no Google' });
   await est('POST', '/estacao-api/batida', { agentes: {} });
   await req('POST', `/api/estacao/tarefas/${t2.id}/cancelar`);

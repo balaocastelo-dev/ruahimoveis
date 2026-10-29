@@ -46,14 +46,15 @@ window.abrePcDoAgente = async function abrePcDoAgente(slug) {
           <button class="btn pri" type="submit">▶ Mandar fazer</button></form>
         <div id="pc-tarefa-ao-vivo" class="pc-tvivo" hidden></div>
         <h3>Últimas tarefas</h3><div id="pc-tarefas" class="pc-tlista"><div class="muted small">Nenhuma ainda.</div></div>
-        <div class="pc-acoes">${est && est.pode_editar ? `<button class="btn sm" data-act="pc-ordem" data-c="ler_whatsapp">Ler não lidas do WhatsApp</button><button class="btn sm" data-act="pc-ordem" data-c="reiniciar">Reiniciar o PC</button>` : ''}</div>
-        <p class="small muted">Clique na tela para usar mouse e teclado; Ctrl+V cola o texto daqui. Logins (Facebook, WhatsApp, portais) ficam salvos neste PC, que fica sempre ligado.</p>
+        <div class="pc-acoes" id="pc-acoes"></div>
+        <p class="small muted">Clique na tela para usar mouse e teclado; Ctrl+V cola o texto daqui. Logins (Facebook, WhatsApp, portais) ficam salvos neste PC: desligar não apaga nada.</p>
       </aside>
     </div></div>`;
   document.body.appendChild(el);
   PC_ATUAL = { slug, ag, el, ws: null, controle: false, ultimoEsc: 0 };
   PC_ATUAL.esc = (e) => { if (e.key !== 'Escape' || document.activeElement === $('#pc-canvas')) return; pcFecha(); };
   document.addEventListener('keydown', PC_ATUAL.esc, true);
+  pcAcoes(est);
   pcTarefasLista();
   PC_ATUAL.tTarefas = setInterval(pcTarefasLista, 5000);
   $('#pc-tarefa-f').onsubmit = async (e) => {
@@ -63,10 +64,37 @@ window.abrePcDoAgente = async function abrePcDoAgente(slug) {
   };
   if (!est || !est.configurada) return pcAviso(`<b>O PC virtual ainda não está ligado nesta imobiliária.</b><br>${est && est.pode_editar ? 'Abra <a href="#/whats/config">Configuração geral › PCs virtuais</a> para ligar a estação.' : 'Peça ao administrador para ligar a estação dos PCs virtuais.'}`);
   if (!est.online) return pcAviso('<b>A estação dos PCs virtuais está desligada agora.</b><br>Ela volta sozinha quando o computador da estação ligar. As tarefas que você mandar ficam na fila.');
+  if (est.agentes && est.agentes[slug] && est.agentes[slug].ligado === false) return pcDesligado();
   pcConecta();
 };
 
 function pcAviso(html) { const a = $('#pc-aviso'); if (!a) return; a.innerHTML = html; a.hidden = !html; const st = $('#pc-st'); if (st && html) { st.className = 'pc-st'; st.lastChild.textContent = 'desligado'; } }
+
+const pcDesligado = () => pcAviso('<b>Este PC está desligado.</b><br>Clique em <b>⏻ Ligar este PC</b> aqui ao lado: ele abre em poucos segundos com os logins de sempre.');
+
+/* Ligar e desligar o PC deste robô, aqui mesmo. O estado vem da batida da estação (a cada 8 s), por isso
+   o botão fica "Aguarde…" até o PC responder — e, quando liga, a tela se conecta sozinha. */
+function pcAcoes(d) {
+  const s = PC_ATUAL, box = $('#pc-acoes'); if (!s || !box) return;
+  if (!d || !d.pode_editar) { box.innerHTML = ''; s.acoes = ''; return; }
+  const ag = (d.agentes || {})[s.slug];
+  const ligado = !!(ag && ag.ligado);
+  const esperando = s.espera && Date.now() < s.espera && ligado !== s.esperaLigado;
+  if (s.espera && !esperando) { s.espera = 0; if (ligado) pcReconecta(); else { pcFechaWs(); pcDesligado(); } }
+  const html = !d.online
+    ? '<span class="small muted">A estação está fora do ar: o liga/desliga volta quando ela ligar.</span>'
+    : esperando
+      ? `<button class="btn sm" disabled>${s.esperaLigado ? 'Ligando o PC…' : 'Desligando o PC…'}</button>`
+      : ligado
+        ? `<button class="btn sm" data-act="pc-liga" data-l="0" title="Fecha o Chrome deste robô. Os logins ficam salvos.">⏻ Desligar este PC</button>
+           <button class="btn sm" data-act="pc-ordem" data-c="reiniciar">Reiniciar o PC</button>
+           <button class="btn sm" data-act="pc-ordem" data-c="ler_whatsapp">Ler não lidas do WhatsApp</button>`
+        : `<button class="btn sm pri" data-act="pc-liga" data-l="1" title="Abre o Chrome deste robô com os logins de sempre.">⏻ Ligar este PC</button>`;
+  if (html === s.acoes) return;                 // sem repintar de graça: não perde o clique nem pisca
+  s.acoes = html; box.innerHTML = html;
+}
+function pcFechaWs() { const s = PC_ATUAL; if (!s || !s.ws) return; try { s.ws.close(); } catch {} s.ws = null; }
+function pcReconecta() { const s = PC_ATUAL; if (!s || (s.ws && s.ws.readyState <= 1)) return; pcAviso(''); pcConecta(); }
 
 async function pcConecta() {
   const s = PC_ATUAL; if (!s) return;
@@ -137,6 +165,8 @@ async function pcTarefasLista() {
   const s = PC_ATUAL; const box = $('#pc-tarefas'); if (!s || !box) return;
   try {
     const d = await api('GET', '/api/estacao');
+    if (PC_ATUAL !== s) return;
+    pcAcoes(d);
     const l = (d.tarefas || []).filter((t) => t.agente === s.slug).slice(0, 8);
     const nome = { fila: 'na fila', rodando: 'fazendo agora', feita: 'feita ✅', erro: 'não conseguiu', cancelada: 'cancelada' };
     box.innerHTML = l.length ? l.map((t) => `<details class="pc-t ${t.status}"><summary><b>#${t.id}</b> ${esc(t.pedido.slice(0, 70))}<span class="pill ${t.status === 'feita' ? 'ok' : t.status === 'erro' ? 'bad' : 'warn'}">${nome[t.status] || t.status}</span></summary>
@@ -153,6 +183,16 @@ ACT['pc-aba'] = (el) => pcManda({ t: 'aba', acao: 'ativar', i: +el.dataset.i });
 ACT['pc-aba-fecha'] = (el) => pcManda({ t: 'aba', acao: 'fechar', i: +el.dataset.i });
 ACT['pc-aba-nova'] = () => pcManda({ t: 'aba', acao: 'nova' });
 ACT['pc-wa'] = () => (PC_ATUAL ? api('POST', '/api/estacao/comando', { agente: PC_ATUAL.slug, comando: 'abrir_whatsapp' }).then(() => toast('Abrindo o WhatsApp Web neste PC (em até 10 s). Se pedir, leia o QR code com o celular.')).catch((e) => toast(e.message)) : null);
+ACT['pc-liga'] = (el) => comBotao(el, async () => {
+  const s = PC_ATUAL; if (!s) return;
+  const liga = el.dataset.l === '1';
+  await api('POST', '/api/estacao/comando', { agente: s.slug, comando: liga ? 'ligar' : 'desligar' });
+  s.espera = Date.now() + 90e3; s.esperaLigado = liga; s.acoes = '';
+  if (!liga) { pcFechaWs(); pcDesligado(); }                      // a tela para na hora; o PC fecha na próxima batida
+  else pcAviso('<b>Ligando o PC…</b><br>O Chrome deste robô abre em poucos segundos.');
+  pcTarefasLista();
+  toast(liga ? 'Ligando o PC (em até 10 s).' : 'Desligando o PC. Ele só volta quando você ligar de novo.');
+});
 ACT['pc-ordem'] = (el) => comBotao(el, async () => { await api('POST', '/api/estacao/comando', { agente: PC_ATUAL.slug, comando: el.dataset.c }); toast('Pedido enviado ao PC (em até 10 s).'); });
 ACT['pc-cancela'] = (el) => comBotao(el, async () => { await api('POST', `/api/estacao/tarefas/${el.dataset.id}/cancelar`); toast('Tarefa cancelada.'); pcTarefasLista(); });
 

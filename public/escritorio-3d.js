@@ -29,17 +29,23 @@ const T = {
     painel: 'Painel de hoje', noar: 'no WhatsApp', captacao: 'Sala de captação', vendas: 'Salão de vendas', diretoria: 'Diretoria', entrada: 'Entrada', mural: 'Mural de oportunidades',
     cafe: 'Café', recepcao: 'Recepção', reuniao: 'Reunião', plantao: 'Plantão', impressora: 'Impressora', vazio: 'Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.',
     abrir: 'Abrir a mesa', fechar: 'Fechar', esperando: 'Esperando o primeiro cliente do dia…', dica: 'Arraste para girar · roda para aproximar · duplo clique num agente abre a mesa',
-    virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.' },
+    virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.',
+    entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil',
+  },
   en: { vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
     painel: "Today's board", noar: 'on WhatsApp', captacao: 'Sourcing room', vendas: 'Sales floor', diretoria: 'Management', entrada: 'Entrance', mural: 'Opportunity board',
     cafe: 'Coffee', recepcao: 'Reception', reuniao: 'Meeting', plantao: 'Front desk', impressora: 'Printer', vazio: 'As the agents work, every action shows up here and in a balloon above whoever did it.',
     abrir: 'Open desk', fechar: 'Close', esperando: 'Waiting for the first client of the day…', dica: 'Drag to rotate · wheel to zoom · double-click an agent to open their desk',
-    virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.' },
+    virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.',
+    entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline',
+  },
   ja: { vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
     painel: '本日のボード', noar: 'WhatsApp接続中', captacao: '物件開拓室', vendas: '営業フロア', diretoria: '経営室', entrada: '入口', mural: '案件ボード',
     cafe: 'カフェ', recepcao: '受付', reuniao: '会議', plantao: 'フロント', impressora: 'プリンター', vazio: 'エージェントが働くと、各アクションがここと担当者の上の吹き出しに表示されます。',
     abrir: 'デスクを開く', fechar: '閉じる', esperando: '本日最初のお客様をお待ちしています…', dica: 'ドラッグで回転 · ホイールでズーム · エージェントをダブルクリックでデスクを開く',
-    virtual: 'バーチャルオフィス', inativo: '休止中', equipe: 'チーム', ver2d: '2Dで見る', ver3d: '3Dで見る', hoje: '本日', sem3d: 'ブラウザで3Dを開けませんでした。2D表示にしています。' },
+    virtual: 'バーチャルオフィス', inativo: '休止中', equipe: 'チーム', ver2d: '2Dで見る', ver3d: '3Dで見る', hoje: '本日', sem3d: 'ブラウザで3Dを開けませんでした。2D表示にしています。',
+    entrar: 'オフィスに入る', sair: 'オフィスを出る', ajuda: 'WASD / 矢印キーで移動 · Shiftで走る · ドラッグで視点 · Eで操作 · Escで退出', falarCom: '話す:', abrirLugar: '開く', crm: 'CRM・商談',
+  },
 };
 let LANG = 'pt';
 try { const l = localStorage.getItem('jg3d-lang'); if (T[l]) LANG = l; } catch {}
@@ -138,6 +144,7 @@ function para() {
   if (!E) return;
   const e = E; E = null;
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
+  if (e.andar) { try { e.andar.desmonta(); } catch {} }
   if (e.ro) e.ro.disconnect();
   document.removeEventListener('fullscreenchange', redimensiona);
   document.removeEventListener('keydown', tecla);
@@ -188,6 +195,20 @@ function telaCheia() {
 ACT['j3-cheia'] = () => telaCheia();
 ACT['j3-lang'] = (el) => { LANG = el.dataset.lang; try { localStorage.setItem('jg3d-lang', LANG); } catch {} hud(); if (E) { numeros({ totais: E.totais }); tvPinta(); Object.values(E.agentes).forEach((ag) => { if (ag.tela && !ag.tela.externa) telaPinta(ag); etiquetaNome(ag); }); zonasTexto(); $('#j3-dica').textContent = t('dica'); if (!$('#j3-card').hidden && E.cardSlug) cardAgente(E.cardSlug); } };
 ACT['j3-fecha-card'] = () => fechaCard();
+// Andar dentro do escritório (módulo próprio, carregado só quando o usuário pede).
+ACT['j3-andar'] = async () => {
+  if (!E) return;
+  try {
+    if (!E.andar) {
+      const m = await import('/escritorio-andar.js');
+      if (!E) return;
+      E.andar = m.ligaAndar({ THREE, E, fazPessoa, SALA, MESAS, LUGAR, SENTA, reduz, $, esc,
+        textos: { entrar: t('entrar'), sair: t('sair'), ajuda: t('ajuda'), falarCom: t('falarCom'), abrir: t('abrirLugar'),
+          mural: t('mural'), tv: t('painel'), crm: t('crm'), recepcao: t('recepcao'), impressora: t('impressora'), cafe: t('cafe'), reuniao: t('reuniao') } });
+    }
+    E.andar.alterna();
+  } catch (e) { console.warn('andar:', e); toast('Não deu para entrar no escritório agora.', true); }
+};
 ACT['j3-apres'] = () => { if (!E) return; E.apres = !E.apres; E.idleDesde = E.apres ? -1e9 : performance.now(); $('#j3-hud .j3-apres').classList.toggle('on', E.apres); };
 
 // ---------- HUD, ticker, relógio, números ----------
@@ -201,6 +222,7 @@ function hud() {
     <div class="jg-num q"><b id="j3-n-apr">0</b><span>${esc(t('aprovar'))}</span></div>
     <span class="j3-seg j3-lang">${langs.map(([k, n]) => `<button class="${k === LANG ? 'on' : ''}" data-act="j3-lang" data-lang="${k}">${n}</button>`).join('')}</span>
     <span class="j3-seg"><button class="on" title="${esc(t('ver3d'))}">3D</button><button data-act="jg-modo" data-modo="2d" title="${esc(t('ver2d'))}">2D</button></span>
+    <button class="jg-bt j3-andar-bt" data-act="j3-andar" title="${esc(t('entrar'))}">🚶</button>
     <button class="jg-bt j3-apres ${E.apres ? 'on' : ''}" data-act="j3-apres" title="${esc(t('apres'))}">▶</button>
     <button class="jg-bt" data-act="j3-cheia" title="${esc(t('cheia'))}">⛶</button>`;
   const tk = $('#j3-ticker');
@@ -1037,6 +1059,18 @@ function quadro(agoraMs) {
   if (!vivo()) return para();
   const dt = Math.min(0.05, (agoraMs - (E.ultimo || agoraMs)) / 1000); E.ultimo = agoraMs; E.tempo += dt;
   interpolaClima(dt);
+  // andando dentro do escritório: o módulo cuida do personagem e da câmera
+  if (E.andando && E.andar) {
+    E.andar.quadro(dt);
+    for (const ag of Object.values(E.agentes)) animaAgente(ag, dt);
+    if (E.visitante && E.visitante.b) animaAgente(E.visitante, dt);
+    if (E.querHover) { E.querHover = false; E.tela.style.cursor = 'grab'; }
+    E.renderer.toneMappingExposure = E.exposicao;
+    E.composer.render(dt);
+    medeDesempenho(agoraMs);
+    projeta();
+    return;
+  }
   // voo da câmera
   if (E.voo) {
     const v = E.voo; const k = suave(Math.min(1, (agoraMs - v.t0) / v.dur));
