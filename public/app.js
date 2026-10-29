@@ -841,7 +841,7 @@ if (document.readyState === 'loading') document.addEventListener('DOMContentLoad
 // Áreas que rolam (tabelas largas, linha do tempo, funil, feed) precisam ser alcançáveis pelo teclado.
 (() => {
   const SEL = '.tbl,.timeline,#kb,#ev-feed,.rolar';
-  let t = 0;
-  const marca = () => { t = 0; document.querySelectorAll(SEL).forEach((el) => { if (!el.hasAttribute('tabindex')) { el.tabIndex = 0; if (!el.getAttribute('role')) el.setAttribute('role', 'region'); if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', el.id === 'kb' ? 'Funil de vendas (role para o lado)' : el.id === 'ev-feed' ? 'Acontecendo agora' : 'Área com rolagem'); } }); };
+  let t = 0, nTab = 0;
+  const marca = () => { t = 0; document.querySelectorAll(SEL).forEach((el) => { if (!el.hasAttribute('tabindex')) { el.tabIndex = 0; if (!el.getAttribute('role')) el.setAttribute('role', 'region'); if (!el.getAttribute('aria-label')) { const card = el.closest('.card,section'); const h = card && card.querySelector('h2,h3,h4'); el.setAttribute('aria-label', el.id === 'kb' ? 'Funil de vendas (role para o lado)' : el.id === 'ev-feed' ? 'Acontecendo agora' : (h ? h.textContent.trim().slice(0, 60) + ' (tabela)' : 'Tabela ' + (++nTab))); } } }); };
   new MutationObserver(() => { if (!t) t = setTimeout(marca, 120); }).observe(document.documentElement, { childList: true, subtree: true });
 })();
