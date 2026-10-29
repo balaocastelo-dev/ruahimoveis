@@ -55,7 +55,7 @@ function figura(f, { eager = false } = {}) {
 function chamada(tema, temImoveis) {
   const c = CHAMADAS[tema];
   const href = tema === 'imoveis' ? (temImoveis ? '#imoveis' : '/imoveis') : '#contato';
-  return `<aside class="p-chamada"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
+  return `<aside class="p-chamada" aria-label="${esc(c.titulo)}"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
 <a class="p-botao" href="${href}"${tema === 'imoveis' ? '' : ` data-motivo="${tema === 'vender' ? 'vender' : 'comprar'}"`}>${esc(c.rotulo)}</a></aside>`;
 }
 
@@ -188,8 +188,8 @@ async function paginaBairro(req, x, ctx) {
 <section class="b-hero" data-galeria='${esc(JSON.stringify(galeria))}'>
   ${capa ? `<button type="button" class="b-hero-foto" data-ver="${esc(capa.ver)}" aria-label="Ampliar: ${esc(capa.legenda)}"><img src="${esc(capa.src)}" alt="${esc(capa.alt)}" fetchpriority="high" decoding="async" width="1280" height="853"></button>` : ''}
   <div class="b-hero-txt">
-    <p class="p-sobre">Guia de bairro · Campinas${b.regiao ? ` · ${esc(b.regiao)}` : ''}</p>
     <h1>${esc(p.titulo)}</h1>
+    <p class="p-sobre depois">Guia de bairro · Campinas${b.regiao ? ` · ${esc(b.regiao)}` : ''}</p>
     <p class="p-linha-fina">${esc(p.resumo)}</p>
     <p class="b-data">${data ? `Atualizado em ${esc(dataPorExtenso(data))}` : ''}${capa ? `<span>Capa: ${esc(capa.legenda)} (${esc(capa.credito)})</span>` : ''}</p>
   </div>
@@ -248,7 +248,7 @@ function paginaLista(req, lista, capas) {
   const ordem = [...grupos.keys()].sort((a, c) => (REGIOES.indexOf(a) + 1 || 99) - (REGIOES.indexOf(c) + 1 || 99));
   const ancora = (r) => r.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-');
   const corpo = `
-<section class="p-hero p-hero-curto"><p class="p-sobre">Guias de bairro · ${esc(CLIENTE)}</p><h1>Bairros de Campinas</h1>
+<section class="p-hero p-hero-curto"><h1>Bairros de Campinas</h1><p class="p-sobre depois">Guias de bairro · ${esc(CLIENTE)}</p>
 <p class="p-hero-l">Como é morar em cada bairro: história, parques, escolas, comércio, acesso, prédios e condomínios, com fotos reais e os imóveis que a ${esc(CLIENTE)} tem à venda em cada um.</p>
 ${ordem.length > 1 ? `<nav class="b-regioes" aria-label="Regiões">${ordem.map((r) => `<a href="#${ancora(r)}">${esc(r)}</a>`).join('')}</nav>` : ''}</section>
 ${lista.length ? ordem.map((r) => `<section class="p-cd-sec" id="${ancora(r)}" aria-labelledby="r-${ancora(r)}"><h2 id="r-${ancora(r)}">${esc(r)}</h2><div class="b-lista">${grupos.get(r).map((x) => cartaoBairro(x, capas.get(x.bairro.slug))).join('')}</div></section>`).join('')

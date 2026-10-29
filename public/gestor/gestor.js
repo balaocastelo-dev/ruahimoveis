@@ -21,12 +21,12 @@ const comBotao = async (b, fn) => { b.disabled = true; try { await fn(); } catch
 
 // ---------- entrada ----------
 function telaEntrada() {
-  $('#raiz').innerHTML = `<div class="entrada"><form id="f-entrar" autocomplete="on">
-    <div class="marca">Herrera HOUSE IA<span>Painel do gestor</span></div>
+  $('#raiz').innerHTML = `<main class="entrada"><form id="f-entrar" autocomplete="on">
+    <h1 class="marca">Herrera HOUSE IA<span>Painel do gestor</span></h1>
     <p class="muted pequeno">As imobiliárias da plataforma, os números de cada uma e os valores do mês.</p>
     <label class="c">E-mail<input name="email" type="email" required autocomplete="username"></label>
     <label class="c">Senha<input name="senha" type="password" required autocomplete="current-password"></label>
-    <button class="btn pri" type="submit">Entrar</button><p class="erro" id="e-entrar" hidden></p></form></div>`;
+    <button class="btn pri" type="submit">Entrar</button><p class="erro" id="e-entrar" role="alert" hidden></p></form></main>`;
   $('#f-entrar').addEventListener('submit', async (e) => {
     e.preventDefault(); const f = e.target, b = $('button', f);
     b.disabled = true; $('#e-entrar').hidden = true;

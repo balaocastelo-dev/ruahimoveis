@@ -89,24 +89,22 @@ function aoVivo() {
   const paineis = CLIENTES.map((c, i) => {
     const vers = VERSOES_AV.map(([k, n], j) => `<button type="button" class="av-ver${j ? '' : ' ativa'}" data-v="${k}" data-cam="${VERSOES_AV[j][2]}" aria-pressed="${!j}">${k === 's' ? CAL : esc(n)}</button>`).join('');
     const imgs = VERSOES_AV.map(([k, n], j) => `<img class="av-img${j ? '' : ' ativa'}" data-v="${k}" src="${C}${c.slug}-${k}-m.webp" srcset="${C}${c.slug}-${k}-m.webp 1440w, ${C}${c.slug}-${k}.webp 2880w" sizes="(max-width: 1240px) 100vw, 860px" width="2880" height="1800" alt="${esc(`Portal ${c.nome} no ar, versão ${n}`)}" loading="lazy" decoding="async">`).join('');
-    return `<article class="av-painel${i ? '' : ' ativo'}" role="tabpanel" id="av-${c.slug}" aria-labelledby="av-aba-${c.slug}" style="--c:${c.cor};--c2:${c.cor2}">
+    return `<div class="av-painel${i ? '' : ' ativo'}" role="tabpanel" id="av-${c.slug}" aria-labelledby="av-aba-${c.slug}" style="--c:${c.cor};--c2:${c.cor2}">
       <div class="av-palco">
-        <div class="janela av-janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="av-url"><b>🔒</b> ${c.slug}.corretordofuturo.app<em>/imoveis</em></span></div><div class="av-imgs">${imgs}</div></div>
+        <div class="janela av-janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="av-url">${ICONE.cadeado} ${c.slug}.corretordofuturo.app<em>/imoveis</em></span></div><div class="av-imgs">${imgs}</div></div>
         <figure class="av-cel" aria-hidden="true"><img src="${C}${c.slug}-m.webp" width="780" height="1688" alt="" loading="lazy" decoding="async"></figure>
         <span class="av-aovivo"><i></i>no ar agora</span>
       </div>
       <div class="av-info">
-        <span class="av-estilo">${esc(c.estilo)}</span>
         <h3>${esc(c.nome)}</h3>
-        <p>${esc(c.frase)}</p>
+        <p><b class="av-estilo">${esc(c.estilo)}.</b> ${esc(c.frase)}</p>
         <div class="av-vers" role="group" aria-label="Versão do portal">${vers}</div>
         <dl class="av-ficha"><div><dt>Endereço</dt><dd>${c.slug}.corretordofuturo.app</dd></div><div><dt>Letra</dt><dd>${esc(c.fonte)}</dd></div><div><dt>Capa</dt><dd>${esc(c.lugar)}, em 4K</dd></div></dl>
-        <div class="av-acoes"><a class="btn pri av-abrir" href="${linkCliente(c)}" target="_blank" rel="noopener">Abrir o portal ao vivo <span aria-hidden="true">↗</span></a><a class="btn" href="${linkCliente(c, '/blog')}" target="_blank" rel="noopener">Blog</a><a class="btn" href="${linkCliente(c, '/bairros')}" target="_blank" rel="noopener">Bairros</a></div>
+        <div class="av-acoes"><a class="btn pri av-abrir" href="${linkCliente(c)}" target="_blank" rel="noopener">Abrir o portal ao vivo ${ICONE.seta}</a><a class="btn" href="${linkCliente(c, '/blog')}" target="_blank" rel="noopener">Blog</a><a class="btn" href="${linkCliente(c, '/bairros')}" target="_blank" rel="noopener">Bairros</a></div>
       </div>
-    </article>`;
+    </div>`;
   }).join('\n    ');
   return `<section id="ao-vivo" class="escuro ao-vivo" aria-labelledby="t-av"><div class="cx">
-  <p class="kicker"><span class="pulso" aria-hidden="true"></span>Ao vivo agora</p>
   <h2 id="t-av">Quatro imobiliárias de demonstração no ar. <em>Entre e navegue.</em></h2>
   <p class="lead">Criamos quatro imobiliárias fictícias para você ver o sistema funcionando de verdade. Mesmo sistema, quatro marcas que não se parecem em nada: logo, cores, letra e foto de capa próprias, cada uma no seu endereço. Clique, abra o portal e mexa à vontade, do celular ou do computador.</p>
   <div class="av-abas" role="tablist" aria-label="Imobiliárias de demonstração">${abas}</div>
@@ -116,12 +114,12 @@ function aoVivo() {
   <p class="demo-aviso">Imobiliárias fictícias criadas para demonstração, com imóveis e fotos ilustrativas, rodando no mesmo sistema que a sua vai usar.</p>
 
   <div class="av-proxima revelar">
-    <div><p class="kicker ouro-k">A próxima é a sua</p><h3>Como fica o endereço da sua imobiliária?</h3>
+    <div><h3>Como fica o endereço da sua imobiliária?</h3>
       <p>Digite o nome e veja. Em poucos dias, o portal, o blog e os guias de bairro estão no ar com a sua marca.</p></div>
     <form class="av-nome" autocomplete="off">
       <label for="av-input" class="vis-oculto">Nome da sua imobiliária</label>
       <input id="av-input" name="nome" maxlength="40" placeholder="Nome da sua imobiliária" enterkeyhint="go">
-      <p class="av-dominio" aria-live="polite"><span class="av-cad">🔒</span><b id="av-slug">suaimobiliaria</b>.corretordofuturo.app</p>
+      <p class="av-dominio" aria-live="polite"><span class="av-cad">${ICONE.cadeado}</span><b id="av-slug">suaimobiliaria</b>.corretordofuturo.app</p>
       <button class="btn ouro" type="submit">Quero esse endereço</button>
     </form>
   </div>
@@ -160,7 +158,7 @@ const COMODOS = [
 function plantaSvg() {
   const sala = (c) => {
     const cx = c.x + c.w / 2, cy = c.y + c.h / 2;
-    return `<g class="comodo" data-comodo="${c.k}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(c.nome)}: ver o que faz">
+    return `<g class="comodo" data-comodo="${c.k}" role="button" tabindex="0" aria-pressed="false">
   <rect x="${c.x + 4}" y="${c.y + 4}" width="${c.w - 8}" height="${c.h - 8}" rx="2"/>
   <text x="${cx}" y="${cy - 2}" text-anchor="middle">${esc(c.nome)}</text>
   <text class="area" x="${cx}" y="${cy + 16}" text-anchor="middle">${esc(c.area)}</text></g>`;
@@ -175,7 +173,7 @@ function plantaSvg() {
   <line class="vao" x1="290" y1="310" x2="326" y2="310"/><path class="porta" d="M290 310A36 36 0 0 1 326 346"/>
   <line class="vao" x1="472" y1="420" x2="520" y2="420"/><path class="porta" d="M472 420A48 48 0 0 1 520 372"/>
   ${COMODOS.map(sala).join('\n  ')}
-  <g class="comodo entrada" data-comodo="entrada" role="button" tabindex="0" aria-label="Entrada: falar com a gente">
+  <g class="comodo entrada" data-comodo="entrada" role="button" tabindex="0">
     <rect x="404" y="274" width="172" height="142" rx="2"/>
     <text x="490" y="338" text-anchor="middle">Entrada</text>
     <text class="area" x="490" y="356" text-anchor="middle">fale com a gente</text></g>
@@ -229,6 +227,15 @@ const PERGUNTAS = [
 ];
 
 const ICONE = {
+  seta: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
+  cadeado: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
+  queda: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 7 7 7 4-4 7 7"/><path d="M21 11v6h-6"/></svg>',
+  novo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>',
+  abaixo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M7 16V9M12 16V5M17 16v-3"/></svg>',
+  dono: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+  tempo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12M6 21h12M7 3c0 5 10 5 10 9s-10 4-10 9M17 3c0 5-10 5-10 9s10 4 10 9"/></svg>',
+  varios: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="12" height="12" rx="2"/><path d="M9 3h10a2 2 0 0 1 2 2v10"/></svg>',
+
   olho: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>',
   pena: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 4c-8 0-14 6-14 14v2h2c8 0 14-6 14-14V4Z"/><path d="M4 20 14 10"/></svg>',
   balao: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5Z"/><path d="M8 10h8M8 13h5"/></svg>',
@@ -269,7 +276,7 @@ function pagina() {
 <meta name="theme-color" content="#070b0f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=Pinyon+Script&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="/plataforma/site.css?v=6">
+<link rel="stylesheet" href="/plataforma/site.css?v=7">
 <link rel="preload" as="image" href="${T}3d-poster.webp">
 <link rel="preload" as="image" href="${C}ondemorar-d-m.webp">
 <script type="application/ld+json">${json(ld)}</script><script type="application/ld+json">${json(faq)}</script>
@@ -280,11 +287,10 @@ ${topo()}
 <div class="escuro abre"><div class="cx">
   <div class="abre-grade">
     <div>
-      <p class="kicker">Sistema imobiliário com inteligência artificial</p>
       <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
       <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
       <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ao-vivo">Ver imobiliárias ao vivo</a></div>
-      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração →</span></a>
+      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração ${ICONE.seta}</span></a>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
     <div class="palco">
@@ -304,8 +310,7 @@ ${topo()}
     ${NUMEROS.map(([n, suf, txt]) => `<li><strong data-conta="${n}" data-suf="${esc(suf)}">${n.toLocaleString('pt-BR')}${esc(suf)}</strong><span>${esc(txt)}</span></li>`).join('')}
   </ul>
   <div class="brasil revelar">
-    <p class="brasil-k">Brasil inteiro</p>
-    <p class="brasil-t">Atendemos imobiliárias de todo o país. A base começou por Campinas e ganha novas cidades com o tempo, rumo a <strong>cerca de <span data-conta="3" data-suf=" milhões">3 milhões</span> de imóveis</strong> no Brasil.</p>
+    <p class="brasil-t"><b>Brasil inteiro.</b> Atendemos imobiliárias de todo o país. A base começou por Campinas e ganha novas cidades com o tempo, rumo a <strong>cerca de <span data-conta="3" data-suf=" milhões">3 milhões</span> de imóveis</strong> no Brasil.</p>
     <p class="brasil-nota">Estimativa: os três maiores portais do país somam cerca de 7 milhões de anúncios (Grupo OLX, outubro de 2026). Na base de Campinas, 58% dos anúncios eram o mesmo imóvel anunciado por mais de uma imobiliária, o que dá algo perto de 3 milhões de imóveis diferentes.</p>
   </div>
 </div></div>
@@ -313,7 +318,6 @@ ${topo()}
 ${aoVivo()}
 
 <section id="ia" class="escuro ia" aria-labelledby="t-ia"><div class="cx">
-  <p class="kicker">Inteligências artificiais</p>
   <h2 id="t-ia">Nove agentes que não tiram férias, nem folga no domingo.</h2>
   <p class="lead">Cada agente cuida de um setor do escritório e conversa pelo WhatsApp. Eles respondem na hora, entendem o que o cliente procura, mandam o imóvel certo, marcam a visita e chamam o corretor quando é a vez dele. Você decide quem responde sozinho e quem sugere a resposta para você aprovar.</p>
   <ul class="agentes revelar">
@@ -344,12 +348,11 @@ ${aoVivo()}
 </div></section>
 
 <section id="radar" class="claro" aria-labelledby="t-radar"><div class="cx">
-  <p class="kicker">Radar de captação</p>
   <h2 id="t-radar">Os imóveis da cidade, lidos e prontos para captar.</h2>
   <p class="lead">Dezenas de milhares de anúncios da região num mapa só, por bairro, rua e prédio. O sistema junta o mesmo imóvel anunciado por várias imobiliárias, compara com o preço do metro do bairro e mostra onde está a oportunidade.</p>
   <ul class="sinais" aria-label="Sinais que a leitura aponta">
-    <li class="s-q">↓ <b>Baixou o preço</b></li><li class="s-n">✦ <b>Anúncio novo</b></li><li class="s-a">◆ <b>Abaixo do m² do bairro</b></li>
-    <li class="s-p">☺ <b>Dono anuncia direto</b></li><li class="s-r">⌛ <b>Anunciado há muito tempo</b></li><li class="s-v">⧉ <b>Várias imobiliárias</b></li>
+    <li class="s-q">${ICONE.queda}<b>Baixou o preço</b></li><li class="s-n">${ICONE.novo}<b>Anúncio novo</b></li><li class="s-a">${ICONE.abaixo}<b>Abaixo do m² do bairro</b></li>
+    <li class="s-p">${ICONE.dono}<b>Dono anuncia direto</b></li><li class="s-r">${ICONE.tempo}<b>Anunciado há muito tempo</b></li><li class="s-v">${ICONE.varios}<b>Várias imobiliárias</b></li>
   </ul>
   <figure class="revelar">${janela('radar-ia', 'Leitura da base com o mapa dos anúncios coloridos pela situação do proprietário, frases da IA e filtros por sinal', { url: 'app.corretordofuturo.app/#/radar' })}
     <figcaption>A leitura da base: cada ponto é um anúncio, a cor diz se o dono já foi achado e as frases levam direto aos filtros.</figcaption></figure>
@@ -363,7 +366,6 @@ ${aoVivo()}
 </div></section>
 
 <section id="condominios" class="escuro c3d" aria-labelledby="t-3d"><div class="cx">
-  <p class="kicker">Condomínios em 3D</p>
   <h2 id="t-3d">Mostre o andar, a vista e a vizinhança antes da visita.</h2>
   <p class="lead">Os prédios e condomínios da cidade com andares, torres e unidades. Abra o 3D, gire, veja o apartamento destacado no andar certo e troque o dia pela noite. A ficha do prédio traz o que está à venda, o preço do metro e o que tem perto.</p>
   <div class="c3d-grade">
@@ -384,7 +386,6 @@ ${aoVivo()}
 </div></section>
 
 <section id="painel" class="claro" aria-labelledby="t-painel"><div class="cx">
-  <p class="kicker">Painel do dono</p>
   <h2 id="t-painel">O negócio inteiro numa tela, e o que precisa de você hoje.</h2>
   <p class="lead">Valor da carteira, vendas, clientes, visitas e captação, comparados com o período anterior. Em cima de tudo, a lista do que não pode esperar.</p>
   <div class="painel-cx revelar">
@@ -396,15 +397,14 @@ ${aoVivo()}
 </div></section>
 
 <section id="operacao" class="claro" aria-labelledby="t-op"><div class="cx">
-  <p class="kicker">Operação</p>
   <h2 id="t-op">Carteira, ficha, CRM e visitas, conversando entre si.</h2>
   <p class="lead">O anúncio captado vira imóvel na carteira, o imóvel vira página no portal, quem pergunta pelo portal vira cliente no CRM e é atendido pelos agentes no WhatsApp.</p>
   <div class="telas" data-abas>
     <div class="abas" role="tablist" aria-label="Telas do sistema">
       ${OPERACAO.map((t, i) => `<button type="button" role="tab" id="aba-${t.k}" aria-controls="tela-${t.k}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(t.nome)}</button>`).join('')}
     </div>
-    ${OPERACAO.map((t, i) => `<figure class="painelaba" role="tabpanel" id="tela-${t.k}" aria-labelledby="aba-${t.k}"${i === 0 ? '' : ' hidden'}>${janela(t.k, t.alt)}
-      <figcaption>${esc(t.legenda)}</figcaption></figure>`).join('\n    ')}
+    ${OPERACAO.map((t, i) => `<div class="painelaba" role="tabpanel" id="tela-${t.k}" aria-labelledby="aba-${t.k}"${i === 0 ? '' : ' hidden'}><figure>${janela(t.k, t.alt)}
+      <figcaption>${esc(t.legenda)}</figcaption></figure></div>`).join('\n    ')}
   </div>
   <div class="celulares" style="margin-top:64px">
     <figure class="celular"><img src="${T}celular.webp" width="1170" height="2532" alt="O painel do sistema aberto no celular" loading="lazy" decoding="async"><figcaption>O painel no celular</figcaption></figure>
@@ -414,13 +414,12 @@ ${aoVivo()}
 </div></section>
 
 <section id="portal" class="claro" aria-labelledby="t-portal"><div class="cx">
-  <p class="kicker">Portal com a sua marca</p>
   <h2 id="t-portal">Uma vitrine, três jeitos de apresentar.</h2>
   <p class="lead">O portal fica no seu domínio, com a sua marca, e cada imóvel ganha uma página escrita a partir das fotos e da ficha. Quem se interessa vira cliente quente no seu CRM, com o imóvel e o horário da visita.</p>
   <ul class="versoes">
-    <li class="versao revelar">${mockVitrine()}<div><span class="tag">Vitrine</span><h3>Para quem busca</h3><p>Busca, filtros por tipo, bairro, quartos e valor, favoritos e uma página completa para cada imóvel.</p></div></li>
-    <li class="versao revelar">${mockRevista()}<div><span class="tag">Revista</span><h3>Para quem sonha</h3><p>Uma edição por mês, com ensaios sobre modos de morar e os imóveis entre os textos, como numa revista de casa.</p></div></li>
-    <li class="versao sig revelar">${mockSignature(false)}<div><span class="tag">${CAL}</span><h3>Para poucos</h3><p>Residências acima de R$ 10 milhões, com menos fotos e mais intenção. Valores só para membros do Clube ${CAL}.</p></div></li>
+    <li class="versao revelar">${mockVitrine()}<div><h3>Vitrine</h3><p><b>Para quem busca.</b> Busca, filtros por tipo, bairro, quartos e valor, favoritos e uma página completa para cada imóvel.</p></div></li>
+    <li class="versao revelar">${mockRevista()}<div><h3>Revista</h3><p><b>Para quem sonha.</b> Uma edição por mês, com ensaios sobre modos de morar e os imóveis entre os textos, como numa revista de casa.</p></div></li>
+    <li class="versao sig revelar">${mockSignature(false)}<div><h3>${CAL}</h3><p><b>Para poucos.</b> Residências acima de R$ 10 milhões, com menos fotos e mais intenção. Valores só para membros do Clube ${CAL}.</p></div></li>
   </ul>
   <p class="demo-aviso">Simulações com imóveis fictícios e fotos ilustrativas geradas por inteligência artificial.</p>
   <figure class="pagina-imovel revelar">${janela('portal-imovel', 'Página de um apartamento no portal, com mosaico de fotos, o texto escrito pela IA, a ficha e o botão de agendar visita', { url: 'casaprado.com.br/imoveis/apartamento-cambui' })}
@@ -430,7 +429,6 @@ ${aoVivo()}
 <section class="escuro signature" aria-labelledby="t-sig"><div class="cx">
   <div class="sig-grade">
     <div>
-      <p class="kicker ouro-k">A linha</p>
       <p class="cal cal-grande">signature</p>
       <h2 id="t-sig">Residências que não se anunciam.</h2>
       <p class="lead">Imóvel acima de R$ 10 milhões entra sozinho na ${CAL} e some do portal comum. A apresentação muda de tom: escura, silenciosa, com as fotos escolhidas a dedo.</p>
@@ -448,20 +446,18 @@ ${aoVivo()}
 </div></section>
 
 <section id="conteudo" class="claro" aria-labelledby="t-conteudo"><div class="cx">
-  <p class="kicker">Blog e guias de bairro</p>
   <h2 id="t-conteudo">Seu nome na resposta quando alguém pesquisa o bairro.</h2>
   <p class="lead">O blog da imobiliária publica sozinho, três vezes por dia, e cada bairro onde você atua ganha um guia completo, com fotos reais, fontes e perguntas frequentes. Tudo leva o leitor para os seus imóveis e para o formulário, nunca para fora do seu site.</p>
   <ul class="textos">
-    <li class="texto revelar"><span class="quando">Artigo · 6h</span><h3>Varanda gourmet: o que avaliar antes de comprar</h3><p>Ventilação, ponto de gás, carga elétrica e o que o condomínio permite fechar.</p><div class="busca"><span>“vale a pena apartamento com varanda gourmet”</span></div></li>
-    <li class="texto revelar"><span class="quando">Guia de bairro</span><h3>Morar no Cambuí: ruas, escolas, parques e o que custa</h3><p>Um guia completo, com o que tem perto, os prédios do bairro e os imóveis à venda.</p><div class="busca"><span>“como é morar no Cambuí”</span></div></li>
-    <li class="texto revelar"><span class="quando">Dica · 18h</span><h3>Documentos para vender o imóvel sem susto</h3><p>Matrícula, certidões e o que o comprador vai pedir, em linguagem simples.</p><div class="busca"><span>“documentos para vender imóvel”</span></div></li>
+    <li class="texto revelar"><h3>Varanda gourmet: o que avaliar antes de comprar</h3><p>Ventilação, ponto de gás, carga elétrica e o que o condomínio permite fechar.</p><div class="busca"><span class="quando">Artigo · publicado às 6h</span><span>“vale a pena apartamento com varanda gourmet”</span></div></li>
+    <li class="texto revelar"><h3>Morar no Cambuí: ruas, escolas, parques e o que custa</h3><p>Um guia completo, com o que tem perto, os prédios do bairro e os imóveis à venda.</p><div class="busca"><span class="quando">Guia de bairro</span><span>“como é morar no Cambuí”</span></div></li>
+    <li class="texto revelar"><h3>Documentos para vender o imóvel sem susto</h3><p>Matrícula, certidões e o que o comprador vai pedir, em linguagem simples.</p><div class="busca"><span class="quando">Dica · publicada às 18h</span><span>“documentos para vender imóvel”</span></div></li>
   </ul>
 </div></section>
 
 <section id="comodos" class="claro" aria-labelledby="t-comodos"><div class="cx">
   <div class="comodos">
     <div>
-      <p class="kicker">Tudo numa casa só</p>
       <h2 id="t-comodos">Cada cômodo é uma parte do sistema.</h2>
       <p class="lead" style="margin-bottom:24px">Toque num cômodo da planta para ver o que ele faz.</p>
       <div class="ficha" id="ficha" aria-live="polite"></div>
@@ -508,7 +504,6 @@ ${aoVivo()}
 <section id="contato" class="escuro" aria-labelledby="t-contato"><div class="cx">
   <div class="contato">
     <div>
-      <p class="kicker">Fale com a gente</p>
       <h2 id="t-contato">Vamos montar o seu escritório?</h2>
       <p class="lead" style="margin-bottom:0">Conte um pouco sobre você e respondemos pelo WhatsApp, com uma demonstração ao vivo.</p>
       <div class="direto">
@@ -530,7 +525,7 @@ ${aoVivo()}
 
 <div class="fixa" aria-hidden="true" hidden><div class="fixa-cx"><span class="fixa-t"><b>Sua imobiliária no ar assim,</b> com a sua marca.</span><a class="btn pri" href="#contato" tabindex="-1">Quero a minha</a><a class="fixa-wa" href="https://wa.me/${wa}" target="_blank" rel="noopener" tabindex="-1" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg></a></div></div>
 ${rodape()}
-<script src="/plataforma/site.js?v=4" defer></script>
+<script src="/plataforma/site.js?v=5" defer></script>
 </body></html>`;
 }
 

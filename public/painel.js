@@ -66,8 +66,7 @@ async function telaPainelAdm() {
 
   $('#main').innerHTML = `
   <div class="row" style="justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:6px">
-    <div><div class="eyebrow">${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>
-      <h1 style="margin-bottom:2px">Painel da imobiliária</h1>
+    <div><h1 style="margin-bottom:2px">Painel da imobiliária</h1><div class="eyebrow depois">${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>
       <p class="muted small" style="margin:0">Últimos ${per} (${esc(d.periodo.ini.split('-').reverse().join('/'))} a hoje), comparado ao período anterior. Atualizado às ${esc(d.gerado.slice(11, 16))}.</p></div>
     <div class="row" style="gap:8px"><div class="seg" role="group" aria-label="Período">${[[7, '7 dias'], [30, '30 dias'], [90, '90 dias'], [365, '12 meses']].map(([v, t]) => `<button type="button" data-act="painel-dias" data-dias="${v}" aria-pressed="${v === d.dias}">${t}</button>`).join('')}</div>
       <button class="btn sm" data-act="painel-atualiza" title="Buscar os números de agora">↻ Atualizar</button></div>

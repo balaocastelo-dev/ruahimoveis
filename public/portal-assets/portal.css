@@ -628,3 +628,25 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .p-legal-erro{background:#F8E3DB;color:#6A2716}
 @media (max-width:900px){.p-legal-grade{grid-template-columns:minmax(0,1fr);gap:20px}.p-legal .legal-indice{position:static}}
 @media (max-width:560px){.p-legal .legal-form{grid-template-columns:1fr;padding:16px}}
+
+/* Rótulo depois do título (nunca acima dele): fica junto do título e abre espaço para o que vem a seguir. */
+.depois{margin-top:-.35em!important;margin-bottom:18px!important}
+.p-hero-foto .p-sobre.depois{margin-bottom:14px!important}
+/* Setas desenhadas (no lugar de caracteres) */
+.p-seta{display:inline-block;width:1em;height:1em;vertical-align:-.14em;background:currentColor;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
+.p-seta-volta{transform:scaleX(-1)}
+a:hover>.p-seta:not(.p-seta-volta){transform:translateX(3px)}
+/* Superfícies do navegador no tom da imobiliária */
+::selection{background:color-mix(in srgb,var(--ouro) 28%,transparent)}
+input,textarea{caret-color:var(--ouro)}
+a{text-underline-offset:.18em}
+/* alvos de toque e itens só para leitores de tela (varredura de 28/10) */
+.oculto{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.p-rodape nav a,.p-trilha a{display:inline-block;padding:6px 0}
+.p-link{min-height:32px}
+input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(--ouro)}
+.p-legal .legal-indice a{display:inline-block;padding:4px 0}
+.p-cartao-tipo{color:color-mix(in srgb,var(--salvia) 58%,var(--grafite));margin:2px 0 6px}
+.r-indice span{color:var(--ouro-escuro)}

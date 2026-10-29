@@ -34,7 +34,6 @@ async function telaFisguei(qs) {
   const [r, pd, cr] = await Promise.all([api('GET', '/api/fisguei/resumo'), api('GET', '/api/fisguei/pedidos'), api('GET', '/api/fisguei/creditos'), typeof mapasCfg === 'function' ? mapasCfg() : null]);
   FX.resumo = r; FX.pedidos = pd; FX.cred = cr;
   $('#main').innerHTML = `<div class="fx">
-    <div class="eyebrow">Imóveis da base</div>
     ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
     <header class="fx-topo">
       <div class="fx-titulo">
@@ -240,7 +239,7 @@ function fxCard(a, i = 0) {
   const podeBuscar = a.logradouro && a.numero && a.dono === 'nenhum' && !busca;
   return `<article class="fx-card ${FX.sel.has(a.id) ? 'sel' : ''}" data-id="${a.id}" style="--i:${i % 12}">
     <div class="fx-foto" data-n="${fotos.length}">
-      <button type="button" class="fx-abre" data-act="fx-abre" data-id="${a.id}" aria-label="Abrir prévia: ${esc(a.subtipo)}${a.bairro ? ', ' + esc(a.bairro) : ''}">
+      <button type="button" class="fx-abre" data-act="fx-abre" data-id="${a.id}" title="Abrir prévia">
         <div class="fx-fila" style="--k:0">${fotos.slice(0, 8).map((u, j) => `<img src="${esc(u)}" alt="" ${j ? 'loading="lazy"' : ''} decoding="async" referrerpolicy="no-referrer" data-cadeia="">`).join('') || SEM_FOTO()}</div>
       </button>
       ${fotos.length > 1 ? `<button type="button" class="fx-seta e" data-act="fx-foto" data-d="-1" aria-label="Foto anterior">‹</button><button type="button" class="fx-seta d" data-act="fx-foto" data-d="1" aria-label="Próxima foto">›</button><span class="fx-pontos">${fotos.slice(0, 8).map((_, j) => `<i class="${j ? '' : 'on'}"></i>`).join('')}</span>` : ''}

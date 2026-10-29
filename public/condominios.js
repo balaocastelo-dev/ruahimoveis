@@ -28,15 +28,15 @@ async function telaCondominios(qs) {
   const [l, bairros, alertas] = await Promise.all([api('GET', '/api/condominios?' + new URLSearchParams(f)), api('GET', '/api/condominios/bairros').catch(() => []), api('GET', '/api/condominios/alertas').catch(() => [])]);
   const r = l.resumo || {};
   const paginas = Math.max(1, Math.ceil(l.total / l.porPagina));
-  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base · Campinas</div><h1>Condomínios</h1>${typeof mkAbas === 'function' ? mkAbas('condominios') : ''}
+  $('#main').innerHTML = `<h1>Condomínios</h1><div class="eyebrow depois">Imóveis da base · Campinas</div>${typeof mkAbas === 'function' ? mkAbas('condominios') : ''}
   <p class="lead">Os prédios e condomínios residenciais de Campinas, juntando o CNPJ da Receita, o mapa aberto e os cadastros da ${esc(MARCA.cliente)}. Cada um cruza a carteira, o Radar e o Fisguei: quem está vendendo, por quanto e por qual imobiliária.</p>
   ${alertas.length ? `<div class="card cd-alertas"><div class="row"><h2 style="margin:0;flex:1">Anúncios novos em prédios-alvo</h2><button class="btn sm" data-act="cd-visto">Marcar como vistos</button></div>
     <div class="list" style="margin-top:8px">${alertas.slice(0, 8).map((a) => `<a class="item click" href="${a.href}" style="text-decoration:none;color:inherit"><span class="pill ${a.origem === 'radar' ? 'info' : 'ok'}">${a.origem === 'radar' ? 'Radar' : 'Fisguei'}</span><span style="flex:1">${esc(a.texto)}</span><span class="muted small">${dataBR(a.criado_em)}</span></a>`).join('')}</div></div>` : ''}
   <div class="grid g4 cd-kpis">${cdKpi((r.total || 0).toLocaleString('pt-BR'), 'condomínios na base')}${cdKpi((r.verticais || 0).toLocaleString('pt-BR'), 'prédios')}${cdKpi((r.horizontais || 0).toLocaleString('pt-BR'), 'condomínios de casas')}${cdKpi((r.alvos || 0).toLocaleString('pt-BR'), 'prédios-alvo', '<a href="' + link({ alvo: '1' }) + '">ver</a>')}</div>
   <form class="row cd-filtros" data-form="cd-busca">
     <input name="q" value="${esc(f.q)}" placeholder="Nome, rua ou CNPJ" style="flex:1;min-width:200px">
-    <select name="tipo"><option value="">Todos os tipos</option>${['vertical', 'horizontal', 'indefinido'].map((t) => `<option value="${t}" ${f.tipo === t ? 'selected' : ''}>${CD_TIPO[t][0]}</option>`).join('')}</select>
-    <select name="bairro"><option value="">Todos os bairros</option>${bairros.map((b) => `<option ${f.bairro === b ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
+    <select name="tipo" aria-label="Tipo de condomínio"><option value="">Todos os tipos</option>${['vertical', 'horizontal', 'indefinido'].map((t) => `<option value="${t}" ${f.tipo === t ? 'selected' : ''}>${CD_TIPO[t][0]}</option>`).join('')}</select>
+    <select name="bairro" aria-label="Bairro"><option value="">Todos os bairros</option>${bairros.map((b) => `<option ${f.bairro === b ? 'selected' : ''}>${esc(b)}</option>`).join('')}</select>
     <input type="hidden" name="ordem" value="${esc(f.ordem)}"><input type="hidden" name="dir" value="${esc(f.dir)}">
     <label class="chk"><input type="checkbox" name="venda" ${f.venda ? 'checked' : ''}> Com imóvel à venda</label>
     <label class="chk"><input type="checkbox" name="alvo" ${f.alvo ? 'checked' : ''}> Prédios-alvo</label>
@@ -114,7 +114,7 @@ function cdTabelaVenda(c, temGeo, loc) {
     const dica = on ? (cdOrdem.d > 0 ? 'do menor para o maior · clique para inverter' : 'do maior para o menor · clique para inverter') : 'ordenar';
     return `<th class="cd-ord${on ? ' on' : ''}" data-ord="${k}" aria-sort="${on ? (cdOrdem.d > 0 ? 'ascending' : 'descending') : 'none'}"><button type="button" title="${dica}">${CD_ORDEM[k].t} <span class="cd-seta" aria-hidden="true">${seta}</span></button></th>`;
   };
-  return `<table><thead><tr><th></th>${Object.keys(CD_ORDEM).map(th).join('')}${temGeo ? '<th></th>' : ''}</tr></thead><tbody>
+  return `<table><thead><tr><th><span class="vis-oculto">Foto</span></th>${Object.keys(CD_ORDEM).map(th).join('')}${temGeo ? '<th><span class="vis-oculto">Ações</span></th>' : ''}</tr></thead><tbody>
     ${cdOrdena(lista).map((a) => `<tr class="click" data-act="ir" data-href="${a.href}"><td style="width:72px"><span class="mk-mini">${fotoCadeia([a.foto], a.ref, { vazio: ' ' })}</span></td><td><span class="pill ${cdDaCasa(a) ? 'gold' : a.origem === 'Radar' ? 'info' : 'ok'}">${esc(a.origem)}</span> <span class="mono small">${esc(a.ref)}</span>${a.tambem ? `<br><span class="muted small">também no ${esc(a.tambem.join(', '))}</span>` : ''}</td>
       <td>${esc(a.unidade || '—')}</td><td>${a.quartos || '—'}</td><td>${a.area ? Math.round(a.area) + ' m²' : '—'}</td><td><b>${brl(a.valor)}</b>${loc ? '<span class="muted small">/mês</span>' : ''}</td><td>${a.valor && a.area ? (loc ? 'R$ ' + (a.valor / a.area).toLocaleString('pt-BR', { maximumFractionDigits: 2 }) + '/m²' : cdM2(a.valor / a.area)) : '—'}</td>
       <td>${a.dias !== null && a.dias !== undefined ? a.dias + ' dia(s)' : '—'}</td><td>${esc(a.anunciante || '—')}${a.portal ? `<br><span class="muted small">${esc(a.portal)}</span>` : ''}</td>${temGeo ? `<td>${cdDaCasa(a) ? `<button class="btn sm" data-act="cd-3d" data-href="${cd3d(c.id, a.href.split('/').pop())}" title="Ver o apartamento no 3D">3D</button>` : ''}</td>` : ''}</tr>`).join('')}
@@ -145,8 +145,7 @@ async function telaCondominio(id) {
   $('#main').innerHTML = `<a class="btn sm" href="#/condominios">← Condomínios</a>
   <div class="cd-hero">
     <div style="flex:1;min-width:260px">
-      <div class="eyebrow">${esc(cdFontes(c.fontes))}${c.cnpj ? ' · CNPJ ' + esc(c.cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5')) : ''}</div>
-      <h1 style="margin:2px 0">${esc(c.nome)}</h1>
+      <h1 style="margin:2px 0">${esc(c.nome)}</h1><div class="eyebrow depois">${esc(cdFontes(c.fontes))}${c.cnpj ? ' · CNPJ ' + esc(c.cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5')) : ''}</div>
       <div class="muted">${esc(cdEnd(c))}${c.cep ? ' · CEP ' + esc(c.cep.replace(/(\d{5})(\d{3})/, '$1-$2')) : ''}</div>
       <div class="row" style="gap:6px;margin-top:8px;flex-wrap:wrap">${cdTipo(c.tipo)}${c.alvo ? '<span class="pill gold">prédio-alvo</span>' : ''}${c.situacao && c.situacao !== 'ativa' ? `<span class="pill warn">CNPJ ${esc(c.situacao)}</span>` : ''}${s.lazer.slice(0, 6).map((x) => `<span class="pill info">${esc(x)}</span>`).join('')}</div>
     </div>

@@ -114,15 +114,15 @@ const dataNum = (d) => { if (!d) return null; const t = new Date(String(d).lengt
 // fotos de um imóvel da carteira: a capa; sem foto, a fachada do prédio/condomínio pelo Google (quando ligada)
 const imFotos = (i) => [i.capa && `/api/arquivos/${i.capa}`, i.condominio_id && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${i.condominio_id}` : null];
 function telaSetup() {
-  $('#root').innerHTML = `<div class="auth"><form class="card" data-form="setup">
-    <div class="brand"><b>${esc(MARCA.sistema)}</b><span>Primeiro acesso</span></div>
+  $('#root').innerHTML = `<main class="auth"><form class="card" data-form="setup">
+    <h1 class="brand"><b>${esc(MARCA.sistema)}</b><span>Primeiro acesso</span></h1>
     <p class="muted" style="margin:0">Crie o usuário administrativo. Ele cadastra os corretores depois.</p>
     <label class="f">Seu nome<input name="nome" required autocomplete="name"></label>
     <label class="f">E-mail (login)<input name="email" type="email" required autocomplete="username"></label>
     <label class="f">Senha (8+ caracteres, letras e números)<input name="senha" type="password" required minlength="8" autocomplete="new-password"></label>
     <label class="f">Repita a senha<input name="senha2" type="password" required autocomplete="new-password"></label>
     <label class="chk"><input type="checkbox" name="exemplo"> Incluir dados de exemplo para testar (dá para apagar depois)</label>
-    <button class="btn pri" type="submit">Criar e entrar</button></form></div>`;
+    <button class="btn pri" type="submit">Criar e entrar</button></form></main>`;
 }
 FORM.setup = async (f) => {
   const d = formJSON(f);
@@ -135,12 +135,12 @@ FORM.setup = async (f) => {
 };
 function telaLogin() {
   clearInterval(poll);
-  $('#root').innerHTML = `<div class="auth"><form class="card" data-form="login">
-    <div class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></div>
+  $('#root').innerHTML = `<main class="auth"><form class="card" data-form="login">
+    <h1 class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></h1>
     <label class="f">E-mail<input name="email" type="email" required autocomplete="username"></label>
     <label class="f">Senha<input name="senha" type="password" required autocomplete="current-password"></label>
     <button class="btn pri" type="submit">Entrar</button>
-    <p class="muted small" style="margin:0">Esqueceu a senha? Peça ao administrativo para redefinir.</p></form></div>`;
+    <p class="muted small" style="margin:0">Esqueceu a senha? Peça ao administrativo para redefinir.</p></form></main>`;
 }
 FORM.login = async (f) => { await api('POST', '/api/login', formJSON(f)); ME = await api('GET', '/api/me'); await carregaBase(); shell(); rota(); };
 ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = null; telaLogin(); };
@@ -258,7 +258,7 @@ async function telaPortal() {
   const n = (e) => l.filter((x) => x.estado === e).length;
   const ordem = ['reprovada', 'sem-arquivo', 'sem-pagina', 'desatualizada', 'no-ar'];
   l.sort((a, b) => ordem.indexOf(a.estado) - ordem.indexOf(b.estado) || String(a.codigo).localeCompare(b.codigo));
-  $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Portal de imóveis</h1>
+  $('#main').innerHTML = `<h1>Portal de imóveis</h1>
   <p class="lead">O portal público mostra os imóveis com status <b>publicado</b> e foto. Cada um ganha uma página única, escrita a partir das fotos e da ficha por uma tarefa automática; o imóvel só aparece depois que a página passa na conferência. Valor, áreas e quartos vêm sempre da ficha, ao vivo: se a ficha mudar e o texto passar a discordar, a página sai do ar e é reescrita. Quem clica em "Tenho interesse" ou "Agendar visita" entra no CRM com origem <b>Portal ${esc(MARCA.cliente)}</b>.</p>
   <div class="row" style="margin-bottom:16px;flex-wrap:wrap"><a class="btn pri" href="/imoveis" target="_blank" rel="noopener">Abrir o portal</a>
   <span class="pill ok">${n('no-ar') + n('desatualizada') + l.filter((x) => x.automatica).length} no ar</span><span class="pill warn">${n('sem-pagina')} esperando página</span>${n('reprovada') + n('sem-arquivo') + n('sem-foto') ? `<span class="pill bad">${n('reprovada') + n('sem-arquivo') + n('sem-foto')} fora do ar</span>` : ''}</div>
@@ -279,7 +279,7 @@ ACT['portal-legenda'] = async (el) => {
 async function telaBlog() {
   const d = await api('GET', '/api/blog');
   const situ = (a) => (a.noAr ? '<span class="pill ok">no ar</span>' : a.esperandoFoto ? '<span class="pill warn">esperando a foto</span>' : '<span class="pill info">agendado</span>');
-  $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>${esc(MARCA.blog || MARCA.cliente + ' Blog')}</h1>
+  $('#main').innerHTML = `<h1>${esc(MARCA.blog || MARCA.cliente + ' Blog')}</h1>
   <p class="lead">Três textos por dia, escritos e conferidos sozinhos: artigo às 6h, notícia às 12h e dica às 18h. Cada um só aparece no blog com a foto de capa, feita de madrugada na placa de vídeo. Use "Copiar legenda" para postar no Instagram e no Facebook.</p>
   <div class="row" style="margin-bottom:16px"><a class="btn pri" href="/blog" target="_blank" rel="noopener">Abrir o blog</a><span class="muted small">${d.fotosNaFila ? `${d.fotosNaFila} foto(s) na fila da placa de vídeo` : 'Nenhuma foto na fila'}</span></div>
   ${d.artigos.length ? `<div class="card"><div class="list">${d.artigos.map((a) => `<div class="item" style="flex-wrap:wrap">
@@ -302,8 +302,7 @@ async function telaPainel() {
   api('GET', '/api/condominios/alertas').then((l) => { const el = $('#painel-cond'); if (el && l.length) el.innerHTML = `<div class="banner info"><b>${l.length}</b> anúncio(s) novo(s) em prédios-alvo: ${l.slice(0, 3).map((a) => `<a href="${a.href}">${esc(a.texto)}</a>`).join(' · ')}${l.length > 3 ? ' …' : ''} <a href="#/condominios?alvo=1">ver prédios-alvo</a></div>`; }).catch(() => {});
   if (veTudo()) api('GET', '/api/radar/resumo').then((r) => { const el = $('#painel-aprov'); if (el && r.aprovacoesPendentes) el.innerHTML = `<div class="banner warn"><b>${r.aprovacoesPendentes}</b> pedido(s) de matrícula/birô esperando sua aprovação. <a href="#/radar/aprovacoes">Revisar</a></div>`; }).catch(() => {});
   if (veTudo()) api('GET', '/api/radar/alertas').then((al) => { const el = $('#painel-radar'); if (el && typeof avisoSaude === 'function') el.innerHTML = avisoSaude(al, false); }).catch(() => {});
-  $('#main').innerHTML = `<div class="eyebrow">${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</div>
-  <h1>Painel</h1><p class="lead">${veTudo() ? 'Visão de toda a imobiliária.' : 'Seus imóveis, leads e visitas.'}</p>
+  $('#main').innerHTML = `<h1>Painel</h1><div class="eyebrow depois">${new Date().toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })}</div><p class="lead">${veTudo() ? 'Visão de toda a imobiliária.' : 'Seus imóveis, leads e visitas.'}</p>
   <div id="painel-radar"></div><div id="painel-aprov"></div><div id="painel-cond"></div>
   ${d.sugestoes ? `<div class="banner warn">A IA preparou <b>${d.sugestoes}</b> resposta(s) esperando aprovação. <a href="#/whats">Abrir WhatsApp</a></div>` : ''}
   <div class="grid g4">
@@ -457,7 +456,7 @@ async function telaImoveis(qs) {
   try { CART_F = JSON.parse(lerPref('ruah.carteira.filtros', '{}')) || {}; } catch { CART_F = {}; }
   const veio = qs && CART_CAMPOS.filter((k) => qs.get(k));
   if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
-  $('#main').innerHTML = `<div class="eyebrow">Operação</div><h1>Carteira de imóveis</h1>
+  $('#main').innerHTML = `<h1>Carteira de imóveis</h1>
   <p class="lead">Os imóveis em operação: os da ${esc(MARCA.cliente)} e os que vieram das vitrines da base quando o proprietário foi localizado pela consulta de proprietários. Cada um anda sozinho pelas etapas, do dono localizado até o publicado.</p>
   <div class="seg cart-neg" role="group" aria-label="Venda ou locação" id="cart-neg" style="margin-bottom:10px"></div>
   <div class="cart-funil" id="cart-funil" role="group" aria-label="Etapas"></div>
@@ -479,7 +478,7 @@ async function telaImovelForm(id) {
   const p = im.proprietario || {};
   const v = (k) => esc(im[k] ?? '');
   $('#main').innerHTML = `<a class="btn sm" href="${id ? '#/imoveis/' + id : '#/imoveis'}">← Voltar</a>
-  <div class="eyebrow" style="margin-top:12px">${id ? esc(im.codigo) : 'Cadastro inteligente'}</div><h1>${id ? 'Editar imóvel' : 'Novo imóvel'}</h1>
+  <h1>${id ? 'Editar imóvel' : 'Novo imóvel'}</h1><div class="eyebrow depois">${id ? esc(im.codigo) : 'Cadastro inteligente'}</div>
   <p class="lead">Digite o CEP (ou a rua) e o número e clique em <b>Pesquisar endereço</b>. Os campos em verde vieram da pesquisa: confira antes de salvar. O condomínio fica gravado e os próximos cadastros no mesmo endereço saem automáticos.</p>
   <form data-form="imovel" data-id="${id || ''}" class="grid" style="gap:16px">
   <div class="grid g2">
@@ -558,8 +557,7 @@ async function telaFicha(id, aba) {
   const im = await api('GET', `/api/imoveis/${id}`);
   const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda']];
   $('#main').innerHTML = `<a class="btn sm" href="#/imoveis">← Imóveis</a>
-  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><div class="eyebrow mono">${esc(im.codigo)} ${etapaPill(im.etapa)}</div>
-    <h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1></div>
+  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1><div class="eyebrow depois mono">${esc(im.codigo)} ${etapaPill(im.etapa)}</div></div>
     <select class="inp" style="width:auto" data-status-imovel="${im.id}">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select>
     ${im.condominio_id ? `<a class="btn" href="#/condominios/${im.condominio_id}">Condomínio</a><a class="btn" href="/condominio-3d.html?id=${im.condominio_id}&imovel=${im.id}" target="_blank" rel="noopener">Ver no 3D</a>` : ''}
     <a class="btn" href="#/imoveis/${im.id}/editar">Editar</a></div>
@@ -624,7 +622,7 @@ ACT['criar-pasta'] = (el) => comBotao(null, async () => { const r = await api('P
 async function abaCompradores(im) {
   const l = await api('GET', `/api/imoveis/${im.id}/compradores`);
   $('#aba').innerHTML = `<p class="lead">Leads ativos cujo perfil combina com este imóvel (verba, quartos, vagas, tipo e bairro).</p>
-  ${l.length ? `<div class="card tbl"><table><thead><tr><th>Combina</th><th>Cliente</th><th>Procura</th><th>Etapa</th><th>Corretor</th><th></th></tr></thead><tbody>${l.map((c) => `<tr><td><span class="pill ok">${c.score}%</span></td><td><b>${esc(c.nome)}</b><br><span class="muted small">${esc(c.motivos.join(' · '))}</span></td><td>${esc(c.busca || '')}</td><td>${esc(c.etapa)}</td><td>${esc(c.corretor || '—')}</td>
+  ${l.length ? `<div class="card tbl"><table><thead><tr><th>Combina</th><th>Cliente</th><th>Procura</th><th>Etapa</th><th>Corretor</th><th><span class="vis-oculto">Ações</span></th></tr></thead><tbody>${l.map((c) => `<tr><td><span class="pill ok">${c.score}%</span></td><td><b>${esc(c.nome)}</b><br><span class="muted small">${esc(c.motivos.join(' · '))}</span></td><td>${esc(c.busca || '')}</td><td>${esc(c.etapa)}</td><td>${esc(c.corretor || '—')}</td>
     <td>${veTudo() || c.corretor_id === ME.id ? `<a class="btn sm" href="#/leads/${c.id}">Abrir</a>` : '<span class="muted small">outro corretor</span>'}</td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">Nenhum lead combina ainda. Cadastre o perfil de busca dos clientes no CRM.</div>'}`;
 }
 async function abaLink(im) {
@@ -672,7 +670,7 @@ ACT['cancelar-aut'] = (el) => comBotao(null, async () => { if (!confirm('Cancela
 
 // ---------- CRM ----------
 async function telaLeads() {
-  $('#main').innerHTML = `<div class="eyebrow">CRM</div><h1>Funil de vendas</h1><p class="lead"><span class="so-mouse">Arraste o cartão para mudar a etapa.</span><span class="so-toque">Use "Mover para" no cartão para mudar a etapa; deslize para o lado para ver as outras colunas.</span> ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
+  $('#main').innerHTML = `<h1>Funil de vendas</h1><p class="lead"><span class="so-mouse">Arraste o cartão para mudar a etapa.</span><span class="so-toque">Use "Mover para" no cartão para mudar a etapa; deslize para o lado para ver as outras colunas.</span> ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
   <div class="row" style="margin-bottom:12px"><input class="inp" id="busca-ld" placeholder="Buscar por nome, telefone ou o que procura" style="flex:1;min-width:200px"><button class="btn pri" data-act="novo-lead">+ Novo lead</button></div><div class="kanban" id="kb"></div>`;
   const carrega = async () => {
     const leads = await api('GET', '/api/leads?' + new URLSearchParams({ q: $('#busca-ld').value }));
@@ -715,7 +713,7 @@ FORM['novo-lead'] = async (f) => { const r = await api('POST', '/api/leads', for
 async function telaLead(id) {
   const [l, imoveis] = await Promise.all([api('GET', `/api/leads/${id}`), api('GET', '/api/imoveis')]);
   $('#main').innerHTML = `<a class="btn sm" href="#/leads">← Funil</a>
-  <div class="row" style="margin-top:12px"><div style="flex:1"><div class="eyebrow">Lead · ${esc(l.origem || 'sem origem')}</div><h1>${esc(l.nome)}</h1></div>
+  <div class="row" style="margin-top:12px"><div style="flex:1"><h1>${esc(l.nome)}</h1><div class="eyebrow depois">Lead · ${esc(l.origem || 'sem origem')}</div></div>
     ${l.telefone ? `<a class="btn pri" href="#/whats/${l.id}">Abrir conversa</a>` : ''}</div>
   <p class="lead">${esc(tel(l.telefone))}${l.email ? ' · ' + esc(l.email) : ''} · corretor ${esc(l.corretor_nome || '—')} ${l.nao_contatar ? '<span class="pill bad">não contatar</span>' : ''}</p>
   <div class="grid g2"><form class="card grid" data-form="lead" data-id="${l.id}" style="gap:12px;align-content:start"><h3>Dados e perfil de busca</h3>${camposLead(l)}<div><button class="btn pri" type="submit">Salvar</button></div></form>
@@ -736,7 +734,7 @@ ACT['enviar-link'] = (el) => comBotao(el, async () => { const r = await api('POS
 // ---------- WhatsApp ----------
 async function telaWhats(leadId) {
   const d = await api('GET', '/api/whats');
-  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><div class="eyebrow">Atendimento</div><h1>Conversas do CRM</h1>
+  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><h1>Conversas do CRM</h1>
   <p class="lead">Todas as conversas com clientes, de todos os agentes e da API oficial. Respostas sugeridas pelos agentes do escritório aparecem aqui para aprovar.</p>
   ${d.modo === 'simulado' ? `<div class="banner warn"><b>Modo simulado:</b> a API oficial do WhatsApp ainda não foi configurada. Use “Simular mensagem recebida” para testar o fluxo; nada é enviado de verdade.</div>` : ''}
   <div class="grid g12"><div class="grid" style="gap:12px;align-content:start">
@@ -778,7 +776,7 @@ async function telaVisitas() {
   const l = await api('GET', '/api/visitas');
   const dias = {}; l.forEach((v) => (dias[v.data_hora.slice(0, 10)] = dias[v.data_hora.slice(0, 10)] || []).push(v));
   const hoje = new Date().toISOString().slice(0, 10);
-  $('#main').innerHTML = `<div class="eyebrow">Agenda</div><h1>Visitas</h1><p class="lead">Confirme, registre como foi e cancele visitas. Agende pela ficha do lead. Funciona no celular pelo endereço da rede mostrado na janela do sistema.</p>
+  $('#main').innerHTML = `<h1>Visitas</h1><p class="lead">Confirme, registre como foi e cancele visitas. Agende pela ficha do lead. Funciona no celular pelo endereço da rede mostrado na janela do sistema.</p>
   ${Object.keys(dias).length ? Object.entries(dias).map(([d, vs]) => `<h3 style="margin-top:16px">${new Date(d + 'T12:00').toLocaleDateString('pt-BR', { weekday: 'long', day: '2-digit', month: '2-digit' })}${d === hoje ? ' · hoje' : ''}</h3>
     <div class="list">${vs.map((v) => `<div class="item" style="flex-wrap:wrap"><span class="mono" style="min-width:48px">${v.data_hora.slice(11, 16)}</span><a href="#/imoveis/${v.imovel_id}" aria-label="Abrir imóvel ${esc(v.codigo)}">${miniFoto(v)}</a><div style="flex:1;min-width:200px">
       <div class="t">${esc(v.codigo)} · ${esc(v.condominio || [v.logradouro, v.numero].filter(Boolean).join(', '))}</div><div class="muted small">${esc(v.lead)} · ${esc(tel(v.telefone))}${veTudo() ? ' · ' + esc(v.corretor || '') : ''}${v.avaliacao ? ' · “' + esc(v.avaliacao) + '”' : ''}</div></div>
@@ -798,7 +796,7 @@ async function telaConfig(qs) {
   const [ig, us, au] = await Promise.all([api('GET', '/api/integracoes'), api('GET', '/api/usuarios'), ME.perfil === 'adm' ? api('GET', '/api/auditoria') : Promise.resolve([])]);
   const dv = ig.drive, adm = ME.perfil === 'adm';
   const msgDrive = qs.get('drive');
-  $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Configurações</h1>
+  $('#main').innerHTML = `<h1>Configurações</h1>
   ${msgDrive ? `<div class="banner ${msgDrive === 'ok' ? '' : 'warn'}" style="${msgDrive === 'ok' ? 'background:var(--ok-bg)' : ''}">${msgDrive === 'ok' ? 'Google Drive conectado.' : esc(msgDrive)}</div>` : ''}
   <div class="grid g3">
     <div class="card"><div class="row"><h3 style="margin:0">Google Drive</h3><span class="sp"></span>${dv.conectado ? '<span class="pill ok">conectado</span>' : '<span class="pill warn">desconectado</span>'}</div>
@@ -815,7 +813,7 @@ async function telaConfig(qs) {
   ${!ig.public_url ? '<div class="banner warn" style="margin-top:16px">Sem endereço público configurado: links de assinatura e de imóvel só abrem neste PC ou na rede do escritório. Veja “Endereço público” no COMO-CONFIGURAR.txt.</div>' : ''}
   <div class="grid g21" style="margin-top:16px">
     <div class="card"><div class="row"><h2 style="margin:0">Usuários</h2><span class="sp"></span>${adm ? '<button class="btn pri sm" data-act="novo-usuario">+ Novo usuário</button>' : ''}</div>
-      <div class="tbl" style="margin-top:10px"><table><thead><tr><th>Nome</th><th>Login</th><th>Perfil</th><th>Situação</th>${adm ? '<th></th>' : ''}</tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.nome)}</td><td class="mono">${esc(u.email || '')}</td><td>${esc(u.perfil)}</td><td>${u.ativo === 0 ? '<span class="pill bad">inativo</span>' : '<span class="pill ok">ativo</span>'}</td>
+      <div class="tbl" style="margin-top:10px"><table><thead><tr><th>Nome</th><th>Login</th><th>Perfil</th><th>Situação</th>${adm ? '<th><span class="vis-oculto">Ações</span></th>' : ''}</tr></thead><tbody>${us.map((u) => `<tr><td>${esc(u.nome)}</td><td class="mono">${esc(u.email || '')}</td><td>${esc(u.perfil)}</td><td>${u.ativo === 0 ? '<span class="pill bad">inativo</span>' : '<span class="pill ok">ativo</span>'}</td>
         ${adm ? `<td style="white-space:nowrap">${u.id !== ME.id ? `<button class="btn sm" data-act="reset-senha" data-id="${u.id}">Nova senha</button> <button class="btn sm ${u.ativo ? 'danger' : ''}" data-act="ativo" data-id="${u.id}" data-v="${u.ativo ? 0 : 1}">${u.ativo ? 'Desativar' : 'Ativar'}</button>` : '<span class="muted small">você</span>'}</td>` : ''}</tr>`).join('')}</tbody></table></div></div>
     <div class="grid" style="gap:16px;align-content:start"><form class="card grid" data-form="meu-telefone" style="gap:10px"><h2 style="margin:0">Meu WhatsApp</h2><p class="muted small" style="margin:0">Vai no QR code das cartas de captação quando a ${esc(MARCA.cliente)} não tiver um número central (WHATSAPP_CLIENTE no .env).</p><label class="f">Celular com DDD<input name="telefone" inputmode="tel" value="${esc(tel(ME.telefone || ''))}"></label><div><button class="btn" type="submit">Salvar</button></div></form>
     <form class="card grid" data-form="minha-senha" style="gap:10px;align-content:start"><h2 style="margin:0">Minha senha</h2><label class="f">Senha atual<input type="password" name="atual" required autocomplete="current-password"></label><label class="f">Nova senha<input type="password" name="nova" required minlength="8" autocomplete="new-password"></label><div><button class="btn" type="submit">Trocar senha</button></div></form></div>
@@ -839,3 +837,11 @@ FORM['minha-senha'] = async (f) => { await api('POST', '/api/me/senha', formJSON
 
 // só começa depois que todos os scripts da página (radar, fisguei, captação, vitrines…) estiverem carregados
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inicio); else inicio();
+
+// Áreas que rolam (tabelas largas, linha do tempo, funil, feed) precisam ser alcançáveis pelo teclado.
+(() => {
+  const SEL = '.tbl,.timeline,#kb,#ev-feed,.rolar';
+  let t = 0;
+  const marca = () => { t = 0; document.querySelectorAll(SEL).forEach((el) => { if (!el.hasAttribute('tabindex')) { el.tabIndex = 0; if (!el.getAttribute('role')) el.setAttribute('role', 'region'); if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', el.id === 'kb' ? 'Funil de vendas (role para o lado)' : el.id === 'ev-feed' ? 'Acontecendo agora' : 'Área com rolagem'); } }); };
+  new MutationObserver(() => { if (!t) t = setTimeout(marca, 120); }).observe(document.documentElement, { childList: true, subtree: true });
+})();

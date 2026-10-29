@@ -16,7 +16,7 @@ const topo = `<div class="row"><b style="font-family:var(--f-display);font-size:
   const tels = String(d.corretor_tel || '').replace(/\D/g, '');
   app.innerHTML = topo + `
   ${d.fotos.length ? `<img class="hero" id="hero" src="${foto(d.fotos[0])}" alt="Foto do imóvel"><div class="thumbs">${d.fotos.map((f, i) => `<img src="${foto(f)}" data-f="${f}" class="${i ? '' : 'on'}" alt="Foto ${i + 1}" loading="lazy">`).join('')}</div>` : '<div class="noimg">Fotos em breve</div>'}
-  <div><div class="eyebrow">${esc(d.codigo)} · ${esc(d.bairro || '')}, ${esc(d.cidade || '')}</div><h1>${esc(d.tipo)}${d.condominio ? ' no ' + esc(d.condominio) : ''}</h1>
+  <div><h1>${esc(d.tipo)}${d.condominio ? ' no ' + esc(d.condominio) : ''}</h1><div class="eyebrow depois">${esc(d.codigo)} · ${esc(d.bairro || '')}, ${esc(d.cidade || '')}</div>
     <p class="lead" style="margin:0">${d.endereco ? esc(d.endereco) + ' · ' : ''}<b style="font-size:20px;color:var(--ink)">${brl(d.valor)}</b></p></div>
   <div class="grid g4">${[['Quartos', d.quartos], ['Suítes', d.suites], ['Vagas', d.vagas], ['Área útil', d.area_util ? d.area_util + ' m²' : null]].map(([a, b]) => `<div class="card kpi"><div class="n" style="font-size:26px">${esc(b ?? '—')}</div><div class="l">${a}</div></div>`).join('')}</div>
   <div class="grid g21"><div class="card"><h3>Sobre o imóvel</h3><p style="white-space:pre-wrap;margin:0">${esc(d.descricao || 'Fale com o corretor para mais detalhes.')}</p>${d.lazer ? `<h3 style="margin-top:14px">Lazer do condomínio</h3><p style="margin:0">${esc(d.lazer)}</p>` : ''}</div>

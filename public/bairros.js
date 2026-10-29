@@ -25,7 +25,7 @@ async function telaBairros(q) {
   const pode = BR.podeEditar;
   const aba = (f, t) => `<a class="btn sm ${filtro === f ? 'pri' : ''}" href="#/bairros?f=${f}">${t}</a>`;
 
-  $('#main').innerHTML = `<div class="eyebrow">Conteúdo</div><h1>Páginas de bairros</h1>
+  $('#main').innerHTML = `<h1>Páginas de bairros</h1>
   <p class="lead">Um guia completo para cada bairro de Campinas, feito para ser encontrado no Google e citado pelas IAs. Uma tarefa automática pesquisa o bairro, escolhe fotos reais (de imóveis da ${esc(MARCA.cliente)} no bairro e de lugares do bairro, com licença livre) e escreve a página; a régua confere antes de publicar. Os números da página (imóveis da ${esc(MARCA.cliente)} à venda, prédios, o que tem perto) são atualizados sozinhos. Aqui você decide quais bairros entram, a ordem da fila e o que a página deve dizer.</p>
   <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:16px">
     <div class="card kpi"><div class="n">${n((b) => BR_NOAR.includes(b.estado))}</div><div class="l">páginas no ar</div></div>
@@ -40,7 +40,7 @@ async function telaBairros(q) {
     <form data-form="br-busca" style="display:flex;gap:6px"><input name="q" value="${esc(q.get('q') || '')}" placeholder="Procurar bairro" style="width:180px"><input type="hidden" name="f" value="${esc(filtro)}"></form>
   </div>
   ${fila.length ? `<p class="muted small" style="margin:0 0 12px">Próximos da fila: ${fila.slice(0, 5).map((b, i) => `<b>${i + 1}. ${esc(b.nome)}</b>`).join(' · ')}. A ordem segue: reescrita pedida, depois prioridade, imóveis da ${esc(MARCA.cliente)} no bairro e número de prédios.</p>` : ''}
-  <div class="card tbl"><table><thead><tr><th>Bairro</th><th>Região</th><th title="Imóveis da ${esc(MARCA.cliente)} à venda no bairro">Imóveis</th><th title="Condomínios e prédios na base">Prédios</th><th>Página</th><th>Prioridade</th><th></th></tr></thead><tbody>
+  <div class="card tbl"><table><thead><tr><th>Bairro</th><th>Região</th><th title="Imóveis da ${esc(MARCA.cliente)} à venda no bairro">Imóveis</th><th title="Condomínios e prédios na base">Prédios</th><th>Página</th><th>Prioridade</th><th><span class="vis-oculto">Ações</span></th></tr></thead><tbody>
   ${vis.map((b) => {
     const [c, t] = BR_ESTADO[b.estado] || ['info', b.estado];
     const noar = BR_NOAR.includes(b.estado);

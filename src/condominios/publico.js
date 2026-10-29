@@ -47,8 +47,8 @@ async function pagina(req, c) {
   const indexar = process.env.CONDOMINIOS_PUBLICOS === '1' && noAr.length > 0;
   const corpo = `
 <section class="p-hero p-hero-curto">
-  <p class="p-sobre">${vertical ? 'Prédio residencial' : 'Condomínio de casas'}${c.bairro ? ` · ${esc(c.bairro)}` : ''} · Campinas</p>
   <h1>${esc(c.nome)}</h1>
+  <p class="p-sobre depois">${vertical ? 'Prédio residencial' : 'Condomínio de casas'}${c.bairro ? ` · ${esc(c.bairro)}` : ''} · Campinas</p>
   ${fatos.length ? `<p class="p-hero-l">${esc(fatos.join(' · '))}${c.unidades_fonte && /censo/i.test(c.unidades_fonte) ? ' <span class="p-cd-fonte">(Censo 2022, IBGE)</span>' : ''}</p>` : ''}
   <p><a class="p-botao" href="/condominios/${esc(c.slug)}/3d">Explorar o condomínio em 3D</a> <a class="p-botao sec" href="#contato">Quero morar aqui</a></p>
 </section>

@@ -33,7 +33,7 @@ async function telaEscritorio() {
     : p.pausado ? '<div class="banner warn"><b>Escritório em pausa:</b> ninguém responde até você retomar.</div>' : '';
   const selo = `<span class="ev-pc ${p.nuvem ? 'on' : p.vivo ? 'on' : ''}"><i></i>${p.nuvem ? `Cérebro na nuvem · ${esc(p.modelo || 'Gemini')}` : p.vivo ? `Cérebro no PC · ${esc(p.modelo || '')}` : 'Cérebro desligado'}</span>
     <span class="ev-pc ${p.vivo ? 'on' : ''}"><i></i>${p.vivo ? 'WhatsApp no PC ligado' : 'WhatsApp no PC desligado'}</span>`;
-  $('#main').innerHTML = `<div class="ev-topo"><div><div class="eyebrow">Atendimento</div><h1>Escritório virtual</h1>
+  $('#main').innerHTML = `<div class="ev-topo"><div><h1>Escritório virtual</h1>
     <p class="lead">Nove agentes robôs, cada um com um setor, um número de WhatsApp (QR code) e uma <b>alma</b> — o arquivo <span class="mono">.soul</span> com as instruções de como ele pensa e fala. Eles atendem clientes, buscam donos de imóveis e mantêm o dono e os corretores informados.</p></div>
     <div class="ev-topo-acoes">${selo}
       <a class="btn jg-entra" href="#/whats/ao-vivo">🎮 Ver o escritório ao vivo</a>
@@ -78,7 +78,7 @@ function evAprovar(l, porSlug) {
   return l.map((m) => { const a = porSlug[m.agente] || {};
     return `<div class="ev-ap" data-id="${m.id}"><div class="row" style="gap:8px">${evAvatar(a, 'mini')}<b>${esc(a.nome || m.agente)}</b><span class="muted small">para ${esc(m.nome || tel(m.telefone))}</span><span class="sp"></span><span class="muted small">${dataBR(m.criado_em)}</span></div>
       ${m.pergunta ? `<div class="ev-ap-q">“${esc(m.pergunta)}”</div>` : ''}
-      <textarea class="inp" rows="3" id="evap-${m.id}">${esc(m.texto)}</textarea>
+      <textarea class="inp" rows="3" id="evap-${m.id}" aria-label="Resposta sugerida (pode editar antes de aprovar)">${esc(m.texto)}</textarea>
       <div class="row" style="gap:6px"><button class="btn pri sm" data-act="ev-aprova" data-id="${m.id}">Aprovar e enviar</button><button class="btn sm" data-act="ev-descarta" data-id="${m.id}">Descartar</button>${m.lead_id ? `<a class="btn sm" href="#/whats/${m.lead_id}">Conversa</a>` : ''}</div></div>`; }).join('');
 }
 async function evAtualiza() {
@@ -104,7 +104,7 @@ async function telaMesa(slug, aba = 'mesa') {
   const ls = a.linha_estado;
   $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a>
   <div class="ev-cab" style="--c:${esc(a.cor)}">${evAvatar(a, ls.estado === 'conectado' && a.ajustes.ativo ? 'grande pulsa' : 'grande')}
-    <div style="flex:1;min-width:0"><div class="eyebrow">Agente ${a.n} · ${esc(a.setor)}</div><h1 style="margin:0">${esc(a.nome)}</h1><p class="lead" style="margin:2px 0 0">${esc(a.cargo)} — ${esc(a.resumo)}</p></div>
+    <div style="flex:1;min-width:0"><h1 style="margin:0">${esc(a.nome)}</h1><div class="eyebrow depois">Agente ${a.n} · ${esc(a.setor)}</div><p class="lead" style="margin:2px 0 0">${esc(a.cargo)} — ${esc(a.resumo)}</p></div>
     <div class="ev-cab-st">${evPill(a.ajustes.ativo ? ls.estado : 'parada')}<span class="small muted">${a.linha !== a.slug ? `usa a linha de ${esc(a.linha_nome)}` : ls.numero ? esc(tel(ls.numero)) : 'sem número'}</span>
       <span class="small muted">${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}${a.ajustes.alma_editada ? ' · alma editada' : ''}</span></div></div>
   <div class="tabs">${EV_ABAS.map(([k, l]) => `<a href="#/whats/agente/${a.slug}/${k}" class="${aba === k ? 'on' : ''}">${l}${k === 'mesa' && a.aprovar ? ` <span class="pill bad">${a.aprovar}</span>` : ''}</a>`).join('')}</div>
@@ -285,7 +285,7 @@ async function telaEscritorioConfig() {
   if (!veTudo()) { $('#main').innerHTML = '<div class="empty">Só o administrativo e o gestor mudam a configuração do escritório.</div>'; return; }
   const d = await api('GET', '/api/escritorio/config');
   const ia = d.ia, g = d.geral, p = d.pc;
-  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><div class="eyebrow">Escritório virtual</div><h1>Configuração geral</h1>
+  $('#main').innerHTML = `<a class="muted small" href="#/whats">← Escritório virtual</a><h1>Configuração geral</h1>
   <p class="lead">O que vale para os 9 agentes: o cérebro que alimenta todos eles, as regras dos setores e o funcionamento sem o PC.</p>
   <div class="grid g2" style="align-items:start">
     <form class="card grid" data-form="ev-ia" style="gap:12px">

@@ -218,3 +218,12 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 }
 @media (min-width:2300px){body{font-size:19px}}
 @media (min-width:1800px){:root{--largura:1320px}}
+/* categoria dentro da linha de dados (não acima do título) */
+.meta .cat{font-size:inherit;font-weight:600}
+.meta .cat:hover{text-decoration:underline!important;text-underline-offset:.18em}
+::selection{background:color-mix(in srgb,var(--salvia) 24%,transparent)}
+input,textarea{caret-color:var(--salvia)}
+.rodape nav a{display:inline-block;padding:6px 0}
+.meta .cat{display:inline-block;padding:3px 0}
+input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(--ouro)}
+.rolar:focus-visible{outline:3px solid var(--ouro);outline-offset:2px}

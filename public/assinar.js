@@ -15,7 +15,7 @@ const topo = (emp) => `<div class="brand"><b style="font-family:var(--f-display)
   if (d.status === 'cancelado') { app.innerHTML = topo(d.empresa) + `<div class="card"><h2>Link cancelado</h2><p>Este link foi substituído. Peça o novo link ao corretor.</p></div>`; return; }
 
   app.innerHTML = topo(d.empresa) + `
-  <div><div class="eyebrow">Imóvel ${esc(d.codigo)}</div><h1>Autorização de venda</h1><p class="muted" style="margin:0">Leia o documento até o fim, confira seus dados e assine com o dedo ou o mouse.</p></div>
+  <div><h1>Autorização de venda</h1><div class="eyebrow depois">Imóvel ${esc(d.codigo)}</div><p class="muted" style="margin:0">Leia o documento até o fim, confira seus dados e assine com o dedo ou o mouse.</p></div>
   <div class="doc">${esc(d.conteudo)}</div>
   <form class="card grid" id="f" style="gap:12px">
     <label class="f">Nome completo<input name="nome" required value="${esc(d.nome || '')}" autocomplete="name"></label>

@@ -131,7 +131,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <body class="${classe}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="p-topo">
-  <a class="p-marca" href="/imoveis" aria-label="${esc(CLIENTE)}, imóveis à venda">${require('../tema').logo(CLIENTE, 'p-marca-logo') || `<span class="p-marca-n">${esc(CLIENTE)}</span>`}<span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
+  <a class="p-marca" href="/imoveis">${require('../tema').logo(CLIENTE, 'p-marca-logo') || `<span class="p-marca-n">${esc(CLIENTE)}</span>`}<span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
   <nav class="p-nav" aria-label="Portal">
     <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
@@ -161,8 +161,8 @@ function cartao(x, { eager = false } = {}) {
 <a class="p-cartao-img" href="/imoveis/${p.slug}"><img src="${fotoUrl(p.capa.foto)}" alt="${esc(p.capa.alt)}" width="1280" height="853" loading="${eager ? 'eager' : 'lazy'}" decoding="async"><span class="p-cartao-n">${im.fotos.length} fotos</span></a>
 <button class="p-fav" type="button" data-fav="${esc(im.codigo)}" aria-pressed="false" aria-label="Guardar ${esc(im.codigo)} nos favoritos" title="Guardar nos favoritos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.5 8.1 3.6 4.5 7.2 4.5c2 0 3.6 1.1 4.8 2.8 1.2-1.7 2.8-2.8 4.8-2.8 3.6 0 5.7 3.6 4.5 6.8-1.8 4.6-9.3 9.2-9.3 9.2z"/></svg></button>
 <div class="p-cartao-t">
-<p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
+<p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <p class="p-specs">${specs(im, true).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
 <p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
 </div></article>`;
@@ -217,8 +217,8 @@ ${require('./versoes').seletor('vitrine')}
 <section class="p-hero p-hero-foto p-hero-direita">
   <div class="p-hero-fundo" aria-hidden="true"><img src="${esc(FUNDO.src)}"${FUNDO.srcset ? ` srcset="${esc(FUNDO.srcset)}" sizes="100vw"` : ''} alt="" width="${FUNDO.largura}" height="${FUNDO.altura}" style="object-position:${esc(FUNDO.posicao)}" fetchpriority="high" decoding="async"></div>
   <div class="p-hero-txt">
-  <p class="p-sobre">Portal ${esc(CLIENTE)}</p>
   <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
+  <p class="p-sobre depois">Portal ${esc(CLIENTE)}</p>
   <p class="p-hero-l">${lista.length} imóveis com fotos, ficha completa e uma página para cada um. Encontrou? Fale com o corretor pela própria página.</p>
   </div>
   <form class="p-filtros" method="get" action="/imoveis" role="search" data-filtros>
@@ -235,8 +235,8 @@ ${require('./versoes').seletor('vitrine')}
 <section class="p-resultado" aria-live="polite">
   ${guiaDoBairro ? `<p class="p-guia">Quer conhecer melhor o bairro? <a href="/bairros/${esc(guiaDoBairro.slug)}">Guia do ${esc(guiaDoBairro.nome)}</a>: história, parques, escolas, comércio e prédios.</p>` : ''}
   <div class="p-resultado-cab"><p><b>${achados.length}</b> ${achados.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}</p>${filtrado ? '<a href="/imoveis">Limpar filtros</a>' : ''}</div>
-  ${daPagina.length ? `<div class="p-grade">${daPagina.map((x, i) => cartao(x, { eager: i < 3 })).join('')}</div>` : `<div class="p-vazio"><p>${lista.length ? 'Nenhum imóvel com esses filtros.' : 'Os imóveis chegam em breve.'}</p>${filtrado ? '<a class="p-botao sec" href="/imoveis">Ver todos os imóveis</a>' : ''}${whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.') ? `<a class="p-botao" href="${esc(whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.'))}" target="_blank" rel="noopener">Contar o que procuro</a>` : ''}</div>`}
-  ${paginas > 1 ? `<nav class="p-paginas" aria-label="Páginas">${pagina > 1 ? `<a href="${esc(link(pagina - 1))}" rel="prev">← Anteriores</a>` : '<span></span>'}<span>Página ${pagina} de ${paginas}</span>${pagina < paginas ? `<a href="${esc(link(pagina + 1))}" rel="next">Próximos →</a>` : '<span></span>'}</nav>` : ''}
+  ${daPagina.length ? `<h2 class="oculto">${lista.length} imóveis</h2><div class="p-grade">${daPagina.map((x, i) => cartao(x, { eager: i < 3 })).join('')}</div>` : `<div class="p-vazio"><p>${lista.length ? 'Nenhum imóvel com esses filtros.' : 'Os imóveis chegam em breve.'}</p>${filtrado ? '<a class="p-botao sec" href="/imoveis">Ver todos os imóveis</a>' : ''}${whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.') ? `<a class="p-botao" href="${esc(whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.'))}" target="_blank" rel="noopener">Contar o que procuro</a>` : ''}</div>`}
+  ${paginas > 1 ? `<nav class="p-paginas" aria-label="Páginas">${pagina > 1 ? `<a href="${esc(link(pagina - 1))}" rel="prev"><span class="p-seta p-seta-volta" aria-hidden="true"></span> Anteriores</a>` : '<span></span>'}<span>Página ${pagina} de ${paginas}</span>${pagina < paginas ? `<a href="${esc(link(pagina + 1))}" rel="next">Próximos <span class="p-seta" aria-hidden="true"></span></a>` : '<span></span>'}</nav>` : ''}
 </section>`;
   const base = urlBase(req);
   const ld = [{
@@ -252,10 +252,10 @@ ${require('./versoes').seletor('vitrine')}
 
 function paginaFavoritos(req, lista) {
   const corpo = `
-<section class="p-hero p-hero-curto"><p class="p-sobre">Portal ${esc(CLIENTE)}</p><h1>Seus favoritos</h1>
+<section class="p-hero p-hero-curto"><h1>Seus favoritos</h1><p class="p-sobre depois">Portal ${esc(CLIENTE)}</p>
 <p class="p-hero-l">Os imóveis que você marcou com o coração ficam guardados neste aparelho. Nada é enviado para a ${esc(CLIENTE)} até você pedir contato.</p></section>
 <section class="p-resultado" data-favoritos>
-  <div class="p-grade">${lista.map((x) => cartao(x)).join('')}</div>
+  <h2 class="oculto">Imóveis guardados</h2><div class="p-grade">${lista.map((x) => cartao(x)).join('')}</div>
   <div class="p-vazio" data-favoritos-vazio hidden><p>Você ainda não guardou nenhum imóvel. Toque no coração de um imóvel para guardar aqui.</p><a class="p-botao" href="/imoveis">Ver os imóveis</a></div>
 </section>`;
   return casca(req, { titulo: `Favoritos · ${CLIENTE}`, descricao: `Os imóveis da ${CLIENTE} que você guardou.`, caminho: '/imoveis/favoritos', corpo, classe: 'p-vitrine', semIndice: true });
@@ -266,7 +266,7 @@ function chamada(tema, im) {
   const c = CHAMADAS[tema];
   const zap = tema === 'corretor' && whatsapp(im, `Olá! Tenho uma dúvida sobre o imóvel ${im.codigo}.`);
   const href = zap || '#contato';
-  return `<aside class="p-chamada"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
+  return `<aside class="p-chamada" aria-label="${esc(c.titulo)}"><div><p class="p-chamada-t">${esc(c.titulo)}</p><p>${esc(c.texto)}</p></div>
 <a class="p-botao" href="${esc(href)}"${zap ? ' target="_blank" rel="noopener"' : ` data-contato="${tema === 'visita' ? 'visita' : 'interesse'}"`}>${esc(c.rotulo)}</a></aside>`;
 }
 
@@ -391,8 +391,8 @@ function paginaImovel(req, x, lista) {
   const corpo = `
 <nav class="p-trilha" aria-label="Você está em"><a href="/imoveis">Imóveis</a>${grupo ? ` <span aria-hidden="true">›</span> <a href="/imoveis?tipo=${grupo.slug}">${esc(grupo.nome)}</a>` : ''}${im.bairro ? ` <span aria-hidden="true">›</span> <a href="${x.guiaDoBairro ? `/bairros/${esc(x.guiaDoBairro.slug)}` : `/imoveis?bairro=${encodeURIComponent(im.bairro)}`}">${esc(im.bairro)}</a>` : ''}</nav>
 <header class="p-im-cab">
-  <p class="p-sobre">${esc(im.tipo)} · ${esc(lugar(im))}${im.condominio ? ` · ${esc(im.condominio)}` : ''}</p>
   <h1>${esc(p.titulo)}</h1>
+  <p class="p-sobre depois">${esc(im.tipo)} · ${esc(lugar(im))}${im.condominio ? ` · ${esc(im.condominio)}` : ''}</p>
   <p class="p-linha-fina">${esc(p.resumo)}</p>
 </header>
 <div class="p-mosaico p-mosaico-${Math.min(mosaico.length, 5)}" data-galeria='${esc(JSON.stringify(ordem.map((f) => ({ src: fotoUrl(f), legenda: legendas.get(f) || '' }))))}'>

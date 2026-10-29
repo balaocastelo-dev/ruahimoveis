@@ -11,7 +11,7 @@ async function telaRadar(qs) {
   const st = qs.get('status') || '';
   const [l, r, al] = await Promise.all([api('GET', '/api/radar?' + new URLSearchParams({ status: st })), api('GET', '/api/radar/resumo'), api('GET', '/api/radar/alertas').catch(() => null)]);
   const n = (k) => r.porStatus[k] || 0;
-  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Oportunidades (Radar)</h1>
+  $('#main').innerHTML = `<h1>Oportunidades (Radar)</h1>
   ${typeof capAbas === 'function' ? capAbas('radar') : ''}
   <p class="lead">Imóveis à venda por particulares que podem virar exclusividade da ${esc(MARCA.cliente)}. A ordem é sempre do grátis para o pago: contato do anúncio, carta com QR code, placa/portaria e, só com aprovação, matrícula e birô.</p>
   ${avisoSaude(al, true)}${painelAlertas(al)}
@@ -24,7 +24,7 @@ async function telaRadar(qs) {
   </div>
   <div class="row" style="margin:16px 0 12px">
     <div class="tabs" style="margin:0;flex:1;border:0">${[['', 'Em andamento'], ['nova', 'Novas'], ['carta_enviada', 'Carta enviada'], ['aguardando_aprovacao', 'Aguardando aprovação'], ['captada', 'Captadas'], ['descartada', 'Descartadas']].map(([k, t]) => `<a href="#/radar${k ? '?status=' + k : ''}" class="${st === k ? 'on' : ''}">${t}</a>`).join('')}</div></div>
-  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th><th>Fisgar</th></tr></thead><tbody>
+  ${l.length ? `<div class="card tbl"><table><thead><tr><th><input type="checkbox" id="sel-todas" aria-label="Selecionar todas"></th><th><span class="vis-oculto">Ações</span></th><th>Prioridade</th><th>Anúncio</th><th>Endereço</th><th class="num">Valor</th><th>Status</th><th>Corretor</th><th>Fisgar</th></tr></thead><tbody>
     ${l.map((o) => `<tr><td><input type="checkbox" class="sel-op" value="${o.id}" ${o.bloqueio || o.anunciante_tipo === 'imobiliaria' || !o.logradouro ? 'disabled title="Sem endereço, de imobiliária ou na lista não contatar"' : ''} aria-label="Selecionar ${esc(o.ref)}"></td>
       <td class="click" data-act="ir" data-href="#/radar/${o.id}" style="width:72px;cursor:pointer"><span class="mk-mini">${fotoCadeia([o.foto], o.titulo || o.tipo || '', { vazio: ' ' })}</span></td>
       <td>${prioPill(o.prioridade)}</td>
@@ -97,7 +97,7 @@ async function telaOpForm(id) {
   const o = id ? await api('GET', `/api/radar/${id}`) : { anunciante_tipo: 'particular', cidade: 'Campinas' };
   const v = (k) => esc(o[k] ?? '');
   $('#main').innerHTML = `<a class="btn sm" href="${id ? '#/radar/' + id : '#/radar'}">← Voltar</a>
-  <div class="eyebrow" style="margin-top:12px">${id ? esc(o.ref) : 'Radar de captação'}</div><h1>${id ? 'Editar oportunidade' : 'Nova oportunidade'}</h1>
+  <h1>${id ? 'Editar oportunidade' : 'Nova oportunidade'}</h1><div class="eyebrow depois">${id ? esc(o.ref) : 'Radar de captação'}</div>
   <p class="lead">Copie os dados do alerta do portal. O sistema avisa se o mesmo imóvel já foi cadastrado (mesmo link, telefone ou endereço) e calcula a prioridade.</p>
   <form class="grid" style="gap:16px" data-form="op" data-id="${id || ''}"><div class="grid g2">
     <fieldset><legend>Anúncio</legend>
@@ -158,7 +158,7 @@ async function telaOp(id) {
   const formPedido = (tipo, nome) => `<form class="grid" style="gap:8px" data-form="pedido" data-id="${o.id}" data-tipo="${tipo}"><div class="grid g2"><label class="f">Custo estimado (R$)<input name="custo_estimado" inputmode="decimal" value="${o.custos_padrao[tipo] || ''}"></label><label class="f">Por que vale a pena?<input name="justificativa" placeholder="Alto padrão, carta sem resposta há 15 dias"></label></div><div><button class="btn sm" type="submit">Pedir aprovação para ${nome}</button></div></form>`;
 
   $('#main').innerHTML = `<a class="btn sm" href="#/radar">← Radar</a>
-  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><div class="eyebrow mono">${esc(o.ref)} · ${esc(o.portal || 'sem portal')}</div><h1>${esc(o.titulo || o.condominio_nome || o.tipo || 'Oportunidade')}</h1></div>
+  <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><h1>${esc(o.titulo || o.condominio_nome || o.tipo || 'Oportunidade')}</h1><div class="eyebrow depois mono">${esc(o.ref)} · ${esc(o.portal || 'sem portal')}</div></div>
     ${prioPill(o.prioridade)} ${opPill(o.status)} <a class="btn" href="#/radar/${o.id}/editar">Editar</a>${!o.corretor_id ? ` <button class="btn pri" data-act="op-assumir" data-id="${o.id}">Assumir</button>` : ''}</div>
   <p class="lead">${esc(endOp(o) || 'Endereço não informado')}${o.bairro ? ' · ' + esc(o.bairro) : ''} · <b>${brl(o.valor)}</b>${o.valor_anterior && o.valor < o.valor_anterior ? ` <span class="pill ok">era ${brl(o.valor_anterior)}</span>` : ''} · corretor ${esc(o.corretor_nome || 'livre')}${o.link ? ` · <a href="${esc(o.link)}" target="_blank" rel="noopener">ver anúncio</a>` : ''}</p>
   ${o.bloqueio ? `<div class="banner warn"><b>Não contatar:</b> ${esc(o.bloqueio)}</div>` : ''}
@@ -217,7 +217,7 @@ ACT['op-reabrir'] = (el) => comBotao(el, async () => { await api('POST', `/api/r
 async function telaAprovacoes() {
   if (!veTudo()) { $('#main').innerHTML = '<div class="empty">Só o gestor e o administrativo aprovam consultas pagas.</div>'; return; }
   const l = await api('GET', '/api/radar/aprovacoes');
-  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Aprovar consultas pagas</h1>${typeof capAbas === 'function' ? capAbas('aprovacoes') : ''}
+  $('#main').innerHTML = `<h1>Aprovar consultas pagas</h1>${typeof capAbas === 'function' ? capAbas('aprovacoes') : ''}
   <p class="lead">Matrícula e birô custam dinheiro e envolvem dados pessoais. Aprove só quando os caminhos grátis já foram tentados e o imóvel justifica.</p>
   ${l.length ? `<div class="list">${l.map((a) => `<div class="item" style="flex-wrap:wrap"><div style="flex:1;min-width:240px"><div class="t"><span class="mono" style="color:var(--gold)">${esc(a.ref)}</span> ${a.tipo === 'matricula' ? 'Matrícula' : 'Birô de dados'} · ${esc(a.titulo || a.condominio_nome || '')}</div>
     <div class="muted small">${esc([a.logradouro, a.numero, a.unidade].filter(Boolean).join(', '))} · ${brl(a.valor)} · pedido por ${esc(a.solicitante || '')}${a.custo_estimado ? ' · custo ' + brl(a.custo_estimado) : ''}</div>${a.justificativa ? `<div class="small">“${esc(a.justificativa)}”</div>` : ''}</div>

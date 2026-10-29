@@ -48,7 +48,7 @@ function sobre() {
 <p>O sistema funciona pela internet para imobiliárias e corretores de qualquer cidade do país. A base de mercado (anúncios, prédios em 3D e guias de bairro) começou por Campinas (SP) e ganha novas cidades com o tempo, conforme chegam clientes em cada região.</p>`],
     ['de-onde-vem', 'De onde vêm os dados', `
 <p>Cada informação do sistema tem uma origem conhecida. Nada vem de vazamento, de compra de listas ou de invasão.</p>
-<table class="legal-tabela"><thead><tr><th>Origem</th><th>O que entra</th><th>Como entra</th></tr></thead><tbody>
+<table class="legal-tabela" tabindex="0"><thead><tr><th>Origem</th><th>O que entra</th><th>Como entra</th></tr></thead><tbody>
 <tr><td>Anúncios publicados abertamente na internet</td><td>Dados do imóvel anunciado: tipo, bairro, rua, preço, área, quartos, data e fotos do anúncio</td><td>Só páginas e índices que o próprio site libera para leitura automática (regras do robots.txt). Não entramos em área com senha, não contornamos bloqueio nem CAPTCHA. Site que bloqueia robôs não é lido.</td></tr>
 <tr><td>Bases de dados imobiliárias contratadas pela imobiliária cliente (ex.: Fisgar)</td><td>Anúncios com endereço e, quando a imobiliária consulta, nomes e telefones de possíveis proprietários</td><td>Pela conta e pelos créditos da própria imobiliária. Cada consulta fica só com a imobiliária que a fez. Número de CPF ou CNPJ não é guardado.</td></tr>
 <tr><td>Dados públicos oficiais e abertos</td><td>CNPJ de condomínios (Receita Federal), endereços e prédios do Censo 2022 (IBGE, sem dado pessoal), mapas (OpenStreetMap, Overture Maps), fotos com licença livre (Wikimedia Commons, com autor e licença indicados)</td><td>Bases abertas, usadas nas condições de cada licença</td></tr>
@@ -125,7 +125,7 @@ function privacidade() {
 <p><strong>Somos controladores</strong> dos dados das contas de acesso ao sistema, da cobrança, dos contatos feitos com a plataforma e da base comum de mercado.</p>
 <p><strong>Somos operadores</strong> dos dados que cada imobiliária cliente trata no sistema (proprietários, clientes, conversas, documentos). Nesses casos, quem decide é a imobiliária, e é com ela que o titular deve falar primeiro; se você não souber qual imobiliária tem os seus dados, fale com a gente e encaminhamos o pedido.</p>`],
     ['quais-dados', 'Quais dados, para quê e com qual base legal', `
-<table class="legal-tabela"><thead><tr><th>Quem</th><th>Dados</th><th>Para quê</th><th>Base legal (LGPD)</th></tr></thead><tbody>
+<table class="legal-tabela" tabindex="0"><thead><tr><th>Quem</th><th>Dados</th><th>Para quê</th><th>Base legal (LGPD)</th></tr></thead><tbody>
 <tr><td>Usuários das imobiliárias</td><td>Nome, e-mail, perfil, celular, registros de acesso e de ações no sistema</td><td>Dar acesso, segurança, suporte, auditoria</td><td>Execução de contrato (art. 7º, V); cumprimento de obrigação legal para registros de acesso (art. 7º, II; Marco Civil, art. 15)</td></tr>
 <tr><td>Visitantes de corretordofuturo.app</td><td>Nenhum dado é gravado. O formulário abre o WhatsApp com a sua mensagem; não usamos cookies de rastreamento nem anúncios</td><td>Contato comercial</td><td>Procedimentos preliminares a pedido do titular (art. 7º, V)</td></tr>
 <tr><td>Pessoas citadas em anúncios publicados (por exemplo, anunciante pessoa física ou corretor)</td><td>Nome ou nome comercial, CRECI e dados do anúncio, quando constam no próprio anúncio</td><td>Informação de mercado para profissionais do setor imobiliário</td><td>Legítimo interesse (art. 7º, IX e art. 10), com dados tornados públicos pelo próprio titular (art. 7º, §§ 4º e 7º), respeitando a finalidade da publicação</td></tr>
@@ -173,7 +173,7 @@ function privacidadeCliente() {
 <p>O site e o sistema da imobiliária funcionam no ${esc(P.nome)}, software de outra empresa (${quemEPlataforma()}), que é <strong>operadora</strong>: guarda e processa os dados por conta da imobiliária e não os usa para outra finalidade.</p>
 <p>Fale com a imobiliária sobre os seus dados ${contato}.${C.encarregado ? ` Encarregado: ${esc(C.encarregado)}.` : ''}</p>`],
     ['visitante', 'Se você visita o site ou pede informação', `
-<table class="legal-tabela"><thead><tr><th>Quando</th><th>Dados</th><th>Para quê</th><th>Base legal (LGPD)</th></tr></thead><tbody>
+<table class="legal-tabela" tabindex="0"><thead><tr><th>Quando</th><th>Dados</th><th>Para quê</th><th>Base legal (LGPD)</th></tr></thead><tbody>
 <tr><td>"Tenho interesse", "Agendar visita", "Fale com a gente"</td><td>Nome, telefone, e-mail (se você der), mensagem, imóvel e data da visita</td><td>Responder, marcar a visita e mostrar imóveis do seu interesse</td><td>Procedimentos preliminares de contrato, a seu pedido (art. 7º, V)</td></tr>
 <tr><td>Clube Signature</td><td>Nome, telefone, e-mail e o aceite</td><td>Liberar valores reservados e combinar visita privada</td><td>Consentimento (art. 7º, I), que você pode revogar</td></tr>
 <tr><td>Favoritos</td><td>Os imóveis que você guardou</td><td>Lembrar os favoritos</td><td>Ficam só no seu aparelho; nada é enviado</td></tr>

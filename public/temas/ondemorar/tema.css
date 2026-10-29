@@ -28,3 +28,8 @@ button,.btn,.p-btn,input[type=submit],a.p-btn,.p-cta{border-radius:14px!importan
 .p-topo::after,.topo::after{content:"";display:block;height:6px;width:100%;margin-top:14px;border-radius:6px;
   background:linear-gradient(90deg,#FF3B5C 0 11%,#FF8A00 11% 22%,#FFC800 22% 33%,#2ED573 33% 44%,#00C2FF 44% 55%,#3D7BFF 55% 66%,#8E5BFF 66% 77%,#FF4FB8 77% 88%,#FF3B5C 88%)}
 .p-topo{flex-wrap:wrap}
+/* contraste dos botões (varredura de 28/10): azul mais fundo com letra branca no claro; roxo do texto mais escuro */
+@media (prefers-color-scheme:light){
+  :root{--ouro:#2B63D9;--ouro-escuro:#1E4FB8;--salvia:#7442F0}
+  .p-botao:not(.sec),.botao:not(.sec),.p-form button[type=submit],form button[type=submit]{color:#fff!important}
+}

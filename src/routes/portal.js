@@ -173,10 +173,10 @@ function paginaLegal(req, tipo, { aviso = '' } = {}) {
   const titulo = tipo === 'privacidade' ? 'Privacidade e seus dados' : 'Termos de uso do site';
   const lista = tipo === 'privacidade' ? [...secoes, ['pedido', 'Fazer um pedido']] : secoes;
   const corpo = `<div class="p-legal">
-<p class="p-legal-k">${T.esc(cfg.CLIENTE_NOME)}</p>
 <h1>${titulo}</h1>
+<p class="p-legal-k depois">${T.esc(cfg.CLIENTE_NOME)}</p>
 <p class="p-legal-v">Versão de ${T.VIGENCIA}. ${T.esc(T.AVISO_REVISAO)}</p>
-<nav class="p-legal-abas" aria-label="Institucional"><a href="/privacidade"${tipo === 'privacidade' ? ' aria-current="page"' : ''}>Privacidade</a><a href="/termos"${tipo === 'termos' ? ' aria-current="page"' : ''}>Termos de uso</a></nav>
+<nav class="p-legal-abas" aria-label="Páginas institucionais"><a href="/privacidade"${tipo === 'privacidade' ? ' aria-current="page"' : ''}>Privacidade</a><a href="/termos"${tipo === 'termos' ? ' aria-current="page"' : ''}>Termos de uso</a></nav>
 <div class="p-legal-grade">${T.indice(lista)}<div class="p-legal-texto">${aviso}${T.corpo(secoes)}${tipo === 'privacidade' ? T.formulario('/privacidade/pedido') : ''}</div></div>
 </div>`;
   return paginas.casca(req, { titulo: `${titulo} · ${cfg.EMPRESA}`, descricao: `${titulo} de ${cfg.EMPRESA}: dados tratados, bases legais da LGPD e os seus direitos.`, caminho: `/${tipo}`, corpo, classe: 'p-pagina-legal' });

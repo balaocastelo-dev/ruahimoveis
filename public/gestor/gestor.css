@@ -173,3 +173,4 @@ legend{font-size:12px;font-weight:600;color:var(--suave);padding:0 6px;text-tran
 .sim-ano.futuro{border-style:dashed;border-color:var(--acao)}
 .sim-ano.futuro .sim-tag{background:var(--acao-clara);color:var(--acao)}
 @media (prefers-reduced-motion:reduce){.g-barra rect,.g-barra .g-valor,.g-barra .g-nova,.sim-kpi,.sim-bloco,.sim-ano{animation:none}}
+.entrada h1.marca{margin:0}

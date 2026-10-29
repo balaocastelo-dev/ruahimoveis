@@ -59,12 +59,12 @@ function destaque(x, n) {
   return `<article class="r-dest${n % 2 ? ' r-dest-inv' : ''}" data-revelar>
 <a class="r-dest-img" href="/imoveis/${p.slug}"><img src="${fotoUrl(p.capa.foto)}" alt="${esc(p.capa.alt)}" width="1280" height="853" loading="lazy" decoding="async"></a>
 <div class="r-dest-t">
-<p class="r-chapeu">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
+<p class="r-chapeu depois">${esc(im.tipo)} · ${esc(lugar(im))}</p>
 <p class="r-dest-resumo">${esc(p.resumo)}</p>
 <p class="r-dest-specs">${specs(im).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
 <p class="r-dest-preco">${im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
-<a class="r-ler" href="/imoveis/${p.slug}">Conhecer o imóvel <span aria-hidden="true">→</span></a>
+<a class="r-ler" href="/imoveis/${p.slug}">Conhecer o imóvel <span class="p-seta" aria-hidden="true"></span></a>
 </div></article>`;
 }
 
@@ -72,9 +72,8 @@ function capitulo(c, n, imoveis) {
   const [primeiro, ...outros] = imoveis;
   return `<section class="r-cap" id="${c.id}" aria-labelledby="${c.id}-t">
 <header class="r-cap-cab" data-revelar>
-<p class="r-num">${String(n).padStart(2, '0')}</p>
-<p class="r-chapeu">${esc(c.chapeu)}</p>
 <h2 id="${c.id}-t">${esc(c.titulo)}</h2>
+<p class="r-chapeu depois">${esc(c.chapeu)}</p>
 <p class="r-linha-fina">${esc(c.linhaFina)}</p>
 </header>
 <div class="r-ensaio" data-revelar>${c.paragrafos.map((t, i) => `<p${i === 0 ? ' class="r-capitular"' : ''}>${esc(t)}</p>`).join('')}</div>
@@ -90,23 +89,23 @@ ${outros.length ? `<div class="p-grade r-grade">${outros.map((y) => cartao(y)).j
 function leituras(artigos) {
   if (!artigos.length) return '';
   return `<section class="r-sopro" aria-labelledby="sopro-t" data-revelar>
-<p class="r-chapeu">Do ${esc(cfg.BLOG_NOME)}</p>
 <h2 id="sopro-t">Leituras para a casa</h2>
+<p class="r-chapeu depois">Do ${esc(cfg.BLOG_NOME)}</p>
 <div class="r-sopro-grade">${artigos.map((a) => `<article class="r-art">
 <a href="/blog/${esc(a.slug)}" class="r-art-img">${a.capa && a.capa.src ? `<img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt || '')}" width="1600" height="900" loading="lazy" decoding="async">` : ''}</a>
-<p class="r-chapeu">${esc(nomeDaCategoria(a.categoria))}</p>
 <h3><a href="/blog/${esc(a.slug)}">${esc(a.titulo)}</a></h3>
+<p class="r-chapeu depois">${esc(nomeDaCategoria(a.categoria))}</p>
 <p>${esc(cortar(a.resumo || '', 140))}</p>
 <p class="r-art-meta">${esc(dataPorExtenso(a.publicadoEm))}${a.minutos ? `, ${a.minutos} min de leitura` : ''}</p>
 </article>`).join('')}</div>
-<a class="r-ler" href="/blog">Todos os textos do ${esc(cfg.BLOG_NOME)} <span aria-hidden="true">→</span></a>
+<a class="r-ler" href="/blog">Todos os textos do ${esc(cfg.BLOG_NOME)} <span class="p-seta" aria-hidden="true"></span></a>
 </section>`;
 }
 
 function chamadaSignature() {
   return `<section class="r-sig" aria-labelledby="r-sig-t" data-revelar>
-<p class="r-sig-marca">${esc(CLIENTE)} <span>Signature</span></p>
 <h2 id="r-sig-t">Para o que não se anuncia</h2>
+<p class="r-sig-marca depois">${esc(CLIENTE)} <span>Signature</span></p>
 <p>Uma seleção reservada de residências acima de R$ 10 milhões, apresentadas com poucas fotos e muita intenção. Os valores ficam com os membros do Clube Signature.</p>
 <a class="p-botao" href="/imoveis/signature">Conhecer a Signature</a>
 </section>`;
@@ -140,8 +139,8 @@ function paginaRevista(req, lista, artigos = []) {
   const corpo = `
 ${seletor('revista')}
 <header class="r-mastro">
-  <p class="r-mastro-ed">${esc(edicao)}</p>
   <h1>Revista <i>${esc(CLIENTE)}</i></h1>
+  <p class="r-mastro-ed depois">${esc(edicao)}</p>
   <p class="r-mastro-l">Casa, arquitetura e bem-estar em Campinas e região, com os imóveis da ${esc(CLIENTE)} entre os textos.</p>
 </header>
 ${capa ? `<section class="r-capa" aria-label="Capa da edição">
@@ -226,8 +225,8 @@ function clube(membro, codigo = '') {
   const c = SIGNATURE.clube;
   return `<section class="s-clube" id="clube" aria-labelledby="clube-t">
 <div class="s-clube-txt">
-<p class="s-sobre">Por convite</p>
 <h2 id="clube-t">${esc(c.titulo)}</h2>
+<p class="s-sobre depois">Por convite</p>
 ${membro ? '<p>Você é membro do Clube Signature. Os valores aparecem em todas as residências da seleção, neste aparelho.</p><p>Para visitar uma residência, abra a página dela e escolha o melhor período: a ' + esc(CLIENTE) + ' confirma pessoalmente.</p>'
     : `<p>${esc(c.texto)}</p><ul class="s-beneficios">${c.beneficios.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`}
 </div>
@@ -246,10 +245,10 @@ ${seletor('signature')}
 <section class="s-hero">
   ${capa ? fundo(capa.foto) : ''}
   <div class="s-hero-txt">
-    <p class="s-marca">${esc(CLIENTE)} <span>Signature</span></p>
     <h1>${esc(SIGNATURE.titulo)}</h1>
+    <p class="s-marca depois">${esc(CLIENTE)} <span>Signature</span></p>
     <p class="s-hero-l">${esc(SIGNATURE.linhaFina)}</p>
-    ${membro ? '<p class="s-status">✦ Membro do Clube Signature</p>' : '<a class="s-convite" href="#clube">Solicitar acesso ao Clube</a>'}
+    ${membro ? '<p class="s-status">Membro do Clube Signature</p>' : '<a class="s-convite" href="#clube">Solicitar acesso ao Clube</a>'}
   </div>
 </section>
 <section class="s-manifesto" data-revelar>${SIGNATURE.manifesto.map((t) => `<p>${esc(t)}</p>`).join('')}</section>
@@ -257,27 +256,26 @@ ${casas.length ? `<section class="s-residencias" aria-label="Residências da sel
 ${casas.map((s, i) => `<article class="s-res${i % 2 ? ' s-res-inv' : ''}" data-revelar>
   <a class="s-res-fotos s-res-fotos-${Math.min(s.fotos.length, 3)}" href="${s.href}" aria-label="${esc(s.titulo)}">${s.fotos.slice(0, 3).map((f, k) => `<img src="${fotoUrl(f.foto)}" alt="${esc(f.legenda)}" width="1280" height="853" loading="${i === 0 && k === 0 ? 'eager' : 'lazy'}" decoding="async">`).join('')}</a>
   <div class="s-res-t">
-    <p class="s-num">Nº ${String(i + 1).padStart(2, '0')}</p>
-    <p class="s-sobre">${esc(s.local)}</p>
     <h2><a href="${s.href}">${esc(s.titulo)}</a></h2>
+    <p class="s-sobre depois">${esc(s.local)}</p>
     ${s.frase ? `<p class="s-frase">${esc(s.frase)}</p>` : ''}
     <p class="s-specs">${numeros(s.im).map(([v, r]) => `${esc(v)} ${esc(r)}`).join('<span aria-hidden="true"> · </span>')}</p>
     ${preco(s, membro)}
-    <a class="s-ler" href="${s.href}">Conhecer a residência <span aria-hidden="true">→</span></a>
+    <a class="s-ler" href="${s.href}">Conhecer a residência <span class="p-seta" aria-hidden="true"></span></a>
   </div>
 </article>`).join('')}
 </section>` : '<p class="s-vazio">A seleção Signature está sendo preparada.</p>'}
 ${ativos.length ? `<section class="s-ativos" aria-labelledby="ativos-t" data-revelar>
-  <p class="s-sobre">Patrimônio Signature</p>
   <h2 id="ativos-t">Áreas e ativos</h2>
+  <p class="s-sobre depois">Patrimônio Signature</p>
   <p class="s-ativos-l">Terrenos e imóveis corporativos de grande porte, apresentados apenas para membros e investidores. Fotos, documentos e estudos de viabilidade, em conversa reservada.</p>
   <div class="s-ativos-grade">${ativos.map((s) => `<article class="s-ativo">
-    <p class="s-sobre">${esc(s.im.tipo)} · ${esc(s.local)}</p>
     <h3>${esc(s.titulo)}</h3>
+    <p class="s-sobre depois">${esc(s.im.tipo)} · ${esc(s.local)}</p>
     <p class="s-ativo-area">${esc(metros(s.im.area_total || s.im.area_util) || '')}</p>
     ${s.frase ? `<p>${esc(s.frase)}</p>` : ''}
     ${preco(s, membro)}
-    <a class="s-ler" href="${s.href}">Detalhes <span aria-hidden="true">→</span></a>
+    <a class="s-ler" href="${s.href}">Detalhes <span class="p-seta" aria-hidden="true"></span></a>
   </article>`).join('')}</div>
 </section>` : ''}
 ${clube(membro)}`;
@@ -301,9 +299,8 @@ ${seletor('signature')}
 <section class="s-hero s-hero-im">
   ${primeira ? fundo(primeira.foto) : ''}
   <div class="s-hero-txt">
-    <p class="s-marca">${esc(CLIENTE)} <span>Signature</span></p>
-    <p class="s-sobre">${esc(im.tipo)} · ${esc(s.local)}</p>
     <h1>${esc(s.titulo)}</h1>
+    <p class="s-sobre depois">${esc(im.tipo)} · ${esc(s.local)} · ${esc(CLIENTE)} Signature</p>
     ${s.frase ? `<p class="s-hero-l">${esc(s.frase)}</p>` : ''}
   </div>
 </section>

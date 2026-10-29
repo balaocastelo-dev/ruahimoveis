@@ -99,7 +99,7 @@ async function telaFisguei(qs) {
   const [r, l, pd] = await Promise.all([api('GET', '/api/fisguei/resumo'), vista === 'lista' ? api('GET', '/api/fisguei?' + params) : Promise.resolve(null), api('GET', '/api/fisguei/pedidos')]);
   const n = (k) => r.porStatus[k] || 0;
   const link = (o) => '#/fisguei?' + new URLSearchParams({ filtro, q, vista, ...o }).toString();
-  $('#main').innerHTML = `<div class="eyebrow">Imóveis da base</div><h1>Anúncios e proprietários (Fisguei)</h1>
+  $('#main').innerHTML = `<h1>Anúncios e proprietários (Fisguei)</h1>
   ${typeof capAbas === 'function' ? capAbas('fisguei') : ''}
   <p class="lead">Os anúncios e proprietários que vocês abrem no Fisgar viram a base da ${esc(MARCA.cliente)}. Quando chega o telefone de um possível dono, o robô <b>TH-IA-GO CORRETOR</b> chama no WhatsApp perguntando, com educação, se a pessoa é a proprietária. Quem responde SIM vai direto para o Radar com o corretor.</p>
   ${cartaoRobo(r)}${cartaoBusca(pd)}${cartaoExtensao(r)}
@@ -128,7 +128,7 @@ async function telaFisguei(qs) {
 function listaFisguei(l, link) {
   const c = $('#fg-conteudo');
   if (!l.itens.length) { c.innerHTML = '<div class="empty">Nada aqui ainda. Abra a Base de Anúncios no Fisgar com a extensão ligada e os anúncios aparecem nesta lista.</div>'; return; }
-  c.innerHTML = `<div class="card tbl"><table><thead><tr><th></th><th>Imóvel</th><th>Endereço</th><th class="num">Valor</th><th>Anunciante</th><th>Proprietários</th><th>Situação</th></tr></thead><tbody>
+  c.innerHTML = `<div class="card tbl"><table><thead><tr><th><span class="vis-oculto">Foto</span></th><th>Imóvel</th><th>Endereço</th><th class="num">Valor</th><th>Anunciante</th><th>Proprietários</th><th>Situação</th></tr></thead><tbody>
     ${l.itens.map((a) => `<tr class="click" data-act="ir" data-href="#/fisguei/${a.id}" style="cursor:pointer">
       <td style="width:64px">${a.foto ? `<img src="${esc(a.foto)}" alt="" loading="lazy" referrerpolicy="no-referrer" style="width:64px;height:48px;object-fit:cover;border-radius:6px">` : ''}</td>
       <td><span class="mono" style="color:var(--gold)">${esc(a.ref)}</span> <b>${esc(a.tipo || 'Imóvel')}</b><br><span class="muted small">${[a.quartos ? a.quartos + ' qto' : '', a.suites ? a.suites + ' suíte' : '', a.vagas ? a.vagas + ' vaga' : '', a.area_util ? a.area_util + ' m²' : ''].filter(Boolean).join(' · ')}</span></td>
@@ -167,8 +167,7 @@ async function telaFisgueiAnuncio(id, aba) {
   const vitrine = { apartamentos: 'Apartamentos', casas: 'Casas', terrenos: 'Terrenos', comerciais: 'Salas e barracões' }[a.categoria];
   $('#main').innerHTML = `<a class="btn sm" href="#/fisguei">← Radar + Fisguei</a>${vitrine ? ` <a class="btn sm" href="#/${a.categoria}">${vitrine}</a>` : ''}
   <div class="row" style="margin:12px 0 6px;gap:10px;flex-wrap:wrap"><div style="flex:1;min-width:260px">
-    <div class="eyebrow">${esc(a.ref)} · Fisgar #${esc(a.fisgar_id)}${a.portal ? ' · ' + esc(a.portal) : ''}</div>
-    <h1 style="margin:2px 0">${esc(a.subtipo || a.tipo || 'Imóvel')} na ${esc(fgEnd(a))}</h1>
+    <h1 style="margin:2px 0">${esc(a.subtipo || a.tipo || 'Imóvel')} na ${esc(fgEnd(a))}</h1><div class="eyebrow depois">${esc(a.ref)} · Fisgar #${esc(a.fisgar_id)}${a.portal ? ' · ' + esc(a.portal) : ''}</div>
     <div class="muted">${esc([a.complemento, a.bairro, a.cidade, a.cep].filter(Boolean).join(' · '))}</div></div>
     <div>${fgPill(a.status)}${a.pausado ? ' <span class="pill bad">robô pausado aqui</span>' : ''}</div></div>
   <div class="row" style="gap:6px;margin:10px 0 14px;flex-wrap:wrap">

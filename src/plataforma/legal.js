@@ -32,7 +32,7 @@ ${rodape()}
 }
 
 function abas(atual) {
-  return `<nav class="legal-abas" aria-label="Institucional">${Object.entries(PAGINAS).map(([c, p]) => `<a href="${c}"${c === atual ? ' aria-current="page"' : ''}>${esc(p.titulo)}</a>`).join('')}</nav>`;
+  return `<nav class="legal-abas" aria-label="Páginas institucionais">${Object.entries(PAGINAS).map(([c, p]) => `<a href="${c}"${c === atual ? ' aria-current="page"' : ''}>${esc(p.titulo)}</a>`).join('')}</nav>`;
 }
 
 function pagina(caminho, { aviso = '' } = {}) {
@@ -41,7 +41,6 @@ function pagina(caminho, { aviso = '' } = {}) {
   const lista = p.form ? [...secoes, ['pedido', 'Fazer um pedido']] : secoes;
   return casca({ titulo: p.titulo, descricao: p.descricao, caminho, corpo: `
 <div class="escuro legal-abre"><div class="cx">
-  <p class="kicker">${esc(p.kicker)}</p>
   <h1>${esc(p.h1)}</h1>
   <p class="lead">${esc(p.lead)}</p>
   <p class="legal-versao" style="color:var(--luz-2)">Versão de ${T.VIGENCIA}. ${esc(T.AVISO_REVISAO)}</p>

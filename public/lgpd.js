@@ -9,7 +9,7 @@ async function lgpdConfere() {
   const d = document.createElement('div');
   d.id = 'lgpd-aceite'; d.className = 'lgpd-veu';
   d.innerHTML = `<div class="lgpd-caixa" role="dialog" aria-modal="true" aria-labelledby="lgpd-t">
-    <div class="eyebrow">Antes de continuar</div><h2 id="lgpd-t">Termos de uso e privacidade</h2>
+    <h2 id="lgpd-t">Termos de uso e privacidade</h2><div class="eyebrow depois">Antes de continuar</div>
     <p>O ${esc(MARCA.sistema)} é um software independente, sem vínculo com portais de anúncios ou bases de dados de terceiros. Os dados de proprietários e clientes que você vê aqui são da imobiliária, que responde pelo uso deles (LGPD).</p>
     <ul class="lgpd-regras">
       <li>Use nome e telefone de proprietário só para falar do imóvel daquela pessoa. Nada de repassar, vender ou fazer lista de transmissão.</li>
@@ -41,7 +41,7 @@ function lgpdBadge() {
 
 async function telaPrivacidade() {
   if (!veTudo()) {
-    $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Privacidade e LGPD</h1>
+    $('#main').innerHTML = `<h1>Privacidade e LGPD</h1>
     <p class="lead">Os pedidos de titulares ficam com o administrativo e o gestor. Leia os <a href="/termos" target="_blank" rel="noopener">Termos</a> e a <a href="/privacidade" target="_blank" rel="noopener">Política de privacidade</a> do portal.</p>`;
     return;
   }
@@ -54,7 +54,7 @@ async function telaPrivacidade() {
     return `<span class="pill ${dias < 0 ? 'bad' : dias <= 3 ? 'warn' : 'info'}">${dias < 0 ? `atrasado ${-dias} dia(s)` : dias === 0 ? 'vence hoje' : `faltam ${dias} dia(s)`}</span>`;
   };
   const falta = [!d.cliente.cnpj && 'CNPJ (CLIENTE_CNPJ)', !d.cliente.creci && 'CRECI (CLIENTE_CRECI)', !d.cliente.email && 'e-mail de privacidade (CLIENTE_EMAIL_PRIVACIDADE)'].filter(Boolean);
-  $('#main').innerHTML = `<div class="eyebrow">Sistema</div><h1>Privacidade e LGPD</h1>
+  $('#main').innerHTML = `<h1>Privacidade e LGPD</h1>
   <p class="lead">A ${esc(d.cliente.empresa)} é a controladora dos dados tratados aqui; o ${esc(MARCA.sistema)} é o operador. Os pedidos feitos em <a href="/privacidade" target="_blank" rel="noopener">/privacidade</a> do portal chegam nesta tela e precisam de resposta em até 15 dias (LGPD, art. 19).</p>
   ${falta.length ? `<div class="card" style="border-color:var(--gold);margin-bottom:16px"><b>Falta completar na página de privacidade do portal:</b> ${falta.map(esc).join(', ')}. Peça ao suporte para preencher.</div>` : ''}
   <div class="row" style="flex-wrap:wrap;margin-bottom:16px"><span class="pill ${abertos.length ? 'warn' : 'ok'}">${abertos.length} aberto(s)</span><span class="pill info">${d.pedidos.length - abertos.length} respondido(s)</span><span class="sp"></span>

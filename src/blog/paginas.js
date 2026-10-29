@@ -54,7 +54,7 @@ function bloco(b, ids) {
       return `<${tag} class="lista">${b.itens.map((i) => `<li>${rico(i)}</li>`).join('')}</${tag}>`;
     }
     case 'destaque': return `<div class="destaque ${esc(b.tom)}">${b.titulo ? `<p class="destaque-t">${esc(b.titulo)}</p>` : ''}<p>${rico(b.texto)}</p></div>`;
-    case 'tabela': return `<figure class="tabela">${b.titulo ? `<figcaption>${esc(b.titulo)}</figcaption>` : ''}<div class="rolar"><table>
+    case 'tabela': return `<figure class="tabela">${b.titulo ? `<figcaption>${esc(b.titulo)}</figcaption>` : ''}<div class="rolar" tabindex="0" role="region" aria-label="Tabela (role para o lado)"><table>
 <thead><tr>${b.colunas.map((c, i) => `<th scope="col"${i === b.colunaDestaque ? ' class="destacada"' : ''}>${esc(c)}</th>`).join('')}</tr></thead>
 <tbody>${b.linhas.map((l) => `<tr>${l.map((c, i) => (i === 0 ? `<th scope="row">${rico(c)}</th>` : `<td${i === b.colunaDestaque ? ' class="destacada"' : ''}>${rico(c)}</td>`)).join('')}</tr>`).join('')}</tbody></table></div>
 ${b.nota || b.fonte ? `<p class="nota">${b.nota ? rico(b.nota) : ''}${b.fonte ? ` Fonte: ${esc(b.fonte.nome)}${siteDe(b.fonte.url) && !b.fonte.nome.includes(siteDe(b.fonte.url)) ? ` (${esc(siteDe(b.fonte.url))})` : ''}.` : ''}</p>` : ''}</figure>`;
@@ -144,10 +144,9 @@ function cartao(a, grande = false) {
   const tag = grande ? 'h2' : 'h3';
   return `<article class="cartao${grande ? ' cartao-g' : ''}" data-busca="${esc(`${a.titulo} ${a.resumo} ${a.etiquetas.join(' ')} ${nomeDaCategoria(a.categoria)}`.toLowerCase())}">
 <a href="/blog/${a.slug}" class="cartao-img">${img}</a>
-<div class="cartao-t"><a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a>
-<${tag}><a href="/blog/${a.slug}">${esc(a.titulo)}</a></${tag}>
+<div class="cartao-t"><${tag}><a href="/blog/${a.slug}">${esc(a.titulo)}</a></${tag}>
 <p>${esc(grande ? a.resumo : cortar(a.resumo, 130))}</p>
-<p class="meta"><time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>, ${a.minutos} min de leitura</p></div></article>`;
+<p class="meta"><a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a> · <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>, ${a.minutos} min de leitura</p></div></article>`;
 }
 
 function paginaInicial(req, artigos, categoria = null) {
@@ -195,10 +194,9 @@ function paginaArtigo(req, a, relacionados) {
   const corpo = `<div class="leitura" aria-hidden="true"><span></span></div>
 <article class="artigo">
 <header class="art-cab">
-  <a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a>
   <h1>${esc(a.titulo)}</h1>
   <p class="linha-fina">${esc(a.resumo)}</p>
-  <p class="meta">Por Equipe ${esc(CLIENTE)}. <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>${a.atualizadoEm ? `, atualizado em ${dataPorExtenso(a.atualizadoEm)}` : ''}. Leitura de ${minutos} min.</p>
+  <p class="meta">Em <a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a>. Por Equipe ${esc(CLIENTE)}. <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>${a.atualizadoEm ? `, atualizado em ${dataPorExtenso(a.atualizadoEm)}` : ''}. Leitura de ${minutos} min.</p>
 </header>
 ${a.capa ? `<figure class="capa"><img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt)}" width="${a.capa.largura || 1600}" height="${a.capa.altura || 900}" fetchpriority="high"><figcaption>Imagem ilustrativa gerada por IA.</figcaption></figure>` : ''}
 <div class="art-corpo">
