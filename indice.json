@@ -144,7 +144,16 @@
       "categoria": "noticias",
       "criadaEm": "2026-10-29T17:22:20.855Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "cortina-ou-persiana-qual-escolher-em-cada-ambiente",
+      "titulo": "Cortina ou persiana: qual vai melhor em cada ambiente",
+      "tema": "cortina ou persiana em cada ambiente",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-29T17:23:19.789Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-29T17:22:20.855Z"
+  "atualizadoEm": "2026-10-29T17:23:19.789Z"
 }
