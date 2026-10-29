@@ -73,7 +73,7 @@ function mockSignature(grande) {
 
 // Imobiliárias de demonstração no ar na plataforma (portais reais, imóveis e fotos ilustrativas).
 // Capturas em /plataforma/clientes/<slug>-{d,r,s}.webp (navegador) e <slug>-m.webp (celular), tiradas dos portais no ar.
-// "cliente: true" troca o selo para "Cliente" quando a imobiliária for cliente de verdade, com contrato.
+// São imobiliárias fictícias (decisão do Thiago, 28/10/2026): nunca apresentar como clientes.
 const CLIENTES = [
   { slug: 'ondemorar', nome: 'Onde morar?', cor: '#3D7BFF', cor2: '#FF6B4A', estilo: 'Alegre e colorida', frase: 'Para quem procura a primeira casa: cores vivas, alfinete no mapa e tudo explicado sem pressa.', lugar: 'Lagoa do Taquaral', fonte: 'Fredoka' },
   { slug: 'cademeuap', nome: 'Cadê meu AP?', cor: '#0E8C8C', cor2: '#FF6B4A', estilo: 'Apartamentos, direto ao ponto', frase: 'Especialista em apartamento na cidade: prédio com lupa, verde-azulado e coral, busca rápida.', lugar: 'Prédios do Centro e do Cambuí', fonte: 'Outfit' },
@@ -107,13 +107,13 @@ function aoVivo() {
   }).join('\n    ');
   return `<section id="ao-vivo" class="escuro ao-vivo" aria-labelledby="t-av"><div class="cx">
   <p class="kicker"><span class="pulso" aria-hidden="true"></span>Ao vivo agora</p>
-  <h2 id="t-av">Quatro imobiliárias já estão no ar. <em>Entre e navegue.</em></h2>
-  <p class="lead">Mesmo sistema, quatro marcas que não se parecem em nada: logo, cores, letra e foto de capa próprias, cada uma no seu endereço. Clique, abra o portal e mexa à vontade, do celular ou do computador.</p>
-  <div class="av-abas" role="tablist" aria-label="Imobiliárias no ar">${abas}</div>
+  <h2 id="t-av">Quatro imobiliárias de demonstração no ar. <em>Entre e navegue.</em></h2>
+  <p class="lead">Criamos quatro imobiliárias fictícias para você ver o sistema funcionando de verdade. Mesmo sistema, quatro marcas que não se parecem em nada: logo, cores, letra e foto de capa próprias, cada uma no seu endereço. Clique, abra o portal e mexa à vontade, do celular ou do computador.</p>
+  <div class="av-abas" role="tablist" aria-label="Imobiliárias de demonstração">${abas}</div>
   <div class="av-paineis">
     ${paineis}
   </div>
-  <p class="demo-aviso">Portais de demonstração funcionando na plataforma, com imóveis e fotos ilustrativas.</p>
+  <p class="demo-aviso">Imobiliárias fictícias criadas para demonstração, com imóveis e fotos ilustrativas, rodando no mesmo sistema que a sua vai usar.</p>
 
   <div class="av-proxima revelar">
     <div><p class="kicker ouro-k">A próxima é a sua</p><h3>Como fica o endereço da sua imobiliária?</h3>
@@ -281,7 +281,7 @@ ${topo()}
       <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
       <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
       <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ao-vivo">Ver imobiliárias ao vivo</a></div>
-      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>No ar agora</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais rodando na plataforma →</span></a>
+      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração para navegar →</span></a>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
     <div class="palco">
