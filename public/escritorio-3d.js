@@ -26,21 +26,21 @@ import { OutputPass } from '/vendor/three/pos/OutputPass.js';
 
 // ---------- textos da interface (os balões vêm do servidor em português e ficam como estão) ----------
 const T = {
-  pt: { vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
+  pt: { cliente: 'Cliente', entraramHoje: 'Entraram hoje', semImoveisHoje: 'Nenhum imóvel cadastrado hoje', semFoto: 'Sem foto', vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
     painel: 'Painel de hoje', noar: 'no WhatsApp', captacao: 'Sala de captação', vendas: 'Salão de vendas', diretoria: 'Diretoria', entrada: 'Entrada', mural: 'Mural de oportunidades',
     cafe: 'Café', recepcao: 'Recepção', reuniao: 'Reunião', plantao: 'Plantão', impressora: 'Impressora', vazio: 'Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.',
     abrir: 'Abrir a mesa', fechar: 'Fechar', esperando: 'Esperando o primeiro cliente do dia…', dica: 'Arraste para girar · roda para aproximar · duplo clique num agente abre a mesa',
     virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.',
     entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil', sofa: 'Sofá', cliqueAbrir: 'Clique para abrir', salaEmBreve: 'Sala de reunião ao vivo em breve',
   },
-  en: { vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
+  en: { cliente: 'Client', entraramHoje: 'Added today', semImoveisHoje: 'No properties added today', semFoto: 'No photo', vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
     painel: "Today's board", noar: 'on WhatsApp', captacao: 'Sourcing room', vendas: 'Sales floor', diretoria: 'Management', entrada: 'Entrance', mural: 'Opportunity board',
     cafe: 'Coffee', recepcao: 'Reception', reuniao: 'Meeting', plantao: 'Front desk', impressora: 'Printer', vazio: 'As the agents work, every action shows up here and in a balloon above whoever did it.',
     abrir: 'Open desk', fechar: 'Close', esperando: 'Waiting for the first client of the day…', dica: 'Drag to rotate · wheel to zoom · double-click an agent to open their desk',
     virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.',
     entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline', sofa: 'Sofa', cliqueAbrir: 'Click to open', salaEmBreve: 'Live meeting room coming soon',
   },
-  ja: { vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
+  ja: { cliente: 'お客様', entraramHoje: '本日の新着物件', semImoveisHoje: '本日の新着物件はありません', semFoto: '写真なし', vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
     painel: '本日のボード', noar: 'WhatsApp接続中', captacao: '物件開拓室', vendas: '営業フロア', diretoria: '経営室', entrada: '入口', mural: '案件ボード',
     cafe: 'カフェ', recepcao: '受付', reuniao: '会議', plantao: 'フロント', impressora: 'プリンター', vazio: 'エージェントが働くと、各アクションがここと担当者の上の吹き出しに表示されます。',
     abrir: 'デスクを開く', fechar: '閉じる', esperando: '本日最初のお客様をお待ちしています…', dica: 'ドラッグで回転 · ホイールでズーム · エージェントをダブルクリックでデスクを開く',
@@ -135,6 +135,7 @@ export async function telaEscritorio3D() {
   E.vida = setInterval(vidaNoEscritorio, 6500);
   E.relogio = setInterval(relogio, 20000);
   E.ssaver = setInterval(() => { if (vivo()) Object.values(E.agentes).forEach((ag) => ag.tela && !ag.tela.externa && telaPinta(ag)); }, 30000);
+  E.tvIntervalo = setInterval(() => { if (vivo()) { E.tvFotos = !E.tvFotos; tvPinta(); } }, 8000);
   document.addEventListener('fullscreenchange', redimensiona);
   document.addEventListener('keydown', tecla);
   if (!reduz()) setTimeout(() => { if (E === meu) { $('#j3-dica').classList.add('ve'); setTimeout(() => $('#j3-dica') && $('#j3-dica').classList.remove('ve'), 7000); } }, 2500);
@@ -146,6 +147,7 @@ function para() {
   fechaPainelLugar();
   const e = E; E = null;
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
+  clearInterval(e.tvIntervalo);
   if (e.andar) { try { e.andar.desmonta(); } catch {} }
   if (e.ro) e.ro.disconnect();
   document.removeEventListener('fullscreenchange', redimensiona);
@@ -243,6 +245,7 @@ function relogio() {
 }
 function numeros(d) {
   if (!d || !d.totais || !vivo()) return;
+  if (d.entraram) tvImoveis(d.entraram);
   E.totais = d.totais; const x = d.totais;
   const anima = (id, v) => { const el = $('#' + id); if (!el) return; if (el.textContent !== String(v)) { el.textContent = v; el.parentNode.classList.remove('pula'); void el.offsetWidth; el.parentNode.classList.add('pula'); } };
   anima('j3-n-acoes', x.acoes); anima('j3-n-conv', x.conversas); anima('j3-n-env', x.enviadas); anima('j3-n-apr', x.aprovar);
@@ -625,6 +628,22 @@ function tvPinta() {
   x.fillStyle = '#7fe0c8'; x.font = '700 28px "DM Sans", system-ui, sans-serif'; x.fillText(t('painel').toUpperCase(), 56, 64);
   x.fillStyle = '#9aa3ad'; x.font = '500 26px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillText(`${MARCA.cliente || ''}  ·  ${new Date().toLocaleTimeString(LANG === 'ja' ? 'ja-JP' : LANG === 'en' ? 'en-US' : 'pt-BR', { hour: '2-digit', minute: '2-digit' })}`, 968, 64);
   x.fillStyle = '#ff5c5c'; x.beginPath(); x.arc(968 - x.measureText(`${MARCA.cliente || ''}  ·  00:00`).width - 26, 64, 9, 0, Math.PI * 2); x.fill();
+  if (E.tvFotos) {
+    x.fillStyle = '#15181d'; x.fillRect(32, 25, 600, 78);
+    x.fillStyle = '#7fe0c8'; x.textAlign = 'left'; x.font = '700 28px system-ui'; x.fillText(t('entraramHoje'), 56, 64);
+    if (!E.entraram?.length) { x.fillStyle = '#b7c0ca'; x.font = '28px system-ui'; x.fillText(t('semImoveisHoje'), 56, 290); }
+    (E.entraram || []).forEach((im, i) => {
+      const cx = 56 + i * 312, cy = 150, img = E.tvImagens?.get(im.capa);
+      x.fillStyle = '#29333c'; x.fillRect(cx, cy, 288, 260);
+      if (img?.complete && img.naturalWidth) {
+        const k = Math.max(288 / img.naturalWidth, 260 / img.naturalHeight), w = 288 / k, h = 260 / k;
+        x.drawImage(img, (img.naturalWidth - w) / 2, (img.naturalHeight - h) / 2, w, h, cx, cy, 288, 260);
+      } else { x.fillStyle = '#b7c0ca'; x.font = '22px system-ui'; x.fillText(t('semFoto'), cx + 22, cy + 130); }
+      x.fillStyle = '#fff'; x.font = '600 28px system-ui'; x.fillText(String(im.codigo), cx, 450, 288);
+      x.fillStyle = '#b7c0ca'; x.font = '23px system-ui'; x.fillText(String(im.tipo || ''), cx, 488, 288);
+    });
+    E.tv.tx.needsUpdate = true; return;
+  }
   const itens = [[`${tt.no_ar ?? 0}/9`, t('noar')], [tt.conversas ?? 0, t('conversas')], [tt.enviadas ?? 0, t('enviadas')], [tt.aprovar ?? 0, t('aprovar')]];
   itens.forEach(([v, l], i) => {
     const cx = 56 + (i % 2) * 470, cy = 150 + Math.floor(i / 2) * 200;
@@ -633,6 +652,15 @@ function tvPinta() {
     x.fillStyle = '#b7c0ca'; x.font = '500 28px "DM Sans", system-ui, sans-serif'; x.fillText(l, cx + 30, cy + 132);
   });
   E.tv.tx.needsUpdate = true;
+}
+function tvImoveis(lista) {
+  E.entraram = lista.slice(0, 3); E.tvImagens ||= new Map(); const meu = E;
+  const capas = new Set(E.entraram.map((i) => i.capa).filter((id) => Number.isSafeInteger(id) && id > 0));
+  for (const id of E.tvImagens.keys()) if (!capas.has(id)) E.tvImagens.delete(id);
+  for (const id of capas) if (!E.tvImagens.has(id)) {
+    const img = new Image(); E.tvImagens.set(id, img);
+    img.onload = () => { if (E === meu) tvPinta(); }; img.src = `/api/arquivos/${id}`;
+  }
 }
 
 // ---------- mobília ----------
@@ -997,7 +1025,7 @@ function atualizaAgentes(lista) {
   for (const a of lista) {
     const ag = E.agentes[a.slug]; if (!ag) continue;
     ag.dados = a; ag.nome = a.nome; ag.estado = a.estado;
-    const dormia = ag.dorme; ag.dorme = !a.ativo;
+    ag.dorme = !a.ativo;
     if (ag.b.glb) {
       ag.b.mats.forEach((m) => { if (m.alphaTest) return; m.transparent = ag.dorme; m.opacity = ag.dorme ? 0.6 : 1; m.color.copy(m.userData.corBase); if (ag.dorme) m.color.multiplyScalar(0.55); m.needsUpdate = true; });
     } else {
@@ -1005,7 +1033,7 @@ function atualizaAgentes(lista) {
       ag.b.rosto.material.opacity = ag.dorme ? 0.6 : 1;
       ag.b.cabeca.rotation.z = ag.dorme ? 0.25 : 0;
     }
-    if (dormia !== ag.dorme && !ag.tela.externa) telaPinta(ag);
+    if (!ag.tela.externa) telaPinta(ag);
     etiquetaNome(ag);
     ag.elNome.dataset.estado = a.estado;
   }
@@ -1023,6 +1051,17 @@ function telaPinta(ag) {
   x.fillStyle = ag.cor; x.beginPath(); x.roundRect(22, 22, W - 44, 46, [14, 14, 0, 0]); x.fill();
   x.fillStyle = '#fff'; x.font = '700 20px "DM Sans", system-ui, sans-serif'; x.textAlign = 'left'; x.textBaseline = 'middle'; x.fillText(`${ag.nome} · WhatsApp`, 42, 45);
   x.font = '500 15px "DM Sans", system-ui, sans-serif'; x.textAlign = 'right'; x.fillStyle = 'rgba(255,255,255,.8)'; x.fillText(new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }), W - 42, 45);
+  if (ag.dados.ultimas?.length) {
+    ag.dados.ultimas.slice(-3).forEach((m, i) => {
+      const saida = m.direcao === 'saida', bx = saida ? 108 : 40, by = 80 + i * 64;
+      x.fillStyle = saida ? '#195c4c' : '#303c49'; x.beginPath(); x.roundRect(bx, by, 364, 58, 9); x.fill();
+      x.textAlign = 'left'; x.fillStyle = '#c6d5d0'; x.font = '11px system-ui'; x.fillText(saida ? ag.nome : t('cliente'), bx + 10, by + 10);
+      const texto = String(m.texto).slice(0, 60); x.fillStyle = '#fff'; x.font = '14px system-ui';
+      x.fillText(texto.slice(0, 34), bx + 10, by + 27, 342); x.fillText(texto.slice(34), bx + 10, by + 44, 285);
+      x.textAlign = 'right'; x.fillStyle = '#b2c8c1'; x.font = '10px system-ui'; x.fillText(String(m.hora), bx + 354, by + 47);
+    });
+    m.tx.needsUpdate = true; return;
+  }
   let s = ag.slug.length * 31 + new Date().getMinutes(); const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
   let y = 90;
   for (let i = 0; i < 5 && y < H - 70; i++) { const w = 120 + rnd() * 180; const h = 26 + Math.round(rnd()) * 16; const dir = i % 2; x.fillStyle = dir ? 'rgba(127,224,200,.28)' : 'rgba(255,255,255,.14)'; x.beginPath(); x.roundRect(dir ? W - 42 - w : 42, y, w, h, 10); x.fill(); y += h + 12; }

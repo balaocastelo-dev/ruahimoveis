@@ -219,11 +219,15 @@ r.get('/escritorio/ao-vivo', (req, res) => {
     out.agentes = B.AGENTES.map((a) => {
       const aj = B.ajustes(a.slug); const est = B.estadoLinha(B.linhaDe(a.slug)); const h = hoje[a.slug] || {};
       return { slug: a.slug, n: a.n, nome: aj.nome, cargo: a.cargo, cor: a.cor, tipo: a.tipo, ativo: !!aj.ativo, modo: aj.modo,
-        estado: est.estado, conversas: +h.conversas || 0, enviadas: +h.enviadas || 0, aprovar: aprovar[a.slug] || 0 };
+        estado: est.estado, conversas: +h.conversas || 0, enviadas: +h.enviadas || 0, aprovar: aprovar[a.slug] || 0,
+        ...(A.veTudo(u) ? { ultimas: require('../agentes/previa-monitor').ultimas(a.slug) } : {}) };
     });
     out.totais = { conversas: out.agentes.reduce((s, a) => s + a.conversas, 0), enviadas: out.agentes.reduce((s, a) => s + a.enviadas, 0),
       aprovar: out.agentes.reduce((s, a) => s + a.aprovar, 0), no_ar: out.agentes.filter((a) => a.estado === 'conectado').length,
       acoes: (one(`SELECT count(*) n FROM agente_eventos WHERE ${H('criado_em')}`) || {}).n || 0 };
+    out.entraram = all(`SELECT i.id,i.codigo,i.tipo,
+      (SELECT min(f.id) FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') capa
+      FROM imoveis i WHERE ${H('i.criado_em')} ${A.veTudo(u) ? '' : 'AND i.corretor_id=' + u.id} ORDER BY i.id DESC LIMIT 3`);
   }
   res.json(out);
 });

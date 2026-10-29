@@ -134,6 +134,11 @@ Os limites de valor mudam em "Regras do escritório".
    autorizações (pendentes, assinadas ou aguardando); sofá → leads cuja última mensagem efetiva é de entrada;
    café → `#/avisos` (eventos de hoje e afazeres abertos, somente leitura, respeitando o acesso do corretor);
    reunião → Chat com aviso de sala ao vivo em breve. Ícone, nome e dica nos lugares, clique e teclado nos dois modos.
+2. **Monitores e TV:** `ao-vivo?full=1` entrega `ultimas` apenas a adm/gestor: as três mensagens efetivas da conversa
+   mais recente, em ordem, com direção, hora e texto de até 60 caracteres. Testes, notas e saídas ainda não enviadas
+   ficam fora; nomes cadastrados, telefones, e-mails e links são removidos no servidor. Os demais perfis mantêm o
+   protetor de tela. O gancho do PC virtual continua tendo prioridade. A TV alterna a cada 8 segundos entre os números
+   e os três últimos imóveis cadastrados hoje, com capas autenticadas de `/api/arquivos/:id`, filtradas por acesso.
 
 ### Verificação
 
