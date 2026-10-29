@@ -208,6 +208,12 @@ function limite(req, max) {
   return h.length > max;
 }
 
+/** Cookie deixado pelo link das redes (/r/<id><rede>): { rede, post } ou null. */
+function redesOrigem(req) {
+  const m = String(req.headers.cookie || '').match(/(?:^|;\s*)redes_origem=(instagram|facebook|google|links|redes)\.(\d{1,9})/);
+  return m ? { rede: { instagram: 'Instagram', facebook: 'Facebook', google: 'Google', links: 'link na bio', redes: 'redes' }[m[1]], post: Number(m[2]) } : null;
+}
+
 const api = express.Router();
 api.post('/interesse', async (req, res) => {
   const b = req.body || {};
@@ -239,6 +245,8 @@ api.post('/interesse', async (req, res) => {
   ].filter(Boolean).join('\n');
 
   const existente = one('SELECT * FROM leads WHERE telefone=?', tel);
+  // veio de uma publicação nas redes (link /r/…): a origem diz de qual rede
+  const redes = redesOrigem(req);
   let leadId;
   if (existente) {
     leadId = existente.id;
@@ -246,10 +254,10 @@ api.post('/interesse', async (req, res) => {
   } else {
     leadId = Number(run(`INSERT INTO leads(nome,telefone,email,origem,etapa,temperatura,corretor_id,tipo_desejado,bairros,busca,ultimo_contato)
       VALUES(?,?,?,?,?,?,?,?,?,?,datetime('now','localtime'))`,
-    nome, tel, email, ORIGEM_PORTAL, visita ? 'visita' : 'novo', 'quente', one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null,
+    nome, tel, email, redes ? `${ORIGEM_PORTAL} · redes (${redes.rede})` : ORIGEM_PORTAL, visita ? 'visita' : 'novo', 'quente', one('SELECT corretor_id FROM imoveis WHERE id=?', im.id).corretor_id || null,
     im.tipo, im.bairro, `Veio pelo portal: ${im.codigo}`).lastInsertRowid);
   }
-  run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', linhas, null);
+  run('INSERT INTO interacoes(lead_id,tipo,texto,autor_id) VALUES(?,?,?,?)', leadId, 'portal', redes ? `${linhas}\nChegou pela publicação #${redes.post} no ${redes.rede}.` : linhas, null);
   audit(null, 'portal_interesse', `${im.codigo} · lead ${leadId}${existente ? ' (já existia)' : ''}${visita ? ' · visita' : ''}`);
   res.json({ ok: true });
 });

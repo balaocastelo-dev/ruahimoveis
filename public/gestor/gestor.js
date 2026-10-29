@@ -144,7 +144,7 @@ function desenhaLista() {
         <div class="selos"><span class="selo ${i.situacao}">${esc(SITU[i.situacao] || i.situacao)}</span><span class="selo plano">${esc(i.plano)}</span>${i.mensalidade ? `<span class="selo">${brl(i.mensalidade)}/mês</span>` : ''}<span class="selo">${n(i.comissao_pct)}% da comissão</span></div></div>
       <div class="metricas">${i.numeros ? met(n(x.imoveis), `imóveis · ${n(x.publicados)} publicados`) + met(mi(x.vgv_carteira), 'na carteira') + met(n(x.vendidos) + (x.alugados ? ` + ${n(x.alugados)}` : ''), x.alugados ? 'vendidos + alugados' : 'vendidos')
         + met(brl(i.comissao_mes), 'sua parte no mês') + met(n(x.leads_30d), 'clientes em 30 dias') + met(n(x.visitas_30d), 'visitas em 30 dias') + met(n(x.usuarios), 'usuários')
-        + met(n(x.creditos_mes) + (i.creditos_fisgar_mes ? ` / ${n(i.creditos_fisgar_mes)}` : ''), 'consultas Fisgar no mês') + met(quando(x.ultima_atividade), 'última atividade') + met((x.tamanho_mb || 0).toLocaleString('pt-BR') + ' MB', 'no banco')
+        + met(n(x.creditos_mes) + (i.creditos_fisgar_mes ? ` / ${n(i.creditos_fisgar_mes)}` : ''), 'consultas Fisgar no mês') + met(n(x.social_mes || 0), `posts nas redes no mês · ${n(x.social_contas || 0)} conta(s)`) + met(quando(x.ultima_atividade), 'última atividade') + met((x.tamanho_mb || 0).toLocaleString('pt-BR') + ' MB', 'no banco')
         : `<span class="muted">${esc(i.erro || 'Banco ainda não criado.')}</span>`}</div>
       <div class="acoes">${i.link ? `<a class="btn sm" href="${esc(i.link)}" target="_blank" rel="noopener">Abrir sistema</a>` : ''}
         <button class="btn sm" data-a="editar">Editar</button>

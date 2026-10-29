@@ -43,6 +43,9 @@ app.use('/webhook/whatsapp', publico.webhook);
 
 // Escritório virtual: ciclo do cérebro na nuvem (agendador do Supabase a cada minuto + aviso do PC quando chega mensagem).
 app.post('/escritorio-ciclo', require('./src/routes/escritorio').ciclo);
+// Redes e publicações: artes (/social/arte), links rastreados (/r/…), página "link na bio" (/links),
+// volta da conexão com Facebook/Google (/redes/retorno/…) e o ciclo do agendador (/social-ciclo).
+app.use(require('./src/routes/social').publico);
 
 // Extensão do Chrome "Fisguei → Herrera HOUSE IA": entra com a chave própria (fora de /api, sem sessão).
 app.use('/fisguei-api', require('./src/routes/fisguei').receber);
@@ -69,6 +72,8 @@ app.use('/api', require('./src/routes/captacao'));
 // Escritório virtual: os 9 agentes robôs (#/whats), cada um com alma (.soul) e WhatsApp próprio.
 app.use('/api', require('./src/routes/escritorio'));
 app.use('/api', require('./src/routes/lgpd')); // aceite dos termos, pedidos de titulares, não contatar
+// Redes e publicações (#/redes): calendário, aprovação e contas do Instagram, Facebook e Google Meu Negócio.
+app.use('/api', require('./src/routes/social').api);
 // Páginas de bairros: a lista, a situação de cada página e o que a imobiliária (cliente) quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.

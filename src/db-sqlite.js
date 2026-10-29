@@ -417,6 +417,27 @@ CREATE TABLE IF NOT EXISTS agente_midias (
   lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, mime TEXT, nome TEXT, tamanho INTEGER, legenda TEXT, dados BLOB NOT NULL,
   imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
 
+// Redes e publicações: posts agendados (Instagram, Facebook, Google), contas conectadas e cliques nos links.
+db.exec(`CREATE TABLE IF NOT EXISTS social_posts (
+  id INTEGER PRIMARY KEY, chave TEXT NOT NULL UNIQUE, tipo TEXT NOT NULL, ref TEXT, titulo TEXT NOT NULL,
+  legenda TEXT, hashtags TEXT, link TEXT, slides TEXT NOT NULL DEFAULT '[]', agendado_para TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'agendado', redes TEXT NOT NULL DEFAULT '[]', resultado TEXT NOT NULL DEFAULT '{}',
+  origem TEXT NOT NULL DEFAULT 'auto', editado INTEGER NOT NULL DEFAULT 0, versao INTEGER NOT NULL DEFAULT 1, motivo TEXT,
+  aprovado_por INTEGER REFERENCES usuarios(id) ON DELETE SET NULL, aprovado_em TEXT, publicado_em TEXT,
+  criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), atualizado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_sp_agenda ON social_posts(agendado_para);
+CREATE INDEX IF NOT EXISTS ix_sp_status ON social_posts(status, agendado_para);
+CREATE INDEX IF NOT EXISTS ix_sp_ref ON social_posts(tipo, ref);
+CREATE TABLE IF NOT EXISTS social_contas (
+  id INTEGER PRIMARY KEY, rede TEXT NOT NULL, conta_id TEXT NOT NULL, nome TEXT, usuario TEXT, token TEXT, refresh TEXT,
+  expira_em TEXT, dados TEXT, ativo INTEGER NOT NULL DEFAULT 1, ultimo_erro TEXT,
+  conectado_por INTEGER REFERENCES usuarios(id) ON DELETE SET NULL, conectado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')),
+  UNIQUE (rede, conta_id));
+CREATE TABLE IF NOT EXISTS social_cliques (
+  id INTEGER PRIMARY KEY, post_id INTEGER REFERENCES social_posts(id) ON DELETE CASCADE, rede TEXT,
+  em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_sc_post ON social_cliques(post_id);`);
+
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);
 const run = (sql, ...p) => db.prepare(sql).run(...p);

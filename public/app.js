@@ -150,7 +150,7 @@ const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
-  ['Conteúdo', [['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
+  ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
   ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/privacidade', 'Privacidade e LGPD', 'lgpd'], ['#/configuracoes', 'Configurações']]],
 ];
 function shell() {
@@ -188,6 +188,7 @@ async function atualizaBadge() {
     b.textContent = alertaRadar || alertaRobo ? '!' : n; b.hidden = !alertaRadar && !alertaRobo && !n;
     b.title = alertaRadar ? 'O radar precisa de atenção' : alertaRobo ? 'O robô TH-IA-GO precisa de atenção' : 'Aprovações e respostas esperando alguém'; topoAtualiza();
   });
+  if (typeof rsBadge === 'function') rsBadge();
   api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; topoAtualiza(); }).catch(() => {});
   try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; topoAtualiza(); } } catch {}
 }
@@ -241,6 +242,7 @@ async function rota() {
     else if (p[0] === 'robos') await telaRobos();
     else if (p[0] === 'condominios' && p[1]) await telaCondominio(+p[1]);
     else if (p[0] === 'condominios') await telaCondominios(new URLSearchParams(qs || ''));
+    else if (p[0] === 'redes' && typeof telaRedes === 'function') await telaRedes(p[1] || '', new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
     else if (p[0] === 'portal') await telaPortal();
     else if (p[0] === 'bairros') await telaBairros(new URLSearchParams(qs || ''));

@@ -67,6 +67,8 @@ BEGIN
       'creditos_mes', (SELECT coalesce(sum(creditos),0) FROM %1$s.fisguei_pedidos WHERE substr(criado_em,1,7) = %2$L),
       'ultima_atividade', (SELECT max(em) FROM %1$s.auditoria),
       'suspensa', (SELECT valor FROM %1$s.config WHERE chave = 'plataforma_suspensa') = '1',
+      'social_mes', (SELECT count(*) FROM %1$s.social_posts WHERE status IN ('publicado','parcial') AND substr(coalesce(publicado_em, agendado_para),1,7) = %2$L),
+      'social_contas', (SELECT count(*) FROM %1$s.social_contas WHERE ativo = 1),
       'tamanho_mb', (SELECT round(sum(pg_total_relation_size(c.oid)) / 1048576.0, 1) FROM pg_class c WHERE c.relnamespace = %3$L::regnamespace AND c.relkind = 'r')
     )$q$, s, mes, p_schema) INTO r;
   RETURN r;

@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node --disable-warning=ExperimentalWarning server.js",
-    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/banco-materias.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js && node test/plataforma.js && node test/lgpd.js",
+    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/banco-materias.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js && node test/plataforma.js && node test/lgpd.js && node test/social.js",
     "portal": "node scripts/portal-publicar.mjs",
     "blog": "node scripts/blog-publicar.mjs"
   },
@@ -20,6 +20,7 @@
     "imapflow": "2.1.2",
     "multer": "2.0.2",
     "node-html-parser": "9.0.4",
+    "opentype.js": "1.3.4",
     "pdfkit": "0.17.2",
     "pg": "8.13.1",
     "pino": "10.3.1",
