@@ -122,14 +122,30 @@ async function processaEntradas(o = {}) {
 }
 
 // ---------- mandar o que está na fila ----------
+const marcaSaida = (m, status, motivo = null, waId = null) => run(`UPDATE agente_mensagens SET status=?, motivo=?, wa_id=coalesce(?,wa_id), enviado_em=CASE WHEN ?='enviada' THEN datetime('now','localtime') ELSE enviado_em END WHERE id=?`, status, motivo, waId, status, m.id);
+// Antes de mandar: quem pediu PARAR (no lead ou na lista comum) não recebe. Devolve o motivo do descarte, ou null.
+function barraSaida(m) {
+  if (m.lead_id) { const l = one('SELECT nao_contatar FROM leads WHERE id=?', m.lead_id); if (l && l.nao_contatar && !/não vai mais receber/.test(m.texto)) return 'cliente pediu PARAR'; }
+  if (require('../fisguei/base').bloqueado(m.telefone)) return 'número bloqueado (PARAR)';
+  return null;
+}
+// Depois de mandar: a conversa do CRM também fica com a mensagem.
+function registraEnviada(m, id) {
+  marcaSaida(m, 'enviada', null, id);
+  if (m.lead_id) {
+    run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', m.lead_id, m.telefone, 'saida', m.texto, 'enviada', id || null, m.autor || B.ajustes(m.agente).nome);
+    run(`DELETE FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, m.lead_id);
+    run(`UPDATE leads SET ultimo_contato=datetime('now','localtime') WHERE id=?`, m.lead_id);
+  }
+}
 async function enviaSaidas() {
   const fila = all(`SELECT * FROM agente_mensagens WHERE direcao='saida' AND status='fila' ORDER BY id LIMIT 12`);
   const F = require('../fisguei/base');
   for (const m of fila) {
-    const marca = (status, motivo = null, waId = null) => run(`UPDATE agente_mensagens SET status=?, motivo=?, wa_id=coalesce(?,wa_id), enviado_em=CASE WHEN ?='enviada' THEN datetime('now','localtime') ELSE enviado_em END WHERE id=?`, status, motivo, waId, status, m.id);
-    if (m.lead_id) { const l = one('SELECT nao_contatar FROM leads WHERE id=?', m.lead_id); if (l && l.nao_contatar && !/não vai mais receber/.test(m.texto)) { marca('descartada', 'cliente pediu PARAR'); continue; } }
-    if (F.bloqueado(m.telefone)) { marca('descartada', 'número bloqueado (PARAR)'); continue; }
+    const marca = (status, motivo = null, waId = null) => marcaSaida(m, status, motivo, waId);
     const linha = B.linhaDe(m.agente);
+    if (B.ajustes(linha).canal === 'web') continue; // sai pelo WhatsApp Web do PC virtual (estação)
+    const barra = barraSaida(m); if (barra) { marca('descartada', barra); continue; }
     if (linha === 'captador') {
       if (!m.pessoa_id) { marca('erro', 'sem proprietário ligado'); continue; }
       F.enfileiraResposta(m.pessoa_id, m.telefone, m.texto, m.autor || 'TH-IA-GO'); marca('enviada', 'pela linha do robô do Fisguei'); continue;
@@ -137,12 +153,7 @@ async function enviaSaidas() {
     if (!linhas.conectada(linha)) { if (m.motivo !== 'linha desconectada') marca('fila', 'linha desconectada'); continue; }
     try {
       const id = await linhas.enviar(linha, m.telefone, m.texto);
-      marca('enviada', null, id);
-      if (m.lead_id) {
-        run('INSERT INTO mensagens(lead_id,telefone,direcao,texto,status,wa_id,autor) VALUES(?,?,?,?,?,?,?)', m.lead_id, m.telefone, 'saida', m.texto, 'enviada', id || null, m.autor || B.ajustes(m.agente).nome);
-        run(`DELETE FROM mensagens WHERE lead_id=? AND direcao='sugestao'`, m.lead_id);
-        run(`UPDATE leads SET ultimo_contato=datetime('now','localtime') WHERE id=?`, m.lead_id);
-      }
+      registraEnviada(m, id);
     } catch (e) { marca(/sem WhatsApp/.test(e.message) ? 'erro' : 'fila', e.message.slice(0, 200)); }
     await espera(2500 + Math.random() * 3500);
   }
@@ -226,4 +237,4 @@ function iniciar() {
   setTimeout(volta, 3e3);
 }
 
-module.exports = { iniciar, entrada, captadorEntrada, processaEntradas, enviaSaidas, atribuiLeads, volta, cicloCerebro, avisaNuvem };
+module.exports = { iniciar, entrada, captadorEntrada, processaEntradas, enviaSaidas, atribuiLeads, volta, cicloCerebro, avisaNuvem, marcaSaida, barraSaida, registraEnviada };

@@ -415,7 +415,12 @@ CREATE TABLE IF NOT EXISTS agente_midias (
   id INTEGER PRIMARY KEY, agente TEXT NOT NULL, telefone TEXT, pessoa_id INTEGER REFERENCES fisguei_pessoas(id) ON DELETE SET NULL,
   anuncio_id INTEGER REFERENCES fisguei_anuncios(id) ON DELETE SET NULL, oportunidade_id INTEGER REFERENCES oportunidades(id) ON DELETE SET NULL,
   lead_id INTEGER REFERENCES leads(id) ON DELETE SET NULL, mime TEXT, nome TEXT, tamanho INTEGER, legenda TEXT, dados BLOB NOT NULL,
-  imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));`);
+  imovel_arquivo_id INTEGER, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE TABLE IF NOT EXISTS agente_tarefas (
+  id INTEGER PRIMARY KEY, agente TEXT NOT NULL, pedido TEXT NOT NULL, para_telefone TEXT, para_nome TEXT,
+  status TEXT NOT NULL DEFAULT 'fila', resultado TEXT, erro TEXT, passos TEXT NOT NULL DEFAULT '[]', n_passos INTEGER NOT NULL DEFAULT 0,
+  criado_por INTEGER REFERENCES usuarios(id) ON DELETE SET NULL, criado_em TEXT NOT NULL DEFAULT (datetime('now','localtime')), atualizado_em TEXT, concluido_em TEXT);
+CREATE INDEX IF NOT EXISTS ix_at_status ON agente_tarefas(status, agente);`);
 
 // Redes e publicações: posts agendados (Instagram, Facebook, Google), contas conectadas e cliques nos links.
 db.exec(`CREATE TABLE IF NOT EXISTS social_posts (

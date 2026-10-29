@@ -1345,3 +1345,66 @@ a{text-underline-offset:.18em}
 .fx-cats button[aria-pressed="true"] span{color:#1b1c1e;opacity:1}
 /* superfícies escuras no tema claro: o dourado de texto volta a ser claro */
 .side,.topbar,.fx-cred,.fx-seg button[aria-pressed="true"],.perfil-escuro{--gold-ink:#d9b56e}
+
+/* ===== PC virtual do agente (janela sobre o escritório) ===== */
+.pc-fundo{position:fixed;inset:0;z-index:9000;background:rgba(8,10,14,.72);backdrop-filter:blur(6px);display:grid;place-items:center;padding:18px;animation:pc-surge .25s ease-out}
+@keyframes pc-surge{from{opacity:0}to{opacity:1}}
+.pc-quadro{width:min(1640px,100%);max-height:100%;display:flex;flex-direction:column;border-radius:18px;overflow:hidden;background:#101317;color:#e9edf2;box-shadow:0 40px 90px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06)}
+.pc-quadro:fullscreen{width:100vw;height:100vh;max-height:none;border-radius:0}
+.pc-topo{display:flex;align-items:center;gap:12px;padding:10px 14px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 35%,#101317),#101317 60%);border-bottom:1px solid rgba(255,255,255,.06)}
+.pc-topo .sp{flex:1}
+.pc-av{width:40px;height:40px;border-radius:50%;box-shadow:0 0 0 2px var(--c)}
+.pc-quem b{display:block;font-size:15px}.pc-quem span{font-size:12px;opacity:.7}
+.pc-st{display:inline-flex;align-items:center;gap:7px;font-size:12px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.07)}
+.pc-st i{width:8px;height:8px;border-radius:50%;background:#9aa3ad}
+.pc-st.on i{background:#3ddc84;box-shadow:0 0 8px #3ddc84}
+.pc-bt{border:0;background:rgba(255,255,255,.08);color:#fff;width:34px;height:32px;border-radius:9px;cursor:pointer;font-size:15px}
+.pc-bt:hover{background:rgba(255,255,255,.18)}
+.pc-corpo{display:grid;grid-template-columns:minmax(0,1fr) 320px;min-height:0;flex:1}
+.pc-monitor{display:flex;flex-direction:column;min-width:0;background:#1c2026;padding:10px 10px 12px}
+.pc-abas{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.pc-aba{display:flex;align-items:center;gap:6px;max-width:220px;min-width:0;padding:7px 12px;border:0;border-radius:10px 10px 0 0;background:#2a3038;color:#cfd6de;font-size:12px;cursor:pointer}
+.pc-aba span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-aba i{font-style:normal;opacity:.6;padding:0 2px}.pc-aba i:hover{opacity:1}
+.pc-aba.on{background:#f4f6f8;color:#1b1f24}
+.pc-aba.nova{padding:7px 11px;background:transparent;font-size:15px}
+.pc-barra{display:flex;gap:6px;align-items:center;padding:7px 8px;background:#f4f6f8;border-radius:0 10px 0 0}
+.pc-nav{border:0;background:transparent;color:#3b434c;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:15px}
+.pc-nav:hover{background:#e3e7eb}
+.pc-url{flex:1}.pc-url input{width:100%;height:32px;border-radius:16px;border:0;background:#e6e9ed;padding:0 14px;font:14px 'DM Sans',sans-serif;color:#1b1f24;outline:none}
+.pc-url input:focus{background:#fff;box-shadow:0 0 0 2px var(--c)}
+.pc-tela{position:relative;background:#fff;border-radius:0 0 10px 10px;overflow:hidden;aspect-ratio:1366/820}
+.pc-tela canvas{display:block;width:100%;height:100%;outline:none;cursor:default}
+.pc-tela canvas:focus{box-shadow:inset 0 0 0 2px var(--c)}
+.pc-cursor{position:absolute;width:0;height:0;pointer-events:none;transition:left .02s linear,top .02s linear;z-index:2}
+.pc-cursor svg{position:absolute;left:-3px;top:-2px;width:26px;height:26px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.5))}
+.pc-cursor img{position:absolute;left:16px;top:18px;width:26px;height:26px;border-radius:50%;box-shadow:0 0 0 2px #fff,0 3px 8px rgba(0,0,0,.4)}
+.pc-cursor.clica::after{content:"";position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;border:3px solid var(--c);animation:pc-clique .5s ease-out forwards}
+@keyframes pc-clique{from{transform:scale(.3);opacity:1}to{transform:scale(1.6);opacity:0}}
+.pc-aviso{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:30px;background:rgba(16,19,23,.86);color:#fff;font-size:15px;line-height:1.5}
+.pc-aviso[hidden]{display:none}.pc-aviso a{color:#e8c36a}
+.pc-lado{padding:14px;overflow-y:auto;background:#14181d;border-left:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:10px}
+.pc-lado h3{margin:6px 0 0;font-size:14px;color:#fff}
+.pc-lado textarea,.pc-lado .inp{width:100%;background:#0d1014;color:#e9edf2;border:1px solid #2a3038;border-radius:10px;padding:9px;font:13.5px 'DM Sans',sans-serif}
+.pc-lado label{display:block;margin:6px 0}
+.pc-lado .btn{width:100%;margin-top:4px}
+.pc-acoes{display:flex;flex-wrap:wrap;gap:6px}.pc-acoes .btn{width:auto;flex:1}
+.pc-tvivo{border-radius:12px;padding:10px;background:color-mix(in srgb,var(--c) 22%,#0d1014);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 60%,transparent)}
+.pc-tvivo .row{display:flex;align-items:center;gap:6px}.pc-tvivo .sp{flex:1}.pc-tvivo .btn{width:auto;margin:0}
+.pc-passo{margin-top:6px;font-size:13px;display:flex;gap:8px;align-items:flex-start}
+.pc-gira{flex:none;width:14px;height:14px;border-radius:50%;border:2px solid rgba(255,255,255,.25);border-top-color:#fff;animation:pc-gira .8s linear infinite;margin-top:2px}
+@keyframes pc-gira{to{transform:rotate(360deg)}}
+.pc-tlista{display:flex;flex-direction:column;gap:6px}
+.pc-t{border-radius:10px;background:#0d1014;padding:8px 10px;font-size:12.5px}
+.pc-t summary{cursor:pointer;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.pc-t .pill{margin-left:auto}
+.pc-res{white-space:pre-wrap;margin:8px 0;padding:8px;border-radius:8px;background:#161b21;font-size:12.5px}
+.pc-res.erro{color:#ffb4ac}
+.pc-passos{margin:6px 0 0;padding-left:18px;font-size:11.5px;opacity:.8;max-height:180px;overflow:auto}
+@media (max-width:1100px){.pc-corpo{grid-template-columns:1fr}.pc-lado{border-left:0;border-top:1px solid rgba(255,255,255,.06)}}
+@media (max-width:640px){.pc-fundo{padding:0}.pc-quadro{border-radius:0;height:100%}}
+.jg-mesa,.jg-ag{cursor:pointer}
+.jg-ag .jg-boneco{pointer-events:auto}
+.pc-ajuda{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.pc-ajuda>div{border-radius:12px;padding:12px;background:var(--panel2,rgba(0,0,0,.03));box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.pc-ajuda p{margin:6px 0 8px}

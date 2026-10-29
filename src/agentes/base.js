@@ -46,6 +46,10 @@ function ajustes(slug) {
     nome: s.nome || a.nome,
     alma: typeof s.alma === 'string' && s.alma.trim() ? s.alma : null,
     alma_em: s.alma_em || null, alma_por: s.alma_por || null,
+    // canal do WhatsApp: 'qr' = aparelho conectado no PC (Baileys); 'web' = WhatsApp Web aberto no PC virtual do agente
+    canal: s.canal === 'web' ? 'web' : 'qr',
+    // no WhatsApp Web: 'nao_salvos' = só conversa com quem não está salvo na agenda do número; 'todos' = todo mundo
+    wa_filtro: s.wa_filtro === 'todos' ? 'todos' : 'nao_salvos',
   };
 }
 function salvaAjustes(slug, b = {}, usuario) {
@@ -61,6 +65,8 @@ function salvaAjustes(slug, b = {}, usuario) {
     n.linha = b.linha;
   }
   if (b.nome !== undefined) n.nome = String(b.nome).slice(0, 40).trim() || undefined;
+  if (b.canal !== undefined) n.canal = b.canal === 'web' ? 'web' : 'qr';
+  if (b.wa_filtro !== undefined) n.wa_filtro = b.wa_filtro === 'todos' ? 'todos' : 'nao_salvos';
   if (b.alma !== undefined) {
     const t = String(b.alma || '').replace(/\r\n/g, '\n');
     if (t.length > 20000) { const e = new Error('A alma ficou grande demais (limite 20 mil caracteres).'); e.status = 400; throw e; }
@@ -81,6 +87,12 @@ function linhaDe(slug) {
 // ---------- estado das linhas (gravado pelo PC, lido pela tela) ----------
 function estadoLinha(slug) {
   let st;
+  if (ajustes(slug).canal === 'web') {
+    // WhatsApp Web no PC virtual do agente (estação na RTX): a estação conta como está a cada batida
+    st = json(getConfig('estacao_wa:' + slug), {});
+    const vivo = st.em && Date.now() - new Date(st.em).getTime() < 90e3;
+    return { ...st, canal: 'web', vivo: !!vivo, estado: vivo ? st.estado || 'parada' : 'desligado', qr: vivo && st.estado === 'qr' ? st.qr : null };
+  }
   if (slug === 'captador') st = json(getConfig('fisguei_robo'), {});
   else st = json(getConfig('agente_wa:' + slug), {});
   const vivo = st.em && Date.now() - new Date(st.em).getTime() < 3 * 60e3;

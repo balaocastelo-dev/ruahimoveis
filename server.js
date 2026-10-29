@@ -23,7 +23,7 @@ app.use((req, res, next) => {
   res.setHeader('Referrer-Policy', 'same-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
+    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' wss://*.trycloudflare.com wss://*.corretordofuturo.app ws://127.0.0.1:* ws://localhost:*; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");
   next();
 });
 
@@ -50,6 +50,9 @@ app.use(require('./src/routes/social').publico);
 // Extensão do Chrome "Fisguei → Herrera HOUSE IA": entra com a chave própria (fora de /api, sem sessão).
 app.use('/fisguei-api', require('./src/routes/fisguei').receber);
 
+// PCs virtuais dos agentes: a estação (RTX ou servidor) entra com a chave própria (fora de /api, sem sessão).
+app.use('/estacao-api', require('./src/estacao/servidor').est);
+
 app.use(express.json({ limit: '1mb' }));
 app.use('/api', mesmaOrigem);
 app.use('/api/publico/portal', require('./src/routes/portal').api);
@@ -74,6 +77,7 @@ app.use('/api', require('./src/routes/escritorio'));
 app.use('/api', require('./src/routes/lgpd')); // aceite dos termos, pedidos de titulares, não contatar
 // Redes e publicações (#/redes): calendário, aprovação e contas do Instagram, Facebook e Google Meu Negócio.
 app.use('/api', require('./src/routes/social').api);
+app.use('/api', require('./src/estacao/servidor').api); // PCs virtuais dos agentes: passe, tarefas, cérebro
 // Páginas de bairros: a lista, a situação de cada página e o que a imobiliária (cliente) quer em cada uma.
 app.use('/api', require('./src/routes/bairros').tela);
 // Blog: a situação (agendados, esperando foto) para a tela do sistema.

@@ -103,4 +103,4 @@ async function testar(modelo) {
   return { ...ajustes(), modelos };
 }
 
-module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO };
+module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO, cifra, decifra, chave };

@@ -153,14 +153,14 @@ function jgNumeros(d) {
 // ---------- agentes ----------
 function jgSprite(a) {
   const foto = EV_AVATARES.includes(a.slug) ? `/plataforma/agentes/${a.slug}.svg` : '';
-  return `<div class="jg-ag" data-slug="${esc(a.slug)}" style="--c:${esc(a.cor)}">
+  return `<div class="jg-ag" data-slug="${esc(a.slug)}" data-act="pc-abre" title="Abrir o PC de ${esc(a.nome)}" style="--c:${esc(a.cor)}">
     <div class="jg-baloes"></div>
     <div class="jg-boneco"><span class="jg-sombra"></span><span class="jg-pernas"><i></i><i></i></span><span class="jg-corpo"></span>
       ${foto ? `<img class="jg-cab" src="${foto}" alt="">` : `<span class="jg-cab jg-cab-l">${esc(a.nome.slice(0, 2))}</span>`}<span class="jg-zz">z<small>z</small></span></div>
     <div class="jg-nome"><i class="st"></i>${esc(a.nome)}</div></div>`;
 }
 function jgMesa(a, [x, y]) {
-  return `<div class="jg-mesa" data-slug="${esc(a.slug)}" style="left:${x - 78}px;top:${y - 24}px;z-index:${y + 30};--c:${esc(a.cor)}">
+  return `<div class="jg-mesa" data-slug="${esc(a.slug)}" data-act="pc-abre" title="Abrir o PC de ${esc(a.nome)}" style="left:${x - 78}px;top:${y - 24}px;z-index:${y + 30};--c:${esc(a.cor)}">
     <div class="jg-tampo"><span class="jg-note"><i></i></span><span class="jg-caneca"></span><span class="jg-papel"></span></div><div class="jg-frente"><i class="st"></i><span class="nm">${esc(a.nome)}</span></div></div>`;
 }
 function jgMontaAgentes(lista) {

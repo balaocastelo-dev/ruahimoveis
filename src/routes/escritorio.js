@@ -265,8 +265,8 @@ r.get('/escritorio/:slug/conversa', (req, res) => {
 r.put('/escritorio/:slug', gestor, (req, res) => {
   const a = agenteOu404(req.params.slug);
   const b = req.body || {};
-  const aj = B.salvaAjustes(a.slug, { ativo: b.ativo, modo: b.modo, linha: b.linha, nome: b.nome }, req.usuario);
-  audit(req.usuario.id, 'escritorio.agente', `${a.slug} ${JSON.stringify({ ativo: aj.ativo, modo: aj.modo, linha: aj.linha, nome: aj.nome })}`);
+  const aj = B.salvaAjustes(a.slug, { ativo: b.ativo, modo: b.modo, linha: b.linha, nome: b.nome, canal: b.canal, wa_filtro: b.wa_filtro }, req.usuario);
+  audit(req.usuario.id, 'escritorio.agente', `${a.slug} ${JSON.stringify({ ativo: aj.ativo, modo: aj.modo, linha: aj.linha, nome: aj.nome, canal: aj.canal })}`);
   res.json({ ok: true });
 });
 r.put('/escritorio/:slug/alma', gestor, (req, res) => {

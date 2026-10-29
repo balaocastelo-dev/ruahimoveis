@@ -106,7 +106,8 @@ async function telaMesa(slug, aba = 'mesa') {
   <div class="ev-cab" style="--c:${esc(a.cor)}">${evAvatar(a, ls.estado === 'conectado' && a.ajustes.ativo ? 'grande pulsa' : 'grande')}
     <div style="flex:1;min-width:0"><h1 style="margin:0">${esc(a.nome)}</h1><div class="eyebrow depois">Agente ${a.n} · ${esc(a.setor)}</div><p class="lead" style="margin:2px 0 0">${esc(a.cargo)} — ${esc(a.resumo)}</p></div>
     <div class="ev-cab-st">${evPill(a.ajustes.ativo ? ls.estado : 'parada')}<span class="small muted">${a.linha !== a.slug ? `usa a linha de ${esc(a.linha_nome)}` : ls.numero ? esc(tel(ls.numero)) : 'sem número'}</span>
-      <span class="small muted">${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}${a.ajustes.alma_editada ? ' · alma editada' : ''}</span></div></div>
+      <span class="small muted">${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}${a.ajustes.alma_editada ? ' · alma editada' : ''}</span>
+      <button class="btn pri sm" data-act="pc-abre" data-slug="${esc(a.slug)}">🖥️ Abrir o PC de ${esc(a.nome)}</button></div></div>
   <div class="tabs">${EV_ABAS.map(([k, l]) => `<a href="#/whats/agente/${a.slug}/${k}" class="${aba === k ? 'on' : ''}">${l}${k === 'mesa' && a.aprovar ? ` <span class="pill bad">${a.aprovar}</span>` : ''}</a>`).join('')}</div>
   <div id="ev-aba"></div>`;
   const f = { mesa: evAbaMesa, conversas: evAbaConversas, alma: evAbaAlma, whatsapp: evAbaWhats, teste: evAbaTeste, ajustes: evAbaAjustes }[aba] || evAbaMesa;
@@ -211,7 +212,37 @@ function evAbaAlma(a) {
 ACT['ev-alma-salva'] = (el) => comBotao(el, async () => { await api('PUT', `/api/escritorio/${location.hash.split('/')[3]}/alma`, { alma: $('#ev-alma').value }); toast('Alma salva. Vale na próxima mensagem.'); rota(); });
 ACT['ev-alma-padrao'] = (el) => comBotao(el, async () => { if (!confirm('Voltar a alma para o texto padrão? A versão editada será perdida.')) return; await api('POST', `/api/escritorio/${location.hash.split('/')[3]}/alma/restaurar`); toast('Alma padrão restaurada'); rota(); });
 
+// Canal do WhatsApp do agente: aparelho conectado no PC (QR, como antes) ou o WhatsApp Web aberto no PC virtual dele.
 function evAbaWhats(a) {
+  const propria = a.linha === a.slug;
+  const web = a.ajustes.canal === 'web';
+  if (!propria) return evAbaWhatsQr(a);
+  if (web) evAbaWhatsWeb(a); else evAbaWhatsQr(a);
+  if (!a.pode_editar) return;
+  const box = document.createElement('form'); box.className = 'card grid ev-canal'; box.dataset.form = 'ev-canal'; box.style.gap = '10px'; box.style.marginTop = '16px';
+  box.innerHTML = `<h2 style="margin:0">Como ${esc(a.nome)} usa o WhatsApp</h2>
+    <label class="check"><input type="radio" name="canal" value="qr" ${web ? '' : 'checked'}> <span><b>Aparelho conectado (QR code)</b> — a linha roda no PC da ${esc(MARCA.cliente)}, como sempre.</span></label>
+    <label class="check"><input type="radio" name="canal" value="web" ${web ? 'checked' : ''}> <span><b>WhatsApp Web no PC virtual de ${esc(a.nome)}</b> — o WhatsApp fica aberto no Chrome dele, sempre ligado: ele lê as conversas novas, responde pelo cérebro do escritório e entrega resultados de tarefas.</span></label>
+    <label class="f">Quem ele atende no WhatsApp Web<select class="inp" name="wa_filtro"><option value="nao_salvos" ${a.ajustes.wa_filtro !== 'todos' ? 'selected' : ''}>Só quem NÃO está salvo na agenda do número (bom para número pessoal)</option><option value="todos" ${a.ajustes.wa_filtro === 'todos' ? 'selected' : ''}>Todo mundo que escrever (número só da imobiliária)</option></select></label>
+    <div class="banner warn small" style="margin:0">Automatizar o WhatsApp Web vai contra as regras do WhatsApp: o número pode ser bloqueado, principalmente ao mandar mensagem para quem não conhece. As respostas seguem o modo do agente (${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}) e quem pede PARAR não recebe mais nada.</div>
+    <div class="row"><span class="sp"></span><button class="btn pri" type="submit">Salvar</button></div>`;
+  $('#ev-aba').appendChild(box);
+}
+FORM['ev-canal'] = async (f) => { const o = formJSON(f); const slug = location.hash.split('/')[3]; await api('PUT', `/api/escritorio/${slug}`, o); toast(o.canal === 'web' ? 'Pronto: o WhatsApp Web abre no PC virtual em até 30 s.' : 'Salvo'); telaMesa(slug, 'whatsapp'); };
+function evAbaWhatsWeb(a) {
+  const ls = a.linha_estado;
+  const corpo = ls.estado === 'qr' && ls.qr
+    ? `<div class="fg-qr"><img src="${esc(ls.qr)}" alt="QR code do WhatsApp Web" width="240" height="240"><div class="small"><b>Para entrar no WhatsApp Web do PC de ${esc(a.nome)}:</b><ol style="margin:6px 0;padding-left:18px"><li>No celular com o número que ${esc(a.nome)} vai usar, abra o WhatsApp</li><li>Toque em <b>⋮</b> → <b>Aparelhos conectados</b> → <b>Conectar um aparelho</b></li><li>Aponte para este QR code</li></ol>A conexão fica salva no PC virtual.</div></div>`
+    : ls.estado === 'conectado' ? `<p>WhatsApp Web conectado no número <b>${esc(tel(ls.numero))}</b>, aberto no PC virtual de ${esc(a.nome)}.</p>`
+    : ls.estado === 'desligado' ? '<p>A estação dos PCs virtuais está desligada agora. O WhatsApp volta sozinho quando ela ligar.</p>'
+    : `<p>Abrindo o WhatsApp Web no PC virtual… (${esc(ls.estado || '')})${ls.erro ? ' — ' + esc(ls.erro) : ''}</p>`;
+  $('#ev-aba').innerHTML = `<div class="grid g2" style="align-items:start"><div class="card"><div class="row"><h2 style="margin:0">WhatsApp Web no PC virtual</h2><span class="sp"></span>${evPill(ls.estado)}</div>${corpo}
+    <div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn pri" data-act="pc-abre" data-slug="${esc(a.slug)}">🖥️ Abrir o PC de ${esc(a.nome)}</button>${a.pode_editar ? `<button class="btn" data-act="ev-wa-ordem" data-c="ler_whatsapp">Ler as não lidas agora</button><button class="btn" data-act="ev-wa-ordem" data-c="sair_whatsapp">Sair do WhatsApp</button>` : ''}</div></div>
+    <div class="card"><h3>Bom saber</h3><ul class="small"><li>O WhatsApp Web fica numa aba própria do Chrome de ${esc(a.nome)}, que nunca desliga.</li><li>Cada mensagem nova vai para o cérebro do escritório; a resposta sai pelo mesmo WhatsApp (ou espera aprovação, conforme o modo).</li><li>"Ler as não lidas" passa para o escritório as conversas que chegaram antes.</li><li>Grupos e status não são lidos.</li></ul></div></div>`;
+  if (ls.estado !== 'conectado') poll = setInterval(async () => { if (!$('#ev-aba')) return clearInterval(poll); try { const n = await api('GET', `/api/escritorio/${a.slug}`); if (n.linha_estado.estado !== ls.estado || n.linha_estado.qr !== ls.qr) { clearInterval(poll); telaMesa(a.slug, 'whatsapp'); } } catch {} }, 5000);
+}
+ACT['ev-wa-ordem'] = (el) => comBotao(el, async () => { if (el.dataset.c === 'sair_whatsapp' && !confirm('Sair do WhatsApp Web neste PC? Para voltar, será preciso ler o QR code de novo.')) return; await api('POST', '/api/estacao/comando', { agente: location.hash.split('/')[3], comando: el.dataset.c }); toast('Pedido enviado ao PC virtual (em até 10 s).'); });
+function evAbaWhatsQr(a) {
   const ls = a.linha_estado; const propria = a.linha === a.slug;
   const qr = ls.estado === 'qr' && ls.qr ? `<div class="fg-qr"><img src="${esc(ls.qr)}" alt="QR code do WhatsApp" width="240" height="240"><div class="small"><b>Para conectar o número de ${esc(a.nome)}:</b><ol style="margin:6px 0;padding-left:18px"><li>Abra o WhatsApp do celular que vai ser de ${esc(a.nome)}</li><li>Toque em <b>⋮</b> → <b>Aparelhos conectados</b> → <b>Conectar um aparelho</b></li><li>Aponte a câmera para este QR code</li></ol><span class="muted">O código muda a cada 20 segundos; a tela atualiza sozinha.</span></div></div>` : '';
   let corpo;
@@ -316,7 +347,9 @@ async function telaEscritorioConfig() {
       <div class="grid g3"><label class="f">Agenda dos corretores<input class="inp" type="time" name="hora_agenda" value="${esc(g.hora_agenda || '')}"></label><label class="f">Lembrete antes da visita (min)<input class="inp" type="number" name="lembrete_visita_min" min="0" max="240" value="${g.lembrete_visita_min}"></label><span></span></div>
       <p class="muted small" style="margin:0">Off-market → Vicente; terreno → Teo; galpão, sala e loja → Bruno; apartamento → Ana (ou Helena acima do limite); casa → Clara (ou Helena acima do limite). O dono e os horários do relatório ficam na mesa do Augusto.</p>
       <div class="row"><span class="sp"></span><button class="btn pri" type="submit">Salvar regras</button></div></form>
-  </div>`;
+  </div>
+  <div id="pcv-config"></div>`;
+  if (typeof pcConfig === 'function') pcConfig();
 }
 FORM['ev-ia'] = async (f) => { const o = formJSON(f); if (!o.chave) delete o.chave; const r = await api('PUT', '/api/escritorio/config/ia', o); toast(r.tem_chave ? 'Salvo. Testando a chave…' : 'Salvo'); if (r.tem_chave && o.chave) await evIaTesta(); else rota(); };
 async function evIaTesta(el) {
