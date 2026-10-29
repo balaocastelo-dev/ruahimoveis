@@ -126,7 +126,8 @@ app.get('/v/:token', (req, res, next) => { try { publico.paginaLink(req, res); }
 // Página inicial = portal de imóveis (/imoveis), com o botão "Entrar". Quem já está logado (ou abriu um link
 // do sistema, /#/...) vai para o sistema; /entrar abre sempre a tela de entrada. Na entrada da plataforma
 // (app.corretordofuturo.app) e sem nenhum usuário ainda (primeiro acesso), a raiz continua sendo o sistema.
-const telaDoSistema = (req, res) => { res.setHeader('Cache-Control', 'no-cache'); res.sendFile(path.join(PUB, 'app.html')); };
+// no-store (e não no-cache): com 304 o Chrome reaproveita cabeçalhos velhos, inclusive a CSP, e mudanças de política não chegam ao navegador
+const telaDoSistema = (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.sendFile(path.join(PUB, 'app.html')); };
 app.get('/entrar', telaDoSistema);
 app.get(['/', '/index.html'], (req, res) => {
   const { APP_HOSTS } = require('./src/plataforma/vitrine');
