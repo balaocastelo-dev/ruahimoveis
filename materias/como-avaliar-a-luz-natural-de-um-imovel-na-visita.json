@@ -1,0 +1,128 @@
+{
+  "slug": "como-avaliar-a-luz-natural-de-um-imovel-na-visita",
+  "tema": "como avaliar luz natural do imovel na visita",
+  "titulo": "Luz natural do imóvel: como avaliar na visita",
+  "formato": "dica",
+  "resumo": "Saiba como avaliar a luz natural de um imóvel na visita: orientação solar, horário, janelas, vizinhos e o que a norma de desempenho pede para os ambientes.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "luz natural",
+    "orientação solar",
+    "compra",
+    "bem-estar"
+  ],
+  "capa": {
+    "alt": "Sala vazia de apartamento com piso de madeira e feixes de sol entrando por uma janela ampla"
+  },
+  "redes": {
+    "legenda": "Você já visitou um imóvel lindo às 11h e descobriu depois que ele vive na sombra? A luz natural muda com a face do prédio, o horário e até o vizinho da frente. Bússola no celular, visita em dois horários e um olhar atento às janelas já ajudam muito. Veja o passo a passo no blog (link na bio).",
+    "hashtags": [
+      "luznatural",
+      "bemestar",
+      "arquitetura",
+      "casanova",
+      "decoracao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Avaliar a **luz natural de um imóvel** na visita é uma das decisões que mais pesam no dia a dia: um apartamento claro parece maior, gasta menos energia com lâmpadas e fica mais gostoso de morar. O problema é que a luz que você vê numa visita rápida pode ser bem diferente da que vai encontrar em outros horários e estações."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta prática: descubra para onde as janelas principais estão voltadas, visite em dois horários diferentes e observe o que pode fazer sombra, como prédios vizinhos, árvores e varandas profundas. Com esses três passos, você já tem uma boa ideia de como a casa vai ser ao longo do ano."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "No Brasil, a face norte recebe mais sol ao longo do ano, sobretudo no inverno; a sul recebe menos sol direto.",
+        "Leste traz o sol da manhã, mais ameno; oeste, o da tarde, mais quente.",
+        "A planta do imóvel costuma indicar o norte; bússola do celular e mapas ajudam na visita.",
+        "Prédios vizinhos, árvores e varandas fundas podem roubar boa parte da luz."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que observar para entender a luz do imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pela **orientação solar**, ou seja, para qual ponto cardeal as janelas estão voltadas. Reportagem do portal Portas lembra que, no hemisfério sul, o norte recebe mais sol, o leste concentra a luz da manhã, o oeste recebe o sol da tarde, mais quente, e o sul tende a ter menos sol direto. A planta de arquitetura costuma marcar o norte."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Abra a bússola do celular perto da janela da sala e anote para onde ela aponta.",
+        "Repita nos quartos: são eles que pedem sol da manhã e conforto à tarde.",
+        "Volte em outro horário, de preferência no fim da tarde, para ver a luz do poente.",
+        "Olhe pela janela e veja se há prédio próximo, terreno vazio que pode receber construção ou árvore grande na frente.",
+        "Apague as luzes durante a visita e observe se dá para ler confortavelmente no meio do ambiente.",
+        "Repare na profundidade dos cômodos: quanto mais longe da janela, menos luz chega."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também uma régua técnica. Artigo da revista do IPT explica que a NBR 15575, norma de desempenho das edificações habitacionais, pede nos ambientes de permanência um nível mínimo de iluminação natural, calculado em condições de céu parcialmente nublado durante o dia. Em imóvel novo, vale perguntar à construtora se o projeto atende a esse requisito."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando mais sol não é melhor"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A face norte é a queridinha, mas não é regra absoluta. Estudo da UTFPR em Curitiba confirmou o ganho térmico de janelas voltadas para o norte no inverno, mas também registrou mais queixas de calor em dias de céu limpo. Em cidades quentes, a mesma reportagem do Portas lembra que pode ser preciso sombreamento extra, como brises, beirais ou cortinas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O sol de oeste é o mais delicado: entra baixo e quente no fim da tarde, justo quando a casa está cheia. Se a sala ou os quartos estiverem voltados para o poente, veja se há varanda, vegetação ou proteção nas janelas. Para mais ideias de conforto em casa, passeie pela seção de [bem-estar](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel em Campinas e a luz é prioridade, conte isso logo no primeiro contato. A equipe da {{cliente}}, imobiliária que atende quem quer comprar ou vender, pode ajudar você nessa busca e nas visitas. Mais textos no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: confira a orientação, visite em dois horários e olhe o vizinho antes de se apaixonar pela sala."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a melhor face para um apartamento em Campinas?",
+      "resposta": "Não há resposta única. A face norte recebe mais sol no inverno, o leste traz luz mais amena pela manhã e o oeste esquenta à tarde. O ideal depende de quais ambientes ficam em cada face e de haver proteção contra o calor."
+    },
+    {
+      "pergunta": "Como descobrir a orientação solar sem a planta?",
+      "resposta": "Use a bússola do celular perto da janela ou um aplicativo de mapas que mostre o norte. Visitar em dois horários diferentes ajuda a confirmar como o sol entra de fato."
+    },
+    {
+      "pergunta": "Prédio vizinho pode tirar a luz do imóvel?",
+      "resposta": "Pode, principalmente nos andares mais baixos. Observe a distância até os prédios em volta e se há terrenos vazios que podem receber construção no futuro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Como saber a posição solar de um imóvel ou terreno — Portas",
+      "url": "https://portas.com.br/morar-bem/dicas-lar/como-saber-a-posicao-solar-de-um-imovel-ou-terreno/",
+      "data": "31 de agosto de 2026"
+    },
+    {
+      "nome": "Contribuições para o dimensionamento de aberturas para iluminação natural em habitações de interesse social — Revista IPT",
+      "url": "https://revista.ipt.br/revistaIPT/en/article/download/65/78",
+      "data": "2018"
+    },
+    {
+      "nome": "Efeito de orientação de janela no ambiente térmico e na percepção do usuário — UTFPR, anais do Encac (Antac)",
+      "url": "https://eventos.antac.org.br/index.php/encac/article/download/4037/3048/12202",
+      "data": "consultado em outubro de 2026"
+    }
+  ]
+}
