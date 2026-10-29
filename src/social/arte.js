@@ -174,8 +174,11 @@ async function capaImovel(x, W, H, o = {}) {
   y -= Math.round(W * 0.062);
   if (linhaSpecs) { partes.push(texto('media', linhaSpecs, m, y, Math.round(W * 0.027), '#FFFFFF', { opacidade: 0.95 })); y -= Math.round(W * 0.052); }
   for (let i = titulo.length - 1; i >= 0; i--) { partes.push(texto('titulo', titulo[i], m, y, tituloTam, '#FFFFFF')); y -= tituloTam * 1.06; }
-  const lugar = [im.tipo, im.bairro || im.cidade].filter(Boolean).join(' · ').toUpperCase();
-  partes.push(texto('forte', lugar, m, y - 6, Math.round(W * 0.022), P.destaque === '#141414' ? '#E9D9B4' : '#FFFFFF', { ls: 0.16, opacidade: 0.92 }));
+  // tipo · bairro numa linha só (nome de loteamento longo é cortado com "…")
+  const tamL = Math.round(W * 0.022);
+  let lugar = [im.tipo, im.bairro || im.cidade].filter(Boolean).join(' · ').toUpperCase();
+  while (lugar.length > 4 && largura('forte', lugar, tamL, 0.16) > larg) lugar = `${lugar.slice(0, -2).trimEnd()}…`;
+  partes.push(texto('forte', lugar, m, y - 6, tamL, P.destaque === '#141414' ? '#E9D9B4' : '#FFFFFF', { ls: 0.16, opacidade: 0.92 }));
   const sel = await selo(Math.round(W * 0.085));
   const meta = await sharp(sel).metadata();
   return montar(base, W, H, degrade(W, H, 0.34, 0.9) + tag.svg + partes.join('') + aviso(W, H), [{ input: sel, left: W - m - meta.width, top: m - 6 }]);
