@@ -62,7 +62,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-29T02:19:39.081Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "quarto-para-dormir-melhor-luz-temperatura-ruido-materiais",
@@ -83,5 +83,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-29T02:35:53.386Z"
+  "atualizadoEm": "2026-10-29T06:58:57.514Z"
 }

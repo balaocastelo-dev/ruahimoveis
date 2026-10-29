@@ -11,7 +11,10 @@
     "compra"
   ],
   "capa": {
-    "alt": "Estrutura de concreto de um edifício residencial em construção, com lajes aparentes e luz suave do fim da tarde"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/norma-de-desempenho-nbr-15575-o-que-garante-no-imovel-novo-def5e00d.jpg",
+    "alt": "Estrutura de concreto de um edifício residencial em construção, com lajes aparentes e luz suave do fim da tarde",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Você sabia que existe uma norma que diz quanto tempo a estrutura, o telhado e o encanamento de um imóvel novo devem durar? É a NBR 15575, a norma de desempenho. Ela também fixa um mínimo de isolamento de som entre vizinhos e de luz natural nos cômodos. Explicamos o que ela cobre, o que fica de fora e os documentos que vale pedir antes de assinar. Leia o artigo completo no blog (link na bio).",
