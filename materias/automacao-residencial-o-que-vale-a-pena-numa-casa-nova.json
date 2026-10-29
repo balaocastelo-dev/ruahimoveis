@@ -1,0 +1,264 @@
+{
+  "slug": "automacao-residencial-o-que-vale-a-pena-numa-casa-nova",
+  "tema": "automacao residencial o que vale a pena na casa nova",
+  "titulo": "Automação residencial: o que vale a pena numa casa nova",
+  "resumo": "Automação residencial dá conforto e segurança quando é planejada na obra. Veja o que prever, o que vale a pena automatizar e o que costuma virar problema.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "automação residencial",
+    "casa inteligente",
+    "alto padrão",
+    "casa nova",
+    "tecnologia"
+  ],
+  "capa": {
+    "alt": "Sala de estar contemporânea ao entardecer com iluminação indireta no forro, persianas motorizadas meio abertas e um painel de controle discreto na parede"
+  },
+  "seo": {
+    "titulo": "Automação residencial: o que vale a pena na casa nova"
+  },
+  "redes": {
+    "legenda": "Casa inteligente começa antes do primeiro interruptor. Automação bem feita é aquela que você quase não percebe: luz que acende na hora certa, cortina que fecha sozinha, aviso de vazamento no celular. Mal planejada, vira aplicativo demais e aparelho que não conversa com o outro. No blog, mostramos o que prever na obra e o que vale a pena automatizar. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "automacaoresidencial",
+      "casainteligente",
+      "altopadrao",
+      "arquitetura",
+      "casanova",
+      "tecnologia",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Automação residencial** é o que transforma a casa em um lugar que responde ao seu jeito de viver: a luz que acende em cena quando a noite chega, a cortina que baixa com o sol forte, o aviso no celular quando o sensor detecta água no chão. Para quem está construindo ou comprando uma casa nova, a pergunta é o que vale a pena."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: vale a pena automatizar o que você usa todo dia, como iluminação, cortinas, climatização e segurança, e planejar a infraestrutura ainda na obra. O que costuma virar problema é o excesso: muitos aparelhos de marcas que não conversam entre si, aplicativos demais e sistemas fechados que só um técnico consegue mexer."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Automatize o que é rotina: luz, cortinas, clima, segurança e alertas de vazamento ou fumaça.",
+        "Planeje na obra: pontos de energia, rede bem distribuída e lugar para os equipamentos.",
+        "Prefira padrões abertos, como o Matter, para que aparelhos de marcas diferentes conversem.",
+        "Interface simples vale mais do que muitos recursos: a casa precisa funcionar para todos."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que vale a pena automatizar numa casa nova"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de partida não é a tecnologia, e sim a rotina. A revista de arquitetura Architonic resume bem: automatize o que melhora o dia a dia, como iluminação programada, alarme e climatização, e não tarefas que você faria igualmente bem sozinho. Uma boa pergunta para cada item é: eu usaria isso todo dia, ou só para mostrar às visitas?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **iluminação** costuma ser o primeiro e o mais útil. Com dimmers e cenas, um único toque deixa a sala pronta para receber, para ver um filme ou para dormir. As **cortinas e persianas motorizadas** vêm logo depois, especialmente em janelas altas ou grandes, difíceis de alcançar, e ajudam a controlar o calor do sol nas horas mais quentes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **segurança** é outra camada que costuma compensar. Um material técnico da AltoQi, empresa de software para projetos de engenharia, cita a integração de alarme e câmeras com avisos no celular e sensores de gás, água e fumaça capazes de fechar válvulas automaticamente. Fechaduras digitais também facilitam a rotina e a acessibilidade, porque dispensam chaves."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **climatização e na irrigação**, o ganho é de conforto e de uso mais racional da água e da energia: o ar-condicionado liga só nos cômodos ocupados e o jardim é regado conforme a umidade do solo. O resultado depende do uso; a automação ajuda, mas não substitui um projeto com boa orientação solar, sombreamento e ventilação natural."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Automação residencial na casa nova",
+      "pros": [
+        "Conforto: cenas de luz, cortina e clima com um toque ou por horário.",
+        "Segurança: alertas no celular de alarme, vazamento de água ou fumaça.",
+        "Acessibilidade: menos esforço para pessoas idosas ou com mobilidade reduzida.",
+        "Uso mais racional de energia e água, com desligamento de cômodos vazios."
+      ],
+      "contras": [
+        "Aparelhos de marcas diferentes nem sempre conversam entre si.",
+        "Sistemas fechados podem criar dependência de um único instalador.",
+        "Equipamentos e aplicativos envelhecem mais rápido do que a casa.",
+        "Interface complicada faz a família voltar ao interruptor comum."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que prever na obra para não quebrar parede depois"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Automação planejada na obra sai mais limpa e mais confiável do que a improvisada depois. A Architonic recomenda tratar o projeto de automação como qualquer projeto elétrico: definir antes da construção onde ficam interruptores, sensores, motores e painéis. Mudar isso com a parede pronta costuma significar quebra, poeira e acabamento refeito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Alguns cuidados aparecem em quase todo projeto. Muitos interruptores inteligentes precisam de **fio neutro** na caixa, como lembra reportagem da Forbes Brasil sobre casa conectada; cortinas motorizadas pedem ponto de energia junto ao trilho; e a rede sem fio precisa alcançar a casa inteira, o que em casas grandes costuma exigir vários pontos de acesso, em rede mesh ou ligados por cabo."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Ponto de energia perto do trilho de cada cortina ou persiana que poderá ser motorizada.",
+        "Fio neutro nas caixas de interruptor, para aceitar módulos inteligentes no futuro.",
+        "Tubulação de reserva entre os andares e até o local dos equipamentos.",
+        "Um espaço ventilado e acessível para roteador, central e demais equipamentos.",
+        "Cabos de rede até os pontos de acesso do Wi-Fi, a TV e o escritório."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Toda mudança na instalação elétrica deve seguir a norma brasileira de instalações de baixa tensão, a ABNT NBR 5410, e ser feita por profissional habilitado, com projeto e ART, como lembra um estudo técnico do Centro Paula Souza sobre casas inteligentes. Não troque interruptores nem abra o quadro por conta própria: módulos de automação ficam ligados diretamente à rede elétrica."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como escolher sistemas que não fiquem obsoletos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O maior desafio da automação é a compatibilidade. O mesmo material da AltoQi aponta a falta de um protocolo universal entre fabricantes como um dos principais obstáculos: equipamentos que não conversam geram confusão e gasto desnecessário. Protocolo é a linguagem que os aparelhos usam para trocar comandos; quando cada marca fala a sua, a casa vira uma coleção de aplicativos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma resposta do setor é o **Matter**, padrão aberto mantido pela Connectivity Standards Alliance. Segundo a própria entidade, ele funciona sobre Wi-Fi, Thread e cabo de rede, opera localmente dentro de casa e só os aparelhos certificados podem exibir o selo Matter. Para comandar de fora de casa, é preciso um controlador conectado à internet, como um hub ou uma caixa de som inteligente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O padrão continua crescendo. A versão 1.5, anunciada pela entidade em novembro de 2025, passou a incluir câmeras, cortinas, persianas, portões e portas de garagem, além de sensores de umidade do solo para irrigação. Isso não significa trocar tudo: muitos aparelhos recebem o suporte por atualização, e outros entram na rede por meio de pontes."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Sistema sem fio ou cabeado: o que muda",
+      "colunas": [
+        "Critério",
+        "Sem fio",
+        "Cabeado"
+      ],
+      "linhas": [
+        [
+          "Melhor momento",
+          "Casa pronta ou pequenas reformas",
+          "Casa em construção ou reforma ampla"
+        ],
+        [
+          "Instalação",
+          "Mais simples, com menos quebra",
+          "Exige planejamento e obra"
+        ],
+        [
+          "Estabilidade",
+          "Depende de uma boa cobertura de rede",
+          "Costuma ser mais estável"
+        ],
+        [
+          "Ampliação",
+          "Fácil de acrescentar aparelhos",
+          "Depende da tubulação prevista"
+        ],
+        [
+          "Para quem combina",
+          "Quem quer começar por etapas",
+          "Quem quer um sistema integrado de longo prazo"
+        ]
+      ],
+      "colunaDestaque": 0
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outro cuidado simples é conferir a homologação da Anatel, a agência que regula as telecomunicações no Brasil. Aparelhos que se conectam à rede sem fio precisam ser certificados para venda no país; o selo traz o número da homologação, que pode ser consultado no sistema público da agência, como explica o Olhar Digital."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que costuma virar problema e como evitar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O problema mais comum não é técnico, é de uso. Se só uma pessoa da casa sabe operar o sistema, os demais voltam ao interruptor. O material da AltoQi lembra que o morador nem sempre domina programação e que a interface precisa ser simples. Peça que os comandos principais funcionem também por botão físico, e não apenas pelo celular."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O segundo é a dependência de quem instalou. Em sistemas fechados, qualquer ajuste depende do integrador, o profissional que projeta, instala e compatibiliza os equipamentos. Antes de contratar, pergunte se o sistema usa padrão aberto, se você recebe senhas e documentação e se outro profissional conseguirá dar manutenção no futuro. Mais ideias de casa em [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terceiro é a privacidade. Câmeras e assistentes de voz enviam dados para a nuvem; prefira equipamentos que permitam gravação local, troque as senhas de fábrica e mantenha tudo atualizado. E lembre que a tecnologia envelhece mais rápido do que a construção: invista na infraestrutura, que dura décadas, e escolha os aparelhos com calma, por etapas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de comprar uma casa pronta, vale perguntar o que já está automatizado, se existe documentação do sistema e quem fez a instalação. Para outros temas de casa e arquitetura, visite o [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura em Campinas uma casa nova ou de alto padrão e quer avaliar a infraestrutura com calma, a equipe da {{cliente}} pode ajudar a separar as opções que combinam com o seu jeito de morar. Em uma linha: planeje a infraestrutura na obra e automatize só o que você vai usar todo dia."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Vale a pena automatizar a casa depois de pronta?",
+      "resposta": "Sim, com aparelhos sem fio, como lâmpadas, tomadas e alguns interruptores inteligentes. Mas sistemas integrados e cortinas motorizadas costumam sair melhor quando a infraestrutura é prevista na obra."
+    },
+    {
+      "pergunta": "O que é o padrão Matter?",
+      "resposta": "É um padrão aberto da Connectivity Standards Alliance para que aparelhos de marcas diferentes funcionem juntos. Ele roda sobre Wi-Fi, Thread e cabo de rede, e só os aparelhos certificados exibem o selo."
+    },
+    {
+      "pergunta": "Por que o interruptor inteligente precisa de fio neutro?",
+      "resposta": "Muitos modelos precisam do neutro para manter o próprio módulo ligado. Por isso vale prever o fio nas caixas durante a obra, sempre com um eletricista habilitado."
+    },
+    {
+      "pergunta": "A automação funciona sem internet?",
+      "resposta": "Depende do sistema. Segundo a Connectivity Standards Alliance, o Matter opera localmente, mas o comando de fora de casa exige um controlador conectado à internet."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Matter FAQs — Connectivity Standards Alliance",
+      "url": "https://csa-iot.org/all-solutions/matter/matter-faq/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Matter 1.5 Introduces Cameras, Closures, and Enhanced Energy Management Capabilities — Connectivity Standards Alliance",
+      "url": "https://csa-iot.org/newsroom/matter-1-5-introduces-cameras-closures-and-enhanced-energy-management-capabilities/",
+      "data": "novembro de 2025"
+    },
+    {
+      "nome": "How to design smart homes: eight tips for incorporating domotics into architecture — Architonic",
+      "url": "https://www.architonic.com/en/s/how-to-design-smart-homes-eight-tips-for-incorporating-domotics-into-architecture/20178536",
+      "data": "fevereiro de 2021"
+    },
+    {
+      "nome": "Automação residencial: conceitos, benefícios e desafios para projetistas — AltoQi",
+      "url": "https://lps.altoqi.com.br/hubfs/%5BMKT%5D%20Materiais%20Ricos/Ebooks/%5BEbook%5D%20Automa%C3%A7%C3%A3o%20residencial%20-%20Conceitos%2c%20beneficios%20e%20desafios%20para%20projetistas.pdf",
+      "data": "sem data"
+    },
+    {
+      "nome": "Quanto custa montar uma casa inteligente no Brasil — Forbes Brasil",
+      "url": "https://forbes.com.br/forbes-tech/2022/03/quanto-custa-montar-uma-casa-inteligente-no-brasil/",
+      "data": "março de 2022"
+    },
+    {
+      "nome": "O que significa quando um aparelho é homologado pela Anatel? — Olhar Digital",
+      "url": "https://olhardigital.com.br/2023/09/08/reviews/o-que-significa-quando-um-aparelho-e-homologado-pela-anatel/",
+      "data": "setembro de 2023"
+    },
+    {
+      "nome": "Casa inteligente: diretrizes técnicas para automação residencial — Centro Paula Souza (Etec Prof. Armando José Farinazzo)",
+      "url": "https://ric.cps.sp.gov.br/bitstream/123456789/42153/1/CASA%20INTELIGENTE%20DIRETRIZES%20T%c3%89CNICAS%20PARA%20AUTOMA%c3%87%c3%83O%20RESIDENCIAL.pdf",
+      "data": "2025"
+    }
+  ]
+}
