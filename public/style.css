@@ -1445,6 +1445,13 @@ a{text-underline-offset:.18em}
 .j3-seg button:not(.on):hover{background:rgba(255,255,255,.14);color:#fff}
 .jg-hud .j3-seg{margin-right:4px}
 .j3-apres.on{background:#e8c36a;color:#1a1d22}
+.j3-hud .j3-apres{width:auto;padding:5px 10px;font-size:12px}
+.j3-tour{position:absolute;left:16px;bottom:16px;z-index:6;width:min(430px,calc(100% - 32px));padding:16px 18px;background:rgba(14,18,24,.95);color:#fff;border:1px solid #bfa16b;border-radius:14px;box-shadow:0 12px 35px #0005}
+.j3-tour p{font-size:14px;line-height:1.55;margin:10px 0 14px;min-height:3em}
+.j3-tour .sp{flex:1}.j3-tour small{color:#c4cbd1}
+.j3-tour button{background:#ffffff16;border:1px solid #ffffff26;border-radius:7px;color:#fff;padding:5px 12px;cursor:pointer}
+.j3-tour button:disabled{opacity:.35;cursor:default}
+.em-tour .j3-dica,.em-tour .j3-ticker{display:none}
 .j3-ticker{position:absolute;right:14px;bottom:14px;width:min(430px,calc(100% - 28px));max-height:150px;z-index:5;display:flex;flex-direction:column;gap:4px;padding:8px;border-radius:14px;
   background:rgba(14,16,20,.74);backdrop-filter:blur(10px);color:#fff;overflow:hidden;box-shadow:0 12px 24px -12px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.07)}
 .j3-dica{position:absolute;left:50%;top:54px;transform:translate(-50%,-10px);opacity:0;transition:opacity .6s,transform .6s;z-index:5;pointer-events:none;

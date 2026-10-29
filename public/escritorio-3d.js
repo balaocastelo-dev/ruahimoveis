@@ -52,6 +52,80 @@ let LANG = 'pt';
 try { const l = localStorage.getItem('jg3d-lang'); if (T[l]) LANG = l; } catch {}
 const t = (k) => (T[LANG] && T[LANG][k]) || T.pt[k] || k;
 
+Object.assign(T.pt, { apres: 'Apresentar', anterior: 'Parada anterior', proxima: 'Próxima parada',
+  tour_entrada: 'Bem-vindo ao escritório. Aqui você acompanha os agentes e as ações da equipe ao vivo.',
+  tour_captacao: 'TH-IA-GO procura oportunidades e conversa com proprietários. As captações chegam ao Radar para a equipe acompanhar.',
+  tour_vendas: 'Cada agente atende um setor da carteira pelo WhatsApp. As mesas mostram a atividade e dão acesso ao PC de cada agente.',
+  tour_diretoria: 'Augusto e Marta coordenam o escritório. Relatórios, visitas e afazeres ajudam a equipe a organizar o dia.',
+  tour_mural: 'O mural reúne as oportunidades de captação. Clique nele para abrir o Radar dentro do escritório.',
+  tour_tv: 'A TV mostra os números do dia e os imóveis que chegaram hoje. Clique para abrir o painel do sistema.' });
+Object.assign(T.en, { apres: 'Present', anterior: 'Previous stop', proxima: 'Next stop',
+  tour_entrada: 'Welcome to the office. Follow the agents and your team’s activities as they happen.',
+  tour_captacao: 'TH-IA-GO finds opportunities and talks to property owners. New sourcing opportunities reach Radar for the team to follow up.',
+  tour_vendas: 'Each agent handles a property sector on WhatsApp. The desks show their activity and open each agent’s PC.',
+  tour_diretoria: 'Augusto and Marta coordinate the office. Reports, visits and tasks help the team organize the day.',
+  tour_mural: 'The board brings sourcing opportunities together. Click it to open Radar inside the office.',
+  tour_tv: 'The TV shows today’s numbers and newly added properties. Click to open the system dashboard.' });
+Object.assign(T.ja, { apres: '案内を開始', anterior: '前の場所', proxima: '次の場所',
+  tour_entrada: 'オフィスへようこそ。エージェントとチームの活動をリアルタイムで確認できます。',
+  tour_captacao: 'TH-IA-GOは物件を探し、オーナーと会話します。新しい案件はRadarに集まり、チームが対応します。',
+  tour_vendas: '各エージェントが担当分野の物件をWhatsAppで案内します。デスクで活動を確認し、各自のPCを開けます。',
+  tour_diretoria: 'AugustoとMartaがオフィスをまとめます。報告、内見、タスクでチームの一日を支えます。',
+  tour_mural: '掲示板には新しい物件の案件が集まります。クリックするとオフィス内でRadarを開けます。',
+  tour_tv: 'テレビには本日の数字と新着物件が表示されます。クリックしてシステムのダッシュボードを開けます。' });
+
+const TOUR = [
+  { titulo: 'entrada', alvo: [0, 1, 6.2], camera: [0, 5.5, 15] },
+  { titulo: 'captacao', alvo: [-8.5, 1, -2], camera: [-6.5, 4.8, 5.5] },
+  { titulo: 'vendas', alvo: [0, 1, 0], camera: [2, 7, 12] },
+  { titulo: 'diretoria', alvo: [8.7, 1, -2], camera: [8.7, 5, 6.5] },
+  { titulo: 'mural', alvo: [-10.3, 1.9, -6.7], camera: [-9, 3.4, 0.5] },
+  { titulo: 'tv', alvo: [10.3, 2, -6.7], camera: [9, 3.4, 0.5] },
+];
+function tourLegenda() {
+  if (!E?.tour) return;
+  const { indice } = E.tour, p = TOUR[indice];
+  let el = $('#j3-tour');
+  if (!el) { el = document.createElement('section'); el.id = 'j3-tour'; el.className = 'j3-tour'; E.raiz.appendChild(el); }
+  el.innerHTML = `<div class="row"><b>${esc(t(p.titulo === 'tv' ? 'painel' : p.titulo))}</b><span class="sp"></span><small>${indice + 1} / ${TOUR.length}</small>
+    <button data-act="j3-tour-sair" title="${esc(t('fechar'))} (Esc)">✕</button></div>
+    <p aria-live="polite">${esc(t('tour_' + p.titulo))}</p><div class="row"><button data-act="j3-tour-anterior" ${indice === 0 ? 'disabled' : ''} title="${esc(t('anterior'))}">◀</button>
+    <button data-act="j3-tour-proxima" title="${esc(t('proxima'))}">▶</button><span class="sp"></span><small>Esc · ${esc(t('fechar'))}</small></div>`;
+}
+function tourParada(indice) {
+  if (!E?.tour || indice < 0) return;
+  if (indice >= TOUR.length) return terminaTour(true);
+  E.tour.indice = indice; E.tour.proxima = performance.now() + 9000;
+  const p = TOUR[indice], alvo = new THREE.Vector3(...p.alvo);
+  E.voo = { t0: performance.now(), dur: reduz() ? 1 : 1400, p0: E.camera.position.clone(), a0: E.controls.target.clone(), p1: new THREE.Vector3(...p.camera), a1: alvo };
+  E.tourLuz.position.copy(alvo).add(new THREE.Vector3(0, 1.5, 0)); E.tourLuz.visible = true;
+  E.tourMarca.position.set(alvo.x, 0.035, alvo.z); E.tourMarca.visible = true;
+  tourLegenda();
+}
+function iniciaTour() {
+  if (!E) return;
+  E.andar?.sai(); fechaPainelLugar(); fechaCard();
+  if (!E.tourLuz) {
+    E.tourLuz = new THREE.PointLight(0xffda8a, 9, 9, 1.4); E.cena.add(E.tourLuz);
+    E.tourMarca = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.05, 48), new THREE.MeshBasicMaterial({ color: 0xffd987, transparent: true, opacity: 0.65, depthWrite: false }));
+    E.tourMarca.rotation.x = -Math.PI / 2; E.cena.add(E.tourMarca);
+  }
+  E.tour = { indice: 0 }; E.apres = false; E.controls.enabled = false;
+  tourParada(0); hud();
+}
+function terminaTour(orbita = false) {
+  if (!E) return;
+  E.tour = null; E.voo = null; E.apres = orbita; E.idleDesde = orbita ? -1e9 : performance.now();
+  E.controls.enabled = !E.andando;
+  if (E.tourLuz) E.tourLuz.visible = false;
+  if (E.tourMarca) E.tourMarca.visible = false;
+  $('#j3-tour')?.remove(); E.raiz.classList.remove('em-tour');
+  $('#j3-hud .j3-apres')?.classList.toggle('on', orbita);
+}
+ACT['j3-tour-anterior'] = () => tourParada((E?.tour?.indice ?? 0) - 1);
+ACT['j3-tour-proxima'] = () => tourParada((E?.tour?.indice ?? 0) + 1);
+ACT['j3-tour-sair'] = () => terminaTour();
+
 // ---------- planta (metros): x da esquerda para a direita, z do fundo (janelas, -7) para a frente (entrada, +7) ----------
 const SALA = { X: 12, Z: 7, H: 3.4, CORREDOR: 3.9, VIDRO: [-5.3, 5.2] };
 const MESAS = {
@@ -186,6 +260,11 @@ export function jg3dPara() { para(); }
 function tecla(e) {
   if (!vivo()) return para();
   if (/INPUT|TEXTAREA|SELECT/.test(e.target.tagName || '')) return;
+  if (E.tour && ['Escape', 'ArrowLeft', 'ArrowRight'].includes(e.key)) {
+    e.preventDefault();
+    if (e.key === 'Escape') terminaTour(); else tourParada(E.tour.indice + (e.key === 'ArrowLeft' ? -1 : 1));
+    return;
+  }
   if (e.key === 'f' || e.key === 'F') telaCheia();
   if (e.key === 'Escape') fechaCard();
   acordou();
@@ -202,6 +281,7 @@ ACT['j3-fecha-card'] = () => fechaCard();
 // Andar dentro do escritório (módulo próprio, carregado só quando o usuário pede).
 ACT['j3-andar'] = async () => {
   if (!E) return;
+  if (E.tour || E.apres) terminaTour();
   try {
     if (!E.andar) {
       const m = await import('/escritorio-andar.js');
@@ -213,7 +293,7 @@ ACT['j3-andar'] = async () => {
     await E.andar.alterna();
   } catch (e) { console.warn('andar:', e); toast('Não deu para entrar no escritório agora.', true); }
 };
-ACT['j3-apres'] = () => { if (!E) return; E.apres = !E.apres; E.idleDesde = E.apres ? -1e9 : performance.now(); $('#j3-hud .j3-apres').classList.toggle('on', E.apres); };
+ACT['j3-apres'] = () => { if (E) { if (E.tour || E.apres) terminaTour(); else iniciaTour(); } };
 
 // ---------- HUD, ticker, relógio, números ----------
 function hud() {
@@ -227,12 +307,14 @@ function hud() {
     <span class="j3-seg j3-lang">${langs.map(([k, n]) => `<button class="${k === LANG ? 'on' : ''}" data-act="j3-lang" data-lang="${k}">${n}</button>`).join('')}</span>
     <span class="j3-seg"><button class="on" title="${esc(t('ver3d'))}">3D</button><button data-act="jg-modo" data-modo="2d" title="${esc(t('ver2d'))}">2D</button></span>
     <button class="jg-bt j3-andar-bt" data-act="j3-andar" title="${esc(t('entrar'))}">🚶</button>
-    <button class="jg-bt j3-apres ${E.apres ? 'on' : ''}" data-act="j3-apres" title="${esc(t('apres'))}">▶</button>
+    <button class="jg-bt j3-apres ${E.apres || E.tour ? 'on' : ''}" data-act="j3-apres" title="${esc(t('apres'))}">▶ ${esc(t('apres'))}</button>
     <button class="jg-bt" data-act="j3-cheia" title="${esc(t('cheia'))}">⛶</button>`;
   const tk = $('#j3-ticker');
   if (!tk.children.length || tk.querySelector('.jg-tk-vazio')) tk.innerHTML = `<span class="jg-tk-vazio">${esc(t('vazio'))}</span>`;
   $('#j3-dica').textContent = t('dica');
   relogio();
+  E.raiz.classList.toggle('em-tour', !!E.tour); tourLegenda();
+  numeros({ totais: E.totais });
 }
 function relogio() {
   if (!vivo()) return;
@@ -1098,6 +1180,7 @@ function acerta() {
   return null;
 }
 function vaiAoAgente(slug) {
+  if (E.tour) terminaTour();
   const ag = E.agentes[slug]; if (!ag) return;
   const [mx, mz] = ag.mesa;
   const lado = mx >= 3 || slug === 'gerente-corretores' ? -1 : 1;
@@ -1122,6 +1205,7 @@ function fechaCard() { const c = $('#j3-card'); if (c) { c.hidden = true; } if (
 // mural → oportunidades (radar) · TV da diretoria → painel de hoje · placa do salão → CRM (leads)
 function abreLugar(k) {
   const l = LUGAR_TELA[k]; if (!l) return;
+  if (E?.tour) terminaTour();
   if (E && E.camera && l.cam && !E.andando) {      // voo curto até o lugar, como no clique num agente
     const [x, z] = l.cam;
     E.voo = { t0: performance.now(), dur: reduz() ? 1 : 900, p0: E.camera.position.clone(), a0: E.controls.target.clone(),
@@ -1139,6 +1223,7 @@ function quadro(agoraMs) {
   if (!vivo()) return para();
   const dt = Math.min(0.05, (agoraMs - (E.ultimo || agoraMs)) / 1000); E.ultimo = agoraMs; E.tempo += dt;
   interpolaClima(dt);
+  if (E.tour && agoraMs >= E.tour.proxima) tourParada(E.tour.indice + 1);
   // andando dentro do escritório: o módulo cuida do personagem e da câmera
   if (E.andando && E.andar) {
     E.andar.quadro(dt);
@@ -1156,7 +1241,7 @@ function quadro(agoraMs) {
     const v = E.voo; const k = suave(Math.min(1, (agoraMs - v.t0) / v.dur));
     E.camera.position.lerpVectors(v.p0, v.p1, k); E.controls.target.lerpVectors(v.a0, v.a1, k);
     if (k >= 1) E.voo = null;
-  } else if (!reduz() && (E.apres || agoraMs - E.idleDesde > 20000)) {
+  } else if (!E.tour && !reduz() && (E.apres || agoraMs - E.idleDesde > 20000)) {
     // modo apresentação: órbita lenta, vai e volta dentro dos limites
     const ang = Math.sin(E.tempo * 0.07) * 1.05; const dist = 18 + Math.sin(E.tempo * 0.05) * 3; const alt = 7.5 + Math.sin(E.tempo * 0.09) * 1.5;
     const alvo = new THREE.Vector3(Math.sin(E.tempo * 0.04) * 3, 0.9, -0.5 + Math.cos(E.tempo * 0.03) * 1.5);

@@ -139,6 +139,10 @@ Os limites de valor mudam em "Regras do escritório".
    ficam fora; nomes cadastrados, telefones, e-mails e links são removidos no servidor. Os demais perfis mantêm o
    protetor de tela. O gancho do PC virtual continua tendo prioridade. A TV alterna a cada 8 segundos entre os números
    e os três últimos imóveis cadastrados hoje, com capas autenticadas de `/api/arquivos/:id`, filtradas por acesso.
+3. **Apresentar:** inicia exclusivamente pelo botão; seis paradas (entrada, captação, vendas, diretoria, mural e TV),
+   com voo, luz e marca no chão, legendas PT/EN/日本語 e 9 segundos por parada. ◀/▶ ou setas pulam etapas;
+   ESC encerra. Ao completar, volta à órbita de apresentação. Abrir lugar, PC ou modo andar encerra o tour;
+   movimento reduzido aplica a câmera imediatamente. Não altera humanos, animações ou colisões.
 
 ### Verificação
 

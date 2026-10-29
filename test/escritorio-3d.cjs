@@ -74,6 +74,23 @@ const clima = async (page, hora, nome) => {
   ok(estrutura.sombra === 4096 && estrutura.zMax < -7, 'sombra 4096 e panorama atrás da fachada (-z)');
   ok(estrutura.sentados, 'pessoas sentadas nas posições e alturas originais');
 
+  ok(await page.evaluate(() => !window.jg3dEstado().tour), 'tour nunca começa sozinho');
+  await page.click('[data-act="j3-apres"]');
+  ok(await page.evaluate(() => window.jg3dEstado().tour.indice === 0 && window.jg3dEstado().tourLuz.visible), 'Apresentar inicia na entrada e acende o lugar');
+  await page.click('[data-act="j3-lang"][data-lang="en"]');
+  ok((await page.locator('#j3-tour').innerText()).includes('Welcome'), 'tour em inglês');
+  await page.click('[data-act="j3-lang"][data-lang="ja"]');
+  ok((await page.locator('#j3-tour').innerText()).includes('ようこそ'), 'tour em japonês');
+  await page.click('[data-act="j3-lang"][data-lang="pt"]');
+  await page.keyboard.press('ArrowRight'); await page.keyboard.press('ArrowLeft');
+  ok(await page.evaluate(() => window.jg3dEstado().tour.indice === 0), 'setas avançam e voltam no tour');
+  for (let i = 0; i < 6; i++) await page.click('[data-act="j3-tour-proxima"]');
+  ok(await page.evaluate(() => !window.jg3dEstado().tour && window.jg3dEstado().apres && !window.jg3dEstado().tourLuz.visible), 'fim do tour volta à órbita e apaga destaque');
+  await page.click('[data-act="j3-apres"]'); await page.click('[data-act="j3-apres"]');
+  await page.keyboard.press('Escape');
+  ok(await page.evaluate(() => !window.jg3dEstado().tour && !window.jg3dEstado().apres && window.jg3dEstado().controls.enabled), 'ESC sai do tour e devolve controle da câmera');
+  await pausa(page);
+
   // Aproxima a câmera para conferir as texturas e a cadeira com o humano.
   await page.evaluate(() => { const e = window.jg3dEstado(); window.__clima(12, true); e.camera.position.set(-5, 3.4, 3); e.controls.target.set(-3, 0.9, -1.8); e.controls.update(); });
   await page.waitForTimeout(800);
