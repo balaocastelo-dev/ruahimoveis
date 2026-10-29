@@ -281,7 +281,7 @@ ${topo()}
       <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
       <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
       <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ao-vivo">Ver imobiliárias ao vivo</a></div>
-      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração para navegar →</span></a>
+      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração →</span></a>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
     <div class="palco">

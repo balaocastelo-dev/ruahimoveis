@@ -540,3 +540,5 @@ html.js .av-painel.ativo { animation: entra .55s cubic-bezier(.2, .7, .2, 1); }
 .fixa-wa svg { width: 24px; height: 24px; }
 @media (max-width: 600px) { .fixa { padding: 0 10px 10px; } .fixa-t { display: none; } .fixa-cx { padding: 8px; } .fixa .btn { flex: 1; } }
 @media print { .fixa { display: none; } }
+
+.vis-oculto { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

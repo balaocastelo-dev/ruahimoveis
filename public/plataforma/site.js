@@ -106,7 +106,7 @@
     }
     function para() { parado = true; clearTimeout(timer); avAbas.forEach(function (a) { a.classList.remove('correndo'); }); }
     avAbas.forEach(function (a, i) {
-      a.addEventListener('click', function () { para(); avAbre(a); if (window.innerWidth < 760) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); });
+      a.addEventListener('click', function () { para(); avAbre(a); var lista = a.parentNode; if (lista.scrollWidth > lista.clientWidth) lista.scrollTo({ left: a.offsetLeft - (lista.clientWidth - a.offsetWidth) / 2, behavior: calmo ? 'auto' : 'smooth' }); });
       a.addEventListener('keydown', function (e) {
         if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); para(); avAbre(avAbas[(i + (e.key === 'ArrowRight' ? 1 : avAbas.length - 1)) % avAbas.length], true); }
       });
