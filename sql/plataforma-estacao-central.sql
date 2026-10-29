@@ -32,8 +32,6 @@ GRANT EXECUTE ON FUNCTION plataforma.definir_estacao_central(text) TO plataforma
 
 COMMIT;
 
--- ATENÇÃO (29/10/2026): para a imobiliária enxergar esta chave (e a chave de IA central), o projeto dela
--- na Vercel precisa da variável PLATAFORMA_DATABASE_URL (usuário plataforma_app). Hoje só o projeto
--- "ruahimoveis" tem; ondemorar, cademeuap, imob-casaprado e imob-lumen NÃO têm — sem ela, central.js
--- devolve vazio e a estação cai na chave própria/ESTACAO_CHAVE. Copiar a variável do projeto ruahimoveis
--- para cada projeto (mesmo valor) e publicar de novo.
+-- Como a imobiliária enxerga esta chave: pelo PLATAFORMA_DATABASE_URL quando o projeto tem essa variável
+-- (hoje só "ruahimoveis") ou, sem ela, pela própria conexão, por plataforma.cofre_central() —
+-- ver sql/plataforma-cofre-central.sql. Nenhuma variável nova é necessária nos projetos.

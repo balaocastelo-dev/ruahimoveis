@@ -51,19 +51,34 @@ async function carregar() {
   if (CACHE.em && agora - CACHE.em < prazo) return CACHE;
   if (CARREGANDO) return CARREGANDO;
   CARREGANDO = (async () => {
-    const p = pool();
-    if (!p) { CACHE = { chave: '', modelo: '', em: agora, erro: 'sem PLATAFORMA_DATABASE_URL' }; return CACHE; }
     try {
-      const { rows } = await p.query("SELECT chave, valor FROM config WHERE chave IN ('ia_central','ia_central_modelo','estacao_chave')");
-      const m = Object.fromEntries(rows.map((r) => [r.chave, r.valor]));
+      const m = (await lePlataforma()) || lePeloProprioBanco();
+      if (!m) { CACHE = { ...CACHE, em: Date.now(), erro: 'sem acesso ao cofre da plataforma' }; return CACHE; }
       CACHE = { chave: String(m.ia_central || '').trim(), modelo: String(m.ia_central_modelo || '').trim(),
         estacao: String(m.estacao_chave || '').trim(), em: Date.now(), erro: null };
     } catch (e) {
-      CACHE = { chave: CACHE.chave, modelo: CACHE.modelo, estacao: CACHE.estacao, em: Date.now(), erro: e.message };
+      CACHE = { ...CACHE, em: Date.now(), erro: e.message };
     }
     return CACHE;
   })().finally(() => { CARREGANDO = null; });
   return CARREGANDO;
+}
+
+/** Caminho 1: conexão própria da plataforma (PLATAFORMA_DATABASE_URL), quando o projeto a tem. */
+async function lePlataforma() {
+  const p = pool(); if (!p) return null;
+  const { rows } = await p.query("SELECT chave, valor FROM config WHERE chave IN ('ia_central','ia_central_modelo','estacao_chave')");
+  return Object.fromEntries(rows.map((r) => [r.chave, r.valor]));
+}
+/** Caminho 2: o banco da própria imobiliária. Todos os schemas moram no mesmo Postgres, e plataforma.cofre_central()
+    (SECURITY DEFINER) devolve SÓ as três chaves centrais — a tabela plataforma.config continua invisível para ela.
+    Assim uma imobiliária nova usa o cérebro central sem variável nenhuma no projeto. */
+function lePeloProprioBanco() {
+  try {
+    const { all } = require('../db');
+    const rows = all('SELECT chave, valor FROM plataforma.cofre_central()');
+    return Object.fromEntries(rows.map((r) => [r.chave, r.valor]));
+  } catch { return null; }   // SQLite no PC, ou sem permissão: segue sem cofre
 }
 
 const chave = () => CACHE.chave || '';
@@ -75,7 +90,14 @@ const estado = () => ({ tem_chave: !!CACHE.chave, modelo: CACHE.modelo || null, 
 
 /** Soma o que esta imobiliária gastou do cérebro central (um upsert por chamada, por dia e modelo). */
 async function anota({ modelo: mod, entrada = 0, saida = 0, erro = false }) {
-  const p = pool(); if (!p) return;
+  const m = String(mod || '').slice(0, 80) || 'desconhecido';
+  const p = pool();
+  if (!p) {
+    // sem conexão da plataforma: anota pelo próprio banco. A função usa o usuário do banco para saber
+    // de quem é o consumo (ondemorar_app → ondemorar), então ninguém pode lançar gasto no nome de outra.
+    try { require('../db').all('SELECT plataforma.anota_ia_uso(?, ?, ?, ?)', m, Math.max(0, entrada | 0), Math.max(0, saida | 0), erro ? 1 : 0); } catch { /* nunca derruba o atendimento */ }
+    return;
+  }
   try {
     const slug = await eu();
     await p.query(
@@ -87,7 +109,7 @@ async function anota({ modelo: mod, entrada = 0, saida = 0, erro = false }) {
          tokens_saida = ia_uso.tokens_saida + EXCLUDED.tokens_saida,
          erros = ia_uso.erros + EXCLUDED.erros,
          atualizado_em = now()`,
-      [slug, String(mod || '').slice(0, 80) || 'desconhecido', Math.max(0, entrada | 0), Math.max(0, saida | 0), erro ? 1 : 0]);
+      [slug, m, Math.max(0, entrada | 0), Math.max(0, saida | 0), erro ? 1 : 0]);
   } catch { /* medir o consumo nunca pode derrubar o atendimento */ }
 }
 
