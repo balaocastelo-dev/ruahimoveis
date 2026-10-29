@@ -311,6 +311,7 @@ r.post('/escritorio/:slug/teste', async (req, res) => {
   const texto = txt((req.body || {}).texto, 1000) || falha(400, 'Escreva a mensagem.');
   B.registraEntrada({ agente: a.slug, linha: 'teste', telefone: telTeste(req.usuario, a.slug), nome: req.usuario.nome + ' (teste)', texto });
   // com o Gemini, quem responde é a nuvem, na hora (o PC não precisa estar ligado)
+  await IA.carregarCentral();
   if (IA.naNuvem()) { try { await require('../agentes/escritorio').cicloCerebro({ telefone: telTeste(req.usuario, a.slug), prazo: 40e3, rotinas: false, atribuir: false }); } catch {} }
   res.json({ ok: true, pc: pc() });
 });
@@ -325,6 +326,7 @@ async function ciclo(req, res) {
   const token = getConfig('escritorio_ciclo_token');
   const veio = String(req.headers['x-ruah-ciclo'] || '');
   if (!token || veio.length !== token.length || !require('crypto').timingSafeEqual(Buffer.from(veio), Buffer.from(token))) return res.status(401).json({ erro: 'não autorizado' });
+  await IA.carregarCentral();
   if (!IA.naNuvem()) return res.json({ ok: true, sem_chave: true });
   res.json(await require('../agentes/escritorio').cicloCerebro({ prazo: 45e3 }));
 }

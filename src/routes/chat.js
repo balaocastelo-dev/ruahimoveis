@@ -85,6 +85,7 @@ r.post('/chat/conversas/:id/mensagens', async (req, res) => {
   }
   // Orçamento compartilhado entre os robôs da sala: a função na Vercel tem 60 s.
   const fim = Date.now() + 40e3;
+  if (pedido === null) await IA.carregarCentral();
   if (pedido === null && IA.naNuvem()) for (const { agente } of agentes) {
     const prazo = fim - Date.now(); if (prazo < 1000) break;
     await require('../agentes/escritorio').cicloCerebro({ telefone: C.telefone(c.id, agente), prazo, rotinas: false, atribuir: false });

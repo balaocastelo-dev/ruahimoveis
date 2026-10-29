@@ -1,8 +1,11 @@
-// Cérebro dos agentes: Gemini (Google, na nuvem) quando há chave na Configuração geral do escritório;
-// sem chave, a IA local do PC (Ollama). A chave fica cifrada no banco e só volta mascarada para a tela.
+// Cérebro dos agentes: Gemini (Google, na nuvem) quando há chave; sem chave, a IA local do PC (Ollama).
+// A chave vem, nesta ordem: a da própria imobiliária (Configuração geral, cifrada no banco dela) →
+// a CENTRAL da plataforma (uma só para todas, de graça para a imobiliária; src/plataforma/central.js)
+// → GEMINI_API_KEY do ambiente. A tela só recebe os 4 últimos dígitos.
 const crypto = require('crypto');
 const cfg = require('../config');
 const { getConfig, setConfig } = require('../db');
+const central = require('../plataforma/central');
 
 const MODELO_PADRAO = 'gemini-flash-latest';
 const API = process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1beta'; // a troca de endereço serve só para os testes
@@ -19,10 +22,15 @@ function decifra(p) {
 }
 
 function bruto() { try { return JSON.parse(getConfig('escritorio_ia') || '{}'); } catch { return {}; } }
-function chave() { const b = bruto(); return (b.chave && decifra(b.chave)) || process.env.GEMINI_API_KEY || ''; }
+function propria() { const b = bruto(); return (b.chave && decifra(b.chave)) || ''; }
+function chave() { return propria() || central.chave() || process.env.GEMINI_API_KEY || ''; }
+function origem() { return propria() ? 'propria' : central.chave() ? 'central' : process.env.GEMINI_API_KEY ? 'ambiente' : null; }
+/** Garante a chave central lida (cache de 5 min). Chamar antes de decidir o cérebro nos caminhos async. */
+const carregarCentral = () => central.carregar().catch(() => null);
 function ajustes() {
-  const b = bruto(); const k = chave();
-  return { provedor: k ? 'gemini' : 'ollama', modelo: b.modelo || MODELO_PADRAO, tem_chave: !!k, chave_final: k ? k.slice(-4) : null,
+  const b = bruto(); const k = chave(); const o = origem();
+  return { provedor: k ? 'gemini' : 'ollama', modelo: b.modelo || central.modelo() || MODELO_PADRAO, tem_chave: !!k, chave_final: k ? k.slice(-4) : null,
+    origem: o, central: central.estado(), propria: !!propria(),
     chave_quebrada: !!(b.chave && !decifra(b.chave)), testado_em: b.testado_em || null, teste_ok: b.teste_ok ?? null, teste_msg: b.teste_msg || null,
     ollama_modelo: cfg.OLLAMA_MODEL };
 }
@@ -53,6 +61,10 @@ async function gemini(sistema, pedido, o = {}) {
     signal: AbortSignal.timeout(o.timeout || 40000),
   });
   const j = await r.json().catch(() => ({}));
+  if (origem() === 'central') {
+    const u = j.usageMetadata || {};
+    central.anota({ modelo, entrada: u.promptTokenCount || 0, saida: u.candidatesTokenCount || 0, erro: !r.ok });
+  }
   if (!r.ok) {
     const msg = (j.error && j.error.message) || `HTTP ${r.status}`;
     const e = new Error(r.status === 400 && /API key/i.test(msg) ? 'Chave do Gemini recusada pelo Google.' : r.status === 404 ? `O modelo "${modelo}" não existe para essa chave.` : r.status === 429 ? 'Limite de uso do Gemini atingido (tente de novo em alguns minutos ou aumente a cota).' : `Gemini: ${msg}`);
@@ -76,6 +88,7 @@ async function ollama(sistema, pedido) {
 }
 
 async function disponivel() {
+  await carregarCentral();
   if (naNuvem()) return true;
   if (process.env.VERCEL) return false; // na nuvem, sem chave não há cérebro
   try { const r = await fetch(`${cfg.OLLAMA_URL}/api/tags`, { signal: AbortSignal.timeout(2500) }); return r.ok; } catch { return false; }
@@ -103,4 +116,4 @@ async function testar(modelo) {
   return { ...ajustes(), modelos };
 }
 
-module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO, cifra, decifra, chave };
+module.exports = { ajustes, salva, naNuvem, disponivel, perguntar, testar, MODELO_PADRAO, cifra, decifra, chave, origem, carregarCentral };

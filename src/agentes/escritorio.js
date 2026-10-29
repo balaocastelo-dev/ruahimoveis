@@ -202,6 +202,7 @@ function pegaTrava(seg) {
 const soltaTrava = () => run(`UPDATE config SET valor=? WHERE chave='escritorio_trava'`, new Date(0).toISOString());
 let ultimaRotinaNuvem = 0;
 async function cicloCerebro(o = {}) {
+  await ia.carregarCentral(); // a chave do Gemini é central (uma só da plataforma, de graça para as imobiliárias)
   if (!B.geral().ligado) { statusCerebro({ pausado: true }); return { pausado: true }; }
   const prazo = o.prazo || 45e3;
   if (!pegaTrava(Math.ceil(prazo / 1000) + 15)) return { ocupado: true };
