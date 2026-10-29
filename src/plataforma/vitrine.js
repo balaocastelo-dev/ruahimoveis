@@ -295,8 +295,8 @@ ${topo()}
     </div>
     <div class="palco">
       <div class="palco-tela">
-        <video autoplay muted loop playsinline preload="metadata" poster="${T}3d-poster.webp?v=3" aria-label="Prédio em 3D girando, com o andar do apartamento destacado em dourado">
-          <source src="${T}3d.webm?v=3" type="video/webm"><source src="${T}3d.mp4?v=3" type="video/mp4"></video>
+        <video autoplay muted loop playsinline preload="metadata" poster="${T}3d-poster.webp?v=4" aria-label="Prédio em 3D girando, com o andar do apartamento destacado em dourado">
+          <source src="${T}3d.mp4?v=4" type="video/mp4"></video>
         <div class="palco-legenda"><b>Condomínio em 3D</b><span>o andar do apartamento em dourado, o entorno de verdade</span></div>
       </div>
       <div class="palco-flutuas">
