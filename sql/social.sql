@@ -53,7 +53,7 @@ BEGIN
 END $$;
 
 -- O ciclo: chama /social-ciclo de cada imobiliária ativa e publicada, com o token guardado no banco dela
--- (o token nasce quando alguém abre a tela Redes e publicações; sem token, a imobiliária é pulada).
+-- (o token nasce com a imobiliária, em plataforma.criar_imobiliaria, ou na primeira rodada do ciclo).
 CREATE OR REPLACE FUNCTION plataforma.social_ciclo() RETURNS integer
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public AS $f$
 DECLARE i record; tk text; n integer := 0;
@@ -61,6 +61,8 @@ BEGIN
   FOR i IN SELECT x.slug, x.link FROM plataforma.imobiliarias x JOIN pg_namespace ns ON ns.nspname = x.slug
            WHERE x.situacao = 'ativa' AND x.publicada = 1 AND x.link ~ '^https://' LOOP
     BEGIN
+      -- imobiliária que ainda não tem token ganha um aqui (nenhuma fica de fora do ciclo)
+      EXECUTE format('INSERT INTO %I.config(chave, valor) VALUES (''social_ciclo_token'', encode(extensions.gen_random_bytes(24), ''hex'')) ON CONFLICT (chave) DO NOTHING', i.slug);
       EXECUTE format('SELECT valor FROM %I.config WHERE chave = ''social_ciclo_token''', i.slug) INTO tk;
     EXCEPTION WHEN OTHERS THEN tk := NULL; END;
     CONTINUE WHEN tk IS NULL;

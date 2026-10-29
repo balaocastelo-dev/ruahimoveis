@@ -124,6 +124,10 @@ BEGIN
   EXECUTE format('GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA %I TO %I', p_slug, papel);
   EXECUTE format('GRANT USAGE, SELECT, UPDATE ON ALL SEQUENCES IN SCHEMA %I TO %I', p_slug, papel);
   EXECUTE format('GRANT EXECUTE ON FUNCTION %I.agora() TO %I', p_slug, papel);
+  -- Redes e publicações (sql/social.sql): a cadência vem do plano (plataforma.meu_plano) e o ciclo já tem o token desta imobiliária
+  EXECUTE format('GRANT USAGE ON SCHEMA plataforma TO %I', papel);
+  EXECUTE format('GRANT EXECUTE ON FUNCTION plataforma.meu_plano() TO %I', papel);
+  EXECUTE format('INSERT INTO %I.config(chave, valor) VALUES (''social_ciclo_token'', encode(extensions.gen_random_bytes(24), ''hex'')) ON CONFLICT (chave) DO NOTHING', p_slug);
   EXECUTE format('INSERT INTO %I.usuarios(nome, email, perfil, senha_hash) VALUES (%L, %L, ''adm'', %L)', p_slug, p_admin_nome, p_admin_email, p_admin_hash);
   UPDATE plataforma.imobiliarias SET situacao = 'implantacao' WHERE slug = p_slug;
   PERFORM plataforma.compartilhar_base(p_slug); -- já começa vendo todos os anúncios da base (sql/plataforma-base-comum.sql)
