@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Onde morar?"><title>Onde morar?</title><style>.pino{fill:url(#g)}.casa{fill:#fff}.sol{fill:#FFC800}</style><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF8A00"/><stop offset="1" stop-color="#FF3B5C"/></linearGradient></defs><g transform="translate(3 -1) scale(.9)">
+    <path class="pino" d="M32 2C17 2 6 13.4 6 27.6 6 46 32 70 32 70S58 46 58 27.6C58 13.4 47 2 32 2Z"/>
+    <path class="casa" d="M32 13.5 17.5 25.5v17.5h10v-10h9v10h10V25.5Z"/>
+    <circle class="sol" cx="47" cy="14" r="5"/></g></svg>

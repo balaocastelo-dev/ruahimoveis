@@ -70,6 +70,64 @@ function mockSignature(grande) {
   </div>`;
 }
 
+
+// Imobiliárias de demonstração no ar na plataforma (portais reais, imóveis e fotos ilustrativas).
+// Capturas em /plataforma/clientes/<slug>-{d,r,s}.webp (navegador) e <slug>-m.webp (celular), tiradas dos portais no ar.
+// "cliente: true" troca o selo para "Cliente" quando a imobiliária for cliente de verdade, com contrato.
+const CLIENTES = [
+  { slug: 'ondemorar', nome: 'Onde morar?', cor: '#3D7BFF', cor2: '#FF6B4A', estilo: 'Alegre e colorida', frase: 'Para quem procura a primeira casa: cores vivas, alfinete no mapa e tudo explicado sem pressa.', lugar: 'Lagoa do Taquaral', fonte: 'Fredoka' },
+  { slug: 'cademeuap', nome: 'Cadê meu AP?', cor: '#0E8C8C', cor2: '#FF6B4A', estilo: 'Apartamentos, direto ao ponto', frase: 'Especialista em apartamento na cidade: prédio com lupa, verde-azulado e coral, busca rápida.', lugar: 'Prédios do Centro e do Cambuí', fonte: 'Outfit' },
+  { slug: 'casaprado', nome: 'Casa Prado', cor: '#2F5D46', cor2: '#A8843F', estilo: 'Clássica e acolhedora', frase: 'Casas, condomínios e campo: serifa elegante, verde e trigo, o jeito de uma imobiliária de família.', lugar: 'Bosque dos Jequitibás', fonte: 'Fraunces' },
+  { slug: 'lumen', nome: 'Lumen', cor: '#A88440', cor2: '#141414', estilo: 'Alto padrão', frase: 'Preto, marfim e dourado, letra fina e espaçada: uma butique para residências de luxo.', lugar: 'Campinas à noite', fonte: 'Josefin Sans' },
+];
+const C = '/plataforma/clientes/';
+const VERSOES_AV = [['d', 'Vitrine', '/imoveis'], ['r', 'Revista', '/imoveis/revista'], ['s', 'signature', '/imoveis/signature']];
+const linkCliente = (c, cam = '/imoveis') => `https://${c.slug}.corretordofuturo.app${cam}`;
+
+function aoVivo() {
+  const abas = CLIENTES.map((c, i) => `<button type="button" class="av-aba${i ? '' : ' ativa'}" role="tab" id="av-aba-${c.slug}" aria-controls="av-${c.slug}" aria-selected="${!i}" tabindex="${i ? -1 : 0}" style="--c:${c.cor}"><span class="av-placa"><img src="${C}logo-${c.slug}.svg" alt="${esc(c.nome)}" width="186" height="50"></span><i class="av-barra" aria-hidden="true"></i></button>`).join('');
+  const paineis = CLIENTES.map((c, i) => {
+    const vers = VERSOES_AV.map(([k, n], j) => `<button type="button" class="av-ver${j ? '' : ' ativa'}" data-v="${k}" data-cam="${VERSOES_AV[j][2]}" aria-pressed="${!j}">${k === 's' ? CAL : esc(n)}</button>`).join('');
+    const imgs = VERSOES_AV.map(([k, n], j) => `<img class="av-img${j ? '' : ' ativa'}" data-v="${k}" src="${C}${c.slug}-${k}-m.webp" srcset="${C}${c.slug}-${k}-m.webp 1440w, ${C}${c.slug}-${k}.webp 2880w" sizes="(max-width: 1240px) 100vw, 860px" width="2880" height="1800" alt="${esc(`Portal ${c.nome} no ar, versão ${n}`)}" loading="lazy" decoding="async">`).join('');
+    return `<article class="av-painel${i ? '' : ' ativo'}" role="tabpanel" id="av-${c.slug}" aria-labelledby="av-aba-${c.slug}" style="--c:${c.cor};--c2:${c.cor2}">
+      <div class="av-palco">
+        <div class="janela av-janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span class="av-url"><b>🔒</b> ${c.slug}.corretordofuturo.app<em>/imoveis</em></span></div><div class="av-imgs">${imgs}</div></div>
+        <figure class="av-cel" aria-hidden="true"><img src="${C}${c.slug}-m.webp" width="780" height="1688" alt="" loading="lazy" decoding="async"></figure>
+        <span class="av-aovivo"><i></i>no ar agora</span>
+      </div>
+      <div class="av-info">
+        <span class="av-estilo">${esc(c.estilo)}</span>
+        <h3>${esc(c.nome)}</h3>
+        <p>${esc(c.frase)}</p>
+        <div class="av-vers" role="group" aria-label="Versão do portal">${vers}</div>
+        <dl class="av-ficha"><div><dt>Endereço</dt><dd>${c.slug}.corretordofuturo.app</dd></div><div><dt>Letra</dt><dd>${esc(c.fonte)}</dd></div><div><dt>Capa</dt><dd>${esc(c.lugar)}, em 4K</dd></div></dl>
+        <div class="av-acoes"><a class="btn pri av-abrir" href="${linkCliente(c)}" target="_blank" rel="noopener">Abrir o portal ao vivo <span aria-hidden="true">↗</span></a><a class="btn" href="${linkCliente(c, '/blog')}" target="_blank" rel="noopener">Blog</a><a class="btn" href="${linkCliente(c, '/bairros')}" target="_blank" rel="noopener">Bairros</a></div>
+      </div>
+    </article>`;
+  }).join('\n    ');
+  return `<section id="ao-vivo" class="escuro ao-vivo" aria-labelledby="t-av"><div class="cx">
+  <p class="kicker"><span class="pulso" aria-hidden="true"></span>Ao vivo agora</p>
+  <h2 id="t-av">Quatro imobiliárias já estão no ar. <em>Entre e navegue.</em></h2>
+  <p class="lead">Mesmo sistema, quatro marcas que não se parecem em nada: logo, cores, letra e foto de capa próprias, cada uma no seu endereço. Clique, abra o portal e mexa à vontade, do celular ou do computador.</p>
+  <div class="av-abas" role="tablist" aria-label="Imobiliárias no ar">${abas}</div>
+  <div class="av-paineis">
+    ${paineis}
+  </div>
+  <p class="demo-aviso">Portais de demonstração funcionando na plataforma, com imóveis e fotos ilustrativas.</p>
+
+  <div class="av-proxima revelar">
+    <div><p class="kicker ouro-k">A próxima é a sua</p><h3>Como fica o endereço da sua imobiliária?</h3>
+      <p>Digite o nome e veja. Em poucos dias, o portal, o blog e os guias de bairro estão no ar com a sua marca.</p></div>
+    <form class="av-nome" autocomplete="off">
+      <label for="av-input" class="vis-oculto">Nome da sua imobiliária</label>
+      <input id="av-input" name="nome" maxlength="40" placeholder="Nome da sua imobiliária" enterkeyhint="go">
+      <p class="av-dominio" aria-live="polite"><span class="av-cad">🔒</span><b id="av-slug">suaimobiliaria</b>.corretordofuturo.app</p>
+      <button class="btn ouro" type="submit">Quero esse endereço</button>
+    </form>
+  </div>
+</div></section>`;
+}
+
 // Uma captura de tela numa moldura de navegador. `nome` = arquivo em /plataforma/telas (há a versão inteira e a "-m", com metade da largura).
 function janela(nome, alt, { url = 'app.corretordofuturo.app', w = 2880, h = 1800, lazy = true } = {}) {
   return `<div class="janela"><div class="janela-barra" aria-hidden="true"><i></i><i></i><i></i><span>${esc(url)}</span></div>`
@@ -181,7 +239,7 @@ function topo({ inicio = '' } = {}) {
   const nome = esc(cfg.SISTEMA_NOME);
   return `<header class="topo"><div class="cx">
   <a class="marca" href="/" aria-label="${nome}, início"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M3 12 13 4l10 8v11H3Z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/><path d="M10 23v-7h6v7" fill="none" stroke="currentColor" stroke-width="2"/></svg>${nome}</a>
-  <nav aria-label="Seções"><a class="sec" href="${inicio}#ia">Inteligência artificial</a><a class="sec" href="${inicio}#radar">Radar</a><a class="sec" href="${inicio}#condominios">3D</a><a class="sec" href="${inicio}#portal">Portal e ${CAL}</a><a class="sec" href="/sobre">Sobre nós</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn pri" href="${inicio}#contato">Fale com a gente</a></nav>
+  <nav aria-label="Seções"><a class="sec" href="${inicio}#ao-vivo">Ao vivo</a><a class="sec" href="${inicio}#ia">Inteligência artificial</a><a class="sec" href="${inicio}#radar">Radar</a><a class="sec" href="${inicio}#condominios">3D</a><a class="sec" href="${inicio}#portal">Portal e ${CAL}</a><a class="sec" href="/sobre">Sobre nós</a><a class="entrar" href="${APP_URL}">Entrar</a><a class="btn pri" href="${inicio}#contato">Fale com a gente</a></nav>
 </div></header>`;
 }
 function rodape() {
@@ -208,8 +266,9 @@ function pagina() {
 <meta name="theme-color" content="#070b0f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=Pinyon+Script&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="/plataforma/site.css?v=5">
+<link rel="stylesheet" href="/plataforma/site.css?v=6">
 <link rel="preload" as="image" href="${T}3d-poster.webp">
+<link rel="preload" as="image" href="${C}ondemorar-d-m.webp">
 <script type="application/ld+json">${json(ld)}</script><script type="application/ld+json">${json(faq)}</script>
 </head><body>
 ${topo()}
@@ -221,7 +280,8 @@ ${topo()}
       <p class="kicker">Sistema imobiliário com inteligência artificial</p>
       <h1>O corretor do futuro já tem <em>escritório</em>.</h1>
       <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
-      <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ia">Conhecer por dentro</a></div>
+      <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ao-vivo">Ver imobiliárias ao vivo</a></div>
+      <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>No ar agora</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais rodando na plataforma →</span></a>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
     <div class="palco">
@@ -246,6 +306,8 @@ ${topo()}
     <p class="brasil-nota">Estimativa: os três maiores portais do país somam cerca de 7 milhões de anúncios (Grupo OLX, outubro de 2026). Na base de Campinas, 58% dos anúncios eram o mesmo imóvel anunciado por mais de uma imobiliária, o que dá algo perto de 3 milhões de imóveis diferentes.</p>
   </div>
 </div></div>
+
+${aoVivo()}
 
 <section id="ia" class="escuro ia" aria-labelledby="t-ia"><div class="cx">
   <p class="kicker">Inteligências artificiais</p>
@@ -463,8 +525,9 @@ ${topo()}
 </div></section>
 </main>
 
+<div class="fixa" aria-hidden="true" hidden><div class="fixa-cx"><span class="fixa-t"><b>Sua imobiliária no ar assim,</b> com a sua marca.</span><a class="btn pri" href="#contato" tabindex="-1">Quero a minha</a><a class="fixa-wa" href="https://wa.me/${wa}" target="_blank" rel="noopener" tabindex="-1" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg></a></div></div>
 ${rodape()}
-<script src="/plataforma/site.js?v=3" defer></script>
+<script src="/plataforma/site.js?v=4" defer></script>
 </body></html>`;
 }
 

@@ -80,6 +80,82 @@
     });
   });
 
+
+  // Ao vivo: troca de imobiliária (abas com logo, rodízio sozinho até a pessoa mexer) e de versão do portal
+  var avSec = document.getElementById('ao-vivo');
+  if (avSec) {
+    var avAbas = Array.prototype.slice.call(avSec.querySelectorAll('.av-aba'));
+    var DUR = 7000, timer = null, parado = calmo, visivel = false;
+    function avAbre(aba, foco) {
+      avAbas.forEach(function (a) {
+        var sel = a === aba;
+        a.classList.toggle('ativa', sel); a.classList.remove('correndo');
+        a.setAttribute('aria-selected', sel ? 'true' : 'false'); a.tabIndex = sel ? 0 : -1;
+        var p = document.getElementById(a.getAttribute('aria-controls')); if (p) p.classList.toggle('ativo', sel);
+      });
+      avSec.style.setProperty('--c', getComputedStyle(aba).getPropertyValue('--c'));
+      if (foco) aba.focus();
+      agenda();
+    }
+    function agenda() {
+      clearTimeout(timer);
+      var at = avSec.querySelector('.av-aba.ativa');
+      if (parado || !visivel || !at) return;
+      void at.offsetWidth; at.style.setProperty('--dur', DUR + 'ms'); at.classList.add('correndo');
+      timer = setTimeout(function () { avAbre(avAbas[(avAbas.indexOf(at) + 1) % avAbas.length]); }, DUR);
+    }
+    function para() { parado = true; clearTimeout(timer); avAbas.forEach(function (a) { a.classList.remove('correndo'); }); }
+    avAbas.forEach(function (a, i) {
+      a.addEventListener('click', function () { para(); avAbre(a); if (window.innerWidth < 760) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); });
+      a.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { e.preventDefault(); para(); avAbre(avAbas[(i + (e.key === 'ArrowRight' ? 1 : avAbas.length - 1)) % avAbas.length], true); }
+      });
+    });
+    avSec.querySelectorAll('.av-painel').forEach(function (p) {
+      p.addEventListener('pointerenter', function () { if (!parado) { clearTimeout(timer); avAbas.forEach(function (a) { a.classList.remove('correndo'); }); } });
+      p.addEventListener('pointerleave', function () { if (!parado) agenda(); });
+      var abrir = p.querySelector('.av-abrir'), url = p.querySelector('.av-url em'), base = abrir ? abrir.href.replace(/\/imoveis.*$/, '') : '';
+      p.querySelectorAll('.av-ver').forEach(function (b) {
+        b.addEventListener('click', function () {
+          para();
+          p.querySelectorAll('.av-ver').forEach(function (x) { var s = x === b; x.classList.toggle('ativa', s); x.setAttribute('aria-pressed', s ? 'true' : 'false'); });
+          p.querySelectorAll('.av-img').forEach(function (im) { im.classList.toggle('ativa', im.dataset.v === b.dataset.v); });
+          if (url) url.textContent = b.dataset.cam;
+          if (abrir) abrir.href = base + b.dataset.cam;
+        });
+      });
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { visivel = es[0].isIntersecting; if (visivel) agenda(); else clearTimeout(timer); }, { threshold: 0.35 }).observe(avSec);
+    }
+    // carrega as outras capturas depois que a página abriu, para a troca ser instantânea
+    window.addEventListener('load', function () { setTimeout(function () { avSec.querySelectorAll('img[loading=lazy]').forEach(function (im) { im.loading = 'eager'; }); }, 1500); });
+    avAbre(avAbas[0]);
+
+    // "Como fica o endereço da sua imobiliária?"
+    var nomeIn = document.getElementById('av-input'), slugEl = document.getElementById('av-slug'), nomeForm = avSec.querySelector('form.av-nome');
+    function slug(t) { return String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/&/g, 'e').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 30) || 'suaimobiliaria'; }
+    if (nomeIn) nomeIn.addEventListener('input', function () { slugEl.textContent = slug(nomeIn.value); });
+    if (nomeForm) nomeForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = document.querySelector('form.fale textarea'), nome = nomeIn.value.trim();
+      if (msg) msg.value = 'Quero o endereço ' + slug(nome) + '.corretordofuturo.app' + (nome ? ' para a ' + nome : '') + '.' + (msg.value ? '\n' + msg.value : '');
+      var perfil = document.querySelector('form.fale select'); if (perfil && !perfil.value) perfil.value = 'Imobiliária parceira';
+      document.getElementById('contato').scrollIntoView({ behavior: calmo ? 'auto' : 'smooth' });
+      var n = document.querySelector('form.fale input[name=nome]'); if (n) setTimeout(function () { n.focus({ preventScroll: true }); }, calmo ? 0 : 600);
+    });
+  }
+
+  // barra fixa: aparece depois da abertura, some perto do formulário
+  var fixa = document.querySelector('.fixa'), abreEl = document.querySelector('.abre'), contato = document.getElementById('contato');
+  if (fixa && abreEl && contato && 'IntersectionObserver' in window) {
+    fixa.hidden = false;
+    var passou = false, noFim = false;
+    function poe() { var m = passou && !noFim; fixa.classList.toggle('mostra', m); fixa.setAttribute('aria-hidden', m ? 'false' : 'true'); fixa.querySelectorAll('a').forEach(function (a) { a.tabIndex = m ? 0 : -1; }); }
+    new IntersectionObserver(function (es) { passou = !es[0].isIntersecting; poe(); }, { threshold: 0 }).observe(abreEl);
+    new IntersectionObserver(function (es) { noFim = es[0].isIntersecting; poe(); }, { threshold: 0, rootMargin: '0px 0px 200px 0px' }).observe(contato);
+  }
+
   // Fale com a gente: abre o WhatsApp com a mensagem pronta (nada é gravado)
   var form = document.querySelector('form.fale');
   if (form) form.addEventListener('submit', function (e) {

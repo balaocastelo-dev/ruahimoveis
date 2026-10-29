@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 96" role="img" aria-label="Casa Prado"><title>Casa Prado</title><style>.tel{stroke:#2F5D46}.par{stroke:#2F5D46}.jan{fill:#C9A45C}.cam{stroke:#7FA86B}.cam2{stroke:#C9A45C}.t1{fill:#1F3D2F}.t2{fill:#A8843F}
+</style><g transform="translate(2 2)"><path class="tel" d="M8 46 40 16 72 46" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="par" d="M18 40v28h44V40" fill="none" stroke-width="4" stroke-linejoin="round"/>
+    <path class="jan" d="M34 50h12v18H34z"/>
+    <path class="cam" d="M2 78c14-6 26-6 38 0s26 6 38 0" fill="none" stroke-width="4" stroke-linecap="round"/>
+    <path class="cam2" d="M10 88c10-4 20-4 30 0s20 4 30 0" fill="none" stroke-width="3" stroke-linecap="round"/></g></svg>
