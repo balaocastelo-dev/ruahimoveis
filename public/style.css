@@ -1341,3 +1341,4 @@ a{text-underline-offset:.18em}
 .bad-t{color:var(--bad)}
 @media (max-width:760px){.rs-cal{display:none}.rs-lista{display:block}.rs-nav h2{min-width:0;font-size:22px}.rs-artes figure{width:62vw}.rs-artes figure.rs-g{width:78vw}}
 @media (min-width:761px) and (max-width:1100px){.rs-pn{display:none}.rs-dia{min-height:96px}}
+.ev-kpi.quente span{color:color-mix(in srgb,var(--ink) 78%,var(--gold-ink))}
