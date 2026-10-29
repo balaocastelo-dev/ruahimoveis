@@ -95,7 +95,7 @@ async function anota({ modelo: mod, entrada = 0, saida = 0, erro = false }) {
   if (!p) {
     // sem conexão da plataforma: anota pelo próprio banco. A função usa o usuário do banco para saber
     // de quem é o consumo (ondemorar_app → ondemorar), então ninguém pode lançar gasto no nome de outra.
-    try { require('../db').all('SELECT plataforma.anota_ia_uso(?, ?, ?, ?)', m, Math.max(0, entrada | 0), Math.max(0, saida | 0), erro ? 1 : 0); } catch { /* nunca derruba o atendimento */ }
+    try { require('../db').all('SELECT plataforma.anota_ia_uso(?, ?, ?, ?, ?)', m, Math.max(0, entrada | 0), Math.max(0, saida | 0), erro ? 1 : 0, euSync()); } catch { /* nunca derruba o atendimento */ }
     return;
   }
   try {

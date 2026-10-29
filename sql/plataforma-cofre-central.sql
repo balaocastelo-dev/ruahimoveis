@@ -29,9 +29,12 @@ SECURITY DEFINER
 SET search_path TO 'plataforma'
 AS $function$
 DECLARE
-  v_slug text := CASE WHEN current_user = 'plataforma_app'
-                      THEN coalesce(nullif(btrim(p_imobiliaria), ''), 'desconhecido')
-                      ELSE regexp_replace(current_user::text, '_app$', '') END;
+  -- Papel de imobiliária (ondemorar_app): de quem é o gasto vem do próprio usuário do banco, sem como mentir.
+  -- Conexões da plataforma (plataforma_app) ou do PC (postgres) dizem a imobiliária no parâmetro.
+  v_slug text := CASE
+    WHEN current_user::text <> 'plataforma_app' AND current_user::text ~ '_app$'
+      THEN regexp_replace(current_user::text, '_app$', '')
+    ELSE coalesce(nullif(btrim(p_imobiliaria), ''), 'desconhecido') END;
 BEGIN
   INSERT INTO ia_uso (imobiliaria, dia, modelo, chamadas, tokens_entrada, tokens_saida, erros)
   VALUES (v_slug, (now() AT TIME ZONE 'America/Sao_Paulo')::date,
@@ -52,3 +55,9 @@ GRANT EXECUTE ON FUNCTION plataforma.cofre_central() TO ruah_app, ondemorar_app,
 GRANT EXECUTE ON FUNCTION plataforma.anota_ia_uso(text, integer, integer, boolean, text) TO ruah_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
 
 COMMIT;
+
+-- PENDENTE (29/10/2026, fim da tarde): a versão acima da anota_ia_uso ainda NÃO foi aplicada no banco —
+-- o pedido de confirmação do Supabase ficou sem resposta. A que está lá funciona certo para as
+-- imobiliárias na Vercel (papéis <slug>_app); só erra quando a chamada vem do PC com o usuário postgres,
+-- que fica registrado como "postgres". Reaplicar este arquivo resolve, e apagar a linha de teste:
+--   DELETE FROM plataforma.ia_uso WHERE modelo = 'teste-cofre';
