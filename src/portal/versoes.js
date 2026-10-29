@@ -28,7 +28,7 @@ const HD = new Set([174]);
 const DEMONSTRACAO = /^(1|sim|true)$/i.test(String(process.env.PORTAL_DEMONSTRACAO || ''));
 function fundo(foto) {
   const hd = HD.has(foto) ? `/portal-assets/signature/${foto}` : null;
-  const src = hd ? `${hd}-1920.jpg` : `/imoveis/foto/${foto}/capa?v=1`;
+  const src = hd ? `${hd}-1920.jpg` : `/imoveis/foto/${foto}/capa?v=2`;
   const extra = hd ? ` srcset="${hd}-1920.jpg 1920w, ${hd}-2560.jpg 2560w" sizes="100vw" width="2560" height="1706"` : ' width="1920" height="1280"';
   return `<div class="s-hero-fundo" aria-hidden="true"><img class="s-hero-desfoque" src="${src}" alt="" decoding="async"><img class="s-hero-foto" src="${src}"${extra} alt="" fetchpriority="high" decoding="async">${DEMONSTRACAO ? '<span class="s-hero-aviso">Imagem ilustrativa</span>' : ''}</div>`;
 }
