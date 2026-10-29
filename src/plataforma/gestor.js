@@ -166,7 +166,7 @@ api.post('/senha', exige(async (req, res) => {
   evento(req.gestor.id, null, 'senha', null); res.json({ ok: true });
 }));
 
-const COLS = 'id, slug, nome, empresa, materias_dia, contato_nome, contato_email, contato_telefone, link, dominio, vercel_projeto, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, publicada, notas, criado_em, atualizado_em';
+const COLS = 'id, slug, nome, empresa, materias_dia, onboarding, contato_nome, contato_email, contato_telefone, link, dominio, vercel_projeto, plano, mensalidade, comissao_pct, comissao_venda_pct, creditos_fisgar_mes, situacao, publicada, notas, criado_em, atualizado_em';
 api.get('/imobiliarias', exige(async (req, res) => {
   const lista = await q(`SELECT ${COLS} FROM imobiliarias ORDER BY id`);
   { // papel de parede de cada imobiliária (o mesmo do portal dela), para o fundo do cartão
@@ -270,6 +270,95 @@ api.post('/imobiliarias/:id/publicada', exige(async (req, res) => {
     [link, txt(req.body && req.body.vercel_projeto, 100), Number(req.params.id)]);
   evento(req.gestor.id, Number(req.params.id), 'publicada', link); res.json({ ok: true });
 }));
+// ---------- Assistente "Nova imobiliária" com o Herrera (avatar de treinamento) ----------
+// Os passos da configuração; o painel guarda em imobiliarias.onboarding o que já foi feito e conferido.
+const PASSOS = ['boas-vindas', 'dados', 'administrador', 'publicar', 'marca', 'gemini', 'google-maps', 'facebook-instagram', 'google-meu-negocio', 'whatsapp', 'pronto'];
+async function marcaPasso(im, gestorId, passo, feito, detalhe) {
+  if (!PASSOS.includes(passo)) falha(400, 'Passo desconhecido.');
+  const v = feito ? { feito: true, em: new Date().toISOString(), por: gestorId, ...(detalhe ? { detalhe: String(detalhe).slice(0, 300) } : {}) } : null;
+  await q(`UPDATE imobiliarias SET onboarding = CASE WHEN $1::jsonb IS NULL THEN onboarding - $2 ELSE jsonb_set(onboarding, ARRAY[$2], $1::jsonb) END WHERE id = $3`, [v ? JSON.stringify(v) : null, passo, im.id]);
+}
+async function imobDoAssistente(id) {
+  return await um(`SELECT ${COLS}, db_url_cifrada IS NOT NULL AS automatico FROM imobiliarias WHERE id = $1`, [Number(id)]) || falha(404, 'Imobiliária não encontrada.');
+}
+async function noAr(link) {
+  if (!link) return { ok: false, motivo: 'Ainda sem link.' };
+  try {
+    const r = await fetch(link.replace(/\/+$/, '') + '/imoveis', { redirect: 'manual', signal: AbortSignal.timeout(9000), headers: { 'User-Agent': 'HerreraHouseIA-assistente/1.0' } });
+    return r.status < 400 ? { ok: true, status: r.status } : { ok: false, status: r.status, motivo: `O endereço respondeu ${r.status}.` };
+  } catch (e) { return { ok: false, motivo: 'Ainda não respondeu (' + e.message + ').' }; }
+}
+async function configurado(slug) { try { return (await um('SELECT configurado($1) AS c', [slug])).c || {}; } catch { return {}; } }
+api.get('/imobiliarias/:id/assistente', exige(async (req, res) => {
+  const im = await imobDoAssistente(req.params.id);
+  res.json({ imobiliaria: im, passos: PASSOS, onboarding: im.onboarding || {}, configurado: await configurado(im.slug), publicacao: await noAr(im.link) });
+}));
+api.post('/imobiliarias/:id/assistente/passo', exige(async (req, res) => {
+  const im = await imobDoAssistente(req.params.id);
+  const b = req.body || {};
+  await marcaPasso(im, req.gestor.id, String(b.passo || ''), b.feito !== false, b.detalhe);
+  evento(req.gestor.id, im.id, 'assistente', `${b.passo}${b.feito === false ? ' (desmarcado)' : ''}`);
+  res.json({ ok: true });
+}));
+// Confere de verdade: o site no ar, as redes conectadas, os números de WhatsApp, a equipe.
+api.post('/imobiliarias/:id/assistente/conferir/:passo', exige(async (req, res) => {
+  const im = await imobDoAssistente(req.params.id);
+  const passo = req.params.passo;
+  const c = await configurado(im.slug);
+  const redes = c.redes || [];
+  let r;
+  if (passo === 'publicar') r = await noAr(im.link);
+  else if (passo === 'facebook-instagram') r = redes.includes('instagram') && redes.includes('facebook') ? { ok: true } : { ok: false, motivo: redes.includes('facebook') ? 'O Facebook está conectado, mas falta o Instagram (ele precisa ser conta profissional ligada à Página).' : 'Ainda não há Facebook nem Instagram conectados no sistema da imobiliária.' };
+  else if (passo === 'google-meu-negocio') r = redes.includes('google') ? { ok: true } : { ok: false, motivo: 'O Google Meu Negócio ainda não foi conectado no sistema da imobiliária.' };
+  else if (passo === 'whatsapp') r = Number(c.linhas_whatsapp) > 0 ? { ok: true, detalhe: `${c.linhas_whatsapp} número(s) conectado(s)` } : { ok: false, motivo: 'Nenhum número de WhatsApp conectado aos agentes ainda.' };
+  else if (passo === 'gemini') r = c.gemini ? { ok: true } : { ok: false, motivo: 'A chave do Gemini ainda não está no sistema da imobiliária.' };
+  else if (passo === 'google-maps') r = c.google_maps ? { ok: true } : { ok: false, motivo: 'A chave do Google Maps ainda não está no sistema da imobiliária.' };
+  else if (passo === 'administrador') r = Number(c.usuarios) > 0 ? { ok: true } : { ok: false, motivo: 'Sem usuário ativo.' };
+  else falha(400, 'Esse passo não tem conferência automática.');
+  if (r.ok) await marcaPasso(im, req.gestor.id, passo, true, r.detalhe || 'conferido');
+  res.json(r);
+}));
+// Chave do Gemini: testa no Google e, se a imobiliária foi criada pelo painel, grava já cifrada na configuração dela
+// (mesma cifra do sistema: derivada da conexão do banco da imobiliária). A chave nunca fica no banco da plataforma.
+api.post('/imobiliarias/:id/assistente/gemini', exige(async (req, res) => {
+  const im = await imobDoAssistente(req.params.id);
+  const chave = String((req.body || {}).chave || '').trim();
+  if (!/^[A-Za-z0-9_\-.]{20,200}$/.test(chave)) falha(400, 'Isso não parece uma chave do Gemini (começa com "AIza…").');
+  const t = await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=50', { headers: { 'x-goog-api-key': chave }, signal: AbortSignal.timeout(15000) });
+  const j = await t.json().catch(() => ({}));
+  if (!t.ok) return res.json({ ok: false, motivo: t.status === 400 || t.status === 403 ? 'O Google recusou essa chave. Confira se copiou inteira e se ela é do Google AI Studio.' : `O Google respondeu ${t.status}.` });
+  const modelos = (j.models || []).map((m) => String(m.name || '').replace(/^models\//, ''));
+  const modelo = modelos.includes('gemini-flash-latest') ? 'gemini-flash-latest' : modelos.find((m) => /flash/.test(m) && !/image|tts|live/.test(m)) || 'gemini-flash-latest';
+  if (!im.automatico) return res.json({ ok: true, gravado: false, modelo, motivo: 'Chave válida. Esta imobiliária foi instalada antes do painel: cole a chave no sistema dela, em Escritório virtual › Configuração geral.' });
+  const row = await um('SELECT db_url_cifrada FROM imobiliarias WHERE id = $1', [im.id]);
+  const { dbUrl } = JSON.parse(decifra(row.db_url_cifrada));
+  const segredo = crypto.createHash('sha256').update('ruah-escritorio-ia:' + dbUrl).digest();
+  const iv = crypto.randomBytes(12); const ci = crypto.createCipheriv('aes-256-gcm', segredo, iv);
+  const enc = Buffer.concat([ci.update(chave, 'utf8'), ci.final()]);
+  const valor = JSON.stringify({ chave: [iv, ci.getAuthTag(), enc].map((b) => b.toString('base64')).join('.'), modelo, por: 'Assistente Herrera (painel do gestor)', em: new Date().toISOString(), teste_ok: true, testado_em: new Date().toISOString() });
+  await q('SELECT definir_config($1, $2, $3)', [im.slug, 'escritorio_ia', valor]);
+  await marcaPasso(im, req.gestor.id, 'gemini', true, `chave …${chave.slice(-4)} · ${modelo}`);
+  evento(req.gestor.id, im.id, 'assistente', `gemini …${chave.slice(-4)}`);
+  res.json({ ok: true, gravado: true, modelo });
+}));
+// Chave do Google Maps: testa o 3D realista (Map Tiles) e a foto de fachada (Street View Static) como se fosse o site da
+// imobiliária (a chave deve estar restrita ao endereço dela) e grava na configuração dela.
+api.post('/imobiliarias/:id/assistente/maps', exige(async (req, res) => {
+  const im = await imobDoAssistente(req.params.id);
+  const chave = String((req.body || {}).chave || '').trim();
+  if (!/^[A-Za-z0-9_\-]{30,60}$/.test(chave)) falha(400, 'Isso não parece uma chave do Google Maps (começa com "AIza…").');
+  const ref = { Referer: (im.link || `https://${dominioDe(im.slug)}`).replace(/\/?$/, '/') };
+  const testes = {};
+  try { const t = await fetch(`https://tile.googleapis.com/v1/3dtiles/root.json?key=${encodeURIComponent(chave)}`, { headers: ref, signal: AbortSignal.timeout(15000) }); testes.map_tiles = t.ok ? 'ok' : `recusou (${t.status})`; } catch (e) { testes.map_tiles = 'sem resposta'; }
+  try { const t = await fetch(`https://maps.googleapis.com/maps/api/streetview/metadata?location=-22.8997,-47.0606&key=${encodeURIComponent(chave)}`, { headers: ref, signal: AbortSignal.timeout(15000) }); const j = await t.json().catch(() => ({})); testes.street_view = j.status === 'OK' || j.status === 'ZERO_RESULTS' ? 'ok' : `recusou (${j.status || t.status})`; } catch { testes.street_view = 'sem resposta'; }
+  if (testes.map_tiles !== 'ok' && testes.street_view !== 'ok') return res.json({ ok: false, testes, motivo: 'O Google recusou a chave nas duas APIs. Ative a Map Tiles API e a Street View Static API no projeto e confira a restrição de site.' });
+  await q('SELECT definir_config($1, $2, $3)', [im.slug, 'google_maps_chave', chave]);
+  const parcial = testes.map_tiles !== 'ok' || testes.street_view !== 'ok';
+  await marcaPasso(im, req.gestor.id, 'google-maps', true, `chave …${chave.slice(-4)}${parcial ? ' (parcial)' : ''}`);
+  evento(req.gestor.id, im.id, 'assistente', `google maps …${chave.slice(-4)}`);
+  res.json({ ok: true, testes, parcial, motivo: parcial ? `Gravada, mas uma das APIs ainda recusa: ${testes.map_tiles !== 'ok' ? 'Map Tiles (3D realista)' : 'Street View Static (fachadas)'}. Ative no Google Cloud.` : null });
+}));
+
 // Banco de matérias do blog: estoque, entregas e o ciclo (sincronizar o ramo + entregar) na hora.
 const banco = require('./banco');
 api.get('/banco', exige(async (req, res) => res.json(await banco.situacao(q))));
@@ -306,7 +395,7 @@ const PAGINA = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><m
 <title>Painel do gestor · Herrera HOUSE IA</title><meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/gestor/gestor.css"></head><body><div id="raiz"></div><script src="/gestor/gestor.js"></script></body></html>`;
+<link rel="stylesheet" href="/gestor/gestor.css"><link rel="stylesheet" href="/gestor/herrera.css"></head><body><div id="raiz"></div><script src="/gestor/gestor.js"></script><script src="/gestor/herrera.js"></script></body></html>`;
 
 // Fora do painel: o ciclo chamado pelo pg_cron (token em plataforma.config 'banco_ciclo_token') e um resumo
 // sem segredo para a rotina que escreve (quantas há em estoque, consumo por dia e temas já usados).

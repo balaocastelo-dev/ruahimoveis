@@ -108,7 +108,7 @@ api.get('/elevacao', async (req, res) => {
   // o 3D do Google usa altura sobre o elipsoide: em Campinas o geoide fica ~5,5 m abaixo
   res.json({ altitude: elev.get(k) ?? null, elipsoide: elev.has(k) ? elev.get(k) - 5.5 : null });
 });
-api.get('/mapas', (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ chave: (process.env.GOOGLE_MAPS_KEY || '').trim() || null }); });
+api.get('/mapas', (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.json({ chave: require('./fachada').chave() || null }); });
 api.get('/:slug/3d', async (req, res) => {
   const c = porSlug(req.params.slug);
   if (!c) return res.status(404).json({ erro: 'Condomínio não encontrado.' });

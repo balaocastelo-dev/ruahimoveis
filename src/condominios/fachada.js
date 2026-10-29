@@ -3,7 +3,18 @@
 // Cada foto fica guardada na tabela fachadas: o mesmo endereço não é pago de novo.
 const { one, run } = require('../db');
 
-const chave = () => (process.env.GOOGLE_MAPS_KEY || '').trim();
+// a chave vem da variável GOOGLE_MAPS_KEY ou, sem ela, da configuração da imobiliária (gravada pelo assistente do gestor)
+let memoChave = { em: 0, v: '' };
+const chave = () => {
+  const env = (process.env.GOOGLE_MAPS_KEY || '').trim();
+  if (env) return env;
+  if (Date.now() - memoChave.em > 5 * 60e3) {
+    let v = '';
+    try { v = String(require('../db').getConfig('google_maps_chave') || '').trim(); } catch { /* sem banco */ }
+    memoChave = { em: Date.now(), v };
+  }
+  return memoChave.v;
+};
 // a chave é restrita aos sites do cliente no Google: a chamada do servidor se apresenta como o site
 const CAB = { Referer: (process.env.PUBLIC_URL || 'https://ruahimoveis.vercel.app').replace(/\/?$/, '/') };
 const ligado = () => !!chave();
@@ -35,4 +46,4 @@ async function foto(ref, lat, lon) {
   return img;
 }
 
-module.exports = { foto, ligado };
+module.exports = { chave, foto, ligado };

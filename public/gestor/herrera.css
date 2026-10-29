@@ -1,0 +1,109 @@
+/* Assistente com o Herrera (avatar de treinamento) · painel do gestor.
+   O palco é escuro, com o verde-neon dos hologramas das imagens do personagem; o passo fica no papel do painel. */
+:root{--hz-neon:#3FE0A8;--hz-neon-2:#1FB98A;--hz-palco:#0B1114;--hz-palco-2:#101B1F}
+
+/* botão que chama o Herrera (com um rostinho pulsando) */
+.hz-chama{position:relative}
+.hz-mini{width:18px;height:18px;border-radius:50%;background:url('/gestor/herrera/herrera-rosto.webp') center/cover,var(--hz-palco);box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 10px var(--hz-neon);flex:none;animation:hz-pulso 2.4s ease-in-out infinite}
+.btn.sm .hz-mini{width:16px;height:16px}
+@keyframes hz-pulso{0%,100%{box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 4px var(--hz-neon)}50%{box-shadow:0 0 0 2px rgba(255,255,255,.85),0 0 14px var(--hz-neon)}}
+.selo.conf{background:var(--alerta-claro);color:var(--alerta)}
+.selo.conf-ok{background:var(--ok-claro);color:var(--ok)}
+
+/* a janela */
+dialog.hz-dlg{width:min(1320px,100vw);height:min(860px,100dvh);max-width:100vw;max-height:100dvh;padding:0;border:0;border-radius:18px;background:var(--fundo);color:var(--tinta);box-shadow:0 30px 90px rgba(0,0,0,.45);overflow:hidden}
+dialog.hz-dlg::backdrop{background:radial-gradient(circle at 30% 40%,rgba(31,185,138,.18),transparent 55%),rgba(6,10,12,.78);backdrop-filter:blur(6px)}
+.hz{display:grid;grid-template-rows:auto auto 1fr;height:100%}
+.hz-topo{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid var(--linha);background:var(--papel)}
+.hz-topo .sp{flex:1}
+
+/* trilha de passos */
+.hz-trilha{display:flex;gap:4px;list-style:none;margin:0;padding:10px 16px;overflow-x:auto;background:var(--papel);border-bottom:1px solid var(--linha);scrollbar-width:thin}
+.hz-trilha li{flex:1 0 auto}
+.hz-trilha button{display:flex;align-items:center;gap:7px;width:100%;border:0;background:none;padding:6px 8px;border-radius:10px;cursor:pointer;color:var(--suave);font-size:13px;white-space:nowrap}
+.hz-trilha button:disabled{opacity:.45;cursor:not-allowed}
+.hz-trilha button:not(:disabled):hover{background:var(--fundo)}
+.hz-n{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--linha-forte);font:600 12px var(--mono);flex:none;transition:.25s}
+.hz-trilha li.feito .hz-n{background:var(--ok);border-color:var(--ok);color:#fff}
+.hz-trilha li.atual button{color:var(--tinta);font-weight:600;background:var(--acao-clara)}
+.hz-trilha li.atual .hz-n{border-color:var(--acao);background:var(--acao);color:#fff;box-shadow:0 0 0 4px color-mix(in srgb,var(--acao) 25%,transparent)}
+
+.hz-grade{display:grid;grid-template-columns:minmax(380px,1.05fr) 1fr;min-height:0}
+
+/* palco do Herrera */
+.hz-palco{background:radial-gradient(120% 90% at 20% 10%,var(--hz-palco-2),var(--hz-palco) 60%);padding:22px;display:flex;flex-direction:column;gap:12px;min-height:0;position:relative;overflow:hidden}
+.hz-palco::before{content:"";position:absolute;inset:-40% -20% auto auto;width:70%;aspect-ratio:1;background:radial-gradient(circle,rgba(63,224,168,.16),transparent 60%);pointer-events:none}
+.hz-tela{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:832/480;background:#000;box-shadow:0 0 0 1px rgba(63,224,168,.35),0 18px 50px rgba(0,0,0,.55)}
+.hz-tela video,.hz-tela img{width:100%;height:100%;object-fit:cover;display:block}
+.hz-tela img{animation:hz-respira 5s ease-in-out infinite;transform-origin:50% 40%}
+@keyframes hz-respira{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
+.hz-aura{position:absolute;inset:0;border-radius:16px;pointer-events:none;z-index:2;box-shadow:inset 0 0 0 2px rgba(63,224,168,0);transition:box-shadow .4s}
+.hz-tela.falando .hz-aura{box-shadow:inset 0 0 0 2px rgba(63,224,168,.7),inset 0 0 40px rgba(63,224,168,.18)}
+.hz-cracha{position:absolute;left:14px;bottom:14px;z-index:3;display:flex;flex-direction:column;padding:7px 12px;border-radius:12px;background:rgba(8,14,16,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;border:1px solid rgba(63,224,168,.35)}
+.hz-cracha b{font:700 16px/1.1 var(--titulo);letter-spacing:.01em}
+.hz-cracha span{font-size:11.5px;opacity:.75}
+.hz-fala{position:absolute;right:16px;bottom:18px;z-index:3;display:flex;gap:3px;align-items:flex-end;height:22px;opacity:0;transition:opacity .3s}
+.hz-fala i{width:4px;border-radius:2px;background:var(--hz-neon);height:6px;box-shadow:0 0 6px var(--hz-neon)}
+.hz-tela.falando .hz-fala{opacity:1}
+.hz-tela.falando .hz-fala i{animation:hz-onda .9s ease-in-out infinite}
+.hz-fala i:nth-child(2){animation-delay:.15s!important}.hz-fala i:nth-child(3){animation-delay:.3s!important}.hz-fala i:nth-child(4){animation-delay:.45s!important}.hz-fala i:nth-child(5){animation-delay:.6s!important}
+@keyframes hz-onda{0%,100%{height:5px}50%{height:22px}}
+.hz-play{position:absolute;inset:0;margin:auto;z-index:4;width:76px;height:76px;border-radius:50%;border:0;background:var(--hz-neon);color:#062019;font-size:28px;cursor:pointer;box-shadow:0 0 0 10px rgba(63,224,168,.22),0 10px 30px rgba(0,0,0,.5)}
+.hz-legenda{margin:0;min-height:3.2em;color:#E9FFF7;font:500 17px/1.45 var(--texto);text-wrap:balance;text-shadow:0 1px 2px rgba(0,0,0,.4)}
+.hz-legenda.entra{animation:hz-sobe .35s ease-out}
+@keyframes hz-sobe{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hz-ctl{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto}
+.hz-ctl .btn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#DDEFEA}
+.hz-ctl .btn:hover{border-color:var(--hz-neon)}
+.hz-ctl .btn[aria-pressed=false]{opacity:.65}
+
+/* o passo */
+.hz-passo{display:grid;grid-template-rows:1fr auto;min-height:0;background:var(--fundo)}
+.hz-corpo{overflow:auto;padding:24px 28px}
+.hz-corpo.entra{animation:hz-sobe .35s ease-out}
+.hz-corpo h2{font-size:26px;margin:2px 0 6px}
+.hz-etapa{font:600 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acao)}
+.hz-corpo .campos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.hz-corpo .c{display:flex;flex-direction:column;gap:5px;font-size:13px;color:var(--suave)}
+.hz-corpo .c.inteiro{grid-column:1/-1}
+.hz-corpo input,.hz-corpo select,.hz-corpo textarea{border:1px solid var(--linha-forte);border-radius:10px;padding:9px 11px;background:var(--papel);color:var(--tinta);font-size:15px;min-height:40px}
+.hz-corpo input:focus,.hz-corpo select:focus,.hz-corpo textarea:focus{outline:2px solid var(--acao);outline-offset:1px}
+.hz-linha{display:flex;gap:8px}.hz-linha input{flex:1;font-family:var(--mono)}
+.hz-lista{margin:14px 0;padding:0;list-style:none;counter-reset:hz;display:grid;gap:8px}
+.hz-lista li{counter-increment:hz;position:relative;padding:10px 12px 10px 46px;background:var(--papel);border:1px solid var(--linha);border-radius:12px}
+.hz-lista li::before{content:counter(hz);position:absolute;left:12px;top:9px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--acao-clara);color:var(--acao);font:600 12px var(--mono)}
+.hz-teste{display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap;margin-top:10px}
+.hz-teste .c{flex:1;min-width:240px}
+.hz-teste input{font-family:var(--mono)}
+.hz-acoes{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.hz-nota{margin-top:16px;padding:12px 14px;border-radius:12px;background:var(--acao-clara);color:var(--acao-escura);font-size:14px}
+.hz-ok{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:var(--ok-claro);color:var(--ok);font-weight:500}
+.hz-erro{margin:10px 0 0;padding:9px 12px;border-radius:10px;background:var(--erro-claro);color:var(--erro)}
+.hz-checks{display:grid;gap:8px;margin:14px 0}
+.hz-checks p{margin:0;padding:10px 12px;border-radius:10px;background:var(--papel);border:1px solid var(--linha)}
+.hz-checks p.ok{border-color:color-mix(in srgb,var(--ok) 40%,var(--linha))}
+.hz-checks p.espera{animation:hz-piscar 1.6s ease-in-out infinite}
+@keyframes hz-piscar{50%{opacity:.6}}
+.hz-resumo{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:16px 0 20px;padding:14px 16px;background:var(--papel);border:1px solid var(--linha);border-radius:12px}
+.hz-resumo dt{color:var(--suave);font-size:13px}.hz-resumo dd{margin:0;font-weight:500}
+.btn.hz-grande{min-height:48px;padding:10px 22px;font-size:16px;box-shadow:0 8px 24px color-mix(in srgb,var(--acao) 35%,transparent)}
+.hz-final{list-style:none;padding:0;margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hz-final li{padding:10px 12px;border-radius:10px;background:var(--papel);border:1px solid var(--linha)}
+.hz-final li.ok{color:var(--ok)}.hz-final li.falta{color:var(--alerta)}
+.hz-rod{display:flex;align-items:center;gap:10px;padding:12px 28px;border-top:1px solid var(--linha);background:var(--papel)}
+.hz-rod .sp{flex:1}
+
+/* tablet e celular: o Herrera fica em cima, menor, e o passo rola embaixo */
+@media (max-width:900px){
+  dialog.hz-dlg{border-radius:0;width:100vw;height:100dvh}
+  .hz-grade{grid-template-columns:1fr;grid-template-rows:auto 1fr;overflow:auto}
+  .hz-palco{padding:12px 14px;gap:8px}
+  .hz-tela{max-height:34dvh;aspect-ratio:auto;height:34dvh}
+  .hz-legenda{font-size:15px;min-height:2.6em}
+  .hz-ctl{margin-top:0}.hz-ctl .btn{min-height:34px}
+  .hz-corpo{padding:16px}
+  .hz-corpo .campos,.hz-final{grid-template-columns:1fr}
+  .hz-rod{padding:10px 16px}
+  .hz-trilha .hz-t{display:none}.hz-trilha li.atual .hz-t{display:inline}
+}
+@media (prefers-reduced-motion:reduce){.hz-tela img,.hz-mini,.hz-fala i,.hz-corpo.entra,.hz-legenda.entra,.hz-checks p.espera{animation:none!important}}

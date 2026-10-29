@@ -1,0 +1,70 @@
+{
+ "versao": 0,
+ "clips": {
+  "01-boas-vindas": {
+   "imagem": "palco",
+   "texto": "Fala, tudo bem? Eu sou o Herrera, e vou te acompanhar em cada passo pra colocar uma imobiliária nova no ar. É rapidinho: eu explico, você faz, e o sistema confere tudo na hora. No final, a imobiliária sai com portal, blog, redes sociais e inteligência artificial funcionando. Bora começar?",
+   "frases": []
+  },
+  "02-dados": {
+   "imagem": "holograma",
+   "texto": "Primeiro passo: os dados da imobiliária.",
+   "frases": []
+  },
+  "03-administrador": {
+   "imagem": "mesa",
+   "texto": "Agora o administrador.",
+   "frases": []
+  },
+  "04-publicar": {
+   "imagem": "holograma",
+   "texto": "Hora de publicar!",
+   "frases": []
+  },
+  "05-marca": {
+   "imagem": "holograma",
+   "texto": "Agora deixa com a cara dela.",
+   "frases": []
+  },
+  "06-gemini": {
+   "imagem": "mesa",
+   "texto": "Vamos pegar a chave da inteligência artificial, o Gemini.",
+   "frases": []
+  },
+  "07-google-maps": {
+   "imagem": "mesa",
+   "texto": "Agora a chave do Google Maps.",
+   "frases": []
+  },
+  "08-facebook-instagram": {
+   "imagem": "holograma",
+   "texto": "Redes sociais!",
+   "frases": []
+  },
+  "09-google-meu-negocio": {
+   "imagem": "mesa",
+   "texto": "Agora o Google Meu Negócio.",
+   "frases": []
+  },
+  "10-whatsapp": {
+   "imagem": "holograma",
+   "texto": "Por último, o WhatsApp dos agentes.",
+   "frases": []
+  },
+  "11-pronto": {
+   "imagem": "palco",
+   "texto": "Prontinho!",
+   "frases": []
+  },
+  "12-deu-certo": {
+   "imagem": "palco",
+   "texto": "Deu certo! Pode seguir pro próximo passo.",
+   "frases": []
+  },
+  "13-nao-deu": {
+   "imagem": "mesa",
+   "texto": "Hum, não funcionou.",
+   "frases": []
+  }
+ }
+}

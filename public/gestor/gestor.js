@@ -45,7 +45,8 @@ async function iniciar() {
     <div id="kpis" class="kpis"></div>
     <div class="cab"><h2>Clientes</h2><div class="sp"></div>
       <div class="filtros" role="group" aria-label="Filtrar">${['todas', 'ativa', 'implantacao', 'suspensa'].map((k) => `<button type="button" data-f="${k}" aria-pressed="${FILTRO === k}">${k === 'todas' ? 'Todas' : SITU[k]}</button>`).join('')}</div>
-      <button class="btn pri" id="b-nova">+ Nova imobiliária</button></div>
+      <button class="btn" id="b-rapida" title="O formulário de uma tela só, sem o assistente">Cadastro rápido</button>
+      <button class="btn pri hz-chama" id="b-nova"><span class="hz-mini" aria-hidden="true"></span>+ Nova imobiliária com o Herrera</button></div>
     <div id="lista" class="imobs"><div class="vazio">Carregando os números…</div></div>
     <section class="banco" aria-labelledby="t-banco"><div class="cab"><h2 id="t-banco">Banco de matérias do blog</h2><div class="sp"></div>
       <button class="btn" id="b-banco">Buscar prontas e entregar agora</button></div>
@@ -58,7 +59,8 @@ async function iniciar() {
     <section class="atividade"><h2>Atividade recente</h2><ol id="ativ"></ol></section></main>`;
   $('#b-sair').onclick = async () => { await api('POST', '/logout').catch(() => {}); telaEntrada(); };
   $('#b-senha').onclick = janelaSenha;
-  $('#b-nova').onclick = janelaNova;
+  $('#b-nova').onclick = () => (window.Herrera ? Herrera.abrir() : janelaNova());
+  $('#b-rapida').onclick = janelaNova;
   $('#b-banco').onclick = async (ev) => {
     const b = ev.currentTarget; b.disabled = true; b.textContent = 'Rodando…';
     try {
@@ -141,19 +143,20 @@ function desenhaLista() {
     const met = (v, lb) => `<div class="met"><div class="v">${v}</div><div class="l">${esc(lb)}</div></div>`;
     return `<article class="imob ${i.situacao}${i.fundo ? ' com-fundo' : ''}" data-id="${i.id}"${i.fundo ? ` style="--foto:url('${esc(i.fundo.src)}');--foto-pos:${esc(i.fundo.posicao || '50% 50%')}" title="${esc(i.fundo.lugar)}"` : ''}>
       <div><div class="imob-nome">${esc(i.nome)}</div><div class="imob-sub">${esc(i.empresa || '')}${i.link ? ` · <a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.link.replace(/^https:\/\//, ''))}</a>` : ' · <span class="muted">sem link ainda</span>'}</div>
-        <div class="selos"><span class="selo ${i.situacao}">${esc(SITU[i.situacao] || i.situacao)}</span><span class="selo plano">${esc(i.plano)}</span>${i.mensalidade ? `<span class="selo">${brl(i.mensalidade)}/mês</span>` : ''}<span class="selo">${n(i.comissao_pct)}% da comissão</span></div></div>
+        <div class="selos"><span class="selo ${i.situacao}">${esc(SITU[i.situacao] || i.situacao)}</span><span class="selo plano">${esc(i.plano)}</span>${i.mensalidade ? `<span class="selo">${brl(i.mensalidade)}/mês</span>` : ''}<span class="selo">${n(i.comissao_pct)}% da comissão</span>${window.Herrera ? (() => { const f = Herrera.progresso(i.onboarding), t = Herrera.NUCLEO.length; return `<span class="selo ${f >= t ? 'conf-ok' : 'conf'}" title="Passos da configuração conferidos pelo Herrera">Configuração ${f}/${t}</span>`; })() : ''}</div></div>
       <div class="metricas">${i.numeros ? met(n(x.imoveis), `imóveis · ${n(x.publicados)} publicados`) + met(mi(x.vgv_carteira), 'na carteira') + met(n(x.vendidos) + (x.alugados ? ` + ${n(x.alugados)}` : ''), x.alugados ? 'vendidos + alugados' : 'vendidos')
         + met(brl(i.comissao_mes), 'sua parte no mês') + met(n(x.leads_30d), 'clientes em 30 dias') + met(n(x.visitas_30d), 'visitas em 30 dias') + met(n(x.usuarios), 'usuários')
         + met(n(x.creditos_mes) + (i.creditos_fisgar_mes ? ` / ${n(i.creditos_fisgar_mes)}` : ''), 'consultas Fisgar no mês') + met(n(x.social_mes || 0), `posts nas redes no mês · ${n(x.social_contas || 0)} conta(s)`) + met(quando(x.ultima_atividade), 'última atividade') + met((x.tamanho_mb || 0).toLocaleString('pt-BR') + ' MB', 'no banco')
         : `<span class="muted">${esc(i.erro || 'Banco ainda não criado.')}</span>`}</div>
       <div class="acoes">${i.link ? `<a class="btn sm" href="${esc(i.link)}" target="_blank" rel="noopener">Abrir sistema</a>` : ''}
+        ${window.Herrera ? `<button class="btn sm hz-chama" data-a="herrera" title="Continuar a configuração com o Herrera"><span class="hz-mini" aria-hidden="true"></span>${Herrera.progresso(i.onboarding) >= Herrera.NUCLEO.length ? 'Herrera' : 'Continuar com o Herrera'}</button>` : ''}
         <button class="btn sm" data-a="editar">Editar</button>
         ${i.situacao === 'implantacao' || !i.publicada ? '<button class="btn sm" data-a="instalar">Instalação</button>' : ''}
         ${i.situacao === 'suspensa' ? '<button class="btn sm" data-a="reativar">Reativar</button>' : '<button class="btn sm perigo" data-a="suspender">Suspender</button>'}</div></article>`;
   }).join('');
   document.querySelectorAll('.imob [data-a]').forEach((b) => b.onclick = () => {
     const im = DADOS.imobiliarias.find((i) => i.id === +b.closest('.imob').dataset.id);
-    ({ editar: janelaEditar, instalar: janelaInstalacao, suspender: janelaSuspender, reativar: (x) => situacao(x, false, b) })[b.dataset.a](im, b);
+    ({ herrera: (x) => Herrera.abrir(x), editar: janelaEditar, instalar: janelaInstalacao, suspender: janelaSuspender, reativar: (x) => situacao(x, false, b) })[b.dataset.a](im, b);
   });
 }
 
