@@ -12,7 +12,10 @@
     "decoração"
   ],
   "capa": {
-    "alt": "Sala clara com grandes janelas para um jardim, plantas em vasos de cerâmica, piso de madeira e sofá de linho"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/biofilia-como-trazer-a-natureza-para-dentro-de-casa-608b7291.jpg",
+    "alt": "Sala clara com grandes janelas para um jardim, plantas em vasos de cerâmica, piso de madeira e sofá de linho",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Você já reparou como a casa fica mais gostosa com uma janela para o verde? Isso tem nome: biofilia, a nossa atração natural pela natureza. Arquitetos usam a ideia para planejar luz, plantas, materiais e vistas, e dá para aplicar em qualquer cômodo, sem obra. Mostramos os três caminhos do design biofílico e o que olhar num imóvel antes de comprar. Leia o artigo completo no blog (link na bio).",
