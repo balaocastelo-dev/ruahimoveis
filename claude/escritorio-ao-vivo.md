@@ -40,7 +40,33 @@ o duplo clique que chama `window.abrePcDoAgente(slug)` continuam disponíveis. A
 
 O harness é portátil e só escuta em `127.0.0.1`. O controle de horário `window.__clima` existe apenas no harness, não no site.
 
+## Andar no escritório e lugares clicáveis (29/10/2026, tarde) — no ar
+
+- **Andar tipo Roblox**: botão 🚶 no HUD (`public/escritorio-andar.js`, carregado por `import()` só ao entrar).
+  Terceira pessoa com o `visitante.glb`, WASD/setas, Shift corre, arrastar o mouse olha, joystick no celular,
+  colisão com mesas, cadeiras, sofá, balcão, paredes e vidro. Ao lado de um robô: **E · Falar com <nome>**
+  (abre o PC dele); em cima de um lugar: **E · Abrir**. Sai pelo botão ou ESC, e a órbita volta como estava.
+- **Mural, TV da diretoria e placa do salão clicáveis**: caixas invisíveis (`E.cliques`) na frente de cada um;
+  clique simples abre o **painel do lugar** (`.j3p-*`) com a tela real do sistema num `iframe`
+  `/app.html?embutido=1#/rota` — mural → `#/radar`, TV → `#/painel`, placa → `#/leads`; andando, também
+  recepção → `#/visitas`, impressora → `#/imoveis`, café → `#/whats`, reunião → `#/chat`. ✕, ESC ou clique fora
+  fecham; ↗ abre a tela inteira. Modo embutido em `public/app.js` (`EMBUTIDO`): sem menu, sem barra do topo,
+  sem sino e sem o aceite da LGPD. CSP passou a `frame-src 'self'` + `frame-ancestors 'self'`
+  (`X-Frame-Options: SAMEORIGIN`): só a própria origem se embute.
+- **Liga/desliga de cada PC no painel do robô** (`public/estacao-pc.js`): ⏻ Ligar/Desligar, com Reiniciar e
+  "Ler não lidas" só enquanto ligado; o estado vem da batida da estação (8 s). Desligar agora vale: a estação
+  guarda `data/estacao-apagados.json` e abrir a janela, o monitor da mesa, o WhatsApp Web ou a volta automática
+  **não** religam mais — só Ligar, Reiniciar ou uma tarefa nova (ordem de gente).
+- Testes: `test/escritorio-3d.cjs` cobre os três cliques, o ESC e o modo andar (25 verificações, tudo verde);
+  `node test/escritorio.js` segue cobrindo a estação, com liga/desliga chegando pela batida.
+- A estação no PC da RTX foi atualizada para este código e reiniciada (porta 3434, túnel novo a cada reinício).
+
 ## Próxima tarefa, fora desta entrega
 
-Andar com avatar pelo escritório e conversar em texto/voz/vídeo. O plano está no roteiro original; não foi implementado nesta
-etapa. Permanecem pendentes as decisões sobre salas P2P/SFU, permissões entre imobiliárias e ordem chat/locomoção.
+- Chat etapas 2–4: voz gravada e anexos, chamadas de voz/vídeo (WebRTC P2P até 6 pessoas, decisão do Thiago) e
+  presença multiplayer com voz por proximidade dentro do escritório 3D.
+- Lugares clicáveis no modo 2D (`public/escritorio-jogo.js`) — ficou de fora desta entrega.
+- **Estação da Onde morar?**: hoje só `casaprado` e `lumen` (as de exemplo) têm chave de estação, por isso os PCs
+  dos robôs da Onde morar? não abrem. Falta gerar a chave em *Escritório virtual › Configuração geral › PCs
+  virtuais › Gerar chave da estação* (precisa de adm/gestor logado) e acrescentar a imobiliária em
+  `data/estacao.json` do PC.
