@@ -99,6 +99,31 @@ Os limites de valor mudam em "Regras do escritório".
   materiais. O 3D pode ser reaberto após o 2D. O balão inicial do 2D verifica se ainda pertence à cena aberta antes de aparecer.
   GLBs, animações, posições dos humanos, API, HUD e ganchos dos PCs virtuais continuam os mesmos.
 
+### Andar pelo escritório e lugares clicáveis (29/10/2026)
+
+- **Andar (tipo Roblox):** botão 🚶 no HUD (`public/escritorio-andar.js`, carregado por `import()` só quando alguém entra).
+  Câmera em terceira pessoa atrás do visitante (`visitante.glb`), **W A S D** ou setas, **Shift** corre, arrastar o mouse
+  olha em volta, joystick na tela no celular. Colisão por círculos e caixas montadas a partir de `MESAS`, `LUGAR` e `SALA`
+  (mesas, cadeiras, sofá, balcão, paredes e vidro), com empurrão em 3 iterações — não se atravessa nem se sai da sala.
+  Ao lado de um agente aparece a dica **E · Falar com <nome>** (abre o PC dele ou o chat); em cima de um lugar, **E · Abrir**.
+  Sair pelo mesmo botão ou por ESC; a órbita volta como estava.
+- **Lugares clicáveis:** caixas invisíveis (`MAT.hit`, `E.cliques`) na frente do mural, da TV da diretoria e da placa do salão,
+  com `userData = { tipo: 'lugar', lugar }`; `acerta()` as inclui, o cursor vira a mãozinha e a etiqueta HTML `.j3-lugar.clicavel`
+  mostra "Abrir". Clique simples (ou duplo, ou **E** no modo andar) abre o **painel do lugar** (`.j3p-fundo`, fechado por ✕, ESC
+  ou clique fora) com a **tela real do sistema** num `<iframe src="/app.html?embutido=1#/rota">`:
+
+  | Lugar | Tela |
+  | --- | --- |
+  | Mural de oportunidades | `#/radar` |
+  | TV da diretoria | `#/painel` |
+  | Placa do salão de vendas | `#/leads` (CRM) |
+  | Recepção · impressora · café · mesa de reunião (modo andar) | `#/visitas` · `#/imoveis` · `#/whats` · `#/chat` |
+
+  O botão ↗ no cabeçalho do painel abre a mesma tela inteira, fora do 3D.
+- **Modo embutido** (`/app.html?embutido=1#/rota`, `EMBUTIDO` em `public/app.js`): a mesma sessão e as mesmas telas, sem
+  menu lateral, sem barra do topo, sem sino do chat e sem o aceite da LGPD (isso fica na janela de fora). A CSP passou a
+  permitir `frame-src 'self'` e `frame-ancestors 'self'` (`X-Frame-Options: SAMEORIGIN`): só a própria origem se embute.
+
 ### Verificar o cenário antes de publicar
 
 ```powershell

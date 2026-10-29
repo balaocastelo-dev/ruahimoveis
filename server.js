@@ -19,11 +19,11 @@ app.set('trust proxy', process.env.VERCEL ? 1 : 'loopback');
 
 app.use((req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff');
-  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN'); // só a própria tela se embute (painel do lugar no escritório 3D); quem manda é o frame-ancestors da CSP
   res.setHeader('Referrer-Policy', 'same-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   res.setHeader('Content-Security-Policy',
-    "default-src 'self'; img-src 'self' data: blob: https:; frame-src https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' blob: wss://*.trycloudflare.com wss://*.corretordofuturo.app ws://127.0.0.1:* ws://localhost:*; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"); // blob: = texturas dos humanos 3D (GLTFLoader lê as imagens embutidas por blob:)
+    "default-src 'self'; img-src 'self' data: blob: https:; frame-src 'self' https://www.google.com https://maps.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self' blob: wss://*.trycloudflare.com wss://*.corretordofuturo.app ws://127.0.0.1:* ws://localhost:*; frame-ancestors 'self'; base-uri 'none'; form-action 'self'"); // frame-src/frame-ancestors 'self' = painel do lugar no escritório 3D (a própria tela do sistema embutida); blob: = texturas dos humanos 3D (GLTFLoader lê as imagens embutidas por blob:)
   next();
 });
 

@@ -29,3 +29,13 @@ acontece com o "PC de <agente>" ao dar duplo clique num agente (ver `public/esta
 ## Prompt pronto para o Codex
 > Leia docs/tarefa-escritorio-interativo.md e os arquivos citados e implemente tudo. Não mude a aparência do
 > escritório 3D além do destaque de hover. Rode npm test antes de subir. Commits pequenos em main, em português.
+
+## Resultado (29/10/2026 — feito pelo Claude, não refazer)
+
+Entregue em `main`: caixas invisíveis de clique (`E.cliques`) no mural, na TV e na placa, `acerta()` ampliado, cursor e
+etiqueta "Abrir", painel `.j3p-*` com `<iframe src="/app.html?embutido=1#/rota">` (mural → `#/radar`, TV → `#/painel`,
+placa → `#/leads`, mais recepção/impressora/café/reunião pelo modo andar), modo embutido em `public/app.js` (`EMBUTIDO`),
+CSP com `frame-src 'self'`/`frame-ancestors 'self'` e `X-Frame-Options: SAMEORIGIN`. Testes no `test/escritorio-3d.cjs`
+(clique nos três lugares, ESC, modo andar) e documentação em `docs/escritorio.md`.
+
+Falta (se quiser continuar): os mesmos cliques no modo 2D (`public/escritorio-jogo.js`).

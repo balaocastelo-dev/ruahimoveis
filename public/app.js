@@ -154,6 +154,9 @@ const MENU = [
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
   ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/privacidade', 'Privacidade e LGPD', 'lgpd'], ['#/configuracoes', 'Configurações']]],
 ];
+// Modo embutido (/app.html?embutido=1#/rota): só o conteúdo da tela, para abrir dentro do
+// painel do Escritório ao vivo 3D (mural, TV da diretoria, placa do salão). Mesma sessão, mesmas telas.
+const EMBUTIDO = /[?&]embutido=1/.test(location.search);
 function shell() {
   const perfil = { adm: 'Administrativo', gestor: 'Gestor', corretor: 'Corretor' }[ME.perfil];
   $('#root').innerHTML = `<div class="app"><header class="topbar"><button type="button" class="hamb" data-act="menu" aria-label="Abrir o menu" aria-controls="menu-lateral" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -163,6 +166,8 @@ function shell() {
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
+  document.body.classList.toggle('embutido', EMBUTIDO);
+  if (EMBUTIDO) return;                       // sem menu, sem sino do chat e sem o aceite: isso fica na janela de fora
   atualizaBadge();
   if (typeof chatInicia === 'function') chatInicia();
   if (typeof lgpdConfere === 'function') lgpdConfere(); // aceite dos Termos e da Política (public/lgpd.js)

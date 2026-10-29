@@ -206,7 +206,7 @@ ACT['j3-andar'] = async () => {
         textos: { entrar: t('entrar'), sair: t('sair'), ajuda: t('ajuda'), falarCom: t('falarCom'), abrir: t('abrirLugar'),
           mural: t('mural'), tv: t('painel'), crm: t('crm'), recepcao: t('recepcao'), impressora: t('impressora'), cafe: t('cafe'), reuniao: t('reuniao') } });
     }
-    E.andar.alterna();
+    await E.andar.alterna();
   } catch (e) { console.warn('andar:', e); toast('Não deu para entrar no escritório agora.', true); }
 };
 ACT['j3-apres'] = () => { if (!E) return; E.apres = !E.apres; E.idleDesde = E.apres ? -1e9 : performance.now(); $('#j3-hud .j3-apres').classList.toggle('on', E.apres); };
@@ -324,9 +324,10 @@ function montaCena() {
     if (!desceu) return; const [x, y, t0] = desceu; desceu = null;
     if (Math.hypot(ev.clientX - x, ev.clientY - y) > 6 || performance.now() - t0 > 600) return;
     posPonteiro(ev); const hit = acerta();
-    if (hit && hit.tipo === 'monitor') vaiAoAgente(hit.slug);
+    if (hit && hit.tipo === 'lugar') abreLugar(hit.lugar);
+    else if (hit && hit.tipo === 'monitor') vaiAoAgente(hit.slug);
   };
-  E.escuta.dblclick = (ev) => { posPonteiro(ev); const hit = acerta(); if (hit) vaiAoAgente(hit.slug); };
+  E.escuta.dblclick = (ev) => { posPonteiro(ev); const hit = acerta(); if (!hit) return; if (hit.tipo === 'lugar') abreLugar(hit.lugar); else vaiAoAgente(hit.slug); };
   E.escuta.pointermove = (ev) => { if (ev.pointerType === 'touch') return; posPonteiro(ev); E.querHover = true; acordou(); };
   E.escuta.wheel = () => acordou();
   for (const k of Object.keys(E.escuta)) tela.addEventListener(k, E.escuta[k], { passive: true });
@@ -579,6 +580,13 @@ function constroiPredio(cena) {
   const tvCv = document.createElement('canvas'); tvCv.width = 1024; tvCv.height = 576; const tvTx = new THREE.CanvasTexture(tvCv); tvTx.colorSpace = THREE.SRGBColorSpace;
   const tv = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.46), new THREE.MeshStandardMaterial({ map: tvTx, emissive: 0xffffff, emissiveMap: tvTx, emissiveIntensity: 0.9, roughness: 0.2 }));
   tv.position.set(10.3, 2.0, -Z + 0.19); cena.add(tv); E.tv = { cv: tvCv, tx: tvTx };
+  // lugares clicáveis: caixa invisível na frente de cada um (mural → oportunidades, TV → painel da diretoria,
+  // placa do salão → CRM). Clique simples abre a tela real do sistema dentro do escritório.
+  E.cliques = [];
+  for (const [lugar, x, y, l, a] of [['mural', -10.3, 1.9, 2.5, 1.5], ['tv', 10.3, 2.0, 2.9, 1.8], ['placa', 0, 2.05, 3.4, 1.6]]) {
+    const c = new THREE.Mesh(new THREE.BoxGeometry(l, a, 0.5), MAT.hit);
+    c.position.set(x, y, -Z + 0.35); c.userData = { tipo: 'lugar', lugar }; cena.add(c); E.cliques.push(c);
+  }
 }
 function texturaPlaca() {
   const cv = document.createElement('canvas'); cv.width = 1024; cv.height = 416; const x = cv.getContext('2d');
@@ -969,8 +977,14 @@ function zonasTexto() {
   const ovl = $('#j3-ovl'); if (!ovl) return;
   ovl.querySelectorAll('.j3-zona').forEach((z) => z.remove());
   E.zonas = ZONAS.map(([k, x]) => { const el = document.createElement('div'); el.className = 'j3-zona'; el.textContent = t(k); ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, 3.05, -SALA.Z + 0.1) }; });
-  const lugares = [['entrada', 0, 2.55, SALA.Z + 0.1], ['cafe', -4.6, 1.75, SALA.Z - 0.4], ['recepcao', -2.2, 1.55, SALA.Z - 1.6], ['reuniao', 8.7, 1.3, 5.2], ['mural', -10.3, 2.75, -SALA.Z + 0.2], ['impressora', -11.3, 1.5, 2.4]];
-  E.lugares = lugares.map(([k, x, y, z]) => { const el = document.createElement('div'); el.className = 'j3-zona j3-lugar'; el.textContent = t(k); ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, y, z) }; });
+  const lugares = [['entrada', 0, 2.55, SALA.Z + 0.1], ['cafe', -4.6, 1.75, SALA.Z - 0.4], ['recepcao', -2.2, 1.55, SALA.Z - 1.6], ['reuniao', 8.7, 1.3, 5.2],
+    ['mural', -10.3, 2.75, -SALA.Z + 0.2, 'mural'], ['impressora', -11.3, 1.5, 2.4], ['painel', 10.3, 2.95, -SALA.Z + 0.2, 'tv'], ['crm', 0, 1.22, -SALA.Z + 0.2, 'placa']];
+  E.lugares = lugares.map(([k, x, y, z, lugar]) => {
+    const el = document.createElement('div'); el.className = 'j3-zona j3-lugar';
+    if (lugar) { el.classList.add('clicavel'); el.dataset.act = 'j3-lugar'; el.dataset.lugar = lugar; el.title = t('abrirLugar'); el.innerHTML = `${esc(t(k))}<small>${esc(t('abrirLugar'))}</small>`; }
+    else el.textContent = t(k);
+    ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, y, z) };
+  });
 }
 function atualizaAgentes(lista) {
   for (const a of lista) {
@@ -1028,8 +1042,13 @@ window.jg3dEstado = () => E;
 function acerta() {
   E.ray.setFromCamera(E.ponteiro, E.camera);
   const alvos = []; for (const ag of Object.values(E.agentes)) alvos.push(ag.b.g); for (const m of Object.values(E.monitores)) alvos.push(m.mesh, m.hit);
+  for (const c of E.cliques || []) alvos.push(c);
   const hits = E.ray.intersectObjects(alvos, true);
-  for (const h of hits) { let o = h.object; while (o && !(o.userData && o.userData.slug)) o = o.parent; if (o) return { slug: o.userData.slug, tipo: h.object.userData.tipo || o.userData.tipo }; }
+  for (const h of hits) {
+    let o = h.object; while (o && !(o.userData && (o.userData.slug || o.userData.lugar))) o = o.parent;
+    if (o && o.userData.lugar) return { lugar: o.userData.lugar, tipo: 'lugar' };
+    if (o) return { slug: o.userData.slug, tipo: h.object.userData.tipo || o.userData.tipo };
+  }
   return null;
 }
 function vaiAoAgente(slug) {
@@ -1052,6 +1071,51 @@ function cardAgente(slug) {
   c.style.setProperty('--c', ag.cor); c.hidden = false;
 }
 function fechaCard() { const c = $('#j3-card'); if (c) { c.hidden = true; } if (E) E.cardSlug = null; }
+
+// ---------- lugares clicáveis: a tela real do sistema dentro do escritório ----------
+// mural → oportunidades (radar) · TV da diretoria → painel de hoje · placa do salão → CRM (leads)
+const LUGAR_TELA = {
+  mural: { rota: '#/radar', titulo: 'mural', icone: '📌', cam: [-10.3, 1.9] },
+  tv: { rota: '#/painel', titulo: 'painel', icone: '📺', cam: [10.3, 2.0] },
+  placa: { rota: '#/leads', titulo: 'crm', icone: '📈', cam: [0, 2.05] },
+  recepcao: { rota: '#/visitas', titulo: 'recepcao', icone: '🔔', cam: [0.9, 5.3] },
+  impressora: { rota: '#/imoveis', titulo: 'impressora', icone: '🖨️', cam: [-10.2, 2.4] },
+  cafe: { rota: '#/whats', titulo: 'cafe', icone: '☕', cam: [-4.6, 5.3] },
+  reuniao: { rota: '#/chat', titulo: 'reuniao', icone: '💬', cam: [8.7, 5.2] },
+};
+function abreLugar(k) {
+  const l = LUGAR_TELA[k]; if (!l) return;
+  if (E && E.camera && l.cam && !E.andando) {      // voo curto até o lugar, como no clique num agente
+    const [x, z] = l.cam, frente = z > 0 ? 1 : -1;
+    E.voo = { t0: performance.now(), dur: reduz() ? 1 : 900, p0: E.camera.position.clone(), a0: E.controls.target.clone(),
+      p1: new THREE.Vector3(x * 0.55, 3.2, z + frente * 7.5), a1: new THREE.Vector3(x, 1.9, z) };
+    acordou();
+  }
+  painelLugar(l);
+}
+window.jg3dAbreLugar = abreLugar;   // o modo "andar" (escritorio-andar.js) usa o mesmo painel
+function painelLugar(l) {
+  fechaPainelLugar();
+  const el = document.createElement('div'); el.id = 'j3-painel'; el.className = 'j3p-fundo';
+  el.innerHTML = `<div class="j3p-quadro">
+    <header class="j3p-topo"><span class="j3p-i" aria-hidden="true">${l.icone}</span><b>${esc(t(l.titulo))}</b><span class="sp"></span>
+      <button class="j3p-bt" data-act="j3-lugar-abre" data-r="${esc(l.rota)}" title="${esc(t('abrir'))}">↗</button>
+      <button class="j3p-bt" data-act="j3-lugar-fecha" title="${esc(t('fechar'))}">✕</button></header>
+    <div class="j3p-corpo"><iframe src="/app.html?embutido=1${esc(l.rota)}" title="${esc(t(l.titulo))}" loading="eager"></iframe></div></div>`;
+  document.body.appendChild(el);
+  el.addEventListener('pointerdown', (ev) => { if (ev.target === el) fechaPainelLugar(); });
+  PAINEL_ESC = (ev) => { if (ev.key === 'Escape') { ev.stopPropagation(); fechaPainelLugar(); } };
+  document.addEventListener('keydown', PAINEL_ESC, true);
+}
+let PAINEL_ESC = null;
+function fechaPainelLugar() {
+  const el = $('#j3-painel'); if (el) el.remove();
+  if (PAINEL_ESC) { document.removeEventListener('keydown', PAINEL_ESC, true); PAINEL_ESC = null; }
+}
+window.jg3dFechaLugar = fechaPainelLugar;
+ACT['j3-lugar'] = (el) => abreLugar(el.dataset.lugar);
+ACT['j3-lugar-fecha'] = () => fechaPainelLugar();
+ACT['j3-lugar-abre'] = (el) => { const r = el.dataset.r; fechaPainelLugar(); location.hash = r.replace(/^#/, ''); };
 
 // ====================================================================== quadro a quadro
 const _v = new THREE.Vector3(); const _c = new THREE.Vector3();

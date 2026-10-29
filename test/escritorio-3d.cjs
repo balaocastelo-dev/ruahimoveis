@@ -101,6 +101,44 @@ const clima = async (page, hora, nome) => {
   await page.waitForFunction(() => window.__pcAberto === 'apartamentos');
   ok(true, 'duplo clique no agente abre o PC');
   await pausa(page);
+
+  // Lugares clicáveis: mural → oportunidades, TV da diretoria → painel, placa do salão → CRM.
+  for (const [lugar, rota] of [['mural', '#/radar'], ['tv', '#/painel'], ['placa', '#/leads']]) {
+    await page.evaluate((k) => {
+      const e = window.jg3dEstado(); e.idleDesde = 1e12; e.voo = null;
+      const o = e.cliques.find((c) => c.userData.lugar === k);
+      e.camera.position.set(o.position.x * 0.5, 3.2, o.position.z + 9); e.controls.target.copy(o.position); e.controls.update();
+    }, lugar);
+    await page.waitForTimeout(700);                       // o amortecimento do OrbitControls precisa assentar
+    const p = await page.evaluate((k) => {
+      const e = window.jg3dEstado(), o = e.cliques.find((c) => c.userData.lugar === k);
+      const v = o.position.clone().project(e.camera), r = e.tela.getBoundingClientRect();
+      return { x: r.left + (v.x + 1) * r.width / 2, y: r.top + (1 - v.y) * r.height / 2 };
+    }, lugar);
+    await page.mouse.move(p.x, p.y); await page.waitForTimeout(150);
+    const cursor = await page.evaluate(() => window.jg3dEstado().tela.style.cursor);
+    await page.mouse.down(); await page.mouse.up();
+    await page.waitForFunction(() => !!document.querySelector('#j3-painel iframe'), null, { timeout: 5000 });
+    const src = await page.evaluate(() => document.querySelector('#j3-painel iframe').getAttribute('src'));
+    ok(cursor === 'pointer' && src === `/app.html?embutido=1${rota}`, `clique no ${lugar} abre ${rota} embutido`);
+    await page.keyboard.press('Escape'); await page.waitForTimeout(150);
+    ok(await page.evaluate(() => !document.querySelector('#j3-painel')), `ESC fecha o painel do ${lugar}`);
+  }
+
+  // Andar pelo escritório (tipo Roblox): entra, caminha, abre um lugar e sai.
+  await page.click('.j3-andar-bt');
+  await page.waitForFunction(() => window.jg3dEstado().andando, null, { timeout: 30000 });
+  ok(await page.locator('.j3a-ajuda').isVisible(), 'modo andar entra com o visitante e a ajuda na tela');
+  const antes = await page.evaluate(() => window.jg3dEstado().andar && [...document.querySelectorAll('.j3a-ajuda')].length);
+  await page.keyboard.down('w'); await page.waitForTimeout(800); await page.keyboard.up('w');
+  ok(antes === 1 && await page.evaluate(() => Number.isFinite(window.jg3dEstado().camera.position.z)), 'W caminha sem sair da sala');
+  await page.evaluate(() => window.jg3dAbreLugar('mural'));
+  await page.waitForFunction(() => !!document.querySelector('#j3-painel iframe'), null, { timeout: 5000 });
+  await page.keyboard.press('Escape'); await page.waitForTimeout(150);
+  ok(await page.evaluate(() => !document.querySelector('#j3-painel') && window.jg3dEstado().andando), 'painel abre e fecha sem sair do modo andar');
+  await page.click('.j3-andar-bt'); await page.waitForTimeout(400);
+  ok(await page.evaluate(() => !window.jg3dEstado().andando && window.jg3dEstado().controls.enabled), 'sai do modo andar e a órbita volta');
+
   await page.mouse.move(650, 470); await page.mouse.down(); await page.mouse.move(730, 490, { steps: 5 }); await page.mouse.up();
   ok(await page.evaluate(() => Number.isFinite(window.jg3dEstado().camera.position.x)), 'órbita da câmera responde');
 

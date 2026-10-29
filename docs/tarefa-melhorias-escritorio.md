@@ -62,3 +62,6 @@ Além de mural → radar, TV → painel, placa → CRM (tarefa anterior), ligar 
 - Não mexer nos humanos 3D nem na API do escritório além do que está descrito.
 - `npm test` antes de subir; render headless (`docs/wip/servidor-teste.cjs` + `shot3d.cjs`) nos três horários.
 - Documentar cada item em `docs/escritorio.md` e escrever o resumo em "## Resultado" neste arquivo.
+
+> Nota (29/10/2026): o painel embutido citado acima já existe — `painelLugar()`/`.j3p-*` em `public/escritorio-3d.js`
+> com `<iframe src="/app.html?embutido=1#/rota">`. Reaproveitar, não criar outro.

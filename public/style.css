@@ -1500,3 +1500,25 @@ a{text-underline-offset:.18em}
 .j3-com-andar .j3-dica:hover,.j3-com-andar .j3-ticker:hover{opacity:1}
 .jg-bt.j3-andar-bt.on{background:#c9a96f;color:#1b1a17;border-color:#c9a96f}
 @media (max-width:720px){.j3a-ajuda{font-size:11px;bottom:10px;padding:6px 12px}.j3a-prompt{bottom:54px}}
+
+/* ---------- modo embutido: a tela do sistema dentro do painel do Escritório 3D ---------- */
+body.embutido{background:var(--bg)}
+body.embutido .topbar,body.embutido .side,body.embutido .side-veu,body.embutido .chat-sino{display:none!important}
+body.embutido .app{grid-template-columns:1fr}
+body.embutido .main{padding:14px 16px 28px}
+body.embutido h1{font-size:26px;margin-top:0}
+
+/* ---------- painel de um lugar do escritório (mural, TV da diretoria, placa do salão) ---------- */
+.j3p-fundo{position:fixed;inset:0;z-index:70;background:rgba(10,12,16,.72);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:min(3vh,26px)}
+.j3p-quadro{--c:#c9a35a;width:min(1180px,96vw);height:min(860px,94vh);display:flex;flex-direction:column;background:var(--card,#fff);border:1px solid rgba(255,255,255,.14);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.j3p-topo{display:flex;align-items:center;gap:10px;padding:9px 12px;background:#15181f;color:#eee;border-bottom:3px solid var(--c)}
+.j3p-topo b{font-size:15px}
+.j3p-topo .j3p-i{font-size:19px;line-height:1}
+.j3p-topo span.sp{flex:1}
+.j3p-bt{background:rgba(255,255,255,.1);color:#fff;border:0;border-radius:8px;width:30px;height:30px;font-size:15px;cursor:pointer}
+.j3p-bt:hover{background:rgba(255,255,255,.22)}
+.j3p-corpo{flex:1;min-height:0;background:var(--bg,#f6f4f0)}
+.j3p-corpo iframe{width:100%;height:100%;border:0;display:block}
+.j3-lugar.clicavel{cursor:pointer;pointer-events:auto;border:1px solid rgba(201,163,90,.75);transition:background .15s,color .15s}
+.j3-lugar.clicavel:hover{background:rgba(201,163,90,.92);color:#15181f}
+.j3-lugar small{display:block;font-size:9px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
