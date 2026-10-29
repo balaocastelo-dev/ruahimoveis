@@ -27,9 +27,10 @@ const fim = (k) => '…' + String(k || '').slice(-4);
     body: JSON.stringify({
       systemInstruction: { parts: [{ text: 'Você é um teste de conexão. Responda só com JSON.' }] },
       contents: [{ role: 'user', parts: [{ text: 'Devolva {"ok":true,"frase":"uma frase curta dizendo que o cérebro central está no ar"}' }] }],
-      generationConfig: { temperature: 0.2, maxOutputTokens: 200, responseMimeType: 'application/json' },
+      // sem "pensar" e com folga de saída: os modelos novos gastam o limite pensando e devolvem vazio
+      generationConfig: { temperature: 0.2, maxOutputTokens: 800, responseMimeType: 'application/json', thinkingConfig: { thinkingBudget: 0 } },
     }),
-    signal: AbortSignal.timeout(30000),
+    signal: AbortSignal.timeout(60000),
   });
   const j = await r.json().catch(() => ({}));
   const texto = j.candidates?.[0]?.content?.parts?.[0]?.text || '';
