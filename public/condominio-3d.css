@@ -89,3 +89,4 @@ h1{font-family:var(--f-display);font-weight:600;font-size:30px;line-height:1.05;
 }
 /* telas grandes */
 @media (min-width:2000px){.painel,.bussola{zoom:1.25}}
+.marca.depois{margin:2px 0 4px}.marca.depois b{font-size:15px}

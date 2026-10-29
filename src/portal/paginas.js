@@ -128,7 +128,7 @@ ${blocoImagem(base, imagem, imagemLargura, imagemAltura, imagemTipo)}
 <link rel="stylesheet" href="/portal-assets/portal.css?v=${VERSAO_ASSETS}">${require('../tema').head()}
 ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('\n')}
 </head>
-<body class="${classe}">
+<body class="${classe}${DEMONSTRACAO ? ' p-demo' : ''}">
 <a class="pular" href="#conteudo">Ir para o conteúdo</a>
 <header class="p-topo">
   <a class="p-marca" href="/imoveis">${require('../tema').logo(CLIENTE, 'p-marca-logo') || `<span class="p-marca-n">${esc(CLIENTE)}</span>`}<span class="p-marca-l">Imóveis à venda em Campinas e região</span></a>
@@ -422,7 +422,7 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 <aside class="p-lado" aria-label="Valor e contato">
   <div class="p-lado-caixa">
     <p class="p-lado-rot">Valor de venda</p>
-    <p class="p-lado-preco">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
+    <p class="p-lado-preco${reservado(im) ? ' p-lado-reservado' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
     ${im.valor_condominio || im.iptu ? `<p class="p-lado-taxas">${[im.valor_condominio ? `Condomínio ${esc(reais(im.valor_condominio))}/mês` : '', im.iptu ? `IPTU ${esc(reais(im.iptu))}/ano` : ''].filter(Boolean).join(' · ')}</p>` : ''}
     <a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>
     <a class="p-botao sec" href="#contato" data-contato="visita">Agendar visita</a>

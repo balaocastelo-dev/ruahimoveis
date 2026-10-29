@@ -99,7 +99,7 @@ function aoVivo() {
         <h3>${esc(c.nome)}</h3>
         <p><b class="av-estilo">${esc(c.estilo)}.</b> ${esc(c.frase)}</p>
         <div class="av-vers" role="group" aria-label="Versão do portal">${vers}</div>
-        <dl class="av-ficha"><div><dt>Endereço</dt><dd>${c.slug}.corretordofuturo.app</dd></div><div><dt>Letra</dt><dd>${esc(c.fonte)}</dd></div><div><dt>Capa</dt><dd>${esc(c.lugar)}, em 4K</dd></div></dl>
+        <dl class="av-ficha"><div><dt>Endereço</dt><dd>${c.slug}<wbr>.corretordofuturo.app</dd></div><div><dt>Letra</dt><dd>${esc(c.fonte)}</dd></div><div><dt>Capa</dt><dd>${esc(c.lugar)}, em 4K</dd></div></dl>
         <div class="av-acoes"><a class="btn pri av-abrir" href="${linkCliente(c)}" target="_blank" rel="noopener">Abrir o portal ao vivo ${ICONE.seta}</a><a class="btn" href="${linkCliente(c, '/blog')}" target="_blank" rel="noopener">Blog</a><a class="btn" href="${linkCliente(c, '/bairros')}" target="_blank" rel="noopener">Bairros</a></div>
       </div>
     </div>`;
@@ -119,7 +119,7 @@ function aoVivo() {
     <form class="av-nome" autocomplete="off">
       <label for="av-input" class="vis-oculto">Nome da sua imobiliária</label>
       <input id="av-input" name="nome" maxlength="40" placeholder="Nome da sua imobiliária" enterkeyhint="go">
-      <p class="av-dominio" aria-live="polite"><span class="av-cad">${ICONE.cadeado}</span><b id="av-slug">suaimobiliaria</b>.corretordofuturo.app</p>
+      <p class="av-dominio" aria-live="polite"><span class="av-cad">${ICONE.cadeado}</span><b id="av-slug">suaimobiliaria</b><wbr>.corretordofuturo.app</p>
       <button class="btn ouro" type="submit">Quero esse endereço</button>
     </form>
   </div>

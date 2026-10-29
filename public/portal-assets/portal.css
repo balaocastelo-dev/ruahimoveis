@@ -650,3 +650,6 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .p-legal .legal-indice a{display:inline-block;padding:4px 0}
 .p-cartao-tipo{color:color-mix(in srgb,var(--salvia) 58%,var(--grafite));margin:2px 0 6px}
 .r-indice span{color:var(--ouro-escuro)}
+.p-lado-reservado{font-size:21px;line-height:1.25}.p-lado-reservado a{color:var(--ouro-escuro);text-decoration-thickness:1px}
+/* demonstração: o selo "Imagem ilustrativa" fica no canto de baixo à esquerda da foto; o recorte não pode cortá-lo */
+.p-demo img:not(.p-hero-fundo img):not(.s-hero-foto):not(.s-hero-desfoque){object-position:0% 100%}
