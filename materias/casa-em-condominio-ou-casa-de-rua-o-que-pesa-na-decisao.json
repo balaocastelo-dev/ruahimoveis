@@ -11,7 +11,10 @@
     "casa"
   ],
   "capa": {
-    "alt": "Rua arborizada e tranquila de um bairro residencial com casas contemporâneas, muros baixos e jardins na frente"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/casa-em-condominio-ou-casa-de-rua-o-que-pesa-na-decisao-e02eed6e.jpg",
+    "alt": "Rua arborizada e tranquila de um bairro residencial com casas contemporâneas, muros baixos e jardins na frente",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Casa em condomínio ou casa de rua? A dúvida vai além da portaria: envolve custo mensal, regras para construir, privacidade, vizinhança e a sua rotina. E nem todo bairro com cancela é um condomínio de verdade. Explicamos as diferenças entre os formatos e uma lista do que observar na visita para decidir com calma. Leia o artigo completo no blog (link na bio).",
