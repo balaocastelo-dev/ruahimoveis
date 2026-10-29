@@ -24,8 +24,40 @@ const jgVivo = () => JG_ESTADO && document.body.contains(JG_ESTADO.raiz);
 const jgReduz = () => window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 const jgEspera = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// Em qual modo abrir: 3D (padrão) ou 2D. ?modo=2d na rota, ou a escolha guardada; sem WebGL cai no 2D sozinho.
+function jgModo() {
+  const qs = new URLSearchParams((location.hash.split('?')[1] || ''));
+  if (qs.get('modo') === '2d' || qs.get('modo') === '3d') return qs.get('modo');
+  try { const m = localStorage.getItem('jg-modo'); if (m === '2d' || m === '3d') return m; } catch {}
+  return '3d';
+}
+function jgTemWebGL() {
+  try { const c = document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl2') || c.getContext('webgl'))); } catch { return false; }
+}
+let JG_3D = null; // módulo escritorio-3d.js, carregado só quando abre o 3D
 async function telaEscritorioJogo() {
   if (JG_ESTADO) jgPara();
+  if (JG_3D && JG_3D.jg3dPara) JG_3D.jg3dPara();
+  if (jgModo() === '3d' && jgTemWebGL()) {
+    try {
+      JG_3D = JG_3D || await import('/escritorio-3d.js');
+      await JG_3D.telaEscritorio3D();
+      return;
+    } catch (e) {
+      console.warn('Escritório 3D indisponível, abrindo o 2D:', e);
+      if (!/Sessão|Erro 4/.test(e.message || '')) toast('Seu navegador não abriu o 3D; mostrando a versão 2D.');
+    }
+  }
+  await telaEscritorioJogo2D();
+}
+ACT['jg-modo'] = (el) => {
+  try { localStorage.setItem('jg-modo', el.dataset.modo); } catch {}
+  const [path] = location.hash.split('?');
+  if (location.hash !== path) { location.hash = path; return; } // tira ?modo= da rota; o hashchange reabre a tela
+  if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  rota();
+};
+async function telaEscritorioJogo2D() {
   const d = await api('GET', '/api/escritorio/ao-vivo?full=1');
   if (JG_ESTADO) jgPara();
   const nomeImob = MARCA.empresa || MARCA.cliente || 'Imobiliária';
@@ -63,6 +95,7 @@ async function telaEscritorioJogo() {
         <div class="jg-num"><b id="jg-n-conv">0</b><span>conversas</span></div>
         <div class="jg-num"><b id="jg-n-env">0</b><span>enviadas</span></div>
         <div class="jg-num q"><b id="jg-n-apr">0</b><span>para aprovar</span></div>
+        <span class="j3-seg"><button data-act="jg-modo" data-modo="3d" title="Ver em 3D">3D</button><button class="on" title="Versão 2D">2D</button></span>
         <button class="jg-bt" data-act="jg-cheia" title="Tela cheia (F)">⛶</button>
       </div>
       <div class="jg-ticker" id="jg-ticker"><span class="jg-tk-vazio">Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.</span></div>
