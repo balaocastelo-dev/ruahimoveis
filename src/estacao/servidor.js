@@ -166,7 +166,7 @@ est.post('/batida', (req, res) => {
   for (const [slug, s] of Object.entries(ag)) {
     if (!B.POR_SLUG[slug] || !s || !s.wa) continue;
     const w = s.wa; const antes = json(getConfig('estacao_wa:' + slug), {});
-    setConfig('estacao_wa:' + slug, JSON.stringify({ em: agora(), estado: String(w.estado || 'parada').slice(0, 20), numero: w.numero ? B.normTel(w.numero) : antes.numero || null, qr: w.qr ? String(w.qr).slice(0, 4000) : null, erro: w.erro ? String(w.erro).slice(0, 200) : null }));
+    setConfig('estacao_wa:' + slug, JSON.stringify({ em: agora(), estado: String(w.estado || 'parada').slice(0, 20), numero: w.numero ? B.normTel(w.numero) : antes.numero || null, qr: w.qr && /^data:image\/(png|jpeg);base64,/.test(w.qr) ? String(w.qr).slice(0, 30000) : null, erro: w.erro ? String(w.erro).slice(0, 200) : null }));
   }
   // tarefa que ficou "fazendo agora" sem notícia há 10 min: a estação caiu no meio
   for (const t of all(`SELECT id,agente FROM agente_tarefas WHERE status='rodando' AND coalesce(atualizado_em,criado_em) < datetime('now','localtime','-10 minutes')`)) {
