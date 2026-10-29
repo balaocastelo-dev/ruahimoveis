@@ -10,12 +10,26 @@ const { one, all, run, audit, getConfig, setConfig } = require('../db');
 const { falha, txt } = require('../util');
 const B = require('../agentes/base');
 const IA = require('../agentes/ia');
+const C = require('../plataforma/central');
 
 const json = (s, d) => { try { return s ? JSON.parse(s) : d; } catch { return d; } };
 const agora = () => new Date().toISOString();
 // A chave da estação: gerada na tela (fica cifrada no banco) ou posta nas variáveis do projeto (ESTACAO_ID + ESTACAO_CHAVE).
-const estacao = () => { const e = json(getConfig('estacao'), {}); if (!e.chave && process.env.ESTACAO_CHAVE) return { id: process.env.ESTACAO_ID || 'imob', env: true }; return e; };
-const chaveEstacao = () => { const e = json(getConfig('estacao'), {}); return e.chave ? IA.decifra(e.chave) : process.env.ESTACAO_CHAVE || null; };
+// A chave da estação, em ordem: a própria da imobiliária (gerada na tela, cifrada no banco) → a CENTRAL da
+// plataforma (plataforma.config 'estacao_chave': o Thiago mantém uma só e toda imobiliária usa de graça, como a
+// chave de IA) → a variável do projeto (ESTACAO_ID + ESTACAO_CHAVE). Com a central, o id é o próprio schema.
+const estacao = () => {
+  const e = json(getConfig('estacao'), {});
+  if (e.chave) return e;
+  if (C.estacaoChave()) return { id: C.euSync(), central: true };
+  if (process.env.ESTACAO_CHAVE) return { id: process.env.ESTACAO_ID || 'imob', env: true };
+  return e;
+};
+const chaveEstacao = () => {
+  const e = json(getConfig('estacao'), {});
+  if (e.chave) return IA.decifra(e.chave);
+  return C.estacaoChave() || process.env.ESTACAO_CHAVE || null;
+};
 const status = () => json(getConfig('estacao_status'), {});
 const online = (s = status()) => !!(s.em && Date.now() - new Date(s.em).getTime() < 60e3);
 
@@ -70,14 +84,16 @@ const resumoTarefa = (t) => t && ({ id: t.id, agente: t.agente, pedido: t.pedido
 const api = express.Router();
 const gestor = A.exigePerfil('adm', 'gestor');
 
-api.get('/estacao', (req, res) => {
+api.get('/estacao', async (req, res) => {
+  await C.carregar();
   const s = status(); const e = estacao();
   res.json({ configurada: !!chaveEstacao(), online: online(s), em: s.em || null, versao: s.versao || null, url: online(s) ? s.url || null : null,
     maquina: s.maquina || null, agentes: s.agentes || {}, ia: A.veTudo(req.usuario) ? iaAjustes() : undefined, provedores: PROVEDORES,
     pode_editar: A.veTudo(req.usuario), id: A.veTudo(req.usuario) ? e.id || null : undefined,
     tarefas: all(`SELECT * FROM agente_tarefas ORDER BY id DESC LIMIT 30`).map(resumoTarefa) });
 });
-api.post('/estacao/passe', (req, res) => {
+api.post('/estacao/passe', async (req, res) => {
+  await C.carregar();
   const ag = String((req.body || {}).agente || '');
   if (!B.POR_SLUG[ag]) falha(404, 'Agente não encontrado.');
   const s = status();
@@ -146,7 +162,8 @@ api.post('/estacao/comando', gestor, (req, res) => {
 // ==================== rotas da estação (/estacao-api, com a chave da estação) ====================
 const est = express.Router();
 est.use(express.json({ limit: '2mb' }));
-est.use((req, res, next) => {
+est.use(async (req, res, next) => {
+  await C.carregar();
   const k = chaveEstacao(); const v = String(req.get('x-estacao') || '');
   if (!k || v.length !== k.length || !crypto.timingSafeEqual(Buffer.from(v), Buffer.from(k))) return res.status(401).json({ erro: 'Chave da estação inválida.' });
   next();
