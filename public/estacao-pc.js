@@ -64,7 +64,7 @@ window.abrePcDoAgente = async function abrePcDoAgente(slug) {
   };
   if (!est || !est.configurada) return pcAviso(`<b>O PC virtual ainda não está ligado nesta imobiliária.</b><br>${est && est.pode_editar ? 'Abra <a href="#/whats/config">Configuração geral › PCs virtuais</a> para ligar a estação.' : 'Peça ao administrador para ligar a estação dos PCs virtuais.'}`);
   if (!est.online) return pcAviso('<b>A estação dos PCs virtuais está desligada agora.</b><br>Ela volta sozinha quando o computador da estação ligar. As tarefas que você mandar ficam na fila.');
-  if (est.agentes && est.agentes[slug] && est.agentes[slug].ligado === false) return pcDesligado();
+  if (!(est.agentes && est.agentes[slug] && est.agentes[slug].ligado)) return pcDesligado();
   pcConecta();
 };
 
@@ -81,6 +81,8 @@ function pcAcoes(d) {
   const ligado = !!(ag && ag.ligado);
   const esperando = s.espera && Date.now() < s.espera && ligado !== s.esperaLigado;
   if (s.espera && !esperando) { s.espera = 0; if (ligado) pcReconecta(); else { pcFechaWs(); pcDesligado(); } }
+  else if (ligado && !esperando) pcReconecta();        // ligou por outro caminho: a tela se conecta sozinha
+  else if (!ligado && !esperando && s.ws) { pcFechaWs(); pcDesligado(); }
   const html = !d.online
     ? '<span class="small muted">A estação está fora do ar: o liga/desliga volta quando ela ligar.</span>'
     : esperando
