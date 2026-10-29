@@ -11,7 +11,11 @@ const EV_ZONAS = [
 ];
 const EV_EVENTO = { visita: '📅', chamou_corretor: '🔔', transferiu: '↪', respondeu: '💬', foto: '📷', captacao: '🏠', afazer: '📌', feito: '✅', relatorio: '📊', manha: '☀️', agenda: '🗓', alerta: '⚡', aviso: '📣', atribuido: '🧭', aprovado: '👍', alma: '✍️', erro: '⚠️', lembrete: '⏰' };
 const evPill = (e) => { const [c, t] = EV_LINHA[e] || ['info', e || '—']; return `<span class="pill ${c}">${esc(t)}</span>`; };
-const evAvatar = (a, g = '') => `<span class="ev-av ${g}" style="--c:${esc(a.cor)}" aria-hidden="true">${esc(a.sigla)}</span>`;
+// Avatar ilustrado de cada agente (public/plataforma/agentes/<slug>.svg); sem desenho, ficam as letras.
+const EV_AVATARES = ['captador', 'apartamentos', 'comerciais', 'terrenos', 'casas', 'alto-padrao', 'offmarket', 'gerente', 'gerente-corretores'];
+const evAvatar = (a, g = '') => EV_AVATARES.includes(a.slug)
+  ? `<span class="ev-av com-foto ${g}" style="--c:${esc(a.cor)}" aria-hidden="true"><img src="/plataforma/agentes/${a.slug}.svg" alt="" loading="lazy" decoding="async"></span>`
+  : `<span class="ev-av ${g}" style="--c:${esc(a.cor)}" aria-hidden="true">${esc(a.sigla)}</span>`;
 const evHora = (s) => (s ? String(s).slice(11, 16) : '');
 const evNum = (n) => (n || 0).toLocaleString('pt-BR');
 let EV_CACHE = null;

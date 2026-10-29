@@ -193,15 +193,15 @@ const NUMEROS = [
 
 // O escritório virtual: os nove agentes (nomes e limites editáveis em cada imobiliária).
 const AGENTES = [
-  ['TH', 'TH-IA-GO', 'Captação', 'Acha o dono do imóvel anunciado, conversa, pede as fotos originais e a autorização.', '#5fd4bf'],
-  ['An', 'Ana', 'Apartamentos', 'Responde quem procura apartamento, entende o perfil e marca a visita.', '#7fb4ff'],
-  ['Cl', 'Clara', 'Casas', 'Atende casas e casas em condomínio até R$ 2 milhões, com fotos e link do imóvel.', '#ffb38a'],
-  ['He', 'Helena', 'Alto padrão', 'Cuida de casas acima de R$ 2 milhões e apartamentos acima de R$ 3 milhões, com o tom certo.', '#d8b26a'],
-  ['Vi', 'Vicente', 'Off-market', 'Oferece imóveis fora do mercado só por link privado, sempre com a sua aprovação.', '#c9a0ff'],
-  ['Br', 'Bruno', 'Galpões e salas', 'Atende empresas: salas, lojas e barracões, com metragem e vagas na ponta da língua.', '#9be37a'],
-  ['Te', 'Teo', 'Terrenos', 'Responde sobre lotes e terrenos, zoneamento e condomínios fechados.', '#e3d47a'],
-  ['Au', 'Augusto', 'Gerente do dono', 'Manda o resumo das 8h e o relatório das 19h, e avisa o dono do que importa.', '#ff8a8a'],
-  ['Ma', 'Marta', 'Gerente dos corretores', 'Passa a agenda do dia, lembra a visita 60 minutos antes e cobra o que venceu.', '#8ae0ff'],
+  ['captador', 'TH-IA-GO', 'Captação', 'Acha o dono do imóvel anunciado, conversa, pede as fotos originais e a autorização.', '#5fd4bf'],
+  ['apartamentos', 'Ana', 'Apartamentos', 'Responde quem procura apartamento, entende o perfil e marca a visita.', '#7fb4ff'],
+  ['casas', 'Clara', 'Casas', 'Atende casas e casas em condomínio até R$ 2 milhões, com fotos e link do imóvel.', '#ffb38a'],
+  ['alto-padrao', 'Helena', 'Alto padrão', 'Cuida de casas acima de R$ 2 milhões e apartamentos acima de R$ 3 milhões, com o tom certo.', '#d8b26a'],
+  ['offmarket', 'Vicente', 'Off-market', 'Oferece imóveis fora do mercado só por link privado, sempre com a sua aprovação.', '#c9a0ff'],
+  ['comerciais', 'Bruno', 'Galpões e salas', 'Atende empresas: salas, lojas e barracões, com metragem e vagas na ponta da língua.', '#9be37a'],
+  ['terrenos', 'Teo', 'Terrenos', 'Responde sobre lotes e terrenos, zoneamento e condomínios fechados.', '#e3d47a'],
+  ['gerente', 'Augusto', 'Gerente do dono', 'Manda o resumo das 8h e o relatório das 19h, e avisa o dono do que importa.', '#ff8a8a'],
+  ['gerente-corretores', 'Marta', 'Gerente dos corretores', 'Passa a agenda do dia, lembra a visita 60 minutos antes e cobra o que venceu.', '#8ae0ff'],
 ];
 
 // Capturas de operação (aba por tela), da imobiliária de demonstração.
@@ -314,14 +314,14 @@ ${aoVivo()}
   <h2 id="t-ia">Nove agentes que não tiram férias, nem folga no domingo.</h2>
   <p class="lead">Cada agente cuida de um setor do escritório e conversa pelo WhatsApp. Eles respondem na hora, entendem o que o cliente procura, mandam o imóvel certo, marcam a visita e chamam o corretor quando é a vez dele. Você decide quem responde sozinho e quem sugere a resposta para você aprovar.</p>
   <ul class="agentes revelar">
-    ${AGENTES.map(([ini, n, setor, txt, cor]) => `<li class="agente"><span class="avatar" style="background:${cor}" aria-hidden="true">${esc(ini)}</span><div><h3>${esc(n)}</h3><span class="setor">${esc(setor)}</span><p>${esc(txt)}</p></div></li>`).join('\n    ')}
+    ${AGENTES.map(([slug, n, setor, txt, cor]) => `<li class="agente"><span class="avatar com-foto" style="--c:${cor}" aria-hidden="true"><img src="/plataforma/agentes/${slug}.svg" alt="" width="68" height="68" loading="lazy" decoding="async"></span><div><h3>${esc(n)}</h3><span class="setor">${esc(setor)}</span><p>${esc(txt)}</p></div></li>`).join('\n    ')}
   </ul>
 
   <div class="duas bloco-ia">
     <figure class="revelar">${janela('escritorio', 'Escritório virtual com os agentes nas salas de captação, vendas e diretoria, o movimento do dia e as respostas para aprovar', { url: 'app.corretordofuturo.app/#/whats' })}
       <figcaption>O escritório virtual: cada agente na sua sala, o que aconteceu hoje e o que espera a sua aprovação.</figcaption></figure>
     <div class="chat revelar" aria-label="Exemplo de conversa com um agente">
-      <div class="chat-topo"><span class="avatar" style="background:#7fb4ff" aria-hidden="true">An</span><div><b>Ana · Apartamentos</b>WhatsApp da imobiliária</div></div>
+      <div class="chat-topo"><span class="avatar com-foto" style="--c:#7fb4ff" aria-hidden="true"><img src="/plataforma/agentes/apartamentos.svg" alt="" width="38" height="38"></span><div><b>Ana · Apartamentos</b>WhatsApp da imobiliária</div></div>
       <p class="msg ent">Oi! Vi o apartamento de 3 quartos no Cambuí no site. Aceita financiamento?</p>
       <p class="msg sug">Oi, Larissa! Aceita sim. São 118 m², 3 quartos e 2 vagas. Quer que eu simule as parcelas ou prefere visitar no sábado?<small>Resposta sugerida pela Ana · esperando aprovação</small></p>
       <div class="chat-acoes"><span>Editar</span><span class="ok">Aprovar e enviar</span></div>
