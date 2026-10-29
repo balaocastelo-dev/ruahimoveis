@@ -2,7 +2,9 @@
 // por QR) e manda o que estiver na fila. Usa a biblioteca aberta WA-JS (WPPConnect) dentro da própria página do WhatsApp.
 // Atenção: automatizar o WhatsApp Web vai contra as regras do WhatsApp; o número pode ser bloqueado. Quem liga assume isso.
 const QR = require('qrcode');
+const fs = require('fs');
 const WAJS = require.resolve('@wppconnect/wa-js');
+let CODIGO_WAJS = null;
 
 const espera = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (...a) => console.log(new Date().toLocaleTimeString('pt-BR'), '[whatsapp]', ...a);
@@ -38,7 +40,8 @@ class WhatsAppWeb {
   }
   async injeta() {
     const p = this.pagina; if (!p || p.isClosed()) return;
-    if (!(await p.evaluate(() => !!window.WPP).catch(() => false))) await p.addScriptTag({ path: WAJS });
+    // o WhatsApp Web não deixa <script> de fora (CSP): o código entra direto pela ferramenta do navegador
+    if (!(await p.evaluate(() => !!window.WPP).catch(() => false))) await p.evaluate(CODIGO_WAJS || (CODIGO_WAJS = fs.readFileSync(WAJS, 'utf8')));
     await p.waitForFunction(() => window.WPP && window.WPP.isReady, null, { timeout: 90000 });
     await p.evaluate(() => {
       if (window.__hhLigado) return; window.__hhLigado = true;
