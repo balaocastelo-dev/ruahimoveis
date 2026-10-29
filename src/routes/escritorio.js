@@ -213,6 +213,14 @@ r.get('/escritorio/ao-vivo', (req, res) => {
   }
   const out = { ev: ev.length ? ev[ev.length - 1].id : ev0, au, eventos: ev, sistema, agora: new Date().toISOString() };
   if (req.query.full) {
+    // Presença com a infraestrutura existente: no máximo um registro por minuto por usuário.
+    // A sessão precisa continuar válida; logout/expiração retiram a pessoa mesmo com auditoria recente.
+    if (!one("SELECT id FROM auditoria WHERE usuario_id=? AND acao='escritorio.presenca' AND em>=datetime('now','localtime','-1 minute') LIMIT 1", u.id)) audit(u.id, 'escritorio.presenca', '');
+    const online = all(`SELECT DISTINCT u.id,u.nome FROM usuarios u JOIN auditoria a ON a.usuario_id=u.id
+      WHERE u.ativo=1 AND a.em>=datetime('now','localtime','-5 minute')
+      AND EXISTS (SELECT 1 FROM sessoes s WHERE s.usuario_id=u.id AND s.expira_em>?) ORDER BY u.nome,u.id`, Date.now());
+    out.online_total = online.length;
+    if (A.veTudo(u)) out.online = online.map((p) => ({ nome: primeiroNome(p.nome) }));
     const hoje = Object.fromEntries(all(`SELECT agente, count(DISTINCT CASE WHEN direcao='entrada' THEN telefone END) conversas,
       sum(CASE WHEN direcao='saida' AND status='enviada' THEN 1 ELSE 0 END) enviadas, sum(CASE WHEN direcao='saida' AND status='aprovar' THEN 1 ELSE 0 END) aprovar
       FROM agente_mensagens WHERE ${H('criado_em')} AND telefone NOT LIKE 'teste-%' GROUP BY agente`).map((x) => [x.agente, x]));

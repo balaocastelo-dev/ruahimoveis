@@ -158,6 +158,10 @@ Os limites de valor mudam em "Regras do escritório".
    GLBs disponíveis não reservados aos agentes. Hoje esse conjunto contém somente `visitante.glb`; os nove humanos
    dos agentes ficam intactos. Logins simultâneos aguardam em fila. Ao terminar ou fechar a cena, a etiqueta e os
    materiais próprios do visitante são removidos, sem afetar o visitante do modo andar.
+7. **Ocupação:** letreiro discreto abaixo da marca no pilar central, com total e até três primeiros nomes.
+   `ao-vivo?full=1` retorna `online_total` a todos e `online: [{nome}]` somente a adm/gestor. Conta usuários ativos
+   com sessão válida e atividade na auditoria nos últimos cinco minutos. O escritório renova `escritorio.presenca`
+   no máximo uma vez por minuto; logout e sessão expirada retiram a pessoa. Usa as tabelas existentes, sem migração.
 
 ### Verificação
 

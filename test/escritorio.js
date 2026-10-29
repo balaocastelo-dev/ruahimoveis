@@ -113,8 +113,21 @@ const ia = http.createServer((req, res) => {
   const comum = await req('GET', '/api/escritorio/ao-vivo?full=1');
   ok(comum.agentes.every((a) => !Object.hasOwn(a, 'ultimas')), 'monitores: corretor não recebe prévias');
   ok(comum.entraram.every((i) => one('SELECT corretor_id FROM imoveis WHERE id=?', i.id).corretor_id === corretorTeste.id), 'TV: corretor só recebe imóveis que pode abrir');
+  ok(Number.isInteger(comum.online_total) && !Object.hasOwn(comum, 'online'), 'ocupação: corretor recebe só quantidade, sem nomes');
   cookie = cookieAdm;
   run("DELETE FROM agente_mensagens WHERE telefone IN ('5519000000001','5519987654321','teste-9-apartamentos')");
+  const presencas = one("SELECT count(*) n FROM auditoria WHERE usuario_id=? AND acao='escritorio.presenca'", usuarioLogin.id).n;
+  const ocupacao0 = await req('GET', '/api/escritorio/ao-vivo?full=1');
+  ok(ocupacao0.online.some((u) => u.nome === 'Gestor') && ocupacao0.online.every((u) => Object.keys(u).join() === 'nome'), 'ocupação: gestor recebe somente primeiros nomes');
+  ok(one("SELECT count(*) n FROM auditoria WHERE usuario_id=? AND acao='escritorio.presenca'", usuarioLogin.id).n === presencas, 'ocupação: polling não duplica presença no mesmo minuto');
+  const pessoaOnline = Number(run("INSERT INTO usuarios(nome,email,perfil,senha_hash) VALUES('Presença Teste','presenca@example.test','corretor','teste')").lastInsertRowid);
+  const sessaoOnline = auth.criarSessao(pessoaOnline);
+  db0.audit(pessoaOnline, 'login', '');
+  ok((await req('GET', '/api/escritorio/ao-vivo?full=1')).online_total === ocupacao0.online_total + 1, 'ocupação: sessão válida com atividade recente entra na contagem');
+  run("UPDATE auditoria SET em=datetime('now','localtime','-6 minute') WHERE usuario_id=?", pessoaOnline);
+  ok((await req('GET', '/api/escritorio/ao-vivo?full=1')).online_total === ocupacao0.online_total, 'ocupação: após cinco minutos sem atividade sai');
+  db0.audit(pessoaOnline, 'login', ''); auth.encerrarSessao(sessaoOnline);
+  ok((await req('GET', '/api/escritorio/ao-vivo?full=1')).online_total === ocupacao0.online_total, 'ocupação: logout retira imediatamente mesmo com atividade recente');
 
   // 2) setores
   ok(B.setorDoImovel({ tipo: 'Apartamento', valor: 900000, status: 'publicado' }) === 'apartamentos', 'apartamento → Ana');

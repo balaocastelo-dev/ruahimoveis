@@ -27,21 +27,21 @@ import { OutputPass } from '/vendor/three/pos/OutputPass.js';
 
 // ---------- textos da interface (os balões vêm do servidor em português e ficam como estão) ----------
 const T = {
-  pt: { visitante: 'Visitante', cliente: 'Cliente', entraramHoje: 'Entraram hoje', semImoveisHoje: 'Nenhum imóvel cadastrado hoje', semFoto: 'Sem foto', vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
+  pt: { ocupacao: '{n} pessoas no escritório agora', ocupacaoUma: '1 pessoa no escritório agora', visitante: 'Visitante', cliente: 'Cliente', entraramHoje: 'Entraram hoje', semImoveisHoje: 'Nenhum imóvel cadastrado hoje', semFoto: 'Sem foto', vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
     painel: 'Painel de hoje', noar: 'no WhatsApp', captacao: 'Sala de captação', vendas: 'Salão de vendas', diretoria: 'Diretoria', entrada: 'Entrada', mural: 'Mural de oportunidades',
     cafe: 'Café', recepcao: 'Recepção', reuniao: 'Reunião', plantao: 'Plantão', impressora: 'Impressora', vazio: 'Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.',
     abrir: 'Abrir a mesa', fechar: 'Fechar', esperando: 'Esperando o primeiro cliente do dia…', dica: 'Arraste para girar · roda para aproximar · duplo clique num agente abre a mesa',
     virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.',
     entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil', sofa: 'Sofá', cliqueAbrir: 'Clique para abrir', salaEmBreve: 'Sala de reunião ao vivo em breve',
   },
-  en: { visitante: 'Visitor', cliente: 'Client', entraramHoje: 'Added today', semImoveisHoje: 'No properties added today', semFoto: 'No photo', vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
+  en: { ocupacao: '{n} people in the office now', ocupacaoUma: '1 person in the office now', visitante: 'Visitor', cliente: 'Client', entraramHoje: 'Added today', semImoveisHoje: 'No properties added today', semFoto: 'No photo', vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
     painel: "Today's board", noar: 'on WhatsApp', captacao: 'Sourcing room', vendas: 'Sales floor', diretoria: 'Management', entrada: 'Entrance', mural: 'Opportunity board',
     cafe: 'Coffee', recepcao: 'Reception', reuniao: 'Meeting', plantao: 'Front desk', impressora: 'Printer', vazio: 'As the agents work, every action shows up here and in a balloon above whoever did it.',
     abrir: 'Open desk', fechar: 'Close', esperando: 'Waiting for the first client of the day…', dica: 'Drag to rotate · wheel to zoom · double-click an agent to open their desk',
     virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.',
     entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline', sofa: 'Sofa', cliqueAbrir: 'Click to open', salaEmBreve: 'Live meeting room coming soon',
   },
-  ja: { visitante: '来訪者', cliente: 'お客様', entraramHoje: '本日の新着物件', semImoveisHoje: '本日の新着物件はありません', semFoto: '写真なし', vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
+  ja: { ocupacao: '現在の在室人数：{n}人', ocupacaoUma: '現在の在室人数：1人', visitante: '来訪者', cliente: 'お客様', entraramHoje: '本日の新着物件', semImoveisHoje: '本日の新着物件はありません', semFoto: '写真なし', vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
     painel: '本日のボード', noar: 'WhatsApp接続中', captacao: '物件開拓室', vendas: '営業フロア', diretoria: '経営室', entrada: '入口', mural: '案件ボード',
     cafe: 'カフェ', recepcao: '受付', reuniao: '会議', plantao: 'フロント', impressora: 'プリンター', vazio: 'エージェントが働くと、各アクションがここと担当者の上の吹き出しに表示されます。',
     abrir: 'デスクを開く', fechar: '閉じる', esperando: '本日最初のお客様をお待ちしています…', dica: 'ドラッグで回転 · ホイールでズーム · エージェントをダブルクリックでデスクを開く',
@@ -354,6 +354,8 @@ async function atualizaTempo() {
 function numeros(d) {
   if (!d || !d.totais || !vivo()) return;
   if (d.entraram) tvImoveis(d.entraram);
+  if (Number.isFinite(d.online_total)) { E.onlineTotal = d.online_total; E.online = d.online || []; }
+  ocupacaoPinta();
   E.totais = d.totais; const x = d.totais;
   const anima = (id, v) => { const el = $('#' + id); if (!el) return; if (el.textContent !== String(v)) { el.textContent = v; el.parentNode.classList.remove('pula'); void el.offsetWidth; el.parentNode.classList.add('pula'); } };
   anima('j3-n-acoes', x.acoes); anima('j3-n-conv', x.conversas); anima('j3-n-env', x.enviadas); anima('j3-n-apr', x.aprovar);
@@ -683,6 +685,10 @@ function constroiPredio(cena) {
   placa.position.set(0, 2.05, -Z + 0.12); cena.add(placa); E.placa = placa;
   const led = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.03, 0.08), M.led); led.position.set(0, 2.78, -Z + 0.16); cena.add(led); E.leds = [led];
   const base = new THREE.Mesh(new THREE.BoxGeometry(3.4, 0.03, 0.08), M.led); base.position.set(0, 1.33, -Z + 0.16); cena.add(base); E.leds.push(base);
+  const oc = document.createElement('canvas'); oc.width = 1024; oc.height = 168;
+  const ot = new THREE.CanvasTexture(oc); ot.colorSpace = THREE.SRGBColorSpace;
+  const ocupacao = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 0.53), new THREE.MeshBasicMaterial({ map: ot }));
+  ocupacao.position.set(0, 0.91, -Z + 0.13); cena.add(ocupacao); E.ocupacao = { cv: oc, tx: ot, mesh: ocupacao };
   // mural de oportunidades (pilar da esquerda) e TV (pilar da direita)
   const Lm = new Lote(cena);
   Lm.caixa(2.3, 1.3, 0.05, M.madeira, -10.3, 1.9, -Z + 0.14); Lm.caixa(2.16, 1.16, 0.03, M.cortica, -10.3, 1.9, -Z + 0.17);
@@ -726,6 +732,17 @@ function texturaPlaca() {
   pinta(null);
   if (MARCA.logo) { const im = new Image(); im.onload = () => pinta(im); im.onerror = () => pinta(null); im.src = MARCA.logo; }
   return tx;
+}
+function ocupacaoPinta() {
+  if (!E?.ocupacao) return;
+  const n = E.onlineTotal || 0, nomes = (E.online || []).slice(0, 3).map((p) => String(p.nome || '').trim().split(/\s+/)[0]).filter(Boolean).join(' · ');
+  const texto = t(n === 1 ? 'ocupacaoUma' : 'ocupacao').replace('{n}', String(n));
+  const chave = `${LANG}:${texto}:${nomes}`; if (E.ocupacao.chave === chave) return; E.ocupacao.chave = chave;
+  const x = E.ocupacao.cv.getContext('2d'); x.fillStyle = '#24272b'; x.fillRect(0, 0, 1024, 168);
+  x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillStyle = '#e5d4ad'; x.font = '500 38px system-ui'; x.fillText(texto, 512, nomes ? 55 : 84, 960);
+  if (nomes) { x.fillStyle = '#bdc4c7'; x.font = '30px system-ui'; x.fillText(nomes, 512, 114, 940); }
+  E.ocupacao.tx.needsUpdate = true;
+  E.ocupacao.mesh.userData.descricao = texto + (nomes ? ' · ' + nomes : '');
 }
 function tvPinta() {
   if (!E || !E.tv) return;
@@ -1160,7 +1177,7 @@ function zonasTexto() {
   ovl.querySelectorAll('.j3-zona').forEach((z) => z.remove());
   E.zonas = ZONAS.map(([k, x]) => { const el = document.createElement('div'); el.className = 'j3-zona'; el.textContent = t(k); ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, 3.05, -SALA.Z + 0.1) }; });
   const lugares = [['entrada', 0, 2.55, SALA.Z + 0.1], ['cafe', -4.6, 1.75, SALA.Z - 0.4, 'cafe'], ['recepcao', -2.2, 1.55, SALA.Z - 1.6, 'recepcao'], ['reuniao', 8.7, 1.3, 5.2, 'reuniao'], ['sofa', 3.2, 1.3, 6.2, 'sofa'],
-    ['mural', -10.3, 2.75, -SALA.Z + 0.2, 'mural'], ['impressora', -11.3, 1.5, 2.4, 'impressora'], ['painel', 10.3, 2.95, -SALA.Z + 0.2, 'tv'], ['crm', 0, 1.22, -SALA.Z + 0.2, 'placa']];
+    ['mural', -10.3, 2.75, -SALA.Z + 0.2, 'mural'], ['impressora', -11.3, 1.5, 2.4, 'impressora'], ['painel', 10.3, 2.95, -SALA.Z + 0.2, 'tv'], ['crm', 0, 3.05, -SALA.Z + 0.2, 'placa']];
   E.lugares = lugares.map(([k, x, y, z, lugar]) => {
     const el = document.createElement('div'); el.className = 'j3-zona j3-lugar';
     if (lugar) { el.classList.add('clicavel'); el.dataset.act = 'j3-lugar'; el.dataset.lugar = lugar; el.title = t('cliqueAbrir'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.innerHTML = `${esc(LUGAR_TELA[lugar].icone)} ${esc(t(k))}<small>${esc(t('cliqueAbrir'))}</small>`; el.onkeydown = (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); abreLugar(lugar); } }; }
