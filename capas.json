@@ -10,5 +10,65 @@
   "n": 4,
   "ambiente": "fachada",
   "nota": 9.0
+ },
+ "36607": {
+  "imob": "ondemorar",
+  "n": 2,
+  "ambiente": "piscina",
+  "nota": "curadoria"
+ },
+ "91279": {
+  "imob": "ondemorar",
+  "n": 4,
+  "ambiente": "fachada",
+  "nota": "curadoria"
+ },
+ "36720": {
+  "imob": "lumen",
+  "n": 2,
+  "ambiente": "sala",
+  "nota": "curadoria"
+ },
+ "86818": {
+  "imob": "lumen",
+  "n": 1,
+  "ambiente": "area_gourmet",
+  "nota": "curadoria"
+ },
+ "2488": {
+  "imob": "casaprado",
+  "n": 2,
+  "ambiente": "fachada",
+  "nota": "curadoria"
+ },
+ "86259": {
+  "imob": "casaprado",
+  "n": 5,
+  "ambiente": "fachada",
+  "nota": "curadoria"
+ },
+ "87889": {
+  "imob": "casaprado",
+  "n": 3,
+  "ambiente": "sala",
+  "nota": "curadoria"
+ },
+ "10772": {
+  "imob": "cademeuap",
+  "n": 1,
+  "ambiente": "sala",
+  "nota": "curadoria"
+ },
+ "32118": {
+  "imob": "cademeuap",
+  "n": 1,
+  "ambiente": "lazer",
+  "nota": "curadoria"
+ },
+ "90017": {
+  "imob": "cademeuap",
+  "n": 5,
+  "ambiente": "area_gourmet",
+  "nota": "curadoria"
  }
 }
