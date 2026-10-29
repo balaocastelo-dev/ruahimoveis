@@ -11,7 +11,10 @@
     "projeto"
   ],
   "capa": {
-    "alt": "Sala de estar ao anoitecer com luz suave do teto, abajur aceso ao lado da poltrona e quadro iluminado por spot"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/iluminacao-residencial-em-camadas-geral-tarefa-destaque-c3df4ac6.jpg",
+    "alt": "Sala de estar ao anoitecer com luz suave do teto, abajur aceso ao lado da poltrona e quadro iluminado por spot",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Por que algumas salas parecem aconchegantes e outras, frias, mesmo com móveis parecidos? Quase sempre a resposta está na luz. A casa bem iluminada usa três camadas: a geral, a de tarefa e a de destaque. Mostramos como combinar cada uma, que cor de luz escolher e o que muda na sala, na cozinha e no quarto. Leia o artigo completo no blog (link na bio).",
