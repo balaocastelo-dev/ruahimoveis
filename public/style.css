@@ -1519,6 +1519,13 @@ body.embutido h1{font-size:26px;margin-top:0}
 .j3p-bt:hover{background:rgba(255,255,255,.22)}
 .j3p-corpo{flex:1;min-height:0;background:var(--bg,#f6f4f0)}
 .j3p-corpo iframe{width:100%;height:100%;border:0;display:block}
+.j3p-aviso{margin:0;padding:8px 16px;background:#fff3d8;color:#604512;font-size:13px}
+.jg-lugar{cursor:pointer}
+.jg-lugar:focus-visible{outline:4px solid #c9a35a;outline-offset:4px}
+.jg-lugar .jg-lugar-dica{display:none;position:absolute;left:0;bottom:100%;min-width:190px;background:#15181f;color:#fff;padding:7px 12px;border-radius:6px;font-size:14px;white-space:nowrap;pointer-events:none}
+.jg-lugar-dica small{display:block;font-size:12px;color:#e8c36a}
+.jg-lugar:hover,.jg-lugar:focus-visible{filter:brightness(1.15);overflow:visible;z-index:2450}
+.jg-lugar:hover .jg-lugar-dica,.jg-lugar:focus-visible .jg-lugar-dica{display:block}
 .j3-lugar.clicavel{cursor:pointer;pointer-events:auto;border:1px solid rgba(201,163,90,.75);transition:background .15s,color .15s}
 .j3-lugar.clicavel:hover{background:rgba(201,163,90,.92);color:#15181f}
 .j3-lugar small{display:block;font-size:9px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}

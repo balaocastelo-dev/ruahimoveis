@@ -3,6 +3,8 @@
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http'), assert = require('assert');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-escritorio-'));
 process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
+// O teste usa só seus simuladores, mesmo em um PC com chaves e banco da plataforma no .env.
+for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
 
 // IA local de mentira: devolve a próxima resposta da fila
 const respostas = [];
@@ -68,6 +70,19 @@ const ia = http.createServer((req, res) => {
   ok(!JSON.stringify(v1.sistema).includes('127.0.0.1'), 'ao vivo: nada de IP no balão');
   const v2 = await req('GET', `/api/escritorio/ao-vivo?ev=${v1.ev}&au=${v1.au}`);
   ok(!v2.eventos.length && !v2.sistema.length, 'ao vivo: não repete o que já mostrou');
+
+  // Lugares: a espera considera só mensagens efetivas; sugestões ainda não são respostas.
+  const esperaId = Number(run("INSERT INTO leads(nome) VALUES(?)", 'Cliente na espera').lastInsertRowid);
+  run("INSERT INTO mensagens(lead_id,telefone,direcao,texto) VALUES(?,'teste-espera',?,?)", esperaId, 'entrada', 'Podemos visitar?');
+  run("INSERT INTO mensagens(lead_id,telefone,direcao,texto) VALUES(?,'teste-espera',?,?)", esperaId, 'sugestao', 'Resposta ainda não enviada');
+  ok((await req('GET', '/api/leads?aguardando=1')).some((l) => l.id === esperaId), 'sofá: sugestão não tira cliente da espera');
+  run("INSERT INTO mensagens(lead_id,telefone,direcao,texto) VALUES(?,'teste-espera',?,?)", esperaId, 'saida', 'Sim, vamos agendar');
+  ok(!(await req('GET', '/api/leads?aguardando=1')).some((l) => l.id === esperaId), 'sofá: resposta enviada tira cliente da espera');
+  const avisoId = (await req('POST', '/api/escritorio/afazeres', { texto: 'Revisar agenda da equipe' })).id;
+  const avisos = await req('GET', '/api/escritorio/avisos');
+  ok(avisos.eventos.some((e) => e.tipo === 'visita') && avisos.afazeres.some((f) => f.id === avisoId), 'café: eventos de hoje e afazeres abertos');
+  await req('POST', `/api/escritorio/afazeres/${avisoId}/feito`);
+  ok(!(await req('GET', '/api/escritorio/avisos')).afazeres.some((f) => f.id === avisoId), 'café: afazer concluído sai dos avisos');
 
   // 2) setores
   ok(B.setorDoImovel({ tipo: 'Apartamento', valor: 900000, status: 'publicado' }) === 'apartamentos', 'apartamento → Ana');

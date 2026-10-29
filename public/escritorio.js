@@ -20,6 +20,14 @@ const evHora = (s) => (s ? String(s).slice(11, 16) : '');
 const evNum = (n) => (n || 0).toLocaleString('pt-BR');
 let EV_CACHE = null;
 
+// Café do escritório: consulta os avisos sem oferecer ações de edição.
+async function telaAvisos() {
+  const d = await api('GET', '/api/escritorio/avisos');
+  $('#main').innerHTML = `<h1>Avisos da equipe</h1><p class="lead">Eventos de hoje e afazeres abertos${veTudo() ? ' da equipe' : ' atribuídos a você'}.</p>
+    <div class="grid g2"><section class="card"><h2>Hoje no escritório</h2><div class="list">${d.eventos.length ? d.eventos.map((e) => `<div class="item"><span>${esc(EV_EVENTO[e.tipo] || '📌')}</span><div><b>${esc(e.agente)}</b><p>${esc(e.texto || '')}</p><small class="muted">${esc(evHora(e.criado_em))}</small></div></div>`).join('') : '<p class="empty">Nenhum aviso hoje.</p>'}</div></section>
+    <section class="card"><h2>Afazeres abertos</h2><div class="list">${d.afazeres.length ? d.afazeres.map((f) => `<div class="item"><div><b>${esc(f.texto)}</b><p class="muted small">${esc(f.corretor || 'Equipe')}${f.quando ? ' · ' + esc(dataBR(f.quando)) : ''}</p></div></div>`).join('') : '<p class="empty">Nenhum afazer aberto.</p>'}</div></section></div>`;
+}
+
 // ---------- planta do escritório ----------
 async function telaEscritorio() {
   const d = await api('GET', '/api/escritorio');

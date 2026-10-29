@@ -27,6 +27,7 @@ function camposLead(b, u) {
 r.get('/leads', (req, res) => {
   const u = req.usuario; const p = []; let w = 'WHERE 1=1';
   if (!A.veTudo(u)) { w += ' AND l.corretor_id=?'; p.push(u.id); }
+  if (req.query.aguardando === '1') w += " AND (SELECT m.direcao FROM mensagens m WHERE m.lead_id=l.id AND m.direcao!='sugestao' ORDER BY m.id DESC LIMIT 1)='entrada'";
   if (req.query.q) { w += ' AND (l.nome LIKE ? OR l.telefone LIKE ? OR l.busca LIKE ?)'; const q = `%${req.query.q}%`; p.push(q, q, q); }
   res.json(all(`SELECT l.*, u.nome corretor_nome,
       (SELECT texto FROM mensagens m WHERE m.lead_id=l.id AND m.direcao!='sugestao' ORDER BY id DESC LIMIT 1) ultima_msg

@@ -126,6 +126,17 @@ Os limites de valor mudam em "Regras do escritório".
 
 ### Verificar o cenário antes de publicar
 
+### Melhorias do escritório (lote 2)
+
+1. **Lugares com propósito:** o painel `.j3p-*` original foi extraído para `public/escritorio-lugares.js`,
+   compartilhado pelo 3D, modo andar e 2D, inclusive sem WebGL. Mantém iframe, ESC, fechar e tela inteira.
+   Mural → Radar; TV → Painel; placa → CRM; recepção → Visitas; impressora → Carteira com filtro de
+   autorizações (pendentes, assinadas ou aguardando); sofá → leads cuja última mensagem efetiva é de entrada;
+   café → `#/avisos` (eventos de hoje e afazeres abertos, somente leitura, respeitando o acesso do corretor);
+   reunião → Chat com aviso de sala ao vivo em breve. Ícone, nome e dica nos lugares, clique e teclado nos dois modos.
+
+### Verificação
+
 ```powershell
 node test/escritorio.js
 node test/escritorio-3d.cjs

@@ -109,6 +109,14 @@ r.post('/escritorio/saidas/:id/descartar', (req, res) => {
 });
 
 // ---------- afazeres (lembrados pela Marta) ----------
+r.get('/escritorio/avisos', (req, res) => {
+  const u = req.usuario;
+  res.json({
+    eventos: all(`SELECT id,agente,tipo,texto,criado_em FROM agente_eventos WHERE ${H('criado_em')} AND tipo!='teste' ORDER BY id DESC LIMIT 100`),
+    afazeres: all(`SELECT f.id,f.texto,f.quando,us.nome corretor FROM agente_afazeres f LEFT JOIN usuarios us ON us.id=f.corretor_id
+      WHERE f.feito=0 ${A.veTudo(u) ? '' : 'AND f.corretor_id=' + u.id} ORDER BY coalesce(f.quando,'9999'),f.id DESC LIMIT 200`),
+  });
+});
 r.get('/escritorio/afazeres', (req, res) => {
   const u = req.usuario;
   res.json(all(`SELECT f.*, us.nome corretor, l.nome lead FROM agente_afazeres f LEFT JOIN usuarios us ON us.id=f.corretor_id LEFT JOIN leads l ON l.id=f.lead_id

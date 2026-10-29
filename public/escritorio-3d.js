@@ -10,6 +10,7 @@
    Microsoft Rocketbox, MIT, com o rosto e a roupa combinando com o retrato em /plataforma/agentes/<slug>.jpg) animado por
    esqueleto: sentado à mesa, digitando, andando, bebendo café, lendo papel, acenando. As animações vêm em dois arquivos
    partilhados (pessoas/anim-m.glb e anim-f.glb). Se um GLB não carregar, entra o boneco estilizado antigo (fazBoneco). */
+import { LUGAR_TELA, painelLugar, fechaPainelLugar } from '/escritorio-lugares.js';
 import * as THREE from '/vendor/three/three.module.min.js';
 import { OrbitControls } from '/vendor/three/OrbitControls.js';
 import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
@@ -30,21 +31,21 @@ const T = {
     cafe: 'Café', recepcao: 'Recepção', reuniao: 'Reunião', plantao: 'Plantão', impressora: 'Impressora', vazio: 'Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.',
     abrir: 'Abrir a mesa', fechar: 'Fechar', esperando: 'Esperando o primeiro cliente do dia…', dica: 'Arraste para girar · roda para aproximar · duplo clique num agente abre a mesa',
     virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.',
-    entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil',
+    entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil', sofa: 'Sofá', cliqueAbrir: 'Clique para abrir', salaEmBreve: 'Sala de reunião ao vivo em breve',
   },
   en: { vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
     painel: "Today's board", noar: 'on WhatsApp', captacao: 'Sourcing room', vendas: 'Sales floor', diretoria: 'Management', entrada: 'Entrance', mural: 'Opportunity board',
     cafe: 'Coffee', recepcao: 'Reception', reuniao: 'Meeting', plantao: 'Front desk', impressora: 'Printer', vazio: 'As the agents work, every action shows up here and in a balloon above whoever did it.',
     abrir: 'Open desk', fechar: 'Close', esperando: 'Waiting for the first client of the day…', dica: 'Drag to rotate · wheel to zoom · double-click an agent to open their desk',
     virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.',
-    entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline',
+    entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline', sofa: 'Sofa', cliqueAbrir: 'Click to open', salaEmBreve: 'Live meeting room coming soon',
   },
   ja: { vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
     painel: '本日のボード', noar: 'WhatsApp接続中', captacao: '物件開拓室', vendas: '営業フロア', diretoria: '経営室', entrada: '入口', mural: '案件ボード',
     cafe: 'カフェ', recepcao: '受付', reuniao: '会議', plantao: 'フロント', impressora: 'プリンター', vazio: 'エージェントが働くと、各アクションがここと担当者の上の吹き出しに表示されます。',
     abrir: 'デスクを開く', fechar: '閉じる', esperando: '本日最初のお客様をお待ちしています…', dica: 'ドラッグで回転 · ホイールでズーム · エージェントをダブルクリックでデスクを開く',
     virtual: 'バーチャルオフィス', inativo: '休止中', equipe: 'チーム', ver2d: '2Dで見る', ver3d: '3Dで見る', hoje: '本日', sem3d: 'ブラウザで3Dを開けませんでした。2D表示にしています。',
-    entrar: 'オフィスに入る', sair: 'オフィスを出る', ajuda: 'WASD / 矢印キーで移動 · Shiftで走る · ドラッグで視点 · Eで操作 · Escで退出', falarCom: '話す:', abrirLugar: '開く', crm: 'CRM・商談',
+    entrar: 'オフィスに入る', sair: 'オフィスを出る', ajuda: 'WASD / 矢印キーで移動 · Shiftで走る · ドラッグで視点 · Eで操作 · Escで退出', falarCom: '話す:', abrirLugar: '開く', crm: 'CRM・商談', sofa: 'ソファ', cliqueAbrir: 'クリックして開く', salaEmBreve: 'ライブ会議室は近日公開',
   },
 };
 let LANG = 'pt';
@@ -142,6 +143,7 @@ export async function telaEscritorio3D() {
 function para() {
   clearInterval(poll);
   if (!E) return;
+  fechaPainelLugar();
   const e = E; E = null;
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
   if (e.andar) { try { e.andar.desmonta(); } catch {} }
@@ -587,6 +589,11 @@ function constroiPredio(cena) {
     const c = new THREE.Mesh(new THREE.BoxGeometry(l, a, 0.5), MAT.hit);
     c.position.set(x, y, -Z + 0.35); c.userData = { tipo: 'lugar', lugar }; cena.add(c); E.cliques.push(c);
   }
+  for (const [lugar, w, h, d] of [['recepcao', 1.9, 1.1, 0.7], ['impressora', 0.8, 1.1, 0.7], ['cafe', 1.9, 1.3, 0.7], ['sofa', 2, 0.9, 1], ['reuniao', 2, 1, 2]]) {
+    const [x, z] = LUGAR_TELA[lugar].cam;
+    const c = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), MAT.hit);
+    c.position.set(x, h / 2, z); c.userData = { tipo: 'lugar', lugar }; cena.add(c); E.cliques.push(c);
+  }
 }
 function texturaPlaca() {
   const cv = document.createElement('canvas'); cv.width = 1024; cv.height = 416; const x = cv.getContext('2d');
@@ -977,11 +984,11 @@ function zonasTexto() {
   const ovl = $('#j3-ovl'); if (!ovl) return;
   ovl.querySelectorAll('.j3-zona').forEach((z) => z.remove());
   E.zonas = ZONAS.map(([k, x]) => { const el = document.createElement('div'); el.className = 'j3-zona'; el.textContent = t(k); ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, 3.05, -SALA.Z + 0.1) }; });
-  const lugares = [['entrada', 0, 2.55, SALA.Z + 0.1], ['cafe', -4.6, 1.75, SALA.Z - 0.4], ['recepcao', -2.2, 1.55, SALA.Z - 1.6], ['reuniao', 8.7, 1.3, 5.2],
-    ['mural', -10.3, 2.75, -SALA.Z + 0.2, 'mural'], ['impressora', -11.3, 1.5, 2.4], ['painel', 10.3, 2.95, -SALA.Z + 0.2, 'tv'], ['crm', 0, 1.22, -SALA.Z + 0.2, 'placa']];
+  const lugares = [['entrada', 0, 2.55, SALA.Z + 0.1], ['cafe', -4.6, 1.75, SALA.Z - 0.4, 'cafe'], ['recepcao', -2.2, 1.55, SALA.Z - 1.6, 'recepcao'], ['reuniao', 8.7, 1.3, 5.2, 'reuniao'], ['sofa', 3.2, 1.3, 6.2, 'sofa'],
+    ['mural', -10.3, 2.75, -SALA.Z + 0.2, 'mural'], ['impressora', -11.3, 1.5, 2.4, 'impressora'], ['painel', 10.3, 2.95, -SALA.Z + 0.2, 'tv'], ['crm', 0, 1.22, -SALA.Z + 0.2, 'placa']];
   E.lugares = lugares.map(([k, x, y, z, lugar]) => {
     const el = document.createElement('div'); el.className = 'j3-zona j3-lugar';
-    if (lugar) { el.classList.add('clicavel'); el.dataset.act = 'j3-lugar'; el.dataset.lugar = lugar; el.title = t('abrirLugar'); el.innerHTML = `${esc(t(k))}<small>${esc(t('abrirLugar'))}</small>`; }
+    if (lugar) { el.classList.add('clicavel'); el.dataset.act = 'j3-lugar'; el.dataset.lugar = lugar; el.title = t('cliqueAbrir'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.innerHTML = `${esc(LUGAR_TELA[lugar].icone)} ${esc(t(k))}<small>${esc(t('cliqueAbrir'))}</small>`; el.onkeydown = (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); abreLugar(lugar); } }; }
     else el.textContent = t(k);
     ovl.appendChild(el); return { el, pos: new THREE.Vector3(x, y, z) };
   });
@@ -1074,48 +1081,18 @@ function fechaCard() { const c = $('#j3-card'); if (c) { c.hidden = true; } if (
 
 // ---------- lugares clicáveis: a tela real do sistema dentro do escritório ----------
 // mural → oportunidades (radar) · TV da diretoria → painel de hoje · placa do salão → CRM (leads)
-const LUGAR_TELA = {
-  mural: { rota: '#/radar', titulo: 'mural', icone: '📌', cam: [-10.3, 1.9] },
-  tv: { rota: '#/painel', titulo: 'painel', icone: '📺', cam: [10.3, 2.0] },
-  placa: { rota: '#/leads', titulo: 'crm', icone: '📈', cam: [0, 2.05] },
-  recepcao: { rota: '#/visitas', titulo: 'recepcao', icone: '🔔', cam: [0.9, 5.3] },
-  impressora: { rota: '#/imoveis', titulo: 'impressora', icone: '🖨️', cam: [-10.2, 2.4] },
-  cafe: { rota: '#/whats', titulo: 'cafe', icone: '☕', cam: [-4.6, 5.3] },
-  reuniao: { rota: '#/chat', titulo: 'reuniao', icone: '💬', cam: [8.7, 5.2] },
-};
 function abreLugar(k) {
   const l = LUGAR_TELA[k]; if (!l) return;
   if (E && E.camera && l.cam && !E.andando) {      // voo curto até o lugar, como no clique num agente
-    const [x, z] = l.cam, frente = z > 0 ? 1 : -1;
+    const [x, z] = l.cam;
     E.voo = { t0: performance.now(), dur: reduz() ? 1 : 900, p0: E.camera.position.clone(), a0: E.controls.target.clone(),
-      p1: new THREE.Vector3(x * 0.55, 3.2, z + frente * 7.5), a1: new THREE.Vector3(x, 1.9, z) };
+      p1: new THREE.Vector3(x * 0.55, 3.2, z + 7.5), a1: new THREE.Vector3(x, 1.9, z) };
     acordou();
   }
-  painelLugar(l);
+  painelLugar(l, t);
 }
 window.jg3dAbreLugar = abreLugar;   // o modo "andar" (escritorio-andar.js) usa o mesmo painel
-function painelLugar(l) {
-  fechaPainelLugar();
-  const el = document.createElement('div'); el.id = 'j3-painel'; el.className = 'j3p-fundo';
-  el.innerHTML = `<div class="j3p-quadro">
-    <header class="j3p-topo"><span class="j3p-i" aria-hidden="true">${l.icone}</span><b>${esc(t(l.titulo))}</b><span class="sp"></span>
-      <button class="j3p-bt" data-act="j3-lugar-abre" data-r="${esc(l.rota)}" title="${esc(t('abrir'))}">↗</button>
-      <button class="j3p-bt" data-act="j3-lugar-fecha" title="${esc(t('fechar'))}">✕</button></header>
-    <div class="j3p-corpo"><iframe src="/app.html?embutido=1${esc(l.rota)}" title="${esc(t(l.titulo))}" loading="eager"></iframe></div></div>`;
-  document.body.appendChild(el);
-  el.addEventListener('pointerdown', (ev) => { if (ev.target === el) fechaPainelLugar(); });
-  PAINEL_ESC = (ev) => { if (ev.key === 'Escape') { ev.stopPropagation(); fechaPainelLugar(); } };
-  document.addEventListener('keydown', PAINEL_ESC, true);
-}
-let PAINEL_ESC = null;
-function fechaPainelLugar() {
-  const el = $('#j3-painel'); if (el) el.remove();
-  if (PAINEL_ESC) { document.removeEventListener('keydown', PAINEL_ESC, true); PAINEL_ESC = null; }
-}
-window.jg3dFechaLugar = fechaPainelLugar;
 ACT['j3-lugar'] = (el) => abreLugar(el.dataset.lugar);
-ACT['j3-lugar-fecha'] = () => fechaPainelLugar();
-ACT['j3-lugar-abre'] = (el) => { const r = el.dataset.r; fechaPainelLugar(); location.hash = r.replace(/^#/, ''); };
 
 // ====================================================================== quadro a quadro
 const _v = new THREE.Vector3(); const _c = new THREE.Vector3();

@@ -79,6 +79,7 @@ export function ligaAndar(ctx) {
     l.push({ tipo: 'lugar', lugar: 'impressora', x: LUGAR.impressora[0] + 0.9, z: LUGAR.impressora[1], nome: tx('impressora', 'Impressora'), acao: tx('abrir', 'Abrir') });
     l.push({ tipo: 'lugar', lugar: 'cafe', x: LUGAR.cafe[0], z: LUGAR.cafe[1] - 1.0, nome: tx('cafe', 'Café'), acao: tx('abrir', 'Abrir') });
     l.push({ tipo: 'lugar', lugar: 'reuniao', x: LUGAR.reuniao[0], z: LUGAR.reuniao[1] - 1.6, nome: tx('reuniao', 'Sala de reunião'), acao: tx('abrir', 'Abrir') });
+    l.push({ tipo: 'lugar', lugar: 'sofa', x: LUGAR.sofa[0], z: LUGAR.sofa[1], nome: tx('sofa', 'Sofá'), acao: tx('abrir', 'Abrir') });
     return l;
   }
   const LISTA = alvos();

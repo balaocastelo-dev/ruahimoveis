@@ -228,7 +228,8 @@ async function rota() {
     else if (p[0] === 'imoveis' && p[1]) await telaFicha(+p[1], p[2] || 'dados');
     else if (p[0] === 'imoveis') await telaImoveis(new URLSearchParams(qs || ''));
     else if (p[0] === 'leads' && p[1]) await telaLead(+p[1]);
-    else if (p[0] === 'leads') await telaLeads();
+    else if (p[0] === 'leads') await telaLeads(new URLSearchParams(qs || ''));
+    else if (p[0] === 'avisos') await telaAvisos();
     else if (p[0] === 'chat') await telaChat(p[1] ? +p[1] : null);
     else if (p[0] === 'whats' && p[1] === 'agente' && p[2]) await telaMesa(p[2], p[3] || 'mesa');
     else if (p[0] === 'whats' && p[1] === 'conversas') await telaWhats(null);
@@ -346,6 +347,7 @@ const donoLinha = (i) => (i.dono ? `<div class="cart-dono small">Dono: <b>${esc(
 // ---------- localizar proprietário direto da carteira (sem voltar às vitrines da base) ----------
 const BUSCA_DONO = { fila: ['warn', 'Na fila da consulta'], buscando: ['warn', 'Buscando o dono…'], sem_resultado: ['bad', 'A consulta não achou dono'], erro: ['bad', 'A busca falhou'] };
 function cartAcoes(i) {
+  if (CART_F.autorizacoes === '1') return `<a class="btn sm" href="#/imoveis/${i.id}/autorizacao">Ver autorizações</a>`;
   if (i.dono) return '';
   const b = i.busca_dono;
   if (b && b.status === 'escolher') return `<a class="btn sm" href="#/fisguei/${b.anuncio_id}" title="Prédio com várias pessoas no endereço: escolha quem consultar">Prédio: escolher quem consultar</a>`;
@@ -386,7 +388,7 @@ const imCards = (l, o = {}) => `<div class="imcards${o.mini ? ' mini' : ''}">${l
 // ---------- carteira: filtros ----------
 let CART_F = {}, CART_PORTAL = null;
 const FINALIDADE = { venda: 'Venda', locacao: 'Locação', venda_locacao: 'Venda e locação' };
-const CART_CAMPOS = ['neg', 'etapa', 'dono', 'ficha', 'exclusivo', 'portal', 'origem', 'corretor', 'status'];
+const CART_CAMPOS = ['neg', 'etapa', 'dono', 'ficha', 'exclusivo', 'portal', 'origem', 'corretor', 'status', 'autorizacoes'];
 function cartFiltra(l) {
   const f = CART_F;
   return l.filter((i) => {
@@ -394,6 +396,7 @@ function cartFiltra(l) {
     if (f.neg === 'locacao' && !(i.finalidade === 'locacao' || i.finalidade === 'venda_locacao')) return false;
     if (f.etapa && i.etapa !== f.etapa) return false;
     if (f.status && i.status !== f.status) return false;
+    if (f.autorizacoes === '1' && !i.autorizacao_status && i.status !== 'aguardando_autorizacao') return false;
     if (f.dono === 'com' && !i.dono) return false;
     if (f.dono === 'sem' && i.dono) return false;
     if (f.dono === 'tel' && !(i.dono && i.dono.telefone)) return false;
@@ -419,6 +422,7 @@ function cartFiltrosHTML() {
     <select class="inp" data-cart="portal" aria-label="Portal">${opt('portal', [['', 'Portal: todos'], ['sim', 'Com página no portal'], ['nao', 'Sem página no portal']])}</select>
     <select class="inp" data-cart="origem" aria-label="Origem">${opt('origem', [['', 'Origem: todas'], ...ORIGENS])}</select>
     <select class="inp" data-cart="status" aria-label="Status">${opt('status', [['', 'Status: todos'], ...Object.entries(STATUS).map(([k, [l]]) => [k, l])])}</select>
+    <select class="inp" data-cart="autorizacoes" aria-label="Autorizações">${opt('autorizacoes', [['', 'Autorizações: todos'], ['1', 'Com autorização ou aguardando']])}</select>
     ${veTudo() ? `<select class="inp" data-cart="corretor" aria-label="Corretor">${opt('corretor', [['', 'Corretor: todos'], ...USUARIOS.map((u) => [String(u.id), u.nome])])}</select>` : ''}
     ${CART_CAMPOS.some((k) => f[k]) ? '<button type="button" class="btn sm" data-act="cart-limpa">Limpar filtros</button>' : ''}`;
 }
@@ -679,11 +683,12 @@ FORM.autorizacao = async (f) => {
 ACT['cancelar-aut'] = (el) => comBotao(null, async () => { if (!confirm('Cancelar este link de assinatura?')) return; await api('POST', `/api/imoveis/${el.dataset.id}/autorizacoes/${el.dataset.aid}/cancelar`); rota(); });
 
 // ---------- CRM ----------
-async function telaLeads() {
-  $('#main').innerHTML = `<h1>Funil de vendas</h1><p class="lead"><span class="so-mouse">Arraste o cartão para mudar a etapa.</span><span class="so-toque">Use "Mover para" no cartão para mudar a etapa; deslize para o lado para ver as outras colunas.</span> ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
+async function telaLeads(qs = new URLSearchParams()) {
+  const aguardando = qs.get('aguardando') === '1';
+  $('#main').innerHTML = `<h1>${aguardando ? 'Leads aguardando resposta' : 'Funil de vendas'}</h1>${aguardando ? '<p class="muted">Última mensagem recebida do cliente, ainda sem resposta. <a href="#/leads">Ver todos</a></p>' : ''}<p class="lead"><span class="so-mouse">Arraste o cartão para mudar a etapa.</span><span class="so-toque">Use "Mover para" no cartão para mudar a etapa; deslize para o lado para ver as outras colunas.</span> ${veTudo() ? 'Você vê os leads de todos os corretores.' : 'Você vê só os seus leads.'}</p>
   <div class="row" style="margin-bottom:12px"><input class="inp" id="busca-ld" placeholder="Buscar por nome, telefone ou o que procura" style="flex:1;min-width:200px"><button class="btn pri" data-act="novo-lead">+ Novo lead</button></div><div class="kanban" id="kb"></div>`;
   const carrega = async () => {
-    const leads = await api('GET', '/api/leads?' + new URLSearchParams({ q: $('#busca-ld').value }));
+    const leads = await api('GET', '/api/leads?' + new URLSearchParams({ q: $('#busca-ld').value, aguardando: aguardando ? '1' : '' }));
     $('#kb').innerHTML = ETAPAS.map(([k, l]) => { const c = leads.filter((x) => x.etapa === k); return `<div class="col" data-etapa="${k}"><h4>${l}<span class="mono">${c.length}</span></h4>
       ${c.map((x) => `<div class="lc" draggable="true" data-lead="${x.id}"><b>${esc(x.nome)}</b><div class="muted">${esc(x.busca || tel(x.telefone) || '')}</div>
         <div class="row" style="margin-top:6px;gap:6px"><span class="pill ${TEMP[x.temperatura]}">${esc(x.temperatura)}</span>${x.valor_max ? `<span class="small muted">até ${brl(x.valor_max)}</span>` : ''}</div>

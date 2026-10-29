@@ -80,7 +80,7 @@ function enriquece(lista) {
     ];
     const ok = itens.filter((x) => x[2]).length;
     return {
-      ...i, etapa, origem,
+      ...i, etapa, origem, autorizacao_status: as || null,
       dono: d ? { nome: d.nome, telefone: d.telefone, origem: d.origem_dado, confirmado: !doFisgar || !!(f && f.conf), nao_contatar: !!d.nao_contatar } : null,
       fisguei_ids: f ? f.ids : [], busca_dono: f && f.pedido ? f.pedido : null,
       ficha: { pct: Math.round((ok / itens.length) * 100), falta: itens.filter((x) => !x[2]).map((x) => x[1]) },

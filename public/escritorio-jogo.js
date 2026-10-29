@@ -58,6 +58,7 @@ ACT['jg-modo'] = (el) => {
   rota();
 };
 async function telaEscritorioJogo2D() {
+  const lugares = await import('/escritorio-lugares.js');
   const d = await api('GET', '/api/escritorio/ao-vivo?full=1');
   if (JG_ESTADO) jgPara();
   const nomeImob = MARCA.empresa || MARCA.cliente || 'Imobiliária';
@@ -102,6 +103,16 @@ async function telaEscritorioJogo2D() {
     </div>
   </div>`;
   JG_ESTADO = { raiz: $('#jg'), ev: d.ev, au: d.au, agentes: {}, fila: [], rodando: false, ultimoTicker: [], vazio: true };
+  const alvos = { mural: '.jg-mural', tv: '.jg-tv', placa: '.jg-placa', recepcao: '.jg-balcao', impressora: '.jg-impressora', cafe: '.jg-cafe', sofa: '.jg-sofa', reuniao: '.jg-reuniao' };
+  for (const [k, seletor] of Object.entries(alvos)) {
+    const el = $(seletor, JG_ESTADO.raiz), l = lugares.LUGAR_TELA[k];
+    el.classList.add('jg-lugar'); el.tabIndex = 0; el.setAttribute('role', 'button'); el.dataset.lugar = k;
+    el.title = `${l.icone} ${l.nome} · Clique para abrir`; el.setAttribute('aria-label', el.title);
+    el.insertAdjacentHTML('beforeend', `<span class="jg-lugar-dica">${esc(l.icone)} ${esc(l.nome)}<small>Clique para abrir</small></span>`);
+    el.onclick = () => lugares.painelLugar(l);
+    el.onkeydown = (ev) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); lugares.painelLugar(l); } };
+  }
+  JG_ESTADO.fechaLugar = lugares.fechaPainelLugar;
   jgMontaAgentes(d.agentes);
   jgNumeros(d);
   jgRelogio();
@@ -134,6 +145,7 @@ async function telaEscritorioJogo2D() {
 function jgPara() {
   clearInterval(poll);
   if (!JG_ESTADO) return;
+  JG_ESTADO.fechaLugar?.();
   clearInterval(JG_ESTADO.iv); clearInterval(JG_ESTADO.vida); clearInterval(JG_ESTADO.relogio);
   if (JG_ESTADO.ro) JG_ESTADO.ro.disconnect();
   document.removeEventListener('fullscreenchange', jgEscala);
