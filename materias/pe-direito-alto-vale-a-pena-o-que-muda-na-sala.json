@@ -12,7 +12,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Sala de estar com pé-direito alto, janelas altas de piso a teto, cortinas longas de linho e um pendente sobre a mesa de centro"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/pe-direito-alto-vale-a-pena-o-que-muda-na-sala-800867b7.jpg",
+    "alt": "Sala de estar com pé-direito alto, janelas altas de piso a teto, cortinas longas de linho e um pendente sobre a mesa de centro",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Pé-direito alto vale a pena? Ele dá amplitude, mais luz e ar circulando, mas cobra o preço em ar-condicionado, eco e limpeza das janelas altas. No blog, explicamos as medidas mais comuns, quando ele compensa e o truque da cortina perto do teto para quem tem sala de altura padrão. Leia a dica completa no blog (link na bio).",
