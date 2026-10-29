@@ -321,14 +321,14 @@ ${aoVivo()}
   <h2 id="t-ia">Nove agentes que não tiram férias, nem folga no domingo.</h2>
   <p class="lead">Cada agente cuida de um setor do escritório e conversa pelo WhatsApp. Eles respondem na hora, entendem o que o cliente procura, mandam o imóvel certo, marcam a visita e chamam o corretor quando é a vez dele. Você decide quem responde sozinho e quem sugere a resposta para você aprovar.</p>
   <ul class="agentes revelar">
-    ${AGENTES.map(([slug, n, setor, txt, cor]) => `<li class="agente"><span class="avatar com-foto" style="--c:${cor}" aria-hidden="true"><img src="/plataforma/agentes/${slug}.svg" alt="" width="68" height="68" loading="lazy" decoding="async"></span><div><h3>${esc(n)}</h3><span class="setor">${esc(setor)}</span><p>${esc(txt)}</p></div></li>`).join('\n    ')}
+    ${AGENTES.map(([slug, n, setor, txt, cor]) => `<li class="agente"><span class="avatar com-foto" style="--c:${cor}" aria-hidden="true"><img src="/plataforma/agentes/${slug}.jpg" alt="" width="68" height="68" loading="lazy" decoding="async"></span><div><h3>${esc(n)}</h3><span class="setor">${esc(setor)}</span><p>${esc(txt)}</p></div></li>`).join('\n    ')}
   </ul>
 
   <div class="duas bloco-ia">
     <figure class="revelar">${janela('escritorio', 'Escritório virtual com os agentes nas salas de captação, vendas e diretoria, o movimento do dia e as respostas para aprovar', { url: 'app.corretordofuturo.app/#/whats' })}
       <figcaption>O escritório virtual: cada agente na sua sala, o que aconteceu hoje e o que espera a sua aprovação.</figcaption></figure>
     <div class="chat revelar" aria-label="Exemplo de conversa com um agente">
-      <div class="chat-topo"><span class="avatar com-foto" style="--c:#7fb4ff" aria-hidden="true"><img src="/plataforma/agentes/apartamentos.svg" alt="" width="38" height="38"></span><div><b>Ana · Apartamentos</b>WhatsApp da imobiliária</div></div>
+      <div class="chat-topo"><span class="avatar com-foto" style="--c:#7fb4ff" aria-hidden="true"><img src="/plataforma/agentes/apartamentos.jpg" alt="" width="38" height="38"></span><div><b>Ana · Apartamentos</b>WhatsApp da imobiliária</div></div>
       <p class="msg ent">Oi! Vi o apartamento de 3 quartos no Cambuí no site. Aceita financiamento?</p>
       <p class="msg sug">Oi, Larissa! Aceita sim. São 118 m², 3 quartos e 2 vagas. Quer que eu simule as parcelas ou prefere visitar no sábado?<small>Resposta sugerida pela Ana · esperando aprovação</small></p>
       <div class="chat-acoes"><span>Editar</span><span class="ok">Aprovar e enviar</span></div>

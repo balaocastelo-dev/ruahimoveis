@@ -5,10 +5,16 @@
    etiquetas são HTML projetado por cima da cena (texto nítido). Módulo ES carregado por import() a partir do escritorio-jogo.js.
    Reusa do app: $, esc, api, toast, ACT, poll, MARCA; do escritorio-jogo.js: jgDeEvento, JG_EMOJI_VAI, jgReduz, jgEspera.
    Ganchos para outros módulos: window.jg3dTelaDoAgente(slug, imagem) pinta o monitor do agente;
-   window.abrePcDoAgente(slug), se existir, é chamado ao dar duplo clique num agente. */
+   window.abrePcDoAgente(slug), se existir, é chamado ao dar duplo clique num agente.
+   Pessoas: cada agente é um humano 3D de verdade (public/plataforma/pessoas/<slug>.glb — personagens da biblioteca
+   Microsoft Rocketbox, MIT, com o rosto e a roupa combinando com o retrato em /plataforma/agentes/<slug>.jpg) animado por
+   esqueleto: sentado à mesa, digitando, andando, bebendo café, lendo papel, acenando. As animações vêm em dois arquivos
+   partilhados (pessoas/anim-m.glb e anim-f.glb). Se um GLB não carregar, entra o boneco estilizado antigo (fazBoneco). */
 import * as THREE from '/vendor/three/three.module.min.js';
 import { OrbitControls } from '/vendor/three/OrbitControls.js';
 import { mergeGeometries } from '/vendor/three/BufferGeometryUtils.js';
+import { GLTFLoader } from '/vendor/three/GLTFLoader.js';
+import { clone as clonaEsqueleto } from '/vendor/three/SkeletonUtils.js';
 
 // ---------- textos da interface (os balões vêm do servidor em português e ficam como estão) ----------
 const T = {
@@ -40,13 +46,18 @@ const MESAS = {
   casas: [-3, 1.9], 'alto-padrao': [0, 1.9], offmarket: [3, 1.9],
   gerente: [7.4, -2.5], 'gerente-corretores': [10.2, -2.5],
 };
-const SENTA = 0.95; // o agente senta a esta distância (em z) do centro da mesa, de frente para as janelas
+const SENTA = 0.80; // o agente senta a esta distância (em z) do centro da mesa, de frente para as janelas (joelhos por baixo do tampo)
 const LUGAR = {
   mural: [-10.4, -5.3], impressora: [-10.2, 2.4], porta: [0, 7.6], recepcao: [0.9, 5.3], cafe: [-4.6, 5.3],
   tv: [10.4, -5.3], reuniao: [8.7, 4.2], sofa: [3.2, 5.1], plantao: [-2.2, 5.0],
 };
 const ZONAS = [['captacao', -8.6], ['vendas', 0], ['diretoria', 8.6]];
 const AVATARES = ['captador', 'apartamentos', 'comerciais', 'terrenos', 'casas', 'alto-padrao', 'offmarket', 'gerente', 'gerente-corretores'];
+const FOTO = (slug) => `/plataforma/agentes/${slug}.jpg`; // retrato fotorrealista (gerado no Flux) de cada agente
+// humanos 3D: sexo de cada personagem (escolhe o conjunto de animações) e onde ficam os arquivos
+const PESSOA_GENERO = { captador: 'm', apartamentos: 'f', comerciais: 'm', terrenos: 'm', casas: 'f', 'alto-padrao': 'f', offmarket: 'm', gerente: 'm', 'gerente-corretores': 'f', visitante: 'm' };
+const PESSOAS_URL = '/plataforma/pessoas/';
+const PESSOA_Y = -0.30; // as animações sentadas do Rocketbox assumem uma cadeira alta: baixa o corpo para os pés tocarem o chão
 
 let E = null; // estado da cena aberta
 const vivo = () => E && document.body.contains(E.raiz);
@@ -198,7 +209,7 @@ function ticker(item) {
   const tk = $('#j3-ticker'); if (!tk) return;
   const vazio = tk.querySelector('.jg-tk-vazio'); if (vazio) vazio.remove();
   const ag = E.agentes[item.agente];
-  const foto = ag && AVATARES.includes(ag.slug) ? `<img src="/plataforma/agentes/${ag.slug}.svg" alt="">` : '<span class="jg-tk-p">👤</span>';
+  const foto = ag && AVATARES.includes(ag.slug) ? `<img src="${FOTO(ag.slug)}" alt="">` : '<span class="jg-tk-p">👤</span>';
   const hora = item.hora ? String(item.hora).replace(' ', 'T').slice(11, 16) : new Date().toTimeString().slice(0, 5);
   const el = document.createElement('div'); el.className = 'jg-tk';
   el.innerHTML = `${foto}<span class="e">${esc(item.emoji)}</span><span class="t"><b>${esc(ag ? ag.nome : t('equipe'))}</b> ${esc(item.texto)}</span><small>${esc(hora)}</small>`;
@@ -504,10 +515,10 @@ function constroiMobilia(cena) {
     L.caixa(1.5, 0.3, 0.02, M.plasticoEscuro, x, 0.56, z - 0.38); // painel de privacidade
     L.cil(0.14, 0.17, 0.02, M.preto, x, 0.77, z - 0.18, 24); L.caixa(0.04, 0.26, 0.04, M.preto, x, 0.9, z - 0.2); // base e haste do monitor
     L.caixa(0.62, 0.4, 0.028, M.preto, x, 1.17, z - 0.17); // moldura
-    L.caixa(0.42, 0.012, 0.14, M.plasticoEscuro, x, 0.766, z + 0.12); L.caixa(0.06, 0.02, 0.1, M.plasticoEscuro, x + 0.32, 0.77, z + 0.14); // teclado e mouse
+    L.caixa(0.42, 0.012, 0.14, M.plasticoEscuro, x, 0.766, z + 0.24); L.caixa(0.06, 0.02, 0.1, M.plasticoEscuro, x + 0.32, 0.77, z + 0.26); // teclado e mouse (na beira, onde as mãos ficam)
     L.caixa(0.22, 0.012, 0.3, M.papel, x - 0.5, 0.766, z + 0.05, -0.3); // papel
     // cadeira (de frente para a mesa e as janelas)
-    const cz = z + SENTA + 0.05;
+    const cz = z + SENTA + 0.08;
     L.cil(0.26, 0.26, 0.02, M.preto, x, 0.03, cz, 20); L.cil(0.03, 0.03, 0.42, M.aluminio, x, 0.24, cz, 10);
     L.caixa(0.5, 0.08, 0.5, M.tecido, x, 0.47, cz); L.caixa(0.5, 0.56, 0.07, M.tecido, x, 0.82, cz + 0.24);
     L.caixa(0.06, 0.2, 0.36, M.preto, x - 0.27, 0.66, cz); L.caixa(0.06, 0.2, 0.36, M.preto, x + 0.27, 0.66, cz);
@@ -642,14 +653,68 @@ function texturaRosto(slug, nome, cor) {
   x.fillStyle = cor; x.beginPath(); x.arc(tam / 2, tam / 2, tam / 2 - 8, 0, Math.PI * 2); x.fill();
   x.fillStyle = '#fff'; x.font = '700 92px "DM Sans", system-ui, sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(nome.slice(0, 2).toUpperCase(), tam / 2, tam / 2 + 6); anel();
   if (AVATARES.includes(slug)) {
-    // o SVG não traz width/height: injeta para o navegador rasterizar no tamanho certo
-    fetch(`/plataforma/agentes/${slug}.svg`, { credentials: 'same-origin' }).then((r) => r.text()).then((svg) => {
-      const s2 = svg.replace(/<svg\b([^>]*)>/, (m, attrs) => `<svg${attrs.replace(/\s(width|height)="[^"]*"/g, '')} width="${tam}" height="${tam}">`);
-      const url = URL.createObjectURL(new Blob([s2], { type: 'image/svg+xml' })); (E.urlsBlob = E.urlsBlob || []).push(url);
-      const im = new Image(); im.onload = () => { x.clearRect(0, 0, tam, tam); x.save(); x.beginPath(); x.arc(tam / 2, tam / 2, tam / 2 - 8, 0, Math.PI * 2); x.clip(); x.drawImage(im, 0, 0, tam, tam); x.restore(); anel(); }; im.src = url;
-    }).catch(() => {});
+    const im = new Image(); im.onload = () => { x.clearRect(0, 0, tam, tam); x.save(); x.beginPath(); x.arc(tam / 2, tam / 2, tam / 2 - 8, 0, Math.PI * 2); x.clip(); x.drawImage(im, 0, 0, tam, tam); x.restore(); anel(); }; im.src = FOTO(slug);
   }
   return tx;
+}
+
+// ---------- humanos 3D (GLB + esqueleto) ----------
+const PESSOA_CACHE = {}; // url -> Promise<gltf>
+let GLTF = null;
+function carregaGltf(url) {
+  GLTF = GLTF || new GLTFLoader();
+  return (PESSOA_CACHE[url] = PESSOA_CACHE[url] || GLTF.loadAsync(url));
+}
+// Esqueleto Biped do Rocketbox (nomes como o GLTFLoader os deixa): o que é "parte de baixo" ao sentar.
+const OSSO_BAIXO = /Pelvis|Spine$|Thigh|Calf|Foot|Toe/;
+// Pessoa de verdade: corpo com esqueleto, animações por nome, misturador com transição suave entre elas.
+async function fazPessoa(slug, cor) {
+  const g = PESSOA_GENERO[slug] || 'm';
+  const [modelo, anims] = await Promise.all([carregaGltf(`${PESSOAS_URL}${slug}.glb`), carregaGltf(`${PESSOAS_URL}anim-${g}.glb`)]);
+  if (!vivo()) throw new Error('cena fechada');
+  const corpo = clonaEsqueleto(modelo.scene); // cópia com esqueleto próprio (o GLB carregado fica intacto no cache)
+  const grp = new THREE.Group(); grp.userData = { slug, tipo: 'agente' }; grp.add(corpo);
+  const mats = [];
+  corpo.traverse((o) => {
+    if (!o.isMesh) return;
+    o.castShadow = true; o.receiveShadow = false; o.frustumCulled = false; o.userData = { slug, tipo: 'agente' };
+    o.material = Array.isArray(o.material) ? o.material.map((m) => m.clone()) : o.material.clone(); // materiais próprios (opacidade, inativo)
+    const ms = Array.isArray(o.material) ? o.material : [o.material];
+    for (const m of ms) {
+      m.envMapIntensity = 0.55;
+      if (m.transparent || /opacity/i.test(m.name)) { m.transparent = false; m.alphaTest = 0.45; m.depthWrite = true; m.side = THREE.DoubleSide; }
+      m.userData.corBase = m.color.clone(); mats.push(m);
+    }
+  });
+  const clips = {}; for (const c of anims.animations) clips[c.name] = c;
+  if (clips.sentado && clips.digita && !clips.digitaSentado) clips.digitaSentado = clips.sentado; // digitar sentado = sentado + mãos no teclado (procedural)
+  const mixer = new THREE.AnimationMixer(corpo);
+  const acoes = {}; for (const [n, c] of Object.entries(clips)) { const a = mixer.clipAction(c); a.setLoop(THREE.LoopRepeat, Infinity); a.enabled = true; acoes[n] = a; }
+  const osso = (n) => corpo.getObjectByName(n);
+  const b = { glb: true, g: grp, corpo, mixer, acoes, mats, atual: null, sentado: false,
+    cabeca: osso('Bip01_Head'), pescoco: osso('Bip01_Neck'),
+    antebracos: [osso('Bip01_L_Forearm'), osso('Bip01_R_Forearm')], maos: [osso('Bip01_L_Hand'), osso('Bip01_R_Hand')], teclando: 0 };
+  // toca(nome): troca a animação com transição; velocidade opcional
+  b.toca = (nome, tempo = 0.35, vel = 1) => {
+    const a = b.acoes[nome] || b.acoes.idle; if (!a) return;
+    a.timeScale = vel;
+    if (b.atual === a) return;
+    if (b.atual) { a.reset().play(); b.atual.crossFadeTo(a, tempo, true); } else { a.reset().play(); }
+    b.atual = a;
+  };
+  // dessincroniza as pessoas (não respiram todas juntas)
+  b.fase = Math.random() * 3;
+  return b;
+}
+// Depois do misturador: mãos no teclado e dedos mexendo (as animações sentadas do Rocketbox deixam as mãos no tampo).
+const _q = new THREE.Quaternion(); const _ax = new THREE.Vector3(0, 1, 0); const _ax2 = new THREE.Vector3(1, 0, 0);
+function maosNoTeclado(b, k, t) {
+  if (k <= 0.001) return;
+  for (let i = 0; i < 2; i++) {
+    const fa = b.antebracos[i], ma = b.maos[i]; if (!fa || !ma) continue;
+    fa.quaternion.multiply(_q.setFromAxisAngle(_ax, (0.55 + Math.sin(t * 17 + i * 1.7) * 0.04) * k));
+    ma.quaternion.multiply(_q.setFromAxisAngle(_ax2, Math.sin(t * 19 + i * 2.1) * 0.14 * k));
+  }
 }
 function texturaRostoEmoji(emoji) {
   const tam = 256; const cv = document.createElement('canvas'); cv.width = cv.height = tam; const x = cv.getContext('2d');
@@ -696,21 +761,27 @@ function fazBoneco(cor, rostoTx, slug) {
   return b;
 }
 function sentaBoneco(b) {
-  b.sentado = true; b.corpo.position.y = -0.39;
+  b.sentado = true;
+  if (b.glb) { b.toca('sentado', 0.45); return; }
+  b.corpo.position.y = -0.39;
   b.coxas.forEach((c) => { c.rotation.x = Math.PI / 2; }); b.canelas.forEach((c) => { c.rotation.x = -Math.PI / 2 + 0.1; });
   b.bracos.forEach(({ br, ante }) => { br.rotation.x = 0.55; ante.rotation.x = 0.95; });
 }
 function levantaBoneco(b) {
-  b.sentado = false; b.corpo.position.y = 0;
+  b.sentado = false;
+  if (b.glb) { b.toca('idle', 0.3); return; }
+  b.corpo.position.y = 0;
   b.coxas.forEach((c) => { c.rotation.x = 0; }); b.canelas.forEach((c) => { c.rotation.x = 0; });
   b.bracos.forEach(({ br, ante }) => { br.rotation.x = 0; ante.rotation.x = 0.15; });
 }
 function montaAgentes(lista) {
   for (const a of lista) {
     const m = MESAS[a.slug]; if (!m) continue;
+    // o boneco estilizado entra na hora; a pessoa de verdade (GLB) troca de lugar com ele assim que carrega
     const b = fazBoneco(a.cor, texturaRosto(a.slug, a.nome, a.cor), a.slug);
     const ag = { slug: a.slug, nome: a.nome, cor: a.cor, dados: a, b, mesa: m, x: m[0], z: m[1] + SENTA, rot: Math.PI, rotAlvo: Math.PI, ocupado: false, andando: false, digita: 0, faz: 0, estica: 0, dorme: !a.ativo, tela: E.monitores[a.slug] };
     b.g.position.set(ag.x, 0, ag.z); b.g.rotation.y = Math.PI; // de frente para as janelas (olhando para -z)
+    b.g.visible = false; // só aparece se o humano 3D falhar
     sentaBoneco(b); E.cena.add(b.g);
     // etiquetas HTML: nome e balões
     const ovl = $('#j3-ovl');
@@ -719,9 +790,25 @@ function montaAgentes(lista) {
     ag.elNome = nome; ag.elBaloes = baloes;
     E.agentes[a.slug] = ag;
     etiquetaNome(ag); telaPinta(ag);
+    trocaPorPessoa(ag);
   }
   zonasTexto();
   atualizaAgentes(lista);
+}
+// Carrega o humano 3D e põe no lugar do boneco, herdando posição, estado e pose.
+async function trocaPorPessoa(ag) {
+  const meu = E;
+  let p;
+  try { p = await fazPessoa(ag.slug, ag.cor); }
+  catch (e) { console.warn('humano 3D indisponível para', ag.slug, e); if (E === meu && ag.b) ag.b.g.visible = true; return; }
+  if (E !== meu || !vivo()) return;
+  const velho = ag.b;
+  p.g.position.copy(velho.g.position); p.g.rotation.y = velho.g.rotation.y;
+  E.cena.remove(velho.g);
+  ag.b = p; E.cena.add(p.g);
+  if (velho.sentado) sentaBoneco(p); else levantaBoneco(p);
+  p.mixer.update(p.fase); // começa num ponto diferente da animação
+  if (E.agentes[ag.slug] === ag) atualizaAgentes([ag.dados]);
 }
 function etiquetaNome(ag) {
   ag.elNome.innerHTML = `<i class="st"></i>${esc(ag.nome)}${ag.dorme ? `<small class="zz">z<small>z</small></small>` : ''}`;
@@ -739,9 +826,13 @@ function atualizaAgentes(lista) {
     const ag = E.agentes[a.slug]; if (!ag) continue;
     ag.dados = a; ag.nome = a.nome; ag.estado = a.estado;
     const dormia = ag.dorme; ag.dorme = !a.ativo;
-    ag.b.mats.forEach((m) => { m.transparent = ag.dorme; m.opacity = ag.dorme ? 0.55 : 1; m.color.set(a.cor); if (ag.dorme) m.color.lerp(new THREE.Color(0x888888), 0.5); });
-    ag.b.rosto.material.opacity = ag.dorme ? 0.6 : 1;
-    ag.b.cabeca.rotation.z = ag.dorme ? 0.25 : 0;
+    if (ag.b.glb) {
+      ag.b.mats.forEach((m) => { if (m.alphaTest) return; m.transparent = ag.dorme; m.opacity = ag.dorme ? 0.6 : 1; m.color.copy(m.userData.corBase); if (ag.dorme) m.color.multiplyScalar(0.55); m.needsUpdate = true; });
+    } else {
+      ag.b.mats.forEach((m) => { m.transparent = ag.dorme; m.opacity = ag.dorme ? 0.55 : 1; m.color.set(a.cor); if (ag.dorme) m.color.lerp(new THREE.Color(0x888888), 0.5); });
+      ag.b.rosto.material.opacity = ag.dorme ? 0.6 : 1;
+      ag.b.cabeca.rotation.z = ag.dorme ? 0.25 : 0;
+    }
     if (dormia !== ag.dorme && !ag.tela.externa) telaPinta(ag);
     etiquetaNome(ag);
     ag.elNome.dataset.estado = a.estado;
@@ -802,7 +893,7 @@ function vaiAoAgente(slug) {
 }
 function cardAgente(slug) {
   const ag = E.agentes[slug]; const a = ag.dados || {}; const c = $('#j3-card'); E.cardSlug = slug;
-  const foto = AVATARES.includes(slug) ? `<img src="/plataforma/agentes/${slug}.svg" alt="">` : `<span class="j3-ini" style="background:${esc(ag.cor)}">${esc(ag.nome.slice(0, 2))}</span>`;
+  const foto = AVATARES.includes(slug) ? `<img src="${FOTO(slug)}" alt="">` : `<span class="j3-ini" style="background:${esc(ag.cor)}">${esc(ag.nome.slice(0, 2))}</span>`;
   c.innerHTML = `<button class="j3-x" data-act="j3-fecha-card" title="${esc(t('fechar'))}">×</button>
     <div class="j3-card-topo">${foto}<div><b>${esc(ag.nome)}</b><span>${esc(a.cargo || '')}</span><small><i class="st" data-estado="${esc(a.estado || '')}"></i>${esc(a.estado === 'conectado' ? 'WhatsApp ' + t('vivo') : a.estado || '')}${ag.dorme ? ` · ${esc(t('inativo'))}` : ''}</small></div></div>
     <div class="j3-card-nums"><div><b>${a.conversas ?? 0}</b><span>${esc(t('conversas'))}</span></div><div><b>${a.enviadas ?? 0}</b><span>${esc(t('enviadas'))}</span></div><div class="${a.aprovar > 0 ? 'q' : ''}"><b>${a.aprovar ?? 0}</b><span>${esc(t('aprovar'))}</span></div></div>
@@ -835,10 +926,11 @@ function quadro(agoraMs) {
   if (E.camera.position.y < 0.5) E.camera.position.y = 0.5;
   // agentes
   for (const ag of Object.values(E.agentes)) animaAgente(ag, dt);
-  if (E.visitante) animaAgente(E.visitante, dt);
-  // rostos sempre um pouco à frente da cabeça, do lado da câmera
-  for (const ag of Object.values(E.agentes).concat(E.visitante ? [E.visitante] : [])) {
-    const b = ag.b; b.cabeca.getWorldPosition(_v); _c.copy(E.camera.position).sub(_v).normalize().multiplyScalar(0.13);
+  if (E.visitante && E.visitante.b) animaAgente(E.visitante, dt);
+  // bonecos estilizados (só se o humano 3D não carregou): rosto sempre um pouco à frente da cabeça, do lado da câmera
+  for (const ag of Object.values(E.agentes).concat(E.visitante && E.visitante.b ? [E.visitante] : [])) {
+    const b = ag.b; if (b.glb || !b.rosto) continue;
+    b.cabeca.getWorldPosition(_v); _c.copy(E.camera.position).sub(_v).normalize().multiplyScalar(0.13);
     b.rosto.position.copy(b.cabeca.position).add(b.corpo.worldToLocal(_c.add(_v)).sub(b.cabeca.position).multiplyScalar(1));
   }
   // hover
@@ -850,13 +942,14 @@ function animaAgente(ag, dt) {
   const b = ag.b; const g = b.g;
   // andar até o alvo
   if (ag.alvo) {
-    const dx = ag.alvo[0] - ag.x, dz = ag.alvo[1] - ag.z; const d = Math.hypot(dx, dz); const vel = 1.35;
+    const dx = ag.alvo[0] - ag.x, dz = ag.alvo[1] - ag.z; const d = Math.hypot(dx, dz); const vel = ag.b.glb ? 1.2 : 1.35;
     if (d < 0.03 || reduz()) { ag.x = ag.alvo[0]; ag.z = ag.alvo[1]; const r = ag.alvo; ag.alvo = null; if (ag.resolve) { const f = ag.resolve; ag.resolve = null; f(r); } }
     else { const p = Math.min(d, vel * dt); ag.x += (dx / d) * p; ag.z += (dz / d) * p; ag.rotAlvo = Math.atan2(dx, dz); ag.passo = (ag.passo || 0) + dt * 7.5; }
   }
   g.position.x = ag.x; g.position.z = ag.z;
   // vira suave
   let dr = ag.rotAlvo - ag.rot; dr = Math.atan2(Math.sin(dr), Math.cos(dr)); ag.rot += dr * Math.min(1, dt * 9); g.rotation.y = ag.rot;
+  if (b.glb) return animaPessoa(ag, b, dt);
   if (ag.andando && !b.sentado) {
     const s = Math.sin(ag.passo || 0);
     b.coxas[0].rotation.x = s * 0.55; b.coxas[1].rotation.x = -s * 0.55;
@@ -876,6 +969,26 @@ function animaAgente(ag, dt) {
     else { b.bracos.forEach(({ br, ante }) => { br.rotation.x += (0.55 - br.rotation.x) * 0.1; ante.rotation.x += (0.95 - ante.rotation.x) * 0.1; }); b.cabeca.rotation.x += (-0.05 - b.cabeca.rotation.x) * 0.1; b.cabeca.rotation.z = 0; }
   }
 }
+// Humano 3D: escolhe a animação pelo estado (andando, parado fazendo algo, sentado digitando/pensando/dormindo) e avança o misturador.
+function animaPessoa(ag, b, dt) {
+  let alvo, vel = 1;
+  if (ag.andando && !b.sentado) alvo = 'anda';
+  else if (!b.sentado) {
+    if (ag.faz > 0) { ag.faz -= dt; alvo = ag.fazAnim || 'papel'; } else alvo = ag.parado || 'idle';
+  } else if (ag.dorme) { alvo = 'respira'; vel = 0.6; }
+  else if (ag.digita > 0) { ag.digita -= dt; alvo = 'digitaSentado'; }
+  else if (ag.estica > 0) { ag.estica -= dt; alvo = 'pensa'; }
+  else alvo = 'sentado';
+  b.toca(alvo, alvo === 'anda' ? 0.25 : 0.4, alvo === 'anda' ? 1.1 : vel);
+  b.mixer.update(dt);
+  // sentado, o corpo desce para os pés tocarem o chão (as animações sentadas assumem uma cadeira alta)
+  b.corpo.position.y = lerp(b.corpo.position.y, b.sentado ? PESSOA_Y : 0, Math.min(1, dt * 5));
+  // mãos no teclado (suave para entrar e sair)
+  const quer = alvo === 'digitaSentado' ? 1 : 0; b.teclando = lerp(b.teclando, quer, Math.min(1, dt * 6));
+  maosNoTeclado(b, b.teclando, E.tempo + b.fase);
+  // inativo: cabeça pende um pouco
+  if (ag.dorme && b.pescoco) b.pescoco.quaternion.multiply(_q.setFromAxisAngle(_ax2, 0.28 + Math.sin(E.tempo * 0.8 + b.fase) * 0.03));
+}
 // Projeta as etiquetas HTML (nome, balões, salas) a partir das posições 3D.
 function projeta() {
   const W = E.W, H = E.H; const cam = E.camera;
@@ -886,7 +999,7 @@ function projeta() {
   };
   const dist = cam.position.distanceTo(E.controls.target); const k = THREE.MathUtils.clamp(14 / dist, 0.6, 1.25);
   E.raiz.style.setProperty('--k', k.toFixed(3));
-  for (const ag of Object.values(E.agentes).concat(E.visitante ? [E.visitante] : [])) {
+  for (const ag of Object.values(E.agentes).concat(E.visitante && E.visitante.b ? [E.visitante] : [])) {
     ag.b.cabeca.getWorldPosition(_v); const topo = _v.clone(); topo.y += 0.26;
     poe(ag.elBaloes, topo, -26 * k);
     if (ag.elNome) { const sent = ag.b.sentado && !ag.dorme && !ag.b.g.userData.visitante; ag.elNome.classList.toggle('longe', dist > 24); poe(ag.elNome, topo, 2); if (sent && dist < 9) ag.elNome.style.display = 'none'; }
@@ -927,10 +1040,13 @@ async function executa(it) {
   balao(ag, it.emoji, it.texto, it.festa ? 'festa' : '');
   try {
     await anda(ag, LUGAR[it.vai]);
-    ag.faz = 2.4; await espera(2600); ag.faz = 0;
+    ag.fazAnim = GESTO_DO_LUGAR[it.vai] || 'papel';
+    ag.faz = 3.2; await espera(3400); ag.faz = 0;
     await volta(ag);
   } finally { ag.ocupado = false; }
 }
+// gesto do humano 3D em cada lugar: ler o papel no mural/impressora, falar na porta/recepção, café, celular
+const GESTO_DO_LUGAR = { mural: 'papel', impressora: 'papel', porta: 'fala', recepcao: 'fala', tv: 'olhar', cafe: 'bebe', reuniao: 'fala', sofa: 'celular', plantao: 'fala' };
 function digita(ag) { ag.digita = 4.2; if (ag.tela && ag.tela.mesh) { ag.tela.mesh.material.emissiveIntensity = 1.0; setTimeout(() => { if (ag.tela && ag.tela.mesh) ag.tela.mesh.material.emissiveIntensity = ag.dorme ? 0.08 : 0.75; }, 4200); } }
 function passo(ag, x, z) {
   return new Promise((res) => { if (!vivo()) return res(); ag.alvo = [x, z]; ag.resolve = res; });
@@ -954,19 +1070,24 @@ async function volta(ag) {
 // Alguém da equipe entra pela porta ("Marcelo chegou no escritório").
 async function visitante(it) {
   if (E.visitante) return;
-  const b = fazBoneco('#8a8f98', texturaRostoEmoji('👤'), 'visitante'); b.g.userData.visitante = true;
+  E.visitante = true; // reserva a vaga enquanto carrega
+  let b;
+  try { b = await fazPessoa('visitante', '#8a8f98'); } catch { if (!vivo()) { E && (E.visitante = null); return; } b = fazBoneco('#8a8f98', texturaRostoEmoji('👤'), 'visitante'); }
+  if (!vivo()) { E && (E.visitante = null); return; }
+  b.g.userData.visitante = true;
   const ovl = $('#j3-ovl'); const baloes = document.createElement('div'); baloes.className = 'j3-baloes'; baloes.style.setProperty('--c', '#8a8f98'); ovl.appendChild(baloes);
-  const p = { slug: 'visitante', b, x: 0, z: SALA.Z + 1.6, rot: Math.PI, rotAlvo: Math.PI, andando: true, elBaloes: baloes, elNome: null, mesa: [0, 0] };
+  const p = { slug: 'visitante', b, x: 0, z: SALA.Z + 1.6, rot: Math.PI, rotAlvo: Math.PI, andando: true, elBaloes: baloes, elNome: null, mesa: [0, 0], faz: 0 };
   b.g.position.set(p.x, 0, p.z); levantaBoneco(b); E.cena.add(b.g); E.visitante = p;
   try {
     await passo(p, LUGAR.porta[0], LUGAR.porta[1] - 0.3); await passo(p, LUGAR.recepcao[0], LUGAR.recepcao[1]);
     p.andando = false; p.rotAlvo = -Math.PI / 2;
-    balao(p, it.emoji, it.texto); await espera(3800);
+    p.fazAnim = 'acena'; p.faz = 1.8; balao(p, it.emoji, it.texto); await espera(1900); p.fazAnim = 'fala'; p.faz = 2.0; await espera(1900);
     p.andando = true; await passo(p, LUGAR.sofa[0] + 1.2, SALA.CORREDOR); await passo(p, 6.2, SALA.CORREDOR);
     p.andando = false;
-    b.mats.forEach((m) => { m.transparent = true; }); for (let i = 0; i < 10; i++) { await espera(60); b.mats.forEach((m) => { m.opacity = 1 - i / 10; }); b.rosto.material.opacity = 1 - i / 10; }
+    const vis = b.mats.filter((m) => !m.alphaTest); vis.forEach((m) => { m.transparent = true; m.needsUpdate = true; });
+    for (let i = 0; i < 10; i++) { await espera(60); vis.forEach((m) => { m.opacity = 1 - i / 10; }); if (b.rosto) b.rosto.material.opacity = 1 - i / 10; }
   } finally {
-    E && E.cena.remove(b.g); baloes.remove(); b.rosto.material.map.dispose(); if (E) E.visitante = null;
+    E && E.cena.remove(b.g); baloes.remove(); if (b.rosto) b.rosto.material.map.dispose(); if (E) E.visitante = null;
   }
 }
 function festa() {
@@ -985,7 +1106,7 @@ function vidaNoEscritorio() {
   const r = Math.random();
   if (r < 0.3 && !reduz()) {
     ag.ocupado = true;
-    (async () => { try { await anda(ag, [LUGAR.cafe[0] + (Math.random() * 0.8 - 0.4), LUGAR.cafe[1]]); ag.rotAlvo = 0; balao(ag, '☕', '', 'leve'); await espera(2400); await volta(ag); } finally { ag.ocupado = false; } })();
+    (async () => { try { await anda(ag, [LUGAR.cafe[0] + (Math.random() * 0.8 - 0.4), LUGAR.cafe[1]]); ag.rotAlvo = 0; balao(ag, '☕', '', 'leve'); ag.fazAnim = 'bebe'; ag.faz = 3.6; await espera(3800); ag.faz = 0; await volta(ag); } finally { ag.ocupado = false; } })();
   } else if (r < 0.6) digita(ag);
   else if (r < 0.75) ag.estica = 1.6;
   else if (r < 0.85) balao(ag, ['📱', '💭', '📋', '🙂'][Math.floor(Math.random() * 4)], '', 'leve');

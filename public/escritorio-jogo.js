@@ -185,7 +185,7 @@ function jgNumeros(d) {
 
 // ---------- agentes ----------
 function jgSprite(a) {
-  const foto = EV_AVATARES.includes(a.slug) ? `/plataforma/agentes/${a.slug}.svg` : '';
+  const foto = EV_AVATARES.includes(a.slug) ? `/plataforma/agentes/${a.slug}.jpg` : '';
   return `<div class="jg-ag" data-slug="${esc(a.slug)}" data-act="pc-abre" title="Abrir o PC de ${esc(a.nome)}" style="--c:${esc(a.cor)}">
     <div class="jg-baloes"></div>
     <div class="jg-boneco"><span class="jg-sombra"></span><span class="jg-pernas"><i></i><i></i></span><span class="jg-corpo"></span>
@@ -274,7 +274,7 @@ function jgTicker(item) {
   const tk = $('#jg-ticker'); if (!tk) return;
   const vazio = $('.jg-tk-vazio', tk); if (vazio) vazio.remove();
   const ag = JG_ESTADO.agentes[item.agente];
-  const foto = ag && EV_AVATARES.includes(ag.slug) ? `<img src="/plataforma/agentes/${ag.slug}.svg" alt="">` : '<span class="jg-tk-p">👤</span>';
+  const foto = ag && EV_AVATARES.includes(ag.slug) ? `<img src="/plataforma/agentes/${ag.slug}.jpg" alt="">` : '<span class="jg-tk-p">👤</span>';
   const hora = item.hora ? String(item.hora).replace(' ', 'T').slice(11, 16) : new Date().toTimeString().slice(0, 5);
   const el = document.createElement('div'); el.className = 'jg-tk';
   el.innerHTML = `${foto}<span class="e">${esc(item.emoji)}</span><span class="t"><b>${esc(ag ? ag.nome : 'Equipe')}</b> ${esc(item.texto)}</span><small>${esc(hora)}</small>`;

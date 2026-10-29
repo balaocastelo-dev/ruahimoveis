@@ -20,7 +20,7 @@ window.abrePcDoAgente = async function abrePcDoAgente(slug) {
   const jg = typeof JG_ESTADO !== 'undefined' && JG_ESTADO && JG_ESTADO.agentes[slug] ? JG_ESTADO.agentes[slug].dados : null;
   const ag = (EV_CACHE && EV_CACHE.agentes || []).find((a) => a.slug === slug) || jg || { slug, nome: slug, cor: '#888', cargo: '' };
   let est = null; try { est = await api('GET', '/api/estacao'); } catch {}
-  const foto = EV_AVATARES.includes(slug) ? `/plataforma/agentes/${slug}.svg` : '';
+  const foto = EV_AVATARES.includes(slug) ? `/plataforma/agentes/${slug}.jpg` : '';
   const el = document.createElement('div');
   el.id = 'pc-janela'; el.className = 'pc-fundo';
   el.innerHTML = `<div class="pc-quadro" style="--c:${esc(ag.cor)}">

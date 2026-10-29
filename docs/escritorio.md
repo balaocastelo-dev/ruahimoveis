@@ -57,3 +57,21 @@ Os limites de valor mudam em "Regras do escritório".
   pesadas não travem o WhatsApp. Com o PC desligado, as respostas esperam na fila. (Decisão de 27/10: linhas continuam no PC por ora.)
 `ESCRITORIO=0` no `.env` desliga. Tabelas: `agente_mensagens`, `agente_eventos`, `agente_afazeres`, `agente_midias` e a coluna `leads.agente`
 (`sql/escritorio.sql`). Teste: `node test/escritorio.js`.
+
+## Escritório ao vivo em 3D (`#/whats/ao-vivo`)
+
+- `public/escritorio-3d.js` (three.js r170, `public/vendor/three`). Os 9 agentes são **humanos 3D de verdade** — personagens da
+  Microsoft Rocketbox (MIT) convertidos para GLB em `public/plataforma/pessoas/<slug>.glb` (≈0,3–1,1 MB cada) e animados por
+  esqueleto com dois conjuntos partilhados, `anim-m.glb` e `anim-f.glb` (sentado, digita, anda, bebe, papel, fala, acena, celular,
+  pensa, respira, olhar, alonga). Quem é quem está em `public/plataforma/pessoas/LICENSE.md`. Se um GLB não carregar, entra o boneco
+  estilizado antigo (`fazBoneco`).
+- Estado → animação em `animaPessoa()`: andando = `anda`; parado fazendo algo = gesto do lugar (`GESTO_DO_LUGAR`: mural/impressora = papel,
+  porta/recepção/reunião = fala, café = bebe, sofá = celular); sentado = `sentado`, digitando = `sentado` + mãos no teclado (procedural,
+  `maosNoTeclado`), alongando = `pensa`, inativo = `respira` com a cabeça pendendo. As animações sentadas assumem uma cadeira alta:
+  o corpo desce `PESSOA_Y` (−0,30 m) ao sentar; a cadeira fica `SENTA` (0,80 m) do centro da mesa.
+- **Retratos** dos agentes (`public/plataforma/agentes/<slug>.jpg`, 768 px): fotos realistas geradas pelo Flux na RTX 4090 com o
+  script `C:\Users\user\demo-herrera\avatares.py` (prompts combinando com o personagem 3D de cada um; `python avatares.py <slug>`
+  refaz um; `VARIANTE=1` muda a semente). Os `.svg` antigos continuam na pasta como reserva.
+- Para refazer os GLB: `rb/converte.py` (Blender como módulo `bpy` 5.2 + `rb/otimiza.mjs` com gltf-transform) a partir do repositório
+  `microsoft/Microsoft-Rocketbox` (sparse checkout só dos personagens usados). O conversor re-amostra as animações do Rocketbox pelas
+  matrizes locais absolutas (o descanso dos arquivos de animação não é a A-pose) e deixa só rotações + posição do Pelvis.
