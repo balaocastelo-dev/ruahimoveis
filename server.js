@@ -139,8 +139,8 @@ app.get(['/', '/index.html'], (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.type('html').send('<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>Imóveis</title><meta name="robots" content="noindex"><script src="/ir.js"></script><noscript><meta http-equiv="refresh" content="0;url=/imoveis"></noscript></head><body><a href="/imoveis">Ver os imóveis</a></body></html>');
 });
-// os humanos 3D do escritório (7 MB de GLB) e os retratos dos agentes mudam raramente: cache longo no navegador
-for (const p of ['plataforma/pessoas', 'plataforma/agentes', 'vendor']) app.use('/' + p, express.static(path.join(PUB, p), { index: false, maxAge: '7d' }));
+// Humanos, retratos, texturas do cenário e three.js mudam raramente: cache de 7 dias no navegador.
+for (const p of ['plataforma/pessoas', 'plataforma/agentes', 'plataforma/cenario', 'vendor']) app.use('/' + p, express.static(path.join(PUB, p), { index: false, maxAge: '7d' }));
 app.use(express.static(PUB, { index: false, maxAge: 0 }));
 
 // Erros: mensagem clara para o usuário, detalhe só no console.
