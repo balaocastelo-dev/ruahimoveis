@@ -133,7 +133,7 @@ async function telaEscritorioJogo2D() {
       if (!jgVivo()) return;
       JG_ESTADO.ev = r.ev; JG_ESTADO.au = r.au;
       r.eventos.forEach((e) => jgEnfileira(jgDeEvento(e)));
-      r.sistema.forEach((s) => jgEnfileira({ agente: s.agente, emoji: s.emoji, texto: s.texto, vai: JG_EMOJI_VAI[s.emoji] || null, hora: s.criado_em, festa: s.emoji === '🎉' }));
+      r.sistema.forEach((s) => jgEnfileira({ agente: s.agente, emoji: s.emoji, texto: s.texto, visitante: s.visitante, vai: JG_EMOJI_VAI[s.emoji] || null, hora: s.criado_em, festa: s.emoji === '🎉' }));
       if (r.agentes) { jgAtualizaAgentes(r.agentes); jgNumeros(r); }
     } catch {}
   }, 4000);
@@ -346,7 +346,7 @@ function jgDigita(ag) {
 async function jgVisitante(it) {
   const g = document.createElement('div');
   g.className = 'jg-ag jg-pessoa anda'; g.style.setProperty('--c', '#8a8f98');
-  g.innerHTML = `<div class="jg-baloes"></div><div class="jg-boneco"><span class="jg-sombra"></span><span class="jg-pernas"><i></i><i></i></span><span class="jg-corpo"></span><span class="jg-cab jg-cab-p">👤</span></div>`;
+  g.innerHTML = `<div class="jg-baloes"></div><div class="jg-boneco"><span class="jg-sombra"></span><span class="jg-pernas"><i></i><i></i></span><span class="jg-corpo"></span><span class="jg-cab jg-cab-p">👤</span></div><div class="jg-nome">${esc(it.visitante?.nome || 'Visitante')}</div>`;
   $('#jg-gente').appendChild(g);
   const p = { el: g, x: JG_LUGAR.porta[0], y: JG.H + 40, slug: 'pessoa' };
   g.style.left = `${p.x}px`; g.style.top = `${p.y}px`; g.style.zIndex = '2000';

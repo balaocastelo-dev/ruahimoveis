@@ -71,10 +71,14 @@ const ia = http.createServer((req, res) => {
   const db0 = require('../src/db');
   db0.audit(null, 'portal_interesse', 'AP0001 · lead 1 · visita');
   db0.audit(null, 'login', '127.0.0.1');
+  const usuarioLogin = one("SELECT id,nome FROM usuarios WHERE perfil='adm' ORDER BY id LIMIT 1");
+  db0.audit(usuarioLogin.id, 'login', '127.0.0.1');
   const v1 = await req('GET', `/api/escritorio/ao-vivo?ev=${v0.ev}&au=${v0.au}`);
   ok(v1.eventos.some((e) => e.agente === 'casas' && e.tipo === 'visita'), 'ao vivo: evento novo do agente chega');
   ok(v1.sistema.some((x) => x.emoji === '📅' && /AP0001/.test(x.texto)), 'ao vivo: pedido de visita do portal vira balão');
   ok(!JSON.stringify(v1.sistema).includes('127.0.0.1'), 'ao vivo: nada de IP no balão');
+  const chegada = v1.sistema.find((s) => s.agente === 'porta');
+  ok(chegada.visitante.id === usuarioLogin.id && chegada.visitante.nome === usuarioLogin.nome, 'login: visitante recebe id estável e nome do usuário');
   const v2 = await req('GET', `/api/escritorio/ao-vivo?ev=${v1.ev}&au=${v1.au}`);
   ok(!v2.eventos.length && !v2.sistema.length, 'ao vivo: não repete o que já mostrou');
 

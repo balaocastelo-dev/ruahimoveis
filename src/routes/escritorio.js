@@ -201,13 +201,14 @@ r.get('/escritorio/ao-vivo', (req, res) => {
   let sistema = []; let au = au0;
   if (A.veTudo(u)) {
     const l = inicio
-      ? all(`SELECT a.id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id ORDER BY a.id DESC LIMIT 1`)
-      : all(`SELECT a.id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id WHERE a.id>? ORDER BY a.id LIMIT 30`, au0);
+      ? all(`SELECT a.id,a.usuario_id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id ORDER BY a.id DESC LIMIT 1`)
+      : all(`SELECT a.id,a.usuario_id,a.acao,a.detalhe,a.em,us.nome FROM auditoria a LEFT JOIN usuarios us ON us.id=a.usuario_id WHERE a.id>? ORDER BY a.id LIMIT 30`, au0);
     for (const a of l) {
       au = Math.max(au, a.id);
       if (inicio) continue; // na abertura só marca o ponto de partida
       const x = acaoDoSistema(a, g);
-      if (x) sistema.push({ id: a.id, agente: x[0], emoji: x[1], texto: x[2], criado_em: a.em });
+      if (x) sistema.push({ id: a.id, agente: x[0], emoji: x[1], texto: x[2], criado_em: a.em,
+        ...(a.acao === 'login' ? { visitante: { id: a.usuario_id, nome: a.nome } } : {}) });
     }
   }
   const out = { ev: ev.length ? ev[ev.length - 1].id : ev0, au, eventos: ev, sistema, agora: new Date().toISOString() };

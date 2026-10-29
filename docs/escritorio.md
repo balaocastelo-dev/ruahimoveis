@@ -153,6 +153,11 @@ Os limites de valor mudam em "Regras do escritório".
    gesto do usuário. Ruído filtrado produz teclas quando agentes digitam; osciladores geram ding de ação, telefone
    de lead e acorde junto ao confete de venda. Volume baixo, sem arquivos, sem sons no histórico inicial ou na aba
    oculta. Movimento reduzido impede ativação e silencia imediatamente. Sair fecha contexto, fontes e intervalo.
+6. **Visitantes com nome:** a ação `login` entrega `{visitante: {id, nome}}` para adm/gestor, sem IP. A etiqueta
+   segue a cabeça como a dos agentes (e também aparece no 2D). O modelo é escolhido por `id % n` no conjunto de
+   GLBs disponíveis não reservados aos agentes. Hoje esse conjunto contém somente `visitante.glb`; os nove humanos
+   dos agentes ficam intactos. Logins simultâneos aguardam em fila. Ao terminar ou fechar a cena, a etiqueta e os
+   materiais próprios do visitante são removidos, sem afetar o visitante do modo andar.
 
 ### Verificação
 

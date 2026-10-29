@@ -27,21 +27,21 @@ import { OutputPass } from '/vendor/three/pos/OutputPass.js';
 
 // ---------- textos da interface (os balões vêm do servidor em português e ficam como estão) ----------
 const T = {
-  pt: { cliente: 'Cliente', entraramHoje: 'Entraram hoje', semImoveisHoje: 'Nenhum imóvel cadastrado hoje', semFoto: 'Sem foto', vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
+  pt: { visitante: 'Visitante', cliente: 'Cliente', entraramHoje: 'Entraram hoje', semImoveisHoje: 'Nenhum imóvel cadastrado hoje', semFoto: 'Sem foto', vivo: 'ao vivo', acoes: 'ações hoje', conversas: 'conversas', enviadas: 'enviadas', aprovar: 'para aprovar', cheia: 'Tela cheia (F)', apres: 'Modo apresentação',
     painel: 'Painel de hoje', noar: 'no WhatsApp', captacao: 'Sala de captação', vendas: 'Salão de vendas', diretoria: 'Diretoria', entrada: 'Entrada', mural: 'Mural de oportunidades',
     cafe: 'Café', recepcao: 'Recepção', reuniao: 'Reunião', plantao: 'Plantão', impressora: 'Impressora', vazio: 'Quando os agentes trabalharem, cada ação aparece aqui e num balão em cima de quem fez.',
     abrir: 'Abrir a mesa', fechar: 'Fechar', esperando: 'Esperando o primeiro cliente do dia…', dica: 'Arraste para girar · roda para aproximar · duplo clique num agente abre a mesa',
     virtual: 'escritório virtual', inativo: 'inativo', equipe: 'Equipe', ver2d: 'Ver em 2D', ver3d: 'Ver em 3D', hoje: 'hoje', sem3d: 'Seu navegador não abriu o 3D; mostrando a versão 2D.',
     entrar: 'Entrar no escritório', sair: 'Sair do escritório', ajuda: 'WASD ou setas andam · Shift corre · arraste para olhar · E interage · Esc sai', falarCom: 'Falar com', abrirLugar: 'Abrir', crm: 'CRM e funil', sofa: 'Sofá', cliqueAbrir: 'Clique para abrir', salaEmBreve: 'Sala de reunião ao vivo em breve',
   },
-  en: { cliente: 'Client', entraramHoje: 'Added today', semImoveisHoje: 'No properties added today', semFoto: 'No photo', vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
+  en: { visitante: 'Visitor', cliente: 'Client', entraramHoje: 'Added today', semImoveisHoje: 'No properties added today', semFoto: 'No photo', vivo: 'live', acoes: 'actions today', conversas: 'conversations', enviadas: 'sent', aprovar: 'to approve', cheia: 'Full screen (F)', apres: 'Presentation mode',
     painel: "Today's board", noar: 'on WhatsApp', captacao: 'Sourcing room', vendas: 'Sales floor', diretoria: 'Management', entrada: 'Entrance', mural: 'Opportunity board',
     cafe: 'Coffee', recepcao: 'Reception', reuniao: 'Meeting', plantao: 'Front desk', impressora: 'Printer', vazio: 'As the agents work, every action shows up here and in a balloon above whoever did it.',
     abrir: 'Open desk', fechar: 'Close', esperando: 'Waiting for the first client of the day…', dica: 'Drag to rotate · wheel to zoom · double-click an agent to open their desk',
     virtual: 'virtual office', inativo: 'inactive', equipe: 'Team', ver2d: 'View in 2D', ver3d: 'View in 3D', hoje: 'today', sem3d: 'Your browser could not open 3D; showing the 2D view.',
     entrar: 'Walk into the office', sair: 'Leave the office', ajuda: 'WASD or arrows to walk · Shift to run · drag to look · E to interact · Esc to leave', falarCom: 'Talk to', abrirLugar: 'Open', crm: 'CRM and pipeline', sofa: 'Sofa', cliqueAbrir: 'Click to open', salaEmBreve: 'Live meeting room coming soon',
   },
-  ja: { cliente: 'お客様', entraramHoje: '本日の新着物件', semImoveisHoje: '本日の新着物件はありません', semFoto: '写真なし', vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
+  ja: { visitante: '来訪者', cliente: 'お客様', entraramHoje: '本日の新着物件', semImoveisHoje: '本日の新着物件はありません', semFoto: '写真なし', vivo: 'ライブ', acoes: '本日のアクション', conversas: '会話', enviadas: '送信済み', aprovar: '承認待ち', cheia: '全画面 (F)', apres: 'プレゼンモード',
     painel: '本日のボード', noar: 'WhatsApp接続中', captacao: '物件開拓室', vendas: '営業フロア', diretoria: '経営室', entrada: '入口', mural: '案件ボード',
     cafe: 'カフェ', recepcao: '受付', reuniao: '会議', plantao: 'フロント', impressora: 'プリンター', vazio: 'エージェントが働くと、各アクションがここと担当者の上の吹き出しに表示されます。',
     abrir: 'デスクを開く', fechar: '閉じる', esperando: '本日最初のお客様をお待ちしています…', dica: 'ドラッグで回転 · ホイールでズーム · エージェントをダブルクリックでデスクを開く',
@@ -145,6 +145,8 @@ const AVATARES = ['captador', 'apartamentos', 'comerciais', 'terrenos', 'casas',
 const FOTO = (slug) => `/plataforma/agentes/${slug}.jpg`; // retrato fotorrealista (gerado no Flux) de cada agente
 // humanos 3D: sexo de cada personagem (escolhe o conjunto de animações) e onde ficam os arquivos
 const PESSOA_GENERO = { captador: 'm', apartamentos: 'f', comerciais: 'm', terrenos: 'm', casas: 'f', 'alto-padrao': 'f', offmarket: 'm', gerente: 'm', 'gerente-corretores': 'f', visitante: 'm' };
+// Só os modelos disponíveis que não estão reservados para os nove agentes.
+const VISITANTES = Object.keys(PESSOA_GENERO).filter((slug) => !AVATARES.includes(slug));
 const PESSOAS_URL = '/plataforma/pessoas/';
 const PESSOA_Y = -0.30; // as animações sentadas do Rocketbox assumem uma cadeira alta: baixa o corpo para os pés tocarem o chão
 
@@ -208,7 +210,7 @@ export async function telaEscritorio3D() {
       if (!vivo() || E !== meu) return;
       E.ev = r.ev; E.au = r.au;
       r.eventos.forEach((e) => enfileira(jgDeEvento(e)));
-      r.sistema.forEach((s) => enfileira({ agente: s.agente, emoji: s.emoji, texto: s.texto, vai: JG_EMOJI_VAI[s.emoji] || null, hora: s.criado_em, festa: s.emoji === '🎉' }));
+      r.sistema.forEach((s) => enfileira({ agente: s.agente, emoji: s.emoji, texto: s.texto, visitante: s.visitante, vai: JG_EMOJI_VAI[s.emoji] || null, hora: s.criado_em, festa: s.emoji === '🎉' }));
       if (r.agentes) { atualizaAgentes(r.agentes); numeros(r); }
     } catch {}
   }, 4000);
@@ -228,6 +230,7 @@ function para() {
   if (!E) return;
   fechaPainelLugar();
   const e = E; E = null;
+  if (e.visitante?.resolve) { e.visitante.resolve(); e.visitante.resolve = null; }
   clearInterval(e.iv); clearInterval(e.vida); clearInterval(e.relogio); clearInterval(e.ssaver);
   clearInterval(e.tvIntervalo);
   clearInterval(e.tempoIntervalo);
@@ -1466,25 +1469,37 @@ async function volta(ag) {
 }
 // Alguém da equipe entra pela porta ("Marcelo chegou no escritório").
 async function visitante(it) {
-  if (E.visitante) return;
-  E.visitante = true; // reserva a vaga enquanto carrega
+  if (!vivo()) return;
+  const meu = E; meu.filaVisitantes ||= [];
+  if (meu.visitante) { meu.filaVisitantes.push(it); return; }
+  meu.visitante = true; // reserva a vaga enquanto carrega
+  const id = Math.abs(Math.trunc(Number(it.visitante?.id) || 0)), modelo = VISITANTES[id % VISITANTES.length];
+  const nome = String(it.visitante?.nome || t('visitante')).slice(0, 120);
+  const ativo = () => E === meu && vivo();
   let b;
-  try { b = await fazPessoa('visitante', '#8a8f98'); } catch { if (!vivo()) { E && (E.visitante = null); return; } b = fazBoneco('#8a8f98', texturaRostoEmoji('👤'), 'visitante'); }
-  if (!vivo()) { E && (E.visitante = null); return; }
+  try { b = await fazPessoa(modelo, '#8a8f98'); } catch { if (!ativo()) return; b = fazBoneco('#8a8f98', texturaRostoEmoji('👤'), 'visitante'); }
+  if (!ativo()) { b.mats.forEach((m) => m.dispose()); return; }
   b.g.userData.visitante = true;
   const ovl = $('#j3-ovl'); const baloes = document.createElement('div'); baloes.className = 'j3-baloes'; baloes.style.setProperty('--c', '#8a8f98'); ovl.appendChild(baloes);
-  const p = { slug: 'visitante', b, x: 0, z: SALA.Z + 1.6, rot: Math.PI, rotAlvo: Math.PI, andando: true, elBaloes: baloes, elNome: null, mesa: [0, 0], faz: 0 };
+  const etiqueta = document.createElement('div'); etiqueta.className = 'j3-nome j3-visitante'; etiqueta.innerHTML = esc(nome); etiqueta.style.setProperty('--c', '#8a8f98'); ovl.appendChild(etiqueta);
+  const p = { slug: 'visitante', nome, usuarioId: id, modelo, b, x: 0, z: SALA.Z + 1.6, rot: Math.PI, rotAlvo: Math.PI, andando: true, elBaloes: baloes, elNome: etiqueta, mesa: [0, 0], faz: 0 };
   b.g.position.set(p.x, 0, p.z); levantaBoneco(b); E.cena.add(b.g); E.visitante = p;
+  const move = async (x, z) => { if (!ativo()) return false; await passo(p, x, z); return ativo(); };
   try {
-    await passo(p, LUGAR.porta[0], LUGAR.porta[1] - 0.3); await passo(p, LUGAR.recepcao[0], LUGAR.recepcao[1]);
+    if (!await move(LUGAR.porta[0], LUGAR.porta[1] - 0.3) || !await move(LUGAR.recepcao[0], LUGAR.recepcao[1])) return;
     p.andando = false; p.rotAlvo = -Math.PI / 2;
-    p.fazAnim = 'acena'; p.faz = 1.8; balao(p, it.emoji, it.texto); await espera(1900); p.fazAnim = 'fala'; p.faz = 2.0; await espera(1900);
-    p.andando = true; await passo(p, LUGAR.sofa[0] + 1.2, SALA.CORREDOR); await passo(p, 6.2, SALA.CORREDOR);
+    p.fazAnim = 'acena'; p.faz = 1.8; balao(p, it.emoji, it.texto); await espera(1900); if (!ativo()) return;
+    p.fazAnim = 'fala'; p.faz = 2.0; await espera(1900); if (!ativo()) return;
+    p.andando = true; if (!await move(LUGAR.sofa[0] + 1.2, SALA.CORREDOR) || !await move(6.2, SALA.CORREDOR)) return;
     p.andando = false;
     const vis = b.mats.filter((m) => !m.alphaTest); vis.forEach((m) => { m.transparent = true; m.needsUpdate = true; });
     for (let i = 0; i < 10; i++) { await espera(60); vis.forEach((m) => { m.opacity = 1 - i / 10; }); if (b.rosto) b.rosto.material.opacity = 1 - i / 10; }
   } finally {
-    E && E.cena.remove(b.g); baloes.remove(); if (b.rosto) b.rosto.material.map.dispose(); if (E) E.visitante = null;
+    meu.cena.remove(b.g); baloes.remove(); etiqueta.remove();
+    b.mixer?.stopAllAction(); b.mixer?.uncacheRoot(b.corpo); b.mats.forEach((m) => m.dispose());
+    if (b.rosto) b.rosto.material.map.dispose();
+    meu.visitante = null;
+    if (ativo() && meu.filaVisitantes.length) visitante(meu.filaVisitantes.shift());
   }
 }
 function festa(comSom = false) {
