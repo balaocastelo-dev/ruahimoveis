@@ -38,8 +38,8 @@ const escolhida = () => {
   if (ULTIMA && l.some((x) => x.k === ULTIMA.k)) return ULTIMA;   // a que a estação está usando mesmo
   return l[0] || null;
 };
-const estacao = () => (escolhida() ? escolhida().info : json(getConfig('estacao'), {}));
-const chaveEstacao = () => (escolhida() ? escolhida().k : null);
+const estacao = () => { const x = escolhida(); return x ? x.info : {}; };
+const chaveEstacao = () => { const x = escolhida(); return x ? x.k : null; };
 const status = () => json(getConfig('estacao_status'), {});
 const online = (s = status()) => !!(s.em && Date.now() - new Date(s.em).getTime() < 60e3);
 
