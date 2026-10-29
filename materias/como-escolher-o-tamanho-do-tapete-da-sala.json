@@ -12,7 +12,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Sala de estar com tapete claro grande sob o sofá e as poltronas, mesa de centro de madeira e piso de tábuas aparecendo nas bordas"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/como-escolher-o-tamanho-do-tapete-da-sala-b1c52048.jpg",
+    "alt": "Sala de estar com tapete claro grande sob o sofá e as poltronas, mesa de centro de madeira e piso de tábuas aparecendo nas bordas",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "O erro mais comum na sala? Tapete pequeno demais, perdido no meio do piso. A regra que resolve quase tudo: o tapete passa das laterais do sofá e recebe pelo menos os pés da frente dos móveis. Reunimos as folgas em centímetros, as medidas mais vendidas e um truque com fita crepe para acertar antes de comprar. Leia a dica completa no blog (link na bio).",
