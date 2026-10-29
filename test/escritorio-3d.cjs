@@ -104,14 +104,12 @@ const clima = async (page, hora, nome) => {
 
   // Lugares clicáveis: mural → oportunidades, TV da diretoria → painel, placa do salão → CRM.
   for (const [lugar, rota] of [['mural', '#/radar'], ['tv', '#/painel'], ['placa', '#/leads']]) {
-    await page.evaluate((k) => {
-      const e = window.jg3dEstado(); e.idleDesde = 1e12; e.voo = null;
-      const o = e.cliques.find((c) => c.userData.lugar === k);
-      e.camera.position.set(o.position.x * 0.5, 3.2, o.position.z + 9); e.controls.target.copy(o.position); e.controls.update();
-    }, lugar);
-    await page.waitForTimeout(700);                       // o amortecimento do OrbitControls precisa assentar
-    const p = await page.evaluate((k) => {
+    // sem amortecimento a câmera vai exatamente para onde o teste manda (e o alvo cai no centro da tela)
+    const p = await page.evaluate(async (k) => {
       const e = window.jg3dEstado(), o = e.cliques.find((c) => c.userData.lugar === k);
+      e.idleDesde = 1e12; e.voo = null; e.apres = false; e.controls.autoRotate = false; e.controls.enableDamping = false;
+      e.camera.position.set(o.position.x * 0.5, 3.2, o.position.z + 9); e.controls.target.copy(o.position); e.controls.update();
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
       const v = o.position.clone().project(e.camera), r = e.tela.getBoundingClientRect();
       return { x: r.left + (v.x + 1) * r.width / 2, y: r.top + (1 - v.y) * r.height / 2 };
     }, lugar);
@@ -124,6 +122,8 @@ const clima = async (page, hora, nome) => {
     await page.keyboard.press('Escape'); await page.waitForTimeout(150);
     ok(await page.evaluate(() => !document.querySelector('#j3-painel')), `ESC fecha o painel do ${lugar}`);
   }
+
+  await page.evaluate(() => { window.jg3dEstado().controls.enableDamping = true; });
 
   // Andar pelo escritório (tipo Roblox): entra, caminha, abre um lugar e sai.
   await page.click('.j3-andar-bt');
