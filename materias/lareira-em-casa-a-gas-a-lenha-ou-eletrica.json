@@ -1,0 +1,166 @@
+{
+  "slug": "lareira-em-casa-a-gas-a-lenha-ou-eletrica",
+  "tema": "lareira em casa a gas lenha ou eletrica",
+  "titulo": "Lareira em casa: a gás, a lenha, a etanol ou elétrica?",
+  "formato": "dica",
+  "resumo": "Lareira a lenha, a gás, a etanol ou elétrica: veja o que cada uma pede em instalação, ventilação e manutenção para aquecer a casa com segurança.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "lareira",
+    "alto padrão",
+    "segurança",
+    "conforto"
+  ],
+  "capa": {
+    "alt": "Sala de estar aconchegante com lareira de pedra acesa, poltronas de couro e manta de lã"
+  },
+  "redes": {
+    "legenda": "Lareira em casa é charme puro nas noites frias, mas cada tipo pede um cuidado: a lenha precisa de chaminé limpa, a gás de instalador habilitado, a etanol de muita atenção no abastecimento e a elétrica de fiação que aguente. Montamos um guia rápido para você escolher sem susto. Leia no blog (link na bio).",
+    "hashtags": [
+      "lareira",
+      "altopadrao",
+      "casa",
+      "decoracao",
+      "arquitetura",
+      "inverno",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem sonha com uma **lareira em casa** costuma travar na escolha do tipo: a lenha, a gás, a etanol ou elétrica. Todas aquecem e criam aquele clima de recolhimento, mas cada uma pede uma instalação, uma rotina de manutenção e um cuidado de segurança diferentes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta direta: a **lenha** entrega a experiência mais autêntica, mas exige chaminé e limpeza; a **gás** é prática, mas depende de instalação profissional; a **etanol** dispensa chaminé, mas pede atenção com o combustível; a **elétrica** é a mais simples e segura, com chama apenas simulada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Toda queima de lenha, gás ou álcool gera monóxido de carbono, um gás sem cheiro e sem cor: ventilação é obrigatória.",
+        "Lareira a lenha precisa de chaminé bem instalada e limpa com regularidade por profissional.",
+        "Aparelho a gás pede instalador habilitado e inspeção periódica de mangueiras e válvulas.",
+        "A elétrica não queima nada, mas a fiação precisa suportar a carga."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual tipo combina com a sua casa"
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os quatro tipos lado a lado",
+      "colunas": [
+        "Tipo",
+        "Instalação",
+        "Manutenção",
+        "Cuidado principal"
+      ],
+      "linhas": [
+        [
+          "Lenha",
+          "Chaminé e projeto de exaustão",
+          "Limpeza da chaminé por profissional",
+          "Fumaça e gases saindo totalmente para fora"
+        ],
+        [
+          "Gás",
+          "Rede de gás e instalador habilitado",
+          "Inspeção de mangueiras e válvulas",
+          "Vazamento e ventilação do ambiente"
+        ],
+        [
+          "Etanol",
+          "Sem chaminé; muitos modelos são portáteis",
+          "Limpeza do queimador",
+          "Abastecer só com a chama apagada e fria"
+        ],
+        [
+          "Elétrica",
+          "Tomada ou ponto elétrico dedicado",
+          "Quase nenhuma",
+          "Fiação adequada, sem benjamins"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Siga sempre o manual do fabricante, que traz distâncias mínimas e regras de uso de cada modelo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A lareira a lenha costuma ser decidida ainda no projeto da casa, porque a chaminé atravessa laje e telhado. Orientação da Defesa Civil de Curitiba, publicada em julho de 2026, pede chaminé bem instalada, limpa e mantida, para que a fumaça saia toda para fora, e lenha própria para queima, nunca madeira com verniz ou tinta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A versão a gás acende com um botão e não faz cinza, mas não é coisa para improvisar. A mesma orientação recomenda inspeção semestral por profissional habilitado indicado pelo fabricante. Mexer em rede de gás exige projeto e responsável técnico: nunca faça por conta própria. Para mais ideias de conforto em casas amplas, veja a seção de [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A lareira a etanol, também chamada de ecológica, agrada em apartamentos porque não exige duto. Reportagem da Tribuna do Paraná com o Corpo de Bombeiros alerta que o perigo está em produtos improvisados e no manuseio do álcool: use só modelos certificados, siga as instruções e não use em ambiente totalmente fechado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Os cuidados que valem para qualquer lareira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto comum entre lenha, gás e etanol é o **monóxido de carbono**, gás invisível e sem cheiro produzido na queima. Orientação do Corpo de Bombeiros de Minas Gerais, divulgada pela Rádio Itatiaia, lista sintomas como dor de cabeça, náusea, tontura e confusão mental. Diante deles, saia do ambiente e chame os bombeiros pelo 193."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Nunca feche o cômodo por completo: deixe uma fresta de janela ou porta para renovar o ar.",
+        "Não durma com a lareira acesa.",
+        "Mantenha tapetes, cortinas e mantas longe da chama, respeitando a distância do manual.",
+        "Faça a limpeza anual da chaminé e a inspeção dos aparelhos a gás com profissional.",
+        "Na elétrica, confirme com um eletricista se a fiação suporta a carga e evite extensões."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um imóvel e a lareira é desejo antigo, observe na visita se já existe chaminé, ponto de gás ou espaço para um modelo elétrico embutido. A equipe da {{cliente}}, imobiliária em Campinas que atende quem quer comprar ou vender, pode ajudar a buscar casas com esse detalhe. Mais textos no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: lenha para quem quer o ritual completo, gás para a praticidade, etanol com muito cuidado e elétrica para a tranquilidade."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Lareira a etanol é segura dentro de apartamento?",
+      "resposta": "Modelos certificados e usados conforme o manual costumam ser seguros, segundo os bombeiros. O risco está no improviso, no abastecimento com a chama acesa e no uso em ambiente totalmente fechado."
+    },
+    {
+      "pergunta": "Com que frequência limpar a chaminé da lareira a lenha?",
+      "resposta": "A orientação dos bombeiros é contratar um profissional para limpar a chaminé e a lareira uma vez por ano, além de inspeções regulares para garantir que nada obstrua a saída da fumaça."
+    },
+    {
+      "pergunta": "Lareira elétrica aquece de verdade?",
+      "resposta": "Ela funciona como um aquecedor elétrico com efeito visual de chama. Não gera fumaça nem monóxido, mas precisa de tomada e fiação que suportem a potência do aparelho."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Defesa Civil orienta sobre o uso seguro de aquecedores e lareiras — Prefeitura de Curitiba",
+      "url": "https://www.curitiba.pr.gov.br/noticias/defesa-civil-orienta-sobre-o-uso-seguro-de-aquecedores-e-lareiras/83903",
+      "data": "4 de julho de 2026"
+    },
+    {
+      "nome": "É seguro ter lareira ecológica? Bombeiros dão alerta de segurança — Tribuna do Paraná",
+      "url": "https://www.tribunapr.com.br/noticias/curitiba-regiao/e-seguro-ter-lareira-ecologica-bombeiros-dao-alerta-de-seguranca/",
+      "data": "19 de junho de 2023"
+    },
+    {
+      "nome": "Como evitar intoxicação por monóxido de carbono — Rádio Itatiaia",
+      "url": "https://www.itatiaia.com.br/brasil/sudeste/mg/morte-de-casal-em-monte-verde-saiba-como-evitar-intoxicacao-por-monoxido-de-carbono",
+      "data": "26 de junho de 2023"
+    }
+  ]
+}

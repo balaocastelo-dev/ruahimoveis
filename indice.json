@@ -171,7 +171,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-29T20:21:28.252Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "lareira-em-casa-a-gas-a-lenha-ou-eletrica",
+      "titulo": "Lareira em casa: a gás, a lenha, a etanol ou elétrica?",
+      "tema": "lareira em casa a gas lenha ou eletrica",
+      "tipo": "dica",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-10-29T20:22:13.928Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-29T20:21:28.252Z"
+  "atualizadoEm": "2026-10-29T20:22:13.929Z"
 }
