@@ -244,5 +244,132 @@
     "ambiente": "varanda"
    }
   ]
+ },
+ "2488": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/2488-1h.jpg",
+    "antigos": [
+     "casaprado/2488-1.jpg",
+     "casaprado/2488-1f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/2488-2h.jpg",
+    "antigos": [
+     "casaprado/2488-2.jpg",
+     "casaprado/2488-2f.jpg"
+    ],
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "casaprado/2488-3h.jpg",
+    "antigos": [
+     "casaprado/2488-3.jpg",
+     "casaprado/2488-3f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/2488-4h.jpg",
+    "antigos": [
+     "casaprado/2488-4.jpg",
+     "casaprado/2488-4f.jpg"
+    ],
+    "ambiente": "quarto"
+   }
+  ]
+ },
+ "86259": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/86259-1h.jpg",
+    "antigos": [
+     "casaprado/86259-1.jpg",
+     "casaprado/86259-1f.jpg"
+    ],
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "casaprado/86259-2h.jpg",
+    "antigos": [
+     "casaprado/86259-2.jpg",
+     "casaprado/86259-2f.jpg"
+    ],
+    "ambiente": "escritorio"
+   },
+   {
+    "arquivo": "casaprado/86259-3h.jpg",
+    "antigos": [
+     "casaprado/86259-3.jpg",
+     "casaprado/86259-3f.jpg"
+    ],
+    "ambiente": "piscina"
+   },
+   {
+    "arquivo": "casaprado/86259-4h.jpg",
+    "antigos": [
+     "casaprado/86259-4.jpg",
+     "casaprado/86259-4f.jpg"
+    ],
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "casaprado/86259-5h.jpg",
+    "antigos": [
+     "casaprado/86259-5.jpg",
+     "casaprado/86259-5f.jpg"
+    ],
+    "ambiente": "fachada"
+   }
+  ]
+ },
+ "87889": {
+  "imob": "casaprado",
+  "fotos": [
+   {
+    "arquivo": "casaprado/87889-1h.jpg",
+    "antigos": [
+     "casaprado/87889-1.jpg",
+     "casaprado/87889-1f.jpg"
+    ],
+    "ambiente": "banheiro"
+   },
+   {
+    "arquivo": "casaprado/87889-2h.jpg",
+    "antigos": [
+     "casaprado/87889-2.jpg",
+     "casaprado/87889-2f.jpg"
+    ],
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "casaprado/87889-3h.jpg",
+    "antigos": [
+     "casaprado/87889-3.jpg",
+     "casaprado/87889-3f.jpg"
+    ],
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "casaprado/87889-4h.jpg",
+    "antigos": [
+     "casaprado/87889-4.jpg",
+     "casaprado/87889-4f.jpg"
+    ],
+    "ambiente": "lazer"
+   },
+   {
+    "arquivo": "casaprado/87889-5h.jpg",
+    "antigos": [
+     "casaprado/87889-5.jpg",
+     "casaprado/87889-5f.jpg"
+    ],
+    "ambiente": "escritorio"
+   }
+  ]
  }
 }
