@@ -437,7 +437,7 @@ canvas#cv:hover,canvas#cv:active{border-color:var(--gold)!important;box-shadow:0
 
 /* ===== Fisguei ===== */
 .fg-robo{border-color:color-mix(in srgb,var(--gold) 40%,var(--line))}
-.fg-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;letter-spacing:.5px;background:var(--gold);color:#fff;flex:none}
+.fg-avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;letter-spacing:.5px;background:var(--gold);color:#1b1c1e;flex:none}
 .fg-qr{display:flex;gap:16px;align-items:flex-start;margin-top:12px;flex-wrap:wrap}
 .fg-qr img{background:#fff;padding:8px;border-radius:10px;border:1px solid var(--line)}
 .fg-mapa{height:560px;border-radius:12px;border:1px solid var(--line);overflow:hidden;margin-bottom:8px}
