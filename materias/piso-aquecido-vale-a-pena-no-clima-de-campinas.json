@@ -1,0 +1,170 @@
+{
+  "slug": "piso-aquecido-vale-a-pena-no-clima-de-campinas",
+  "tema": "piso aquecido vale a pena em campinas",
+  "formato": "dica",
+  "titulo": "Piso aquecido vale a pena no clima de Campinas?",
+  "resumo": "Piso aquecido em Campinas faz sentido em poucos cômodos e poucas semanas por ano. Veja os tipos, onde ele compensa e o que pesar antes de instalar.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "piso aquecido",
+    "conforto térmico",
+    "bem-estar",
+    "reforma",
+    "campinas"
+  ],
+  "capa": {
+    "alt": "Banheiro claro com piso de porcelanato amadeirado, bancada de pedra clara, toalhas de linho dobradas e luz suave de inverno pela janela"
+  },
+  "redes": {
+    "legenda": "Pé frio no piso do banheiro numa manhã de julho: vale instalar piso aquecido em Campinas? Aqui o inverno é curto, então a resposta costuma ser sim para um ou dois cômodos e não para a casa inteira. No blog, explicamos a diferença entre o sistema elétrico e o de água quente e o que pesar antes de reformar. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "pisoaquecido",
+      "bemestar",
+      "conforto",
+      "banheiro",
+      "reforma",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem pesquisa se **piso aquecido vale a pena em Campinas** normalmente pensa naquela manhã de julho em que o porcelanato do banheiro parece gelo. A ideia de pisar num chão morno é sedutora, mas a cidade tem inverno curto e tardes amenas, e isso muda bastante a conta do conforto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: em Campinas, o piso aquecido costuma compensar em um ou dois cômodos onde você fica descalço, como banheiro e quarto, e com o sistema elétrico de baixa espessura. Aquecer a casa inteira com tubos de água quente raramente faz sentido num clima como o daqui."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O frio em Campinas se concentra de junho a agosto, com mínimas médias perto de 12 °C a 13 °C.",
+        "O sistema elétrico é fino e cabe numa reforma; o de água quente pede obra grande e casa nova.",
+        "Termostato por cômodo e uso só nos dias frios mantêm o gasto de energia sob controle.",
+        "Banheiro e quarto são os candidatos naturais; sala e áreas grandes raramente compensam."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que o clima de Campinas diz sobre o piso aquecido"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelas médias climatológicas publicadas pela Climatempo, calculadas com cerca de 30 anos de observações, julho é o mês mais frio de Campinas, com mínima média em torno de 12 °C e máxima de 23 °C. Junho e agosto ficam perto disso. Ou seja: as madrugadas esfriam, mas as tardes costumam ser agradáveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, o desconforto aparece em momentos bem marcados: ao sair do banho, ao levantar cedo, ao andar descalço à noite. É exatamente aí que o piso aquecido entrega mais, porque esquenta a superfície em contato com o corpo. Para conforto do ambiente inteiro, ele concorre com soluções mais simples, como vedar frestas e usar tapetes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há dois caminhos técnicos. Segundo reportagem da Gazeta do Povo sobre aquecimento residencial, o sistema hidráulico usa tubos com água aquecida por caldeira e exige um contrapiso mais alto, perto de 10 cm. O elétrico usa cabos ou uma manta muito fina instalada sob o revestimento, sem mexer na altura do piso."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Piso aquecido elétrico ou de água quente",
+      "colunas": [
+        "Ponto",
+        "Elétrico (cabo ou manta)",
+        "Hidráulico (água quente)"
+      ],
+      "linhas": [
+        [
+          "Obra",
+          "Cabe numa troca de revestimento",
+          "Pede reforma grande ou casa nova"
+        ],
+        [
+          "Altura do piso",
+          "Quase não muda",
+          "Contrapiso mais alto, perto de 10 cm"
+        ],
+        [
+          "Controle",
+          "Termostato por cômodo",
+          "Normalmente por zonas maiores"
+        ],
+        [
+          "Faz mais sentido",
+          "Banheiro, quarto, closet",
+          "Casas grandes em clima frio"
+        ]
+      ],
+      "colunaDestaque": 1
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde instalar e o que pesar antes de decidir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O consumo depende de quanto tempo o sistema fica ligado e de quão bem o cômodo segura o calor. O portal WebArCondicionado lembra que o termostato desliga o aquecimento ao atingir a temperatura escolhida e que janelas abertas ou ambiente mal vedado fazem a conta subir. Aquecer só o cômodo em uso é o que mais pesa a favor."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Banheiro:** o caso clássico, porque você pisa descalço e molhado; a área é pequena.",
+        "**Quarto:** útil para quem levanta cedo; combine com tapete ao lado da cama.",
+        "**Revestimento:** porcelanato e pedra conduzem bem o calor; madeira precisa ficar aclimatada antes da instalação para não empenar.",
+        "**Elétrica:** o circuito e o quadro precisam ser avaliados por eletricista habilitado, com projeto e ART quando houver obra."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Não instale cabos de aquecimento por conta própria nem ligue o sistema em tomada comum. A instalação mexe na rede elétrica de área molhada e deve ser feita por profissional habilitado, seguindo o manual do fabricante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas, se o frio incomoda poucas vezes por ano, talvez um tapete de algodão, uma toalha aquecida ou a troca da janela que deixa passar vento resolvam com menos obra. Para outras ideias de conforto, veja os textos de [Bem-estar em casa](/blog/categoria/bem-estar) e as novidades do [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um imóvel e quer saber quais casas já têm esse tipo de acabamento, ou se o banheiro de uma casa comporta a reforma, a equipe da {{cliente}} conversa com você e ajuda a olhar esses detalhes na visita. Em Campinas, piso aquecido é luxo de cômodo, não de casa inteira."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Piso aquecido gasta muita energia?",
+      "resposta": "Depende do tempo ligado, do tamanho da área e da vedação do cômodo. Com termostato, uso só nos dias frios e aquecimento restrito ao banheiro ou ao quarto, o gasto costuma ficar contido."
+    },
+    {
+      "pergunta": "Dá para colocar piso aquecido sem quebrar o piso atual?",
+      "resposta": "O sistema elétrico vai por baixo do revestimento, então normalmente é preciso trocar o piso. Ele não exige subir o contrapiso, por isso é o mais usado em reformas."
+    },
+    {
+      "pergunta": "Piso aquecido funciona com piso de madeira?",
+      "resposta": "Pode funcionar, mas a madeira precisa ser aclimatada à umidade do ambiente antes da instalação para não empenar. Confirme com o fabricante do piso e do sistema."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Climatologia de Campinas — Climatempo",
+      "url": "https://www.climatempo.com.br/climatologia/418/campinas-br",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Novas tecnologias ajudam a aquecer a casa no inverno — Gazeta do Povo",
+      "url": "https://www.gazetadopovo.com.br/imoveis/novas-tecnologias-ajudam-a-aquecer-a-casa-no-inverno-d0jhgdphzpvf7lvs414ywprug",
+      "data": "2016"
+    },
+    {
+      "nome": "Piso aquecido aumenta muito o consumo de energia? — WebArCondicionado",
+      "url": "https://webarcondicionado.com.br/piso-aquecido-aumenta-muito-o-consumo-de-energia",
+      "data": "maio de 2017"
+    }
+  ]
+}
