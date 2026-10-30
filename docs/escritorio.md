@@ -89,7 +89,8 @@ Os limites de valor mudam em "Regras do escritório".
   `vercel.json` repete a regra para os arquivos estáticos servidos diretamente pela Vercel.
 - **Cidade e horário:** céu físico `Sky`, sol direcional e panorama cilíndrico atrás da fachada (`-z`), com transições entre dia,
   tarde e noite, estrelas e luz nas janelas. Os prédios próximos deixam o horizonte fotográfico visível; o chão externo fica
-  abaixo da imagem para não cortá-la. Horários seguem o relógio local do navegador (dia 6h30–16h30; tarde 16h30–19h e 5h30–6h30).
+  abaixo da imagem para não cortá-la. Horários seguem Campinas (`America/Sao_Paulo`), independentemente do fuso do navegador
+  (dia 6h30–16h30; tarde 16h30–19h e 5h30–6h30). O clima real modula essas cenas, conforme o lote 2 abaixo.
 - **Efeitos:** `RenderPass → GTAOPass → UnrealBloomPass → OutputPass`, render target HDR com até 4 amostras MSAA, ACES e exposição
   aplicada por `E.exposicao`. Bloom: threshold 0,9, strength 0,3, radius 0,4. Ambiente HDR reduzido a 0,2 para preservar os materiais.
   Sombra solar em 4096 px no desktop e 2048 no celular, limitada à capacidade da GPU. O GTAO usa meia resolução e ignora vidros,
@@ -107,9 +108,10 @@ Os limites de valor mudam em "Regras do escritório".
   (mesas, cadeiras, sofá, balcão, paredes e vidro), com empurrão em 3 iterações — não se atravessa nem se sai da sala.
   Ao lado de um agente aparece a dica **E · Falar com <nome>** (abre o PC dele ou o chat); em cima de um lugar, **E · Abrir**.
   Sair pelo mesmo botão ou por ESC; a órbita volta como estava.
-- **Lugares clicáveis:** caixas invisíveis (`MAT.hit`, `E.cliques`) na frente do mural, da TV da diretoria e da placa do salão,
-  com `userData = { tipo: 'lugar', lugar }`; `acerta()` as inclui, o cursor vira a mãozinha e a etiqueta HTML `.j3-lugar.clicavel`
-  mostra "Abrir". Clique simples (ou duplo, ou **E** no modo andar) abre o **painel do lugar** (`.j3p-fundo`, fechado por ✕, ESC
+- **Lugares clicáveis:** caixas invisíveis (`MAT.hit`, `E.cliques`) no mural, TV da diretoria, placa do salão, recepção,
+  impressora, sofá, café e mesa de reunião, com `userData = { tipo: 'lugar', lugar }`; `acerta()` as inclui,
+  o cursor vira a mãozinha e a etiqueta HTML `.j3-lugar.clicavel` mostra "Clique para abrir".
+  Clique simples (ou duplo, ou **E** no modo andar) abre o **painel do lugar** (`.j3p-fundo`, fechado por ✕, ESC
   ou clique fora) com a **tela real do sistema** num `<iframe src="/app.html?embutido=1#/rota">`:
 
   | Lugar | Tela |

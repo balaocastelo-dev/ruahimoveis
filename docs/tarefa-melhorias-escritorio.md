@@ -99,3 +99,14 @@ Validação concluída:
   `render.json` e `npm-test.log` (não versionadas).
 
 Detalhes e comandos de reprodução em [escritorio.md](escritorio.md#melhorias-do-escritório-lote-2).
+
+### Revalidação em 30/10/2026
+
+Na nova conferência, os sete commits acima já estavam na `main` local e remota, cujo código estava em `f248812`.
+Os itens foram revisados na ordem e não exigiram nova implementação. Foram repetidos com sucesso `npm test`,
+`node test/escritorio-2d.cjs` e `node test/escritorio-3d.cjs`; o relatório 3D registrou nove humanos nos três horários,
+sem erros JavaScript/WebGL ou falhas de recursos. O modo andar, o PC virtual e o painel compartilhado continuaram funcionando.
+
+Também foram refeitas com `docs/wip/servidor-teste.cjs` + `shot3d.cjs` e conferidas visualmente as capturas de 12h,
+17h30 e 21h em `data/cenario-qa/shot-{dia,tarde,noite}.png`. Os logs atualizados ficam na mesma pasta, fora do Git.
+Esta revisão altera somente a documentação: registra a validação e corrige as descrições antigas do fuso horário e dos lugares.
