@@ -60,11 +60,16 @@ do dashboard e da projeção. Mantém o visual, a sessão do gestor e a restriç
 - Nenhuma biblioteca ou migração nova. `src/agentes/ia.js` e `src/plataforma/central.js` permanecem intactos.
   Custo estimado e teto mensal, opcionais, não foram incluídos.
 
-Validação: **`npm test` passou**, incluindo `test/cerebro.js` (acesso, validação, gravação pela função,
+Validação repetida nesta revisão: **`npm test` passou**, incluindo `test/cerebro.js` (acesso, validação, gravação pela função,
 preservação da chave, totais e sigilo em erros do banco, Google e JSON inválido). **`node test/cerebro-tela.cjs`
 passou** no Chrome: desktop/celular, filtros, troca de chave/modelo, teste, remoção, recuperação de falha e
 sessão expirada. Capturas em `data/cerebro-qa/` (fora do Git). `git diff --check` sem erros.
 
-Os testes usam PostgreSQL e Gemini simulados, sem acessar chaves reais. A consulta de metadados de produção
-foi recusada pelo conector Supabase e este ambiente não tem `PLATAFORMA_DATABASE_URL`; portanto, a execução
-contra o banco e o Gemini de produção não foi validada nesta sessão.
+**Revisão em 30/10/2026:** a tela já estava implementada no commit `f248812`. A conferência dos requisitos
+identificou e corrigiu uma falha no tratamento de JSON inválido: rotas como `/gestor-api/CEREBRO/CHAVE`
+eram aceitas pelo Express, mas escapavam da resposta segura e podiam devolver o início da chave no erro.
+A proteção agora reconhece maiúsculas e minúsculas. O teste de regressão cobre também barra final,
+JSON malformado, chave enviada sem JSON e corpo acima de 200 KB, sempre com mensagem genérica em português.
+
+Os testes usam PostgreSQL e Gemini simulados, sem acessar chaves reais. A execução contra o banco e o
+Gemini de produção não foi validada nesta revisão.

@@ -143,15 +143,25 @@ async function testar() {
     estado.erroBanco = true;
     for (const [m, u] of [['GET', '/cerebro'], ['GET', '/cerebro/modelos'], ['POST', '/cerebro/chave'], ['POST', '/cerebro/testar']]) await req(m, '/gestor-api' + u, m === 'POST' ? { chave: NOVA } : undefined, 500);
     estado.erroBanco = false;
-    const invalido = await fetch(base + '/gestor-api/cerebro/chave', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: '{' + NOVA });
-    assert.equal(invalido.status, 400); assert.ok(!(await invalido.text()).includes(NOVA));
+    // O parser pode refletir apenas o começo do segredo, mesmo sem devolver a chave completa.
+    // Rotas do Express ignoram caixa e aceitam barra final; todas devem usar a resposta segura.
+    for (const rota of ['/cerebro/chave', '/CEREBRO/CHAVE', '/CeReBrO/testar/', '/CEREBRO']) {
+      for (const body of ['{' + NOVA, NOVA, JSON.stringify({ chave: NOVA, excesso: 'x'.repeat(201 * 1024) })]) {
+        const invalido = await fetch(base + '/gestor-api' + rota, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body });
+        assert.equal(invalido.status, body.length > 200 * 1024 ? 413 : 400);
+        assert.match(invalido.headers.get('content-type'), /^application\/json/);
+        const resposta = await invalido.text();
+        assert.ok(!resposta.includes(NOVA) && !resposta.includes(NOVA.slice(0, 10)), 'Erro de JSON não pode incluir nem o início da chave');
+        assert.deepEqual(JSON.parse(resposta), { erro: 'Pedido inválido. Confira os campos e tente novamente.' });
+      }
+    }
     await req('POST', '/gestor-api/cerebro/chave', { chave: null });
     assert.equal(estado.gravacoes.at(-1)[0], null); assert.equal(estado.gravacoes.at(-1)[2], false);
     assert.equal((await req('GET', '/gestor-api/cerebro')).configuracao.tem_chave, false);
     await req('POST', '/gestor-api/cerebro/testar', {}, 400);
     await req('GET', '/gestor-api/cerebro/modelos', undefined, 400);
     assert.ok(estado.gravacoes.every((p) => !JSON.stringify(p.slice(4)).includes(NOVA)));
-    console.log('ok · chave ausente/removida e segredo protegido em erros do banco, Google e JSON');
+    console.log('ok · chave ausente/removida e segredo protegido em erros do banco, Google e JSON, inclusive rotas em maiúsculas e corpo excessivo');
   } finally { await fechar(); }
 }
 module.exports = { criarServidor, CHAVE, NOVA, TOKEN };

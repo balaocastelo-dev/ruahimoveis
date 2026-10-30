@@ -135,8 +135,9 @@ async function linkDaVercel(projeto) {
 const api = express.Router();
 api.use(express.json({ limit: '200kb' }));
 // O parser também pode incluir parte do corpo no erro: nunca ecoar uma chave enviada com JSON inválido.
+// As rotas do Express aceitam maiúsculas e minúsculas; a proteção deve reconhecer as mesmas variações.
 api.use((err, req, res, next) => {
-  if (req.path === '/cerebro' || req.path.startsWith('/cerebro/')) return res.status(err.status === 413 ? 413 : 400).json({ erro: 'Pedido inválido. Confira os campos e tente novamente.' });
+  if (/^\/cerebro(?:\/|$)/i.test(req.path)) return res.status(err.status === 413 ? 413 : 400).json({ erro: 'Pedido inválido. Confira os campos e tente novamente.' });
   next(err);
 });
 
