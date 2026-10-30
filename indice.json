@@ -297,7 +297,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-30T14:23:54.981Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "cozinha-integrada-ilha-coifa-cheiro-e-barulho",
+      "titulo": "Cozinha integrada: ilha, coifa e o cuidado com cheiro e barulho",
+      "tema": "cozinha integrada com ilha coifa cheiro e barulho",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-30T17:17:42.915Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T14:23:54.982Z"
+  "atualizadoEm": "2026-10-30T17:17:42.915Z"
 }
