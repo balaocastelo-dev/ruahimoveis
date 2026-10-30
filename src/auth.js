@@ -73,6 +73,7 @@ function limpaFalhas(chave) { run('DELETE FROM tentativas_login WHERE chave=?', 
 
 // ---- middlewares ----
 function exigeLogin(req, res, next) {
+  if (req.usuario) return next(); // já entrou pela chave de API (Authorization: Bearer)
   const u = usuarioDaSessao(req);
   if (!u) return res.status(401).json({ erro: 'Sessão expirada. Entre novamente.' });
   req.usuario = u;
@@ -85,6 +86,7 @@ const exigePerfil = (...perfis) => (req, res, next) => {
 // Bloqueia requisições de escrita vindas de outro site (CSRF), além do SameSite=Lax.
 function mesmaOrigem(req, res, next) {
   if (['GET', 'HEAD', 'OPTIONS'].includes(req.method)) return next();
+  if (req.apiChave) return next(); // chave de API: não é navegador, não há risco de CSRF
   const origem = req.headers.origin;
   if (origem) {
     try {

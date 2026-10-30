@@ -35,6 +35,7 @@ function resumoAgente(a, u) {
   const ultimo = one('SELECT tipo,texto,criado_em FROM agente_eventos WHERE agente=? ORDER BY id DESC LIMIT 1', a.slug);
   const { alma, ...aj2 } = aj;
   return { ...a, nome: aj.nome, ajustes: { ...aj2, alma_editada: !!alma }, linha, linha_nome: B.ajustes(linha).nome,
+    linha_sistema: B.linhaSistema(), linha_sistema_nome: B.ajustes(B.linhaSistema()).nome,
     linha_estado: { estado: est.estado, numero: est.numero || null, vivo: est.vivo, erro: est.erro || null },
     hoje: { conversas: +hoje.conversas || 0, recebidas: +hoje.recebidas || 0, enviadas: +hoje.enviadas || 0 }, aprovar, leads, ultimo };
 }

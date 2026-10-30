@@ -1,11 +1,15 @@
-// Linhas de WhatsApp dos agentes (QR code / aparelho conectado), uma sessão por agente. Roda só no PC.
-// O TH-IA-GO (captador) usa a linha do robô do Fisguei (src/fisguei/robo.js); os outros 8 ficam aqui.
+// Linhas de WhatsApp dos agentes (QR code / aparelho conectado). Roda só no PC.
+// Por padrão existe UMA linha para todo o sistema (config.linha_sistema, ver src/agentes/base.js): todos os
+// agentes atendem pelo mesmo número e ninguém pede QR novo. Quem escolher "número próprio" na mesa ganha a
+// sessão dele. Só são abertas as linhas realmente em uso (B.linhasEmUso()).
+// O TH-IA-GO (captador) usa a linha do robô do Fisguei (src/fisguei/robo.js), que é só da captação.
 // Cada linha só liga depois que alguém clica em "Conectar" na mesa do agente (ou se já tem sessão salva).
 const fs = require('fs');
 const path = require('path');
 const cfg = require('../config');
 const { getConfig, setConfig } = require('../db');
 const C = require('./catalogo');
+const BASE = require('./base');
 
 const LINHAS = {}; // slug → { sock, st, reconectando }
 let B = null, aoReceber = null;
@@ -89,6 +93,7 @@ function falhou(slug, e) {
 async function comandos() {
   for (const a of C.AGENTES) {
     if (a.slug === 'captador') continue;
+    // comando é ordem de gente: vale mesmo para uma linha que hoje não está em uso
     const c = getConfig('agente_cmd:' + a.slug);
     if (!c) continue;
     setConfig('agente_cmd:' + a.slug, null);
@@ -118,12 +123,14 @@ async function enviar(slug, telefone, texto) {
 
 function iniciar(receber) {
   aoReceber = receber;
-  for (const a of C.AGENTES) {
-    if (a.slug === 'captador') continue;
-    if (temSessao(a.slug)) conecta(a.slug).catch((e) => falhou(a.slug, e));
-    else publica(a.slug);
+  const usadas = new Set(BASE.linhasQr());
+  log('sistema', `linha(s) em uso: ${[...usadas].join(', ') || 'nenhuma'}`);
+  for (const slug of usadas) {
+    if (temSessao(slug)) conecta(slug).catch((e) => falhou(slug, e));
+    else publica(slug);
   }
-  setInterval(() => C.AGENTES.forEach((a) => a.slug !== 'captador' && publica(a.slug)), 60e3);
+  // uma sessão salva de agente que não é mais linha fica quieta: não abre sozinha (era um QR por agente)
+  setInterval(() => { for (const slug of BASE.linhasQr()) publica(slug); }, 60e3);
 }
 
 module.exports = { iniciar, comandos, enviar, conectada };

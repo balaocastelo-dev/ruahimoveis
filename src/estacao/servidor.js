@@ -188,7 +188,10 @@ function agentesParaEstacao() {
     return { slug: a.slug, n: a.n, nome: aj.nome, cargo: a.cargo, cor: a.cor, tipo: a.tipo, ativo: aj.ativo, canal: aj.canal, wa_filtro: aj.wa_filtro, linha: B.linhaDe(a.slug), resumo: a.resumo }; });
 }
 est.get('/config', (req, res) => res.json({ id: estacao().id, cliente: cfg.CLIENTE_NOME, empresa: cfg.EMPRESA, sistema: cfg.SISTEMA_NOME, site: cfg.PUBLIC_URL || null,
-  agentes: agentesParaEstacao(), ia: iaParaEstacao() }));
+  agentes: agentesParaEstacao(), ia: iaParaEstacao(),
+  // o WhatsApp é do NÚMERO, não de cada agente: aqui vão os números que atendem pelo WhatsApp Web.
+  // O PC desse agente é o único que pode ligar sozinho — é o WhatsApp da casa.
+  linhas_wa: B.linhasWeb().map((slug) => ({ slug, nome: B.ajustes(slug).nome, wa_filtro: B.ajustes(slug).wa_filtro })) }));
 
 // Batida a cada ~8 s: a estação conta como estão os PCs e leva tarefas, mensagens para mandar e comandos.
 est.post('/batida', (req, res) => {
@@ -217,7 +220,7 @@ est.post('/batida', (req, res) => {
   const saidas = [];
   for (const m of all(`SELECT * FROM agente_mensagens WHERE direcao='saida' AND status='fila' ORDER BY id LIMIT 15`)) {
     const linha = B.linhaDe(m.agente);
-    if (B.ajustes(linha).canal !== 'web') continue;
+    if (B.canalDaLinha(linha) !== 'web') continue;
     const barra = E.barraSaida(m); if (barra) { E.marcaSaida(m, 'descartada', barra); continue; }
     if (run(`UPDATE agente_mensagens SET status='enviando', motivo=NULL WHERE id=? AND status='fila'`, m.id).changes) saidas.push({ id: m.id, linha, telefone: m.telefone, texto: m.texto });
   }

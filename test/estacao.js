@@ -52,21 +52,26 @@ process.env.ESTACAO_ID = 'teste-1'; process.env.ESTACAO_CHAVE = 'est_chave_de_te
   const saida = one(`SELECT * FROM agente_mensagens WHERE direcao='saida' AND telefone='5519999990000' ORDER BY id DESC`);
   ok(tf.status === 'feita' && tf.passos.length === 1 && saida && saida.status === 'fila' && /Tarefa concluída/.test(saida.texto), 'tarefa feita: passos guardados e resultado na fila do WhatsApp (sem esperar aprovação)');
 
-  // 4) WhatsApp Web como linha: a saída vai para a estação, não para a linha por QR
-  await req('PUT', '/api/escritorio/casas', { canal: 'web', wa_filtro: 'todos' });
-  ok(B.ajustes('casas').canal === 'web', 'agente passa a usar o WhatsApp Web do PC virtual');
-  const b3 = await est('POST', '/estacao-api/batida', { agentes: { casas: { ligado: true, wa: { estado: 'conectado', numero: '5519988887777' } } } });
-  ok(b3.saidas.some((m) => m.id === saida.id && m.linha === 'casas'), 'mensagem da fila vai para o WhatsApp Web da estação');
-  ok(B.estadoLinha('casas').estado === 'conectado' && B.estadoLinha('casas').numero === '5519988887777', 'estado da linha web vem da estação');
+  // 4) WhatsApp Web como número da casa: o canal é do NÚMERO do sistema, não de cada agente
+  const LS = B.linhaSistema();
+  await req('PUT', `/api/escritorio/${LS}`, { canal: 'web', wa_filtro: 'todos' });
+  ok(B.canalDaLinha(LS) === 'web' && B.linhaDe('casas') === LS && B.linhasWeb().length === 1,
+    'o número do sistema atende pelo WhatsApp Web e todos os agentes usam ele');
+  const cfgEst = await est('GET', '/estacao-api/config');
+  ok(cfgEst.linhas_wa.length === 1 && cfgEst.linhas_wa[0].slug === LS && cfgEst.linhas_wa[0].wa_filtro === 'todos',
+    'a estação recebe um único número de WhatsApp para segurar');
+  const b3 = await est('POST', '/estacao-api/batida', { agentes: { [LS]: { ligado: true, wa: { estado: 'conectado', numero: '5519988887777' } } } });
+  ok(b3.saidas.some((m) => m.id === saida.id && m.linha === LS), 'mensagem da fila vai para o WhatsApp Web da estação');
+  ok(B.estadoLinha(LS).estado === 'conectado' && B.estadoLinha(LS).numero === '5519988887777', 'estado da linha web vem da estação');
   await est('POST', `/estacao-api/wa-saida/${saida.id}`, { ok: true, wa_id: 'ABC' });
   ok(one('SELECT status FROM agente_mensagens WHERE id=?', saida.id).status === 'enviada', 'envio confirmado pela estação');
 
   // 5) entrada pelo WhatsApp Web vira conversa do agente (e PARAR bloqueia)
-  await est('POST', '/estacao-api/wa-entrada', { linha: 'casas', telefone: '5519977776666', nome: 'Rita', texto: 'Oi, vi a casa no portal, ainda está à venda?', wa_id: 'm1' });
-  await est('POST', '/estacao-api/wa-entrada', { linha: 'casas', telefone: '5519977776666', nome: 'Rita', texto: 'Oi, vi a casa no portal, ainda está à venda?', wa_id: 'm1' });
+  await est('POST', '/estacao-api/wa-entrada', { linha: LS, telefone: '5519977776666', nome: 'Rita', texto: 'Oi, vi a casa no portal, ainda está à venda?', wa_id: 'm1' });
+  await est('POST', '/estacao-api/wa-entrada', { linha: LS, telefone: '5519977776666', nome: 'Rita', texto: 'Oi, vi a casa no portal, ainda está à venda?', wa_id: 'm1' });
   const ent = one(`SELECT count(*) n FROM agente_mensagens WHERE direcao='entrada' AND telefone='5519977776666'`);
-  ok(ent.n === 1 && one(`SELECT agente FROM leads WHERE telefone LIKE '%77776666'`).agente === 'casas', 'mensagem nova vira entrada da Clara (sem repetir) e lead no CRM');
-  await est('POST', '/estacao-api/wa-entrada', { linha: 'casas', telefone: '5519977776666', nome: 'Rita', texto: 'PARAR', wa_id: 'm2' });
+  ok(ent.n === 1 && !!one(`SELECT agente FROM leads WHERE telefone LIKE '%77776666'`).agente, 'mensagem nova no número da casa vira entrada de um agente (sem repetir) e lead no CRM');
+  await est('POST', '/estacao-api/wa-entrada', { linha: LS, telefone: '5519977776666', nome: 'Rita', texto: 'PARAR', wa_id: 'm2' });
   ok(one(`SELECT nao_contatar FROM leads WHERE telefone LIKE '%77776666'`).nao_contatar === 1, 'PARAR pelo WhatsApp Web entra na lista não contatar');
 
   // 6) comando para a estação e cancelamento

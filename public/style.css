@@ -1388,7 +1388,10 @@ a{text-underline-offset:.18em}
 .pc-lado textarea,.pc-lado .inp{width:100%;background:#0d1014;color:#e9edf2;border:1px solid #2a3038;border-radius:10px;padding:9px;font:13.5px 'DM Sans',sans-serif}
 .pc-lado label{display:block;margin:6px 0}
 .pc-lado .btn{width:100%;margin-top:4px}
-.pc-acoes{display:flex;flex-wrap:wrap;gap:6px}.pc-acoes .btn{width:auto;flex:1}
+/* ações do PC (ligar/desligar, reiniciar, WhatsApp): um por linha, texto numa linha só — lado a lado cada botão ficava com 1/3 da largura e o nome quebrava no meio */
+.pc-acoes{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.07)}
+.pc-acoes:empty{display:none}
+.pc-acoes .btn{width:100%;flex:none;margin-top:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pc-tvivo{border-radius:12px;padding:10px;background:color-mix(in srgb,var(--c) 22%,#0d1014);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 60%,transparent)}
 .pc-tvivo .row{display:flex;align-items:center;gap:6px}.pc-tvivo .sp{flex:1}.pc-tvivo .btn{width:auto;margin:0}
 .pc-passo{margin-top:6px;font-size:13px;display:flex;gap:8px;align-items:flex-start}

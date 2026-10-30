@@ -471,6 +471,22 @@ CREATE TRIGGER IF NOT EXISTS chat_ultima AFTER INSERT ON chat_mensagens BEGIN
     WHERE id=NEW.conversa_id AND ultima_id<NEW.id;
 END;`);
 
+// Chaves de API (controle do sistema por IAs e robôs) e o registro de uso de cada uma.
+db.exec(`CREATE TABLE IF NOT EXISTS api_chaves (
+  id INTEGER PRIMARY KEY, nome TEXT NOT NULL, prefixo TEXT NOT NULL UNIQUE, chave_hash TEXT NOT NULL,
+  usuario_id INTEGER REFERENCES usuarios(id) ON DELETE CASCADE,
+  escopos TEXT NOT NULL DEFAULT '*', somente_leitura INTEGER NOT NULL DEFAULT 0,
+  limite_min INTEGER NOT NULL DEFAULT 300, ips TEXT, expira_em TEXT, ativo INTEGER NOT NULL DEFAULT 1,
+  usos INTEGER NOT NULL DEFAULT 0, ultimo_uso TEXT, ultimo_ip TEXT,
+  criada_por INTEGER REFERENCES usuarios(id) ON DELETE SET NULL,
+  criada_em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE TABLE IF NOT EXISTS api_log (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, chave_id INTEGER REFERENCES api_chaves(id) ON DELETE CASCADE,
+  metodo TEXT NOT NULL, caminho TEXT NOT NULL, status INTEGER, ms INTEGER, ip TEXT, acao TEXT, erro TEXT,
+  em TEXT NOT NULL DEFAULT (datetime('now','localtime')));
+CREATE INDEX IF NOT EXISTS ix_apilog_chave ON api_log(chave_id, id);
+CREATE INDEX IF NOT EXISTS ix_apilog_em ON api_log(em);`);
+
 const one = (sql, ...p) => db.prepare(sql).get(...p);
 const all = (sql, ...p) => db.prepare(sql).all(...p);
 const run = (sql, ...p) => db.prepare(sql).run(...p);
