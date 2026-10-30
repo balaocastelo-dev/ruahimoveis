@@ -174,3 +174,24 @@ legend{font-size:12px;font-weight:600;color:var(--suave);padding:0 6px;text-tran
 .sim-ano.futuro .sim-tag{background:var(--acao-clara);color:var(--acao)}
 @media (prefers-reduced-motion:reduce){.g-barra rect,.g-barra .g-valor,.g-barra .g-nova,.sim-kpi,.sim-bloco,.sim-ano{animation:none}}
 .entrada h1.marca{margin:0}
+
+/* Cérebro central */
+.cerebro-bloco{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);padding:22px;margin:24px 0}
+.cerebro-controles{padding:0;margin:0;border:0;min-width:0}
+.cerebro-controles input,.cerebro-controles select{width:100%;min-width:0}
+.cerebro-acoes{display:flex;flex-wrap:wrap;gap:8px}
+.cerebro-ok{color:var(--ok)}
+#ia-estado{overflow-wrap:anywhere}
+#ia-consumo .tab{min-width:650px}
+#ia-consumo tbody th{text-transform:none;letter-spacing:0;font-size:14px;color:var(--tinta)}
+#ia-consumo tfoot{background:var(--acao-clara);font-weight:600}
+#ia-grafico{overflow-x:auto;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);padding:16px 10px 8px}
+.cerebro-grafico{display:grid;grid-template-columns:repeat(30,minmax(18px,1fr));gap:4px;min-width:720px}
+.cerebro-dia{padding:0;border:0;background:none;cursor:pointer;min-width:0}
+.cerebro-coluna{display:flex;align-items:flex-end;height:160px;border-bottom:1px solid var(--linha-forte);background:linear-gradient(var(--linha) 1px,transparent 1px) 0 0/100% 40px}
+.cerebro-barra{display:block;width:100%;background:var(--acao);border-radius:4px 4px 0 0}
+.cerebro-dia:hover .cerebro-barra,.cerebro-dia:focus .cerebro-barra{background:var(--ouro)}
+.cerebro-data{display:block;font:10px var(--mono);color:var(--suave);margin-top:6px;white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1100px){.topo-in{flex-wrap:wrap}.topo .sim-nav{order:2;width:100%}}
+@media(max-width:560px){.cerebro-bloco{padding:16px}#cerebro{padding:24px 16px 60px}.topo-in{padding:12px 16px;gap:8px}.topo .marca{width:100%}.topo .sp{display:none}}

@@ -80,7 +80,7 @@
     return `<div class="bi">
     <header class="bi-topo">
       <div class="bi-marca"><span class="bi-logo">H</span><div><b>Herrera HOUSE IA</b><small>Investor dashboard</small></div></div>
-      <nav class="bi-abas">${link('/gestor', 'Imobiliárias', 'imobs')}${link('/gestor/dashboard', 'Dashboard', 'dashboard')}${link('/gestor/projecao', 'Projeção', 'projecao')}</nav>
+      <nav class="bi-abas">${link('/gestor', 'Imobiliárias', 'imobs')}${link('/gestor/cerebro', 'Cérebro', 'cerebro')}${link('/gestor/dashboard', 'Dashboard', 'dashboard')}${link('/gestor/projecao', 'Projeção', 'projecao')}</nav>
       <div class="bi-ao-vivo"><i></i>simulação ao vivo</div>
       <div class="bi-sp"></div>
       <button class="bi-btn" id="b-premissas" title="Premissas">⚙ Premissas</button>

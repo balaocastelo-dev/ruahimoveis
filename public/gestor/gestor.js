@@ -7,7 +7,7 @@ const mi = (v) => { v = Number(v) || 0; return v >= 1e9 ? 'R$ ' + (v / 1e9).toLo
 const n = (v) => (Number(v) || 0).toLocaleString('pt-BR');
 const quando = (s) => { if (!s) return '—'; const d = new Date(String(s).replace(' ', 'T')); const min = Math.round((Date.now() - d.getTime()) / 60000); if (min < 2) return 'agora'; if (min < 60) return `há ${min} min`; const h = Math.round(min / 60); if (h < 24) return `há ${h} h`; const dd = Math.round(h / 24); return dd < 30 ? `há ${dd} dia${dd > 1 ? 's' : ''}` : d.toLocaleDateString('pt-BR'); };
 const SITU = { ativa: 'Ativa', suspensa: 'Suspensa', implantacao: 'Em implantação' };
-const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel', banco_ciclo: 'rodou o banco de matérias:', materias_dia: 'mudou as matérias por dia de', lgpd_atendido: 'respondeu o pedido de titular' };
+const ACAO = { criou: 'cadastrou', editou: 'editou', suspendeu: 'suspendeu', reativou: 'reativou', viu_instalacao: 'viu os dados de instalação de', publicada: 'marcou como publicada', senha: 'trocou a senha do painel', banco_ciclo: 'rodou o banco de matérias:', materias_dia: 'mudou as matérias por dia de', lgpd_atendido: 'respondeu o pedido de titular', ia_central_chave: 'alterou a chave central do Gemini', ia_central_modelo: 'alterou o modelo central do Gemini' };
 
 async function api(metodo, url, corpo) {
   const r = await fetch('/gestor-api' + url, { method: metodo, headers: { 'Content-Type': 'application/json', 'X-Gestor': '1' }, body: corpo ? JSON.stringify(corpo) : undefined, credentials: 'same-origin' });
@@ -37,10 +37,19 @@ function telaEntrada() {
 
 // ---------- painel ----------
 let DADOS = null, FILTRO = 'todas', EU = null;
+function topoGestor(ativa = 'imobiliarias') {
+  const abas = [['imobiliarias', '/gestor', 'Imobiliárias'], ['cerebro', '/gestor/cerebro', 'Cérebro'], ['dashboard', '/gestor/dashboard', 'Dashboard'], ['projecao', '/gestor/projecao', 'Projeção 10 anos']];
+  return `<header class="topo"><div class="topo-in"><div class="marca">Herrera HOUSE IA<span>Painel do gestor</span></div><nav class="sim-nav" aria-label="Painel do gestor">${abas.map(([id, href, nome]) => `<a class="btn sm${ativa === id ? ' pri' : ''}" href="${href}"${ativa === id ? ' aria-current="page"' : ''}>${nome}</a>`).join('')}</nav><div class="sp"></div>
+    <span class="muted pequeno">${esc(EU.nome)}</span><button class="btn sm" id="b-senha">Trocar senha</button><button class="btn sm" id="b-sair">Sair</button></div></header>`;
+}
+function ligaTopoGestor() {
+  $('#b-sair').onclick = async () => { await api('POST', '/logout').catch(() => {}); telaEntrada(); };
+  $('#b-senha').onclick = janelaSenha;
+}
 async function iniciar() {
   try { EU = await api('GET', '/eu'); } catch { return; }
-  $('#raiz').innerHTML = `<header class="topo"><div class="topo-in"><div class="marca">Herrera HOUSE IA<span>Painel do gestor</span></div><nav class="sim-nav"><a class="btn sm pri" href="/gestor">Imobiliárias</a><a class="btn sm" href="/gestor/dashboard">Dashboard</a><a class="btn sm" href="/gestor/projecao">Projeção 10 anos</a></nav><div class="sp"></div>
-    <span class="muted pequeno">${esc(EU.nome)}</span><button class="btn sm" id="b-senha">Trocar senha</button><button class="btn sm" id="b-sair">Sair</button></div></header>
+  if (document.body.dataset.pagina === 'cerebro') return telaCerebro();
+  $('#raiz').innerHTML = `${topoGestor()}
     <main><h1>Imobiliárias</h1><p class="muted">Cada imobiliária tem o sistema, o portal e o blog dela, com banco separado. A base de condomínios e o 3D são comuns.</p>
     <div id="kpis" class="kpis"></div>
     <div class="cab"><h2>Clientes</h2><div class="sp"></div>
@@ -57,8 +66,7 @@ async function iniciar() {
       <p class="muted pequeno">Pedidos feitos em corretordofuturo.app/privacidade. Prazo de resposta: 15 dias. Pedidos feitos no portal de cada imobiliária ficam no sistema dela (Sistema › Privacidade e LGPD).</p>
       <div id="lgpd"><div class="vazio">Carregando…</div></div></section>
     <section class="atividade"><h2>Atividade recente</h2><ol id="ativ"></ol></section></main>`;
-  $('#b-sair').onclick = async () => { await api('POST', '/logout').catch(() => {}); telaEntrada(); };
-  $('#b-senha').onclick = janelaSenha;
+  ligaTopoGestor();
   $('#b-nova').onclick = () => (window.Herrera ? Herrera.abrir() : janelaNova());
   $('#b-rapida').onclick = janelaNova;
   $('#b-banco').onclick = async (ev) => {
@@ -83,6 +91,117 @@ async function carregar() {
     $('#ativ').innerHTML = ev.length ? ev.map((e) => `<li><span class="n">${esc(new Date(e.em.replace(' ', 'T')).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }))}</span><span>${e.acao === 'banco_materias' ? 'Entrega do banco de matérias:' : `Você ${esc(ACAO[e.acao] || e.acao)}`} ${e.imobiliaria ? `<b>${esc(e.imobiliaria)}</b>` : ''}${(e.acao === 'editou' || e.acao.startsWith('banco') || e.acao === 'materias_dia') && e.detalhe ? ` <span class="muted">(${esc(e.detalhe)})</span>` : ''}</span></li>`).join('') : '<li class="muted">Nada ainda.</li>';
   } catch (e) { $('#lista').innerHTML = `<div class="vazio">${esc(e.message)}</div>`; }
 }
+// ---------- Cérebro da plataforma ----------
+async function telaCerebro() {
+  $('#raiz').innerHTML = `${topoGestor('cerebro')}<main id="cerebro">
+    <h1>Cérebro da plataforma</h1><p class="muted">A chave central do Gemini atende as imobiliárias sem configuração individual. Acompanhe aqui o consumo de todos os modelos centrais.</p>
+    <section class="cerebro-bloco" aria-labelledby="t-chave"><h2 id="t-chave">Chave central · Gemini</h2>
+      <p id="ia-estado" role="status">Carregando a configuração…</p>
+      <form id="f-cerebro" autocomplete="off"><fieldset class="cerebro-controles" disabled>
+        <div class="campos"><label class="c">Nova chave<input name="chave" type="password" autocomplete="new-password" spellcheck="false" maxlength="200" aria-describedby="ia-ajuda" placeholder="Cole uma chave para cadastrar ou substituir"></label>
+          <label class="c">Modelo<select name="modelo" required aria-describedby="ia-modelos-msg"><option value="gemini-flash-latest">gemini-flash-latest</option></select></label></div>
+        <p id="ia-ajuda" class="muted pequeno">Deixe a chave vazia para guardar apenas o modelo. As imobiliárias recebem a alteração em até 5 minutos.</p>
+        <div class="cerebro-acoes"><button type="submit" class="btn pri">Guardar</button><button type="button" class="btn" id="ia-testar">Testar</button><button type="button" class="btn" id="ia-modelos">Atualizar modelos</button><button type="button" class="btn perigo" id="ia-remover">Remover</button></div>
+      </fieldset></form><p id="ia-modelos-msg" class="muted pequeno" role="status"></p><p id="ia-teste" role="status" aria-live="polite"></p>
+    </section>
+    <section class="banco" aria-labelledby="t-consumo"><div class="cab"><h2 id="t-consumo">Consumo por imobiliária</h2><div class="sp"></div>
+      <div class="filtros" role="group" aria-label="Período do consumo">${[['hoje', 'Hoje'], ['mes', 'Este mês'], ['mes_passado', 'Mês passado']].map(([v, t]) => `<button type="button" data-periodo="${v}" aria-pressed="${v === 'mes'}">${t}</button>`).join('')}</div><button class="btn" id="ia-atualizar">Atualizar consumo</button></div>
+      <p class="muted pequeno">Horário de São Paulo. Ordenado pela soma dos tokens de entrada e saída. Os testes deste painel aparecem separados.</p>
+      <div id="ia-consumo" aria-live="polite"><div class="vazio">Carregando o consumo…</div></div>
+    </section><section class="banco" aria-labelledby="t-grafico"><h2 id="t-grafico">Últimos 30 dias</h2><p class="muted pequeno">Tokens de entrada + saída, somando todas as imobiliárias e os testes da plataforma. Selecione uma barra para ver os números do dia.</p>
+      <div id="ia-grafico"></div><p id="ia-dia" class="muted pequeno" role="status"></p></section></main>`;
+  ligaTopoGestor();
+  const raiz = $('#cerebro'), f = $('#f-cerebro'), controles = $('fieldset', f), estado = $('#ia-estado');
+  const modelo = f.elements.modelo, chave = f.elements.chave, teste = $('#ia-teste'), modelosMsg = $('#ia-modelos-msg');
+  let periodo = 'mes', temChave = false, carregamento = 0, ocupado = false, configuracaoCarregada = false;
+  function habilitar() {
+    controles.disabled = ocupado || !configuracaoCarregada;
+    for (const id of ['#ia-testar', '#ia-remover', '#ia-modelos']) $(id, raiz).disabled = ocupado || !temChave;
+    raiz.querySelectorAll('[data-periodo], #ia-atualizar').forEach((b) => { b.disabled = ocupado; });
+  }
+  function configuracao(c) {
+    configuracaoCarregada = true;
+    temChave = c.tem_chave;
+    estado.textContent = `${temChave ? 'Chave cadastrada: …' + c.chave_final : 'Nenhuma chave central cadastrada.'} · Modelo em uso: ${c.modelo} · Última alteração da chave pelo painel: ${c.alterada_em ? new Date(String(c.alterada_em).replace(' ', 'T') + (/Z$|[+-]\d\d:\d\d$/.test(c.alterada_em) ? '' : '-03:00')).toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }) : 'sem registro anterior'}`;
+    modelo.replaceChildren(new Option(c.modelo, c.modelo));
+    habilitar();
+  }
+  async function modelos() {
+    if (!temChave) { modelosMsg.textContent = 'Guarde uma chave para listar e testar os modelos disponíveis.'; return; }
+    modelosMsg.textContent = 'Consultando modelos da chave central…';
+    const selecionado = modelo.value;
+    try {
+      const d = await api('GET', '/cerebro/modelos');
+      if (!raiz.isConnected) return;
+      modelo.replaceChildren(...d.modelos.map((m) => new Option(m.nome + ' · ' + m.id, m.id)));
+      if (!d.modelos.some((m) => m.id === selecionado)) modelo.prepend(new Option(selecionado + ' (modelo em uso; fora da lista)', selecionado));
+      modelo.value = selecionado;
+      modelosMsg.textContent = d.modelos.length ? `${n(d.modelos.length)} modelos disponíveis. Guardar aplica a escolha; Testar usa o modelo selecionado e a chave já guardada.` : 'Nenhum modelo de texto retornado. O modelo em uso foi mantido.';
+    } catch (e) { modelosMsg.textContent = e.message; }
+  }
+  async function carregarUso(inicial = false) {
+    const vez = ++carregamento;
+    const alvo = $('#ia-consumo', raiz); alvo.setAttribute('aria-busy', 'true');
+    alvo.innerHTML = '<div class="vazio">Carregando o consumo…</div>';
+    try {
+      const d = await api('GET', '/cerebro?periodo=' + periodo);
+      if (!raiz.isConnected || vez !== carregamento) return;
+      if (inicial) configuracao(d.configuracao);
+      const valores = (r) => ['chamadas', 'tokens_entrada', 'tokens_saida', 'erros'].map((k) => `<td class="dir n">${n(r[k])}</td>`).join('');
+      alvo.innerHTML = `${d.total.chamadas ? '' : '<p class="muted">Nenhum consumo registrado neste período.</p>'}<div class="tabela-rolo"><table class="tab"><caption class="sr-only">Consumo ${periodo === 'hoje' ? 'de hoje' : periodo === 'mes' ? 'deste mês' : 'do mês passado'}</caption><thead><tr><th scope="col">Imobiliária</th><th scope="col" class="dir">Chamadas</th><th scope="col" class="dir">Tokens de entrada</th><th scope="col" class="dir">Tokens de saída</th><th scope="col" class="dir">Erros</th></tr></thead><tbody>${d.imobiliarias.map((r) => `<tr><th scope="row">${esc(r.nome)}</th>${valores(r)}</tr>`).join('') || '<tr><td colspan="5">Nenhuma imobiliária cadastrada.</td></tr>'}</tbody><tfoot><tr><th scope="row">Total</th>${valores(d.total)}</tr></tfoot></table></div>`;
+      const max = Math.max(1, ...d.dias.map((r) => r.tokens_entrada + r.tokens_saida));
+      $('#ia-grafico', raiz).innerHTML = `<div class="cerebro-grafico">${d.dias.map((r, i) => {
+        const total = r.tokens_entrada + r.tokens_saida, data = r.dia.split('-').reverse().join('/');
+        const descricao = `${data}: ${n(total)} tokens · ${n(r.chamadas)} chamadas · ${n(r.erros)} erros`;
+        return `<button type="button" class="cerebro-dia" title="${esc(descricao)}" aria-label="${esc(descricao)}"><span class="cerebro-coluna"><span class="cerebro-barra" style="height:${total / max * 100}%"></span></span><span class="cerebro-data" aria-hidden="true">${i % 5 === 0 || i === d.dias.length - 1 ? esc(data.slice(0, 5)) : '&nbsp;'}</span></button>`;
+      }).join('')}</div>`;
+      $('#ia-dia', raiz).textContent = d.dias.some((r) => r.chamadas) ? 'Os dias sem consumo ficam com a barra vazia.' : 'Nenhum consumo registrado nos últimos 30 dias.';
+      raiz.querySelectorAll('.cerebro-dia').forEach((b) => { b.onclick = b.onfocus = () => { $('#ia-dia', raiz).textContent = b.getAttribute('aria-label'); }; });
+      if (inicial) await modelos();
+    } catch (e) {
+      if (!raiz.isConnected || vez !== carregamento) return;
+      alvo.innerHTML = `<div class="vazio">${esc(e.message)}</div>`;
+      if (inicial) estado.textContent = 'Não foi possível carregar a configuração. Use Atualizar consumo para tentar novamente.';
+    } finally { if (vez === carregamento) alvo.removeAttribute('aria-busy'); }
+  }
+  async function acao(fn) {
+    if (ocupado) return;
+    ocupado = true; habilitar();
+    try { await fn(); } catch (e) { aviso(e.message, true); }
+    finally { ocupado = false; if (raiz.isConnected) habilitar(); }
+  }
+  f.onsubmit = (e) => {
+    e.preventDefault();
+    const nova = chave.value.trim(); chave.value = '';
+    if (!temChave && !nova) { aviso('Cole a chave central primeiro.', true); return; }
+    acao(async () => {
+      await api('POST', '/cerebro/chave', { modelo: modelo.value, ...(nova ? { chave: nova } : {}) });
+      teste.textContent = ''; aviso('Configuração central guardada.'); await carregarUso(true);
+    });
+  };
+  $('#ia-remover', raiz).onclick = () => janela('<h2>Remover a chave central do Gemini?</h2><p>As imobiliárias deixarão de usar esta chave em até 5 minutos.</p><div class="rod"><button type="button" class="btn" data-fecha>Cancelar</button><button type="button" class="btn perigo" id="ia-confirmar">Remover chave</button></div>', (d) => {
+    $('#ia-confirmar', d).onclick = () => acao(async () => {
+      d.close(); await api('POST', '/cerebro/chave', { chave: null });
+      chave.value = ''; teste.textContent = ''; aviso('Chave central removida.'); await carregarUso(true);
+    });
+  });
+  $('#ia-testar', raiz).onclick = () => acao(async () => {
+    teste.className = 'muted'; teste.textContent = 'Fazendo uma pergunta curta ao Gemini…';
+    try {
+      const r = await api('POST', '/cerebro/testar', { modelo: modelo.value });
+      teste.className = r.ok ? 'cerebro-ok' : 'erro';
+      teste.textContent = `${r.ok ? 'OK' : 'Erro'} · ${r.mensagem} (${(r.ms / 1000).toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 })} s)`;
+    } catch (e) { teste.className = 'erro'; teste.textContent = e.message; }
+    await carregarUso();
+  });
+  $('#ia-modelos', raiz).onclick = () => acao(modelos);
+  $('#ia-atualizar', raiz).onclick = () => acao(() => carregarUso(!configuracaoCarregada));
+  raiz.querySelectorAll('[data-periodo]').forEach((b) => { b.onclick = () => {
+    periodo = b.dataset.periodo; raiz.querySelectorAll('[data-periodo]').forEach((x) => x.setAttribute('aria-pressed', x === b)); carregarUso();
+  }; });
+  await acao(() => carregarUso(true));
+}
+
 const TIPOS = { principal: 'artigos', noticia: 'notícias', dica: 'dicas' };
 function desenhaLgpd(d) {
   const alvo = $('#lgpd'); if (!alvo) return;

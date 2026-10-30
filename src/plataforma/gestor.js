@@ -74,12 +74,12 @@ async function gestorDa(req) {
   const t = lerCookie(req, COOKIE); if (!t) return null;
   return um(`SELECT g.id, g.nome, g.email FROM sessoes s JOIN gestores g ON g.id = s.gestor_id WHERE s.token_hash = $1 AND s.expira_em > now() AND g.ativo = 1`, [sha256(t)]);
 }
-const exige = (fn) => async (req, res) => {
+const exige = (fn, erroSeguro) => async (req, res) => {
   try {
     if (req.method !== 'GET' && req.get('x-gestor') !== '1') falha(403, 'Pedido recusado.');
     const g = await gestorDa(req); if (!g) falha(401, 'Entre de novo.');
     req.gestor = g; await fn(req, res);
-  } catch (e) { res.status(e.status || 500).json({ erro: e.status ? e.message : 'Algo deu errado: ' + e.message }); }
+  } catch (e) { res.status(e.status || 500).json({ erro: e.status ? e.message : erroSeguro || 'Algo deu errado: ' + e.message }); }
 };
 
 // ---------- Vercel (opcional: só com VERCEL_TOKEN) ----------
@@ -134,6 +134,11 @@ async function linkDaVercel(projeto) {
 // ---------- rotas ----------
 const api = express.Router();
 api.use(express.json({ limit: '200kb' }));
+// O parser também pode incluir parte do corpo no erro: nunca ecoar uma chave enviada com JSON inválido.
+api.use((err, req, res, next) => {
+  if (req.path === '/cerebro' || req.path.startsWith('/cerebro/')) return res.status(err.status === 413 ? 413 : 400).json({ erro: 'Pedido inválido. Confira os campos e tente novamente.' });
+  next(err);
+});
 
 api.post('/login', async (req, res) => {
   try {
@@ -359,6 +364,134 @@ api.post('/imobiliarias/:id/assistente/maps', exige(async (req, res) => {
   res.json({ ok: true, testes, parcial, motivo: parcial ? `Gravada, mas uma das APIs ainda recusa: ${testes.map_tiles !== 'ok' ? 'Map Tiles (3D realista)' : 'Street View Static (fachadas)'}. Ative no Google Cloud.` : null });
 }));
 
+// ---------- Cérebro central (somente sessão do gestor; segredos ficam no servidor) ----------
+const GEMINI_API = process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis.com/v1beta';
+const MODELO_CENTRAL = 'gemini-flash-latest';
+const exigeCerebro = (fn) => exige(fn, 'Não foi possível acessar o cérebro central. Tente novamente.');
+function modeloCentral(v) {
+  if (typeof v !== 'string') falha(400, 'Escolha um modelo Gemini válido.');
+  const m = v.trim().replace(/^models\//, '');
+  if (!/^gemini-[A-Za-z0-9._-]{1,73}$/.test(m)) falha(400, 'Escolha um modelo Gemini válido.');
+  return m;
+}
+async function estadoCentral() {
+  // Até a consulta de estado recebe somente o sufixo. Nunca devolver config ou o resultado bruto da função.
+  const r = await um(`SELECT
+    nullif(right(btrim((SELECT valor FROM plataforma.config WHERE chave = 'ia_central')), 4), '') AS chave_final,
+    coalesce(nullif((SELECT valor FROM plataforma.config WHERE chave = 'ia_central_modelo'), ''), $1) AS modelo,
+    (SELECT max(em) FROM plataforma.eventos WHERE acao = 'ia_central_chave') AS alterada_em`, [MODELO_CENTRAL]);
+  return { tem_chave: !!r.chave_final, chave_final: r.chave_final, modelo: r.modelo, alterada_em: r.alterada_em };
+}
+async function segredoCentral() {
+  const rows = await q(`SELECT chave, valor FROM plataforma.config WHERE chave IN ('ia_central', 'ia_central_modelo')`);
+  const c = Object.fromEntries(rows.map((r) => [r.chave, r.valor]));
+  const chave = String(c.ia_central || '').trim();
+  if (!chave) falha(400, 'Guarde a chave central do Gemini primeiro.');
+  return { chave, modelo: modeloCentral(c.ia_central_modelo || MODELO_CENTRAL) };
+}
+const erroGemini = (status) => status === 400 || status === 401 || status === 403 ? 'O Google recusou a chave ou o pedido. Confira a chave e as permissões do projeto.'
+  : status === 404 ? 'Modelo não disponível para esta chave. Atualize a lista de modelos.'
+    : status === 429 ? 'Limite de uso do Gemini atingido. Tente novamente em alguns minutos.'
+      : status >= 500 ? 'O Gemini está indisponível agora. Tente novamente em alguns minutos.' : 'Não foi possível consultar o Gemini.';
+
+api.get('/cerebro', exigeCerebro(async (req, res) => {
+  const periodo = req.query.periodo || 'mes';
+  if (!['hoje', 'mes', 'mes_passado'].includes(periodo)) falha(400, 'Período inválido.');
+  const [configuracao, imobiliarias, dias] = await Promise.all([
+    estadoCentral(),
+    q(`WITH relogio AS (SELECT (now() AT TIME ZONE 'America/Sao_Paulo')::date AS hoje),
+      limites AS (SELECT
+        CASE $1 WHEN 'hoje' THEN hoje WHEN 'mes' THEN date_trunc('month', hoje)::date
+          ELSE (date_trunc('month', hoje) - interval '1 month')::date END AS inicio,
+        CASE $1 WHEN 'hoje' THEN hoje + 1 WHEN 'mes' THEN (date_trunc('month', hoje) + interval '1 month')::date
+          ELSE date_trunc('month', hoje)::date END AS fim FROM relogio),
+      uso AS (SELECT imobiliaria, sum(chamadas) AS chamadas, sum(tokens_entrada) AS tokens_entrada,
+        sum(tokens_saida) AS tokens_saida, sum(erros) AS erros FROM plataforma.ia_uso, limites
+        WHERE dia >= inicio AND dia < fim GROUP BY imobiliaria)
+      SELECT coalesce(i.slug, u.imobiliaria) AS slug,
+        coalesce(i.nome, CASE WHEN u.imobiliaria = 'plataforma' THEN 'Plataforma (testes)' ELSE u.imobiliaria END) AS nome,
+        coalesce(u.chamadas, 0) AS chamadas, coalesce(u.tokens_entrada, 0) AS tokens_entrada,
+        coalesce(u.tokens_saida, 0) AS tokens_saida, coalesce(u.erros, 0) AS erros
+      FROM plataforma.imobiliarias i FULL JOIN uso u ON u.imobiliaria = i.slug
+      ORDER BY (coalesce(u.tokens_entrada, 0) + coalesce(u.tokens_saida, 0)) DESC, chamadas DESC, nome`, [periodo]),
+    q(`WITH relogio AS (SELECT (now() AT TIME ZONE 'America/Sao_Paulo')::date AS hoje)
+      SELECT to_char(d.dia, 'YYYY-MM-DD') AS dia, coalesce(sum(u.chamadas), 0) AS chamadas,
+        coalesce(sum(u.tokens_entrada), 0) AS tokens_entrada, coalesce(sum(u.tokens_saida), 0) AS tokens_saida,
+        coalesce(sum(u.erros), 0) AS erros FROM relogio,
+        LATERAL generate_series(hoje - 29, hoje, interval '1 day') AS d(dia)
+      LEFT JOIN plataforma.ia_uso u ON u.dia = d.dia::date GROUP BY d.dia ORDER BY d.dia`),
+  ]);
+  const campos = ['chamadas', 'tokens_entrada', 'tokens_saida', 'erros'];
+  for (const r of [...imobiliarias, ...dias]) for (const c of campos) r[c] = Number(r[c]);
+  const total = Object.fromEntries(campos.map((c) => [c, imobiliarias.reduce((s, r) => s + r[c], 0)]));
+  res.json({ configuracao, periodo, imobiliarias, total, dias });
+}));
+api.post('/cerebro/chave', exigeCerebro(async (req, res) => {
+  const b = req.body || {}, manter = b.chave === undefined;
+  if (manter && b.modelo === undefined) falha(400, 'Informe uma chave ou escolha um modelo.');
+  if (!manter && b.chave !== null && (typeof b.chave !== 'string' || !/^[A-Za-z0-9_\-.]{20,200}$/.test(b.chave.trim()))) falha(400, 'Isso não parece uma chave do Gemini. Cole a chave inteira ou use Remover.');
+  const modelo = b.modelo === undefined ? null : modeloCentral(b.modelo);
+  // A leitura da chave para mudar só o modelo e a gravação ficam na mesma instrução, sem cache nem ida ao cliente.
+  // Evento e troca são atômicos. A função é a única responsável por escrever no cofre.
+  await q(`WITH troca AS MATERIALIZED (
+      SELECT plataforma.definir_ia_central(CASE WHEN $3::boolean THEN
+        (SELECT valor FROM plataforma.config WHERE chave = 'ia_central') ELSE $1::text END, $2::text))
+    INSERT INTO plataforma.eventos(gestor_id, imobiliaria_id, acao, detalhe)
+      SELECT $4, NULL, $5, $6 FROM troca`,
+  [manter || b.chave === null ? null : b.chave.trim(), modelo, manter, req.gestor.id,
+    manter ? 'ia_central_modelo' : 'ia_central_chave', manter ? 'Modelo central atualizado' : b.chave === null ? 'Chave central removida' : 'Chave central atualizada']);
+  res.json({ ok: true });
+}));
+api.get('/cerebro/modelos', exigeCerebro(async (req, res) => {
+  const { chave } = await segredoCentral(), modelos = new Map(), paginas = new Set();
+  let pagina = '';
+  const signal = AbortSignal.timeout(15000);
+  try {
+    do {
+      const r = await fetch(`${GEMINI_API}/models?pageSize=200${pagina ? '&pageToken=' + encodeURIComponent(pagina) : ''}`, { headers: { 'x-goog-api-key': chave }, signal });
+      if (!r.ok) return res.status(502).json({ erro: erroGemini(r.status) });
+      const j = await r.json();
+      for (const m of j.models || []) {
+        const id = String(m.name || '').replace(/^models\//, '');
+        // Mesmos modelos de texto de IA.testar; nenhuma resposta bruta do provedor chega ao navegador.
+        if ((m.supportedGenerationMethods || []).includes('generateContent') && /^gemini-[A-Za-z0-9._-]{1,73}$/.test(id) && !/embedding|image|tts|audio|live/i.test(id) && !id.includes(chave)) {
+          modelos.set(id, { id, nome: String(m.displayName || id).split(chave).join('…' + chave.slice(-4)).slice(0, 120) });
+        }
+      }
+      pagina = j.nextPageToken || '';
+      if (pagina && paginas.has(pagina)) throw new Error('Paginação repetida');
+      paginas.add(pagina);
+    } while (pagina);
+    res.json({ modelos: [...modelos.values()] });
+  } catch { res.status(502).json({ erro: 'Não foi possível listar os modelos do Gemini. Tente novamente.' }); }
+}));
+api.post('/cerebro/testar', exigeCerebro(async (req, res) => {
+  const { chave, modelo: atual } = await segredoCentral();
+  const modelo = req.body && req.body.modelo !== undefined ? modeloCentral(req.body.modelo) : atual;
+  const inicio = Date.now(); let ok = false, mensagem, uso = {};
+  try {
+    // Mesmo generateContent de IA.testar, sempre com a chave central e sem alterar a configuração da imobiliária.
+    const r = await fetch(`${GEMINI_API}/models/${encodeURIComponent(modelo)}:generateContent`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'x-goog-api-key': chave },
+      body: JSON.stringify({ contents: [{ role: 'user', parts: [{ text: 'Responda apenas: OK.' }] }], generationConfig: { maxOutputTokens: 256 } }),
+      signal: AbortSignal.timeout(30000),
+    });
+    const j = await r.json(); uso = j.usageMetadata || {};
+    ok = r.ok && (j.candidates || []).some((c) => (c.content?.parts || []).some((p) => !p.thought && typeof p.text === 'string' && p.text.trim()));
+    mensagem = ok ? 'O Gemini respondeu à pergunta de teste.' : r.ok ? 'O Gemini não devolveu texto. Tente novamente ou escolha outro modelo.' : erroGemini(r.status);
+  } catch { mensagem = 'O Gemini não respondeu ao teste. Confira a conexão e tente novamente.'; }
+  const ms = Date.now() - inicio;
+  const tokens = (v) => Number.isSafeInteger(v) && v >= 0 ? v : 0;
+  // O teste também consome tokens; fica separado das imobiliárias e não derruba o resultado se a medição falhar.
+  await q(`INSERT INTO plataforma.ia_uso(imobiliaria, dia, modelo, chamadas, tokens_entrada, tokens_saida, erros)
+    VALUES ('plataforma', (now() AT TIME ZONE 'America/Sao_Paulo')::date, $1, 1, $2, $3, $4)
+    ON CONFLICT (imobiliaria, dia, modelo) DO UPDATE SET chamadas = ia_uso.chamadas + 1,
+      tokens_entrada = ia_uso.tokens_entrada + EXCLUDED.tokens_entrada, tokens_saida = ia_uso.tokens_saida + EXCLUDED.tokens_saida,
+      erros = ia_uso.erros + EXCLUDED.erros, atualizado_em = now()`,
+  [modelo, tokens(uso.promptTokenCount), tokens(uso.candidatesTokenCount), ok ? 0 : 1]).catch(() => {});
+  res.json({ ok, mensagem, ms });
+}));
+
 // Banco de matérias do blog: estoque, entregas e o ciclo (sincronizar o ramo + entregar) na hora.
 const banco = require('./banco');
 api.get('/banco', exige(async (req, res) => res.json(await banco.situacao(q))));
@@ -421,12 +554,14 @@ function gestor(req, res, next) {
   const host = String(req.hostname || '').toLowerCase();
   if (HOSTS.has(host) && (req.path === '/banco-ciclo' || req.path === '/banco-materias/situacao.json')) return bancoPublico(req, res);
   const SIM = { '/gestor/dashboard': 'dashboard', '/gestor/projecao': 'projecao' }[req.path.replace(/\/$/, '')];
-  const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || !!SIM || req.path.startsWith('/gestor-api/');
+  const cerebro = req.path.replace(/\/$/, '') === '/gestor/cerebro';
+  const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || !!SIM || cerebro || req.path.startsWith('/gestor-api/');
   if (!ehGestor) return next();
   if (!HOSTS.has(host)) return res.status(404).type('text/plain').send('Não encontrado.');
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.setHeader('Cache-Control', 'no-store');
   if (req.path.startsWith('/gestor-api/')) { req.url = req.url.replace(/^\/gestor-api/, ''); return api(req, res, next); }
+  if (cerebro) return res.type('html').send(PAGINA.replace('<body>', '<body data-pagina="cerebro">').replace('<title>Painel do gestor', '<title>Cérebro · Painel do gestor'));
   if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js').replace('/gestor/gestor.css">', '/gestor/gestor.css"><link rel="stylesheet" href="/gestor/bi.css">')
     .replace(/<title>[^<]*<\/title>/, `<title>${SIM === 'dashboard' ? 'Dashboard' : 'Projeção'} · Painel do gestor</title>`));
   res.type('html').send(PAGINA);

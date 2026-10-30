@@ -41,3 +41,30 @@ Nova seção "Cérebro" no painel do gestor, no mesmo visual das outras páginas
 > Use a função plataforma.definir_ia_central para gravar a chave e a tabela plataforma.ia_uso para o consumo.
 > A chave nunca pode voltar para o navegador (só os 4 últimos dígitos). npm test antes de subir; commit e
 > push em main, mensagens em português.
+
+## Resultado
+
+Implementado em 30/10/2026: **Cérebro** em `/gestor/cerebro`, com acesso pela navegação do painel,
+do dashboard e da projeção. Mantém o visual, a sessão do gestor e a restrição aos hosts da plataforma.
+
+- Chave central do Gemini: estado, somente os quatro últimos caracteres, modelo e data da última
+  alteração feita pelo painel. Guardar e Remover usam exclusivamente `plataforma.definir_ia_central`;
+  mudar apenas o modelo preserva a chave no servidor. A troca e o evento são gravados na mesma instrução.
+  Alterações anteriores à tela aparecem como **sem registro anterior**, pois não há data documentada no cofre.
+- Modelos consultados no Google com paginação e filtro para geração de texto. Testar faz uma pergunta curta
+  com a chave central e o modelo selecionado, informa sucesso/erro e duração, sem devolver a resposta bruta.
+  Os testes são contabilizados separadamente como **Plataforma (testes)** em `plataforma.ia_uso`.
+- Consumo de todos os modelos por imobiliária: Hoje, Este mês e Mês passado, horário de São Paulo,
+  chamadas, tokens de entrada/saída, erros e total; ordenação pela soma de tokens. Gráfico HTML/CSS de
+  30 dias, incluindo dias zerados, com números acessíveis pelo teclado e em celular.
+- Nenhuma biblioteca ou migração nova. `src/agentes/ia.js` e `src/plataforma/central.js` permanecem intactos.
+  Custo estimado e teto mensal, opcionais, não foram incluídos.
+
+Validação: **`npm test` passou**, incluindo `test/cerebro.js` (acesso, validação, gravação pela função,
+preservação da chave, totais e sigilo em erros do banco, Google e JSON inválido). **`node test/cerebro-tela.cjs`
+passou** no Chrome: desktop/celular, filtros, troca de chave/modelo, teste, remoção, recuperação de falha e
+sessão expirada. Capturas em `data/cerebro-qa/` (fora do Git). `git diff --check` sem erros.
+
+Os testes usam PostgreSQL e Gemini simulados, sem acessar chaves reais. A consulta de metadados de produção
+foi recusada pelo conector Supabase e este ambiente não tem `PLATAFORMA_DATABASE_URL`; portanto, a execução
+contra o banco e o Gemini de produção não foi validada nesta sessão.
