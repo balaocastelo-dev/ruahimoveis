@@ -4,6 +4,8 @@ const os = require('os'), path = require('path'), fs = require('fs'), crypto = r
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-estacao-'));
 process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'y'.repeat(48); process.env.IA_MODO = 'desligado';
 process.env.ESTACAO_ID = 'teste-1'; process.env.ESTACAO_CHAVE = 'est_chave_de_teste_1234567890';
+// A configuração do PC não pode fornecer chaves reais ao cenário "sem chave".
+for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
 
 (async () => {
   const app = require('../server');

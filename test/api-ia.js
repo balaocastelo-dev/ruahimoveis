@@ -4,6 +4,8 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-api-'));
 process.env.RUAH_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado'; process.env.ESCRITORIO = '0'; process.env.FISGUEI_ROBO = '0'; process.env.RADAR_PORTAIS = '0';
+// Exercita apenas o banco temporário e impede consultas ao cofre real da plataforma.
+for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
 const app = require('../server');
 const assert = require('assert');
 
@@ -84,6 +86,11 @@ const assert = require('assert');
   const log = ok(await req('GET', '/api/chaves/log?limite=5', null, true), 'registro de uso');
   assert(log.length > 0 && log[0].caminho);
 
-  srv.close(); fs.rmSync(tmp, { recursive: true, force: true });
+  await new Promise((resolve, reject) => srv.close((erro) => erro ? reject(erro) : resolve()));
+  require('../src/db').db.close(); // Windows mantém o arquivo bloqueado enquanto o SQLite está aberto.
+  const limpeza = fs.realpathSync(tmp);
+  assert.equal(path.dirname(limpeza), fs.realpathSync(os.tmpdir()));
+  assert.ok(path.basename(limpeza).startsWith('ruah-api-'));
+  fs.rmSync(limpeza, { recursive: true, force: true });
   console.log('\nAPI de controle por IA: tudo certo.');
 })().catch((e) => { console.error(e); process.exit(1); });
