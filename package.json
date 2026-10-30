@@ -10,9 +10,11 @@
   },
   "scripts": {
     "start": "node --disable-warning=ExperimentalWarning server.js",
-    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/banco-materias.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js && node test/plataforma.js && node test/lgpd.js && node test/social.js && node test/estacao.js",
+    "test": "node test/smoke.js && node test/og.js && node test/blog.js && node test/banco-materias.js && node test/portal.js && node test/painel.js && node test/fisguei.js && node test/fisguei-inteligente.js && node test/condominios.js && node test/mercado.js && node test/escritorio.js && node test/plataforma.js && node test/lgpd.js && node test/social.js && node test/estacao.js && node test/api-ia.js",
     "portal": "node scripts/portal-publicar.mjs",
-    "blog": "node scripts/blog-publicar.mjs"
+    "blog": "node scripts/blog-publicar.mjs",
+    "api-chave": "node scripts/api-chave.js",
+    "mcp": "node scripts/mcp-herrera.mjs"
   },
   "dependencies": {
     "@wppconnect/wa-js": "^4.7.2",

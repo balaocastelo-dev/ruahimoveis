@@ -54,6 +54,11 @@ app.use('/fisguei-api', require('./src/routes/fisguei').receber);
 app.use('/estacao-api', require('./src/estacao/servidor').est);
 
 app.use(express.json({ limit: '1mb' }));
+// Controle por IA: qualquer rota /api aceita uma chave de API (Authorization: Bearer hh_...).
+// Vem antes de tudo: a chave resolve o usuário, dispensa o cookie e o CSRF de navegador.
+const apiIA = require('./src/api-ia');
+app.use('/api', apiIA.porChave);
+app.use('/gestor-api', apiIA.porChave);
 app.use('/api', mesmaOrigem);
 app.use('/api/publico/portal', require('./src/routes/portal').api);
 app.use('/api/publico/blog', require('./src/routes/blog').api);
@@ -62,6 +67,7 @@ app.use('/api/publico/bairros', require('./src/routes/bairros').api);
 app.use('/api/publico', publico);
 const ABERTAS = new Set(['/setup', '/login', '/logout', '/drive/callback']);
 app.use('/api', (req, res, next) => (ABERTAS.has(req.path) ? next() : exigeLogin(req, res, next)));
+app.use('/api', apiIA.rotas); // chaves de API e /api/ia (catálogo, estado, executar, consulta)
 app.use('/api', require('./src/routes/arquivos'));
 app.use('/api/imoveis', require('./src/routes/imoveis'));
 app.use('/api', require('./src/routes/leads'));
