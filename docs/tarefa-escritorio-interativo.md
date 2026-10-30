@@ -38,4 +38,6 @@ placa → `#/leads`, mais recepção/impressora/café/reunião pelo modo andar),
 CSP com `frame-src 'self'`/`frame-ancestors 'self'` e `X-Frame-Options: SAMEORIGIN`. Testes no `test/escritorio-3d.cjs`
 (clique nos três lugares, ESC, modo andar) e documentação em `docs/escritorio.md`.
 
-Falta (se quiser continuar): os mesmos cliques no modo 2D (`public/escritorio-jogo.js`).
+Concluído no lote 2: os mesmos cliques no modo 2D (`public/escritorio-jogo.js`) usam o painel compartilhado
+de `public/escritorio-lugares.js`, inclusive sem WebGL. Entrega no commit `86cd02e` e teste em
+`test/escritorio-2d.cjs`; detalhes em [tarefa-melhorias-escritorio.md](tarefa-melhorias-escritorio.md#resultado).

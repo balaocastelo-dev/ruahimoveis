@@ -110,3 +110,25 @@ sem erros JavaScript/WebGL ou falhas de recursos. O modo andar, o PC virtual e o
 Também foram refeitas com `docs/wip/servidor-teste.cjs` + `shot3d.cjs` e conferidas visualmente as capturas de 12h,
 17h30 e 21h em `data/cenario-qa/shot-{dia,tarde,noite}.png`. Os logs atualizados ficam na mesma pasta, fora do Git.
 Esta revisão altera somente a documentação: registra a validação e corrige as descrições antigas do fuso horário e dos lugares.
+
+### Conferência da main em `5f9265f` (30/10/2026)
+
+Os sete itens foram conferidos novamente na ordem e já estavam implementados na `main` local e remota,
+inclusive os oito cliques do 2D no painel compartilhado. Os arquivos de produção foram preservados.
+Foi corrigida também a nota antiga em `tarefa-escritorio-interativo.md` que ainda dizia faltar essa integração.
+
+O commit `c7cec91` corrige duas instabilidades do teste headless: o avanço automático do tour podia ocorrer
+durante os cliques lentos do SwiftShader; e o iframe carregava a aplicação completa num servidor simulado sem
+`/marca.js` ou sessão. O teste agora separa navegação manual e avanço automático das seis paradas e usa conteúdo
+simulado no iframe, como o teste 2D, verificando também ESC com foco dentro dele. Nada mudou no tour em produção.
+
+Validação final desta rodada:
+
+- `npm test`: as 19 suítes passaram.
+- `node test/escritorio-2d.cjs`: passou para os oito lugares sem WebGL.
+- `node test/escritorio-3d.cjs`: passou, incluindo tour manual/automático, idiomas, clima, áudio, painel,
+  PC virtual, modo andar, descarte, reabertura e celular; nove humanos nos três horários, sem erros ou recursos com falha.
+- `docs/wip/servidor-teste.cjs` + `shot3d.cjs`: renders refeitos às 12h, 17h30 e 21h e conferidos visualmente.
+
+Evidências locais atualizadas em `data/cenario-qa/`: `npm-test.log`, `test-2d.log`, `test-3d.log`, `render.json`,
+`lugares-2d.png` e `shot-{dia,tarde,noite}.{png,log}` (fora do Git). Sem bibliotecas novas ou alteração da CSP.
