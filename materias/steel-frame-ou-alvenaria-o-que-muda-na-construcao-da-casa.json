@@ -1,0 +1,256 @@
+{
+  "slug": "steel-frame-ou-alvenaria-o-que-muda-na-construcao-da-casa",
+  "tema": "steel frame ou alvenaria na construcao da casa",
+  "titulo": "Steel frame ou alvenaria: o que muda na construção da casa",
+  "resumo": "Steel frame ou alvenaria com concreto armado? Veja como cada sistema funciona, prazo, conforto, reformas, acabamentos e o que perguntar antes de construir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "steel frame",
+    "casa nova",
+    "projeto",
+    "obra"
+  ],
+  "capa": {
+    "alt": "Estrutura de uma casa térrea em perfis de aço galvanizado montada sobre a fundação, num canteiro limpo ao entardecer"
+  },
+  "redes": {
+    "legenda": "Já pensou em construir uma casa sem tijolo? O steel frame usa um esqueleto de perfis leves de aço, placas e isolantes, e promete obra mais rápida e limpa. Mas ele pede mão de obra treinada e projeto fechado desde o começo. Comparamos steel frame e alvenaria com concreto armado: prazo, conforto, reforma e acabamentos. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "steelframe",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "engenharia",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir a casa, num terreno de condomínio ou de rua, cedo ou tarde ouve a pergunta: **steel frame ou alvenaria**? De um lado, o sistema que a maior parte das casas brasileiras usa, com pilares e vigas de concreto armado e paredes de bloco. Do outro, um esqueleto de aço leve, fechado com placas, que chega com fama de obra rápida e limpa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: os dois podem render uma casa confortável e durável, desde que bem projetados e executados. O steel frame costuma ganhar em prazo, limpeza e leveza; a alvenaria com concreto armado ganha em familiaridade, mão de obra disponível e liberdade para acabamentos pesados. A escolha certa depende do projeto, do prazo e de quem vai executar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Na alvenaria, o concreto armado faz a estrutura e os blocos fecham as paredes.",
+        "No steel frame, perfis leves de aço formam o esqueleto, fechado com placas e isolantes.",
+        "Steel frame costuma ser mais rápido e gerar menos entulho, mas exige equipe treinada.",
+        "Os dois pedem projeto completo e responsável técnico com ART ou RRT."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda como cada sistema fica de pé"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na casa de **alvenaria** que você conhece, quem segura o peso é a estrutura de **concreto armado**: pilares, vigas e lajes. O concreto resiste bem à compressão, e as barras de aço dentro dele resistem à tração, o esforço de puxar. Os blocos ou tijolos entre os pilares fazem a vedação, ou seja, fecham o espaço, mas não carregam a casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O projeto dessa estrutura segue a norma ABNT NBR 6118, de projeto de estruturas de concreto, e a fundação segue outra norma, a NBR 6122. Segundo o portal técnico OrçaFascio, o concreto armado é a base da maior parte da construção no Brasil, de casas a pontes, e sua durabilidade depende de detalhes como a cura e o cobrimento das armaduras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **steel frame**, ou *light steel framing*, troca essa lógica. Segundo o blog técnico Sienge, a casa ganha um esqueleto de perfis leves de aço formados a frio. Do lado de fora, entram placas cimentícias ou de OSB, um painel de lascas de madeira prensadas; do lado de dentro, chapas de drywall. Entre elas vão barreira de vapor e isolante, como lã de vidro, de rocha ou de PET."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O sistema tem normas próprias. A ABNT publicou em 2022 a série NBR 16970, dividida em três partes: desempenho, projeto estrutural e interfaces entre sistemas. Segundo o Sienge, a parte de desempenho trata de edificações de até dois pavimentos, o que cobre a maioria das casas. Para prédios mais altos, o sistema costuma ser combinado com outras estruturas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare prazo, obra, conforto e liberdade de projeto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As diferenças aparecem logo no canteiro. A alvenaria é uma obra úmida: concreto, argamassa e reboco precisam de tempo para secar, e o concreto pede no mínimo sete dias de cura em condições normais. O steel frame é uma obra seca, montada com peças pré-fabricadas, o que costuma encurtar o cronograma e reduzir entulho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Steel frame e alvenaria com concreto armado, lado a lado",
+      "colunas": [
+        "Ponto",
+        "Alvenaria com concreto armado",
+        "Steel frame"
+      ],
+      "linhas": [
+        [
+          "Como é a obra",
+          "Úmida: concreto, argamassa e reboco",
+          "Seca: montagem de perfis e placas"
+        ],
+        [
+          "Prazo",
+          "Mais longo, com tempo de cura e secagem",
+          "Costuma ser mais curto"
+        ],
+        [
+          "Peso sobre a fundação",
+          "Maior",
+          "Menor, pela leveza do aço"
+        ],
+        [
+          "Entulho",
+          "Mais resíduo no canteiro",
+          "Menos resíduo"
+        ],
+        [
+          "Mão de obra",
+          "Ampla e conhecida",
+          "Mais escassa e especializada"
+        ],
+        [
+          "Conforto térmico e acústico",
+          "Depende da espessura e dos materiais da parede",
+          "Depende do isolante entre as placas"
+        ],
+        [
+          "Acabamentos pesados",
+          "Recebe pedra e cerâmica sem reforço especial",
+          "Pedra natural e cerâmica densa podem pedir reforço"
+        ],
+        [
+          "Reformas internas",
+          "Quebra-quebra e entulho",
+          "Paredes internas mudam com menos transtorno"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Comparação geral, elaborada a partir de Sienge e OrçaFascio. Cada projeto muda o resultado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No conforto, nenhum sistema vence sozinho. A parede de alvenaria tem massa, o que ajuda a segurar o calor e o som. A parede de steel frame é leve, mas o isolante entre as placas faz esse papel, e o Sienge cita bons resultados térmicos e acústicos quando o conjunto é bem especificado. O detalhe do projeto pesa mais do que o nome do sistema."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na liberdade de projeto, a alvenaria aceita bem acabamentos pesados, como revestimento de pedra na fachada ou bancadas grandes presas na parede. No steel frame, isso é possível, mas precisa estar previsto: segundo o Sienge, pedra natural e cerâmicas densas podem exigir reforço extra. Mais ideias de projeto e obra estão em [construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba quando o steel frame faz sentido e quando não"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O steel frame ainda é minoria no Brasil, mas já tem público certo. Dados da Abcem, a associação da construção metálica, citados pelo Diário do Comércio, mostram que a maior parte das obras no sistema são residências, cerca de 61%, seguidas de empreendimentos comerciais e indústrias. Ou seja: a casa é o uso mais comum."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "O que pesa no steel frame",
+      "pros": [
+        "Obra mais rápida, com peças pré-fabricadas",
+        "Canteiro mais limpo e menos entulho",
+        "Estrutura leve, que alivia a fundação",
+        "Paredes internas mais fáceis de mudar numa reforma",
+        "Bom conforto térmico e acústico quando o isolante é bem escolhido"
+      ],
+      "contras": [
+        "Mão de obra qualificada ainda escassa e mais cara",
+        "Exige projeto executivo completo antes de começar",
+        "Acabamentos pesados podem pedir reforço",
+        "Metro quadrado costuma sair mais caro que a alvenaria comum",
+        "Erro de montagem compromete o desempenho"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ele costuma fazer mais sentido quando o prazo é apertado, o terreno tem acesso difícil para caminhão de concreto ou o condomínio limita barulho e sujeira na obra. Também é uma saída comum para ampliações, porque pesa pouco sobre a estrutura existente. Segundo o Sienge, o custo por metro quadrado tende a ser maior, mas o prazo menor e o entulho reduzido podem equilibrar a conta final."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas há casos em que a alvenaria segue mais prática: quando não há equipe treinada por perto, quando o projeto ainda vai mudar muito durante a obra ou quando você quer fachada e interiores cheios de pedra. Mudar de ideia no meio do caminho custa caro no steel frame, porque instalações e reforços são pensados antes da montagem."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Pergunte isto antes de fechar com quem vai construir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Seja qual for o sistema, a casa só fica boa com projeto completo e um responsável técnico, engenheiro ou arquiteto, que assina a ART ou a RRT, os documentos que registram quem responde pela obra. Estrutura não é lugar para improviso: nenhuma parede de steel frame nem pilar de concreto deve ser cortado ou removido sem esse profissional."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Qual sistema estrutural o projeto usa, e por quê nesse terreno?",
+        "A equipe tem obras anteriores no mesmo sistema que eu possa conhecer?",
+        "O projeto executivo, com estrutura, elétrica e hidráulica, está completo antes de começar?",
+        "Quais isolantes e placas foram especificados para conforto térmico e acústico?",
+        "Onde vão os acabamentos pesados, e eles estão previstos na estrutura?",
+        "Quem assina a ART ou a RRT de projeto e de execução?"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale lembrar que casa nova, em qualquer sistema, precisa atender à norma de desempenho de edificações habitacionais, que trata de conforto, segurança e durabilidade. Peça ao responsável técnico que mostre como o projeto atende a esses requisitos. Para seguir pesquisando, o [blog](/blog) reúne outros guias sobre projeto, materiais e casa nova."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se em vez de construir você preferir comprar uma casa pronta, a equipe da {{cliente}}, imobiliária em Campinas, ajuda a encontrar imóveis à venda e a entender o que observar na construção de cada um. Em uma linha: escolha o sistema pela equipe que vai executar e pelo projeto que você tem, não pela moda."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Casa de steel frame é segura?",
+      "resposta": "Pode ser tão segura quanto uma casa de alvenaria, desde que projetada e montada segundo as normas do sistema, como a série NBR 16970, e com responsável técnico. O risco maior está em mão de obra sem treinamento e projeto incompleto."
+    },
+    {
+      "pergunta": "Dá para pendurar armário e TV na parede de steel frame?",
+      "resposta": "Dá, mas o ponto de fixação precisa ser planejado. O comum é prever reforços dentro da parede nos lugares de armários, bancadas e TV. Por isso vale definir a posição desses itens ainda no projeto."
+    },
+    {
+      "pergunta": "Steel frame é mais barato que alvenaria?",
+      "resposta": "Normalmente o metro quadrado sai mais caro, mas a obra mais curta e com menos entulho pode equilibrar o custo total. A comparação justa considera prazo, desperdício e despesas de canteiro, não só o preço do material."
+    },
+    {
+      "pergunta": "Posso fazer reforma numa casa de steel frame?",
+      "resposta": "Pode, e as paredes internas costumam mudar com menos transtorno. Mesmo assim, qualquer alteração em parede estrutural pede avaliação de engenheiro ou arquiteto, com ART ou RRT."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Steel frame: desvantagens e vantagens — Sienge",
+      "url": "https://sienge.com.br/blog/steel-frame-desvantagens-vantagens/",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "Steel frame avança como sistema construtivo no Brasil — Diário do Comércio",
+      "url": "https://diariodocomercio.com.br/negocios/steel-frame-avanca-sistema-construtivo-brasil/",
+      "data": "julho de 2025"
+    },
+    {
+      "nome": "ABNT NBR 16970-1 Light Steel Framing — Parte 1: Desempenho — Target Normas",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/45958/nbr16970-1-light-steel-framing-sistemas-construtivos-estruturados-em-perfis-leves-de-aco-formados-a-frio-com-fechamentos-em-chapas-delgadas-parte-1-desempenho",
+      "data": "maio de 2022"
+    },
+    {
+      "nome": "Estruturas de concreto armado: conceito, projeto e execução — OrçaFascio",
+      "url": "https://www.orcafascio.com/papodeengenheiro/estruturas-de-concreto-armado",
+      "data": "abril de 2026"
+    },
+    {
+      "nome": "ABNT NBR 6118 Projeto de estruturas de concreto — Target Normas",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/27457/nbr6118-projeto-de-estruturas-de-concreto-procedimento",
+      "data": "março de 2026"
+    }
+  ]
+}
