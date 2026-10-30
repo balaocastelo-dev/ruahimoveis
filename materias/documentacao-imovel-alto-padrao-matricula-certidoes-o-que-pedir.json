@@ -1,0 +1,246 @@
+{
+  "slug": "documentacao-imovel-alto-padrao-matricula-certidoes-o-que-pedir",
+  "tema": "documentacao do imovel matricula e certidoes antes da compra",
+  "titulo": "Documentação do imóvel de alto padrão: matrícula, certidões e o que pedir",
+  "resumo": "Antes de comprar um imóvel de alto padrão, leia a matrícula atualizada e peça certidões de IPTU, condomínio e do vendedor. Veja o que cada papel mostra.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "compra",
+    "alto padrão",
+    "documentação",
+    "cartório"
+  ],
+  "seo": {
+    "titulo": "Documentação do imóvel: matrícula e certidões"
+  },
+  "capa": {
+    "alt": "Mesa de madeira escura com pastas de documentos, óculos e uma caneta-tinteiro, diante de uma janela com jardim"
+  },
+  "redes": {
+    "legenda": "Você sabia que conta de luz e carnê de IPTU não provam quem é o dono de um imóvel? Quem prova é a matrícula, guardada no Registro de Imóveis. Antes de comprar uma casa de alto padrão, vale lê-la com calma e pedir algumas certidões simples: IPTU, condomínio e as do vendedor. Explicamos o que cada papel mostra e o que pedir a um advogado ou ao cartório. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "altopadrao",
+      "comprarimovel",
+      "documentacao",
+      "casanova",
+      "imoveis",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de um imóvel de alto padrão, a atenção costuma ir para a planta, a vista e os acabamentos. A **documentação do imóvel** parece um detalhe burocrático, mas é ela que garante que a casa será sua de fato, sem dívida escondida, penhora ou área construída que não existe no papel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: comece pela **matrícula atualizada**, pedida no Registro de Imóveis, e leia tudo o que está anotado nela. Depois, junte a certidão de débitos de IPTU, a declaração de débitos do condomínio e, se fizer sentido, certidões do vendedor. Um advogado e o tabelião ajudam a fechar o quadro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A matrícula é o documento central: mostra dono, área, hipotecas e penhoras.",
+        "Pela lei, o que não está na matrícula, em regra, não pode ser cobrado do comprador de boa-fé.",
+        "IPTU e condomínio em atraso costumam acompanhar o imóvel; peça as certidões.",
+        "Em casa de alto padrão, confira se a área construída e as ampliações estão averbadas."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o que a matrícula conta sobre o imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **matrícula** é a ficha do imóvel no Cartório de Registro de Imóveis da região. Cada imóvel tem a sua, com um número próprio, e nela ficam anotados, em ordem, os registros (compra, venda, doação, hipoteca) e as averbações, que são as alterações de dados, como uma construção nova ou a mudança de nome do dono."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um artigo publicado pelo Colégio Notarial do Brasil, seção São Paulo, chama a matrícula de item mais importante da compra. É nela que aparecem hipotecas, penhoras e outras ocorrências, e é ela que confirma se quem está vendendo é mesmo o proprietário. Conta de água, de luz ou carnê de IPTU não têm esse efeito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há um motivo legal para tanta importância. A Lei 13.097, de 2015, trouxe o que os especialistas chamam de **concentração na matrícula**: segundo o artigo 54, situações que não estejam registradas ou averbadas ali, em regra, não podem ser opostas ao comprador de boa-fé. Em outras palavras, o que importa precisa estar escrito na ficha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, peça uma **certidão de matrícula atualizada**, recente. Reportagem reproduzida pelo Instituto de Registro Imobiliário do Brasil (IRIB) registra a orientação do Procon-SP de usar certidão emitida há menos de 30 dias. O pedido pode ser feito no cartório ou pelos serviços eletrônicos reunidos no portal Registro de Imóveis do Brasil."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Confira o nome do proprietário:** deve ser o mesmo de quem assina a venda, ou de quem tem poderes para isso.",
+        "**Leia as medidas:** área do terreno e área construída, comparando com o que você viu na visita.",
+        "**Procure ônus:** hipoteca, alienação fiduciária (o imóvel dado em garantia de um financiamento), penhora, usufruto.",
+        "**Veja as averbações:** construção, demolição, casamento ou divórcio do dono, mudança de numeração.",
+        "**Leia até a última anotação:** a situação atual é a soma de tudo o que foi registrado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida quais certidões pedir além da matrícula"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em 2022, a Lei 14.382 acrescentou ao mesmo artigo 54 um parágrafo que dispensa a apresentação de certidões forenses e de distribuidores judiciais para o negócio. Um artigo publicado no portal Migalhas explica essa leitura: para o comprador de boa-fé, a certidão de propriedade e de ônus reais seria o suficiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Isso não quer dizer que as outras certidões perderam o sentido. O próprio portal Registro de Imóveis do Brasil lembra que o comprador não é obrigado a pesquisar ações contra o vendedor além das que já estão na matrícula, mas que essas certidões podem ser úteis antes de fechar o negócio. E o tabelião pode, a seu pedido, pesquisar débitos do vendedor no dia da escritura."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os papéis mais pedidos na compra e o que cada um mostra",
+      "colunas": [
+        "Documento",
+        "Onde se pede",
+        "O que mostra"
+      ],
+      "linhas": [
+        [
+          "Certidão de matrícula atualizada",
+          "Registro de Imóveis da região",
+          "Dono, medidas, hipotecas, penhoras e averbações"
+        ],
+        [
+          "Certidão de débitos de IPTU",
+          "Prefeitura",
+          "Se há imposto municipal em aberto sobre o imóvel"
+        ],
+        [
+          "Declaração de débitos do condomínio",
+          "Síndico ou administradora",
+          "Se há taxas de condomínio em atraso"
+        ],
+        [
+          "Certidões do vendedor (protesto, cíveis, trabalhistas, federais)",
+          "Cartórios de protesto, tribunais, Receita",
+          "Dívidas e ações que podem atingir o vendedor"
+        ],
+        [
+          "Habite-se (imóvel novo ou ampliado)",
+          "Prefeitura",
+          "Que a construção foi aprovada e liberada para uso"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Com base em orientações do IRIB, do Colégio Notarial do Brasil (SP) e do portal Registro de Imóveis do Brasil. A lista é geral: o advogado ou o tabelião indicam o que pedir em cada negócio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Duas certidões merecem atenção especial. Segundo o artigo do Colégio Notarial, dívidas de IPTU passam ao novo proprietário, por isso a certidão da prefeitura vem antes da assinatura. Em casa de condomínio ou apartamento, a reportagem do IRIB recomenda a declaração de débitos emitida pelo síndico. Mais leituras sobre compra estão em [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Olhe com mais cuidado o que é comum no alto padrão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Casas grandes passam por muitas mudanças ao longo dos anos: uma suíte a mais, a área gourmet, a piscina, a edícula. O problema aparece quando a obra existe, mas não foi aprovada na prefeitura nem averbada na matrícula. A reportagem do IRIB sugere comparar a metragem da escritura com a do carnê de IPTU; diferença grande pede explicação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Área não averbada costuma atrasar o financiamento, dificultar uma venda futura e, às vezes, exigir regularização antes da escritura. O caminho, nesses casos, depende de projeto aprovado, habite-se da ampliação e averbação no cartório. Isso pede arquiteto ou engenheiro responsável e, quase sempre, um advogado que acompanhe o processo até o fim."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Comprar uma casa com ampliação ainda não averbada",
+      "pros": [
+        "A negociação pode prever que o vendedor regularize antes da escritura.",
+        "A casa já tem o espaço que você procura, sem obra pela frente.",
+        "Com projeto e habite-se, a área costuma poder ser averbada depois."
+      ],
+      "contras": [
+        "Banco pode recusar ou reduzir o financiamento sobre área que não está no papel.",
+        "Regularizar exige projeto, taxas e tempo, e pode não ser possível em todos os casos.",
+        "A venda futura fica mais lenta se o problema não for resolvido."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outros pontos frequentes no alto padrão: imóvel em nome de uma empresa, quando vale pedir também a certidão da Junta Comercial e conferir quem pode assinar por ela; imóvel ainda financiado, quando a matrícula mostra a garantia e o contrato precisa prever a quitação; e terreno em condomínio, que tem regulamento próprio de construção."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Consulte a prefeitura sobre a área",
+      "texto": "A reportagem do IRIB também orienta perguntar à prefeitura se há projeto de desapropriação que atinja o imóvel. Em casas próximas de vias que podem ser alargadas, essa consulta simples evita surpresas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Feche a compra pelo caminho que protege você"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com a documentação em ordem, a compra segue dois passos no cartório. Primeiro, a **escritura pública**, lavrada no Tabelião de Notas, onde o negócio é formalizado. Depois, o **registro** dessa escritura na matrícula, no Registro de Imóveis. Só com o registro a propriedade passa de fato para o seu nome; antes disso, a casa continua do vendedor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quando há um compromisso de compra e venda antes da escritura, a reportagem do IRIB recomenda registrá-lo no Registro de Imóveis, o que protege contra desistência do vendedor e contra a venda do mesmo imóvel a outra pessoa. O ITBI, imposto municipal da transferência, tem regras próprias em cada cidade; confirme com a prefeitura e o cartório."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nada aqui substitui a análise de quem conhece o seu caso. Cada negócio tem detalhes, como herança, divórcio, empresa ou financiamento, que mudam a lista de papéis. Um advogado de confiança, o tabelião e o próprio Registro de Imóveis respondem às dúvidas específicas. Para mais textos sobre morar e comprar bem, visite o [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa de alto padrão em Campinas, a equipe da {{cliente}} pode ajudar a organizar a visita e a reunir, junto com o vendedor, os documentos que o seu advogado e o cartório vão pedir. A decisão fica mais tranquila quando o papel confirma o que os seus olhos viram: comece pela matrícula."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O que é a matrícula do imóvel?",
+      "resposta": "É a ficha do imóvel no Cartório de Registro de Imóveis, com número próprio. Nela ficam o dono, as medidas, as vendas anteriores, hipotecas, penhoras e outras alterações."
+    },
+    {
+      "pergunta": "A certidão de matrícula precisa ser recente?",
+      "resposta": "Sim. A orientação do Procon-SP, citada em reportagem reproduzida pelo IRIB, é usar certidão emitida há menos de 30 dias, para que reflita a situação atual."
+    },
+    {
+      "pergunta": "Ainda preciso pedir certidões do vendedor?",
+      "resposta": "A lei dispensa a apresentação de certidões de ações judiciais para o negócio, e o que não está na matrícula, em regra, não pode ser cobrado do comprador de boa-fé. Mesmo assim, essas certidões podem ser úteis; um advogado indica quais pedir no seu caso."
+    },
+    {
+      "pergunta": "Dívida de IPTU passa para quem compra?",
+      "resposta": "Segundo artigo do Colégio Notarial do Brasil (SP), sim, as dívidas de IPTU acompanham o imóvel. Por isso a certidão de débitos da prefeitura deve ser conferida antes de assinar."
+    },
+    {
+      "pergunta": "Quando o imóvel passa a ser meu?",
+      "resposta": "Quando a escritura é registrada na matrícula, no Registro de Imóveis. A escritura sozinha formaliza o negócio, mas a transferência da propriedade acontece com o registro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "A desnecessidade de certidões para a compra de imóveis segundo o CNJ — Migalhas",
+      "url": "https://www.migalhas.com.br/depeso/416130/a-desnecessidade-de-certidoes-para-a-compra-de-imoveis-segundo-o-cnj",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Clipping O Liberal: Cuidado com a documentação do imóvel — IRIB",
+      "url": "https://www.irib.org.br/?p=104115",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "O que você precisa saber antes de comprar a casa própria — Colégio Notarial do Brasil, seção São Paulo",
+      "url": "https://cnbsp.org.br/2021/06/28/artigo-o-que-voce-precisa-saber-antes-de-comprar-a-casa-propria-%c2%96-por-cleber-thomazi/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Guichê de Certidões — Registro de Imóveis do Brasil",
+      "url": "https://www.registrodeimoveis.org.br/guiche-certidoes",
+      "data": "outubro de 2026"
+    }
+  ]
+}

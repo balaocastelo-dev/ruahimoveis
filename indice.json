@@ -324,7 +324,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-30T17:19:36.567Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "documentacao-imovel-alto-padrao-matricula-certidoes-o-que-pedir",
+      "titulo": "Documentação do imóvel de alto padrão: matrícula, certidões e o que pedir",
+      "tema": "documentacao do imovel matricula e certidoes antes da compra",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-10-30T20:24:28.217Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T17:19:36.567Z"
+  "atualizadoEm": "2026-10-30T20:24:28.218Z"
 }
