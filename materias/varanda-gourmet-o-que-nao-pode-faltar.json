@@ -1,0 +1,138 @@
+{
+  "slug": "varanda-gourmet-o-que-nao-pode-faltar",
+  "tema": "varanda gourmet o que nao pode faltar",
+  "titulo": "Varanda gourmet: o que não pode faltar no projeto",
+  "resumo": "Varanda gourmet: bancada com pia, churrasqueira com boa tiragem, entrada de ar, móveis e luz. Veja o que não pode faltar e o que exige um profissional.",
+  "categoria": "alto-padrao",
+  "formato": "dica",
+  "etiquetas": [
+    "varanda gourmet",
+    "churrasqueira",
+    "alto padrão",
+    "projeto"
+  ],
+  "capa": {
+    "alt": "Varanda gourmet com bancada de pedra, churrasqueira embutida, mesa de madeira e plantas, ao entardecer"
+  },
+  "redes": {
+    "legenda": "Sua varanda gourmet enche de fumaça no churrasco? Quase sempre o problema está no projeto: altura da chaminé, tamanho do duto ou falta de entrada de ar depois que a varanda foi fechada com vidro. Reunimos o que não pode faltar numa varanda gourmet, da bancada com pia à luz certa, e o que só um profissional deve mexer. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "varandagourmet",
+      "areagourmet",
+      "churrasqueira",
+      "arquitetura",
+      "decoracao",
+      "altopadrao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma **varanda gourmet** bem resolvida vira o cômodo mais disputado da casa: é onde se cozinha conversando, se recebe os amigos e se passa o domingo. Mas, para funcionar de verdade, ela precisa de mais do que uma churrasqueira e uma mesa bonita."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que não pode faltar: uma bancada com pia e espaço de apoio, uma churrasqueira com tiragem bem dimensionada, entrada e saída de ar, móveis confortáveis, armários e uma iluminação que sirva tanto para cozinhar quanto para ficar à mesa."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Bancada com pia e área de apoio é o coração da varanda gourmet.",
+        "Fumaça dentro de casa costuma ser problema de projeto da chaminé ou de falta de ar.",
+        "Fechar a varanda com vidro muda a ventilação e, em condomínio, pede autorização.",
+        "Gás, elétrica e chaminé são trabalho para profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Monte a lista do que a varanda gourmet precisa"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Bancada com pia:** para lavar, cortar e servir sem atravessar a casa. Prefira pedra resistente a gordura e calor.",
+        "**Churrasqueira ou cooktop:** escolha pelo seu uso; carvão, gás e elétrica pedem instalações diferentes.",
+        "**Coifa e chaminé bem dimensionadas:** são elas que levam a fumaça embora.",
+        "**Refrigeração:** frigobar ou adega climatizada evitam idas à cozinha.",
+        "**Armários práticos:** para utensílios, pratos e carvão, longe da umidade.",
+        "**Mesa, cadeiras e bancos confortáveis:** a varanda é lugar de ficar, não só de passar.",
+        "**Luz em duas camadas:** uma forte e direcionada sobre a bancada e outra mais suave para a mesa.",
+        "**Tomadas e pontos de água previstos:** definidos no projeto, antes do acabamento."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pense na circulação como numa cozinha: entre a bancada, a churrasqueira e a mesa, deixe passagem livre para quem carrega uma travessa quente. Plantas em vasos grandes ajudam a aconchegar, desde que não fiquem perto do calor. Mais ideias para ambientes de receber estão em [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Evite a fumaça e os problemas de ventilação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fumaça voltando para a varanda é a queixa mais comum. Segundo reportagem da TNH1, as causas costumam estar no desenho da chaminé: duto estreito ou que muda de diâmetro, curvas fortes, coifa mal dimensionada e saída mais baixa que as construções vizinhas, o que deixa o vento empurrar a fumaça de volta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fechar a varanda com vidro piora o quadro se ninguém pensar na entrada de ar. Reportagem do Catraca Livre explica que, sem reposição de ar, a exaustão perde eficiência e a fumaça fica no ambiente. Ela lembra ainda o alerta da agência americana de segurança de produtos: carvão não deve queimar em local fechado, por causa do monóxido de carbono, um gás sem cor e sem cheiro."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Chaminé, instalação de gás e circuitos elétricos da churrasqueira são trabalho para profissional habilitado. Se a fumaça acumula ou alguém sente tontura e dor de cabeça, pare de usar a churrasqueira até a ventilação ser avaliada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em apartamento ou condomínio, há ainda a fachada. O Código Civil, no artigo 1.336, diz que o condômino não deve alterar a forma e a cor da fachada nem das esquadrias externas, e por isso fechar a varanda costuma depender de padrão aprovado pelo condomínio. As regras variam: consulte a convenção, o síndico e, havendo dúvida, um advogado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura um imóvel que já tenha uma varanda gourmet pensada desde o projeto, a equipe da {{cliente}}, imobiliária em Campinas, ajuda a encontrar opções à venda. Para mais ideias, visite o [blog](/blog). Em uma linha: primeiro resolva a fumaça e o ar, depois escolha os móveis."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Por que minha churrasqueira solta fumaça na varanda?",
+      "resposta": "As causas mais comuns são chaminé baixa em relação aos vizinhos, duto estreito ou com curvas, coifa mal dimensionada ou falta de entrada de ar. Um profissional habilitado consegue avaliar o conjunto e indicar a correção."
+    },
+    {
+      "pergunta": "Posso fechar a varanda gourmet com vidro?",
+      "resposta": "Em casa, a decisão é sua, mas é preciso garantir entrada de ar para a churrasqueira. Em condomínio, o fechamento mexe na fachada e costuma depender de padrão aprovado; confira a convenção e fale com o síndico antes."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Fechar a varanda com vidro e esquecer entrada de ar para a churrasqueira — Catraca Livre",
+      "url": "https://catracalivre.com.br/noticias/fechar-a-varanda-com-vidro-e-esquecer-entrada-de-ar-para-a-churrasqueira-por-que-o-ambiente-pode-comecar-a-devolver-fumaca-para-dentro/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Churrasqueira de alvenaria pode encher o ambiente de fumaça se este detalhe for ignorado — TNH1",
+      "url": "https://www.tnh1.com.br/tnh1-variedades/churrasqueira-de-alvenaria-pode-encher-o-ambiente-de-fumaca-se-este-detalhe-for-ignorado/",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "Arquiteta dá dicas para transformar varanda em espaço gourmet sofisticado — Bahia Notícias",
+      "url": "https://www.bahianoticias.com.br/bnhall/noticia/1161-arquiteta-da-dicas-para-transformar-varanda-em-espaco-gourmet-sofisticado",
+      "data": "maio de 2022"
+    },
+    {
+      "nome": "O fechamento de varanda por cortina de vidro — Migalhas",
+      "url": "https://www.migalhas.com.br/depeso/347421/o-fechamento-de-varanda-por-cortina-de-vidro",
+      "data": "junho de 2021"
+    }
+  ]
+}
