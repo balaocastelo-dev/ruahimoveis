@@ -270,7 +270,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-30T11:29:18.989Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "banheiro-com-cara-de-spa-materiais-iluminacao-ventilacao",
+      "titulo": "Banheiro com cara de spa: materiais, iluminação e ventilação",
+      "tema": "banheiro com cara de spa materiais luz e ventilacao",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-30T14:20:50.104Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T11:29:18.990Z"
+  "atualizadoEm": "2026-10-30T14:20:50.104Z"
 }
