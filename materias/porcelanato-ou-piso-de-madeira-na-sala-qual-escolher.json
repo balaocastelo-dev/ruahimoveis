@@ -1,0 +1,176 @@
+{
+  "slug": "porcelanato-ou-piso-de-madeira-na-sala-qual-escolher",
+  "tema": "porcelanato ou piso de madeira na sala",
+  "titulo": "Porcelanato ou piso de madeira na sala: qual escolher",
+  "formato": "dica",
+  "resumo": "Porcelanato ou madeira na sala? Compare conforto, manutenção, ruído e resistência à água, e veja onde entram o vinílico e o laminado nessa escolha.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "piso",
+    "porcelanato",
+    "madeira",
+    "sala",
+    "interiores"
+  ],
+  "capa": {
+    "alt": "Sala de estar com piso de madeira em tábuas largas encontrando um porcelanato claro na área de jantar"
+  },
+  "redes": {
+    "legenda": "Porcelanato ou madeira na sala? A madeira traz aconchego e pode ser raspada e renovada, mas pede pano quase seco. O porcelanato aguenta água e sol, mas tem no rejunte o seu ponto fraco. E ainda tem o vinílico e o laminado no meio do caminho. Comparamos conforto, limpeza e ruído para você decidir. Leia no blog (link na bio).",
+    "hashtags": [
+      "piso",
+      "porcelanato",
+      "pisodemadeira",
+      "decoracao",
+      "interiores",
+      "sala",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na dúvida entre **porcelanato ou piso de madeira na sala**, a escolha costuma ficar entre dois desejos: a praticidade de um piso que aguenta quase tudo e o aconchego de pisar em madeira. Os dois ficam bonitos e duram muitos anos. O que muda é a rotina que cada um pede e a sensação que dão no dia a dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a madeira faz sentido em salas secas, para quem valoriza conforto ao pisar, silêncio e a possibilidade de renovar o piso com raspagem. O porcelanato vai melhor em salas integradas à cozinha ou à varanda, com sol forte ou pets, para quem quer limpar com água sem preocupação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Madeira: aconchego, menos eco e pode ser raspada e envernizada de novo, mas não tolera excesso de água.",
+        "Porcelanato: aceita lavagem e muito uso, mas é mais frio, ecoa mais e o rejunte pede cuidado.",
+        "Vinílico e laminado são caminhos intermediários, cada um com limites próprios diante da água."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como cada piso se comporta na rotina da sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O piso de madeira maciça, em tacos ou tábuas, é usado no Brasil há décadas. Uma reportagem do Correio Braziliense lembra que a **raspagem**, que tira uma camada fina para eliminar riscos, pode ser repetida ao longo da vida do piso, seguida de verniz novo. Em troca, a limpeza pede pano quase seco: a madeira não tolera excesso de umidade e pode empenar ou manchar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O porcelanato é uma placa cerâmica de baixíssima absorção de água. Segundo a Ceusa, que cita a norma ABNT NBR 15463, o porcelanato técnico absorve no máximo 0,10% de água e o esmaltado, no máximo 0,50%. A placa é fácil de lavar; o ponto fraco, segundo o Correio Braziliense, é o rejunte cimentício, poroso, que pede selador e escovação periódica."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Madeira, porcelanato e as alternativas na sala",
+      "colunas": [
+        "Critério",
+        "Madeira maciça",
+        "Porcelanato",
+        "Vinílico",
+        "Laminado"
+      ],
+      "linhas": [
+        [
+          "Água na limpeza",
+          "Pano quase seco",
+          "Aceita lavar",
+          "Mop úmido",
+          "Pano úmido, sem lavar"
+        ],
+        [
+          "Sensação ao pisar",
+          "Aconchegante",
+          "Frio e rígido",
+          "Macio",
+          "Aconchegante"
+        ],
+        [
+          "Ruído de passos",
+          "Moderado",
+          "Ecoa mais",
+          "Abafa bem",
+          "Pede manta acústica"
+        ],
+        [
+          "Renovação",
+          "Raspagem e verniz",
+          "Troca de placas",
+          "Troca de réguas",
+          "Troca de réguas"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Qual é o piso mais fácil de limpar: porcelanato, madeira ou vinil? — Correio Braziliense",
+        "url": "https://www.correiobraziliense.com.br/cbradar/qual-e-o-piso-mais-facil-de-limpar-porcelana-madeira-ou-vinil/"
+      },
+      "nota": "Ruído do vinílico e do laminado segundo a Engenharia 360; sensação ao pisar é uma descrição geral, que varia com o produto e a instalação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre os dois extremos ficam o vinílico e o laminado. A Engenharia 360 explica que o vinílico é feito de PVC, abafa o barulho dos passos e resiste bem à água, mas pode riscar sob abrasão forte. O laminado tem base de fibra prensada com camada de resina, aparência de madeira e pouca tolerância à umidade; uma manta acústica ajuda no ruído."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual escolher para a sua sala"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Sala integrada à cozinha ou à varanda:** porcelanato, ou ao menos porcelanato na faixa de transição, aguenta melhor respingos e lavagem.",
+        "**Sala fechada e seca, de estar ou TV:** madeira traz conforto, aquece o visual e reduz o eco.",
+        "**Apartamento com vizinho embaixo:** vinílico ou madeira tendem a abafar passos melhor do que o porcelanato.",
+        "**Pets e crianças:** porcelanato resiste a arranhões; madeira risca, mas pode ser renovada com raspagem."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a escolha não precisa ser única. Muitas salas combinam madeira na área de estar e porcelanato no jantar ou junto à varanda, com uma linha de transição limpa. Se for trocar o piso de um imóvel, lembre que a diferença de espessura entre materiais muda o nível do chão e as portas, por isso o projeto merece um arquiteto ou um bom instalador."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mais ideias de materiais e acabamentos estão na categoria [interiores e mobiliário](/blog/categoria/interiores) e na página inicial do [blog](/blog). E se você procura um imóvel e quer avaliar o piso que já vem nele, a equipe da {{cliente}} pode ajudar na busca."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: madeira para a sala seca e aconchegante, porcelanato para a sala integrada e de muito uso."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Piso de madeira na sala dá muito trabalho?",
+      "resposta": "Pede mais cuidado do que o porcelanato: limpeza com pano quase seco, sem produtos abrasivos, e líquidos secos na hora. Em troca, riscos podem ser removidos com raspagem e verniz novo, sem trocar o piso."
+    },
+    {
+      "pergunta": "Porcelanato na sala é muito frio?",
+      "resposta": "Ele transmite mais a sensação de frio ao pisar do que a madeira ou o vinílico. Tapetes na área de estar costumam equilibrar o conforto e ainda reduzem o eco do ambiente."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Qual é o piso mais fácil de limpar: porcelanato, madeira ou vinil? — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/qual-e-o-piso-mais-facil-de-limpar-porcelana-madeira-ou-vinil/",
+      "data": "junho de 2026"
+    },
+    {
+      "nome": "Veja as características e benefícios do piso de taco — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/revista-do-correio/2024/09/6940868-veja-as-caracteristicas-e-beneficios-do-piso-de-taco.html",
+      "data": "setembro de 2024"
+    },
+    {
+      "nome": "Quais tipos de porcelanato existem? — Ceusa",
+      "url": "https://www.ceusa.com.br/en/central-de-ajuda/resposta/what-types-of-porcelain-tiles-exist",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Piso vinílico ou laminado? Entenda a diferença — Engenharia 360",
+      "url": "https://engenharia360.com/piso-vinilico-ou-piso-laminado-diferenca/",
+      "data": "março de 2025"
+    }
+  ]
+}
