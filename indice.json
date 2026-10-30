@@ -360,7 +360,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-30T23:24:40.459Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "seguranca-em-casa-de-alto-padrao-camadas-de-protecao",
+      "titulo": "Segurança em casa de alto padrão: camadas de proteção, não só câmeras",
+      "tema": "seguranca residencial em camadas na casa",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-10-30T23:26:02.729Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T23:24:40.460Z"
+  "atualizadoEm": "2026-10-30T23:26:02.730Z"
 }

@@ -1,0 +1,260 @@
+{
+  "slug": "seguranca-em-casa-de-alto-padrao-camadas-de-protecao",
+  "tema": "seguranca residencial em camadas na casa",
+  "titulo": "Segurança em casa de alto padrão: camadas de proteção, não só câmeras",
+  "resumo": "Segurança em casa funciona em camadas: rua e entorno, muro e portão, luz, portas e janelas, alarme e hábitos. Veja o que observar em cada uma antes de comprar.",
+  "seo": {
+    "titulo": "Segurança em casa: camadas de proteção, não só câmeras"
+  },
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "segurança",
+    "alto padrão",
+    "casa",
+    "compra",
+    "arquitetura"
+  ],
+  "capa": {
+    "alt": "Fachada de casa contemporânea ao anoitecer com gradil vazado, jardim baixo e caminho de entrada bem iluminado"
+  },
+  "redes": {
+    "legenda": "Muro alto deixa a casa mais segura? Nem sempre. Cartilhas de polícia mostram que ver e ser visto pesa muito: gradil vazado, caminho iluminado, porta maciça, fechadura de lingueta longa e um vizinho que sabe o que fazer quando o alarme toca. Segurança em casa se constrói em camadas, e a câmera é só uma delas. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "seguranca",
+      "altopadrao",
+      "casa",
+      "arquitetura",
+      "casanova",
+      "moradia",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quando se fala em **segurança em casa**, a primeira imagem costuma ser uma câmera no muro ou um painel cheio de telas. Ela ajuda, mas sozinha resolve pouco. Quem procura uma casa de alto padrão, ou pensa em reforçar a sua, ganha muito mais entendendo como as proteções se somam, do portão da rua até o quarto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: segurança residencial funciona em camadas. Começa no entorno e na rua, passa por muro, portão e iluminação, chega a portas, janelas e fechaduras, e se completa com alarme, câmeras e hábitos da família. Cartilhas de polícia repetem a mesma ideia: a casa é tão forte quanto o seu ponto mais fraco."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Ver e ser visto protege: gradil vazado, jardim baixo e boa luz costumam valer mais do que um muro cego.",
+        "Portas maciças, fechaduras de lingueta longa e trancas extras atrasam a entrada.",
+        "Alarme e câmera não substituem as outras camadas; combine com um vizinho o que fazer quando o alarme disparar.",
+        "Na compra, visite o imóvel de dia e à noite e observe a rua, a iluminação e o movimento."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que pensar em camadas, e não em um equipamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada camada tem um papel: desencorajar, atrasar, avisar e responder. Um gradil que deixa ver o jardim desencoraja; uma porta maciça atrasa; um alarme avisa; um vizinho atento ou a polícia responde. Se uma dessas peças falha, as outras continuam trabalhando. Quando tudo depende de um único equipamento, basta ele falhar para a casa ficar exposta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa lógica tem nome na arquitetura: **CPTED**, sigla em inglês para prevenção do crime pelo desenho do ambiente. O Departamento de Polícia de Los Angeles resume alguns princípios: vigilância natural, com espaços organizados para que as pessoas vejam o que acontece; controle natural de acesso; e reforço do território, com limites claros marcados por cercas, sebes, pisos diferentes e muretas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas camada não é sinônimo de fortaleza. Uma casa cercada por muros cegos, sem janelas para a rua, pode até parecer protegida, e ainda assim esconder quem já entrou. O desenho que equilibra privacidade e visibilidade costuma ser mais seguro e também mais agradável de morar."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "As camadas de segurança de uma casa",
+      "colunas": [
+        "Camada",
+        "Papel",
+        "O que observar"
+      ],
+      "linhas": [
+        [
+          "Entorno e rua",
+          "Desencorajar",
+          "Iluminação pública, movimento, terrenos vazios por perto"
+        ],
+        [
+          "Muro, gradil e portão",
+          "Desencorajar e atrasar",
+          "Visibilidade, pontos de apoio para escalar, portão sempre trancado"
+        ],
+        [
+          "Iluminação externa",
+          "Desencorajar",
+          "Caminho da rua à porta e garagem sem sombras"
+        ],
+        [
+          "Portas, janelas e fechaduras",
+          "Atrasar",
+          "Porta maciça, lingueta longa, trancas extras, janelas perto da porta"
+        ],
+        [
+          "Alarme e câmeras",
+          "Avisar",
+          "Quem é avisado e o que faz quando o alarme dispara"
+        ],
+        [
+          "Hábitos da família",
+          "Evitar brechas",
+          "Chaves, prestadores de serviço, encomendas, casa vazia"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Cartilha de segurança residencial — Conseg-PR / Polícia Militar do Paraná",
+        "url": "https://www.conseg.pr.gov.br/sites/conseg/arquivos_restritos/files/migrados/File/CARTILHA_SEGURANCA_RESIDENCIAL.pdf"
+      },
+      "nota": "Organização das camadas feita para este texto a partir das orientações da cartilha."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Muro, portão e luz: a primeira impressão da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cartilha de segurança residencial publicada pelo Conselho Comunitário de Segurança do Paraná, com base em pesquisas da Polícia Militar do estado, recomenda preferir grades a muros: deixam ver o interior e são mais difíceis de transpor. Na pesquisa citada pela cartilha, 60% dos delitos aconteceram por escalada, o que muda a forma de olhar a frente da casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso o material orienta evitar muros com barras horizontais, detalhes que sirvam de degrau ou muros laterais em rampa que levem ao andar de cima. Lixeiras, caixas de luz e objetos encostados no muro também viram apoio. Plantas com espinhos junto à grade, pelo lado de dentro, formam uma barreira discreta. E a altura deve ser conferida também pelo lado do vizinho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O portão merece atenção simples: segundo a mesma pesquisa, 12% das casas foram invadidas com o portão aberto. Na iluminação, a orientação é clarear todo o trajeto entre a rua e a porta, além da garagem, evitar sombras e variar os pontos de luz. O número da casa deve ficar visível de dia e de noite, o que também ajuda socorro e entregas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Paisagismo também é segurança",
+      "texto": "Arbustos altos encostados em janelas e portões podem esconder quem se aproxima. Um jardim de frente mais baixo, com árvores de copa alta, mantém a vista livre sem abrir mão do verde. Árvores da calçada que bloqueiam a luz pública podem ter a poda pedida à prefeitura."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Portas, fechaduras, alarme e câmeras: o que cada um resolve"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na entrada, a cartilha paranaense pede portas externas maciças, bem ajustadas ao batente e sem frestas. Fechaduras antigas e do tipo cilindro são apontadas como obsoletas; o recomendado é a lingueta longa, com metade dentro do batente, somada a trancas complementares. Também é importante conseguir ver quem bate, por janela ou olho mágico, e trocar a fechadura ao se mudar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Janelas próximas à porta pedem cuidado, porque podem permitir alcançar a fechadura por dentro. Em vitrôs, grades resolvem. Mas a própria orientação policial lembra que grades em janelas precisam poder ser removidas com facilidade em caso de incêndio ou outra emergência. Segurança contra invasão nunca deve impedir a saída rápida da família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Alarme e câmera entram como camada de aviso. A cartilha é direta: o alarme não substitui as demais medidas, e vale combinar com um vizinho próximo que ele acione a polícia quando o alarme disparar na sua ausência. A Polícia Militar de São Paulo acrescenta que o alarme deve ser testado periodicamente. Uma câmera que ninguém olha registra, mas não impede."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Câmeras como peça central da segurança",
+      "pros": [
+        "Registram o que aconteceu e ajudam a identificar movimentos estranhos",
+        "Permitem conferir a casa à distância",
+        "Inibem parte das tentativas quando estão visíveis"
+      ],
+      "contras": [
+        "Não atrasam a entrada de ninguém",
+        "Dependem de alguém olhar e reagir a tempo",
+        "Perdem valor se a luz é fraca ou se há pontos cegos no terreno",
+        "Precisam de energia, conexão e manutenção constantes"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Hábitos e escolha do imóvel: as camadas que não se compram"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A pesquisa citada pela cartilha do Paraná aponta que, em 36% dos casos, atitudes dos próprios moradores facilitaram o crime. Por isso a Polícia Militar de São Paulo recomenda ter a chave na mão antes de chegar à porta, olhar o entorno antes de entrar ou sair, desconfiar de serviços não solicitados e confirmar com a empresa as credenciais de quem se apresenta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em viagens, o Idec sugere conferir fechaduras de portas, janelas e sacadas, suspender entregas ou pedir a um vizinho de confiança que recolha correspondências, manter o jardim cuidado e não comentar a viagem perto de estranhos. Vale também checar se o seguro residencial cobre furto e roubo, e em quais condições."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de escolher a casa, a cartilha paranaense sugere conversar com vizinhos, observar terrenos vazios ou casas abandonadas por perto e visitar o imóvel de dia e à noite, olhando iluminação, calçadas e movimento. Outros pontos de atenção na compra estão na categoria [alto padrão](/blog/categoria/alto-padrao) do nosso blog, e mais ideias para a casa ficam na página inicial do [blog](/blog)."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "A frente da casa deixa ver o jardim, ou esconde quem está perto da porta?",
+        "Há apoios para escalar o muro, dos dois lados?",
+        "O caminho da rua à porta e a garagem ficam bem iluminados à noite?",
+        "Portas externas são maciças e as fechaduras têm lingueta longa?",
+        "As grades das janelas podem ser abertas numa emergência?",
+        "Quem é avisado quando o alarme dispara, e o que essa pessoa faz?"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa e quer olhar esses detalhes com calma, a equipe da {{cliente}} pode acompanhar a escolha e as visitas, inclusive em horários diferentes do dia."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Casa segura é a que soma camadas simples e bem pensadas, da rua ao quarto, e não a que aposta tudo em um único equipamento."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Muro alto ou gradil: o que deixa a casa mais segura?",
+      "resposta": "Cartilhas de polícia costumam preferir o gradil, porque permite ver o interior e é mais difícil de escalar. Um muro cego pode esconder quem já entrou. O ideal é combinar visibilidade com portão sempre trancado e boa iluminação."
+    },
+    {
+      "pergunta": "Câmera substitui alarme ou vigilância?",
+      "resposta": "Não. A câmera registra e ajuda a acompanhar a casa, mas não atrasa a entrada de ninguém. Ela funciona melhor somada a portas e fechaduras resistentes, boa luz e alguém combinado para agir quando algo acontece."
+    },
+    {
+      "pergunta": "Que fechadura é recomendada para a porta de entrada?",
+      "resposta": "A cartilha da Polícia Militar do Paraná recomenda fechadura de lingueta longa, com metade dentro do batente, em porta maciça e bem ajustada, além de trancas complementares. Também orienta trocar a fechadura ao mudar de casa."
+    },
+    {
+      "pergunta": "O que observar sobre segurança ao visitar um imóvel?",
+      "resposta": "Visite de dia e à noite, observe iluminação, calçadas, movimento e terrenos vazios por perto, e converse com vizinhos. Na casa, veja muro, portão, portas, janelas e a luz do caminho até a entrada."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Cartilha de segurança residencial — Conseg-PR / Polícia Militar do Paraná",
+      "url": "https://www.conseg.pr.gov.br/sites/conseg/arquivos_restritos/files/migrados/File/CARTILHA_SEGURANCA_RESIDENCIAL.pdf",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Segurança residencial: área interna — Conseg-PR",
+      "url": "https://www.conseg.pr.gov.br/sites/conseg/arquivos_restritos/files/documento/2021-03/seguranca_residencial-area_interna.pdf",
+      "data": "março de 2021"
+    },
+    {
+      "nome": "Dicas de segurança: residência — Polícia Militar do Estado de São Paulo",
+      "url": "https://www.policiamilitar.sp.gov.br/unidades/ccomsoc/pvs/uploads/pdfs/residencia.pdf",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Crime Prevention Through Environmental Design — Los Angeles Police Department",
+      "url": "https://www.lapdonline.org/office-of-the-chief-of-police/office-of-operations/office-of-operations-orders-and-notices/public-engagement-section/crime-prevention-through-environmental-design/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Saiba como deixar sua casa mais segura enquanto viaja — Idec",
+      "url": "https://idec.org.br/consultas/dicas-e-direitos/saiba-como-deixar-sua-casa-mais-segura-enquanto-viaja",
+      "data": "julho de 2011"
+    }
+  ]
+}
