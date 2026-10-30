@@ -19,6 +19,14 @@ const pausa = (page) => page.evaluate(() => {
   clearInterval(e.vida); clearInterval(e.relogio);
   e.idleDesde = 1e12; e.voo = null;
 });
+// SwiftShader pode gastar mais de 9 s entre cliques. Pause apenas o prazo do tour
+// durante as interações; o avanço automático é verificado separadamente abaixo.
+const pausaTour = (page) => page.evaluate(() => {
+  const tour = window.jg3dEstado().tour;
+  if (!tour) return null;
+  tour.proxima = Infinity;
+  return tour.indice;
+});
 const clima = async (page, hora, nome) => {
   await page.evaluate((h) => { window.__clima(h, true); }, hora);
   await page.waitForTimeout(1000);
@@ -51,6 +59,9 @@ const clima = async (page, hora, nome) => {
     p.on('requestfailed', (r) => { if (!r.failure()?.errorText.includes('ERR_ABORTED')) falhas.push(`${r.failure()?.errorText} ${r.url()}`); });
   };
   monitora(page);
+  // Como no 2D, testa o painel com um iframe local: este servidor simulado não
+  // fornece sessão, /marca.js nem as APIs das telas (cobertas por npm test).
+  await page.route('**/app.html?embutido=1', (r) => r.fulfill({ contentType: 'text/html', body: '<!doctype html><html><body><input aria-label="Busca"></body></html>' }));
   await page.addInitScript(() => {
     const Audio = window.AudioContext;
     window.AudioContext = class extends Audio { constructor(...args) { super(...args); window.__audio = this; window.__notas = 0; }
@@ -93,17 +104,35 @@ const clima = async (page, hora, nome) => {
 
   ok(await page.evaluate(() => !window.jg3dEstado().tour), 'tour nunca começa sozinho');
   await page.click('[data-act="j3-apres"]');
-  ok(await page.evaluate(() => window.jg3dEstado().tour.indice === 0 && window.jg3dEstado().tourLuz.visible), 'Apresentar inicia na entrada e acende o lugar');
+  ok(await pausaTour(page) === 0 && await page.evaluate(() => window.jg3dEstado().tourLuz.visible), 'Apresentar inicia na entrada e acende o lugar');
   await page.click('[data-act="j3-lang"][data-lang="en"]');
   ok((await page.locator('#j3-tour').innerText()).includes('Welcome'), 'tour em inglês');
   await page.click('[data-act="j3-lang"][data-lang="ja"]');
   ok((await page.locator('#j3-tour').innerText()).includes('ようこそ'), 'tour em japonês');
   await page.click('[data-act="j3-lang"][data-lang="pt"]');
-  await page.keyboard.press('ArrowRight'); await page.keyboard.press('ArrowLeft');
-  ok(await page.evaluate(() => window.jg3dEstado().tour.indice === 0), 'setas avançam e voltam no tour');
-  for (let i = 0; i < 6; i++) await page.click('[data-act="j3-tour-proxima"]');
+  await page.keyboard.press('ArrowRight');
+  ok(await pausaTour(page) === 1, 'seta direita avança no tour');
+  await page.keyboard.press('ArrowLeft');
+  ok(await pausaTour(page) === 0, 'seta esquerda volta no tour');
+  for (let i = 1; i < 6; i++) {
+    await page.click('[data-act="j3-tour-proxima"]');
+    ok(await pausaTour(page) === i, `botão avança para a parada ${i + 1}`);
+  }
+  await page.click('[data-act="j3-tour-proxima"]');
   ok(await page.evaluate(() => !window.jg3dEstado().tour && window.jg3dEstado().apres && !window.jg3dEstado().tourLuz.visible), 'fim do tour volta à órbita e apaga destaque');
   await page.click('[data-act="j3-apres"]'); await page.click('[data-act="j3-apres"]');
+  await pausaTour(page);
+  // Vence o prazo sem aguardar nove segundos de relógio real por parada.
+  for (let i = 1; i < 6; i++) {
+    await page.evaluate(() => { window.jg3dEstado().tour.proxima = 0; });
+    await page.waitForFunction((indice) => window.jg3dEstado().tour?.indice === indice, i);
+    ok(await pausaTour(page) === i, `avanço automático para a parada ${i + 1}`);
+  }
+  await page.evaluate(() => { window.jg3dEstado().tour.proxima = 0; });
+  await page.waitForFunction(() => !window.jg3dEstado().tour && window.jg3dEstado().apres);
+  ok(true, 'tour automático também termina na órbita');
+  await page.click('[data-act="j3-apres"]'); await page.click('[data-act="j3-apres"]');
+  await pausaTour(page);
   await page.keyboard.press('Escape');
   ok(await page.evaluate(() => !window.jg3dEstado().tour && !window.jg3dEstado().apres && window.jg3dEstado().controls.enabled), 'ESC sai do tour e devolve controle da câmera');
   await pausa(page);
@@ -165,8 +194,9 @@ const clima = async (page, hora, nome) => {
     await page.waitForFunction(() => !!document.querySelector('#j3-painel iframe'), null, { timeout: 5000 });
     const src = await page.evaluate(() => document.querySelector('#j3-painel iframe').getAttribute('src'));
     ok(cursor === 'pointer' && src === `/app.html?embutido=1${rota}`, `clique no ${lugar} abre ${rota} embutido`);
+    await page.frameLocator('#j3-painel iframe').getByRole('textbox', { name: 'Busca' }).focus();
     await page.keyboard.press('Escape'); await page.waitForTimeout(150);
-    ok(await page.evaluate(() => !document.querySelector('#j3-painel')), `ESC fecha o painel do ${lugar}`);
+    ok(await page.evaluate(() => !document.querySelector('#j3-painel')), `ESC no iframe fecha o painel do ${lugar}`);
   }
 
   await page.evaluate(() => { window.jg3dEstado().controls.enableDamping = true; });

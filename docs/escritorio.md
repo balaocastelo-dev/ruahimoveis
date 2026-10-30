@@ -184,6 +184,12 @@ duplo clique, painel, modo andar, tour nos três idiomas, clima, som, descarte, 
 Chromium. Capturas e `render.json` ficam em `data/cenario-qa/` (fora do Git). FPS de SwiftShader é uma medida do renderizador por
 software, não um benchmark de GPU do usuário.
 
+Nos testes do tour, o prazo automático fica pausado durante os cliques e a troca de idiomas, pois o SwiftShader
+pode levar mais de nove segundos nessas interações. O avanço por prazo é conferido separadamente nas seis paradas,
+incluindo o retorno à órbita. Essa instrumentação fica só no teste; a duração do tour em produção continua igual.
+Os testes 2D e 3D usam conteúdo simulado no iframe e verificam ESC com o foco dentro dele. O servidor de render
+não fornece sessão nem `/marca.js`; as APIs das telas são verificadas pela suíte `npm test`.
+
 Para explorar manualmente: `node docs/wip/servidor-teste.cjs` serve `http://127.0.0.1:8766/teste-3d.html`. O parâmetro `quiet=1`
 pausa a atividade espontânea para comparar imagens. Só esse servidor expõe `window.__clima(hora, true)` para testar horários;
 produção continua seguindo o relógio. O comando `node docs/wip/shot3d.cjs URL ARQUIVO.png 6000` faz uma captura avulsa.
