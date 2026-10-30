@@ -1,0 +1,178 @@
+{
+  "slug": "telhado-aparente-ou-embutido-qual-escolher",
+  "tema": "telhado aparente ou embutido com platibanda",
+  "titulo": "Telhado aparente ou embutido: qual escolher para a casa",
+  "resumo": "Telhado aparente ou embutido com platibanda? Veja como cada um muda a fachada, a inclinação, as calhas, a manutenção e o risco de infiltração na casa.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "telhado",
+    "construção",
+    "casa nova",
+    "fachada"
+  ],
+  "capa": {
+    "alt": "Duas casas térreas lado a lado, uma com telhado de telhas cerâmicas aparentes e beiral, outra com fachada reta e platibanda que esconde o telhado"
+  },
+  "redes": {
+    "legenda": "Telhado que aparece ou telhado escondido? A escolha muda a fachada, mas também a obra: o embutido pede platibanda, calha interna bem feita e acesso para limpar; o aparente tem beiral que protege a parede e manutenção mais fácil de enxergar. No blog, comparamos os dois para você decidir sem surpresa. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "telhado",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "fachada",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de desenhar a fachada, a dúvida aparece cedo: **telhado aparente ou embutido**? O aparente mostra as telhas, normalmente cerâmicas, com beiral saindo das paredes. O embutido esconde a cobertura atrás de uma mureta chamada **platibanda**, que dá à casa aquele visual reto e contemporâneo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o embutido entrega a estética moderna, mas concentra o risco de infiltração nas calhas e exige obra caprichada e manutenção com acesso seguro. O aparente costuma ser mais simples de executar e de inspecionar, e o beiral protege as paredes. A melhor escolha depende do projeto, do orçamento completo e de quem vai executar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Embutido usa telhas de pouca inclinação escondidas por uma platibanda, com calha interna.",
+        "Aparente usa telhas mais inclinadas, como as cerâmicas, e beiral que protege as paredes.",
+        "No embutido, calhas e rufos são o ponto crítico: projeto e execução definem se haverá goteira.",
+        "Compare orçamentos completos, com estrutura, telhas, calhas, impermeabilização e manutenção."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que muda na obra entre um e outro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A diferença começa na inclinação. Segundo a Sienge, plataforma de gestão para construtoras, a telha cerâmica do telhado aparente trabalha com inclinação de 25% a 35%, enquanto o telhado embutido usa inclinações baixas, de 5% a 20%. Por isso o embutido recebe telhas de fibrocimento, metálicas ou sanduíche, que aceitam caimento pequeno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No embutido, toda a água da chuva cai dentro da platibanda e corre por calhas internas até os tubos de descida. O portal Lar Pontual lembra que a funilaria, ou seja, calhas e rufos, é o ponto mais sensível, e que o dimensionamento segue a norma ABNT NBR 10844, de águas pluviais. Calha subdimensionada ou mal vedada costuma virar mancha no forro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O aparente, por sua vez, despeja a água para fora pelo beiral e costuma ter calhas externas, quando tem. A estrutura de madeira para telha cerâmica é mais robusta, porque a telha pesa mais. Mas as falhas ficam à vista: uma telha quebrada ou deslocada é mais fácil de achar do que um vazamento escondido atrás da mureta."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Telhado aparente e embutido lado a lado",
+      "colunas": [
+        "Ponto",
+        "Aparente",
+        "Embutido"
+      ],
+      "linhas": [
+        [
+          "Visual",
+          "Telhas e beiral à mostra",
+          "Fachada reta, sem telhas visíveis"
+        ],
+        [
+          "Inclinação",
+          "Mais alta, na casa de 25% a 35% na cerâmica",
+          "Baixa, de 5% a 20%"
+        ],
+        [
+          "Telhas comuns",
+          "Cerâmica e concreto",
+          "Fibrocimento, metálica e sanduíche"
+        ],
+        [
+          "Água da chuva",
+          "Sai pelo beiral",
+          "Corre por calha interna na platibanda"
+        ],
+        [
+          "Manutenção",
+          "Falhas mais fáceis de ver",
+          "Exige acesso seguro para limpar calhas"
+        ]
+      ],
+      "colunaDestaque": 0
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como decidir sem se arrepender depois"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não escolha só pela fachada da foto. Uma reportagem de O Antagonista sobre o tema lembra que o embutido pode parecer mais barato por usar telhas leves, mas a conta cresce com platibanda, calhas internas, rufos bem vedados e impermeabilização. Já há quem aponte economia de estrutura no embutido. Por isso a conta só fecha com orçamentos completos dos dois sistemas."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Telhado embutido",
+      "pros": [
+        "Fachada contemporânea, de linhas retas",
+        "Usa telhas leves e menos estrutura de madeira",
+        "A platibanda ajuda a proteger a cobertura do vento"
+      ],
+      "contras": [
+        "Risco de infiltração concentrado em calhas e rufos",
+        "Pede alçapão ou acesso seguro para manutenção",
+        "Telha metálica simples esquenta e faz barulho na chuva sem isolamento",
+        "Não tem beiral para proteger as paredes da chuva e do sol"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pense no clima também. Em regiões de chuva forte no verão, como Campinas, a calha interna precisa dar conta de temporais, e a limpeza periódica deixa de ser opcional. Se escolher telha metálica no embutido, a versão sanduíche, com isolante no meio, costuma reduzir calor e ruído. Para mais temas de obra, veja a categoria [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Telhado é projeto de profissional",
+      "texto": "Inclinação, estrutura, calhas e impermeabilização devem ser definidas por arquiteto ou engenheiro responsável, com ART ou RRT. Não suba no telhado nem mexa em calhas e rufos sem equipamento e orientação técnica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para outros temas de casa e arquitetura, visite o [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está avaliando casas em Campinas e quer entender a cobertura antes de decidir, a equipe da {{cliente}} pode ajudar na busca. Em uma linha: escolha o telhado pelo projeto completo e pela qualidade da execução, não só pela fachada."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Telhado embutido dá mais goteira?",
+      "resposta": "Não necessariamente, mas o risco fica concentrado nas calhas internas e nos rufos. Com projeto bem dimensionado, execução cuidadosa e limpeza periódica, ele funciona bem."
+    },
+    {
+      "pergunta": "Dá para usar telha cerâmica no telhado embutido?",
+      "resposta": "Normalmente não, porque a cerâmica pede inclinação alta e exigiria uma platibanda muito alta para escondê-la. Por isso o embutido costuma usar fibrocimento, telha metálica ou sanduíche."
+    },
+    {
+      "pergunta": "Qual dos dois é mais barato?",
+      "resposta": "Depende do projeto. O embutido economiza em estrutura, mas soma platibanda, calhas e impermeabilização. Só orçamentos completos dos dois sistemas mostram a diferença no seu caso."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Tipos de telhado — Sienge",
+      "url": "https://www.sienge.com.br/blog/tipos-de-telhado/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Telhado embutido — Lar Pontual (Portal da Reforma)",
+      "url": "https://larpontual.com.br/portal/telhado-embutido",
+      "data": "2026"
+    },
+    {
+      "nome": "Telhado colonial ou embutido? A opção moderna nem sempre é a mais barata no fim da obra — O Antagonista",
+      "url": "https://oantagonista.com.br/brasil/telhado-colonial-ou-embutido-a-opcao-moderna-nem-sempre-e-a-mais-barata-no-fim-da-obra/",
+      "data": "maio de 2026"
+    }
+  ]
+}

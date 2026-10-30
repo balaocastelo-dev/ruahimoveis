@@ -315,7 +315,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-30T17:18:50.966Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "telhado-aparente-ou-embutido-qual-escolher",
+      "titulo": "Telhado aparente ou embutido: qual escolher para a casa",
+      "tema": "telhado aparente ou embutido com platibanda",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-10-30T17:19:36.567Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T17:18:50.966Z"
+  "atualizadoEm": "2026-10-30T17:19:36.567Z"
 }
