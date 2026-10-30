@@ -14,6 +14,28 @@
   Reiniciar e "Ler não lidas" só enquanto ligado; o estado vem da batida da estação (8 s) e a tela se
   conecta sozinha quando o PC liga.
 
+## Um QR só para o sistema + WhatsApp da casa (29/10/2026, 21h)
+
+- Pedido do Thiago: "pode voltar ao canal dela pro QR, e de qualquer outro agente do sistema, todos devem
+  usar o mesmo QR do sistema sem depender de um novo".
+- **Linha do sistema**: cada agente tem `linha` = `'sistema'` (novo padrão), que aponta para
+  `config.linha_sistema` (padrão: o gerente geral). Todos atendem pelo MESMO número, um QR code só.
+  Continuam valendo `'propria'` (número só dele) e apontar para outro agente (resolve em cadeia).
+  O TH-IA-GO segue no número do robô do Fisguei, que é só da captação de proprietários.
+- **O canal é do número, não do agente** (`B.canalDaLinha`): `qr` = Baileys no PC da imobiliária (precisa do
+  sistema aberto num computador dela); `web` = WhatsApp Web no PC virtual, na estação. Quem usa o número do
+  sistema atende pelo canal dele.
+- **WhatsApp da casa**: `/estacao-api/config` manda `linhas_wa` e a estação abre UMA sessão por número,
+  ligando o PC daquele agente **sozinho** — é a única exceção ao "nada liga sozinho" (escolha do Thiago:
+  "um PC ligado só pro WhatsApp"). Sessão em PC que não é mais número de WhatsApp é fechada.
+- Estado em 29/10 21h05: Casa Prado com `linha_sistema = gerente`, canal `web`, filtro "todos" → o PC do
+  Augusto ligou sozinho e o **QR está esperando leitura** na mesa dele (aba WhatsApp). Clara voltou para o
+  número do sistema (o `canal: web` dela foi removido). Lumen, Onde morar? e Cadê meu AP? ficaram sem
+  WhatsApp da casa (nenhum PC ligado); para ligar numa delas, basta pôr canal `web` no agente da linha do
+  sistema pela tela.
+- Roteamento com número compartilhado (já existia em `quemAtende`): cliente conhecido cai no agente dele;
+  número novo entra pelo primeiro agente de cliente e a IA transfere para o setor certo.
+
 ## PCs virtuais dos agentes (29/10/2026, madrugada)
 - Pedido do Thiago: cada agente com um "PC virtual" de verdade (Chrome) que dá para usar pelo escritório
   (mouse, teclado) — deixar Facebook e WhatsApp Web abertos para ele —; dar tarefa a um agente, que usa o PC
