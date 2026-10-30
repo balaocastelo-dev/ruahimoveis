@@ -117,14 +117,16 @@ Os limites de valor mudam em "Regras do escritório".
   | Mural de oportunidades | `#/radar` |
   | TV da diretoria | `#/painel` |
   | Placa do salão de vendas | `#/leads` (CRM) |
-  | Recepção · impressora · café · mesa de reunião (modo andar) | `#/visitas` · `#/imoveis` · `#/whats` · `#/chat` |
+  | Recepção | `#/visitas` |
+  | Impressora | `#/imoveis?autorizacoes=1` |
+  | Sofá | `#/leads?aguardando=1` |
+  | Café | `#/avisos` |
+  | Mesa de reunião | `#/chat`, com aviso de sala ao vivo em breve |
 
   O botão ↗ no cabeçalho do painel abre a mesma tela inteira, fora do 3D.
 - **Modo embutido** (`/app.html?embutido=1#/rota`, `EMBUTIDO` em `public/app.js`): a mesma sessão e as mesmas telas, sem
   menu lateral, sem barra do topo, sem sino do chat e sem o aceite da LGPD (isso fica na janela de fora). A CSP passou a
   permitir `frame-src 'self'` e `frame-ancestors 'self'` (`X-Frame-Options: SAMEORIGIN`): só a própria origem se embute.
-
-### Verificar o cenário antes de publicar
 
 ### Melhorias do escritório (lote 2)
 
@@ -166,19 +168,30 @@ Os limites de valor mudam em "Regras do escritório".
 ### Verificação
 
 ```powershell
-node test/escritorio.js
+npm test
+node test/escritorio-2d.cjs
 node test/escritorio-3d.cjs
 ```
 
-O segundo comando inicia sozinho o servidor local com API simulada, usa `playwright-core` e Chrome instalado com SwiftShader,
+O teste 2D verifica os oito lugares sem WebGL, dicas, clique, Enter/espaço, ESC dentro do iframe, retorno de foco,
+fechamento por botão/fundo e painel em tela cheia. Os filtros das rotas são preservados ao abrir a tela inteira.
+
+O teste 3D inicia sozinho o servidor local com API simulada, usa `playwright-core` e Chrome instalado com SwiftShader,
 aguarda os nove humanos e todas as texturas, captura dia/tarde/noite, detalhe e celular, e verifica câmera, HUD, monitor externo,
-duplo clique, descarte, reabertura 3D/2D, redimensionamento e redução automática do GTAO. `CHROME_PATH` permite outro executável
+duplo clique, painel, modo andar, tour nos três idiomas, clima, som, descarte, reabertura 3D/2D, redimensionamento e redução automática do GTAO. `CHROME_PATH` permite outro executável
 Chromium. Capturas e `render.json` ficam em `data/cenario-qa/` (fora do Git). FPS de SwiftShader é uma medida do renderizador por
 software, não um benchmark de GPU do usuário.
 
 Para explorar manualmente: `node docs/wip/servidor-teste.cjs` serve `http://127.0.0.1:8766/teste-3d.html`. O parâmetro `quiet=1`
 pausa a atividade espontânea para comparar imagens. Só esse servidor expõe `window.__clima(hora, true)` para testar horários;
 produção continua seguindo o relógio. O comando `node docs/wip/shot3d.cjs URL ARQUIVO.png 6000` faz uma captura avulsa.
+Com o servidor local aberto, as três capturas obrigatórias usam a mesma câmera:
+
+```powershell
+node docs/wip/shot3d.cjs 'http://127.0.0.1:8766/teste-3d.html?quiet=1' data/cenario-qa/shot-dia.png 1000 '0,9,19,0,0.9,-0.5' 12
+node docs/wip/shot3d.cjs 'http://127.0.0.1:8766/teste-3d.html?quiet=1' data/cenario-qa/shot-tarde.png 1000 '0,9,19,0,0.9,-0.5' 17.5
+node docs/wip/shot3d.cjs 'http://127.0.0.1:8766/teste-3d.html?quiet=1' data/cenario-qa/shot-noite.png 1000 '0,9,19,0,0.9,-0.5' 21
+```
 
 Publicação: commits pequenos em `main` e `git push origin main`, que aciona os projetos ligados ao repositório na Vercel.
 Conferir o deploy e `https://ondemorar.corretordofuturo.app/#/whats/ao-vivo` com sessão autenticada.

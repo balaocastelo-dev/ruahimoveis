@@ -65,3 +65,37 @@ Além de mural → radar, TV → painel, placa → CRM (tarefa anterior), ligar 
 
 > Nota (29/10/2026): o painel embutido citado acima já existe — `painelLugar()`/`.j3p-*` em `public/escritorio-3d.js`
 > com `<iframe src="/app.html?embutido=1#/rota">`. Reaproveitar, não criar outro.
+
+## Resultado
+
+Concluído em 30/10/2026, com os sete itens em commits separados na `main`, nesta ordem:
+
+| Item | Entrega | Commit |
+| --- | --- | --- |
+| 1 | Painel `.j3p-*` original compartilhado entre 3D, andar e 2D; oito lugares, filtros de autorizações/espera e avisos somente leitura. | `86cd02e` |
+| 2 | Três mensagens sem nomes cadastrados ou contatos nos monitores de adm/gestor; TV alterna números e imóveis do dia a cada 8 s. | `d3cbbae` |
+| 3 | Apresentar com seis paradas, câmera, destaque, legendas PT/EN/日本語, navegação e ESC; termina na órbita. | `47a8de0` |
+| 4 | Clima de Campinas no servidor, cache de 15 minutos, falha `{}`, relógio de São Paulo, temperatura e chuva leve; celular/movimento reduzido usam cores. | `da100fd` |
+| 5 | WebAudio opcional, baixo, desligado por padrão, preferência salva; teclado, ação, lead e venda; bloqueado com movimento reduzido. | `764cc32` |
+| 6 | Visitante com nome e modelo estável por usuário, fila de chegadas e descarte ao sair; agentes preservados. | `229ff61` |
+| 7 | Letreiro com total de sessões recentes e até três primeiros nomes, estes apenas para adm/gestor. | `40e2b63` |
+
+O painel foi extraído para `public/escritorio-lugares.js` para reaproveitar o mesmo iframe inclusive no 2D sem WebGL.
+O modo andar conserva câmera, controles e colisões; recebeu apenas o alvo do sofá. Sem bibliotecas novas ou alteração
+da CSP. O conjunto disponível de visitantes contém somente `visitante.glb`; os outros nove GLBs continuam reservados
+aos agentes, sem alterações nos personagens ou nas animações.
+
+Validação concluída:
+
+- `npm test`: todas as suítes passaram, incluindo clima, escritório, estação e API de IA.
+  A mesclagem pendente foi concluída preservando ambas as listas de testes. Os testes de estação/API foram isolados
+  das chaves do ambiente, e o SQLite é fechado antes da limpeza no Windows.
+- `node test/escritorio-2d.cjs`: oito cliques sem WebGL, filtros, hover, Enter/espaço, ESC dentro do iframe,
+  retorno do foco, fechar por botão/fundo, tela cheia e abertura da rota inteira.
+- `node test/escritorio-3d.cjs`: dia/tarde/noite, nove humanos, 21 texturas, tour e idiomas, clima, som,
+  painel, modo andar, PC, reabertura e descarte; nenhum erro JavaScript/WebGL ou de recurso.
+- `docs/wip/servidor-teste.cjs` + `shot3d.cjs`: capturas às 12h, 17h30 e 21h, conferidas visualmente.
+  Evidências locais em `data/cenario-qa/`: `shot-dia.png`, `shot-tarde.png`, `shot-noite.png`, `lugares-2d.png`,
+  `render.json` e `npm-test.log` (não versionadas).
+
+Detalhes e comandos de reprodução em [escritorio.md](escritorio.md#melhorias-do-escritório-lote-2).
