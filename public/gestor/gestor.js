@@ -197,7 +197,8 @@ async function telaCerebro() {
   $('#ia-modelos', raiz).onclick = () => acao(modelos);
   $('#ia-atualizar', raiz).onclick = () => acao(() => carregarUso(!configuracaoCarregada));
   raiz.querySelectorAll('[data-periodo]').forEach((b) => { b.onclick = () => {
-    periodo = b.dataset.periodo; raiz.querySelectorAll('[data-periodo]').forEach((x) => x.setAttribute('aria-pressed', x === b)); carregarUso();
+    periodo = b.dataset.periodo; raiz.querySelectorAll('[data-periodo]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+    acao(() => carregarUso(!configuracaoCarregada));
   }; });
   await acao(() => carregarUso(true));
 }

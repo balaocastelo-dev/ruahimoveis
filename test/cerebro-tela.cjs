@@ -84,6 +84,15 @@ const { criarServidor, CHAVE, NOVA, TOKEN } = require('./cerebro');
     await page.getByText('Não foi possível carregar a configuração. Use Atualizar consumo para tentar novamente.', { exact: true }).waitFor();
     assert.equal(await page.getByRole('button', { name: 'Guardar', exact: true }).isDisabled(), true);
     estado.erroBanco = false;
+    await page.getByRole('button', { name: 'Hoje', exact: true }).click();
+    await page.getByText('Nenhum consumo registrado neste período.', { exact: true }).waitFor();
+    assert.equal(await page.getByRole('button', { name: 'Guardar', exact: true }).isDisabled(), false, 'trocar o período também deve recuperar a configuração após uma falha inicial');
+    assert.match(await page.locator('#ia-estado').innerText(), /Nenhuma chave central cadastrada/);
+
+    estado.erroBanco = true;
+    await page.reload();
+    await page.getByText('Não foi possível carregar a configuração. Use Atualizar consumo para tentar novamente.', { exact: true }).waitFor();
+    estado.erroBanco = false;
     await page.getByRole('button', { name: 'Atualizar consumo', exact: true }).click();
     await page.waitForFunction(() => document.querySelector('#f-cerebro fieldset')?.disabled === false);
     await context.clearCookies();

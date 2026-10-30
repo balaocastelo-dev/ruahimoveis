@@ -73,3 +73,15 @@ JSON malformado, chave enviada sem JSON e corpo acima de 200 KB, sempre com mens
 
 Os testes usam PostgreSQL e Gemini simulados, sem acessar chaves reais. A execução contra o banco e o
 Gemini de produção não foi validada nesta revisão.
+
+**Nova conferência em 30/10/2026:** os requisitos obrigatórios já estavam implementados e foram revalidados.
+Corrigida a recuperação após falha inicial do banco: ao escolher Hoje, Este mês ou Mês passado, a tela agora
+recarrega também a configuração que faltou e libera o formulário de chave/modelo. Antes, o consumo voltava,
+mas o formulário permanecia desabilitado. Os controles aguardam a conclusão da consulta durante a troca de período.
+
+O teste de regressão em `test/cerebro-tela.cjs` reproduziu a falha antes da correção e passou depois dela,
+preservando a verificação de recuperação pelo botão Atualizar consumo. **`npm test` passou integralmente**,
+assim como **`node test/cerebro-tela.cjs`** e **`git diff --check`**. Capturas de desktop e celular conferidas.
+Mantidos o uso exclusivo de `plataforma.definir_ia_central` para gravar a chave, o retorno apenas do sufixo
+e a leitura do consumo em `plataforma.ia_uso`. A consulta de conferência ao Supabase foi recusada pelo
+conector por falta de permissão; esta validação usa banco e Gemini simulados, sem alterar dados de produção.
