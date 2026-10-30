@@ -1,0 +1,239 @@
+{
+  "slug": "qualidade-do-ar-dentro-de-casa-ventilacao-umidade-plantas",
+  "tema": "qualidade do ar dentro de casa umidade e fontes",
+  "titulo": "Qualidade do ar dentro de casa: ventilação, umidade e plantas",
+  "resumo": "Qualidade do ar dentro de casa depende de controlar a fonte, ventilar bem e manter a umidade certa. Plantas ajudam no bem-estar, mas não purificam o ar.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "bem-estar",
+    "ventilação",
+    "umidade",
+    "qualidade do ar",
+    "plantas"
+  ],
+  "capa": {
+    "alt": "Sala clara com janelas abertas, cortinas leves de linho se movendo com a brisa e plantas verdes perto da luz"
+  },
+  "redes": {
+    "legenda": "Planta purifica o ar de casa? Um estudo da Universidade Drexel calculou que seriam necessárias centenas delas para fazer o que uma janela aberta faz. O que melhora mesmo o ar dentro de casa é tirar a fonte, ventilar na hora certa e manter a umidade sob controle. No blog, explicamos como fazer isso em cada cômodo. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "qualidadedoar",
+      "bemestar",
+      "casasaudavel",
+      "ventilacao",
+      "plantas",
+      "arquitetura",
+      "decoracao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Qualidade do ar dentro de casa** é um tema que ganhou espaço nas conversas sobre morar bem. Passamos boa parte do dia em ambientes fechados, cozinhando, tomando banho, limpando, pintando uma parede ou montando um móvel novo. Tudo isso mexe com o ar que respiramos, e a casa pode ajudar ou atrapalhar, dependendo de como foi projetada e de como é usada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em resumo, o ar de casa melhora com três atitudes, nesta ordem: controlar a fonte do problema, ventilar nos momentos certos e manter a umidade numa faixa equilibrada. Plantas deixam a casa mais agradável e acolhedora, mas, segundo as pesquisas mais recentes, não fazem o papel de purificador. Purificador de ar ajuda em alguns casos, mas também não substitui a ventilação."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Para a EPA, agência ambiental dos Estados Unidos, eliminar ou reduzir a fonte costuma ser a estratégia mais eficaz.",
+        "Ventile bem durante atividades que soltam muita poluição: cozinhar, pintar, lixar e usar produtos de limpeza fortes.",
+        "A umidade interna ideal fica entre 30% e 50%; umidade persistente favorece mofo e ácaros.",
+        "Plantas trazem bem-estar, mas seriam necessárias centenas delas por cômodo para mudar o ar de forma mensurável."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o ar ruim dentro de casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia da EPA sobre qualidade do ar interno, revisado em 2026, agrupa as fontes mais comuns. Primeiro, a combustão: fogão a gás, lareira a lenha, aquecedores sem chaminé e fumaça de cigarro. Depois, materiais e móveis, como chapas de madeira prensada, que podem liberar formaldeído. Em seguida, produtos do dia a dia: tintas, vernizes, limpadores, aromatizadores e cosméticos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esses produtos liberam os chamados compostos orgânicos voláteis, conhecidos pela sigla COV: substâncias que evaporam à temperatura ambiente e respondem por boa parte daquele cheiro de tinta fresca ou de móvel novo. O guia lembra que eles saem não só durante o uso, mas em alguma medida também enquanto os frascos ficam guardados, o que vale para a área de serviço e o armário embaixo da pia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A quarta fonte é a umidade. Carpete úmido, material que molhou e não secou, água parada e ar-condicionado ou umidificador sem manutenção favorecem mofo, bactérias e ácaros. O guia faz uma observação importante: uma fonte isolada pode não ser preocupante, mas a maioria das casas tem várias ao mesmo tempo, e o efeito somado é o que pesa."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Fontes comuns e a primeira atitude em cada uma",
+      "colunas": [
+        "Fonte",
+        "Onde aparece",
+        "Primeira atitude"
+      ],
+      "linhas": [
+        [
+          "Combustão",
+          "Fogão a gás, lareira, churrasqueira interna",
+          "Coifa com saída para fora, chaminé revisada e janela aberta"
+        ],
+        [
+          "COV de tintas e vernizes",
+          "Pintura, reforma, móvel recém-envernizado",
+          "Ventilar bastante durante e depois; se possível, fazer fora de casa"
+        ],
+        [
+          "Produtos de limpeza e aromatizadores",
+          "Área de serviço, banheiro, cozinha",
+          "Usar só o necessário, ventilar e guardar bem fechados"
+        ],
+        [
+          "Madeira prensada nova",
+          "Móveis e marcenaria recém-instalados",
+          "Ventilar os primeiros dias e preferir produtos de baixa emissão"
+        ],
+        [
+          "Umidade e mofo",
+          "Banheiro, cozinha, armários encostados em parede fria",
+          "Exaustor, secar o que molhou e investigar infiltração"
+        ]
+      ],
+      "nota": "Com base no guia The Inside Story, da EPA. A tabela organiza as fontes; não substitui a avaliação de um profissional em caso de problema persistente."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando ventilar e quando controlar a fonte"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A EPA descreve três estratégias básicas: controlar a fonte, melhorar a ventilação e usar purificadores. A primeira é, normalmente, a mais eficaz e também a mais econômica, porque ventilar muito pode aumentar o gasto com energia quando a casa usa ar-condicionado. Trocar um produto de limpeza forte por um mais suave, por exemplo, resolve mais do que abrir a janela depois."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ventilação vem em seguida e tem hora certa. O guia recomenda ventilar o máximo possível durante atividades curtas e intensas: pintar, remover tinta, lixar, soldar e cozinhar. Na cozinha, a indicação é uma coifa com saída para o lado de fora. No banheiro, o exaustor ou a janela aberta durante o banho, para o vapor não ficar preso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Casas com janelas em paredes opostas ou em lados diferentes ventilam melhor, porque o ar entra por um lado e sai pelo outro. Se você está escolhendo um imóvel, vale observar isso na visita. Há mais ideias sobre luz, ar e conforto na seção de [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Purificador de ar em casa",
+      "pros": [
+        "Ajuda a reduzir partículas suspensas no ar em cômodos fechados.",
+        "Útil em dias de ar externo ruim, quando abrir a janela não é boa ideia.",
+        "Funciona sem obra e pode mudar de cômodo."
+      ],
+      "contras": [
+        "A eficiência depende da capacidade do aparelho e do fluxo de ar, nem todo modelo dá conta do cômodo.",
+        "Segundo a EPA, em geral não é feito para remover gases.",
+        "Não resolve a causa: mofo, cheiro de tinta ou fumaça continuam sendo produzidos.",
+        "Exige troca de filtro e consome energia."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas ventilação não é sempre a resposta. Em dias de queimada, de muita poeira na rua ou de obra ao lado, abrir a janela pode trazer mais poluição do que levar embora. Nesses dias, o ideal é ventilar nos horários de ar mais limpo e reduzir as fontes internas. É aí que um purificador pode fazer sentido, como apoio."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual a umidade certa e como evitar o mofo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A umidade relativa é a quantidade de vapor de água no ar em relação ao máximo que ele suportaria naquela temperatura. A EPA recomenda manter a umidade dentro de casa entre 30% e 50%, e sempre abaixo de 60%, para limitar mofo, bactérias e ácaros. Um higrômetro simples, aparelho que mede a umidade, ajuda a saber onde você está."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Organização Mundial da Saúde publicou em 2009 diretrizes específicas sobre umidade e mofo em ambientes internos. O documento associa esses agentes a mais sintomas respiratórios e alergias e conclui que o caminho mais eficaz é prevenir a umidade persistente e o crescimento de fungos nas superfícies e na estrutura da casa. Em outras palavras: secar e ventilar antes de limpar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, a EPA orienta secar em 24 a 48 horas o que molhou, consertar vazamentos o quanto antes e nunca pintar por cima de parede úmida ou mofada sem resolver a causa. Armários encostados em parede fria, roupa secando dentro de cômodo fechado e banheiro sem exaustão são os pontos mais comuns de acúmulo de umidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o ar também pode ficar seco demais. Em épocas secas, a umidade dentro de casa também pode cair bastante. Nesses períodos, uma bacia de água, toalha úmida no quarto ou umidificador bem limpo ajudam no conforto. O cuidado é não exagerar: umidificador ligado o tempo todo num quarto fechado pode empurrar a umidade para cima do ideal."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Mancha que volta tem causa",
+      "texto": "Mofo que reaparece logo depois da limpeza costuma indicar infiltração, vazamento ou ponte térmica na parede. Investigar e corrigir pede um profissional; em obra que mexe em impermeabilização, fachada ou estrutura, exija engenheiro ou arquiteto com ART ou RRT."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Plantas purificam o ar? O que a pesquisa mostra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ideia de que plantas limpam o ar de casa ganhou força a partir de um estudo da NASA de 1989, feito em câmaras seladas e pensado para estações espaciais. Em 2019, os engenheiros Michael Waring e Bryan Cummings, da Universidade Drexel, revisaram cerca de trinta anos de experimentos e publicaram a análise no Journal of Exposure Science and Environmental Epidemiology."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A conclusão, segundo reportagem do New Atlas, é que uma planta comum remove uma quantidade mínima de poluentes em comparação com um purificador ou com a renovação de ar de um edifício. Para limpar os compostos orgânicos de um único metro quadrado de piso, seriam necessárias centenas de plantas, até mil. Abrir duas janelas, apontam os autores, faz mais diferença."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Isso não tira o valor das plantas. Elas trazem verde, textura, cuidado diário e a sensação de natureza que tanta gente busca dentro de casa. Só não devem ocupar o lugar da janela aberta, da coifa e do exaustor. Se a ideia é ter mais verde, escolha espécies que combinem com a luz de cada cômodo e evite vasos com água parada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem está procurando imóvel pode levar esse olhar para a visita: há janelas em lados diferentes? O banheiro tem exaustor ou janela de verdade? A cozinha comporta coifa com saída para fora? Há manchas de umidade no teto ou nos cantos? Para mais temas sobre a casa e o jeito de morar, visite o [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você quer comprar ou vender um imóvel em Campinas e prefere conversar com calma sobre ventilação, luz e conforto, a equipe da {{cliente}} pode ajudar. Em uma linha: ar bom em casa é fonte controlada, janela aberta na hora certa e umidade na medida."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Plantas purificam o ar de casa?",
+      "resposta": "Muito pouco. Uma revisão da Universidade Drexel, de 2019, estimou que seriam necessárias centenas de plantas para limpar os compostos orgânicos de um metro quadrado de piso. Elas trazem bem-estar, mas não substituem a ventilação."
+    },
+    {
+      "pergunta": "Qual a umidade ideal dentro de casa?",
+      "resposta": "A EPA recomenda manter a umidade relativa entre 30% e 50%, e sempre abaixo de 60%, para limitar mofo, bactérias e ácaros. Um higrômetro ajuda a acompanhar."
+    },
+    {
+      "pergunta": "Purificador de ar substitui abrir a janela?",
+      "resposta": "Não. Ele ajuda a reduzir partículas, mas, segundo a EPA, em geral não remove gases e não resolve a fonte. Funciona melhor como apoio, em dias de ar externo ruim."
+    },
+    {
+      "pergunta": "O que fazer depois de pintar a casa?",
+      "resposta": "Ventile o máximo possível durante e depois da pintura, com janelas em lados opostos abertas. A EPA recomenda ventilação intensa em atividades curtas que liberam muitos compostos, como pintar e lixar."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "The Inside Story: A Guide to Indoor Air Quality — U.S. Environmental Protection Agency (EPA)",
+      "url": "https://www.epa.gov/indoor-air-quality-iaq/inside-story-guide-indoor-air-quality",
+      "data": "maio de 2026"
+    },
+    {
+      "nome": "Text Version of the Mold House Tour — U.S. Environmental Protection Agency (EPA)",
+      "url": "https://epa.gov/mold/text-version-mold-house-tour",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "WHO guidelines for indoor air quality: dampness and mould — Organização Mundial da Saúde",
+      "url": "https://www.who.int/publications/i/item/9789289041683",
+      "data": "2009"
+    },
+    {
+      "nome": "Reportagem sobre a revisão da Universidade Drexel a respeito de plantas e ar interno — New Atlas",
+      "url": "https://newatlas.com/health-wellbeing/indoor-plants-no-effect-air-quality-in-home",
+      "data": "novembro de 2019"
+    }
+  ]
+}

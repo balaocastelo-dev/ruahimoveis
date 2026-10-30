@@ -279,7 +279,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-30T14:20:50.104Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "qualidade-do-ar-dentro-de-casa-ventilacao-umidade-plantas",
+      "titulo": "Qualidade do ar dentro de casa: ventilação, umidade e plantas",
+      "tema": "qualidade do ar dentro de casa umidade e fontes",
+      "tipo": "principal",
+      "categoria": "bem-estar",
+      "criadaEm": "2026-10-30T14:22:50.848Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T14:20:50.104Z"
+  "atualizadoEm": "2026-10-30T14:22:50.848Z"
 }
