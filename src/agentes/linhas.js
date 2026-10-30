@@ -123,14 +123,14 @@ async function enviar(slug, telefone, texto) {
 
 function iniciar(receber) {
   aoReceber = receber;
-  const usadas = BASE.linhasEmUso();
+  const usadas = new Set(BASE.linhasQr());
   log('sistema', `linha(s) em uso: ${[...usadas].join(', ') || 'nenhuma'}`);
   for (const slug of usadas) {
     if (temSessao(slug)) conecta(slug).catch((e) => falhou(slug, e));
     else publica(slug);
   }
   // uma sessão salva de agente que não é mais linha fica quieta: não abre sozinha (era um QR por agente)
-  setInterval(() => { for (const slug of BASE.linhasEmUso()) publica(slug); }, 60e3);
+  setInterval(() => { for (const slug of BASE.linhasQr()) publica(slug); }, 60e3);
 }
 
 module.exports = { iniciar, comandos, enviar, conectada };

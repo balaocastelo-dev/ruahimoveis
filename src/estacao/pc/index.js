@@ -72,15 +72,21 @@ class Imob {
     if (this.pcs[slug]) await this.pcs[slug].desliga();
   }
   // WhatsApp Web nos agentes que usam esse canal (e só neles)
+  // WhatsApp da casa: o sistema diz quais NÚMEROS atendem pelo WhatsApp Web (normalmente um só, o número
+  // do sistema). O PC que segura essa sessão é o único que pode ligar sozinho — foi a escolha do Thiago:
+  // "um PC ligado só pro WhatsApp", os outros ficam desligados até ele ligar.
   async garanteWhatsApps() {
-    for (const a of this.cfg.agentes) {
-      const pc = this.pcs[a.slug];
-      if (a.canal !== 'web' || !a.ativo) { continue; }
-      const p = this.pcs[a.slug];
-      if (!p || !p.ligado) continue;         // não liga PC por causa do WhatsApp: só cuida de quem já está ligado
-      if (!p.wa) p.wa = new WhatsAppWeb(p, (m) => this.post('/estacao-api/wa-entrada', { linha: a.slug, ...m }));
-      p.wa.filtro = a.wa_filtro;
+    const linhas = Array.isArray(this.cfg.linhas_wa) ? this.cfg.linhas_wa : [];
+    for (const l of linhas) {
+      const p = await this.ligaPc(l.slug, `WhatsApp da casa (${l.nome || l.slug})`, true).catch((e) => { log(l.slug, e.message); return null; });
+      if (!p) continue;
+      if (!p.wa) p.wa = new WhatsAppWeb(p, (m) => this.post('/estacao-api/wa-entrada', { linha: l.slug, ...m }));
+      p.wa.filtro = l.wa_filtro;
       await p.wa.garante();
+    }
+    // quem não é mais número de WhatsApp não fica com sessão aberta
+    for (const [slug, p] of Object.entries(this.pcs)) {
+      if (p.wa && !linhas.some((l) => l.slug === slug)) { try { await p.wa.sair(); } catch {} p.wa = null; }
     }
   }
   async batida() {

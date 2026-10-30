@@ -94,29 +94,33 @@ function linhaSistema() {
 function linhaDe(slug, prof = 0) {
   if (slug === 'captador') return slug;
   const a = ajustes(slug);
-  // WhatsApp Web roda no PC virtual do próprio agente: nesse canal a linha é sempre a dele
-  if (a.canal === 'web') return slug;
   if (a.linha === 'propria' || prof > 3) return slug;
   const alvo = a.linha === 'sistema' ? linhaSistema() : a.linha;
   if (!C.POR_SLUG[alvo] || alvo === slug || alvo === 'captador') return slug;
   return linhaDe(alvo, prof + 1);
 }
-/** Linhas (sessões de WhatsApp) que o sistema realmente precisa abrir no PC. */
+/** Linhas (números de WhatsApp) que o sistema realmente usa. Normalmente só a do sistema. */
 function linhasEmUso() {
   const l = new Set();
   for (const a of C.AGENTES) {
     if (a.slug === 'captador') continue;          // o robô do Fisguei cuida dessa
-    const aj = ajustes(a.slug);
-    if (!aj.ativo || aj.canal === 'web') continue; // desligado, ou atende pelo WhatsApp Web do PC virtual
+    if (!ajustes(a.slug).ativo) continue;
     l.add(linhaDe(a.slug));
   }
   return l;
 }
+// O canal (QR no PC da imobiliária ou WhatsApp Web no PC virtual) é do NÚMERO, não de cada agente:
+// quem usa o número do sistema atende pelo canal daquele número.
+const canalDaLinha = (linha) => (ajustes(linha).canal === 'web' ? 'web' : 'qr');
+/** Números que atendem pelo WhatsApp Web da estação (um PC virtual segura a sessão). */
+const linhasWeb = () => [...linhasEmUso()].filter((s) => canalDaLinha(s) === 'web');
+/** Números que atendem por QR code (Baileys) no PC da imobiliária. */
+const linhasQr = () => [...linhasEmUso()].filter((s) => canalDaLinha(s) !== 'web');
 
 // ---------- estado das linhas (gravado pelo PC, lido pela tela) ----------
 function estadoLinha(slug) {
   let st;
-  if (ajustes(slug).canal === 'web') {
+  if (canalDaLinha(slug) === 'web') {
     // WhatsApp Web no PC virtual do agente (estação na RTX): a estação conta como está a cada batida
     st = json(getConfig('estacao_wa:' + slug), {});
     const vivo = st.em && Date.now() - new Date(st.em).getTime() < 90e3;
@@ -243,7 +247,7 @@ function enfileiraSaida({ agente, telefone, texto, lead_id = null, pessoa_id = n
 }
 
 module.exports = {
-  ...C, normTel, mesmoTel, padraoTel, ehTeste, ehChat, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, linhaSistema, linhasEmUso, estadoLinha, comando,
+  ...C, normTel, mesmoTel, padraoTel, ehTeste, ehChat, json, geral, salvaGeral, ajustes, salvaAjustes, alma, linhaDe, linhaSistema, linhasEmUso, canalDaLinha, linhasWeb, linhasQr, estadoLinha, comando,
   categoria, setorDoImovel, setorDaBusca, setorDoLead, imovelDoLead, quemAtende, corretorPorTelefone, leadDoCliente, proximoCorretor,
   evento, jaFeito, registraEntrada, enfileiraSaida,
 };

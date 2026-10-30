@@ -222,10 +222,12 @@ function evAbaWhats(a) {
   if (web) evAbaWhatsWeb(a); else evAbaWhatsQr(a);
   if (!a.pode_editar) return;
   const box = document.createElement('form'); box.className = 'card grid ev-canal'; box.dataset.form = 'ev-canal'; box.style.gap = '10px'; box.style.marginTop = '16px';
-  box.innerHTML = `<h2 style="margin:0">Como ${esc(a.nome)} usa o WhatsApp</h2>
-    <label class="check"><input type="radio" name="canal" value="qr" ${web ? '' : 'checked'}> <span><b>Aparelho conectado (QR code)</b> — a linha roda no PC da ${esc(MARCA.cliente)}, como sempre.</span></label>
-    <label class="check"><input type="radio" name="canal" value="web" ${web ? 'checked' : ''}> <span><b>WhatsApp Web no PC virtual de ${esc(a.nome)}</b> — o WhatsApp fica aberto no Chrome dele, sempre ligado: ele lê as conversas novas, responde pelo cérebro do escritório e entrega resultados de tarefas.</span></label>
-    <label class="f">Quem ele atende no WhatsApp Web<select class="inp" name="wa_filtro"><option value="nao_salvos" ${a.ajustes.wa_filtro !== 'todos' ? 'selected' : ''}>Só quem NÃO está salvo na agenda do número (bom para número pessoal)</option><option value="todos" ${a.ajustes.wa_filtro === 'todos' ? 'selected' : ''}>Todo mundo que escrever (número só da imobiliária)</option></select></label>
+  const daCasa = a.linha === a.linha_sistema;   // este é o número do sistema: vale para todos os agentes
+  box.innerHTML = `<h2 style="margin:0">${daCasa ? 'Como o sistema usa o WhatsApp' : `Como ${esc(a.nome)} usa o WhatsApp`}</h2>
+    ${daCasa ? `<p class="small muted" style="margin:0">Este é o <b>número da casa</b>: todos os agentes atendem por ele, com um QR code só.</p>` : ''}
+    <label class="check"><input type="radio" name="canal" value="qr" ${web ? '' : 'checked'}> <span><b>Aparelho conectado (QR code)</b> — a linha roda no PC da ${esc(MARCA.cliente)} (precisa do sistema aberto num computador da imobiliária).</span></label>
+    <label class="check"><input type="radio" name="canal" value="web" ${web ? 'checked' : ''}> <span><b>WhatsApp Web no PC virtual de ${esc(a.nome)}</b> — o WhatsApp fica aberto no Chrome dele, na estação. Esse é o único PC que liga sozinho (é o WhatsApp da casa); os outros só ligam quando você clicar.</span></label>
+    <label class="f">Quem o sistema atende no WhatsApp Web<select class="inp" name="wa_filtro"><option value="nao_salvos" ${a.ajustes.wa_filtro !== 'todos' ? 'selected' : ''}>Só quem NÃO está salvo na agenda do número (bom para número pessoal)</option><option value="todos" ${a.ajustes.wa_filtro === 'todos' ? 'selected' : ''}>Todo mundo que escrever (número só da imobiliária)</option></select></label>
     <div class="banner warn small" style="margin:0">Automatizar o WhatsApp Web vai contra as regras do WhatsApp: o número pode ser bloqueado, principalmente ao mandar mensagem para quem não conhece. As respostas seguem o modo do agente (${a.ajustes.modo === 'automatico' ? 'responde sozinho' : 'sugere e espera aprovação'}) e quem pede PARAR não recebe mais nada.</div>
     <div class="row"><span class="sp"></span><button class="btn pri" type="submit">Salvar</button></div>`;
   $('#ev-aba').appendChild(box);

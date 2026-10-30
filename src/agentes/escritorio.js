@@ -159,7 +159,7 @@ async function enviaSaidas() {
   for (const m of fila) {
     const marca = (status, motivo = null, waId = null) => marcaSaida(m, status, motivo, waId);
     const linha = B.linhaDe(m.agente);
-    if (B.ajustes(linha).canal === 'web') continue; // sai pelo WhatsApp Web do PC virtual (estação)
+    if (B.canalDaLinha(linha) === 'web') continue; // sai pelo WhatsApp Web do PC virtual (estação)
     const barra = barraSaida(m); if (barra) { marca('descartada', barra); continue; }
     if (linha === 'captador') {
       if (!m.pessoa_id) { marca('erro', 'sem proprietário ligado'); continue; }
