@@ -7,6 +7,8 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-chat-'));
 process.env.RUAH_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = 'c'.repeat(48);
 process.env.IA_MODO = 'desligado';
+process.env.ESTACAO_ID = 'chat-teste';
+process.env.ESTACAO_CHAVE = 'est_chat_chave_ficticia_1234567890';
 // Valores vazios impedem que config.js importe banco/chaves reais do .env deste PC.
 for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
 
@@ -43,10 +45,10 @@ const fecha = async (servidor) => {
     srv = app.listen(0);
     const base = `http://127.0.0.1:${srv.address().port}`;
     // Cada cliente guarda o próprio cookie; o teste nunca troca a identidade de uma requisição em andamento.
-    const cliente = () => {
+    const cliente = (cabecalhos = {}) => {
       let cookie = '';
       return async (metodo, url, corpo, status = 200, prazo = 8000) => {
-        const r = await fetch(base + url, { method: metodo, headers: { 'Content-Type': 'application/json', cookie, origin: base },
+        const r = await fetch(base + url, { method: metodo, headers: { 'Content-Type': 'application/json', cookie, origin: base, ...cabecalhos },
           body: corpo === undefined ? undefined : JSON.stringify(corpo), signal: AbortSignal.timeout(prazo) });
         const sc = r.headers.get('set-cookie'); if (sc) cookie = sc.split(';')[0];
         const j = await r.json();
@@ -55,6 +57,7 @@ const fecha = async (servidor) => {
       };
     };
     const adm = cliente(), ana = cliente(), bruno = cliente(), anonimo = cliente();
+    const estacao = cliente({ 'x-estacao': process.env.ESTACAO_CHAVE });
     const caixa = (req) => req('GET', '/api/chat/caixa');
     const cria = (req, com, tipo = 'direta', titulo) => req('POST', '/api/chat/conversas', { tipo, com, titulo });
     const envia = (req, id, texto) => req('POST', `/api/chat/conversas/${id}/mensagens`, { texto });
@@ -162,6 +165,11 @@ const fecha = async (servidor) => {
 
     // Histórico grande sem depender de relógio: cursores são IDs, mesmo com datas iguais.
     const historico = await cria(ana, [b.id], 'sala', 'Histórico');
+    await adm('GET', `/api/chat/conversas/${historico.id}`, undefined, 403);
+    await adm('POST', `/api/chat/conversas/${historico.id}/mensagens`, { texto: 'Fora da sala' }, 403);
+    assert.ok(!(await caixa(adm)).conversas.some((c) => c.id === historico.id));
+    assert.equal(one('SELECT count(*) n FROM chat_mensagens WHERE conversa_id=?', historico.id).n, 0);
+    console.log('ok · sala criada por corretor também impede leitura e escrita de administrador não participante');
     const lote = [];
     for (let i = 1; i <= 85; i++) lote.push(Number(run('INSERT INTO chat_mensagens(conversa_id,de_usuario,texto) VALUES(?,?,?)', historico.id, a.id, `Mensagem ${i}`).lastInsertRowid));
     const pagina = await le(bruno, historico.id);
@@ -261,6 +269,55 @@ const fecha = async (servidor) => {
     assert.equal(all('SELECT * FROM leads').length, 0, 'chat interno não cria clientes no CRM');
     semTelefones([conversaRobo, respostasSala]);
     console.log('ok · cérebro responde pela nuvem simulada na direta e para cada robô da sala');
+
+    // A estação é simulada pela API: nenhum PC ou serviço externo executa o pedido.
+    await bruno('GET', `/api/chat/conversas/${salaRobos.id}`, undefined, 403);
+    await bruno('POST', `/api/chat/conversas/${salaRobos.id}/mensagens`, { texto: 'tarefa: Pedido de quem não participa' }, 403);
+    assert.equal(one('SELECT count(*) n FROM agente_tarefas').n, 0, 'envio negado não cria tarefa');
+    const pedido = 'Prepare o resumo dos imóveis para a reunião';
+    const mt = await envia(ana, salaRobos.id, `tarefa: ${pedido}`);
+    const tarefas = all('SELECT * FROM agente_tarefas ORDER BY id');
+    assert.deepEqual(tarefas.map((t) => t.agente).sort(), ['apartamentos', 'casas']);
+    for (const t of tarefas) {
+      assert.equal(t.pedido, pedido);
+      assert.equal(t.criado_por, a.id);
+      assert.equal(t.para_nome, 'Ana Silva');
+      assert.equal(t.para_telefone, `chat-${salaRobos.id}-${t.agente}`);
+      assert.equal(t.status, 'fila');
+    }
+    assert.deepEqual(mt.digitando, [], 'pedido direto de tarefa já foi processado');
+    assert.equal(chamadas.length, 3, 'tarefa explícita não consulta a IA, mesmo com chave configurada');
+    const confirmacoes = await le(ana, salaRobos.id, `?desde=${mt.id}`);
+    assert.deepEqual(confirmacoes.mensagens.map((m) => m.de_agente).sort(), ['apartamentos', 'casas']);
+    assert.ok(confirmacoes.mensagens.every((m) => /Recebi a tarefa/.test(m.texto)));
+    const cursorTarefa = confirmacoes.mensagens.at(-1).id;
+    const recebidas = await estacao('POST', '/estacao-api/batida', { agentes: {} });
+    assert.deepEqual(ids(recebidas.tarefas), ids(tarefas));
+    assert.deepEqual((await estacao('POST', '/estacao-api/batida', { agentes: {} })).tarefas, [], 'estação recebe cada tarefa uma vez');
+    for (const t of tarefas) {
+      await estacao('POST', `/estacao-api/tarefa/${t.id}`, { concluir: { resultado: `Resumo de ${t.agente} pronto para a reunião.` } });
+      assert.equal(one('SELECT status FROM agente_tarefas WHERE id=?', t.id).status, 'feita');
+    }
+    const resultados = await ana('GET', `/api/chat/novidades?desde=${cursorTarefa}`);
+    assert.equal(resultados.mensagens.length, 2);
+    assert.deepEqual(resultados.mensagens.map((m) => m.de_agente).sort(), ['apartamentos', 'casas']);
+    for (const m of resultados.mensagens) {
+      assert.equal(m.conversa_id, salaRobos.id, 'resultado volta à sala que originou a tarefa');
+      assert.equal(m.de_usuario, null);
+      assert.match(m.texto, /Tarefa concluída/);
+      assert.ok(m.texto.includes(`Resumo de ${m.de_agente} pronto para a reunião.`));
+    }
+    assert.equal((await caixa(ana)).conversas.find((c) => c.id === salaRobos.id).nao_lidas, 2);
+    for (let i = 0; i < 2; i++) {
+      assert.deepEqual(ids((await le(ana, salaRobos.id, `?desde=${cursorTarefa}`)).mensagens), ids(resultados.mensagens), 'releitura não duplica resultados');
+    }
+    assert.equal((await caixa(ana)).conversas.find((c) => c.id === salaRobos.id).nao_lidas, 0);
+    assert.ok(!(await caixa(bruno)).conversas.some((c) => c.id === salaRobos.id));
+    assert.deepEqual((await le(ana, robo.id, `?desde=${cursorTarefa}`)).mensagens, [], 'resultado não vaza para a direta com o mesmo robô');
+    assert.equal(one('SELECT count(*) n FROM leads').n, 0);
+    assert.equal(one("SELECT count(*) n FROM agente_mensagens WHERE telefone LIKE 'chat-%' AND direcao='saida' AND status IN ('fila','enviando')").n, 0, 'respostas do chat não entram na fila de WhatsApp');
+    semTelefones([confirmacoes, resultados]);
+    console.log('ok · tarefa para cada robô, estação recebe uma vez e resultado volta à sala sem duplicar nem enviar WhatsApp');
 
     const revogado = pendente(bruno, (await caixa(bruno)).ate, 401);
     await revogado.esperando();

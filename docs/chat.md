@@ -148,6 +148,20 @@ própria da estação, e enfileira a mensagem de conclusão para o mesmo endere�
 entrega na conversa. Criar a tarefa não liga nem executa um PC: a estação precisa estar configurada
 e disponível, conforme [escritorio.md](escritorio.md).
 
+Por exemplo, enviar a `POST /api/chat/conversas/:id/mensagens`:
+
+```json
+{ "texto": "tarefa: Prepare o resumo dos imóveis para a reunião" }
+```
+
+Numa sala com `apartamentos` e `casas`, isso cria duas tarefas com o remetente registrado como
+criador, e cada robô confirma o recebimento. A estação retira as tarefas em
+`POST /estacao-api/batida` e envia a conclusão a `POST /estacao-api/tarefa/:id`, com o cabeçalho
+`x-estacao` e o corpo `{ "concluir": { "resultado": "Resumo pronto para a reunião." } }`.
+O resultado aparece como mensagem do robô **na sala de origem**, conta como não lido e não vai
+para a conversa direta com o mesmo robô nem para a fila de envio do WhatsApp. Quem não participa
+da sala recebe `403` também ao tentar enviar `tarefa:`, sem criar tarefa.
+
 ## Aplicar `sql/chat.sql` em cada schema
 
 No SQLite não há aplicação manual: iniciar o backend cria as estruturas. No Postgres, aplicar o
@@ -215,7 +229,11 @@ sessões independentes e simula o Gemini em HTTP local. Cobre diretas únicas, s
 paginação, validações, contatos inativos, leitura/escrita negadas a não participantes (inclusive
 adm), long polling com chegada posterior, isolamento de conversas, logout durante a espera e
 resposta vazia após 25 segundos. Verifica respostas do PC e da nuvem, vários robôs na sala,
-espelhamento idempotente e exclusão de rascunhos/conversas de clientes. Fecha servidores e SQLite
+espelhamento idempotente e exclusão de rascunhos/conversas de clientes. Também cobre a sala criada
+por corretor sem acesso para administrador alheio, o bloqueio de tarefas de não participantes e
+o fluxo `tarefa:` com dois robôs: criação sem chamada à IA, retirada única pela estação simulada,
+conclusão pela API e retorno à sala com não lidas, sem duplicação ou envio ao WhatsApp. Nenhum PC
+real executa os pedidos do teste. Fecha servidores e SQLite
 antes de remover os dados temporários, inclusive em caso de falha.
 
 O teste automatizado usa SQLite; não aplica nem valida a migração num Postgres real. A aplicação
