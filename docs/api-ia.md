@@ -34,6 +34,13 @@ permissão da chamada direta.
 
 `POST /api/ia/consulta` só aceita `SELECT`/`WITH`, recusa `;` e qualquer comando de escrita, e força `LIMIT`.
 
+## Ressalva: painel do gestor
+`porChave` está montado em `/gestor-api`, mas a chave pertence a um usuário da imobiliária, e o invólucro
+`exige` de `src/plataforma/gestor.js` continua pedindo o cookie `gestor_sessao` (tabela `plataforma.gestores`).
+Na prática, o escopo `plataforma` está reservado: o painel do gestor só abre pelo login dele. Para abrir por
+chave seria preciso uma chave do gestor da plataforma, no cofre `plataforma.config`.
+
 ## O que falta (opcional)
 - Tela em Sistema › Configurações para criar/revogar chave pelo navegador (hoje é pela API ou pelo script).
+- Chave do gestor da plataforma para `/gestor-api/*`.
 - Webhooks de saída (hoje a IA acompanha por `GET /api/ia/eventos?desde=`).

@@ -18,7 +18,7 @@ Há três portas. A primeira é a nova e é a que interessa a robôs e IAs.
 
 ### 1.1 Chave de API (robôs, IAs, integrações)
 
-Mande o cabeçalho em **qualquer** rota `/api/...` (e em `/gestor-api/...`):
+Mande o cabeçalho em **qualquer** rota `/api/...`:
 
 ```bash
 curl -H "Authorization: Bearer hh_1a2b3c4d_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" \
@@ -71,7 +71,7 @@ O banco guarda só o **hash** da chave (SHA-256). Perdeu, cria outra.
 | `escritorio` | agentes robôs, PCs virtuais, estação |
 | `painel` | painéis, números, auditoria, rotas `/api/ia/*` |
 | `config` | usuários, integrações, LGPD, chaves de API, configurações |
-| `plataforma` | painel do gestor (`/gestor-api/*`) |
+| `plataforma` | reservado. O painel do gestor (`/gestor-api/*`) tem login próprio (tabela `plataforma.gestores`, cookie `gestor_sessao`) e **ainda não abre por chave de API** |
 | `sql` | `/api/ia/esquema` e `/api/ia/consulta` |
 
 **Erros próprios da chave**
@@ -4332,7 +4332,9 @@ curl -s "$BASE/condominio-3d.html?slug=edificio-x"
 ```
 ## Escritório virtual (`src/routes/escritorio.js`)
 
-Montado com `app.use('/api', require('./src/routes/escritorio'))`, **depois** de `express.json({ limit: '1mb' })`, de `mesmaOrigem` (bloqueia escrita com `Origin` de outro host → 403) e de `exigeLogin` (sem cookie de sessão `ruah_sessao` válido → 401 `{"erro":"Sessão expirada. Entre novamente."}`). As rotas marcadas "adm, gestor" passam ainda por `A.exigePerfil('adm','gestor')` → 403 `{"erro":"Seu perfil não tem acesso a esta função."}`.
+Montado com `app.use('/api', require('./src/routes/escritorio'))`, **depois** de `express.json({ limit: '1mb' })`, da entrada por chave de API, de `mesmaOrigem` (bloqueia escrita com `Origin` de outro host → 403) e de `exigeLogin` (sem chave e sem cookie de sessão `ruah_sessao` válido → 401 `{"erro":"Sessão expirada. Entre novamente."}`). As rotas marcadas "adm, gestor" passam ainda por `A.exigePerfil('adm','gestor')` → 403 `{"erro":"Seu perfil não tem acesso a esta função."}`.
+
+Escopo deste módulo: `/api/escritorio…` pede **`escritorio`**. Valem as duas formas de entrar em `/api` e os erros próprios da chave descritos no módulo "Base". `POST /escritorio-ciclo` fica fora de `/api`: não passa pela chave de API, só pelo token do ciclo.
 `:slug` tem de ser um dos 9 agentes (`captador`, `apartamentos`, `comerciais`, `terrenos`, `casas`, `alto-padrao`, `offmarket`, `gerente`, `gerente-corretores`); qualquer outro → 404 `{"erro":"Agente não encontrado."}`.
 A rota `ciclo` é exportada à parte e o `server.js` a monta como `POST /escritorio-ciclo`, **antes** do parser JSON (o corpo não é lido) e sem sessão.
 
@@ -4353,7 +4355,7 @@ A rota `ciclo` é exportada à parte e o `server.js` a monta como `POST /escrito
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `PUT /api/escritorio/geral`
@@ -4380,7 +4382,7 @@ curl -s "$BASE/api/escritorio" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** grava `config.escritorio`; registra na auditoria `escritorio.geral` (com o telefone mascarado, só os 4 últimos). Com `ligado:false` o `cicloCerebro` passa a devolver `{"pausado":true}` e nenhum agente responde.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/escritorio/geral" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"dono_telefone":"19999990000","hora_relatorio":"19:30"}'
+curl -s -X PUT "$BASE/api/escritorio/geral" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"dono_telefone":"19999990000","hora_relatorio":"19:30"}'
 ```
 
 ### `GET /api/escritorio/relatorio`
@@ -4393,7 +4395,7 @@ curl -s -X PUT "$BASE/api/escritorio/geral" -H "Cookie: ruah_sessao=$CHAVE" -H '
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/relatorio" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/relatorio" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/escritorio/relatorio`
@@ -4405,7 +4407,7 @@ curl -s "$BASE/api/escritorio/relatorio" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** insere uma mensagem de saída em `agente_mensagens` com `status='fila'` (`aprovar:false`, não espera aprovação) — ou seja, **a mensagem sai de verdade no WhatsApp** na próxima rodada das linhas (QR no PC) ou na próxima batida da estação (WhatsApp Web); grava um `agente_eventos` tipo `relatorio`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/relatorio" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/escritorio/relatorio" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/config`
@@ -4422,7 +4424,7 @@ curl -s -X POST "$BASE/api/escritorio/relatorio" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/config" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/config" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `PUT /api/escritorio/config/ia`
@@ -4441,7 +4443,7 @@ curl -s "$BASE/api/escritorio/config" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** grava `config.escritorio_ia` com a **chave cifrada** (AES-256-GCM, segredo derivado de `'ruah-escritorio-ia:' + DATABASE_URL`), zera o resultado do último teste e, se ainda não existir, **cria o token do ciclo** (`config.escritorio_ciclo_token`, 24 bytes aleatórios) usado por `POST /escritorio-ciclo`; registra na auditoria `escritorio.ia`.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/escritorio/config/ia" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"chave":"AIza...","modelo":"gemini-flash-latest"}'
+curl -s -X PUT "$BASE/api/escritorio/config/ia" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"chave":"AIza...","modelo":"gemini-flash-latest"}'
 ```
 
 ### `POST /api/escritorio/config/ia/testar`
@@ -4458,7 +4460,7 @@ curl -s -X PUT "$BASE/api/escritorio/config/ia" -H "Cookie: ruah_sessao=$CHAVE" 
 - **Efeitos:** **chamada externa** ao Google (`generativelanguage.googleapis.com`) ou à Anthropic (`api.anthropic.com`) quando só o Claude está configurado; grava `teste_ok`, `teste_msg` e `testado_em` em `config.escritorio_ia`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/config/ia/testar" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"modelo":"gemini-flash-latest"}'
+curl -s -X POST "$BASE/api/escritorio/config/ia/testar" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"modelo":"gemini-flash-latest"}'
 ```
 
 ### `POST /api/escritorio/saidas/:id/aprovar`
@@ -4475,7 +4477,7 @@ curl -s -X POST "$BASE/api/escritorio/config/ia/testar" -H "Cookie: ruah_sessao=
 - **Efeitos:** muda `agente_mensagens.status` de `aprovar` para `fila` (**passa a sair de verdade no WhatsApp**), grava o texto e o autor (`<Nome do agente> (aprovado por <usuário>)`), apaga a sugestão espelhada em `mensagens` do lead e grava um `agente_eventos` tipo `aprovado`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/saidas/42/aprovar" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Oi! Posso te mostrar amanhã às 10h?"}'
+curl -s -X POST "$BASE/api/escritorio/saidas/42/aprovar" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Oi! Posso te mostrar amanhã às 10h?"}'
 ```
 
 ### `POST /api/escritorio/saidas/:id/descartar`
@@ -4487,7 +4489,7 @@ curl -s -X POST "$BASE/api/escritorio/saidas/42/aprovar" -H "Cookie: ruah_sessao
 - **Efeitos:** `agente_mensagens.status='descartada'` com `motivo='descartada por <usuário>'`; apaga a sugestão espelhada em `mensagens`. Nada sai no WhatsApp.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/saidas/42/descartar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/escritorio/saidas/42/descartar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/afazeres`
@@ -4500,7 +4502,7 @@ curl -s -X POST "$BASE/api/escritorio/saidas/42/descartar" -H "Cookie: ruah_sess
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/afazeres" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/afazeres" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/escritorio/afazeres`
@@ -4519,7 +4521,7 @@ curl -s "$BASE/api/escritorio/afazeres" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** insere em `agente_afazeres` (`origem='tela:<usuário>'`). Se o afazer é de **outro** corretor e ele tem telefone, enfileira uma mensagem de WhatsApp pela linha da Marta (`gerente-corretores`, `aprovar:false` → **sai de verdade**) pedindo que responda `feito <id>` quando terminar, com chave de idempotência `aviso:afazer:<id>`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/afazeres" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Confirmar visita do AP0029","corretor_id":3,"quando":"2026-10-31 09:00"}'
+curl -s -X POST "$BASE/api/escritorio/afazeres" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Confirmar visita do AP0029","corretor_id":3,"quando":"2026-10-31 09:00"}'
 ```
 
 ### `POST /api/escritorio/afazeres/:id/feito`
@@ -4536,7 +4538,7 @@ curl -s -X POST "$BASE/api/escritorio/afazeres" -H "Cookie: ruah_sessao=$CHAVE" 
 - **Efeitos:** atualiza `agente_afazeres.feito` e `feito_em` (`datetime('now','localtime')` ao marcar, `NULL` ao desmarcar).
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/afazeres/8/feito" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"feito":true}'
+curl -s -X POST "$BASE/api/escritorio/afazeres/8/feito" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"feito":true}'
 ```
 
 ### `GET /api/escritorio/midias/:id`
@@ -4549,7 +4551,7 @@ curl -s -X POST "$BASE/api/escritorio/afazeres/8/feito" -H "Cookie: ruah_sessao=
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/midias/15" -H "Cookie: ruah_sessao=$CHAVE" -o foto.jpg
+curl -s "$BASE/api/escritorio/midias/15" -H "Authorization: Bearer $CHAVE" -o foto.jpg
 ```
 
 ### `POST /api/escritorio/midias/:id/imovel`
@@ -4561,7 +4563,7 @@ curl -s "$BASE/api/escritorio/midias/15" -H "Cookie: ruah_sessao=$CHAVE" -o foto
 - **Efeitos:** cria um registro em `arquivos` (categoria `Fotos`) com o conteúdo da foto, **envia ao Google Drive** quando o Drive está conectado, e guarda o `imovel_arquivo_id` em `agente_midias`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/midias/15/imovel" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/escritorio/midias/15/imovel" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/ao-vivo`
@@ -4587,7 +4589,7 @@ Sem `ev` nem `au` é "abertura": devolve os 6 últimos eventos e só marca o pon
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/ao-vivo?ev=120&au=455&full=1" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/ao-vivo?ev=120&au=455&full=1" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/:slug`
@@ -4611,7 +4613,7 @@ Para `captador` vêm também `midias` (até 60) e `robo` (`hoje`, `fila`, `confi
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/casas" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/casas" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/:slug/conversa`
@@ -4629,7 +4631,7 @@ curl -s "$BASE/api/escritorio/casas" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/casas/conversa?tel=5519999990000" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/casas/conversa?tel=5519999990000" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `PUT /api/escritorio/:slug`
@@ -4651,7 +4653,7 @@ curl -s "$BASE/api/escritorio/casas/conversa?tel=5519999990000" -H "Cookie: ruah
 - **Efeitos:** grava `config['agente:<slug>']`; registra na auditoria `escritorio.agente`. Mudar `canal` muda por onde as mensagens daquele **número** saem (fila do PC por QR ou batida da estação).
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/escritorio/casas" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"modo":"automatico","linha":"sistema"}'
+curl -s -X PUT "$BASE/api/escritorio/casas" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"modo":"automatico","linha":"sistema"}'
 ```
 
 ### `PUT /api/escritorio/:slug/alma`
@@ -4668,7 +4670,7 @@ curl -s -X PUT "$BASE/api/escritorio/casas" -H "Cookie: ruah_sessao=$CHAVE" -H '
 - **Efeitos:** grava `alma`, `alma_em` e `alma_por` em `config['agente:<slug>']`; `agente_eventos` tipo `alma`; auditoria `escritorio.alma`. Passa a valer na próxima resposta do agente.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/escritorio/casas/alma" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"alma":"Você é Clara, corretora de casas da RUAH. Fala curto, sempre oferece visita."}'
+curl -s -X PUT "$BASE/api/escritorio/casas/alma" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"alma":"Você é Clara, corretora de casas da RUAH. Fala curto, sempre oferece visita."}'
 ```
 
 ### `POST /api/escritorio/:slug/alma/restaurar`
@@ -4680,7 +4682,7 @@ curl -s -X PUT "$BASE/api/escritorio/casas/alma" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** apaga a alma editada em `config['agente:<slug>']`; grava `agente_eventos` tipo `alma`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/casas/alma/restaurar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/escritorio/casas/alma/restaurar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/escritorio/:slug/alma.soul`
@@ -4693,7 +4695,7 @@ curl -s -X POST "$BASE/api/escritorio/casas/alma/restaurar" -H "Cookie: ruah_ses
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/casas/alma.soul" -H "Cookie: ruah_sessao=$CHAVE" -o 05-casas.soul
+curl -s "$BASE/api/escritorio/casas/alma.soul" -H "Authorization: Bearer $CHAVE" -o 05-casas.soul
 ```
 
 ### `POST /api/escritorio/:slug/comando`
@@ -4710,7 +4712,7 @@ curl -s "$BASE/api/escritorio/casas/alma.soul" -H "Cookie: ruah_sessao=$CHAVE" -
 - **Efeitos:** grava `config['agente_cmd:<slug>']` (ou `config.fisguei_robo_cmd` no `captador`, onde `conectar` é traduzido para `reiniciar`); o processo das linhas no PC lê e **abre/fecha a sessão do WhatsApp** (pode gerar QR code novo). Auditoria `escritorio.linha`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/casas/comando" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"comando":"conectar"}'
+curl -s -X POST "$BASE/api/escritorio/casas/comando" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"comando":"conectar"}'
 ```
 
 ### `GET /api/escritorio/:slug/teste`
@@ -4723,7 +4725,7 @@ curl -s -X POST "$BASE/api/escritorio/casas/comando" -H "Cookie: ruah_sessao=$CH
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/escritorio/casas/teste" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/escritorio/casas/teste" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/escritorio/:slug/teste`
@@ -4740,7 +4742,7 @@ curl -s "$BASE/api/escritorio/casas/teste" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** insere a entrada em `agente_mensagens` com telefone `teste-<usuário>-<slug>`; com IA na nuvem, roda o `cicloCerebro` na hora (prazo de 40 s, sem rotinas e sem atribuir leads) — ou seja, **chama a IA externa** e grava a resposta com `status='teste'`. Sem IA na nuvem, a resposta fica para o PC.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/escritorio/casas/teste" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Tem casa no Cambuí até 1,5 mi?"}'
+curl -s -X POST "$BASE/api/escritorio/casas/teste" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"texto":"Tem casa no Cambuí até 1,5 mi?"}'
 ```
 
 ### `DELETE /api/escritorio/:slug/teste`
@@ -4752,7 +4754,7 @@ curl -s -X POST "$BASE/api/escritorio/casas/teste" -H "Cookie: ruah_sessao=$CHAV
 - **Efeitos:** apaga de `agente_mensagens` tudo com telefone `teste-<usuário>-<slug>`.
 - **Exemplo:**
 ```bash
-curl -s -X DELETE "$BASE/api/escritorio/casas/teste" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X DELETE "$BASE/api/escritorio/casas/teste" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /escritorio-ciclo`
@@ -4770,7 +4772,7 @@ curl -s -X POST "$BASE/escritorio-ciclo" -H "x-ruah-ciclo: $CHAVE"
 
 ## Redes e publicações (`src/routes/social.js`)
 
-O arquivo exporta dois roteadores. `api` é montado em `/api` (atrás de `express.json`, `mesmaOrigem` e `exigeLogin`; as rotas marcadas "adm, gestor" passam por `exigePerfil`). `publico` é montado **na raiz**, antes do parser JSON e sem sessão nenhuma: `/social/arte/…`, `/r/:cod`, `/links`, `/redes/retorno/:rede` e `POST /social-ciclo`.
+O arquivo exporta dois roteadores. `api` é montado em `/api` (atrás de `express.json`, da entrada por chave de API, de `mesmaOrigem` e de `exigeLogin`; as rotas marcadas "adm, gestor" passam por `exigePerfil`). Escopo deste módulo: `/api/social…` pede **`conteudo`**; valem as duas formas de entrar em `/api` e os erros próprios da chave descritos no módulo "Base". `publico` é montado **na raiz**, antes do parser JSON e sem sessão nenhuma: `/social/arte/…`, `/r/:cod`, `/links`, `/redes/retorno/:rede` e `POST /social-ciclo`.
 Estados possíveis de um post: `agendado`, `aguardando`, `publicando`, `publicado`, `parcial`, `erro`, `pronto_manual`, `cancelado`. Redes possíveis: `instagram`, `facebook`, `google`.
 
 ### `GET /api/social`
@@ -4797,7 +4799,7 @@ Estados possíveis de um post: `agendado`, `aguardando`, `publicando`, `publicad
 - **Efeitos:** garante o token do ciclo (`config.social_ciclo_token`, 24 bytes aleatórios, criado se faltar) e pode **criar posts novos** em `social_posts` ao planejar (só no futuro; erro no planejamento é apenas registrado no console).
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social?mes=2026-11" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social?mes=2026-11" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/social/resumo`
@@ -4810,7 +4812,7 @@ curl -s "$BASE/api/social?mes=2026-11" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social/resumo" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social/resumo" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/social/posts/:id`
@@ -4831,7 +4833,7 @@ curl -s "$BASE/api/social/resumo" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura (lê o conteúdo ao vivo do portal/blog/bairros).
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social/posts/31" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social/posts/31" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `PUT /api/social/posts/:id`
@@ -4852,7 +4854,7 @@ curl -s "$BASE/api/social/posts/31" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** atualiza `social_posts`; auditoria `social_editou`.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/social/posts/31" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"legenda":"Casa pronta para morar no Cambuí","agendado_para":"2026-11-02 12:00","redes":["instagram","facebook"]}'
+curl -s -X PUT "$BASE/api/social/posts/31" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"legenda":"Casa pronta para morar no Cambuí","agendado_para":"2026-11-02 12:00","redes":["instagram","facebook"]}'
 ```
 
 ### `POST /api/social/posts/:id/aprovar`
@@ -4864,7 +4866,7 @@ curl -s -X PUT "$BASE/api/social/posts/31" -H "Cookie: ruah_sessao=$CHAVE" -H 'C
 - **Efeitos:** `social_posts.status='agendado'` com `aprovado_por` e `aprovado_em`, **apenas** quando o status era `aguardando` (em qualquer outro caso nada muda e a resposta volta igual).
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/aprovar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/aprovar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/aprovar`
@@ -4881,7 +4883,7 @@ curl -s -X POST "$BASE/api/social/posts/31/aprovar" -H "Cookie: ruah_sessao=$CHA
 - **Efeitos:** atualiza em lote `social_posts` (`aguardando` → `agendado`); auditoria `social_aprovou_mes`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/aprovar" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"mes":"2026-11"}'
+curl -s -X POST "$BASE/api/social/aprovar" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"mes":"2026-11"}'
 ```
 
 ### `POST /api/social/posts/:id/cancelar`
@@ -4893,7 +4895,7 @@ curl -s -X POST "$BASE/api/social/aprovar" -H "Cookie: ruah_sessao=$CHAVE" -H 'C
 - **Efeitos:** `status='cancelado'` com `motivo='Tirado do calendário por <usuário>.'`; auditoria `social_cancelou`. Não apaga nada nas redes.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/cancelar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/cancelar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/posts/:id/restaurar`
@@ -4905,7 +4907,7 @@ curl -s -X POST "$BASE/api/social/posts/31/cancelar" -H "Cookie: ruah_sessao=$CH
 - **Efeitos:** `status` volta para `aguardando` (quando o modo dos ajustes é `aprovar`) ou `agendado`, e o `motivo` é apagado.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/restaurar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/restaurar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/posts/:id/trocar`
@@ -4917,7 +4919,7 @@ curl -s -X POST "$BASE/api/social/posts/31/restaurar" -H "Cookie: ruah_sessao=$C
 - **Efeitos:** cancela o post atual (muda a `chave` para `<chave>#x<id>` e `status='cancelado'`) e roda o planejador evitando o mesmo `ref`, criando um post novo em `social_posts`; auditoria `social_trocou`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/trocar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/trocar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/posts/:id/publicar`
@@ -4929,7 +4931,7 @@ curl -s -X POST "$BASE/api/social/posts/31/trocar" -H "Cookie: ruah_sessao=$CHAV
 - **Efeitos:** **publica de verdade** nas redes conectadas e ativas: carrossel/foto no Instagram (Graph API: `media` + `media_publish`), foto ou feed na Página do Facebook, e `localPosts` no Google Meu Negócio (com botão "Saiba mais" apontando para o link rastreado `/r/<id>g`). Grava `resultado`, `status` (`publicado`, `parcial` ou `erro`), `publicado_em` e, se não estava editado, a legenda/hashtags ao vivo; limpa ou grava `social_contas.ultimo_erro`; auditoria `social_publicou_agora` e `social_publicacao`. Sem conta conectada (ou em portal de demonstração) não publica: o post fica `pronto_manual`. Se o conteúdo saiu do ar, o post é liberado/cancelado.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/publicar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/publicar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/posts/:id/postado`
@@ -4941,7 +4943,7 @@ curl -s -X POST "$BASE/api/social/posts/31/publicar" -H "Cookie: ruah_sessao=$CH
 - **Efeitos:** grava `status='publicado'`, `publicado_em` e, dentro de `resultado`, `manual: {ok:true, em, por: <usuário>}`; limpa o `motivo`; auditoria `social_postado_a_mao`. Nada é enviado às redes.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/posts/31/postado" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/posts/31/postado" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/planejar`
@@ -4953,7 +4955,7 @@ curl -s -X POST "$BASE/api/social/posts/31/postado" -H "Cookie: ruah_sessao=$CHA
 - **Efeitos:** **cria posts** em `social_posts` (só horários futuros e ainda vazios; o que já existe não é duplicado nem alterado); auditoria `social_planejou`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/planejar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/planejar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/social/imoveis`
@@ -4966,7 +4968,7 @@ curl -s -X POST "$BASE/api/social/planejar" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social/imoveis" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social/imoveis" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/imoveis`
@@ -4986,7 +4988,7 @@ curl -s "$BASE/api/social/imoveis" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** cria posts em `social_posts` com `origem='manual'` e `status='agendado'` (não passam por aprovação); auditoria `social_escolheu_imoveis`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/imoveis" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"codigos":["CA0012","AP0029"],"inicio":"2026-11-03","hora":"12:00","intervalo":2}'
+curl -s -X POST "$BASE/api/social/imoveis" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"codigos":["CA0012","AP0029"],"inicio":"2026-11-03","hora":"12:00","intervalo":2}'
 ```
 
 ### `PUT /api/social/ajustes`
@@ -5006,7 +5008,7 @@ curl -s -X POST "$BASE/api/social/imoveis" -H "Cookie: ruah_sessao=$CHAVE" -H 'C
 - **Efeitos:** grava `config.social_ajustes`. Ligar `modo:"aprovar"` passa os posts automáticos futuros de `agendado` para `aguardando`; voltar para `automatico` faz o caminho inverso. Auditoria `social_ajustes`.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/social/ajustes" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"modo":"aprovar","redes":{"google":false}}'
+curl -s -X PUT "$BASE/api/social/ajustes" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"modo":"aprovar","redes":{"google":false}}'
 ```
 
 ### `GET /api/social/contas`
@@ -5019,7 +5021,7 @@ curl -s -X PUT "$BASE/api/social/ajustes" -H "Cookie: ruah_sessao=$CHAVE" -H 'Co
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social/contas" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social/contas" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/social/conectar/:rede`
@@ -5032,7 +5034,7 @@ curl -s "$BASE/api/social/contas" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura; o `state` é assinado com HMAC e vale 20 minutos, amarrado ao id do usuário.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/social/conectar/meta" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/social/conectar/meta" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/social/contas/:id/ativar`
@@ -5044,7 +5046,7 @@ curl -s "$BASE/api/social/conectar/meta" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** desliga (`ativo=0`) as outras contas da mesma rede e liga esta; auditoria `social_conta_ativa`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/social/contas/2/ativar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/social/contas/2/ativar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `DELETE /api/social/contas/:id`
@@ -5056,7 +5058,7 @@ curl -s -X POST "$BASE/api/social/contas/2/ativar" -H "Cookie: ruah_sessao=$CHAV
 - **Efeitos:** apaga a linha de `social_contas` (**e com ela o token cifrado**); auditoria `social_conta_removida`. Nada é revogado na Meta/Google.
 - **Exemplo:**
 ```bash
-curl -s -X DELETE "$BASE/api/social/contas/2" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X DELETE "$BASE/api/social/contas/2" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /social/arte/:id/:n.jpg`
@@ -5125,7 +5127,7 @@ curl -s "$BASE/links"
 - **Efeitos:** **chama a Meta ou o Google**; na Meta troca o token curto por um longo e lista as Páginas com `instagram_business_account`; no Google lista contas e locais do Meu Negócio e exige `refresh_token`. Grava/atualiza `social_contas` com **token e refresh cifrados** (AES-256-GCM derivado de `'herrera-redes:' + DATABASE_URL`), deixando só uma conta ativa por rede; auditoria `social_conectou`.
 - **Exemplo:**
 ```bash
-curl -s -i "$BASE/redes/retorno/meta?code=AQB...&state=meta.1.1762000000.abcd" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -i "$BASE/redes/retorno/meta?code=AQB...&state=meta.1.1762000000.abcd" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /social-ciclo`
@@ -5143,7 +5145,7 @@ curl -s -X POST "$BASE/social-ciclo" -H "x-social-ciclo: $CHAVE"
 
 ## LGPD no sistema (`src/routes/lgpd.js`)
 
-Montado em `/api`, atrás de `express.json`, `mesmaOrigem` e `exigeLogin`. Não usa `exigePerfil`: as rotas de pedidos e de bloqueio conferem o perfil na mão com `A.veTudo` (adm ou gestor) e devolvem 403 com mensagem própria. Versão dos Termos/Política em vigor: `2026-10-28`.
+Montado em `/api`, atrás de `express.json`, da entrada por chave de API (escopo **`config`**; valem as duas formas de entrar em `/api` e os erros próprios da chave descritos no módulo "Base"), de `mesmaOrigem` e de `exigeLogin`. Não usa `exigePerfil`: as rotas de pedidos e de bloqueio conferem o perfil na mão com `A.veTudo` (adm ou gestor) e devolvem 403 com mensagem própria. Versão dos Termos/Política em vigor: `2026-10-28`.
 
 ### `GET /api/lgpd/aceite`
 - **Quem pode:** qualquer usuário logado (cada um vê o próprio aceite).
@@ -5155,7 +5157,7 @@ Montado em `/api`, atrás de `express.json`, `mesmaOrigem` e `exigeLogin`. Não 
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/lgpd/aceite" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/lgpd/aceite" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/lgpd/aceite`
@@ -5172,7 +5174,7 @@ curl -s "$BASE/api/lgpd/aceite" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** grava `config['lgpd_aceite_u<id>']` com a versão, o instante e **o IP do usuário**; auditoria `lgpd_aceite` (também com o IP).
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/lgpd/aceite" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"aceito":true}'
+curl -s -X POST "$BASE/api/lgpd/aceite" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"aceito":true}'
 ```
 
 ### `GET /api/lgpd/resumo`
@@ -5185,7 +5187,7 @@ curl -s -X POST "$BASE/api/lgpd/aceite" -H "Cookie: ruah_sessao=$CHAVE" -H 'Cont
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/lgpd/resumo" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/lgpd/resumo" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `GET /api/lgpd/pedidos`
@@ -5204,7 +5206,7 @@ curl -s "$BASE/api/lgpd/resumo" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/lgpd/pedidos" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/lgpd/pedidos" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/lgpd/pedidos/:id/atender`
@@ -5221,7 +5223,7 @@ curl -s "$BASE/api/lgpd/pedidos" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** em `titular_pedidos` grava `situacao='atendido'`, `resposta`, `atendido_em` e `atendido_por`; auditoria `lgpd_atendido` com o protocolo.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/lgpd/pedidos/4/atender" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"resposta":"Telefone bloqueado e dados apagados em 30/10/2026; titular avisado por WhatsApp."}'
+curl -s -X POST "$BASE/api/lgpd/pedidos/4/atender" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"resposta":"Telefone bloqueado e dados apagados em 30/10/2026; titular avisado por WhatsApp."}'
 ```
 
 ### `POST /api/lgpd/nao-contatar`
@@ -5239,7 +5241,7 @@ curl -s -X POST "$BASE/api/lgpd/pedidos/4/atender" -H "Cookie: ruah_sessao=$CHAV
 - **Efeitos:** **bloqueia o número de verdade**: insere/atualiza `fisguei_bloqueios`, passa para `pulado` os contatos daquele telefone que estavam na fila do robô (`fisguei_contatos`), marca `leads.nao_contatar=1` e, no Postgres, chama `lgpd.opor(<hash do telefone>, motivo, origem)`, que grava o **hash SHA-256** do número na lista comum `plataforma.nao_contatar` — valendo para **todas as imobiliárias** da plataforma. Limpa o cache de `podeContatar`. Auditoria `lgpd_nao_contatar` só com os 4 últimos dígitos.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/lgpd/nao-contatar" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"telefone":"19999990000","motivo":"pediu por telefone"}'
+curl -s -X POST "$BASE/api/lgpd/nao-contatar" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"telefone":"19999990000","motivo":"pediu por telefone"}'
 ```
 
 ## PCs virtuais dos agentes · lado da estação (`src/estacao/servidor.js`, `est` em `/estacao-api`)
@@ -5369,7 +5371,7 @@ curl -s -X POST "$BASE/estacao-api/tarefa/12" -H "x-estacao: $CHAVE" -H 'Content
 
 ## PCs virtuais dos agentes · lado da tela (`src/estacao/servidor.js`, `api` em `/api`)
 
-O mesmo arquivo exporta `api`, montado com `app.use('/api', require('./src/estacao/servidor').api)` — atrás de `express.json({limit:'1mb'})`, `mesmaOrigem` e `exigeLogin`, como o resto de `/api`. As rotas marcadas "adm, gestor" usam `exigePerfil('adm','gestor')`.
+O mesmo arquivo exporta `api`, montado com `app.use('/api', require('./src/estacao/servidor').api)` — atrás de `express.json({limit:'1mb'})`, da entrada por chave de API, de `mesmaOrigem` e de `exigeLogin`, como o resto de `/api`. Escopo deste módulo: `/api/estacao…` pede **`escritorio`**; valem as duas formas de entrar em `/api` e os erros próprios da chave descritos no módulo "Base". As rotas marcadas "adm, gestor" usam `exigePerfil('adm','gestor')`.
 
 ### `GET /api/estacao`
 - **Quem pode:** qualquer usuário logado; `ia` e `id` da estação só vão para adm/gestor.
@@ -5390,7 +5392,7 @@ O mesmo arquivo exporta `api`, montado com `app.use('/api', require('./src/estac
 - **Efeitos:** só leitura; pode ler a chave central da plataforma (cache de 5 min).
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/estacao" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/estacao" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/estacao/passe`
@@ -5407,7 +5409,7 @@ curl -s "$BASE/api/estacao" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** só leitura — o passe é um HMAC-SHA256 assinado com a chave da estação sobre `<id>.<agente>.<expira>.<id do usuário>.<c|v>`, **válido por 10 minutos**; nada é gravado.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/passe" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas"}'
+curl -s -X POST "$BASE/api/estacao/passe" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas"}'
 ```
 
 ### `POST /api/estacao/chave`
@@ -5419,7 +5421,7 @@ curl -s -X POST "$BASE/api/estacao/passe" -H "Cookie: ruah_sessao=$CHAVE" -H 'Co
 - **Efeitos:** sobrescreve `config.estacao` com o id (mantido se já existia; senão criado a partir do nome do cliente + 3 bytes aleatórios) e a **chave nova cifrada** (AES-256-GCM). Trocar a chave invalida a antiga e também os passes assinados com ela. Auditoria `estacao.chave`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/chave" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/estacao/chave" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `PUT /api/estacao/ia`
@@ -5439,7 +5441,7 @@ curl -s -X POST "$BASE/api/estacao/chave" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** grava `config.estacao_ia` com a **chave cifrada**, zera o último teste e guarda quem mexeu e quando; a estação recebe a configuração nova (com a chave em claro) na próxima leitura de `/estacao-api/config`. Auditoria `estacao.ia`.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/estacao/ia" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"provedor":"openai","base_url":"https://openrouter.ai/api/v1","chave":"sk-or-v1-...","modelo":"qwen/qwen2.5-vl-72b-instruct:free"}'
+curl -s -X PUT "$BASE/api/estacao/ia" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"provedor":"openai","base_url":"https://openrouter.ai/api/v1","chave":"sk-or-v1-...","modelo":"qwen/qwen2.5-vl-72b-instruct:free"}'
 ```
 
 ### `POST /api/estacao/ia/testar`
@@ -5451,7 +5453,7 @@ curl -s -X PUT "$BASE/api/estacao/ia" -H "Cookie: ruah_sessao=$CHAVE" -H 'Conten
 - **Efeitos:** **chamada externa** ao provedor escolhido (timeout de 20 s); grava `teste_ok`, `teste_msg` e `testado_em` em `config.estacao_ia`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/ia/testar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/estacao/ia/testar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/estacao/tarefas`
@@ -5470,7 +5472,7 @@ curl -s -X POST "$BASE/api/estacao/ia/testar" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** insere em `agente_tarefas` com `status='fila'`; grava um `agente_eventos` tipo `tarefa`; auditoria `estacao.tarefa`. Na próxima batida a estação pega a tarefa e **liga o PC do agente** (uma tarefa nova é uma das poucas coisas que ligam um PC sozinho), abre uma aba nova, e a IA passa a clicar e digitar de verdade no Chrome (até 40 passos); no fim o resultado **sai pelo WhatsApp** de quem pediu.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/tarefas" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas","pedido":"Procurar no site da prefeitura o valor do IPTU 2026 do imóvel da Rua X, 100","para_telefone":"19999990000"}'
+curl -s -X POST "$BASE/api/estacao/tarefas" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas","pedido":"Procurar no site da prefeitura o valor do IPTU 2026 do imóvel da Rua X, 100","para_telefone":"19999990000"}'
 ```
 
 ### `GET /api/estacao/tarefas/:id`
@@ -5483,7 +5485,7 @@ curl -s -X POST "$BASE/api/estacao/tarefas" -H "Cookie: ruah_sessao=$CHAVE" -H '
 - **Efeitos:** só leitura.
 - **Exemplo:**
 ```bash
-curl -s "$BASE/api/estacao/tarefas/13" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s "$BASE/api/estacao/tarefas/13" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/estacao/tarefas/:id/cancelar`
@@ -5495,7 +5497,7 @@ curl -s "$BASE/api/estacao/tarefas/13" -H "Cookie: ruah_sessao=$CHAVE"
 - **Efeitos:** marca `agente_tarefas.status='cancelada'` quando o status era `fila` ou `rodando`; na próxima batida a estação é avisada e **para a tarefa no meio**.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/tarefas/13/cancelar" -H "Cookie: ruah_sessao=$CHAVE"
+curl -s -X POST "$BASE/api/estacao/tarefas/13/cancelar" -H "Authorization: Bearer $CHAVE"
 ```
 
 ### `POST /api/estacao/comando`
@@ -5513,7 +5515,7 @@ curl -s -X POST "$BASE/api/estacao/tarefas/13/cancelar" -H "Cookie: ruah_sessao=
 - **Efeitos:** acrescenta o comando em `config.estacao_cmd` (guarda os 40 últimos); a estação o consome na próxima batida e **liga, reinicia ou desliga o Chrome do agente**, lê as conversas não lidas, abre o WhatsApp Web ou sai dele (`sair_whatsapp` encerra a sessão do número). Auditoria `estacao.comando`.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/api/estacao/comando" -H "Cookie: ruah_sessao=$CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas","comando":"ligar"}'
+curl -s -X POST "$BASE/api/estacao/comando" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"agente":"casas","comando":"ligar"}'
 ```
 
 ## Painel do gestor da plataforma (`src/plataforma/gestor.js`)
@@ -5521,6 +5523,8 @@ curl -s -X POST "$BASE/api/estacao/comando" -H "Cookie: ruah_sessao=$CHAVE" -H '
 Fica em **`corretordofuturo.app/gestor`** e a API dele usa o prefixo real **`/gestor-api/`** (o middleware tira esse prefixo antes de entregar ao roteador, que internamente conhece `/login`, `/imobiliarias`, …). O middleware `gestor` é o **primeiro** do `server.js`, antes de qualquer outra coisa, e só atende quando o `hostname` está em `GESTOR_HOSTS` (padrão `corretordofuturo.app,www.corretordofuturo.app,localhost,127.0.0.1`); em outro host, `/gestor…` devolve 404 em texto puro (`Não encontrado.`). Tudo sai com `X-Robots-Tag: noindex, nofollow` e `Cache-Control: no-store`. O roteador tem o próprio `express.json({ limit: '200kb' })` e termina com um 404 `{"erro":"Não encontrado."}` para caminho desconhecido.
 
 **Autenticação do gestor** (separada da do sistema das imobiliárias): `POST /gestor-api/login` confere e-mail e senha na tabela `gestores` do schema `plataforma` (scrypt, `N=16384,r=8,p=1`), com freio de 8 tentativas por 15 minutos por IP+e-mail (tabela `tentativas`). No sucesso grava um token de 32 bytes (hash SHA-256) em `plataforma.sessoes` com validade de **12 horas** e manda o cookie `gestor_sessao` (`HttpOnly; SameSite=Strict; Path=/`, com `Secure` na Vercel). Todas as outras rotas passam pelo invólucro `exige`, que (1) em método diferente de `GET` obriga o cabeçalho **`x-gestor: 1`** (proteção contra CSRF) → 403 `Pedido recusado.`, e (2) resolve o gestor pelo cookie → 401 `Entre de novo.` Erros inesperados saem como 500 `Algo deu errado: <mensagem>`. O banco é o do usuário `plataforma_app` (`PLATAFORMA_DATABASE_URL`), que só vê o schema `plataforma`; sem essa variável as rotas devolvem 503 `Painel sem banco: falta PLATAFORMA_DATABASE_URL.`
+
+`/gestor-api/` também passa pelo middleware da chave de API (escopo **`plataforma`**), mas a chave resolve um usuário do **sistema da imobiliária**, não um gestor da plataforma: o invólucro `exige` continua pedindo o cookie `gestor_sessao` (sem ele, 401 `Entre de novo.`) e o cabeçalho `x-gestor: 1` nas escritas. Por isso os exemplos deste módulo usam o cookie.
 
 ### `GET /gestor` (e `/gestor/dashboard`, `/gestor/projecao`)
 - **Quem pode:** qualquer visitante nos hosts do gestor (a página em si é pública; os dados só vêm pela API, com cookie).
