@@ -4440,7 +4440,7 @@ curl -s "$BASE/api/escritorio/config" -H "Authorization: Bearer $CHAVE"
 
 - **Resposta:** o mesmo objeto `ia` do `GET /api/escritorio/config`.
 - **Erros:** 400 `Essa não parece uma chave da API do Gemini (começa com "AIza…" ou similar).`; 401; 403.
-- **Efeitos:** grava `config.escritorio_ia` com a **chave cifrada** (AES-256-GCM, segredo derivado de `'ruah-escritorio-ia:' + DATABASE_URL`), zera o resultado do último teste e, se ainda não existir, **cria o token do ciclo** (`config.escritorio_ciclo_token`, 24 bytes aleatórios) usado por `POST /escritorio-ciclo`; registra na auditoria `escritorio.ia`.
+- **Efeitos:** grava `config.escritorio_ia` com a **chave cifrada** (AES-256-GCM, segredo derivado de `'hh-escritorio-ia:' + DATABASE_URL` (valores cifrados com o prefixo anterior ainda abrem)), zera o resultado do último teste e, se ainda não existir, **cria o token do ciclo** (`config.escritorio_ciclo_token`, 24 bytes aleatórios) usado por `POST /escritorio-ciclo`; registra na auditoria `escritorio.ia`.
 - **Exemplo:**
 ```bash
 curl -s -X PUT "$BASE/api/escritorio/config/ia" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"chave":"AIza...","modelo":"gemini-flash-latest"}'
@@ -5789,7 +5789,7 @@ curl -s -X POST "$BASE/gestor-api/imobiliarias/5/assistente/conferir/publicar" -
 
 - **Resposta:** `{"ok":true,"gravado":true,"modelo":"gemini-flash-latest"}`; chave válida mas instalação antiga: `{"ok":true,"gravado":false,"modelo":"gemini-flash-latest","motivo":"Chave válida. Esta imobiliária foi instalada antes do painel: cole a chave no sistema dela, em Escritório virtual › Configuração geral."}`; chave recusada: `{"ok":false,"motivo":"O Google recusou essa chave. Confira se copiou inteira e se ela é do Google AI Studio."}`
 - **Erros:** 403 sem `x-gestor`; 401; 404 `Imobiliária não encontrada.`; 400 `Isso não parece uma chave do Gemini (começa com "AIza…").`
-- **Efeitos:** **chama o Google** (`generativelanguage.googleapis.com/v1beta/models`) para validar a chave e escolher o modelo flash; cifra a chave com AES-256-GCM usando o segredo derivado da conexão do banco **da imobiliária** (`'ruah-escritorio-ia:' + dbUrl`, o mesmo esquema do sistema dela) e chama `plataforma.definir_config(slug, 'escritorio_ia', <json>)` — a chave em claro **nunca** fica no banco da plataforma. Marca o passo `gemini` e grava `plataforma.eventos`.
+- **Efeitos:** **chama o Google** (`generativelanguage.googleapis.com/v1beta/models`) para validar a chave e escolher o modelo flash; cifra a chave com AES-256-GCM usando o segredo derivado da conexão do banco **da imobiliária** (`'hh-escritorio-ia:' + dbUrl`, o mesmo esquema do sistema dela; o prefixo anterior ainda abre) e chama `plataforma.definir_config(slug, 'escritorio_ia', <json>)` — a chave em claro **nunca** fica no banco da plataforma. Marca o passo `gemini` e grava `plataforma.eventos`.
 - **Exemplo:**
 ```bash
 curl -s -X POST "$BASE/gestor-api/imobiliarias/5/assistente/gemini" -H "Cookie: gestor_sessao=$CHAVE" -H 'x-gestor: 1' -H 'Content-Type: application/json' -d '{"chave":"AIza..."}'

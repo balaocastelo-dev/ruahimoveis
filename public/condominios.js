@@ -6,8 +6,7 @@ const cdEnd = (c) => [[c.logradouro, c.numero].filter(Boolean).join(', '), c.bai
 const cdM2 = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') + '/m²' : '—');
 const cdFontes = (f) => String(f || '').split(',').filter(Boolean).map((x) => ({ cnpj: 'CNPJ (Receita)', osm: 'Mapa aberto', cadastro: 'Cadastro ' + MARCA.cliente, ruah: 'Cadastro ' + MARCA.cliente }[x] || x)).join(' · ');
 const cdKpi = (n, l, sub) => `<div class="card kpi"><div class="n">${n}</div><div class="l">${esc(l)}</div>${sub ? `<div class="small muted" style="margin-top:2px">${sub}</div>` : ''}</div>`;
-// imóvel da carteira da própria imobiliária: o servidor manda origem = nome do cliente ('RUAH' nos dados antigos)
-const cdDaCasa = (a) => a.origem === MARCA.cliente || a.origem === 'RUAH';
+const cdDaCasa = (a) => a.origem === MARCA.cliente;
 const cd3d = (id, imovel) => `/condominio-3d.html?id=${id}${imovel ? '&imovel=' + imovel : ''}`;
 
 // ---------- lista + mapa ----------

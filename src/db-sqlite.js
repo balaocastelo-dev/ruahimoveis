@@ -6,13 +6,7 @@ const { DATA_DIR } = require('./config');
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 function arquivoLocal() {
-  if (process.env.HOUSE_DB) return process.env.HOUSE_DB;
-  // RUAH_DB e data/ruah.db: nomes antigos do arquivo local. Não apaga o banco que já existe.
-  if (process.env.RUAH_DB) return process.env.RUAH_DB;
-  const novo = path.join(DATA_DIR, 'house.db');
-  const antigo = path.join(DATA_DIR, 'ruah.db');
-  if (!fs.existsSync(novo) && fs.existsSync(antigo)) return antigo;
-  return novo;
+  return process.env.HOUSE_DB || path.join(DATA_DIR, 'house.db');
 }
 const db = new DatabaseSync(arquivoLocal());
 db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');

@@ -15,7 +15,7 @@ const crypto = require('crypto');
 const destino = process.argv[2];
 if (!destino) { console.error('Uso: node scripts/demo-vitrine.js /caminho/demo.db'); process.exit(1); }
 const abs = path.resolve(destino);
-if (/ruah\.db$/i.test(abs) || abs.startsWith(path.resolve(__dirname, '..', 'data'))) {
+if (abs.startsWith(path.resolve(__dirname, '..', 'data'))) {
   console.error('Recusado: escolha um arquivo fora de data/ (este script cria um banco de demonstração do zero).'); process.exit(1);
 }
 for (const s of ['', '-wal', '-shm']) { try { fs.unlinkSync(abs + s); } catch {} }

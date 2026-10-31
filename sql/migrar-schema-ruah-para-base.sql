@@ -116,7 +116,7 @@ BEGIN
      WHERE fontes ~ '(^|,)ruah(,|$)';
   END IF;
 
-  -- O código novo aceita o cabeçalho antigo (x-ruah-ciclo) e o novo (x-hh-ciclo).
+  -- O código só aceita o cabeçalho x-hh-ciclo. Rode este arquivo depois de publicar o código.
   IF EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = 'cron')
      AND EXISTS (SELECT 1 FROM information_schema.tables WHERE table_schema = 'cron' AND table_name = 'job') THEN
     EXECUTE $q$UPDATE cron.job

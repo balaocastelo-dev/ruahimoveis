@@ -64,12 +64,12 @@ if ($emUso) {
 }
 
 # 4) Backup diário do banco (guarda 14 dias)
-if ((Test-Path 'data\house.db') -or (Test-Path 'data\ruah.db')) {
+if (Test-Path 'data\house.db') {
   $dia = Get-Date -Format 'yyyy-MM-dd'
   $dest = Join-Path 'data\backups' $dia
   if (-not (Test-Path $dest)) {
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
-    if (Test-Path 'data\house.db') { Copy-Item 'data\house.db*' $dest -Force } elseif (Test-Path 'data\ruah.db') { Copy-Item 'data\ruah.db*' $dest -Force }
+    Copy-Item 'data\house.db*' $dest -Force
     Get-ChildItem 'data\backups' -Directory | Sort-Object Name -Descending | Select-Object -Skip 14 | Remove-Item -Recurse -Force
     Linha "  [ok] Backup do banco: data\backups\$dia" Green
   }
@@ -86,7 +86,6 @@ if (-not (Test-Path $atalho)) {
   $s.WorkingDirectory = $PSScriptRoot
   $s.IconLocation = "$env:WINDIR\System32\shell32.dll,19"
   $s.Save()
-  Remove-Item -LiteralPath (Join-Path $desktop 'Sistema RUAH.lnk') -ErrorAction SilentlyContinue
   Linha '  [ok] Atalho "Herrera HOUSE IA" criado na Área de Trabalho' Green
 }
 

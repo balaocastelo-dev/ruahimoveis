@@ -36,7 +36,7 @@ Estados da página: **no ar**; **desatualizada** (no ar, mas a ficha ou as fotos
 ```
 PORTAL=true          # false tira todos os imóveis do portal sem apagar nada
 PORTAL_URL=          # endereço público (domínio). Vazio = o de quem acessa. O comando usa 
-WHATSAPP_CLIENTE=    # (ou o nome antigo WHATSAPP_RUAH) botão "Falar no WhatsApp" quando o imóvel não tem corretor com celular
+WHATSAPP_CLIENTE=    # botão "Falar no WhatsApp" quando o imóvel não tem corretor com celular
 BLOG_CRECI=          # aparece no rodapé
 ```
 

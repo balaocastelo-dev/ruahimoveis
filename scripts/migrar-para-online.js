@@ -1,4 +1,4 @@
-// Copia o banco local do PC (data/house.db, ou o arquivo antigo data/ruah.db, + data/arquivos) para o banco online.
+// Copia o banco local do PC (data/house.db + data/arquivos) para o banco online.
 // Uso (no PC):  node scripts/migrar-para-online.js "postgres://..."
 // Mantém os mesmos ids, então links, assinaturas e históricos continuam batendo.
 const fs = require('fs');
@@ -15,7 +15,8 @@ const ORDEM = ['usuarios', 'config', 'condominios', 'proprietarios', 'imoveis', 
   'interacoes', 'visitas', 'mensagens', 'assinaturas', 'oportunidades', 'oportunidade_eventos', 'aprovacoes', 'auditoria'];
 
 (async () => {
-  const arquivo = fs.existsSync(path.join(DATA, 'house.db')) ? path.join(DATA, 'house.db') : path.join(DATA, 'ruah.db');
+  const arquivo = path.join(DATA, 'house.db');
+  if (!fs.existsSync(arquivo)) { console.error('Não achei data/house.db.'); process.exit(1); }
   const lite = new DatabaseSync(arquivo, { readOnly: true });
   const pg = new Client({ connectionString: url.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(url) ? false : { rejectUnauthorized: false } });
   await pg.connect();
