@@ -450,7 +450,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-31T14:25:31.937Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-sousas-e-joaquim-egidio-campinas",
+      "titulo": "Morar em Sousas e Joaquim Egídio: o lado verde de Campinas",
+      "tema": "morar em sousas e joaquim egidio",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-10-31T14:26:44.152Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T14:25:31.937Z"
+  "atualizadoEm": "2026-10-31T14:26:44.153Z"
 }
