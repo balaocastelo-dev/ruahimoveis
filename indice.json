@@ -378,7 +378,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-30T23:26:50.544Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "construir-casa-em-condominio-fechado-do-terreno-ao-projeto-aprovado",
+      "titulo": "Construir casa em condomínio fechado: do terreno ao projeto aprovado",
+      "tema": "construir casa em condominio do terreno ao alvara",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-10-31T02:17:45.290Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-30T23:26:50.545Z"
+  "atualizadoEm": "2026-10-31T02:17:45.291Z"
 }

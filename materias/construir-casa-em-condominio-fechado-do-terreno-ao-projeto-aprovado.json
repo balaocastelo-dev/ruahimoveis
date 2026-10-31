@@ -1,0 +1,257 @@
+{
+  "slug": "construir-casa-em-condominio-fechado-do-terreno-ao-projeto-aprovado",
+  "tema": "construir casa em condominio do terreno ao alvara",
+  "titulo": "Construir casa em condomínio fechado: do terreno ao projeto aprovado",
+  "seo": {
+    "titulo": "Construir casa em condomínio: do terreno ao projeto aprovado"
+  },
+  "resumo": "Construir casa em condomínio fechado: o que olhar no lote, a sondagem, as regras internas, a ART ou RRT e o caminho do alvará na Prefeitura de Campinas.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "condomínio",
+    "projeto",
+    "alvará",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Terreno plano e limpo em condomínio arborizado, com estacas de marcação e plantas de arquitetura enroladas sobre uma mesa de madeira"
+  },
+  "redes": {
+    "legenda": "Comprou o lote no condomínio e quer começar a casa? Antes do primeiro tijolo vêm três aprovações: a das regras do próprio condomínio, a do projeto na prefeitura e a responsabilidade técnica de quem projeta e executa. Explicamos, passo a passo, do terreno ao alvará, o que costuma atrasar a obra e onde vale chamar um profissional. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "casanova",
+      "condominio",
+      "arquitetura",
+      "projetodecasa",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Construir casa em condomínio fechado** é o plano de muita gente que quer espaço, verde e segurança sem abrir mão da cidade. Você escolhe o lote, imagina a varanda, a sala voltada para o jardim, e quer ver a obra começar logo. Só que entre o terreno e o primeiro tijolo existe um caminho de estudos, regras e aprovações."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ordem que costuma funcionar é esta: conhecer bem o lote (topografia e solo), ler as regras do condomínio, contratar o projeto com responsável técnico, aprovar o desenho no condomínio e, por fim, aprovar na prefeitura e obter o alvará de execução. Pular etapas quase sempre custa tempo e retrabalho depois."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Antes de projetar, estude o lote: levantamento topográfico e sondagem do solo orientam a fundação e o desenho da casa.",
+        "Condomínio e loteamento têm regras próprias de construção; elas valem junto com a lei municipal, não no lugar dela.",
+        "Projeto e obra pedem responsável técnico, com ART (engenharia) ou RRT (arquitetura).",
+        "Em Campinas, o projeto de casa unifamiliar é aprovado pela Secretaria de Urbanismo, com pedido digital, e só depois do alvará a obra pode começar."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o lote antes de pensar na planta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lote decide muito do projeto. A inclinação muda a quantidade de terra a mover, a posição da garagem e o custo dos muros de arrimo, aquelas paredes que seguram o terreno. A orientação define onde bate o sol da manhã e o da tarde. Por isso, o primeiro estudo costuma ser o **levantamento planialtimétrico**, que desenha o terreno com suas medidas e níveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O segundo é a **sondagem do solo**. A mais comum é a sondagem a percussão, conhecida como SPT, que perfura o terreno em alguns pontos e mede a resistência de cada camada, além de indicar se há água perto da superfície. Relatórios desse tipo seguem normas da ABNT, como a NBR 6484 (método do ensaio) e a NBR 8036 (programação das sondagens)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É com esses dados que o engenheiro escolhe a fundação. Um solo firme e raso aceita soluções mais simples; um solo mole ou com água pede estacas mais profundas. Sem sondagem, a escolha vira palpite, e a conta pode aparecer depois em trincas e recalques. Quem decide a fundação é o engenheiro responsável, nunca o orçamento da empreiteira sozinho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Estudos do lote e o que cada um responde",
+      "colunas": [
+        "Estudo",
+        "O que mostra",
+        "Por que importa no projeto"
+      ],
+      "linhas": [
+        [
+          "Levantamento planialtimétrico",
+          "Medidas, divisas, curvas de nível e árvores",
+          "Define cortes, aterros, níveis dos pisos e posição da casa"
+        ],
+        [
+          "Sondagem do solo (SPT)",
+          "Camadas, resistência e presença de água",
+          "Orienta o tipo e a profundidade da fundação"
+        ],
+        [
+          "Estudo de insolação",
+          "Caminho do sol ao longo do dia e do ano",
+          "Ajuda a posicionar sala, quartos e área de lazer"
+        ],
+        [
+          "Leitura da matrícula",
+          "Medidas oficiais, dono e restrições registradas",
+          "Confirma que o lote pode receber a casa pretendida"
+        ]
+      ],
+      "colunaDestaque": 0
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas atenção: nem todo lote bonito é um lote fácil. Um terreno muito inclinado ou com árvore protegida pode render uma casa interessante, só que exige mais projeto e mais obra. Vale fazer os estudos antes de fechar a compra, quando ainda é possível comparar terrenos. Mais ideias sobre obra e casa nova estão em [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Leia as regras do condomínio antes de desenhar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Condomínios e loteamentos fechados costumam ter um conjunto de regras de construção: recuos maiores que os da prefeitura, altura máxima, número de pavimentos, taxa de área permeável, tipo de muro ou de cerca, horários de obra e até materiais de fachada. Essas regras não substituem a lei municipal. Elas se somam a ela, e vale sempre a mais restritiva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há uma diferença jurídica que ajuda a entender de onde vêm essas regras. No **condomínio de lotes**, criado no Código Civil pela Lei 13.465/2017, cada lote é uma unidade e a convenção traz os padrões das futuras construções, que os donos devem seguir. No **loteamento**, as ruas passam ao município e as limitações aparecem no memorial do loteamento registrado. Na dúvida sobre o seu caso, um advogado ou o cartório de registro de imóveis esclarece."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, peça ao condomínio o regulamento de obras atualizado antes de contratar o projeto e entregue uma cópia ao arquiteto. Muitos condomínios exigem a análise do projeto pela própria administração antes da obra, além de depósito de caução, cadastro de prestadores e regras para entrada de caminhões. Saber disso cedo evita redesenhar a casa inteira."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Duas aprovações, não uma",
+      "texto": "O aval do condomínio não substitui a aprovação da prefeitura, e o alvará da prefeitura não dispensa as regras do condomínio. A casa precisa atender às duas, e a mais restritiva prevalece."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha quem projeta e quem responde pela obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Projeto e execução de casa são trabalhos técnicos, e a lei exige que alguém responda por eles. Para engenheiros, existe a **ART**, Anotação de Responsabilidade Técnica, prevista na Lei 6.496/1977 para todo contrato de obra ou serviço de engenharia e arquitetura. Para arquitetos e urbanistas, existe o **RRT**, Registro de Responsabilidade Técnica, previsto na Lei 12.378/2010."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esses registros identificam quem é o responsável legal por cada parte: projeto de arquitetura, estrutura, fundações, instalações elétricas e hidráulicas, e a execução da obra. Eles também são pedidos pela prefeitura na aprovação. Um mesmo profissional pode assumir mais de uma etapa, desde que tenha habilitação para cada uma."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além da aprovação, o projeto completo costuma incluir os projetos complementares, que são estrutura, fundação, elétrica, hidráulica e, quando houver, gás, climatização e paisagismo. Com tudo desenhado e compatibilizado antes da obra, a casa sai mais perto do orçamento. Mudanças feitas no canteiro, com a parede já levantada, são as que mais encarecem."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Projeto completo antes da obra",
+      "pros": [
+        "Orçamento mais preciso, porque quantidades e materiais estão definidos",
+        "Menos improviso e menos retrabalho no canteiro",
+        "Instalações compatíveis com a estrutura, sem furos em viga ou pilar",
+        "Aprovação mais tranquila no condomínio e na prefeitura"
+      ],
+      "contras": [
+        "Exige mais tempo e investimento antes de começar",
+        "Pede decisões cedo, como acabamentos e posição de tomadas",
+        "Mudar de ideia depois tem custo de revisão dos projetos"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas não confunda economia com atalho. Dispensar o engenheiro de estrutura ou assinar projeto de terceiro para ganhar tempo pode gerar problemas na obra, na aprovação e, mais tarde, na venda. Estrutura, gás e elétrica são áreas em que o dono da casa não deve decidir sozinho nem executar por conta própria."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Aprove o projeto na prefeitura e só então comece"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em Campinas, a casa para uma única família, chamada de habitação unifamiliar, precisa ter o projeto aprovado e o **alvará de execução**, que autoriza o início da obra. O pedido é digital, pela plataforma Aprova Fácil da Secretaria de Urbanismo, e proprietário e profissionais precisam estar credenciados no sistema."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a página do serviço na prefeitura, entre os documentos pedidos estão o projeto simplificado, a ficha do cadastro físico do imóvel, a ART ou o RRT do autor do projeto e do responsável técnico, o memorial de cálculo das áreas, a declaração de movimentação de terra, o termo de uso de madeira legal e a matrícula atualizada. A lista pode mudar; confira a versão vigente antes de protocolar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A prefeitura oferece dois caminhos. No procedimento tradicional, os pedidos são analisados em ordem de chegada. No licenciamento autodeclaratório, chamado Construa Já, o alvará é emitido de forma automática depois de validações e do pagamento das taxas, mas a análise técnica vem depois, e os profissionais e o proprietário respondem pelo cumprimento da legislação. Ao fim da obra, pede-se o certificado de conclusão e o Habite-se."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Estude o lote: levantamento topográfico, sondagem e leitura da matrícula.",
+        "Peça ao condomínio o regulamento de obras atualizado.",
+        "Contrate arquiteto e engenheiros, com ART ou RRT de cada etapa.",
+        "Desenvolva o projeto e submeta à análise do condomínio, se ele exigir.",
+        "Protocole a aprovação na prefeitura e aguarde o alvará de execução.",
+        "Comece a obra e, ao terminar, peça o certificado de conclusão e o Habite-se."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas cada lote tem sua história: área de preservação, restrição registrada ou uma exigência do condomínio podem mudar a ordem ou acrescentar etapas. Converse com o profissional responsável e, em questões de contrato ou registro, com um advogado ou o cartório. Outros textos sobre morar bem estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você ainda está escolhendo o terreno ou pensa em trocar a casa atual por um projeto novo, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar e quem quer vender um imóvel e pode ajudar a comparar opções com calma."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: estude o lote, leia as regras, contrate responsáveis técnicos e só comece a obra com o alvará na mão."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Preciso de aprovação do condomínio e da prefeitura?",
+      "resposta": "Normalmente, sim. O condomínio confere as regras internas de construção e a prefeitura aprova o projeto pela lei municipal. Uma aprovação não substitui a outra."
+    },
+    {
+      "pergunta": "O que é a sondagem do solo e por que fazer antes do projeto?",
+      "resposta": "É uma investigação do terreno que mostra as camadas do solo, sua resistência e a presença de água. Com ela, o engenheiro escolhe a fundação certa em vez de adivinhar."
+    },
+    {
+      "pergunta": "Qual a diferença entre ART e RRT?",
+      "resposta": "A ART é o registro de responsabilidade técnica de engenheiros, previsto na Lei 6.496/1977. O RRT é o equivalente para arquitetos e urbanistas, previsto na Lei 12.378/2010. Os dois identificam quem responde pelo projeto e pela obra."
+    },
+    {
+      "pergunta": "Posso começar a obra antes do alvará?",
+      "resposta": "Não é o recomendado. Em Campinas, o alvará de execução é o documento que autoriza o início da obra; construir sem ele pode gerar autuação e exigir regularização depois."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Emitir Alvará de Habitação Unifamiliar — Prefeitura de Campinas",
+      "url": "https://portal-adm.campinas.sp.gov.br/servico/emitir-alvara-de-habitacao-unifamiliar",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Lei nº 6.496, de 7 de dezembro de 1977 (ART) — Câmara dos Deputados",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6496-7-dezembro-1977-366461-publicacaooriginal-1-pl.html",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Lei nº 12.378, de 31 de dezembro de 2010 (RRT) — Câmara dos Deputados",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2010/lei-12378-31-dezembro-2010-609912-publicacaooriginal-131243-pl.html",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Condomínio de lotes: regime jurídico e aspectos registrais — Migalhas",
+      "url": "https://www.migalhas.com.br/coluna/registralhas/269493/condominio-de-lotes--regime-juridico-e-aspectos-registrais",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Relatório de sondagem do terreno (NBR 6484 e NBR 8036) — Prefeitura de Águas Frias (SC)",
+      "url": "https://aguasfrias.sc.gov.br/uploads/sites/394/2022/05/2399181_Sondagem_do_terreno.pdf",
+      "data": "outubro de 2026"
+    }
+  ]
+}
