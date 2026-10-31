@@ -1,0 +1,242 @@
+{
+  "slug": "orientacao-solar-da-casa-sombreamento-brise-beiral",
+  "tema": "orientacao solar e sombreamento no projeto da casa",
+  "titulo": "Orientação solar da casa: como sombrear cada fachada no projeto",
+  "resumo": "Norte, sul, leste ou oeste: veja como o sol bate em cada fachada, quando usar beiral, brise, árvore ou vidro especial e o que decidir antes de construir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "projeto",
+    "conforto térmico",
+    "casa nova",
+    "fachada"
+  ],
+  "capa": {
+    "alt": "Fachada de casa moderna térrea com beiral largo de madeira, brises verticais na lateral e grandes portas de vidro sombreadas, sob sol de fim de tarde"
+  },
+  "seo": {
+    "titulo": "Orientação solar da casa: como sombrear cada fachada"
+  },
+  "redes": {
+    "legenda": "Você sabia que a mesma janela pode deixar a sala agradável ou quente demais só por causa da fachada para onde ela abre? No Brasil, o sol da tarde no lado oeste costuma ser o mais difícil de controlar, e beiral nem sempre resolve. No blog, explicamos como o sol bate em cada lado da casa e quando usar beiral, brise, árvore ou vidro especial, antes de a obra começar. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "arquitetura",
+      "construcao",
+      "casanova",
+      "projetoarquitetonico",
+      "conforto",
+      "sustentabilidade",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir costuma pensar primeiro na planta e no acabamento, mas a **orientação solar da casa** decide boa parte do conforto antes de qualquer escolha de piso. Para que lado ficam a sala, os quartos e as grandes janelas define quanto sol entra, em que hora do dia e se a casa vai pedir ar-condicionado o tempo todo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: cada fachada recebe um sol diferente e pede uma proteção diferente. No Brasil, a face norte recebe mais sol ao longo do ano e costuma se resolver com beiral; leste e oeste recebem sol baixo, de manhã e de tarde, e pedem proteção vertical, árvores ou vidro adequado. O lado sul é o que menos recebe sol direto."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Janelas do mesmo tamanho recebem calor e luz diferentes conforme a fachada para onde abrem.",
+        "Sol alto, como o do norte, se controla bem com beiral e marquise; sol baixo, de leste e oeste, pede brise vertical, muro ou árvore.",
+        "Proteção por fora da janela costuma funcionar melhor que cortina por dentro, porque barra o calor antes do vidro.",
+        "Cada terreno e cada cidade pedem estudo próprio, feito pelo arquiteto antes de fechar a planta."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o sol bate em cada fachada no Brasil"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No hemisfério sul, o sol percorre o céu inclinado para o norte. Por isso, a fachada norte é a que recebe mais sol direto ao longo do ano, com destaque para o inverno, quando o sol fica mais baixo. A fachada sul recebe pouco sol direto. É uma regra geral, lembrada em guias como o do portal Portas, que vale para todo o país."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O leste recebe o sol da manhã, que costuma ser mais suave, porque o ar ainda está fresco. O oeste recebe o sol da tarde, justamente quando a temperatura do ar chega ao pico. Um estudo apresentado em 2019 no Encontro de Sustentabilidade em Projeto, da UFSC, concluiu que o sombreamento da tarde é o que mais pesa no conforto dentro de casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma dissertação de mestrado da UTFPR, de 2012, lembra outro ponto: janelas de dimensões idênticas expõem o ambiente a quantidades diferentes de calor e de luz conforme a fachada. Ou seja, a mesma porta de vidro pode ser ótima na face sul e cansativa na face oeste. O tamanho da abertura importa tanto quanto a direção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas norte não é automaticamente a melhor face em todo lugar. Em cidades muito quentes, o sol do norte também precisa de sombra, e em regiões frias ele é bem-vindo no inverno. O clima de cada cidade muda a conta, e a norma brasileira de desempenho térmico, a ABNT NBR 15220, divide o país em zonas bioclimáticas justamente por isso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Beiral, brise, muro ou árvore: qual proteção usar em cada lado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ferramenta certa depende da altura do sol. Quando ele está alto, como ao meio-dia na face norte, uma proteção horizontal resolve: beiral largo, marquise, pergolado ou brise horizontal. Quando o sol está baixo, de manhã cedo ou no fim da tarde, ele entra por baixo de qualquer beiral, e a proteção precisa ser vertical ou ficar à frente da janela."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No estudo da UFSC, feito com uma casa padrão simulada em clima quente, a ampliação do beiral ajudou na face norte, enquanto muros de proteção laterais e árvores grandes deram conta das faces leste e oeste. A face oeste foi a mais difícil de resolver. Os autores insistem que cada orientação pede um projeto diferente."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Que proteção costuma funcionar em cada fachada",
+      "colunas": [
+        "Fachada",
+        "Sol que recebe",
+        "Proteção que costuma funcionar"
+      ],
+      "linhas": [
+        [
+          "Norte",
+          "Mais sol ao longo do ano, alto no verão e mais baixo no inverno",
+          "Beiral, marquise, pergolado ou brise horizontal bem dimensionado"
+        ],
+        [
+          "Sul",
+          "Pouco sol direto",
+          "Geralmente dispensa proteção pesada; boa face para luz difusa"
+        ],
+        [
+          "Leste",
+          "Sol da manhã, baixo e mais ameno",
+          "Brise vertical, venezianas, vegetação ou aceitar o sol em quartos e cozinha"
+        ],
+        [
+          "Oeste",
+          "Sol da tarde, baixo e no horário mais quente",
+          "Brise vertical ou móvel, muro de proteção, árvores, vidro de controle solar, janelas menores"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Orientação geral. O dimensionamento depende da latitude, do clima e do terreno, e deve ser feito pelo arquiteto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As árvores merecem um lugar especial nessa lista. Elas sombreiam sem esquentar, refrescam o ar em volta e ainda mudam a paisagem da janela. O porém é o tempo: uma muda leva anos para fazer sombra de verdade. Se o projeto conta com a árvore, plante cedo e combine com uma proteção construída nos primeiros anos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por fora ou por dentro: por que a sombra externa rende mais"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cortinas e persianas internas são flexíveis, mas têm um limite. A dissertação da UTFPR explica que a proteção interna não impede o efeito estufa: o sol atravessa o vidro, aquece a cortina, e esse calor fica dentro do ambiente. A proteção externa, bem dimensionada, barra a radiação antes do vidro, sem precisar escurecer a sala."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O vidro também entra na conta. O vidro comum incolor deixa passar a maior parte do calor do sol. Vidros de controle solar reduzem esse ganho, mas o mesmo estudo lembra que é preciso cuidar para não cortar a luz natural na mesma proporção. Vale pedir ao projetista que compare as opções para cada fachada, e não uma só para a casa toda."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Proteção solar externa: o que pesa a favor e contra",
+      "pros": [
+        "Barra o calor antes de ele atravessar o vidro",
+        "Mantém a luz natural e a vista quando bem desenhada",
+        "Pode virar parte da linguagem da fachada, como brises e pergolados",
+        "Reduz a dependência de ar-condicionado nas horas quentes"
+      ],
+      "contras": [
+        "Precisa ser pensada no projeto; depois da obra fica mais difícil",
+        "Brises móveis pedem manutenção e limpeza",
+        "Mal dimensionada, pode escurecer o ambiente no inverno",
+        "Em condomínio, mudanças de fachada costumam depender de aprovação"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As cores ajudam. Um material da UFES sobre clima quente e úmido mostra que superfícies claras absorvem bem menos radiação solar que as escuras. Telhado e paredes externas claras, junto com boa ventilação, aliviam o calor que a casa acumula durante a tarde. Mais ideias de projeto estão na categoria [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que decidir antes de fechar a planta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O melhor momento para pensar no sol é antes de desenhar os cômodos. Com o norte marcado na planta do terreno, o arquiteto consegue posicionar a sala, os quartos, a área de serviço e a varanda conforme o uso de cada um. Uma área de serviço com sol da manhã, por exemplo, ajuda a secar roupa; um quarto voltado para o oeste pode pedir mais proteção."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Marque o norte verdadeiro no terreno e na planta, e observe as construções e árvores vizinhas que fazem sombra.",
+        "Liste os cômodos que você usa à tarde e evite deixá-los com grandes vidros desprotegidos a oeste.",
+        "Peça ao arquiteto uma simulação simples de insolação para ver o sol em cada fachada no verão e no inverno.",
+        "Defina beirais, brises e vidros já no projeto, e não depois da obra pronta.",
+        "Planeje árvores e jardim junto com a casa, para que a sombra cresça com ela."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Projeto e obra com responsável técnico",
+      "texto": "Beirais longos, marquises e brises fixos mexem na cobertura e na estrutura. Eles precisam de projeto de arquiteto ou engenheiro, com ART ou RRT, e de aprovação na prefeitura e no condomínio quando for o caso. Não acrescente balanços e estruturas à fachada por conta própria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai comprar uma casa pronta pode usar a mesma lógica na visita: veja para onde abrem as janelas da sala e dos quartos, se há beiral, se há árvores e como o sol entra no fim da tarde. Uma bússola no celular resolve a parte da direção. Outros guias do [blog](/blog) ajudam a montar a lista de visita."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um terreno ou uma casa em Campinas, a equipe da {{cliente}} pode ajudar a comparar opções e a olhar a orientação de cada imóvel com você. A decisão em uma linha: escolha a fachada de cada cômodo pelo sol que ele vai receber, e proteja o oeste antes de pensar no ar-condicionado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é a melhor orientação para a sala de uma casa?",
+      "resposta": "Depende do clima e do uso. Em boa parte do Brasil, salas voltadas para o norte com beiral bem dimensionado costumam receber sol no inverno e sombra no verão. Fachadas a oeste sem proteção tendem a esquentar no fim da tarde."
+    },
+    {
+      "pergunta": "Beiral resolve o sol da tarde?",
+      "resposta": "Normalmente, não sozinho. O sol da tarde chega baixo e entra por baixo do beiral. Na face oeste, costumam funcionar melhor brises verticais, muros de proteção, árvores ou vidros de controle solar."
+    },
+    {
+      "pergunta": "Cortina blackout substitui o brise?",
+      "resposta": "Ela bloqueia a luz, mas o calor já atravessou o vidro e fica dentro do cômodo. A proteção externa barra a radiação antes da janela e por isso costuma ser mais eficiente para o conforto térmico."
+    },
+    {
+      "pergunta": "Dá para corrigir a orientação de uma casa pronta?",
+      "resposta": "Não dá para girar a casa, mas dá para melhorar: pergolados, toldos, árvores, películas ou troca de vidros ajudam. Mudanças na fachada pedem projeto com responsável técnico e, em condomínio, aprovação."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Estudo de estratégias de sombreamento em habitações na Zona Bioclimática 7 — VII ENSUS, UFSC (Repositório UnB)",
+      "url": "https://www.repositorio.unb.br/bitstream/10482/46362/1/EVENTO_EstudoEstrategiasSombreamento.pdf",
+      "data": "2019"
+    },
+    {
+      "nome": "Análise da eficiência energética da envoltória em diferentes zonas bioclimáticas — dissertação UTFPR (CORE)",
+      "url": "https://core.ac.uk/download/150138745.pdf",
+      "data": "2012"
+    },
+    {
+      "nome": "Eficiência energética nas edificações: estratégias para o clima quente-úmido — UFES",
+      "url": "https://www.inf.ufes.br/~neyval/Gestao_ambiental/Tecnologias_Limpas/Ecoeficiencia_Energetica_de_Edificacoes.pdf",
+      "data": "2005"
+    },
+    {
+      "nome": "Projeto de revisão da ABNT NBR 15220-3: zoneamento bioclimático — LabEEE/UFSC",
+      "url": "https://labeee.ufsc.br/sites/default/files/documents/zoneamento_projeto.pdf",
+      "data": "junho de 2024"
+    },
+    {
+      "nome": "Como saber a posição solar de um imóvel ou terreno — Portas",
+      "url": "https://portas.com.br/morar-bem/dicas-lar/como-saber-a-posicao-solar-de-um-imovel-ou-terreno/",
+      "data": "outubro de 2026"
+    }
+  ]
+}
