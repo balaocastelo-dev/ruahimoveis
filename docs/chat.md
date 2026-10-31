@@ -50,7 +50,7 @@ do SQLite ou a função `<schema>.agora()` no Postgres.
 
 ## API
 
-Prefixo de todas as rotas abaixo: `/api`. O navegador usa o cookie de sessão `ruah_sessao` recebido
+Prefixo de todas as rotas abaixo: `/api`. O navegador usa o cookie de sessão `hh_sessao` recebido
 em `/api/login`; as escritas seguem a proteção de mesma origem do sistema. Sem sessão, a resposta é
 `401`. Apenas participantes podem consultar ou enviar mensagens, inclusive quando o solicitante é
 adm/gestor: acesso a conversa alheia (ou inexistente) retorna `403`.
@@ -169,12 +169,12 @@ arquivo depois das migrações base e de `sql/escritorio.sql` **em cada schema**
 `usuarios`, `arquivos`, `agente_mensagens`, a função `<schema>.agora()` e o papel `<schema>_app`.
 Para tarefas, o escritório também deve ter `agente_tarefas`.
 
-O arquivo original usa `ruah` e `ruah_app`. No SQL Editor do banco, ou numa cópia do arquivo para
+O arquivo original usa o schema `base` e o papel `base_app`. No SQL Editor do banco, ou numa cópia do arquivo para
 execução com `psql`, preparar cada versão conforme esta tabela:
 
-| Imobiliária / schema | Substituir `ruah` por | Substituir `ruah_app` por |
+| Imobiliária / schema | Substituir `base` por | Substituir `base_app` por |
 | --- | --- | --- |
-| RUAH | `ruah` (original) | `ruah_app` (original) |
+| Molde (base comum) | `base` (original) | `base_app` (original) |
 | ONDEMORAR | `ondemorar` | `ondemorar_app` |
 | Cadê Meu AP | `cademeuap` | `cademeuap_app` |
 | Casa Prado | `casaprado` | `casaprado_app` |
@@ -183,10 +183,10 @@ execução com `psql`, preparar cada versão conforme esta tabela:
 1. Usar uma conexão administrativa capaz de criar tabelas, funções, triggers e políticas e conceder
    os privilégios necessários. O papel de execução da aplicação não é o executor da migração.
 2. Abrir uma cópia completa de `sql/chat.sql`. Para outro schema, substituir **todas** as ocorrências
-   de `ruah_app` pelo papel desejado e depois `ruah` pelo schema desejado. Não basta trocar o
+   de `base_app` pelo papel desejado e depois `base` pelo schema desejado. Não basta trocar o
    `search_path`: defaults, função, corpo do trigger, políticas e concessões também têm referências.
 3. Executar o bloco inteiro, de `BEGIN` a `COMMIT`, uma vez por linha da tabela. Por exemplo, com
-   a conexão administrativa já configurada no `psql`, a versão original da RUAH pode ser aplicada
+   a conexão administrativa já configurada no `psql`, a versão original da imobiliária pode ser aplicada
    a partir da raiz do repositório com:
 
    ```powershell
@@ -197,15 +197,15 @@ execução com `psql`, preparar cada versão conforme esta tabela:
    condicional das tabelas/índices e recria função, trigger e políticas. Se houver erro dentro da
    transação no SQL Editor, executar `ROLLBACK`, corrigir a dependência e executar o bloco completo.
 4. Conferir no schema escolhido as três tabelas, os índices e o trigger `chat_ultima`. A consulta
-   abaixo deve retornar três linhas, todas com `relrowsecurity = true`; trocar `ruah` ao verificar
+   abaixo deve retornar três linhas, todas com `relrowsecurity = true`; trocar `base` ao verificar
    outra imobiliária:
 
    ```sql
    SELECT n.nspname AS schema, c.relname AS tabela, c.relrowsecurity,
-          has_table_privilege('ruah_app', c.oid, 'SELECT') AS pode_ler,
-          has_table_privilege('ruah_app', c.oid, 'INSERT') AS pode_inserir
+          has_table_privilege('base_app', c.oid, 'SELECT') AS pode_ler,
+          has_table_privilege('base_app', c.oid, 'INSERT') AS pode_inserir
    FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
-   WHERE n.nspname = 'ruah'
+   WHERE n.nspname = 'base'
      AND c.relname IN ('chat_conversas', 'chat_participantes', 'chat_mensagens');
    ```
 

@@ -3,8 +3,8 @@
 //   node test/blog.js [artigo.json]
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-blog-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-blog-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 
@@ -56,7 +56,7 @@ const ramo = http.createServer((req, res) => {
     const art = await get(`/blog/${base.slug}`);
     assert.equal(art.s, 200); assert.ok(art.t.includes('<h1>')); assert.ok(art.t.includes('application/ld+json')); assert.ok(art.t.includes('og:image'));
     console.log('ok · artigo com texto no HTML, JSON-LD e og:image');
-    // O leitor não sai do site da RUAH: só links do próprio site (blog, vitrine /imoveis, contato).
+    // O leitor não sai do site da Imobiliária: só links do próprio site (blog, vitrine /imoveis, contato).
     for (const pag of [art.t, ini.t]) {
       const fora = [...pag.matchAll(/<a\s[^>]*href="([^"]+)"/g)].map((m) => m[1])
         .filter((h) => !h.startsWith('/') && !h.startsWith('#'));
@@ -65,7 +65,7 @@ const ramo = http.createServer((req, res) => {
     const { paginaArtigo } = require('../src/blog/paginas');
     const comFora = { ...lido.valor, blocos: [{ tipo: 'paragrafo', texto: 'Veja [este site](https://exemplo.com.br/x) e [este texto](/blog/outro).' }, ...lido.valor.blocos] };
     const h = paginaArtigo({ protocol: 'http', get: () => 'x', path: '/blog/x' }, comFora, []);
-    assert.ok(!h.includes('exemplo.com.br/x"') && h.includes('href="/blog/outro"')); console.log('ok · nenhuma página leva para fora do site da RUAH');
+    assert.ok(!h.includes('exemplo.com.br/x"') && h.includes('href="/blog/outro"')); console.log('ok · nenhuma página leva para fora do site da Imobiliária');
     assert.ok(avaliarArtigo(comFora).erros.some((e) => /fora do site/.test(e))); console.log('ok · régua barra link para fora no texto');
     assert.equal((await get('/blog/artigo-sem-foto-ainda-esperando')).s, 404);
     assert.equal((await get('/blog/artigo-agendado-para-amanha-cedo')).s, 404);
@@ -83,7 +83,7 @@ const ramo = http.createServer((req, res) => {
     assert.equal(r.status, 200, await r.text());
     const { one } = require('../src/db');
     const lead = one("SELECT * FROM leads WHERE telefone='5519988881234'");
-    assert.ok(lead && lead.origem === 'Blog RUAH'); console.log('ok · contato do blog vira lead no CRM (origem Blog RUAH)');
+    assert.ok(lead && lead.origem === 'Blog Imobiliária'); console.log('ok · contato do blog vira lead no CRM (origem Blog Imobiliária)');
     console.log('\nBlog OK');
     process.exit(0);
   } catch (e) { console.error('FALHOU', e.message); process.exit(1); }
@@ -93,10 +93,10 @@ const ramo = http.createServer((req, res) => {
 {
   const assert = require('assert');
   const antes = process.env.BLOG_DIARIO_URL;
-  process.env.BLOG_DIARIO_URL = 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/outra/blog-conteudo';
+  process.env.BLOG_DIARIO_URL = 'https://raw.githubusercontent.com/exemplo/plataforma/refs/heads/outra/blog-conteudo';
   const { capaDaRotina } = require('../src/blog/categorias');
-  assert.ok(capaDaRotina('https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
-  assert.ok(capaDaRotina('https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
+  assert.ok(capaDaRotina('https://raw.githubusercontent.com/exemplo/plataforma/refs/heads/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
+  assert.ok(capaDaRotina('https://raw.githubusercontent.com/exemplo/plataforma/outra/blog-conteudo/capas/um-texto-0123abcd.jpg', 'um-texto'));
   assert.ok(!capaDaRotina('https://exemplo.com/capas/um-texto-0123abcd.jpg', 'um-texto'));
   if (antes === undefined) delete process.env.BLOG_DIARIO_URL; else process.env.BLOG_DIARIO_URL = antes;
   console.log('ok · capa no ramo do blog de cada imobiliária é aceita');

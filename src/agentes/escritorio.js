@@ -228,7 +228,7 @@ function avisaNuvem() {
   if (!token) return;
   pingMarcado = setTimeout(async () => {
     pingMarcado = null;
-    try { await fetch(`${cerebro.urlBase()}/escritorio-ciclo`, { method: 'POST', headers: { 'x-ruah-ciclo': token }, signal: AbortSignal.timeout(60000) }); }
+    try { await fetch(`${cerebro.urlBase()}/escritorio-ciclo`, { method: 'POST', headers: { 'x-hh-ciclo': token }, signal: AbortSignal.timeout(60000) }); }
     catch (e) { log('não consegui chamar a nuvem:', e.message); }
   }, 17e3);
 }

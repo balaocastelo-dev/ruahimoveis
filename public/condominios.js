@@ -4,7 +4,7 @@ const CD_TIPO = { vertical: ['Prédio', 'info'], horizontal: ['Condomínio de ca
 const cdTipo = (t) => `<span class="pill ${(CD_TIPO[t] || CD_TIPO.indefinido)[1]}">${esc((CD_TIPO[t] || CD_TIPO.indefinido)[0])}</span>`;
 const cdEnd = (c) => [[c.logradouro, c.numero].filter(Boolean).join(', '), c.bairro].filter(Boolean).join(' · ') || 'Endereço a confirmar';
 const cdM2 = (v) => (v ? 'R$ ' + Math.round(v).toLocaleString('pt-BR') + '/m²' : '—');
-const cdFontes = (f) => String(f || '').split(',').filter(Boolean).map((x) => ({ cnpj: 'CNPJ (Receita)', osm: 'Mapa aberto', ruah: 'Cadastro ' + MARCA.cliente }[x] || x)).join(' · ');
+const cdFontes = (f) => String(f || '').split(',').filter(Boolean).map((x) => ({ cnpj: 'CNPJ (Receita)', osm: 'Mapa aberto', cadastro: 'Cadastro ' + MARCA.cliente, ruah: 'Cadastro ' + MARCA.cliente }[x] || x)).join(' · ');
 const cdKpi = (n, l, sub) => `<div class="card kpi"><div class="n">${n}</div><div class="l">${esc(l)}</div>${sub ? `<div class="small muted" style="margin-top:2px">${sub}</div>` : ''}</div>`;
 // imóvel da carteira da própria imobiliária: o servidor manda origem = nome do cliente ('RUAH' nos dados antigos)
 const cdDaCasa = (a) => a.origem === MARCA.cliente || a.origem === 'RUAH';
@@ -93,7 +93,7 @@ const CD_ORDEM = {
   dias: { t: 'Anunciado há', v: (a) => (a.dias !== null && a.dias !== undefined ? a.dias : null) },
   anunciante: { t: 'Quem anuncia', v: (a) => a.anunciante || '', txt: true },
 };
-let cdOrdem = (() => { try { return JSON.parse(localStorage.getItem('ruah.cdOrdem')) || { k: 'valor', d: 1 }; } catch { return { k: 'valor', d: 1 }; } })();
+let cdOrdem = (() => { try { return JSON.parse(localStorage.getItem('hh.cdOrdem')) || { k: 'valor', d: 1 }; } catch { return { k: 'valor', d: 1 }; } })();
 
 function cdOrdena(lista) {
   const col = CD_ORDEM[cdOrdem.k]; if (!col) return lista;
@@ -129,7 +129,7 @@ function ligaOrdemVenda(c, temGeo, loc) {
     const k = th.dataset.ord;
     // texto começa em A→Z; número começa do menor; clicar de novo inverte
     cdOrdem = cdOrdem.k === k ? { k, d: -cdOrdem.d } : { k, d: 1 };
-    try { localStorage.setItem('ruah.cdOrdem', JSON.stringify(cdOrdem)); } catch {}
+    try { localStorage.setItem('hh.cdOrdem', JSON.stringify(cdOrdem)); } catch {}
     box.innerHTML = cdTabelaVenda(c, temGeo, loc);
     const outro = $(loc ? '#cd-avenda' : '#cd-alocar'); if (outro) outro.innerHTML = cdTabelaVenda(c, temGeo, !loc);
   });
@@ -178,7 +178,7 @@ async function telaCondominio(id) {
       ${c.razao_social ? `<dt>Razão social</dt><dd>${esc(c.razao_social)}</dd>` : ''}
     </dl>${s.lazer.length ? `<h3 style="margin-top:14px">Lazer e estrutura</h3><div class="row" style="gap:6px;flex-wrap:wrap">${s.lazer.map((x) => `<span class="pill info">${esc(x)}</span>`).join('')}</div><p class="small muted" style="margin:6px 0 0">Lido das descrições dos anúncios do prédio.</p>` : ''}</div>
     <div class="card cd-capta"><h2>Captação no prédio</h2>
-      <div class="grid g3" style="gap:10px">${cdKpi(s.proprietarios_conhecidos, 'possíveis donos conhecidos')}${cdKpi(s.donos_confirmados, 'donos confirmados')}${cdKpi(s.vendidos_ruah, 'vendidos pela ' + MARCA.cliente)}</div>
+      <div class="grid g3" style="gap:10px">${cdKpi(s.proprietarios_conhecidos, 'possíveis donos conhecidos')}${cdKpi(s.donos_confirmados, 'donos confirmados')}${cdKpi(s.vendidos, 'vendidos pela ' + MARCA.cliente)}</div>
       ${s.imobiliarias.length ? `<h3 style="margin-top:14px">Imobiliárias anunciando aqui <span class="muted small">(${s.imobiliarias.length})</span></h3><div class="list cd-imob">${s.imobiliarias.slice(0, CD_IMOB_TOPO).map(cdImobItem).join('')}</div>${s.imobiliarias.length > CD_IMOB_TOPO ? `<details class="cd-imob-mais"><summary>Ver todas as ${s.imobiliarias.length}</summary><div class="list cd-imob cd-imob-rola">${s.imobiliarias.slice(CD_IMOB_TOPO).map(cdImobItem).join('')}</div></details>` : ''}` : '<p class="muted small" style="margin-top:12px">Nenhuma imobiliária concorrente anunciando neste prédio agora.</p>'}
       <div class="row" style="gap:6px;margin-top:14px;flex-wrap:wrap">
         ${c.fisguei.length ? `<a class="btn sm" href="#/fisguei?q=${encodeURIComponent(c.logradouro || c.nome)}">Ver no Fisguei (${c.fisguei.length})</a>` : ''}

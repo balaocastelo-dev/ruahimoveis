@@ -82,7 +82,7 @@ virtuais, modo 2D, os humanos 3D, duplo clique no agente).
 
 ## Prompt pronto para o Codex
 
-> Leia docs/tarefa-cenario-3d.md e docs/escritorio.md do repositório balaocastelo-dev/ruahimoveis e execute os
+> Leia docs/tarefa-cenario-3d.md e docs/escritorio.md deste repositório e execute os
 > "Passos" 1 a 6 da tarefa do cenário 3D. As texturas PNG estão em C:\Users\user\demo-herrera\cenario.
 > Não mexa nos humanos 3D (public/plataforma/pessoas) nem na API. Teste com render headless antes de subir.
 > Commits pequenos em main, mensagens em português.

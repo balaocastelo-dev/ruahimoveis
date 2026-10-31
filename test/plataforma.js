@@ -2,8 +2,8 @@
 //   node test/plataforma.js
 const os = require('os'), path = require('path'), fs = require('fs');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-plataforma-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-plataforma-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 delete process.env.DATABASE_URL; delete process.env.PLATAFORMA_DATABASE_URL;

@@ -5,8 +5,8 @@
 //   node test/bairros.js
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-bairros-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-bairros-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 delete process.env.DATABASE_URL;
@@ -51,7 +51,7 @@ run(`INSERT INTO bairro_commons(titulo,url,thumb,largura,altura,autor,licenca,ok
   'File:Centro de Convivencia Campinas.jpg', 'https://upload.wikimedia.org/x.jpg', 'https://upload.wikimedia.org/thumb/x.jpg/1280px-x.jpg', 3000, 2000, 'Fulano de Tal', 'CC BY-SA 4.0');
 run(`INSERT INTO bairro_commons(titulo,ok,motivo,licenca,verificado_em) VALUES(?,0,'licença não aceita (CC BY-NC 2.0)','CC BY-NC 2.0',datetime('now','localtime'))`, 'File:Foto proibida.jpg');
 
-// ---- a página do imóvel no portal (para a lista "imóveis da RUAH no bairro")
+// ---- a página do imóvel no portal (para a lista "imóveis da Imobiliária no bairro")
 const paginaImovel = JSON.parse(fs.readFileSync(path.join(__dirname, 'portal-exemplo.json'), 'utf8'));
 Object.assign(paginaImovel, { codigo: 'AP9301', slug: 'apartamento-3-quartos-cambui-campinas-ap9301', titulo: 'Apartamento de 3 quartos no Cambuí, em Campinas', capa: { foto: 9201, alt: 'Sala com varanda' },
   galeria: [{ foto: 9201, legenda: 'Sala', ambiente: 'sala' }, { foto: 9202, legenda: 'Fachada do prédio', ambiente: 'fachada' }, { foto: 9203, legenda: 'Cozinha', ambiente: 'cozinha' }, { foto: 9204, legenda: 'Quarto', ambiente: 'quarto' }],
@@ -75,7 +75,7 @@ const modelo = {
   capa: { foto: 'f1' },
   fotos: [
     { id: 'f1', commons: 'File:Centro de Convivencia Campinas.jpg', legenda: 'Centro de Convivência Cultural, no Cambuí', alt: 'Praça com teatro de arena e árvores altas' },
-    { id: 'f2', imovel_foto: 9202, legenda: 'Prédio com apartamento da RUAH à venda no Cambuí', alt: 'Fachada de prédio residencial de vários andares' },
+    { id: 'f2', imovel_foto: 9202, legenda: 'Prédio com apartamento da Imobiliária à venda no Cambuí', alt: 'Fachada de prédio residencial de vários andares' },
     { id: 'f3', commons: 'File:Foto proibida.jpg', legenda: 'Rua arborizada do bairro', alt: 'Rua com árvores e prédios dos dois lados' },
   ],
   blocos,
@@ -83,10 +83,10 @@ const modelo = {
     { pergunta: 'O Cambuí fica longe do centro de Campinas?', resposta: 'Não: o bairro faz divisa com o Centro.' },
     { pergunta: 'O Cambuí tem prédios residenciais?', resposta: 'Sim, a maior parte dos imóveis do bairro é apartamento.' },
     { pergunta: 'Tem praça no Cambuí?', resposta: 'Sim, como o Centro de Convivência Cultural.' },
-    { pergunta: 'Como falar com a RUAH sobre o Cambuí?', resposta: 'Pelo formulário no fim desta página.' },
+    { pergunta: 'Como falar com a imobiliária sobre o Cambuí?', resposta: 'Pelo formulário no fim desta página.' },
   ],
   fontes: [{ nome: 'Prefeitura de Campinas', site: 'https://campinas.sp.gov.br/' }, { nome: 'IBGE, Censo 2022' }],
-  redes: { legenda: 'Como é morar no Cambuí, em Campinas? Preparamos um guia completo do bairro, com história, praças, comércio e prédios.', hashtags: ['cambui', 'campinas', 'morarbem', 'ruahimobiliaria'] },
+  redes: { legenda: 'Como é morar no Cambuí, em Campinas? Preparamos um guia completo do bairro, com história, praças, comércio e prédios.', hashtags: ['cambui', 'campinas', 'morarbem', 'imobiliaria'] },
   publicadoEm: new Date(Date.now() - 3600e3).toISOString(),
 };
 
@@ -136,7 +136,7 @@ const ramo = http.createServer((req, res) => {
     // ---- a página do bairro
     let r = await get('/bairros/cambui');
     assert.strictEqual(r.s, 200, r.t.slice(0, 400));
-    for (const k of ['Cambuí em números', 'imóvel da RUAH à venda', 'prédios residenciais', '/imoveis/apartamento-3-quartos-cambui-campinas-ap9301', '/imoveis/foto/9202', 'Escola Estadual Carlos Gomes',
+    for (const k of ['Cambuí em números', 'imóvel da Imobiliária à venda', 'prédios residenciais', '/imoveis/apartamento-3-quartos-cambui-campinas-ap9301', '/imoveis/foto/9202', 'Escola Estadual Carlos Gomes',
       'Edifício Jequitibá', 'Foto: Fulano de Tal · CC BY-SA 4.0 · Wikimedia Commons', '"@type":"FAQPage"', '"@type":"Place"', 'GeoCoordinates', 'Prefeitura de Campinas (campinas.sp.gov.br)', 'data-bairro-contato', '/bairros/cambui/foto/1']) {
       assert.ok(r.t.includes(k), `a página deveria ter: ${k}`);
     }
@@ -162,7 +162,7 @@ const ramo = http.createServer((req, res) => {
     r = await get('/bairros/dados.json');
     const d = JSON.parse(r.t);
     const camb = d.bairros.find((b) => b.slug === 'cambui');
-    assert.ok(camb && camb.pagina.estado === 'no-ar' && camb.imoveis_da_ruah[0].fotos.some((f) => f.foto === 9202 && f.ambiente === 'fachada'), 'dados.json do Cambuí');
+    assert.ok(camb && camb.pagina.estado === 'no-ar' && camb.imoveis[0].fotos.some((f) => f.foto === 9202 && f.ambiente === 'fachada'), 'dados.json do Cambuí');
     assert.ok(camb.condominios.total === 3 && camb.perto && camb.centro, 'dados ao vivo no dados.json');
     assert.notStrictEqual(d.bairros[0].slug, 'cambui', 'bairro no ar vai para o fim da fila');
     console.log('ok · dados.json: fila, fotos de imóveis com ambiente, números ao vivo');
@@ -171,10 +171,10 @@ const ramo = http.createServer((req, res) => {
     let c = await send('POST', '/api/publico/bairros/contato', { bairro: 'cambui', motivo: 'vender', nome: 'Maria', telefone: '(19) 98888-7777', aceite: true, mensagem: 'Tenho um apartamento' });
     assert.ok(c.j.ok, JSON.stringify(c.j));
     const lead = one("SELECT * FROM leads WHERE telefone='5519988887777'");
-    assert.ok(lead && lead.origem === 'Portal RUAH · bairro' && lead.bairros === 'Cambuí' && lead.temperatura === 'quente', 'lead do bairro');
+    assert.ok(lead && lead.origem === 'Portal Imobiliária · bairro' && lead.bairros === 'Cambuí' && lead.temperatura === 'quente', 'lead do bairro');
     c = await send('POST', '/api/publico/bairros/contato', { bairro: 'nao-existe', nome: 'X', telefone: '19988887777', aceite: true });
     assert.strictEqual(c.s, 404);
-    console.log('ok · formulário vira lead "Portal RUAH · bairro" com o bairro');
+    console.log('ok · formulário vira lead "Portal Imobiliária · bairro" com o bairro');
 
     // ---- a tela do sistema
     run("INSERT INTO usuarios(nome,email,perfil,senha_hash) VALUES('Adm','adm@t','adm','x')");
@@ -198,7 +198,7 @@ const ramo = http.createServer((req, res) => {
     assert.strictEqual((await fonte.situacao()).find((x) => x.slug === 'cambui').estado, 'pedida', 'reescrita pedida');
     r = await get('/bairros/dados.json');
     assert.strictEqual(JSON.parse(r.t).bairros[0].slug, 'cambui', 'reescrita pedida vai para o começo da fila');
-    assert.strictEqual(JSON.parse(r.t).bairros[0].notas_da_ruah, 'Falar da feira de domingo');
+    assert.strictEqual(JSON.parse(r.t).bairros[0].notas, 'Falar da feira de domingo');
     c = await send('PUT', '/api/bairros/cambui', { oculto: true }, adm); assert.ok(c.j.ok);
     r = await get('/bairros/cambui'); assert.strictEqual(r.s, 404, 'bairro oculto sai do ar');
     r = await get('/bairros'); assert.ok(!r.t.includes('/bairros/cambui'), 'bairro oculto sai da lista');

@@ -6,7 +6,7 @@ const paginas = require('../blog/paginas');
 const { SLUGS } = require('../blog/categorias');
 const { SLUG } = require('../blog/validar');
 const cfg = require('../config');
-// Origem dos leads do blog: "Blog " + nome do cliente (com a config padrão, "Blog RUAH" como sempre).
+// Origem dos leads do blog: "Blog " + nome do cliente.
 const ORIGEM_BLOG = `Blog ${cfg.CLIENTE_NOME}`;
 
 const router = express.Router();

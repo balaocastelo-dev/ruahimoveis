@@ -31,7 +31,7 @@ const cfg = require('../src/config.js');
 const OLLAMA = (process.env.OLLAMA_URL || 'http://127.0.0.1:11434').replace(/\/+$/, '');
 const VISAO = process.env.PORTAL_GPU_VISAO || 'qwen2.5vl:7b';
 const TEXTO = process.env.PORTAL_GPU_TEXTO || 'qwen3:14b';
-const PORTAL = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
+const PORTAL = (process.env.PORTAL_URL || process.env.PUBLIC_URL || 'http://127.0.0.1:3333').replace(/\/+$/, '');
 const FOTOS_DE = (process.env.PORTAL_GPU_FOTOS || 'http://localhost:3333').replace(/\/+$/, '');
 const PASTA = path.join(RAIZ, 'data', 'portal-gpu');
 
@@ -141,7 +141,7 @@ Responda SÓ com este JSON:
 TAMANHO TOTAL: 450 a 750 palavras somando todos os parágrafos. Não passe de 900.`;
 
 function fichaParaModelo(im, fotos) {
-  const anuncio = String(im.descricao_do_anuncio || '').split('\n').filter((l) => !/https?:|ruahimobiliaria|c[óo]digo\s+[A-Z]{2}\d/i.test(l)).join('\n').trim();
+  const anuncio = String(im.descricao_do_anuncio || '').split('\n').filter((l) => !/https?:|c[óo]digo\s+[A-Z]{2}\d/i.test(l)).join('\n').trim();
   return {
     codigo: im.codigo, tipo: im.tipo, bairro: im.bairro, cidade: im.cidade, uf: im.uf, condominio: im.condominio,
     lazer_do_condominio: im.lazer_do_condominio, quartos: im.quartos, suites: im.suites, vagas: im.vagas,

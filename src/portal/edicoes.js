@@ -1,6 +1,6 @@
 // Portal do cliente (a imobiliária) · o texto das versões "Revista" e "Signature" da vitrine.
 //
-// Revista (/imoveis/revista): ensaios no estilo do blog Sopro, com os imóveis
+// Revista (/imoveis/revista): ensaios no estilo do blog, com os imóveis
 // do portal entre os textos. Os ensaios falam de modos de morar, nunca de um
 // imóvel específico: os imóveis entram por filtro (tipo) e aparecem com o
 // título e o resumo da própria página aprovada. Assim o texto não fica
@@ -17,8 +17,6 @@
 
 const cfg = require('../config');
 const CLIENTE = cfg.CLIENTE_NOME;
-// A linha fina do ensaio de abertura explica o nome "Ruah" (sopro, em hebraico): só vale para esse nome.
-const NOME_E_SOPRO = /^ruah$/i.test(String(CLIENTE).trim());
 
 const CASAS = ['Casa', 'Casa em condomínio', 'Sobrado', 'Chácara', 'Sítio'];
 const APARTAMENTOS = ['Apartamento', 'Cobertura', 'Flat'];
@@ -30,9 +28,7 @@ const CAPITULOS = [
     id: 'a-casa-que-respira',
     chapeu: 'Ensaio de abertura',
     titulo: 'A casa que respira',
-    linhaFina: NOME_E_SOPRO
-      ? 'Ruah, em hebraico, é sopro. Talvez seja a melhor palavra para o que se procura numa casa: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.'
-      : 'Sopro talvez seja a melhor palavra para o que se procura numa casa: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.',
+    linhaFina: 'Talvez a melhor definição do que se procura numa casa seja esta: um lugar onde o ar circula, a luz entra sem pedir licença e o tempo desacelera.',
     paragrafos: [
       'Há casas que se entendem pela planta e há casas que se entendem pelo corpo. As primeiras impressionam no papel; as segundas, na primeira manhã. O que separa uma da outra raramente está no número de metros quadrados. Está no modo como a janela enquadra a árvore, na sombra que o beiral desenha na varanda às quatro da tarde, no silêncio que sobra quando a porta se fecha.',
       'No interior paulista, de verão longo e inverno seco, a casa que respira é quase uma questão de bom senso: ventilação cruzada, pé-direito generoso, varandas profundas, um jardim que refresca o chão em volta. Não é tendência de revista. É o jeito antigo, e ainda o mais inteligente, de morar bem por aqui.',

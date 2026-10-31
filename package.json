@@ -2,7 +2,7 @@
   "name": "herrera-house-ia",
   "version": "1.0.0",
   "private": true,
-  "description": "Herrera HOUSE IA — sistema imobiliário com IA (1º cliente: RUAH Investimentos Imobiliários)",
+  "description": "Herrera HOUSE IA — sistema imobiliário com IA",
   "main": "server.js",
   "type": "commonjs",
   "engines": {

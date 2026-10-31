@@ -5,7 +5,7 @@ const express = require('express');
 const cfg = require('./src/config');
 
 if (!cfg.SECRET_KEY || cfg.SECRET_KEY.length < 32) {
-  console.error(`\n[ERRO] ${cfg.SISTEMA_NOME}: SECRET_KEY ausente no arquivo .env. Rode o INICIAR-RUAH.ps1 para gerar a configuração.\n`);
+  console.error(`\n[ERRO] ${cfg.SISTEMA_NOME}: SECRET_KEY ausente no arquivo .env. Rode o INICIAR.ps1 para gerar a configuração.\n`);
   process.exit(1);
 }
 

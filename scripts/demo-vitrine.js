@@ -5,7 +5,7 @@
 // Nenhum dado de cliente real, do Fisgar ou de portais. Nunca rode apontando para o banco de produção.
 //
 // Uso: node scripts/demo-vitrine.js /caminho/demo.db
-// Depois: CLIENTE_NOME="Casa Prado" EMPRESA="Casa Prado Imóveis" RUAH_DB=/caminho/demo.db SECRET_KEY=... \
+// Depois: CLIENTE_NOME="Casa Prado" EMPRESA="Casa Prado Imóveis" HOUSE_DB=/caminho/demo.db SECRET_KEY=... \
 //         FISGUEI_ROBO=0 ESCRITORIO=0 RADAR_PORTAIS=0 IA_MODO=desligado node server.js
 'use strict';
 const fs = require('fs');
@@ -24,7 +24,7 @@ fs.mkdirSync(path.dirname(abs), { recursive: true });
 // Sempre SQLite local, nunca o banco online.
 delete process.env.DATABASE_URL;
 process.env.DATABASE_URL = '';
-process.env.RUAH_DB = abs;
+process.env.HOUSE_DB = abs;
 process.env.TZ = 'America/Sao_Paulo';
 process.env.CLIENTE_NOME = process.env.CLIENTE_NOME || 'Casa Prado';
 process.env.EMPRESA = process.env.EMPRESA || 'Casa Prado Imóveis';

@@ -1,7 +1,7 @@
 # Guias de bairro — uma página de SEO para cada bairro de Campinas
 
-Público, sem login: `/bairros` (lista por região) e `/bairros/<bairro>` (o guia). Online (instalação do cliente RUAH no Herrera HOUSE IA): https://ruahimoveis.vercel.app/bairros.
-Montado em 27/10/2026 no mesmo esquema do blog Sopro e do portal de imóveis.
+Público, sem login: `/bairros` (lista por região) e `/bairros/<bairro>` (o guia).
+Montado em 27/10/2026 no mesmo esquema do blog e do portal de imóveis.
 
 Cada guia é um texto completo (900 a 2.600 palavras) pesquisado em fontes públicas, com fotos reais, e feito para o
 Google e para as IAs: título e resumo com o nome do bairro, abertura que responde "como é o bairro", resumo em itens,
@@ -13,11 +13,11 @@ perguntas frequentes, fontes, dados estruturados (`Article` + `Place` com coorde
 | Parte | De onde vem |
 |---|---|
 | Texto, fotos escolhidas, perguntas, fontes | ramo `claude/bairros-conteudo` (escrito pela tarefa agendada, conferido pela régua) |
-| "<Bairro> em números" | banco, ao vivo: imóveis da imobiliária (cliente RUAH) à venda, prédios e condomínios (Receita + Censo 2022), o que tem perto (Overture/OSM) |
+| "<Bairro> em números" | banco, ao vivo: imóveis da imobiliária à venda, prédios e condomínios (Receita + Censo 2022), o que tem perto (Overture/OSM) |
 | Imóveis da imobiliária no bairro | portal, ao vivo; a foto do cartão é a da **fachada/condomínio** (ambiente da galeria do imóvel) |
 | O que tem perto | tabela `pois`, num raio de 1,5 km do centro do bairro (média dos prédios, ou o centro manual) |
 | Prédios e condomínios | base de condomínios; com `CONDOMINIOS_PUBLICOS=1` os nomes viram link para a página pública de cada um |
-| Formulário | lead no CRM, origem **Portal RUAH · bairro** ("Portal " + nome do cliente), com o bairro em "bairros" e o motivo (comprar, vender, dúvida) |
+| Formulário | lead no CRM, origem **Portal da imobiliária · bairro** ("Portal " + nome do cliente), com o bairro em "bairros" e o motivo (comprar, vender, dúvida) |
 
 ## As fotos
 
@@ -42,7 +42,7 @@ perguntas frequentes, fontes, dados estruturados (`Article` + `Place` com coorde
 | Comando | `scripts/bairros-publicar.mjs`: `preparar`, `fotos`, `conferir`, `publicar`, `listar`, `retirar` |
 | Para quem escreve | `/bairros/dados.json` (a fila em ordem, números ao vivo, fotos dos imóveis com o ambiente, notas da imobiliária) |
 | Regras de quem escreve | `ROTINA.md` no ramo `claude/bairros-conteudo` |
-| Tarefa agendada | "Bairros RUAH - guias dos bairros" (do cliente RUAH; texto em `docs/bairros-tarefa.md`) |
+| Tarefa agendada | "Bairros - guias dos bairros" (texto em `docs/bairros-tarefa.md`) |
 | Tela | Conteúdo › Páginas de bairros (`public/bairros.js`) |
 
 ## A tela "Páginas de bairros"

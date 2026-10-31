@@ -1,7 +1,7 @@
 -- Cofre central sem variável nova no projeto (29/10/2026).
 --
 -- Problema: central.js só lia o cofre pelo PLATAFORMA_DATABASE_URL, e essa variável existe só no projeto
--- "ruahimoveis". Resultado: nenhuma imobiliária enxergava a chave de IA central nem a chave da estação.
+-- "o repositório da plataforma". Resultado: nenhuma imobiliária enxergava a chave de IA central nem a chave da estação.
 --
 -- Solução: todos os schemas moram no mesmo Postgres, então a imobiliária lê o cofre pela PRÓPRIA conexão,
 -- por duas funções SECURITY DEFINER que entregam só o necessário:
@@ -50,9 +50,9 @@ END $function$;
 
 REVOKE ALL ON FUNCTION plataforma.cofre_central() FROM PUBLIC, anon, authenticated;
 REVOKE ALL ON FUNCTION plataforma.anota_ia_uso(text, integer, integer, boolean, text) FROM PUBLIC, anon, authenticated;
-GRANT USAGE ON SCHEMA plataforma TO ruah_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app;
-GRANT EXECUTE ON FUNCTION plataforma.cofre_central() TO ruah_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
-GRANT EXECUTE ON FUNCTION plataforma.anota_ia_uso(text, integer, integer, boolean, text) TO ruah_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
+GRANT USAGE ON SCHEMA plataforma TO base_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app;
+GRANT EXECUTE ON FUNCTION plataforma.cofre_central() TO base_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
+GRANT EXECUTE ON FUNCTION plataforma.anota_ia_uso(text, integer, integer, boolean, text) TO base_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
 
 COMMIT;
 

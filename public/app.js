@@ -1,6 +1,6 @@
 /* Herrera HOUSE IA — aplicativo (sem frameworks; todos os dados passam por esc() antes de virar HTML) */
 // Marca: nome do sistema e do cliente (imobiliária) vêm do servidor em /marca.js; estes são só os padrões.
-const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH', empresa: 'RUAH Investimentos Imobiliários' }, window.MARCA || {});
+const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'Imobiliária', empresa: 'Imobiliária' }, window.MARCA || {});
 'use strict';
 if (MARCA.icone) { const l = document.createElement('link'); l.rel = 'icon'; l.type = 'image/svg+xml'; l.href = MARCA.icone; document.head.appendChild(l); }
 if (MARCA.cliente) document.title = MARCA.sistema + ' · ' + MARCA.cliente;
@@ -88,8 +88,8 @@ async function carregaBase() {
 }
 // ---------- ordenar listas: cada botão alterna menor → maior e maior → menor ----------
 // opcoes: [[chave, rótulo, (item) => valor, texto?]]. Sem o dado vai sempre para o fim.
-const ordLer = (nome, padrao) => { try { const v = JSON.parse(localStorage.getItem('ruah.ord.' + nome)); return v && v.k ? v : padrao; } catch { return padrao; } };
-const ordGravar = (nome, v) => { try { localStorage.setItem('ruah.ord.' + nome, JSON.stringify(v)); } catch {} };
+const ordLer = (nome, padrao) => { try { const v = JSON.parse(localStorage.getItem('hh.ord.' + nome)); return v && v.k ? v : padrao; } catch { return padrao; } };
+const ordGravar = (nome, v) => { try { localStorage.setItem('hh.ord.' + nome, JSON.stringify(v)); } catch {} };
 const ordProximo = (atual, k) => (atual.k === k ? { k, d: -atual.d } : { k, d: 1 });
 function ordLista(lista, opcoes, atual) {
   const o = opcoes.find((x) => x[0] === atual.k); if (!o) return lista;
@@ -427,7 +427,7 @@ function cartFiltrosHTML() {
     ${CART_CAMPOS.some((k) => f[k]) ? '<button type="button" class="btn sm" data-act="cart-limpa">Limpar filtros</button>' : ''}`;
 }
 function imDesenha() {
-  const modo = lerPref('ruah.imoveis.modo', 'cards');
+  const modo = lerPref('hh.imoveis.modo', 'cards');
   document.querySelectorAll('[data-act="im-modo"]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.modo === modo)));
   // funil de etapas (conta sem o filtro de etapa)
   const semEtapa = (() => { const e = CART_F.etapa; CART_F.etapa = ''; const l = cartFiltra(IM_LISTA); CART_F.etapa = e; return l; })();
@@ -446,7 +446,7 @@ function imDesenha() {
     : IM_LISTA.length ? '<div class="card"><div class="empty">Nenhum imóvel com esses filtros. <a href="#" data-act="cart-limpa">Limpar filtros</a></div></div>'
       : '<div class="card"><div class="empty">A carteira está vazia. Escolha imóveis nas vitrines da base (Apartamentos, Casas…) e clique em <b>Localizar proprietário</b>, ou <a href="#/imoveis/novo">cadastre um imóvel</a>.</div></div>';
 }
-const cartGuarda = () => gravaPref('ruah.carteira.filtros', JSON.stringify(CART_F));
+const cartGuarda = () => gravaPref('hh.carteira.filtros', JSON.stringify(CART_F));
 ACT['cart-neg'] = (el) => { CART_F.neg = el.dataset.k; cartGuarda(); imDesenha(); };
 ACT['cart-etapa'] = (el) => { CART_F.etapa = CART_F.etapa === el.dataset.k ? '' : el.dataset.k; cartGuarda(); imDesenha(); };
 ACT['cart-limpa'] = () => { CART_F = {}; cartGuarda(); imDesenha(); };
@@ -464,10 +464,10 @@ ACT['ver-foto'] = (el) => {
   const fotos = [...el.closest('.fotos').querySelectorAll('img')].map((i) => i.getAttribute('src'));
   abrirGaleria(fotos, +el.dataset.n, el.closest('.card').dataset.legenda || '');
 };
-ACT['im-modo'] = (el) => { gravaPref('ruah.imoveis.modo', el.dataset.modo); if ($('#tb-im')) imDesenha(); };
+ACT['im-modo'] = (el) => { gravaPref('hh.imoveis.modo', el.dataset.modo); if ($('#tb-im')) imDesenha(); };
 
 async function telaImoveis(qs) {
-  try { CART_F = JSON.parse(lerPref('ruah.carteira.filtros', '{}')) || {}; } catch { CART_F = {}; }
+  try { CART_F = JSON.parse(lerPref('hh.carteira.filtros', '{}')) || {}; } catch { CART_F = {}; }
   const veio = qs && CART_CAMPOS.filter((k) => qs.get(k));
   if (veio && veio.length) { CART_F = Object.fromEntries(veio.map((k) => [k, qs.get(k)])); cartGuarda(); }
   $('#main').innerHTML = `<h1>Carteira de imóveis</h1>

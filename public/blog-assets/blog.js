@@ -1,9 +1,9 @@
-// Sopro · o blog da imobiliária (cliente). Busca na lista, barra de leitura, sumário e "copiar link".
+// Blog da imobiliária. Busca na lista, barra de leitura, sumário e "copiar link".
 (function () {
   'use strict';
-  // nome da imobiliária (cliente): vem do og:site_name que o servidor escreve ("Sopro · <cliente>")
+  // nome da imobiliária (cliente): vem do og:site_name que o servidor escreve
   var siteName = (document.querySelector('meta[property="og:site_name"]') || {}).content || '';
-  var CLIENTE = siteName.split(' · ').pop() || 'RUAH';
+  var CLIENTE = siteName.split(' · ').pop() || 'Imobiliária';
 
   // Busca: filtra os cartões já na página, sem ir ao servidor.
   var busca = document.getElementById('busca');

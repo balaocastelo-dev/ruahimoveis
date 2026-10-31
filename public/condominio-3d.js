@@ -16,7 +16,7 @@ function unir(lista) {
 const $ = (s) => document.querySelector(s);
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 // Marca (/marca.js): o 3D também abre pelo portal público, então o topo mostra a imobiliária (cliente).
-const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'RUAH' }, window.MARCA || {});
+const MARCA = Object.assign({ sistema: 'Herrera HOUSE IA', cliente: 'Imobiliária' }, window.MARCA || {});
 if ($('#marca-cliente')) $('#marca-cliente').textContent = MARCA.cliente;
 const qs = new URLSearchParams(location.search);
 const ID = qs.get('id'), IMOVEL = qs.get('imovel'), SLUG = qs.get('slug'), FG = qs.get('fg');

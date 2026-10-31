@@ -87,7 +87,7 @@ contado em `api_chaves`. Veja em `GET /api/chaves/log`.
 
 ### 1.2 Sessão do navegador (as telas)
 
-`POST /api/login` grava o cookie `ruah_sessao` (12 horas). É o que as telas usam. Escrita exige mesma origem (CSRF).
+`POST /api/login` grava o cookie `hh_sessao` (12 horas). É o que as telas usam. Escrita exige mesma origem (CSRF).
 
 ### 1.3 Entradas próprias de robô (não usam chave de API)
 
@@ -137,7 +137,7 @@ curl -s "$BASE/api/ia/ferramentas.json?escopo=imoveis" -H "Authorization: Bearer
 
 ```json
 { "mcpServers": {
-    "herrera": { "command": "node", "args": ["C:/Users/user/Desktop/Sistema RUAH/scripts/mcp-herrera.mjs"],
+    "herrera": { "command": "node", "args": ["C:/Users/user/Desktop/Herrera HOUSE IA/scripts/mcp-herrera.mjs"],
       "env": { "HERRERA_URL": "https://minhaimobiliaria.corretordofuturo.app",
                "HERRERA_CHAVE": "hh_...", "HERRERA_ESCOPOS": "imoveis,crm,captacao" } } } }
 ```
@@ -203,7 +203,7 @@ curl -s -X POST "$BASE/api/ia/consulta" -H "Authorization: Bearer $CHAVE" -H 'Co
 # 5. Catálogo completo das rotas
 ## Base: acesso, usuários, painel e integrações (`src/routes/base.js`)
 
-Montado em `/api`. Em `server.js`, só `/api/setup`, `/api/login`, `/api/logout` e `/api/drive/callback` ficam fora do `exigeLogin`; todo o resto de `/api` exige sessão (cookie `ruah_sessao`, 12 horas) e todo método que não seja `GET`/`HEAD`/`OPTIONS` passa por `mesmaOrigem` (se vier o cabeçalho `Origin` com host diferente do `Host`, responde 403).
+Montado em `/api`. Em `server.js`, só `/api/setup`, `/api/login`, `/api/logout` e `/api/drive/callback` ficam fora do `exigeLogin`; todo o resto de `/api` exige sessão (cookie `hh_sessao`, 12 horas) e todo método que não seja `GET`/`HEAD`/`OPTIONS` passa por `mesmaOrigem` (se vier o cabeçalho `Origin` com host diferente do `Host`, responde 403).
 
 **Duas formas de entrar em `/api`.** Antes de tudo, `src/api-ia` tenta a chave de API: `Authorization: Bearer hh_<prefixo>_<segredo>` (ou o cabeçalho `X-Api-Key`). Com uma chave válida, o usuário dono dela é resolvido na hora, o cookie fica dispensado e o `mesmaOrigem` é liberado — então, nas chamadas por chave, o erro **403 "Origem não permitida."** não acontece. O perfil que vale é o do usuário dono da chave, de modo que as regras de `adm`/`gestor`/`corretor` descritas em cada endpoint continuam as mesmas. A chave traz limites próprios, e cada um deles tem o seu erro:
 
@@ -225,7 +225,7 @@ Escopo deste módulo: `/api/painel`, `/api/auditoria` e `/api/me*` pedem `painel
 - **Entrada:** nenhuma
 - **Resposta:**
 ```json
-{ "precisa": true, "empresa": "RUAH Investimentos Imobiliários" }
+{ "precisa": true, "empresa": "a imobiliária" }
 ```
 - **Erros:** 500 se o banco estiver indisponível.
 - **Efeitos:** só leitura.
@@ -248,11 +248,11 @@ curl -s "$BASE/api/setup"
 
 - **Resposta:**
 ```json
-{ "ok": true, "exemplo": { "corretores": [ { "nome": "Marina (Exemplo)", "email": "marina@exemplo.ruah", "senha": "Ruah483921a7c2" } ] } }
+{ "ok": true, "exemplo": { "corretores": [ { "nome": "Marina (Exemplo)", "email": "marina@exemplo.local", "senha": "Temp483921a7c2" } ] } }
 ```
 Sem `exemplo`, o campo vem `null`.
 - **Erros:** 400 nome/e-mail inválidos; 400 senha fraca; 409 se o administrador já existe ("O administrador já foi criado. Entre com seu login.").
-- **Efeitos:** insere em `usuarios` com perfil `adm` (senha em scrypt); grava `auditoria` com ação `setup`; cria sessão em `sessoes` e manda o cookie `ruah_sessao` (HttpOnly, SameSite=Lax, 12 h). Com `exemplo`, `src/seed.js` insere 2 corretores (senha temporária aleatória, devolvida na resposta), 2 condomínios, 3 imóveis, 1 proprietário, 4 leads, 1 mensagem de WhatsApp, 1 visita e interações — tudo marcado "(Exemplo)".
+- **Efeitos:** insere em `usuarios` com perfil `adm` (senha em scrypt); grava `auditoria` com ação `setup`; cria sessão em `sessoes` e manda o cookie `hh_sessao` (HttpOnly, SameSite=Lax, 12 h). Com `exemplo`, `src/seed.js` insere 2 corretores (senha temporária aleatória, devolvida na resposta), 2 condomínios, 3 imóveis, 1 proprietário, 4 leads, 1 mensagem de WhatsApp, 1 visita e interações — tudo marcado "(Exemplo)".
 - **Exemplo:**
 ```bash
 curl -s -X POST "$BASE/api/setup" -H 'Content-Type: application/json' \
@@ -450,7 +450,7 @@ curl -s "$BASE/api/painel" -H "Authorization: Bearer $CHAVE"
 - **Resposta:**
 ```json
 {
-  "drive": { "configurado": true, "conectado": false, "conta": null, "raiz": "RUAH Imóveis", "pendentes": 3, "redirect": "http://localhost:3333/api/drive/callback" },
+  "drive": { "configurado": true, "conectado": false, "conta": null, "raiz": "Imóveis da imobiliária", "pendentes": 3, "redirect": "http://localhost:3333/api/drive/callback" },
   "whatsapp": { "modo": "simulado", "webhook": "http://localhost:3333/webhook/whatsapp", "segredo": false, "verify": false },
   "ia": { "ok": true, "modelo": "qwen3:14b", "instalado": true, "modelos": ["qwen3:14b"], "modo": "sugerir" },
   "public_url": null
@@ -771,7 +771,7 @@ curl -s "$BASE/api/imoveis/1/compradores" -H "Authorization: Bearer $CHAVE"
     { "id": 12, "categoria": "Fotos", "nome": "sala.jpg", "mime": "image/jpeg", "tamanho": 418233, "drive_id": "1xYz", "drive_link": "https://drive.google.com/file/d/1xYz/view", "criado_em": "2026-10-20 11:03:00" },
     { "categoria": "Contratos", "nome": "minuta.pdf", "mime": "application/pdf", "tamanho": 90122, "drive_id": "1Qrs", "drive_link": "https://drive.google.com/file/d/1Qrs/view", "so_drive": true }
   ],
-  "drive": { "configurado": true, "conectado": true, "conta": "loja@gmail.com", "raiz": "RUAH Imóveis", "pendentes": 0, "redirect": "http://localhost:3333/api/drive/callback" },
+  "drive": { "configurado": true, "conectado": true, "conta": "loja@gmail.com", "raiz": "Imóveis da imobiliária", "pendentes": 0, "redirect": "http://localhost:3333/api/drive/callback" },
   "aviso": null
 }
 ```
@@ -1052,7 +1052,7 @@ Valores aceitos no arquivo: `etapa` entre `novo`, `qualificado`, `visita`, `prop
 
 - **Resposta:**
 ```json
-[ { "id": 12, "nome": "Carlos", "telefone": "5519900000002", "email": null, "origem": "Site RUAH", "etapa": "novo", "temperatura": "quente", "busca": "4 quartos perto do Dom Pedro", "tipo_desejado": "Apartamento", "quartos_min": 4, "vagas_min": 2, "valor_max": 2500000, "bairros": "Dom Pedro", "nao_contatar": 0, "corretor_id": 2, "criado_em": "2026-10-20 10:00:00", "ultimo_contato": "2026-10-30 08:40:00", "corretor_nome": "Marina", "ultima_msg": "Ainda está disponível?" } ]
+[ { "id": 12, "nome": "Carlos", "telefone": "5519900000002", "email": null, "origem": "Site da imobiliária", "etapa": "novo", "temperatura": "quente", "busca": "4 quartos perto do Dom Pedro", "tipo_desejado": "Apartamento", "quartos_min": 4, "vagas_min": 2, "valor_max": 2500000, "bairros": "Dom Pedro", "nao_contatar": 0, "corretor_id": 2, "criado_em": "2026-10-20 10:00:00", "ultimo_contato": "2026-10-30 08:40:00", "corretor_nome": "Marina", "ultima_msg": "Ainda está disponível?" } ]
 ```
 - **Erros:** 401 sem sessão.
 - **Efeitos:** só leitura.
@@ -1524,7 +1524,7 @@ Entrada em todas as rotas `/api` deste documento, nesta ordem (`server.js`):
 
 1. **Chave de API** (`api-ia.porChave`): `Authorization: Bearer hh_<prefixo>_<segredo>` ou o cabeçalho `x-api-key`. A chave resolve o usuário (ela pertence a um usuário, com o perfil dele), dispensa o cookie e dispensa a checagem de CSRF. Erros próprios: 401 `Chave de API inválida, revogada ou vencida.`; 403 `Esta chave só vale nos endereços de IP autorizados.`; 429 `Limite de N chamadas por minuto para esta chave.`; 403 `Chave somente de leitura.` em qualquer método que não seja GET/HEAD; 403 `Esta chave não tem o escopo "captacao". …` — **todas as rotas de radar, fisguei, captação, mercado, fachada e mapas usam o escopo `captacao`**. Cada chamada por chave é registrada em `api_log`.
 2. **`mesmaOrigem`**: bloqueia escrita vinda de outro site (403 `Origem não permitida.` / `Origem inválida.`). Pulado para GET/HEAD/OPTIONS e para quem entrou por chave de API.
-3. **`exigeLogin`**: quem não entrou por chave precisa do cookie de sessão `ruah_sessao` válido, senão 401 `Sessão expirada. Entre novamente.`
+3. **`exigeLogin`**: quem não entrou por chave precisa do cookie de sessão `hh_sessao` válido, senão 401 `Sessão expirada. Entre novamente.`
 
 Quando a rota não chama `A.exigePerfil`, qualquer perfil (`adm`, `gestor`, `corretor`) entra — mas `permitida()` barra o corretor em oportunidade de outro corretor (403 `Esta oportunidade é de outro corretor.`); `A.veTudo(u)` é verdadeiro para `adm` e `gestor`. Nos exemplos, `$CHAVE` é uma chave de API com o escopo `captacao`.
 
@@ -3034,7 +3034,7 @@ curl -s "$BASE/imoveis/revista"
 
 ### `GET /imoveis/signature`
 - **Quem pode:** público, sem login (os valores só aparecem com o cookie do Clube)
-- **O que faz:** apresenta a seleção Signature — os imóveis à venda com valor a partir de R$ 10.000.000. Se o aparelho tem o cookie `ruah_signature` válido, mostra os valores; senão, mostra o formulário do Clube.
+- **O que faz:** apresenta a seleção Signature — os imóveis à venda com valor a partir de R$ 10.000.000. Se o aparelho tem o cookie `hh_signature` válido, mostra os valores; senão, mostra o formulário do Clube.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
 - **Resposta:** HTML, com `Cache-Control: private, no-store` e `Vary: Cookie`.
@@ -3265,9 +3265,9 @@ Montado em `/api/publico/portal/signature`.
 | `empresa` | texto | não | armadilha para robô: responde `{"ok":true}` sem gravar |
 
 - **Query:** nenhuma.
-- **Resposta:** JSON `{ "ok": true }`, com o cabeçalho `Set-Cookie: ruah_signature=<lead>.<validade>.<assinatura>; Path=/; Max-Age=15552000; HttpOnly; SameSite=Lax` (mais `Secure` quando roda na Vercel) — 180 dias.
+- **Resposta:** JSON `{ "ok": true }`, com o cabeçalho `Set-Cookie: hh_signature=<lead>.<validade>.<assinatura>; Path=/; Max-Age=15552000; HttpOnly; SameSite=Lax` (mais `Secure` quando roda na Vercel) — 180 dias.
 - **Erros:** **429** acima de 6 envios em 10 minutos pelo mesmo IP; **400** nas validações de nome, telefone, e-mail e aceite.
-- **Efeitos:** cria ou atualiza o lead em `leads` (origem `<cliente> Signature`, etapa `novo`, temperatura `quente`, busca "imóveis acima de R$ 10 milhões"); grava a interação em `interacoes` (tipo `portal`); registra `signature_clube` na auditoria; deixa no aparelho o cookie `ruah_signature` (HMAC com a `SECRET_KEY`, guardando só o número do lead e a validade).
+- **Efeitos:** cria ou atualiza o lead em `leads` (origem `<cliente> Signature`, etapa `novo`, temperatura `quente`, busca "imóveis acima de R$ 10 milhões"); grava a interação em `interacoes` (tipo `portal`); registra `signature_clube` na auditoria; deixa no aparelho o cookie `hh_signature` (HMAC com a `SECRET_KEY`, guardando só o número do lead e a validade).
 - **Exemplo:**
 ```bash
 curl -s -X POST "$BASE/api/publico/portal/signature" -H 'Content-Type: application/json' -d '{"nome":"Ana Souza","telefone":"19999999999","aceite":1,"codigo":"CA0004"}'
@@ -3409,7 +3409,7 @@ curl -s -X POST "$BASE/api/publico/blog/contato" -H 'Content-Type: application/j
 
 ## Guias de bairro (`src/routes/bairros.js`)
 
-Três routers: o público (montado na raiz), o `api` (em `/api/publico/bairros`) e o `tela` (em `/api`, atrás do login). Em `/api` a entrada pode ser o cookie de sessão `ruah_sessao` do navegador ou uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`); a chave resolve o usuário e dispensa o cookie e a conferência de origem. As rotas de bairros exigem o escopo `conteudo` da chave. As páginas públicas saem com `Cache-Control: public, max-age=120, s-maxage=600, stale-while-revalidate=3600` quando o status é 200.
+Três routers: o público (montado na raiz), o `api` (em `/api/publico/bairros`) e o `tela` (em `/api`, atrás do login). Em `/api` a entrada pode ser o cookie de sessão `hh_sessao` do navegador ou uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`); a chave resolve o usuário e dispensa o cookie e a conferência de origem. As rotas de bairros exigem o escopo `conteudo` da chave. As páginas públicas saem com `Cache-Control: public, max-age=120, s-maxage=600, stale-while-revalidate=3600` quando o status é 200.
 
 ### `GET /bairros`
 - **Quem pode:** público, sem login
@@ -3439,7 +3439,7 @@ curl -s -i "$BASE/bairros/"
 
 ### `GET /bairros/dados.json`
 - **Quem pode:** público, sem login (fora do Google: `Disallow` no `robots.txt`)
-- **O que faz:** a fila e tudo que quem escreve os guias precisa: situação da página, centro do bairro, carteira do cliente, condomínios, o que tem perto, fotos de imóveis e as notas da imobiliária. Ordena pela urgência (`pedida` primeiro, `oculto` por último), depois por prioridade, número de imóveis, condomínios e nome. Bairros ocultos ficam de fora. Os nomes de campo com "ruah" (`notas_da_ruah`, `carteira_ruah`, `imoveis_da_ruah`) são o contrato lido por `scripts/bairros-publicar.mjs` e pela tarefa agendada.
+- **O que faz:** a fila e tudo que quem escreve os guias precisa: situação da página, centro do bairro, carteira do cliente, condomínios, o que tem perto, fotos de imóveis e as notas da imobiliária. Ordena pela urgência (`pedida` primeiro, `oculto` por último), depois por prioridade, número de imóveis, condomínios e nome. Bairros ocultos ficam de fora. Os campos `notas`, `carteira` e `imoveis` são o contrato lido por `scripts/bairros-publicar.mjs` e pela tarefa agendada.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
 - **Resposta:** JSON, com `Cache-Control: public, max-age=30, s-maxage=60`.
@@ -3449,12 +3449,12 @@ curl -s -i "$BASE/bairros/"
   "bairros": [
     {
       "slug": "cambui", "nome": "Cambuí", "regiao": "Centro",
-      "apelidos": [], "prioridade": 0, "notas_da_ruah": null,
+      "apelidos": [], "prioridade": 0, "notas": null,
       "pagina": { "estado": "no-ar", "titulo": "...", "endereco": "/bairros/cambui", "publicadoEm": "2026-10-20" },
       "centro": { "lat": -22.89, "lon": -47.05 },
-      "carteira_ruah": { "total": 4, "tipos": ["Apartamento (3)", "Casa (1)"], "menor": 800000, "maior": 2500000 },
+      "carteira": { "total": 4, "tipos": ["Apartamento (3)", "Casa (1)"], "menor": 800000, "maior": 2500000 },
       "condominios": { "total": 120, "verticais": 110, "horizontais": 2, "unidades": 4200, "maisAlto": 24, "nomes": [] },
-      "perto": {}, "imoveis_da_ruah": []
+      "perto": {}, "imoveis": []
     }
   ]
 }
@@ -3589,7 +3589,7 @@ curl -s -X POST "$BASE/api/publico/bairros/contato" -H 'Content-Type: applicatio
 
 ### `GET /bairros` (tela do sistema)
 Montado em `/api/bairros`.
-- **Quem pode:** com login (cookie de sessão `ruah_sessao`) ou com chave de API (`Authorization: Bearer $CHAVE` ou `X-API-Key`); qualquer perfil
+- **Quem pode:** com login (cookie de sessão `hh_sessao`) ou com chave de API (`Authorization: Bearer $CHAVE` ou `X-API-Key`); qualquer perfil
 - **O que faz:** a tela Conteúdo › Páginas de bairros: a lista completa (inclusive os ocultos) com a situação de cada página, quantos imóveis e condomínios cada bairro tem, e as sugestões de bairros que ainda não estão na lista.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
@@ -3722,7 +3722,7 @@ curl -s -X POST "$BASE/api/bairros/atualizar" -H "Authorization: Bearer $CHAVE"
 
 ## Condomínios no sistema (`src/routes/condominios.js`)
 
-Montado em `/api` (`app.use('/api', require('./src/routes/condominios'))`), portanto atrás do `exigeLogin` e do `mesmaOrigem` (as escritas de outro site levam **403**). Em vez do cookie `ruah_sessao`, a entrada pode ser uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`), que dispensa o cookie e a conferência de origem; essas rotas exigem o escopo `condominios` da chave. Todas as rotas devolvem JSON e todas respondem **401** `{"erro":"Sessão expirada. Entre novamente."}` sem sessão.
+Montado em `/api` (`app.use('/api', require('./src/routes/condominios'))`), portanto atrás do `exigeLogin` e do `mesmaOrigem` (as escritas de outro site levam **403**). Em vez do cookie `hh_sessao`, a entrada pode ser uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`), que dispensa o cookie e a conferência de origem; essas rotas exigem o escopo `condominios` da chave. Todas as rotas devolvem JSON e todas respondem **401** `{"erro":"Sessão expirada. Entre novamente."}` sem sessão.
 
 ### `GET /condominios`
 - **Quem pode:** com login ou com chave de API; qualquer perfil
@@ -3860,7 +3860,7 @@ curl -s "$BASE/api/condominios/bairros" -H "Authorization: Bearer $CHAVE"
 {
   "id": 12, "nome": "Edifício X", "tipo": "vertical", "bairro": "Cambuí", "tem_contorno": true,
   "aVenda": [], "aLocar": [],
-  "resumo": { "a_venda": 7, "a_locar": 2, "preco_mediano": 950000, "m2_mediano": 9500, "taxa_condominio": 1200, "iptu": 300, "dias_anunciado": 45, "imobiliarias": [], "particulares": 1, "quartos": [], "lazer": [], "vendidos_ruah": 2 },
+  "resumo": { "a_venda": 7, "a_locar": 2, "preco_mediano": 950000, "m2_mediano": 9500, "taxa_condominio": 1200, "iptu": 300, "dias_anunciado": 45, "imobiliarias": [], "particulares": 1, "quartos": [], "lazer": [], "vendidos": 2 },
   "carteira": [], "radar": [], "fisguei": []
 }
 ```
@@ -4089,7 +4089,7 @@ Montado em `/api/publico/assinatura/:token`.
 - **Query:** nenhuma.
 - **Resposta:** JSON.
 ```json
-{ "status": "pendente", "conteudo": "...", "codigo": "AP0029", "nome": "Maria Silva", "empresa": "RUAH Investimentos Imobiliários", "assinado_em": null }
+{ "status": "pendente", "conteudo": "...", "codigo": "AP0029", "nome": "Maria Silva", "empresa": "a imobiliária", "assinado_em": null }
 ```
   Quando o status é `cancelado`, `conteudo` vem `null`.
 - **Erros:** **429** `{"erro":"Muitas tentativas. Aguarde um minuto."}` acima de 30 chamadas por minuto pelo mesmo IP e rota; **404** `{"erro":"Link de assinatura inválido."}`.
@@ -4133,7 +4133,7 @@ Montado em `/api/publico/imovel/:token`.
 - **Resposta:** JSON.
 ```json
 {
-  "empresa": "RUAH Investimentos Imobiliários", "codigo": "AP0029", "tipo": "Apartamento",
+  "empresa": "a imobiliária", "codigo": "AP0029", "tipo": "Apartamento",
   "condominio": "Edifício X", "lazer": null, "bairro": "Cambuí", "cidade": "Campinas",
   "endereco": null, "quartos": 3, "suites": 1, "vagas": 2, "area_util": 120, "area_total": null,
   "valor": 1200000, "valor_condominio": 1200, "iptu": 300, "descricao": "...",
@@ -4196,10 +4196,10 @@ curl -s -X POST "$BASE/webhook/whatsapp" -H 'X-Hub-Signature-256: sha256=...' --
 
 ## Blog e portal declarados no `server.js`
 
-As quatro rotas `/api/...` desta seção ficam atrás do `exigeLogin` e do `mesmaOrigem`. A entrada pode ser o cookie de sessão `ruah_sessao` ou uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`), que resolve o usuário e dispensa o cookie e a conferência de origem; elas exigem o escopo `conteudo` da chave. Com chave inválida, revogada ou vencida a resposta é **401**; fora dos IPs autorizados, **403**; acima do limite por minuto da chave, **429**; com chave somente de leitura num método diferente de GET/HEAD, **403**; sem o escopo, **403**.
+As quatro rotas `/api/...` desta seção ficam atrás do `exigeLogin` e do `mesmaOrigem`. A entrada pode ser o cookie de sessão `hh_sessao` ou uma chave de API em `Authorization: Bearer hh_...` (ou `X-API-Key`), que resolve o usuário e dispensa o cookie e a conferência de origem; elas exigem o escopo `conteudo` da chave. Com chave inválida, revogada ou vencida a resposta é **401**; fora dos IPs autorizados, **403**; acima do limite por minuto da chave, **429**; com chave somente de leitura num método diferente de GET/HEAD, **403**; sem o escopo, **403**.
 
 ### `GET /api/blog`
-- **Quem pode:** com login (cookie de sessão `ruah_sessao`) ou com chave de API (`Authorization: Bearer $CHAVE` ou `X-API-Key`); qualquer perfil
+- **Quem pode:** com login (cookie de sessão `hh_sessao`) ou com chave de API (`Authorization: Bearer $CHAVE` ou `X-API-Key`); qualquer perfil
 - **O que faz:** a situação do blog para a tela do sistema: todos os artigos (inclusive os agendados e os que esperam foto), com as marcas `noAr` e `esperandoFoto`, mais quantas capas estão na fila.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
@@ -4270,7 +4270,7 @@ curl -s "$BASE/api/portal/AP0029/redes" -H "Authorization: Bearer $CHAVE"
 - **Query:** nenhuma.
 - **Resposta:** JavaScript (`application/javascript`), com `Cache-Control: no-cache`. Os `<` do JSON são escapados como `<`.
 ```javascript
-window.MARCA={"sistema":"Herrera HOUSE IA","cliente":"RUAH","empresa":"RUAH Investimentos Imobiliários","blog":"RUAH Blog","tema":"","logo":"","icone":""};
+window.MARCA={"sistema":"Herrera HOUSE IA","cliente":"Onde morar","empresa":"Onde morar","blog":"Imobiliária Blog","tema":"","logo":"","icone":""};
 ```
 - **Erros:** nenhum.
 - **Efeitos:** só leitura.
@@ -4332,7 +4332,7 @@ curl -s "$BASE/condominio-3d.html?slug=edificio-x"
 ```
 ## Escritório virtual (`src/routes/escritorio.js`)
 
-Montado com `app.use('/api', require('./src/routes/escritorio'))`, **depois** de `express.json({ limit: '1mb' })`, da entrada por chave de API, de `mesmaOrigem` (bloqueia escrita com `Origin` de outro host → 403) e de `exigeLogin` (sem chave e sem cookie de sessão `ruah_sessao` válido → 401 `{"erro":"Sessão expirada. Entre novamente."}`). As rotas marcadas "adm, gestor" passam ainda por `A.exigePerfil('adm','gestor')` → 403 `{"erro":"Seu perfil não tem acesso a esta função."}`.
+Montado com `app.use('/api', require('./src/routes/escritorio'))`, **depois** de `express.json({ limit: '1mb' })`, da entrada por chave de API, de `mesmaOrigem` (bloqueia escrita com `Origin` de outro host → 403) e de `exigeLogin` (sem chave e sem cookie de sessão `hh_sessao` válido → 401 `{"erro":"Sessão expirada. Entre novamente."}`). As rotas marcadas "adm, gestor" passam ainda por `A.exigePerfil('adm','gestor')` → 403 `{"erro":"Seu perfil não tem acesso a esta função."}`.
 
 Escopo deste módulo: `/api/escritorio…` pede **`escritorio`**. Valem as duas formas de entrar em `/api` e os erros próprios da chave descritos no módulo "Base". `POST /escritorio-ciclo` fica fora de `/api`: não passa pela chave de API, só pelo token do ciclo.
 `:slug` tem de ser um dos 9 agentes (`captador`, `apartamentos`, `comerciais`, `terrenos`, `casas`, `alto-padrao`, `offmarket`, `gerente`, `gerente-corretores`); qualquer outro → 404 `{"erro":"Agente não encontrado."}`.
@@ -4390,7 +4390,7 @@ curl -s -X PUT "$BASE/api/escritorio/geral" -H "Authorization: Bearer $CHAVE" -H
 - **O que faz:** monta o relatório do dia (texto pronto para WhatsApp) e os números do dia em texto, sem mandar nada.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
-- **Resposta:** `{"texto":"📊 *Relatório do dia · RUAH* (30/10)\n\n*Comercial*\n• Leads novos: 3…","numeros":"Leads novos hoje: 3 (portal: 2; redes: 1).\nVisitas hoje: 1…"}`
+- **Resposta:** `{"texto":"📊 *Relatório do dia · Imobiliária* (30/10)\n\n*Comercial*\n• Leads novos: 3…","numeros":"Leads novos hoje: 3 (portal: 2; redes: 1).\nVisitas hoje: 1…"}`
 - **Erros:** 401; 403.
 - **Efeitos:** só leitura.
 - **Exemplo:**
@@ -4455,7 +4455,7 @@ curl -s -X PUT "$BASE/api/escritorio/config/ia" -H "Authorization: Bearer $CHAVE
 | --- | --- | --- | --- |
 | `modelo` | texto | não | modelo a testar (padrão: o modelo em vigor nos ajustes) |
 
-- **Resposta:** `{"provedor":"gemini","modelo":"gemini-flash-latest","tem_chave":true,"chave_final":"9f2a","teste_ok":true,"teste_msg":"O escritório da RUAH está pronto. (1.4 s)","testado_em":"2026-10-30T12:03:00.000Z","modelos":[{"id":"gemini-flash-latest","nome":"Gemini Flash"}]}`
+- **Resposta:** `{"provedor":"gemini","modelo":"gemini-flash-latest","tem_chave":true,"chave_final":"9f2a","teste_ok":true,"teste_msg":"O escritório da imobiliária está pronto. (1.4 s)","testado_em":"2026-10-30T12:03:00.000Z","modelos":[{"id":"gemini-flash-latest","nome":"Gemini Flash"}]}`
 - **Erros:** 400 `Cole a chave da API do Gemini primeiro.` quando não há chave de Gemini nem de Claude; 401; 403.
 - **Efeitos:** **chamada externa** ao Google (`generativelanguage.googleapis.com`) ou à Anthropic (`api.anthropic.com`) quando só o Claude está configurado; grava `teste_ok`, `teste_msg` e `testado_em` em `config.escritorio_ia`.
 - **Exemplo:**
@@ -4670,7 +4670,7 @@ curl -s -X PUT "$BASE/api/escritorio/casas" -H "Authorization: Bearer $CHAVE" -H
 - **Efeitos:** grava `alma`, `alma_em` e `alma_por` em `config['agente:<slug>']`; `agente_eventos` tipo `alma`; auditoria `escritorio.alma`. Passa a valer na próxima resposta do agente.
 - **Exemplo:**
 ```bash
-curl -s -X PUT "$BASE/api/escritorio/casas/alma" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"alma":"Você é Clara, corretora de casas da RUAH. Fala curto, sempre oferece visita."}'
+curl -s -X PUT "$BASE/api/escritorio/casas/alma" -H "Authorization: Bearer $CHAVE" -H 'Content-Type: application/json' -d '{"alma":"Você é Clara, corretora de casas da imobiliária. Fala curto, sempre oferece visita."}'
 ```
 
 ### `POST /api/escritorio/:slug/alma/restaurar`
@@ -4758,16 +4758,16 @@ curl -s -X DELETE "$BASE/api/escritorio/casas/teste" -H "Authorization: Bearer $
 ```
 
 ### `POST /escritorio-ciclo`
-- **Quem pode:** quem apresenta o cabeçalho `x-ruah-ciclo` igual ao token guardado em `config.escritorio_ciclo_token` (comparação em tempo constante). Sem sessão e **sem** o parser JSON: o corpo nunca é lido. É a rota chamada pelo agendador do Supabase (pg_cron + pg_net, a cada minuto) e pelo próprio PC logo depois de chegar mensagem.
+- **Quem pode:** quem apresenta o cabeçalho `x-hh-ciclo` igual ao token guardado em `config.escritorio_ciclo_token` (comparação em tempo constante). Sem sessão e **sem** o parser JSON: o corpo nunca é lido. É a rota chamada pelo agendador do Supabase (pg_cron + pg_net, a cada minuto) e pelo próprio PC logo depois de chegar mensagem.
 - **O que faz:** roda um ciclo do cérebro na nuvem: atribui leads, responde as conversas pendentes e roda as rotinas dos gerentes, com prazo de 45 s.
-- **Entrada:** nenhuma (só o cabeçalho `x-ruah-ciclo`).
+- **Entrada:** nenhuma (só o cabeçalho `x-hh-ciclo`).
 - **Query:** nenhuma.
 - **Resposta:** `{"ok":true,"ms":1830,"erro":null}`; sem chave de IA na nuvem, `{"ok":true,"sem_chave":true}`; com o escritório desligado, `{"pausado":true}`; se outro ciclo está rodando, `{"ocupado":true}`.
 - **Erros:** 401 `{"erro":"não autorizado"}` quando o token não existe, tem tamanho diferente ou não confere.
 - **Efeitos:** o ciclo inteiro do escritório — **chama a IA externa** (Claude ou Gemini), grava respostas em `agente_mensagens` (status `aprovar` no modo sugerir, `fila` no automático, e aí **as mensagens saem no WhatsApp**), cria/atualiza leads, visitas, afazeres, links internos e eventos, manda relatórios e avisos ao dono e aos corretores, e grava `config.escritorio_cerebro` com o estado.
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/escritorio-ciclo" -H "x-ruah-ciclo: $CHAVE"
+curl -s -X POST "$BASE/escritorio-ciclo" -H "x-hh-ciclo: $CHAVE"
 ```
 
 ## Redes e publicações (`src/routes/social.js`)
@@ -4790,7 +4790,7 @@ Estados possíveis de um post: `agendado`, `aguardando`, `publicando`, `publicad
 {"mes":"2026-10","hoje":"2026-10-30","agora":"2026-10-30 12:00",
  "posts":[{"id":31,"tipo":"imovel","ref":"CA0012","titulo":"Casa no Cambuí","agendado_para":"2026-10-30 12:00","status":"agendado","origem":"auto","redes":["instagram","facebook","google"],"resultado":{},"slides":4,"motivo":null,"editado":false,"thumb":"/social/arte/31/0.jpg?f=feed&v=1&s=ab12…","publicado_em":null}],
  "cancelados":[],"cadencia":{"plano":"profissional","nome":"Profissional"},"ajustes":{"modo":"automatico","pausado":false,"redes":{"instagram":true,"facebook":true,"google":true},"tipos":{"imovel":true,"blog":true,"revista":true,"bairro":true}},
- "contas":[{"id":2,"rede":"instagram","conta_id":"178…","nome":"RUAH","usuario":"@ruah","ativo":1}],
+ "contas":[{"id":2,"rede":"instagram","conta_id":"178…","nome":"Onde morar","usuario":"@imobiliaria","ativo":1}],
  "disponivel":{"meta":true,"google":false,"demonstracao":false},
  "numeros":{"publicados_mes":9,"agendados_7d":7,"aguardando":0,"pronto_manual":1,"erros":0,"cliques_mes":34,"leads_mes":2},
  "planejado_em":"2026-10-30 11:40","ciclo_em":"2026-10-30 11:50"}
@@ -4926,7 +4926,7 @@ curl -s -X POST "$BASE/api/social/posts/31/trocar" -H "Authorization: Bearer $CH
 - **Quem pode:** adm, gestor
 - **O que faz:** publica agora, fora do horário agendado.
 - **Entrada:** nenhuma.
-- **Resposta:** o resumo do post depois da tentativa, ex. `{"id":31,"status":"publicado","resultado":{"instagram":{"ok":true,"id":"178…","url":"https://instagram.com/p/…","em":"2026-10-30 12:05","conta":"RUAH"}},"publicado_em":"2026-10-30 12:05"}`
+- **Resposta:** o resumo do post depois da tentativa, ex. `{"id":31,"status":"publicado","resultado":{"instagram":{"ok":true,"id":"178…","url":"https://instagram.com/p/…","em":"2026-10-30 12:05","conta":"Onde morar"}},"publicado_em":"2026-10-30 12:05"}`
 - **Erros:** 404; 400 `Já foi publicado.`; 400 `Volte com o post para o calendário antes.` (cancelado); 400 `As publicações estão pausadas (Ajustes).`; 401; 403.
 - **Efeitos:** **publica de verdade** nas redes conectadas e ativas: carrossel/foto no Instagram (Graph API: `media` + `media_publish`), foto ou feed na Página do Facebook, e `localPosts` no Google Meu Negócio (com botão "Saiba mais" apontando para o link rastreado `/r/<id>g`). Grava `resultado`, `status` (`publicado`, `parcial` ou `erro`), `publicado_em` e, se não estava editado, a legenda/hashtags ao vivo; limpa ou grava `social_contas.ultimo_erro`; auditoria `social_publicou_agora` e `social_publicacao`. Sem conta conectada (ou em portal de demonstração) não publica: o post fica `pronto_manual`. Se o conteúdo saiu do ar, o post é liberado/cancelado.
 - **Exemplo:**
@@ -5016,7 +5016,7 @@ curl -s -X PUT "$BASE/api/social/ajustes" -H "Authorization: Bearer $CHAVE" -H '
 - **O que faz:** lista **todas** as contas conectadas (ativas e inativas), o que está configurado na plataforma e os endereços de retorno a cadastrar na Meta e no Google.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
-- **Resposta:** `{"contas":[{"id":2,"rede":"instagram","conta_id":"178…","nome":"RUAH","usuario":"@ruah","expira_em":null,"ativo":1,"ultimo_erro":null,"conectado_em":"2026-10-28 10:00"}],"disponivel":{"meta":true,"google":false,"demonstracao":false},"retorno":{"meta":"https://ruah.corretordofuturo.app/redes/retorno/meta","google":"https://ruah.corretordofuturo.app/redes/retorno/google"}}` — os tokens **nunca** aparecem.
+- **Resposta:** `{"contas":[{"id":2,"rede":"instagram","conta_id":"178…","nome":"Onde morar","usuario":"@imobiliaria","expira_em":null,"ativo":1,"ultimo_erro":null,"conectado_em":"2026-10-28 10:00"}],"disponivel":{"meta":true,"google":false,"demonstracao":false},"retorno":{"meta":"https://ondemorar.corretordofuturo.app/redes/retorno/meta","google":"https://ondemorar.corretordofuturo.app/redes/retorno/google"}}` — os tokens **nunca** aparecem.
 - **Erros:** 401.
 - **Efeitos:** só leitura.
 - **Exemplo:**
@@ -5200,7 +5200,7 @@ curl -s "$BASE/api/lgpd/resumo" -H "Authorization: Bearer $CHAVE"
 {"pedidos":[{"id":4,"protocolo":"LGPD-20261029-A1B2C3","tipo":"oposicao","nome":"Maria","email":null,"telefone":"5519999990000","mensagem":null,"origem":"portal","situacao":"aberto","resposta":null,"criado_em":"2026-10-29 14:00:00","prazo":"2026-11-13","atendido_em":null}],
  "tipos":{"oposicao":"Não quero mais ser contatado(a)","confirmar":"Saber se vocês têm dados meus","acessar":"Ver quais dados vocês têm sobre mim","corrigir":"Corrigir dados errados ou desatualizados","eliminar":"Apagar os meus dados","compartilhamento":"Saber com quem os meus dados foram compartilhados","portabilidade":"Receber os meus dados para levar a outro fornecedor","outro":"Outra dúvida sobre os meus dados"},
  "links":{"privacidade":"/privacidade","termos":"/termos"},
- "cliente":{"empresa":"RUAH Investimentos Imobiliários","cnpj":"","creci":"","email":""}}
+ "cliente":{"empresa":"Onde morar","cnpj":"","creci":"","email":""}}
 ```
 - **Erros:** 403 `Só o administrativo ou o gestor veem os pedidos de titulares.`; 401.
 - **Efeitos:** só leitura.
@@ -5255,7 +5255,7 @@ Montado com `app.use('/estacao-api', require('./src/estacao/servidor').est)`, **
 - **Query:** nenhuma.
 - **Resposta:**
 ```json
-{"id":"ruah-ab12cd","cliente":"RUAH","empresa":"RUAH Investimentos Imobiliários","sistema":"Herrera HOUSE IA","site":"https://ruah.corretordofuturo.app",
+{"id":"ondemorar-ab12cd","cliente":"Onde morar","empresa":"Onde morar","sistema":"Herrera HOUSE IA","site":"https://ondemorar.corretordofuturo.app",
  "agentes":[{"slug":"casas","n":5,"nome":"Clara","cargo":"Corretora de casas até R$ 2 mi","cor":"#2f7d4f","tipo":"cliente","ativo":true,"canal":"qr","wa_filtro":"nao_salvos","linha":"gerente","resumo":"…"}],
  "ia":{"provedor":"anthropic","modelo":"claude-sonnet-5-5","base_url":null,"chave":"sk-ant-…"},
  "linhas_wa":[{"slug":"gerente","nome":"Augusto","wa_filtro":"nao_salvos"}]}
@@ -5384,7 +5384,7 @@ O mesmo arquivo exporta `api`, montado com `app.use('/api', require('./src/estac
  "agentes":{"casas":{"ligado":true,"aba":{"url":"https://…","titulo":"…"},"tarefa":null,"vendo":0}},
  "ia":{"provedor":"anthropic","provedor_nome":"Anthropic Claude","modelo":"claude-sonnet-5-5","base_url":null,"tem_chave":true,"chave_final":"9f2a","usa_chave_do_escritorio":true,"precisa_chave":true,"testado_em":null,"teste_ok":null,"teste_msg":null},
  "provedores":{"gemini":{"nome":"Google Gemini","modelo":"gemini-flash-latest"},"anthropic":{"nome":"Anthropic Claude","modelo":"claude-sonnet-5-5"},"openai":{"nome":"Compatível com OpenAI (OpenRouter, Groq, OpenCode…)","modelo":"qwen/qwen2.5-vl-72b-instruct:free","base_url":"https://openrouter.ai/api/v1"},"ollama":{"nome":"IA local do PC (Ollama, grátis)","modelo":"qwen2.5vl:7b","base_url":"http://127.0.0.1:11434"}},
- "pode_editar":true,"id":"ruah-ab12cd",
+ "pode_editar":true,"id":"ondemorar-ab12cd",
  "tarefas":[{"id":12,"agente":"casas","pedido":"…","para_telefone":"5519999990000","para_nome":"Thiago","status":"feita","resultado":"…","erro":null,"n_passos":7,"passos":[],"criado_em":"2026-10-30 11:50:00","atualizado_em":"2026-10-30 11:56:00","concluido_em":"2026-10-30 11:56:00"}]}
 ```
 `online` é verdadeiro quando a última batida tem menos de 60 s; `url` só vem quando está online.
@@ -5404,7 +5404,7 @@ curl -s "$BASE/api/estacao" -H "Authorization: Bearer $CHAVE"
 | --- | --- | --- | --- |
 | `agente` | slug de agente | sim | de quem é o PC |
 
-- **Resposta:** `{"url":"https://xyz.trycloudflare.com","passe":"ruah-ab12cd.casas.1762010000.3.c.aBc…","controle":true}`
+- **Resposta:** `{"url":"https://xyz.trycloudflare.com","passe":"ondemorar-ab12cd.casas.1762010000.3.c.aBc…","controle":true}`
 - **Erros:** 404 `Agente não encontrado.`; 409 `A estação dos PCs virtuais ainda não foi ligada a esta imobiliária.`; 503 `A estação dos PCs virtuais está desligada agora. Ela volta sozinha quando o computador ligar.`; 401.
 - **Efeitos:** só leitura — o passe é um HMAC-SHA256 assinado com a chave da estação sobre `<id>.<agente>.<expira>.<id do usuário>.<c|v>`, **válido por 10 minutos**; nada é gravado.
 - **Exemplo:**
@@ -5416,7 +5416,7 @@ curl -s -X POST "$BASE/api/estacao/passe" -H "Authorization: Bearer $CHAVE" -H '
 - **Quem pode:** adm, gestor
 - **O que faz:** gera (ou troca) a chave própria da estação desta imobiliária. **A chave inteira só aparece nesta resposta**; depois só os 4 últimos dígitos.
 - **Entrada:** nenhuma.
-- **Resposta:** `{"id":"ruah-ab12cd","chave":"est_AbCd…","base":"https://ruah.corretordofuturo.app"}`
+- **Resposta:** `{"id":"ondemorar-ab12cd","chave":"est_AbCd…","base":"https://ondemorar.corretordofuturo.app"}`
 - **Erros:** 401; 403.
 - **Efeitos:** sobrescreve `config.estacao` com o id (mantido se já existia; senão criado a partir do nome do cliente + 3 bytes aleatórios) e a **chave nova cifrada** (AES-256-GCM). Trocar a chave invalida a antiga e também os passes assinados com ela. Auditoria `estacao.chave`.
 - **Exemplo:**
@@ -5607,7 +5607,7 @@ curl -s -X POST "$BASE/gestor-api/senha" -H "Cookie: gestor_sessao=$CHAVE" -H 'x
 - **Query:** nenhuma.
 - **Resposta:**
 ```json
-{"imobiliarias":[{"id":2,"slug":"ruah","nome":"RUAH","empresa":"RUAH Investimentos Imobiliários","materias_dia":null,"onboarding":{"dados":{"feito":true}},"contato_nome":"…","contato_email":"…","contato_telefone":"…","link":"https://ruah.corretordofuturo.app","dominio":"ruah.corretordofuturo.app","vercel_projeto":"imob-ruah","plano":"profissional","mensalidade":497,"comissao_pct":20,"comissao_venda_pct":6,"creditos_fisgar_mes":100,"situacao":"ativa","publicada":1,"notas":null,"fundo":{"src":"…","lugar":"Castelo d'Água","posicao":"center"},"numeros":{"imoveis":120,"leads_30d":34,"vgv_carteira":98000000,"valor_vendido_mes":1800000},"comissao_mes":21600,"comissao_total":120000}],
+{"imobiliarias":[{"id":2,"slug":"ondemorar","nome":"Onde morar","empresa":"Onde morar","materias_dia":null,"onboarding":{"dados":{"feito":true}},"contato_nome":"…","contato_email":"…","contato_telefone":"…","link":"https://ondemorar.corretordofuturo.app","dominio":"ondemorar.corretordofuturo.app","vercel_projeto":"imob-ondemorar","plano":"profissional","mensalidade":497,"comissao_pct":20,"comissao_venda_pct":6,"creditos_fisgar_mes":100,"situacao":"ativa","publicada":1,"notas":null,"fundo":{"src":"…","lugar":"Castelo d'Água","posicao":"center"},"numeros":{"imoveis":120,"leads_30d":34,"vgv_carteira":98000000,"valor_vendido_mes":1800000},"comissao_mes":21600,"comissao_total":120000}],
  "resumo":{"total":3,"ativas":2,"suspensas":0,"implantacao":1,"mensalidades":994,"comissao_mes":21600,"vgv":98000000,"imoveis":120,"leads_30d":34,"creditos_mes":0,"vercel_automatico":true}}
 ```
 Quando `numeros()` falha para uma imobiliária, ela vem com `numeros: null` e `erro: "<mensagem>"`.
@@ -5859,7 +5859,7 @@ curl -s -X POST "$BASE/gestor-api/imobiliarias/5/materias" -H "Cookie: gestor_se
 - **O que faz:** os pedidos de titulares feitos em `corretordofuturo.app/privacidade` (até 200, abertos primeiro), quantos números estão na lista comum "não contatar" e os tipos de pedido.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
-- **Resposta:** `{"pedidos":[{"id":3,"protocolo":"LGPD-20261029-9F8E7D","tipo":"eliminar","nome":"Maria","email":"maria@…","telefone":"5519999990000","mensagem":null,"imobiliaria":"RUAH","situacao":"aberto","resposta":null,"criado_em":"2026-10-29 14:00","prazo":"2026-11-13","atendido_em":null}],"nao_contatar":48,"tipos":{"oposicao":"Não quero mais ser contatado(a)","…":"…"}}`
+- **Resposta:** `{"pedidos":[{"id":3,"protocolo":"LGPD-20261029-9F8E7D","tipo":"eliminar","nome":"Maria","email":"maria@…","telefone":"5519999990000","mensagem":null,"imobiliaria":"Onde morar","situacao":"aberto","resposta":null,"criado_em":"2026-10-29 14:00","prazo":"2026-11-13","atendido_em":null}],"nao_contatar":48,"tipos":{"oposicao":"Não quero mais ser contatado(a)","…":"…"}}`
 - **Erros:** 401; 503 sem banco.
 - **Efeitos:** só leitura.
 - **Exemplo:**
@@ -5915,7 +5915,7 @@ curl -s -X POST "$BASE/banco-ciclo" -H "x-banco-ciclo: $CHAVE"
 - **O que faz:** diz quantas matérias há em estoque por tema, o consumo por dia, os dias de estoque, os temas já usados e os nomes das imobiliárias.
 - **Entrada:** nenhuma.
 - **Query:** nenhuma.
-- **Resposta:** `{"livres":[{"tema":"financiamento","n":4}],"total_livres":31,"consumo_dia":3,"dias_de_estoque":10,"temas":["financiamento"],"nomes":["RUAH","Casa Prado"]}`
+- **Resposta:** `{"livres":[{"tema":"financiamento","n":4}],"total_livres":31,"consumo_dia":3,"dias_de_estoque":10,"temas":["financiamento"],"nomes":["Onde morar","Casa Prado"]}`
 - **Erros:** 500 `{"erro":"Não foi possível agora."}`; 503 `Painel sem banco: falta PLATAFORMA_DATABASE_URL.`
 - **Efeitos:** só leitura.
 - **Exemplo:**
@@ -5939,12 +5939,12 @@ A rota `GET /entrar-pela-plataforma` é o outro lado: fica **no domínio da imob
 | `senha` | texto | sim | cortado em 200 |
 | `imobiliaria_id` | número | não | obrigatório na segunda chamada, quando o e-mail está em mais de uma imobiliária |
 
-- **Resposta:** `{"ir":"https://ruah.corretordofuturo.app/entrar-pela-plataforma?t=<token>"}`; com mais de uma imobiliária, `{"escolher":[{"id":2,"nome":"RUAH"},{"id":5,"nome":"Casa Prado"}]}`
+- **Resposta:** `{"ir":"https://ondemorar.corretordofuturo.app/entrar-pela-plataforma?t=<token>"}`; com mais de uma imobiliária, `{"escolher":[{"id":2,"nome":"Onde morar"},{"id":5,"nome":"Casa Prado"}]}`
 - **Erros:** 400 `{"erro":"Digite o e-mail e a senha."}`; 429 `{"erro":"Muitas tentativas. Espere 15 minutos."}` (mais de 20 tentativas por IP ou 6 por e-mail em 15 minutos); 401 `{"erro":"E-mail ou senha não conferem."}`; 423 `{"erro":"Esta imobiliária está temporariamente fora do ar."}`; 500/503 `{"erro":"A entrada está indisponível agora. Tente em instantes."}`
 - **Efeitos:** chama `plataforma.login_busca(email)` e confere a senha com scrypt em memória; no sucesso gera um token de 32 bytes e chama `plataforma.login_entrega(imobiliaria_id, usuario_id, <hash sha256 do token>)`, que **grava o passe no banco da imobiliária** (uma sessão especial `passe:<hash>`, válida 2 minutos e de uso único); limpa o freio por e-mail. A cada falha anota a tentativa em memória (por IP e por e-mail).
 - **Exemplo:**
 ```bash
-curl -s -X POST "$BASE/entrada-api" -H 'Content-Type: application/json' -d '{"email":"thiago@ruah.com.br","senha":"..."}'
+curl -s -X POST "$BASE/entrada-api" -H 'Content-Type: application/json' -d '{"email":"thiago@imobiliaria.com.br","senha":"..."}'
 ```
 
 ### `GET /entrar-pela-plataforma`
@@ -5957,7 +5957,7 @@ curl -s -X POST "$BASE/entrada-api" -H 'Content-Type: application/json' -d '{"em
 | --- | --- | --- | --- |
 | `t` | texto 40–60 (`[A-Za-z0-9_-]`) | sim | o passe devolvido por `POST /entrada-api` |
 
-- **Resposta:** redirecionamento 302 para `/#/painel` com o cookie `ruah_sessao` (`HttpOnly; SameSite=Lax; Path=/; Max-Age=12h`, com `Secure` na Vercel); passe ausente, mal formado, expirado, já usado ou de usuário inativo → 302 para `/entrar`. Sai com `Cache-Control: no-store` e `Referrer-Policy: no-referrer`.
+- **Resposta:** redirecionamento 302 para `/#/painel` com o cookie `hh_sessao` (`HttpOnly; SameSite=Lax; Path=/; Max-Age=12h`, com `Secure` na Vercel); passe ausente, mal formado, expirado, já usado ou de usuário inativo → 302 para `/entrar`. Sai com `Cache-Control: no-store` e `Referrer-Policy: no-referrer`.
 - **Erros:** nenhum status de erro — todo caminho ruim é um 302 para `/entrar`.
 - **Efeitos:** **apaga o passe** de `sessoes` (uso único, apagado mesmo quando não serve) e, se valia, cria uma sessão nova de 12 horas para aquele usuário; grava na auditoria `login` com o detalhe `pela plataforma (app.corretordofuturo.app)`.
 - **Exemplo:**

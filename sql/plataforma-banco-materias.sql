@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS plataforma.config (chave text PRIMARY KEY, valor text
 GRANT SELECT, INSERT, UPDATE ON plataforma.materias TO plataforma_app;
 GRANT SELECT ON plataforma.config TO plataforma_app;
 
--- Cada imobiliária guarda as matérias que recebeu (o blog dela lê daqui). A RUAH é o molde:
+-- Cada imobiliária guarda as matérias que recebeu (o blog dela lê daqui). O schema base é o molde:
 -- criar_imobiliaria copia a estrutura para as próximas.
 DO $$
 DECLARE s record;

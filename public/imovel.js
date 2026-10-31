@@ -4,7 +4,7 @@ const brl = (v) => (v ? 'R$ ' + Number(v).toLocaleString('pt-BR', { maximumFract
 const token = location.pathname.split('/').pop();
 const app = document.getElementById('app');
 // Link off-market é da imobiliária: a marca mostrada é a do cliente, não a do sistema.
-const CLIENTE = (window.MARCA || {}).cliente || 'RUAH';
+const CLIENTE = (window.MARCA || {}).cliente || 'Imobiliária';
 const topo = `<div class="row"><b style="font-family:var(--f-display);font-size:30px;letter-spacing:.08em;color:var(--gold-ink)">${esc(CLIENTE)}</b><span class="sp"></span><span class="pill info">Apresentação exclusiva</span></div>`;
 
 (async () => {

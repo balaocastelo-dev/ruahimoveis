@@ -10,7 +10,7 @@ const cfg = require('../config');
 const { one } = require('../db');
 const F = require('./base');
 
-const hashDoc = (doc) => (doc ? crypto.createHmac('sha256', cfg.SECRET_KEY || 'ruah').update(String(doc).replace(/\D/g, '')).digest('hex').slice(0, 24) : null);
+const hashDoc = (doc) => (doc ? crypto.createHmac('sha256', cfg.SECRET_KEY || 'house').update(String(doc).replace(/\D/g, '')).digest('hex').slice(0, 24) : null);
 const numOu = (v) => { const n = Number(v); return Number.isFinite(n) && n > 0 ? n : null; };
 const intOu = (v) => { const n = parseInt(v, 10); return Number.isFinite(n) && n >= 0 ? n : null; };
 const cepTxt = (z) => { const d = String(z ?? '').replace(/\D/g, ''); return d ? d.padStart(8, '0').slice(-8) : null; };

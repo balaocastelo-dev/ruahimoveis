@@ -39,7 +39,7 @@ const { minutosDeLeitura, semAcento } = require('../src/blog/texto.js');
 const { RAMO_DO_BANCO: RAMO, ENDERECO_DO_BANCO } = require('../src/blog/categorias.js');
 
 const SITUACAO_URL = process.env.BANCO_SITUACAO_URL || 'https://corretordofuturo.app/banco-materias/situacao.json';
-const NOMES_CONHECIDOS = ['RUAH', 'Onde morar', 'ONDEMORAR', 'Cadê meu AP', 'Casa Prado', 'Lumen', 'Herrera HOUSE'];
+const NOMES_CONHECIDOS = ['Onde morar', 'ONDEMORAR', 'Cadê meu AP', 'Casa Prado', 'Lumen', 'Herrera HOUSE'];
 const META_DIAS = 14;          // estoque que a rotina procura manter
 const POR_RODADA = 3;          // o máximo que uma rodada escreve
 

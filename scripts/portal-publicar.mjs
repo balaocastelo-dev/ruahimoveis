@@ -33,7 +33,7 @@ const { avaliarPagina } = require('../src/portal/regua.js');
 const { RAMO_DE_CONTEUDO: RAMO, DONO_REPO, CODIGO } = require('../src/portal/config.js');
 const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
 
-const PORTAL = (process.env.PORTAL_URL || 'https://ruahimoveis.vercel.app').replace(/\/+$/, '');
+const PORTAL = (process.env.PORTAL_URL || process.env.PUBLIC_URL || cfg.BASE_URL).replace(/\/+$/, '');
 const PASTA_FILA = path.join(os.tmpdir(), 'portal');
 
 // ---------------------------------------------------------------- utilidades
@@ -41,7 +41,7 @@ function sair(mensagem, codigo = 1) { console.error(`\n✗ ${mensagem}`); proces
 function git(args, opcoes = {}) {
   return execFileSync('git', args, { cwd: opcoes.cwd ?? RAIZ, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 }
-/** O remoto que aponta para balaocastelo-dev/ruahimoveis (no PC ele se chama "ruahimoveis"; na nuvem, "origin"). */
+/** O remoto que aponta para o repositório da plataforma (PLATAFORMA_REPO; na nuvem, "origin"). */
 function remoto() {
   if (process.env.PORTAL_REMOTO) return process.env.PORTAL_REMOTO;
   const linhas = git(['remote', '-v']).split('\n');
@@ -98,7 +98,7 @@ function abrirRamo() {
     if (/couldn't find remote ref|not found/i.test(String(erro.stderr))) existe = false;
     else sair(`Não consegui buscar o ramo ${RAMO}: ${String(erro.stderr || erro.message).trim()}`);
   }
-  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'portal-ruah-'));
+  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'portal-'));
   if (existe) git(['worktree', 'add', '--quiet', '--detach', pasta, `${REMOTO}/${RAMO}`]);
   else { git(['worktree', 'add', '--quiet', '--detach', pasta]); git(['checkout', '--quiet', '--orphan', `portal-tmp-${Date.now()}`], { cwd: pasta }); git(['rm', '-rfq', '.'], { cwd: pasta }); }
   return pasta;
@@ -118,7 +118,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Portal ${cfg.CLIENTE_NOME}`, '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Portal ${cfg.CLIENTE_NOME}`, '-c', 'user.email=conteudo@corretordofuturo.app'); }
   const rodape = process.env.PORTAL_RODAPE_DO_COMMIT || process.env.BLOG_RODAPE_DO_COMMIT;
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape ? `\n\n${rodape}` : ''}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {

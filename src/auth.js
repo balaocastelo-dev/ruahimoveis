@@ -4,7 +4,7 @@ const { one, run, audit } = require('./db');
 const { SECRET_KEY } = require('./config');
 
 const SESSAO_HORAS = 12;
-const COOKIE = 'ruah_sessao';
+const COOKIE = 'hh_sessao';
 
 // ---- senhas (scrypt, embutido no Node) ----
 function hashSenha(senha) {

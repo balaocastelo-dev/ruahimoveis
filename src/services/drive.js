@@ -101,7 +101,7 @@ async function garantePastaImovel(imovelId) {
 }
 
 async function upload(pastaId, nome, mime, buffer) {
-  const limite = 'ruah' + Date.now().toString(36);
+  const limite = 'hh' + Date.now().toString(36);
   const meta = JSON.stringify({ name: nome, parents: [pastaId] });
   const corpo = Buffer.concat([
     Buffer.from(`--${limite}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n${meta}\r\n--${limite}\r\nContent-Type: ${mime || 'application/octet-stream'}\r\n\r\n`),

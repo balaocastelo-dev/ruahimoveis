@@ -44,7 +44,7 @@ AS $$
    WHERE c.chave IN ('ia_central', 'ia_central_modelo', 'estacao_chave',
                      'ia_central_anthropic', 'ia_central_anthropic_modelo', 'ia_central_preferido')
 $$;
-GRANT EXECUTE ON FUNCTION plataforma.cofre_central() TO ruah_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
+GRANT EXECUTE ON FUNCTION plataforma.cofre_central() TO base_app, ondemorar_app, cademeuap_app, casaprado_app, lumen_app, plataforma_app;
 
 COMMIT;
 

@@ -4,8 +4,8 @@
 //   node test/social.js
 const os = require('os'), path = require('path'), fs = require('fs');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-social-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-social-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 process.env.PLANO = 'profissional';
@@ -72,14 +72,14 @@ global.fetch = async (url, op = {}) => {
   let cookie = '';
   const req = async (m, url, body, extra = {}) => {
     const r = await fetchReal(base + url, { method: m, redirect: 'manual', headers: { 'Content-Type': 'application/json', cookie, ...extra }, body: body ? JSON.stringify(body) : undefined });
-    const sc = r.headers.get('set-cookie'); if (sc && /ruah_s|sess/i.test(sc)) cookie = sc.split(';')[0];
+    const sc = r.headers.get('set-cookie'); if (sc && /hh_sessao/.test(sc)) cookie = sc.split(';')[0];
     const tipo = r.headers.get('content-type') || '';
     const corpo = /image\//.test(tipo) ? Buffer.from(await r.arrayBuffer()) : await r.text();
     let j = corpo; if (typeof corpo === 'string') { try { j = JSON.parse(corpo); } catch { j = corpo; } }
     return { s: r.status, j, h: r.headers };
   };
   try {
-    const st = await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@ruah.com', senha: 'Teste1234' });
+    const st = await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@exemplo.test', senha: 'Teste1234' });
     assert.ok(st.s < 400, JSON.stringify(st.j));
 
     // ---------- planejador
@@ -157,9 +157,9 @@ global.fetch = async (url, op = {}) => {
 
     // ---------- com contas (Meta e Google simulados)
     const R = require('../src/social/redes');
-    R.salvarConta({ rede: 'instagram', conta_id: '1784', nome: 'RUAH', usuario: '@ruah', token: 'tk-pagina', ativo: 1 }, 1);
-    R.salvarConta({ rede: 'facebook', conta_id: '555', nome: 'RUAH Imóveis', token: 'tk-pagina', ativo: 1 }, 1);
-    R.salvarConta({ rede: 'google', conta_id: 'accounts/1/locations/2', nome: 'RUAH', refresh: 'rf', ativo: 1 }, 1);
+    R.salvarConta({ rede: 'instagram', conta_id: '1784', nome: 'Imobiliária', usuario: '@imobiliaria', token: 'tk-pagina', ativo: 1 }, 1);
+    R.salvarConta({ rede: 'facebook', conta_id: '555', nome: 'Imobiliária', token: 'tk-pagina', ativo: 1 }, 1);
+    R.salvarConta({ rede: 'google', conta_id: 'accounts/1/locations/2', nome: 'Imobiliária', refresh: 'rf', ativo: 1 }, 1);
     assert.ok(!JSON.stringify(all('SELECT token, refresh FROM social_contas')).includes('tk-pagina'), 'token cifrado no banco');
     run(`UPDATE social_posts SET status='agendado' WHERE id=?`, ims[4].id);
     r = await P.publicar(one('SELECT * FROM social_posts WHERE id=?', ims[4].id));

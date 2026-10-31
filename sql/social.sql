@@ -1,5 +1,5 @@
 -- Redes e publicações (28/10/2026): posts agendados no Instagram, Facebook e Google Meu Negócio.
--- Aplicar no Supabase uma vez. Cria as tabelas na RUAH (o molde: plataforma.criar_imobiliaria copia
+-- Aplicar no Supabase uma vez. Cria as tabelas no schema base (o molde: plataforma.criar_imobiliaria copia
 -- para as próximas) e em todas as imobiliárias que já existem, com o usuário de banco de cada uma.
 -- Também: plataforma.meu_plano() (o plano de quem pergunta, para a cadência), o ciclo das publicações
 -- (pg_cron a cada 10 minutos chama <link>/social-ciclo de cada imobiliária ativa com o token dela)
@@ -8,7 +8,7 @@
 DO $$
 DECLARE s record; sch text;
 BEGIN
-  FOR s IN SELECT 'ruah' AS slug UNION SELECT i.slug FROM plataforma.imobiliarias i JOIN pg_namespace n ON n.nspname = i.slug LOOP
+  FOR s IN SELECT 'base' AS slug UNION SELECT i.slug FROM plataforma.imobiliarias i JOIN pg_namespace n ON n.nspname = i.slug LOOP
     sch := s.slug;
     CONTINUE WHEN NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = sch);
     EXECUTE format($q$CREATE TABLE IF NOT EXISTS %1$I.social_posts (

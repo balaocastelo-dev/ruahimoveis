@@ -1,7 +1,7 @@
 // Teste do vigia do radar: avisa quando os portais ficam em silêncio ou a leitura para. node test/vigia.js
 const path = require('path'); const os = require('os'); const fs = require('fs');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-vg-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-vg-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.RADAR_EMAIL = 'teste@gmail.com'; process.env.RADAR_EMAIL_SENHA = 'x'; process.env.IA_MODO = 'desligado';
 const assert = require('assert');
 const al = require('../src/services/alertas');

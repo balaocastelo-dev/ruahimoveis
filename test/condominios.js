@@ -1,8 +1,8 @@
 // Teste dos Condomínios: reconhecer pelo endereço/mapa, ligar Radar/Fisguei/carteira, números da ficha, edição e cena 3D.
 // Sem internet: o mapa aberto (Overpass) é simulado com um recorte gravado (test/condominio-osm.json, se existir).
 const os = require('os'), path = require('path'), fs = require('fs'), zlib = require('zlib');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-cd-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-cd-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 process.env.MERCADO_CACHE_S = '0';
@@ -30,7 +30,7 @@ const B = require('../src/condominios/base');
     return { s: r.status, j };
   };
   const ok = (r, msg) => { if (r.s >= 400) { console.error('FALHOU', msg, r.s, r.j); process.exit(1); } console.log('ok ·', msg); return r.j; };
-  ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@ruah.com', senha: 'Teste1234' }), 'setup');
+  ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@exemplo.test', senha: 'Teste1234' }), 'setup');
 
   // utilidades
   assert.deepEqual(G.andarDaUnidade('142 Torre B'), { andar: 14, final: 2, torre: 'B' });
@@ -80,7 +80,7 @@ const B = require('../src/condominios/base');
   const busca = ok(await req('GET', '/api/condominios?q=central'), 'busca por nome'); assert.equal(busca.itens[0].id, ed);
   const mapa = ok(await req('GET', '/api/condominios/mapa'), 'pontos do mapa'); assert.equal(mapa.length, 2);
   const f = ok(await req('GET', `/api/condominios/${ed}`), 'ficha');
-  assert.equal(f.resumo.a_venda, 3, 'imóvel RUAH + 2 anúncios (Radar e Fisguei do mesmo apto viram um)');
+  assert.equal(f.resumo.a_venda, 3, 'imóvel da carteira + 2 anúncios (Radar e Fisguei do mesmo apto viram um)');
   assert.ok(f.aVenda.some((a) => a.tambem && a.tambem.length), 'junta duplicado Radar/Fisguei');
   assert.ok(f.resumo.m2_mediano > 7000 && f.resumo.m2_mediano < 8200, 'm² mediano ' + f.resumo.m2_mediano);
   assert.deepEqual(f.resumo.imobiliarias.map((i) => i.nome).sort(), ['Imobiliária Concorrente', 'Imobiliária sem nome']);

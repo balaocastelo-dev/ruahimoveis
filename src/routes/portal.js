@@ -17,7 +17,7 @@ const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
 const og = require('../og');
 const cfg = require('../config');
-// Origens dos leads do portal: "Portal " + nome do cliente (com a config padrão, "Portal RUAH" como sempre).
+// Origens dos leads do portal: "Portal " + nome do cliente.
 const ORIGEM_PORTAL = `Portal ${cfg.CLIENTE_NOME}`;
 const ORIGEM_SIGNATURE = `${cfg.CLIENTE_NOME} Signature`;
 
@@ -51,7 +51,7 @@ async function guiaDoBairro(nome) {
 }
 
 router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro))));
-// A revista mostra as capas do blog Sopro, que moram no GitHub.
+// A revista mostra as capas do blog, que moram no GitHub.
 const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
 router.get('/imoveis/revista', async (req, res) => {
   const artigos = await require('../blog/diario').listar().catch(() => []);

@@ -1,5 +1,5 @@
 -- Base comum de anúncios (28/10/2026): toda imobiliária da plataforma vê TODOS os anúncios da base (Fisgar/portais).
--- A base mora em ruah.fisguei_anuncios (e o histórico de preços em ruah.fisguei_precos). Em cada outra imobiliária,
+-- A base mora em base.fisguei_anuncios (e o histórico de preços em base.fisguei_precos). Em cada outra imobiliária,
 -- fisguei_anuncios vira uma VIEW dessa base + a tabela fisguei_estado, que guarda o que é só dela:
 -- situação do robô (status), pausado, oportunidade e imóvel da carteira ligados, observações.
 -- Proprietários, telefones, conversas e buscas no Fisgar (fisguei_pessoas, _contatos, _mensagens, _pedidos) continuam só dela.
@@ -9,7 +9,7 @@ LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public AS $f$
 DECLARE c record; papel text := p_slug || '_app';
   base_cols text := 'id,fisgar_id,portal,link,titulo,tipo,negocio,finalidade,logradouro,numero,complemento,bairro,cidade,uf,cep,lat,lon,valor,valor_condominio,iptu,quartos,suites,banheiros,vagas,area_util,area_total,anunciante_nome,anunciante_tipo,publicado_em,fotos';
 BEGIN
-  IF p_slug = 'ruah' OR NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = p_slug) THEN RAISE EXCEPTION 'imobiliária inválida'; END IF;
+  IF p_slug IN ('base', 'ruah') OR NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = p_slug) THEN RAISE EXCEPTION 'imobiliária inválida'; END IF;
   IF EXISTS (SELECT 1 FROM pg_class WHERE relnamespace = p_slug::regnamespace AND relname = 'fisguei_anuncios' AND relkind = 'v') THEN RETURN; END IF; -- já é comum
   -- chaves que apontam para a tabela própria de anúncios saem (os ids passam a ser os da base comum)
   FOR c IN SELECT conname, conrelid::regclass::text t FROM pg_constraint
@@ -19,10 +19,10 @@ BEGIN
   EXECUTE format('DELETE FROM %I.fisguei_pessoas', p_slug);   -- anúncios próprios antigos (cópias) deixam de existir
   EXECUTE format('DELETE FROM %I.fisguei_pedidos', p_slug);
   EXECUTE format('DROP TABLE %I.fisguei_precos', p_slug);
-  EXECUTE format('CREATE VIEW %I.fisguei_precos AS SELECT * FROM ruah.fisguei_precos', p_slug);
+  EXECUTE format('CREATE VIEW %I.fisguei_precos AS SELECT * FROM base.fisguei_precos', p_slug);
   EXECUTE format('DROP TABLE %I.fisguei_anuncios', p_slug);
   EXECUTE format($q$CREATE TABLE %1$I.fisguei_estado (
-      anuncio_id integer PRIMARY KEY REFERENCES ruah.fisguei_anuncios(id) ON DELETE CASCADE,
+      anuncio_id integer PRIMARY KEY REFERENCES base.fisguei_anuncios(id) ON DELETE CASCADE,
       status text NOT NULL DEFAULT 'novo', pausado integer NOT NULL DEFAULT 0,
       oportunidade_id integer REFERENCES %1$I.oportunidades(id) ON DELETE SET NULL,
       imovel_id integer REFERENCES %1$I.imoveis(id) ON DELETE SET NULL,
@@ -37,24 +37,24 @@ BEGIN
       coalesce(e.status, CASE WHEN b.status = 'descartado' THEN 'descartado' ELSE 'novo' END) AS status,
       coalesce(e.pausado, 0) AS pausado, e.oportunidade_id, e.observacoes, b.criado_em, greatest(b.atualizado_em, e.atualizado_em) AS atualizado_em,
       e.imovel_id, b.condominio_id, b.cond_checado, b.anunciado_desde, b.aluguel
-    FROM ruah.fisguei_anuncios b LEFT JOIN %1$I.fisguei_estado e ON e.anuncio_id = b.id$q$, p_slug);
+    FROM base.fisguei_anuncios b LEFT JOIN %1$I.fisguei_estado e ON e.anuncio_id = b.id$q$, p_slug);
   -- gravar na view
   EXECUTE format($q$CREATE FUNCTION %1$I.fisguei_anuncios_grava() RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public AS $g$
     DECLARE v integer;
     BEGIN
       IF TG_OP = 'DELETE' THEN DELETE FROM %1$I.fisguei_estado WHERE anuncio_id = OLD.id; RETURN OLD; END IF;
       IF TG_OP = 'INSERT' THEN
-        INSERT INTO ruah.fisguei_anuncios(fisgar_id,portal,link,titulo,tipo,negocio,finalidade,logradouro,numero,complemento,bairro,cidade,uf,cep,lat,lon,valor,valor_condominio,iptu,quartos,suites,banheiros,vagas,area_util,area_total,anunciante_nome,anunciante_tipo,publicado_em,fotos,aluguel,anunciado_desde)
+        INSERT INTO base.fisguei_anuncios(fisgar_id,portal,link,titulo,tipo,negocio,finalidade,logradouro,numero,complemento,bairro,cidade,uf,cep,lat,lon,valor,valor_condominio,iptu,quartos,suites,banheiros,vagas,area_util,area_total,anunciante_nome,anunciante_tipo,publicado_em,fotos,aluguel,anunciado_desde)
         VALUES (NEW.fisgar_id,NEW.portal,NEW.link,NEW.titulo,NEW.tipo,NEW.negocio,NEW.finalidade,NEW.logradouro,NEW.numero,NEW.complemento,NEW.bairro,NEW.cidade,NEW.uf,NEW.cep,NEW.lat,NEW.lon,NEW.valor,NEW.valor_condominio,NEW.iptu,NEW.quartos,NEW.suites,NEW.banheiros,NEW.vagas,NEW.area_util,NEW.area_total,NEW.anunciante_nome,coalesce(NEW.anunciante_tipo,'desconhecido'),NEW.publicado_em,NEW.fotos,NEW.aluguel,NEW.anunciado_desde)
-        ON CONFLICT (fisgar_id) DO UPDATE SET atualizado_em = ruah.agora() RETURNING id INTO v;
+        ON CONFLICT (fisgar_id) DO UPDATE SET atualizado_em = base.agora() RETURNING id INTO v;
         NEW.id := v;
       ELSE
         v := OLD.id;
-        UPDATE ruah.fisguei_anuncios SET portal = NEW.portal, link = NEW.link, titulo = NEW.titulo, tipo = NEW.tipo, negocio = NEW.negocio, finalidade = NEW.finalidade,
+        UPDATE base.fisguei_anuncios SET portal = NEW.portal, link = NEW.link, titulo = NEW.titulo, tipo = NEW.tipo, negocio = NEW.negocio, finalidade = NEW.finalidade,
           logradouro = NEW.logradouro, numero = NEW.numero, complemento = NEW.complemento, bairro = NEW.bairro, cidade = NEW.cidade, uf = NEW.uf, cep = NEW.cep, lat = NEW.lat, lon = NEW.lon,
           valor = NEW.valor, valor_condominio = NEW.valor_condominio, iptu = NEW.iptu, quartos = NEW.quartos, suites = NEW.suites, banheiros = NEW.banheiros, vagas = NEW.vagas,
           area_util = NEW.area_util, area_total = NEW.area_total, anunciante_nome = NEW.anunciante_nome, anunciante_tipo = NEW.anunciante_tipo, publicado_em = NEW.publicado_em,
-          fotos = NEW.fotos, aluguel = NEW.aluguel, anunciado_desde = NEW.anunciado_desde, condominio_id = NEW.condominio_id, atualizado_em = ruah.agora()
+          fotos = NEW.fotos, aluguel = NEW.aluguel, anunciado_desde = NEW.anunciado_desde, condominio_id = NEW.condominio_id, atualizado_em = base.agora()
         WHERE id = v AND (portal, link, titulo, tipo, negocio, finalidade, logradouro, numero, complemento, bairro, cidade, uf, cep, lat, lon, valor, valor_condominio, iptu, quartos, suites, banheiros, vagas,
           area_util, area_total, anunciante_nome, anunciante_tipo, publicado_em, fotos, aluguel, anunciado_desde, condominio_id)
           IS DISTINCT FROM (NEW.portal, NEW.link, NEW.titulo, NEW.tipo, NEW.negocio, NEW.finalidade, NEW.logradouro, NEW.numero, NEW.complemento, NEW.bairro, NEW.cidade, NEW.uf, NEW.cep, NEW.lat, NEW.lon,

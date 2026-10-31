@@ -1,7 +1,7 @@
 // Teste de fumaça da API: sobe o servidor com banco temporário e percorre os fluxos principais.
 const os = require('os'), path = require('path'), fs = require('fs');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 const app = require('../server');
@@ -21,7 +21,7 @@ const assert = require('assert');
   assert.equal((await req('GET', '/api/me')).s, 401); console.log('ok · sem login bloqueia');
   assert.equal((await req('GET', '/api/setup')).j.precisa, true);
   assert.equal((await req('POST', '/api/setup', { nome: 'Thiago', email: 'a@b.com', senha: 'fraca' })).s, 400); console.log('ok · senha fraca recusada');
-  const st = ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@ruah.com', senha: 'Teste1234', exemplo: true }), 'setup com exemplo');
+  const st = ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@exemplo.test', senha: 'Teste1234', exemplo: true }), 'setup com exemplo');
   assert.equal(st.exemplo.corretores.length, 2);
   assert.equal((await req('POST', '/api/setup', { nome: 'X', email: 'x@x.com', senha: 'Teste1234' })).s, 409); console.log('ok · setup não repete');
   ok(await req('GET', '/api/me'), 'sessão adm');
@@ -87,8 +87,8 @@ const assert = require('assert');
   // CSRF
   assert.equal((await fetch(base + '/api/leads', { method: 'POST', headers: { cookie, Origin: 'https://site-malicioso.com', 'Content-Type': 'application/json' }, body: '{"nome":"x"}' })).status, 403); console.log('ok · outra origem bloqueada');
   // login errado bloqueia após 5
-  for (let i = 0; i < 5; i++) await req('POST', '/api/login', { email: 'adm@ruah.com', senha: 'errada' }, 'x=1');
-  assert.equal((await req('POST', '/api/login', { email: 'adm@ruah.com', senha: 'Teste1234' }, 'x=1')).s, 429); console.log('ok · bloqueio após 5 senhas erradas');
+  for (let i = 0; i < 5; i++) await req('POST', '/api/login', { email: 'adm@exemplo.test', senha: 'errada' }, 'x=1');
+  assert.equal((await req('POST', '/api/login', { email: 'adm@exemplo.test', senha: 'Teste1234' }, 'x=1')).s, 429); console.log('ok · bloqueio após 5 senhas erradas');
 
   console.log('\nTODOS OS TESTES PASSARAM');
   srv.close(); process.exit(0);

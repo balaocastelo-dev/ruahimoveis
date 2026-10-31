@@ -8,7 +8,7 @@
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PAGINA = document.body.dataset.pagina || 'dashboard';
-  const NOMES = ['RUAH', 'Onde morar?', 'Cadê meu AP?', 'Casa Prado', 'Lumen'];
+  const NOMES = ['Horizonte', 'Onde morar?', 'Cadê meu AP?', 'Casa Prado', 'Lumen'];
   const BAIRROS = ['Cambuí', 'Nova Campinas', 'Taquaral', 'Barão Geraldo', 'Sousas', 'Guanabara', 'Alphaville', 'Swiss Park', 'Gramado', 'Bosque', 'Castelo', 'Jardim das Paineiras', 'Mansões Santo Antônio', 'Parque Prado', 'Chácara Primavera'];
   const PADRAO = { anos_historia: 5, anos_projecao: 10, novas_por_ano: 1, rampa: '4, 8, 12, 24, 48', crescimento_depois: 0,
     ticket: 1000000, comissao: 6, parte: 20, mensalidade: 797, multiplo: 6 };

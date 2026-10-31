@@ -35,10 +35,10 @@
   "perguntas": [
     { "pergunta": "A casa tem escadas?", "resposta": "Não. É térrea: as suítes, a sala e a cozinha ficam no mesmo nível." },
     { "pergunta": "Quantas vagas de garagem?", "resposta": "Duas vagas cobertas, conforme a ficha do imóvel." },
-    { "pergunta": "Como agendar uma visita?", "resposta": "Pelo formulário desta página ou pelo WhatsApp. Um corretor da RUAH confirma o dia e o horário." }
+    { "pergunta": "Como agendar uma visita?", "resposta": "Pelo formulário desta página ou pelo WhatsApp. Um corretor da imobiliária confirma o dia e o horário." }
   ],
   "redes": {
     "legenda": "Casa térrea com 3 suítes, piscina e área gourmet no Jardim Exemplo, em Campinas. Tudo no mesmo nível, com a sala aberta para o jardim. Fotos e ficha completa no link da bio.",
-    "hashtags": ["casaemcondominio", "campinas", "casaterrea", "imoveiscampinas", "piscina", "ruahimobiliaria"]
+    "hashtags": ["casaemcondominio", "campinas", "casaterrea", "imoveiscampinas", "piscina", "imobiliaria"]
   }
 }

@@ -53,7 +53,7 @@ const caixa = (titulo, corpo, link) => `<div class="card dk-box"><div class="row
 
 let PAINEL_DIAS = 30;
 async function telaPainelAdm() {
-  PAINEL_DIAS = +lerPref('ruah.painel.dias', '30') || 30;
+  PAINEL_DIAS = +lerPref('hh.painel.dias', '30') || 30;
   const [d, base, al] = await Promise.all([
     api('GET', '/api/painel/adm?dias=' + PAINEL_DIAS),
     api('GET', '/api/painel').catch(() => null),
@@ -155,5 +155,5 @@ async function telaPainelAdm() {
   ${base && base.novos.length ? `<h2 class="dk-sec">Novos na carteira</h2><p class="muted small" style="margin:-6px 0 12px">Cadastrados nos últimos 7 dias e os compradores que combinam.</p>
     ${imCards(base.novos, { extra: (n) => `<div class="imcompr">${n.compradores.length ? n.compradores.map((x) => `<div class="small"><span class="pill ok">${x.score}%</span> ${esc(x.nome)}</div>`).join('') : '<span class="muted small">Sem compradores ainda</span>'}</div>`, href: (n) => n.compradores.length ? `#/imoveis/${n.id}/compradores` : `#/imoveis/${n.id}` })}` : ''}`;
 }
-ACT['painel-dias'] = (el) => { gravaPref('ruah.painel.dias', el.dataset.dias); rota(); };
+ACT['painel-dias'] = (el) => { gravaPref('hh.painel.dias', el.dataset.dias); rota(); };
 ACT['painel-atualiza'] = () => rota();
