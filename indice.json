@@ -414,7 +414,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-31T11:19:09.005Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "cores-e-humor-da-casa-o-que-a-ciencia-diz-e-o-que-e-mito",
+      "titulo": "Cores e humor da casa: o que a ciência diz e o que é mito",
+      "tema": "cores e humor ciencia e mitos",
+      "tipo": "principal",
+      "categoria": "bem-estar",
+      "criadaEm": "2026-10-31T11:20:17.264Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T11:19:09.006Z"
+  "atualizadoEm": "2026-10-31T11:20:17.264Z"
 }
