@@ -1,0 +1,245 @@
+{
+  "slug": "isolamento-acustico-na-construcao-paredes-lajes-e-janelas",
+  "tema": "isolamento acustico na construcao paredes lajes janelas",
+  "titulo": "Isolamento acústico na construção: paredes, lajes e janelas",
+  "resumo": "Isolamento acústico se decide no projeto: paredes, laje com contrapiso e janelas bem vedadas. Veja o que a NBR 15575 cobra e o que perguntar antes de construir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "acústica",
+    "casa nova",
+    "norma de desempenho",
+    "conforto"
+  ],
+  "capa": {
+    "alt": "Obra limpa de um cômodo em construção com contrapiso sobre manta acústica, parede de blocos e uma janela de correr de vidro laminado já instalada"
+  },
+  "redes": {
+    "legenda": "Sabia que a janela costuma ser o ponto mais fraco contra o barulho da rua? E que trocar o vidro por um mais grosso pouco adianta se a vedação for ruim? Isolamento acústico se resolve no projeto: parede certa, laje com contrapiso que amortece o impacto e esquadria bem vedada. No blog, explicamos o que a norma de desempenho cobra e o que perguntar antes de construir ou comprar. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "acustica",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "conforto",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Isolamento acústico na construção** é o que separa uma casa sossegada de uma casa em que se ouve o vizinho, o trânsito e os passos do andar de cima. Quem vai construir ou comprar um imóvel novo costuma pensar em acabamento e planta, mas o silêncio depende de decisões tomadas bem antes: a parede, a laje e a janela."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta é que o som entra pelo ponto mais fraco. Parede com massa suficiente, laje com contrapiso que amortece o impacto e janela com boa vedação trabalham juntas. A norma de desempenho, a ABNT NBR 15575, define níveis mínimos para cada uma, e vale pedir mais do que o mínimo nos quartos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O som passa pelo elo mais fraco: de nada adianta parede grossa com janela mal vedada.",
+        "A NBR 15575 tem três níveis de desempenho acústico: mínimo, intermediário e superior.",
+        "Para ruído de passos, o contrapiso acústico faz mais diferença do que engrossar a laje.",
+        "Na janela, a vedação pesa mais do que a espessura do vidro."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a norma de desempenho exige de acústica"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A NBR 15575 é a norma brasileira que diz como uma moradia deve se comportar em uso: segurança, conforto térmico, durabilidade e também acústica. Ela trata de três caminhos do som: o ruído aéreo que vem de fora pela fachada, o ruído aéreo entre ambientes vizinhos e o ruído de impacto, como passos e objetos que caem no piso de cima."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para cada caminho há três níveis. O **mínimo** é o que a norma cobra; o **intermediário** e o **superior** são opcionais e entregam mais conforto. Segundo o manual da ProAcústica, associação brasileira do setor, a exigência da fachada muda conforme o barulho da rua, e acima de 70 dB de ruído externo é preciso um estudo específico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os índices aparecem em decibéis, e a leitura é diferente para cada tipo de som. No isolamento de ruído aéreo, como o DnT,w, número maior é melhor. No ruído de impacto, medido pelo L'nT,w, número menor é melhor, porque ele indica quanto som chega ao cômodo de baixo. Vale pedir ao vendedor o nível de desempenho atendido, por escrito."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Alguns critérios acústicos da NBR 15575 (manual da ProAcústica)",
+      "colunas": [
+        "Situação",
+        "Mínimo",
+        "Intermediário",
+        "Superior"
+      ],
+      "linhas": [
+        [
+          "Parede entre unidades com ao menos um dormitório (DnT,w)",
+          "45 dB ou mais",
+          "50 dB ou mais",
+          "55 dB ou mais"
+        ],
+        [
+          "Parede entre unidades sem dormitório (DnT,w)",
+          "40 dB ou mais",
+          "45 dB ou mais",
+          "50 dB ou mais"
+        ],
+        [
+          "Ruído de impacto entre unidades (L'nT,w)",
+          "até 80 dB",
+          "até 65 dB",
+          "até 55 dB"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Manual ProAcústica sobre a NBR 15575, edição de 2013",
+        "url": "https://labeee.ufsc.br/sites/default/files/disciplinas/proacustica_manualnorma_nov_2013.pdf"
+      },
+      "nota": "A norma recebeu revisões depois dessa edição. Confirme os valores vigentes com o projetista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o mínimo nem sempre basta. O próprio manual da ProAcústica considera o limite de impacto de 80 dB insuficiente e recomenda os níveis intermediário ou superior. Em casa térrea isolada o ruído de impacto entre vizinhos quase não existe, mas a fachada e as paredes internas dos quartos continuam importando. Veja outros temas de obra em [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Laje e contrapiso: como escolher contra o barulho de passos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em sobrado, apartamento ou casa com quartos no andar de cima, o barulho de passos é o que mais incomoda. Um levantamento do IPT, o Instituto de Pesquisas Tecnológicas de São Paulo, publicado em 2025, mostrou que lajes de 9 a 12 cm sem tratamento acústico têm o pior resultado: cerca de 20% delas não atingem nem o limite mínimo de 80 dB."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo estudo apontou que os sistemas com **contrapiso acústico** ficaram muito melhores: cerca de 85% deles chegaram a 70 dB ou menos. Contrapiso acústico, ou flutuante, é a camada de argamassa assentada sobre uma manta resiliente, que não encosta direto na laje nem nas paredes. Ele corta a vibração antes que ela chegue à estrutura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O revestimento também conta. Segundo o IPT, pisos não cerâmicos, como vinílico, laminado ou carpete, ajudam a reduzir o impacto mesmo sem contrapiso acústico. Já o revestimento cerâmico piorou o desempenho: 31% dos casos com cerâmica não atenderam ao mínimo. Os autores propõem baixar o limite da norma de 80 para 70 dB."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Contrapiso acústico na obra",
+      "pros": [
+        "Reduz bastante o barulho de passos e de objetos que caem no andar de cima.",
+        "Permite usar porcelanato e pedra com menos impacto no cômodo de baixo.",
+        "É feito uma vez, na obra, e dura tanto quanto o piso.",
+        "Ajuda o imóvel a atingir os níveis intermediário ou superior da norma."
+      ],
+      "contras": [
+        "Aumenta a espessura do piso e precisa estar previsto no projeto.",
+        "Exige execução cuidadosa: um ponto de argamassa encostando na laje vira ponte de som.",
+        "Depois da obra pronta, só entra com a troca completa do piso.",
+        "Não resolve ruído que vem pela fachada nem pelas paredes."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Laje, contrapiso e paredes fazem parte do sistema construtivo. Qualquer mudança deve ser definida por engenheiro ou arquiteto responsável, com ART ou RRT. Não remova contrapiso nem abra paredes por conta própria: a obra pode atingir estrutura, tubulações e instalações elétricas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Janelas e esquadrias: o elo fraco da fachada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A parede de alvenaria costuma isolar bem; a janela, não. Um estudo do IPT apresentado em 2026, com 396 ensaios de laboratório feitos entre 2017 e 2025, confirmou que janelas e portas de correr são a parte mais vulnerável da fachada. Elas são leves, têm partes móveis e frestas por onde o som escapa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A conclusão mais útil para quem vai escolher a esquadria é que aumentar a massa sem vedar quase não adianta. Num dos exemplos citados pelos pesquisadores, acrescentar vedações elevou o isolamento em 11 dB, enquanto um vidro a mais rendeu apenas 2 dB. Escovinha simples nas folhas costuma aparecer nas janelas de pior desempenho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para comparar, peça a classe acústica da janela. A norma ABNT NBR 10821-4 classifica as esquadrias pelo índice Rw, que mede o isolamento em laboratório: classe A+ a partir de 36 dB, A de 30 a 35, B de 24 a 29, C de 18 a 23 e D abaixo de 18. Nos quartos voltados para rua movimentada, vale mirar nas classes mais altas."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Vedação com espuma, borracha ou escova com barreira, e não só escovinha simples.",
+        "Fecho que pressiona a folha contra a vedação, como o tipo cremona.",
+        "Vidro laminado de 6 a 8 mm, que com boa vedação rende tanto quanto vidros mais grossos.",
+        "Persiana integrada, que no estudo do IPT acrescentou de 4 a 7 dB em média.",
+        "Instalação bem feita, com o vão vedado entre o caixilho e a parede."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a janela acústica perde parte do efeito se o quarto precisar ficar aberto para ventilar. Por isso o projeto deve pensar junto em ventilação e silêncio, com orientação dos ambientes e, quando for o caso, entradas de ar com atenuação. Mais ideias de conforto estão em [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que pedir no projeto e na compra do imóvel novo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na construção, a decisão mais importante é registrar o nível de desempenho desejado logo no início. Peça ao arquiteto que indique, para cada ambiente, o nível acústico pretendido e as soluções que o garantem: tipo de parede, espessura da laje, contrapiso, esquadria e vedação. Com isso escrito, a obra tem uma meta que pode ser medida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de um imóvel novo, pergunte qual nível da NBR 15575 foi atendido em cada sistema e se há ensaios ou laudos acústicos. Confira também no manual de uso, que a construtora entrega, as orientações sobre troca de piso, para não prejudicar o desempenho. Trocar o revestimento por um mais rígido pode piorar o ruído para o vizinho de baixo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outros detalhes fazem diferença e costumam escapar: tubulações de esgoto que passam dentro dos quartos, tomadas de cômodos vizinhos na mesma posição da parede e portas ocas entre áreas de dormir. O manual da ProAcústica lembra que os valores de ruído de equipamentos prediais aparecem na norma só como referência informativa, então vale perguntar como foram tratados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel novo e quer avaliar esses pontos com calma, a equipe da {{cliente}} pode ajudar a separar as opções e organizar as perguntas certas para cada visita. Isolamento acústico se decide no projeto: peça o nível de desempenho por escrito e cuide da janela tanto quanto da parede."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O que é a NBR 15575?",
+      "resposta": "É a norma de desempenho de edificações habitacionais da ABNT. Ela define como a moradia deve se comportar em uso, incluindo acústica, com níveis mínimo, intermediário e superior."
+    },
+    {
+      "pergunta": "O que é contrapiso acústico?",
+      "resposta": "É a camada de argamassa assentada sobre uma manta resiliente, sem contato direto com a laje e as paredes. Ela reduz a vibração dos passos e melhora o isolamento ao ruído de impacto."
+    },
+    {
+      "pergunta": "Trocar o vidro da janela resolve o barulho da rua?",
+      "resposta": "Nem sempre. Estudo do IPT mostrou que, sem boa vedação, até um vidro grosso rende pouco. Vedação, fecho e instalação costumam pesar mais do que a espessura do vidro."
+    },
+    {
+      "pergunta": "Qual classe de janela escolher para o quarto?",
+      "resposta": "Depende do ruído da rua. A NBR 10821-4 classifica as esquadrias de D a A+ pelo índice Rw. Para quartos voltados a vias movimentadas, convém mirar nas classes mais altas, com orientação do projetista."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Manual ProAcústica para classificação acústica segundo a NBR 15575 — ProAcústica (hospedado pelo LabEEE/UFSC)",
+      "url": "https://labeee.ufsc.br/sites/default/files/disciplinas/proacustica_manualnorma_nov_2013.pdf",
+      "data": "novembro de 2013"
+    },
+    {
+      "nome": "Desempenho ao ruído de impacto de pisos em habitações no Brasil — IPT, Comunicação Técnica 179834",
+      "url": "https://escriba.ipt.br/pdf/179834.pdf",
+      "data": "2025"
+    },
+    {
+      "nome": "Desempenho acústico de janelas e portas de fachada deslizantes — IPT, Comunicação Técnica 180130",
+      "url": "https://escriba.ipt.br/pdf/180130.pdf",
+      "data": "2026"
+    },
+    {
+      "nome": "Comissão finaliza discussão do desempenho acústico de edificações — CBIC",
+      "url": "https://cbic.org.br/inovacao/2020/11/03/comissao-finaliza-discussao-do-desempenho-acustico-de-edificacoes/",
+      "data": "novembro de 2020"
+    }
+  ]
+}
