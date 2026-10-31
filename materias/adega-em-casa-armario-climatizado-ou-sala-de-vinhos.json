@@ -1,0 +1,255 @@
+{
+  "slug": "adega-em-casa-armario-climatizado-ou-sala-de-vinhos",
+  "tema": "adega em casa climatizada ou sala de vinhos",
+  "titulo": "Adega em casa: armário climatizado ou sala de vinhos?",
+  "resumo": "Adega em casa pede temperatura estável, umidade certa e pouca luz. Compare armário climatizado e sala de vinhos e veja o que o projeto precisa prever.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "adega",
+    "alto padrão",
+    "projeto",
+    "casa"
+  ],
+  "capa": {
+    "alt": "Sala de vinhos com paredes de pedra clara, prateleiras de madeira com garrafas deitadas e porta de vidro iluminada por luz quente"
+  },
+  "redes": {
+    "legenda": "Sabia que o maior inimigo do vinho em casa não é o calor em si, mas a temperatura que sobe e desce? Por isso a adega pede mais do que um canto bonito: estabilidade, umidade na faixa certa, pouca luz e garrafas deitadas. Comparamos o armário climatizado e a sala de vinhos e mostramos o que o projeto precisa prever. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "adega",
+      "vinho",
+      "altopadrao",
+      "arquitetura",
+      "decoracao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter uma **adega em casa** é o desejo de quem gosta de vinho e de receber: um lugar bonito para guardar as garrafas, escolher a do jantar e mostrar aos amigos. Mas a pergunta prática vem logo: basta um armário climatizado na cozinha gourmet, ou vale construir uma sala de vinhos de verdade?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para a maioria das casas, o armário climatizado resolve: ele controla a temperatura, protege da luz e cabe em qualquer projeto. A sala de vinhos faz sentido para coleções maiores e para quem guarda garrafas por anos, desde que seja tratada como um ambiente técnico, com isolamento, vedação e equipamento próprio, e não só como um cômodo decorado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O vinho sofre mais com a variação de temperatura do que com um grau a mais ou a menos.",
+        "Umidade entre 60% e 70%, pouca luz e garrafas deitadas protegem a rolha e o sabor.",
+        "Armário climatizado atende bem a maioria das casas; sala de vinhos é para coleções maiores e guarda longa.",
+        "Sala de vinhos pede isolamento, barreira de vapor, porta vedada e equipamento feito para adega."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda do que o vinho precisa antes de escolher"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra mais repetida por quem estuda o assunto é a estabilidade. Uma reportagem da Forbes sobre armazenamento em casa resume bem: a maior ameaça ao vinho é a variação de temperatura. O calor acelera a oxidação, e o frio excessivo resseca a rolha. Por isso uma prateleira na cozinha, perto do fogão ou da janela, é o pior lugar da casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As faixas de guarda citadas na mesma reportagem ficam entre 13 °C e 18 °C para tintos, de 7 °C a 13 °C para brancos e de 4 °C a 10 °C para espumantes. Guias de construção de adegas trabalham com algo perto de 12 °C a 14 °C para guarda longa. Note que temperatura de guarda e de serviço são coisas diferentes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A umidade conta tanto quanto. A faixa mais citada fica entre 60% e 70%; abaixo disso, a rolha seca e encolhe, e acima, o rótulo descola e o mofo aparece. A luz também pesa: a vinícola Salton explica que a luz altera aroma, sabor e cor, clareando tintos e escurecendo brancos e espumantes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A posição completa a lista. Vinhos tranquilos com rolha de cortiça ficam deitados, para a rolha seguir úmida e vedando bem. Espumantes podem ficar em pé, porque o gás mantém a rolha úmida, e garrafas com tampa de rosca são menos sensíveis à posição. A geladeira comum serve para gelar antes de servir, mas não para guardar por semanas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare o armário climatizado com a sala de vinhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **armário climatizado**, que muita gente chama de adega elétrica, é um móvel com controle de temperatura. Há modelos de uma zona só e de duas zonas, com compartimentos independentes para guardar tintos e espumantes em temperaturas diferentes. Pode ficar solto, ligado na tomada, ou embutido na marcenaria, desde que o projeto respeite a ventilação indicada pelo fabricante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por dentro, há dois tipos de refrigeração. O termoelétrico é silencioso e econômico, mas costuma render menos em ambientes muito quentes. O de compressor funciona como uma geladeira, aguenta melhor o calor e permite zonas ajustáveis, mas gasta mais energia e faz algum ruído. Em casa com verão quente, esse ponto merece atenção."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Armário climatizado ou sala de vinhos",
+      "colunas": [
+        "Critério",
+        "Armário climatizado",
+        "Sala de vinhos"
+      ],
+      "linhas": [
+        [
+          "Tamanho da coleção",
+          "De poucas a algumas dezenas de garrafas",
+          "Centenas de garrafas ou mais"
+        ],
+        [
+          "Tempo de guarda",
+          "Curto e médio prazo",
+          "Médio e longo prazo"
+        ],
+        [
+          "Obra",
+          "Nenhuma, ou nicho na marcenaria",
+          "Isolamento, barreira de vapor, porta e equipamento"
+        ],
+        [
+          "Controle de umidade",
+          "Limitado ao que o aparelho oferece",
+          "Pode ser projetado com umidificador ou desumidificador"
+        ],
+        [
+          "Onde cabe",
+          "Cozinha gourmet, sala, bar ou escritório",
+          "Cômodo próprio, subsolo ou área sem sol direto"
+        ],
+        [
+          "Manutenção",
+          "Simples, como um eletrodoméstico",
+          "Equipamento técnico com revisão periódica"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Para quem compra vinho para beber em meses, o armário costuma bastar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **sala de vinhos** é outra história. Ela vira um cômodo frio dentro de uma casa mais quente, e isso exige cuidados que um quarto comum não tem. Em compensação, guarda muito mais garrafas, permite exposição cenográfica e pode virar ponto de encontro, com bancada para degustação. Para mais ideias de casas pensadas para receber, veja a seção [Alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas não construa a sala só porque ficou bonita no projeto de outra pessoa. Se você bebe o que compra em poucos meses, ela vai custar espaço, energia e manutenção sem dar o retorno esperado. Nesse caso, um bom armário de duas zonas, bem posicionado, entrega o essencial com muito menos complicação."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba o que a sala de vinhos exige no projeto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O primeiro passo é escolher o lugar: um cômodo sem sol direto, longe de fontes de calor e de vibração, como a casa de máquinas da piscina. Subsolos costumam ser a melhor opção. Garagens só funcionam com isolamento reforçado, porque esquentam muito ao longo do dia, segundo o guia de construção de adegas da Coravin."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois vem o isolamento das paredes, do teto e do piso, e com ele a **barreira de vapor**, uma camada contínua que impede a umidade do ar quente de atravessar a parede e condensar no lado frio. O guia técnico da Wine Guardian explica que ela vai no lado quente do isolamento, voltado para os cômodos da casa, e nunca na face interna da adega."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sem essa barreira, a umidade condensa dentro da parede, encharca o isolamento e só aparece depois, como mofo, manchas no teto e rótulos descolando. O conserto costuma exigir abrir a parede de novo. Por isso esse detalhe precisa estar no projeto desde o começo, desenhado pelo arquiteto e executado com cuidado."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Porta:** vedada em todo o contorno; se for de vidro, prefira vidro duplo com controle de raios UV.",
+        "**Equipamento:** o ar-condicionado comum não controla temperatura e umidade ao mesmo tempo; use sistema próprio para adega.",
+        "**Iluminação:** LED de baixo calor, de preferência com sensor para não ficar acesa à toa.",
+        "**Prateleiras:** garrafas deitadas na maior parte; expositores inclinados com moderação, porque recebem mais luz.",
+        "**Monitoramento:** um termo-higrômetro, que mede temperatura e umidade, ajuda a perceber variações cedo."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "A sala de vinhos envolve isolamento, instalação elétrica dedicada e, às vezes, dreno do equipamento. Esse trabalho pede arquiteto ou engenheiro responsável, com ART ou RRT, e instalador qualificado. Não improvise a elétrica nem adapte um ar-condicionado comum por conta própria."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida se a adega pesa na escolha do imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a adega é importante para você, ela pode orientar a visita a imóveis. Um subsolo seco, um cômodo sem janela voltada para o poente ou um nicho na área gourmet já pensado para receber um armário embutido facilitam muito. Já uma sala de vinhos pronta merece a mesma atenção que qualquer instalação técnica: pergunte pelo equipamento e pela manutenção."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Sala de vinhos pronta no imóvel",
+      "pros": [
+        "Espaço já isolado e com equipamento instalado.",
+        "Enriquece a área de receber e o uso da casa no dia a dia.",
+        "Comporta coleções grandes e guarda longa."
+      ],
+      "contras": [
+        "Equipamento antigo pode precisar de troca.",
+        "Falhas de barreira de vapor só aparecem com o tempo.",
+        "Ocupa um cômodo que poderia ter outro uso."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita, observe se há marcas de umidade nas paredes ou no teto, se a porta veda bem e se o ambiente está de fato frio. Peça informações sobre a idade do equipamento e quem faz a manutenção. Se tiver dúvida, um arquiteto ou engenheiro pode avaliar o ambiente antes da compra. Veja mais temas como este no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com espaço para receber, área gourmet ou um cômodo que possa virar adega, a equipe da {{cliente}} pode ajudar a encontrar imóveis à venda em Campinas que combinem com esse jeito de viver. Em uma linha: armário climatizado para beber bem, sala de vinhos para guardar por anos."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a temperatura ideal para guardar vinho em casa?",
+      "resposta": "As faixas mais citadas vão de 13 °C a 18 °C para tintos, de 7 °C a 13 °C para brancos e de 4 °C a 10 °C para espumantes. Mais importante do que o número exato é a temperatura não ficar subindo e descendo."
+    },
+    {
+      "pergunta": "Posso guardar vinho na geladeira comum?",
+      "resposta": "Para gelar antes de servir, sim. Para guardar, não é o ideal: a geladeira é fria demais e seca, o que pode ressecar a rolha. Reportagens sobre o tema recomendam não deixar o vinho lá por mais de um mês."
+    },
+    {
+      "pergunta": "Adega termoelétrica ou de compressor: qual escolher?",
+      "resposta": "A termoelétrica é silenciosa e econômica, mas rende menos em lugares muito quentes. A de compressor aguenta melhor o calor e permite zonas ajustáveis, mas gasta mais energia e faz algum ruído."
+    },
+    {
+      "pergunta": "Dá para transformar um quarto em sala de vinhos?",
+      "resposta": "Dá, com projeto. O cômodo precisa de isolamento, barreira de vapor, porta vedada e equipamento próprio para adega. Esse trabalho pede arquiteto ou engenheiro responsável."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Como armazenar vinho em casa: dicas para tintos, brancos e espumantes — Forbes Brasil",
+      "url": "https://forbes.com.br/forbeswsb/2025/09/como-armazenar-vinho-em-casa-dicas-para-tintos-brancos-e-espumantes/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "5 dicas para guardar a garrafa de vinho em casa — Salton",
+      "url": "https://www.salton.com.br/artigo/5-dicas-para-guardar-a-garrafa-de-vinho-em-casa",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Como escolher o local ideal para guardar o vinho em casa — NSC Total",
+      "url": "https://www.nsctotal.com.br/noticias/como-escolher-o-local-ideal-para-guardar-o-vinho-em-casa",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Adega climatizada: como escolher a ideal para a sua casa — Brastemp",
+      "url": "https://www.brastemp.com.br/experience/tech/adega-climatizada-como-escolher-a-ideal-para-a-sua-casa/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "How to Build a Wine Cellar: A Step-by-Step Guide — Coravin",
+      "url": "https://www.coravin.com/blogs/community/build-a-wine-cellar",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Vapor Barrier Guide — Wine Guardian",
+      "url": "https://wineguardiandealer.com/blogs/wine-cooling-planning/vapor-barrier-guide",
+      "data": "outubro de 2026"
+    }
+  ]
+}

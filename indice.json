@@ -468,7 +468,16 @@
       "categoria": "campinas",
       "criadaEm": "2026-10-31T17:20:01.202Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "adega-em-casa-armario-climatizado-ou-sala-de-vinhos",
+      "titulo": "Adega em casa: armário climatizado ou sala de vinhos?",
+      "tema": "adega em casa climatizada ou sala de vinhos",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-10-31T17:21:10.449Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T17:20:01.203Z"
+  "atualizadoEm": "2026-10-31T17:21:10.449Z"
 }
