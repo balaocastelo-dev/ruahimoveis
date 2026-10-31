@@ -1,0 +1,233 @@
+{
+  "slug": "sauna-em-casa-seca-ou-a-vapor-qual-escolher",
+  "tema": "sauna em casa seca ou a vapor",
+  "titulo": "Sauna em casa: seca ou a vapor, qual escolher e o que exige cada uma",
+  "resumo": "Temperatura, umidade, construção, ventilação e manutenção. Entenda a diferença entre sauna seca e a vapor em casa e o que planejar antes de incluir uma no projeto.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "alto padrão",
+    "área de lazer",
+    "bem-estar",
+    "sauna",
+    "projeto"
+  ],
+  "capa": {
+    "alt": "Sauna seca de madeira clara com bancos em dois níveis, aquecedor com pedras e iluminação indireta suave"
+  },
+  "seo": {
+    "titulo": "Sauna em casa: seca ou a vapor, qual escolher"
+  },
+  "redes": {
+    "legenda": "Sauna seca ou a vapor: qual faz mais sentido em casa? Na seca, o ar fica bem mais quente e com pouca umidade; na úmida, a temperatura é menor, mas o vapor satura o ambiente. Cada uma pede uma construção diferente, da madeira ao azulejo com ralo. No blog, explicamos as diferenças, a ventilação, o tamanho e a manutenção de cada uma. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "sauna",
+      "altopadrao",
+      "arquitetura",
+      "areadelazer",
+      "bemestar",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter uma **sauna em casa** costuma entrar nos planos de quem constrói ou reforma pensando em lazer e descanso: um lugar para relaxar depois do treino, receber amigos no inverno ou fechar o dia com calma. A primeira dúvida é quase sempre a mesma: sauna seca ou a vapor, a chamada sauna úmida?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a sauna seca costuma ser mais simples de construir e de manter, porque trabalha com pouca umidade. A sauna a vapor agrada a quem prefere o calor úmido, mas exige um ambiente impermeabilizado, ralo, hidráulica e cuidado constante contra fungos. A escolha depende do seu gosto, do espaço e de quanta manutenção você aceita."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A sauna seca trabalha com ar muito quente e pouca umidade; a a vapor, com temperatura menor e umidade perto de 100%.",
+        "A seca é feita de madeira; a a vapor pede revestimento cerâmico, impermeabilização e ralo.",
+        "As duas precisam de ventilação planejada, circuito elétrico próprio e profissional habilitado.",
+        "Tamanho compacto e pé-direito baixo ajudam a aquecer mais rápido e gastar menos energia."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Seca ou a vapor: o que muda na experiência"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na sauna seca, um aquecedor elétrico ou a lenha esquenta um conjunto de pedras, e o ar costuma ficar entre 65 °C e 93 °C, com umidade de 10% a 20%, segundo um guia da fabricante Haven of Heat. Jogar um pouco de água nas pedras cria uma onda de vapor rápida, que logo se dissipa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na sauna a vapor, um gerador de vapor satura o ambiente, e a temperatura fica bem menor, perto de 43 °C a 49 °C, com umidade próxima de 100%. Como o suor não evapora no ar saturado, a sensação de calor pode ser tão intensa quanto numa sauna seca mais quente. Há ainda a sauna infravermelha, que aquece o corpo por radiação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Brasil, a sauna úmida tem tradição forte. Uma matéria do portal Acessa.com, de 2011, registrava que ela era a maioria dos pedidos a construtores, e a seca ficava com uma fatia pequena. Já a seca tem a vantagem de existir em modelos modulares, que podem ser montados sem uma grande obra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a preferência pessoal pesa mais do que qualquer tendência. Vale experimentar os dois tipos em um clube ou hotel antes de decidir. Para quem tem alguma condição de saúde, está grávida ou usa medicamentos que afetam a regulação de temperatura, a recomendação é conversar com o médico antes de usar qualquer sauna. Para outras ideias de conforto, veja a categoria [Bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Construção: o que cada tipo pede da obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sauna seca é, basicamente, uma caixa de madeira bem isolada. Usam-se madeiras macias secas em estufa, como cedro, abeto, álamo ou amieiro, ou madeira termicamente modificada, que resiste melhor à umidade. No Brasil, também aparecem ipê e pinus. Muitos modelos são modulares e chegam prontos para montar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na sauna seca, a matéria do Acessa.com lembra um detalhe que faz diferença: pregos de ferro precisam ficar bem afundados na madeira, porque esquentam e podem queimar a pele. Bancos e encostos costumam seguir a mesma madeira das paredes, e a porta de vidro temperado é preferida à de alumínio, que esquenta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sauna a vapor é outra obra. O ambiente precisa ser todo impermeabilizado e revestido com cerâmica, com piso antiderrapante, ralo e ponto de água para o gerador. O teto deve ser inclinado, para que a água condensada escorra pelas paredes em vez de pingar em quem está sentado. É serviço para empresa especializada."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Sauna seca e sauna a vapor lado a lado",
+      "colunas": [
+        "Critério",
+        "Sauna seca",
+        "Sauna a vapor"
+      ],
+      "linhas": [
+        [
+          "Temperatura típica",
+          "65 °C a 93 °C",
+          "43 °C a 49 °C"
+        ],
+        [
+          "Umidade",
+          "10% a 20%",
+          "Perto de 100%"
+        ],
+        [
+          "Revestimento",
+          "Madeira",
+          "Cerâmica sobre impermeabilização"
+        ],
+        [
+          "Instalações",
+          "Aquecedor e circuito elétrico próprio",
+          "Gerador de vapor, hidráulica, ralo e elétrica"
+        ],
+        [
+          "Manutenção",
+          "Menor: ambiente seco",
+          "Maior: rejunte, calcário e fungos"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Faixas gerais, com base em guias da Haven of Heat e do Acessa.com; cada fabricante e projeto define os próprios valores."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde instalar: tamanho, ventilação e elétrica"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lugar ideal é plano, seco e perto de um chuveiro, para a ducha antes e depois. Piso não poroso, como cerâmica, porcelanato ou concreto, é o indicado; carpete retém umidade e favorece mofo. Sauna externa precisa de base firme e nivelada, e a madeira de fora pede proteção renovada contra sol e chuva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Tamanho importa mais do que parece. A matéria do Acessa.com sugere de 6 m² a 8 m² e pé-direito até 2,5 m, porque o ar quente sobe e um teto alto demora para aquecer e gasta mais energia. Do outro lado, um aquecedor pequeno para um ambiente grande esquenta devagar e trabalha no limite."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ventilação também é planejada. Um esquema comum é uma entrada de ar baixa, perto do aquecedor, e uma saída alta na parede oposta, para o ar circular. Sem isso, o calor fica desigual e o ar, abafado. Para outras ideias de lazer em casa, veja a categoria [Alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Elétrica e hidráulica são com profissional",
+      "texto": "Aquecedores de sauna costumam pedir circuito próprio e verificação da capacidade do quadro elétrico. A instalação elétrica, a hidráulica e a impermeabilização devem ser feitas por profissionais habilitados, com projeto e responsável técnico (ART ou RRT). Não faça a ligação por conta própria."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Manutenção e uso no dia a dia: vale a pena para você?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sauna seca é a mais fácil de cuidar. Depois de cada uso, deixe a porta aberta por 15 a 30 minutos para secar, passe um pano úmido nos bancos e limpe de tempos em tempos com produto suave. Cloro e produtos fortes não são indicados. As pedras do aquecedor costumam ser trocadas a cada um a três anos, conforme o uso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na sauna a vapor, a rotina é mais intensa: o gerador precisa de limpeza contra calcário, o rejunte pede revisão e vedação, e a umidade constante exige atenção a fungos. Em compensação, o revestimento cerâmico é fácil de lavar. Se a sauna vai ficar sem uso por muito tempo, essa manutenção pesa mais."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Ter sauna em casa: o que pesa a favor e contra",
+      "pros": [
+        "Lazer e descanso sem sair de casa, em qualquer estação",
+        "Pode ser integrada à academia, à piscina ou à suíte",
+        "A seca tem modelos modulares, de montagem mais rápida"
+      ],
+      "contras": [
+        "Exige espaço, ventilação e instalações dedicadas",
+        "Consome energia e pede manutenção, sobretudo a a vapor",
+        "Uso pouco frequente costuma não compensar a obra"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de decidir, seja honesto sobre a frequência de uso. Uma sauna usada toda semana entra na rotina; uma usada duas vezes por ano vira depósito de toalhas. Se você ainda está escolhendo o imóvel, observe se há espaço técnico perto da área de lazer e de um banheiro, o que facilita uma instalação futura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a sauna faz parte do seu jeito de morar, a equipe da {{cliente}} pode ajudar a encontrar casas com área de lazer pronta ou espaço para planejar uma. Em uma linha: escolha a seca se quer simplicidade e pouca manutenção, e a a vapor se o calor úmido é o que você realmente gosta."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a diferença entre sauna seca e a vapor?",
+      "resposta": "A seca trabalha com ar muito quente, em geral de 65 °C a 93 °C, e pouca umidade. A a vapor fica perto de 43 °C a 49 °C, mas com umidade próxima de 100%, o que faz a sensação de calor ser intensa."
+    },
+    {
+      "pergunta": "Qual sauna dá menos manutenção em casa?",
+      "resposta": "A sauna seca, porque o ambiente fica seco e o risco de mofo é menor. Basta deixar a porta aberta para secar depois do uso e limpar os bancos com produto suave."
+    },
+    {
+      "pergunta": "Qual o tamanho ideal de uma sauna residencial?",
+      "resposta": "Uma referência comum é de 6 m² a 8 m², com pé-direito até 2,5 m. Ambientes maiores ou muito altos demoram para aquecer e gastam mais energia."
+    },
+    {
+      "pergunta": "Posso instalar a sauna sem eletricista?",
+      "resposta": "Não é recomendado. O aquecedor costuma pedir circuito elétrico próprio, e a sauna a vapor ainda envolve hidráulica e impermeabilização. Procure profissionais habilitados, com responsável técnico."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Sauna vs. Steam Room: What's the Difference — Haven of Heat",
+      "url": "https://havenofheat.com/es/blogs/sauna-guides/sauna-vs-steam-room-whats-the-difference-and-which-is-better-for-you",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "The Dos and Don'ts of Putting in a Home Sauna — Haven of Heat",
+      "url": "https://havenofheat.com/blogs/sauna-guides/the-dos-and-donts-of-putting-in-a-home-sauna",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Do You Need to Ventilate Your Home Sauna? — Saunafin",
+      "url": "https://www.saunafin.com/blog/do-you-need-to-ventilate-your-home-sauna/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Sauna — Acessa.com Casa",
+      "url": "https://www.acessa.com/casa/arquivo/ambientes/2011/02/04-sauna/",
+      "data": "fevereiro de 2011"
+    }
+  ]
+}
