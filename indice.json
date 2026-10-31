@@ -513,7 +513,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-31T20:24:51.277Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-no-taquaral-campinas-bairro-da-lagoa",
+      "titulo": "Bairro Taquaral, em Campinas: a vida em volta da Lagoa e do parque",
+      "tema": "morar no taquaral perto da lagoa",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-10-31T23:23:35.445Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T20:24:51.277Z"
+  "atualizadoEm": "2026-10-31T23:23:35.445Z"
 }
