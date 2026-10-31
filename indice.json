@@ -432,7 +432,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-10-31T11:21:29.952Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "temperatura-de-cor-da-lampada-em-cada-ambiente",
+      "titulo": "Temperatura de cor da lâmpada: qual usar em cada ambiente da casa",
+      "tema": "temperatura de cor da lampada em cada ambiente",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-31T14:24:25.644Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T11:21:29.953Z"
+  "atualizadoEm": "2026-10-31T14:24:25.644Z"
 }

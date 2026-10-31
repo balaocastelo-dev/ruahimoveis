@@ -1,0 +1,174 @@
+{
+  "slug": "temperatura-de-cor-da-lampada-em-cada-ambiente",
+  "tema": "temperatura de cor da lampada em cada ambiente",
+  "formato": "dica",
+  "titulo": "Temperatura de cor da lâmpada: qual usar em cada ambiente da casa",
+  "resumo": "Luz de 2700 K, 4000 K ou 6500 K? Entenda o que o número em kelvin quer dizer e qual temperatura de cor combina com sala, quarto, cozinha e banheiro.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "iluminação",
+    "decoração",
+    "interiores",
+    "lâmpadas"
+  ],
+  "capa": {
+    "alt": "Sala de estar ao entardecer iluminada por luz amarelada e suave de luminárias de piso e pendentes, com sofá claro e mesa de madeira"
+  },
+  "redes": {
+    "legenda": "Sabe o que significa aquele 2700 K ou 6500 K na caixa da lâmpada? Não é o quanto ela esquenta: é a cor da luz. Número baixo dá luz amarelada e acolhedora; número alto, luz branca e azulada. Sala e quarto costumam pedir luz quente, cozinha e banheiro ficam bem com luz neutra. No blog, explicamos ambiente por ambiente e o que mais olhar na embalagem. Leia a matéria completa no blog (link na bio).",
+    "hashtags": [
+      "iluminacao",
+      "decoracao",
+      "interiores",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de trocar uma lâmpada, a dúvida aparece logo na prateleira: a **temperatura de cor** vem escrita em kelvin, com números como 2700 K, 4000 K ou 6500 K, e cada caixa promete uma luz diferente. Escolher errado deixa a sala com cara de consultório ou a cozinha amarelada demais para cozinhar com conforto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra prática: o número em kelvin indica a aparência da luz, não o calor da lâmpada. Valores perto de 2700 K dão luz amarelada e acolhedora, boa para sala e quarto. Perto de 4000 K, a luz é branca neutra, útil na cozinha e no banheiro. Acima de 6000 K, ela fica azulada e combina mais com áreas de trabalho."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Kelvin mede a cor da luz: quanto maior o número, mais branca e azulada ela parece.",
+        "Sala, quarto e jantar costumam ficar melhores com luz quente, por volta de 2700 K a 3000 K.",
+        "Cozinha, banheiro e lavanderia pedem luz neutra, em torno de 4000 K, para enxergar bem as cores.",
+        "Kelvin não diz quanto a lâmpada ilumina: para isso, olhe os lúmens e o índice de reprodução de cor (IRC)."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual temperatura de cor escolher para cada ambiente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome confunde porque a luz chamada de fria tem o número mais alto. Isso descreve só a sensação visual: o tom amarelado lembra o fim de tarde e as antigas lâmpadas incandescentes, enquanto o tom azulado lembra a claridade do meio-dia. Segundo o Correio Braziliense, o termo técnico é temperatura de cor correlata."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Temperatura de cor sugerida por ambiente",
+      "colunas": [
+        "Ambiente",
+        "Faixa sugerida",
+        "Por quê"
+      ],
+      "linhas": [
+        [
+          "Sala de estar e de TV",
+          "2700 K a 3000 K",
+          "Luz amarelada deixa o ambiente acolhedor para relaxar"
+        ],
+        [
+          "Quarto",
+          "2700 K",
+          "Tom quente combina com o fim do dia e a hora de descansar"
+        ],
+        [
+          "Sala de jantar",
+          "2700 K a 3000 K",
+          "Valoriza a mesa e cria clima para receber"
+        ],
+        [
+          "Cozinha",
+          "4000 K",
+          "Luz neutra ajuda a enxergar a cor dos alimentos"
+        ],
+        [
+          "Banheiro",
+          "4000 K no espelho",
+          "Mostra a pele e a maquiagem com mais fidelidade"
+        ],
+        [
+          "Lavanderia e home office",
+          "4000 K a 5000 K",
+          "Claridade para tarefas que pedem atenção"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Faixas de referência, com base no Correio Braziliense, na revista O Setor Elétrico e na Deco Proteste. A cor das paredes e a luz natural também mudam o resultado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela não é lei. Uma sala com paredes muito escuras pode pedir um pouco mais de claridade, e quem trabalha à noite na mesa de jantar talvez prefira uma luminária de tarefa mais branca. Também dá para misturar tons no mesmo cômodo, desde que cada luz tenha um papel. Veja mais ideias em [Interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que mais conferir na embalagem antes de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A temperatura de cor resolve o tom, mas não diz quanto a lâmpada ilumina nem quão fiel ela é às cores. Por isso, vale ler a caixa inteira. Quem escolhe só pelo kelvin corre o risco de levar uma luz com o tom certo, mas fraca demais para o cômodo ou que deixa a madeira e os tecidos com aparência acinzentada."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Lúmens (lm):** medem a quantidade de luz. Duas lâmpadas com a mesma potência em watts podem iluminar de forma bem diferente.",
+        "**IRC (índice de reprodução de cor):** vai de 0 a 100 e mostra a fidelidade das cores. Para casa, a referência mais citada é acima de 80, de preferência acima de 85.",
+        "**Dimerizável:** se o cômodo tem dimmer, a lâmpada precisa dizer que é regulável.",
+        "**Mesma temperatura no mesmo ambiente:** misturar 2700 K e 6500 K no mesmo teto costuma deixar a luz manchada."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de trocar todas as lâmpadas da casa, teste uma em cada cômodo por alguns dias, de noite, com a decoração no lugar. A troca de lâmpada em soquete comum é simples, mas qualquer mudança no circuito, como instalar dimmer ou novos pontos de luz, deve ficar com um eletricista habilitado. Outras dicas estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um imóvel e quer avaliar como cada ambiente recebe luz, natural e artificial, a equipe da {{cliente}}, em Campinas, pode ajudar na procura e na visita. Em resumo: luz quente para descansar, neutra para fazer, e o IRC sempre acima de 80."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Luz fria gasta mais energia que luz quente?",
+      "resposta": "Não necessariamente. O kelvin indica só a cor da luz. O consumo depende da potência em watts, e a quantidade de luz, dos lúmens; compare esses dois números na embalagem."
+    },
+    {
+      "pergunta": "Qual temperatura de cor usar no banheiro?",
+      "resposta": "Perto do espelho, uma luz neutra, por volta de 4000 K, mostra a pele com mais fidelidade. Se quiser um clima de relaxamento no banho, uma segunda luz mais quente, em outro circuito, resolve."
+    },
+    {
+      "pergunta": "Posso usar 6500 K na sala?",
+      "resposta": "Pode, mas a luz azulada costuma deixar a sala com aparência de escritório. Para descansar e receber, a maioria dos guias indica luz quente, entre 2700 K e 3000 K."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "O que significa 2700K, 4000K e 6500K nas lâmpadas — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/diferenca-entre-lampadas-2700k-4000k-6500k-como-escolher/",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "Tonalidade das lâmpadas causam efeitos diferenciados nos ambientes — O Setor Elétrico",
+      "url": "https://www.osetoreletrico.com.br/?p=14947",
+      "data": "março de 2020"
+    },
+    {
+      "nome": "Lâmpadas: como escolher e usar — Deco Proteste",
+      "url": "https://www.deco.proteste.pt/sustentabilidade/artigo/lampadas-como-escolher-usar",
+      "data": "fevereiro de 2024"
+    },
+    {
+      "nome": "Por que é tão difícil comprar uma lâmpada LED — Gazeta do Povo",
+      "url": "https://www.gazetadopovo.com.br/imoveis/por-que-e-tao-dificil-comprar-uma-lampada-led-a151y6d6j58olrxzrr1ely1ov",
+      "data": "julho de 2016"
+    }
+  ]
+}
