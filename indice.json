@@ -387,7 +387,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-31T02:17:45.290Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "imovel-com-vista-o-que-observar-para-a-vista-nao-sumir",
+      "titulo": "Imóvel com vista: o que observar para a vista não sumir",
+      "tema": "imovel com vista risco de construcao vizinha",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-10-31T02:19:46.152Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T02:17:45.291Z"
+  "atualizadoEm": "2026-10-31T02:19:46.152Z"
 }
