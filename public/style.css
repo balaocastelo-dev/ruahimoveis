@@ -1539,3 +1539,8 @@ body.embutido h1{font-size:26px;margin-top:0}
 .j3-lugar.clicavel{cursor:pointer;pointer-events:auto;border:1px solid rgba(201,163,90,.75);transition:background .15s,color .15s}
 .j3-lugar.clicavel:hover{background:rgba(201,163,90,.92);color:#15181f}
 .j3-lugar small{display:block;font-size:9px;opacity:.75;letter-spacing:.06em;text-transform:uppercase}
+
+/* Chaves de API, em Configurações */
+.chaves-escopos{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px 12px}
+.chaves-tbl table{min-width:max-content}
+.chaves-tbl th:nth-child(7),.chaves-tbl td:nth-child(7){white-space:nowrap}

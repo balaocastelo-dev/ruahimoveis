@@ -79,12 +79,97 @@ const assert = require('assert');
 
   // revogar
   const lista = ok(await req('GET', '/api/chaves', null, true), 'chaves listadas');
-  assert(lista.length === 2 && !lista.some((c) => c.chave_hash));
+  assert(lista.length === 2 && !lista.some((c) => c.chave_hash || c.chave));
+  const estrela = lista.find((c) => c.id === nova.id);
+  assert.equal(estrela.limite_min, 300, 'padrão da API continua 300 quando o limite não vem');
+  assert.equal(estrela.expira_em, null, 'padrão da API continua sem prazo');
+  assert.equal(estrela.nome, 'Claude'); assert.equal(estrela.prefixo, nova.prefixo); assert.equal(estrela.ativo, 1);
   ok(await req('DELETE', `/api/chaves/${so.id}`, null, true), 'chave revogada');
   assert.equal((await fetch(base + '/api/ia/manifesto', { headers: { authorization: `Bearer ${so.chave}` } })).status, 401, 'chave revogada não entra');
 
   const log = ok(await req('GET', '/api/chaves/log?limite=5', null, true), 'registro de uso');
   assert(log.length > 0 && log[0].caminho);
+  const logChave = ok(await req('GET', `/api/chaves/log?chave_id=${nova.id}&limite=50`, null, true), 'log de uma chave');
+  assert(logChave.length > 0 && logChave.every((l) => l.chave_id === nova.id && l.caminho && l.metodo));
+
+  // o que a tela manda: limite 60, validade 90, escopos explícitos, IPs e só leitura
+  const tela = ok(await req('POST', '/api/chaves', {
+    nome: 'Planilha', escopos: ['imoveis', 'crm'], somente_leitura: true, limite_min: 60, dias: 90, ips: ['203.0.113.10', '203.0.113.11'],
+  }, true), 'chave como a tela cria');
+  assert.ok(tela.chave && /não aparece de novo/.test(tela.aviso));
+  const achou = ok(await req('GET', '/api/chaves', null, true), 'lista depois da tela').find((c) => c.id === tela.id);
+  assert.equal(achou.nome, 'Planilha');
+  assert.equal(achou.prefixo, tela.prefixo);
+  assert.equal(achou.escopos, 'imoveis,crm');
+  assert.equal(achou.somente_leitura, 1);
+  assert.equal(achou.limite_min, 60);
+  assert.equal(achou.ips, '203.0.113.10,203.0.113.11');
+  assert.equal(achou.ultimo_uso, null);
+  assert.equal(achou.ativo, 1);
+  const falta = (new Date(achou.expira_em.replace(' ', 'T')) - Date.now()) / 864e5;
+  assert.ok(falta > 89 && falta < 91, 'validade perto de 90 dias (' + falta + ')');
+
+  const ig = ok(await req('GET', '/api/integracoes', null, true), 'integrações dizem se é gestor da plataforma');
+  assert.equal(ig.gestor_plataforma, false);
+  const negado = await req('POST', '/api/chaves', { nome: 'Painel', escopos: ['plataforma'] }, true);
+  assert.equal(negado.s, 403, 'plataforma recusada para quem não é gestor da plataforma');
+  assert.match(negado.j.erro, /gestor da plataforma/);
+  const negadoTxt = await req('POST', '/api/chaves', { nome: 'Painel', escopos: 'imoveis, plataforma' }, true);
+  assert.equal(negadoTxt.s, 403);
+
+  // o mesmo administrador, quando o e-mail é de um gestor da plataforma, pode conceder o escopo
+  const pg = require('pg'), PoolOriginal = pg.Pool;
+  pg.Pool = class { constructor() {} on() {} async query(sql, p = []) {
+    if (/lower\(email\)/.test(sql) && p[0] === 'adm@teste.local') return { rows: [{ id: 1 }] };
+    return { rows: [] };
+  } };
+  process.env.PLATAFORMA_DATABASE_URL = 'postgres://teste:teste@127.0.0.1/teste';
+  const plat = ok(await req('POST', '/api/chaves', { nome: 'Gestor', escopos: ['plataforma'], limite_min: 60, dias: 90 }, true), 'gestor da plataforma cria escopo plataforma');
+  assert.deepEqual(plat.escopos, ['plataforma']);
+  delete process.env.PLATAFORMA_DATABASE_URL;
+  pg.Pool = PoolOriginal;
+  assert.equal((await req('POST', '/api/chaves', { nome: 'Painel de novo', escopos: ['plataforma'] }, true)).s, 403, 'sem o banco da plataforma volta a recusar');
+
+  // perfil: a tela é só do adm; a API segue aberta para o gestor e fechada para o corretor
+  ok(await req('POST', '/api/usuarios', { nome: 'Gestor Teste', email: 'gestor@teste.local', perfil: 'gestor', senha: 'senha1234' }), 'gestor criado');
+  ok(await req('POST', '/api/usuarios', { nome: 'Corretor Teste', email: 'corretor@teste.local', perfil: 'corretor', senha: 'senha1234' }), 'corretor criado');
+  const entra = async (email) => {
+    const r = await fetch(base + '/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, senha: 'senha1234' }) });
+    return r.headers.get('set-cookie').split(';')[0];
+  };
+  const como = async (ck, m, url, body) => {
+    const r = await fetch(base + url, { method: m, headers: { 'Content-Type': 'application/json', cookie: ck }, body: body ? JSON.stringify(body) : undefined });
+    const t = await r.text(); let j; try { j = JSON.parse(t); } catch { j = t; }
+    return { s: r.status, j };
+  };
+  const ckG = await entra('gestor@teste.local'), ckC = await entra('corretor@teste.local');
+  assert.equal((await como(ckG, 'GET', '/api/chaves')).s, 200, 'gestor lista pela API');
+  assert.equal((await como(ckG, 'GET', '/api/integracoes')).j.gestor_plataforma, false);
+  for (const [m, url, body] of [['GET', '/api/chaves'], ['GET', '/api/chaves/log'], ['POST', '/api/chaves', { nome: 'Não' }], ['DELETE', '/api/chaves/1']]) {
+    assert.equal((await como(ckC, m, url, body)).s, 403, 'corretor não mexe em chave (' + m + ' ' + url + ')');
+  }
+
+  const html = await (await fetch(base + '/app.html')).text();
+  assert.ok(html.includes('/chaves.js'), 'a tela do sistema carrega chaves.js');
+  const jsTela = await (await fetch(base + '/chaves.js')).text();
+  const jsApp = await (await fetch(base + '/app.js')).text();
+  assert.match(jsApp, /secaoChavesApi\(chaves, !!ig\.gestor_plataforma\)/);
+  assert.match(jsApp, /adm \? api\('GET', '\/api\/chaves'\)/);
+  const vm = require('vm');
+  const ctx = { FORM: {}, ACT: {}, esc: (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])) };
+  vm.createContext(ctx); vm.runInContext(jsTela, ctx);
+  const sec = ctx.secaoChavesApi([{ id: 3, nome: 'A & B', prefixo: 'abcd1234', escopos: '*', somente_leitura: 0, limite_min: 60, ips: null, expira_em: null, ultimo_uso: null, ativo: 1 }], false);
+  assert.match(sec, /Chaves de API/); assert.match(sec, /hh_abcd1234_/); assert.match(sec, /value="60"/); assert.match(sec, /value="90"/);
+  assert.match(sec, /Revogar/); assert.match(sec, /Chamadas/); assert.match(sec, /Somente leitura/);
+  assert.match(sec, /A &amp; B/); assert.doesNotMatch(sec, /value="plataforma"/);
+  for (const id of ['imoveis', 'crm', 'captacao', 'condominios', 'conteudo', 'escritorio', 'painel', 'config', 'sql']) assert.match(sec, new RegExp('value="' + id + '"'));
+  assert.match(ctx.secaoChavesApi([], true), /value="plataforma"/);
+  assert.match(ctx.secaoChavesApi([], false), /Nenhuma chave criada/);
+  const vencida = ctx.secaoChavesApi([{ id: 4, nome: 'Velha', prefixo: 'ffff0000', escopos: 'painel', somente_leitura: 1, limite_min: 60, ips: '203.0.113.9', expira_em: '2000-01-01 00:00:00', ultimo_uso: '2000-01-01 00:00:00', ativo: 1 }], false);
+  assert.match(vencida, /Vencida/); assert.match(vencida, /sim/); assert.match(vencida, /203\.0\.113\.9/);
+  const revogada = ctx.secaoChavesApi([{ id: 5, nome: 'Fim', prefixo: '0000ffff', escopos: 'crm', somente_leitura: 0, limite_min: 60, ips: null, expira_em: null, ultimo_uso: null, ativo: 0 }], false);
+  assert.match(revogada, /Revogada/); assert.doesNotMatch(revogada, /data-act="revogar-chave"/);
+  console.log('ok · tela de chaves (só adm, sem a caixa plataforma para os demais)');
 
   await new Promise((resolve, reject) => srv.close((erro) => erro ? reject(erro) : resolve()));
   require('../src/db').db.close(); // Windows mantém o arquivo bloqueado enquanto o SQLite está aberto.

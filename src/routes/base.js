@@ -112,8 +112,12 @@ r.get('/painel', (req, res) => {
 });
 
 r.get('/integracoes', async (req, res) => {
+  let gestor_plataforma = false;
+  if (req.usuario.perfil === 'adm') {
+    try { gestor_plataforma = await require('../api-ia').ehGestorPlataforma(req); } catch { gestor_plataforma = false; }
+  }
   res.json({ drive: drive.status(), whatsapp: { modo: wa.modo(), webhook: (cfg.PUBLIC_URL || cfg.BASE_URL) + '/webhook/whatsapp', segredo: !!cfg.WA_APP_SECRET, verify: !!cfg.WA_VERIFY_TOKEN },
-    ia: { ...(await ia.disponivel()), modo: cfg.IA_MODO, modelo: cfg.OLLAMA_MODEL }, public_url: cfg.PUBLIC_URL || null });
+    ia: { ...(await ia.disponivel()), modo: cfg.IA_MODO, modelo: cfg.OLLAMA_MODEL }, public_url: cfg.PUBLIC_URL || null, gestor_plataforma });
 });
 
 r.get('/auditoria', A.exigePerfil('adm'), (req, res) =>
