@@ -20,10 +20,9 @@ const SLUGS = new Set(CATEGORIAS.map((c) => c.slug));
 const nomeDaCategoria = (slug) => (CATEGORIAS.find((c) => c.slug === slug) || {}).nome || slug;
 
 // Site e Instagram da imobiliária. SITE_CLIENTE / INSTAGRAM_CLIENTE no .env.
-// SITE_RUAH / INSTAGRAM_RUAH são os nomes antigos e continuam valendo.
 const envDe = (...nomes) => { for (const n of nomes) { const v = (process.env[n] || '').trim(); if (v) return v; } return ''; };
-const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH');
-const INSTAGRAM_CLIENTE = envDe('INSTAGRAM_CLIENTE', 'INSTAGRAM_RUAH');
+const SITE_CLIENTE = envDe('SITE_CLIENTE');
+const INSTAGRAM_CLIENTE = envDe('INSTAGRAM_CLIENTE');
 
 /**
  * Temas de chamada. O leitor nunca sai do site da imobiliária (decisão do Thiago, 26/10/2026):

@@ -4,10 +4,10 @@
 // → GEMINI_API_KEY / ANTHROPIC_API_KEY do ambiente. A tela só recebe os 4 últimos dígitos.
 // Com as duas disponíveis, usa o Claude e cai no Gemini se ele falhar (o contrário se 'ia_central_preferido'
 // disser 'gemini'). O consumo de cada imobiliária é somado em plataforma.ia_uso pelo nome do modelo.
-const crypto = require('crypto');
 const cfg = require('../config');
 const { getConfig, setConfig } = require('../db');
 const central = require('../plataforma/central');
+const cifraIa = require('./cifra-ia');
 
 const MODELO_PADRAO = 'gemini-flash-latest';
 const MODELO_CLAUDE_PADRAO = 'claude-sonnet-5-5';
@@ -15,15 +15,9 @@ const API = process.env.GEMINI_API_URL || 'https://generativelanguage.googleapis
 const API_ANTHROPIC = process.env.ANTHROPIC_API_URL || 'https://api.anthropic.com/v1';
 
 // Chave de cifra comum ao PC e ao link (os dois usam o mesmo banco; o SECRET_KEY pode ser diferente em cada um).
-const segredo = () => crypto.createHash('sha256').update('ruah-escritorio-ia:' + (process.env.DATABASE_URL || cfg.DATABASE_URL || cfg.SECRET_KEY)).digest();
-function cifra(t) {
-  const iv = crypto.randomBytes(12); const c = crypto.createCipheriv('aes-256-gcm', segredo(), iv);
-  const enc = Buffer.concat([c.update(t, 'utf8'), c.final()]);
-  return [iv, c.getAuthTag(), enc].map((b) => b.toString('base64')).join('.');
-}
-function decifra(p) {
-  try { const [iv, tag, enc] = String(p).split('.').map((s) => Buffer.from(s, 'base64')); const d = crypto.createDecipheriv('aes-256-gcm', segredo(), iv); d.setAuthTag(tag); return Buffer.concat([d.update(enc), d.final()]).toString('utf8'); } catch { return null; }
-}
+const materialCifra = () => process.env.DATABASE_URL || cfg.DATABASE_URL || cfg.SECRET_KEY;
+function cifra(t) { return cifraIa.cifra(materialCifra(), t); }
+function decifra(p) { return cifraIa.decifra(materialCifra(), p); }
 
 function bruto() { try { return JSON.parse(getConfig('escritorio_ia') || '{}'); } catch { return {}; } }
 function propria() { const b = bruto(); return (b.chave && decifra(b.chave)) || ''; }

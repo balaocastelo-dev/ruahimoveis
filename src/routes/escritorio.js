@@ -346,7 +346,7 @@ r.delete('/escritorio/:slug/teste', (req, res) => {
 // Chamado pelo agendador do Supabase (a cada minuto) e pelo PC quando chega mensagem. Sem chave do Gemini não faz nada (o PC cuida).
 async function ciclo(req, res) {
   const token = getConfig('escritorio_ciclo_token');
-  const veio = String(req.headers['x-hh-ciclo'] || req.headers['x-ruah-ciclo'] || '');
+  const veio = String(req.headers['x-hh-ciclo'] || '');
   if (!token || veio.length !== token.length || !require('crypto').timingSafeEqual(Buffer.from(veio), Buffer.from(token))) return res.status(401).json({ erro: 'não autorizado' });
   await IA.carregarCentral();
   if (!IA.naNuvem()) return res.json({ ok: true, sem_chave: true });

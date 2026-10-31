@@ -7,8 +7,7 @@ if (MARCA.cliente) document.title = MARCA.sistema + ' · ' + MARCA.cliente;
 const $ = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-// Sugestão escrita pela IA: 'IA RUAH' nos registros antigos, 'IA <nome do sistema>' nos novos.
-const autorDaIA = (a) => !a || a === 'IA RUAH' || /^IA( |$)/.test(a);
+const autorDaIA = (a) => !a || /^IA( |$)/.test(a);
 const brl = (v) => (v || v === 0 ? 'R$ ' + Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 0 }) : '—');
 const dataBR = (s) => (s ? new Date(s.replace(' ', 'T')).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) : '');
 const tel = (t) => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, -4)}-${d.slice(-4)}` : t || ''; };

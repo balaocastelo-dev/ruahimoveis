@@ -1,10 +1,21 @@
 // Teste do Escritório virtual: setores, alma (.soul), mensagem do cliente → IA (simulada) → ações → aprovação → envio,
 // transferência entre agentes, gerente dos corretores ("feito N"), conversa de teste e relatório do dono.
-const os = require('os'), path = require('path'), fs = require('fs'), http = require('http'), assert = require('assert');
+const os = require('os'), path = require('path'), fs = require('fs'), http = require('http'), crypto = require('crypto'), assert = require('assert');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-escritorio-'));
 process.env.HOUSE_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
 // O teste usa só seus simuladores, mesmo em um PC com chaves e banco da plataforma no .env.
 for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
+{
+  const cifraIa = require('../src/agentes/cifra-ia');
+  const material = 'postgres://teste';
+  const iv = crypto.randomBytes(12);
+  const key = crypto.createHash('sha256').update('ruah-escritorio-ia:' + material).digest();
+  const c = crypto.createCipheriv('aes-256-gcm', key, iv);
+  const enc = Buffer.concat([c.update('AIzaANTIGA', 'utf8'), c.final()]);
+  const pacote = [iv, c.getAuthTag(), enc].map((b) => b.toString('base64')).join('.');
+  assert.equal(cifraIa.decifra(material, pacote), 'AIzaANTIGA');
+  assert.equal(cifraIa.decifra(material, cifraIa.cifra(material, 'AIzaNOVA')), 'AIzaNOVA');
+}
 
 // IA local de mentira: devolve a próxima resposta da fila
 const respostas = [];

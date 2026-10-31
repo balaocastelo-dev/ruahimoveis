@@ -54,8 +54,7 @@ module.exports = {
   WA_VERIFY_TOKEN: env('WA_VERIFY_TOKEN'),
   WA_APP_SECRET: env('WA_APP_SECRET'),
   // Número de WhatsApp da imobiliária impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
-  // WHATSAPP_RUAH é o nome antigo da variável e continua valendo.
-  WHATSAPP_CLIENTE: env('WHATSAPP_CLIENTE') || env('WHATSAPP_RUAH'),
+  WHATSAPP_CLIENTE: env('WHATSAPP_CLIENTE'),
   CUSTO_MATRICULA: parseFloat(env('CUSTO_MATRICULA', '0')) || 0,
   CUSTO_BIRO: parseFloat(env('CUSTO_BIRO', '0')) || 0,
 

@@ -12,6 +12,7 @@ const COOKIE = 'gestor_sessao';
 const SEGURO = process.env.VERCEL ? '; Secure' : '';
 const TEAM = process.env.VERCEL_TEAM_ID || 'team_Mdwt9HWMVtQuaVPBUajlME76';
 const { REPO, CONTEUDO_VAZIO: VAZIO } = require('./repo');
+const cifraIa = require('../agentes/cifra-ia');
 const POOLER = process.env.PLATAFORMA_POOLER || 'aws-1-us-west-2.pooler.supabase.com:6543';
 const PROJETO_DB = process.env.PLATAFORMA_PROJETO_DB || 'yufvfitdhfdjdluvymha';
 // Endereço padrão de cada imobiliária: <nome>.corretordofuturo.app (pedido do Thiago, 28/10/2026).
@@ -337,10 +338,7 @@ api.post('/imobiliarias/:id/assistente/gemini', exige(async (req, res) => {
   if (!im.automatico) return res.json({ ok: true, gravado: false, modelo, motivo: 'Chave válida. Esta imobiliária foi instalada antes do painel: cole a chave no sistema dela, em Escritório virtual › Configuração geral.' });
   const row = await um('SELECT db_url_cifrada FROM imobiliarias WHERE id = $1', [im.id]);
   const { dbUrl } = JSON.parse(decifra(row.db_url_cifrada));
-  const segredo = crypto.createHash('sha256').update('ruah-escritorio-ia:' + dbUrl).digest();
-  const iv = crypto.randomBytes(12); const ci = crypto.createCipheriv('aes-256-gcm', segredo, iv);
-  const enc = Buffer.concat([ci.update(chave, 'utf8'), ci.final()]);
-  const valor = JSON.stringify({ chave: [iv, ci.getAuthTag(), enc].map((b) => b.toString('base64')).join('.'), modelo, por: 'Assistente Herrera (painel do gestor)', em: new Date().toISOString(), teste_ok: true, testado_em: new Date().toISOString() });
+  const valor = JSON.stringify({ chave: cifraIa.cifra(dbUrl, chave), modelo, por: 'Assistente Herrera (painel do gestor)', em: new Date().toISOString(), teste_ok: true, testado_em: new Date().toISOString() });
   await q('SELECT definir_config($1, $2, $3)', [im.slug, 'escritorio_ia', valor]);
   await marcaPasso(im, req.gestor.id, 'gemini', true, `chave …${chave.slice(-4)} · ${modelo}`);
   evento(req.gestor.id, im.id, 'assistente', `gemini …${chave.slice(-4)}`);
