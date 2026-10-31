@@ -40,7 +40,17 @@ permissão da chamada direta.
 Na prática, o escopo `plataforma` está reservado: o painel do gestor só abre pelo login dele. Para abrir por
 chave seria preciso uma chave do gestor da plataforma, no cofre `plataforma.config`.
 
+## Tela (Sistema › Configurações)
+Só o perfil **adm** vê a seção "Chaves de API" em `#/configuracoes` (`public/chaves.js`). Gestor e corretor não veem a seção. As rotas continuam como estavam: adm e gestor podem listar, criar, revogar e ler o log; o corretor recebe 403.
+
+A lista mostra nome, prefixo, escopos, só leitura, limite por minuto, IPs, validade, último uso e situação (ativa, vencida ou revogada). **Revogar** pede confirmação e chama `DELETE /api/chaves/:id`. **Chamadas** abre o `api_log` daquela chave (`GET /api/chaves/log?chave_id=`).
+
+O formulário pede nome, caixas de escopo (`imoveis`, `crm`, `captacao`, `condominios`, `conteudo`, `escritorio`, `painel`, `config`, `sql`), somente leitura, limite por minuto (padrão **60**) e validade em dias (padrão **90**). A lista de IPs é opcional. A caixa **plataforma** só aparece para o gestor da plataforma: o e-mail do administrador é o de um gestor ativo em `plataforma.gestores`, ou existe sessão do painel (`gestor_sessao`) no mesmo endereço. Sem nenhuma caixa marcada, a chave recebe todos os escopos que essa pessoa pode conceder — e isso não inclui `plataforma`, a menos que a caixa esteja na tela.
+
+Na criação, a chave aparece uma única vez num modal com botão **Copiar** e o aviso de que ela não aparece de novo. Clicar fora ou apertar Esc não fecha esse modal; só o botão Fechar.
+
+Pela API, pedir o escopo `plataforma` sem ser gestor da plataforma responde **403**. O padrão da API, quando o campo não vem, continua outro: limite 300 por minuto e sem prazo. A tela é que manda 60 e 90.
+
 ## O que falta (opcional)
-- Tela em Sistema › Configurações para criar/revogar chave pelo navegador (hoje é pela API ou pelo script).
 - Chave do gestor da plataforma para `/gestor-api/*`.
 - Webhooks de saída (hoje a IA acompanha por `GET /api/ia/eventos?desde=`).

@@ -36,11 +36,41 @@ const r = express.Router();
 const admOuGestor = (req, res, nx) => (A.veTudo(req.usuario) ? nx() : res.status(403).json({ erro: 'Só adm e gestor.' }));
 const base = (req) => (cfg.PUBLIC_URL || `${req.protocol}://${req.get('host')}`).replace(/\/$/, '');
 
+// O escopo "plataforma" só pode ser concedido por quem é gestor da plataforma:
+// sessão do painel neste endereço, ou o mesmo e-mail de um gestor ativo.
+const cacheGestor = new Map();
+async function ehGestorPlataforma(req) {
+  const email = String((req.usuario && req.usuario.email) || '').trim().toLowerCase();
+  if (!email || !process.env.PLATAFORMA_DATABASE_URL) return false;
+  const agora = Date.now();
+  const c = cacheGestor.get(email);
+  if (c && c.ate > agora) return c.ok;
+  let ok = false;
+  try {
+    const G = require('../plataforma/gestor');
+    const sess = await G.gestorDa(req);
+    if (sess) ok = true;
+    else {
+      const rows = await G.consulta('SELECT id FROM gestores WHERE lower(email) = $1 AND ativo = 1 LIMIT 1', [email]);
+      ok = rows.length > 0;
+    }
+  } catch { ok = false; }
+  cacheGestor.set(email, { ok, ate: agora + 60e3 });
+  if (cacheGestor.size > 500) for (const [k, v] of cacheGestor) if (v.ate <= agora) cacheGestor.delete(k);
+  return ok;
+}
+function pediuPlataforma(escopos) {
+  if (escopos == null || escopos === '*' || escopos === '') return false;
+  const lista = Array.isArray(escopos) ? escopos : String(escopos).split(',');
+  return lista.some((s) => String(s).trim() === 'plataforma');
+}
+
 // ---- chaves de API ----
 r.get('/chaves', admOuGestor, (req, res) => res.json(K.lista()));
 r.get('/chaves/log', admOuGestor, (req, res) => res.json(K.log(Math.min(500, int(req.query.limite) || 100), int(req.query.chave_id))));
-r.post('/chaves', admOuGestor, (req, res) => {
+r.post('/chaves', admOuGestor, async (req, res) => {
   const b = req.body || {};
+  if (pediuPlataforma(b.escopos) && !(await ehGestorPlataforma(req))) falha(403, 'O escopo "plataforma" só pode ser concedido pelo gestor da plataforma.');
   const alvo = int(b.usuario_id) || req.usuario.id;
   if (alvo !== req.usuario.id && !A.veTudo(req.usuario)) falha(403, 'Só adm e gestor criam chave para outro usuário.');
   const nova = K.criar({ ...b, usuarioId: alvo, criadaPor: req.usuario.id });
@@ -170,4 +200,4 @@ r.post('/ia/executar', async (req, res) => {
   } catch (e) { falha(502, `Não consegui falar com o próprio sistema (${destino}): ${e.message}`); }
 });
 
-module.exports = { porChave, rotas: r, ESCOPOS: K.ESCOPOS };
+module.exports = { porChave, rotas: r, ESCOPOS: K.ESCOPOS, ehGestorPlataforma };

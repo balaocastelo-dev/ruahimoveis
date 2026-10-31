@@ -565,4 +565,4 @@ function gestor(req, res, next) {
   res.type('html').send(PAGINA);
 }
 
-module.exports = { gestor, slugDe, cifra, decifra, hashSenha, confere, consulta: (sql, p) => q(sql, p) };
+module.exports = { gestor, gestorDa, slugDe, cifra, decifra, hashSenha, confere, consulta: (sql, p) => q(sql, p) };

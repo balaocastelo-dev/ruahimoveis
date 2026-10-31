@@ -29,10 +29,17 @@ async function api(method, url, body, isForm) {
   return j;
 }
 function toast(t, erro) { const e = $('#toast'); e.textContent = t; e.className = 'toast' + (erro ? ' erro' : ''); e.hidden = false; clearTimeout(e._t); e._t = setTimeout(() => (e.hidden = true), erro ? 6000 : 3200); }
-function modal(html) { const m = $('#modal'); m.innerHTML = `<div class="modal">${html}</div>`; m.hidden = false; const f = m.querySelector('input,select,textarea'); if (f) f.focus(); }
-function fechaModal() { $('#modal').hidden = true; $('#modal').innerHTML = ''; }
-$('#modal').addEventListener('click', (e) => { if (e.target.id === 'modal' || e.target.closest('[data-fecha]')) fechaModal(); });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fechaModal(); });
+function modal(html, o) {
+  const m = $('#modal'); m.innerHTML = `<div class="modal">${html}</div>`; m.hidden = false;
+  if (o && o.segura) m.dataset.segura = '1'; else delete m.dataset.segura;
+  const f = m.querySelector('input,select,textarea'); if (f) f.focus();
+}
+function fechaModal() { const m = $('#modal'); delete m.dataset.segura; m.hidden = true; m.innerHTML = ''; }
+$('#modal').addEventListener('click', (e) => {
+  if (e.target.closest('[data-fecha]')) { fechaModal(); return; }
+  if (e.target.id === 'modal' && !$('#modal').dataset.segura) fechaModal();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !$('#modal').dataset.segura) fechaModal(); });
 const formJSON = (f) => { const o = {}; new FormData(f).forEach((v, k) => { o[k] = v; }); $$('input[type=checkbox]', f).forEach((c) => { o[c.name] = c.checked; }); return o; };
 async function copiar(texto) { try { await navigator.clipboard.writeText(texto); toast('Copiado'); } catch { prompt('Copie o texto:', texto); } }
 async function comBotao(btn, fn) { const t = btn && btn.innerHTML; if (btn) { btn.disabled = true; btn.innerHTML = 'Aguarde…'; } try { await fn(); } catch (e) { toast(e.message, true); } finally { if (btn && document.body.contains(btn)) { btn.disabled = false; btn.innerHTML = t; } } }
@@ -807,8 +814,13 @@ FORM['visita-ok'] = async (f) => { const d = formJSON(f); await api('PATCH', `/a
 
 // ---------- configurações ----------
 async function telaConfig(qs) {
-  const [ig, us, au] = await Promise.all([api('GET', '/api/integracoes'), api('GET', '/api/usuarios'), ME.perfil === 'adm' ? api('GET', '/api/auditoria') : Promise.resolve([])]);
-  const dv = ig.drive, adm = ME.perfil === 'adm';
+  const adm = ME.perfil === 'adm';
+  const [ig, us, au, chaves] = await Promise.all([
+    api('GET', '/api/integracoes'), api('GET', '/api/usuarios'),
+    adm ? api('GET', '/api/auditoria') : Promise.resolve([]),
+    adm ? api('GET', '/api/chaves') : Promise.resolve([]),
+  ]);
+  const dv = ig.drive;
   const msgDrive = qs.get('drive');
   $('#main').innerHTML = `<h1>Configurações</h1>
   ${msgDrive ? `<div class="banner ${msgDrive === 'ok' ? '' : 'warn'}" style="${msgDrive === 'ok' ? 'background:var(--ok-bg)' : ''}">${msgDrive === 'ok' ? 'Google Drive conectado.' : esc(msgDrive)}</div>` : ''}
@@ -832,6 +844,7 @@ async function telaConfig(qs) {
     <div class="grid" style="gap:16px;align-content:start"><form class="card grid" data-form="meu-telefone" style="gap:10px"><h2 style="margin:0">Meu WhatsApp</h2><p class="muted small" style="margin:0">Vai no QR code das cartas de captação quando a ${esc(MARCA.cliente)} não tiver um número central (WHATSAPP_CLIENTE no .env).</p><label class="f">Celular com DDD<input name="telefone" inputmode="tel" value="${esc(tel(ME.telefone || ''))}"></label><div><button class="btn" type="submit">Salvar</button></div></form>
     <form class="card grid" data-form="minha-senha" style="gap:10px;align-content:start"><h2 style="margin:0">Minha senha</h2><label class="f">Senha atual<input type="password" name="atual" required autocomplete="current-password"></label><label class="f">Nova senha<input type="password" name="nova" required minlength="8" autocomplete="new-password"></label><div><button class="btn" type="submit">Trocar senha</button></div></form></div>
   </div>
+  ${adm && typeof secaoChavesApi === 'function' ? secaoChavesApi(chaves, !!ig.gestor_plataforma) : ''}
   ${adm ? `<div class="card" style="margin-top:16px"><h2>Registro de atividades</h2><div class="tbl" style="max-height:320px;overflow:auto"><table><thead><tr><th>Quando</th><th>Quem</th><th>Ação</th><th>Detalhe</th></tr></thead><tbody>${au.slice(0, 80).map((a) => `<tr><td class="mono">${dataBR(a.em)}</td><td>${esc(a.nome || 'Sistema / público')}</td><td>${esc(a.acao)}</td><td class="small">${esc(a.detalhe || '')}</td></tr>`).join('')}</tbody></table></div></div>` : ''}`;
 }
 ACT['drive-conectar'] = (el) => comBotao(el, async () => { const r = await api('GET', '/api/drive/conectar'); location.href = r.url; });

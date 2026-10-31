@@ -8,7 +8,7 @@ o que cada rota faz, o que ela recebe, o que devolve e o que muda no mundo quand
 - **Formato**: JSON em tudo, menos as páginas públicas (HTML), as fotos e os PDFs.
 - **Erro**: sempre `{"erro":"explicação em português"}` com o status HTTP certo.
 - **Fuso e datas**: texto `AAAA-MM-DD` ou `AAAA-MM-DD HH:MM:SS`, horário de São Paulo.
-- Atualizado em 30/10/2026. Gerado a partir do código: `src/routes/*`, `src/api-ia/*`, `src/plataforma/*`, `src/estacao/*`.
+- Atualizado em 31/10/2026. Gerado a partir do código: `src/routes/*`, `src/api-ia/*`, `src/plataforma/*`, `src/estacao/*`.
 
 ---
 
@@ -34,7 +34,8 @@ a que o usuário já tinha. Um corretor com chave continua vendo só os imóveis
 
 | Jeito | Comando |
 |---|---|
-| Pelo PC (sem tela) | `node scripts/api-chave.js "Claude" "*"` — mostra a chave uma única vez |
+| Pela tela (só administrativo) | Sistema › Configurações › Chaves de API (`#/configuracoes`) — a chave aparece uma única vez, com botão Copiar |
+| Pelo PC | `node scripts/api-chave.js "Claude" "*"` — mostra a chave uma única vez |
 | Pela API (já logado ou com outra chave) | `POST /api/chaves` |
 | Listar / revogar pelo PC | `node scripts/api-chave.js --listar` · `--revogar <id>` |
 
@@ -71,7 +72,7 @@ O banco guarda só o **hash** da chave (SHA-256). Perdeu, cria outra.
 | `escritorio` | agentes robôs, PCs virtuais, estação |
 | `painel` | painéis, números, auditoria, rotas `/api/ia/*` |
 | `config` | usuários, integrações, LGPD, chaves de API, configurações |
-| `plataforma` | reservado. O painel do gestor (`/gestor-api/*`) tem login próprio (tabela `plataforma.gestores`, cookie `gestor_sessao`) e **ainda não abre por chave de API** |
+| `plataforma` | reservado ao gestor da plataforma. Na tela, a caixa só aparece para ele; pela API, quem não é gestor da plataforma recebe 403 ao pedir esse escopo. O painel (`/gestor-api/*`) tem login próprio (tabela `plataforma.gestores`, cookie `gestor_sessao`) e **ainda não abre por chave de API** |
 | `sql` | `/api/ia/esquema` e `/api/ia/consulta` |
 
 **Erros próprios da chave**
