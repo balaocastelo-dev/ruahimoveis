@@ -486,7 +486,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-31T17:22:20.970Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-no-cambui-campinas-bairro-a-pe",
+      "titulo": "Morar no Cambuí: como é a vida no bairro que se faz a pé em Campinas",
+      "tema": "morar no cambui em campinas",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-10-31T20:22:56.940Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T17:22:20.970Z"
+  "atualizadoEm": "2026-10-31T20:22:56.940Z"
 }
