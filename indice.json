@@ -531,7 +531,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-10-31T23:24:44.661Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "microcimento-ou-cimento-queimado-diferencas-piso-parede",
+      "titulo": "Microcimento ou cimento queimado: o que muda no piso e na parede",
+      "tema": "microcimento ou cimento queimado no piso e parede",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-10-31T23:25:56.002Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-10-31T23:24:44.662Z"
+  "atualizadoEm": "2026-10-31T23:25:56.002Z"
 }
