@@ -132,3 +132,14 @@ Validação final desta rodada:
 
 Evidências locais atualizadas em `data/cenario-qa/`: `npm-test.log`, `test-2d.log`, `test-3d.log`, `render.json`,
 `lugares-2d.png` e `shot-{dia,tarde,noite}.{png,log}` (fora do Git). Sem bibliotecas novas ou alteração da CSP.
+
+### Validação da main em `0b19a9a` (30/10/2026)
+
+Os sete itens foram revisados na ordem novamente: todos os commits de implementação já pertencem à `main`
+local e remota. Os oito cliques do 2D já reutilizam o painel `.j3p-*` compartilhado. Não houve pendência de
+implementação; o painel, o modo andar, os humanos, a API e as dependências foram preservados nesta rodada.
+
+Passaram `npm test` (19 suítes), `node test/escritorio-2d.cjs` e `node test/escritorio-3d.cjs`.
+O relatório confirmou nove humanos nos três horários, sem erros JavaScript/WebGL ou falhas de recursos.
+As capturas de 12h, 17h30 e 21h foram refeitas com `servidor-teste.cjs` + `shot3d.cjs` e conferidas visualmente.
+Os logs e imagens listados acima foram atualizados; esta rodada altera somente o registro da validação.

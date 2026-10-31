@@ -169,6 +169,10 @@ Os limites de valor mudam em "Regras do escritório".
 
 ### Verificação
 
+Última validação: `main` em `0b19a9a`, em 30/10/2026. As 19 suítes de `npm test`, os testes 2D/3D e os renders
+de 12h, 17h30 e 21h passaram; os sete itens já estavam implementados e não exigiram alterações de produção.
+O registro está em [Resultado da tarefa](tarefa-melhorias-escritorio.md#resultado).
+
 ```powershell
 npm test
 node test/escritorio-2d.cjs
