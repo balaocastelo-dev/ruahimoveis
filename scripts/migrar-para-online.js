@@ -1,4 +1,4 @@
-// Copia o banco local do PC (data/ruah.db + data/arquivos) para o banco online (Postgres/Supabase).
+// Copia o banco local do PC (data/house.db, ou o arquivo antigo data/ruah.db, + data/arquivos) para o banco online.
 // Uso (no PC):  node scripts/migrar-para-online.js "postgres://..."
 // Mantém os mesmos ids, então links, assinaturas e históricos continuam batendo.
 const fs = require('fs');
@@ -15,7 +15,8 @@ const ORDEM = ['usuarios', 'config', 'condominios', 'proprietarios', 'imoveis', 
   'interacoes', 'visitas', 'mensagens', 'assinaturas', 'oportunidades', 'oportunidade_eventos', 'aprovacoes', 'auditoria'];
 
 (async () => {
-  const lite = new DatabaseSync(path.join(DATA, 'ruah.db'), { readOnly: true });
+  const arquivo = fs.existsSync(path.join(DATA, 'house.db')) ? path.join(DATA, 'house.db') : path.join(DATA, 'ruah.db');
+  const lite = new DatabaseSync(arquivo, { readOnly: true });
   const pg = new Client({ connectionString: url.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(url) ? false : { rejectUnauthorized: false } });
   await pg.connect();
   const ja = (await pg.query('SELECT count(*)::int n FROM usuarios')).rows[0].n;
@@ -26,7 +27,7 @@ const ORDEM = ['usuarios', 'config', 'condominios', 'proprietarios', 'imoveis', 
     for (const t of ORDEM) {
       const colsLite = lite.prepare(`PRAGMA table_info(${t})`).all().map((c) => c.name);
       if (!colsLite.length) { console.log(`- ${t}: não existe no banco local`); continue; }
-      const colsPg = (await pg.query("SELECT column_name FROM information_schema.columns WHERE table_schema='ruah' AND table_name=$1", [t])).rows.map((r) => r.column_name);
+      const colsPg = (await pg.query("SELECT column_name FROM information_schema.columns WHERE table_schema='base' AND table_name=$1", [t])).rows.map((r) => r.column_name);
       const cols = colsLite.filter((c) => colsPg.includes(c));
       const sobra = colsLite.filter((c) => !colsPg.includes(c));
       if (sobra.length) console.log(`  aviso: ${t} tem colunas só no local (não copiadas): ${sobra.join(', ')}`);
@@ -39,7 +40,7 @@ const ORDEM = ['usuarios', 'config', 'condominios', 'proprietarios', 'imoveis', 
         parte.forEach((l, li) => { vals.push('(' + cols.map((c, ci) => '$' + (li * cols.length + ci + 1)).join(',') + ')'); cols.forEach((c) => params.push(l[c])); });
         await pg.query(`INSERT INTO ${t}(${cols.join(',')}) VALUES ${vals.join(',')}`, params);
       }
-      if (cols.includes('id')) await pg.query(`SELECT setval(pg_get_serial_sequence('ruah.${t}','id'), (SELECT coalesce(max(id),0)+1 FROM ${t}), false)`);
+      if (cols.includes('id')) await pg.query(`SELECT setval(pg_get_serial_sequence('base.${t}','id'), (SELECT coalesce(max(id),0)+1 FROM ${t}), false)`);
       console.log(`- ${t}: ${linhas.length} registro(s)`);
     }
     // conteúdo dos arquivos

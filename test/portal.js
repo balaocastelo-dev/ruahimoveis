@@ -4,8 +4,8 @@
 //   node test/portal.js
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-portal-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-portal-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 delete process.env.DATABASE_URL;
@@ -126,7 +126,7 @@ const ramo = http.createServer((req, res) => {
     const r1 = await post('/api/publico/portal/interesse', { codigo: 'CA9001', nome: 'Ana Compradora', telefone: '(19) 99876-5432', email: 'ana@exemplo.com', mensagem: 'Quero saber mais', visita: true, dia: '2026-11-03', periodo: 'Manhã', aceite: true });
     assert.equal(r1.s, 200, JSON.stringify(r1.j));
     const lead = one("SELECT * FROM leads WHERE telefone='5519998765432'");
-    assert.ok(lead && lead.origem === 'Portal RUAH' && lead.etapa === 'visita' && lead.temperatura === 'quente');
+    assert.ok(lead && lead.origem === 'Portal Imobiliária' && lead.etapa === 'visita' && lead.temperatura === 'quente');
     const it = all('SELECT * FROM interacoes WHERE lead_id=?', lead.id);
     assert.ok(it.some((i) => /VISITA/.test(i.texto) && /CA9001/.test(i.texto) && /03\/11\/2026/.test(i.texto))); console.log('ok · "agendar visita" vira lead quente no CRM com o imóvel e a data');
     await post('/api/publico/portal/interesse', { codigo: 'CA9001', nome: 'Ana C.', telefone: '19998765432', aceite: true });

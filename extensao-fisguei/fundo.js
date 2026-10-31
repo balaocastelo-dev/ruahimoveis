@@ -1,5 +1,5 @@
 // Fisguei → Herrera HOUSE IA · envia ao Herrera HOUSE IA o que a página do Fisgar recebeu (em lotes, com nova tentativa se falhar).
-const PADRAO = 'https://ruahimoveis.vercel.app';
+const PADRAO = '';
 let fila = [];
 let enviando = false;
 const st = { erro: null, anuncios: 0, pessoas: 0, dia: '' };

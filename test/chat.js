@@ -3,8 +3,8 @@
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http');
 const assert = require('assert/strict');
 const { setTimeout: espera } = require('timers/promises');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-chat-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-chat-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = 'c'.repeat(48);
 process.env.IA_MODO = 'desligado';
 process.env.ESTACAO_ID = 'chat-teste';
@@ -336,7 +336,7 @@ const fecha = async (servidor) => {
     banco?.db.close(); // No Windows, fechar o SQLite antes de remover seu diretório.
     const limpeza = fs.realpathSync(tmp);
     assert.equal(path.dirname(limpeza), fs.realpathSync(os.tmpdir()));
-    assert.ok(path.basename(limpeza).startsWith('ruah-chat-'));
+    assert.ok(path.basename(limpeza).startsWith('hh-chat-'));
     fs.rmSync(limpeza, { recursive: true, force: true });
   }
   console.log('\nChat: todos os testes passaram.');

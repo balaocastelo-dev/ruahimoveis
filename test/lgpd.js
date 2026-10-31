@@ -2,8 +2,8 @@
 // mensagem do robô com a origem do contato e o aceite dos Termos no sistema.
 //   node test/lgpd.js
 const os = require('os'), path = require('path'), fs = require('fs'), assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-lgpd-'));
-process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'l'.repeat(48); process.env.IA_MODO = 'desligado';
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-lgpd-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'l'.repeat(48); process.env.IA_MODO = 'desligado';
 process.env.PLATAFORMA_HOSTS = 'localhost'; // localhost = corretordofuturo.app; 127.0.0.1 = portal da imobiliária
 process.env.EMPRESA = 'Imobiliária Teste Ltda'; process.env.CLIENTE_CRECI = '12345-J';
 delete process.env.DATABASE_URL; delete process.env.PLATAFORMA_DATABASE_URL;

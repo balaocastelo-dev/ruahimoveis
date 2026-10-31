@@ -1,8 +1,8 @@
 // Bairros · páginas de SEO, uma por bairro de Campinas.
 //
-// Mesmo esquema do blog Sopro e do portal de imóveis:
+// Mesmo esquema do blog e do portal de imóveis:
 //   - a página é um JSON de blocos tipados (nunca HTML), num ramo do GitHub
-//     (`claude/bairros-conteudo` do repositório público ruahimoveis — identificador técnico, não trocar);
+//     (`claude/bairros-conteudo` do repositório da plataforma);
 //   - quem escreve é uma tarefa agendada do Claude, que pesquisa o bairro,
 //     escolhe fotos reais e escreve um guia completo;
 //   - uma régua em código confere no comando de publicar E de novo no site;
@@ -41,9 +41,10 @@ const TEMAS = new Set(Object.keys(CHAMADAS));
 const LICENCAS_OK = /^(?:CC0(?:\s1\.0)?|Public domain|PD(?:[- ].*)?|CC BY(?:-SA)? (?:1\.0|2\.0|2\.5|3\.0|4\.0)(?:\s[a-z]{2,3})?)$/i;
 const licencaAceita = (nome) => LICENCAS_OK.test(String(nome || '').trim()) && !/\bNC\b|\bND\b/i.test(String(nome || ''));
 
+const { REPO, RAW } = require('../plataforma/repo');
 const RAMO_DE_CONTEUDO = 'claude/bairros-conteudo';
-const DONO_REPO = 'balaocastelo-dev/ruahimoveis';
-const ENDERECO_DO_RAMO = `https://raw.githubusercontent.com/${DONO_REPO}/refs/heads/${RAMO_DE_CONTEUDO}`;
+const DONO_REPO = REPO;
+const ENDERECO_DO_RAMO = `${RAW}/refs/heads/${RAMO_DE_CONTEUDO}`;
 
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 /** Arquivo do Commons: "File:Nome da foto.jpg". */

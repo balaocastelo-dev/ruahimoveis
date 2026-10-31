@@ -14,7 +14,7 @@ const { one, run } = require('../db');
 const { licencaAceita, ARQUIVO_COMMONS } = require('./config');
 
 const API = 'https://commons.wikimedia.org/w/api.php';
-const UA = 'RUAH-Imoveis/1.0 (guias de bairro de Campinas; imoveisruah@gmail.com)';
+const UA = 'HerreraHOUSEIA/1.0 (guias de bairro de Campinas; https://corretordofuturo.app)';
 const RENOVAR_DIAS = 30;
 const LARGURAS = [330, 500, 960, 1280, 1920];
 

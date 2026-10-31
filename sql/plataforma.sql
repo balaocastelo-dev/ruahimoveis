@@ -1,5 +1,6 @@
 -- Herrera HOUSE IA · plataforma de imobiliárias (painel do gestor), 28/10/2026.
--- Cada imobiliária é um schema próprio (ruah, ondemorar, …) com um usuário de banco só dela.
+-- Cada imobiliária é um schema próprio (ondemorar, cademeuap, …) com um usuário de banco só dela.
+-- O schema "base" é o molde e a base comum; não é uma imobiliária. O slug "ruah" continua reservado.
 -- O painel do gestor entra com o usuário plataforma_app, que NÃO lê as tabelas das imobiliárias:
 -- só a tabela de cadastro (plataforma.*) e as funções abaixo (SECURITY DEFINER), que devolvem números.
 -- O usuário plataforma_app é criado à parte (com senha), fora deste arquivo.
@@ -85,35 +86,35 @@ BEGIN
     atualizado_em = to_char(now() AT TIME ZONE 'America/Sao_Paulo', 'YYYY-MM-DD HH24:MI:SS') WHERE slug = p_schema;
 END $f$;
 
--- Nova imobiliária: schema com a mesma estrutura da RUAH (vazio), base comum por views, usuário de banco próprio
+-- Nova imobiliária: schema com a mesma estrutura do molde "base" (vazio), base comum por views, usuário de banco próprio
 -- e o administrador. A senha do banco e o hash da senha do admin vêm do servidor (nunca ficam neste arquivo).
 CREATE OR REPLACE FUNCTION plataforma.criar_imobiliaria(p_slug text, p_db_senha text, p_admin_nome text, p_admin_email text, p_admin_hash text) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public AS $f$
 DECLARE t record; f record; compart text[] := ARRAY['condominios','predios3d','mapa3d','pois','fachadas']; papel text := p_slug || '_app';
 BEGIN
-  IF p_slug !~ '^[a-z][a-z0-9_]{2,30}$' OR p_slug IN ('ruah','plataforma','public','extensions','auth','storage','realtime','pg_catalog','information_schema') THEN
+  IF p_slug !~ '^[a-z][a-z0-9_]{2,30}$' OR p_slug IN ('base','ruah','plataforma','public','extensions','auth','storage','realtime','pg_catalog','information_schema') THEN
     RAISE EXCEPTION 'nome técnico inválido'; END IF;
   IF NOT EXISTS (SELECT 1 FROM plataforma.imobiliarias WHERE slug = p_slug) THEN RAISE EXCEPTION 'cadastre a imobiliária antes'; END IF;
   IF EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = p_slug) THEN RAISE EXCEPTION 'esse banco já existe'; END IF;
   EXECUTE format('CREATE SCHEMA %I', p_slug);
   EXECUTE format($q$CREATE FUNCTION %I.agora() RETURNS text LANGUAGE sql STABLE AS 'SELECT to_char(now() AT TIME ZONE ''America/Sao_Paulo'', ''YYYY-MM-DD HH24:MI:SS'')'$q$, p_slug);
   FOR t IN SELECT c.relname FROM pg_class c JOIN pg_namespace s ON s.oid = c.relnamespace
-           WHERE s.nspname = 'ruah' AND c.relkind = 'r' AND c.relname <> ALL(compart) AND c.relname NOT LIKE 'bkp_%' LOOP
-    EXECUTE format('CREATE TABLE %I.%I (LIKE ruah.%I INCLUDING ALL)', p_slug, t.relname, t.relname);
+           WHERE s.nspname = 'base' AND c.relkind = 'r' AND c.relname <> ALL(compart) AND c.relname NOT LIKE 'bkp_%' LOOP
+    EXECUTE format('CREATE TABLE %I.%I (LIKE base.%I INCLUDING ALL)', p_slug, t.relname, t.relname);
   END LOOP;
   FOR t IN SELECT unnest(compart) relname LOOP
-    EXECUTE format('CREATE VIEW %I.%I AS SELECT * FROM ruah.%I', p_slug, t.relname, t.relname);
+    EXECUTE format('CREATE VIEW %I.%I AS SELECT * FROM base.%I', p_slug, t.relname, t.relname);
   END LOOP;
   FOR f IN SELECT conname, conrelid::regclass::text rel, pg_get_constraintdef(oid) def FROM pg_constraint
-           WHERE contype = 'f' AND connamespace = 'ruah'::regnamespace AND confrelid::regclass::text !~ '(condominios|predios3d|mapa3d|pois|fachadas)$'
+           WHERE contype = 'f' AND connamespace = 'base'::regnamespace AND confrelid::regclass::text !~ '(condominios|predios3d|mapa3d|pois|fachadas)$'
              AND conrelid::regclass::text !~ 'bkp_' LOOP
-    EXECUTE format('ALTER TABLE %I.%I ADD CONSTRAINT %I %s', p_slug, split_part(f.rel, '.', 2), f.conname, replace(f.def, 'ruah.', quote_ident(p_slug) || '.'));
+    EXECUTE format('ALTER TABLE %I.%I ADD CONSTRAINT %I %s', p_slug, split_part(f.rel, '.', 2), f.conname, replace(f.def, 'base.', quote_ident(p_slug) || '.'));
   END LOOP;
-  FOR f IN SELECT table_name, column_name, column_default FROM information_schema.columns WHERE table_schema = p_slug AND column_default LIKE '%ruah.agora()%' LOOP
-    EXECUTE format('ALTER TABLE %I.%I ALTER COLUMN %I SET DEFAULT %s', p_slug, f.table_name, f.column_name, replace(f.column_default, 'ruah.agora()', quote_ident(p_slug) || '.agora()'));
+  FOR f IN SELECT table_name, column_name, column_default FROM information_schema.columns WHERE table_schema = p_slug AND column_default LIKE '%base.agora()%' LOOP
+    EXECUTE format('ALTER TABLE %I.%I ALTER COLUMN %I SET DEFAULT %s', p_slug, f.table_name, f.column_name, replace(f.column_default, 'base.agora()', quote_ident(p_slug) || '.agora()'));
   END LOOP;
-  EXECUTE format('INSERT INTO %I.bairros SELECT * FROM ruah.bairros', p_slug);
-  EXECUTE format('INSERT INTO %I.bairro_commons SELECT * FROM ruah.bairro_commons', p_slug);
+  EXECUTE format('INSERT INTO %I.bairros SELECT * FROM base.bairros', p_slug);
+  EXECUTE format('INSERT INTO %I.bairro_commons SELECT * FROM base.bairro_commons', p_slug);
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = papel) THEN
     EXECUTE format('CREATE ROLE %I LOGIN PASSWORD %L', papel, p_db_senha);
   END IF;

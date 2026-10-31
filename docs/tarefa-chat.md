@@ -9,7 +9,7 @@ Leia antes: `docs/escritorio.md` (agentes, cérebro, PCs virtuais), `src/routes/
 = como uma mensagem humana chega ao robô e como ele responde: `B.registraEntrada` + `cicloCerebro({telefone})`),
 `src/routes/base.js` (`/painel`), `public/app.js` (SPA por hash, `rota()`, `ACT`, `api()`, `toast`, `$`),
 `public/escritorio.js` (tela #/whats), `src/db-sqlite.js` (esquema local criado no boot) e `sql/escritorio.sql`
-(esquema Postgres/Supabase, um schema por imobiliária: ruah, ondemorar, cademeuap, casaprado, lumen — as
+(esquema Postgres/Supabase, um schema por imobiliária: base é o molde; ondemorar, cademeuap, casaprado, lumen — as
 migrações no Supabase são aplicadas à parte, pelo Claude; o Codex entrega o SQL pronto).
 
 ## Entrega da etapa 1
@@ -46,4 +46,4 @@ migrações no Supabase são aplicadas à parte, pelo Claude; o Codex entrega o 
 4. Andar no escritório (avatar próprio, WASD/joystick, colisão, presença dos outros usuários por long polling 2 Hz, perto do robô + E abre o chat, área da mesa de reunião entra na sala ao vivo, voz por proximidade).
 
 ## Prompt pronto para o Codex
-> Leia docs/tarefa-chat.md e os arquivos que ele indica no repositório balaocastelo-dev/ruahimoveis e implemente a etapa 1 completa (banco SQLite + sql/chat.sql, API em src/routes/chat.js, tela public/chat.js com #/chat, sininho e toasts no shell, robôs como contatos respondendo pelo cérebro existente, test/chat.js, docs/chat.md). Não mexa na API do escritório além de reaproveitar funções; não mexa no 3D além do balão. Rode npm test antes de subir. Commits pequenos em main, mensagens em português.
+> Leia docs/tarefa-chat.md e os arquivos que ele indica neste repositório e implemente a etapa 1 completa (banco SQLite + sql/chat.sql, API em src/routes/chat.js, tela public/chat.js com #/chat, sininho e toasts no shell, robôs como contatos respondendo pelo cérebro existente, test/chat.js, docs/chat.md). Não mexa na API do escritório além de reaproveitar funções; não mexa no 3D além do balão. Rode npm test antes de subir. Commits pequenos em main, mensagens em português.

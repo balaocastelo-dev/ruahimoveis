@@ -24,7 +24,7 @@ async function base(arq) {
   console.log(`condomínios no arquivo: ${lista.length}`);
   const c = await pool.connect();
   try {
-    await c.query('SET search_path = ruah, extensions');
+    await c.query('SET search_path = base, extensions');
     for (let i = 0; i < lista.length; i += 250) {
       const lote = lista.slice(i, i + 250);
       const vals = [], linhas = [];
@@ -33,7 +33,7 @@ async function base(arq) {
         linhas.push('(' + COLS.map((k) => { vals.push(x[k] ?? null); return `$${vals.length}`; }).join(',') + ')');
       }
       const upd = COLS.filter((k) => k !== 'slug').map((k) => {
-        if (k === 'nome' || k === 'nome_busca') return `${k} = CASE WHEN condominios.atualizado_em IS NOT NULL OR condominios.fontes = 'ruah' THEN condominios.${k} ELSE excluded.${k} END`;
+        if (k === 'nome' || k === 'nome_busca') return `${k} = CASE WHEN condominios.atualizado_em IS NOT NULL OR condominios.fontes IN ('cadastro','ruah') THEN condominios.${k} ELSE excluded.${k} END`;
         if (k === 'lat' || k === 'lon' || k === 'geo_fonte') return `${k} = CASE WHEN condominios.geo_fonte = 'ajustado' THEN condominios.${k} ELSE coalesce(excluded.${k}, condominios.${k}) END`;
         if (k === 'tipo') return `tipo = CASE WHEN condominios.atualizado_em IS NOT NULL THEN condominios.tipo ELSE excluded.tipo END`;
         if (SO_SE_VAZIO.has(k)) return `${k} = coalesce(condominios.${k}, excluded.${k})`;
@@ -47,7 +47,7 @@ async function base(arq) {
     // condomínios antigos (cadastros da imobiliária sem endereço) ganham slug e nome de busca
     await c.query(`UPDATE condominios SET nome_busca = upper(nome) WHERE nome_busca IS NULL`);
     const r = await c.query(`SELECT id, nome FROM condominios WHERE slug IS NULL`);
-    for (const x of r.rows) await c.query('UPDATE condominios SET slug=$1, fontes=coalesce(fontes,$2) WHERE id=$3', [`${chave(x.nome).toLowerCase().replace(/ /g, '-')}-${x.id}`, 'ruah', x.id]);
+    for (const x of r.rows) await c.query('UPDATE condominios SET slug=$1, fontes=coalesce(fontes,$2) WHERE id=$3', [`${chave(x.nome).toLowerCase().replace(/ /g, '-')}-${x.id}`, 'cadastro', x.id]);
     const t = await c.query(`SELECT count(*) n, count(lat) geo FROM condominios WHERE coalesce(tipo,'') <> 'comercial'`);
     console.log(`no banco: ${t.rows[0].n} condomínios residenciais, ${t.rows[0].geo} no mapa`);
   } finally { c.release(); }
@@ -57,7 +57,7 @@ async function pois(arq) {
   const l = JSON.parse(fs.readFileSync(arq, 'utf8'));
   const c = await pool.connect();
   try {
-    await c.query('SET search_path = ruah, extensions');
+    await c.query('SET search_path = base, extensions');
     await c.query('BEGIN'); await c.query('DELETE FROM pois');
     for (let i = 0; i < l.length; i += 500) {
       const vals = [], v = [];
@@ -76,12 +76,12 @@ async function predios(arq) {
   console.log(`blocos (${tabela}): ${linhas.length}`);
   const c = await pool.connect();
   try {
-    await c.query('SET search_path = ruah, extensions');
+    await c.query('SET search_path = base, extensions');
     for (let i = 0; i < linhas.length; i += 100) {
       const lote = linhas.slice(i, i + 100).map((l) => JSON.parse(l));
       const vals = [], v = [];
       for (const x of lote) { vals.push(x.t, Buffer.from(x.d, 'base64')); v.push(`($${vals.length - 1},$${vals.length})`); }
-      await c.query(`INSERT INTO ${tabela}(tile,dados) VALUES ${v.join(',')} ON CONFLICT (tile) DO UPDATE SET dados=excluded.dados, atualizado_em=ruah.agora()`, vals);
+      await c.query(`INSERT INTO ${tabela}(tile,dados) VALUES ${v.join(',')} ON CONFLICT (tile) DO UPDATE SET dados=excluded.dados, atualizado_em=base.agora()`, vals);
       process.stdout.write(`\r  ${Math.min(i + 100, linhas.length)}/${linhas.length}`);
     }
     console.log('');
@@ -91,7 +91,7 @@ async function predios(arq) {
 try {
   if (arqBase && arqBase !== '-') await base(path.resolve(arqBase));
   for (const a of arqsPredios) await (/pois/.test(path.basename(a)) ? pois(path.resolve(a)) : predios(path.resolve(a)));
-  if (arqsPredios.some((a) => /mapa3d/.test(a))) { const c = await pool.connect(); await c.query("DELETE FROM ruah.condominio_cache WHERE tipo='3d'"); c.release(); }
+  if (arqsPredios.some((a) => /mapa3d/.test(a))) { const c = await pool.connect(); await c.query("DELETE FROM base.condominio_cache WHERE tipo='3d'"); c.release(); }
   // liga carteira, Radar e Fisguei aos condomínios
   if (arqBase && arqBase !== '-') { const B = require('../src/condominios/base'); console.log('vínculos:', B.vincular({ tudo: false })); }
   fs.writeFileSync(path.join(path.dirname(path.resolve(arqsPredios[0] || arqBase)), 'importar_ok.txt'), new Date().toISOString());

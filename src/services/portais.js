@@ -12,7 +12,7 @@ const cfg = require('../config');
 const { getConfig, setConfig, audit } = require('../db');
 const alertas = require('./alertas');
 
-const UA = `Mozilla/5.0 (compatible; ${cfg.SISTEMA_NOME.replace(/\s+/g, '')}-Radar/1.0; +https://ruahimobiliaria.com.br)`;
+const UA = `Mozilla/5.0 (compatible; ${cfg.SISTEMA_NOME.replace(/\s+/g, '')}-Radar/1.0; +https://corretordofuturo.app)`;
 const BASE = 'https://www.chavesnamao.com.br';
 const PAUSA_MS = 4000;          // entre uma página e outra do mesmo portal
 const DETALHES_POR_RODADA = 25; // anúncios novos abertos por rodada (o resto fica na fila)

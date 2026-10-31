@@ -16,7 +16,7 @@ const chave = () => {
   return memoChave.v;
 };
 // a chave é restrita aos sites do cliente no Google: a chamada do servidor se apresenta como o site
-const CAB = { Referer: (process.env.PUBLIC_URL || 'https://ruahimoveis.vercel.app').replace(/\/?$/, '/') };
+const CAB = { Referer: (process.env.PUBLIC_URL || require('../config').BASE_URL || 'https://corretordofuturo.app').replace(/\/?$/, '/') };
 const ligado = () => !!chave();
 const rumo = (la1, lo1, la2, lo2) => {
   const r = Math.PI / 180, y = Math.sin((lo2 - lo1) * r) * Math.cos(la2 * r);

@@ -6,10 +6,10 @@
   var $ = function (s, el) { return (el || document).querySelector(s); };
   var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
   // Nome da imobiliária (cliente): o servidor escreve no topo da página (.p-marca-n), vindo da configuração.
-  var CLIENTE = ((document.querySelector('.p-marca-n') || {}).textContent || '').trim() || 'RUAH';
+  var CLIENTE = ((document.querySelector('.p-marca-n') || {}).textContent || '').trim() || 'Imobiliária';
 
   // ------------------------------------------------------------ favoritos
-  var CHAVE = 'ruah-favoritos'; // identificador técnico (guarda os favoritos já salvos): não trocar
+  var CHAVE = 'hh-favoritos'; // identificador técnico (guarda os favoritos já salvos): não trocar
   function lerFavs() { try { var v = JSON.parse(localStorage.getItem(CHAVE) || '[]'); return Array.isArray(v) ? v : []; } catch (e) { return []; } }
   function gravarFavs(l) { try { localStorage.setItem(CHAVE, JSON.stringify(l)); } catch (e) { /* aparelho sem armazenamento */ } }
   function pintarFavs() {

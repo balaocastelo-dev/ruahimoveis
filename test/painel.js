@@ -1,7 +1,7 @@
 // Teste do painel do administrador: node test/painel.js
 const os = require('os'), path = require('path'), fs = require('fs');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-pn-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-pn-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 const app = require('../server');
@@ -14,7 +14,7 @@ const assert = require('assert');
     const sc = r.headers.get('set-cookie'); if (sc) cookie = sc.split(';')[0];
     return { s: r.status, j: await r.json().catch(() => null) };
   };
-  const st = await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@ruah.com', senha: 'Teste1234', exemplo: true });
+  const st = await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@exemplo.test', senha: 'Teste1234', exemplo: true });
   assert.equal(st.s, 200);
   for (const dias of [7, 30, 90, 365]) {
     const r = await req('GET', '/api/painel/adm?dias=' + dias);

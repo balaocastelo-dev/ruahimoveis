@@ -4,10 +4,10 @@ const { run, one } = require('./db');
 const cfg = require('./config');
 const { hashSenha } = require('./auth');
 
-function senhaTemp() { return 'Ruah' + crypto.randomInt(100000, 999999) + crypto.randomBytes(2).toString('hex'); }
+function senhaTemp() { return 'Temp' + crypto.randomInt(100000, 999999) + crypto.randomBytes(2).toString('hex'); }
 
 function seedExemplo() {
-  const corretores = [['Marina (Exemplo)', 'marina@exemplo.ruah'], ['Rafael (Exemplo)', 'rafael@exemplo.ruah']];
+  const corretores = [['Marina (Exemplo)', 'marina@exemplo.local'], ['Rafael (Exemplo)', 'rafael@exemplo.local']];
   const credenciais = [];
   const ids = corretores.map(([nome, email]) => {
     const s = senhaTemp(); credenciais.push({ nome, email, senha: s });

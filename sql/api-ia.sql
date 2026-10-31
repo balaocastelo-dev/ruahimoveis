@@ -1,10 +1,10 @@
 -- API de controle por IA (30/10/2026): chaves de API e registro de uso.
--- Aplicar no Supabase uma vez. Cria as tabelas na RUAH (o molde que plataforma.criar_imobiliaria copia)
+-- Aplicar no Supabase uma vez. Cria as tabelas no schema base (o molde que plataforma.criar_imobiliaria copia)
 -- e em todas as imobiliárias que já existem, com o usuário de banco de cada uma.
 DO $$
 DECLARE s record; sch text;
 BEGIN
-  FOR s IN SELECT 'ruah' AS slug UNION SELECT i.slug FROM plataforma.imobiliarias i JOIN pg_namespace n ON n.nspname = i.slug LOOP
+  FOR s IN SELECT 'base' AS slug UNION SELECT i.slug FROM plataforma.imobiliarias i JOIN pg_namespace n ON n.nspname = i.slug LOOP
     sch := s.slug;
     CONTINUE WHEN NOT EXISTS (SELECT 1 FROM pg_namespace WHERE nspname = sch);
     EXECUTE format($q$CREATE TABLE IF NOT EXISTS %1$I.api_chaves (

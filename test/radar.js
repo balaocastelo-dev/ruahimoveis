@@ -1,7 +1,7 @@
 // Teste do radar de captação: cascata grátis → aprovação → pago → captação, duplicados e não contatar.
 const os = require('os'), path = require('path'), fs = require('fs'), assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-radar-'));
-process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'y'.repeat(48); process.env.IA_MODO = 'desligado'; process.env.WHATSAPP_RUAH = '19999998888';
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-radar-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'y'.repeat(48); process.env.IA_MODO = 'desligado'; process.env.WHATSAPP_CLIENTE = '19999998888';
 const app = require('../server');
 (async () => {
   const srv = app.listen(0); const base = `http://127.0.0.1:${srv.address().port}`;
@@ -38,7 +38,7 @@ const app = require('../server');
   const res = ok(await req('adm', 'GET', '/api/radar/resumo'), 'resumo'); assert.equal(res.gasto, 47.5);
 
   // resposta à carta pelo WhatsApp com a referência
-  ok(await req('adm', 'POST', '/api/whats/simular', { telefone: '19977776666', nome: 'Maria', texto: `Olá! Recebi a carta da RUAH (ref. OP-${String(o1.id).padStart(4, '0')}).` }), 'dono responde a carta pelo WhatsApp');
+  ok(await req('adm', 'POST', '/api/whats/simular', { telefone: '19977776666', nome: 'Maria', texto: `Olá! Recebi a carta da Imobiliária (ref. OP-${String(o1.id).padStart(4, '0')}).` }), 'dono responde a carta pelo WhatsApp');
   const det = ok(await req('cor', 'GET', `/api/radar/${o1.id}`), 'detalhe'); assert.ok(det.eventos.some((e) => /respondeu à carta/.test(e.texto))); assert.equal(det.titular_telefone, '5519977776666'); console.log('ok · resposta ligada à oportunidade');
 
   const cv = ok(await req('cor', 'POST', `/api/radar/${o1.id}/converter`, {}), 'capta (vira imóvel)');

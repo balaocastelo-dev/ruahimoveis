@@ -13,7 +13,7 @@ const A = require('../auth');
 const { one, run, audit } = require('../db');
 const { txt, falha } = require('../util');
 const cfg = require('../config');
-// Origem dos leads das páginas de bairro: "Portal " + nome do cliente + " · bairro" (padrão: "Portal RUAH · bairro").
+// Origem dos leads das páginas de bairro: "Portal " + nome do cliente + " · bairro".
 const ORIGEM_BAIRRO = `Portal ${cfg.CLIENTE_NOME} · bairro`;
 const coord = (v) => { const n = Number(String(v).replace(',', '.')); return Number.isFinite(n) ? n : null; };
 const { normTel } = require('../services/whatsapp');
@@ -83,17 +83,17 @@ router.get('/bairros/dados.json', async (req, res) => {
     const s = e.situacao.get(b.slug) || {};
     const v = dados.vivo(b, porBairro.get(b.slug) || []);
     const fotos = dados.fotosDeImoveis(b.slug, aVenda, noArImoveis).map((im) => ({ ...im, fotos: im.fotos.map((f) => ({ ...f, url: `${base}${portalPaginas.fotoUrl(f.foto)}` })) }));
-    // Os nomes de campo com "ruah" (notas_da_ruah, carteira_ruah, imoveis_da_ruah) são o contrato do dados.json
+    // notas, carteira e imoveis são o contrato do dados.json
     // lido pelo scripts/bairros-publicar.mjs e pela tarefa agendada: identificadores técnicos, não trocar.
     return {
-      slug: b.slug, nome: b.nome, regiao: b.regiao, apelidos: b.apelidos, prioridade: b.prioridade, notas_da_ruah: b.notas || null,
+      slug: b.slug, nome: b.nome, regiao: b.regiao, apelidos: b.apelidos, prioridade: b.prioridade, notas: b.notas || null,
       pagina: { estado: s.estado || 'sem-pagina', ...(s.titulo ? { titulo: s.titulo, endereco: `/bairros/${b.slug}` } : {}), ...(s.publicadoEm ? { publicadoEm: s.publicadoEm } : {}), ...(s.erros ? { erros: s.erros } : {}), ...(b.pedidoEm ? { reescrita_pedida_em: b.pedidoEm } : {}) },
-      centro: v.centro, carteira_ruah: { ...v.carteira, tipos: v.carteira.tipos.map(([t, n]) => `${t} (${n})`) },
-      condominios: v.condominios, perto: v.perto, imoveis_da_ruah: fotos,
+      centro: v.centro, carteira: { ...v.carteira, tipos: v.carteira.tipos.map(([t, n]) => `${t} (${n})`) },
+      condominios: v.condominios, perto: v.perto, imoveis: fotos,
     };
   });
   bairros.sort((a, c) => (PESO[a.pagina.estado] ?? 5) - (PESO[c.pagina.estado] ?? 5) || c.prioridade - a.prioridade
-    || c.imoveis_da_ruah.length - a.imoveis_da_ruah.length || c.condominios.total - a.condominios.total || a.nome.localeCompare(c.nome, 'pt-BR'));
+    || c.imoveis.length - a.imoveis.length || c.condominios.total - a.condominios.total || a.nome.localeCompare(c.nome, 'pt-BR'));
   res.setHeader('Cache-Control', 'public, max-age=30, s-maxage=60');
   res.json({ geradoEm: new Date().toISOString(), bairros });
 });

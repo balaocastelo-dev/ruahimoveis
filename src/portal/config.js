@@ -2,7 +2,7 @@
 //
 // O portal mostra os imóveis à venda (status "publicado") com uma PÁGINA ÚNICA
 // para cada um, escrita a partir das fotos e da ficha do imóvel. Segue o mesmo
-// esquema do blog Sopro:
+// esquema do blog:
 //   - a página é um JSON de blocos tipados (nunca HTML), num ramo do GitHub;
 //   - quem escreve é uma tarefa agendada do Claude, que olha as fotos;
 //   - uma régua em código confere no comando de publicar E de novo no site;
@@ -59,9 +59,10 @@ const CHAMADAS = {
 const TEMAS = new Set(Object.keys(CHAMADAS));
 
 /** O ramo do GitHub onde ficam as páginas. O repositório é público: leitura sem senha. */
+const { REPO, RAW } = require('../plataforma/repo');
 const RAMO_DE_CONTEUDO = 'claude/portal-conteudo';
-const DONO_REPO = 'balaocastelo-dev/ruahimoveis';
-const ENDERECO_DO_RAMO = `https://raw.githubusercontent.com/${DONO_REPO}/refs/heads/${RAMO_DE_CONTEUDO}`;
+const DONO_REPO = REPO;
+const ENDERECO_DO_RAMO = `${RAW}/refs/heads/${RAMO_DE_CONTEUDO}`;
 
 /** O endereço da página: palavras da busca + o código do imóvel no fim (único e estável). */
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;

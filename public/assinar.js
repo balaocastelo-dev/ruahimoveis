@@ -3,7 +3,7 @@ const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const token = location.pathname.split('/').pop();
 const app = document.getElementById('app');
 // Página pública: a marca mostrada é a da imobiliária (cliente), não a do sistema.
-const CLIENTE = (window.MARCA || {}).cliente || 'RUAH';
+const CLIENTE = (window.MARCA || {}).cliente || 'Imobiliária';
 document.title = `Assinatura · ${CLIENTE}`;
 const topo = (emp) => `<div class="brand"><b style="font-family:var(--f-display);font-size:34px;letter-spacing:.08em;color:var(--gold-ink)">${esc(CLIENTE)}</b><span class="muted small">${esc(emp || '')}</span></div>`;
 

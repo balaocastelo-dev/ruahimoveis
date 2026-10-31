@@ -5,8 +5,8 @@
 //   node test/versoes.js
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-versoes-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-versoes-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 delete process.env.DATABASE_URL;
@@ -79,17 +79,17 @@ const ramo = http.createServer((req, res) => {
     const r = await post('/api/publico/portal/signature', { nome: 'Rui Investidor', telefone: '(19) 99111-2222', email: 'rui@exemplo.com', codigo: 'SG9001', aceite: true });
     assert.equal(r.s, 200, JSON.stringify(r.j));
     const cookie = (r.h.get('set-cookie') || '').split(';')[0];
-    assert.match(cookie, /^ruah_signature=\d+\.\d{13}\.[A-Za-z0-9_-]{32}$/);
+    assert.match(cookie, /^hh_signature=\d+\.\d{13}\.[A-Za-z0-9_-]{32}$/);
     const lead = one("SELECT * FROM leads WHERE telefone='5519991112222'");
-    assert.ok(lead && lead.origem === 'RUAH Signature' && lead.temperatura === 'quente' && /SG9001/.test(lead.busca));
-    assert.ok(all('SELECT * FROM interacoes WHERE lead_id=?', lead.id).some((i) => /Clube Signature/.test(i.texto))); console.log('ok · pedido de acesso vira lead quente "RUAH Signature" e devolve o cookie');
+    assert.ok(lead && lead.origem === 'Imobiliária Signature' && lead.temperatura === 'quente' && /SG9001/.test(lead.busca));
+    assert.ok(all('SELECT * FROM interacoes WHERE lead_id=?', lead.id).some((i) => /Clube Signature/.test(i.texto))); console.log('ok · pedido de acesso vira lead quente "Imobiliária Signature" e devolve o cookie');
     const sigM = await get('/imoveis/signature', cookie);
     assert.ok(sigM.t.includes('R$ 12.500.000') && sigM.t.includes('R$ 18.000.000') && sigM.t.includes('Membro do Clube Signature'));
     const resM = await get('/imoveis/signature/sg9001', cookie);
     assert.ok(resM.t.includes('R$ 12.500.000') && resM.t.includes('data-interesse')); console.log('ok · membro vê os valores e pede visita privada');
     const falso = cookie.replace(/.$/, (c) => (c === 'A' ? 'B' : 'A'));
     assert.ok(!(await get('/imoveis/signature', falso)).t.includes('12.500.000'));
-    const vencido = `ruah_signature=${lead.id}.${Date.now() - 1000}.${'a'.repeat(32)}`;
+    const vencido = `hh_signature=${lead.id}.${Date.now() - 1000}.${'a'.repeat(32)}`;
     assert.ok(!(await get('/imoveis/signature', vencido)).t.includes('12.500.000')); console.log('ok · cookie alterado ou vencido não libera nada');
 
     // ---- visita privada pela página da residência (sem página no portal comum)
@@ -100,7 +100,7 @@ const ramo = http.createServer((req, res) => {
     run('UPDATE imoveis SET valor=15000000 WHERE id=?', comumId); fonte.limparCache();
     const pg = await get(`/imoveis/${modelo.slug}`);
     assert.equal(pg.s, 200);
-    assert.ok(!pg.t.includes('15.000.000') && pg.t.includes('RUAH Signature') && !pg.t.includes('"price"'));
+    assert.ok(!pg.t.includes('15.000.000') && pg.t.includes('Imobiliária Signature') && !pg.t.includes('"price"'));
     const vit2 = await get('/imoveis');
     assert.ok(!vit2.t.includes('15.000.000') && vit2.t.includes('/imoveis/signature/ca9001'));
     assert.ok(!(await get('/imoveis?de=10000000')).t.includes(modelo.titulo.slice(0, 30)), 'filtro de valor não denuncia o valor');

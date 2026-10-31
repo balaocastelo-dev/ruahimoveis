@@ -1,6 +1,6 @@
 -- LGPD (28/10/2026): pedidos dos titulares e lista "não contatar" comum a toda a plataforma.
 -- 1) Em cada imobiliária (controladora dos dados dela): tabela titular_pedidos (pedidos feitos no portal dela).
---    Imobiliária nova herda a tabela pelo criar_imobiliaria (LIKE ruah.*).
+--    Imobiliária nova herda a tabela pelo criar_imobiliaria (LIKE base.*).
 -- 2) Na plataforma: plataforma.titular_pedidos (pedidos feitos em corretordofuturo.app) e plataforma.nao_contatar
 --    (telefones, em hash, de quem pediu para não ser contatado: vale para TODAS as imobiliárias, porque a base é comum).
 -- 3) Schema lgpd com duas funções liberadas a todos os usuários de banco: registrar oposição e perguntar se pode contatar.

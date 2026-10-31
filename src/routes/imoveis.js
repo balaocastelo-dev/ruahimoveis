@@ -132,6 +132,7 @@ r.get('/:id', (req, res) => {
 
 function salvarCondominio(b) {
   const G = require('../condominios/geo');
+  const { FONTE_CASA, fonteDaCasa } = require('../condominios/fonte');
   // Reconhecido pela base de condomínios (pesquisa de endereço): usa direto e só completa o que faltar.
   const escolhido = int(b.condominio_id);
   if (escolhido && one('SELECT id FROM condominios WHERE id=?', escolhido)) {
@@ -144,16 +145,16 @@ function salvarCondominio(b) {
   const cep = endereco.soDigitos(b.cep) || null, numero = txt(b.numero, 20);
   const existe = cep && numero ? one('SELECT id, fontes FROM condominios WHERE cep=? AND numero=?', cep, numero) : one('SELECT id, fontes FROM condominios WHERE lower(nome)=lower(?)', nome);
   if (existe) {
-    const daBase = existe.fontes && existe.fontes !== 'ruah'; // nome oficial (CNPJ/mapa) não é trocado pelo cadastro
+    const daBase = existe.fontes && !fonteDaCasa(existe.fontes); // nome oficial (CNPJ/mapa) não é trocado pelo cadastro
     run(`UPDATE condominios SET ${daBase ? '' : 'nome=?, nome_busca=?, '}ano_construcao=coalesce(?,ano_construcao), lazer=coalesce(?,lazer), administradora=coalesce(?,administradora), lat=coalesce(lat,?), lon=coalesce(lon,?) WHERE id=?`,
       ...(daBase ? [] : [nome, G.chave(nome)]), txt(b.ano_construcao, 10), txt(b.lazer, 300), txt(b.administradora, 120), num(b.lat), num(b.lon), existe.id);
     return existe.id;
   }
   let sl = G.slug(nome); if (one('SELECT 1 FROM condominios WHERE slug=?', sl)) sl = `${sl}-${Date.now().toString(36)}`;
   const id = Number(run(`INSERT INTO condominios(nome,cep,logradouro,numero,bairro,cidade,uf,ano_construcao,lazer,administradora,lat,lon,nome_busca,slug,fontes,tipo,geo_fonte)
-    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,'ruah',?,?)`,
+    VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
   nome, cep, txt(b.logradouro, 150), numero, txt(b.bairro, 80), txt(b.cidade, 80), txt(b.uf, 2), txt(b.ano_construcao, 10), txt(b.lazer, 300), txt(b.administradora, 120), num(b.lat), num(b.lon),
-  G.chave(nome), sl, /casa|sobrado|ch[áa]cara|terreno/i.test(b.tipo || '') ? 'horizontal' : 'vertical', num(b.lat) ? 'cadastro' : null).lastInsertRowid);
+  G.chave(nome), sl, FONTE_CASA, /casa|sobrado|ch[áa]cara|terreno/i.test(b.tipo || '') ? 'horizontal' : 'vertical', num(b.lat) ? 'cadastro' : null).lastInsertRowid);
   require('../condominios/base').limpaCache();
   return id;
 }

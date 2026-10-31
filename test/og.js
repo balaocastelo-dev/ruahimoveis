@@ -2,8 +2,8 @@
 // O robô do WhatsApp não executa JavaScript e não pode contar como acesso.
 const os = require('os'), path = require('path'), fs = require('fs'), crypto = require('crypto');
 const assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-og-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-og-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 delete process.env.DATABASE_URL;
@@ -28,7 +28,7 @@ assert.equal(og.ehPreview('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_1) Apple
 assert.equal(og.ehPreview('Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36 WhatsApp/2.23.20.0'), false);
 assert.equal(og.ehPreview('Mozilla/5.0 Chrome/120'), false);
 assert.equal(og.ehPreview(''), false);
-assert.equal(og.origemPublica({ protocol: 'http', get: () => 'ruahimoveis.vercel.app' }), 'https://ruahimoveis.vercel.app');
+assert.equal(og.origemPublica({ protocol: 'http', get: () => 'ondemorar.corretordofuturo.app' }), 'https://ondemorar.corretordofuturo.app');
 assert.equal(og.origemPublica({ protocol: 'http', get: () => '127.0.0.1:3333' }), 'http://127.0.0.1:3333');
 assert.equal(og.origemPublica({ protocol: 'http', get: () => 'evil host"><script>' }), '');
 assert.deepEqual(og.dimensoesSaida(2000, 1400), { width: 1200, height: 840 });
@@ -81,7 +81,7 @@ console.log('ok · robô de prévia, URL https e tamanho da capa');
     console.log(hd.split('\n').filter((l) => /<title>|og:|twitter:|robots/.test(l)).join('\n'));
     assert.ok(hd.includes('property="og:title" content="Casa em condomínio · Quinta da Baroneza · CA0036"'), hd);
     assert.ok(hd.includes('property="og:description" content="R$ 4.500.000 · 420 m² · 4 quartos · 3 suítes · 4 vagas"'), hd);
-    assert.ok(hd.includes('property="og:site_name" content="RUAH"'));
+    assert.ok(hd.includes('property="og:site_name" content="Imobiliária"'));
     assert.ok(hd.includes('property="og:type" content="website"'));
     assert.ok(hd.includes(`property="og:url" content="${base}/v/token-og-privado"`));
     assert.ok(hd.includes('name="twitter:card" content="summary_large_image"'));
@@ -154,8 +154,8 @@ console.log('ok · robô de prévia, URL https e tamanho da capa');
     const antes = acessos(linkA);
     run(`UPDATE links_internos SET expira_em=datetime('now','localtime','-2 minute') WHERE token=?`, 'token-og-privado');
     const exp = await (await fetch(`${base}/v/token-og-privado`, { headers: { 'User-Agent': 'WhatsApp/2.23' } })).text();
-    assert.ok(exp.includes('property="og:title" content="Imóvel · RUAH"'));
-    assert.ok(exp.includes('property="og:site_name" content="RUAH"'));
+    assert.ok(exp.includes('property="og:title" content="Imóvel · Imobiliária"'));
+    assert.ok(exp.includes('property="og:site_name" content="Imobiliária"'));
     assert.ok(exp.includes('name="twitter:card" content="summary"'));
     assert.ok(!exp.includes('CA0036') && !exp.includes('Quinta da Baroneza') && !exp.includes('4.500.000') && !exp.includes('property="og:image"'));
     assert.equal((await fetch(`${base}/v/token-og-privado/og.jpg`)).status, 404);
@@ -164,9 +164,9 @@ console.log('ok · robô de prévia, URL https e tamanho da capa');
     console.log('ok · link expirado ou revogado não vaza o imóvel');
 
     const inv = await (await fetch(`${base}/v/nao-existe-xyz`, { headers: { 'User-Agent': 'facebookexternalhit/1.1' } })).text();
-    assert.ok(inv.includes('Imóvel · RUAH') && !inv.includes('CA0036') && !inv.includes('Quinta'));
+    assert.ok(inv.includes('Imóvel · Imobiliária') && !inv.includes('CA0036') && !inv.includes('Quinta'));
     const xss = await (await fetch(`${base}/v/${encodeURIComponent('"><script>alert(1)</script>')}`, { headers: { 'User-Agent': 'WhatsApp/2.23' } })).text();
-    assert.ok(!xss.includes('alert(1)') && xss.includes('Imóvel · RUAH'));
+    assert.ok(!xss.includes('alert(1)') && xss.includes('Imóvel · Imobiliária'));
     console.log('ok · token inválido fica genérico');
 
     run(`UPDATE imoveis SET status='vendido' WHERE id=?`, im);

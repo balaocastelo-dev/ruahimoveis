@@ -19,12 +19,11 @@ const CATEGORIAS = [
 const SLUGS = new Set(CATEGORIAS.map((c) => c.slug));
 const nomeDaCategoria = (slug) => (CATEGORIAS.find((c) => c.slug === slug) || {}).nome || slug;
 
-// Site e Instagram da imobiliária. SITE_CLIENTE / INSTAGRAM_CLIENTE no .env; SITE_RUAH / INSTAGRAM_RUAH (nomes antigos) continuam valendo.
+// Site e Instagram da imobiliária. SITE_CLIENTE / INSTAGRAM_CLIENTE no .env.
+// SITE_RUAH / INSTAGRAM_RUAH são os nomes antigos e continuam valendo.
 const envDe = (...nomes) => { for (const n of nomes) { const v = (process.env[n] || '').trim(); if (v) return v; } return ''; };
-// site próprio da imobiliária: só a RUAH tem um padrão; as outras só se configurarem SITE_CLIENTE (senão o rodapé não mostra o link)
-const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH') || (/^ruah$/i.test(process.env.CLIENTE_NOME || 'RUAH') ? 'https://www.ruahimobiliaria.com.br' : '');
+const SITE_CLIENTE = envDe('SITE_CLIENTE', 'SITE_RUAH');
 const INSTAGRAM_CLIENTE = envDe('INSTAGRAM_CLIENTE', 'INSTAGRAM_RUAH');
-const SITE_RUAH = SITE_CLIENTE, INSTAGRAM_RUAH = INSTAGRAM_CLIENTE; // apelidos antigos
 
 /**
  * Temas de chamada. O leitor nunca sai do site da imobiliária (decisão do Thiago, 26/10/2026):
@@ -77,17 +76,19 @@ const CHAMADAS = {
 CHAMADAS.instagram = CHAMADAS.blog;
 const TEMAS = new Set(Object.keys(CHAMADAS));
 
+const { REPO, RAW, CONTEUDO_VAZIO } = require('../plataforma/repo');
+
 /** O ramo do GitHub onde a rotina publica. O repositório é público: leitura sem senha. */
-const RAMO_DE_CONTEUDO = 'claude/blog-conteudo';
-const DONO_REPO = 'balaocastelo-dev/ruah-imoveis';
-const ENDERECO_DO_RAMO = `https://raw.githubusercontent.com/${DONO_REPO}/refs/heads/${RAMO_DE_CONTEUDO}`;
+const RAMO_DE_CONTEUDO = 'plataforma/conteudo-vazio';
+const DONO_REPO = REPO;
+const ENDERECO_DO_RAMO = `${CONTEUDO_VAZIO}/blog`;
 
 /** Banco de matérias da plataforma: as capas das matérias que cada imobiliária recebe moram aqui. */
 const RAMO_DO_BANCO = 'plataforma/banco-materias';
-const REPO_DO_BANCO = 'balaocastelo-dev/ruahimoveis';
-const ENDERECO_DO_BANCO = `https://raw.githubusercontent.com/${REPO_DO_BANCO}/refs/heads/${RAMO_DO_BANCO}`;
+const REPO_DO_BANCO = REPO;
+const ENDERECO_DO_BANCO = `${RAW}/refs/heads/${RAMO_DO_BANCO}`;
 
-/** O ramo que ESTA imobiliária lê: cada uma tem o seu (BLOG_DIARIO_URL); sem ele, o da RUAH. */
+/** O ramo que ESTA imobiliária lê: cada uma tem o seu (BLOG_DIARIO_URL); sem ele, o conteúdo vazio da plataforma. */
 const ramoDoBlog = () => (process.env.BLOG_DIARIO_URL || ENDERECO_DO_RAMO).replace(/\/+$/, '');
 
 const arquivoDaCapa = (slug, marca, ext) => `capas/${slug}-${marca}.${ext}`;
@@ -104,6 +105,6 @@ function capaDaRotina(src, slug) {
 }
 
 module.exports = {
-  CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_CLIENTE, INSTAGRAM_CLIENTE, SITE_RUAH, INSTAGRAM_RUAH,
+  CATEGORIAS, SLUGS, nomeDaCategoria, CHAMADAS, TEMAS, SITE_CLIENTE, INSTAGRAM_CLIENTE,
   RAMO_DE_CONTEUDO, DONO_REPO, ENDERECO_DO_RAMO, ramoDoBlog, RAMO_DO_BANCO, REPO_DO_BANCO, ENDERECO_DO_BANCO, arquivoDaCapa, enderecoDaCapa, capaDaRotina,
 };

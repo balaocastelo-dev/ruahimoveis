@@ -38,7 +38,7 @@ Endereço público assinado: `/social/arte/<id>/<n>.jpg?f=feed|google&v=<versão
 ## Publicação
 
 - Ciclo: `POST /social-ciclo` com o cabeçalho `x-social-ciclo` = `config.social_ciclo_token` (criado junto com a imobiliária em `plataforma.criar_imobiliaria`, ou pelo próprio ciclo).
-- Imobiliária nova já nasce com tudo: as tabelas vêm da RUAH (o molde), o usuário de banco ganha `plataforma.meu_plano()` e o token do ciclo. Quando ela fica ativa e publicada, o calendário se monta sozinho na rodada seguinte.
+- Imobiliária nova já nasce com tudo: as tabelas vêm da imobiliária (o molde), o usuário de banco ganha `plataforma.meu_plano()` e o token do ciclo. Quando ela fica ativa e publicada, o calendário se monta sozinho na rodada seguinte.
   O Supabase chama a cada 10 min (`plataforma.social_ciclo()`, pg_cron `plataforma-social-ciclo`) todas as imobiliárias ativas e publicadas.
 - O ciclo planeja os próximos 35 dias (no máximo 1 vez por hora) e publica o que chegou a hora (até 3 por rodada).
 - Sem conta conectada: o post fica **pronto para postar** (baixar artes, copiar legenda, "Já postei à mão").
@@ -64,5 +64,5 @@ Endereço público assinado: `/social/arte/<id>/<n>.jpg?f=feed|google&v=<versão
 
 ## Banco
 
-`social_posts`, `social_contas`, `social_cliques` (`sql/social.sql`, aplicado em todos os schemas; a RUAH é o molde para as próximas).
+`social_posts`, `social_contas`, `social_cliques` (`sql/social.sql`, aplicado em todos os schemas; a imobiliária é o molde para as próximas).
 Teste: `node test/social.js`.

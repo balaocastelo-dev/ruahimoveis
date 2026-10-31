@@ -85,7 +85,7 @@ ACT['fg-chave'] = (el) => comBotao(el, async () => {
 });
 ACT['fg-instalar'] = () => modal(`<h2>Instalar a extensão no Chrome</h2>
   <ol><li>No Chrome, abra <b class="mono">chrome://extensions</b> e ligue o <b>Modo do desenvolvedor</b> (canto superior direito).</li>
-  <li>Clique em <b>Carregar sem compactação</b> e escolha a pasta <b class="mono">Área de Trabalho\\Sistema RUAH\\extensao-fisguei</b>.</li>
+  <li>Clique em <b>Carregar sem compactação</b> e escolha a pasta <b class="mono">extensao-fisguei</b> deste projeto.</li>
   <li>Clique no ícone de quebra-cabeça e fixe o <b>Fisguei → ${esc(MARCA.sistema)}</b>.</li>
   <li>Clique no ícone do Fisguei, cole o endereço do sistema e a chave (botão <b>Gerar chave</b> nesta tela) e toque em <b>Salvar e testar</b>.</li>
   <li>Pronto: use o Fisgar normalmente. Cada proprietário que você consultar lá aparece aqui e entra na fila do robô.</li></ol>

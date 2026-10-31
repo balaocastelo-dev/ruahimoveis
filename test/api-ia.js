@@ -1,7 +1,7 @@
 // Controle por IA: chave de API em qualquer rota /api, catálogo, estado, executar e consulta.
 const os = require('os'), path = require('path'), fs = require('fs');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-api-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-api-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado'; process.env.ESCRITORIO = '0'; process.env.FISGUEI_ROBO = '0'; process.env.RADAR_PORTAIS = '0';
 // Exercita apenas o banco temporário e impede consultas ao cofre real da plataforma.
@@ -90,7 +90,7 @@ const assert = require('assert');
   require('../src/db').db.close(); // Windows mantém o arquivo bloqueado enquanto o SQLite está aberto.
   const limpeza = fs.realpathSync(tmp);
   assert.equal(path.dirname(limpeza), fs.realpathSync(os.tmpdir()));
-  assert.ok(path.basename(limpeza).startsWith('ruah-api-'));
+  assert.ok(path.basename(limpeza).startsWith('hh-api-'));
   fs.rmSync(limpeza, { recursive: true, force: true });
   console.log('\nAPI de controle por IA: tudo certo.');
 })().catch((e) => { console.error(e); process.exit(1); });

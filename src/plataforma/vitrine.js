@@ -1,5 +1,5 @@
 // Domínio da plataforma (corretordofuturo.app): é a página de vendas do produto Herrera HOUSE IA,
-// nunca o sistema nem o portal de um cliente. Nada de cliente (RUAH ou outro) aparece aqui:
+// nunca o sistema nem o portal de um cliente. Nada de uma imobiliária específica aparece aqui:
 // as telas são de uma imobiliária de demonstração ("Casa Prado", dados e fotos fictícios; scripts/demo-vitrine.js).
 const path = require('path');
 const express = require('express');

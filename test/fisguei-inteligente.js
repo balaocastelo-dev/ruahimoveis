@@ -1,8 +1,8 @@
 // Teste do Fisguei inteligente: cartões com sinais (queda de preço, novo, abaixo do m², particular, repetido),
 // filtro por proprietário e saldo de créditos do Fisgar (lido pela extensão ou informado à mão).
 const os = require('os'), path = require('path'), fs = require('fs'), assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-fgi-'));
-process.env.RUAH_DB = process.env.RUAH_DB || path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-fgi-'));
+process.env.HOUSE_DB = process.env.HOUSE_DB || path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
 const app = require('../server');
 const { run } = require('../src/db');
 

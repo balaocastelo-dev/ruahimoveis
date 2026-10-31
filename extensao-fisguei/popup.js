@@ -2,7 +2,7 @@ const $ = (id) => document.getElementById(id);
 const msg = (t, cls) => { $('msg').textContent = t; $('msg').className = cls || ''; };
 (async () => {
   const c = await chrome.storage.local.get(['url', 'chave']);
-  $('url').value = c.url || 'https://ruahimoveis.vercel.app';
+  $('url').value = c.url || '';
   $('chave').value = c.chave || '';
   chrome.runtime.sendMessage({ tipo: 'estado' }, (st) => { if (st) $('cont').textContent = `Hoje: ${st.anuncios} anúncio(s) e ${st.pessoas} pessoa(s) enviados${st.fila ? ` · ${st.fila} esperando` : ''}.`; });
 })();

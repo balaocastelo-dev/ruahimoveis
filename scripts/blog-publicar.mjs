@@ -46,7 +46,7 @@ const { minutosDeLeitura, semAcento, diaEmCampinas, FUSO } = require('../src/blo
 const { RAMO_DE_CONTEUDO: RAMO, arquivoDaCapa, enderecoDaCapa } = require('../src/blog/categorias.js');
 const cfg = require('../src/config.js'); // nome da imobiliária (cliente): CLIENTE_NOME / EMPRESA no .env
 
-const SITE = (process.env.BLOG_URL || '').replace(/\/+$/, '');
+const SITE = (process.env.BLOG_URL || process.env.PUBLIC_URL || cfg.BASE_URL).replace(/\/+$/, '');
 
 // ---------------------------------------------------------------- utilidades
 
@@ -73,7 +73,7 @@ function abrirRamo() {
   } catch (erro) {
     sair(`Não consegui buscar o ramo ${RAMO}: ${String(erro.stderr || erro.message).trim()}`);
   }
-  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'blog-ruah-'));
+  const pasta = fs.mkdtempSync(path.join(os.tmpdir(), 'blog-'));
   git(['worktree', 'add', '--quiet', '--detach', pasta, `origin/${RAMO}`]);
   return pasta;
 }
@@ -94,7 +94,7 @@ function gravarIndice(pasta, indice) {
 function enviar(pasta, mensagem) {
   git(['add', '-A'], { cwd: pasta });
   const identidade = [];
-  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Blog ${cfg.CLIENTE_NOME}`, '-c', 'user.email=imoveisruah@gmail.com'); }
+  try { git(['config', 'user.email'], { cwd: pasta }); } catch { identidade.push('-c', `user.name=Blog ${cfg.CLIENTE_NOME}`, '-c', 'user.email=conteudo@corretordofuturo.app'); }
   const rodape = process.env.BLOG_RODAPE_DO_COMMIT ? `\n\n${process.env.BLOG_RODAPE_DO_COMMIT}` : '';
   git([...identidade, 'commit', '--quiet', '-m', `${mensagem}${rodape}`], { cwd: pasta });
   for (let tentativa = 1; ; tentativa += 1) {

@@ -1,7 +1,7 @@
 // Teste do Mercado (Bairro → Rua → Imóvel), do 3D por imóvel do Fisguei e da foto de fachada (Google simulado).
 const os = require('os'), path = require('path'), fs = require('fs');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-mk-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-mk-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 process.env.MERCADO_CACHE_S = '0';
@@ -31,7 +31,7 @@ global.fetch = async (url, op) => {
     return { s: r.status, j };
   };
   const ok = (r, msg) => { if (r.s >= 400) { console.error('FALHOU', msg, r.s, r.j); process.exit(1); } console.log('ok ·', msg); return r.j; };
-  ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@ruah.com', senha: 'Teste1234' }), 'setup');
+  ok(await req('POST', '/api/setup', { nome: 'Thiago Adm', email: 'adm@exemplo.test', senha: 'Teste1234' }), 'setup');
 
   const add = (id, bairro, rua, num, valor, area, part, lat, lon, tipo = 'Apartamento') => run(`INSERT INTO fisguei_anuncios(fisgar_id,tipo,logradouro,numero,bairro,cidade,valor,area_util,anunciante_tipo,lat,lon,status,fotos)
     VALUES(?,?,?,?,?,'Campinas',?,?,?,?,?,'novo',?)`, id, tipo, rua, num, bairro, valor, area, part ? 'particular' : 'imobiliaria', lat, lon, JSON.stringify(['https://exemplo.com/f.jpg']));

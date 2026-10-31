@@ -1,6 +1,6 @@
 # Banco de materias do blog (plataforma Herrera HOUSE IA) - tarefa da FOTO DE CAPA (pasta \HerreraHouse\). Criado pelo Claude em 28/10/2026.
 # Roda o scripts\capa_blog_banco.py, que usa o gerador do Balao (balao-content-factory\publisher\capa_blog.py) na RTX 4090.
-# Horarios fora das rodadas do Balao (22h00 e 5h30) e da RUAH (22h40 e 4h40): 23h10 e 3h40.
+# Horarios fora das rodadas do Balao (22h00 e 5h30): 23h10 e 3h40.
 # Para desligar:  Disable-ScheduledTask -TaskPath '\HerreraHouse\' -TaskName 'Capa do banco de materias'
 $ErrorActionPreference = 'Stop'
 $PYW = 'C:\Users\user\AppData\Local\Programs\Python\Python313\pythonw.exe'

@@ -2,9 +2,9 @@
 """
 Foto de capa das matérias do BANCO DE MATÉRIAS da plataforma Herrera HOUSE IA, feita na RTX 4090 do PC.
 
-Igual ao capa_blog_ruah.py (mesmo gerador do Balão: Flux no ComfyUI local + conferência por um modelo
+Mesmo gerador do Balão (Flux no ComfyUI local + conferência por um modelo
 de visão do Ollama), mudando só:
-  - a fila: capas/pendentes.json no ramo plataforma/banco-materias do ruahimoveis;
+  - a fila: capas/pendentes.json no ramo plataforma/banco-materias do repositório da plataforma;
   - o repositório onde a foto é presa: clone próprio (_banco_repo) e o comando
     node scripts/banco-materias.mjs capa <slug> foto.jpg (a matéria passa a "pronta");
   - registro e estado próprios (logs\\capa_blog_banco.log, data\\capas_blog_banco.json).
@@ -22,15 +22,16 @@ FABRICA = Path(os.environ.get("BALAO_FABRICA", r"C:\Users\user\balao-content-fac
 sys.path.insert(0, str(FABRICA))
 import capa_blog as c  # noqa: E402  (o gerador do Balão)
 
-RUAH = "capa_blog_banco.py"
-c.FILA = "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/pendentes.json"
-c.REPO_URL = "https://github.com/balaocastelo-dev/ruahimoveis.git"
+EU = "capa_blog_banco.py"
+REPO = os.environ.get("PLATAFORMA_REPO", "balaocastelo-dev/ruahimoveis")
+c.FILA = f"https://raw.githubusercontent.com/{REPO}/refs/heads/plataforma/banco-materias/capas/pendentes.json"
+c.REPO_URL = f"https://github.com/{REPO}.git"
 c.REPO = Path(os.environ.get("BANCO_REPO", str(c.RAIZ / "_banco_repo")))
 c.LOG = c.RAIZ / "logs" / "capa_blog_banco.log"
 c.ESTADO = c.RAIZ / "data" / "capas_blog_banco.json"
 c.SAIDA = c.RAIZ / "data" / "capas_blog_banco"
-if RUAH not in c.OCUPANTES:
-    c.OCUPANTES.append(RUAH)
+if EU not in c.OCUPANTES:
+    c.OCUPANTES.append(EU)
 
 # O que vai junto de todo pedido: fotografia de arquitetura, sem gente e sem escrita.
 c.SEMPRE = (" Realistic architectural and interior design photography, landscape 16:9, natural light,"
@@ -59,7 +60,7 @@ def esperar_placa():
         quem = c.placa_ocupada()
         if not quem:
             return True
-        if quem == RUAH:
+        if quem == EU:
             c.log("já há outra rodada do banco de matérias em andamento: saindo")
             return False
         if time.time() > fim:

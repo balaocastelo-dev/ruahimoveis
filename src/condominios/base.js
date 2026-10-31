@@ -285,7 +285,7 @@ function numeros(id) {
       lazer,
       proprietarios_conhecidos: fisguei.reduce((s, f) => s + (f.pessoas || 0), 0),
       donos_confirmados: fisguei.filter((f) => f.status === 'confirmado').length,
-      vendidos_ruah: carteira.filter((i) => i.status === 'vendido').length,
+      vendidos: carteira.filter((i) => i.status === 'vendido').length,
     },
     carteira: carteira.map(({ descricao, ...i }) => i),
     radar, fisguei,

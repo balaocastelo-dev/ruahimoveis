@@ -2,7 +2,7 @@
 # Logs: codex-<tarefa>.log. Cada tarefa termina com commit + push em main (a Vercel publica sozinha).
 # 29/10/2026: as tarefas 'chat' e 'interativo' (lugares clicaveis) ja foram entregues - sairam da fila.
 $ErrorActionPreference = 'Continue'
-Set-Location C:\Users\user\ruahimoveis
+Set-Location $PSScriptRoot
 $tarefas = @(
   @{ nome = 'melhorias'; prompt = 'Leia docs/tarefa-melhorias-escritorio.md e implemente os 7 itens na ordem. ATENCAO: o painel embutido dos lugares JA EXISTE em public/escritorio-3d.js (abreLugar/painelLugar, classes .j3p-*, iframe /app.html?embutido=1#/rota) e o modo andar JA EXISTE em public/escritorio-andar.js; reaproveite e nao mude o que ja funciona. Falta ligar os mesmos cliques no modo 2D (public/escritorio-jogo.js). Siga as regras do arquivo: nenhuma biblioteca nova, npm test antes de subir, render headless nos tres horarios. Commits pequenos em main, mensagens em portugues, resumo na secao Resultado do proprio arquivo.' },
   @{ nome = 'chatfim'; prompt = 'A etapa 1 do chat (docs/tarefa-chat.md) foi implementada mas faltaram duas coisas: test/chat.js (no estilo dos outros testes, cobrindo conversa direta, sala, nao lidas, long polling, permissao negada a quem nao participa e resposta de robo) e docs/chat.md (tabelas, API, fluxo do robo, como aplicar sql/chat.sql em cada schema). Faca as duas, adicione o teste ao npm test, rode npm test e suba com commit e push em main, mensagens em portugues. Nao altere o comportamento ja implementado; so corrija o que o teste revelar de errado.' },
@@ -14,7 +14,7 @@ foreach ($t in $tarefas) {
     git stash -q -u 2>$null
     git pull -q origin main
     "=== $(Get-Date -Format 'HH:mm') tentativa $tentativa de $($t.nome)" | Tee-Object -FilePath "codex-$($t.nome).log" -Append
-    $saida = codex exec --approve-for-me -c sandbox_workspace_write.network_access=true -C C:\Users\user\ruahimoveis $t.prompt 2>&1
+    $saida = codex exec --approve-for-me -c sandbox_workspace_write.network_access=true -C $PSScriptRoot $t.prompt 2>&1
     $saida | Tee-Object -FilePath "codex-$($t.nome).log" -Append | Out-Null
     if ($saida -match 'hit your usage limit|usage limit') {
       "=== $(Get-Date -Format 'HH:mm') limite do Codex: esperando 35 min" | Tee-Object -FilePath "codex-$($t.nome).log" -Append

@@ -11,8 +11,7 @@ const HOSTS = new Set(String(process.env.GESTOR_HOSTS || 'corretordofuturo.app,w
 const COOKIE = 'gestor_sessao';
 const SEGURO = process.env.VERCEL ? '; Secure' : '';
 const TEAM = process.env.VERCEL_TEAM_ID || 'team_Mdwt9HWMVtQuaVPBUajlME76';
-const REPO = process.env.PLATAFORMA_REPO || 'balaocastelo-dev/ruahimoveis';
-const VAZIO = 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/conteudo-vazio';
+const { REPO, CONTEUDO_VAZIO: VAZIO } = require('./repo');
 const POOLER = process.env.PLATAFORMA_POOLER || 'aws-1-us-west-2.pooler.supabase.com:6543';
 const PROJETO_DB = process.env.PLATAFORMA_PROJETO_DB || 'yufvfitdhfdjdluvymha';
 // Endereço padrão de cada imobiliária: <nome>.corretordofuturo.app (pedido do Thiago, 28/10/2026).
@@ -103,11 +102,11 @@ function variaveis(im, dbUrl, segredo) {
   if (im.link) { v.PUBLIC_URL = im.link; v.LINK_ONLINE = im.link; }
   return v;
 }
-// Cada imobiliária ganha um papel de parede próprio, pela ordem de criação (a RUAH fica com o Castelo).
+// Cada imobiliária ganha um papel de parede próprio, pela ordem de criação.
 async function comFundo(im) {
-  const r = await um(`SELECT count(*)::int AS n FROM imobiliarias WHERE slug <> 'ruah' AND id < $1`, [im.id]);
+  const r = await um(`SELECT count(*)::int AS n FROM imobiliarias WHERE id < $1`, [im.id]);
   const { SEQUENCIA } = require('../portal/fundos');
-  return { ...im, fundo: im.slug === 'ruah' ? 'castelo' : SEQUENCIA[((r && r.n) || 0) % SEQUENCIA.length] };
+  return { ...im, fundo: SEQUENCIA[((r && r.n) || 0) % SEQUENCIA.length] };
 }
 async function publicaNaVercel(im, vars) {
   const nome = ('imob-' + im.slug).slice(0, 40);
@@ -177,7 +176,7 @@ api.get('/imobiliarias', exige(async (req, res) => {
   const lista = await q(`SELECT ${COLS} FROM imobiliarias ORDER BY id`);
   { // papel de parede de cada imobiliária (o mesmo do portal dela), para o fundo do cartão
     const { SEQUENCIA, fundoDe } = require('../portal/fundos'); let k = 0;
-    for (const im of lista) { const f = fundoDe(im.slug === 'ruah' ? 'castelo' : SEQUENCIA[(k++) % SEQUENCIA.length], im.nome); im.fundo = { src: f.src, lugar: f.lugar, posicao: f.posicao }; }
+    for (const im of lista) { const f = fundoDe(SEQUENCIA[(k++) % SEQUENCIA.length], im.nome); im.fundo = { src: f.src, lugar: f.lugar, posicao: f.posicao }; }
   }
   await Promise.all(lista.map(async (im) => {
     try { im.numeros = (await um('SELECT numeros($1) AS n', [im.slug])).n; } catch (e) { im.numeros = null; im.erro = e.message; }

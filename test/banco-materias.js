@@ -4,7 +4,7 @@
 const os = require('os'), path = require('path'), fs = require('fs');
 const assert = require('assert');
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'banco-materias-'));
-process.env.RUAH_DB = path.join(tmp, 't.db');
+process.env.HOUSE_DB = path.join(tmp, 't.db');
 process.env.SECRET_KEY = process.env.SECRET_KEY || 'x'.repeat(48);
 process.env.IA_MODO = 'desligado';
 process.env.BLOG_DIARIO_URL = 'http://127.0.0.1:9/nada'; // sem ramo: o blog vive só do banco

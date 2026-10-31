@@ -1,8 +1,8 @@
 // Papel de parede do portal (foto de fundo do topo de /imoveis): um lugar-símbolo de Campinas para cada imobiliária.
 // Fotos com licença livre do Wikimedia Commons (licença e autor conferidos no próprio Commons), guardadas em
-// public/portal-assets/fundos/; o crédito aparece embaixo da foto, como pede a licença. "castelo" é foto própria da RUAH.
-// Cada imobiliária escolhe pela variável PORTAL_FUNDO; sem ela, a RUAH fica com o Castelo e as outras ganham uma
-// foto fixa sorteada pelo nome (sempre a mesma para a mesma imobiliária).
+// public/portal-assets/fundos/; o crédito aparece embaixo da foto, como pede a licença. "castelo" é foto da Torre do Castelo.
+// Cada imobiliária escolhe pela variável PORTAL_FUNDO; sem ela, ganha uma foto fixa sorteada pelo nome
+// (sempre a mesma para a mesma imobiliária).
 
 const FUNDOS = {
   castelo: { lugar: 'Torre do Castelo, Campinas', src: '/portal-assets/hero-castelo.jpg?v=3', srcset: '/portal-assets/hero-castelo-1280.jpg?v=2 1280w, /portal-assets/hero-castelo.jpg?v=3 1920w, /portal-assets/hero-castelo-3840.webp?v=1 3840w', largura: 3840, altura: 2160, posicao: '62% 30%', propria: true },
@@ -14,7 +14,7 @@ const FUNDOS = {
   estacao: { lugar: 'Estação Cultura, Campinas', arquivo: 'File:Estação Cultura Campinas.jpg', autor: 'Edison Marcon', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 2560, quatroK: true, posicao: '50% 50%' },
   cambui: { lugar: 'Cambuí visto do alto, Campinas', arquivo: 'File:Bosque dos Jequitibas Campinas.jpg', autor: 'Leandro R. M. de Marco', licenca: 'CC BY-SA 3.0', largura: 3840, altura: 2560, quatroK: true, posicao: '50% 55%' },
 };
-// ordem em que as novas imobiliárias recebem uma foto (o Castelo é da RUAH)
+// ordem em que as novas imobiliárias recebem uma foto (o Castelo entra só se PORTAL_FUNDO=castelo)
 const SEQUENCIA = ['taquaral', 'skyline', 'jequitibas', 'noite', 'catedral', 'estacao', 'cambui'];
 
 function sorteiaPorNome(nome) {
@@ -24,7 +24,7 @@ function sorteiaPorNome(nome) {
 
 /** O papel de parede desta imobiliária: { id, lugar, src, srcset, largura, altura, posicao, credito, link }. */
 function fundoDe(id, cliente) {
-  const chave = FUNDOS[id] ? id : (/^ruah\b/i.test(String(cliente || '').trim()) ? 'castelo' : sorteiaPorNome(cliente));
+  const chave = FUNDOS[id] ? id : sorteiaPorNome(cliente);
   const f = FUNDOS[chave];
   // versões 4K ampliadas com IA (SeedVR2): 1280, 1920 e 3840 px
   const src = f.src || (f.quatroK ? `/portal-assets/fundos/${chave}-1920.jpg?v=1` : `/portal-assets/fundos/${chave}.jpg?v=1`);

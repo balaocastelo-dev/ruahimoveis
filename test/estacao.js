@@ -1,8 +1,8 @@
 // Teste dos PCs virtuais (lado do sistema): chave da estação, batida, tarefa (fila → estação → passos → resultado
 // no WhatsApp de quem pediu), WhatsApp Web como linha do agente (entrada, saída, PARAR) e o passe assinado da tela.
 const os = require('os'), path = require('path'), fs = require('fs'), crypto = require('crypto'), assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-estacao-'));
-process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'y'.repeat(48); process.env.IA_MODO = 'desligado';
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-estacao-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'y'.repeat(48); process.env.IA_MODO = 'desligado';
 process.env.ESTACAO_ID = 'teste-1'; process.env.ESTACAO_CHAVE = 'est_chave_de_teste_1234567890';
 // A configuração do PC não pode fornecer chaves reais ao cenário "sem chave".
 for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';

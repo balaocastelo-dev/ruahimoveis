@@ -10,7 +10,7 @@ Página `#/fisguei` (também `/fisguei`) do Herrera HOUSE IA. Traz para dentro d
    - `owners/GetPeople` (aba Proprietários) → `fisguei_pessoas`;
    - `owners/GetPersonInfo` (botão Consultar, o que gasta crédito no Fisgar) → telefones e e-mails em `fisguei_contatos`.
 3. Envia em lotes para `POST /fisguei-api/receber` com o cabeçalho `X-Fisguei-Chave` (gerada em Fisguei → Gerar chave; o banco guarda só o hash).
-4. `src/fisguei/normaliza.js` traduz o formato do Fisgar. Anúncio só de locação fica de fora (a imobiliária cliente, a RUAH, só vende). O CPF/CNPJ que o Fisgar devolve **não é gravado**: vira um hash para reconhecer a mesma pessoa.
+4. `src/fisguei/normaliza.js` traduz o formato do Fisgar. Anúncio só de locação fica de fora (a imobiliária cliente, a imobiliária, só vende). O CPF/CNPJ que o Fisgar devolve **não é gravado**: vira um hash para reconhecer a mesma pessoa.
 
 ## Robô TH-IA-GO CORRETOR
 
@@ -60,4 +60,4 @@ A tela Captação > Fisguei (`#/fisguei`) virou uma vitrine de cartões para ope
 - **Seleção em lote**: marcar vários cartões e "Buscar dono" de todos (`POST /api/fisguei/buscar-anuncios`); o limite diário de créditos continua valendo.
 
 API: `GET /api/fisguei/explorar`, `GET /api/fisguei/explorar/mapa`, `GET|POST /api/fisguei/creditos`. Teste: `node test/fisguei-inteligente.js`.
-Migração no Supabase: `ruah_fisguei_inteligente` (sql/fisguei.sql).
+Migração no Supabase: ver `sql/fisguei.sql` (aplicar no schema `base` e nos schemas das imobiliárias).

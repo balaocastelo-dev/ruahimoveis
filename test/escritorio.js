@@ -1,8 +1,8 @@
 // Teste do Escritório virtual: setores, alma (.soul), mensagem do cliente → IA (simulada) → ações → aprovação → envio,
 // transferência entre agentes, gerente dos corretores ("feito N"), conversa de teste e relatório do dono.
 const os = require('os'), path = require('path'), fs = require('fs'), http = require('http'), assert = require('assert');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'ruah-escritorio-'));
-process.env.RUAH_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'hh-escritorio-'));
+process.env.HOUSE_DB = path.join(tmp, 't.db'); process.env.SECRET_KEY = 'z'.repeat(48); process.env.IA_MODO = 'desligado';
 // O teste usa só seus simuladores, mesmo em um PC com chaves e banco da plataforma no .env.
 for (const k of ['DATABASE_URL', 'PLATAFORMA_DATABASE_URL', 'GEMINI_API_KEY', 'ANTHROPIC_API_KEY']) process.env[k] = '';
 
@@ -109,7 +109,7 @@ const ia = http.createServer((req, res) => {
   ok(!/Érica|Souza|98765|example|telefone|rascunho|anterior|Teste/.test(JSON.stringify(monitor)) && monitor[1].texto.includes('Cliente'), 'monitores: nomes, telefone e e-mail removidos antes de enviar');
   const cookieAdm = cookie, auth = require('../src/auth');
   const corretorTeste = one("SELECT id FROM usuarios WHERE perfil='corretor' ORDER BY id LIMIT 1");
-  cookie = 'ruah_sessao=' + auth.criarSessao(corretorTeste.id);
+  cookie = 'hh_sessao=' + auth.criarSessao(corretorTeste.id);
   const comum = await req('GET', '/api/escritorio/ao-vivo?full=1');
   ok(comum.agentes.every((a) => !Object.hasOwn(a, 'ultimas')), 'monitores: corretor não recebe prévias');
   ok(comum.entraram.every((i) => one('SELECT corretor_id FROM imoveis WHERE id=?', i.id).corretor_id === corretorTeste.id), 'TV: corretor só recebe imóveis que pode abrir');
@@ -172,7 +172,7 @@ const ia = http.createServer((req, res) => {
 
   // 6) transferência: cliente quer terreno → Teo assume
   respostas.push({ mensagem: 'Para terrenos, quem cuida é o Teo. Ele já vai falar com você!', acoes: [{ tipo: 'transferir', para: 'terrenos', motivo: 'quer terreno em Sousas' }] });
-  respostas.push({ mensagem: 'Oi Paula, aqui é o Teo, de terrenos da RUAH. Qual o tamanho que você procura?', acoes: [] });
+  respostas.push({ mensagem: 'Oi Paula, aqui é o Teo, de terrenos da Imobiliária. Qual o tamanho que você procura?', acoes: [] });
   await E.entrada({ linha: 'apartamentos', telefone: '19981112222', nome: 'Paula', texto: 'Na verdade quero um terreno em Sousas' });
   envelhece(); await E.processaEntradas(); await E.processaEntradas();
   ok(one('SELECT agente FROM leads WHERE id=?', lead.id).agente === 'terrenos', 'lead passou para o Teo');
@@ -237,7 +237,7 @@ const ia = http.createServer((req, res) => {
   await E.entrada({ linha: 'casas', telefone: '19977776666', nome: 'Rui', texto: 'Bom dia' });
   envelhece();
   const tok = one(`SELECT valor FROM config WHERE chave='escritorio_ciclo_token'`).valor;
-  const cic = await (await fetch(base + '/escritorio-ciclo', { method: 'POST', headers: { 'x-ruah-ciclo': tok } })).json();
+  const cic = await (await fetch(base + '/escritorio-ciclo', { method: 'POST', headers: { 'x-hh-ciclo': tok } })).json();
   ok(cic.ok && one(`SELECT 1 FROM agente_mensagens WHERE telefone='5519977776666' AND direcao='saida'`), 'ciclo da nuvem responde o cliente');
 
   srv.close(); ia.close();

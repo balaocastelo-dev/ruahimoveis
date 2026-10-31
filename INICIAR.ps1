@@ -1,6 +1,5 @@
 ﻿# ==========================================================
 #  HERRERA HOUSE IA - iniciar (um clique)
-#  (instalação do cliente RUAH; o nome deste arquivo não muda)
 #  - confere o Node.js, instala dependências na 1a vez
 #  - cria o .env com chave secreta aleatória
 #  - faz backup diário do banco
@@ -65,12 +64,12 @@ if ($emUso) {
 }
 
 # 4) Backup diário do banco (guarda 14 dias)
-if (Test-Path 'data\ruah.db') {
+if ((Test-Path 'data\house.db') -or (Test-Path 'data\ruah.db')) {
   $dia = Get-Date -Format 'yyyy-MM-dd'
   $dest = Join-Path 'data\backups' $dia
   if (-not (Test-Path $dest)) {
     New-Item -ItemType Directory -Force -Path $dest | Out-Null
-    Copy-Item 'data\ruah.db*' $dest -Force
+    if (Test-Path 'data\house.db') { Copy-Item 'data\house.db*' $dest -Force } elseif (Test-Path 'data\ruah.db') { Copy-Item 'data\ruah.db*' $dest -Force }
     Get-ChildItem 'data\backups' -Directory | Sort-Object Name -Descending | Select-Object -Skip 14 | Remove-Item -Recurse -Force
     Linha "  [ok] Backup do banco: data\backups\$dia" Green
   }
@@ -83,7 +82,7 @@ if (-not (Test-Path $atalho)) {
   $ws = New-Object -ComObject WScript.Shell
   $s = $ws.CreateShortcut($atalho)
   $s.TargetPath = "$env:WINDIR\System32\WindowsPowerShell\v1.0\powershell.exe"
-  $s.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\INICIAR-RUAH.ps1`""
+  $s.Arguments = "-NoProfile -ExecutionPolicy Bypass -File `"$PSScriptRoot\INICIAR.ps1`""
   $s.WorkingDirectory = $PSScriptRoot
   $s.IconLocation = "$env:WINDIR\System32\shell32.dll,19"
   $s.Save()

@@ -12,7 +12,7 @@ para a IA (Claude e Gemini) e, pela mesma ideia, para a estação dos PCs virtua
   as cercas de código são removidas da resposta.
 - Ordem: `ia_central_preferido='gemini'` manda no Gemini; senão **Claude**; senão Gemini (próprio ou
   central); senão Ollama. Se o escolhido falhar, cai no outro sozinho. Testado no PC em 29/10 17h:
-  resposta do `claude-sonnet-5-5` em 1,4 s, consumo registrado como `ruah` em `plataforma.ia_uso`.
+  resposta do `claude-sonnet-5-5` em 1,4 s, consumo registrado em `plataforma.ia_uso` no nome da instalação que rodou o teste.
   No mesmo teste o **Gemini estourou 40 s** — mais um motivo para o Claude na frente.
 - Os PCs dos robôs (estação) também passam a operar com o Claude central quando a imobiliária não escolheu
   provedor (`src/estacao/servidor.js`; a estação já falava com a Anthropic em `src/estacao/ia-visao.js`).
@@ -25,7 +25,7 @@ para a IA (Claude e Gemini) e, pela mesma ideia, para a estação dos PCs virtua
   (`plataforma.definir_ia_central`, `plataforma.definir_estacao_central`), executáveis apenas pelo
   `plataforma_app`. A chave **nunca** sai numa rota: no máximo os 4 últimos dígitos.
 - Leitura (`src/plataforma/central.js`, cache de 5 min / 1 min em erro), em dois caminhos:
-  1. `PLATAFORMA_DATABASE_URL`, quando o projeto tem essa variável (hoje só `ruahimoveis`);
+  1. `PLATAFORMA_DATABASE_URL`, quando o projeto tem essa variável (o projeto da plataforma);
   2. **a própria conexão da imobiliária**, por `plataforma.cofre_central()` — todos os schemas moram no
      mesmo Postgres. A função devolve só as três chaves centrais; `plataforma.config` continua invisível
      para os papéis `<slug>_app`. **Nenhuma variável nova é necessária em projeto nenhum.**

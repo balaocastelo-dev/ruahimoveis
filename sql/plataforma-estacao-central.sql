@@ -33,5 +33,5 @@ GRANT EXECUTE ON FUNCTION plataforma.definir_estacao_central(text) TO plataforma
 COMMIT;
 
 -- Como a imobiliária enxerga esta chave: pelo PLATAFORMA_DATABASE_URL quando o projeto tem essa variável
--- (hoje só "ruahimoveis") ou, sem ela, pela própria conexão, por plataforma.cofre_central() —
+-- (o projeto da plataforma) ou, sem ela, pela própria conexão, por plataforma.cofre_central() —
 -- ver sql/plataforma-cofre-central.sql. Nenhuma variável nova é necessária nos projetos.

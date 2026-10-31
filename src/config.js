@@ -18,12 +18,12 @@ if (fs.existsSync(envPath)) {
 const env = (k, d = '') => (process.env[k] ?? d).trim();
 
 const PORT = parseInt(env('PORT', '3333'), 10);
-const CLIENTE_NOME = env('CLIENTE_NOME', 'RUAH'); // nome curto da imobiliária (cliente desta instalação)
+const CLIENTE_NOME = env('CLIENTE_NOME', 'Imobiliária'); // nome curto da imobiliária (cliente desta instalação)
 
 module.exports = {
   ROOT,
   // Na Vercel só /tmp aceita gravação (cache temporário); no PC continua em data/.
-  DATA_DIR: process.env.VERCEL ? '/tmp/ruah-data' : path.join(ROOT, 'data'),
+  DATA_DIR: process.env.VERCEL ? '/tmp/hh-data' : path.join(ROOT, 'data'),
   DATABASE_URL: env('DATABASE_URL'), // Postgres online (Supabase). Vazio = banco local SQLite.
   PORT,
   BASE_URL: env('BASE_URL', process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : `http://localhost:${PORT}`),
@@ -32,12 +32,12 @@ module.exports = {
   // Nome do sistema (o produto) e do cliente que usa esta instalação (a imobiliária).
   SISTEMA_NOME: env('SISTEMA_NOME', 'Herrera HOUSE IA'),
   CLIENTE_NOME,                                                   // nome curto da imobiliária (marca no portal, blog, mensagens)
-  EMPRESA: env('EMPRESA', 'RUAH Investimentos Imobiliários'),      // razão/nome completo da imobiliária
+  EMPRESA: env('EMPRESA', 'Imobiliária'),                      // razão/nome completo da imobiliária
   // Identidade visual da imobiliária (opcional): logo e tema (pasta public/temas/<TEMA>, com tema.css, logo.svg e icone.svg)
   TEMA: env('TEMA').replace(/[^a-z0-9-]/gi, ''),
   get LOGO_URL() { return env('LOGO_URL') || (this.TEMA ? `/temas/${this.TEMA}/logo.svg` : ''); },
   get ICONE_URL() { return env('ICONE_URL') || (this.TEMA ? `/temas/${this.TEMA}/icone.svg` : ''); },
-  // Nome do blog: o da imobiliária + "Blog" (ex.: RUAH Blog); BLOG_NOME troca.
+  // Nome do blog: o da imobiliária + "Blog"; BLOG_NOME troca.
   get BLOG_NOME() { return env('BLOG_NOME') || `${CLIENTE_NOME} Blog`; },
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
@@ -56,7 +56,6 @@ module.exports = {
   // Número de WhatsApp da imobiliária impresso no QR code das cartas (com DDD). Vazio = usa o celular do corretor.
   // WHATSAPP_RUAH é o nome antigo da variável e continua valendo.
   WHATSAPP_CLIENTE: env('WHATSAPP_CLIENTE') || env('WHATSAPP_RUAH'),
-  get WHATSAPP_RUAH() { return this.WHATSAPP_CLIENTE; },
   CUSTO_MATRICULA: parseFloat(env('CUSTO_MATRICULA', '0')) || 0,
   CUSTO_BIRO: parseFloat(env('CUSTO_BIRO', '0')) || 0,
 
@@ -75,7 +74,7 @@ module.exports = {
 
   // Escritório virtual (9 agentes robôs com WhatsApp próprio). Roda só no PC; 0 desliga.
   ESCRITORIO: env('ESCRITORIO', '1'),
-  LINK_ONLINE: env('LINK_ONLINE', 'https://ruahimoveis.vercel.app'), // links das mensagens dos agentes quando não há PUBLIC_URL
+  LINK_ONLINE: env('LINK_ONLINE', ''), // links das mensagens dos agentes quando não há PUBLIC_URL
 
   // IA local (Ollama)
   OLLAMA_URL: env('OLLAMA_URL', 'http://127.0.0.1:11434'),
