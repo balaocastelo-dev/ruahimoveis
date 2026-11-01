@@ -1,0 +1,163 @@
+{
+  "slug": "tinta-economica-standard-ou-premium-qual-a-diferenca",
+  "tema": "tinta economica standard ou premium diferenca",
+  "titulo": "Tinta econômica, standard ou premium: qual a diferença na parede",
+  "resumo": "Tinta econômica, standard ou premium: o que a norma muda entre elas, onde usar cada uma, como ler o rendimento na lata e calcular a quantidade certa.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "pintura",
+    "paredes",
+    "decoração",
+    "reforma"
+  ],
+  "capa": {
+    "alt": "Parede recém-pintada em tom verde-sálvia fosco numa sala clara, com rolo de pintura e bandeja apoiados sobre lona no piso de madeira"
+  },
+  "redes": {
+    "legenda": "Você sabe o que muda entre tinta econômica, standard, premium e super premium? Não é só o preço: a norma brasileira define quanto cada uma rende, quanto cobre e quanto aguenta ser lavada. A econômica, por exemplo, é indicada só para áreas internas. Entenda onde usar cada uma e como calcular a quantidade certa. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "decoracao",
+      "pintura",
+      "reforma",
+      "interiores",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de pintar a casa, a prateleira da loja mostra latas parecidas com nomes diferentes: **tinta econômica, standard, premium** e, às vezes, super premium. A diferença não é só de marketing. Essas categorias seguem uma norma técnica brasileira e indicam quanto a tinta rende, quanto ela cobre a cor de baixo e quanto aguenta ser limpa sem desbotar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a econômica serve para paredes internas de pouco uso; a standard vai bem na maior parte da casa e também em áreas externas; a premium e a super premium rendem mais, cobrem melhor e resistem mais à limpeza, por isso compensam em corredores, cozinhas, quartos de criança e fachadas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "As categorias seguem a ABNT NBR 15079, que define requisitos mínimos de desempenho.",
+        "Tinta econômica é indicada apenas para uso interno.",
+        "Quanto mais alta a categoria, maior o rendimento mínimo e a resistência à limpeza.",
+        "O rendimento da lata é teórico e considera uma demão; planeje ao menos duas."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a norma muda entre as categorias de tinta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma é a **ABNT NBR 15079**, que trata das tintas látex para construção civil. Ela fixa mínimos de cobertura, rendimento e lavabilidade, que é a capacidade de a parede ser limpa sem perder a pintura. Na revisão de 2019, segundo a Abrafati, a norma ganhou o nível super premium e uma segunda parte para os acabamentos acetinado, semiacetinado e semibrilho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Rendimento mínimo da tinta fosca por categoria",
+      "colunas": [
+        "Categoria",
+        "Rendimento mínimo (m² por lata de 18 L)",
+        "Onde costuma ir bem"
+      ],
+      "linhas": [
+        [
+          "Econômica",
+          "70",
+          "Paredes internas de pouco uso, como depósito e área de serviço"
+        ],
+        [
+          "Standard",
+          "90",
+          "Quartos, salas e também áreas externas"
+        ],
+        [
+          "Premium",
+          "110",
+          "Áreas de muito uso, cozinha, corredores e fachadas"
+        ],
+        [
+          "Super premium",
+          "150",
+          "Onde se quer máxima cobertura e resistência à limpeza"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Cartilha sobre mudanças normativas — Abrafati",
+        "url": "https://abrafati.com.br/wp-content/uploads/2024/12/Cartilha-sobre-Mudancas-Normativas.pdf"
+      },
+      "nota": "Valores da revisão de 2019 da NBR 15079-1. O catálogo da ABNT lista edições posteriores da norma; confira a categoria e o rendimento impressos na embalagem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resistência à limpeza também sobe com a categoria. Nos acabamentos semibrilho, por exemplo, a cartilha da Abrafati indica 100 ciclos de abrasão úmida na standard, 150 na premium e 200 na super premium. Em casa, isso significa que a parede da premium aguenta melhor o pano úmido na marca de mão ou na mancha perto do interruptor. Para mais ideias de acabamento, veja [interiores](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como escolher e calcular a quantidade certa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pelo uso do cômodo. A econômica é indicada apenas para áreas internas, e fachadas e muros pedem standard ou premium, porque enfrentam sol e chuva. Mas nem sempre a categoria mais alta é necessária: num quarto de hóspedes pouco usado, uma standard bem aplicada costuma resolver. Vale também conferir se a marca participa do programa setorial de qualidade de tintas, ligado ao PBQP-H."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para calcular, divida a área a pintar pelo rendimento da lata e multiplique pelo volume da embalagem. Com 20 m² de parede e uma tinta que rende 100 m² por lata de 18 L, a conta dá 3,6 L por demão. Como o rendimento informado considera uma demão e a cobertura completa costuma pedir pelo menos duas, dobre o resultado e some uma pequena folga."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "O rendimento muda na prática",
+      "texto": "Parede sem massa, reboco novo, cor escura sob cor clara e a técnica de quem pinta mudam o rendimento real. Prepare bem a superfície com selador ou massa quando indicado e faça uma demão de teste num canto antes de comprar o restante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está pensando em renovar a casa antes de vender, ou quer entender o que vale pintar num imóvel que pretende comprar, a equipe da {{cliente}}, imobiliária de Campinas, conversa com você sobre os próximos passos. Mais dicas para a casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: use a econômica só onde quase ninguém encosta e reserve a premium para as paredes que mais trabalham."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Tinta econômica pode ser usada na parte externa da casa?",
+      "resposta": "Não é indicado. A tinta econômica é recomendada apenas para uso interno; para fachadas e muros, o indicado é standard ou premium, que resistem melhor ao sol e à chuva."
+    },
+    {
+      "pergunta": "O que é tinta super premium?",
+      "resposta": "É o nível mais alto da ABNT NBR 15079, criado na revisão de 2019. Tem o maior rendimento mínimo e a maior resistência à limpeza entre as categorias, e a designação só pode aparecer na lata se o produto atender a esses requisitos."
+    },
+    {
+      "pergunta": "Quantas demãos de tinta são necessárias?",
+      "resposta": "O rendimento informado na embalagem considera uma demão, mas a cobertura completa costuma pedir pelo menos duas. A cor anterior e o estado da parede podem exigir mais."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Cartilha sobre mudanças normativas em tintas imobiliárias — Abrafati",
+      "url": "https://abrafati.com.br/wp-content/uploads/2024/12/Cartilha-sobre-Mudancas-Normativas.pdf",
+      "data": "dezembro de 2024"
+    },
+    {
+      "nome": "Na compra de tintas, o planejamento faz toda a diferença — Sienge",
+      "url": "https://sienge.com.br/blog/na-compra-de-tintas-o-planejamento-faz-toda-diferenca/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "ABNT NBR 15079-1: Tintas para construção civil, requisitos de desempenho, parte 1 — Catálogo ABNT",
+      "url": "https://www.normas.com.br/visualizar/abnt-nbr-nm/11550/abnt-nbr15079-1-tintas-para-construcao-civil-requisitos-de-desempenho-parte-1-tinta-fosca-nas-cores-claras",
+      "data": "abril de 2025"
+    }
+  ]
+}
