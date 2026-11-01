@@ -1,0 +1,256 @@
+{
+  "slug": "para-raios-em-casa-quando-precisa-spda-dps-aterramento",
+  "tema": "para raios e protecao contra surtos em casa",
+  "titulo": "Para-raios em casa: quando a casa precisa e o que mais protege",
+  "resumo": "Para-raios em casa: como funciona o SPDA, quando a norma pede, o papel do DPS e do aterramento e o que conferir na compra ou na reforma antes das tempestades.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "segurança",
+    "instalação elétrica",
+    "raios"
+  ],
+  "capa": {
+    "alt": "Casa contemporânea de dois pavimentos com telhado embutido sob céu de tempestade, nuvens escuras ao fundo e jardim molhado pela chuva"
+  },
+  "redes": {
+    "legenda": "Quase um quarto das mortes por raio no Brasil acontece dentro de casa, em contato com algo ligado à rede elétrica ou telefônica, segundo o Inpe. Para-raios não é coisa só de prédio: a proteção de uma casa combina SPDA, aterramento e DPS no quadro de luz, e cada um tem uma função. Antes das tempestades de verão, vale saber o que conferir. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "casanova",
+      "seguranca",
+      "instalacaoeletrica",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quando a temporada de tempestades chega, muita gente se pergunta se precisa de **para-raios em casa**. A dúvida faz sentido: o Brasil está entre os países com mais raios do mundo, e uma descarga perto de casa pode queimar aparelhos, danificar a instalação elétrica e, em casos graves, ferir quem está lá dentro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: nem toda casa precisa de para-raios, mas toda casa precisa de uma instalação elétrica bem aterrada e, na maioria dos casos, de um dispositivo contra surtos no quadro de luz. Quem decide se o para-raios é necessário é um cálculo de risco previsto em norma técnica, feito por engenheiro eletricista, que considera a altura da casa, o entorno e a quantidade de raios da região."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Para-raios (SPDA) protege a estrutura; o DPS protege a instalação e os aparelhos.",
+        "A necessidade do para-raios sai de uma análise de risco prevista na ABNT NBR 5419.",
+        "O DPS no quadro é exigido pela NBR 5410 em várias situações comuns em casas.",
+        "Projeto e instalação pedem engenheiro eletricista com ART, nunca improviso."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que raio é assunto de casa, e não só de prédio"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o Grupo de Eletricidade Atmosférica (ELAT) do Inpe, o Brasil recebe em média cerca de 78 milhões de raios por ano. Num levantamento divulgado em 2023, o grupo contou 835 mortes por descargas elétricas no país entre 2013 e 2022, com tendência de queda nos anos mais recentes. São Paulo liderou o número de hospitalizações no período."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dado que mais interessa a quem pensa na casa é outro: ainda segundo o ELAT, 24% das mortes aconteceram dentro de casa, com a vítima em contato com objetos ligados à rede elétrica ou telefônica. Ou seja, o raio não precisa atingir o telhado para causar dano. A energia pode entrar pelos fios da rua, pelo cabo de telefone ou de antena e se espalhar pela instalação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Sudeste, a época mais carregada costuma ir da primavera ao fim do verão. Uma reportagem da revista Pesquisa FAPESP já apontava os meses de dezembro a março como os de maior risco no Sul e no Sudeste, quando as chuvas são mais intensas. É a melhor hora para revisar a proteção da casa: antes de a temporada começar."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para-raios (SPDA): como saber se a sua casa precisa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome técnico do para-raios é **SPDA**, sistema de proteção contra descargas atmosféricas. Ele tem três partes: a captação, no alto da casa, que recebe o raio; as descidas, cabos que levam a corrente pelas fachadas; e o aterramento, hastes e cabos enterrados que dissipam a energia no solo. Se uma das partes falha, o conjunto deixa de proteger como deveria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra para projetar o SPDA é a **ABNT NBR 5419**, cuja edição de 2015 tem quatro partes: princípios gerais, gerenciamento de risco, danos físicos às estruturas e sistemas elétricos e eletrônicos internos. Ela segue a norma internacional IEC 62305. É na parte de gerenciamento de risco que o engenheiro calcula se a casa precisa ou não de para-raios."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse cálculo leva em conta a densidade de raios da região, medida em raios por quilômetro quadrado por ano, além da altura e da área da construção, dos materiais, do entorno e de quem vive ali. Uma casa térrea cercada de prédios mais altos tende a ter risco menor do que um sobrado isolado no alto de um morro, com árvores e piscina por perto."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "A norma está em revisão",
+      "texto": "Segundo a revista O Setor Elétrico, a revisão da NBR 5419 vai estimar a densidade de raios por município, com metodologia do Inpe, e em muitas regiões o número de raios considerado praticamente dobrou em relação à edição de 2015. Projetos antigos que dispensaram o para-raios podem precisar de novo cálculo quando a nova versão sair."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o para-raios não resolve tudo. Ele protege a estrutura e as pessoas contra o raio que cai na casa, mas não impede que um surto vindo pela rede elétrica da rua queime a geladeira ou o computador. Para isso existe outra peça, bem menor, que fica dentro do quadro de luz. Para entender outros sistemas da obra, veja os textos de [construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "DPS e aterramento: a proteção que fica no quadro de luz"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **DPS**, dispositivo de proteção contra surtos, desvia para o aterramento os picos de tensão causados por raios, mesmo os que caem longe, e por manobras na rede. Ele deve ficar o mais perto possível da entrada de energia, de preferência no quadro de distribuição geral. Sem um aterramento bem feito, o DPS não tem para onde mandar a energia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma de instalações elétricas de baixa tensão, a **ABNT NBR 5410**, exige o DPS em situações bem comuns: quando a casa é alimentada por linha aérea, quando fica em local com mais de 25 dias de trovoada por ano ou quando partes da instalação ficam expostas a descargas diretas, conforme artigo técnico apresentado num congresso do Confea em 2024. Na prática, isso alcança muitas casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os DPS se dividem em classes. A classe I é voltada aos surtos de origem atmosférica e costuma ficar no quadro geral; a classe II protege contra surtos induzidos pela rede; e a classe III protege aparelhos sensíveis, perto da tomada. Segundo o CREA-SC, o DPS passou a ser usado no país a partir de 2005, o que merece atenção em casas mais antigas."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quem faz o quê na proteção elétrica da casa",
+      "colunas": [
+        "Proteção",
+        "O que faz",
+        "Onde fica",
+        "Norma de referência"
+      ],
+      "linhas": [
+        [
+          "SPDA (para-raios)",
+          "Recebe o raio que cai na casa e leva a corrente ao solo",
+          "Telhado, fachadas e solo",
+          "ABNT NBR 5419"
+        ],
+        [
+          "DPS",
+          "Desvia picos de tensão vindos da rede ou induzidos por raios",
+          "Quadro de distribuição e, se preciso, perto dos aparelhos",
+          "ABNT NBR 5410"
+        ],
+        [
+          "Aterramento",
+          "Dá caminho seguro para a energia se dissipar no solo",
+          "Hastes e cabos enterrados ligados ao quadro",
+          "ABNT NBR 5410 e NBR 5419"
+        ],
+        [
+          "DR",
+          "Desliga o circuito ao detectar fuga de corrente acima de 30 mA",
+          "Quadro de distribuição",
+          "ABNT NBR 5410"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "O trio da proteção nas instalações elétricas residenciais — Confea/CONTECC 2024",
+        "url": "https://confea.org.br/midias/uploads-imce/contecc%202024/ELE/O_%E2%80%9CTRIO_DA_PROTE%C3%87%C3%83O__NAS_INSTALA%C3%87%C3%95ES_EL%C3%89TRICAS_RESIDENCIAIS.pdf"
+      },
+      "nota": "O DR protege pessoas contra choque e não substitui o DPS nem o para-raios."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que conferir na compra, na construção ou na reforma"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita a uma casa à venda, abra o quadro de luz com o proprietário ou o corretor e veja se há disjuntores identificados, um DR e um DPS. Pergunte se existe para-raios e se há laudo de inspeção recente. Se a casa é antiga, um eletricista ou engenheiro pode avaliar a instalação antes da compra, o que evita surpresas na primeira tempestade."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Peça o projeto elétrico e, se houver, o projeto do SPDA com a ART do engenheiro.",
+        "Confira se o quadro tem DPS, DR e disjuntores identificados por circuito.",
+        "Pergunte se o aterramento foi medido e quando foi a última inspeção.",
+        "Em casa isolada, alta ou com estrutura metálica, peça a análise de risco da NBR 5419.",
+        "Para aparelhos sensíveis, avalie DPS de tomada além do DPS do quadro."
+      ]
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Instalar para-raios numa casa",
+      "pros": [
+        "Protege a estrutura e as pessoas contra o raio direto",
+        "Reduz risco de incêndio no telhado e na cobertura",
+        "Pode ser integrado à arquitetura quando previsto no projeto",
+        "Traz tranquilidade em locais altos e isolados"
+      ],
+      "contras": [
+        "Nem toda casa precisa, segundo a análise de risco",
+        "Exige projeto, ART e inspeção periódica",
+        "Instalação malfeita pode piorar o risco",
+        "Não protege aparelhos sem o DPS no quadro"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Mexer no quadro de luz, no aterramento ou no telhado para instalar proteção é trabalho de engenheiro eletricista ou de técnico habilitado, com ART. Não instale DPS, hastes ou cabos por conta própria: uma ligação errada pode deixar a casa mais vulnerável do que antes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Durante a tempestade, alguns cuidados simples ajudam, segundo o CREA-SC: evite tomar banho, não use aparelhos ligados na tomada nem telefone com fio e fique longe de objetos de metal. Para quem vai construir, prever o SPDA e o aterramento já no projeto costuma sair mais fácil e mais discreto do que adaptar depois. Mais ideias de projeto estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa e quer olhar com calma a instalação elétrica, o quadro e os laudos antes de decidir, a equipe da {{cliente}}, imobiliária de Campinas, acompanha quem quer comprar ou vender e ajuda a reunir os documentos para a avaliação do engenheiro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: DPS e aterramento são para quase toda casa; o para-raios depende da análise de risco, e quem decide é o engenheiro."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Toda casa precisa de para-raios?",
+      "resposta": "Não. A necessidade sai de uma análise de risco prevista na ABNT NBR 5419, que considera a densidade de raios da região, a altura e a área da casa e o entorno. Um engenheiro eletricista faz esse cálculo."
+    },
+    {
+      "pergunta": "Qual a diferença entre para-raios e DPS?",
+      "resposta": "O para-raios (SPDA) recebe o raio que cai na construção e leva a corrente para o solo, protegendo a estrutura. O DPS fica no quadro de luz e desvia os picos de tensão que chegam pela rede, protegendo a instalação e os aparelhos."
+    },
+    {
+      "pergunta": "O DPS é obrigatório?",
+      "resposta": "A ABNT NBR 5410 exige o DPS em várias situações, como casas alimentadas por linha aérea ou em locais com mais de 25 dias de trovoada por ano. Na dúvida, um eletricista ou engenheiro avalia a sua instalação."
+    },
+    {
+      "pergunta": "É perigoso tomar banho durante tempestade com raios?",
+      "resposta": "Sim, o CREA-SC orienta evitar o banho e o contato com aparelhos ligados à tomada e telefone com fio durante tempestades. Segundo o Inpe, parte das mortes por raio acontece dentro de casa, em contato com objetos ligados à rede."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Campeão de incidência de raios, Brasil teve 835 mortes em uma década — Banda B (Folhapress, dados do ELAT/Inpe)",
+      "url": "https://www.bandab.com.br/nacional/mortes-queda-de-raio-brasil/amp/",
+      "data": "novembro de 2023"
+    },
+    {
+      "nome": "Revisão da NBR 5419 prevê redefinição da análise de risco e da densidade de raios — O Setor Elétrico",
+      "url": "https://www.osetoreletrico.com.br/?p=164586",
+      "data": "junho de 2025"
+    },
+    {
+      "nome": "O trio da proteção nas instalações elétricas residenciais — Confea/CONTECC 2024",
+      "url": "https://confea.org.br/midias/uploads-imce/contecc%202024/ELE/O_%E2%80%9CTRIO_DA_PROTE%C3%87%C3%83O__NAS_INSTALA%C3%87%C3%95ES_EL%C3%89TRICAS_RESIDENCIAIS.pdf",
+      "data": "outubro de 2024"
+    },
+    {
+      "nome": "Como evitar danos físicos e materiais causados por raios — CREA-SC",
+      "url": "https://portal.crea-sc.org.br/?p=6490",
+      "data": "janeiro de 2017"
+    },
+    {
+      "nome": "Este campeonato é nosso — Revista Pesquisa FAPESP",
+      "url": "https://revistapesquisa.fapesp.br/este-campeonato-e-nosso/",
+      "data": "junho de 2001"
+    }
+  ]
+}
