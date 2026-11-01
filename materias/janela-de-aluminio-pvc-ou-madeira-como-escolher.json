@@ -1,0 +1,259 @@
+{
+  "slug": "janela-de-aluminio-pvc-ou-madeira-como-escolher",
+  "tema": "janela de aluminio pvc ou madeira",
+  "titulo": "Janela de alumínio, PVC ou madeira: como escolher",
+  "resumo": "Janela de alumínio, PVC ou madeira: veja o que muda em calor, ruído, vedação e manutenção, e o que a norma NBR 10821 pede antes de comprar a esquadria.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "janelas",
+    "esquadrias",
+    "conforto acústico",
+    "conforto térmico"
+  ],
+  "capa": {
+    "alt": "Sala clara com grandes janelas de caixilho escuro abertas para um jardim, piso de madeira e poltrona de linho"
+  },
+  "redes": {
+    "legenda": "Alumínio, PVC ou madeira: qual janela deixa a casa mais fresca e silenciosa? O material conta, mas a vedação, o tipo de abertura e o vidro pesam tanto quanto. E existe uma norma, a NBR 10821, que classifica a janela por água, vento e ruído. Explicamos o que comparar antes de fechar a compra da esquadria. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "janelas",
+      "esquadrias",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "conforto",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Escolher entre **janela de alumínio, PVC ou madeira** parece uma questão de estilo, mas a decisão muda o conforto da casa por décadas. A janela é o ponto mais frágil da fachada: é por ela que entram o calor da tarde, o barulho da rua, a poeira e, se a instalação falhar, a água da chuva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em resumo, o PVC costuma isolar melhor calor e ruído e pede pouca manutenção; o alumínio é leve, resistente e permite perfis finos e vãos grandes; a madeira traz calor visual, mas exige cuidado periódico. Só que o material não decide sozinho: vedação, tipo de abertura, vidro e instalação pesam tanto quanto, e a norma ajuda a comparar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "PVC tende a isolar melhor calor e ruído; alumínio se destaca em leveza e vãos amplos; madeira pede manutenção regular.",
+        "A vedação e o tipo de abertura contam tanto quanto o material: maxim-ar costuma vedar melhor que a de correr.",
+        "A norma ABNT NBR 10821 classifica janelas por estanqueidade à água, resistência ao vento e desempenho acústico.",
+        "Peça ao fornecedor o certificado de conformidade com a norma e o manual de instalação e manutenção."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare os três materiais pelo que você sente em casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **alumínio** é o material mais comum nas casas brasileiras. É leve, não apodrece, aceita pintura e anodização em muitas cores e permite perfis finos, o que favorece grandes panos de vidro. O ponto fraco é que o metal conduz calor com facilidade; por isso, as linhas mais completas usam soluções contra as chamadas pontes térmicas, que são caminhos por onde o calor atravessa a esquadria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **PVC** é um plástico rígido que conduz pouco calor e costuma vir com sistema de vedação mais elaborado, com borrachas em todo o contorno. Por isso, tende a se sair melhor em isolamento térmico e acústico. Não precisa de pintura e resiste bem à umidade. Os perfis são mais largos e levam reforço metálico interno para ganhar rigidez nas peças maiores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **madeira** tem bom desempenho térmico natural e uma beleza difícil de imitar, além de permitir desenhos sob medida. Em troca, pede verniz ou pintura de proteção de tempos em tempos, porque sol, chuva e insetos degradam a superfície. Em fachada muito exposta, sem beiral, o desgaste aparece mais cedo, e a manutenção precisa entrar na conta desde o projeto."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Alumínio, PVC e madeira lado a lado",
+      "colunas": [
+        "Critério",
+        "Alumínio",
+        "PVC",
+        "Madeira"
+      ],
+      "linhas": [
+        [
+          "Isolamento térmico",
+          "Menor, salvo linhas com proteção contra ponte térmica",
+          "Bom: o material conduz pouco calor",
+          "Bom, com vedação bem feita"
+        ],
+        [
+          "Isolamento acústico",
+          "Depende muito da vedação e do vidro",
+          "Costuma ser bom, pela vedação contínua",
+          "Depende do ajuste das folhas"
+        ],
+        [
+          "Manutenção",
+          "Limpeza e lubrificação das partes móveis",
+          "Limpeza; dispensa pintura",
+          "Verniz ou pintura periódicos"
+        ],
+        [
+          "Aparência",
+          "Perfis finos, visual leve e moderno",
+          "Perfis mais largos",
+          "Aspecto natural, sob medida"
+        ],
+        [
+          "Atenção especial",
+          "Acabamento adequado ao ambiente, como o litorâneo",
+          "Reforço metálico nas peças grandes",
+          "Exposição direta a sol e chuva"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Guia de Esquadrias para Edificações — CBIC",
+        "url": "https://cbic.org.br/wp-content/uploads/2017/11/Guia_de_Esquadrias_para_Edificacoes_2017.pdf"
+      },
+      "nota": "Comparação geral. O desempenho real depende da linha do fabricante, do vidro e da instalação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela não fecha a questão. Uma janela de alumínio de linha boa, com borrachas e vidro adequado, pode render mais que uma de PVC mal instalada. Por isso, compare sempre a linha específica do fabricante, e não só o nome do material. Mais conteúdo sobre obra e casa nova está em [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida a vedação, o tipo de abertura e o vidro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Boa parte do calor e do barulho que entra pela janela passa pelas frestas, e não pelo material. Uma reportagem da Gazeta do Povo sobre esquadrias lembra que a infiltração de ar é um dos fatores que mais prejudicam o conforto térmico. Borrachas e escovas entre as folhas ajudam muito, e a qualidade do ajuste na instalação faz diferença visível no dia a dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O tipo de abertura também pesa. A janela de correr sempre tem um vão entre as folhas, enquanto a maxim-ar, que abre projetando a folha para fora, e a de abrir costumam fechar pressionando a borracha contra o batente, o que veda melhor. A basculante, segundo o guia da CBIC, deixa passar água e não deve ser usada em fachada, apenas em áreas internas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois vem o vidro. O **vidro insulado**, também chamado de vidro duplo, junta duas lâminas separadas por um espaçador, formando uma câmara selada que dificulta a passagem de calor e de som. O **vidro laminado** tem uma película entre duas lâminas: é mais seguro, porque não se desfaz em pedaços ao quebrar, e ajuda na acústica. Há ainda combinações dos dois."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Vidro insulado na janela de casa",
+      "pros": [
+        "Reduz a passagem de calor, o que ajuda quando há ar-condicionado",
+        "Diminui o ruído externo, sobretudo combinado ao laminado",
+        "Melhora o conforto perto de grandes panos de vidro"
+      ],
+      "contras": [
+        "Pesa mais e pede perfil e ferragens compatíveis",
+        "Custa mais que o vidro comum",
+        "Rende pouco se a janela tiver frestas ou má vedação"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem toda casa precisa de vidro duplo em todas as janelas. Num quarto voltado para uma avenida movimentada, ele faz diferença; numa janela de banheiro voltada para o jardim, raramente compensa. Concentre o investimento onde há ruído, sol forte da tarde ou ambiente climatizado, e pense no conjunto com sombreamento e ventilação. Mais ideias de conforto estão em [Bem-estar](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Use a norma NBR 10821 para comparar orçamentos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Brasil, as janelas externas seguem a **ABNT NBR 10821**, norma técnica de esquadrias para edificações dividida em cinco partes. Segundo o guia da CBIC, as partes 2, 4 e 5 tratam da classificação e dos requisitos, do desempenho térmico e da instalação e manutenção das esquadrias externas. É a régua que permite comparar duas propostas que, no papel, parecem iguais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma classifica a **estanqueidade à água** em três níveis: mínimo, intermediário e superior, este sem nenhuma passagem de água no ensaio. A pressão de vento usada no teste varia com a altura da edificação e a região do país. Há ainda ensaio de abrir e fechar repetidas vezes, no mínimo 10 mil ciclos, para verificar se a janela continua funcionando bem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para ruído, a norma traz classes de desempenho acústico baseadas no índice Rw, que mede em decibéis quanto a janela reduz o som. A classe A, a melhor, corresponde a 30 dB ou mais; a classe D, a mais simples, vai até 18 dB. Quem mora perto de avenida, aeroporto ou área de festas ganha ao pedir a classe por escrito."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Informe ao fornecedor o número de pavimentos da casa e a cidade, para definir a classe de vento e de água.",
+        "Peça o nível de estanqueidade e, se o ruído importa, a classe acústica da linha oferecida.",
+        "Para alumínio, confira se o acabamento é adequado ao ambiente; o guia cita classes diferentes para áreas urbanas, litorâneas e industriais.",
+        "Prefira fabricantes qualificados no programa setorial de qualidade do PBQP-H, o programa federal de qualidade na construção.",
+        "Peça o certificado de conformidade com a NBR 10821, a etiqueta de desempenho e o manual de instalação e manutenção."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Trocar a janela pela mesma medida costuma ser serviço de esquadrista. Já alargar o vão, abrir uma janela nova ou mexer em verga e contraverga envolve estrutura e pede engenheiro ou arquiteto responsável, com ART ou RRT. Em condomínio, mudança de fachada depende das regras internas e de aprovação."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Pense na instalação e na manutenção antes de fechar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma janela excelente mal instalada vira fonte de infiltração. A NBR 10821 tem uma parte inteira dedicada à instalação, e o guia da CBIC recomenda inspecionar as peças no recebimento e seguir o manual do fabricante. O contramarco, a vedação entre o caixilho e a parede e o caimento do peitoril são detalhes que separam uma janela seca de uma parede manchada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A manutenção também deve entrar na escolha, não apenas no preço inicial. Uma reportagem do Olhar Digital sobre os três materiais lembra que decidir só pelo menor valor de compra pode sair caro ao longo dos anos, em energia e em reparos. Limpar os trilhos, lubrificar roldanas e dobradiças e checar as borrachas são cuidados simples que prolongam a vida de qualquer esquadria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a manutenção muda de peso conforme o material. Na madeira, o verniz ou a pintura protetora volta à rotina com regularidade, e adiar costuma custar mais caro depois. No alumínio e no PVC, o trabalho é quase só limpeza e regulagem. Se você não quer pensar nisso, a madeira pode ficar nos ambientes mais protegidos, como a varanda coberta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de comprar uma casa pronta, vale abrir e fechar todas as janelas na visita, observar se há marcas de umidade embaixo dos peitoris e perguntar pelo manual de uso. Para mais temas como este, visite o [blog](/blog). E se você procura uma casa ou vai vender a sua, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar e quem quer vender."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A melhor janela é a que combina material, vedação, vidro e instalação com o sol, o ruído e a rotina de cada cômodo."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Janela de PVC é melhor que a de alumínio?",
+      "resposta": "Em isolamento térmico e acústico, o PVC costuma levar vantagem, porque conduz pouco calor e tem vedação contínua. O alumínio se destaca em leveza, perfis finos e vãos grandes. Uma linha de alumínio bem vedada pode superar um PVC mal instalado, então compare a linha e a instalação."
+    },
+    {
+      "pergunta": "O que é a NBR 10821?",
+      "resposta": "É a norma técnica da ABNT para esquadrias de edificações. Ela classifica janelas externas por estanqueidade à água, resistência ao vento, desempenho acústico e térmico, e traz orientações de instalação e manutenção. Peça ao fornecedor o certificado de conformidade com ela."
+    },
+    {
+      "pergunta": "Vidro duplo resolve o barulho da rua?",
+      "resposta": "Ajuda bastante, sobretudo combinado ao vidro laminado, mas só rende se a janela vedar bem. Frestas entre as folhas deixam o som passar. Em janela de correr simples, o ganho costuma ser menor do que em maxim-ar ou de abrir."
+    },
+    {
+      "pergunta": "Janela basculante pode ser usada na fachada?",
+      "resposta": "O guia de esquadrias da CBIC orienta não usar basculante em fachada, porque o modelo permite a passagem de água. Ele é indicado para áreas internas. Na fachada, prefira modelos com nível de estanqueidade adequado ao local."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guia de Esquadrias para Edificações — CBIC",
+      "url": "https://cbic.org.br/wp-content/uploads/2017/11/Guia_de_Esquadrias_para_Edificacoes_2017.pdf",
+      "data": "2017"
+    },
+    {
+      "nome": "Qual a melhor janela para a casa: alumínio, PVC ou madeira? — Olhar Digital",
+      "url": "https://olhardigital.com.br/curiosidades/2026/07/07/qual-a-melhor-janela-para-a-casa-aluminio-pvc-ou-madeira/",
+      "data": "julho de 2026"
+    },
+    {
+      "nome": "Esquadrias ajudam a manter a casa aquecida no inverno — Gazeta do Povo",
+      "url": "https://www.gazetadopovo.com.br/imoveis/esquadrias-ajudam-a-manter-a-casa-aquecida-no-inverno-8tlgxh2ud17rf9zqwx1s6taag/",
+      "data": "maio de 2016"
+    },
+    {
+      "nome": "Vidros insulados — AECweb",
+      "url": "https://www.aecweb.com.br/produto/vidros-insulados/5806",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
