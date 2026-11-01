@@ -1,0 +1,152 @@
+{
+  "slug": "rejunte-epoxi-ou-cimenticio-qual-escolher",
+  "tema": "rejunte epoxi ou cimenticio qual escolher",
+  "titulo": "Rejunte epóxi ou cimentício: qual escolher em cada ambiente",
+  "resumo": "Rejunte epóxi ou cimentício? Veja como cada um se comporta com água, gordura e manchas, onde vale usar cada tipo e os cuidados na aplicação e na limpeza.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "interiores",
+    "revestimento",
+    "reforma",
+    "banheiro"
+  ],
+  "capa": {
+    "alt": "Parede de banheiro com porcelanato claro de grandes formatos e juntas finas e retas em tom cinza-claro"
+  },
+  "redes": {
+    "legenda": "Sabe aquela junta do box que escurece com o tempo? A escolha do rejunte faz diferença. O cimentício é mais fácil de aplicar e atende bem paredes e áreas secas; o epóxi absorve muito menos água e resiste melhor a gordura e produtos de limpeza, mas pede mão de obra caprichada. Mostramos onde usar cada um e os cuidados que evitam manchas. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "rejunte",
+      "reforma",
+      "interiores",
+      "banheiro",
+      "decoracao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A dúvida entre **rejunte epóxi ou cimentício** aparece em toda reforma de banheiro e cozinha. A resposta curta: o cimentício é mais fácil de aplicar e atende bem paredes e áreas de uso leve; o epóxi absorve muito menos água e resiste melhor a gordura e manchas, por isso brilha em boxes, bancadas e piscinas. Ele só pede mão de obra mais cuidadosa."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Cimentício: mais fácil e tolerante na aplicação, bom para paredes e áreas de limpeza leve.",
+        "Epóxi: baixíssima absorção e mais resistência a manchas, indicado para áreas molhadas e com gordura.",
+        "O epóxi endurece rápido e não sai depois de curado: aplique em áreas pequenas e limpe na hora.",
+        "Nos dois casos, nada de produto ácido na limpeza."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como cada rejunte se comporta no dia a dia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **rejunte cimentício** é uma argamassa à base de cimento, hoje quase sempre com resinas e aditivos. O boletim técnico de um rejunte desse tipo da Quartzolit, revisado em julho de 2026, indica uso em pisos e paredes, internos e externos, inclusive em áreas molhadas, em juntas de 1 a 10 mm. É a escolha mais comum e a mais simples de aplicar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **rejunte epóxi** é bicomponente: uma resina e um endurecedor misturados na hora. O boletim do fabricante prevê uso em paredes, pisos e piscinas, em juntas de 1 a 5 mm, com liberação para contato com água só depois de 7 dias. Material didático de construção aponta absorção muito baixa e maior resistência a detergentes, gordura e ácidos leves."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Rejunte cimentício x epóxi",
+      "colunas": [
+        "Ponto",
+        "Cimentício",
+        "Epóxi"
+      ],
+      "linhas": [
+        [
+          "Absorção de água",
+          "Maior, mesmo aditivado",
+          "Muito baixa"
+        ],
+        [
+          "Manchas e gordura",
+          "Pode escurecer com o tempo",
+          "Resiste melhor"
+        ],
+        [
+          "Aplicação",
+          "Mais fácil e tolerante",
+          "Exige mistura precisa e limpeza rápida"
+        ],
+        [
+          "Tempo para trabalhar",
+          "Maior",
+          "Curto, sobretudo no calor"
+        ],
+        [
+          "Onde brilha",
+          "Paredes e áreas de uso leve",
+          "Box, bancada, cozinha, piscina"
+        ],
+        [
+          "Custo",
+          "Menor",
+          "Maior"
+        ]
+      ],
+      "nota": "Com base nos boletins técnicos da Quartzolit e no material didático Cursa. Siga sempre a ficha do produto escolhido."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o epóxi não é resposta para tudo. Em área externa com sol forte, o boletim avisa que as cores claras podem amarelar com o tempo por causa da radiação ultravioleta. E em parede seca de sala ou quarto, a vantagem dele quase não aparece. Mais ideias de acabamento estão em [Interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cuidados na aplicação para o rejunte não manchar"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Respeite o prazo depois do assentamento: o boletim do cimentício pede ao menos 72 horas, ou o tempo indicado pela argamassa colante.",
+        "Com o epóxi, trabalhe em áreas pequenas: o fabricante orienta aplicar a mistura em até uma hora e limpar com esponja úmida em até 30 minutos.",
+        "Faça um teste em uma peça escondida: revestimentos porosos, foscos ou texturizados podem manchar, sobretudo com rejunte de cor contrastante.",
+        "Proteja do sol, do vento e da chuva nas primeiras 24 horas, especialmente em área externa.",
+        "Na limpeza do dia a dia, use pano e detergente neutro; produtos ácidos atacam os dois tipos."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O epóxi endurecido não sai mais do revestimento, então vale contratar quem já tenha experiência com ele. Se você está reformando para vender ou procurando uma casa com acabamentos bem resolvidos, a equipe da {{cliente}}, em Campinas, ajuda a olhar esses detalhes. Veja outras dicas no [blog](/blog). Em resumo: cimentício para o simples, epóxi para onde tem água e gordura."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso usar rejunte epóxi no box do banheiro?",
+      "resposta": "Pode, e é uma das melhores indicações para ele, pela baixa absorção de água. Respeite o prazo do fabricante antes de molhar a área; no produto consultado, são 7 dias."
+    },
+    {
+      "pergunta": "Rejunte cimentício serve para área molhada?",
+      "resposta": "Os cimentícios aditivados atuais costumam ser indicados também para banheiros e cozinhas, conforme a ficha técnica. Eles só tendem a escurecer mais com o tempo do que o epóxi em áreas de uso intenso."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Boletim técnico Rejunte Porcelanatos e Cerâmicas — Quartzolit",
+      "url": "https://www.quartzolit.weber/files/br/2026-08/05._BoletimTcnico_RejuntePorcelanatoseCeramicas_2026.pdf.pdf",
+      "data": "julho de 2026"
+    },
+    {
+      "nome": "Boletim técnico Rejunte Epóxi Super Fácil — Quartzolit",
+      "url": "https://www.quartzolit.weber/files/br/2026-08/02._BoletimTcnico_RejunteEpoxi_2026.pdf.pdf",
+      "data": "julho de 2026"
+    },
+    {
+      "nome": "Rejuntes cimentícios e epóxi: seleção, preparo e aplicação — Cursa",
+      "url": "https://cursa.app/pt/pagina/rejuntes-cimenticios-e-epoxi-selecao-preparo-e-aplicacao"
+    }
+  ]
+}
