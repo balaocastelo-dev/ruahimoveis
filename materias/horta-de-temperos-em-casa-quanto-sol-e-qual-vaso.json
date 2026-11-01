@@ -1,0 +1,166 @@
+{
+  "slug": "horta-de-temperos-em-casa-quanto-sol-e-qual-vaso",
+  "tema": "horta de temperos em vasos em casa",
+  "titulo": "Horta de temperos em casa: quanto sol e qual vaso usar",
+  "resumo": "Para a horta de temperos dar certo em casa, conte as horas de sol, escolha vasos com boa drenagem e regue pela umidade da terra. Veja o que plantar primeiro.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "horta",
+    "temperos",
+    "plantas",
+    "varanda",
+    "bem-estar"
+  ],
+  "capa": {
+    "alt": "Vasos de barro com manjericão, alecrim, salsa e cebolinha sobre uma bancada de madeira junto a uma janela ensolarada"
+  },
+  "redes": {
+    "legenda": "Seu manjericão morre sempre? Quase sempre a culpa é da falta de sol ou do vaso sem furo. Orientações da Embrapa falam em pelo menos seis horas de sol por dia para os temperos, e a terra não pode ficar encharcada. No blog, mostramos como escolher o lugar, o vaso e os temperos mais fáceis para começar. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "horta",
+      "hortaemcasa",
+      "temperos",
+      "varanda",
+      "plantas",
+      "bemestar",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter uma **horta de temperos em casa** é uma das formas mais simples de trazer verde para a rotina: o cheiro do manjericão perto da janela, a cebolinha cortada na hora. Mas muita gente desiste depois de ver as mudas amarelarem em poucas semanas, sem saber se o problema foi a rega, o vaso ou o lugar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a maioria dos temperos precisa de **sol direto por várias horas**, a Embrapa fala em pelo menos seis por dia, e de vaso com furo e camada de drenagem. Regue quando a terra estiver secando, não por calendário, e comece por espécies de raiz curta, como cebolinha, salsa e manjericão."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Escolha o lugar mais ensolarado: varanda ou janela com cinco a seis horas de sol direto por dia.",
+        "Use vaso com furos, camada de drenagem e prato embaixo; quanto maior o vaso, melhor.",
+        "Confira a umidade da terra pela manhã e regue só quando ela começar a secar.",
+        "Comece por temperos de raiz curta e colha as folhas antes da floração."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde colocar a horta e qual vaso escolher"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O lugar decide quase tudo. A cartilha Horta do Lar, da Emater/RS-Ascar, pede local arejado e ensolarado, como varanda ou parapeito, com pelo menos **cinco horas de sol** por dia. O documento Plantas Condimentares, da Embrapa Agroindústria Tropical, fala em ao menos **seis horas** para os temperos. Observe a janela por um dia inteiro antes de comprar as mudas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No vaso, a regra é drenar. A cartilha da Emater/RS orienta furar o fundo, cobrir os furos com tela fina ou filtro de café, fazer uma camada de argila expandida ou cacos de telha e colocar um prato embaixo. Recipientes maiores prolongam a colheita, e o mínimo citado é de 1 litro. A Embrapa sugere até cano de PVC cortado ao meio, com 10 a 15 cm de profundidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem toda casa tem esse sol. Se a única janela recebe luz indireta, os temperos tendem a crescer fracos; nesse caso, plantas ornamentais de sombra costumam ir melhor. Para pensar o verde em cada cômodo, veja [Bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quais temperos plantar primeiro e como cuidar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para começar, a cartilha da Emater/RS indica hortaliças de **raiz curta**, como cebolinha, salsa e coentro, e desaconselha as de raiz longa, como cenoura e rabanete, em vasos rasos. O documento da Embrapa traz o ciclo de cada tempero e mostra que alguns, como manjericão e hortelã, precisam ser renovados todo ano, enquanto o alecrim é perene."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Temperos fáceis para vaso: como plantar e cuidar",
+      "colunas": [
+        "Tempero",
+        "Como começar",
+        "Ciclo",
+        "Cuidado principal"
+      ],
+      "linhas": [
+        [
+          "Cebolinha",
+          "Bulbos",
+          "Cerca de 60 dias",
+          "Pode ser plantada o ano todo"
+        ],
+        [
+          "Salsa",
+          "Sementes",
+          "Cerca de 50 dias",
+          "Planta bianual"
+        ],
+        [
+          "Manjericão",
+          "Sementes",
+          "Cerca de 60 dias",
+          "Não tolera terra mal drenada"
+        ],
+        [
+          "Hortelã",
+          "Mudas ou rizomas",
+          "Cerca de 90 dias",
+          "Gosta de terra úmida e rica em matéria orgânica"
+        ],
+        [
+          "Alecrim",
+          "Sementes ou estacas",
+          "Perene",
+          "Prefere terra bem drenada, sem excesso de água"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Ciclos segundo o documento Plantas Condimentares, da Embrapa (2013); variam com clima e cultivo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rega é onde mais se erra. A Emater/RS recomenda conferir a umidade da terra **todas as manhãs**, mantendo-a nem seca nem encharcada. Para adubar, a cartilha cita matéria orgânica e húmus de minhoca. A Embrapa orienta colher folhas e caules **antes da floração** e retirar à mão pragas e ervas daninhas. O que deixa a terra encharcada, em geral, mata mais do que o esquecimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa ou um apartamento com varanda ensolarada para montar a sua horta, a equipe da {{cliente}}, em Campinas, ajuda a considerar a posição do sol na escolha. Outras ideias para a casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: sol direto, vaso que drena e rega pela umidade da terra resolvem quase toda horta de temperos."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantas horas de sol uma horta de temperos precisa?",
+      "resposta": "A Emater/RS fala em pelo menos cinco horas de sol por dia, e a Embrapa, em ao menos seis para as plantas condimentares. Com menos luz, os temperos tendem a crescer fracos."
+    },
+    {
+      "pergunta": "Por que o manjericão morre no vaso?",
+      "resposta": "As causas mais comuns são falta de sol e terra encharcada. O manjericão não tolera solo mal drenado, e a Embrapa indica renovar a planta a cada ano."
+    },
+    {
+      "pergunta": "Qual o melhor vaso para horta em apartamento?",
+      "resposta": "Um vaso com furos no fundo, camada de drenagem e prato embaixo. Recipientes maiores prolongam a colheita; floreiras e canos de PVC cortados ao meio também funcionam."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Horta do Lar — Emater/RS-Ascar (repositório Embrapa)",
+      "url": "https://ainfo.cnptia.embrapa.br/digital/bitstream/item/33963/1/hortadolar0001.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Plantas Condimentares: Cultivo e Utilização — Embrapa Agroindústria Tropical",
+      "url": "https://www.infoteca.cnptia.embrapa.br/bitstream/doc/981610/1/DOC13004.pdf",
+      "data": "2013"
+    },
+    {
+      "nome": "Horta em Pequenos Espaços — Embrapa",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/958531/1/folderHPE.pdf",
+      "data": "novembro de 2026"
+    }
+  ]
+}
