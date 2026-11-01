@@ -1,0 +1,243 @@
+{
+  "slug": "casa-para-envelhecer-bem-acessibilidade-no-projeto-e-na-compra",
+  "tema": "casa para envelhecer bem com acessibilidade",
+  "titulo": "Casa para envelhecer bem: o que muda no projeto e na compra",
+  "resumo": "Casa para envelhecer bem: portas largas, box sem degrau, reforço para barras e boa luz. Veja as medidas de referência e o que pedir ao comprar um imóvel novo.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "bem-estar",
+    "acessibilidade",
+    "banheiro",
+    "compra",
+    "casa"
+  ],
+  "capa": {
+    "alt": "Banheiro claro e amplo com box sem degrau, barra de apoio em aço escovado, banco de madeira e janela com luz natural"
+  },
+  "redes": {
+    "legenda": "Uma casa boa para os 40 também é boa para os 80? Portas de 80 cm, box sem degrau, parede reforçada para uma barra futura e luz nos caminhos não pesam no visual e mudam muito a vida lá na frente. E quem compra na planta pode pedir adaptações por escrito antes da obra começar. Veja o que olhar no projeto e na visita. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "acessibilidade",
+      "desenhouniversal",
+      "bemestar",
+      "arquitetura",
+      "casanova",
+      "banheiro",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Pensar numa **casa para envelhecer bem** não é planejar um imóvel com cara de hospital. É escolher, desde já, uma casa em que você, seus pais ou qualquer visita circulem com conforto e segurança em todas as fases da vida, inclusive depois de uma cirurgia no joelho, com um carrinho de bebê ou com as mãos cheias de compras."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O caminho passa pelo chamado **desenho universal**: portas e corredores com folga, banheiro sem degrau no box, paredes preparadas para receber barras, maçanetas de alavanca e boa iluminação nos caminhos. A maioria desses itens custa pouco ou nada quando entra no projeto, e muito mais quando vira reforma. Para quem compra imóvel novo, há ainda regras que ajudam."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Portas com vão livre de 80 cm e corredores de 90 cm são referências do decreto federal de acessibilidade em moradias.",
+        "Box sem desnível e paredes reforçadas para barras de apoio evitam reforma no futuro.",
+        "Desde 2020, prédios residenciais novos devem ser projetados com princípios de acessibilidade, e o comprador na planta pode pedir adaptações.",
+        "Tapetes soltos, caminhos escuros e banheiro escorregadio estão entre os riscos mais citados para quedas em casa."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda por que vale pensar nisso antes de precisar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quedas dentro de casa são um problema sério na maturidade. Dados do Ministério da Saúde reunidos pelo Instituto de Longevidade mostram que, só entre janeiro e abril de 2024, mais de 62 mil pessoas idosas foram internadas por queda no país. O banheiro e o quarto aparecem entre os lugares mais perigosos, e boa parte do risco vem do próprio ambiente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A boa notícia é que a arquitetura pode ajudar bastante. Um piso sem degraus escondidos, luz que acende antes do primeiro passo e um apoio firme no lugar certo reduzem situações de risco. Esses mesmos detalhes deixam a casa mais confortável para qualquer idade, o que torna a escolha sensata mesmo para quem ainda está longe dos 60 anos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas casa adaptada não substitui cuidado com a saúde. Atividade física, revisão de medicamentos que causam tontura e acompanhamento profissional continuam essenciais, e a orientação sobre isso cabe a médicos e fisioterapeutas. O papel da casa é tirar obstáculos do caminho. Mais conteúdo sobre conforto e qualidade de vida em casa está em [Bem-estar](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Confira as medidas que fazem diferença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A principal referência técnica no Brasil é a **ABNT NBR 9050**, norma de acessibilidade a edificações, mobiliário e espaços. Para moradias novas, o Decreto Federal nº 9.451, de 2018, trouxe uma lista de requisitos para unidades internamente acessíveis, organizada pela CBIC, a câmara da indústria da construção, num guia prático. A tabela resume os pontos mais úteis para quem avalia uma casa."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para uma casa acessível",
+      "colunas": [
+        "Item",
+        "Referência",
+        "Onde observar"
+      ],
+      "linhas": [
+        [
+          "Vão livre das portas",
+          "Mínimo de 80 cm",
+          "Entrada, quartos e banheiros"
+        ],
+        [
+          "Corredores",
+          "Faixa livre de no mínimo 90 cm",
+          "Circulação entre os cômodos"
+        ],
+        [
+          "Box do chuveiro",
+          "Mínimo de 0,95 m x 0,90 m, sem desnível",
+          "Banheiro principal"
+        ],
+        [
+          "Barras de apoio",
+          "Parede com reforço para instalação futura",
+          "Box e lado da bacia sanitária"
+        ],
+        [
+          "Desníveis no piso",
+          "Até 0,5 cm dispensam tratamento",
+          "Soleiras, portas e transições de piso"
+        ],
+        [
+          "Maçanetas",
+          "Tipo alavanca",
+          "Todas as portas"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Guia de acessibilidade em unidades residenciais — CBIC",
+        "url": "https://cbic.org.br/wp-content/uploads/2019/12/Guia_Acessibilidade_art.581.pdf"
+      },
+      "nota": "Referências do Anexo I do Decreto nº 9.451/2018, que remete à NBR 9050. Consulte a edição vigente da norma no projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As barras de apoio merecem atenção especial. Cadernos técnicos de órgãos públicos que seguem a NBR 9050 indicam a instalação entre 75 cm e 85 cm do piso acabado até o eixo da barra. O ponto crítico é a parede: barra presa em azulejo sobre parede fraca pode se soltar justamente quando alguém se apoia nela com o peso do corpo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem toda casa precisa cumprir a norma à risca para ser confortável. O decreto e a NBR 9050 são referências; numa casa própria, o que importa é que as medidas atendam a quem mora ali. Um arquiteto pode adaptar as soluções ao espaço e ao estilo da casa, sem perder a elegância. Projetos assim aparecem também em [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Avalie cada ambiente na visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pela entrada. Degraus na porta principal e na garagem são o primeiro obstáculo; veja se há como chegar até a sala sem subir nenhum, ou se uma rampa suave caberia no terreno. Dentro de casa, procure soleiras altas, mudanças de nível entre ambientes e escadas sem corrimão dos dois lados, que pesam mais com o passar dos anos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No banheiro, observe se o box tem degrau ou rebaixo, se o piso parece escorregadio quando molhado e se há espaço livre ao lado da bacia. Pergunte se as paredes têm reforço para barras. No quarto, veja se existe um caminho livre e iluminado até o banheiro, e se há tomada perto da cama para um abajur ou luz de presença."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pense ainda na cozinha e na lavanderia: armários altos demais obrigam a subir em bancos, e pias muito baixas cansam as costas. Interruptores na entrada de cada cômodo, luz nos corredores e tomadas acima do rodapé são detalhes que facilitam a rotina. Tapetes soltos e fios atravessando a passagem estão entre os riscos de queda mais citados."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Casa térrea para envelhecer",
+      "pros": [
+        "Sem escadas no dia a dia, toda a casa fica acessível",
+        "Mais fácil de adaptar com rampas, barras e portas largas",
+        "Integra bem a casa ao jardim e à área externa"
+      ],
+      "contras": [
+        "Pede terreno maior para o mesmo número de cômodos",
+        "Quartos no mesmo nível da rua podem exigir mais cuidado com privacidade e ruído",
+        "Oferta menor em alguns bairros e condomínios"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas sobrado não precisa ser descartado. Uma suíte no térreo, que hoje serve de escritório ou quarto de hóspedes, pode virar o quarto principal no futuro. Outra saída é prever no projeto o espaço para uma plataforma ou elevador residencial, solução que depende de cálculo estrutural e de profissional responsável, com ART ou RRT."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba o que pedir ao comprar um imóvel novo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Decreto nº 9.451 regulamenta o artigo 58 da Lei Brasileira de Inclusão, a Lei nº 13.146, de 2015. Segundo a CBIC, desde 27 de janeiro de 2020 as unidades de novos edifícios residenciais multifamiliares privados devem ser projetadas com princípios de acessibilidade. O empreendedor pode oferecer unidades adaptáveis, que permitem mudar o layout sem mexer na estrutura e nas instalações, entre outras opções."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem compra na planta, o guia da CBIC explica que o pedido de adaptação deve ser feito por escrito à incorporadora até o início da obra, e a conversão deve ficar pronta até o habite-se, documento da prefeitura que libera o uso do imóvel. Por isso, vale perguntar logo na compra a data prevista de início da obra e o prazo para esse pedido."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Leia o contrato com apoio profissional",
+      "texto": "As regras do decreto têm detalhes, exceções e prazos. Antes de assinar, confira no contrato e no memorial descritivo o que está previsto sobre acessibilidade e, em caso de dúvida, consulte um advogado especializado em direito imobiliário."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em casa pronta ou usada, a adaptação costuma vir por reforma. Trocar louças, instalar barras e rebaixar o box parecem simples, mas envolvem impermeabilização, hidráulica e, às vezes, a estrutura. Quando a obra mexer em paredes, laje ou instalações, conte com engenheiro ou arquiteto responsável. Mais ideias para morar bem estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa que acompanhe as próximas fases da sua família, ou vai vender a sua, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar e quem quer vender."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma casa para envelhecer bem é a que você escolhe hoje pensando em quem você será daqui a vinte anos."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a largura mínima de porta para uma casa acessível?",
+      "resposta": "A referência do Decreto nº 9.451/2018, baseada na NBR 9050, é um vão livre mínimo de 80 cm. Vão livre é a passagem que sobra com a porta aberta, descontando batente e a própria folha. Corredores, pela mesma referência, devem ter faixa livre de pelo menos 90 cm."
+    },
+    {
+      "pergunta": "A que altura se instala a barra de apoio no banheiro?",
+      "resposta": "Cadernos técnicos que seguem a NBR 9050 indicam entre 75 cm e 85 cm do piso acabado até o eixo da barra. Mais importante que a altura é a parede ter reforço para aguentar o peso do corpo. Na dúvida, peça orientação a um arquiteto."
+    },
+    {
+      "pergunta": "Posso pedir adaptações ao comprar apartamento na planta?",
+      "resposta": "Segundo o guia da CBIC sobre o Decreto nº 9.451/2018, o pedido deve ser feito por escrito à incorporadora até o início da obra, e a adaptação concluída até o habite-se. Cada empreendimento tem regras e prazos próprios; confira o contrato com um advogado."
+    },
+    {
+      "pergunta": "Casa térrea é obrigatória para envelhecer bem?",
+      "resposta": "Não. A térrea facilita, mas um sobrado com uma suíte no térreo ou com espaço previsto para plataforma ou elevador também funciona. O essencial é ter, num só nível, quarto, banheiro e áreas de convívio."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guia de acessibilidade em unidades residenciais (art. 58 da LBI) — CBIC",
+      "url": "https://cbic.org.br/wp-content/uploads/2019/12/Guia_Acessibilidade_art.581.pdf",
+      "data": "dezembro de 2019"
+    },
+    {
+      "nome": "Guia prático esclarece empreendedores sobre as novas regras de acessibilidade — CBIC",
+      "url": "https://cbic.org.br/industriaimobiliaria/2019/12/09/guia-pratico-esclarece-empreendedores-sobre-as-novas-regras-de-acessibilidade/",
+      "data": "dezembro de 2019"
+    },
+    {
+      "nome": "Queda de idosos — Instituto de Longevidade",
+      "url": "https://institutodelongevidade.org/longevidade-e-saude/saude-fisica/queda-de-idosos",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Caderno de especificações: acessibilidade NBR 9050 — DER-ES",
+      "url": "https://der.es.gov.br/Media/der/Documentos/Tabela%20Referencial%20de%20Preço/Referencial%20de%20Edificações/CADERNO_ESPECIFICACOES/1706-ACESSIBILIDADE%20-%20NBR%209050.pdf",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
