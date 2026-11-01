@@ -567,7 +567,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-01T02:26:25.488Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "escada-interna-medidas-tipos-e-materiais",
+      "titulo": "Escada interna: medidas, tipos e materiais para subir com conforto",
+      "tema": "escada interna medidas tipos e materiais",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-01T11:23:30.682Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T02:26:25.488Z"
+  "atualizadoEm": "2026-11-01T11:23:30.683Z"
 }

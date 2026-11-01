@@ -1,0 +1,261 @@
+{
+  "slug": "escada-interna-medidas-tipos-e-materiais",
+  "tema": "escada interna medidas tipos e materiais",
+  "titulo": "Escada interna: medidas, tipos e materiais para subir com conforto",
+  "resumo": "Escada interna confortável começa na conta dos degraus: veja a regra de Blondel, as medidas de referência, os tipos de escada e o que pesa na escolha do material.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "escada",
+    "interiores",
+    "projeto",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Escada interna de degraus de madeira clara presos à parede, com guarda-corpo de vidro, em sala com pé-direito duplo e luz natural"
+  },
+  "redes": {
+    "legenda": "Já reparou que algumas escadas cansam e outras parecem subir sozinhas? A diferença está numa conta simples que relaciona a altura e a profundidade de cada degrau. No blog, explicamos essa regra, as medidas de referência, os tipos de escada e como escolher o material. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "escada",
+      "arquitetura",
+      "interiores",
+      "decoracao",
+      "casanova",
+      "projeto",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **escada interna** é um dos poucos elementos da casa que você usa dezenas de vezes por dia sem pensar nele, até o dia em que ela cansa, assusta ou faz alguém tropeçar. Ao mesmo tempo, costuma ser a peça mais escultural do projeto: aparece logo na entrada, conecta andares e ajuda a definir o estilo da sala."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: uma escada confortável nasce da proporção entre a altura do degrau e a profundidade da pisada, calculada pela regra de Blondel. Depois vêm a largura, a altura livre sobre a cabeça, o corrimão, o guarda-corpo e o patamar. O tipo de escada e o material vêm por último, e dependem do espaço e do jeito de morar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A regra de Blondel pede que dois espelhos somados a um piso fiquem entre 63 e 65 cm.",
+        "Em casas, a largura costuma partir de 80 cm, e a altura livre sobre os degraus, de cerca de 2,15 m.",
+        "Corrimão entre 70 e 92 cm e guarda-corpo de 1,10 m ou mais onde há vão livre aumentam a segurança.",
+        "Escada é estrutura: o projeto e a obra pedem arquiteto ou engenheiro responsável."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como saber se a escada vai ser confortável"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dois nomes ajudam a entender qualquer escada. O **espelho** é a parte vertical do degrau, ou seja, a altura que você sobe a cada passo. O **piso**, também chamado de pisada, é a parte horizontal onde o pé apoia. A relação entre os dois decide se a subida parece natural ou se exige esforço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A conta mais usada é a **fórmula de Blondel**, que leva o nome do arquiteto François Blondel: dois espelhos somados a um piso devem resultar entre 63 e 65 cm, segundo o ArchDaily. A lógica é imitar o passo humano. Um degrau mais alto pede pisada mais curta, e um degrau baixo pede pisada mais longa, para o ritmo não se perder."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um exemplo ajuda. Imagine um desnível de 2,88 m entre o piso de baixo e o de cima. Com 16 degraus, cada espelho fica com 18 cm. Pela regra, dois espelhos somam 36 cm, então o piso deve ficar entre 27 e 29 cm. Repetir essa medida em todos os degraus é tão importante quanto acertá-la."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Como referência mais confortável, a norma de acessibilidade NBR 9050, da ABNT (a Associação Brasileira de Normas Técnicas), trabalha com espelho entre 16 e 18 cm e piso entre 26 e 32 cm, conforme material didático da PUC Goiás. Ela foi feita para rotas acessíveis, mas serve de boa régua para uma casa onde vão morar crianças, idosos ou visitas frequentes."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Degraus diferentes são o maior risco",
+      "texto": "O pé memoriza a altura dos primeiros degraus. Um degrau mais alto ou mais baixo no meio do caminho, comum quando o piso de acabamento é trocado depois da obra, quebra esse ritmo e costuma causar tropeços. Confira a espessura do revestimento ainda no projeto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "As medidas que pesam na segurança"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **largura** define quem cruza com quem e o que passa pela escada na mudança. O ArchDaily indica mínimo de 80 cm para residências unifamiliares, e o blog da Sienge cita 90 cm como medida usual. Na prática, uma escada que leva aos quartos agradece alguns centímetros a mais, porque colchões e móveis grandes passam por ali ao menos uma vez."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **altura livre** é a distância entre a quina do degrau e o teto ou a laje logo acima. O ArchDaily e a Sienge citam mínimo de 2,15 m, e lembram que o manual de Ernst Neufert admite 2 m. Esse é um ponto que costuma ser esquecido em escadas sob vigas ou em mezaninos, e que só aparece quando alguém bate a cabeça."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **corrimão**, segundo as referências da NBR 9050 citadas pelo ArchDaily, fica entre 70 e 92 cm de altura, de forma contínua ao longo dos degraus. Já o **guarda-corpo** é a proteção do vão livre. A revisão da NBR 14718, publicada em 2019, passou a pedir altura igual ou maior que 1,10 m onde o desnível chega a 1 m ou mais, conforme a CBIC."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **patamar**, aquele trecho plano no meio do caminho, serve de descanso e de proteção em caso de queda. As referências consultadas recomendam não passar de 15 degraus seguidos. A NBR 9050 também pede patamar em mudanças de direção e quando o desnível chega a 3,20 m. Em escadas de dois lances, ele costuma ter a mesma largura da escada."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para uma escada residencial",
+      "colunas": [
+        "Item",
+        "Referência",
+        "Onde aparece"
+      ],
+      "linhas": [
+        [
+          "Regra de Blondel",
+          "2 espelhos + 1 piso entre 63 e 65 cm",
+          "ArchDaily"
+        ],
+        [
+          "Espelho",
+          "16 a 18 cm",
+          "NBR 9050, via PUC Goiás"
+        ],
+        [
+          "Piso (pisada)",
+          "26 a 32 cm",
+          "NBR 9050, via PUC Goiás"
+        ],
+        [
+          "Largura em casa",
+          "80 cm no mínimo; 90 cm é usual",
+          "ArchDaily e Sienge"
+        ],
+        [
+          "Altura livre",
+          "2,15 m (Neufert admite 2 m)",
+          "ArchDaily e Sienge"
+        ],
+        [
+          "Corrimão",
+          "70 a 92 cm de altura",
+          "NBR 9050, via ArchDaily"
+        ],
+        [
+          "Guarda-corpo",
+          "1,10 m ou mais com desnível de 1 m ou mais",
+          "NBR 14718, via CBIC"
+        ],
+        [
+          "Degraus seguidos",
+          "até 15 antes de um patamar",
+          "ArchDaily e Sienge"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "São referências técnicas gerais. O código de obras do município e o projeto aprovado podem pedir outras medidas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale lembrar que essas medidas são referências, e não uma licença para resolver a escada por conta própria. O código de obras da cidade, o projeto aprovado e o cálculo estrutural dão a palavra final. Para entender melhor como cada etapa da obra se encaixa, há mais textos na seção de [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual tipo de escada combina com o espaço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **escada reta**, de um lance só, é a mais simples de usar e de construir, e a que melhor transporta móveis. Em compensação, ocupa um comprimento grande em planta. Quando o desnível pede muitos degraus, ela precisa de um patamar no meio, o que alonga ainda mais o espaço necessário."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As escadas **em L** e **em U** dobram o percurso com um patamar e cabem melhor em plantas compactas. A em U, em especial, coloca a chegada perto da saída, o que ajuda a organizar a circulação. O patamar também funciona como respiro visual, bom lugar para uma janela, uma obra de arte ou uma planta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **escada caracol** e os degraus em **leque**, que giram em torno de um eixo, economizam espaço e têm forte apelo estético. O porém é a pisada variável: perto do centro, o degrau fica estreito demais para o pé. Por isso, costumam funcionar melhor como acesso secundário, a um mezanino ou a um terraço, e não como a escada principal da casa."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Escada solta, de degraus em balanço",
+      "pros": [
+        "Deixa a luz e a vista atravessarem o ambiente.",
+        "Vira peça de destaque sem precisar de decoração.",
+        "Ocupa visualmente menos espaço que uma escada fechada."
+      ],
+      "contras": [
+        "Pede parede ou estrutura preparada para receber os degraus.",
+        "O vão entre os degraus preocupa quem tem crianças pequenas ou animais.",
+        "Exige guarda-corpo bem resolvido e cálculo estrutural cuidadoso."
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Que material escolher para os degraus"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **madeira** deixa a escada acolhedora e silenciosa ao pisar, mas marca com o uso e pede manutenção do acabamento de tempos em tempos. As **pedras**, como granito e mármore, são duráveis e elegantes. O ponto de atenção é o polimento: superfície muito lisa escorrega, principalmente de meia, e acabamentos levigados ou escovados costumam ser mais seguros."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **concreto aparente** combina com projetos contemporâneos e resolve estrutura e acabamento ao mesmo tempo, mas transmite mais ruído de impacto. O **metal**, muitas vezes combinado com madeira na pisada, permite peças finas e leves. Em todos os casos, a quina do degrau merece atenção: uma faixa antiderrapante discreta ou um leve contraste de cor ajuda a enxergar onde termina cada pisada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **iluminação** completa o conjunto. Balizadores na parede ou fitas de LED sob os degraus marcam o caminho à noite sem acender a casa inteira. É uma solução bonita, mas que envolve instalação elétrica embutida, então deve entrar no projeto e ser feita por eletricista. Mais ideias de materiais e acabamentos estão em [interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Onde parar",
+      "texto": "Trocar o revestimento dos degraus é uma reforma de acabamento. Mudar a estrutura, abrir um vão na laje ou fixar degraus em balanço numa parede existente exige projeto e responsável técnico com ART ou RRT, o registro de responsabilidade do engenheiro ou do arquiteto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa ou um sobrado em Campinas, a escada merece atenção já na primeira visita: suba e desça devagar, observe a altura dos degraus, a firmeza do corrimão e a luz do caminho. A equipe da {{cliente}} pode ajudar a encontrar imóveis com o tipo de circulação que combina com a sua rotina."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: acerte a conta dos degraus primeiro, garanta largura, altura livre e proteção, e só então escolha a forma e o material que vão dar personalidade à escada."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O que é a fórmula de Blondel?",
+      "resposta": "É uma regra que relaciona a altura e a profundidade dos degraus para imitar o passo humano. Dois espelhos somados a um piso devem ficar entre 63 e 65 cm. Quanto mais alto o degrau, mais curta deve ser a pisada."
+    },
+    {
+      "pergunta": "Qual a largura mínima de uma escada em casa?",
+      "resposta": "As referências técnicas citam 80 cm como mínimo para residências unifamiliares, e 90 cm como medida usual. O código de obras do município pode ter exigências próprias, por isso vale confirmar com o arquiteto."
+    },
+    {
+      "pergunta": "Escada caracol pode ser a escada principal da casa?",
+      "resposta": "Pode, mas costuma ser menos confortável, porque a pisada fica estreita perto do eixo central e o transporte de móveis é difícil. Por isso ela é mais usada como acesso secundário, a mezaninos ou terraços."
+    },
+    {
+      "pergunta": "Qual a altura do guarda-corpo da escada?",
+      "resposta": "A revisão de 2019 da NBR 14718 pede guarda-corpo com 1,10 m ou mais onde o desnível chega a 1 m ou mais. O corrimão, que é onde a mão apoia, fica entre 70 e 92 cm."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Como projetar e calcular uma escada? — ArchDaily Brasil",
+      "url": "https://www.archdaily.com.br/br/892663/como-projetar-e-calcular-uma-escada",
+      "data": "abril de 2018"
+    },
+    {
+      "nome": "Como projetar e calcular uma escada — Blog da Sienge",
+      "url": "https://sienge.com.br/blog/como-projetar-e-calcular-uma-escada/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Escadas: material didático (NBR 9050) — PUC Goiás",
+      "url": "https://professor.pucgoias.edu.br/sitedocente/admin/arquivosUpload/17452/material/ESCADA.pdf"
+    },
+    {
+      "nome": "Publicada revisão da norma de guarda-corpos para edificação — CBIC",
+      "url": "https://cbic.org.br/publicada-revisao-da-norma-de-guarda-corpos-para-edificacao/",
+      "data": "setembro de 2019"
+    }
+  ]
+}
