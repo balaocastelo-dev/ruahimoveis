@@ -657,7 +657,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-01T20:21:26.229Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "aquecimento-de-agua-em-casa-solar-gas-ou-bomba-de-calor",
+      "titulo": "Aquecimento de água em casa: solar, gás ou bomba de calor?",
+      "tema": "aquecimento de agua da casa solar termico gas ou bomba de calor",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-01T20:22:45.847Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T20:21:26.229Z"
+  "atualizadoEm": "2026-11-01T20:22:45.848Z"
 }

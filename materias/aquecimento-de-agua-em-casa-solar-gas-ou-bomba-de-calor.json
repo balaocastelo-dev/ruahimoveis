@@ -1,0 +1,246 @@
+{
+  "slug": "aquecimento-de-agua-em-casa-solar-gas-ou-bomba-de-calor",
+  "tema": "aquecimento de agua da casa solar termico gas ou bomba de calor",
+  "titulo": "Aquecimento de água em casa: solar, gás ou bomba de calor?",
+  "resumo": "Aquecimento de água em casa: compare chuveiro elétrico, solar térmico, gás e bomba de calor, com o que pesa no consumo, no espaço e na obra antes de escolher.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "casa nova",
+    "energia",
+    "banheiro",
+    "sustentabilidade"
+  ],
+  "capa": {
+    "alt": "Telhado cerâmico de uma casa com coletores solares para aquecimento de água e reservatório térmico sob céu azul"
+  },
+  "redes": {
+    "legenda": "O banho quente é um dos maiores gastos de energia de uma casa. Na hora de construir ou reformar, dá para escolher entre chuveiro elétrico, aquecimento solar, aquecedor a gás e bomba de calor, e cada um pede espaço, instalação e cuidados diferentes. Comparamos os quatro com base em estudos de universidades brasileiras. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "casanova",
+      "energia",
+      "sustentabilidade",
+      "banheiro",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem está projetando uma casa nova ou planejando uma reforma grande logo esbarra na pergunta: qual o melhor **aquecimento de água em casa**? O chuveiro elétrico é o caminho mais conhecido, mas casas maiores, com vários banheiros, banheira e cozinha com água quente, costumam pedir um sistema central que atenda tudo ao mesmo tempo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em resumo, o aquecimento solar térmico tende a ser o que mais reduz o consumo de energia, desde que haja telhado bem orientado e um apoio para dias nublados. O gás entrega água quente sob demanda e com boa vazão. A bomba de calor gasta eletricidade, mas bem menos que uma resistência. A escolha certa depende do telhado, do espaço e da rotina da família."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O banho responde por uma fatia grande do consumo elétrico das casas brasileiras.",
+        "Solar térmico com apoio reduz muito a energia gasta para esquentar água, segundo estudos acadêmicos.",
+        "Aquecedor a gás exige rede de gás, ventilação e instalação por profissional habilitado.",
+        "Bomba de calor usa eletricidade com eficiência maior que a resistência, mas pede espaço ventilado para o equipamento."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a água quente pesa tanto na conta da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esquentar água consome muita energia. Uma pesquisa da Eletrobras e do Procel, citada por pesquisadores do IPT, apontou que 80,9% dos domicílios brasileiros aquecem a água do banho de algum modo e que 73,5% deles usam energia elétrica para isso. O chuveiro elétrico é, de longe, o aparelho mais comum."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um documento de projeto apoiado pelo Procel e publicado pelo Ministério de Minas e Energia lembra que as estimativas oficiais atribuíam ao chuveiro de 20% a 30% do consumo de uma residência. Como todos tomam banho em horários parecidos, ele também ajuda a formar o pico de demanda do fim do dia na rede elétrica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o chuveiro elétrico não é vilão em toda casa. Um estudo da UFSC apresentado em 2023, que comparou sistemas em doze cidades, observou impacto menor nas regiões mais quentes, onde a demanda por água quente é baixa. Numa casa compacta, com um ou dois banheiros, ele continua sendo uma solução simples e barata de instalar."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Aquecimento solar: quando o telhado faz o trabalho"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O aquecedor solar térmico é diferente do painel fotovoltaico, que gera eletricidade. Aqui, **coletores** no telhado esquentam a própria água, que fica guardada num **reservatório térmico**, uma espécie de caixa isolada. Nos dias nublados ou de uso intenso, um apoio elétrico ou a gás completa a temperatura. A norma ABNT NBR 15569 orienta o projeto desses sistemas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um artigo publicado em 2012 na revista Ambiente Construído simulou uma casa em Viçosa (MG) e encontrou redução média de 70% na energia usada para aquecer água ao trocar o chuveiro elétrico por solar com apoio elétrico. O consumo total da casa caiu, em média, 36%. No estudo da UFSC, o solar se mostrou a melhor alternativa para reduzir o consumo."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Aquecimento solar térmico",
+      "pros": [
+        "Maior redução de consumo entre os sistemas comparados nos estudos",
+        "Atende vários pontos ao mesmo tempo: chuveiros, banheira e cozinha",
+        "Funciona bem num clima com muitos dias de sol"
+      ],
+      "contras": [
+        "Precisa de área de telhado bem orientada e sem sombra",
+        "O reservatório ocupa espaço e pesa, o que exige conferir a estrutura",
+        "Perde calor parado: no artigo de 2012, as perdas do reservatório equivaliam a cerca de 70% da energia de apoio",
+        "Depende de apoio elétrico ou a gás nos dias nublados"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o solar não vale quando o telhado é pequeno, sombreado por prédios ou árvores, ou voltado para o lado errado. Nesse caso, os coletores rendem pouco e o apoio trabalha quase sempre. A posição do sol e das sombras sobre a casa é assunto de projeto; outros textos sobre isso estão na seção de [construção do blog](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Gás ou bomba de calor: água quente sem depender do sol"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "Aquecedor a gás"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **aquecedor a gás de passagem** esquenta a água no momento em que a torneira abre e não precisa de reservatório. Ele pode usar gás natural encanado, onde a rede chega, ou GLP em botijões e cilindros. No estudo da UFSC, o rendimento informado nas etiquetas dos aparelhos a gás ficou entre 82% e 98%, ou seja, boa parte do calor do gás vai para a água."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em compensação, o gás pede rede própria, ventilação adequada no local do aparelho e saída dos gases da queima para o exterior. Instalação de gás não é serviço para fazer por conta própria: deve ser projetada e executada por profissional habilitado, seguindo as normas técnicas e as regras do condomínio e da distribuidora."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "Bomba de calor"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **bomba de calor** funciona como um ar-condicionado ao contrário: retira calor do ar e o transfere para a água de um reservatório. Por isso, para cada unidade de eletricidade consumida, entrega mais calor do que uma resistência entregaria. Pesquisadores da UFMG registraram que esses aparelhos têm coeficiente de desempenho maior que o de aquecedores elétricos e a gás."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a bomba de calor tem custos e cuidados próprios: precisa de um lugar ventilado para a unidade externa, que faz ruído como a de um ar-condicionado, e trabalha com reservatório, que também perde calor. O mesmo estudo da UFSC lembra que ela ainda é pouco comum nas casas brasileiras, por isso vale escolher marca com assistência técnica por perto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como escolher o sistema certo para a sua casa"
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os quatro sistemas lado a lado",
+      "colunas": [
+        "Sistema",
+        "Energia",
+        "Reservatório",
+        "Costuma combinar com"
+      ],
+      "linhas": [
+        [
+          "Chuveiro elétrico",
+          "Eletricidade, na hora do banho",
+          "Não",
+          "Casas compactas, poucos banheiros"
+        ],
+        [
+          "Solar térmico com apoio",
+          "Sol, mais apoio elétrico ou a gás",
+          "Sim",
+          "Telhado amplo e bem orientado, família grande"
+        ],
+        [
+          "Aquecedor a gás de passagem",
+          "Gás natural ou GLP",
+          "Não",
+          "Vários pontos de uso e rede de gás disponível"
+        ],
+        [
+          "Bomba de calor",
+          "Eletricidade com alta eficiência",
+          "Sim",
+          "Pouco telhado livre e espaço ventilado para o equipamento"
+        ]
+      ],
+      "nota": "Comparação geral, com base nos estudos citados nas fontes; o projeto define a solução para cada casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um ponto chama atenção no estudo da UFSC: o boiler elétrico, aquele reservatório aquecido só por resistência, teve o maior consumo entre os sistemas avaliados em todas as cidades, maior até que o chuveiro. Guardar água quente aquecida por resistência costuma ser a combinação menos eficiente. Se for usar reservatório, faça o calor vir do sol, do gás ou da bomba de calor."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Liste os pontos de água quente: chuveiros, banheira, lavatórios e cozinha.",
+        "Peça ao arquiteto ou engenheiro que avalie telhado, sombras e espaço para reservatório e equipamentos.",
+        "Confira se há rede de gás natural na rua ou se o condomínio permite GLP.",
+        "Defina as tubulações de água quente no projeto hidráulico, antes de fechar paredes e lajes.",
+        "Compare equipamentos pela etiqueta do Inmetro e exija instalação por profissional habilitado, com ART ou RRT."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas não troque de sistema sem olhar a casa inteira. Mudar de chuveiro elétrico para aquecimento central numa casa pronta exige tubulação de água quente, o que costuma significar quebrar paredes. Por isso, a melhor hora de decidir é no projeto. Para pensar o banho como momento de conforto, veja também a seção [bem-estar do blog](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas, vale perguntar como a água é aquecida e onde ficam reservatório, coletores e aquecedores. A equipe da {{cliente}} pode ajudar a encontrar imóveis que combinem com o seu jeito de morar. A decisão em uma linha: escolha o sistema pelo telhado, pelo espaço e pela rotina, e decida isso ainda no projeto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Aquecedor solar funciona em dia nublado?",
+      "resposta": "Funciona com rendimento menor. Por isso o sistema tem um apoio elétrico ou a gás, que completa a temperatura quando o sol não basta."
+    },
+    {
+      "pergunta": "Aquecimento solar térmico é a mesma coisa que energia solar?",
+      "resposta": "Não. O painel fotovoltaico gera eletricidade; o coletor térmico esquenta diretamente a água, que fica guardada num reservatório isolado."
+    },
+    {
+      "pergunta": "Bomba de calor gasta menos que chuveiro elétrico?",
+      "resposta": "Para a mesma quantidade de água quente, a bomba de calor tende a consumir menos eletricidade, porque retira calor do ar em vez de gerá-lo só com resistência. O resultado real depende do equipamento, do reservatório e do uso."
+    },
+    {
+      "pergunta": "Posso instalar aquecedor a gás no banheiro?",
+      "resposta": "A instalação de gás segue normas técnicas de ventilação e exaustão e as regras do condomínio e da distribuidora. Quem define o local é um profissional habilitado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Análise energética de sistemas solares térmicos para diferentes demandas de água em uma residência unifamiliar — Ambiente Construído (UFRGS)",
+      "url": "https://seer.ufrgs.br/ambienteconstruido/article/download/25706/21162",
+      "data": "2012"
+    },
+    {
+      "nome": "Benchmarking energético dos sistemas de aquecimento de água em habitações de interesse social — Encac / Antac",
+      "url": "https://eventos.antac.org.br/index.php/encac/article/download/3788/3748/14899",
+      "data": "2023"
+    },
+    {
+      "nome": "Limitações do método de avaliação de aquecedores elétricos instantâneos — Revista IPT",
+      "url": "https://revista.ipt.br/revistaIPT/pt_BR/article/view/66/77",
+      "data": "dezembro de 2018"
+    },
+    {
+      "nome": "Projeto de uma bomba de calor com aproveitamento de energia solar — Ministério de Minas e Energia",
+      "url": "https://www.gov.br/mme/pt-br/arquivos/participacao-pdf-0-5342249135860907.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Análise do comportamento da temperatura de saída da água em uma bomba de calor a CO2 — Congresso Brasileiro de Energia Solar",
+      "url": "https://anaiscbens.emnuvens.com.br/cbens/article/download/2208/2195/2196",
+      "data": "2014"
+    }
+  ]
+}
