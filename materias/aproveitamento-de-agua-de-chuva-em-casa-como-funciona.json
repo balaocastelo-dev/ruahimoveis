@@ -1,0 +1,241 @@
+{
+  "slug": "aproveitamento-de-agua-de-chuva-em-casa-como-funciona",
+  "tema": "aproveitamento de agua de chuva em casa",
+  "titulo": "Aproveitamento de água de chuva em casa: como funciona e o que exige",
+  "resumo": "Aproveitamento de água de chuva em casa: para que serve, quais partes o sistema tem, o que a NBR 15527 pede e os cuidados de manutenção e com o mosquito.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "água de chuva",
+    "sustentabilidade",
+    "construção",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Jardim de casa contemporânea com reservatório fechado de água de chuva junto à parede e calha metálica descendo do telhado"
+  },
+  "redes": {
+    "legenda": "Sabia que a água da chuva que cai no telhado pode abastecer a descarga, a irrigação do jardim e a lavagem do quintal? Mas ela não serve para beber, e o sistema precisa de filtro, descarte da primeira chuva e reservatório bem fechado. No blog, explicamos como funciona, o que a norma pede e onde estão os cuidados. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "aguadechuva",
+      "sustentabilidade",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "jardim",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **aproveitamento de água de chuva em casa** desperta interesse por dois motivos: a vontade de usar menos água tratada e a sensação de que é um desperdício ver o telhado escoar tudo para a rua num dia de temporal. Para quem vai construir ou reformar, a dúvida é se vale a pena e o que o sistema exige."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a água captada no telhado pode substituir a água tratada em usos que não envolvem consumo humano, como descarga, irrigação e lavagem de pisos. Para isso, o sistema precisa de projeto, filtragem, descarte da primeira chuva, reservatório fechado e uma rede totalmente separada da água potável, além de manutenção periódica."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A água de chuva serve para descarga, irrigação, lavagem de pisos e de carros, e outros usos não potáveis.",
+        "A norma de referência é a NBR 15527, da ABNT, na edição de 2019.",
+        "O sistema tem captação, coleta, tratamento, reservatório e distribuição, com rede separada da potável.",
+        "Reservatório fechado e telado e limpeza periódica evitam mosquito e água de má qualidade."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para que a água da chuva pode ser usada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma que trata do assunto é a **NBR 15527**, da ABNT (a Associação Brasileira de Normas Técnicas). Ela surgiu em 2007 e foi revisada; a edição citada pelo IPT, o Instituto de Pesquisas Tecnológicas, é a NBR 15527:2019. O próprio nome resume o escopo: aproveitamento da água de chuva de coberturas para fins não potáveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na revisão, a norma passou a listar os usos aceitos, segundo material da CBIC e do SindusCon-SP: descarga de bacias sanitárias e mictórios, lavagem de pisos e de veículos, irrigação paisagística, uso ornamental, como fontes e espelhos d'água, reserva técnica de incêndio e sistemas de resfriamento. Beber, cozinhar e tomar banho ficam de fora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma distinção importante, destacada pelo IPT: **água de chuva** é a coletada em coberturas sem circulação de pessoas ou veículos, como o telhado. **Água pluvial**, no sentido usado ali, é a que escorre por pisos com circulação, como quintais e garagens, e tende a carregar mais sujeira. O sistema doméstico típico aproveita a primeira."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Onde a água de chuva entra e onde não entra",
+      "colunas": [
+        "Uso",
+        "Pode usar?",
+        "Observação"
+      ],
+      "linhas": [
+        [
+          "Descarga de vasos sanitários",
+          "Sim",
+          "Um dos usos que mais consomem água numa casa"
+        ],
+        [
+          "Irrigação do jardim",
+          "Sim",
+          "Uso clássico; o reservatório rende menos nos meses secos"
+        ],
+        [
+          "Lavagem de pisos, quintal e carro",
+          "Sim",
+          "Torneira identificada como não potável"
+        ],
+        [
+          "Fontes e espelhos d'água",
+          "Sim",
+          "Uso ornamental previsto na norma"
+        ],
+        [
+          "Beber, cozinhar, banho",
+          "Não",
+          "Exigem água potável da rede pública"
+        ],
+        [
+          "Piscina",
+          "Não listado",
+          "Não aparece entre os usos da norma; consulte o projetista"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Usos conforme a NBR 15527, segundo o material da CBIC e do SindusCon-SP e a apresentação do IPT."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o sistema funciona, peça por peça"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O IPT descreve o sistema em cinco partes. A **captação** é o próprio telhado. A **coleta** são as calhas e os condutores, os canos que levam a água para baixo. O **tratamento** inclui a remoção de folhas e sólidos, o descarte da primeira chuva e, quando preciso, a desinfecção. Depois vêm o **armazenamento** e a **distribuição** até os pontos de uso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **descarte da primeira chuva** merece explicação. Os primeiros minutos de chuva lavam o telhado e carregam poeira, folhas e fezes de pássaros. Um dispositivo desvia esse volume inicial para fora do reservatório, e só a água mais limpa segue adiante. Ele precisa de limpeza frequente, ou deixa de cumprir o papel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **reservatório**, ou cisterna, deve ser fechado, com extravasor (o ladrão), acesso para inspeção e ventilação protegida, segundo o caderno técnico da Prefeitura de Belo Horizonte. O IPT recomenda instalá-lo fora de áreas alagáveis e com ponto de esvaziamento. Como a água pode faltar na estiagem, o sistema precisa de abastecimento complementar pela rede pública."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto mais sério é a **conexão cruzada**, quando a água de chuva entra por engano na rede potável. Para evitar, as duas redes devem ser totalmente independentes. O caderno de Belo Horizonte sugere tubos de materiais diferentes e identificação em roxo ou com aviso de água não potável a cada 3 m. Torneiras de água de chuva também devem ser bem sinalizadas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Instalar um sistema de aproveitamento mexe com hidráulica, com a estrutura que recebe o peso do reservatório e, às vezes, com bomba elétrica. Por isso pede projeto e responsável técnico, engenheiro ou arquiteto, com ART ou RRT. Nunca ligue a água de chuva à caixa d'água potável."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando o sistema vale a pena"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não existe resposta única. O IPT recomenda fazer um **balanço hídrico**: de um lado, quanto de chuva o telhado consegue captar e com que qualidade; de outro, quanta água a casa usa em descarga, jardim e limpeza. Quanto maior o telhado e o consumo não potável, mais o sistema tende a fazer sentido."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O tamanho do reservatório também pede cuidado. Segundo o material da CBIC e do SindusCon-SP, a revisão da norma deixou de trazer métodos prontos de dimensionamento, porque os da versão anterior costumavam levar a reservatórios grandes demais. Um tanque superdimensionado ocupa espaço, pesa na estrutura e pode passar meses com água parada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também a questão do clima. A chuva não se distribui por igual ao longo do ano, e em boa parte do interior paulista o inverno costuma ser bem mais seco. Na prática, o reservatório enche no verão e esvazia nos meses secos, justamente quando o jardim pede mais água. Por isso o sistema complementa a rede pública, mas não a substitui."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Aproveitar a água de chuva em casa",
+      "pros": [
+        "Reduz o uso de água tratada em descarga, jardim e limpeza.",
+        "Diminui o volume que o lote joga na rua durante temporais.",
+        "É mais simples de prever na construção do que de adaptar depois."
+      ],
+      "contras": [
+        "Exige espaço para reservatório e, muitas vezes, bomba.",
+        "Pede manutenção periódica para continuar funcionando bem.",
+        "Rende pouco nos meses secos, quando a casa depende da rede."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a manutenção exige depois de pronto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um sistema sem cuidado vira problema. O IPT lista como riscos a proliferação de mosquitos, a contaminação por sujeira do telhado e folhas, e a conexão cruzada. Contra o mosquito, a receita é reservatório sempre fechado, filtro na entrada, tela ou sifão no ladrão, telas na ventilação e calhas sem pontos de água parada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O caderno técnico de Belo Horizonte traz um roteiro útil como referência: inspeção mensal do descarte, dos filtros e da bomba; limpeza do descarte a cada três meses; inspeção das calhas e limpeza do reservatório a cada seis meses; e verificação anual da identificação das tubulações. A NBR 15527 revisada, segundo a CBIC, prevê análise semestral da qualidade da água."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Mantenha a tampa da cisterna sempre fechada e as telas inteiras.",
+        "Limpe calhas e o dispositivo de descarte, principalmente depois da queda de folhas.",
+        "Confira se todas as torneiras de água de chuva estão identificadas.",
+        "Guarde o projeto e o manual do sistema junto com os documentos da casa."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de decidir, vale conferir as regras do seu município e do condomínio, que podem ter exigências próprias para reservatórios e drenagem, e conversar com o projetista sobre o espaço disponível. Mais conteúdos sobre projeto e obra estão na seção de [construção e casas novas](/blog/categoria/construcao), e outros temas da casa, na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas e quer um imóvel que já tenha esse tipo de solução, ou terreno e telhado que permitam instalá-la, a equipe da {{cliente}} pode ajudar a filtrar as opções e organizar as visitas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: a água de chuva é ótima para descarga, jardim e limpeza, desde que venha com projeto, rede separada e manutenção em dia."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso beber a água da chuva captada no telhado?",
+      "resposta": "Não. A NBR 15527 trata do aproveitamento para fins não potáveis, como descarga, irrigação e lavagem. Beber, cozinhar e tomar banho exigem água potável da rede pública."
+    },
+    {
+      "pergunta": "O que é o descarte da primeira chuva?",
+      "resposta": "É um dispositivo que desvia os primeiros minutos de chuva, que lavam o telhado e carregam mais sujeira. Assim, só a água mais limpa segue para o reservatório. Ele precisa de limpeza periódica."
+    },
+    {
+      "pergunta": "Cisterna de água de chuva atrai mosquito?",
+      "resposta": "Pode atrair se ficar aberta ou mal vedada. Reservatório fechado, telas na ventilação e no ladrão, filtro na entrada e calhas sem água parada são as medidas recomendadas pelo IPT."
+    },
+    {
+      "pergunta": "Qual o tamanho ideal do reservatório?",
+      "resposta": "Depende do tamanho do telhado, da chuva da região e do consumo não potável da casa. O IPT recomenda um balanço hídrico feito pelo projetista, já que reservatórios grandes demais ocupam espaço e deixam água parada."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Água de chuva: boas práticas (comunicação técnica nº 177755) — IPT",
+      "url": "https://escriba.ipt.br/pdf/177755.pdf"
+    },
+    {
+      "nome": "Normas de água: NBR 15527 e fontes alternativas — CBIC e SindusCon-SP",
+      "url": "https://cbic.org.br/sustentabilidade/wp-content/uploads/sites/22/2019/04/CMA-BC_NORMASDEAGUA.pdf",
+      "data": "abril de 2019"
+    },
+    {
+      "nome": "Caderno técnico, capítulo 31: aproveitamento de água de chuva — Prefeitura de Belo Horizonte (Sudecap)",
+      "url": "https://prefeitura.pbh.gov.br/sites/default/files/estrutura-de-governo/obras-e-infraestrutura/vale-esse-cap31-251113-1.pdf"
+    }
+  ]
+}
