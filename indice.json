@@ -648,7 +648,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-01T17:20:35.627Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "fundacao-da-casa-sondagem-sapata-radier-ou-estaca",
+      "titulo": "Fundação da casa: sondagem do solo, sapata, radier ou estaca",
+      "tema": "fundacao da casa sondagem do solo sapata radier estaca",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-01T20:21:26.229Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T17:20:35.628Z"
+  "atualizadoEm": "2026-11-01T20:21:26.229Z"
 }

@@ -1,0 +1,269 @@
+{
+  "slug": "fundacao-da-casa-sondagem-sapata-radier-ou-estaca",
+  "tema": "fundacao da casa sondagem do solo sapata radier estaca",
+  "titulo": "Fundação da casa: sondagem do solo, sapata, radier ou estaca",
+  "resumo": "Fundação da casa começa na sondagem do solo. Entenda o laudo SPT, quando se usa sapata, radier ou estaca e o que perguntar ao engenheiro antes da obra.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "casa nova",
+    "fundação",
+    "projeto"
+  ],
+  "capa": {
+    "alt": "Terreno de obra limpo com fôrmas de madeira e armaduras de aço prontas para a concretagem da fundação de uma casa"
+  },
+  "seo": {
+    "titulo": "Fundação da casa: sondagem, sapata, radier ou estaca"
+  },
+  "redes": {
+    "legenda": "Você sabe o que segura a sua casa? Antes de escolher piso, janela ou piscina, a obra decide a fundação, e essa escolha começa num ensaio simples: a sondagem do solo. É ela que diz se a casa pode apoiar em sapatas ou num radier ou se precisa de estacas. Explicamos o laudo, os tipos de fundação e as perguntas para fazer ao engenheiro. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "casanova",
+      "fundacao",
+      "engenharia",
+      "arquitetura",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir costuma gastar meses escolhendo fachada, piso e marcenaria, mas a decisão que sustenta tudo isso fica escondida debaixo da terra: a **fundação da casa**. É ela que leva o peso das paredes, das lajes e do telhado até uma camada de solo capaz de suportá-lo sem afundar de forma desigual."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta é que não existe fundação melhor em abstrato. O tipo certo depende do que a **sondagem do solo** revelar no seu terreno e das cargas do projeto. Em solo firme e casa de até dois pavimentos, sapatas ou radier costumam resolver; em solo fraco ou carga maior, entram as estacas. Quem define é o engenheiro, com o laudo na mão."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A sondagem SPT é o ponto de partida: mostra as camadas do solo, a resistência e o nível da água.",
+        "Fundação rasa (sapata, baldrame, radier) apoia perto da superfície e serve a solo bom e cargas moderadas.",
+        "Fundação profunda (estacas) busca camadas resistentes mais abaixo quando o solo da superfície não aguenta.",
+        "Projeto e execução pedem engenheiro com ART; a escolha nunca deve sair do palpite."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a fundação começa no laudo de sondagem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A sondagem mais usada no Brasil é a de simples reconhecimento com ensaio SPT, sigla em inglês para teste de penetração padrão. Pela norma ABNT NBR 6484, revista em 2020, um martelo de 65 kg cai de 75 cm de altura sobre uma haste com amostrador, e conta-se quantos golpes são necessários para cravar os 30 cm finais. Esse número, o N SPT, indica a resistência de cada camada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O laudo traz, para cada furo, o perfil das camadas encontradas, a descrição dos solos, os valores de N metro a metro e a profundidade em que apareceu água, o chamado nível do lençol freático. Com isso o engenheiro calcula quanto o solo suporta e decide o tipo e a profundidade da fundação. Sem esse documento, qualquer escolha é aposta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quantos furos fazer? A NBR 8036 relaciona o mínimo à área da projeção da construção em planta: dois furos até 200 m² e três entre 200 m² e 400 m². São mínimos. Terrenos com aterro, desnível forte ou solo que muda muito de um ponto a outro costumam pedir mais furos, e cabe ao engenheiro definir a malha."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Desconfie da sondagem relâmpago",
+      "texto": "Material técnico sobre contratação de sondagem aponta sinais de alerta: preço muito abaixo da média, resistência em mostrar fotos do serviço e nenhum vestígio dos furos no terreno. Peça o boletim de campo e o perfil de cada furo, assinados pelo responsável técnico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a sondagem não substitui o olhar do projeto. Ela informa o solo em pontos específicos; se a escavação revelar algo diferente do previsto, como entulho enterrado ou uma camada mole inesperada, o engenheiro precisa ser chamado antes de concretar. Para outros temas de obra e casa nova, veja a seção de [construção do blog](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fundação rasa: quando sapata ou radier dão conta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pela classificação da NBR 6122, a norma de projeto e execução de fundações, a fundação é rasa quando se apoia a uma profundidade menor que duas vezes a sua menor dimensão. Ela transmite a carga ao solo logo abaixo da superfície e, segundo material acadêmico da área, costuma servir a residências de até dois pavimentos em solo de boa resistência."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "Sapatas e vigas baldrame"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **sapata isolada** é um bloco de concreto armado, mais largo que o pilar, que espalha a carga sobre uma área maior de solo. As sapatas são ligadas por **vigas baldrame**, que recebem as paredes do térreo. É, tradicionalmente, a solução mais comum no país, conhecida pelas equipes de obra e fácil de adaptar a terrenos com pequenos desníveis."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 3,
+      "texto": "Radier"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **radier** é uma laje de concreto armado que ocupa toda a área da casa e distribui o peso sobre o terreno inteiro. Um estudo publicado em 2021 comparou as duas soluções numa casa térrea de 177 m² e encontrou o radier mais barato e bem mais rápido: 9 dias úteis contra 26 das sapatas. Os autores ressalvam que o resultado vale para aquele projeto."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Radier: o que pesa a favor e contra",
+      "pros": [
+        "Execução rápida, com menos escavação",
+        "Pode dispensar parte do contrapiso, porque a própria laje vira base do piso",
+        "Distribui a carga por toda a área, o que ajuda em solo de resistência moderada"
+      ],
+      "contras": [
+        "Pede terreno plano ou bem terraplenado",
+        "Tubulações sob a laje precisam estar definidas antes da concretagem",
+        "Mudanças futuras de banheiro ou cozinha no térreo ficam mais trabalhosas",
+        "Parte da literatura técnica aponta a falta de norma brasileira específica para o radier, o que pede projetista experiente"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a fundação rasa não vale quando a camada resistente está funda, quando há aterro recente ou quando o lençol freático aparece perto da superfície. Nesses casos, apoiar a casa no solo de cima pode levar a recalques, que são afundamentos desiguais e costumam aparecer como trincas inclinadas em paredes e esquadrias emperrando."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fundação profunda: quando o solo pede estacas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A NBR 6122 classifica como profunda a fundação apoiada abaixo de duas vezes a sua menor dimensão e a pelo menos 3 m de profundidade. Na prática residencial, isso significa **estacas**: peças longas de concreto ou aço que atravessam o solo fraco e transferem a carga para camadas mais resistentes, pela ponta e pelo atrito lateral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há muitos tipos, e a escolha considera solo, água, acesso de máquinas e vizinhança. Um trabalho de conclusão de curso da Universidade São Francisco comparou estacas numa obra real e descreveu bem as diferenças. A hélice contínua apareceu com baixa vibração e alta produtividade; a Strauss e a Franki, com vibração e ruído que podem incomodar ou afetar construções vizinhas."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tipos de fundação lado a lado",
+      "colunas": [
+        "Tipo",
+        "Como funciona",
+        "Costuma servir para",
+        "Ponto de atenção"
+      ],
+      "linhas": [
+        [
+          "Sapata com baldrame",
+          "Blocos sob os pilares, ligados por vigas",
+          "Solo firme perto da superfície",
+          "Escavação em cada pilar"
+        ],
+        [
+          "Radier",
+          "Laje única sob toda a casa",
+          "Terreno plano e cargas moderadas",
+          "Tubulações definidas antes"
+        ],
+        [
+          "Estaca hélice contínua",
+          "Trado contínuo perfura e o concreto é bombeado",
+          "Solo fraco, terreno com vizinhos próximos",
+          "Equipamento grande e consumo extra de concreto"
+        ],
+        [
+          "Estaca Strauss",
+          "Tubo escavado e concretado no local",
+          "Obras menores e acesso restrito",
+          "Vibração e ruído"
+        ],
+        [
+          "Estaca Franki",
+          "Tubo cravado com base alargada",
+          "Cargas altas e camadas profundas",
+          "Vibração que pode afetar vizinhos"
+        ]
+      ],
+      "nota": "Comparação geral; a escolha depende do laudo de sondagem e do projeto estrutural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo mesmo estudo, a hélice contínua alcança diâmetros de 25 cm a 100 cm e comprimentos de até 30 m, e no caso analisado ficou pronta em 4 dias, contra 17 da Strauss. Em contrapartida, consome concreto além do volume teórico e exige monitoramento da execução. Em lote de condomínio, com casas prontas ao lado, a vibração pesa muito na escolha."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas estaca não é sinônimo de casa melhor. Em solo bom, ela encarece a obra sem trazer ganho. O caminho é o inverso: o laudo diz onde está a camada resistente, e o engenheiro escolhe a solução mais simples que atende com segurança. Quando duas opções empatam, vizinhança, prazo e acesso de máquinas desempatam."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que perguntar ao engenheiro antes da obra começar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fundação é serviço de engenharia do começo ao fim: projeto, sondagem e execução precisam de profissional habilitado, com ART, a Anotação de Responsabilidade Técnica registrada no Crea. Não é etapa para economizar com mão de obra sem acompanhamento, nem para decidir no canteiro. Leve estas perguntas para a reunião de projeto:"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Quantos furos de sondagem foram feitos e onde, em relação à casa?",
+        "Em que profundidade está a camada resistente e onde apareceu água?",
+        "Por que este tipo de fundação, e qual seria a alternativa?",
+        "O terreno tem aterro? Como ele foi considerado no projeto?",
+        "Como a execução será acompanhada e quem assina a ART?",
+        "A vibração da execução pode afetar casas vizinhas? Vale registrar o estado delas antes?"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você vai comprar uma casa pronta, em vez de construir, a fundação não aparece, mas os sinais aparecem. Trincas inclinadas partindo dos cantos de portas e janelas, pisos com desnível e portas que passaram a raspar merecem a avaliação de um engenheiro antes da compra. Outras ideias para morar bem estão na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura um terreno ou uma casa em Campinas e quer entender o que olhar antes de fechar negócio, a equipe da {{cliente}} pode ajudar na busca e indicar quando vale chamar um engenheiro. A decisão em uma linha: primeiro a sondagem, depois o tipo de fundação, nunca o contrário."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Sondagem do solo é obrigatória para construir casa?",
+      "resposta": "A sondagem é a base técnica para o engenheiro dimensionar a fundação, e a NBR 8036 define o número mínimo de furos para edificações. Exigências de prefeitura e de condomínio variam; confirme com o engenheiro responsável e com as regras do loteamento."
+    },
+    {
+      "pergunta": "Quantos furos de sondagem preciso para uma casa?",
+      "resposta": "Pela NBR 8036, o mínimo é de dois furos para projeção de até 200 m² e três entre 200 m² e 400 m². Terrenos irregulares ou com aterro podem pedir mais."
+    },
+    {
+      "pergunta": "Radier é mais barato que sapata?",
+      "resposta": "Em alguns casos, sim: um estudo de 2021 com uma casa térrea encontrou o radier mais barato e mais rápido. Mas o resultado depende do solo, do terreno e do projeto, e não vale como regra."
+    },
+    {
+      "pergunta": "Qual estaca vibra menos perto de vizinhos?",
+      "resposta": "A estaca hélice contínua costuma ser citada pela baixa vibração, enquanto Strauss e Franki vibram mais. A escolha final depende do laudo e do acesso de equipamentos ao lote."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Sondagem e tipos de fundação: normas NBR 6122, 8036 e 6484 — Universidade São Francisco",
+      "url": "https://www.usf.edu.br/galeria/getImage/768/9419241056248770.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Estudo de caso: Strauss x Hélice Contínua — Universidade São Francisco",
+      "url": "https://www.usf.edu.br/galeria/getImage/768/3375793869242864.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "O guia prático para contratar sondagem SPT — Revista FT",
+      "url": "https://revistaft.com.br/?p=233983",
+      "data": "setembro de 2025"
+    },
+    {
+      "nome": "Manual de sondagem — Casan",
+      "url": "https://www.casan.com.br/ckfinder/userfiles/files/Documentos_Download/manual_sondagem.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Análise técnico-econômica: radier x sapata isolada em residência unifamiliar — Research, Society and Development",
+      "url": "https://rsdjournal.org/index.php/rsd/article/download/12368/11391",
+      "data": "2021"
+    }
+  ]
+}
