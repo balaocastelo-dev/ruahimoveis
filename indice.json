@@ -594,7 +594,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-01T11:25:31.864Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-valinhos-vinhedo-ou-itatiba-perto-de-campinas",
+      "titulo": "Morar em Valinhos, Vinhedo ou Itatiba: a vida ao lado de Campinas",
+      "tema": "morar em valinhos vinhedo ou itatiba",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-01T14:25:06.413Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T11:25:31.865Z"
+  "atualizadoEm": "2026-11-01T14:25:06.413Z"
 }
