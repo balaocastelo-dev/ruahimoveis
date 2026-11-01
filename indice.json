@@ -675,7 +675,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-01T20:23:40.700Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "cobogo-o-que-e-historia-e-onde-usar-na-casa",
+      "titulo": "Cobogó: o que é, de onde veio e onde usar na casa",
+      "tema": "cobogo elemento vazado historia e onde usar",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-01T23:25:43.680Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T20:23:40.700Z"
+  "atualizadoEm": "2026-11-01T23:25:43.681Z"
 }
