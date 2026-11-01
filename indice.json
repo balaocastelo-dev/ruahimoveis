@@ -621,7 +621,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-01T14:27:19.668Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "ar-condicionado-em-casa-split-multi-split-ou-vrf",
+      "titulo": "Ar-condicionado em casa: split, multi-split ou VRF?",
+      "tema": "ar condicionado split multi split ou vrf na casa",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-01T17:18:44.734Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T14:27:19.668Z"
+  "atualizadoEm": "2026-11-01T17:18:44.734Z"
 }

@@ -1,0 +1,252 @@
+{
+  "slug": "ar-condicionado-em-casa-split-multi-split-ou-vrf",
+  "tema": "ar condicionado split multi split ou vrf na casa",
+  "titulo": "Ar-condicionado em casa: split, multi-split ou VRF?",
+  "resumo": "Split, multi-split ou VRF: como cada sistema de ar-condicionado funciona, quando faz sentido em casa e o que a obra precisa deixar pronto antes do acabamento.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "conforto térmico",
+    "ar-condicionado",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Quarto claro e minimalista com aparelho de ar-condicionado branco discreto na parede acima de uma cama de linho"
+  },
+  "redes": {
+    "legenda": "Um aparelho por cômodo, uma condensadora para vários ambientes ou um sistema central? Split, multi-split e VRF resolvem o calor de jeitos bem diferentes, e a escolha precisa ser feita antes do reboco, quando a tubulação ainda pode ser embutida. Explicamos como cada um funciona, quando vale a pena e o que a obra deve deixar pronto. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "arcondicionado",
+      "construcao",
+      "casanova",
+      "conforto",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Escolher o **ar-condicionado em casa** parece uma decisão de loja, tomada depois da mudança. Na prática, ela começa bem antes, na planta: é ali que se decide por onde passam os tubos, onde fica a máquina externa e quanto barulho e quanta parede quebrada você vai evitar. Quem constrói ou reforma tem a chance de acertar isso uma vez só."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o **split** comum, um aparelho por ambiente, atende bem a maioria das casas. O **multi-split** liga vários ambientes a uma só unidade externa e ajuda quando falta lugar na fachada. O **VRF** é um sistema central, pensado para muitos ambientes e grandes distâncias. Em todos, a infraestrutura precisa ficar pronta antes do acabamento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Split: um aparelho interno ligado a um externo, para cada cômodo; simples e independente.",
+        "Multi-split: várias unidades internas numa só externa; menos máquinas na fachada, mas todas no mesmo modo.",
+        "VRF: sistema central para muitos ambientes e tubulações longas; mais robusto e mais exigente na instalação.",
+        "Decida na fase de projeto e deixe tubulação, dreno e circuito elétrico prontos antes do reboco."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como cada sistema funciona e o que muda na sua rotina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Todo ar-condicionado desse tipo tem duas partes. A **evaporadora** fica dentro do ambiente e sopra o ar frio. A **condensadora** fica do lado de fora e joga o calor para a rua. Entre elas correm tubos de cobre com o gás refrigerante, um cabo elétrico e um **dreno**, o cano que leva embora a água que o aparelho tira do ar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No **split** tradicional, cada evaporadora tem a sua condensadora. Se a casa tem quatro quartos climatizados, são quatro máquinas externas. A vantagem é a independência: um aparelho com defeito não afeta os outros, e cada um pode ser trocado quando quiser. A desvantagem aparece na fachada e no telhado, que podem ficar cheios de caixas e ruído se ninguém pensar no lugar delas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **multi-split** liga várias evaporadoras a uma única condensadora. A associação de consumidores portuguesa DECO PROteste explica que cada unidade interna continua com controle próprio de temperatura e horário, mas todas trabalham no mesmo modo: ou esfriam, ou aquecem. O número de saídas é limitado e há distâncias e desníveis máximos entre cada unidade interna e a externa, definidos pelo fabricante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **VRF**, sigla em inglês para fluxo de refrigerante variável, é um sistema central. Segundo o portal WebArCondicionado, ele pode atender dezenas de evaporadoras, enquanto o multi-split costuma parar em até oito, e aceita tubulações mais longas, inclusive entre andares. Ele ajusta o funcionamento à necessidade de cada ambiente, mas pede projeto e instaladores mais qualificados."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Split, multi-split e VRF lado a lado",
+      "colunas": [
+        "Ponto",
+        "Split",
+        "Multi-split",
+        "VRF"
+      ],
+      "linhas": [
+        [
+          "Unidades externas",
+          "Uma por ambiente",
+          "Uma para vários ambientes",
+          "Uma central (ou poucas)"
+        ],
+        [
+          "Ambientes atendidos",
+          "Um por aparelho",
+          "Poucos, conforme o modelo",
+          "Muitos, inclusive em vários andares"
+        ],
+        [
+          "Modo de operação",
+          "Cada um no seu",
+          "Todos esfriam ou todos aquecem",
+          "Depende do projeto e do modelo"
+        ],
+        [
+          "Se a máquina externa parar",
+          "Só um ambiente fica sem ar",
+          "Vários ambientes podem ficar sem ar",
+          "Muitos ambientes dependem dela"
+        ],
+        [
+          "Projeto e instalação",
+          "Simples",
+          "Intermediário",
+          "Exige projeto e equipe especializada"
+        ]
+      ],
+      "nota": "Com base em DECO PROteste e WebArCondicionado. Limites de distância, desnível e número de saídas variam por fabricante: confira no manual do modelo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual sistema combina com o tamanho e o uso da sua casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uma casa com poucos ambientes climatizados, geralmente os quartos e a sala, o **split** costuma ser a escolha mais sensata. Ele é conhecido por qualquer técnico, tem peças fáceis de achar e deixa cada pessoa usar o ar do seu jeito. O cuidado está em reservar desde o projeto um lugar ventilado e escondido para as condensadoras, longe das janelas dos quartos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **multi-split** faz sentido quando a arquitetura não comporta várias máquinas do lado de fora: fachada limpa exigida pelo condomínio, varanda pequena ou telhado sem espaço. Mas há um porém. Como uma só condensadora atende vários cômodos, um defeito nela pode deixar a casa inteira sem ar até o conserto. E a soma das evaporadoras precisa caber na capacidade da unidade externa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **VRF** aparece em casas grandes, com muitos ambientes climatizados, vários andares e longas distâncias até a área técnica. Ele organiza toda a climatização num sistema só, com uma área técnica concentrada. Em compensação, o equipamento e a instalação são mais caros, e a manutenção pede uma empresa que conheça aquele fabricante. Numa casa média, raramente compensa."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Multi-split: o que pesa a favor e contra",
+      "pros": [
+        "Menos máquinas na fachada, no telhado ou na varanda",
+        "Cada ambiente com temperatura e horário próprios",
+        "Ajuda quando o condomínio restringe unidades externas"
+      ],
+      "contras": [
+        "Todos os ambientes no mesmo modo, só frio ou só calor",
+        "Um defeito na unidade externa afeta vários cômodos",
+        "Limite de saídas, de distância e de desnível por modelo"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você ainda está decidindo o restante do projeto, vale ler outros textos sobre obra e casa nova em [Construção e casas novas](/blog/categoria/construcao). A climatização conversa com orientação solar, sombreamento e ventilação: uma casa bem posicionada precisa de aparelhos menores e liga o ar por menos horas no ano."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a obra precisa deixar pronto antes do acabamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A chamada **pré-instalação**, ou espera, é o conjunto de tubos e caixas embutidos na parede durante a obra para receber o aparelho depois. Segundo orientação técnica publicada pelo WebArCondicionado, o ideal é definir esse projeto na fase de projetos, porque ele conversa com a arquitetura, a estrutura, a hidráulica e a elétrica. Deixar para depois significa quebrar parede pronta."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Tubos de cobre** com bitola compatível com a carga térmica do ambiente, isolados termicamente.",
+        "**Conduíte** liso com arame guia, para passar os cabos de comando e de força.",
+        "**Dreno** em PVC levando a água da condensação a um ponto adequado, com caimento.",
+        "**Circuito elétrico** dimensionado para o aparelho, com disjuntor exclusivo para cada um.",
+        "**Caixa de espera** embutida na parede, no ponto exato da unidade interna."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na entrega da obra, peça que um técnico confira as esperas. As pontas dos tubos devem estar lacradas, de preferência pressurizadas com nitrogênio, para provar que não há furo nem sujeira dentro. Confira também as folgas que o fabricante exige em volta das unidades interna e externa: uma condensadora espremida num nicho fechado trabalha mais e dura menos."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Circuito elétrico, furos em viga ou laje e carga de gás refrigerante são trabalho de profissional habilitado. Em obra, o projeto de climatização deve ter engenheiro ou arquiteto responsável, com ART ou RRT. Não abra paredes nem mexa no quadro de luz por conta própria."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como comparar consumo e escolher o aparelho certo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na loja, o primeiro guia é a **etiqueta do Inmetro**. O Idec, instituto de defesa do consumidor, orienta preferir a classe A, comparar o consumo anual em kWh e escolher o modelo com o maior **IDRS**, o índice que mede o desempenho do aparelho ao longo das estações. A etiqueta também mostra o gás usado e um QR Code para checar o registro do produto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um detalhe importante: a etiqueta mudou. Desde a revisão feita pelo Inmetro em 2020, os aparelhos **inverter**, que variam a velocidade do compressor em vez de ligar e desligar, passaram a ser medidos em carga parcial, mais perto do uso real. Por isso o Idec alerta que etiquetas do modelo antigo e do novo não se comparam. Prefira o inverter e procure também o selo Procel."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A potência certa depende de muito mais que os metros quadrados. Sol da tarde na parede, janela grande sem proteção, número de pessoas, eletrônicos e pé-direito alto mudam a conta. Tabelas de bolso servem de ponto de partida, mas em obra o ideal é um cálculo de carga térmica feito pelo projetista. Aparelho pequeno demais não dá conta; grande demais liga e desliga sem parar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por fim, pense na manutenção. Filtros limpos, dreno desobstruído e revisão periódica feita por técnico mantêm o consumo baixo e o ar mais limpo. Se o imóvel está à venda ou você vai comprar, pergunte pelas esperas, pelos manuais e pelas últimas revisões. Mais ideias sobre conforto e escolhas de casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa que já tenha a climatização bem resolvida, ou vai vender a sua e quer mostrar esse diferencial, a equipe da {{cliente}}, imobiliária de Campinas, ajuda a olhar esses detalhes com calma. Para a maioria das casas, split bem planejado resolve; multi-split e VRF entram quando o espaço ou o tamanho pedem."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Multi-split gasta menos energia que vários splits?",
+      "resposta": "Não há uma regra geral. O consumo depende da eficiência de cada modelo, do uso e da instalação. Compare a etiqueta do Inmetro, o IDRS e o consumo anual de cada opção antes de decidir."
+    },
+    {
+      "pergunta": "Dá para instalar ar-condicionado depois que a casa está pronta?",
+      "resposta": "Dá, mas costuma exigir quebrar parede ou usar canaletas aparentes para os tubos e o dreno. Por isso vale deixar as esperas prontas durante a obra, mesmo que o aparelho seja comprado depois."
+    },
+    {
+      "pergunta": "VRF vale a pena em casa?",
+      "resposta": "Normalmente só em casas grandes, com muitos ambientes climatizados e longas distâncias até a área técnica. Em casas médias, o split ou o multi-split costumam atender bem com instalação mais simples."
+    },
+    {
+      "pergunta": "O que é IDRS na etiqueta do ar-condicionado?",
+      "resposta": "É o índice de desempenho sazonal que aparece na etiqueta do Inmetro. Quanto maior, mais eficiente o aparelho ao longo do ano. O Idec recomenda usá-lo, junto com o consumo anual em kWh, para comparar modelos."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Ar condicionado multi-split — DECO PROteste",
+      "url": "https://www.deco.proteste.pt/eletrodomesticos/ar-condicionado/dicas/mantenha-casa-fresca-forma-natural-equipamentos/ar-condicionado-multi-split",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "VRF ou multi-split: qual escolher — WebArCondicionado",
+      "url": "https://webarcondicionado.com.br/vrf-ou-multi-split",
+      "data": "fevereiro de 2021"
+    },
+    {
+      "nome": "Pré-instalação e esperas de ar-condicionado em imóveis novos — WebArCondicionado",
+      "url": "https://webarcondicionado.com.br/pre-instalacao-esperas-ar-condicionado-novos-imoveis",
+      "data": "abril de 2019"
+    },
+    {
+      "nome": "Como escolher um ar-condicionado? — Idec",
+      "url": "https://idec.org.br/print/30604"
+    },
+    {
+      "nome": "Inverter terá mais destaque em novo critério do Inmetro para classe A — WebArCondicionado",
+      "url": "https://webarcondicionado.com.br/ar-condicionado-inverter-tera-mais-destaque-em-novo-criterio-do-inmetro-para-classificacao-a-em-consumo-de-energia",
+      "data": "julho de 2020"
+    }
+  ]
+}
