@@ -1,0 +1,176 @@
+{
+  "slug": "ventilador-de-teto-como-escolher-tamanho-e-altura",
+  "tema": "ventilador de teto tamanho e altura certos",
+  "titulo": "Ventilador de teto: como escolher o tamanho e a altura certos",
+  "resumo": "Ventilador de teto bem escolhido refresca sem barulho nem risco: veja o diâmetro por cômodo, a altura mínima das pás, a fixação certa e o sentido do giro no verão.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "ventilador",
+    "conforto térmico",
+    "bem-estar",
+    "quarto"
+  ],
+  "capa": {
+    "alt": "Quarto claro com ventilador de teto de pás de madeira, cama com roupa de linho branca e cortina leve na janela"
+  },
+  "redes": {
+    "legenda": "Ventilador de teto não esfria o quarto: ele refresca você. Por isso faz sentido desligar ao sair do cômodo. E o tamanho certo depende menos da metragem e mais do espaço livre em volta das pás. No blog, mostramos o diâmetro de referência para quarto e sala, a altura mínima e o sentido do giro no verão. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "ventiladordeteto",
+      "conforto",
+      "bemestar",
+      "quarto",
+      "decoracao",
+      "casa",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Escolher um **ventilador de teto** parece simples até a hora de decidir o tamanho. Um aparelho pequeno demais quase não se sente na cama ou no sofá; um grande demais pode ficar perto das paredes, balançar ou deixar as pás baixas demais para quem passa por baixo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: como referência, quartos costumam receber aparelhos de 76 a 90 cm de diâmetro, e salas, de 100 a 110 cm. Mais importante que a metragem é deixar as pás a pelo menos 2,30 m do piso e a cerca de 50 cm das paredes, e fixar o suporte na laje, não no forro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Não há tabela de diâmetro por metro quadrado em norma: o espaço livre em volta das pás manda mais.",
+        "Pás a 2,30 m do piso, no mínimo, e cerca de 50 cm de paredes, armários e cortinas.",
+        "Fixe na laje ou em viga, nunca em forro de gesso ou PVC, e chame um eletricista."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual diâmetro escolher para cada cômodo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um guia publicado pela Casa dos Eletrodomésticos lembra que a famosa tabela de diâmetro por metro quadrado não existe em norma. O critério prático é outro: entre os aparelhos que cabem com folga no cômodo, escolher o de maior vazão de ar e menor consumo. Como faixa de referência, o mesmo guia sugere 76 a 90 cm para quartos e 100 a 110 cm para salas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Departamento de Energia dos Estados Unidos, no guia Energy Saver, observa que **pás maiores** entregam conforto parecido com uma velocidade de ar menor. Na prática, um ventilador maior girando devagar costuma ser mais silencioso e espalhar papéis e cortinas menos do que um pequeno no máximo. Em cômodos compridos, o mesmo guia sugere usar dois aparelhos."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para instalar o ventilador de teto",
+      "colunas": [
+        "Item",
+        "Referência",
+        "Fonte"
+      ],
+      "linhas": [
+        [
+          "Diâmetro no quarto",
+          "76 a 90 cm",
+          "Casa dos Eletrodomésticos"
+        ],
+        [
+          "Diâmetro na sala",
+          "100 a 110 cm",
+          "Casa dos Eletrodomésticos"
+        ],
+        [
+          "Altura das pás ao piso",
+          "2,30 m ou mais",
+          "Mapfre e Casa dos Eletrodomésticos"
+        ],
+        [
+          "Afastamento das paredes",
+          "cerca de 50 cm",
+          "Mapfre"
+        ],
+        [
+          "Carga do ponto de fixação",
+          "suportar 25 kg",
+          "Mapfre"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Confira sempre o manual do fabricante, que pode pedir medidas próprias para o seu modelo."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Altura, fixação e o jeito certo de usar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **altura** é o ponto de segurança. Boletim técnico da Mapfre e o guia da Casa dos Eletrodomésticos indicam as pás a pelo menos 2,30 m do piso. Como o próprio aparelho ocupa de 25 a 55 cm abaixo do teto, isso pede pé-direito a partir de cerca de 2,55 m. Em tetos mais baixos, procure modelos rentes ao teto, sem haste."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **fixação** importa tanto quanto o modelo. A Mapfre orienta que o ponto aguente 25 kg e desaconselha prender o suporte em caixas de passagem de PVC ou em forros de gesso e de PVC, que podem não suportar o peso e a vibração. Ligação elétrica e fixação na laje são trabalho para eletricista, não para improviso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No **uso**, vale uma ideia que muda o hábito: ventilador refresca pessoas, não o ambiente, como lembram o Energy Star e o Energy Saver. Desligue ao sair do cômodo. No verão, o giro anti-horário empurra o ar para baixo. Se o modelo permite inverter o sentido, espere as pás pararem antes de mudar, como orienta a Mapfre."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com ar-condicionado, o ventilador ajuda a economizar: o Energy Saver indica que dá para subir o termostato cerca de 2 °C sem perder conforto. Para comparar aparelhos, olhe a vazão de ar e o consumo na etiqueta de eficiência. Mais ideias para uma casa fresca e confortável estão em [bem-estar em casa](/blog/categoria/bem-estar), e outros temas, na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel em Campinas e quer pé-direito, ventilação e laje que acomodem bem um ventilador de teto, a equipe da {{cliente}} pode ajudar a encontrar opções que combinem com o seu jeito de morar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: escolha pelo espaço livre em volta, garanta 2,30 m de altura e fixação na laje, e desligue quando sair."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a altura mínima para instalar ventilador de teto?",
+      "resposta": "As pás devem ficar a pelo menos 2,30 m do piso. Como o aparelho ocupa parte da altura abaixo do teto, isso costuma pedir pé-direito a partir de cerca de 2,55 m, ou um modelo rente ao teto."
+    },
+    {
+      "pergunta": "Posso instalar ventilador de teto em forro de gesso?",
+      "resposta": "Não é recomendado. O suporte deve ir na laje ou em viga, num ponto que aguente o peso e a vibração do aparelho. Forros de gesso ou PVC podem não suportar a carga."
+    },
+    {
+      "pergunta": "Para que lado o ventilador de teto deve girar no verão?",
+      "resposta": "No sentido anti-horário, olhando de baixo, para empurrar o ar em direção a quem está no cômodo. Se o modelo permitir inverter, espere as pás pararem antes de trocar o sentido."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Fans for Cooling — Energy Saver, Departamento de Energia dos EUA (arquivo)",
+      "url": "https://webarchive.library.unt.edu/web/20161227070401/https://energy.gov/energysaver/fans-cooling",
+      "data": "dezembro de 2016"
+    },
+    {
+      "nome": "Ceiling Fans at a Glance — Energy Star (arquivo)",
+      "url": "https://webarchive.library.unt.edu/eot2008/20081106141342/https:/www.energystar.gov/ia/partners/manuf_res/salestraining_res/CeilingFan_AtAGlance.pdf",
+      "data": "novembro de 2008"
+    },
+    {
+      "nome": "Boletim técnico: instalação de ventilador de teto — Mapfre",
+      "url": "https://www.mapfre.com.br:443/media/04_BTI-Ventilador-2017_tcm909-418473.pdf",
+      "data": "2017"
+    },
+    {
+      "nome": "Qual o diâmetro ideal do ventilador de teto? — Casa dos Eletrodomésticos",
+      "url": "https://www.casadoseletrodomesticos.com.br/qual-o-diametro-ideal-do-ventilador-de-teto",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Altura mínima de pé-direito para ventilador de teto — Casa dos Eletrodomésticos",
+      "url": "https://www.casadoseletrodomesticos.com.br/qual-altura-minima-de-pe-direito-para-ventilador-de-teto",
+      "data": "outubro de 2026"
+    }
+  ]
+}
