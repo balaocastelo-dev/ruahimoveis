@@ -684,7 +684,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-01T23:25:43.680Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "nova-campinas-historia-do-bairro-jardim-de-campinas",
+      "titulo": "Nova Campinas: a história do bairro-jardim de Campinas",
+      "tema": "nova campinas bairro jardim historia e desenho",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-01T23:27:01.718Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T23:25:43.681Z"
+  "atualizadoEm": "2026-11-01T23:27:01.719Z"
 }
