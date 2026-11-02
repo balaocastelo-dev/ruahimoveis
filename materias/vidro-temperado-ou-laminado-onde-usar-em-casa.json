@@ -1,0 +1,192 @@
+{
+  "slug": "vidro-temperado-ou-laminado-onde-usar-em-casa",
+  "tema": "vidro temperado ou laminado onde usar",
+  "titulo": "Vidro temperado ou laminado: onde usar cada um na casa",
+  "resumo": "Vidro temperado ou laminado? Entenda como cada um quebra, o que a norma pede para box, porta, janela, cobertura e guarda-corpo e quando escolher cada um.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "construção",
+    "vidro",
+    "segurança",
+    "reforma",
+    "varanda"
+  ],
+  "capa": {
+    "alt": "Varanda moderna com guarda-corpo de vidro transparente fixado em perfis de aço inox, piso de madeira e vista para árvores"
+  },
+  "redes": {
+    "legenda": "Vidro temperado ou laminado: você sabe a diferença? O temperado quebra em pedacinhos pouco cortantes; o laminado racha, mas os cacos ficam presos na película e o vão continua fechado. Por isso cada um tem seu lugar: box, porta, janela baixa, cobertura e guarda-corpo têm regras próprias na norma. Explicamos onde usar cada um. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "vidro",
+      "construcao",
+      "reforma",
+      "arquitetura",
+      "varanda",
+      "seguranca",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de escolher o vidro do box, da porta da varanda ou do guarda-corpo, a dúvida aparece logo: **vidro temperado ou laminado**? Os dois são chamados de vidros de segurança, custam mais que o vidro comum e parecem iguais na vitrine da vidraçaria. A diferença está no que acontece quando eles quebram."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O temperado é bem mais resistente e, se quebrar, vira pedacinhos pouco cortantes. O laminado racha, mas os cacos ficam presos numa película e o vão continua fechado. Por isso, o laminado é o escolhido onde há risco de queda ou de vidro sobre a cabeça, como coberturas e guarda-corpos, e o temperado brilha em portas, boxes e tampos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Temperado: várias vezes mais resistente que o comum e quebra em pedaços pequenos.",
+        "Laminado: duas ou mais chapas unidas por película; os cacos ficam presos e o vão segue fechado.",
+        "Coberturas e claraboias pedem laminado, aramado ou insulado, nunca temperado sozinho.",
+        "Guarda-corpo: o mais indicado é o laminado ou o temperado laminado, com projeto."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda como cada vidro é feito e como quebra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **temperado** nasce de um vidro comum (o float) que é aquecido e resfriado rapidamente. Esse choque deixa a peça muito mais forte: o portal Engenharia 360, citando a Abravidro, fala em cinco vezes a resistência do vidro comum, e o caderno de especificações da Sudecap, da Prefeitura de Belo Horizonte, em cerca de seis vezes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo caderno lembra um detalhe que muda a obra: o temperado não pode ser cortado, furado nem trabalhado depois de pronto. Por isso, furos de dobradiça e puxador e a medida exata precisam ser definidos antes da têmpera. Medida errada significa fazer uma peça nova."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **laminado** é feito de duas ou mais chapas unidas por uma película plástica de PVB (polivinil butiral), sob calor e pressão. Segundo o guia de segurança da Abividro, quando ele quebra, os cacos ficam aderidos à película, o que mantém o vão fechado até a troca. A película ainda ajuda a filtrar raios UV e a reduzir ruído."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Existe também o **temperado laminado**: chapas temperadas unidas por película. Ele soma a resistência de um com a retenção dos cacos do outro e costuma aparecer em guarda-corpos, escadas e pisos de vidro. Para outras escolhas de obra, veja a categoria [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba onde usar cada um na casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A norma que organiza essas escolhas é a ABNT NBR 7199, que trata do uso de vidros na construção. O guia da Abividro, de 2019, resume o que ela pede para cada lugar. A lista abaixo traz a regra geral; o projeto e o fornecedor definem a espessura e a fixação de cada caso."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Vidro de segurança por aplicação, em linhas gerais",
+      "colunas": [
+        "Onde",
+        "O que o resumo da NBR 7199 aceita",
+        "Observação"
+      ],
+      "linhas": [
+        [
+          "Box de banheiro",
+          "Temperado, laminado, aramado ou insulado",
+          "O temperado é o mais comum"
+        ],
+        [
+          "Portas",
+          "Vidro de segurança abaixo de 1,10 m do piso",
+          "Temperado ou laminado"
+        ],
+        [
+          "Janelas baixas",
+          "Vidro de segurança abaixo de 1,10 m do piso",
+          "Acima disso, há casos em que o comum é aceito"
+        ],
+        [
+          "Coberturas e claraboias",
+          "Laminado, aramado ou insulado",
+          "Temperado sozinho não"
+        ],
+        [
+          "Guarda-corpo vertical",
+          "Temperado, laminado, aramado ou insulado",
+          "Reportagens indicam laminado ou temperado laminado"
+        ],
+        [
+          "Guarda-corpo inclinado",
+          "Laminado, aramado ou insulado",
+          "Temperado sozinho não"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Guia de segurança nas edificações — Abividro",
+        "url": "https://mkt-smart.s3.us-east-1.amazonaws.com/BIBLIOTECA_TECNICA_SITE/09-ESQUADRIAS_DE_PVC/guia-de-seguranca-nas-edificacoes-abividro.pdf"
+      },
+      "nota": "Resumo geral. A especificação final segue a edição vigente da norma e o projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No guarda-corpo, vale atenção redobrada. O resumo da Abividro aceita mais de um tipo no guarda-corpo vertical, mas reportagem recente do Jornal de Brasília aponta o laminado ou o temperado laminado como os indicados, porque o temperado sozinho, se quebrar, deixa o vão aberto. Na dúvida, fique com a opção que segura os cacos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guarda-corpo ainda segue a NBR 14718, que, segundo o portal Sienge, pede altura mínima de 1,10 m a partir do piso. Esse é trabalho para empresa especializada, com projeto e responsável técnico, porque espessura, ferragens e fixação precisam aguentar os esforços da norma. Mais dicas de casa no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você vai comprar um imóvel com varanda envidraçada ou trocar os vidros de casa, peça a especificação do vidro e da instalação por escrito. E, se quer ajuda para avaliar um imóvel em Campinas, para comprar ou vender, fale com a equipe da {{cliente}}."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: temperado onde se quer resistência, laminado onde o vidro não pode cair."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é mais resistente, vidro temperado ou laminado?",
+      "resposta": "O temperado resiste mais a impacto: fontes técnicas falam em cinco a seis vezes o vidro comum. O laminado se destaca por outra coisa: quando quebra, os cacos ficam presos e o vão continua fechado."
+    },
+    {
+      "pergunta": "Posso usar vidro temperado no guarda-corpo?",
+      "resposta": "O mais indicado é o laminado ou o temperado laminado, que seguram os cacos se o vidro quebrar. A especificação deve vir de projeto com responsável técnico, conforme as normas NBR 7199 e NBR 14718."
+    },
+    {
+      "pergunta": "Dá para furar vidro temperado depois de instalado?",
+      "resposta": "Não. O temperado não pode ser cortado, furado nem trabalhado depois da têmpera. Furos e medidas precisam ser definidos antes da fabricação."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guia de segurança nas edificações — Abividro",
+      "url": "https://mkt-smart.s3.us-east-1.amazonaws.com/BIBLIOTECA_TECNICA_SITE/09-ESQUADRIAS_DE_PVC/guia-de-seguranca-nas-edificacoes-abividro.pdf",
+      "data": "2019"
+    },
+    {
+      "nome": "Caderno de encargos, capítulo 16: vidros — Sudecap, Prefeitura de Belo Horizonte",
+      "url": "https://prefeitura-ds.pbh.gov.br/sites/default/files/noticia/sudecap_capitulo_16.pdf",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Qual tipo de vidro usar em portas, vitrines e divisórias — Engenharia 360",
+      "url": "https://engenharia360.com/qual-tipo-de-vidro-usar-em-portas-vitrines-e-divisorias/",
+      "data": "janeiro de 2024"
+    },
+    {
+      "nome": "Cuidados ao escolher o guarda-corpo de vidro — Jornal de Brasília",
+      "url": "https://jornaldebrasilia.com.br/noticias/mundo/cuidados-ao-escolher-o-guarda-corpo-de-vidro-ele-salva-vidas/",
+      "data": "dezembro de 2024"
+    },
+    {
+      "nome": "Guarda-corpos devem atender à NBR 14718 — Sienge",
+      "url": "https://sienge.com.br/blog/guarda-corpos-devem-atender-a-nbr-14718/",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
