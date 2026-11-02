@@ -1,0 +1,265 @@
+{
+  "slug": "casa-com-cachorro-e-gato-pisos-tecidos-e-plantas",
+  "tema": "casa com cachorro e gato pisos tecidos plantas",
+  "titulo": "Casa com cachorro e gato: pisos, tecidos e plantas que convivem bem",
+  "resumo": "Casa com cachorro e gato pede piso que não escorrega, tecido que resiste a unha e pelo e plantas seguras. Veja como escolher sem abrir mão do estilo.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "interiores",
+    "pets",
+    "pisos",
+    "decoração",
+    "plantas"
+  ],
+  "capa": {
+    "alt": "Sala clara com piso de porcelanato acetinado, tapete de fibra natural, sofá em tecido liso e uma cama de pet em madeira junto à janela"
+  },
+  "redes": {
+    "legenda": "Seu cachorro escorrega no piso da sala? Piso muito liso cansa as patas, sobretudo de cães idosos, e alguns tecidos viram ímã de pelo e alvo de unha. Dá para ter uma casa bonita e prática para quem tem pet: piso com textura certa, tecido de trama fechada, nichos para cama e comida e plantas que não fazem mal. Atenção ao lírio, perigoso para gatos. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "casacompet",
+      "decoracao",
+      "interiores",
+      "arquitetura",
+      "pisos",
+      "cachorro",
+      "gato",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma **casa com cachorro e gato** tem sua própria rotina: pelo no sofá, unha no tapete, água espalhada perto do pote e aquela corrida pela sala que termina numa derrapada. Quem gosta de casa bonita costuma se perguntar se dá para conciliar estilo e bicho de estimação, ou se a decoração precisa virar uma coleção de capas e plásticos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dá para conciliar, e o segredo está em três escolhas feitas com antecedência: o piso, os tecidos e as plantas. Um piso com textura certa evita escorregões, tecidos de trama fechada resistem a unhas e soltam o pelo com facilidade, e plantas escolhidas com critério deixam a casa verde com mais tranquilidade. O resto é organização: um lugar fixo para comer, dormir e brincar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Piso fácil de limpar e que não absorve urina, mas sem acabamento tão liso que faça o animal escorregar.",
+        "No sofá, tecidos lisos e de trama fechada, couro ou tecidos impermeáveis; fuja de tramas abertas que prendem a unha.",
+        "Lírio é muito perigoso para gatos; comigo-ninguém-pode, jiboia e azaleia também ficam fora do alcance.",
+        "Reserve cantos próprios para cama, comida e água, longe da passagem."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha um piso que não escorrega e aguenta a rotina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O piso é a decisão mais difícil de mudar depois, por isso merece atenção primeiro. Uma coluna de arquitetura do Jornal de Brasília sobre casa com pets indica o porcelanato e o vinílico como boas escolhas, porque são fáceis de limpar e não absorvem urina. O mesmo texto faz uma ressalva importante: piso muito liso pode ser escorregadio e cansar as articulações dos cães."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse cuidado tem respaldo técnico. Um estudo publicado em 2017 na revista Frontiers in Veterinary Science observa que pisos lisos são difíceis para cães com problemas neurológicos, artrose ou em recuperação de cirurgia, e que muitos reagem diminuindo o contato das almofadas das patas e esticando as unhas. Na prática, o animal anda tenso e perde firmeza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso, em vez de porcelanato polido, que brilha como espelho, prefira acabamentos **acetinados** ou levemente texturizados. Em áreas onde o animal corre ou sobe e desce, como corredores e escadas, passadeiras e tapetes com base antiderrapante ajudam bastante. Para quem tem cachorro idoso, esse detalhe pesa mais do que a cor do piso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resistência ao risco também conta. Em porcelanato esmaltado, a fabricante Ceusa explica que o **PEI** mede a resistência da superfície ao desgaste por tráfego e sujeira, e que, quanto maior o número, mais resistente. No porcelanato técnico, sem esmalte, o teste de PEI não é feito; a avaliação é outra, de abrasão profunda. Pergunte ao fornecedor qual informação vale para a peça escolhida."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Pisos para casa com pet, lado a lado",
+      "colunas": [
+        "Piso",
+        "Limpeza e urina",
+        "Escorregar",
+        "Arranhões"
+      ],
+      "linhas": [
+        [
+          "Porcelanato acetinado ou texturizado",
+          "Fácil de limpar, não absorve",
+          "Mais firme que o polido",
+          "Resiste bem; confira PEI ou abrasão"
+        ],
+        [
+          "Porcelanato polido",
+          "Fácil de limpar, não absorve",
+          "Escorregadio para patas",
+          "Brilho mostra marcas com o tempo"
+        ],
+        [
+          "Vinílico",
+          "Fácil de limpar; atenção às emendas",
+          "Costuma ser confortável",
+          "Pode marcar com unha e peso"
+        ],
+        [
+          "Madeira natural",
+          "Pede secar logo a urina e a água",
+          "Depende do acabamento",
+          "Risca com mais facilidade"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Dicas para você preparar a casa para seu pet — Jornal de Brasília",
+        "url": "https://jornaldebrasilia.com.br/estilo-de-vida/arquitetura-design/dicas-para-voce-preparar-a-casa-para-seu-pet/"
+      },
+      "nota": "Comparação geral. Cada linha de produto tem desempenho próprio: peça a ficha técnica ao fornecedor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para ver outras escolhas de revestimento e mobiliário, explore a categoria [interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Defina tecidos e móveis que resistem a unha e pelo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O sofá é o segundo campo de batalha. A mesma coluna do Jornal de Brasília recomenda materiais lisos, que não acumulam pelo nem desfiam, como couro, lona, vinil ou tecidos impermeáveis. A lógica é simples: quanto mais fechada a trama, menos a unha encontra onde prender e mais fácil o pelo sai com uma escova ou o aspirador."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Tecidos de trama aberta, bouclês felpudos e linhos muito soltos ficam lindos em foto, mas costumam sofrer com gatos, que gostam de afiar as unhas, e com cães que pulam no estofado. Se o tecido que você ama é delicado, uma saída é usar uma manta lavável no lugar preferido do animal e oferecer a ele alternativas, como um arranhador firme perto do sofá."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cor ajuda a esconder a rotina. Tons próximos da cor do pelo do animal disfarçam o que escapa da escova entre uma limpeza e outra. Em tapetes, texturas resistentes e de trama baixa funcionam melhor que pelos longos, que retêm sujeira e pelos. Tapetes laváveis, ou em placas que se trocam separadamente, facilitam a vida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos móveis, pense em cantos próprios. A coluna sugere criar espaços para cama, comida e água longe da circulação, adaptar um móvel antigo ou desenhar nichos na marcenaria. Para cães maiores, um degrau ajuda a subir e descer de camas e sofás. E, para gatos, prateleiras na parede viram área de brincar, desde que não haja objetos frágeis por perto."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Couro ou tecido impermeável no sofá: o que pesa",
+      "pros": [
+        "Superfície lisa: o pelo sai fácil e a unha prende menos",
+        "Limpeza rápida de água, baba e sujeira",
+        "Combina com salas de estilos diferentes",
+        "Menos desfiado do que tramas abertas"
+      ],
+      "contras": [
+        "Couro pode marcar com arranhão de gato",
+        "Alguns tecidos impermeáveis esquentam no verão",
+        "Precisa de cuidado com produtos de limpeza adequados",
+        "Pode ter toque menos macio do que tecidos naturais soltos"
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba quais plantas deixar de fora e quais combinam com pets"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Plantas deixam a casa mais acolhedora, mas algumas fazem mal aos animais. Reportagem da rádio Itatiaia, com orientação de veterinária e referência à Academia Brasileira de Clínicos de Felinos, aponta o **lírio** como a ameaça mais séria para gatos: todas as partes são tóxicas, inclusive o pólen e a água do vaso, e a ingestão pode afetar os rins em poucas horas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outras plantas comuns também pedem cuidado. A mesma reportagem cita comigo-ninguém-pode e jiboia, que têm cristais de oxalato de cálcio capazes de irritar a boca e a garganta quando mastigadas. O Correio Braziliense acrescenta a azaleia, com efeitos gastrointestinais e cardíacos, e recomenda manter antúrio e espada-de-são-jorge longe do alcance dos animais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Do lado seguro, a reportagem da Itatiaia lista orquídeas, bromélias, clorofitos e calateias (a reza-reza) como opções para casas com gatos, além de capim e graminhas plantadas para eles, como alpiste e trigo. Mesmo assim, a regra é pesquisar o nome da planta antes de comprar, porque espécies parecidas podem ter nomes populares iguais."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Se o animal mastigar uma planta suspeita",
+      "texto": "Procure o veterinário logo, leve um pedaço da folha e anote a hora aproximada. A reportagem do Correio Braziliense orienta não induzir vômito em casa por conta própria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma boa estratégia de decoração é usar plantas seguras nas áreas de chão e reservar as que exigem cuidado para lugares realmente fora do alcance, lembrando que gatos sobem em quase tudo. Para mais ideias de verde dentro de casa, veja a categoria [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Organize a casa para o animal e para você"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além de piso, tecido e plantas, alguns detalhes fazem diferença no dia a dia. Telas de proteção em janelas e varandas são indispensáveis em apartamentos com gatos, que costumam ser curiosos e se equilibram em parapeitos. A instalação deve ser feita por empresa especializada, com material próprio para isso, e conferida de tempos em tempos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fios soltos e produtos de limpeza merecem lugar fechado. Esconder a fiação atrás de canaletas ou móveis evita mordidas, e guardar produtos em armários altos ou com trava evita acidentes. Na área de serviço, um ponto de água com chuveirinho, pensado no projeto, facilita o banho e a limpeza das patas na volta do passeio."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Piso acetinado ou texturizado nas áreas de circulação, com passadeiras antiderrapantes em escadas.",
+        "Tecidos de trama fechada no sofá e mantas laváveis no lugar preferido do animal.",
+        "Nichos para cama, comida e água fora da passagem.",
+        "Telas nas janelas e varandas, instaladas por especialista.",
+        "Plantas conferidas pelo nome antes da compra."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel pensando no seu cachorro ou gato, vale observar o piso, a área externa, a varanda e o espaço para um cantinho deles já na visita. A equipe da {{cliente}}, em Campinas, pode ajudar você a comparar imóveis com esse olhar, tanto para comprar quanto para vender."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: piso firme, tecido fechado e plantas conferidas tornam a casa bonita para você e segura para quem tem quatro patas."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o melhor piso para casa com cachorro?",
+      "resposta": "Pisos fáceis de limpar e que não absorvem urina, como o porcelanato e o vinílico, costumam funcionar bem. Prefira acabamentos acetinados ou texturizados, porque o porcelanato polido é escorregadio para as patas."
+    },
+    {
+      "pergunta": "Que tecido de sofá é melhor para quem tem gato?",
+      "resposta": "Tecidos lisos e de trama fechada, couro, lona, vinil ou tecidos impermeáveis soltam o pelo com facilidade e dão menos onde a unha prender. Tramas abertas e bouclês felpudos costumam sofrer mais."
+    },
+    {
+      "pergunta": "Quais plantas são perigosas para gatos?",
+      "resposta": "O lírio é o caso mais grave: todas as partes são tóxicas para gatos, inclusive o pólen e a água do vaso. Comigo-ninguém-pode, jiboia e azaleia também devem ficar fora do alcance. Na dúvida, pergunte ao veterinário."
+    },
+    {
+      "pergunta": "Como evitar que o cachorro escorregue no piso?",
+      "resposta": "Passadeiras e tapetes com base antiderrapante nas áreas de corrida e nas escadas ajudam muito. Na escolha do piso, prefira acabamentos com mais textura do que o polido, sobretudo se o cão é idoso."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Dicas para você preparar a casa para seu pet — Jornal de Brasília",
+      "url": "https://jornaldebrasilia.com.br/estilo-de-vida/arquitetura-design/dicas-para-voce-preparar-a-casa-para-seu-pet/",
+      "data": "junho de 2021"
+    },
+    {
+      "nome": "Dr. Buzby's ToeGrips Application Results in Minimal Changes in Kinetic Gait Parameters in Normal Dogs — Frontiers in Veterinary Science",
+      "url": "https://public-pages-files-2025.frontiersin.org/journals/veterinary-science/articles/10.3389/fvets.2017.00111/text",
+      "data": "2017"
+    },
+    {
+      "nome": "What is abrasion resistance (PEI)? — Ceusa",
+      "url": "https://www.ceusa.com.br/en/central-de-ajuda/resposta/what-is-abrasion-resistance-pei",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Saiba quais plantas são perigosas ou seguras para casas com gatos — Itatiaia",
+      "url": "https://www.itatiaia.com.br/pets-e-animais/saiba-quais-plantas-sao-perigosas-ou-seguras-para-casas-com-gatos/",
+      "data": "janeiro de 2026"
+    },
+    {
+      "nome": "As plantas mais perigosas para gatos e os sinais de alerta — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/as-plantas-mais-perigosas-para-gatos-e-os-sinais-de-alerta-que-muitos-tutores-ignoram/",
+      "data": "maio de 2026"
+    }
+  ]
+}

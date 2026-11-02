@@ -738,7 +738,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-02T11:24:45.089Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "casa-com-cachorro-e-gato-pisos-tecidos-e-plantas",
+      "titulo": "Casa com cachorro e gato: pisos, tecidos e plantas que convivem bem",
+      "tema": "casa com cachorro e gato pisos tecidos plantas",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-02T11:26:05.515Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-02T11:24:45.089Z"
+  "atualizadoEm": "2026-11-02T11:26:05.515Z"
 }
