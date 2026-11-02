@@ -702,7 +702,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-01T23:27:47.550Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-campinas-guia-para-quem-esta-chegando",
+      "titulo": "Morar em Campinas: o guia para quem está chegando à cidade",
+      "tema": "morar em campinas guia para quem chega",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-02T02:17:56.965Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-01T23:27:47.550Z"
+  "atualizadoEm": "2026-11-02T02:17:56.966Z"
 }
