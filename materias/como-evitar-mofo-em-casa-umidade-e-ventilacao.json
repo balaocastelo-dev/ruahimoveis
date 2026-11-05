@@ -1,0 +1,172 @@
+{
+  "slug": "como-evitar-mofo-em-casa-umidade-e-ventilacao",
+  "formato": "dica",
+  "tema": "como evitar mofo nas paredes de casa",
+  "titulo": "Como evitar mofo em casa: umidade, condensação e ventilação",
+  "resumo": "Mofo nasce de umidade. Veja como controlar a umidade do ar, secar a tempo o que molhou e ventilar banheiro e cozinha para a mancha não voltar.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "mofo",
+    "umidade",
+    "ventilação",
+    "bem-estar",
+    "manutenção"
+  ],
+  "capa": {
+    "alt": "Banheiro claro e arejado com janela basculante aberta, toalhas de linho secando e parede branca impecável"
+  },
+  "redes": {
+    "legenda": "Limpou a mancha de mofo e ela voltou? É porque o problema não é a mancha, é a umidade. A agência ambiental americana recomenda manter a umidade do ar abaixo de 60% e secar o que molhou em até dois dias. No blog, mostramos de onde vem a umidade da casa e o que fazer em cada cômodo. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "mofo",
+      "casalimpa",
+      "bemestar",
+      "dicasdecasa",
+      "decoracao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem quer saber **como evitar mofo em casa** precisa olhar menos para a mancha e mais para a água. O mofo é um fungo que só cresce onde há umidade: parede fria que sua, vazamento escondido, banheiro que nunca seca. Tirar a mancha sem resolver a umidade é garantir que ela volte em algumas semanas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A receita, segundo o guia da EPA, a agência ambiental dos Estados Unidos, é controlar a umidade: manter a umidade relativa do ar abaixo de 60%, de preferência entre 30% e 50%, secar em 24 a 48 horas tudo o que molhar e consertar a origem de qualquer vazamento."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Sem umidade, não há mofo: a origem da água vem antes da limpeza.",
+        "Umidade do ar abaixo de 60%, idealmente entre 30% e 50%, medida com um higrômetro.",
+        "Secar em até 24 a 48 horas o que molhou com vazamento ou infiltração.",
+        "Banheiro e cozinha precisam tirar o vapor para fora enquanto estão em uso."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem a umidade que alimenta o mofo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há três origens principais. A primeira é a **água que entra**: vazamento de cano, infiltração pelo telhado, pela laje ou pelo chão. A segunda é o **vapor que a casa produz**: banho quente, panela no fogo, roupa secando dentro de casa. A terceira é a **condensação**, quando o ar úmido encontra uma superfície fria e vira gotinhas, como num copo gelado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A condensação explica por que o mofo aparece atrás do guarda-roupa encostado na parede, no canto do teto e em volta da janela: são pontos mais frios e com pouca circulação de ar. A EPA sugere aumentar a ventilação, elevar a temperatura do ambiente e isolar superfícies frias, como canos de água gelada."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Onde o mofo costuma aparecer e o que fazer",
+      "colunas": [
+        "Lugar",
+        "Causa provável",
+        "O que ajuda"
+      ],
+      "linhas": [
+        [
+          "Teto do banheiro",
+          "Vapor do banho sem saída",
+          "Exaustor ou janela aberta durante e depois do banho"
+        ],
+        [
+          "Atrás de armários",
+          "Parede fria e ar parado",
+          "Afastar o móvel alguns centímetros da parede"
+        ],
+        [
+          "Canto da janela",
+          "Condensação no vidro e no batente",
+          "Ventilar e secar o vidro nas manhãs frias"
+        ],
+        [
+          "Rodapé e base da parede",
+          "Umidade que sobe do piso ou vazamento",
+          "Investigar a origem com um profissional"
+        ],
+        [
+          "Dentro de armários",
+          "Roupa guardada úmida e porta sempre fechada",
+          "Guardar tudo seco e arejar com frequência"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "fonte": {
+        "nome": "A Brief Guide to Mold, Moisture, and Your Home — EPA",
+        "url": "https://19january2021snapshot.epa.gov/mold/brief-guide-mold-moisture-and-your-home_.html"
+      },
+      "nota": "Mancha que volta sempre no mesmo ponto, mesmo com ventilação, costuma indicar infiltração ou vazamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem toda mancha é só condensação. Se ela aparece de baixo para cima, perto do piso, ou depois de chuva forte, pode haver infiltração ou falha de impermeabilização. Aí a solução é obra, e o diagnóstico deve vir de engenheiro ou arquiteto. Mais temas de conforto estão na seção de [bem-estar do blog](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que fazer em casa para o mofo não voltar"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Meça a umidade.** Um higrômetro simples mostra se a casa passa de 60%. Ar-condicionado e desumidificador ajudam nos períodos úmidos.",
+        "**Ventile enquanto produz vapor.** Ligue o exaustor ou abra a janela no banho, ao cozinhar e ao usar a lava-louças.",
+        "**Leve o vapor para fora.** Secadora de roupa e coifa devem, sempre que possível, ter saída para o exterior.",
+        "**Seque rápido.** Depois de um vazamento, seque pisos, tapetes e móveis em até 24 a 48 horas.",
+        "**Limpe superfícies lisas com água e detergente** e deixe secar bem.",
+        "**Não pinte por cima.** Tinta sobre mofo descasca; limpe e seque antes de pintar."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Quando chamar um profissional",
+      "texto": "Pela orientação da EPA, áreas com mofo maiores que cerca de 1 m² podem exigir limpeza profissional. Materiais porosos muito tomados, como forro e carpete, às vezes precisam ser trocados. Se alguém da casa tiver sintomas que associa ao mofo, procure um profissional de saúde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de comprar ou visitar um imóvel, vale reparar em cheiro de guardado, manchas no teto do banheiro, pintura nova só em um canto e ventilação dos cômodos. Mais ideias para morar bem estão no [blog](/blog). Se você está procurando casa em Campinas, a equipe da {{cliente}} pode ajudar a avaliar esses pontos nas visitas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: controle a umidade e a origem da água, e o mofo perde o lugar onde crescer."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a umidade ideal dentro de casa para evitar mofo?",
+      "resposta": "A EPA recomenda manter a umidade relativa abaixo de 60%, de preferência entre 30% e 50%. Um higrômetro barato mede isso, e ar-condicionado ou desumidificador ajudam a baixar."
+    },
+    {
+      "pergunta": "Posso pintar a parede por cima do mofo?",
+      "resposta": "Não é recomendado. A tinta aplicada sobre o mofo tende a descascar. Primeiro limpe, resolva a causa da umidade e deixe a superfície secar por completo."
+    },
+    {
+      "pergunta": "Por que o mofo aparece atrás do guarda-roupa?",
+      "resposta": "Porque ali a parede costuma ser mais fria e o ar fica parado, o que favorece a condensação. Afastar o móvel da parede e ventilar o quarto costuma ajudar."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "A Brief Guide to Mold, Moisture, and Your Home — U.S. Environmental Protection Agency (EPA)",
+      "url": "https://19january2021snapshot.epa.gov/mold/brief-guide-mold-moisture-and-your-home_.html",
+      "data": "janeiro de 2021"
+    },
+    {
+      "nome": "Tribal IAQ Resource Directory: Mold and Moisture — U.S. Environmental Protection Agency (EPA)",
+      "url": "https://www.epa.gov/node/299298",
+      "data": "maio de 2026"
+    }
+  ]
+}
