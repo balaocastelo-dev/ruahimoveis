@@ -1,0 +1,161 @@
+{
+  "slug": "pergolado-de-madeira-metal-ou-concreto-qual-escolher",
+  "tema": "pergolado de madeira metal ou concreto",
+  "titulo": "Pergolado de madeira, metal ou concreto: qual escolher?",
+  "resumo": "Pergolado de madeira, metal ou concreto? Veja como cada material se comporta, qual cobertura usar e o cuidado com vidro e calor antes de montar o seu.",
+  "categoria": "alto-padrao",
+  "formato": "dica",
+  "etiquetas": [
+    "pergolado",
+    "área externa",
+    "jardim",
+    "alto padrão"
+  ],
+  "capa": {
+    "alt": "Pergolado de madeira sobre um deck ao lado do jardim, com trepadeira nas vigas e sombra listrada sobre uma mesa de madeira"
+  },
+  "redes": {
+    "legenda": "Pergolado de madeira, metal ou concreto? A estrutura de vigas paralelas nasceu das pérgolas italianas que sustentavam parreiras e hoje cria sombra em varandas, jardins e áreas de piscina. Cada material pede um cuidado diferente, e a cobertura muda tudo: vidro em telhado, por exemplo, deve ser laminado. No blog, explicamos como escolher. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "pergolado",
+      "areaexterna",
+      "jardim",
+      "paisagismo",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **pergolado** é aquela estrutura de pilares e vigas paralelas que cria sombra sobre a varanda, o deck ou o jardim. Na hora de planejar o seu, a pergunta vem rápido: madeira, metal ou concreto? E o que colocar por cima, se for colocar alguma coisa?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a **madeira** é a mais acolhedora e comum, mas pede proteção regular. O **metal** é rápido de montar e dá pouca manutenção. O **concreto** é o mais durável e pesado. A escolha final depende do estilo da casa, do clima e de quanto cuidado você quer ter depois."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Madeira: visual quente, exige impermeabilização e manutenção periódica.",
+        "Metal: instalação rápida, linhas finas e pouca manutenção.",
+        "Concreto: resistente e durável, combina com casas de linhas retas.",
+        "Vidro na cobertura deve ser laminado ou aramado, e pode esquentar bastante o espaço embaixo."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como cada material se comporta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ideia vem das **pérgolas italianas**, que sustentavam parreiras de uva, lembra a coluna de arquitetura do Jornal de Brasília. Em artigo da arquiteta Aletheia Westermann para a Tribuna de Minas, a madeira aparece como a opção mais comum e de menor custo; o metal, como rápido de instalar e fácil de manter; e o concreto, como durável e resistente."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os materiais do pergolado lado a lado",
+      "colunas": [
+        "Material",
+        "Visual",
+        "Manutenção",
+        "Combina com"
+      ],
+      "linhas": [
+        [
+          "Madeira",
+          "Quente e natural",
+          "Impermeabilização e revisão periódicas",
+          "Jardins, casas de campo e decks"
+        ],
+        [
+          "Metal (aço, ferro ou alumínio)",
+          "Linhas finas e modernas",
+          "Baixa; atenção à pintura e à ferrugem no aço",
+          "Casas contemporâneas e coberturas de vidro"
+        ],
+        [
+          "Concreto",
+          "Robusto e marcante",
+          "Baixa; pintura de tempos em tempos",
+          "Casas de linhas retas e varandas grandes"
+        ],
+        [
+          "Bambu ou eucalipto em toras",
+          "Rústico e praiano",
+          "Depende do tratamento da madeira",
+          "Casas de campo e de praia"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Pergolados: faça chuva ou sol — Tribuna de Minas",
+        "url": "https://tribunademinas.com.br/acervo/aletheia-westermann/20-01-2019/pergolados-faca-chuva-ou-sol-2.html?amp=1"
+      },
+      "nota": "Comparação geral; o desempenho real depende da espécie de madeira, do tratamento e do projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas atenção: o material também precisa conversar com a casa. Os dois textos recomendam seguir as linhas da construção principal e dimensionar o pergolado em proporção ao espaço. A madeira só dura bem com um bom impermeabilizante. Para mais ideias de varanda e jardim, veja a seção de [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cobrir ou deixar vazado?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O modelo tradicional é **vazado**, com sombra listrada e circulação de ar. Trepadeiras nas vigas filtram a luz e deixam o espaço mais fresco. Para proteger da chuva, entram **vidro** ou **policarbonato** translúcido, e há ainda tecidos e toldos retráteis. O Jornal de Brasília alerta que pergolados de vidro podem esquentar muito durante o dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a escolha for vidro, a segurança vem antes do visual. O caderno de encargos da Prefeitura de Belo Horizonte, que segue a norma ABNT NBR 7199, indica para vidros não verticais, como coberturas e claraboias, o vidro **laminado** de segurança ou o **aramado**. O laminado se mantém preso à película quando quebra, em vez de cair em pedaços."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Pergolado com cobertura pesada, fixado em laje ou parede existente, pede cálculo de um engenheiro ou arquiteto com ART ou RRT. Não apoie a estrutura numa laje sem avaliação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mais temas de casa e área externa estão no [blog](/blog). Se você procura uma casa com espaço para criar a sua área externa, ou quer vender a sua, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar ou vender. Em uma linha: madeira para aconchego, metal para leveza, concreto para durar, e vidro na cobertura só laminado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual pergolado dá menos manutenção?",
+      "resposta": "Metal e concreto costumam pedir menos cuidado que a madeira, que precisa de impermeabilização periódica. No aço, vale observar a pintura para evitar ferrugem."
+    },
+    {
+      "pergunta": "Pergolado com vidro esquenta?",
+      "resposta": "Pode esquentar bastante em dias de sol, sobretudo sem ventilação lateral. Trepadeiras, tecidos ou toldos ajudam a filtrar o calor; e o vidro de cobertura deve ser laminado ou aramado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Pergolados: faça chuva ou sol, por Aletheia Westermann — Tribuna de Minas",
+      "url": "https://tribunademinas.com.br/acervo/aletheia-westermann/20-01-2019/pergolados-faca-chuva-ou-sol-2.html?amp=1",
+      "data": "janeiro de 2019"
+    },
+    {
+      "nome": "Já pensou em ter um lindo pergolado em sua casa? — Jornal de Brasília",
+      "url": "https://jornaldebrasilia.com.br/blogs-e-colunas/arquitetura-e-design/ja-pensou-em-ter-um-lindo-pergolado-em-sua-casa/",
+      "data": "outubro de 2021"
+    },
+    {
+      "nome": "Caderno de encargos, capítulo 16: vidros — Sudecap, Prefeitura de Belo Horizonte",
+      "url": "https://prefeitura.pbh.gov.br/sites/default/files/estrutura-de-governo/sudecap/normas-padroes/VA-CADERNO/Capitulo16/CAP16-18-04-24.pdf",
+      "data": "abril de 2024"
+    }
+  ]
+}

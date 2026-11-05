@@ -801,7 +801,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-05T14:24:56.919Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "pergolado-de-madeira-metal-ou-concreto-qual-escolher",
+      "titulo": "Pergolado de madeira, metal ou concreto: qual escolher?",
+      "tema": "pergolado de madeira metal ou concreto",
+      "tipo": "dica",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-11-05T14:25:41.695Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-05T14:24:56.920Z"
+  "atualizadoEm": "2026-11-05T14:25:41.696Z"
 }
