@@ -1,0 +1,274 @@
+{
+  "slug": "carregador-de-carro-eletrico-em-casa-ou-condominio-como-instalar",
+  "tema": "carregador de carro eletrico na garagem de casa",
+  "titulo": "Carregador de carro elétrico em casa: o que a instalação exige",
+  "resumo": "Circuito exclusivo, DR, projeto com ART e o que a lei paulista diz sobre condomínios: o que pensar antes de instalar o carregador na garagem.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "carro elétrico",
+    "garagem",
+    "instalação elétrica",
+    "condomínio",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Garagem residencial moderna com carregador de parede para carro elétrico e cabo enrolado, piso de concreto polido"
+  },
+  "redes": {
+    "legenda": "Vai comprar um carro elétrico ou já está pensando nisso para a casa nova? Carregar em casa não é só ligar numa tomada: o carregador pede circuito próprio, proteção contra choque e um profissional com ART. No blog, explicamos o que a norma técnica pede, o que muda entre casa e condomínio e o que a lei paulista garante a quem mora em prédio. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "carroeletrico",
+      "garagem",
+      "casanova",
+      "construcao",
+      "arquitetura",
+      "condominio",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Instalar um **carregador de carro elétrico em casa** virou uma dúvida comum de quem está trocando de carro ou planejando uma casa nova. A imagem de chegar à noite, conectar o cabo e sair de manhã com a bateria cheia é sedutora, e por isso a recarga em casa costuma estar no topo da lista de quem compra um elétrico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta é que dá, mas não de improviso. Existe uma norma brasileira específica para estações de recarga, a instalação pede circuito próprio e proteções que uma tomada comum não tem, e quem mora em condomínio no estado de São Paulo ganhou em 2026 uma lei que garante esse direito, com condições. Vamos por partes."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A ABNT NBR 17019, de 2022, é a norma que trata das instalações para recarga de veículos elétricos.",
+        "Cada ponto de recarga pede um circuito exclusivo e um dispositivo DR próprio, além de projeto feito por profissional habilitado.",
+        "Na casa nova, o melhor momento de prever a recarga é o projeto elétrico, antes da obra.",
+        "Em São Paulo, a Lei 18.403/2026 garante ao condômino instalar o carregador na sua vaga, à sua custa e cumprindo requisitos técnicos."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Tomada comum ou carregador de parede: qual caminho seguir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há basicamente duas formas de carregar um elétrico em casa. A primeira usa o carregador portátil que muitos carros trazem, ligado a uma tomada. A segunda usa uma estação fixa de parede, conhecida como *wallbox*, que conversa com o carro, controla a corrente e oferece mais proteção. A norma chama essas formas de modos de recarga."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo análise publicada pela revista *O Setor Elétrico*, os modos 1 e 2, que usam tomada e cabo com proteção embutida, são os mais comuns em casas. O modo 3, com a estação de parede dedicada, é o mais usado em condomínios. Nada impede, porém, que uma casa tenha um *wallbox*, e esse costuma ser o caminho de quem carrega todos os dias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A diferença prática está na potência. Estações de parede para uso residencial e comercial vão de cerca de 7,4 kW a 22 kW, com correntes de até 32 A, segundo orientação da fabricante Tramontina. Mais potência significa recarga mais rápida, mas também exige uma entrada de energia capaz de entregá-la, o que nem sempre existe numa casa pronta."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Tomada com carregador portátil ou estação de parede",
+      "colunas": [
+        "Ponto",
+        "Carregador portátil na tomada",
+        "Estação de parede (wallbox)"
+      ],
+      "linhas": [
+        [
+          "Uso mais comum",
+          "Casas e recargas eventuais",
+          "Recarga diária, casas e condomínios"
+        ],
+        [
+          "Potência",
+          "Menor, limitada pela tomada e pelo circuito",
+          "Maior, conforme o modelo e a entrada de energia"
+        ],
+        [
+          "Velocidade",
+          "Recarga lenta, costuma levar a noite toda ou mais",
+          "Recarga mais rápida"
+        ],
+        [
+          "Instalação",
+          "Também pede circuito exclusivo e DR",
+          "Circuito exclusivo, DR e projeto dimensionado"
+        ],
+        [
+          "Controle",
+          "Básico",
+          "Pode limitar corrente e dividir carga entre pontos"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "fonte": {
+        "nome": "Tramontina orienta sobre instalação segura de carregadores — O Mecânico",
+        "url": "https://omecanico.com.br/tramontina-orienta-sobre-instalacao-segura-de-carregadores-para-veiculos-eletricos/"
+      },
+      "nota": "A potência real depende também do carro: ele aceita até um limite de corrente alternada definido pelo fabricante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas atenção: usar a tomada não significa usar qualquer tomada. Um carro puxa corrente alta por horas seguidas, algo muito diferente de um secador de cabelo ligado por minutos. Tomada antiga, fio fino e extensão são a receita para aquecimento. Mesmo no modo mais simples, a recomendação é ter um ponto preparado para isso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a norma pede antes de você ligar o cabo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **ABNT NBR 17019** foi publicada em 11 de abril de 2022 e trata das instalações elétricas de baixa tensão para alimentar veículos elétricos. Ela complementa a NBR 5410, a norma geral das instalações elétricas residenciais. NBR é a sigla das Normas Brasileiras publicadas pela ABNT, a associação que organiza as normas técnicas no país."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Duas exigências chamam atenção. Cada ponto de conexão deve ter o seu próprio circuito terminal, ou seja, um circuito que sai do quadro só para ele. E cada ponto em corrente alternada precisa de um dispositivo DR individual, de no máximo 30 mA. O DR é o interruptor que desliga o circuito quando percebe fuga de corrente, a proteção contra choque."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também um detalhe técnico sobre o tipo de DR. Segundo *O Setor Elétrico*, o DR do tipo AC, o mais simples, não deve ser usado. Como o carro pode gerar fuga em corrente contínua, essa proteção precisa existir: vem embutida em muitos carregadores, o que permite um DR tipo A no quadro, ou é feita na instalação com um DR tipo B."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Circuito exclusivo** para cada ponto de recarga, sem dividir com outras tomadas.",
+        "**DR individual** de até 30 mA, do tipo adequado ao carregador.",
+        "**Disjuntor** dimensionado para a corrente do equipamento, que protege contra sobrecarga e curto-circuito.",
+        "**DPS**, o dispositivo de proteção contra surtos, que desvia sobretensões de raios e manobras da rede.",
+        "**Aterramento** em boas condições, conferido pelo profissional.",
+        "**Projeto com diagrama unifilar** e ART de um profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Mexer no quadro, trocar disjuntor ou puxar circuito novo não é tarefa para fazer por conta própria. Contrate engenheiro eletricista ou técnico habilitado, que dimensiona cabos e proteções e emite a ART, a Anotação de Responsabilidade Técnica. Se a casa precisar de aumento de carga, o pedido é feito à distribuidora de energia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um ponto que costuma surpreender: a norma manda considerar o circuito do carregador com fator de demanda 1, isto é, como se ele usasse a potência total o tempo todo. Em casas mais antigas, a entrada de energia pode não comportar o carregador somado ao chuveiro, ao forno e ao ar-condicionado. Por isso a avaliação vem antes da compra do equipamento."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Na casa nova: onde colocar o ponto de recarga"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir ou reformar tem uma vantagem: dá para prever tudo no projeto elétrico. Deixar a tubulação e o espaço no quadro prontos custa muito menos do que abrir parede depois. Mesmo que o carro elétrico ainda seja um plano, vale pedir ao projetista que reserve o circuito. Veja outras decisões de obra na seção de [construção do blog](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização também conta. A orientação do portal especializado Canal VE é escolher um ponto de fácil acesso, perto da fonte de energia, protegido de sol e chuva, e a no máximo 5 m de onde o carro fica. Cabo cruzando a garagem vira tropeço, e cabo exposto ao tempo envelhece antes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outro cuidado citado pelo mesmo portal: não deixar uma tomada industrial ao lado do carregador. Ela fica energizada e acessível, e pode virar risco de choque se alguém tentar interromper a recarga à força. Em casa com crianças e animais, o cabo deve ficar recolhido no suporte depois do uso."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Prever a recarga já no projeto da casa",
+      "pros": [
+        "Tubulação e quadro dimensionados de uma vez, sem quebra-quebra depois",
+        "Entrada de energia escolhida já pensando na carga extra",
+        "Garagem desenhada com o ponto no lugar certo e protegido do tempo",
+        "A casa fica pronta para o carro que vier, mesmo que demore"
+      ],
+      "contras": [
+        "Exige decisão antecipada sobre potência e posição da vaga",
+        "Pode pedir uma entrada de energia maior desde o início",
+        "Se o carro nunca vier, o circuito fica sem uso"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E quando não vale a pena? Se você quase não roda, carrega no trabalho ou tem um híbrido de bateria pequena, um ponto simples, bem instalado, pode bastar. A estação de alta potência faz sentido para quem roda muito e precisa da bateria cheia todas as manhãs. O tamanho do investimento deve seguir o uso real."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Em condomínio: o que a lei paulista garante e o que ela não resolve"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No estado de São Paulo, a **Lei 18.403, de 18 de fevereiro de 2026**, assegura ao condômino o direito de instalar a recarga individual na sua vaga privativa, em prédios residenciais ou comerciais, às suas expensas. O condomínio não pode proibir sem justificativa técnica ou de segurança, fundamentada e documentada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O texto da lei, publicado pela Assembleia Legislativa, lista as condições: a carga elétrica da unidade precisa comportar o equipamento, a instalação deve seguir as normas da distribuidora e da ABNT, o serviço precisa de profissional habilitado com ART ou RRT, e a administração deve ser comunicada formalmente antes. A convenção pode tratar de responsabilidade por danos e por consumo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a lei não resolve tudo. Uma análise publicada no portal jurídico *Migalhas* lembra que, quando a instalação exige obras nas áreas comuns, como reforço de prumadas e quadros, a lei não diz quem paga, e essas obras podem voltar à assembleia com quórum qualificado. Vagas rotativas, sem ponto fixo, também ficam praticamente de fora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há ainda a segurança contra incêndio em garagens, tema que, segundo o mesmo artigo, ainda aguarda regulamentação mais completa do Corpo de Bombeiros paulista. Na prática, o melhor caminho costuma ser o condomínio contratar um estudo da capacidade elétrica do prédio inteiro, para que os pontos sejam instalados com planejamento, e não um a um."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Cada caso é um caso",
+      "texto": "O que está aqui é a regra geral da lei e da norma. Antes de instalar em condomínio, leia a convenção e o regimento e converse com o síndico. Em caso de recusa ou dúvida, procure um advogado de direito imobiliário; para a parte técnica, um engenheiro eletricista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem está escolhendo um imóvel, a garagem passou a entrar na lista de perguntas: a vaga é fixa, a entrada de energia comporta um carregador, o prédio já tem estudo de carga? Mais ideias sobre o que observar estão nas outras matérias do [blog](/blog). Se você está procurando casa ou apartamento em Campinas e quer pesar esses pontos, a equipe da {{cliente}} pode ajudar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: carregador em casa é uma pequena obra elétrica, com projeto, circuito próprio e profissional responsável, e não um aparelho que se liga na primeira tomada."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso carregar o carro elétrico numa tomada comum de casa?",
+      "resposta": "Alguns carros trazem carregador portátil para tomada, mas a recarga exige corrente alta por muitas horas. O recomendado é um circuito exclusivo com DR, avaliado por um profissional habilitado, em vez de uma tomada qualquer ou extensão."
+    },
+    {
+      "pergunta": "Qual norma trata da instalação de carregador de carro elétrico?",
+      "resposta": "É a ABNT NBR 17019, publicada em 2022, que complementa a NBR 5410 das instalações de baixa tensão. Ela pede, entre outros pontos, circuito terminal exclusivo e DR individual para cada ponto de recarga."
+    },
+    {
+      "pergunta": "O condomínio pode proibir a instalação do carregador na minha vaga?",
+      "resposta": "No estado de São Paulo, a Lei 18.403/2026 diz que o condomínio não pode proibir sem justificativa técnica ou de segurança fundamentada e documentada. O condômino paga a instalação e precisa cumprir requisitos técnicos. Para um caso concreto, procure um advogado."
+    },
+    {
+      "pergunta": "Preciso de ART para instalar o carregador?",
+      "resposta": "A lei paulista exige profissional habilitado com ART ou RRT para instalações em condomínio, e a orientação técnica é a mesma para casas. O profissional dimensiona o circuito e responde pelo serviço."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Alimentação de veículos elétricos na NBR 17019 — O Setor Elétrico",
+      "url": "https://www.osetoreletrico.com.br/?p=167325",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Lei nº 18.403, de 18 de fevereiro de 2026 — Assembleia Legislativa do Estado de São Paulo",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18403-18.02.2026.html",
+      "data": "fevereiro de 2026"
+    },
+    {
+      "nome": "Lei 18.403/26 de SP: recarga de veículos elétricos em condomínios — Migalhas",
+      "url": "https://www.migalhas.com.br/coluna/migalhas-edilicias/452093/lei-18-403-26-de-sp-recarga-de-veiculos-eletricos-em-condominios",
+      "data": "2026"
+    },
+    {
+      "nome": "Saiba como instalar carregador veicular em casa com segurança — Canal VE",
+      "url": "https://canalve.com.br/saiba-como-instalar-carregador-veicular-em-casa-com-seguranca/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Tramontina orienta sobre instalação segura de carregadores para veículos elétricos — O Mecânico",
+      "url": "https://omecanico.com.br/tramontina-orienta-sobre-instalacao-segura-de-carregadores-para-veiculos-eletricos/",
+      "data": "novembro de 2026"
+    }
+  ]
+}
