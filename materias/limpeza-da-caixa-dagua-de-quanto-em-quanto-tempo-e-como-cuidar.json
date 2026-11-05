@@ -1,0 +1,223 @@
+{
+  "slug": "limpeza-da-caixa-dagua-de-quanto-em-quanto-tempo-e-como-cuidar",
+  "tema": "limpeza e cuidados com a caixa dagua de casa",
+  "titulo": "Limpeza da caixa d'água: de quanto em quanto tempo e como cuidar",
+  "resumo": "Limpeza da caixa d'água a cada seis meses: por que fazer, o passo a passo das orientações oficiais, quando chamar empresa e o cuidado com a tampa.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "caixa d'água",
+    "manutenção",
+    "bem-estar",
+    "água"
+  ],
+  "capa": {
+    "alt": "Caixa d'água de polietileno azul, limpa e bem tampada, sobre uma laje coberta e iluminada por luz natural"
+  },
+  "redes": {
+    "legenda": "Quando foi a última vez que alguém limpou a caixa d'água da sua casa? A orientação da vigilância sanitária de São Paulo é limpar e desinfetar, no mínimo, a cada seis meses, sem sabão nem detergente, e manter a tampa bem fechada. Explicamos o passo a passo, quando chamar uma empresa e o cuidado com imóvel fechado. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "caixadagua",
+      "manutencaodacasa",
+      "casalimpa",
+      "bemestar",
+      "dicasdecasa",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **limpeza da caixa d'água** é daquelas tarefas que somem da memória: a água chega pela torneira, parece limpa e ninguém sobe até o forro para conferir. Mas é ali que fica guardada a água usada para beber, cozinhar e tomar banho, e o reservatório acumula areia, lodo e, às vezes, folhas e insetos ao longo dos meses."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: as orientações oficiais pedem limpeza e desinfecção **no mínimo a cada seis meses**, e antes disso se a água mudar de cor, cheiro ou gosto ou se algo cair dentro. O trabalho usa só água, pano, escova macia e água sanitária, nunca sabão. E a tampa precisa ficar bem fechada o tempo todo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Limpe e desinfete a caixa d'água pelo menos a cada seis meses e anote a data.",
+        "Use só água, água sanitária sem perfume, panos limpos e escova ou esponja macia; nada de sabão, detergente ou palha de aço.",
+        "Mantenha a tampa bem vedada para impedir a entrada de sujeira, insetos e pequenos animais.",
+        "Caixa alta, de difícil acesso ou de prédio pede empresa especializada."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a caixa d'água precisa de cuidado se a água já chega tratada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A empresa de saneamento entrega a água tratada até a entrada do imóvel, dentro dos padrões de potabilidade. Daí para dentro, a responsabilidade é de quem mora. Foi o que lembrou a Sanepar, do Paraná, ao divulgar uma pesquisa feita no estado: cerca de 31% dos imóveis com caixa d'água não tinham feito a limpeza do reservatório no último ano."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com o tempo, partículas que vêm pela rede se depositam no fundo e formam uma camada de lodo. Se a tampa não veda bem, entram folhas, poeira, insetos e até pequenos animais. Água parada e mal tampada também pode virar criadouro do mosquito *Aedes aegypti*, transmissor da dengue, segundo a Secretaria da Saúde do Rio Grande do Sul."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso a manutenção é um hábito de casa, como trocar o filtro ou limpar calhas. Não é preciso alarme: é questão de colocar na agenda, fazer direito e registrar. Quem cuida da casa com atenção à [qualidade de vida e ao conforto](/blog/categoria/bem-estar) costuma incluir a caixa d'água na mesma lista de revisões semestrais."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quando limpar a caixa d'água",
+      "colunas": [
+        "Situação",
+        "O que fazer"
+      ],
+      "linhas": [
+        [
+          "Rotina",
+          "Limpar e desinfetar pelo menos a cada seis meses"
+        ],
+        [
+          "Água com cor, cheiro ou gosto diferente",
+          "Limpar antes do prazo"
+        ],
+        [
+          "Objeto, folha ou animal caiu dentro",
+          "Limpar logo"
+        ],
+        [
+          "Tampa quebrada ou mal vedada",
+          "Trocar a tampa, descartar a água e limpar"
+        ],
+        [
+          "Imóvel fechado por muito tempo",
+          "Limpar antes de voltar a usar a água"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Resumo das orientações do Centro de Vigilância Sanitária de São Paulo, da Secretaria da Saúde do RS e da Sanepar."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é a limpeza, segundo as orientações oficiais"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Centro de Vigilância Sanitária (CVS) do estado de São Paulo publicou um comunicado de referência para reservatórios de até 2.000 litros. Outras companhias e secretarias, como o DAE de Jundiaí e a Secretaria da Saúde do RS, têm guias parecidos. Os detalhes variam um pouco, mas a lógica é a mesma: esvaziar, esfregar, desinfetar com cloro e enxaguar a tubulação."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Programe o dia:** feche o registro de entrada ou amarre a boia e use a água até restar um pouco no fundo.",
+        "**Proteja a saída:** tampe o cano que leva água para a casa com um pano limpo, para a sujeira não entrar na tubulação.",
+        "**Esfregue:** paredes, fundo e tampa, com pano ou escova macia usados só para isso. Retire o lodo com pá de plástico e balde.",
+        "**Desinfete:** encha a caixa e acrescente água sanitária na proporção do guia que você segue. O comunicado do CVS fala em cerca de 1 litro para cada 1.000 litros de água.",
+        "**Espere:** deixe agir por cerca de duas horas, sem usar a água.",
+        "**Enxágue a rede:** esvazie a caixa abrindo torneiras e chuveiros e dando descarga; essa água pode lavar quintal e calçada.",
+        "**Encha e registre:** reabra a entrada, tampe bem e anote a data da limpeza e a da próxima."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Nada de sabão nem palha de aço",
+      "texto": "As orientações oficiais pedem para não usar sabão, detergente, outros produtos de limpeza nem escova de aço. Eles deixam resíduo na água ou riscam a caixa, criando ranhuras onde a sujeira se acumula. Use água sanitária comum, sem perfume nem corante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A segurança vem antes de tudo. Caixa no forro ou em cima da laje exige escada firme, chão que aguente o peso e alguém por perto. Use luvas, roupa limpa e, se precisar entrar no reservatório, botas de borracha reservadas para isso. Se o acesso for difícil, se houver fiação no caminho ou se você não se sente seguro em altura, não suba: chame uma empresa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Fazer você mesmo ou contratar uma empresa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em casa, com uma caixa pequena e de fácil acesso, a limpeza costuma caber numa manhã. O DAE de Jundiaí sugere separar pelo menos três horas para a tarefa. O que pesa é o acesso: caixas altas, em torres, com várias unidades ou muito pesadas pedem gente treinada, equipamento de segurança e, às vezes, esvaziamento com bomba."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Limpar a caixa d'água por conta própria",
+      "pros": [
+        "Você controla a data e confere o resultado de perto.",
+        "O trabalho usa materiais simples e fáceis de achar.",
+        "Vira um hábito semestral junto com outras revisões da casa."
+      ],
+      "contras": [
+        "Subir em forro ou laje tem risco de queda.",
+        "Erro na proporção do cloro ou no enxágue compromete o resultado.",
+        "Caixas grandes ou de prédio exigem equipe e equipamento."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em prédios e condomínios, a caixa é coletiva e a limpeza é responsabilidade da administração. A regra varia por estado e por município: no Rio Grande do Sul, por exemplo, uma norma estadual exige que estabelecimentos coletivos contratem empresa licenciada pela vigilância sanitária. Se você mora em condomínio, pergunte ao síndico a data da última limpeza e peça o comprovante do serviço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao contratar, peça que a empresa explique o método, informe os produtos usados e entregue um registro com a data e a próxima limpeza. Desconfie de quem promete o serviço em poucos minutos ou sugere produtos de limpeza comuns. Na dúvida sobre as exigências da sua cidade, a vigilância sanitária municipal ou a companhia de saneamento local orienta."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Tampa, imóvel fechado e outros cuidados que fazem diferença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A tampa é a parte mais simples e mais esquecida. Ela precisa estar inteira, encaixada e bem presa, sem frestas. Se estiver rachada, troque. A Sanepar orienta que, quando a tampa não fecha bem, a água guardada seja descartada e a caixa limpa na hora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Imóvel fechado merece atenção especial. Casa de veraneio, apartamento desocupado ou imóvel parado à venda passa semanas com a água parada. Antes de voltar a usar, ou antes de entregar as chaves a um novo morador, faça a limpeza. Para quem está vendendo, é um cuidado simples que mostra ao comprador uma casa bem mantida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra, a caixa d'água entra no roteiro da visita: veja onde ela fica, se o acesso é seguro, se a tampa veda e se há registro da última limpeza. Para mais ideias de manutenção e de morar bem, explore o [blog](/blog). E, se você está comprando ou vendendo em Campinas, a equipe da {{cliente}} acompanha a visita e ajuda a organizar o que conferir. Água boa em casa começa com uma caixa limpa e tampada."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "De quanto em quanto tempo devo limpar a caixa d'água?",
+      "resposta": "O Centro de Vigilância Sanitária de São Paulo orienta limpar e desinfetar no mínimo a cada seis meses. Limpe antes se a água mudar de cor, cheiro ou gosto ou se algo cair dentro."
+    },
+    {
+      "pergunta": "Posso usar detergente para limpar a caixa d'água?",
+      "resposta": "Não. As orientações oficiais pedem para não usar sabão, detergente, outros produtos de limpeza nem palha de aço. Use água, panos limpos, escova macia e água sanitária sem perfume para a desinfecção."
+    },
+    {
+      "pergunta": "Quanto tempo depois da limpeza posso usar a água?",
+      "resposta": "Os guias oficiais pedem que a água com cloro fique cerca de duas horas na caixa e na tubulação, sem uso. Depois, esvazie tudo, encha de novo e a água pode ser usada normalmente."
+    },
+    {
+      "pergunta": "Em condomínio, quem limpa a caixa d'água?",
+      "resposta": "A caixa coletiva é responsabilidade da administração do condomínio. Pergunte ao síndico a data da última limpeza e peça o comprovante; as exigências variam conforme o estado e o município."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Comunicado CVS 006/2011: limpeza e desinfecção de reservatórios — Centro de Vigilância Sanitária de São Paulo",
+      "url": "https://cvs.saude.sp.gov.br/zip/comunicado%20CVS%20006.pdf",
+      "data": "janeiro de 2011"
+    },
+    {
+      "nome": "Saúde divulga orientações sobre limpeza e desinfecção de caixas d'água — Governo do Rio Grande do Sul",
+      "url": "https://estado.rs.gov.br/saude-divulga-orientacoes-sobre-limpeza-e-desinfeccao-de-caixas-d-agua",
+      "data": "julho de 2018"
+    },
+    {
+      "nome": "Sanepar alerta: 30,7% dos imóveis do Paraná não limparam a caixa d'água no último ano — Agência Estadual de Notícias do Paraná",
+      "url": "https://www.parana.pr.gov.br/aen/Noticia/Sanepar-alerta-307-dos-imoveis-do-Parana-nao-limparam-caixa-dagua-no-ultimo-ano",
+      "data": "fevereiro de 2025"
+    },
+    {
+      "nome": "Passo a passo da limpeza da caixa d'água — DAE Jundiaí",
+      "url": "https://daejundiai.com.br/wp-content/uploads/2016/12/FOLHETO_CAIXA-D%C3%81GUA.pdf",
+      "data": "dezembro de 2016"
+    }
+  ]
+}
