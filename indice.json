@@ -837,7 +837,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-05T17:26:08.608Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "mata-de-santa-genebra-campinas-floresta-urbana",
+      "titulo": "Mata de Santa Genebra: a grande floresta urbana de Campinas",
+      "tema": "mata de santa genebra floresta urbana de campinas",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-05T20:24:29.375Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-05T17:26:08.609Z"
+  "atualizadoEm": "2026-11-05T20:24:29.376Z"
 }
