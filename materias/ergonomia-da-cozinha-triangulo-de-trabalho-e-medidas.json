@@ -1,0 +1,285 @@
+{
+  "slug": "ergonomia-da-cozinha-triangulo-de-trabalho-e-medidas",
+  "tema": "ergonomia da cozinha triangulo de trabalho e medidas",
+  "titulo": "Ergonomia da cozinha: triângulo de trabalho, alturas e circulação",
+  "resumo": "As medidas que fazem uma cozinha funcionar: distância entre pia, fogão e geladeira, altura da bancada, largura de corredor e espaço na ilha.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "cozinha",
+    "ergonomia",
+    "projeto de interiores",
+    "marcenaria",
+    "medidas"
+  ],
+  "capa": {
+    "alt": "Cozinha clara em U com bancada de pedra, cuba sob a janela, cooktop de um lado e geladeira embutida do outro"
+  },
+  "redes": {
+    "legenda": "Sabia que existe uma medida para a distância entre pia, fogão e geladeira? O chamado triângulo de trabalho, a altura certa da bancada e a largura do corredor decidem se a cozinha cansa ou ajuda. Reunimos no blog as medidas usadas por projetistas e o que fazer quando a planta não ajuda. Leia o artigo completo no blog (link na bio) e salve para a próxima reforma.",
+    "hashtags": [
+      "cozinha",
+      "cozinhaplanejada",
+      "ergonomia",
+      "decoracao",
+      "arquitetura",
+      "interiores",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **ergonomia da cozinha** é aquilo que você só percebe quando falta: a pia longe do fogão, a bancada que faz doer as costas, a porta da lava-louças que trava a passagem. Uma cozinha bonita na foto pode ser cansativa no dia a dia, e a diferença quase sempre está em meia dúzia de medidas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A boa notícia é que essas medidas são conhecidas. Projetistas usam há décadas o triângulo de trabalho, referências de altura de bancada e larguras mínimas de corredor publicadas por associações do setor. Com elas, dá para avaliar uma cozinha na visita a um imóvel ou conversar de igual para igual com quem vai desenhar a sua."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O triângulo liga pia, fogão e geladeira: cada lado entre 1,20 m e 2,70 m, e a soma entre 3,60 m e cerca de 8 m.",
+        "A altura da bancada deve seguir quem mais cozinha, e não um número padrão.",
+        "Corredor de trabalho com pelo menos 1,07 m para uma pessoa e 1,22 m para duas.",
+        "Banqueta na ilha pede espaço de joelho e uma faixa livre atrás para passar."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Pia, fogão e geladeira: como posicionar o triângulo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **triângulo de trabalho** liga os três pontos que mais se usa numa cozinha: a geladeira, onde se guarda; a pia, onde se lava e prepara; e o fogão, onde se cozinha. A ideia é que esses três fiquem perto o bastante para poupar passos, mas não tão perto que falte bancada entre eles."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As diretrizes de planejamento da NKBA, a associação norte-americana de projetistas de cozinha e banheiro, recomendam que cada lado tenha entre 1,2 m e 2,7 m e que a soma dos três não passe de 7,9 m. Referências publicadas no Brasil, como a reunida pelo *Correio Braziliense*, falam em soma mínima de 3,60 m e máxima de 8 m."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outro detalhe: nenhuma ilha ou passagem deve cortar uma linha do triângulo em mais de 30 cm. Se o caminho da geladeira até a pia obriga a contornar a ilha, ou se o corredor da casa atravessa a área de trabalho, a cozinha vira rota de passagem e quem cozinha passa o tempo desviando."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Como o triângulo se comporta em cada formato de cozinha",
+      "colunas": [
+        "Formato",
+        "Como fica o triângulo",
+        "Cuidado principal"
+      ],
+      "linhas": [
+        [
+          "Em U",
+          "O mais eficiente: pia na base, fogão e geladeira nas laterais",
+          "Largura entre as bancadas para duas pessoas"
+        ],
+        [
+          "Em L",
+          "Ocupa duas paredes vizinhas e libera espaço para mesa",
+          "Não deixar a geladeira isolada na ponta"
+        ],
+        [
+          "Linear",
+          "O triângulo vira uma linha",
+          "Pia no meio, com bancada dos dois lados"
+        ],
+        [
+          "Com ilha",
+          "Funciona por zonas de trabalho",
+          "A ilha não pode obrigar a contorná-la para chegar à geladeira"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "O triângulo de trabalho — Correio Braziliense",
+        "url": "https://www.correiobraziliense.com.br/cbradar/o-triangulo-de-trabalho-a-regra-de-ouro-para-cozinhas-funcionais-pia-fogao-geladeira/"
+      },
+      "nota": "Em cozinhas lineares, a fabricante Siemens também recomenda manter a área de lavagem no meio da sequência."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o triângulo não é lei. Cozinhas grandes, com dois cozinheiros, segunda cuba ou forno separado do cooktop, costumam funcionar melhor pensadas em **zonas**: guardar, lavar, preparar, cozinhar e servir. A lógica é a mesma, com menos passos e menos cruzamentos, só que aplicada a mais de três pontos."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Altura da bancada, do forno e da lava-louças"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A altura padrão de bancada que se vê em muitos projetos nem sempre serve a quem cozinha. A orientação da Siemens é basear a altura da superfície de trabalho na pessoa que vai usar a cozinha a maior parte do tempo. Para a área do cooktop, a referência é cerca de 20 cm abaixo do cotovelo, o que costuma dar entre 85 cm e 95 cm."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, o teste é simples: em pé, com o braço dobrado em ângulo reto, meça a altura do cotovelo até o chão. Uma bancada baixa demais faz curvar as costas para picar; alta demais cansa ombros e punhos. Em casas com duas pessoas de alturas muito diferentes, vale ter um trecho de bancada em outra altura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O forno e a lava-louças são os campeões de dor nas costas, porque obrigam a abaixar. Por isso a mesma fabricante sugere o forno embutido em torre, na altura dos olhos, e a lava-louças elevada de 30 cm a 40 cm do chão. Os utensílios mais usados devem ficar na faixa entre 80 cm e 160 cm de altura."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Bancada de preparo:** siga a altura do cotovelo de quem mais cozinha.",
+        "**Forno:** em torre, na altura dos olhos, evita abaixar com assadeira quente.",
+        "**Lava-louças:** elevada de 30 cm a 40 cm poupa a coluna ao carregar e esvaziar.",
+        "**Armários:** o que se usa todo dia entre 80 cm e 160 cm do chão; o resto em cima ou embaixo.",
+        "**Frente da lava-louças:** ao menos 90 cm livres para a porta abrir com alguém ao lado."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essas decisões entram no desenho da marcenaria, e vale discuti-las cedo com o arquiteto ou designer de interiores. Mais ideias de materiais e móveis estão na seção de [interiores do blog](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Corredores e bancada livre: quanto espaço deixar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A largura entre duas bancadas, ou entre a bancada e a ilha, é a medida que mais pesa no conforto. As diretrizes da NKBA indicam pelo menos 1,07 m de corredor de trabalho para uma pessoa e 1,22 m quando duas ou mais cozinham juntas. Passagens que não são área de trabalho pedem ao menos 91 cm."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Parece muito? A conta inclui a porta do forno aberta, a gaveta puxada e alguém passando atrás. Corredor estreito demais faz as portas baterem umas nas outras; largo demais transforma cada volta entre pia e fogão em uma pequena caminhada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A bancada livre ao lado de cada equipamento também tem medida. A NKBA recomenda ao lado da pia ao menos 61 cm de um lado e 46 cm do outro, ao lado do cooktop 30 cm de um lado e 38 cm do outro, e 38 cm junto à geladeira, de preferência do lado da maçaneta, para apoiar o que sai dela."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para circulação e apoio",
+      "colunas": [
+        "Espaço",
+        "Medida mínima recomendada"
+      ],
+      "linhas": [
+        [
+          "Corredor de trabalho, uma pessoa",
+          "1,07 m"
+        ],
+        [
+          "Corredor de trabalho, duas ou mais pessoas",
+          "1,22 m"
+        ],
+        [
+          "Passagem fora da área de trabalho",
+          "91 cm"
+        ],
+        [
+          "Bancada de preparo contínua junto à pia",
+          "91 cm de largura por 61 cm de profundidade"
+        ],
+        [
+          "Apoio ao lado do cooktop",
+          "30 cm de um lado e 38 cm do outro"
+        ],
+        [
+          "Apoio junto à geladeira",
+          "38 cm"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Kitchen Planning Guidelines — NKBA",
+        "url": "https://kb.nkba.org/uploads/2022/05/Kitchen-Planning-Guidelines.pdf"
+      },
+      "nota": "Medidas convertidas das diretrizes originais em polegadas e arredondadas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A bancada de preparo, aliás, costuma ser a grande esquecida. A recomendação é um trecho contínuo de pelo menos 91 cm de largura por 61 cm de profundidade, colado à pia. É ali que se corta, tempera e monta o prato. Cuba e cooktop grudados, sem esse respiro entre eles, são um erro comum em cozinhas compactas."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ilha com banquetas: o espaço que ninguém mede"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ilha com banquetas virou o lugar do café da manhã e da conversa enquanto alguém cozinha. Para funcionar, cada lugar pede cerca de 61 cm de largura. A profundidade livre para os joelhos depende da altura do tampo, segundo a NKBA: quanto mais alto o balcão, menos espaço de perna é necessário."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Num tampo de 76 cm, altura de mesa, a referência é 46 cm de espaço para os joelhos. Num balcão de 91 cm, perto da altura de bancada, são 38 cm. Num balcão alto de 107 cm, 30 cm bastam. Atrás das banquetas, deixe ao menos 81 cm até a parede se ninguém passar ali, e cerca de 1,12 m se for passagem."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Banquetas na ilha",
+      "pros": [
+        "Integra a cozinha à sala e a quem está chegando",
+        "Resolve refeições rápidas sem ocupar a mesa de jantar",
+        "Aproveita o lado da ilha que ficaria sem uso"
+      ],
+      "contras": [
+        "Exige profundidade extra no tampo e faixa livre atrás",
+        "Banqueta muito alta é desconfortável para crianças e idosos",
+        "Se a ilha tem cooktop, quem senta fica perto do calor e da gordura"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E quando a ilha não cabe? Se o espaço não permite os corredores de 1,07 m em volta, uma península encostada na parede ou uma bancada em L costumam render mais do que uma ilha espremida. Ilha sem circulação vira obstáculo, e a cozinha perde justamente o que a ergonomia tenta ganhar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem está procurando um imóvel, essas medidas ajudam na visita: leve uma trena, confira o corredor entre as bancadas, a bancada livre ao lado da pia e se o forno obriga a abaixar. Muitas coisas a marcenaria resolve, mas a largura da cozinha não muda sem obra. Outros temas da casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando casa ou apartamento em Campinas e quer uma cozinha que funcione no dia a dia, a equipe da {{cliente}} pode ajudar a separar os imóveis com a planta certa e marcar as visitas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: uma cozinha confortável nasce de medidas simples, pensadas para quem cozinha, antes de qualquer escolha de cor ou pedra."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual é a medida do triângulo de trabalho na cozinha?",
+      "resposta": "As diretrizes da NKBA recomendam que cada lado, entre geladeira, pia e fogão, tenha de 1,2 m a 2,7 m, com soma de até 7,9 m. Referências brasileiras citam soma mínima de 3,60 m e máxima de 8 m."
+    },
+    {
+      "pergunta": "Qual a altura ideal da bancada da cozinha?",
+      "resposta": "Depende de quem cozinha. A orientação da Siemens é tomar como base a altura do cotovelo da pessoa que mais usa a cozinha; na área do cooktop, cerca de 20 cm abaixo do cotovelo, o que costuma ficar entre 85 cm e 95 cm."
+    },
+    {
+      "pergunta": "Qual a largura mínima entre a bancada e a ilha?",
+      "resposta": "A NKBA indica pelo menos 1,07 m de corredor de trabalho para uma pessoa e 1,22 m quando duas ou mais cozinham ao mesmo tempo."
+    },
+    {
+      "pergunta": "Quanto espaço cada banqueta precisa na ilha?",
+      "resposta": "Cerca de 61 cm de largura por lugar. A profundidade para os joelhos varia com a altura do tampo: 38 cm num balcão de 91 cm e 30 cm num balcão alto de 107 cm, segundo a NKBA."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Kitchen Planning Guidelines — National Kitchen & Bath Association (NKBA)",
+      "url": "https://kb.nkba.org/uploads/2022/05/Kitchen-Planning-Guidelines.pdf",
+      "data": "maio de 2022"
+    },
+    {
+      "nome": "O triângulo de trabalho: a regra de ouro para cozinhas funcionais — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/o-triangulo-de-trabalho-a-regra-de-ouro-para-cozinhas-funcionais-pia-fogao-geladeira/",
+      "data": "2026"
+    },
+    {
+      "nome": "Planeamento de cozinha: loiça — Siemens Home",
+      "url": "https://www.siemens-home.bsh-group.com/pt/inspiracao/design/kitchen-planning/loica",
+      "data": "novembro de 2026"
+    }
+  ]
+}

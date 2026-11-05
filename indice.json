@@ -765,7 +765,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-05T11:19:30.838Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "ergonomia-da-cozinha-triangulo-de-trabalho-e-medidas",
+      "titulo": "Ergonomia da cozinha: triângulo de trabalho, alturas e circulação",
+      "tema": "ergonomia da cozinha triangulo de trabalho e medidas",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-05T11:20:43.948Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-05T11:19:30.839Z"
+  "atualizadoEm": "2026-11-05T11:20:43.948Z"
 }
