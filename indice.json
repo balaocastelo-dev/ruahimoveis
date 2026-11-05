@@ -855,7 +855,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-05T20:25:31.925Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "bloco-ceramico-ou-bloco-de-concreto-na-construcao-da-casa",
+      "titulo": "Bloco cerâmico ou bloco de concreto: qual usar nas paredes da casa",
+      "tema": "bloco ceramico ou bloco de concreto na alvenaria",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-05T20:26:44.370Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-05T20:25:31.926Z"
+  "atualizadoEm": "2026-11-05T20:26:44.370Z"
 }

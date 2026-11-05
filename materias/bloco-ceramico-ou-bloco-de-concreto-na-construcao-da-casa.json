@@ -1,0 +1,244 @@
+{
+  "slug": "bloco-ceramico-ou-bloco-de-concreto-na-construcao-da-casa",
+  "tema": "bloco ceramico ou bloco de concreto na alvenaria",
+  "titulo": "Bloco cerâmico ou bloco de concreto: qual usar nas paredes da casa",
+  "seo": {
+    "titulo": "Bloco cerâmico ou bloco de concreto: qual usar na casa"
+  },
+  "resumo": "Bloco cerâmico ou bloco de concreto: diferenças de peso, precisão, conforto térmico e acústico, normas da ABNT e o que perguntar ao engenheiro na obra.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "alvenaria",
+    "casa nova",
+    "obra"
+  ],
+  "capa": {
+    "alt": "Parede em construção com blocos cerâmicos e blocos de concreto empilhados lado a lado num canteiro de obra limpo"
+  },
+  "redes": {
+    "legenda": "Bloco cerâmico ou bloco de concreto? A escolha muda o peso da parede, o conforto térmico, o isolamento de ruído e até o jeito de passar os canos. Não existe campeão absoluto: cada um vai melhor num tipo de obra. Explicamos as diferenças, as normas da ABNT e o que perguntar ao engenheiro antes de comprar o material. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "alvenaria",
+      "casanova",
+      "obra",
+      "arquitetura",
+      "engenhariacivil",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A dúvida entre **bloco cerâmico ou bloco de concreto** aparece cedo, quando o projeto da casa sai do papel e o orçamento da alvenaria chega. Os dois parecem fazer a mesma coisa, levantar paredes, mas têm peso, precisão, comportamento térmico e acústico diferentes. E, em alguns casos, a parede não só fecha o ambiente: ela segura a casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: nenhum é melhor em tudo. O cerâmico costuma ser mais leve e, nos sistemas estudados, deixa passar menos calor; o de concreto é mais preciso nas medidas e, por ter mais massa, pode isolar melhor o ruído. A escolha depende de a parede ser de vedação ou estrutural, do clima e do projeto, sempre com engenheiro ou arquiteto responsável."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Primeiro defina o papel da parede: só vedação ou alvenaria estrutural, que sustenta a casa.",
+        "O bloco cerâmico segue a NBR 15270 e o de concreto, a NBR 6136; exija material que atenda à norma.",
+        "Cerâmico tende a ser mais leve; concreto tem medidas mais regulares, o que ajuda a reduzir desperdício.",
+        "Conforto térmico e acústico depende da parede inteira, com reboco e espessura, não só do bloco."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Antes do material, decida o papel da parede"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há dois jeitos de usar blocos numa casa. Na **alvenaria de vedação**, a estrutura é feita de pilares, vigas e lajes de concreto armado, e os blocos só preenchem os vãos, separando ambientes e protegendo do clima. Na **alvenaria estrutural**, as próprias paredes carregam o peso da casa, com blocos específicos, graute, que é um concreto fluido para preencher furos, e barras de aço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa diferença muda tudo. Na vedação, você tem liberdade para escolher entre cerâmico e concreto e, no futuro, pode até abrir um vão com orientação técnica. Na estrutural, o bloco é parte do cálculo do engenheiro, e tirar uma parede numa reforma pode comprometer a casa. Quem compra uma casa pronta deve perguntar qual sistema foi usado antes de planejar qualquer mudança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Caderno de Encargos da Sudecap, da Prefeitura de Belo Horizonte, resume bem as funções da parede de vedação: além de fechar o espaço, ela contribui para o isolamento térmico e acústico, a segurança contra incêndio e a estanqueidade, que é a capacidade de não deixar a água passar. Ou seja, mesmo sem segurar a casa, ela pesa no conforto do dia a dia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que muda entre o bloco cerâmico e o bloco de concreto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **bloco cerâmico** é feito de argila, moldado por extrusão e queimado em forno. As regras de fabricação e ensaio estão na NBR 15270, da ABNT, revisada em 2023. Ele tem ranhuras nas faces para a argamassa aderir melhor e furos que podem ser horizontais ou verticais, o que altera a resistência exigida. É o bloco mais visto nas obras de vedação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **bloco de concreto** é feito de cimento, agregados e água, prensado e vibrado em máquina. A norma de referência é a NBR 6136. Ele existe em versões de vedação e estruturais, em várias larguras, e suas tolerâncias de medida são mais apertadas que as do cerâmico, segundo o caderno da Sudecap. Isso deixa a parede mais regular e facilita a modulação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Bloco cerâmico e bloco de concreto lado a lado",
+      "colunas": [
+        "Ponto",
+        "Bloco cerâmico",
+        "Bloco de concreto"
+      ],
+      "linhas": [
+        [
+          "Norma da ABNT",
+          "NBR 15270 (partes 1 e 2)",
+          "NBR 6136"
+        ],
+        [
+          "Matéria-prima",
+          "Argila queimada",
+          "Cimento, agregados e água"
+        ],
+        [
+          "Peso",
+          "Tende a ser mais leve",
+          "Tende a ser mais pesado"
+        ],
+        [
+          "Regularidade das medidas",
+          "Tolerância maior",
+          "Tolerância menor, mais preciso"
+        ],
+        [
+          "Uso mais comum",
+          "Vedação; há versões estruturais",
+          "Vedação e alvenaria estrutural"
+        ],
+        [
+          "Calor",
+          "Nos sistemas estudados, deixa passar menos calor",
+          "Pode precisar de reboco ou isolante extra para o desempenho térmico"
+        ],
+        [
+          "Ruído",
+          "Bom com juntas bem preenchidas",
+          "Mais massa pode ajudar no isolamento acústico"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Resumo de caderno técnico da Prefeitura de Belo Horizonte e de estudos da UFRJ e da UFRGS. O desempenho real depende da parede inteira e do projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No **conforto térmico**, um estudo da UFRGS apresentado no Encontro Nacional de Tecnologia do Ambiente Construído de 2024 comparou paredes avaliadas tecnicamente. As de bloco cerâmico tiveram transmitância térmica menor, ou seja, deixaram passar menos calor. Uma dissertação da UFRJ reuniu estudos em que paredes de concreto só com argamassa não atingiram o limite térmico, mas atingiram com isolante."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No **ruído**, a história se inverte em parte. No mesmo estudo da UFRGS, a parede interna de concreto avaliada teve o maior isolamento sonoro, efeito atribuído à sua massa maior. Para o bloco cerâmico, a dissertação da UFRJ cita pesquisa em que juntas verticais totalmente preenchidas de argamassa isolaram melhor que juntas falhadas. Detalhe de execução, portanto, conta tanto quanto o material."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Bloco cerâmico na parede de vedação",
+      "pros": [
+        "Costuma ser mais leve, o que alivia o transporte e a estrutura.",
+        "Nos sistemas estudados, teve melhor desempenho térmico.",
+        "É fácil de encontrar e conhecido pelas equipes de obra."
+      ],
+      "contras": [
+        "Medidas menos regulares podem pedir mais argamassa e reboco mais grosso.",
+        "A faixa de absorção de água admitida é ampla, de 8% a 22%, segundo o caderno da Sudecap.",
+        "Em alvenaria estrutural, as opções de bloco de concreto são mais comuns."
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Na obra: o que pedir para a parede durar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Seja qual for o bloco, o primeiro cuidado é a **qualidade do lote**. O caderno da Sudecap descreve conferências simples, como medir amostras, verificar se as faces estão planas e, no cerâmico, ouvir o som da batida e fazer teste com água para avaliar a queima. Peça ao fornecedor a declaração de conformidade com a norma e guarde a nota fiscal."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Armazenamento:** blocos em pilhas de até 1,80 m, sobre piso plano e seco, protegidos da chuva.",
+        "**Argamassa:** juntas em torno de 1 cm, sem saibro nem areia comum.",
+        "**Vergas e contravergas:** peças de concreto sobre e sob portas e janelas, passando pelo menos 20 cm de cada lado do vão, para evitar trincas inclinadas.",
+        "**Encunhamento:** o fechamento entre a parede e a viga ou laje, feito depois de um intervalo, com material adequado.",
+        "**Instalações:** marcar e cortar os rasgos com serra, nunca abrir a marretadas."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As normas de execução também são diferentes. Para a vedação com blocos cerâmicos, a referência é a NBR 8545; para a alvenaria estrutural, a NBR 16868, que trata de projeto, execução e controle. Na estrutural, o caderno da Sudecap pede, por exemplo, blocos de concreto com mais de 21 dias de fabricação, para reduzir a expansão inicial do material."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Escolha de bloco estrutural, cálculo das paredes, abertura de vãos e retirada de paredes são decisões do engenheiro ou arquiteto responsável, com ART ou RRT, o registro de responsabilidade técnica. Não remova nem corte parede de alvenaria estrutural por conta própria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale lembrar do impacto ambiental, que entra cada vez mais na conversa. A dissertação da UFRJ comparou avaliações de ciclo de vida de blocos de concreto e cerâmicos e concluiu que nenhum material é ambientalmente superior em todos os cenários: o resultado muda com a fábrica, a distância de transporte e o sistema construtivo. Para mais temas de obra, veja a seção de [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como decidir no seu projeto, ou na casa que vai comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você vai construir, leve a pergunta ao projetista com o contexto da casa: clima, orientação do sol, distância entre ambientes ruidosos e quartos, e se haverá alvenaria estrutural. Peça que ele indique a espessura da parede, o tipo de reboco e o bloco que atendem à norma de desempenho, e não apenas o material mais barato no dia da compra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um raciocínio ajuda a conversa: quando o calor do sol é a maior preocupação, o bom desempenho térmico do cerâmico pesa a favor dele; quando a parede é estrutural, ou quando regularidade e isolamento de ruído pesam mais, o concreto ganha pontos. O projeto pode combinar os dois, e uma boa execução vale tanto quanto a escolha do bloco. Outras ideias para a obra estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está comprando uma casa pronta, pergunte qual sistema construtivo foi usado e peça o projeto e o manual do proprietário. Isso evita surpresas numa futura reforma. Para quem está comprando ou vendendo em Campinas, a equipe da {{cliente}} ajuda a reunir a documentação do imóvel e a organizar as visitas. O bloco certo é aquele que o seu projeto pede."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Bloco cerâmico ou de concreto: qual é mais quente por dentro?",
+      "resposta": "Em estudo da UFRGS com paredes avaliadas, as de bloco cerâmico deixaram passar menos calor. Mas o resultado depende da parede inteira, com reboco, espessura e, se houver, isolante. O projetista deve verificar o desempenho térmico exigido pela norma."
+    },
+    {
+      "pergunta": "Qual bloco isola mais o barulho?",
+      "resposta": "A massa ajuda no isolamento acústico, e uma parede interna de concreto teve o melhor resultado num estudo da UFRGS. Juntas bem preenchidas também fazem diferença no bloco cerâmico. Para quartos e paredes entre unidades, peça ao projetista a solução indicada."
+    },
+    {
+      "pergunta": "Posso derrubar uma parede de blocos numa reforma?",
+      "resposta": "Depende do sistema. Em alvenaria estrutural, a parede sustenta a casa e não deve ser retirada sem projeto. Mesmo em vedação, consulte um engenheiro ou arquiteto, com ART ou RRT, antes de abrir vãos."
+    },
+    {
+      "pergunta": "Quais normas valem para os blocos?",
+      "resposta": "O bloco cerâmico segue a NBR 15270 e o bloco de concreto, a NBR 6136, ambas da ABNT. A execução da vedação cerâmica tem a NBR 8545 e a alvenaria estrutural, a NBR 16868."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Caderno de Encargos Sudecap, capítulo 7: Alvenaria — Prefeitura de Belo Horizonte",
+      "url": "https://prefeitura.pbh.gov.br/sites/default/files/estrutura-de-governo/obras-e-infraestrutura/cap07-24-08-29_0.pdf",
+      "data": "agosto de 2024"
+    },
+    {
+      "nome": "Avaliação ambiental comparativa de blocos de concreto e cerâmicos para alvenaria de vedação — UFRJ",
+      "url": "https://pantheon.ufrj.br/bitstream/11422/29513/1/WWSilva.pdf",
+      "data": "2025"
+    },
+    {
+      "nome": "Perfil de desempenho de sistemas de vedação vertical para tomada de decisão — ENTAC 2024 (UFRGS)",
+      "url": "https://eventos.antac.org.br/index.php/entac/article/download/6386/4807/22062",
+      "data": "2024"
+    }
+  ]
+}
