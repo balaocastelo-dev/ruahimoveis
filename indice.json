@@ -999,7 +999,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-06T20:20:47.115Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "caixa-acoplada-ou-valvula-de-descarga-qual-escolher",
+      "titulo": "Caixa acoplada ou válvula de descarga: qual escolher no banheiro",
+      "tema": "caixa acoplada ou valvula de descarga no banheiro",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-06T23:21:49.370Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T20:20:47.116Z"
+  "atualizadoEm": "2026-11-06T23:21:49.371Z"
 }

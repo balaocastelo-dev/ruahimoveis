@@ -1,0 +1,171 @@
+{
+  "slug": "caixa-acoplada-ou-valvula-de-descarga-qual-escolher",
+  "tema": "caixa acoplada ou valvula de descarga no banheiro",
+  "titulo": "Caixa acoplada ou válvula de descarga: qual escolher no banheiro",
+  "resumo": "Caixa acoplada ou válvula de descarga? Veja o que muda em consumo, pressão da água, espaço, manutenção e acabamento antes de definir o banheiro da casa.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "banheiro",
+    "construção",
+    "reforma",
+    "hidráulica"
+  ],
+  "capa": {
+    "alt": "Banheiro claro com bacia sanitária branca, parede revestida em porcelanato acetinado e luz natural suave"
+  },
+  "redes": {
+    "legenda": "Você sabe de onde vem a força da descarga do seu banheiro? A válvula puxa a água direto do encanamento; a caixa acoplada usa o volume guardado no próprio vaso. Essa escolha mexe com espaço, manutenção, consumo e até com o diâmetro do cano na obra. Explicamos as diferenças e quando cada uma faz mais sentido. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "banheiro",
+      "construcao",
+      "reforma",
+      "casanova",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de projetar ou reformar o banheiro, a dúvida aparece cedo: **caixa acoplada ou válvula de descarga**? A primeira é o reservatório preso atrás do vaso, que enche e esvazia a cada uso. A segunda é o mecanismo embutido na parede, com um botão ou placa, que libera a água direto do encanamento da casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a caixa acoplada costuma ser a escolha mais simples, com consumo previsível e manutenção à vista. A válvula agrada a quem quer a parede limpa e descargas seguidas sem espera, mas só funciona bem se o encanamento e a pressão da água forem compatíveis com ela. Por isso, o ideal é decidir ainda no projeto hidráulico."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "As duas soluções trabalham com bacias de 6 litros por descarga, segundo as normas técnicas citadas pela USP.",
+        "A válvula depende da pressão da água e do diâmetro certo do cano; a caixa acoplada é menos exigente.",
+        "Na caixa acoplada, o volume é fixo; na válvula, segurar o botão gasta mais água.",
+        "Conserto de válvula costuma ser feito pela frente, mas pede peças do mesmo fabricante e da mesma bitola."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que muda no consumo, na pressão e no cano"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No consumo, a diferença é menor do que muita gente imagina. A especificação técnica de louças economizadoras da USP adota bacias de **6 litros por descarga** como valor nominal, tanto para o vaso ligado à válvula quanto para o vaso com caixa acoplada. A bacia segue a norma ABNT NBR 15097, a caixa acoplada segue a NBR 15491 e a válvula, a NBR 15857."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que pesa é o comportamento no uso. A caixa acoplada solta sempre o volume que guardou; com **duplo acionamento**, um botão faz a descarga completa e o outro, uma parcial, que a mesma especificação limita a até dois terços da completa. Já a válvula puxa água direto da rede da casa: enquanto o botão fica pressionado, a água continua descendo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A válvula também exige mais do encanamento, um tema que aparece sempre nas matérias de [construção e casas novas](/blog/categoria/construcao). Ela existe em duas bitolas (o diâmetro da rosca): **1 ½ polegada (DN 40)**, para baixa pressão, e **1 ¼ polegada (DN 32)**, para alta pressão. A pressão é medida em metros de coluna d'água (m.c.a.): grosso modo, a altura entre o fundo da caixa d'água e o ponto da descarga."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Bitolas de válvula de descarga e onde costumam ser usadas",
+      "colunas": [
+        "Bitola",
+        "Faixa de pressão indicada",
+        "Uso mais comum"
+      ],
+      "linhas": [
+        [
+          "1 ½ polegada (DN 40)",
+          "De 1,5 a 15 m.c.a.",
+          "Casas térreas, sobrados e andares perto da caixa d'água"
+        ],
+        [
+          "1 ¼ polegada (DN 32)",
+          "De 10 a 40 m.c.a.",
+          "Andares baixos de prédios altos, com grande coluna de água"
+        ]
+      ],
+      "fonte": {
+        "nome": "Válvula de descarga: qual bitola escolher e como reparar — Hiperfer",
+        "url": "https://www.hiperfer.com.br/blog/valvula-de-descarga-tipos-como-escolher"
+      },
+      "nota": "Na prática, a perda de carga no cano muda a conta. Quem define é o projeto hidráulico."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Bitola errada não tem conserto",
+      "texto": "Válvula incompatível com a pressão da casa costuma dar descarga fraca demais ou o golpe de aríete, aquela pancada no cano quando a água para de repente. Troca de bitola mexe no encanamento embutido: fica a cargo de um encanador experiente, com o projeto em mãos, e nunca é ajuste para fazer por conta própria."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual combina com o seu banheiro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pense primeiro em espaço e acabamento. A caixa acoplada ocupa mais volume atrás do vaso e pode apertar um lavabo estreito. A válvula some na parede e deixa o visual mais limpo, mas o mecanismo fica escondido: se a manutenção não puder ser feita pela placa frontal, abrir a parede vira uma possibilidade. Num banheiro de visitas muito usado, a válvula tem a vantagem de não esperar a caixa encher."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Caixa acoplada: o que pesa a favor e contra",
+      "pros": [
+        "Volume de água fixo por descarga, mais fácil de controlar",
+        "Mecanismo à vista, com manutenção sem quebrar parede",
+        "Funciona bem com pressões mais baixas e encanamento comum"
+      ],
+      "contras": [
+        "Ocupa mais espaço atrás do vaso",
+        "Visual menos minimalista do que a parede lisa",
+        "Descargas seguidas precisam esperar o reservatório encher"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Alguns cuidados valem para os dois. Na caixa acoplada, apertar os dois botões ao mesmo tempo não aumenta a vazão e pode entortar as hastes de plástico. Para descobrir vazamento, pingue corante na caixa e veja se a cor aparece no vaso sem ninguém acionar. Na válvula, água escorrendo depois da descarga, botão que volta devagar ou chiado na parede pedem revisão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma casa pronta, vale olhar o tipo de descarga na visita e perguntar como foi feita a manutenção; no [blog](/blog) há outros roteiros do que observar na visita. E, quando a hora for de comprar ou vender um imóvel em Campinas, a equipe da {{cliente}} pode ajudar com as dúvidas da negociação. A decisão, em uma linha: caixa acoplada pela simplicidade, válvula pelo visual, desde que o encanamento acompanhe."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Válvula de descarga gasta mais água que caixa acoplada?",
+      "resposta": "As bacias das duas soluções trabalham com 6 litros por descarga nas normas técnicas. A diferença está no uso: na válvula, segurar o botão faz descer mais água, enquanto a caixa acoplada solta só o volume que guardou."
+    },
+    {
+      "pergunta": "Dá para trocar a válvula por caixa acoplada numa reforma?",
+      "resposta": "Normalmente dá, mas envolve fechar o ponto da válvula na parede, escolher uma bacia compatível e conferir a posição da saída de esgoto. É serviço para um profissional, de preferência com orientação de arquiteto ou engenheiro na reforma."
+    },
+    {
+      "pergunta": "Como saber se a pressão da minha casa serve para válvula?",
+      "resposta": "Uma estimativa grosseira é medir a altura entre o fundo da caixa d'água e o ponto da descarga: cada metro equivale a cerca de 1 m.c.a. Mas a perda no encanamento muda essa conta, por isso a confirmação deve vir do projeto hidráulico ou de um profissional."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Equipamentos Sanitários Economizadores: Especificações Técnicas para a USP — Superintendência do Espaço Físico da USP",
+      "url": "https://www.sef.usp.br/wp-content/uploads/sites/52/2016/07/EquipEconomizadores_Especificações_jun16.pdf",
+      "data": "junho de 2016"
+    },
+    {
+      "nome": "Válvula de descarga: qual bitola escolher e como reparar — Hiperfer",
+      "url": "https://www.hiperfer.com.br/blog/valvula-de-descarga-tipos-como-escolher",
+      "data": "agosto de 2026"
+    },
+    {
+      "nome": "Caixa acoplada ou válvula de descarga: qual opção é melhor — Blog Telhanorte",
+      "url": "https://blog.telhanorte.com.br/caixa-acoplada-ou-valvula-de-descarga-qual-opcao-e-melhor/",
+      "data": "dezembro de 2025"
+    },
+    {
+      "nome": "Descarga com dois botões: como economizar água — Olhar Digital",
+      "url": "https://olhardigital.com.br/curiosidades/?p=23573",
+      "data": "setembro de 2026"
+    }
+  ]
+}
