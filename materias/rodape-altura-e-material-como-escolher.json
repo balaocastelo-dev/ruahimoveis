@@ -1,0 +1,168 @@
+{
+  "slug": "rodape-altura-e-material-como-escolher",
+  "tema": "rodape qual altura e material escolher",
+  "titulo": "Rodapé: qual altura e qual material escolher em cada ambiente",
+  "resumo": "Rodapé alto ou baixo, de MDF, poliestireno ou porcelanato? Veja a regra da altura pelo pé-direito, onde cada material funciona e quando vale o embutido.",
+  "formato": "dica",
+  "categoria": "interiores",
+  "etiquetas": [
+    "rodapé",
+    "acabamento",
+    "interiores",
+    "reforma"
+  ],
+  "capa": {
+    "alt": "Canto de sala com parede clara, rodapé branco alto e piso de madeira iluminado pelo sol da tarde"
+  },
+  "redes": {
+    "legenda": "Rodapé parece detalhe, mas muda a cara da sala. Uma regra simples ajuda na altura: divida o pé-direito por 30. Em 2,70 m, algo perto de 9 a 10 cm. E o material depende do cômodo: MDF e madeira não gostam de umidade, poliestireno e porcelanato aguentam pano molhado. No blog, explicamos onde vai cada um e quando o rodapé embutido vale a pena. Leia o texto completo no blog (link na bio).",
+    "hashtags": [
+      "rodape",
+      "acabamento",
+      "decoracao",
+      "arquitetura",
+      "interiores",
+      "reforma",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de escolher o **rodapé**, a dúvida costuma ser dupla: qual altura deixa a sala proporcional e qual material aguenta a rotina de cada cômodo. É uma peça pequena, que protege a junção entre parede e piso de batidas de vassoura, aspirador e pés de cadeira, mas que aparece em todos os ambientes da casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a altura acompanha o **pé-direito**, que é a distância do piso ao teto, e o material acompanha a umidade do ambiente. Uma conta simples, que lojas de acabamento usam como referência, é dividir o pé-direito por 30. Em áreas secas, quase tudo funciona; em áreas molhadas, só materiais que não incham com água."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Altura de referência: pé-direito dividido por 30, entre 7 e 10 cm na maioria das casas.",
+        "MDF e madeira ficam nas áreas secas; poliestireno, PVC e porcelanato aguentam umidade.",
+        "Rodapé embutido ou invertido precisa ser previsto no projeto, antes do acabamento.",
+        "Na dúvida de cor, o branco combina com quase todo piso."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual altura escolher para o seu pé-direito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Rodapé baixo demais em sala alta parece mesquinho; alto demais em sala baixa achata o ambiente. A conta do pé-direito dividido por 30 dá um bom ponto de partida, e textos de decoração apontam de 7 a 10 cm como uma escolha segura. Acima disso, a altura vira recurso de estilo, mais comum em casas de pé-direito generoso."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Altura de referência do rodapé pelo pé-direito",
+      "colunas": [
+        "Pé-direito",
+        "Altura sugerida",
+        "Observação"
+      ],
+      "linhas": [
+        [
+          "Até 2,50 m",
+          "5 a 7 cm",
+          "Rodapé discreto ajuda a não achatar o cômodo"
+        ],
+        [
+          "De 2,50 m a 2,70 m",
+          "Cerca de 7 cm",
+          "A faixa mais comum em apartamentos"
+        ],
+        [
+          "De 2,70 m a 3 m",
+          "Cerca de 10 cm",
+          "Já comporta frisos e perfis mais marcados"
+        ],
+        [
+          "Acima de 3 m",
+          "15 a 20 cm",
+          "Rodapé alto vira parte da composição da sala"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Referência de proporção do guia de rodapés da Telhanorte, não regra técnica. O gosto e o estilo da casa também contam."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A cor muda a percepção tanto quanto a altura. Rodapé da mesma cor ou material do piso cria continuidade e alonga o ambiente; rodapé em contraste desenha o contorno do cômodo. O branco é a aposta mais fácil, porque conversa com madeira, pedra e cimento. Mais ideias de acabamento estão na categoria [interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual material vai bem em cada cômodo"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Madeira maciça:** clássica e bonita, mas mais cara e trabalhosa de instalar; fique longe de áreas úmidas.",
+        "**MDF:** o substituto mais comum da madeira, com bom custo-benefício; também não deve ficar onde há água frequente.",
+        "**Poliestireno:** não absorve água, resiste a mofo e a produtos de limpeza e aceita pintura; vai bem em salas, quartos e até banheiros.",
+        "**PVC:** flexível e resistente à água, com acabamento de aspecto mais plástico; costuma aparecer em cozinhas e lavanderias.",
+        "**Porcelanato ou cerâmica do próprio piso:** dá continuidade total e aguenta lavagem, mas o recorte e a instalação costumam encarecer o serviço."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também os modelos que não saltam da parede. O **embutido** fica no mesmo plano dela, e o **invertido** fica recuado, criando uma sombra que faz a parede parecer flutuar. Os dois acumulam menos poeira e têm visual limpo, mas dependem de parede e piso muito bem acabados e precisam nascer no projeto, antes do reboco e da pintura."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Rodapé que esconde fiação",
+      "texto": "Alguns perfis têm espaço para esconder fios. Passar cabos de energia por ali é serviço de eletricista habilitado, e rodapé embutido em parede nova deve constar no projeto do arquiteto ou engenheiro responsável."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na instalação do sobreposto, um cuidado faz diferença: em piso cerâmico, cole o rodapé só na parede, sem prender no piso, para respeitar a junta de dilatação, aquele pequeno espaço que absorve a movimentação dos materiais. Em paredes com tinta descascando, o fabricante costuma pedir selador antes da cola."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quando você visitar imóveis, repare no rodapé: ele conta muito sobre o cuidado do acabamento. Outros detalhes da casa estão no [blog](/blog), e a equipe da {{cliente}}, em Campinas, ajuda você a comprar ou vender. Altura pelo pé-direito, material pela umidade: com essas duas regras, o rodapé raramente erra."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Rodapé de MDF pode ir na cozinha?",
+      "resposta": "Não é a melhor escolha onde há água frequente, porque o MDF não é à prova d'água e pode inchar. Na cozinha e na lavanderia, poliestireno, PVC ou o próprio porcelanato do piso costumam durar mais."
+    },
+    {
+      "pergunta": "Dá para fazer casa sem rodapé?",
+      "resposta": "Dá, mas a parede e o piso precisam de acabamento muito preciso, porque nada esconde a junção. Essa escolha deve constar no projeto e ser combinada com quem executa a obra."
+    },
+    {
+      "pergunta": "Rodapé alto faz a sala parecer maior?",
+      "resposta": "Depende do pé-direito. Em ambientes altos, ele valoriza a proporção; em ambientes baixos, tende a achatar. Rodapé da cor da parede ou do piso ajuda a disfarçar a altura."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Tudo sobre rodapés — Telhanorte",
+      "url": "https://www.telhanorte.com.br/tudo-sobre-rodapes",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Applied, Flush and Reveal: What Are the Types of Baseboards? — ArchDaily",
+      "url": "https://www.archdaily.com/948279/applied-flush-and-reveal-what-are-the-types-of-baseboards/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Rodapé: acerte na altura, material e estilo para sua casa — Diário do Nordeste",
+      "url": "https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/ana-karenyna-/rodape-acerte-na-altura-material-e-estilo-para-sua-casa-1.3402426",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Rodapés: tipos e materiais — Durafloor",
+      "url": "https://www.durafloor.com.br/?p=124085",
+      "data": "novembro de 2026"
+    }
+  ]
+}
