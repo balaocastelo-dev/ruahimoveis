@@ -467,7 +467,7 @@
       "tipo": "principal",
       "categoria": "campinas",
       "criadaEm": "2026-10-31T17:20:01.202Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "adega-em-casa-armario-climatizado-ou-sala-de-vinhos",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:50:38.640Z"
+  "atualizadoEm": "2026-11-06T10:56:08.645Z"
 }

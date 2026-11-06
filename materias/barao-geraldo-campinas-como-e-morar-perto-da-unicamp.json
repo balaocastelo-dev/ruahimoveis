@@ -11,7 +11,10 @@
     "morar bem"
   ],
   "capa": {
-    "alt": "Rua residencial arborizada com casas térreas de jardim na frente e uma mata densa ao fundo, no fim da tarde"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/barao-geraldo-campinas-como-e-morar-perto-da-unicamp-d11adbf2.jpg",
+    "alt": "Rua residencial arborizada com casas térreas de jardim na frente e uma mata densa ao fundo, no fim da tarde",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Barão Geraldo: como é morar no distrito da Unicamp"
