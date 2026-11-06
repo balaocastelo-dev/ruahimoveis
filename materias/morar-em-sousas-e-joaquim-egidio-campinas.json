@@ -12,7 +12,10 @@
     "morar bem"
   ],
   "capa": {
-    "alt": "Casa térrea de arquitetura contemporânea com varanda de madeira, gramado e mata nativa em colinas ao fundo sob luz suave da manhã"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/morar-em-sousas-e-joaquim-egidio-campinas-499e2b5e.jpg",
+    "alt": "Casa térrea de arquitetura contemporânea com varanda de madeira, gramado e mata nativa em colinas ao fundo sob luz suave da manhã",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Você sabia que Campinas tem distritos onde a mata, a serra e o rio fazem parte do caminho de casa? Sousas e Joaquim Egídio guardam fazendas do tempo do café, ficam numa área de proteção ambiental e atraem quem quer morar perto do verde. Mas viver lá tem suas regras e seus trajetos. No blog, contamos a história, o jeito de viver e o que pesar antes de mudar. Leia a matéria completa no blog (link na bio).",

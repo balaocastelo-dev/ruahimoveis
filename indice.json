@@ -458,7 +458,7 @@
       "tipo": "principal",
       "categoria": "campinas",
       "criadaEm": "2026-10-31T14:26:44.152Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "barao-geraldo-campinas-como-e-morar-perto-da-unicamp",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:47:27.922Z"
+  "atualizadoEm": "2026-11-06T10:50:38.640Z"
 }
