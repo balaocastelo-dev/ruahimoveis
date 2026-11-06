@@ -12,7 +12,10 @@
     "fachada"
   ],
   "capa": {
-    "alt": "Duas casas térreas lado a lado, uma com telhado de telhas cerâmicas aparentes e beiral, outra com fachada reta e platibanda que esconde o telhado"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/telhado-aparente-ou-embutido-qual-escolher-d7bae7f0.jpg",
+    "alt": "Duas casas térreas lado a lado, uma com telhado de telhas cerâmicas aparentes e beiral, outra com fachada reta e platibanda que esconde o telhado",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Telhado que aparece ou telhado escondido? A escolha muda a fachada, mas também a obra: o embutido pede platibanda, calha interna bem feita e acesso para limpar; o aparente tem beiral que protege a parede e manutenção mais fácil de enxergar. No blog, comparamos os dois para você decidir sem surpresa. Leia a dica completa no blog (link na bio).",

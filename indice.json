@@ -323,7 +323,7 @@
       "tipo": "dica",
       "categoria": "construcao",
       "criadaEm": "2026-10-30T17:19:36.567Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "documentacao-imovel-alto-padrao-matricula-certidoes-o-que-pedir",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:44:54.575Z"
+  "atualizadoEm": "2026-11-06T09:46:18.824Z"
 }
