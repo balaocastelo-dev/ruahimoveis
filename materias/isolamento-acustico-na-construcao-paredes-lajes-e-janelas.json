@@ -12,7 +12,10 @@
     "conforto"
   ],
   "capa": {
-    "alt": "Obra limpa de um cômodo em construção com contrapiso sobre manta acústica, parede de blocos e uma janela de correr de vidro laminado já instalada"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/isolamento-acustico-na-construcao-paredes-lajes-e-janelas-ab50ff94.jpg",
+    "alt": "Obra limpa de um cômodo em construção com contrapiso sobre manta acústica, parede de blocos e uma janela de correr de vidro laminado já instalada",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabia que a janela costuma ser o ponto mais fraco contra o barulho da rua? E que trocar o vidro por um mais grosso pouco adianta se a vedação for ruim? Isolamento acústico se resolve no projeto: parede certa, laje com contrapiso que amortece o impacto e esquadria bem vedada. No blog, explicamos o que a norma de desempenho cobra e o que perguntar antes de construir ou comprar. Leia o artigo completo no blog (link na bio).",

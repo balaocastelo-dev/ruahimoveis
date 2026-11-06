@@ -413,7 +413,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-31T11:19:09.005Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "cores-e-humor-da-casa-o-que-a-ciencia-diz-e-o-que-e-mito",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:14:30.651Z"
+  "atualizadoEm": "2026-11-06T10:24:27.638Z"
 }
