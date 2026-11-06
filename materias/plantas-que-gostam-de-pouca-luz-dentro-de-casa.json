@@ -13,7 +13,10 @@
     "apartamento"
   ],
   "capa": {
-    "alt": "Canto de sala com luz suave e indireta, vasos de cerâmica com zamioculca, espada-de-são-jorge e jiboia pendente sobre um aparador de madeira"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/plantas-que-gostam-de-pouca-luz-dentro-de-casa-18d87d21.jpg",
+    "alt": "Canto de sala com luz suave e indireta, vasos de cerâmica com zamioculca, espada-de-são-jorge e jiboia pendente sobre um aparador de madeira",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sua casa recebe pouco sol? Ainda dá para ter verde. Zamioculca, espada-de-são-jorge, jiboia e aspidistra aguentam cantos com luz fraca. O segredo costuma ser regar menos, porque com pouca luz a planta bebe pouco. E quem tem cão ou gato precisa olhar a lista com atenção. No blog, mostramos como escolher e onde colocar cada uma. Leia a matéria completa no blog (link na bio).",
