@@ -13,7 +13,10 @@
     "decoração"
   ],
   "capa": {
-    "alt": "Sala de jantar clara com mesa oval de madeira, seis cadeiras estofadas e espaço livre de circulação até o aparador"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/mesa-de-jantar-medidas-para-circular-e-sentar-bem-b1c4cd01.jpg",
+    "alt": "Sala de jantar clara com mesa oval de madeira, seis cadeiras estofadas e espaço livre de circulação até o aparador",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Antes de se apaixonar por uma mesa de jantar, pegue a trena. A medida que muda tudo é a circulação: perto de 90 cm livres entre a mesa e a parede ou o aparador, para sentar e passar sem esbarrar. E cada pessoa pede uns 60 cm de tampo. No blog, explicamos como medir a sala e qual formato de mesa combina com ela. Leia a matéria completa no blog (link na bio).",

@@ -125,7 +125,7 @@
       "tipo": "dica",
       "categoria": "interiores",
       "criadaEm": "2026-10-29T14:46:50.626Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "energia-solar-em-casa-quando-compensa-e-o-que-considerar",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:05:40.228Z"
+  "atualizadoEm": "2026-11-06T09:07:11.562Z"
 }
