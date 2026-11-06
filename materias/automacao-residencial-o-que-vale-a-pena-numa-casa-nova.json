@@ -12,7 +12,10 @@
     "tecnologia"
   ],
   "capa": {
-    "alt": "Sala de estar contemporânea ao entardecer com iluminação indireta no forro, persianas motorizadas meio abertas e um painel de controle discreto na parede"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/automacao-residencial-o-que-vale-a-pena-numa-casa-nova-30db0e40.jpg",
+    "alt": "Sala de estar contemporânea ao entardecer com iluminação indireta no forro, persianas motorizadas meio abertas e um painel de controle discreto na parede",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Automação residencial: o que vale a pena na casa nova"

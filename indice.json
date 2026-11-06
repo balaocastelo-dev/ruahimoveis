@@ -161,7 +161,7 @@
       "tipo": "principal",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-29T17:24:37.595Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "madeira-macica-lamina-natural-ou-mdf-o-que-muda-no-movel",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:11:57.576Z"
+  "atualizadoEm": "2026-11-06T09:13:54.299Z"
 }
