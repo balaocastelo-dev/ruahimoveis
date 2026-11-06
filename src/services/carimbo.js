@@ -1,51 +1,61 @@
 // Carimbo da imobiliária sobre as fotos ilustrativas do acervo de demonstração.
 // Cada foto do acervo existe em duas versões no mesmo endereço: <id>-<n>h.jpg (já carimbada com a marca do
-// sistema) e <id>-<n>c.jpg (limpa). Aqui a limpa é baixada e carimbada na hora com o nome desta imobiliária,
-// para cada portal mostrar a marca dele. Sem a versão limpa, ou sem o sharp, devolve null e a foto segue como
-// está. O resultado fica guardado em memória enquanto o servidor estiver de pé.
+// sistema) e <id>-<n>c.jpg (limpa). Aqui a limpa é baixada e recebe o logo desta imobiliária em branco,
+// no meio da foto, para cada portal mostrar a marca dele.
+// O carimbo é o logo do tema (public/temas/<TEMA>/logo.svg), não um texto: fonte de sistema não existe no
+// servidor da Vercel e sairia quadradinho. Sem tema, sem logo ou sem o sharp, devolve null e a foto segue
+// como está. O resultado fica guardado em memória enquanto o servidor estiver de pé.
+const fs = require('fs');
+const path = require('path');
 const cfg = require('../config');
 
 const CACHE = new Map();
 const LIMITE = 80;
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const OPACIDADE = 0.72;        // quanto o branco aparece sobre a foto
+const LARGURA = 0.34;          // o logo ocupa esta fração da largura da foto
+
+let LOGO;
+let LOGO_LIDO = false;
+function logoSvg() {
+  if (LOGO_LIDO) return LOGO;
+  LOGO_LIDO = true;
+  LOGO = null;
+  try {
+    const url = cfg.LOGO_URL;
+    if (url && url.startsWith('/')) {
+      const arq = path.join(__dirname, '..', '..', 'public', url.replace(/^\//, '').split('?')[0]);
+      if (fs.existsSync(arq)) LOGO = fs.readFileSync(arq);
+    }
+  } catch { LOGO = null; }
+  return LOGO;
+}
 
 async function carimbar(buf) {
+  const svg = logoSvg();
+  if (!svg) return null;
   const sharp = require('sharp');
   const meta = await sharp(buf).metadata();
   const w = meta.width || 1200;
   const h = meta.height || 800;
-  const texto = String(cfg.CLIENTE_NOME || '').toUpperCase().trim();
-  if (!texto) return null;
 
-  // A palavra é desenhada solta, num tamanho de referência, para o sharp medir a largura real dela:
-  // assim um nome curto e um nome longo cabem igual, sem conta de largura por letra (que erra com acento).
-  const REF = 120;
-  const svgTexto = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(texto.length * REF * 1.3)}" height="${REF * 2}">
-  <text x="0" y="${REF * 1.2}" font-family="Helvetica, Arial, sans-serif" font-size="${REF}" font-weight="600" letter-spacing="${Math.round(REF * 0.26)}" fill="#ffffff">${esc(texto)}</text></svg>`);
-  const png = await sharp(svgTexto).trim().png().toBuffer();
-  const m2 = await sharp(png).metadata();
+  const logo = await sharp(svg, { density: 400 }).resize({ width: Math.round(w * LARGURA) }).ensureAlpha().png().toBuffer();
+  const m2 = await sharp(logo).metadata();
+  // Silhueta branca: a forma do logo vira o recorte e o recheio é branco, com a opacidade do carimbo.
+  const alfa = await sharp(logo).extractChannel('alpha').linear(OPACIDADE, 0).toBuffer();
+  const branco = await sharp({ create: { width: m2.width, height: m2.height, channels: 3, background: '#ffffff' } })
+    .joinChannel(alfa).png().toBuffer();
 
-  // Reduzida para ocupar no máximo 62% da largura da foto, sempre centralizada.
-  const larg = Math.min(Math.round(w * 0.62), m2.width);
-  const alt = Math.max(1, Math.round((m2.height * larg) / m2.width));
-  const palavra = await sharp(png).resize(larg, alt)
-    .composite([{ input: Buffer.from([255, 255, 255, 191]), raw: { width: 1, height: 1, channels: 4 }, tile: true, blend: 'dest-in' }])
-    .png().toBuffer();
-
-  // Um risco fino atravessa a foto atrás da palavra, como no carimbo do acervo.
-  const y = Math.round(h / 2);
-  const linha = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
-  <line x1="${Math.round(w * 0.06)}" y1="${y}" x2="${Math.round(w * 0.94)}" y2="${y}" stroke="#ffffff" stroke-opacity="0.45" stroke-width="${Math.max(1, Math.round(w / 1100))}"/></svg>`);
-
-  return sharp(buf).composite([
-    { input: linha, top: 0, left: 0 },
-    { input: palavra, top: y - Math.round(alt / 2), left: Math.round((w - larg) / 2) },
-  ]).jpeg({ quality: 86 }).toBuffer();
+  return sharp(buf).composite([{
+    input: branco,
+    top: Math.round((h - m2.height) / 2),
+    left: Math.round((w - m2.width) / 2),
+  }]).jpeg({ quality: 86 }).toBuffer();
 }
 
 /** Foto carimbada com a marca desta imobiliária, ou null quando não dá para carimbar. */
 async function daCasa(url, buscar) {
   if (!/h\.jpg$/i.test(String(url))) return null;          // só as fotos do acervo têm versão limpa
+  if (!logoSvg()) return null;                             // imobiliária sem logo: a foto segue como está
   if (CACHE.has(url)) return CACHE.get(url);
   let saida = null;
   try {
