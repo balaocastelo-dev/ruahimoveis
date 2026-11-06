@@ -476,7 +476,7 @@
       "tipo": "principal",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-31T17:21:10.449Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "impermeabilizacao-da-casa-onde-fazer-quando-e-o-que-pedir",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:56:08.645Z"
+  "atualizadoEm": "2026-11-06T11:01:26.035Z"
 }

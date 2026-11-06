@@ -11,7 +11,10 @@
     "casa"
   ],
   "capa": {
-    "alt": "Sala de vinhos com paredes de pedra clara, prateleiras de madeira com garrafas deitadas e porta de vidro iluminada por luz quente"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/adega-em-casa-armario-climatizado-ou-sala-de-vinhos-80a77219.jpg",
+    "alt": "Sala de vinhos com paredes de pedra clara, prateleiras de madeira com garrafas deitadas e porta de vidro iluminada por luz quente",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabia que o maior inimigo do vinho em casa não é o calor em si, mas a temperatura que sobe e desce? Por isso a adega pede mais do que um canto bonito: estabilidade, umidade na faixa certa, pouca luz e garrafas deitadas. Comparamos o armário climatizado e a sala de vinhos e mostramos o que o projeto precisa prever. Leia o artigo completo no blog (link na bio).",
