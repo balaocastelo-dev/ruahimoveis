@@ -12,7 +12,10 @@
     "campinas"
   ],
   "capa": {
-    "alt": "Jardim residencial com canteiros de gramíneas ornamentais, arbustos, caminho de pedras e cobertura de casca de pinus junto a uma casa clara"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/jardim-de-baixa-manutencao-no-clima-de-campinas-be180dea.jpg",
+    "alt": "Jardim residencial com canteiros de gramíneas ornamentais, arbustos, caminho de pedras e cobertura de casca de pinus junto a uma casa clara",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Jardim de baixa manutenção no clima de Campinas"
