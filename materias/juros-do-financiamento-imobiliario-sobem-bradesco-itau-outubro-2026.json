@@ -11,7 +11,10 @@
     "mercado imobiliário"
   ],
   "capa": {
-    "alt": "Mesa de madeira clara com uma pasta de documentos fechada, uma calculadora e um molho de chaves ao lado de uma janela com luz da manhã"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/juros-do-financiamento-imobiliario-sobem-bradesco-itau-outubro-2026-a5ea6b6b.jpg",
+    "alt": "Mesa de madeira clara com uma pasta de documentos fechada, uma calculadora e um molho de chaves ao lado de uma janela com luz da manhã",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Os juros da casa própria subiram em dois grandes bancos nesta semana. O Bradesco levou a taxa mínima a 15% ao ano mais TR e o Itaú, a 12,95%. No blog, explicamos o que mudou, por que acima de 12% o FGTS deixa de entrar na conta e o que observar antes de assinar. Leia a notícia completa no blog (link na bio).",

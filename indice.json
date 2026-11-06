@@ -143,7 +143,7 @@
       "tipo": "noticia",
       "categoria": "noticias",
       "criadaEm": "2026-10-29T17:22:20.855Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "cortina-ou-persiana-qual-escolher-em-cada-ambiente",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:08:54.695Z"
+  "atualizadoEm": "2026-11-06T09:10:31.384Z"
 }
