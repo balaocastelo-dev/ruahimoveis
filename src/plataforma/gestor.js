@@ -271,6 +271,19 @@ api.get('/imobiliarias/:id/instalacao', exige(async (req, res) => {
   evento(req.gestor.id, im.id, 'viu_instalacao', null);
   res.json({ variaveis: variaveis(await comFundo(im), dbUrl, segredo), repo: REPO, dominio: im.dominio || dominioDe(im.slug), vercel_automatico: !!process.env.VERCEL_TOKEN });
 }));
+// Publica na Vercel uma imobiliária que já existe: serve para quando o VERCEL_TOKEN só chegou depois do cadastro.
+api.post('/imobiliarias/:id/publicar', exige(async (req, res) => {
+  if (!process.env.VERCEL_TOKEN) falha(400, 'Falta a variável VERCEL_TOKEN no projeto do painel.');
+  const im = await um(`SELECT ${COLS}, db_url_cifrada FROM imobiliarias WHERE id = $1`, [Number(req.params.id)]) || falha(404, 'Imobiliária não encontrada.');
+  if (!im.db_url_cifrada) falha(400, 'Esta imobiliária foi instalada à mão: as variáveis já estão no projeto dela na Vercel.');
+  if (im.vercel_projeto) falha(409, `Esta imobiliária já tem o projeto "${im.vercel_projeto}" na Vercel.`);
+  const { dbUrl, segredo } = JSON.parse(decifra(im.db_url_cifrada));
+  const p = await publicaNaVercel(im, variaveis(await comFundo(im), dbUrl, segredo));
+  if (!p) falha(400, 'A Vercel não devolveu o projeto.');
+  await q(`UPDATE imobiliarias SET vercel_projeto = $1, publicada = 1, situacao = 'ativa' WHERE id = $2`, [p.name, im.id]);
+  evento(req.gestor.id, im.id, 'publicada', p.name);
+  res.json({ ok: true, projeto: p.name, link: im.link });
+}));
 api.post('/imobiliarias/:id/publicada', exige(async (req, res) => {
   const link = txt(req.body && req.body.link, 300);
   if (link && !/^https:\/\/[a-z0-9.-]+(\/.*)?$/i.test(link)) falha(400, 'O link precisa começar com https://');
