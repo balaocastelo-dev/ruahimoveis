@@ -485,7 +485,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-31T17:22:20.970Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "morar-no-cambui-campinas-bairro-a-pe",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T11:01:26.035Z"
+  "atualizadoEm": "2026-11-06T11:03:49.370Z"
 }

@@ -11,7 +11,10 @@
     "casa nova"
   ],
   "capa": {
-    "alt": "Laje de cobertura limpa em obra residencial, com manta impermeabilizante cinza aplicada e ralos protegidos, sob céu azul"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/impermeabilizacao-da-casa-onde-fazer-quando-e-o-que-pedir-c9ff2cd1.jpg",
+    "alt": "Laje de cobertura limpa em obra residencial, com manta impermeabilizante cinza aplicada e ralos protegidos, sob céu azul",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Impermeabilização da casa: onde fazer, quando e o que pedir"
