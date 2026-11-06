@@ -1,0 +1,231 @@
+{
+  "slug": "bairro-guanabara-campinas-como-e-morar",
+  "tema": "bairro guanabara em campinas estacao e vida",
+  "titulo": "Bairro Guanabara, em Campinas: a estação, as ruas e a vida hoje",
+  "resumo": "Bairro Guanabara, em Campinas: a história da estação da Mogiana, o que há por perto, como é a rotina entre o Centro e o Taquaral e o que pesar antes de morar.",
+  "categoria": "campinas",
+  "etiquetas": [
+    "campinas",
+    "bairros",
+    "história",
+    "morar bem"
+  ],
+  "capa": {
+    "alt": "Rua residencial arborizada com casas baixas e calçadas largas sob a luz dourada do fim da tarde"
+  },
+  "redes": {
+    "legenda": "Sabia que o nome Guanabara é mais antigo que a estação de trem que deixou o bairro famoso em Campinas? A estação da Mogiana abriu em 1893, ficou décadas parada e hoje é um centro cultural da Unicamp. Em volta dela, ruas arborizadas, casarões que viraram clínicas e restaurantes e o Instituto Agronômico como vizinho. Contamos a história e como é a vida no bairro. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "campinas",
+      "guanabara",
+      "bairrosdecampinas",
+      "historia",
+      "arquitetura",
+      "morarbem",
+      "patrimonio"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura o **bairro Guanabara, em Campinas**, costuma chegar por um destes caminhos: a vontade de morar perto do Centro sem abrir mão de rua arborizada, a curiosidade pela antiga estação de trem ou a rotina de consultas médicas, já que a região concentra clínicas e consultórios. O Guanabara fica entre o Centro, o Cambuí, o Botafogo, o Jardim Chapadão e o Taquaral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: é um bairro principalmente residencial, de ruas internas tranquilas e sombreadas, cortado por avenidas movimentadas que ligam o Centro à região norte. Tem história ferroviária, comércio de serviços forte durante o dia e um silêncio maior à noite. Combina com quem valoriza localização central e verde; pede atenção de quem quer distância do trânsito."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A Estação Guanabara, da Companhia Mogiana, foi inaugurada em 1893 e hoje abriga o CIS-Guanabara, centro cultural da Unicamp.",
+        "O conjunto da estação é tombado pelo conselho de patrimônio de Campinas desde 2004.",
+        "As ruas internas são arborizadas; as avenidas Brasil e Barão de Itapura concentram o trânsito.",
+        "Saúde, serviços e restaurantes em casarões antigos movimentam o dia; a noite é mais quieta."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De onde vem o bairro: a estação da Mogiana e o café"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O nome é mais antigo do que a ferrovia. Segundo o verbete do bairro na Wikipédia, o lugar já se chamava Guanabara antes de a Companhia Mogiana de Estradas de Ferro construir ali a primeira estação do seu tronco, em 1893. O bairro, com o desenho que conhecemos, se formou mais tarde, por volta da metade do século XX, quando a cidade avançou para além do Centro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A estação foi inaugurada em março de 1893, conta reportagem do ACidade ON Campinas, num momento em que o café era o grande produto de exportação do país. O pátio ferroviário era enorme: segundo o Catraca Livre, chegou a ter 13 linhas e mais de cem estruturas, entre armazéns, oficinas e depósitos. O mais conhecido era o **Armazém do Café**, por onde passava parte da produção da região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio que se vê hoje é dos anos 1920. As operações ferroviárias terminaram em 1974 e, por muito tempo, o conjunto ficou abandonado e se deteriorou. Em 1990, a Unicamp recebeu parte da área em comodato, isto é, por empréstimo de uso. A restauração ganhou impulso nos anos 2000, com recursos de incentivo à cultura, e o espaço recebeu uma mostra de decoração em 2008, antes de virar centro cultural."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Desde 2004, o conjunto arquitetônico é **tombado** pelo Conselho de Defesa do Patrimônio Cultural de Campinas, o Condepacc. Tombamento é a proteção legal que impede demolir ou descaracterizar um bem de valor histórico. Para quem gosta de arquitetura, vale reparar na gare, a plataforma coberta, que pode ser visitada. Há mais histórias assim na seção [Campinas e região](/blog/categoria/campinas)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Linha do tempo da Estação Guanabara",
+      "colunas": [
+        "Ano",
+        "O que aconteceu"
+      ],
+      "linhas": [
+        [
+          "1893",
+          "A Companhia Mogiana inaugura a estação, em março"
+        ],
+        [
+          "Anos 1920",
+          "É construído o prédio que existe até hoje"
+        ],
+        [
+          "1974",
+          "Terminam as operações ferroviárias"
+        ],
+        [
+          "1990",
+          "A Unicamp recebe parte da área em comodato"
+        ],
+        [
+          "2004",
+          "O conjunto é tombado pelo Condepacc"
+        ],
+        [
+          "2008",
+          "O espaço restaurado recebe uma mostra de decoração"
+        ],
+        [
+          "Hoje",
+          "Funciona o CIS-Guanabara, centro cultural da Unicamp"
+        ]
+      ],
+      "fonte": {
+        "nome": "Bairros que cresceram ao redor de estações — Catraca Livre",
+        "url": "https://catracalivre.com.br/noticias/bairros-que-cresceram-ao-redor-de-estacoes-guardam-marcas-de-uma-epoca-em-que-o-trem-organizava-o-caminho-ate-o-trabalho/"
+      },
+      "nota": "Datas também conferidas na Wikipédia, no ACidade ON Campinas e no Jornal da Unicamp."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como é a rotina no bairro hoje"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No dia a dia, o Guanabara tem duas caras. As ruas internas são residenciais e arborizadas. Já as avenidas de contorno concentram serviços: a região é conhecida pelo comércio de veículos e, principalmente, pela área da saúde, com hospital e muitos consultórios. Para quem tem consultas frequentes, essa proximidade pesa na balança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma marca do bairro é a reocupação de casarões antigos. Segundo a reportagem do ACidade ON, muitas residências grandes viraram clínicas e restaurantes, o que deixa o movimento intenso na hora do almoço e as ruas bem mais calmas à noite. Na Praça Silva Rêgo, perto da estação, funciona uma feira de artesanato que, com o tempo, ganhou barracas de comida e virou ponto de encontro dos vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Guanabara também tem um vizinho ilustre: o **Instituto Agronômico de Campinas**, o IAC, fundado em 1887 por Dom Pedro II e descrito como a instituição de pesquisa agrícola mais antiga da América Latina. É mais um endereço que reforça o caráter histórico desse pedaço da cidade, ao lado da antiga estação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale saber um detalhe que confunde muita gente: Campinas não tem delimitação legal de bairros. Por isso, nomes como Vila Itapura, Jardim Brasil, Vila Angelino Rossi e Jardim Novo Botafogo aparecem misturados ao Guanabara em endereços e anúncios. Antes de decidir, olhe o mapa e caminhe pelas ruas, em vez de confiar só no nome."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Trânsito, acessos e o que pesar antes de morar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A localização é o principal trunfo. O bairro fica a poucos minutos do Centro e do Cambuí e tem acesso fácil ao Taquaral. Avenidas como a Brasil e a Barão de Itapura ligam a região central à zona norte e levam ao distrito de Barão Geraldo e às cidades de Paulínia e Cosmópolis. É uma vantagem para quem trabalha nesses eixos ou circula muito pela cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O outro lado é o trânsito. Justamente por servirem de ligação, essas avenidas costumam ficar carregadas, e quem mora de frente para elas convive com ruído e movimento. Se silêncio é prioridade, prefira as ruas internas e visite o imóvel em dois horários diferentes, inclusive no fim da tarde. Repare também nas janelas: vidro e vedação fazem muita diferença perto de via movimentada."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Morar no Guanabara: o que pesa a favor e contra",
+      "pros": [
+        "Localização central, perto do Centro, do Cambuí e do Taquaral",
+        "Ruas internas arborizadas e residenciais",
+        "Serviços de saúde e restaurantes a poucos passos",
+        "Patrimônio histórico e centro cultural no próprio bairro"
+      ],
+      "contras": [
+        "Avenidas de ligação com trânsito pesado em vários horários",
+        "Ruído maior em imóveis voltados para as vias principais",
+        "Comércio concentrado no dia; a noite é mais quieta",
+        "Limites do bairro pouco claros, o que confunde a busca"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Para quem o Guanabara combina"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Moradores antigos lembram, na reportagem do ACidade ON, de um bairro familiar, quase uma extensão do Cambuí, com vizinhos conversando na calçada. Quem chegou depois costuma destacar a localização e as árvores. Essa mistura descreve bem o público que se sente em casa ali: gente que quer a vida central, mas com sombra, calçada e um pouco de história no caminho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O bairro costuma agradar a casais e famílias que trabalham na região central ou na zona norte, a quem precisa de serviços médicos por perto e a quem gosta de sair a pé para almoçar. Pode não ser a melhor escolha para quem quer condomínio fechado com grande área de lazer ou busca isolamento total do movimento urbano. Para comparar com outras regiões, veja o [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se o Guanabara entrou na sua lista, a equipe da {{cliente}} pode ajudar a comparar imóveis e entender cada rua antes da visita, seja para comprar, seja para vender. A decisão, em uma linha: o Guanabara faz sentido para quem troca um pouco de sossego nas avenidas por localização central, verde e história."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Onde fica o bairro Guanabara, em Campinas?",
+      "resposta": "Fica entre o Centro, o Cambuí, o Botafogo, o Jardim Chapadão e o Taquaral, com parte na região central e parte na zona norte. Como Campinas não tem limites legais de bairro, os endereços às vezes aparecem com nomes vizinhos, como Vila Itapura."
+    },
+    {
+      "pergunta": "O que funciona hoje na antiga Estação Guanabara?",
+      "resposta": "Funciona o CIS-Guanabara, centro cultural ligado à Unicamp, que ocupa o prédio da estação e o antigo Armazém do Café. O conjunto é tombado pelo Condepacc desde 2004, e a gare pode ser visitada."
+    },
+    {
+      "pergunta": "O bairro Guanabara é barulhento?",
+      "resposta": "Depende da rua. As avenidas de ligação, como a Brasil e a Barão de Itapura, têm trânsito pesado, enquanto as ruas internas costumam ser residenciais e mais calmas. Visitar o imóvel em horários diferentes é a melhor forma de avaliar."
+    },
+    {
+      "pergunta": "Quando a estação da Mogiana foi inaugurada?",
+      "resposta": "A Estação Guanabara foi inaugurada em março de 1893 pela Companhia Mogiana de Estradas de Ferro, na época em que o café era o principal produto de exportação do Brasil. O prédio atual é dos anos 1920."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guanabara (Campinas) — Wikipédia",
+      "url": "https://pt.wikipedia.org/wiki/Guanabara_(Campinas)",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "De estação histórica a ponto comercial: como o bairro Guanabara se transformou — ACidade ON Campinas",
+      "url": "https://www.acidadeon.com/campinas/bairros/de-estacao-historia-a-ponto-comercial-descubra-como-bairro-guanabara-se-transformou-ao-longo-de-tres-seculos/",
+      "data": "novembro de 2025"
+    },
+    {
+      "nome": "Bairros que cresceram ao redor de estações guardam marcas de uma época — Catraca Livre",
+      "url": "https://catracalivre.com.br/noticias/bairros-que-cresceram-ao-redor-de-estacoes-guardam-marcas-de-uma-epoca-em-que-o-trem-organizava-o-caminho-ate-o-trabalho/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Estação Guanabara recebe a Campinas Decor — Jornal da Unicamp",
+      "url": "https://www2.unicamp.br/unicamp/unicamp_hoje/jornalPDF/ju384pag10.pdf",
+      "data": "dezembro de 2007"
+    },
+    {
+      "nome": "IAC completa 139 anos e destaca nova cultivar de feijão gourmet — Correio da Manhã",
+      "url": "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/2026/07/298305-iac-completa-139-anos-e-destaca-nova-cultivar-de-feijao-gourmet.html",
+      "data": "julho de 2026"
+    }
+  ]
+}

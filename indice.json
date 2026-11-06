@@ -1008,7 +1008,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-06T23:21:49.370Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "bairro-guanabara-campinas-como-e-morar",
+      "titulo": "Bairro Guanabara, em Campinas: a estação, as ruas e a vida hoje",
+      "tema": "bairro guanabara em campinas estacao e vida",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-06T23:23:05.712Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T23:21:49.371Z"
+  "atualizadoEm": "2026-11-06T23:23:05.712Z"
 }
