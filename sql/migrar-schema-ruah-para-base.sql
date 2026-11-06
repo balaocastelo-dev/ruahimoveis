@@ -42,12 +42,21 @@ WHERE c.relkind = 'v'
   AND EXISTS (SELECT 1 FROM _mig_estado WHERE aplicada);
 
 -- Corpo das funções que citam o nome antigo (o texto não acompanha o ALTER SCHEMA).
+-- prokind = 'f' deixa de fora agregacoes e funcoes de janela: pg_get_functiondef
+-- recusa esses tipos ("array_agg e uma funcao de agregacao") e abortava a migracao.
+-- O OFFSET 0 impede o planejador de achatar a subconsulta e chamar
+-- pg_get_functiondef antes do filtro de prokind.
 CREATE TEMP TABLE _mig_funcoes ON COMMIT DROP AS
-SELECT pg_get_functiondef(p.oid) AS def
-FROM pg_proc p
-JOIN pg_namespace n ON n.oid = p.pronamespace
-WHERE n.nspname NOT IN ('pg_catalog', 'information_schema')
-  AND pg_get_functiondef(p.oid) ~ 'ruah'
+SELECT s.def
+FROM (
+  SELECT pg_get_functiondef(p.oid) AS def
+  FROM pg_proc p
+  JOIN pg_namespace n ON n.oid = p.pronamespace
+  WHERE p.prokind = 'f'
+    AND n.nspname NOT IN ('pg_catalog', 'information_schema', 'extensions')
+  OFFSET 0
+) s
+WHERE s.def ~ 'ruah'
   AND EXISTS (SELECT 1 FROM _mig_estado WHERE aplicada);
 
 DO $$
@@ -87,19 +96,19 @@ BEGIN
     EXECUTE format('ALTER ROLE %I SET search_path TO %s', r.rolname, caminho);
   END LOOP;
 
-  FOR f IN SELECT def FROM _mig_funcoes LOOP
+  FOR f IN SELECT _mig_funcoes.def FROM _mig_funcoes LOOP
     def := replace(f.def, 'ruah_app', 'base_app');
     def := replace(def, 'ruah.', 'base.');
     def := replace(def, '''ruah''', '''base''');
     -- O slug antigo sai da lista de reservados no replace; volta junto com "base".
-    def := replace(def, 'IN (''base'',''plataforma''', 'IN (''base'',''ruah'',''plataforma''');
+    def := replace(def, 'IN (''base'',''base'',''plataforma''', 'IN (''base'',''ruah'',''plataforma''');
     IF position('CREATE OR REPLACE FUNCTION' in def) = 0 THEN
       def := replace(def, 'CREATE FUNCTION', 'CREATE OR REPLACE FUNCTION');
     END IF;
     EXECUTE def;
   END LOOP;
 
-  FOR v IN SELECT sch, nome, def FROM _mig_views LOOP
+  FOR v IN SELECT _mig_views.sch, _mig_views.nome, _mig_views.def FROM _mig_views LOOP
     def := replace(replace(v.def, 'ruah_app', 'base_app'), 'ruah.', 'base.');
     EXECUTE format('CREATE OR REPLACE VIEW %I.%I AS %s', v.sch, v.nome, def);
     IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = v.sch || '_app') THEN
