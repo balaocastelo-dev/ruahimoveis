@@ -170,7 +170,7 @@
       "tipo": "principal",
       "categoria": "interiores",
       "criadaEm": "2026-10-29T20:21:28.252Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "lareira-em-casa-a-gas-a-lenha-ou-eletrica",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:13:54.299Z"
+  "atualizadoEm": "2026-11-06T09:15:20.020Z"
 }
