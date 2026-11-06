@@ -12,7 +12,10 @@
     "bem-estar"
   ],
   "capa": {
-    "alt": "Banheiro sereno com parede de pedra clara, bancada de madeira, plantas, luz quente indireta e janela para um jardim"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/banheiro-com-cara-de-spa-materiais-iluminacao-ventilacao-dd5ce2cd.jpg",
+    "alt": "Banheiro sereno com parede de pedra clara, bancada de madeira, plantas, luz quente indireta e janela para um jardim",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Por que alguns banheiros parecem spa e outros só parecem frios? Quase sempre a diferença está em três coisas: luz quente e indireta, materiais que aguentam água sem perder a beleza e ventilação que tira o vapor de verdade. No blog, mostramos como combinar cada uma e onde a obra pede profissional. Leia o artigo completo no blog (link na bio).",
