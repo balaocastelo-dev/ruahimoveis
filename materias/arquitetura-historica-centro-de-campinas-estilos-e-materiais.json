@@ -1,0 +1,235 @@
+{
+  "slug": "arquitetura-historica-centro-de-campinas-estilos-e-materiais",
+  "tema": "arquitetura historica do centro de campinas",
+  "titulo": "Arquitetura histórica do Centro de Campinas: estilos e materiais",
+  "resumo": "Taipa de pilão, azulejo português, neomourisco e tijolo inglês: um roteiro pelos prédios históricos do Centro de Campinas e o que eles ensinam à casa de hoje.",
+  "categoria": "campinas",
+  "etiquetas": [
+    "campinas",
+    "arquitetura",
+    "patrimônio histórico",
+    "centro"
+  ],
+  "capa": {
+    "alt": "Detalhe de fachada antiga com parede caiada, porta alta de madeira entalhada e azulejos azuis e brancos ao lado"
+  },
+  "seo": {
+    "titulo": "Arquitetura histórica do Centro de Campinas"
+  },
+  "redes": {
+    "legenda": "Você sabia que a Catedral de Campinas foi erguida em taipa de pilão, terra socada em fôrmas, numa obra que atravessou boa parte do século 19? No Centro da cidade, quatro prédios contam a história da arquitetura paulista: terra, azulejo do Porto, arcos neomouriscos e tijolo vindo da Inglaterra. No blog, um roteiro pelo Centro mostra o que esses materiais ainda ensinam para quem projeta uma casa hoje. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "campinas",
+      "arquitetura",
+      "patrimoniohistorico",
+      "centrodecampinas",
+      "historia",
+      "arquiteturabrasileira",
+      "casa"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem caminha pelo **Centro de Campinas** atravessa, em poucos quarteirões, mais de um século de arquitetura. A **arquitetura histórica do Centro** reúne uma igreja de terra socada, um solar coberto de azulejos portugueses, um mercado de arcos inspirados no mundo árabe e uma estação de tijolos ingleses. Cada prédio conta como a cidade enriqueceu com o café e com a ferrovia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta rápida para quem quer entender esse conjunto: cada edifício reflete o material e o gosto do seu tempo. A taipa de pilão domina o período anterior à ferrovia; depois, chegam materiais importados e estilos europeus. Olhar para eles com calma ajuda a reconhecer escolhas que continuam valendo em casas novas, como paredes grossas, pé-direito alto e revestimentos duráveis."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A Catedral Metropolitana foi construída em taipa de pilão entre 1807 e 1883.",
+        "O Palácio dos Azulejos, de 1878, tem fachada revestida com azulejos trazidos do Porto.",
+        "O Mercado Municipal, de 1908, foi projetado por Ramos de Azevedo em estilo neomourisco.",
+        "A antiga estação da Companhia Paulista, hoje Estação Cultura, usa tijolos importados da Inglaterra."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Antes do trem: a Catedral e a força da taipa de pilão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **Catedral Metropolitana de Nossa Senhora da Conceição** levou cerca de 76 anos para ficar pronta, de 1807 a 1883, segundo o Centro de Memória da Unicamp. Ela foi erguida em **taipa de pilão**, técnica em que a terra úmida é socada em camadas dentro de fôrmas de madeira, formando paredes muito grossas. O acervo da universidade a descreve como uma das construções mais altas do mundo nessa técnica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por fora, a fachada é neoclássica, estilo que busca a simetria e as colunas da arquitetura grega e romana. Por dentro, o destaque é a talha em madeira, o trabalho de entalhe dos altares, atribuída a Vitoriano dos Anjos Figueiroa e Bernardino de Sena Reis e Almeida. O prédio é tombado, ou seja, protegido por lei como patrimônio, inclusive pelo órgão estadual Condephaat."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A taipa explica muito sobre o conforto dessas construções antigas. Paredes de terra espessas demoram a esquentar e a esfriar, o que suaviza a temperatura interna ao longo do dia. Essa ideia, chamada de inércia térmica, segue presente em projetos atuais que usam terra crua, blocos maciços ou paredes duplas, mas com cálculo estrutural e proteção contra umidade."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O ouro verde em azulejo: o Palácio dos Azulejos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com o café, os grandes fazendeiros passaram a construir na cidade. O **Palácio dos Azulejos**, também chamado de Solar do Barão de Itatiba, teve as obras iniciadas em 1878 para Joaquim Ferreira Penteado e a família, segundo o Correio da Manhã. O estilo é neoclássico, e a fachada é revestida de azulejos portugueses vindos do Porto, detalhe que deu nome ao prédio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Além dos azulejos, a casa recebeu mármores e lustres importados, gradis de ferro fundido e uma claraboia de vidros coloridos, que leva luz natural para o interior. Em 1908, os herdeiros venderam o imóvel ao município, e ele foi sede da Prefeitura e do Fórum por cerca de seis décadas. Hoje abriga o Museu da Imagem e do Som de Campinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Por que azulejo na fachada",
+      "texto": "Além da beleza, o azulejo protege a parede da chuva e do sol e é fácil de limpar. É um dos motivos de ele ter atravessado séculos na arquitetura de influência portuguesa no Brasil."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem gosta de casa, o solar mostra duas ideias que continuam atuais: revestir a fachada com um material resistente e trazer luz do alto quando as janelas laterais não bastam. Mais histórias e guias da cidade estão na categoria [Campinas e região](/blog/categoria/campinas)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ferro, tijolo e arcos: o Mercado e a antiga estação"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ferrovia mudou a cidade e a sua arquitetura. A Companhia Paulista de Estradas de Ferro trouxe o primeiro trem a Campinas em 11 de agosto de 1872. Segundo o Correio da Manhã, o corpo central da estação ficou pronto em 1884, com tijolos aparentes importados da Inglaterra e inspiração vitoriana, e novas alas foram acrescentadas nas décadas seguintes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O prédio funcionou como estação até 2001, de acordo com o Centro de Memória da Unicamp, e hoje é a **Estação Cultura**, espaço de concertos, feiras e exposições. O tijolo aparente, que dispensa reboco e pintura, virou referência para casas e reformas que buscam um ar industrial, mas pede cuidado com a impermeabilização e com a limpeza das juntas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Mercado Municipal** foi inaugurado em 12 de abril de 1908, com projeto do engenheiro-arquiteto Ramos de Azevedo. O estilo é neomourisco, que reinterpreta arcos e ornamentos da arquitetura árabe da Península Ibérica. Segundo o Correio da Manhã, o prédio passou por uma grande reforma concluída em 2025, com telhado e instalações novas e melhorias de acessibilidade."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quatro prédios, quatro jeitos de construir",
+      "colunas": [
+        "Prédio",
+        "Época",
+        "Estilo",
+        "Material marcante",
+        "Uso hoje"
+      ],
+      "linhas": [
+        [
+          "Catedral Metropolitana",
+          "1807 a 1883",
+          "Fachada neoclássica",
+          "Taipa de pilão e talha em madeira",
+          "Igreja"
+        ],
+        [
+          "Palácio dos Azulejos",
+          "Obras a partir de 1878",
+          "Neoclássico",
+          "Azulejos portugueses na fachada",
+          "Museu da Imagem e do Som"
+        ],
+        [
+          "Antiga estação da Paulista",
+          "1872 a 1884",
+          "Inspiração vitoriana",
+          "Tijolo aparente inglês",
+          "Estação Cultura"
+        ],
+        [
+          "Mercado Municipal",
+          "1908",
+          "Neomourisco",
+          "Arcos e ornamentos",
+          "Mercado"
+        ]
+      ],
+      "colunaDestaque": 3,
+      "nota": "Datas segundo o Centro de Memória da Unicamp e o Correio da Manhã."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que levar dessa arquitetura para a sua casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Não é preciso morar num casarão para aproveitar essas lições. Os prédios históricos do Centro mostram que materiais duráveis, ventilação e luz natural envelhecem bem. Ao escolher um imóvel ou planejar uma reforma, vale olhar para a espessura das paredes, a altura do pé-direito, a orientação das janelas e a qualidade dos revestimentos, não só para o acabamento da moda."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Usar elementos de inspiração histórica na casa de hoje",
+      "pros": [
+        "Tijolo aparente e azulejo têm vida longa e pedem pouca pintura.",
+        "Paredes grossas e pé-direito alto ajudam no conforto térmico.",
+        "Claraboias e bandeiras de vidro levam luz a cômodos internos.",
+        "Dão personalidade sem depender de tendência passageira."
+      ],
+      "contras": [
+        "Peças artesanais e réplicas de azulejo costumam custar mais e demorar a chegar.",
+        "Tijolo aparente mal protegido absorve umidade e acumula sujeira nas juntas.",
+        "Terra crua e paredes espessas exigem projeto e cálculo de profissional habilitado.",
+        "Em excesso, o estilo histórico pode parecer cenário."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a ideia é reformar um imóvel antigo, o cuidado é maior. Mexer em parede de taipa, trocar telhado ou abrir vãos pede engenheiro ou arquiteto responsável, com ART ou RRT, o registro que formaliza a responsabilidade técnica. Em imóveis tombados ou na área envolvente de um bem protegido, a obra também depende de aprovação dos órgãos de patrimônio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um passeio pelo Centro, de preferência a pé e num dia de semana, é a melhor forma de ver esses detalhes de perto. Outras ideias de casa e cidade estão no [blog](/blog), e a categoria [construção e casas novas](/blog/categoria/construcao) ajuda a traduzir essas lições para um projeto atual."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura um imóvel em Campinas, ou pensa em vender o seu, a equipe da {{cliente}} pode ajudar a olhar além da fachada. Paredes, luz e materiais bem escolhidos atravessam gerações; é isso que vale procurar na casa."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O que é taipa de pilão?",
+      "resposta": "É uma técnica de construção em que a terra úmida é socada em camadas dentro de fôrmas de madeira, formando paredes grossas. Em Campinas, a Catedral Metropolitana é o exemplo mais conhecido."
+    },
+    {
+      "pergunta": "Quem projetou o Mercado Municipal de Campinas?",
+      "resposta": "O engenheiro-arquiteto Ramos de Azevedo. O prédio, em estilo neomourisco, foi inaugurado em 12 de abril de 1908."
+    },
+    {
+      "pergunta": "O que funciona hoje no Palácio dos Azulejos?",
+      "resposta": "O Museu da Imagem e do Som de Campinas. Antes, o prédio foi residência do Barão de Itatiba e sede da Prefeitura e do Fórum."
+    },
+    {
+      "pergunta": "Posso reformar um imóvel antigo perto de um prédio tombado?",
+      "resposta": "Depende das regras de proteção do bem e do seu entorno. Antes de qualquer obra, consulte um arquiteto e os órgãos de patrimônio, e confirme a situação do imóvel na Prefeitura."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "The Campinas' Cultural Heritage — Centro de Memória-Unicamp, Google Arts & Culture",
+      "url": "https://artsandculture.google.com/story/0gUxAEURn1eBJg",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Mercadão de Campinas: história, resistência e reinvenção — Correio da Manhã",
+      "url": "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/2026/01/249591-mercadao-de-campinas-historia-resistencia-e-reinvencao.html",
+      "data": "janeiro de 2026"
+    },
+    {
+      "nome": "Palácio dos Azulejos: o retrato de uma era de riqueza — Correio da Manhã",
+      "url": "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/especial-campinas-e-regiao/2026/06/296520-palacio-dos-azulejos-o-retrato-de-uma-era-de-riqueza.html",
+      "data": "junho de 2026"
+    },
+    {
+      "nome": "Estação Cultura: onde Campinas embarcou rumo ao futuro — Correio da Manhã",
+      "url": "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/especial-campinas-e-regiao/2026/08/309072-estacao-cultura-onde-campinas-embarcou-rumo-ao-futuro.html",
+      "data": "agosto de 2026"
+    }
+  ]
+}

@@ -963,7 +963,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-06T17:23:15.160Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "arquitetura-historica-centro-de-campinas-estilos-e-materiais",
+      "titulo": "Arquitetura histórica do Centro de Campinas: estilos e materiais",
+      "tema": "arquitetura historica do centro de campinas",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-06T17:25:31.205Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T17:23:15.161Z"
+  "atualizadoEm": "2026-11-06T17:25:31.206Z"
 }
