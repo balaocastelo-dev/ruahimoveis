@@ -15,7 +15,10 @@
     "titulo": "Comprar na planta ou pronto: vantagens e riscos"
   },
   "capa": {
-    "alt": "Mesa de madeira com plantas de arquitetura enroladas, maquete branca de um edifício residencial e capacete de obra, com canteiro limpo ao fundo pela janela"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/comprar-imovel-na-planta-ou-pronto-vantagens-riscos-contrato-2321087c.jpg",
+    "alt": "Mesa de madeira com plantas de arquitetura enroladas, maquete branca de um edifício residencial e capacete de obra, com canteiro limpo ao fundo pela janela",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Na planta ou pronto? A escolha muda muito mais do que o prazo para mudar: muda como a parcela é reajustada durante a obra, o que acontece se a entrega atrasar e quanto você recebe de volta se desistir. Desde 2018, a Lei do Distrato definiu boa parte dessas regras. No blog, explicamos os dois caminhos e o que conferir no contrato antes de assinar. Leia a matéria completa no blog (link na bio).",

@@ -215,7 +215,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-29T23:26:31.527Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "marmore-granito-quartzito-ou-porcelanato-guia-de-pedras-para-casa",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:21:18.894Z"
+  "atualizadoEm": "2026-11-06T09:22:55.108Z"
 }
