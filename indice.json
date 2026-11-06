@@ -449,7 +449,7 @@
       "tipo": "principal",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-31T14:25:31.937Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "morar-em-sousas-e-joaquim-egidio-campinas",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:42:02.643Z"
+  "atualizadoEm": "2026-11-06T10:47:27.922Z"
 }

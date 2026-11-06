@@ -12,7 +12,10 @@
     "condomínio"
   ],
   "capa": {
-    "alt": "Terraço de cobertura ao entardecer com deque de madeira, vasos com plantas, poltronas externas e vista aberta para o céu e as copas das árvores"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/cobertura-garden-ou-casa-qual-combina-com-seu-jeito-de-morar-07195370.jpg",
+    "alt": "Terraço de cobertura ao entardecer com deque de madeira, vasos com plantas, poltronas externas e vista aberta para o céu e as copas das árvores",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Cobertura, garden ou casa: qual escolher para morar"
