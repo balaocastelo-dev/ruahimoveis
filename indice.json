@@ -332,7 +332,7 @@
       "tipo": "principal",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-30T20:24:28.217Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "design-brasileiro-de-mobiliario-estilos-que-atravessam-decadas",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:46:18.824Z"
+  "atualizadoEm": "2026-11-06T09:48:10.921Z"
 }
