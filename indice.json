@@ -305,7 +305,7 @@
       "tipo": "principal",
       "categoria": "interiores",
       "criadaEm": "2026-10-30T17:17:42.915Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "home-office-em-casa-o-que-a-casa-precisa-para-trabalhar-bem",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:41:31.167Z"
+  "atualizadoEm": "2026-11-06T09:42:47.275Z"
 }
