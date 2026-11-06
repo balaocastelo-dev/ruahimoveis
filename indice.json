@@ -900,7 +900,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-06T11:32:10.352Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "cupim-em-casa-como-identificar-e-prevenir",
+      "titulo": "Cupim em casa: como identificar o tipo e evitar que ele volte",
+      "tema": "cupim em casa como identificar e prevenir",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-06T11:33:00.192Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T11:32:10.353Z"
+  "atualizadoEm": "2026-11-06T11:33:00.193Z"
 }

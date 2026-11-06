@@ -1,0 +1,164 @@
+{
+  "slug": "cupim-em-casa-como-identificar-e-prevenir",
+  "tema": "cupim em casa como identificar e prevenir",
+  "titulo": "Cupim em casa: como identificar o tipo e evitar que ele volte",
+  "resumo": "Cupim em casa costuma ser de madeira seca ou subterrâneo. Veja os sinais de cada um, como a construção ajuda a prevenir e quando chamar um profissional.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "cupim",
+    "madeira",
+    "manutenção",
+    "construção",
+    "casa"
+  ],
+  "capa": {
+    "alt": "Detalhe de assoalho de tábuas de madeira clara encontrando um rodapé branco, com luz natural lateral de uma janela"
+  },
+  "redes": {
+    "legenda": "Achou um montinho de pó perto do rodapé ou uma trilha de terra subindo a parede? Pode ser cupim, e cada tipo pede um cuidado diferente. O de madeira seca vive dentro da peça; o subterrâneo vem do solo e sobe pela tubulação. Explicamos no blog como reconhecer, o que a construção faz para prevenir e quando chamar um profissional. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "cupim",
+      "casa",
+      "madeira",
+      "manutencao",
+      "construcao",
+      "reforma",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Para saber se há **cupim em casa**, o primeiro passo é descobrir de que tipo ele é. Nas casas brasileiras, os dois mais comuns são o cupim de madeira seca, que vive dentro de móveis, portas e assoalhos, e o cupim subterrâneo, que vem do solo e pode atacar a casa inteira por dentro das paredes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa diferença muda tudo: o sinal que você procura, o tamanho do risco e o tipo de tratamento. Em ambos os casos, o Instituto de Pesquisas Tecnológicas (IPT) insiste no mesmo ponto: o sucesso de qualquer intervenção depende de um bom diagnóstico, feito antes de aplicar qualquer produto."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Cupim de madeira seca vive dentro da peça de madeira, sem contato com o solo.",
+        "Cupim subterrâneo depende da umidade do solo e entra pelas tubulações e pelos vãos da construção.",
+        "Madeira tratada, peças longe do solo e acesso para inspeção são a melhor prevenção.",
+        "Tratamento é trabalho de empresa especializada, depois de identificar a espécie."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Reconheça o tipo pelo sinal que ele deixa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O cupim de madeira seca forma colônias dentro de peças serradas e de lâminas de compensado, segundo pesquisadores do IPT. Ele não precisa de terra nem de umidade alta. O sinal mais conhecido são pequenos grânulos, parecidos com pó de café ou areia fina, que caem de furinhos no móvel, no batente ou no assoalho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O subterrâneo trabalha de outro jeito. A espécie de maior importância econômica, o *Coptotermes gestroi*, vive em contato com a umidade do solo e chega à casa pelas instalações hidráulica, de esgoto e elétrica, subindo por shafts e vãos fechados. Ele não come concreto, mas passa por frestas e por dentro de blocos cerâmicos, e costuma deixar trilhas de terra nas paredes."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Madeira seca ou subterrâneo: como diferenciar",
+      "colunas": [
+        "",
+        "Cupim de madeira seca",
+        "Cupim subterrâneo"
+      ],
+      "linhas": [
+        [
+          "Onde vive",
+          "Dentro da própria peça de madeira",
+          "No solo, com galerias até a casa"
+        ],
+        [
+          "Sinal comum",
+          "Grânulos secos caindo de furinhos",
+          "Trilhas de terra em paredes e rodapés"
+        ],
+        [
+          "Por onde chega",
+          "Revoada que pousa em móvel ou madeira",
+          "Tubulações, shafts, vãos sob escadas e paredes"
+        ],
+        [
+          "Alcance do estrago",
+          "Costuma ficar nas peças atacadas",
+          "Pode atingir forros, quadros e até fiação"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Com base em publicações do IPT."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A revoada, aquela nuvem de insetos alados perto das lâmpadas no começo da temporada de chuvas, também merece atenção. O IPT lembra que ela pode indicar a formação de uma nova colônia por perto. Mas uma revoada sozinha não prova infestação dentro da casa: o que pesa é encontrar sinais nas peças e nas paredes."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Previna na construção e saiba onde parar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A prevenção começa no projeto. Pesquisadores do IPT recomendam avaliar a presença de cupins no terreno e na vizinhança, afastar as peças de madeira do contato com o solo, prever beirais que reduzam a chuva nas paredes e deixar acesso para inspecionar vãos e shafts. Na obra, vale usar madeira tratada conforme a exposição e não deixar restos de madeira e papelão enterrados."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Peça madeira tratada em autoclave para estruturas, pergolados e peças externas.",
+        "Mantenha madeira, lenha e caixas de papelão longe do chão e das paredes.",
+        "Corrija vazamentos e umidade em rodapés, armários de pia e paredes.",
+        "Inspecione de tempos em tempos os pontos escondidos: atrás de armários, sob escadas e no forro."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se aparecer um sinal, não comece com spray de inseticida. O tratamento depende de identificar a espécie e o tamanho do ataque, e pode envolver iscas, barreira química no solo ou troca das peças comprometidas. Isso é trabalho de empresa especializada. Se o ataque atingir estrutura de telhado, forro ou assoalho, chame também um engenheiro ou arquiteto para avaliar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ao visitar um imóvel com muita madeira, olhe batentes, rodapés e o forro com calma e pergunte se já houve tratamento. Outras ideias de cuidado com a casa estão na categoria [Construção e casas novas](/blog/categoria/construcao) e na página inicial do [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas ou pensando em vender a sua, a equipe da {{cliente}} pode ajudar com atendimento feito por pessoas. Em uma linha: descubra o tipo, chame quem sabe tratar e deixe a madeira longe do solo e da umidade."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Cupim come concreto?",
+      "resposta": "Não. Segundo o IPT, o cupim subterrâneo não ataca concreto, mas passa por frestas e por dentro de blocos cerâmicos para chegar à madeira, aos forros e a outros materiais."
+    },
+    {
+      "pergunta": "Inseticida de supermercado resolve?",
+      "resposta": "Costuma matar só os insetos visíveis, sem chegar à colônia. O tratamento eficaz depende de identificar a espécie e o tamanho do ataque, e deve ser feito por empresa especializada."
+    },
+    {
+      "pergunta": "Revoada de cupim quer dizer que a casa está infestada?",
+      "resposta": "Não necessariamente. A revoada pode indicar uma nova colônia por perto, mas a infestação só se confirma com sinais nas peças de madeira ou nas paredes."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Controle de cupim (Comunicação Técnica 179119) — IPT",
+      "url": "https://escriba.ipt.br/pdf/179119.pdf",
+      "data": "2024"
+    },
+    {
+      "nome": "Controle integrado da biodeterioração de sistemas construtivos em madeira — IPT, Workshop de Tecnologia de Processos e Sistemas Construtivos (ANTAC)",
+      "url": "https://eventos.antac.org.br/index.php/tecsic/article/download/375/307/351",
+      "data": "agosto de 2019"
+    }
+  ]
+}
