@@ -422,7 +422,7 @@
       "tipo": "principal",
       "categoria": "bem-estar",
       "criadaEm": "2026-10-31T11:20:17.264Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "arte-em-casa-moldura-passe-partout-vidro-e-onde-pendurar",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:24:27.638Z"
+  "atualizadoEm": "2026-11-06T10:28:22.854Z"
 }

@@ -12,7 +12,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Sala clara com paredes em tom areia, teto branco, poltrona verde-oliva e luz natural suave entrando por uma janela ampla"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/cores-e-humor-da-casa-o-que-a-ciencia-diz-e-o-que-e-mito-89b78aee.jpg",
+    "alt": "Sala clara com paredes em tom areia, teto branco, poltrona verde-oliva e luz natural suave entrando por uma janela ampla",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Azul acalma, vermelho agita, amarelo dá alegria. Será? Uma pesquisa com milhares de pessoas em 30 países mostrou que as associações entre cor e emoção são parecidas no mundo todo, mas isso não prova que a parede muda o seu humor. O que a ciência já mostrou com mais segurança é o efeito da cor clara no teto e nas paredes. No blog, separamos o que é pesquisa e o que é mito. Leia o artigo completo no blog (link na bio).",
