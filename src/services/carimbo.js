@@ -12,7 +12,7 @@ const cfg = require('../config');
 const CACHE = new Map();
 const LIMITE = 80;
 const OPACIDADE = 0.72;        // quanto o branco aparece sobre a foto
-const LARGURA = 0.34;          // o logo ocupa esta fração da largura da foto
+const LARGURA = 0.10;          // o logo ocupa esta fração da largura da foto (carimbo pequeno, no centro)
 
 let LOGO;
 let LOGO_LIDO = false;
@@ -54,16 +54,20 @@ async function carimbar(buf) {
 
 /** Foto carimbada com a marca desta imobiliária, ou null quando não dá para carimbar. */
 async function daCasa(url, buscar) {
-  if (!/h\.jpg$/i.test(String(url))) return null;          // só as fotos do acervo têm versão limpa
+  const u = String(url);
+  if (!/\.jpe?g$/i.test(u)) return null;                   // só as fotos do acervo
   if (!logoSvg()) return null;                             // imobiliária sem logo: a foto segue como está
-  if (CACHE.has(url)) return CACHE.get(url);
+  if (CACHE.has(u)) return CACHE.get(u);
   let saida = null;
   try {
-    const limpa = await buscar(String(url).replace(/h\.jpg$/i, 'c.jpg'), false);
-    if (limpa && limpa.buf) { const b = await carimbar(limpa.buf); if (b) saida = { tipo: 'image/jpeg', buf: b }; }
+    // Quando existe a versão limpa (<n>c.jpg), é ela que recebe a marca da casa, para não ficar
+    // um carimbo por cima do outro. As demais fotos do acervo são carimbadas como estão.
+    const limpa = /h\.jpg$/i.test(u) ? await buscar(u.replace(/h\.jpg$/i, 'c.jpg'), false) : null;
+    const base = limpa || await buscar(u, false);
+    if (base && base.buf) { const b = await carimbar(base.buf); if (b) saida = { tipo: 'image/jpeg', buf: b }; }
   } catch { saida = null; }
   if (CACHE.size >= LIMITE) CACHE.delete(CACHE.keys().next().value);
-  CACHE.set(url, saida);
+  CACHE.set(u, saida);
   return saida;
 }
 
