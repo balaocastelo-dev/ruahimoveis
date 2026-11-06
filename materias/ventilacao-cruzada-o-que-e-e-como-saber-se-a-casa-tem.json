@@ -13,7 +13,10 @@
     "compra"
   ],
   "capa": {
-    "alt": "Sala clara com janelas abertas em paredes opostas, cortinas leves de linho balançando com a brisa e plantas no canto"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/ventilacao-cruzada-o-que-e-e-como-saber-se-a-casa-tem-059687d1.jpg",
+    "alt": "Sala clara com janelas abertas em paredes opostas, cortinas leves de linho balançando com a brisa e plantas no canto",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Já entrou numa casa que parece fresca mesmo no calor? Muitas vezes o segredo é a ventilação cruzada: janelas em lados opostos que deixam o vento atravessar os cômodos. Uma janela só costuma não bastar. No blog, explicamos como ela funciona e como reconhecer na planta e na visita se a casa tem esse respiro. Leia a matéria completa no blog (link na bio).",
