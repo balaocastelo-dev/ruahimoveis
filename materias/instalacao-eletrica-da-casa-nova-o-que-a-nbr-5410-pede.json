@@ -1,0 +1,240 @@
+{
+  "slug": "instalacao-eletrica-da-casa-nova-o-que-a-nbr-5410-pede",
+  "tema": "instalacao eletrica da casa nova nbr 5410",
+  "titulo": "Instalação elétrica da casa nova: o que a NBR 5410 pede",
+  "resumo": "Instalação elétrica da casa nova: DR, DPS, aterramento, circuitos e tomadas que a NBR 5410 exige, e o que conferir na obra ou na compra do imóvel.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "instalação elétrica",
+    "casa nova",
+    "segurança",
+    "reforma"
+  ],
+  "capa": {
+    "alt": "Quadro de distribuição elétrica aberto e organizado, com disjuntores alinhados, numa parede branca de casa em obra"
+  },
+  "seo": {
+    "titulo": "Instalação elétrica da casa nova: o que a NBR 5410 pede"
+  },
+  "redes": {
+    "legenda": "Sabia que menos da metade dos imóveis tem DR, o dispositivo que desliga a energia quando há fuga de corrente, segundo pesquisa da Abracopel citada pela Cemig? Na casa nova, a instalação elétrica fica escondida na parede, mas decide a segurança de quem mora ali. Veja o que a norma NBR 5410 pede, de DR e DPS a aterramento e circuitos, e o que conferir na obra. Texto completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "casanova",
+      "instalacaoeletrica",
+      "reforma",
+      "arquitetura",
+      "engenharia",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **instalação elétrica da casa nova** é a parte da obra que some dentro das paredes e, por isso, costuma receber menos atenção do que o piso ou a marcenaria. Mas é ela que decide se o chuveiro desarma o quadro, se a TV sobrevive a uma tempestade e, sobretudo, se um choque no banheiro vira só um susto. Quem constrói, reforma ou compra precisa saber o básico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: no Brasil, a regra é a norma ABNT NBR 5410. Ela pede, entre outros pontos, dispositivo DR de alta sensibilidade nas áreas molhadas e externas, dispositivo contra surtos, fio terra em todos os circuitos, circuitos separados por uso e projeto feito por profissional habilitado. A seguir, cada item explicado sem jargão."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A NBR 5410 é a norma de instalações elétricas de baixa tensão; a edição vigente é de 2004, com revisão em andamento.",
+        "DR de até 30 mA é obrigatório em banheiros, cozinhas, áreas de serviço, garagens, piscinas e tomadas externas.",
+        "DPS contra surtos e fio terra em todos os circuitos, inclusive os de iluminação, fazem parte da regra.",
+        "Projeto e execução cabem a profissional habilitado, com anotação de responsabilidade técnica."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a instalação elétrica merece atenção desde o projeto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os números ajudam a entender. O anuário da Abracopel, associação que acompanha acidentes de origem elétrica no país, registrou em 2025 um total de 917 choques elétricos, com 646 mortes, e 1.304 incêndios de origem elétrica, com 60 mortes. Só dentro das residências foram 195 acidentes por choque e 150 mortes naquele ano, segundo reportagem do Canal Solar sobre o levantamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Boa parte desses casos tem relação com instalação antiga, improvisada ou sobrecarregada. A Cemig, distribuidora de energia de Minas Gerais, cita pesquisa da Abracopel segundo a qual menos da metade dos imóveis tem o dispositivo DR, embora ele seja exigido no Brasil desde 1997. Ou seja: a regra existe há décadas, mas nem sempre chega à parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na casa nova, o melhor momento para acertar é o projeto. Mudar a posição de um quadro, puxar um circuito exclusivo para o forno ou prever tomadas na ilha da cozinha custa pouco no papel e muito depois do reboco. Outros temas de obra estão reunidos em [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a norma não é um manual de faça você mesmo. Ela orienta o profissional que projeta e executa. O papel de quem constrói ou compra é saber o que perguntar, conferir que a resposta existe e nunca abrir o quadro ou trocar fiação por conta própria."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "DR, DPS e aterramento: os três itens que protegem pessoas e aparelhos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **DR**, sigla de dispositivo diferencial residual, percebe quando parte da corrente escapa do caminho certo, por exemplo pelo corpo de alguém que encosta num aparelho com defeito, e desliga o circuito em fração de segundo. Pela NBR 5410, segundo resumo técnico da Sienge, o DR de alta sensibilidade, de até 30 mA, é obrigatório em banheiros, cozinhas, áreas de serviço, lavanderias, garagens, saunas, piscinas e tomadas externas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **DPS**, dispositivo de proteção contra surtos, cuida dos aparelhos. Ele desvia picos de tensão, como os provocados por raios na rede, que podem queimar televisores, computadores e eletrodomésticos. A Cemig lembra que ele também reduz o risco de incêndio por sobretensão. A exigência de DPS entrou na norma com a edição de 2004."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **aterramento** é o caminho seguro para a corrente de falha. A norma pede condutor de proteção, o fio terra, em todos os circuitos, inclusive os de iluminação. É para ele que serve o terceiro pino da tomada. A Cemig alerta que cortar esse pino ou usar adaptador para plugue antigo anula a proteção."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os dispositivos de proteção da casa, lado a lado",
+      "colunas": [
+        "Item",
+        "O que faz",
+        "Onde a NBR 5410 pede"
+      ],
+      "linhas": [
+        [
+          "DR de até 30 mA",
+          "Desliga o circuito quando percebe fuga de corrente, protegendo contra choque",
+          "Banheiros, cozinhas, áreas de serviço, lavanderias, garagens, saunas, piscinas e tomadas externas"
+        ],
+        [
+          "DPS",
+          "Desvia surtos de tensão vindos da rede, protegendo aparelhos e reduzindo risco de incêndio",
+          "Na instalação, desde a edição de 2004"
+        ],
+        [
+          "Fio terra",
+          "Dá caminho seguro à corrente de falha; liga-se ao terceiro pino da tomada",
+          "Em todos os circuitos, inclusive os de iluminação"
+        ],
+        [
+          "Disjuntor",
+          "Desarma quando o circuito é sobrecarregado ou entra em curto",
+          "Em cada circuito do quadro, dimensionado pelo projeto"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "NBR 5410: principais exigências — Sienge",
+        "url": "https://sienge.com.br/blog/nbr-5410/"
+      },
+      "nota": "Resumo da regra geral, com base na Sienge e na Cemig; a linha do disjuntor é uma descrição geral. O dimensionamento de cada circuito é feito no projeto elétrico."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "A norma está em revisão",
+      "texto": "Segundo a revista O Setor Elétrico, o projeto de revisão da NBR 5410 que passou por consulta pública muda, por exemplo, as regras dos volumes de segurança do banheiro. A Sienge cita que a revisão pode tornar o DR obrigatório em todos os circuitos da casa. Até a publicação, vale a edição de 2004; pergunte ao projetista como ele está tratando o tema."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Circuitos, tomadas e fios: como dimensionar a casa para o uso real"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A NBR 5410 pede que a instalação seja dividida em circuitos de iluminação, de tomadas de uso geral e de tomadas de uso específico, aquelas reservadas a um aparelho só, como ar-condicionado ou torneira elétrica. Separar evita que o forno e o secador de cabelo disputem o mesmo fio e facilita desligar só uma parte da casa numa manutenção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para as tomadas de uso geral, a norma fixa um mínimo: ao menos uma a cada 5 m de perímetro do cômodo, ou fração, distribuídas de modo uniforme. Na iluminação, cada cômodo precisa de pelo menos um ponto de luz no teto comandado por interruptor de parede. A carga mínima é de 100 VA em cômodos de até 6 m², somando 60 VA a cada 4 m² inteiros acima disso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os fios também têm piso. Como referência geral, a seção mínima é de 1,5 mm² nos circuitos de iluminação e de 2,5 mm² nas tomadas de uso geral; os demais seguem o cálculo do projeto. Chuveiro, forno, cooktop de indução e carregador de carro elétrico pedem conta feita por profissional, porque a potência muda tudo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas mínimo não é conforto. Uma casa de hoje tem carregador de celular na cabeceira, eletroportáteis na bancada, roteador, TV e, muitas vezes, home office. Vale pensar no uso real de cada cômodo e pedir folga no quadro para crescer. A Cemig recomenda que aparelhos de alta potência, como fritadeira, micro-ondas e ferro de passar, fiquem em tomadas adequadas, de preferência em circuito exclusivo, sem benjamim ou extensão."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que conferir na obra, na reforma ou antes de comprar o imóvel"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na construção, peça o projeto elétrico assinado e a anotação de responsabilidade técnica do profissional, como a ART do engenheiro. A Sienge lembra que projeto, execução, verificação e manutenção devem ficar com profissionais qualificados, com registro no conselho de classe. Na entrega, o quadro deve vir identificado, circuito por circuito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de um imóvel pronto, olhe o quadro de distribuição na visita, sem abrir nem mexer em nada. Ele está organizado e etiquetado? Há DR e DPS visíveis? As tomadas têm três furos? Disjuntor que desarma com frequência, cheiro de queimado ou tomada aquecida são sinais para chamar um eletricista antes de fechar negócio. Para outras dicas de compra, veja [Alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Refazer a instalação elétrica numa reforma",
+      "pros": [
+        "Permite incluir DR, DPS e aterramento que a casa antiga talvez não tenha",
+        "Abre espaço para circuitos exclusivos de ar-condicionado, forno e carregador de carro",
+        "Reduz o risco de sobrecarga causada por extensões e benjamins"
+      ],
+      "contras": [
+        "Exige quebrar paredes e refazer acabamentos, o que alonga a obra",
+        "Pede projeto e profissional habilitado, o que soma etapas ao cronograma",
+        "Pode exigir aumento de carga junto à distribuidora de energia"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois da mudança, a manutenção continua. A Cemig recomenda uma avaliação da instalação a cada cinco anos, ou sempre que a carga aumentar, como ao instalar um aparelho de maior potência. É um cuidado simples que costuma passar despercebido por anos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas e quer ajuda para comparar imóveis com calma, observando também o que não aparece nas fotos, a equipe da {{cliente}} acompanha a busca. A decisão em uma linha: elétrica boa é projeto assinado, DR, DPS, fio terra e circuitos pensados para o jeito que você vive."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "O que é a NBR 5410?",
+      "resposta": "É a norma da ABNT que trata das instalações elétricas de baixa tensão, como as de casas e apartamentos. A edição vigente é de 2004, com uma pequena revisão em 2008, e uma nova revisão está em andamento."
+    },
+    {
+      "pergunta": "Onde o DR é obrigatório em casa?",
+      "resposta": "Pela NBR 5410, o DR de alta sensibilidade, de até 30 mA, é obrigatório em banheiros, cozinhas, áreas de serviço, lavanderias, garagens, saunas, piscinas e tomadas externas. A revisão da norma pode estendê-lo a todos os circuitos."
+    },
+    {
+      "pergunta": "Qual a diferença entre DR e DPS?",
+      "resposta": "O DR protege pessoas: desliga o circuito quando há fuga de corrente, como num choque. O DPS protege aparelhos e a instalação contra surtos de tensão, como os causados por raios na rede."
+    },
+    {
+      "pergunta": "Preciso de engenheiro para a instalação elétrica da casa?",
+      "resposta": "A norma pede que projeto, execução e manutenção fiquem com profissionais qualificados, como engenheiros eletricistas ou técnicos em eletrotécnica registrados no conselho de classe. Peça a anotação de responsabilidade técnica e o projeto assinado."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo revisar a elétrica da casa?",
+      "resposta": "A Cemig recomenda uma avaliação a cada cinco anos ou sempre que a carga aumentar, como ao instalar um aparelho de maior potência. Sinais como disjuntor desarmando ou tomada quente pedem visita antes disso."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "NBR 5410: o que é e principais exigências — Sienge",
+      "url": "https://sienge.com.br/blog/nbr-5410/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Cemig orienta sobre dispositivos simples que ajudam a reduzir riscos com energia elétrica — Agência Minas",
+      "url": "https://www.agenciaminas.mg.gov.br/noticia/cemig-orienta-sobre-dispositivos-simples-que-ajudam-a-reduzir-riscos-com-energia-eletrica",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Acidentes de origem elétrica superam 2 mil casos no Brasil — Canal Solar",
+      "url": "https://canalsolar.com.br/acidentes-origem-eletrica-superam-2-mil-casos-brasil/",
+      "data": "julho de 2026"
+    },
+    {
+      "nome": "NBR 5410 – Instalações elétricas em banheiros — O Setor Elétrico",
+      "url": "https://www.osetoreletrico.com.br/?p=165060",
+      "data": "novembro de 2026"
+    }
+  ]
+}
