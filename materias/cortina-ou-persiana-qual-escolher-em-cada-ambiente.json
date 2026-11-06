@@ -12,7 +12,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Sala de estar clara com cortinas longas de linho cru do teto ao piso e uma persiana rolô branca parcialmente baixada na janela"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/cortina-ou-persiana-qual-escolher-em-cada-ambiente-88a06f27.jpg",
+    "alt": "Sala de estar clara com cortinas longas de linho cru do teto ao piso e uma persiana rolô branca parcialmente baixada na janela",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Cortina ou persiana? Depende do cômodo. Tecido deixa a sala mais acolhedora, mas sofre com gordura e umidade; persiana ocupa pouco espaço e limpa fácil. No blog, mostramos o que funciona na sala, no quarto, na cozinha, no banheiro e no escritório, e o truque de combinar as duas. Leia a dica completa no blog (link na bio).",
