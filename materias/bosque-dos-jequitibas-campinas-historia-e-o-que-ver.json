@@ -1,0 +1,230 @@
+{
+  "slug": "bosque-dos-jequitibas-campinas-historia-e-o-que-ver",
+  "tema": "bosque dos jequitibas parque historico de campinas",
+  "titulo": "Bosque dos Jequitibás: história, atrações e a vida perto do parque em Campinas",
+  "resumo": "Bosque dos Jequitibás, em Campinas: como nasceu em 1884, o que há para ver hoje, por que às vezes fecha com chuva e o que pesar ao morar perto de um parque.",
+  "categoria": "campinas",
+  "etiquetas": [
+    "campinas",
+    "parques",
+    "áreas verdes",
+    "bairros",
+    "história"
+  ],
+  "capa": {
+    "alt": "Alameda de terra batida sob árvores altas de mata atlântica, com bancos de madeira e luz da manhã filtrada pelas copas"
+  },
+  "redes": {
+    "legenda": "Sabia que um dos parques mais conhecidos de Campinas nasceu em 1884, como iniciativa particular, e só virou público em 1915? O Bosque dos Jequitibás guarda mata atlântica no meio da cidade, museu, aquário e teatro infantil. No blog, contamos a história, o que ver por lá e o que pesar se você sonha morar perto de um parque. Leia o artigo completo (link na bio).",
+    "hashtags": [
+      "campinas",
+      "bosquedosjequitibas",
+      "parques",
+      "mataatlantica",
+      "morarbem",
+      "areasverdes"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **Bosque dos Jequitibás** é daqueles lugares que quase todo morador de Campinas conhece desde criança: a mata alta no meio da cidade, o passeio de domingo, o museu com bichos empalhados, o aquário. Para quem está chegando à cidade, ou pensa em morar por perto, ele também é uma boa porta de entrada para entender como Campinas convive com o verde."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o Bosque é um parque público com mais de 100 mil m², criado em 1884 por um particular e comprado pela Prefeitura em 1915. Guarda um fragmento de mata atlântica, abriga um pequeno zoológico, três espaços de museu e um teatro infantil, e a entrada no parque é gratuita. Fecha às segundas e, por segurança, em dias de chuva forte."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Criado em 1884 por Francisco Bueno de Miranda e comprado pela Prefeitura em 1915.",
+        "Mais de 100 mil m² com fragmento de mata atlântica, zoológico, museus e teatro infantil.",
+        "Parque aberto de terça a domingo, das 6h às 18h, com entrada gratuita; os museus têm ingresso próprio.",
+        "A Prefeitura fecha os parques de forma preventiva quando a chuva acumulada passa do limite municipal."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o Bosque nasceu e por que ele ainda importa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A história começa no fim do século XIX. Segundo reportagem do portal ACidade ON, o Bosque foi criado em 1884 por **Francisco Bueno de Miranda** e adquirido pela Prefeitura de Campinas em 1915. Ou seja, nasceu como iniciativa particular e, pouco mais de trinta anos depois, passou a ser de todos, papel que mantém há mais de um século."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que torna o lugar especial é a mata. O portal Hora Campinas descreve o Bosque como um **fragmento de mata atlântica** na região central, ou seja, um pedaço remanescente da floresta nativa cercado pela cidade. Em 2023, depois da retirada de árvores com risco de queda, o replantio incluiu mudas de jequitibá-rosa, jequitibá-branco, angico-vermelho e aroeira-pimenteira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse patrimônio tem proteção. Em 2023, a retirada de árvores com risco de queda dependeu de autorização do Condephaat, o órgão estadual de patrimônio histórico, segundo o Hora Campinas. E, em 2026, a reforma do aquário e da Casa dos Animais Interessantes precisou da aprovação do Condepacc, o conselho municipal, porque os prédios são tombados, como informou o portal Campinas.com.br."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Tombado quer dizer o quê?",
+      "texto": "Tombamento é o reconhecimento oficial de que um bem tem valor histórico, cultural ou ambiental. Na prática, qualquer obra ou corte de árvore precisa passar pelo órgão de patrimônio responsável antes de sair do papel."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que ver no Bosque dos Jequitibás hoje"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O passeio mais simples é caminhar à sombra. Mas o Bosque reúne também um conjunto de atrações que explica por que ele recebia, antes do fechamento de 2023, mais de 100 mil visitantes por mês, de acordo com o ACidade ON. A tabela abaixo resume o que as reportagens consultadas descrevem."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Atrações do Bosque dos Jequitibás",
+      "colunas": [
+        "Atração",
+        "O que é",
+        "Acesso"
+      ],
+      "linhas": [
+        [
+          "Mata e alamedas",
+          "Fragmento de mata atlântica com caminhos sombreados",
+          "Entrada gratuita, terça a domingo, das 6h às 18h"
+        ],
+        [
+          "Zoológico",
+          "Cerca de 200 animais, entre mamíferos, aves e répteis",
+          "Dentro do parque"
+        ],
+        [
+          "Museu de História Natural",
+          "Coleções de história natural, no complexo de museus do parque",
+          "Ingresso único com o aquário e a Casa dos Animais Interessantes"
+        ],
+        [
+          "Aquário Municipal",
+          "Reformado e reaberto em junho de 2026",
+          "Ingresso único com os outros espaços de museu"
+        ],
+        [
+          "Casa dos Animais Interessantes",
+          "Conhecida como Serpentário, também reformada em 2026",
+          "Ingresso único com os outros espaços de museu"
+        ],
+        [
+          "Teatro Infantil Carlito Maia",
+          "Espetáculos voltados às crianças",
+          "Programação própria"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Aquário Municipal e Casa dos Animais Interessantes reabrem — Campinas.com.br",
+        "url": "https://campinas.com.br/turismo/2026/06/aquario-municipal-e-casa-dos-animais-interessantes-sao-reformados-e-reabrem-ao-publico-no-bosque-dos-jequitibas/"
+      },
+      "nota": "Os espaços de museu têm horário mais curto que o do parque; confira antes de ir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo o Campinas.com.br, a reforma concluída em junho de 2026 trocou a fiação e os quadros elétricos, revisou os telhados e repintou os prédios do aquário e do serpentário. Os três espaços de museu funcionam com ingresso único, pago em dinheiro, e com horários menores do que os do parque: manhãs durante a semana e manhã e tarde aos sábados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há um porém que todo frequentador precisa conhecer. A Prefeitura fecha os parques de forma preventiva quando a chuva acumulada em 72 horas passa de 80 mm, o limite municipal. Em 27 de outubro de 2026, segundo o portal Piranot, o Bosque estava entre os espaços ainda fechados por esse motivo. Antes de sair de casa, confira os canais oficiais da Prefeitura."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Morar perto de um parque: o que pesar na escolha"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter um parque a poucas quadras muda a rotina. A caminhada da manhã vira hábito, as crianças ganham um quintal enorme e a rua costuma ser mais arborizada e fresca no verão. Para muita gente que busca imóvel em Campinas, a proximidade de áreas verdes como o Bosque, a Lagoa do Taquaral ou a Mata de Santa Genebra pesa tanto quanto o número de quartos."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Morar perto de um parque urbano",
+      "pros": [
+        "Caminhada, corrida e passeio com as crianças sem pegar o carro.",
+        "Ruas mais arborizadas, sombra e vista para o verde em muitas janelas.",
+        "Programas culturais e de natureza a poucos passos, como museu e teatro infantil."
+      ],
+      "contras": [
+        "Movimento maior de carros e pedestres nos fins de semana e feriados.",
+        "Árvores grandes pedem atenção em dias de vento e chuva forte, na rua e no parque.",
+        "O parque pode fechar por dias seguidos na temporada de chuvas."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita a um imóvel perto de um parque, vale ir em dois horários: num dia útil e num domingo de manhã. Você percebe o barulho, o estacionamento nas ruas em volta e a sombra das árvores sobre a casa. Repare também na posição das copas em relação ao telhado, às calhas e à fiação. Em dúvida sobre uma árvore de grande porte, a avaliação cabe a um profissional habilitado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a proximidade não é tudo. Um parque bonito não compensa uma casa com pouca luz, planta ruim ou documentação pendente. Use o verde como critério de desempate, junto com acesso a escolas, comércio e trabalho. Há outros textos sobre os bairros e a vida na cidade em [Campinas e região](/blog/categoria/campinas), e sobre conforto em casa em [Bem-estar](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como aproveitar o Bosque como visitante"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A melhor hora costuma ser cedo. O parque abre às 6h, quando o sol ainda é fraco e a mata está mais fresca. Para as famílias, a combinação de museu, aquário e zoológico rende uma manhã inteira; leve dinheiro para o ingresso dos espaços de museu. Aos fins de semana, o movimento é maior, e as ruas do entorno enchem de carros."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel em Campinas e quer ter um parque como o Bosque por perto, ou vai vender uma casa que tem esse privilégio, a equipe da {{cliente}} pode ajudar a avaliar a localização com calma, rua por rua. Mais leituras sobre a cidade estão no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: o Bosque dos Jequitibás é história e mata atlântica no centro de Campinas, e morar perto dele vale mais quando a casa também é boa."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quando o Bosque dos Jequitibás foi criado?",
+      "resposta": "Em 1884, por Francisco Bueno de Miranda. A Prefeitura de Campinas comprou a área em 1915, e desde então o parque é público."
+    },
+    {
+      "pergunta": "Qual o horário do Bosque dos Jequitibás?",
+      "resposta": "O parque abre de terça a domingo, das 6h às 18h, e fecha às segundas. Os espaços de museu têm horário mais curto. Antes de ir, confira se não há fechamento preventivo por chuva."
+    },
+    {
+      "pergunta": "Precisa pagar para entrar no Bosque dos Jequitibás?",
+      "resposta": "A entrada no parque é gratuita. O Museu de História Natural, o Aquário Municipal e a Casa dos Animais Interessantes têm um ingresso único, pago em dinheiro, com meia-entrada e gratuidade para alguns públicos."
+    },
+    {
+      "pergunta": "Por que o Bosque dos Jequitibás fecha em dias de chuva?",
+      "resposta": "A Prefeitura fecha os parques de forma preventiva quando a chuva acumulada em 72 horas passa de 80 mm, por causa do risco de queda de galhos e árvores. A reabertura depende de novas medições."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Campinas reabre Bosque dos Jequitibás após quase sete meses; entenda o que mudou — ACidade ON",
+      "url": "https://www.acidadeon.com/campinas/cotidiano/campinas-reabre-bosque-dos-jequitibas-apos-quase-sete-meses-entenda-o-que-mudou/",
+      "data": "agosto de 2023"
+    },
+    {
+      "nome": "Bosque dos Jequitibás volta a fazer parte do dia a dia de Campinas — Hora Campinas",
+      "url": "https://horacampinas.com.br/bosque-dos-jequitibas-volta-a-fazer-parte-do-dia-a-dia-de-campinas-veja-imagens/",
+      "data": "agosto de 2023"
+    },
+    {
+      "nome": "Aquário Municipal e Casa dos Animais Interessantes são reformados e reabrem ao público — Campinas.com.br",
+      "url": "https://campinas.com.br/turismo/2026/06/aquario-municipal-e-casa-dos-animais-interessantes-sao-reformados-e-reabrem-ao-publico-no-bosque-dos-jequitibas/",
+      "data": "junho de 2026"
+    },
+    {
+      "nome": "Campinas reabre seis parques e bosques do Sudoeste; Taquaral e Jequitibás seguem fechados — Piranot",
+      "url": "https://www.piranot.com.br/2026/10/27/noticias/brasil/estado-sao-paulo/interior/rmp/piracicaba-noticias/campinas-reabre-parques-sudoeste/",
+      "data": "outubro de 2026"
+    }
+  ]
+}
