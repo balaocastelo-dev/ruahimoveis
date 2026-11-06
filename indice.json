@@ -134,7 +134,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-29T14:48:15.369Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "juros-do-financiamento-imobiliario-sobem-bradesco-itau-outubro-2026",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:07:11.562Z"
+  "atualizadoEm": "2026-11-06T09:08:54.695Z"
 }

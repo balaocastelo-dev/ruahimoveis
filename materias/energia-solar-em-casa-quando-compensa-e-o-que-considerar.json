@@ -12,7 +12,10 @@
     "eficiência energética"
   ],
   "capa": {
-    "alt": "Telhado cerâmico de uma casa térrea com fileiras de painéis solares sob céu azul e jardim arborizado ao redor"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/energia-solar-em-casa-quando-compensa-e-o-que-considerar-04518513.jpg",
+    "alt": "Telhado cerâmico de uma casa térrea com fileiras de painéis solares sob céu azul e jardim arborizado ao redor",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Vale a pena colocar placa solar em casa? Depende menos da moda e mais do seu telhado: face norte, pouca sombra e estrutura em bom estado fazem a diferença. E as regras mudaram com a Lei 14.300, que alterou a forma como a energia que sobra vira crédito na conta. No blog, explicamos quando compensa e o que conferir antes de assinar. Leia a matéria completa no blog (link na bio).",
