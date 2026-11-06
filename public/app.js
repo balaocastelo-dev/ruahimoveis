@@ -108,7 +108,7 @@ const MODULOS = {
   estacao: ['/estacao-pc.js'],
   lgpd: ['/lgpd.js'],
   movimento: ['/movimento.js'],
-}};
+};
 const _js = new Map();
 function carregaJs(src) {
   if (!_js.has(src)) {
