@@ -466,9 +466,9 @@ r.get('/mercado/perto/:id', async (req, res) => {
 r.get('/fachada', async (req, res) => {
   const ref = String(req.query.ref || '');
   let lat, lon;
-  const m = ref.match(/^(fg|cd)(\d+)$/);
-  if (m && m[1] === 'fg') ({ lat, lon } = one('SELECT lat, lon FROM fisguei_anuncios WHERE id=?', +m[2]) || {});
-  else if (m) ({ lat, lon } = one('SELECT lat, lon FROM condominios WHERE id=?', +m[2]) || {});
+  const TABELA = { fg: 'fisguei_anuncios', cd: 'condominios', im: 'imoveis' };
+  const m = ref.match(/^(fg|cd|im)(\d+)$/);
+  if (m) ({ lat, lon } = one(`SELECT lat, lon FROM ${TABELA[m[1]]} WHERE id=?`, +m[2]) || {});
   if (!lat) return res.status(404).json({ erro: 'Sem posição.' });
   const img = await require('../condominios/fachada').foto(ref, lat, lon);
   if (!img) return res.status(404).json({ erro: 'Sem foto de fachada.' });

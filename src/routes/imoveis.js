@@ -183,6 +183,9 @@ function campos(b, u) {
   };
 }
 
+// Completa a foto de quem já está na carteira sem nenhuma: fotos do anúncio de origem ou a fachada real da rua.
+r.post('/completar-fotos', A.exigePerfil('adm', 'gestor'), (req, res) => res.json(require('../services/fotos-internas').completaCarteira()));
+
 r.post('/', async (req, res) => {
   const b = req.body || {};
   if (!b.tipo) falha(400, 'Escolha o tipo do imóvel.');
@@ -193,6 +196,15 @@ r.post('/', async (req, res) => {
   const cols = Object.keys(c);
   const id = Number(run(`INSERT INTO imoveis(${cols.join(',')}) VALUES(${cols.map(() => '?').join(',')})`, ...cols.map((k) => c[k])).lastInsertRowid);
   audit(req.usuario.id, 'imovel_criado', c.codigo);
+  // Nenhum imóvel entra na carteira sem foto. A foto da fachada depende da coordenada:
+  // quando o corretor não usou a busca de endereço, ela é procurada aqui, antes das fotos.
+  if (!c.lat && (c.logradouro || c.cep)) {
+    try {
+      const e = await endereco.pesquisar({ cep: c.cep, logradouro: c.logradouro, numero: c.numero, cidade: c.cidade, uf: c.uf });
+      if (e && e.campos && e.campos.lat) run('UPDATE imoveis SET lat=?, lon=? WHERE id=?', e.campos.lat, e.campos.lon, id);
+    } catch { /* endereços online fora do ar: o imóvel é salvo do mesmo jeito */ }
+  }
+  try { require('../services/fotos-internas').garante(id); } catch { /* a foto é um extra: nunca impede o cadastro */ }
   let aviso = null;
   if (drive.conectado()) { try { await drive.garantePastaImovel(id); } catch (e) { aviso = 'Imóvel salvo, mas a pasta no Drive não foi criada: ' + e.message; } }
   res.json({ id, codigo: c.codigo, aviso, compradores: match.leadsParaImovel(id, 5) });

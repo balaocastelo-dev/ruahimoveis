@@ -8,7 +8,7 @@ const CATEGORIA = 'Fotos internas';
 const MAX = 20;
 
 const lista = (j) => { try { const v = typeof j === 'string' ? JSON.parse(j) : j; return Array.isArray(v) ? v : []; } catch { return []; } };
-const urlOk = (u) => typeof u === 'string' && (/^https?:\/\/[^\s"'<>]+$/i.test(u) || /^\/api\/fachada\?ref=(fg|cd)\d+$/.test(u));
+const urlOk = (u) => typeof u === 'string' && (/^https?:\/\/[^\s"'<>]+$/i.test(u) || /^\/api\/fachada\?ref=(fg|cd|im)\d+$/.test(u));
 
 // Endereços de foto conhecidos para o imóvel: anúncios do Fisguei ligados a ele, oportunidades do Radar e, por último, a fachada do Google.
 function urlsDoImovel(imovelId, extra = {}) {
@@ -23,9 +23,10 @@ function urlsDoImovel(imovelId, extra = {}) {
   for (const o of ops) urls.push(o.foto);
   const boas = [...new Set(urls.filter(urlOk))].slice(0, MAX);
   if (!boas.length) {
-    const im = one('SELECT condominio_id FROM imoveis WHERE id=?', imovelId);
+    const im = one('SELECT condominio_id, lat FROM imoveis WHERE id=?', imovelId);
     const comGeo = fg.find((a) => a.lat);
     if (comGeo) boas.push(`/api/fachada?ref=fg${comGeo.id}`);
+    else if (im && im.lat) boas.push(`/api/fachada?ref=im${imovelId}`);
     else if (im && im.condominio_id) boas.push(`/api/fachada?ref=cd${im.condominio_id}`);
   }
   return boas;
