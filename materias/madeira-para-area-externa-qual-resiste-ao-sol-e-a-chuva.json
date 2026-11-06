@@ -13,7 +13,10 @@
     "materiais"
   ],
   "capa": {
-    "alt": "Deck de madeira escura ao redor de uma piscina, com espreguiçadeiras de madeira e jardim tropical ao fundo"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/madeira-para-area-externa-qual-resiste-ao-sol-e-a-chuva-f6d77288.jpg",
+    "alt": "Deck de madeira escura ao redor de uma piscina, com espreguiçadeiras de madeira e jardim tropical ao fundo",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Por que um deck dura décadas e outro apodrece em poucos anos? A espécie escolhida pesa muito: madeiras densas como ipê e cumaru costumam resistir bem a fungos e cupins, enquanto pinus sem tratamento sofre ao tempo. No blog, explicamos o que olhar, como conferir a origem legal e qual manutenção esperar. Leia a dica completa no blog (link na bio).",

@@ -296,7 +296,7 @@
       "tipo": "dica",
       "categoria": "construcao",
       "criadaEm": "2026-10-30T14:23:54.981Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "cozinha-integrada-ilha-coifa-cheiro-e-barulho",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:39:58.652Z"
+  "atualizadoEm": "2026-11-06T09:41:31.167Z"
 }
