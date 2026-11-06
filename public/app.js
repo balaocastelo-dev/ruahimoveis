@@ -667,7 +667,7 @@ FORM.imovel = async (f) => {
 
 async function telaFicha(id, aba, sub) {
   const im = await api('GET', `/api/imoveis/${id}`);
-  const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda'], ['contratos', 'Contratos']];
+  const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda']];
   $('#main').innerHTML = `<a class="btn sm" href="#/imoveis">← Imóveis</a>
   <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1><div class="eyebrow depois mono">${esc(im.codigo)} ${etapaPill(im.etapa)}</div></div>
     <select class="inp" style="width:auto" data-status-imovel="${im.id}">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select>
