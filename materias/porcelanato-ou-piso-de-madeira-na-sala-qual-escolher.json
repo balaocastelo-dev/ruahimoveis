@@ -13,7 +13,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Sala de estar com piso de madeira em tábuas largas encontrando um porcelanato claro na área de jantar"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/porcelanato-ou-piso-de-madeira-na-sala-qual-escolher-fa96081e.jpg",
+    "alt": "Sala de estar com piso de madeira em tábuas largas encontrando um porcelanato claro na área de jantar",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Porcelanato ou madeira na sala? A madeira traz aconchego e pode ser raspada e renovada, mas pede pano quase seco. O porcelanato aguenta água e sol, mas tem no rejunte o seu ponto fraco. E ainda tem o vinílico e o laminado no meio do caminho. Comparamos conforto, limpeza e ruído para você decidir. Leia no blog (link na bio).",

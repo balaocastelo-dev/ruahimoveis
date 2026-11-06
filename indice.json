@@ -377,7 +377,7 @@
       "tipo": "dica",
       "categoria": "interiores",
       "criadaEm": "2026-10-30T23:26:50.544Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "construir-casa-em-condominio-fechado-do-terreno-ao-projeto-aprovado",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:55:19.248Z"
+  "atualizadoEm": "2026-11-06T10:00:57.974Z"
 }
