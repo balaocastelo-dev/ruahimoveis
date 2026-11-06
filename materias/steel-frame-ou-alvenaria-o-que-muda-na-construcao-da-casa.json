@@ -12,7 +12,10 @@
     "obra"
   ],
   "capa": {
-    "alt": "Estrutura de uma casa térrea em perfis de aço galvanizado montada sobre a fundação, num canteiro limpo ao entardecer"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/steel-frame-ou-alvenaria-o-que-muda-na-construcao-da-casa-ba715d14.jpg",
+    "alt": "Estrutura de uma casa térrea em perfis de aço galvanizado montada sobre a fundação, num canteiro limpo ao entardecer",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Já pensou em construir uma casa sem tijolo? O steel frame usa um esqueleto de perfis leves de aço, placas e isolantes, e promete obra mais rápida e limpa. Mas ele pede mão de obra treinada e projeto fechado desde o começo. Comparamos steel frame e alvenaria com concreto armado: prazo, conforto, reforma e acabamentos. Leia o artigo completo no blog (link na bio).",

@@ -233,7 +233,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-30T02:26:41.673Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "varanda-gourmet-o-que-nao-pode-faltar",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:24:55.812Z"
+  "atualizadoEm": "2026-11-06T09:26:35.613Z"
 }
