@@ -118,6 +118,9 @@ function enviarExterna(res, item, cache = 'public, max-age=604800, s-maxage=2592
 async function fotoExterna(res, f) {
   const url = String(f.url_externa || '');
   if (!/^https:\/\/[^\s"'<>]+$/i.test(url)) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  // Foto ilustrativa do acervo: entra com o carimbo desta imobiliária no lugar do carimbo do sistema.
+  const propria = await require('../services/carimbo').daCasa(url, buscarExterna);
+  if (propria && propria.buf) return enviarExterna(res, propria);
   return enviarExterna(res, await buscarExterna(url));
 }
 // Capa (topo da página Signature e do imóvel): a versão em alta e sem carimbo (<id>-<n>c.jpg), quando existe.
