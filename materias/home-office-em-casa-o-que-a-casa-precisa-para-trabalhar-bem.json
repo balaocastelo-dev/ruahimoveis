@@ -12,7 +12,10 @@
     "projeto"
   ],
   "capa": {
-    "alt": "Escritório em casa com mesa de madeira junto a uma janela lateral, cadeira ergonômica, estante embutida e luminária de mesa"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/home-office-em-casa-o-que-a-casa-precisa-para-trabalhar-bem-bdd4333c.jpg",
+    "alt": "Escritório em casa com mesa de madeira junto a uma janela lateral, cadeira ergonômica, estante embutida e luminária de mesa",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Home office em casa: o que a casa precisa"
