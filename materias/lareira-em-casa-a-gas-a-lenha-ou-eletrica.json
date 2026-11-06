@@ -12,7 +12,10 @@
     "conforto"
   ],
   "capa": {
-    "alt": "Sala de estar aconchegante com lareira de pedra acesa, poltronas de couro e manta de lã"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/lareira-em-casa-a-gas-a-lenha-ou-eletrica-309a2019.jpg",
+    "alt": "Sala de estar aconchegante com lareira de pedra acesa, poltronas de couro e manta de lã",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Lareira em casa é charme puro nas noites frias, mas cada tipo pede um cuidado: a lenha precisa de chaminé limpa, a gás de instalador habilitado, a etanol de muita atenção no abastecimento e a elétrica de fiação que aguente. Montamos um guia rápido para você escolher sem susto. Leia no blog (link na bio).",
