@@ -404,7 +404,7 @@
       "tipo": "dica",
       "categoria": "bem-estar",
       "criadaEm": "2026-10-31T02:21:06.301Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "isolamento-acustico-na-construcao-paredes-lajes-e-janelas",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:10:40.285Z"
+  "atualizadoEm": "2026-11-06T10:14:30.651Z"
 }
