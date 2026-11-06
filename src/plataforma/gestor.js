@@ -99,6 +99,8 @@ function variaveis(im, dbUrl, segredo) {
     BLOG_DIARIO_URL: `${VAZIO}/blog`, PORTAL_CONTEUDO_URL: `${VAZIO}/portal`, BAIRROS_CONTEUDO_URL: `${VAZIO}/bairros`,
     IA_MODO: 'desligado', RADAR_PORTAIS: '0', FISGUEI_ROBO: '0', ESCRITORIO: '0', DRIVE_ROOT_NAME: `${im.nome} Imóveis`,
   };
+  // Identidade visual: quando existe public/temas/<slug>, a imobiliária já nasce com a marca dela.
+  if (fs.existsSync(path.join(__dirname, '..', '..', 'public', 'temas', im.slug))) v.TEMA = im.slug;
   if (im.fundo) v.PORTAL_FUNDO = im.fundo; // papel de parede do portal: um lugar-símbolo de Campinas, diferente para cada imobiliária
   if (im.link) { v.PUBLIC_URL = im.link; v.LINK_ONLINE = im.link; }
   return v;
