@@ -101,6 +101,8 @@ function variaveis(im, dbUrl, segredo) {
     BLOG_DIARIO_URL: `${VAZIO}/blog`, PORTAL_CONTEUDO_URL: `${VAZIO}/portal`, BAIRROS_CONTEUDO_URL: `${VAZIO}/bairros`,
     IA_MODO: 'desligado', RADAR_PORTAIS: '0', FISGUEI_ROBO: '0', ESCRITORIO: '0', DRIVE_ROOT_NAME: `${im.nome} Imóveis`,
   };
+  // Google Maps: a chave do painel vale para todas; é ela que dá o 3D realista e a foto de fachada.
+  if (process.env.GOOGLE_MAPS_KEY) v.GOOGLE_MAPS_KEY = process.env.GOOGLE_MAPS_KEY;
   // Identidade visual: quando existe public/temas/<slug>, a imobiliária já nasce com a marca dela.
   if (fs.existsSync(path.join(__dirname, '..', '..', 'public', 'temas', im.slug))) v.TEMA = im.slug;
   if (im.fundo) v.PORTAL_FUNDO = im.fundo; // papel de parede do portal: um lugar-símbolo de Campinas, diferente para cada imobiliária
@@ -273,6 +275,22 @@ api.get('/imobiliarias/:id/instalacao', exige(async (req, res) => {
   evento(req.gestor.id, im.id, 'viu_instalacao', null);
   res.json({ variaveis: variaveis(await comFundo(im), dbUrl, segredo), repo: REPO, dominio: im.dominio || dominioDe(im.slug), vercel_automatico: !!process.env.VERCEL_TOKEN });
 }));
+// Leva a chave do Google Maps do painel para o projeto de uma imobiliária que já existe e republica.
+// A chave vai direto do servidor para a Vercel: nunca passa pela tela nem pelo banco da plataforma.
+api.post('/imobiliarias/:id/google-maps-chave', exige(async (req, res) => {
+  const chave = String(process.env.GOOGLE_MAPS_KEY || '').trim();
+  if (!chave) falha(400, 'O painel não tem a variável GOOGLE_MAPS_KEY.');
+  if (!process.env.VERCEL_TOKEN) falha(400, 'Falta a variável VERCEL_TOKEN no projeto do painel.');
+  const im = await um(`SELECT ${COLS} FROM imobiliarias WHERE id = $1`, [Number(req.params.id)]) || falha(404, 'Imobiliária não encontrada.');
+  if (!im.vercel_projeto) falha(400, 'Esta imobiliária ainda não tem projeto na Vercel.');
+  await vercel(`/v10/projects/${encodeURIComponent(im.vercel_projeto)}/env?upsert=true`, 'POST',
+    { key: 'GOOGLE_MAPS_KEY', value: chave, type: 'encrypted', target: ['production', 'preview'] });
+  const [org, repo] = REPO.split('/');
+  await vercel('/v13/deployments', 'POST', { name: im.vercel_projeto, project: im.vercel_projeto, target: 'production', gitSource: { type: 'github', org, repo, ref: 'main' } });
+  evento(req.gestor.id, im.id, 'google_maps', im.vercel_projeto);
+  res.json({ ok: true, projeto: im.vercel_projeto });
+}));
+
 // Publica na Vercel uma imobiliária que já existe: serve para quando o VERCEL_TOKEN só chegou depois do cadastro.
 api.post('/imobiliarias/:id/publicar', exige(async (req, res) => {
   if (!process.env.VERCEL_TOKEN) falha(400, 'Falta a variável VERCEL_TOKEN no projeto do painel.');
