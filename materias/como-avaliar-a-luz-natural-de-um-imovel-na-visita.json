@@ -12,7 +12,10 @@
     "bem-estar"
   ],
   "capa": {
-    "alt": "Sala vazia de apartamento com piso de madeira e feixes de sol entrando por uma janela ampla"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/como-avaliar-a-luz-natural-de-um-imovel-na-visita-50896d74.jpg",
+    "alt": "Sala vazia de apartamento com piso de madeira e feixes de sol entrando por uma janela ampla",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Você já visitou um imóvel lindo às 11h e descobriu depois que ele vive na sombra? A luz natural muda com a face do prédio, o horário e até o vizinho da frente. Bússola no celular, visita em dois horários e um olhar atento às janelas já ajudam muito. Veja o passo a passo no blog (link na bio).",
