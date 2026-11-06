@@ -2,6 +2,8 @@
 // o cadastro de uma nova, ativar/suspender e os valores (mensalidade + parte da comissão).
 // Fica em corretordofuturo.app/gestor. Banco: usuário plataforma_app (PLATAFORMA_DATABASE_URL), que só enxerga
 // o schema "plataforma" e chama funções que devolvem números das imobiliárias (nunca nomes, telefones ou endereços).
+const fs = require('fs');
+const path = require('path');
 const crypto = require('crypto');
 const express = require('express');
 const cfg = require('../config');
