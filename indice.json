@@ -936,7 +936,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-06T14:40:33.441Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "fazendas-de-cafe-da-regiao-de-campinas-arquitetura-e-historia",
+      "titulo": "Fazendas de café da região de Campinas: arquitetura e história",
+      "tema": "arquitetura das fazendas de cafe da regiao de campinas",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-06T14:41:56.671Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T14:40:33.442Z"
+  "atualizadoEm": "2026-11-06T14:41:56.672Z"
 }
