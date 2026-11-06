@@ -1,0 +1,111 @@
+{
+  "slug": "fipezap-outubro-2026-preco-imoveis-sobe-048",
+  "tema": "fipezap de outubro de 2026 preco de venda",
+  "titulo": "FipeZap: preço dos imóveis à venda sobe 0,48% em outubro",
+  "resumo": "O Índice FipeZap mostrou alta de 0,48% no preço anunciado de imóveis residenciais em outubro de 2026, com 4,54% no ano. Veja os números e o que olhar.",
+  "categoria": "noticias",
+  "etiquetas": [
+    "fipezap",
+    "preço de imóveis",
+    "mercado imobiliário",
+    "compra"
+  ],
+  "capa": {
+    "alt": "Rua residencial arborizada ao entardecer com fachadas de casas e pequenos prédios de varandas claras"
+  },
+  "redes": {
+    "legenda": "O preço anunciado dos imóveis residenciais subiu 0,48% em outubro, segundo o Índice FipeZap, um pouco menos que em setembro. No ano, a alta chega a 4,54%, perto da inflação. Mas a média nacional esconde diferenças grandes entre cidades e tipos de imóvel. No blog, explicamos os números e o que olhar antes de comprar ou vender. Leia a notícia completa no blog (link na bio).",
+    "hashtags": [
+      "fipezap",
+      "mercadoimobiliario",
+      "precodosimoveis",
+      "casapropria",
+      "imoveis",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **preço anunciado dos imóveis residenciais subiu 0,48% em outubro de 2026**, segundo o Índice FipeZap, divulgado em 5 de novembro. O índice, feito pela Fipe a partir de anúncios de venda, acompanha 56 cidades. A alta ficou um pouco abaixo da registrada em setembro, de 0,58%, o que indica um ritmo levemente mais lento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No acumulado de janeiro a outubro, a valorização anunciada chega a 4,54%. Segundo o Portas, o número ficou pouco acima do IPCA estimado para o mesmo período, de 4,28%, e abaixo do IGP-M, de 4,97%. Em 12 meses, a alta é de 5,44%, de acordo com o InfoMoney. O preço médio anunciado no país ficou em cerca de dez mil reais por metro quadrado."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Alta de 0,48% em outubro, depois de 0,58% em setembro.",
+        "No ano, 4,54%; em 12 meses, 5,44%, segundo os dados divulgados.",
+        "Subiram 44 das 56 cidades acompanhadas, incluindo 19 das 22 capitais."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde os preços mais subiram e onde caíram"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Entre as capitais, as maiores altas do mês foram em Aracaju, com 1,99%, Brasília, com 1,85%, e Recife, com 1,49%. Na outra ponta, Campo Grande recuou 1,72%, Belém caiu 0,59% e Curitiba, 0,43%. No acumulado do ano, Vitória lidera, com 12,27%, e Curitiba é a única capital com leve queda, de 0,07%."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "São Paulo, referência para quem acompanha o interior paulista, subiu 0,40% em outubro e 3% no ano. Em 12 meses, a alta paulistana foi de 3,59%, abaixo da inflação estimada para o período, segundo o InfoMoney. O índice não detalha Campinas nas matérias publicadas, por isso a média nacional serve como pano de fundo, não como retrato da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O tamanho do imóvel também pesa. Os de um dormitório tiveram a maior alta em 12 meses, de 7,29%, enquanto os de três dormitórios subiram menos, 3,66%. Os de dois dormitórios registraram a maior alta no mês, de 0,58%. Mais leituras do mercado estão na categoria [mercado imobiliário](/blog/categoria/noticias)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Preço anunciado não é preço fechado",
+      "texto": "O FipeZap mede o valor pedido nos anúncios, não o valor final de cada negócio. Ele mostra a tendência do mercado, mas a negociação de cada imóvel depende de estado, localização e documentação."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que isso muda para você"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem vai comprar, o dado mostra um mercado que segue subindo, mas sem disparar: no ano, os preços pedidos andam perto da inflação. Isso não significa que todo imóvel acompanhe a média. Compare anúncios parecidos no mesmo bairro, com metragem e padrão próximos, antes de fazer uma proposta."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Quem vende: use anúncios semelhantes e recentes como referência, não a média do país.",
+        "Quem compra: veja há quanto tempo o imóvel está anunciado; isso costuma dizer algo sobre a negociação.",
+        "Os dois lados: confira matrícula e certidões antes de fechar valor."
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O índice ajuda a entender a direção do mercado, e a decisão se faz na comparação local. Outros temas da casa e da cidade estão no [blog](/blog). Se quiser conversar sobre comprar ou vender em Campinas, a equipe da {{cliente}} atende você. Média nacional orienta; o preço certo nasce da comparação no seu bairro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Preço dos imóveis residenciais sobe 0,48% em outubro; veja as cidades mais caras — InfoMoney",
+      "url": "https://www.infomoney.com.br/minhas-financas/preco-dos-imoveis-residenciais-sobe-048-em-outubro-veja-as-cidades-mais-caras/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Preço de imóveis residenciais desacelera em outubro, mas fica acima da inflação mensal, diz FipeZap — Portas",
+      "url": "https://portas.com.br/noticias/preco-de-imoveis-residenciais-desacelera-em-outubro-mas-fica-acima-da-inflacao-mensal-diz-fipezap/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Índice FipeZap — Fipe",
+      "url": "https://www.fipe.org.br/pt-br/indices/fipezap/",
+      "data": "novembro de 2026"
+    }
+  ]
+}
