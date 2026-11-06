@@ -107,7 +107,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-29T11:35:22.516Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "plantas-que-gostam-de-pouca-luz-dentro-de-casa",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:02:53.384Z"
+  "atualizadoEm": "2026-11-06T09:04:15.741Z"
 }
