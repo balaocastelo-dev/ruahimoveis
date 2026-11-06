@@ -1,0 +1,27 @@
+/* L7 Inteligência Imobiliária · monocromático, como a marca: preto, cinzas e branco.
+   Open Sans (a fonte do site da L7), cantos retos e botão principal preto de letra branca. */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+:root{
+  --cal:#F4F4F4; --papel:#FFFFFF; --grafite:#111111; --pedra:#5E5E5E; --linha:#DEDEDE;
+  --ouro:#1A1A1A; --ouro-escuro:#000000; --salvia:#404040; --salvia-claro:#EFEFEF;
+  --serifa:"Open Sans", "Segoe UI", system-ui, sans-serif;
+  --texto:"Open Sans", "Segoe UI", system-ui, sans-serif;
+  --raio:3px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --cal:#0D0D0D; --papel:#171717; --grafite:#F2F2F2; --pedra:#A8A8A8; --linha:#2B2B2B;
+  --ouro:#EDEDED; --ouro-escuro:#FFFFFF; --salvia:#C4C4C4; --salvia-claro:#1F1F1F}}
+/* logo no topo */
+.p-marca{align-items:center}
+.p-marca-logo{height:46px;width:auto;display:block}
+.marca-logo{height:clamp(46px,7.5vw,70px);width:auto;display:block}
+@media (max-width:640px){.p-marca-logo{height:32px}}
+/* títulos firmes e um pouco apertados, como o lettering do logo */
+h1,h2,h3,.p-hero h1,.marca-n{font-weight:700!important;letter-spacing:-.015em!important}
+/* cantos retos em tudo o que é clicável, como os blocos do "L7" */
+button,.btn,.p-btn,input[type=submit],a.p-btn,.p-cta{border-radius:3px!important}
+.p-card,.cartao,.card,article.c{border-radius:4px!important}
+/* no tema claro o botão principal é preto: a letra precisa ser branca */
+@media (prefers-color-scheme:light){
+  .p-botao:not(.sec),.botao:not(.sec),.p-form button[type=submit],form button[type=submit]{color:#fff!important}
+}
