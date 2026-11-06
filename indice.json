@@ -431,7 +431,7 @@
       "tipo": "principal",
       "categoria": "interiores",
       "criadaEm": "2026-10-31T11:21:29.952Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "temperatura-de-cor-da-lampada-em-cada-ambiente",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:28:22.854Z"
+  "atualizadoEm": "2026-11-06T10:37:10.636Z"
 }
