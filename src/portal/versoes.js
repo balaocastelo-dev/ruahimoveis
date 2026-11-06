@@ -9,6 +9,7 @@ const { casca, cartao, fotoUrl, urlBase } = require('./paginas');
 const { cortar, dataPorExtenso } = require('../blog/texto');
 const { nomeDaCategoria } = require('../blog/categorias');
 const cfg = require('../config');
+const { getConfig } = require('../db');
 // O nome da imobiliária (a marca na Revista e na Signature) vem da configuração.
 const CLIENTE = cfg.CLIENTE_NOME;
 
@@ -238,8 +239,11 @@ function paginaSignature(req, imoveis, membro) {
   const sel = selecao(imoveis);
   const casas = sel.filter((s) => s.residencia && s.fotos.length);
   const ativos = sel.filter((s) => !(s.residencia && s.fotos.length));
-  // A capa: a foto escolhida em alta definição (SIGNATURE.capa), se a residência ainda está na seleção.
-  const capa = casas.flatMap((c) => c.fotos).find((f) => f.foto === SIGNATURE.capa) || (casas[0] && casas[0].fotos[0]);
+  // A capa: a foto que a imobiliária escolheu (config 'signature_capa'); sem escolha, a padrão da edição.
+  // Em qualquer caso ela só vale se a residência ainda está na seleção; senão entra a primeira foto da primeira casa.
+  let escolhida = SIGNATURE.capa;
+  try { escolhida = Number(getConfig('signature_capa')) || SIGNATURE.capa; } catch { /* sem banco: fica a padrão */ }
+  const capa = casas.flatMap((c) => c.fotos).find((f) => f.foto === escolhida) || (casas[0] && casas[0].fotos[0]);
   const corpo = `
 ${seletor('signature')}
 <section class="s-hero">
