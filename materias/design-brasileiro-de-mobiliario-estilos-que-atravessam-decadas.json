@@ -11,7 +11,10 @@
     "madeira"
   ],
   "capa": {
-    "alt": "Sala clara com poltrona baixa de madeira escura e couro, banco de três pés e cadeira de palhinha sobre piso de tábuas"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/design-brasileiro-de-mobiliario-estilos-que-atravessam-decadas-c16301ef.jpg",
+    "alt": "Sala clara com poltrona baixa de madeira escura e couro, banco de três pés e cadeira de palhinha sobre piso de tábuas",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabia que uma das poltronas brasileiras mais famosas nasceu inspirada na rede de dormir e venceu um concurso internacional na Itália em 1961? O design brasileiro de mobiliário moderno juntou madeira nativa, palhinha e couro com formas leves, pensadas para o nosso clima. Contamos quem criou esse estilo, como reconhecer uma peça bem-feita e como usar em casa sem virar museu. Leia o artigo completo no blog (link na bio).",

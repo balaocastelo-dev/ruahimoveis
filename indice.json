@@ -341,7 +341,7 @@
       "tipo": "principal",
       "categoria": "interiores",
       "criadaEm": "2026-10-30T20:25:50.167Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "como-organizar-o-closet-para-caber-mais-e-achar-tudo",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:48:10.921Z"
+  "atualizadoEm": "2026-11-06T09:50:32.260Z"
 }
