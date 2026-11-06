@@ -1,0 +1,170 @@
+{
+  "slug": "altura-da-tv-na-parede-e-distancia-do-sofa",
+  "tema": "altura da tv na parede e distancia do sofa",
+  "titulo": "Altura da TV na parede: como acertar a medida e a distância do sofá",
+  "resumo": "Altura da TV na parede sem erro: o centro da tela perto dos olhos de quem está sentado, a distância certa do sofá e o cuidado com lareira e janela.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "sala de estar",
+    "interiores",
+    "tv",
+    "medidas"
+  ],
+  "capa": {
+    "alt": "Sala de estar com TV desligada fixada em painel de madeira, sofá claro à frente e luz natural lateral"
+  },
+  "redes": {
+    "legenda": "Seu pescoço reclama depois de um filme? Talvez a TV esteja alta demais. A referência mais usada é simples: o centro da tela perto da altura dos seus olhos quando você está sentado no sofá, e a distância de acordo com o tamanho e a resolução da tela. Explicamos as contas, o caso da lareira e o reflexo da janela no blog (link na bio).",
+    "hashtags": [
+      "decoracao",
+      "saladeestar",
+      "interiores",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Definir a **altura da TV na parede** parece detalhe, mas é a medida que você sente toda noite. Muita gente instala a tela onde a parede parece pedir, alinhada a uma prateleira ou acima de um móvel alto, e só depois percebe que assiste ao jornal com o queixo levantado. Na sala, o conforto do pescoço vem antes da simetria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o centro da tela deve ficar na altura dos olhos de quem está sentado, ou um pouco abaixo. A LG, fabricante de televisores, lembra que essa altura costuma ficar perto de 1 m do chão. A distância até o sofá depende do tamanho e da resolução: telas 4K aceitam ficar mais perto do que as Full HD."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Meça do chão até os seus olhos sentado no sofá: o centro da tela vai perto dessa altura.",
+        "Como referência, a LG indica o centro da TV a cerca de 1 m do piso.",
+        "Em 4K, a LG sugere 2,1 cm de distância por polegada; em Full HD, 4,2 cm.",
+        "TV acima da lareira ou de frente para janela costuma cansar o pescoço ou refletir luz."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual altura escolher para a sua sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pelo sofá que você já tem, e não por uma tabela. Sente na posição em que costuma assistir e peça para alguém medir do chão até os seus olhos. Sofás baixos e fundos deixam os olhos bem mais perto do chão do que uma poltrona de encosto reto. Se a família assiste de lugares diferentes, use a média entre eles."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A LG explica que olhar para cima por muito tempo cansa e que o ideal é o meio da tela ficar na altura dos olhos ou um pouco abaixo. O guia da marca cita cerca de **1 m do chão** até o centro da TV como referência comum. Mas a própria fabricante ressalva que isso muda com a altura de quem assiste e do assento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para telas grandes, vistas de mais longe, a KEF, fabricante britânica de caixas acústicas, propõe uma conta diferente: somar à altura dos olhos uma fração da distância de visualização, o que sobe um pouco o centro da tela. É uma alternativa para salas de cinema em casa; na sala do dia a dia, a regra dos olhos costuma bastar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Acima da lareira, só com suporte articulado",
+      "texto": "A lareira empurra a TV para cima e obriga a olhar para o alto. A LG lembra que, em casos de tela muito alta, como na vista da cama, um suporte ajustável ajuda a inclinar a imagem para baixo. Na sala, prefira outra parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de furar, pense também na parede. Em alvenaria, a fixação costuma ser simples; em drywall, a parede de gesso acartonado, o suporte precisa de reforço interno ou de bucha própria, como indica o fabricante (mais sobre paredes em [Construção](/blog/categoria/construcao)). Confira o peso da TV e do suporte, e veja se há tubulação ou fiação no ponto escolhido."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "A que distância do sofá a tela fica confortável"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A distância depende da resolução, porque uma imagem mais definida pode ser vista de perto sem mostrar os pontos da tela. O guia da LG propõe uma conta rápida: em **Full HD**, cerca de 4,2 cm para cada polegada; em **4K**, cerca de 2,1 cm por polegada. A tabela abaixo aplica essa regra a tamanhos comuns."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Distância mínima de referência entre o sofá e a TV",
+      "colunas": [
+        "Tamanho da tela",
+        "Full HD (4,2 cm por polegada)",
+        "4K (2,1 cm por polegada)"
+      ],
+      "linhas": [
+        [
+          "50 polegadas",
+          "cerca de 2,1 m",
+          "cerca de 1,05 m"
+        ],
+        [
+          "55 polegadas",
+          "cerca de 2,3 m",
+          "cerca de 1,15 m"
+        ],
+        [
+          "65 polegadas",
+          "cerca de 2,7 m",
+          "cerca de 1,4 m"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "fonte": {
+        "nome": "Como medir tamanhos de TV — LG Brasil",
+        "url": "https://www.lg.com/br/lg-experience/dicas-uteis/como-medir-tamanhos-de-tv/"
+      },
+      "nota": "Contas arredondadas. É a distância mais curta em que a imagem ainda parece nítida; para conforto, muita gente prefere ficar um pouco mais longe."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há outro jeito de pensar, usado em cinema em casa: o ângulo que a tela ocupa na sua visão. Segundo a KEF, a recomendação da SMPTE, associação norte-americana de engenheiros de cinema e televisão, é que a tela preencha cerca de **30 graus** do campo de visão. Na prática, isso leva a sentar um pouco mais longe do que a regra mínima do 4K."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por fim, observe a luz. Uma TV de frente para uma janela reflete o céu durante o dia; de costas para ela, você olha contra a claridade. A posição de lado para a janela, com cortina ou persiana, costuma funcionar melhor. E deixe a passagem livre: mesa de centro ou poltrona entre o sofá e a tela atrapalham a circulação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel em Campinas e quer uma sala com parede livre, boa luz lateral e espaço para o sofá na distância certa, a equipe da {{cliente}} pode ajudar a avaliar a planta antes da visita. Outras ideias para a sala estão em [Interiores](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: centro da tela na altura dos seus olhos sentado, distância pela resolução, e nada de TV acima da lareira sem suporte que incline."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a altura certa para pendurar a TV na parede?",
+      "resposta": "O centro da tela deve ficar na altura dos olhos de quem está sentado, ou um pouco abaixo. Como referência, a LG cita cerca de 1 m do chão até o centro, mas vale medir no seu sofá."
+    },
+    {
+      "pergunta": "TV 4K pode ficar mais perto do sofá?",
+      "resposta": "Sim. Pela regra do guia da LG, a TV 4K pede cerca de 2,1 cm por polegada, metade da distância indicada para Full HD. Uma tela 4K de 55 polegadas fica nítida a pouco mais de 1 m."
+    },
+    {
+      "pergunta": "Pode colocar a TV acima da lareira?",
+      "resposta": "Costuma ficar alta demais e cansar o pescoço. Se não houver outra parede, use um suporte articulado que permita inclinar a tela para baixo."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Como medir tamanhos de TV — LG Brasil",
+      "url": "https://www.lg.com/br/lg-experience/dicas-uteis/como-medir-tamanhos-de-tv/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "How to calculate the proper height for your television — KEF",
+      "url": "https://ca.kef.com/blogs/news/how-to-calculate-the-proper-height-for-your-television",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Distância entre TV e sofá — QuintoAndar Guias",
+      "url": "https://www.quintoandar.com.br/guias/?p=287844",
+      "data": "novembro de 2026"
+    }
+  ]
+}
