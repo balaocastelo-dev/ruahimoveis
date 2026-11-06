@@ -12,7 +12,10 @@
     "projeto"
   ],
   "capa": {
-    "alt": "Piscina retangular de borda reta em jardim tropical, com deck de madeira e espreguiçadeiras claras ao entardecer"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/piscina-de-concreto-vinil-ou-fibra-qual-escolher-na-construcao-37a82f2b.jpg",
+    "alt": "Piscina retangular de borda reta em jardim tropical, com deck de madeira e espreguiçadeiras claras ao entardecer",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Piscina de concreto, vinil ou fibra: qual escolher"
