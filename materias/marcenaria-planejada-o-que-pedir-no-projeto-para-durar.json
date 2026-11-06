@@ -15,7 +15,10 @@
     "mdf"
   ],
   "capa": {
-    "alt": "Cozinha com marcenaria planejada em madeira clara, portas sem puxador aparente e gavetas largas sob a bancada"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/marcenaria-planejada-o-que-pedir-no-projeto-para-durar-90dcadea.jpg",
+    "alt": "Cozinha com marcenaria planejada em madeira clara, portas sem puxador aparente e gavetas largas sob a bancada",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Por que um armário planejado parece novo depois de dez anos e outro estufa em dois? Quase sempre a resposta está no projeto: a chapa certa para cada peça, a borda bem fechada, a dobradiça no lugar e a medida conferida na obra pronta. Reunimos o que pedir ao marceneiro antes de assinar. Leia o artigo completo no blog (link na bio).",
