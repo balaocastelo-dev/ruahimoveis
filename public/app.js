@@ -87,24 +87,28 @@ function liberaCss(id) {
 }
 
 // Cada tela pede só os arquivos dela. O login fica em marca.js + app.js; radar, fisguei, escritório e 3D não baixam antes da entrada.
+// As telas do sistema dividem funcoes entre si (um arquivo usa o que o outro declarou):
+// essas vao juntas, senao a tela abre e quebra em "x is not defined". O login continua leve,
+// so com marca.js e app.js, e as telas de fora deste nucleo seguem baixando so o que usam.
+const NUCLEO = ['/condominios.js', '/mercado.js', '/fisguei.js', '/fisguei-explorar.js', '/captacao.js', '/painel.js', '/radar.js'];
 const MODULOS = {
   galeria: ['/galeria.js'],
   chaves: ['/chaves.js'],
   chat: ['/chat.js'],
-  radar: ['/radar.js'],
-  fisguei: ['/fisguei.js', '/fisguei-explorar.js'],
-  condominios: ['/condominios.js'],
-  mercado: ['/mercado.js'],
+  radar: NUCLEO,
+  fisguei: NUCLEO,
+  condominios: NUCLEO,
+  mercado: NUCLEO,
   bairros: ['/bairros.js'],
-  painel: ['/painel.js'],
-  captacao: ['/captacao.js'],
-  escritorio: ['/escritorio.js'],
+  painel: NUCLEO,
+  captacao: NUCLEO,
+  escritorio: ['/escritorio.js', '/estacao-pc.js'],
   jogo: ['/escritorio-jogo.js'],
   social: ['/social.js'],
   estacao: ['/estacao-pc.js'],
   lgpd: ['/lgpd.js'],
   movimento: ['/movimento.js'],
-};
+}};
 const _js = new Map();
 function carregaJs(src) {
   if (!_js.has(src)) {
