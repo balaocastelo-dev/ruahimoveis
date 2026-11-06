@@ -1017,7 +1017,16 @@
       "categoria": "campinas",
       "criadaEm": "2026-11-06T23:23:05.712Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "casa-segura-para-criancas-janelas-piscina-moveis",
+      "titulo": "Casa segura para crianças: janelas, piscina, móveis e cozinha",
+      "tema": "casa segura para criancas pequenas prevencao de acidentes",
+      "tipo": "principal",
+      "categoria": "bem-estar",
+      "criadaEm": "2026-11-06T23:24:33.074Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T23:23:05.712Z"
+  "atualizadoEm": "2026-11-06T23:24:33.074Z"
 }
