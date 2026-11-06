@@ -242,7 +242,7 @@
       "tipo": "dica",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-30T02:27:28.329Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "piscina-de-concreto-vinil-ou-fibra-qual-escolher-na-construcao",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:26:35.613Z"
+  "atualizadoEm": "2026-11-06T09:28:33.161Z"
 }

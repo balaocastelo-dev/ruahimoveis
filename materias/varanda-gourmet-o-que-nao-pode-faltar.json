@@ -12,7 +12,10 @@
     "projeto"
   ],
   "capa": {
-    "alt": "Varanda gourmet com bancada de pedra, churrasqueira embutida, mesa de madeira e plantas, ao entardecer"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/varanda-gourmet-o-que-nao-pode-faltar-e30ef3d2.jpg",
+    "alt": "Varanda gourmet com bancada de pedra, churrasqueira embutida, mesa de madeira e plantas, ao entardecer",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sua varanda gourmet enche de fumaça no churrasco? Quase sempre o problema está no projeto: altura da chaminé, tamanho do duto ou falta de entrada de ar depois que a varanda foi fechada com vidro. Reunimos o que não pode faltar numa varanda gourmet, da bancada com pia à luz certa, e o que só um profissional deve mexer. Leia a dica completa no blog (link na bio).",
