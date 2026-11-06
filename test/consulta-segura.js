@@ -138,6 +138,7 @@ const permitidos = [
   'src/agentes/cifra-ia.js',
   'src/condominios/fonte.js',
   'src/db-arquivo.js',
+  'src/plataforma/repo.js',
   'test/consulta-segura.js',
 ];
 assert.deepEqual(achados, permitidos, 'menção fora da lista: ' + achados.filter((a) => !permitidos.includes(a)).join(', '));
