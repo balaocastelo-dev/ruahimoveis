@@ -12,7 +12,10 @@
     "sala de estar"
   ],
   "capa": {
-    "alt": "Sofá de linho cinza-claro com almofadas soltas e pés de madeira em sala iluminada, ao lado de tapete de lã e mesa de centro de madeira"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/como-escolher-um-sofa-que-dure-muitos-anos-f93821d4.jpg",
+    "alt": "Sofá de linho cinza-claro com almofadas soltas e pés de madeira em sala iluminada, ao lado de tapete de lã e mesa de centro de madeira",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Por que alguns sofás afundam em poucos anos e outros atravessam décadas? A diferença quase sempre está no que não se vê: a madeira da estrutura, as molas ou percintas, a densidade da espuma e a resistência do tecido. Antes de se apaixonar pela maciez da loja, vale pedir a ficha técnica. No blog, mostramos o que conferir. Leia a matéria completa no blog (link na bio).",
