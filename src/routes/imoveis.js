@@ -11,6 +11,7 @@ const endereco = require('../services/endereco');
 const drive = require('../services/drive');
 const match = require('../services/match');
 const carteira = require('../services/carteira');
+const modelos = require('../contratos/modelos');
 
 const r = express.Router();
 r.use(A.exigeLogin);
@@ -308,7 +309,7 @@ function textoAutorizacao(im, dono, o) {
 
 r.get('/:id/autorizacoes', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
-  res.json(all('SELECT id,token,status,prazo_dias,comissao_pct,exclusivo,assinante_nome,assinado_em,pdf_arquivo_id,criado_em FROM assinaturas WHERE imovel_id=? ORDER BY id DESC', req.params.id)
+  res.json(all("SELECT id,token,coalesce(tipo,'autorizacao') AS tipo,status,prazo_dias,comissao_pct,exclusivo,assinante_nome,assinado_em,pdf_arquivo_id,criado_em FROM assinaturas WHERE imovel_id=? ORDER BY id DESC", req.params.id)
     .map((a) => ({ ...a, url: a.status === 'pendente' ? `${cfg.PUBLIC_URL || cfg.BASE_URL}/assinar/${a.token}` : null, token: undefined })));
 });
 
@@ -333,6 +334,68 @@ r.post('/:id/autorizacoes/:aid/cancelar', (req, res) => {
   imovelPermitido(req.usuario, req.params.id);
   run("UPDATE assinaturas SET status='cancelado' WHERE id=? AND imovel_id=? AND status='pendente'", req.params.aid, req.params.id);
   res.json({ ok: true });
+});
+
+// ---- contratos para o cliente: locacao, compra e venda, intermediacao ----
+const TIPOS_CONTRATO = ['locacao', 'venda', 'intermediacao'];
+const GARANTIAS = ['fiador', 'caucao', 'seguro', 'nenhuma'];
+
+/** A outra parte do contrato vem do formulario: nao e o proprietario, e nao fica no cadastro dele. */
+function outraParte(b, prefixo) {
+  return {
+    nome: txt(b[prefixo + '_nome'], 120),
+    cpf: txt(b[prefixo + '_cpf'], 20),
+    rg: txt(b[prefixo + '_rg'], 20),
+    endereco: txt(b[prefixo + '_endereco'], 200),
+    telefone: txt(b[prefixo + '_telefone'], 30),
+    email: txt(b[prefixo + '_email'], 120),
+  };
+}
+
+r.post('/:id/contrato', (req, res) => {
+  imovelPermitido(req.usuario, req.params.id);
+  const b = req.body || {};
+  if (!TIPOS_CONTRATO.includes(b.tipo)) falha(400, 'Escolha o tipo de contrato.');
+  const tipo = b.tipo;
+  const im = one(`${SELECT} WHERE i.id=?`, req.params.id);
+  if (!im) falha(404, 'Imovel nao encontrado.');
+  const dono = im.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', im.proprietario_id) : null;
+  const cliente = outraParte(b, 'cliente');
+  if (!cliente.nome || cliente.nome.split(/\s+/).length < 2) falha(400, 'Informe o nome completo de quem vai assinar.');
+
+  const o = {
+    matricula: txt(b.matricula, 40), observacoes: txt(b.observacoes, 800),
+    prazo_meses: int(b.prazo_meses), prazo_dias: int(b.prazo_dias), dia_vencimento: int(b.dia_vencimento),
+    aluguel: num(b.aluguel), indice: txt(b.indice, 20), inicio: txt(b.inicio, 10),
+    condominio: b.condominio ? 1 : 0, iptu: b.iptu ? 1 : 0,
+    garantia: GARANTIAS.includes(b.garantia) ? b.garantia : 'nenhuma',
+    caucao_alugueis: int(b.caucao_alugueis), seguradora: txt(b.seguradora, 80),
+    fiador_nome: txt(b.fiador_nome, 120), fiador_cpf: txt(b.fiador_cpf, 20), fiador_endereco: txt(b.fiador_endereco, 200),
+    multa_pct: num(b.multa_pct), multa_rescisao_alugueis: int(b.multa_rescisao_alugueis),
+    valor: num(b.valor), sinal: num(b.sinal), forma_pagamento: txt(b.forma_pagamento, 20), parcelas: int(b.parcelas),
+    prazo_escritura_dias: int(b.prazo_escritura_dias), posse: txt(b.posse, 20),
+    comissao_pct: num(b.comissao_pct), comissao_alugueis: num(b.comissao_alugueis),
+    negocio: b.negocio === 'locacao' ? 'locacao' : 'venda', exclusivo: b.exclusivo ? 1 : 0,
+  };
+  if (tipo === 'locacao') {
+    if (!dono || !dono.nome) falha(400, 'Cadastre o proprietario do imovel antes de gerar o contrato de locacao.');
+    if (!(o.aluguel || im.valor_locacao)) falha(400, 'Informe o valor do aluguel.');
+    if (o.garantia === 'fiador' && !o.fiador_nome) falha(400, 'Informe o nome do fiador.');
+  }
+  if (tipo === 'venda') {
+    if (!dono || !dono.nome) falha(400, 'Cadastre o proprietario do imovel antes de gerar o compromisso de compra e venda.');
+    if (!(o.valor || im.valor)) falha(400, 'Informe o valor da venda.');
+  }
+
+  const conteudo = tipo === 'locacao' ? modelos.textoLocacao(im, dono, cliente, o)
+    : tipo === 'venda' ? modelos.textoVenda(im, dono, cliente, o)
+      : modelos.textoIntermediacao(im, cliente, o);
+  const token = A.tokenAleatorio(24);
+  run("UPDATE assinaturas SET status='cancelado' WHERE imovel_id=? AND status='pendente' AND coalesce(tipo,'autorizacao')=?", im.id, tipo);
+  run('INSERT INTO assinaturas(token,imovel_id,tipo,conteudo,conteudo_hash,prazo_dias,comissao_pct,exclusivo,criado_por) VALUES(?,?,?,?,?,?,?,?,?)',
+    token, im.id, tipo, conteudo, A.sha256(conteudo), o.prazo_dias || (o.prazo_meses ? o.prazo_meses * 30 : 180), o.comissao_pct || 0, o.exclusivo, req.usuario.id);
+  audit(req.usuario.id, 'contrato_gerado', `${modelos.TITULOS[tipo]} - ${im.codigo} - ${cliente.nome}`);
+  res.json({ url: `${cfg.PUBLIC_URL || cfg.BASE_URL}/assinar/${token}`, conteudo, titulo: modelos.TITULOS[tipo], telefone: cliente.telefone });
 });
 
 module.exports = r;

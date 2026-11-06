@@ -8,7 +8,8 @@ const { one, all, run, audit } = require('../db');
 const { falha, txt, cpfValido, fmtCpf } = require('../util');
 const drive = require('../services/drive');
 const wa = require('../services/whatsapp');
-const { pdfAutorizacao } = require('../services/pdf');
+const { pdfDocumento } = require('../services/pdf');
+const { TITULOS } = require('../contratos/modelos');
 const og = require('../og');
 
 const r = express.Router();
@@ -47,7 +48,10 @@ r.post('/assinatura/:token', limite(8), async (req, res) => {
   if (!aceite) falha(400, 'Marque que leu e concorda com o documento.');
   if (!txt(nome) || txt(nome).split(/\s+/).length < 2) falha(400, 'Informe seu nome completo.');
   if (!cpfValido(cpf)) falha(400, 'CPF inválido.');
-  const dono = a.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', a.proprietario_id) : null;
+  // Só a autorização de venda é sempre assinada pelo dono. Num contrato, quem assina é o locatário,
+  // o comprador ou o cliente da intermediação: o CPF não tem de bater com o do proprietário.
+  const ehAutorizacao = !a.tipo || a.tipo === 'autorizacao';
+  const dono = ehAutorizacao && a.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', a.proprietario_id) : null;
   if (dono && dono.cpf && dono.cpf.replace(/\D/g, '') !== String(cpf).replace(/\D/g, '')) falha(400, 'O CPF não confere com o proprietário cadastrado. Fale com o corretor.');
   if (typeof assinatura_png !== 'string' || !/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(assinatura_png) || assinatura_png.length > 400000 || assinatura_png.length < 500) falha(400, 'Desenhe sua assinatura no quadro.');
   if (A.sha256(a.conteudo) !== a.conteudo_hash) falha(500, 'O documento foi alterado depois de gerado. Peça um novo link.');
@@ -58,13 +62,21 @@ r.post('/assinatura/:token', limite(8), async (req, res) => {
     dados.nome, dados.cpf, assinatura_png, dados.ip, dados.ua, assinado_em, a.id);
   if (!upd.changes) falha(409, 'Este documento já foi assinado.');
 
-  const pdf = await pdfAutorizacao({ ...a, assinante_nome: dados.nome, assinante_cpf: dados.cpf, assinatura_png, ip: dados.ip, user_agent: dados.ua, assinado_em, imovel_codigo: a.codigo });
-  const arq = await drive.salvarArquivo({ imovelId: a.imovel_id, categoria: 'Autorização de venda', nome: `Autorizacao de venda ${a.codigo} - assinada.pdf`, mime: 'application/pdf', buffer: pdf });
+  const titulo = TITULOS[a.tipo || 'autorizacao'] || TITULOS.autorizacao;
+  const semAcento = titulo.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  const pdf = await pdfDocumento({ ...a, assinante_nome: dados.nome, assinante_cpf: dados.cpf, assinatura_png, ip: dados.ip, user_agent: dados.ua, assinado_em, imovel_codigo: a.codigo });
+  const arq = await drive.salvarArquivo({ imovelId: a.imovel_id, categoria: titulo, nome: `${semAcento} ${a.codigo} - assinado.pdf`, mime: 'application/pdf', buffer: pdf });
   run('UPDATE assinaturas SET pdf_arquivo_id=? WHERE id=?', arq.id, a.id);
-  const ate = new Date(Date.now() + a.prazo_dias * 864e5).toISOString().slice(0, 10);
-  run(`UPDATE imoveis SET exclusivo=?, exclusivo_ate=?, status=CASE WHEN status IN ('captacao','aguardando_autorizacao') THEN 'off_market' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`,
-    a.exclusivo, a.exclusivo ? ate : null, a.imovel_id);
-  audit(null, 'autorizacao_assinada', `${a.codigo} · ${dados.nome} · ${dados.ip}`);
+  if (ehAutorizacao) {
+    const ate = new Date(Date.now() + a.prazo_dias * 864e5).toISOString().slice(0, 10);
+    run(`UPDATE imoveis SET exclusivo=?, exclusivo_ate=?, status=CASE WHEN status IN ('captacao','aguardando_autorizacao') THEN 'off_market' ELSE status END, atualizado_em=datetime('now','localtime') WHERE id=?`,
+      a.exclusivo, a.exclusivo ? ate : null, a.imovel_id);
+  } else if (a.tipo === 'locacao') {
+    run(`UPDATE imoveis SET status='alugado', atualizado_em=datetime('now','localtime') WHERE id=? AND status NOT IN ('vendido','alugado')`, a.imovel_id);
+  } else if (a.tipo === 'venda') {
+    run(`UPDATE imoveis SET status='vendido', atualizado_em=datetime('now','localtime') WHERE id=? AND status NOT IN ('vendido')`, a.imovel_id);
+  }
+  audit(null, ehAutorizacao ? 'autorizacao_assinada' : 'contrato_assinado', `${titulo} · ${a.codigo} · ${dados.nome} · ${dados.ip}`);
   res.json({ ok: true, assinado_em });
 });
 

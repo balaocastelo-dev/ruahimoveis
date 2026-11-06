@@ -323,7 +323,7 @@ async function rota() {
     if (seq !== rotaSeq) return;
     if (p[0] === 'imoveis' && p[1] === 'novo') await telaImovelForm();
     else if (p[0] === 'imoveis' && p[1] && p[2] === 'editar') await telaImovelForm(+p[1]);
-    else if (p[0] === 'imoveis' && p[1]) await telaFicha(+p[1], p[2] || 'dados');
+    else if (p[0] === 'imoveis' && p[1]) await telaFicha(+p[1], p[2] || 'dados', p[3]);
     else if (p[0] === 'imoveis') await telaImoveis(new URLSearchParams(qs || ''));
     else if (p[0] === 'leads' && p[1]) await telaLead(+p[1]);
     else if (p[0] === 'leads') await telaLeads(new URLSearchParams(qs || ''));
@@ -665,9 +665,9 @@ FORM.imovel = async (f) => {
   }
 };
 
-async function telaFicha(id, aba) {
+async function telaFicha(id, aba, sub) {
   const im = await api('GET', `/api/imoveis/${id}`);
-  const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda']];
+  const ABAS = [['dados', 'Dados'], ['arquivos', 'Arquivos e Drive'], ['compradores', 'Compradores'], ['link', 'Link interno'], ['autorizacao', 'Autorização de venda'], ['contratos', 'Contratos']];
   $('#main').innerHTML = `<a class="btn sm" href="#/imoveis">← Imóveis</a>
   <div class="row" style="margin-top:12px;align-items:flex-end"><div style="flex:1;min-width:240px"><h1>${esc(im.tipo)}${im.condominio_nome ? ' · ' + esc(im.condominio_nome) : ''}</h1><div class="eyebrow depois mono">${esc(im.codigo)} ${etapaPill(im.etapa)}</div></div>
     <select class="inp" style="width:auto" data-status-imovel="${im.id}">${Object.entries(STATUS).map(([k, [l]]) => `<option value="${k}" ${k === im.status ? 'selected' : ''}>${l}</option>`).join('')}</select>
@@ -676,7 +676,7 @@ async function telaFicha(id, aba) {
   <p class="lead">${esc([im.logradouro, im.numero].filter(Boolean).join(', '))}${im.unidade ? ' · ' + esc(im.unidade) : ''} · ${esc(im.bairro || '')}, ${esc(im.cidade || '')} · <b>${brl(im.valor)}</b> · corretor ${esc(im.corretor_nome || '—')}</p>
   <div class="tabs">${ABAS.map(([k, l]) => `<a href="#/imoveis/${im.id}/${k}" class="${aba === k ? 'on' : ''}">${l}</a>`).join('')}</div><div id="aba"></div>`;
   $('[data-status-imovel]').addEventListener('change', async (e) => { try { await api('PATCH', `/api/imoveis/${im.id}/status`, { status: e.target.value }); toast('Status alterado'); } catch (er) { toast(er.message, true); } });
-  await ({ dados: abaDados, arquivos: abaArquivos, compradores: abaCompradores, link: abaLink, autorizacao: abaAutorizacao }[aba] || abaDados)(im);
+  await ({ dados: abaDados, arquivos: abaArquivos, compradores: abaCompradores, link: abaLink, autorizacao: abaAutorizacao, contratos: abaContratos }[aba] || abaDados)(im, sub);
 }
 function abaDados(im) {
   const p = im.proprietario;
@@ -779,6 +779,81 @@ FORM.autorizacao = async (f) => {
     ${/localhost|127\.0\.0\.1/.test(r.url) ? '<span class="small muted">Este link só abre neste PC. Para o proprietário abrir de casa, configure o endereço público (PUBLIC_URL) — veja Configurações.</span>' : ''}</div>`;
 };
 ACT['cancelar-aut'] = (el) => comBotao(null, async () => { if (!confirm('Cancelar este link de assinatura?')) return; await api('POST', `/api/imoveis/${el.dataset.id}/autorizacoes/${el.dataset.aid}/cancelar`); rota(); });
+
+// ---------- contratos para o cliente ----------
+const CONTRATOS = [['locacao', 'Locação'], ['venda', 'Compra e venda'], ['intermediacao', 'Intermediação']];
+const CONTRATO_TITULO = { locacao: 'Contrato de locação', venda: 'Compromisso de compra e venda', intermediacao: 'Contrato de intermediação', autorizacao: 'Autorização de venda' };
+
+async function abaContratos(im, tipo) {
+  const t = CONTRATOS.some(([k]) => k === tipo) ? tipo : 'locacao';
+  const l = (await api('GET', `/api/imoveis/${im.id}/autorizacoes`)).filter((a) => a.tipo && a.tipo !== 'autorizacao');
+  const p = im.proprietario;
+  const precisaDono = t !== 'intermediacao';
+  const campos = {
+    locacao: `<div class="grid g2"><label class="f">Aluguel mensal<input name="aluguel" inputmode="decimal" value="${im.valor_locacao || ''}" placeholder="4500"></label>
+        <label class="f">Prazo (meses)<input name="prazo_meses" type="number" value="30" min="6" max="60"></label></div>
+      <div class="grid g2"><label class="f">Início<input name="inicio" type="date"></label>
+        <label class="f">Vence todo dia<input name="dia_vencimento" type="number" value="10" min="1" max="28"></label></div>
+      <div class="grid g2"><label class="f">Reajuste pelo<select class="inp" name="indice"><option>IPCA/IBGE</option><option>IGP-M/FGV</option><option>INPC/IBGE</option></select></label>
+        <label class="f">Multa por atraso (%)<input name="multa_pct" value="2" inputmode="decimal"></label></div>
+      <label class="f">Garantia<select class="inp" name="garantia" data-garantia>
+        <option value="fiador">Fiador</option><option value="caucao">Caução em dinheiro</option><option value="seguro">Seguro-fiança</option><option value="nenhuma">Sem garantia</option></select></label>
+      <div data-g="fiador"><div class="grid g2"><label class="f">Nome do fiador<input name="fiador_nome"></label><label class="f">CPF do fiador<input name="fiador_cpf"></label></div>
+        <label class="f">Endereço do fiador<input name="fiador_endereco"></label></div>
+      <div data-g="caucao" hidden><label class="f">Caução (nº de aluguéis)<select class="inp" name="caucao_alugueis"><option value="1">1 aluguel</option><option value="2">2 aluguéis</option><option value="3" selected>3 aluguéis</option></select></label>
+        <p class="muted small" style="margin:0">O valor acompanha o aluguel: reajustou, a diferença é complementada.</p></div>
+      <div data-g="seguro" hidden><label class="f">Seguradora (opcional)<input name="seguradora"></label></div>
+      <div class="row"><label class="chk"><input type="checkbox" name="condominio" checked> Condomínio por conta do locatário</label>
+        <label class="chk"><input type="checkbox" name="iptu" checked> IPTU por conta do locatário</label></div>`,
+    venda: `<div class="grid g2"><label class="f">Valor da venda<input name="valor" inputmode="decimal" value="${im.valor || ''}"></label>
+        <label class="f">Sinal<input name="sinal" inputmode="decimal" placeholder="0"></label></div>
+      <label class="f">Pagamento do saldo<select class="inp" name="forma_pagamento" data-forma><option value="vista">À vista na escritura</option><option value="financiamento">Financiamento bancário</option><option value="parcelado">Parcelado direto</option></select></label>
+      <div data-f="parcelado" hidden><label class="f">Parcelas<input name="parcelas" type="number" value="12" min="1" max="240"></label></div>
+      <div class="grid g2"><label class="f">Prazo para a escritura (dias)<input name="prazo_escritura_dias" type="number" value="60" min="15" max="365"></label>
+        <label class="f">Posse<select class="inp" name="posse"><option value="escritura">Na escritura</option><option value="assinatura">Na assinatura</option></select></label></div>
+      <div class="grid g2"><label class="f">Comissão (%)<input name="comissao_pct" value="6" inputmode="decimal"></label>
+        <label class="f">Multa (%)<input name="multa_pct" value="10" inputmode="decimal"></label></div>`,
+    intermediacao: `<div class="grid g2"><label class="f">Negócio<select class="inp" name="negocio"><option value="venda">Compra</option><option value="locacao">Locação</option></select></label>
+        <label class="f">Prazo (dias)<input name="prazo_dias" type="number" value="90" min="15" max="365"></label></div>
+      <div class="grid g2"><label class="f">Comissão na compra (%)<input name="comissao_pct" value="6" inputmode="decimal"></label>
+        <label class="f">Comissão na locação (aluguéis)<input name="comissao_alugueis" value="1" inputmode="decimal"></label></div>
+      <label class="chk"><input type="checkbox" name="exclusivo"> Com exclusividade</label>`,
+  }[t];
+
+  $('#aba').innerHTML = `<div class="grid g12">
+    <form class="card grid" data-form="contrato" data-id="${im.id}" style="gap:12px;align-content:start">
+      <h3>Gerar ${CONTRATO_TITULO[t].toLowerCase()}</h3>
+      <div class="tabs" style="margin:0">${CONTRATOS.map(([k, lb]) => `<a href="#/imoveis/${im.id}/contratos/${k}" class="${t === k ? 'on' : ''}">${lb}</a>`).join('')}</div>
+      <input type="hidden" name="tipo" value="${t}">
+      ${precisaDono ? (p && p.nome ? `<p class="muted small" style="margin:0">${t === 'locacao' ? 'Locador' : 'Vendedor'}: <b>${esc(p.nome)}</b>${p.cpf ? ' · CPF ' + esc(p.cpf) : ''}</p>`
+    : `<div class="banner warn" style="margin:0">Cadastre o proprietário antes. <a href="#/imoveis/${im.id}/editar">Editar imóvel</a></div>`) : ''}
+      <h4 style="margin:4px 0 0">${t === 'locacao' ? 'Locatário' : t === 'venda' ? 'Comprador' : 'Cliente'}</h4>
+      <div class="grid g2"><label class="f">Nome completo<input name="cliente_nome" required></label><label class="f">CPF<input name="cliente_cpf"></label></div>
+      <div class="grid g2"><label class="f">Telefone<input name="cliente_telefone" placeholder="(19) 99999-0000"></label><label class="f">E-mail<input name="cliente_email" type="email"></label></div>
+      <label class="f">Endereço<input name="cliente_endereco"></label>
+      <h4 style="margin:4px 0 0">Condições</h4>
+      ${campos}
+      <label class="f">Matrícula nº (opcional)<input name="matricula"></label>
+      <label class="f">Observações (opcional)<textarea name="observacoes"></textarea></label>
+      <button class="btn pri" type="submit" ${precisaDono && !(p && p.nome) ? 'disabled' : ''}>Gerar e criar link de assinatura</button>
+      <p class="muted small" style="margin:0">O texto é um modelo inicial: peça ao advogado da ${esc(MARCA.cliente)} para revisar antes de usar com clientes.</p>
+    </form>
+    <div class="card"><h3>Contratos deste imóvel</h3><div id="ct-novo"></div>${l.length ? `<div class="list">${l.map((a) => `<div class="item" style="flex-direction:column;align-items:stretch"><div class="row">
+      <span class="pill ${a.status === 'assinado' ? 'ok' : a.status === 'pendente' ? 'warn' : 'bad'}">${esc(a.status)}</span><span class="small">${esc(CONTRATO_TITULO[a.tipo] || a.tipo)}</span><span class="sp"></span><span class="muted small">${dataBR(a.criado_em)}</span></div>
+      ${a.status === 'assinado' ? `<div class="small">Assinado por <b>${esc(a.assinante_nome)}</b> em ${esc(a.assinado_em)}${a.pdf_arquivo_id ? ` · <a href="/api/arquivos/${a.pdf_arquivo_id}" target="_blank" rel="noopener">Abrir PDF</a>` : ''}</div>` : ''}
+      ${a.status === 'pendente' ? `<div class="copybox"><input class="inp mono" readonly value="${esc(a.url)}"><button class="btn sm" data-act="copiar" data-txt="${esc(a.url)}">Copiar</button><button class="btn sm danger" data-act="cancelar-aut" data-id="${im.id}" data-aid="${a.id}">Cancelar</button></div>` : ''}</div>`).join('')}</div>` : '<div class="empty">Nenhum contrato gerado.</div>'}</div></div>`;
+
+  const mostra = (sel, valor) => $$(`[data-${sel}]`).forEach((d) => { d.hidden = d.dataset[sel] !== valor; });
+  const g = $('[data-garantia]'); if (g) { mostra('g', g.value); g.addEventListener('change', () => mostra('g', g.value)); }
+  const f = $('[data-forma]'); if (f) { mostra('f', f.value); f.addEventListener('change', () => mostra('f', f.value)); }
+}
+FORM.contrato = async (f) => {
+  const r = await api('POST', `/api/imoveis/${f.dataset.id}/contrato`, formJSON(f));
+  const msg = `Olá! Segue o ${r.titulo.toLowerCase()} para assinatura eletrônica. É só abrir, conferir, informar o CPF e assinar com o dedo: ${r.url}`;
+  const wa = r.telefone ? `https://wa.me/${String(r.telefone).replace(/\D/g, '').replace(/^(?!55)/, '55')}?text=${encodeURIComponent(msg)}` : null;
+  $('#ct-novo').innerHTML = `<div class="sug" style="margin-bottom:12px"><b>${esc(r.titulo)} criado</b><div class="copybox"><input class="inp mono" readonly value="${esc(r.url)}"><button class="btn sm" data-act="copiar" data-txt="${esc(r.url)}">Copiar</button></div>
+    <div class="row">${wa ? `<a class="btn sm pri" href="${esc(wa)}" target="_blank" rel="noopener">Enviar pelo WhatsApp</a>` : ''}<a class="btn sm" href="${esc(r.url)}" target="_blank" rel="noopener">Assinar aqui (presencial)</a></div></div>`;
+};
 
 // ---------- CRM ----------
 async function telaLeads(qs = new URLSearchParams()) {
