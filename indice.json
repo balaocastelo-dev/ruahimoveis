@@ -386,7 +386,7 @@
       "tipo": "principal",
       "categoria": "construcao",
       "criadaEm": "2026-10-31T02:17:45.290Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "imovel-com-vista-o-que-observar-para-a-vista-nao-sumir",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T10:00:57.974Z"
+  "atualizadoEm": "2026-11-06T10:06:10.894Z"
 }

@@ -15,7 +15,10 @@
     "casa nova"
   ],
   "capa": {
-    "alt": "Terreno plano e limpo em condomínio arborizado, com estacas de marcação e plantas de arquitetura enroladas sobre uma mesa de madeira"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/construir-casa-em-condominio-fechado-do-terreno-ao-projeto-aprovado-01f4b69b.jpg",
+    "alt": "Terreno plano e limpo em condomínio arborizado, com estacas de marcação e plantas de arquitetura enroladas sobre uma mesa de madeira",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Comprou o lote no condomínio e quer começar a casa? Antes do primeiro tijolo vêm três aprovações: a das regras do próprio condomínio, a do projeto na prefeitura e a responsabilidade técnica de quem projeta e executa. Explicamos, passo a passo, do terreno ao alvará, o que costuma atrasar a obra e onde vale chamar um profissional. Leia o artigo completo no blog (link na bio).",
