@@ -350,7 +350,7 @@
       "tipo": "dica",
       "categoria": "interiores",
       "criadaEm": "2026-10-30T20:26:38.393Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "marcenaria-planejada-o-que-pedir-no-projeto-para-durar",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:50:32.260Z"
+  "atualizadoEm": "2026-11-06T09:52:21.994Z"
 }
