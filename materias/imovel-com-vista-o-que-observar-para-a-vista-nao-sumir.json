@@ -11,7 +11,10 @@
     "zoneamento"
   ],
   "capa": {
-    "alt": "Sala de estar elevada com janelas do piso ao teto voltadas para um vale verde e montanhas ao entardecer"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/imovel-com-vista-o-que-observar-para-a-vista-nao-sumir-14384baa.jpg",
+    "alt": "Sala de estar elevada com janelas do piso ao teto voltadas para um vale verde e montanhas ao entardecer",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Aquela vista que fez você se apaixonar pelo imóvel pode sumir com o próximo prédio? Na maior parte dos casos, a lei não protege a paisagem: o que protege é o que o terreno da frente pode ou não receber. Mostramos como ler o zoneamento, a topografia e as áreas verdes, e o que pedir por escrito antes de comprar. Leia o artigo completo no blog (link na bio).",
