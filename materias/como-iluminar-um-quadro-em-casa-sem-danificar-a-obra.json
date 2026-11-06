@@ -12,7 +12,10 @@
     "interiores"
   ],
   "capa": {
-    "alt": "Parede de sala em tom quente com uma pintura abstrata emoldurada, iluminada de forma suave por um spot no teto"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/como-iluminar-um-quadro-em-casa-sem-danificar-a-obra-c3190ae5.jpg",
+    "alt": "Parede de sala em tom quente com uma pintura abstrata emoldurada, iluminada de forma suave por um spot no teto",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabia que a luz que valoriza um quadro também pode desbotar a obra com o tempo? Sol direto, lâmpada quente colada na moldura e parede úmida são os vilões mais comuns. Museus seguem limites de luz para cada tipo de material, e dá para levar essa lógica para a sala de casa. No blog, mostramos quanta luz cada obra aguenta, qual lâmpada escolher e onde pendurar. Leia no blog (link na bio).",
