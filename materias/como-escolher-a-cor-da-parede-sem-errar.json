@@ -13,7 +13,10 @@
     "iluminação"
   ],
   "capa": {
-    "alt": "Sala com parede pintada em verde-sálvia suave, sofá de linho cru, aparador de madeira e luz natural entrando por uma janela lateral"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/como-escolher-a-cor-da-parede-sem-errar-36e1b64b.jpg",
+    "alt": "Sala com parede pintada em verde-sálvia suave, sofá de linho cru, aparador de madeira e luz natural entrando por uma janela lateral",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabia que a mesma tinta pode parecer outra cor em cada parede da casa? A luz que entra pela janela, a lâmpada e até o brilho do acabamento mudam o tom. Antes de comprar o galão, teste amostras grandes e observe em horários diferentes. No blog, mostramos o passo a passo para escolher a cor da parede sem arrependimento. Leia a matéria completa no blog (link na bio).",

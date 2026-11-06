@@ -206,7 +206,7 @@
       "tipo": "dica",
       "categoria": "interiores",
       "criadaEm": "2026-10-29T23:25:11.252Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "comprar-imovel-na-planta-ou-pronto-vantagens-riscos-contrato",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:19:54.169Z"
+  "atualizadoEm": "2026-11-06T09:21:18.894Z"
 }
