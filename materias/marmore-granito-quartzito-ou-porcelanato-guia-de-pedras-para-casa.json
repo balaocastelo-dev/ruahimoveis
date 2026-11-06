@@ -12,7 +12,10 @@
     "cozinha"
   ],
   "capa": {
-    "alt": "Bancada de cozinha em pedra clara com veios suaves, ao lado de amostras de granito escuro e quartzito sobre a superfície"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/marmore-granito-quartzito-ou-porcelanato-guia-de-pedras-para-casa-e7cf5f6b.jpg",
+    "alt": "Bancada de cozinha em pedra clara com veios suaves, ao lado de amostras de granito escuro e quartzito sobre a superfície",
+    "largura": 1600,
+    "altura": 900
   },
   "seo": {
     "titulo": "Mármore, granito, quartzito ou porcelanato: qual escolher"

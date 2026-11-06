@@ -224,7 +224,7 @@
       "tipo": "principal",
       "categoria": "interiores",
       "criadaEm": "2026-10-30T02:25:25.479Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "steel-frame-ou-alvenaria-o-que-muda-na-construcao-da-casa",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:22:55.108Z"
+  "atualizadoEm": "2026-11-06T09:24:55.812Z"
 }
