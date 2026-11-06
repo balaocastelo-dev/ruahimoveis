@@ -13,7 +13,10 @@
     "campinas"
   ],
   "capa": {
-    "alt": "Banheiro claro com piso de porcelanato amadeirado, bancada de pedra clara, toalhas de linho dobradas e luz suave de inverno pela janela"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/Corretordofuturo.app/refs/heads/plataforma/banco-materias/capas/piso-aquecido-vale-a-pena-no-clima-de-campinas-883703a9.jpg",
+    "alt": "Banheiro claro com piso de porcelanato amadeirado, bancada de pedra clara, toalhas de linho dobradas e luz suave de inverno pela janela",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Pé frio no piso do banheiro numa manhã de julho: vale instalar piso aquecido em Campinas? Aqui o inverno é curto, então a resposta costuma ser sim para um ou dois cômodos e não para a casa inteira. No blog, explicamos a diferença entre o sistema elétrico e o de água quente e o que pesar antes de reformar. Leia a matéria completa no blog (link na bio).",
