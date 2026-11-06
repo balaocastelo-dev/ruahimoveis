@@ -287,7 +287,7 @@
       "tipo": "principal",
       "categoria": "bem-estar",
       "criadaEm": "2026-10-30T14:22:50.848Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "madeira-para-area-externa-qual-resiste-ao-sol-e-a-chuva",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:38:36.609Z"
+  "atualizadoEm": "2026-11-06T09:39:58.652Z"
 }

@@ -12,7 +12,10 @@
     "plantas"
   ],
   "capa": {
-    "alt": "Sala clara com janelas abertas, cortinas leves de linho se movendo com a brisa e plantas verdes perto da luz"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/qualidade-do-ar-dentro-de-casa-ventilacao-umidade-plantas-24f5ac64.jpg",
+    "alt": "Sala clara com janelas abertas, cortinas leves de linho se movendo com a brisa e plantas verdes perto da luz",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Planta purifica o ar de casa? Um estudo da Universidade Drexel calculou que seriam necessárias centenas delas para fazer o que uma janela aberta faz. O que melhora mesmo o ar dentro de casa é tirar a fonte, ventilar na hora certa e manter a umidade sob controle. No blog, explicamos como fazer isso em cada cômodo. Leia o artigo completo no blog (link na bio).",
