@@ -15,7 +15,10 @@
     "arquitetura"
   ],
   "capa": {
-    "alt": "Fachada de casa contemporânea ao anoitecer com gradil vazado, jardim baixo e caminho de entrada bem iluminado"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/seguranca-em-casa-de-alto-padrao-camadas-de-protecao-4eb1e013.jpg",
+    "alt": "Fachada de casa contemporânea ao anoitecer com gradil vazado, jardim baixo e caminho de entrada bem iluminado",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Muro alto deixa a casa mais segura? Nem sempre. Cartilhas de polícia mostram que ver e ser visto pesa muito: gradil vazado, caminho iluminado, porta maciça, fechadura de lingueta longa e um vizinho que sabe o que fazer quando o alarme toca. Segurança em casa se constrói em camadas, e a câmera é só uma delas. Leia o artigo completo no blog (link na bio).",

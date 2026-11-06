@@ -368,7 +368,7 @@
       "tipo": "principal",
       "categoria": "alto-padrao",
       "criadaEm": "2026-10-30T23:26:02.729Z",
-      "situacao": "esperando-capa"
+      "situacao": "pronta"
     },
     {
       "slug": "porcelanato-ou-piso-de-madeira-na-sala-qual-escolher",
@@ -893,5 +893,5 @@
       "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-06T09:53:52.475Z"
+  "atualizadoEm": "2026-11-06T09:55:19.248Z"
 }
