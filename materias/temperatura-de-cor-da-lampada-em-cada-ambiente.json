@@ -12,7 +12,10 @@
     "lâmpadas"
   ],
   "capa": {
-    "alt": "Sala de estar ao entardecer iluminada por luz amarelada e suave de luminárias de piso e pendentes, com sofá claro e mesa de madeira"
+    "src": "https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/refs/heads/plataforma/banco-materias/capas/temperatura-de-cor-da-lampada-em-cada-ambiente-5a364023.jpg",
+    "alt": "Sala de estar ao entardecer iluminada por luz amarelada e suave de luminárias de piso e pendentes, com sofá claro e mesa de madeira",
+    "largura": 1600,
+    "altura": 900
   },
   "redes": {
     "legenda": "Sabe o que significa aquele 2700 K ou 6500 K na caixa da lâmpada? Não é o quanto ela esquenta: é a cor da luz. Número baixo dá luz amarelada e acolhedora; número alto, luz branca e azulada. Sala e quarto costumam pedir luz quente, cozinha e banheiro ficam bem com luz neutra. No blog, explicamos ambiente por ambiente e o que mais olhar na embalagem. Leia a matéria completa no blog (link na bio).",
