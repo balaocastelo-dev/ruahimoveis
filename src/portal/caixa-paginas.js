@@ -54,6 +54,49 @@ const REGRAS = [
     O edital diz qual é o caso. Conferir isso antes é metade do nosso trabalho.`],
 ];
 
+// ------------------------------------------------------------- a vizinhanca
+// O que existe a pe do endereco, levantado no OpenStreetMap (scripts/caixa-vizinhanca.js).
+// Distancia vale mais que contagem: "ponto de onibus a 56 m" diz algo, "6 pontos de
+// onibus" nao. A contagem fica como detalhe.
+//
+// So aparece quando a posicao e confiavel, e diz de onde veio. Com o endereco achado
+// so pela rua, o texto avisa que o ponto e aproximado -- numero redondo mentiroso
+// seria pior que bloco nenhum.
+const METROS = (d) => (d >= 1000 ? (d / 1000).toFixed(1).replace('.', ',') + ' km' : d + ' m');
+// O nome no singular de cada grupo. Derivar tirando o "s" do plural produzia
+// "Pontos de onibu".
+const NO_SINGULAR = {
+  escola: 'Escola', mercado: 'Mercado', padaria: 'Padaria', farmacia: 'Farmácia',
+  saude: 'Posto ou clínica', onibus: 'Ponto de ônibus', praca: 'Praça ou quadra', banco: 'Banco',
+};
+
+function blocoVizinhanca(i, viz) {
+  if (!viz || !viz.itens || !viz.itens.length) return '';
+  const aproximado = i.geo_precisao === 'rua';
+  const linhas = viz.itens
+    .filter((x) => x.perto)
+    .sort((a, b) => a.perto.dist - b.perto.dist)
+    .map((x) => {
+      const nome = x.perto.nome ? ` &mdash; ${esc(x.perto.nome)}` : '';
+      const titulo = NO_SINGULAR[x.grupo] || x.rotulo;
+      return `<li><strong>${esc(titulo)}</strong> a ${METROS(x.perto.dist)}${nome}
+        ${x.n > 1 ? `<span>${x.n} num raio de ${METROS(viz.raio)}</span>` : ''}</li>`;
+    });
+  if (!linhas.length) return '';
+
+  const mapa = i.lat && i.lon
+    ? `<p class="oc-viz-mapa"><a href="https://www.openstreetmap.org/?mlat=${i.lat}&mlon=${i.lon}#map=17/${i.lat}/${i.lon}"
+        target="_blank" rel="noopener noreferrer">Ver o endereço no mapa ↗</a></p>` : '';
+
+  return `<h2>O que tem por perto</h2>
+    <ul class="oc-viz">${linhas.join('')}</ul>
+    <p class="oc-viz-nota">Levantado no OpenStreetMap a partir ${aproximado
+      ? 'da rua do imóvel &mdash; o ponto é aproximado, porque o número não foi localizado no mapa'
+      : 'do endereço do imóvel'}. O mapa é mantido por voluntários: pode faltar coisa que existe.</p>
+    ${mapa}`;
+}
+
+
 function ldImovel(req, i) {
   const c = conta(i);
   return {
@@ -93,7 +136,7 @@ function paginaOportunidades(req, lista, resumo) {
 }
 
 // -------------------------------------------------------------------- ficha
-function paginaOportunidade(req, i, parecidos = []) {
+function paginaOportunidade(req, i, parecidos = [], viz = null) {
   const m = MODALIDADES[i.modalidade] || { curto: 'venda', como: '', atencao: '' };
   const c = conta(i);
   const financia = i.financiamento === 'Sim';
@@ -132,6 +175,8 @@ function paginaOportunidade(req, i, parecidos = []) {
 
     <h2>O que conferir antes de propor</h2>
     <dl class="oc-regras">${REGRAS.map(([t, d]) => `<div><dt>${esc(t)}</dt><dd>${d}</dd></div>`).join('')}</dl>
+
+    ${blocoVizinhanca(i, viz)}
 
     <h2>A ficha</h2>
     <dl class="oc-ficha-l">${ficha.map(([r, v]) => `<div><dt>${esc(r)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>

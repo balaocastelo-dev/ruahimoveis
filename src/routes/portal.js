@@ -334,7 +334,8 @@ const ocPaginas = require('../portal/caixa-paginas');
 const CAMPOS_OC = `numero, cidade, bairro, endereco, tipo, quartos, vagas,
   area_util::float8 area_util, area_terreno::float8 area_terreno,
   preco::float8 preco, avaliacao::float8 avaliacao, desconto::float8 desconto,
-  modalidade, financiamento, link, descricao, prazo_em, prazo2_em, prazo_tipo`;
+  modalidade, financiamento, link, descricao, prazo_em, prazo2_em, prazo_tipo,
+  lat, lon, geo_precisao`;
 
 router.get('/oportunidades', (req, res) => {
   const lista = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
@@ -361,7 +362,12 @@ router.get('/oportunidades/:numero', (req, res, next) => {
   const parecidos = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
      WHERE saiu_em is null AND na_rmc AND cidade = ? AND numero <> ?
      ORDER BY desconto desc nulls last LIMIT 3`, i.cidade, numero);
-  html(res, ocPaginas.paginaOportunidade(req, i, parecidos));
+  // A vizinhanca e levantada a parte (scripts/caixa-vizinhanca.js): quando ainda nao
+  // foi, a pagina simplesmente nao traz a secao, em vez de trazer vazia.
+  const v = one('SELECT dados FROM caixa_vizinhanca WHERE numero = ?', numero);
+  let viz = null;
+  if (v && v.dados) { try { viz = typeof v.dados === 'string' ? JSON.parse(v.dados) : v.dados; } catch { viz = null; } }
+  html(res, ocPaginas.paginaOportunidade(req, i, parecidos, viz));
 });
 
 
