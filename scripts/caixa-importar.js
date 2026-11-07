@@ -111,9 +111,16 @@ function enriquecer(im) {
   // 220.93 de area do terreno,  1 qto(s), a.serv, WC, 1 sala(s), 1 vaga(s)".
   // Por isso tira-se o acento antes de procurar, e o numero vem na frente.
   const d = semAcento(im.descricao || '').toLowerCase();
-  const tipo = /\bcasa\b|sobrado/.test(d) ? 'Casa' : /apartamento|cobertura|kitnet|flat/.test(d) ? 'Apartamento'
-    : /terreno|\blote\b|gleba/.test(d) ? 'Terreno'
-    : /comercial|\bloja\b|\bsala\b|galp|barrac|predio/.test(d) ? 'Comercial' : null;
+  // O tipo e a primeira palavra da ficha ("Casa, 59.03 de area total, ..."), e vale
+  // mais que adivinhar por palavra solta: "de area do terreno" aparece em quase toda
+  // descricao e fazia sala, predio e galpao virarem Terreno. Fica a palavra da propria
+  // Caixa, com acento, em vez de empurrar tudo para quatro caixinhas.
+  const cabeca = String(im.descricao || '').split(',')[0].trim();
+  const tipo = cabeca && cabeca.length <= 25 && !/\d/.test(cabeca)
+    ? cabeca.charAt(0).toUpperCase() + cabeca.slice(1).toLowerCase()
+    : /\bcasa\b|sobrado/.test(d) ? 'Casa' : /apartamento|cobertura|kitnet|flat/.test(d) ? 'Apartamento'
+      : /terreno|\blote\b|gleba/.test(d) ? 'Terreno'
+      : /comercial|\bloja\b|\bsala\b|galp|barrac|predio/.test(d) ? 'Comercial' : null;
   // A Caixa mistura dois formatos na mesma ficha: a area costuma vir com ponto
   // decimal ("220.93"), mas a de quatro digitos aparece como "1.250,00". A regra
   // que atende as duas: se tem virgula, ela e o decimal e o ponto e milhar.
