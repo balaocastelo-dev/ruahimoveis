@@ -35,6 +35,33 @@ async function dados(cli) {
   return { geral, sp, cidades, modal, tipos };
 }
 
+// As capas moram no ramo de conteudo, nao apontando direto para o Wikimedia: a rede
+// do escritorio nao alcanca os servidores de imagem deles e a capa aparecia quebrada.
+// O credito de cada foto entra nas fontes da materia, que e o que a licenca pede.
+const paginaCommons = (arquivo) => 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(arquivo.replace(/ /g, '_'));
+const CAPAS = {
+  desconto: {
+    arquivo: 'Campinas skyline.jpg', autor: 'Elson Júnior', licenca: 'CC BY 2.0',
+    src: 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/plataforma/banco-materias/capas/caixa-desconto-campinas.jpg',
+    largura: 1600, altura: 1172,
+    alt: 'Prédios do Centro e do Cambuí, em Campinas, vistos de longe ao fim da tarde',
+  },
+  regras: {
+    arquivo: 'Estação Cultura Campinas.jpg', autor: 'Edison Marcon', licenca: 'CC BY-SA 4.0',
+    src: 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/plataforma/banco-materias/capas/caixa-regras-campinas.jpg',
+    largura: 1600, altura: 1067,
+    alt: 'Fachada da Estação Cultura, antiga estação ferroviária de Campinas, em dia claro',
+  },
+  financiamento: {
+    arquivo: 'Campinas at night.jpg', autor: 'João Carlos Medau', licenca: 'CC BY 2.0',
+    src: 'https://raw.githubusercontent.com/balaocastelo-dev/ruahimoveis/plataforma/banco-materias/capas/caixa-financiamento-campinas.jpg',
+    largura: 1600, altura: 1067,
+    alt: 'Campinas vista do alto à noite, com as luzes da cidade espalhadas até o horizonte',
+  },
+};
+const capaDe = (k) => ({ src: CAPAS[k].src, alt: CAPAS[k].alt, largura: CAPAS[k].largura, altura: CAPAS[k].altura });
+const fonteDaCapa = (k) => ({ nome: `Foto da capa: ${CAPAS[k].autor} · ${CAPAS[k].licenca} · Wikimedia Commons`, url: paginaCommons(CAPAS[k].arquivo) });
+
 function artigoDesconto(d) {
   const linhas = d.cidades.filter((c) => c.n >= 2).map((c) => [
     cap(c.cidade), String(c.n), c.medio ? pct(c.medio) : '—', c.menor ? br(c.menor) : '—',
@@ -44,6 +71,7 @@ function artigoDesconto(d) {
     titulo: 'Quanto desconto a Caixa realmente dá na região de Campinas',
     resumo: `Levantamos os ${d.geral.n} imóveis que a Caixa tem à venda na região metropolitana de Campinas e medimos o desconto cidade por cidade. A média fica em ${pct(d.geral.medio)} sobre a avaliação da própria Caixa.`,
     categoria: 'campinas',
+    capa: capaDe('desconto'),
     publicadoEm: hoje,
     etiquetas: ['imóveis da Caixa', 'leilão', 'Campinas'],
     blocos: [
@@ -74,7 +102,7 @@ function artigoDesconto(d) {
       { tipo: 'tabela', colunas: ['Tipo', 'Imóveis na região'],
         linhas: d.tipos.map((t) => [t.tipo, String(t.n)]), fonte: FONTE_LISTA },
     ],
-    fontes: [FONTE_LISTA, FONTE_CARTILHA],
+    fontes: [FONTE_LISTA, FONTE_CARTILHA, fonteDaCapa('desconto')],
   };
 }
 
@@ -84,6 +112,7 @@ function artigoRegras(d) {
     titulo: 'Imóvel da Caixa: as cinco regras que decidem o negócio',
     resumo: 'A entrada de 5% vale para todo mundo, inclusive na compra à vista. O crédito precisa estar aprovado antes do lance. E a dívida de condomínio é sua até 10% da avaliação. As regras que a maioria descobre tarde.',
     categoria: 'noticias',
+    capa: capaDe('regras'),
     publicadoEm: hoje,
     etiquetas: ['imóveis da Caixa', 'leilão', 'financiamento'],
     blocos: [
@@ -116,7 +145,7 @@ function artigoRegras(d) {
           'Prazo curto: leilão e licitação têm data marcada',
         ] },
     ],
-    fontes: [FONTE_CARTILHA, FONTE_REGRAS],
+    fontes: [FONTE_CARTILHA, FONTE_REGRAS, fonteDaCapa('regras')],
   };
 }
 
@@ -126,6 +155,7 @@ function artigoFinanciamento(d) {
     titulo: `Financiamento em imóvel da Caixa: só ${d.geral.fin} dos ${d.geral.n} da região aceitam`,
     resumo: 'Quem não tem o valor à vista depende de uma minoria do estoque. Levantamos quantos imóveis da Caixa na região metropolitana de Campinas aceitam financiamento, e o que isso muda na hora de escolher.',
     categoria: 'noticias',
+    capa: capaDe('financiamento'),
     publicadoEm: hoje,
     etiquetas: ['imóveis da Caixa', 'financiamento', 'Campinas'],
     blocos: [
@@ -146,7 +176,7 @@ function artigoFinanciamento(d) {
       { tipo: 'destaque', tom: 'nota', titulo: 'FGTS tem trava própria',
         texto: 'Usar o FGTS exige imóvel residencial urbano, três anos de trabalho sob o regime do fundo, não ter outro imóvel residencial na mesma cidade e não ter financiamento ativo no SFH. A lista da Caixa não diz se o imóvel aceita FGTS: isso se confirma na agência ou no correspondente antes de propor.' },
     ],
-    fontes: [FONTE_LISTA, FONTE_CARTILHA, FONTE_REGRAS],
+    fontes: [FONTE_LISTA, FONTE_CARTILHA, FONTE_REGRAS, fonteDaCapa('financiamento')],
   };
 }
 
