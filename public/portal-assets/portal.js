@@ -230,7 +230,7 @@
    navegador nao tem o que adivinhar. Quando a data chega, o relogio para e diz
    que encerrou -- em vez de contar para tras. */
 (function () {
-  var alvos = document.querySelectorAll('.oc-prazo[data-prazo]');
+  var alvos = document.querySelectorAll('[data-prazo]');
   if (!alvos.length) return;
 
   function escreve(el, ms) {
@@ -247,6 +247,7 @@
     if (d === 0) partes.push(seg + 's');
     saida.textContent = partes.join(' ');
     el.classList.toggle('oc-urgente', s < 86400);
+    el.classList.toggle('v-urgente', s < 86400);
     return false;
   }
 

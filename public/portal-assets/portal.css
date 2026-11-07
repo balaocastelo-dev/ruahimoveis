@@ -693,13 +693,13 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .oc-desc{position:absolute;right:10px;top:10px;background:rgba(22,19,15,.86);color:#fff;font-size:.72em;
   font-weight:600;padding:5px 9px;border-radius:2px;z-index:1}
 .oc-corpo{display:flex;flex-direction:column;gap:5px;padding:16px 17px 17px;flex:1}
-.oc-tipo{margin:0;font-size:.74em;letter-spacing:.15em;text-transform:uppercase;color:var(--pedra)}
+.oc-tipo{margin:0;font-size:.86em;color:var(--pedra)}
 .oc-card h3{margin:.1em 0 .2em;font-size:1.22em;line-height:1.24}
 .oc-card h3 a{color:inherit;text-decoration:none}
 .oc-card h3 a:hover{color:var(--ouro-escuro)}
 .oc-ficha{margin:0;font-size:.88em;color:var(--pedra)}
 .oc-valor{margin:.5em 0 0;font-size:1.5em;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
-.oc-valor span{display:block;font-size:.46em;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--pedra);margin-top:4px}
+.oc-valor span{display:block;font-size:.5em;font-weight:400;color:var(--pedra);margin-top:4px}
 .oc-valor-c{margin:.2em 0 0;font-size:.82em;color:var(--pedra)}
 .oc-btn{display:inline-block;margin-top:auto;padding-top:13px;font-size:.88em;font-weight:500;color:var(--ouro-escuro)}
 
@@ -778,3 +778,125 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .p-oc-todos{white-space:nowrap}
 .p-vazio-nota{max-width:46rem;margin:2.6em auto 0;padding:0 20px;color:var(--pedra);font-size:1.02em;line-height:1.6;text-align:center}
 .p-vazio-nota + .p-oc-faixa .p-oc-cab{padding-top:1.6em;border-top:0}
+
+/* ============================================================ PÁGINA INICIAL
+   O produto desta casa é uma lista que vence. A página abre com o estado dela,
+   como um painel de embarque, e a foto da cidade virou assinatura entre seções
+   em vez de parede de 770 pixels antes de qualquer coisa útil.
+
+   Duas cores novas, cada uma com um trabalho só:
+     --tempo  tijolo escuro, exclusivo de prazo acabando
+     --abate  verde tinta, exclusivo de dinheiro abaixo da avaliação
+   Fora delas, a identidade da casa continua: papel, tinta e ouro queimado. */
+:root{ --tempo:#8C2F23; --abate:#2E5D4B; }
+
+.v-abre,.v-vitrine,.v-busca,.v-como,.v-blog,.p-resultado{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---- abertura: o que a casa faz, e o estado da lista ---- */
+.v-abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:48px 56px;
+  align-items:start;padding-top:56px;padding-bottom:56px}
+.v-dizer h1{margin:0;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-.014em;max-width:17ch}
+.v-lead{margin:1.1em 0 0;font-size:1.08rem;line-height:1.62;color:var(--pedra);max-width:46ch}
+.v-acao{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin:2em 0 0}
+.v-cta{display:inline-block;background:var(--grafite);color:var(--cal);padding:14px 26px;
+  border-radius:3px;font-weight:600;text-decoration:none;font-size:1rem}
+.v-cta:hover{background:var(--ouro-escuro);color:var(--cal)}
+.v-tel{font-size:1.06rem;font-weight:500;font-variant-numeric:tabular-nums;color:var(--grafite);
+  text-decoration:none;border-bottom:1px solid var(--linha);padding-bottom:2px}
+.v-tel:hover{border-bottom-color:var(--ouro)}
+
+/* ---- o painel: o que fecha primeiro ---- */
+.v-quadro{border:1px solid var(--linha);border-radius:3px;background:var(--papel);overflow:hidden}
+.v-quadro-cab{padding:16px 20px 13px;border-bottom:1px solid var(--linha)}
+.v-quadro-cab h2{margin:0;font-size:1.22rem;line-height:1.2}
+.v-quadro-cab p{margin:3px 0 0;font-size:.84rem;color:var(--pedra)}
+.v-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"onde valor" "prazo prazo";
+  gap:4px 16px;padding:13px 20px;border-bottom:1px solid var(--linha);text-decoration:none;color:inherit}
+.v-linha:last-of-type{border-bottom:0}
+.v-linha:hover{background:var(--salvia-claro)}
+.v-onde{grid-area:onde;min-width:0}
+.v-onde b{display:block;font-weight:600;font-size:1rem;line-height:1.25;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v-onde>span{display:block;font-size:.82rem;color:var(--pedra);margin-top:2px}
+.v-valor{grid-area:valor;text-align:right;white-space:nowrap}
+.v-valor b{display:block;font-size:1.06rem;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.v-abaixo{display:block;font-size:.78rem;color:var(--abate);margin-top:2px}
+.v-prazo{grid-area:prazo;display:flex;align-items:baseline;gap:7px;margin-top:3px}
+.v-prazo b{font-size:.92rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--pedra)}
+.v-urgente b{color:var(--tempo)}
+.v-prazo>span{font-size:.78rem;color:var(--pedra)}
+.v-quadro-vazio{margin:0;padding:18px 20px;font-size:.92rem;color:var(--pedra);line-height:1.55}
+.v-quadro-mais{display:block;padding:13px 20px;border-top:1px solid var(--linha);
+  font-size:.9rem;font-weight:500;color:var(--ouro-escuro);text-decoration:none}
+.v-quadro-mais:hover{background:var(--salvia-claro)}
+
+/* ---- a cidade, como assinatura ---- */
+.v-faixa{margin:0;position:relative}
+.v-faixa img{display:block;width:100%;height:clamp(150px,21vw,260px);object-fit:cover}
+.v-faixa figcaption{max-width:1180px;margin:0 auto;padding:7px 24px 0;font-size:.76rem;color:var(--pedra)}
+/* ---- cabeçalho que se repete nas seções ---- */
+.v-cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px}
+.v-cab h2{margin:0;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15}
+.v-mais{font-size:.93rem;font-weight:500;color:var(--ouro-escuro);white-space:nowrap}
+.v-cab-l{margin:.5em 0 0;color:var(--pedra);font-size:.98rem;line-height:1.55;max-width:60ch}
+
+.v-vitrine{padding-top:52px}
+.v-vitrine .oc-grade{margin-top:26px}
+
+/* ---- busca da carteira própria: desce, porque ninguém procura no vazio ---- */
+.v-busca{padding-top:56px}
+.v-busca h2{margin:0;font-size:clamp(1.4rem,2.3vw,1.8rem)}
+.v-busca-l{margin:.5em 0 1.3em;color:var(--pedra);font-size:.98rem;max-width:58ch}
+.v-busca .p-filtros{position:static;background:var(--papel);border:1px solid var(--linha);
+  border-radius:3px;padding:18px;box-shadow:none}
+.v-nada{color:var(--pedra);padding:26px 0}
+
+/* ---- as três dúvidas de toda conversa sobre imóvel retomado ---- */
+.v-como{padding-top:60px}
+.v-como h2{margin:0 0 26px;font-size:clamp(1.5rem,2.6vw,2rem)}
+.v-como-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:30px 40px}
+.v-como-grade h3{margin:0 0 .45em;font-size:1.12rem;font-weight:600;line-height:1.3}
+.v-como-grade p{margin:0;color:var(--pedra);font-size:.96rem;line-height:1.62}
+.v-como-mais{margin:26px 0 0;font-size:.95rem}
+
+/* ---- o blog no pé ---- */
+.v-blog{padding-top:60px;padding-bottom:70px}
+.v-blog-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:28px;margin-top:24px}
+.v-post{display:block;text-decoration:none;color:inherit}
+.v-post img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:3px;margin-bottom:12px}
+.v-post h3{margin:0 0 .35em;font-size:1.1rem;line-height:1.28;font-weight:600}
+.v-post:hover h3{color:var(--ouro-escuro)}
+.v-post p{margin:0;color:var(--pedra);font-size:.92rem;line-height:1.55}
+
+/* ---- celular ---- */
+@media (max-width:860px){
+  .v-abre{grid-template-columns:1fr;gap:36px;padding-top:36px;padding-bottom:40px}
+  .v-dizer h1{max-width:none}
+}
+@media (max-width:560px){
+  .v-abre,.v-vitrine,.v-busca,.v-como,.v-blog,.p-resultado{padding-left:16px;padding-right:16px}
+  .v-faixa figcaption{padding-left:16px;padding-right:16px}
+  .v-acao{gap:12px 16px}
+  .v-cta{flex:1 1 100%;text-align:center}
+  .v-linha{padding:12px 16px}
+  .v-quadro-cab,.v-quadro-mais{padding-left:16px;padding-right:16px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* o painel agrupa por data: dezenas de imóveis dividem o mesmo encerramento */
+.v-grupo{border-bottom:1px solid var(--linha)}
+.v-grupo:last-of-type{border-bottom:0}
+.v-prazo{display:flex;align-items:baseline;gap:8px;margin:0;padding:11px 20px 8px;
+  background:var(--salvia-claro);font-size:.84rem}
+.v-prazo>span{color:var(--pedra)}
+.v-prazo b{font-weight:600;font-variant-numeric:tabular-nums;color:var(--grafite)}
+.v-urgente b{color:var(--tempo)}
+.v-grupo .v-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;
+  padding:11px 20px;border-bottom:1px solid var(--linha);text-decoration:none;color:inherit}
+.v-grupo .v-linha:last-child{border-bottom:0}
+.v-sem-prazo{margin:0;padding:13px 20px;font-size:.84rem;line-height:1.5;color:var(--pedra);
+  border-top:1px solid var(--linha)}
+@media (max-width:560px){ .v-prazo,.v-grupo .v-linha,.v-sem-prazo{padding-left:16px;padding-right:16px} }
+.v-parte{margin:2.4em 0 0;padding-top:1.6em;border-top:1px solid var(--linha);
+  font-size:.95rem;line-height:1.62;color:var(--pedra);max-width:46ch}
+.v-parte strong{color:var(--grafite);font-weight:600}

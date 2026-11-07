@@ -130,7 +130,7 @@ function cartao(i) {
       ${i.desconto > 0 ? `<span class="oc-desc">${esc(pct(i.desconto))} abaixo da avaliação</span>` : ''}
     </a>
     <div class="oc-corpo">
-      <p class="oc-tipo">${esc(i.tipo || 'Imóvel')} · ${esc(capitalizar(i.cidade))}</p>
+      <p class="oc-tipo">${esc(i.tipo || 'Imóvel')} em ${esc(capitalizar(i.cidade))}</p>
       <h3><a href="${esc(caminho(i))}">${esc(capitalizar(i.bairro || i.cidade))}</a></h3>
       ${ficha.length ? `<p class="oc-ficha">${esc(ficha.join(' · '))}</p>` : ''}
       <p class="oc-valor">${esc(reais(c.total))}<span>total com assessoria</span></p>

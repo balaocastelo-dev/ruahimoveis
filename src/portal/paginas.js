@@ -245,7 +245,7 @@ function faixaCaixa(lista) {
   </section>`;
 }
 
-function paginaVitrine(req, lista, guiaDoBairro = null, daCaixa = []) {
+function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = []) {
   const FUNDO = fundoAgora(process.env.PORTAL_FUNDO, CLIENTE);
   const q = req.query || {};
   const achados = filtrar(lista, q);
@@ -261,35 +261,23 @@ function paginaVitrine(req, lista, guiaDoBairro = null, daCaixa = []) {
   const grupo = GRUPOS.find((g) => g.slug === q.tipo);
   const titulo = grupo ? `${grupo.nome} à venda${q.bairro ? ` no ${q.bairro}` : ''} · ${CLIENTE}` : q.bairro ? `Imóveis à venda no ${q.bairro} · ${CLIENTE}` : `Imóveis à venda em Campinas e região · ${CLIENTE}`;
 
-  const corpo = `
-${require('./versoes').seletor('vitrine')}
-<section class="p-hero p-hero-foto p-hero-direita">
-  <div class="p-hero-fundo" aria-hidden="true"><img src="${esc(FUNDO.src)}"${FUNDO.srcset ? ` srcset="${esc(FUNDO.srcset)}" sizes="100vw"` : ''} alt="" width="${FUNDO.largura}" height="${FUNDO.altura}" style="object-position:${esc(FUNDO.posicao)}" fetchpriority="high" decoding="async"></div>
-  <div class="p-hero-txt">
-  <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
-  <p class="p-sobre depois">Portal ${esc(CLIENTE)}</p>
-  <p class="p-hero-l">${chamadaDaVitrine(lista.length, daCaixa.length)}</p>
-  </div>
-  <form class="p-filtros" method="get" action="/imoveis" role="search" data-filtros>
-    <label class="p-campo p-campo-q"><span>Procurar</span><input type="search" name="q" value="${esc(q.q || '')}" placeholder="Bairro, condomínio, código…" autocomplete="off" maxlength="80"></label>
-    <label class="p-campo"><span>Tipo</span><select name="tipo"><option value="">Todos</option>${grupos.map((g) => `<option value="${g.slug}"${sel(g.slug, q.tipo)}>${esc(g.nome)}</option>`).join('')}</select></label>
-    <label class="p-campo"><span>Bairro</span><select name="bairro"><option value="">Todos</option>${bairros.map(([b, n]) => `<option value="${esc(b)}"${sel(b, q.bairro)}>${esc(b)} (${n})</option>`).join('')}</select></label>
-    <label class="p-campo"><span>Quartos</span><select name="quartos"><option value="">Qualquer</option>${[1, 2, 3, 4].map((n) => `<option value="${n}"${sel(n, q.quartos)}>${n}+</option>`).join('')}</select></label>
-    <label class="p-campo"><span>Até</span><select name="ate"><option value="">Qualquer valor</option>${FAIXAS.map((v) => `<option value="${v}"${sel(v, q.ate)}>${esc(reais(v))}</option>`).join('')}</select></label>
-    <label class="p-campo"><span>Ordem</span><select name="ordem"><option value="">Mais recentes</option><option value="menor-valor"${sel('menor-valor', q.ordem)}>Menor valor</option><option value="maior-valor"${sel('maior-valor', q.ordem)}>Maior valor</option><option value="maior-area"${sel('maior-area', q.ordem)}>Maior área</option></select></label>
-    <button class="p-botao" type="submit">Buscar</button>
-  </form>
-  <p class="p-hero-credito">${esc(FUNDO.lugar)}${FUNDO.credito ? ` · <a href="${esc(FUNDO.link)}" target="_blank" rel="noopener nofollow">${esc(FUNDO.credito)}</a>` : ''}</p>
-</section>
-${vazioHonesto(achados.length, filtrado, daCaixa.length) ? '' : `<section class="p-resultado" aria-live="polite">
-  ${guiaDoBairro ? `<p class="p-guia">Quer conhecer melhor o bairro? <a href="/bairros/${esc(guiaDoBairro.slug)}">Guia do ${esc(guiaDoBairro.nome)}</a>: história, parques, escolas, comércio e prédios.</p>` : ''}
-  <div class="p-resultado-cab"><p><b>${achados.length}</b> ${achados.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}</p>${filtrado ? '<a href="/imoveis">Limpar filtros</a>' : ''}</div>
-  ${daPagina.length ? `<h2 class="oculto">${lista.length} imóveis</h2><div class="p-grade">${daPagina.map((x, i) => cartao(x, { eager: i < 3 })).join('')}</div>` : `<div class="p-vazio"><p>${lista.length ? 'Nenhum imóvel com esses filtros.' : 'Os imóveis chegam em breve.'}</p>${filtrado ? '<a class="p-botao sec" href="/imoveis">Ver todos os imóveis</a>' : ''}${whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.') ? `<a class="p-botao" href="${esc(whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.'))}" target="_blank" rel="noopener">Contar o que procuro</a>` : ''}</div>`}
-  ${paginas > 1 ? `<nav class="p-paginas" aria-label="Páginas">${pagina > 1 ? `<a href="${esc(link(pagina - 1))}" rel="prev"><span class="p-seta p-seta-volta" aria-hidden="true"></span> Anteriores</a>` : '<span></span>'}<span>Página ${pagina} de ${paginas}</span>${pagina < paginas ? `<a href="${esc(link(pagina + 1))}" rel="next">Próximos <span class="p-seta" aria-hidden="true"></span></a>` : '<span></span>'}</nav>` : ''}
-</section>`}
-${vazioHonesto(achados.length, filtrado, daCaixa.length)
-  ? '<p class="p-vazio-nota">A carteira própria da imobiliária está em formação. Enquanto isso, estas são as oportunidades que a gente acompanha na Caixa.</p>' : ''}
-${faixaCaixa(daCaixa)}`;
+  // O corpo da pagina inicial mora em ./vitrine.js: era texto demais para ficar
+  // legivel no meio deste arquivo.
+  const corpo = require('./vitrine').corpo({
+    oc: {
+      fecham: caixa.fecham || [], destaques: caixa.destaques || [],
+      total: caixa.total || 0, financiam: caixa.financiam || 0,
+      semPrazo: caixa.semPrazo || 0, maiorDesconto: caixa.maiorDesconto || 0, safra: caixa.safra || null,
+    },
+    fundo: FUNDO, doBlog, proprios: lista.length,
+    achados, daPagina, paginas, pagina, filtrado, guiaDoBairro, q,
+    ferramentas: {
+      seletor: require('./versoes').seletor('vitrine'),
+      cartao, cortar, link,
+      filtros: { q, grupos, bairros, faixas: FAIXAS, reais },
+    },
+  });
+
   const base = urlBase(req);
   const ld = [{
     '@context': 'https://schema.org', '@type': 'ItemList', name: titulo, numberOfItems: achados.length,

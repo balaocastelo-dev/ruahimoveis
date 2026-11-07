@@ -50,7 +50,8 @@ async function guiaDoBairro(nome) {
   } catch { return null; }
 }
 
-router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro), caixaDaVitrine())));
+router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(
+  req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro), estadoDaCaixa(), await ultimasDoBlog())));
 // A revista mostra as capas do blog, que moram no GitHub.
 const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
 router.get('/imoveis/revista', async (req, res) => {
@@ -339,15 +340,41 @@ const CAMPOS_OC = `numero, cidade, bairro, endereco, tipo, quartos, vagas,
 
 // Os imoveis da Caixa que aparecem na pagina inicial. Quem aceita financiamento vem
 // primeiro: sao minoria e sao os unicos vendaveis para quem nao tem o dinheiro na mao.
-function caixaDaVitrine() {
+// O que a pagina inicial precisa saber da lista da Caixa. Vem tudo junto porque a
+// abertura da pagina e o estado da lista, nao uma foto: quantos ha, o que fecha
+// primeiro e quanto se desconta no melhor caso.
+function estadoDaCaixa() {
+  const vazio = { fecham: [], destaques: [], total: 0, financiam: 0, maiorDesconto: 0, safra: null, semPrazo: 0 };
   try {
-    return all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+    const n = one(`SELECT count(*) total,
+        count(*) filter (where financiamento = 'Sim') financiam,
+        count(*) filter (where prazo_em is null) sem_prazo,
+        max(desconto)::float8 maior,
+        max(ultima_safra) safra
+      FROM caixa_imoveis WHERE saiu_em is null AND na_rmc`) || {};
+    // Os que tem data marcada, do mais proximo para o mais distante. So os que ainda
+    // nao venceram: relogio zerado na capa seria pior que relogio nenhum.
+    const fecham = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+       WHERE saiu_em is null AND na_rmc AND prazo_em is not null
+         AND coalesce(prazo2_em, prazo_em) > to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD"T"HH24:MI:SS')
+       ORDER BY coalesce(
+         case when prazo_em > to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD"T"HH24:MI:SS') then prazo_em end,
+         prazo2_em) ASC LIMIT 8`);
+    const destaques = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
        WHERE saiu_em is null AND na_rmc
-       ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 8`);
-  } catch { return []; } // a vitrine nao pode cair porque a lista da Caixa falhou
+       ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 6`);
+    return { fecham, destaques, total: n.total || 0, financiam: n.financiam || 0,
+      semPrazo: n.sem_prazo || 0, maiorDesconto: n.maior || 0, safra: n.safra || null };
+  } catch { return vazio; } // a vitrine nao pode cair porque a lista da Caixa falhou
 }
-function caixaQuantos() {
-  try { return one('SELECT count(*) n FROM caixa_imoveis WHERE saiu_em is null AND na_rmc').n || 0; } catch { return 0; }
+
+/** As ultimas materias que ja estao no ar, para o pe da pagina inicial. */
+async function ultimasDoBlog(n = 3) {
+  try {
+    const diario = require('../blog/diario');
+    const todas = await diario.listar();
+    return (todas || []).slice(0, n);
+  } catch { return []; }
 }
 
 router.get('/oportunidades', (req, res) => {
