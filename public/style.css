@@ -29,6 +29,10 @@
   color-scheme:dark;
 }
 :root[data-tema="escuro"] nav a.on{color:#1b1c1e}
+/* O logo e tinta quase preta com um fio de ouro. No escuro ele sumiria, entao
+   inverte-se o arquivo e gira-se o matiz de volta: moldura e colunas viram creme
+   e o fio continua dourado, sem precisar de um segundo arquivo por tema. */
+:root[data-tema="escuro"] .brand-logo{filter:invert(1) hue-rotate(180deg)}
 
 /* O botao de trocar, no rodape do menu lateral */
 .tema-btn{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:7px 10px;
