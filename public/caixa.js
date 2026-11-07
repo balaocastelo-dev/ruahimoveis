@@ -159,7 +159,7 @@ async function cxCarrega() {
     const partes = [`${d.total.toLocaleString('pt-BR')} ${d.total === 1 ? 'imóvel' : 'imóveis'}`];
     if (cxNum(r.desconto_medio)) {
       const quantos = cxNum(r.com_desconto);
-      partes.push(`${quantos} com desconto, média de ${cxPct(r.desconto_medio)}`);
+      partes.push(`${Number(quantos).toLocaleString('pt-BR')} com desconto, média de ${cxPct(r.desconto_medio)}`);
     }
     if (cxNum(r.desconto_maior)) partes.push(`maior desconto ${cxPct(r.desconto_maior)}`);
     if (cxNum(r.menor)) partes.push(`a partir de ${brl(r.menor)}`);
@@ -173,7 +173,9 @@ async function cxCarrega() {
   const lista = $('#cx-lista');
   lista.innerHTML = d.itens.length
     ? `<div class="cx-grade">${d.itens.map(cxCartao).join('')}</div>`
-    : `<div class="empty">Nenhum imóvel com esses filtros.${usados.length ? ' Tente afrouxar algum deles.' : ''}</div>`;
+    : `<div class="empty">${CX.saiu === '1' && !usados.length
+      ? 'Nenhum imóvel saiu da lista ainda. A saída só aparece quando houver uma lista nova para comparar com a de hoje.'
+      : `Nenhum imóvel com esses filtros.${usados.length ? ' Tente afrouxar algum deles.' : ''}`}</div>`;
 
   const paginas = Math.ceil(d.total / d.por_pagina);
   $('#cx-paginas').innerHTML = paginas > 1
