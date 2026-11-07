@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Herrera House">
   <title>Herrera House</title>
-  <!-- Favicon: a 16 px a moldura e o lintel desaparecem, entao sobra so o HH em colunas,
+  <!-- Favicon: a 16 px a moldura e o lintel somem, entao sobra so o HH em colunas,
        com traco proporcionalmente mais grosso. -->
   <rect width="64" height="64" rx="7" fill="#16130F"/>
   <g fill="#EFEBE2">
-    <rect x="15" y="14" width="7" height="36"/>
-    <rect x="28.5" y="14" width="7" height="36"/>
-    <rect x="42" y="14" width="7" height="36"/>
-    <rect x="15" y="28.5" width="34" height="7"/>
+    <rect x="14" y="15" width="7" height="34"/>
+    <rect x="28.5" y="15" width="7" height="34"/>
+    <rect x="43" y="15" width="7" height="34"/>
+    <rect x="14" y="28.5" width="36" height="7"/>
   </g>
 </svg>

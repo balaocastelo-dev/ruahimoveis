@@ -1,17 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 310" width="240" height="310" role="img" aria-label="Herrera House">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 272" width="240" height="272" role="img" aria-label="Herrera House">
   <title>Herrera House</title>
-  <!-- Versao para o carimbo das fotos. O sistema converte TODO alfa deste arquivo em branco,
-       entao aqui nao entra o fio interno em ouro: a 10% da largura da foto ele viraria
-       uma segunda linha branca encostada na moldura e sujaria a marca.
-       Tracos um pouco mais grossos que o logo colorido, para aguentar a reducao. -->
+  <!-- Versao do carimbo das fotos. O sistema converte TODO o alfa deste arquivo em
+       branco, entao aqui nao entra o fio interno em ouro: a 10% da largura da foto
+       ele viraria uma segunda linha branca encostada na moldura. Tracos um pouco
+       mais grossos que o logo colorido, para aguentar a reducao. -->
   <g fill="#16130F">
-    <path d="M24 8 H216 L232 24 V286 L216 302 H24 L8 286 V24 Z
-             M33 22 H207 L218 33 V277 L207 288 H33 L22 277 V33 Z" fill-rule="evenodd"/>
-    <rect x="48" y="66" width="144" height="11"/>
-    <rect x="58" y="99" width="22" height="112"/>
-    <rect x="109" y="99" width="22" height="112"/>
-    <rect x="160" y="99" width="22" height="112"/>
-    <rect x="58" y="148" width="124" height="14"/>
-    <rect x="48" y="233" width="144" height="11"/>
+    <path fill-rule="evenodd" d="M17 4 H223 L236 17 V255 L223 268 H17 L4 255 V17 Z
+                                 M24 11 H216 L229 24 V248 L216 261 H24 L11 248 V24 Z"/>
+    <rect x="52" y="61" width="136" height="7"/>
+    <rect x="52" y="88" width="17" height="96"/>
+    <rect x="111.5" y="88" width="17" height="96"/>
+    <rect x="171" y="88" width="17" height="96"/>
+    <rect x="52" y="125" width="136" height="12"/>
+    <rect x="52" y="204" width="136" height="7"/>
   </g>
 </svg>
