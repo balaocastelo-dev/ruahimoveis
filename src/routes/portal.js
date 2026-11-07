@@ -50,7 +50,7 @@ async function guiaDoBairro(nome) {
   } catch { return null; }
 }
 
-router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro))));
+router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro), caixaDaVitrine())));
 // A revista mostra as capas do blog, que moram no GitHub.
 const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
 router.get('/imoveis/revista', async (req, res) => {
@@ -336,6 +336,19 @@ const CAMPOS_OC = `numero, cidade, bairro, endereco, tipo, quartos, vagas,
   preco::float8 preco, avaliacao::float8 avaliacao, desconto::float8 desconto,
   modalidade, financiamento, link, descricao, prazo_em, prazo2_em, prazo_tipo,
   lat, lon, geo_precisao`;
+
+// Os imoveis da Caixa que aparecem na pagina inicial. Quem aceita financiamento vem
+// primeiro: sao minoria e sao os unicos vendaveis para quem nao tem o dinheiro na mao.
+function caixaDaVitrine() {
+  try {
+    return all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+       WHERE saiu_em is null AND na_rmc
+       ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 8`);
+  } catch { return []; } // a vitrine nao pode cair porque a lista da Caixa falhou
+}
+function caixaQuantos() {
+  try { return one('SELECT count(*) n FROM caixa_imoveis WHERE saiu_em is null AND na_rmc').n || 0; } catch { return 0; }
+}
 
 router.get('/oportunidades', (req, res) => {
   const lista = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis

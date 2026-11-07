@@ -768,3 +768,13 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .oc-viz-mapa{margin:.6em 0 0;font-size:.9em}
 .p-rodape-tel{margin:.3em 0 0;font-size:.95em}
 .p-rodape-tel a{font-weight:500}
+
+/* faixa das Oportunidades Caixa na vitrine */
+.p-oc-faixa{margin:3.5em auto 0;max-width:1180px;padding:0 20px}
+.p-oc-cab{display:flex;flex-wrap:wrap;gap:16px 24px;align-items:flex-end;justify-content:space-between;
+  margin-bottom:1.4em;padding-top:2.4em;border-top:1px solid var(--linha)}
+.p-oc-cab h2{margin:.15em 0 .3em}
+.p-oc-l{margin:0;max-width:38rem;color:var(--pedra);font-size:.98em;line-height:1.55}
+.p-oc-todos{white-space:nowrap}
+.p-vazio-nota{max-width:46rem;margin:2.6em auto 0;padding:0 20px;color:var(--pedra);font-size:1.02em;line-height:1.6;text-align:center}
+.p-vazio-nota + .p-oc-faixa .p-oc-cab{padding-top:1.6em;border-top:0}

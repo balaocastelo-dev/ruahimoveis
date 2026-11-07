@@ -149,7 +149,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
     <a href="/oportunidades"${req.path.startsWith('/oportunidades') ? ' aria-current="page"' : ''}>Oportunidades Caixa</a>
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
     <a href="/condominios"${req.path.startsWith('/condominios') ? ' aria-current="page"' : ''}>Condomínios</a>
-    <a href="/blog">${esc(cfg.BLOG_NOME)}</a>
+    <a href="/blog">Blog</a>
     ${zap ? `<a class="p-nav-zap" href="${esc(zap)}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
     <a class="p-nav-entrar" href="/entrar" rel="nofollow">Entrar</a>
   </nav>
@@ -209,7 +209,43 @@ function filtrar(lista, q) {
 
 const FAIXAS = [500000, 800000, 1000000, 1500000, 2000000, 3000000, 5000000, 10000000];
 
-function paginaVitrine(req, lista, guiaDoBairro = null) {
+// Faixa das Oportunidades Caixa na vitrine. Rotulada e separada de proposito: sao
+// imoveis que a Caixa vende, nao da carteira da casa, e misturar os dois confundiria
+// o visitante sobre quem esta vendendo o que.
+// A frase de entrada diz o que existe de verdade. Com a carteira ainda vazia,
+// anunciar "0 imóveis" seria a pior porta de entrada possível -- e esconder isso
+// atrás de um texto vago seria pior ainda. Entao ela fala do que esta cheio.
+// Verdadeiro quando nao ha imovel proprio nenhum, ninguem filtrou nada, e existe
+// Caixa para mostrar. So ai vale esconder a secao de resultado.
+const vazioHonesto = (achados, filtrado, caixa) => achados === 0 && !filtrado && caixa > 0;
+
+function chamadaDaVitrine(proprios, caixa) {
+  const fala = [];
+  if (proprios) fala.push(`${proprios} ${proprios === 1 ? 'imóvel' : 'imóveis'} da casa, com ficha completa e uma página para cada um`);
+  if (caixa) fala.push(`${proprios ? 'e ' : ''}imóveis retomados pela Caixa na região, com desconto sobre a avaliação dela mesma`);
+  if (!fala.length) return 'Fale com o corretor e a gente procura o imóvel certo para você na região de Campinas.';
+  const frase = fala.join(' ');
+  return `${frase[0].toUpperCase()}${frase.slice(1)}. Encontrou? Fale com o corretor pela própria página.`;
+}
+
+function faixaCaixa(lista) {
+  if (!lista || !lista.length) return '';
+  const C = require('./caixa');
+  return `<section class="p-oc-faixa">
+    <div class="p-oc-cab">
+      <div>
+        <p class="p-destaque">Oportunidades Caixa</p>
+        <h2>Imóveis retomados pela Caixa, com desconto</h2>
+        <p class="p-oc-l">A Caixa republica a lista todo dia. Leilão, licitação e venda direta &mdash; cada um
+          com prazo e regra própria. Os valores já mostram a assessoria da casa, separada.</p>
+      </div>
+      <a class="p-botao p-oc-todos" href="/oportunidades">Ver todas</a>
+    </div>
+    <div class="oc-grade">${lista.slice(0, 8).map(C.cartao).join('')}</div>
+  </section>`;
+}
+
+function paginaVitrine(req, lista, guiaDoBairro = null, daCaixa = []) {
   const FUNDO = fundoAgora(process.env.PORTAL_FUNDO, CLIENTE);
   const q = req.query || {};
   const achados = filtrar(lista, q);
@@ -232,7 +268,7 @@ ${require('./versoes').seletor('vitrine')}
   <div class="p-hero-txt">
   <h1>${grupo ? esc(grupo.nome) : 'Imóveis'} à venda${q.bairro ? ` no ${esc(q.bairro)}` : ' em Campinas e região'}</h1>
   <p class="p-sobre depois">Portal ${esc(CLIENTE)}</p>
-  <p class="p-hero-l">${lista.length} imóveis com fotos, ficha completa e uma página para cada um. Encontrou? Fale com o corretor pela própria página.</p>
+  <p class="p-hero-l">${chamadaDaVitrine(lista.length, daCaixa.length)}</p>
   </div>
   <form class="p-filtros" method="get" action="/imoveis" role="search" data-filtros>
     <label class="p-campo p-campo-q"><span>Procurar</span><input type="search" name="q" value="${esc(q.q || '')}" placeholder="Bairro, condomínio, código…" autocomplete="off" maxlength="80"></label>
@@ -245,12 +281,15 @@ ${require('./versoes').seletor('vitrine')}
   </form>
   <p class="p-hero-credito">${esc(FUNDO.lugar)}${FUNDO.credito ? ` · <a href="${esc(FUNDO.link)}" target="_blank" rel="noopener nofollow">${esc(FUNDO.credito)}</a>` : ''}</p>
 </section>
-<section class="p-resultado" aria-live="polite">
+${vazioHonesto(achados.length, filtrado, daCaixa.length) ? '' : `<section class="p-resultado" aria-live="polite">
   ${guiaDoBairro ? `<p class="p-guia">Quer conhecer melhor o bairro? <a href="/bairros/${esc(guiaDoBairro.slug)}">Guia do ${esc(guiaDoBairro.nome)}</a>: história, parques, escolas, comércio e prédios.</p>` : ''}
   <div class="p-resultado-cab"><p><b>${achados.length}</b> ${achados.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}</p>${filtrado ? '<a href="/imoveis">Limpar filtros</a>' : ''}</div>
   ${daPagina.length ? `<h2 class="oculto">${lista.length} imóveis</h2><div class="p-grade">${daPagina.map((x, i) => cartao(x, { eager: i < 3 })).join('')}</div>` : `<div class="p-vazio"><p>${lista.length ? 'Nenhum imóvel com esses filtros.' : 'Os imóveis chegam em breve.'}</p>${filtrado ? '<a class="p-botao sec" href="/imoveis">Ver todos os imóveis</a>' : ''}${whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.') ? `<a class="p-botao" href="${esc(whatsapp(null, 'Olá! Procuro um imóvel e não achei no portal.'))}" target="_blank" rel="noopener">Contar o que procuro</a>` : ''}</div>`}
   ${paginas > 1 ? `<nav class="p-paginas" aria-label="Páginas">${pagina > 1 ? `<a href="${esc(link(pagina - 1))}" rel="prev"><span class="p-seta p-seta-volta" aria-hidden="true"></span> Anteriores</a>` : '<span></span>'}<span>Página ${pagina} de ${paginas}</span>${pagina < paginas ? `<a href="${esc(link(pagina + 1))}" rel="next">Próximos <span class="p-seta" aria-hidden="true"></span></a>` : '<span></span>'}</nav>` : ''}
-</section>`;
+</section>`}
+${vazioHonesto(achados.length, filtrado, daCaixa.length)
+  ? '<p class="p-vazio-nota">A carteira própria da imobiliária está em formação. Enquanto isso, estas são as oportunidades que a gente acompanha na Caixa.</p>' : ''}
+${faixaCaixa(daCaixa)}`;
   const base = urlBase(req);
   const ld = [{
     '@context': 'https://schema.org', '@type': 'ItemList', name: titulo, numberOfItems: achados.length,
