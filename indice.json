@@ -1134,7 +1134,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-07T17:21:22.010Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "altura-da-bancada-do-banheiro-e-do-espelho",
+      "titulo": "Altura da bancada do banheiro: as medidas para cada tipo de cuba",
+      "tema": "altura da bancada e do espelho do banheiro",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-07T20:20:00.275Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-07T17:21:22.011Z"
+  "atualizadoEm": "2026-11-07T20:20:00.276Z"
 }

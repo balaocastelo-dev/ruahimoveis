@@ -1,0 +1,174 @@
+{
+  "slug": "altura-da-bancada-do-banheiro-e-do-espelho",
+  "tema": "altura da bancada e do espelho do banheiro",
+  "titulo": "Altura da bancada do banheiro: as medidas para cada tipo de cuba",
+  "resumo": "Qual a altura certa da bancada do banheiro? Veja a faixa usada em casa, a conta com a cuba de apoio, onde fica o espelho e o que muda no banheiro acessível.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "banheiro",
+    "medidas",
+    "reforma",
+    "interiores",
+    "bancada"
+  ],
+  "capa": {
+    "alt": "Bancada de banheiro em pedra clara com cuba de apoio branca, torneira de parede e espelho redondo acima"
+  },
+  "redes": {
+    "legenda": "Você sabe a que altura fica a sua pia do banheiro? Em casa, a borda da cuba costuma ficar entre 80 e 90 cm do chão. Com cuba de apoio, a conta muda: a pedra desce para a louça terminar na altura certa. E o espelho tem a sua faixa também. Juntamos as medidas e o que muda no banheiro acessível. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "banheiro",
+      "decoracao",
+      "reforma",
+      "interiores",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de reformar ou montar o banheiro, a pergunta aparece cedo: **qual a altura certa da bancada do banheiro**? Uma pia baixa demais cansa as costas a cada escovação; alta demais, molha o braço e espirra água no chão. E a dúvida cresce quando entra a cuba de apoio, aquela louça que fica sobre a pedra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: em casa, a borda da cuba costuma ficar entre 80 e 90 cm do piso. O que importa é onde a água cai, e não onde está a pedra. Por isso, com cuba de apoio, a bancada desce para compensar a altura da louça. O espelho e a torneira vêm depois, a partir dessa medida."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Borda da cuba entre 80 e 90 cm do piso é a faixa usada em banheiros residenciais.",
+        "Cuba de apoio: altura desejada menos a altura da louça dá a altura da pedra.",
+        "Banheiro acessível: a NBR 9050 pede superfície superior do lavatório a no máximo 80 cm.",
+        "Espelho, torneira e pontos de água e esgoto se definem antes do revestimento."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Defina a altura da bancada pelo tipo de cuba"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O portal de reforma da Lar Pontual Engenharia indica, para banheiros de casa, a borda da cuba entre 80 e 90 cm do chão, com média perto de 85 cm. O guia do Planner 5D trabalha com 90 cm como medida comum para cuba de embutir. As fontes variam alguns centímetros, e isso é normal: a faixa existe para caber a altura de quem usa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A conta da cuba de apoio é simples. Escolha a altura final da borda e subtraia a altura da louça. Uma cuba de 12 cm com borda desejada a 90 cm pede a pedra a 78 cm, exemplo dado pelo Planner 5D. Com cuba de embutir ou esculpida na própria pedra, a bancada e a borda ficam praticamente na mesma altura."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Altura da bancada do banheiro por tipo de cuba (faixas de referência)",
+      "colunas": [
+        "Tipo de cuba",
+        "Altura da pedra",
+        "Borda da cuba"
+      ],
+      "linhas": [
+        [
+          "Embutir",
+          "85 a 90 cm",
+          "85 a 90 cm"
+        ],
+        [
+          "Esculpida na pedra",
+          "85 a 90 cm",
+          "85 a 90 cm"
+        ],
+        [
+          "Sobrepor",
+          "cerca de 80 a 86 cm",
+          "86 a 90 cm"
+        ],
+        [
+          "Apoio",
+          "70 a 80 cm, conforme a louça",
+          "85 a 90 cm"
+        ],
+        [
+          "Acessível (NBR 9050)",
+          "até 80 cm",
+          "até 80 cm"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Faixas gerais, segundo Lar Pontual Engenharia, Planner 5D e o resumo da NBR 9050 da Unicamp. A medida final depende da louça, de quem usa e do projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela não substitui o teste. Se a casa tem gente muito alta ou muito baixa, simule a altura com uma caixa ou uma prancheta antes de fechar a medida. No lavabo, que recebe visitas, a média de 85 cm costuma agradar mais gente. Mais ideias de projeto estão em [interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Posicione espelho, torneira e pontos antes da obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com a borda definida, o resto se encaixa. A Lar Pontual sugere a base do espelho entre 1,10 m e 1,20 m do piso, com o topo perto de 1,90 m a 2,00 m. No banheiro acessível, o resumo da NBR 9050 publicado pela Unicamp fala em espelho entre 0,50 m e 1,80 m do piso, para que quem está sentado também se veja."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Torneira de bancada com cuba de apoio:** pede bica alta, para a água cair dentro da louça sem espirrar.",
+        "**Torneira de parede:** o ponto fica acima da borda da cuba; o Planner 5D cita de 1,10 m a 1,20 m do piso, e a Lar Pontual, de 1,00 m a 1,10 m.",
+        "**Esgoto:** a saída costuma ficar perto de 45 cm do piso, segundo o Planner 5D; confirme com o sifão escolhido.",
+        "**Banheiro acessível:** a NBR 9050 pede vão livre embaixo do lavatório e torneira de alavanca, sensor ou similar."
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Compre a louça antes de marcar os pontos",
+      "texto": "Pontos de água e esgoto se definem pela cuba e pela torneira escolhidas. Mudar depois do revestimento significa quebrar parede. Em reforma com troca de tubulação, deixe a hidráulica com profissional habilitado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um imóvel e quer avaliar o banheiro com calma, sem pressa de decidir na primeira visita, a equipe da {{cliente}} acompanha você. Outros guias de casa ficam no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: decida a altura pela borda da cuba, entre 80 e 90 cm, e só depois marque pedra, espelho e pontos."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a altura padrão da pia do banheiro?",
+      "resposta": "Não há uma altura única obrigatória para casa. As referências de projeto usam a borda da cuba entre 80 e 90 cm do piso, com média perto de 85 cm."
+    },
+    {
+      "pergunta": "Como calcular a altura da bancada com cuba de apoio?",
+      "resposta": "Subtraia a altura da louça da altura final que você quer para a borda. Uma cuba de 12 cm, com borda a 90 cm, pede a pedra a 78 cm."
+    },
+    {
+      "pergunta": "Qual a altura da pia no banheiro acessível?",
+      "resposta": "A NBR 9050, norma brasileira de acessibilidade, pede a superfície superior do lavatório a no máximo 80 cm do piso, com espaço livre embaixo para aproximar a cadeira de rodas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Tabela de altura da pia do banheiro — Portal da Reforma, Lar Pontual Engenharia",
+      "url": "https://larpontual.com.br/portal/altura-da-pia-do-banheiro",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "Qual é a altura ideal da pia de banheiro? — Blog Planner 5D",
+      "url": "https://planner5d.com/blog/pt/altura-de-pia-de-banheiro/"
+    },
+    {
+      "nome": "Acessibilidade NBR 9050 — DEPI, Unicamp",
+      "url": "https://depi.unicamp.br/wp-content/uploads/sites/59/2022/01/acessibilidade-nbr9050.pdf"
+    }
+  ]
+}
