@@ -1161,7 +1161,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-07T20:22:01.580Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-holambra-ou-jaguariuna-perto-de-campinas",
+      "titulo": "Morar em Holambra ou Jaguariúna: flores, trilhos e vida perto de Campinas",
+      "tema": "morar em holambra ou jaguariuna perto de campinas",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-07T23:17:16.398Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-07T20:22:01.580Z"
+  "atualizadoEm": "2026-11-07T23:17:16.398Z"
 }
