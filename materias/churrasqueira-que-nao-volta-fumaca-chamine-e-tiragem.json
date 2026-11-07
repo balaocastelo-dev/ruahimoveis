@@ -1,0 +1,154 @@
+{
+  "slug": "churrasqueira-que-nao-volta-fumaca-chamine-e-tiragem",
+  "tema": "churrasqueira sem fumaca chamine e tiragem",
+  "titulo": "Churrasqueira que não volta fumaça: o que define a boa tiragem",
+  "resumo": "Churrasqueira que joga fumaça na varanda costuma ter erro de projeto. Veja como chaminé, boca, caixa de fumaça e tijolo refratário garantem a boa tiragem.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "churrasqueira",
+    "área gourmet",
+    "construção",
+    "varanda"
+  ],
+  "capa": {
+    "alt": "Área gourmet com churrasqueira de tijolos aparentes, coifa de alvenaria e chaminé, ao lado de bancada de pedra clara"
+  },
+  "redes": {
+    "legenda": "Fumaça voltando para a varanda no meio do churrasco? Quase sempre o problema nasce no projeto: chaminé baixa demais, boca grande para um duto fino ou falta de espaço para a fumaça girar antes de subir. No blog, explicamos o que define a boa tiragem e o que pedir a quem vai construir a sua churrasqueira. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "churrasqueira",
+      "areagourmet",
+      "construcao",
+      "casanova",
+      "varanda",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma **churrasqueira que não volta fumaça** é o que todo mundo quer na área gourmet: o fogo aceso, a conversa em volta e a varanda limpa. Quando a fumaça invade o ambiente, a culpa raramente é do carvão ou do vento daquele dia. Normalmente, o problema nasceu no desenho da churrasqueira."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a boa tiragem, que é a capacidade de puxar a fumaça para cima, depende de uma chaminé alta o bastante, de proporção entre a boca e o duto, de um espaço para a fumaça girar antes de subir e de um caminho sem curvas bruscas. O tijolo refratário cuida da parte que aguenta o calor."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A chaminé deve passar de 50 a 80 cm acima do ponto mais alto do telhado e das construções vizinhas.",
+        "Boca grande com duto fino estrangula a saída e devolve a fumaça.",
+        "Duto liso, de seção constante e sem desvios bruscos sobe melhor.",
+        "Caixa de fogo com tijolo e argamassa refratários, nunca com argamassa comum."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a fumaça volta para a varanda"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Fumaça quente sobe sozinha, desde que encontre caminho. Quando a chaminé é baixa, o vento que bate no telhado ou num muro alto cria uma zona de pressão que empurra a fumaça de volta pelo duto. Guias de engenharia e reportagens sobre o assunto apontam o mesmo grupo de erros, quase sempre combinados."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Chaminé baixa:** fica abaixo do telhado vizinho ou de um muro e sofre com o vento encanado.",
+        "**Boca desproporcional:** abertura frontal grande demais para um duto estreito.",
+        "**Sem caixa de fumaça:** falta o espaço vazio logo acima da boca, onde a fumaça gira antes de subir.",
+        "**Coifa mal afunilada:** ângulo errado pressuriza o ar, que escapa pela frente.",
+        "**Duto com curvas e reduções:** cada desvio brusco freia a subida e acumula fuligem."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na coifa sem paredes laterais, o vento também pode roubar o calor e espalhar a fumaça. Uma saída citada pelo Guia do Construtor são anteparos de vidro nas laterais, entre a caixa de fogo e a coifa. Mais ideias de obra e de casa nova estão em [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que pedir no projeto para a churrasqueira puxar bem"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A altura da chaminé é a regra mais lembrada: ela deve ficar de 50 a 80 cm acima do ponto mais alto do telhado e, se houver casas, muros ou prédios perto, acima deles também. Em apartamento, onde subir a chaminé costuma ser impossível, a solução passa por dutos coletivos previstos no prédio e pelas regras do condomínio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dentro da churrasqueira, o calor da caixa de fogo chega a cerca de 300 °C, segundo um guia de engenharia, e degrada a argamassa comum. Por isso o miolo leva tijolo refratário assentado com argamassa refratária. Por fora, o acabamento é livre: tijolo à vista, porcelanato ou cimento queimado, desde que a parte interna esteja isolada."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Chaminé de alvenaria ou coifa",
+      "pros": [
+        "Alvenaria: estrutura fixa que segura melhor a fumaça e o calor",
+        "Coifa: visual mais leve e adapta-se a espaços menores"
+      ],
+      "contras": [
+        "Alvenaria: exige espaço e subida até acima do telhado",
+        "Coifa: mais sensível ao vento lateral, pode pedir anteparos de vidro"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Chaminé que atravessa laje e telhado mexe com estrutura e impermeabilização: pede projeto de arquiteto ou engenheiro, com ART ou RRT. Churrasqueira a gás exige instalador habilitado; não improvise o ponto de gás."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se a churrasqueira já existe e volta fumaça, o primeiro teste é olhar a chaminé por fora: está abaixo do telhado vizinho? Muitas vezes, elevar o duto resolve; em outros casos, só refazer a boca ou a coifa. Mais conteúdos para a casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas e a área gourmet pesa na escolha, a equipe da {{cliente}} pode ajudar a olhar esse detalhe nas visitas. Na dúvida, comece pela chaminé: ela precisa passar do ponto mais alto ao redor."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a altura certa da chaminé da churrasqueira?",
+      "resposta": "A referência citada em guias de construção é de 50 a 80 cm acima do ponto mais alto do telhado. Se houver muros, casas ou prédios próximos, a chaminé deve superar também essas construções."
+    },
+    {
+      "pergunta": "Posso usar tijolo comum dentro da churrasqueira?",
+      "resposta": "Não é o indicado. A caixa de fogo recebe muito calor, que degrada tijolo e argamassa comuns. O miolo deve levar tijolo e argamassa refratários; o acabamento externo pode ser livre."
+    },
+    {
+      "pergunta": "Coifa substitui a chaminé?",
+      "resposta": "Pode substituir, desde que tenha o afunilamento certo e uma saída que puxe a fumaça tão bem quanto a chaminé. Como sofre mais com o vento lateral, às vezes precisa de anteparos de vidro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Área gourmet com churrasqueira: guia de medidas, erros comuns e dimensionamento — Engenharia Prática",
+      "url": "https://engenhariapratica.com.br/area-gourmet-churrasqueira-medidas-projetos/",
+      "data": "fevereiro de 2026"
+    },
+    {
+      "nome": "6 dicas essenciais para quem quer construir uma churrasqueira — Guia do Construtor",
+      "url": "https://www.guiadoconstrutor.com.br/blog/6-perguntas-para-responder-antes-de-construir-uma-churrasqueira"
+    },
+    {
+      "nome": "Churrasqueira de alvenaria pode encher o ambiente de fumaça se este detalhe for ignorado — TNH1",
+      "url": "https://www.tnh1.com.br/tnh1-variedades/churrasqueira-de-alvenaria-pode-encher-o-ambiente-de-fumaca-se-este-detalhe-for-ignorado/",
+      "data": "setembro de 2026"
+    },
+    {
+      "nome": "Tipos de churrasqueira: vantagens e desvantagens — Decor Fácil",
+      "url": "https://www.decorfacil.com/tipos-de-churrasqueira",
+      "data": "janeiro de 2026"
+    }
+  ]
+}
