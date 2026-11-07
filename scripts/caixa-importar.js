@@ -106,15 +106,39 @@ function parsear(texto) {
 
 /** Tira da descricao o que der: tipo, area e quartos. A Caixa escreve em texto corrido. */
 function enriquecer(im) {
-  const d = im.descricao || '';
-  const tipo = /casa/i.test(d) ? 'Casa' : /apartamento/i.test(d) ? 'Apartamento'
-    : /terreno|lote/i.test(d) ? 'Terreno' : /comercial|loja|sala|galp/i.test(d) ? 'Comercial' : null;
-  const mArea = d.match(/area\s*privativa[^\d]*([\d.,]+)/i);
-  const mTerreno = d.match(/area\s*do\s*terreno[^\d]*([\d.,]+)/i);
-  const mQ = d.match(/(\d+)\s*(?:quartos?|dormit)/i);
-  const n = (s) => { const v = Number(String(s || '').replace(/\./g, '').replace(',', '.')); return Number.isFinite(v) ? v : null; };
-  return { ...im, tipo, area_util: n(mArea && mArea[1]), area_terreno: n(mTerreno && mTerreno[1]), quartos: mQ ? Number(mQ[1]) : null };
+  // A Caixa escreve a ficha em texto corrido, com acento, o numero ANTES do rotulo
+  // e ponto como decimal: "Casa, 59.03 de area total, 59.03 de area privativa,
+  // 220.93 de area do terreno,  1 qto(s), a.serv, WC, 1 sala(s), 1 vaga(s)".
+  // Por isso tira-se o acento antes de procurar, e o numero vem na frente.
+  const d = semAcento(im.descricao || '').toLowerCase();
+  const tipo = /\bcasa\b|sobrado/.test(d) ? 'Casa' : /apartamento|cobertura|kitnet|flat/.test(d) ? 'Apartamento'
+    : /terreno|\blote\b|gleba/.test(d) ? 'Terreno'
+    : /comercial|\bloja\b|\bsala\b|galp|barrac|predio/.test(d) ? 'Comercial' : null;
+  // A Caixa mistura dois formatos na mesma ficha: a area costuma vir com ponto
+  // decimal ("220.93"), mas a de quatro digitos aparece como "1.250,00". A regra
+  // que atende as duas: se tem virgula, ela e o decimal e o ponto e milhar.
+  const n = (s) => {
+    if (s === null || s === undefined) return null;
+    let x = String(s);
+    x = x.includes(',') ? x.replace(/\./g, '').replace(',', '.') : x;
+    const v = Number(x);
+    return Number.isFinite(v) && v > 0 ? v : null;
+  };
+  const antes = (rotulo) => {
+    const m = d.match(new RegExp('([\\d.,]+)\\s*(?:m2?\\s*)?de\\s*' + rotulo));
+    return m ? n(m[1]) : null;
+  };
+  const inteiro = (re) => { const m = d.match(re); return m ? Number(m[1]) : null; };
+  return {
+    ...im,
+    tipo,
+    area_util: antes('area\\s*privativa') || antes('area\\s*total'),
+    area_terreno: antes('area\\s*do\\s*terreno'),
+    quartos: inteiro(/(\d+)\s*(?:qto|quarto|dormit)/),
+    vagas: inteiro(/(\d+)\s*vaga/),
+  };
 }
+
 
 const DDL = `
 create table if not exists base.caixa_imoveis (
@@ -123,7 +147,7 @@ create table if not exists base.caixa_imoveis (
   uf text, cidade text, bairro text, endereco text,
   preco numeric, avaliacao numeric, desconto numeric,
   financiamento text, descricao text, modalidade text, link text,
-  tipo text, quartos integer, area_util numeric, area_terreno numeric,
+  tipo text, quartos integer, vagas integer, area_util numeric, area_terreno numeric,
   na_rmc boolean not null default false,
   primeira_safra text not null,
   ultima_safra text not null,
@@ -131,6 +155,7 @@ create table if not exists base.caixa_imoveis (
   criado_em text not null default to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD HH24:MI:SS'),
   atualizado_em text not null default to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD HH24:MI:SS')
 );
+alter table base.caixa_imoveis add column if not exists vagas integer;
 create index if not exists ix_caixa_cidade on base.caixa_imoveis(cidade) where saiu_em is null;
 create index if not exists ix_caixa_rmc on base.caixa_imoveis(na_rmc, desconto desc) where saiu_em is null;
 create index if not exists ix_caixa_safra on base.caixa_imoveis(ultima_safra);
@@ -170,15 +195,15 @@ create index if not exists ix_caixa_safra on base.caixa_imoveis(ultima_safra);
   const sql = `
     insert into base.caixa_imoveis
       (numero, uf, cidade, bairro, endereco, preco, avaliacao, desconto, financiamento,
-       descricao, modalidade, link, tipo, quartos, area_util, area_terreno, na_rmc,
+       descricao, modalidade, link, tipo, quartos, vagas, area_util, area_terreno, na_rmc,
        primeira_safra, ultima_safra)
-    values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$18)
+    values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$19)
     on conflict (numero) do update set
       uf = excluded.uf, cidade = excluded.cidade, bairro = excluded.bairro,
       endereco = excluded.endereco, preco = excluded.preco, avaliacao = excluded.avaliacao,
       desconto = excluded.desconto, financiamento = excluded.financiamento,
       descricao = excluded.descricao, modalidade = excluded.modalidade, link = excluded.link,
-      tipo = excluded.tipo, quartos = excluded.quartos, area_util = excluded.area_util,
+      tipo = excluded.tipo, quartos = excluded.quartos, vagas = excluded.vagas, area_util = excluded.area_util,
       area_terreno = excluded.area_terreno, na_rmc = excluded.na_rmc,
       ultima_safra = excluded.ultima_safra, saiu_em = null,
       atualizado_em = to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD HH24:MI:SS')`;
@@ -187,7 +212,7 @@ create index if not exists ix_caixa_safra on base.caixa_imoveis(ultima_safra);
   let n = 0;
   for (const i of brutos) {
     await cli.query(sql, [i.numero, i.uf, i.cidade, i.bairro, i.endereco, i.preco, i.avaliacao,
-      i.desconto, i.financiamento, i.descricao, i.modalidade, i.link, i.tipo, i.quartos,
+      i.desconto, i.financiamento, i.descricao, i.modalidade, i.link, i.tipo, i.quartos, i.vagas,
       i.area_util, i.area_terreno, RMC.has(semAcento(i.cidade)), safra]);
     if (++n % 500 === 0) process.stdout.write(`\r  gravados ${n}/${brutos.length}`);
   }

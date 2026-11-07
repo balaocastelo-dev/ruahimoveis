@@ -98,6 +98,7 @@ app.use('/api', require('./src/routes/chat'));
 app.use('/api', require('./src/routes/condominios'));
 app.use('/api', require('./src/routes/mercado'));
 app.use('/api', require('./src/routes/captacao'));
+app.use('/api', require('./src/routes/caixa')); // imoveis retomados da Caixa (lista publica, comum a todas)
 // Escritório virtual: os 9 agentes robôs (#/whats), cada um com alma (.soul) e WhatsApp próprio.
 app.use('/api', require('./src/routes/escritorio'));
 app.use('/api', require('./src/routes/lgpd')); // aceite dos termos, pedidos de titulares, não contatar

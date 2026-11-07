@@ -1574,3 +1574,40 @@ body.embutido h1{font-size:26px;margin-top:0}
 .chaves-escopos{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px 12px}
 .chaves-tbl table{min-width:max-content}
 .chaves-tbl th:nth-child(7),.chaves-tbl td:nth-child(7){white-space:nowrap}
+
+/* ----------------------------------------------------------- IMÓVEIS DA CAIXA */
+/* Lista pública da Caixa. Cartão sem foto de propósito: a Caixa não publica
+   imagem na lista, e inventar um placeholder só atrasaria a leitura. O que
+   decide é preço, desconto e modalidade, então é isso que fica grande. */
+.cx-filtros{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end}
+.cx-filtros .f{min-width:150px}
+.cx-filtros select,.cx-filtros .inp{width:100%}
+
+.cx-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+
+.cx-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px;
+  background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.cx-card header{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:22px}
+.cx-tipo{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.cx-desc{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--gold-ink);
+  background:var(--gold-soft);border-radius:2px;padding:3px 7px;white-space:nowrap}
+.cx-card h3{margin:2px 0 0;font-size:17px;line-height:1.25;font-weight:600}
+.cx-onde{margin:0;font-size:13px;color:var(--muted)}
+.cx-preco{margin:8px 0 0;font-size:23px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.cx-preco s{margin-left:8px;font-size:14px;font-weight:400;color:var(--muted);text-decoration-thickness:1px}
+.cx-abate{margin:0;font-size:12.5px;color:var(--gold-ink)}
+.cx-ficha{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.cx-card footer{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin-top:auto;padding-top:11px;border-top:1px solid var(--line);font-size:12.5px}
+.cx-modo{color:var(--muted)}
+.cx-card footer a{font-weight:500;white-space:nowrap}
+.cx-fora{color:var(--muted);font-style:italic}
+.cx-num{position:absolute;right:14px;bottom:-9px;font-size:10px;color:var(--muted);opacity:.55;
+  font-variant-numeric:tabular-nums}
+.cx-saiu{opacity:.72}
+.cx-saiu .cx-preco{text-decoration:line-through;text-decoration-thickness:1px}
+
+@media (max-width:520px){
+  .cx-grade{grid-template-columns:1fr}
+  .cx-filtros .f{min-width:calc(50% - 7px);flex:1 1 calc(50% - 7px)}
+}

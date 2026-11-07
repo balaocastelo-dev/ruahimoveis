@@ -107,6 +107,7 @@ const MODULOS = {
   social: ['/social.js'],
   estacao: ['/estacao-pc.js'],
   lgpd: ['/lgpd.js'],
+  caixa: ['/caixa.js'],
   movimento: ['/movimento.js'],
 };
 const _js = new Map();
@@ -147,6 +148,7 @@ function modulosDaRota(p) {
   if (a === 'bairros') return ['bairros'];
   if (a === 'configuracoes') return ['chaves'];
   if (a === 'privacidade') return ['lgpd'];
+  if (a === 'caixa') return ['caixa'];
   if (!a || a === 'painel') return veTudo() ? ['painel', 'radar'] : [];
   return [];
 }
@@ -242,7 +244,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 
 // ---------- moldura ----------
 const MENU = [
-  ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel'], ['#/apartamentos', 'Imóveis da região', 'cond']]],
+  ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel'], ['#/apartamentos', 'Imóveis da região', 'cond'], ['#/caixa', 'Imóveis da Caixa']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
     // Robôs e consultas saiu do menu junto com o Fisgar (06/11/2026). A rota #/robos continua
@@ -375,6 +377,7 @@ async function rota() {
     else if (p[0] === 'redes' && typeof telaRedes === 'function') await telaRedes(p[1] || '', new URLSearchParams(qs || ''));
     else if (p[0] === 'blog') await telaBlog();
     else if (p[0] === 'portal') await telaPortal();
+    else if (p[0] === 'caixa') await telaCaixa(new URLSearchParams(qs || ''));
     else if (p[0] === 'bairros') await telaBairros(new URLSearchParams(qs || ''));
     else if (p[0] === 'configuracoes') await telaConfig(new URLSearchParams(qs || ''));
     else if (p[0] === 'privacidade' && typeof telaPrivacidade === 'function') await telaPrivacidade();

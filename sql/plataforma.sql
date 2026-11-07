@@ -91,7 +91,7 @@ END $f$;
 -- e o administrador. A senha do banco e o hash da senha do admin vêm do servidor (nunca ficam neste arquivo).
 CREATE OR REPLACE FUNCTION plataforma.criar_imobiliaria(p_slug text, p_db_senha text, p_admin_nome text, p_admin_email text, p_admin_hash text) RETURNS void
 LANGUAGE plpgsql SECURITY DEFINER SET search_path = pg_catalog, public AS $f$
-DECLARE t record; f record; compart text[] := ARRAY['condominios','predios3d','mapa3d','pois','fachadas']; papel text := p_slug || '_app';
+DECLARE t record; f record; compart text[] := ARRAY['condominios','predios3d','mapa3d','pois','fachadas','caixa_imoveis']; papel text := p_slug || '_app';
 BEGIN
   IF p_slug !~ '^[a-z][a-z0-9_]{2,30}$' OR p_slug IN ('base','ruah','plataforma','public','extensions','auth','storage','realtime','pg_catalog','information_schema') THEN
     RAISE EXCEPTION 'nome técnico inválido'; END IF;
@@ -107,7 +107,7 @@ BEGIN
     EXECUTE format('CREATE VIEW %I.%I AS SELECT * FROM base.%I', p_slug, t.relname, t.relname);
   END LOOP;
   FOR f IN SELECT conname, conrelid::regclass::text rel, pg_get_constraintdef(oid) def FROM pg_constraint
-           WHERE contype = 'f' AND connamespace = 'base'::regnamespace AND confrelid::regclass::text !~ '(condominios|predios3d|mapa3d|pois|fachadas)$'
+           WHERE contype = 'f' AND connamespace = 'base'::regnamespace AND confrelid::regclass::text !~ '(condominios|predios3d|mapa3d|pois|fachadas|caixa_imoveis)$'
              AND conrelid::regclass::text !~ 'bkp_' LOOP
     EXECUTE format('ALTER TABLE %I.%I ADD CONSTRAINT %I %s', p_slug, split_part(f.rel, '.', 2), f.conname, replace(f.def, 'base.', quote_ident(p_slug) || '.'));
   END LOOP;
