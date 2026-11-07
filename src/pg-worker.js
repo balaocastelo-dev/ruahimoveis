@@ -11,7 +11,7 @@ function abre() {
   const url = process.env.DATABASE_URL || require('./config').DATABASE_URL;
   pool = new Pool({
     connectionString: url.replace(/[?&]sslmode=[^&]*/, ''),
-    ssl: /sslmode=disable/.test(url) ? false : { rejectUnauthorized: false },
+    ssl: /sslmode=disable|localhost|127\\.0\\.0\\.1/.test(url) ? false : { rejectUnauthorized: false },
     max: Number(process.env.PG_POOL_MAX || 3),
     idleTimeoutMillis: 20000,
     connectionTimeoutMillis: 15000,

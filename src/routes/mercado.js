@@ -204,7 +204,7 @@ async function leAsync() {
   if (!POOL) {
     const { Pool } = require('pg');
     const url = process.env.DATABASE_URL || require('../config').DATABASE_URL;
-    POOL = new Pool({ connectionString: url.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable/.test(url) ? false : { rejectUnauthorized: false }, max: 1, idleTimeoutMillis: 20000 });
+    POOL = new Pool({ connectionString: url.replace(/[?&]sslmode=[^&]*/, ''), ssl: /sslmode=disable|localhost|127\\.0\\.0\\.1/.test(url) ? false : { rejectUnauthorized: false }, max: 1, idleTimeoutMillis: 20000 });
     POOL.on('error', () => {});
   }
   const traduz = require('../sql-pg');
