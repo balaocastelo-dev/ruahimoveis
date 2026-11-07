@@ -209,7 +209,9 @@ if (require.main === module) {
     require('./src/services/alertas').iniciar();
     require('./src/services/portais').iniciar();
     // Robô TH-IA-GO CORRETOR (WhatsApp pelo QR code) roda só no PC.
-    require('./src/fisguei/robo').iniciar();
+    // Sai junto com o Fisgar quando FISGAR=0: sem isso ele subia e pedia QR code
+    // mesmo com a tela fora do menu e o escritorio desligado.
+    if (cfg.FISGAR !== '0') require('./src/fisguei/robo').iniciar();
     // Escritório virtual: as linhas de WhatsApp dos agentes rodam num processo à parte (o site pesado não trava o WhatsApp).
     // O cérebro roda na nuvem quando há chave do Gemini; sem chave, roda nesse processo com a IA local.
     if (cfg.ESCRITORIO !== '0') {
