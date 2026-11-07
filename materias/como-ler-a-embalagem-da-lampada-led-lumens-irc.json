@@ -1,0 +1,146 @@
+{
+  "slug": "como-ler-a-embalagem-da-lampada-led-lumens-irc",
+  "tema": "como ler embalagem da lampada led lumens e irc",
+  "titulo": "Como ler a embalagem da lâmpada LED: lúmens, IRC e eficiência",
+  "resumo": "Lâmpada LED se escolhe por lúmens, não por watts. Veja como ler a embalagem: fluxo luminoso, eficiência em lm/W, IRC, temperatura de cor e selo do Inmetro.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "iluminação",
+    "interiores",
+    "lâmpada led",
+    "casa"
+  ],
+  "capa": {
+    "alt": "Sala de estar à noite iluminada por luminárias de luz quente, com sofá de linho, mesa de madeira e plantas"
+  },
+  "redes": {
+    "legenda": "Você ainda escolhe lâmpada pelos watts? Na LED, quem diz quanto ela ilumina são os lúmens. E tem mais na embalagem: a eficiência em lúmens por watt, a temperatura de cor e o IRC, número que mostra se a madeira, a pele e o tecido vão parecer naturais sob aquela luz. Ensinamos a ler cada item. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "iluminacao",
+      "lampadaled",
+      "decoracao",
+      "interiores",
+      "casa",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Para escolher uma **lâmpada LED**, comece pelos **lúmens** (lm), que medem a quantidade de luz, e não pelos watts, que medem o consumo. Depois confira a eficiência em lúmens por watt, a temperatura de cor, o índice de reprodução de cor (IRC) e o selo do Inmetro. Com esses cinco itens, a embalagem diz quase tudo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O hábito de pedir uma lâmpada de 60 W vem da incandescente, em que mais potência significava mais luz. Na LED essa relação mudou: segundo o guia de compra do Idec, uma LED de 9 W entrega luz parecida com a de uma incandescente de 60 W. Por isso o watt deixou de ser um bom guia."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Lúmens dizem quanta luz a lâmpada dá; watts dizem quanto ela gasta.",
+        "Entre duas com a mesma luz, prefira a de menor potência, que tem mais lúmens por watt.",
+        "IRC acima de 80 costuma ser a referência para casa; quanto mais alto, mais naturais as cores.",
+        "Procure o selo do Inmetro e os dados do fabricante ou importador na embalagem."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Leia os números da embalagem na ordem certa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A etiqueta de eficiência energética das lâmpadas traz três números que andam juntos: a potência em watts, o fluxo luminoso em lúmens e a eficiência luminosa em lúmens por watt (lm/W). Como explica o Idec, com fluxo parecido, escolha a de menor potência; com potência parecida, a de mais lúmens. O lm/W resume as duas coisas."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Fluxo luminoso (lm):** a quantidade de luz. Compare lâmpadas por esse número.",
+        "**Eficiência (lm/W):** quantos lúmens ela entrega por watt. Quanto maior, menos energia para a mesma luz.",
+        "**Temperatura de cor (K):** de 2.700 a 3.000 K é a luz quente, amarelada; de 3.500 a 4.100 K, a neutra; de 5.000 a 6.500 K, a fria.",
+        "**IRC:** de 0 a 100, mostra o quanto as cores parecem naturais sob aquela luz.",
+        "**Selo do Inmetro e dados da empresa:** indicam que o produto passou por avaliação e quem responde por ele."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre a cor da luz, o Idec indica a quente para quartos e salas, a neutra para cozinhas, banheiros e escritórios e a fria para garagens e áreas externas. Mas isso é ponto de partida: o projeto de iluminação e o gosto de quem mora contam. Mais ideias para os ambientes em [Interiores](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o IRC e as regras novas antes de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O IRC é o número que menos gente olha e o que mais muda a aparência da casa. Uma reportagem da Gazeta do Povo sobre a compra de LEDs registra a recomendação de especialistas de IRC acima de 80 a 85 para uso residencial. Abaixo disso, a madeira pode parecer acinzentada, os tecidos perdem tom e a pele ganha aspecto apagado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As regras para LED também estão mudando. Em 2026, o comitê de eficiência energética coordenado pelo Ministério de Minas e Energia fixou os primeiros índices mínimos de eficiência para lâmpadas e luminárias LED, com valor de referência de 120 lm/W a partir de 2028 e 140 lm/W a partir de 2030, e a Portaria 231/2026 do Inmetro estendeu a avaliação às luminárias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas eficiência alta não basta sozinha. Uma lâmpada muito eficiente com IRC baixo pode iluminar bastante e deixar o ambiente sem graça. Desconfie também de embalagem sem dados do fabricante ou do importador e de preço muito abaixo do comum. Para trocas em luminárias embutidas ou dimerizáveis, confirme a compatibilidade com um eletricista."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma casa nova e quer avaliar a luz dos ambientes com calma, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar e quem quer vender. Mais conteúdo no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: compare lúmens, confira o lm/W, peça IRC acima de 80 e escolha a temperatura de cor pelo uso do ambiente."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quantos lúmens equivalem a uma lâmpada incandescente de 60 W?",
+      "resposta": "O guia do Idec usa como exemplo uma LED de 9 W para substituir a incandescente de 60 W. Para comparar com precisão, olhe o fluxo luminoso em lúmens informado na embalagem."
+    },
+    {
+      "pergunta": "O que significa IRC na lâmpada LED?",
+      "resposta": "É o índice de reprodução de cor, de 0 a 100. Quanto mais alto, mais as cores parecem naturais. Para casa, a referência costuma ser acima de 80."
+    },
+    {
+      "pergunta": "Lâmpada com mais watts ilumina mais?",
+      "resposta": "Na LED, não necessariamente. O watt mede consumo. Quem diz quanto ela ilumina é o fluxo luminoso, em lúmens."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guia prático de compra de lâmpadas — Idec",
+      "url": "https://idec.org.br/system/files/ferramentas/idec_guia-lampadas-led2.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Perguntas e respostas: índices mínimos de eficiência para lâmpadas e luminárias LED — Ministério de Minas e Energia",
+      "url": "https://www.gov.br/mme/pt-br/assuntos/noticias/brasil-avanca-na-eficiencia-energetica-com-primeira-regulamentacao-para-lampadas-e-luminarias-led/copy_of_FAQ_IMEE_LAMPADASELUMINARIASLED.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "O novo capítulo da iluminação LED no Brasil: entenda as novas regras — Cenário Energia",
+      "url": "https://cenarioenergia.com.br/2026/10/01/o-novo-capitulo-da-iluminacao-led-no-brasil-entenda-novas-regras/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Por que é tão difícil comprar uma lâmpada LED — Gazeta do Povo",
+      "url": "https://www.gazetadopovo.com.br/imoveis/por-que-e-tao-dificil-comprar-uma-lampada-led-a151y6d6j58olrxzrr1ely1ov",
+      "data": "julho de 2016"
+    },
+    {
+      "nome": "Equivalência entre lâmpadas: tudo o que você precisa saber — O Setor Elétrico",
+      "url": "https://www.osetoreletrico.com.br/?p=14700",
+      "data": "novembro de 2026"
+    }
+  ]
+}
