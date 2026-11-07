@@ -1,0 +1,145 @@
+{
+  "slug": "orquidea-em-casa-onde-colocar-e-como-regar",
+  "tema": "orquidea dentro de casa luz e rega",
+  "titulo": "Orquídea em casa: onde colocar e como regar para ela florescer de novo",
+  "resumo": "Orquídea dentro de casa pede luz clara sem sol forte, rega só com o substrato seco e vaso que drena. Veja onde colocar e o que fazer depois que as flores caem.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "plantas",
+    "orquídea",
+    "bem-estar",
+    "decoração",
+    "jardinagem"
+  ],
+  "capa": {
+    "alt": "Orquídea de flores brancas em vaso de cerâmica clara sobre aparador de madeira, junto a uma janela com cortina de linho"
+  },
+  "redes": {
+    "legenda": "Sua orquídea floresceu uma vez e nunca mais? O motivo costuma ser luz demais, luz de menos ou água sobrando no pratinho. Ela gosta de claridade sem sol forte, de rega só quando o substrato secar e de vaso com furos. E a haste verde não deve ser cortada antes de secar. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "orquidea",
+      "plantas",
+      "plantasemcasa",
+      "decoracao",
+      "bemestar",
+      "jardinagem",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ela chega de presente, cheia de flores, e enfeita a sala por semanas. Depois, as flores caem e fica a dúvida: como cuidar de uma **orquídea em casa** para ela voltar a florescer? Muita gente desiste nessa fase, achando que a planta é difícil. Na maioria das vezes, o problema está no lugar e na rega."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: coloque a orquídea perto de uma janela clara, protegida do sol forte da tarde, regue só quando o substrato estiver seco e nunca deixe água parada no pratinho. Com vaso que drena e paciência depois da floração, ela costuma florescer de novo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Luz clara e indireta; sol só no começo da manhã ou no fim da tarde.",
+        "Regue quando o substrato secar, de preferência pela manhã.",
+        "Vaso com furos e substrato arejado, como casca de pinus, fibra de coco e carvão.",
+        "Depois da floração, corte só a parte seca da haste."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha o canto da casa pela luz e pelo ar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A *Phalaenopsis*, orquídea comum em vasos de presente, pede boa iluminação sem sol direto, segundo o guia de cultivo do Instituto Federal do Espírito Santo. O guia do QuintoAndar sugere janelas que recebem sol antes das 10h ou depois das 16h. O sol forte do meio do dia queima as folhas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ar também conta. As duas fontes recomendam ambiente ventilado, sem abafamento, onde as pragas aparecem com mais facilidade. O QuintoAndar alerta ainda contra o vento frio do ar-condicionado. Uma pista útil, do site eCycle: folhas grossas e firmes costumam aceitar mais luz; folhas macias preferem meia-sombra. Para mais ideias de verde, veja [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Os lugares mais comuns para a orquídea",
+      "pros": [
+        "Perto de janela com cortina leve: luz clara e filtrada.",
+        "Varanda coberta virada para o sol da manhã.",
+        "Mesa ou aparador a um ou dois metros da janela."
+      ],
+      "contras": [
+        "Peitoril com sol da tarde batendo direto.",
+        "Banheiro sem janela ou corredor escuro.",
+        "Embaixo da saída do ar-condicionado."
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acerte a rega, o vaso e o cuidado depois das flores"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra das fontes é a mesma: regue quando o substrato estiver seco. O QuintoAndar ensina o teste do palito: se sair úmido, espere. O guia do IFES prefere a rega pela manhã, para não sobrar água nas folhas novas à noite. O eCycle lembra que água parada é o jeito mais rápido de perder a planta, e que no frio a rega diminui."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Vaso:** precisa de furos. O plástico retém mais água; o barro seca mais rápido. Ajuste a rega ao material.",
+        "**Substrato:** o IFES cita casca de pinus, fibra de coco, brita e carvão vegetal, de preferência misturados, e troca a cada dois ou três anos.",
+        "**Adubo:** em pouca quantidade e na fase de crescimento; o eCycle recomenda não adubar logo após o replantio.",
+        "**Depois da floração:** o IFES orienta não cortar a haste antes de secar, porque ela pode florescer de novo ou dar muda."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas não espere flor toda semana. A floração pode durar até três meses, segundo o IFES, e o eCycle fala em nova florada a cada oito a doze meses. Se a planta está com folhas firmes e raízes claras, ela está bem, mesmo sem flor. Outros guias de casa e jardim ficam no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com aquela janela de luz boa para as plantas, a equipe da {{cliente}} pode ajudar na busca."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: luz clara sem sol forte, rega só com o substrato seco e paciência com a haste verde."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "De quanto em quanto tempo regar a orquídea?",
+      "resposta": "Não há um número fixo de dias: depende do vaso, do substrato e do clima. Regue quando o substrato estiver seco ao toque ou no teste do palito, e nunca deixe água no pratinho."
+    },
+    {
+      "pergunta": "Devo cortar a haste da orquídea depois que as flores caem?",
+      "resposta": "Só a parte seca. Enquanto a haste estiver verde, ela pode voltar a florescer ou gerar uma muda, segundo o guia do Instituto Federal do Espírito Santo."
+    },
+    {
+      "pergunta": "Orquídea pode ficar no banheiro?",
+      "resposta": "Pode, se o banheiro tiver janela e luz clara. Banheiro escuro e abafado costuma prejudicar a planta e favorecer pragas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Cultivo artesanal de orquídeas Phalaenopsis: guia prático (Comunicado Técnico nº 3) — Ifes, via eduCAPES",
+      "url": "https://educapes.capes.gov.br/bitstream/capes/599068/1/COMUNICAD_T%c3%89CNICO_N%c2%ba3.pdf",
+      "data": "abril de 2020"
+    },
+    {
+      "nome": "7 dicas de como cuidar de orquídeas — QuintoAndar Guias",
+      "url": "https://www.quintoandar.com.br/guias/?p=391672",
+      "data": "agosto de 2023"
+    },
+    {
+      "nome": "Como cuidar de orquídeas — eCycle",
+      "url": "https://www.ecycle.com.br/como-cuidar-de-orquideas/"
+    }
+  ]
+}
