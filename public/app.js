@@ -244,7 +244,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 const MENU = [
   ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
-  ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
+  ['Vendas', [['#/leads', 'CRM e funil'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
     // Robôs e consultas saiu do menu junto com o Fisgar (06/11/2026). A rota #/robos continua
   // existindo e funcionando: isto aqui é só o item de menu. Para voltar, repor a entrada.
@@ -296,7 +296,10 @@ async function atualizaBadge() {
   });
   if (typeof rsBadge === 'function') rsBadge();
   api('GET', '/api/condominios/alertas').then((l) => { const b = $('#badge-cond'); if (!b) return; b.textContent = l.length; b.hidden = !l.length; b.title = 'Anúncios novos em prédios-alvo'; topoAtualiza(); }).catch(() => {});
-  try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; topoAtualiza(); } } catch {}
+  // O Escritorio virtual saiu do menu (06/11/2026) e o processo dos agentes fica desligado
+  // por ESCRITORIO=0. Sem a guarda, o sistema pedia /api/whats em toda abertura para um
+  // badge que nao esta mais na tela.
+  if ($('#badge-whats')) try { const w = await api('GET', '/api/whats'); const n = w.conversas.filter((c) => c.tem_sugestao || c.direcao === 'entrada').length; const b = $('#badge-whats'); if (b) { b.textContent = n; b.hidden = !n; b.title = 'Conversas esperando resposta ou aprovação'; topoAtualiza(); } } catch {}
 }
 function marcaNav(h) {
   $$('#nav a').forEach((a) => {
