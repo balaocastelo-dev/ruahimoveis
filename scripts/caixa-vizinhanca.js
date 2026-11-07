@@ -22,7 +22,11 @@ const LIMITE = Number(process.argv[process.argv.indexOf('--limite') + 1]) || 100
 const RAIO = Number(process.argv[process.argv.indexOf('--raio') + 1]) || 1200;
 const UA = { 'User-Agent': 'HerreraHouseIA/1.0 (+https://corretordofuturo.app)', 'Accept': 'application/json' };
 const ESPERA = 2500; // o Overpass e um servico comunitario: sem pressa
+// Os dois espelhos mais conhecidos do Overpass nao sao alcancaveis desta rede (um
+// recusa o TLS, o outro nao responde). O da Suica atende em menos de um segundo,
+// entao vai na frente; os outros ficam de reserva para o dia em que voltarem.
 const ESPELHOS = [
+  'https://overpass.osm.ch/api/interpreter',
   'https://overpass-api.de/api/interpreter',
   'https://overpass.kumi.systems/api/interpreter',
 ];
@@ -73,7 +77,7 @@ async function perguntar(lat, lon) {
     try {
       const r = await fetch(url, {
         method: 'POST', headers: { ...UA, 'Content-Type': 'text/plain' },
-        body: consulta(lat, lon), signal: AbortSignal.timeout(40000),
+        body: consulta(lat, lon), signal: AbortSignal.timeout(20000),
       });
       if (r.status === 429 || r.status === 504) { ultimoErro = new Error(`espelho ocupado (${r.status})`); await dorme(6000); continue; }
       if (!r.ok) { ultimoErro = new Error(`Overpass respondeu ${r.status}`); continue; }

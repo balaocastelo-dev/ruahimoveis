@@ -49,6 +49,14 @@ const reais = (v) => (v ? `R$ ${Math.round(v).toLocaleString('pt-BR')}` : null);
 const metros = (v) => (v ? `${Number(v).toLocaleString('pt-BR', { maximumFractionDigits: 2 })} m²` : null);
 const plural = (n, um, varios) => `${n} ${n === 1 ? um : varios}`;
 const lugar = (im) => [im.bairro, im.cidade].filter(Boolean).join(', ');
+// (19) 98451-5960 -- o numero aparece escrito, nao so dentro do link do WhatsApp:
+// muita gente ainda liga, e telefone visivel e sinal de que existe alguem do outro lado.
+function fmtTel(v) {
+  const n = String(v || '').replace(/\D/g, '').replace(/^55/, '');
+  if (n.length === 11) return `(${n.slice(0, 2)}) ${n.slice(2, 7)}-${n.slice(7)}`;
+  if (n.length === 10) return `(${n.slice(0, 2)}) ${n.slice(2, 6)}-${n.slice(6)}`;
+  return n;
+}
 // ?v=2: fotos externas passaram a ser entregues pelo próprio site (o redirecionamento antigo ficou guardado nos navegadores).
 const fotoUrl = (id) => `/imoveis/foto/${id}?v=2`;
 
@@ -148,7 +156,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
-  <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
+  <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p class="p-rodape-tel">${cfg.WHATSAPP_CLIENTE ? `Thiago Herrera · <a href="tel:+55${String(cfg.WHATSAPP_CLIENTE).replace(/\D/g, '')}">${fmtTel(cfg.WHATSAPP_CLIENTE)}</a>` : ''}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
   <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/condominios">Condomínios</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}${SITE_CLIENTE ? `<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a>` : ''}<a href="/privacidade">Privacidade e seus dados</a><a href="/termos">Termos de uso</a><a href="/entrar" rel="nofollow">Área da equipe</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>${DEMONSTRACAO ? `
   <p class="p-rodape-p"><strong>Portal de demonstração.</strong> As fotos são imagens ilustrativas, criadas para esta demonstração: não mostram os imóveis reais.</p>` : ''}

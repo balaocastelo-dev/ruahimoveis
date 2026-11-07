@@ -766,3 +766,5 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .oc-viz span{font-size:.84em;color:var(--pedra);margin-left:auto}
 .oc-viz-nota{margin:.9em 0 0;font-size:.84em;line-height:1.55;color:var(--pedra)}
 .oc-viz-mapa{margin:.6em 0 0;font-size:.9em}
+.p-rodape-tel{margin:.3em 0 0;font-size:.95em}
+.p-rodape-tel a{font-weight:500}
