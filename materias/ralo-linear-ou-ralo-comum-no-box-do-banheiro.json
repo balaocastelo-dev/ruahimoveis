@@ -1,0 +1,179 @@
+{
+  "slug": "ralo-linear-ou-ralo-comum-no-box-do-banheiro",
+  "tema": "ralo linear ou ralo comum no box",
+  "titulo": "Ralo linear ou ralo comum no box: qual escolher no banheiro",
+  "resumo": "Ralo linear ou ralo quadrado no box? Veja como cada um escoa, o que muda no piso e no caimento, a questão do cheiro e os cuidados de instalação.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "banheiro",
+    "reforma",
+    "construção",
+    "box",
+    "hidráulica"
+  ],
+  "capa": {
+    "alt": "Box de banheiro com piso de porcelanato claro em grande formato e ralo linear de inox junto à parede"
+  },
+  "redes": {
+    "legenda": "Ralo linear ou aquele ralo quadrado no meio do box? O linear, comprido e estreito, deixa o piso cair para um lado só e combina com porcelanato grande e box sem degrau. O comum é simples e fácil de trocar. Mas o que evita cheiro no banheiro é o sifão, e não o formato. Contamos o que pesa na escolha e o que pedir na obra. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "banheiro",
+      "ralolinear",
+      "reforma",
+      "construcao",
+      "arquitetura",
+      "decoracao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem reforma ou constrói o banheiro hoje quase sempre esbarra na dúvida: **ralo linear ou ralo comum no box**? O linear, aquela canaleta comprida e estreita junto à parede, aparece em todas as fotos de banheiro bonito. O comum, quadrado ou redondo no meio do box, é o que a maioria das casas brasileiras sempre teve."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em resumo, o linear brilha com porcelanato grande e box sem degrau, porque o piso cai para um lado só e sobra menos recorte. O comum é mais simples de instalar e de trocar. Em qualquer um, o que evita cheiro é o sifão, e o que evita vazamento é a impermeabilização."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Ralo linear: piso com caimento para um lado só, ideal para peças grandes e box sem degrau.",
+        "Ralo comum: caimento para o centro, mais cortes no piso e instalação mais simples.",
+        "O cheiro de esgoto é barrado pelo sifão (fecho hídrico), não pelo formato do ralo.",
+        "Os dois pedem impermeabilização planejada antes da instalação."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare como cada ralo escoa e o que muda no piso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No ralo comum, o piso do box precisa cair para o centro, de quatro lados. Com porcelanato grande, isso obriga a cortar as peças em diagonal, os chamados cortes em envelope. O ralo linear muda a lógica: a ficha técnica do ralo linear da Tigre, publicada no portal AECweb, diz que o desenho facilita o caimento e reduz a necessidade de cortar o piso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O resultado é um piso quase contínuo, que pode seguir do banheiro para o box sem degrau. A ficha técnica do ralo linear da Wavin recomenda caimento do piso em direção ao ralo e alerta que o modelo modular, sem inclinação própria, pode deixar uma fina lâmina de água parada. Para outras escolhas de obra, veja a categoria [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Ralo linear e ralo comum no box",
+      "colunas": [
+        "Ponto",
+        "Ralo linear",
+        "Ralo comum"
+      ],
+      "linhas": [
+        [
+          "Caimento do piso",
+          "Para um lado só",
+          "Para o centro, de quatro lados"
+        ],
+        [
+          "Cortes no porcelanato",
+          "Poucos, peças quase inteiras",
+          "Cortes em diagonal em volta do ralo"
+        ],
+        [
+          "Box sem degrau",
+          "Facilita",
+          "Possível, mas mais difícil"
+        ],
+        [
+          "Instalação",
+          "Exige nivelamento preciso com o acabamento",
+          "Mais simples e conhecida"
+        ],
+        [
+          "Troca futura",
+          "Depende do comprimento e do modelo",
+          "Em geral mais fácil"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Visão geral. O projeto e o fabricante definem medidas, vazão e posição."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Evite cheiro e vazamento com os cuidados certos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O cheiro de esgoto não depende do formato, e sim do **sifão**: uma curva que guarda um pouco de água e bloqueia os gases da tubulação, o chamado fecho hídrico. O guia do QuintoAndar e o blog da Schneider Electric explicam que o ralo seco, sem sifão, deixa o cheiro voltar; por isso o linear costuma ser ligado a uma caixa sifonada ou ter sifão próprio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ficha da Wavin mostra as duas versões: o modelo sifonado, com fecho hídrico de 3,2 cm, e o modelo baixo, sem sifão, que precisa de um desconector (peça que faz o papel do sifão) embutido na laje ou abaixo dela. Na obra, vale conferir qual dos dois foi instalado."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Impermeabilize antes:** a ficha da Wavin pede que a impermeabilização seja prevista no projeto, com manta asfáltica ou argamassa polimérica entrando no nicho do ralo.",
+        "**Nivele com o acabamento:** o linear precisa ficar exatamente na altura do piso pronto; alguns milímetros acima e a água empoça.",
+        "**Confira a vazão:** chuveiro de alta vazão pede ralo que dê conta da água; compare a vazão informada pelo fabricante.",
+        "**Pense na limpeza:** cabelo e sabão se acumulam; o QuintoAndar recomenda limpar o ralo ao menos uma vez por mês.",
+        "**Chame quem assina:** ralo, caimento e impermeabilização mexem na hidráulica e na laje; deixe com profissional e, em reforma maior, com arquiteto ou engenheiro responsável (ART ou RRT)."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o linear nem sempre compensa. Em box pequeno, com piso de peças menores e reforma rápida, o ralo comum bem posicionado resolve com menos custo e menos risco de erro de nível. Para mais ideias de banheiro e casa, o [blog](/blog) reúne outros guias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma casa e quer olhar esses detalhes com calma na visita, a equipe da {{cliente}} pode acompanhar você."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: escolha o linear para porcelanato grande e box sem degrau, o comum para obra simples, e exija sifão e impermeabilização nos dois."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Ralo linear dá cheiro no banheiro?",
+      "resposta": "Não se tiver sifão. O cheiro vem do ralo seco, sem fecho hídrico. O linear deve ser sifonado ou ligado a uma caixa sifonada ou a um desconector."
+    },
+    {
+      "pergunta": "Ralo linear precisa de caimento?",
+      "resposta": "Sim. O piso precisa cair em direção ao ralo, mas para um lado só, o que simplifica o corte do porcelanato. Alguns modelos modulares não têm inclinação própria e podem deixar uma lâmina de água."
+    },
+    {
+      "pergunta": "Dá para trocar o ralo comum por um linear na reforma?",
+      "resposta": "Costuma dar, mas envolve quebrar o piso, refazer o caimento e a impermeabilização e adaptar a tubulação. É serviço para profissional de hidráulica, com acompanhamento técnico em reforma maior."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Ficha técnica Ralo Linear — Wavin",
+      "url": "https://mediahub.wavin.com/m/daa2b2c1f0a8341/original/FT-Ralo-Linear.pdf"
+    },
+    {
+      "nome": "Ralo Linear Tigre — Portal AECweb",
+      "url": "https://www.aecweb.com.br/produto/ralo-linear-tigre/20727"
+    },
+    {
+      "nome": "Ralo de banheiro: tudo o que você precisa saber sobre os modelos — QuintoAndar Guias",
+      "url": "https://www.quintoandar.com.br/guias/?p=478561",
+      "data": "outubro de 2024"
+    },
+    {
+      "nome": "Conheça 3 tipos de ralos que não aparecem — Blog da Schneider Electric",
+      "url": "https://blog.se.com/br/data-center/arquitetura/2019/06/04/conheca-3-tipos-de-ralos-que-nao-aparecem",
+      "data": "junho de 2019"
+    }
+  ]
+}
