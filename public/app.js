@@ -246,7 +246,9 @@ const MENU = [
   ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/whats', 'Escritório virtual', 'whats'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
-  ['Sistema', [['#/robos', 'Robôs e consultas', 'capt'], ['#/privacidade', 'Privacidade e LGPD', 'lgpd'], ['#/configuracoes', 'Configurações']]],
+    // Robôs e consultas saiu do menu junto com o Fisgar (06/11/2026). A rota #/robos continua
+  // existindo e funcionando: isto aqui é só o item de menu. Para voltar, repor a entrada.
+  ['Sistema', [['#/privacidade', 'Privacidade e LGPD', 'lgpd'], ['#/configuracoes', 'Configurações']]],
 ];
 // Modo embutido (/app.html?embutido=1#/rota): só o conteúdo da tela, para abrir dentro do
 // painel do Escritório ao vivo 3D (mural, TV da diretoria, placa do salão). Mesma sessão, mesmas telas.
@@ -281,8 +283,11 @@ function topoAtualiza() {
   const n = $$('#nav .ct').filter((b) => !b.hidden).length, c = $('#tb-ct'); if (c) { c.hidden = !n; c.title = 'Há avisos no menu'; }
 }
 async function atualizaBadge() {
-  // "Robôs e Fisgar": "!" se o radar ou o robô pararam; senão, o que espera alguém (aprovações + respostas do robô)
-  Promise.all([veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null, veTudo() ? api('GET', '/api/radar/alertas').catch(() => null) : null, api('GET', '/api/fisguei/resumo').catch(() => null)]).then(([r, al, f]) => {
+  // "Robôs e Fisgar": "!" se o radar ou o robô pararam; senão, o que espera alguém (aprovações + respostas do robô).
+  // O item saiu do menu (06/11/2026), entao o badge nao existe mais. Sem esta guarda o sistema
+  // pedia /api/radar/resumo, /api/radar/alertas e /api/fisguei/resumo em toda abertura para
+  // alimentar um elemento que nao esta na tela.
+  if ($('#badge-capt')) Promise.all([veTudo() ? api('GET', '/api/radar/resumo').catch(() => null) : null, veTudo() ? api('GET', '/api/radar/alertas').catch(() => null) : null, api('GET', '/api/fisguei/resumo').catch(() => null)]).then(([r, al, f]) => {
     const b = $('#badge-capt'); if (!b) return;
     const alertaRadar = al && al.saude && !al.saude.ok, alertaRobo = f && ['erro', 'desconectado', 'qr'].includes(f.robo && f.robo.estado);
     const n = ((r && r.aprovacoesPendentes) || 0) + ((f && f.precisaCorretor) || 0);
