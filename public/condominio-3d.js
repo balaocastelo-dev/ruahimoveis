@@ -694,7 +694,10 @@ addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; cam
     cena = D.cena; alvo = cena.alvo; ANDAR_H = alvo.alturaAndar || 3;
     const antes = new Set(scene.children);
     montar();
-    luz(new Date().getHours() >= 18 || new Date().getHours() < 6 ? 'noite' : 'dia');
+    // A cena abre pela hora de quem olha, mas nunca de noite: no escuro
+    // a foto de satelite some e a primeira impressao e uma tela preta.
+    // Depois das 17h entra a luz de fim de tarde; o botao Noite segue ali.
+    luz(new Date().getHours() >= 17 ? 'tarde' : 'dia');
     interface_();
     camera.position.copy(topoAlvo.clone().add(new THREE.Vector3(-cena.raio * 2.2, cena.raio * 1.9, cena.raio * 2.2)));
     controls.target.copy(baseAlvo);
