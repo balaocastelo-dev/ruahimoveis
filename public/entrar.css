@@ -7,10 +7,7 @@
   --f-body:"DM Sans", "Segoe UI", system-ui, sans-serif;
   color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root{
-  --bg:#17191c; --panel:#202328; --ink:#ece9e3; --muted:#9aa0a8; --line:#33373e;
-  --gold:#d2ab62; --gold-ink:#d2ab62; --slate:#101215; --slate-ink:#ece9e3;
-  color-scheme:dark}}
+
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5}

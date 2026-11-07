@@ -14,8 +14,27 @@
   --f-mono:"JetBrains Mono", Consolas, monospace;
   color-scheme: light;
 }
-/* Sem modo escuro de proposito (06/11/2026): o sistema segue a mesma paleta clara do
-   portal. Quem usa o Windows em modo escuro continua vendo o painel claro. */
+/* Claro por padrao, sempre: o modo escuro deixou de seguir o Windows (06/11/2026)
+   e passou a ser escolha do usuario, pelo botao no menu lateral, guardada no
+   proprio navegador. Quem nunca escolheu ve o sistema claro, como o portal. */
+:root[data-tema="escuro"]{
+  --bg:#17191c; --panel:#202328; --ink:#ece9e3; --muted:#9aa0a8; --line:#33373e;
+  --gold:#d2ab62; --gold-ink:#d2ab62; --gold-soft:#3a3122; --slate:#101215; --slate-ink:#ece9e3;
+  --menu:#101215; --menu-ink:#ece9e3; --menu-toque:rgba(255,255,255,.08);
+  --ok:#6cc58f; --ok-bg:#1d3326; --warn:#e2b45a; --warn-bg:#3a2f18;
+  --bad:#ec8a7e; --bad-bg:#3d2320; --info:#8ab8e4; --info-bg:#1e2e3e;
+  --sombra:0 1px 2px rgba(0,0,0,.35),0 6px 18px rgba(0,0,0,.28);
+  --sombra-alta:0 2px 6px rgba(0,0,0,.4),0 22px 44px rgba(0,0,0,.5);
+  --brilho:rgba(255,255,255,.07);
+  color-scheme:dark;
+}
+:root[data-tema="escuro"] nav a.on{color:#1b1c1e}
+
+/* O botao de trocar, no rodape do menu lateral */
+.tema-btn{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:7px 10px;
+  border-radius:7px;font-size:12.5px;opacity:.75;min-height:34px}
+.tema-btn:hover{background:var(--menu-toque);opacity:1}
+.tema-btn svg{width:15px;height:15px;flex:none}
 *{box-sizing:border-box}
 html,body{height:100%;margin:0}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5}
@@ -1130,7 +1149,9 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 .jg-placa>span{font:600 26px 'Cormorant Garamond',serif;letter-spacing:.02em;text-align:center;line-height:1}
 .jg-placa .jg-mono{position:absolute;left:18px;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:12px;background:#2b2622;color:#e8c36a;display:grid;place-items:center;font:700 26px 'Cormorant Garamond',serif}
 .jg-placa small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9a7b45}
-@media (prefers-color-scheme:dark){.jg-placa{background:#1d1b19}.jg-placa>span{color:#f2ead9}.jg-placa .jg-mono{background:#e8c36a;color:#1d1b19}}
+:root[data-tema="escuro"] .jg-placa{background:#1d1b19}
+:root[data-tema="escuro"] .jg-placa>span{color:#f2ead9}
+:root[data-tema="escuro"] .jg-placa .jg-mono{background:#e8c36a;color:#1d1b19}
 .jg-mural{position:absolute;left:40px;top:52px;width:370px;height:114px;z-index:1;border-radius:8px;background:#c79b67;border:6px solid #8a6238;box-shadow:0 8px 16px -10px rgba(0,0,0,.5);overflow:hidden}
 .jg-mural b{position:absolute;left:10px;top:4px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4a3017}
 .jg-mural i{position:absolute;top:30px;width:44px;height:58px;background:#fffaf0;box-shadow:0 2px 3px rgba(0,0,0,.25);transform:rotate(-3deg)}
@@ -1479,7 +1500,11 @@ a{text-underline-offset:.18em}
 .j3-card-nums span{font-size:11px;color:#6b625a}
 .j3-card-nums .q{background:#f7e7b8}
 .j3-card .btn{width:100%;text-align:center;display:block}
-@media (prefers-color-scheme:dark){.j3-card{background:rgba(29,27,25,.97);color:#f2ead9}.j3-card-topo span,.j3-card-nums span{color:#b7ab9c}.j3-card .j3-x{background:rgba(255,255,255,.1);color:#eee}.j3-card-nums div{background:rgba(255,255,255,.07)}.j3-card-nums .q{background:#5a4a1e}}
+:root[data-tema="escuro"] .j3-card{background:rgba(29,27,25,.97);color:#f2ead9}
+:root[data-tema="escuro"] .j3-card-topo span,:root[data-tema="escuro"] .j3-card-nums span{color:#b7ab9c}
+:root[data-tema="escuro"] .j3-card .j3-x{background:rgba(255,255,255,.1);color:#eee}
+:root[data-tema="escuro"] .j3-card-nums div{background:rgba(255,255,255,.07)}
+:root[data-tema="escuro"] .j3-card-nums .q{background:#5a4a1e}
 @media (max-width:720px){
   .j3{height:clamp(380px,calc(100vh - 120px),700px);border-radius:12px}
   .j3-hud{gap:6px;padding:6px 8px}

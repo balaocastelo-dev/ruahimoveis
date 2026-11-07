@@ -258,15 +258,31 @@ function shell() {
     <a class="tb-marca" href="#/painel">${esc(MARCA.sistema)}</a><span class="tb-tit" id="tb-tit"></span><span class="tb-ct" id="tb-ct" hidden></span><a class="chat-sino" id="chat-sino" href="#/chat" aria-label="Mensagens"><span aria-hidden="true">♧</span><span class="chat-nao-lidas" id="chat-contador" hidden></span></a></header>
     <div class="side-veu" data-act="menu-fecha" aria-hidden="true"></div><aside class="side" id="menu-lateral">
     <div class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Sistema imobiliário'}</span></div>
+    <button type="button" class="tema-btn" data-act="tema" aria-label="Alternar entre claro e escuro"><span id="tema-txt"></span></button>
     <div class="who"><div><b>${esc(ME.nome)}</b>${perfil}</div><button data-act="sair">Sair</button></div>
     <nav id="nav">${MENU.map(([g, it]) => `<div class="grp">${g}</div>` + it.map(([h, l, b]) => `<a href="${h}" data-nav="${h}">${l}${b ? `<span class="ct" id="badge-${b}" hidden></span>` : ''}</a>`).join('')).join('')}</nav>
     </aside><main class="main" id="main"></main></div>`;
   document.body.classList.toggle('embutido', EMBUTIDO);
   if (EMBUTIDO) return;                       // sem menu, sem sino do chat e sem o aceite: isso fica na janela de fora
+  temaAplica(temaAtual());   // escreve o rotulo do botao depois que o menu existe
   atualizaBadge();
   if (typeof chatInicia === 'function') chatInicia();
   if (typeof lgpdConfere === 'function') lgpdConfere(); // aceite dos Termos e da Política (public/lgpd.js)
 }
+// Claro ou escuro: escolha do usuario, nao do sistema operacional. Guardada neste
+// navegador. Sem escolha, claro -- a mesma paleta do portal.
+function temaAtual() {
+  try { return localStorage.getItem('hh-tema') === 'escuro' ? 'escuro' : 'claro'; } catch { return 'claro'; }
+}
+function temaAplica(t) {
+  if (t === 'escuro') document.documentElement.dataset.tema = 'escuro';
+  else delete document.documentElement.dataset.tema;
+  try { localStorage.setItem('hh-tema', t); } catch {}
+  const e = document.getElementById('tema-txt');
+  if (e) e.textContent = t === 'escuro' ? 'Modo claro' : 'Modo escuro';
+}
+temaAplica(temaAtual());
+ACT.tema = () => temaAplica(temaAtual() === 'escuro' ? 'claro' : 'escuro');
 // Menu lateral vira gaveta no celular e no tablet (botão ☰ na barra do topo)
 function menuAbre(abre) {
   document.body.classList.toggle('menu-aberto', abre);
