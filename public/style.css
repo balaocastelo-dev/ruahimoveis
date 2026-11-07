@@ -1585,8 +1585,26 @@ body.embutido h1{font-size:26px;margin-top:0}
 
 .cx-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
 
-.cx-card{position:relative;display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px;
-  background:var(--panel);border:1px solid var(--line);border-radius:3px}
+.cx-card{position:relative;display:flex;flex-direction:column;
+  background:var(--panel);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.cx-corpo{display:flex;flex-direction:column;gap:6px;padding:16px 16px 14px;flex:1}
+
+/* A foto vem da propria Caixa. Quando nao existe, o <img> se remove e sobra a
+   faixa com o tipo do imovel: melhor um espaco honesto que a foto de outro lugar. */
+.cx-foto{position:relative;aspect-ratio:4/3;background:var(--gold-soft);display:grid;place-items:center}
+.cx-foto::before{content:attr(data-vazia);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);opacity:.7}
+.cx-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.cx-selo{position:absolute;left:0;bottom:0;z-index:1;background:var(--gold);color:#fff;
+  font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:5px 10px}
+
+/* Quem financia e a minoria (6 em 182 na regiao): merece borda propria. */
+.cx-financia{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.cx-fin{margin:6px 0 0;font-size:12.5px;font-weight:600;color:var(--gold-ink)}
+.cx-fin-btn[aria-pressed="true"]{background:var(--gold);color:#fff;border-color:var(--gold)}
+.cx-fin-btn:disabled{opacity:.45;cursor:default}
+.cx-aviso{margin:0 0 12px;padding:11px 14px;border-left:3px solid var(--gold);background:var(--gold-soft);
+  font-size:13px;line-height:1.5;color:var(--ink);border-radius:0 3px 3px 0}
 .cx-card header{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:22px}
 .cx-tipo{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .cx-desc{font-size:11.5px;font-weight:600;letter-spacing:.04em;color:var(--gold-ink);
@@ -1602,7 +1620,7 @@ body.embutido h1{font-size:26px;margin-top:0}
 .cx-modo{color:var(--muted)}
 .cx-card footer a{font-weight:500;white-space:nowrap}
 .cx-fora{color:var(--muted);font-style:italic}
-.cx-num{position:absolute;right:14px;bottom:-9px;font-size:10px;color:var(--muted);opacity:.55;
+.cx-num{position:absolute;right:14px;bottom:2px;font-size:10px;color:var(--muted);opacity:.55;
   font-variant-numeric:tabular-nums}
 .cx-saiu{opacity:.72}
 .cx-saiu .cx-preco{text-decoration:line-through;text-decoration-thickness:1px}

@@ -34,7 +34,7 @@ function cxVai(mudanca) {
 
 async function telaCaixa(qs) {
   CX = { uf: 'rmc', saiu: '0', ordem: '', pagina: 1 };
-  for (const k of ['uf', 'saiu', 'cidade', 'tipo', 'modalidade', 'desconto', 'max', 'min', 'quartos', 'q', 'ordem', 'pagina']) {
+  for (const k of ['uf', 'saiu', 'fin', 'cidade', 'tipo', 'modalidade', 'desconto', 'max', 'min', 'quartos', 'q', 'ordem', 'pagina']) {
     const v = qs && qs.get(k);
     if (v) CX[k] = k === 'pagina' ? Number(v) || 1 : v;
   }
@@ -49,7 +49,9 @@ async function telaCaixa(qs) {
       <button type="button" data-act="cx-onde" data-uf="sp" data-saiu="0">São Paulo inteiro</button>
       <button type="button" data-act="cx-onde" data-saiu="1">Saíram da lista</button>
     </div>
+    <button type="button" class="btn sm cx-fin-btn" data-act="cx-fin" aria-pressed="false" id="cx-fin-btn"></button>
   </div>
+  <p class="cx-aviso" id="cx-aviso" hidden>A entrada de 5% vale para <b>qualquer</b> imóvel da Caixa, inclusive à vista &mdash; o que muda nestes é que aceitam financiamento ou FGTS. A aprovação prévia do crédito é <b>obrigatória</b>: se a proposta ganhar e o crédito não for aprovado, ela pode ser cancelada com multa de 5% sobre o valor proposto. A entrada é paga em até 2 dias úteis depois da homologação. <a href="https://www.caixa.gov.br/Downloads/habitacao-documentos-gerais/cartilha-como-comprar-imoveis-caixa.pdf" target="_blank" rel="noopener noreferrer">Cartilha da Caixa ↗</a></p>
   <div class="cx-filtros" id="cx-filtros"></div>
   <div class="row" style="margin:10px 0 14px;justify-content:space-between;align-items:baseline">
     <p class="muted small" id="cx-resumo" style="margin:0">Carregando…</p>
@@ -78,6 +80,15 @@ async function cxOpcoes() {
     const s = CX_OPC.safra ? CX_OPC.safra.slice(0, 10).split('-').reverse().join('/') : null;
     e.textContent = s ? `Lista da Caixa de ${s} · ${CX_OPC.regiao} na região · ${CX_OPC.estado} em São Paulo` : 'Lista ainda não importada';
   }
+  const b = $('#cx-fin-btn');
+  if (b) {
+    const q = CX_OPC.financiaveis || 0;
+    b.textContent = `Só os que financiam (${q})`;
+    b.setAttribute('aria-pressed', CX.fin === '1' ? 'true' : 'false');
+    b.disabled = !q;
+  }
+  const av = $('#cx-aviso');
+  if (av) av.hidden = CX.fin !== '1';
 }
 
 function cxFiltros() {
@@ -112,7 +123,7 @@ function cxFiltros() {
       <select data-campo="ordem">
         ${op('', CX.saiu === '1' ? 'Saída mais recente' : 'Maior desconto', CX.ordem)}
         ${op('barato', 'Menor preço', CX.ordem)}${op('caro', 'Maior preço', CX.ordem)}
-        ${op('area', 'Maior área', CX.ordem)}${op('recentes', 'Entrou na lista agora', CX.ordem)}
+        ${op('area', 'Maior área', CX.ordem)}${op('recentes', 'Entrou na lista agora', CX.ordem)}${op('financia', 'Quem financia primeiro', CX.ordem)}
       </select></label>`;
 
   // ACT so escuta clique, e clique num select apenas abre a lista: o change e nosso.
@@ -127,27 +138,40 @@ function cxFiltros() {
 function cxCartao(i) {
   const desc = cxNum(i.desconto);
   const abate = cxNum(i.avaliacao) && cxNum(i.preco) ? Number(i.avaliacao) - Number(i.preco) : null;
+  const financia = i.financiamento === 'Sim';
   const ficha = [i.quartos ? i.quartos + (i.quartos > 1 ? ' quartos' : ' quarto') : null,
     i.vagas ? i.vagas + (i.vagas > 1 ? ' vagas' : ' vaga') : null,
     cxArea(i.area_util), cxNum(i.area_terreno) ? cxArea(i.area_terreno) + ' de terreno' : null].filter(Boolean);
   const saiu = i.saiu_em ? i.saiu_em.slice(0, 10).split('-').reverse().join('/') : null;
-  return `<article class="cx-card${saiu ? ' cx-saiu' : ''}">
-    <header>
-      <span class="cx-tipo">${esc(i.tipo || 'Imóvel')}</span>
-      ${desc && desc > 0 ? `<span class="cx-desc">${cxPct(desc)} abaixo da avaliação</span>` : ''}
-    </header>
-    <h3>${esc(i.bairro ? cxCidade(i.bairro) : '—')}</h3>
-    <p class="cx-onde">${esc(cxCidade(i.cidade))}${i.endereco ? ' · ' + esc(i.endereco) : ''}</p>
-    <p class="cx-preco">${brl(i.preco)}
-      ${cxNum(i.avaliacao) && abate > 0 ? `<s>${brl(i.avaliacao)}</s>` : ''}</p>
-    ${abate > 0 ? `<p class="cx-abate">${brl(abate)} abaixo da avaliação da Caixa</p>` : ''}
-    ${ficha.length ? `<p class="cx-ficha">${esc(ficha.join(' · '))}</p>` : ''}
-    <footer>
-      <span class="cx-modo">${esc(i.modalidade || '—')}</span>
-      ${saiu ? `<span class="cx-fora">Saiu em ${saiu}</span>`
-        : i.link ? `<a href="${esc(i.link)}" target="_blank" rel="noopener noreferrer">Ver na Caixa ↗</a>` : ''}
-    </footer>
-    <span class="cx-num">${esc(i.numero)}</span>
+  // A foto e a que a propria Caixa publica do imovel. Quando nao existe, o <img> se
+  // remove sozinho e fica a faixa com o tipo: melhor um espaco honesto que a foto
+  // de outro lugar.
+  const legenda = /apartamento|pr[eé]dio/i.test(i.tipo || '') ? 'Fachada do prédio' : 'Foto da Caixa';
+  return `<article class="cx-card${saiu ? ' cx-saiu' : ''}${financia ? ' cx-financia' : ''}">
+    <div class="cx-foto" data-vazia="${esc(i.tipo || 'Imóvel')}">
+      <img src="/api/caixa/${encodeURIComponent(i.numero)}/foto" alt="${esc(legenda)} — ${esc(cxCidade(i.bairro || i.cidade))}"
+           loading="lazy" decoding="async" onerror="this.remove()">
+      ${financia ? '<span class="cx-selo">Financia pela Caixa</span>' : ''}
+    </div>
+    <div class="cx-corpo">
+      <header>
+        <span class="cx-tipo">${esc(i.tipo || 'Imóvel')}</span>
+        ${desc && desc > 0 ? `<span class="cx-desc">${cxPct(desc)} abaixo da avaliação</span>` : ''}
+      </header>
+      <h3>${esc(i.bairro ? cxCidade(i.bairro) : '—')}</h3>
+      <p class="cx-onde">${esc(cxCidade(i.cidade))}${i.endereco ? ' · ' + esc(i.endereco) : ''}</p>
+      <p class="cx-preco">${brl(i.preco)}
+        ${cxNum(i.avaliacao) && abate > 0 ? `<s>${brl(i.avaliacao)}</s>` : ''}</p>
+      ${abate > 0 ? `<p class="cx-abate">${brl(abate)} abaixo da avaliação da Caixa</p>` : ''}
+      ${ficha.length ? `<p class="cx-ficha">${esc(ficha.join(' · '))}</p>` : ''}
+      ${financia ? '<p class="cx-fin">Aceita financiamento · entrada de 5%</p>' : ''}
+      <footer>
+        <span class="cx-modo">${esc(i.modalidade || '—')}</span>
+        ${saiu ? `<span class="cx-fora">Saiu em ${saiu}</span>`
+          : i.link ? `<a href="${esc(i.link)}" target="_blank" rel="noopener noreferrer">Ver na Caixa ↗</a>` : ''}
+      </footer>
+      <span class="cx-num">${esc(i.numero)}</span>
+    </div>
   </article>`;
 }
 
@@ -166,7 +190,7 @@ async function cxCarrega() {
     alvo.textContent = partes.join(' · ');
   }
 
-  const usados = ['cidade', 'tipo', 'modalidade', 'desconto', 'max', 'quartos', 'q'].filter((k) => CX[k]);
+  const usados = ['cidade', 'tipo', 'modalidade', 'desconto', 'max', 'quartos', 'q', 'fin'].filter((k) => CX[k]);
   $('#cx-limpar').innerHTML = usados.length
     ? `<button type="button" class="btn sm" data-act="cx-limpar">Limpar ${usados.length} filtro${usados.length > 1 ? 's' : ''}</button>` : '';
 
@@ -185,5 +209,6 @@ async function cxCarrega() {
 }
 
 ACT['cx-onde'] = (b) => cxVai({ uf: b.dataset.saiu === '1' ? CX.uf : b.dataset.uf, saiu: b.dataset.saiu, ordem: '' });
-ACT['cx-limpar'] = () => cxVai({ cidade: '', tipo: '', modalidade: '', desconto: '', max: '', min: '', quartos: '', q: '' });
+ACT['cx-limpar'] = () => cxVai({ cidade: '', tipo: '', modalidade: '', desconto: '', max: '', min: '', quartos: '', q: '', fin: '' });
 ACT['cx-pagina'] = (b) => cxVai({ pagina: Number(b.dataset.p) });
+ACT['cx-fin'] = () => cxVai({ fin: CX.fin === '1' ? '' : '1' });
