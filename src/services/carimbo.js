@@ -21,10 +21,17 @@ function logoSvg() {
   LOGO_LIDO = true;
   LOGO = null;
   try {
-    const url = cfg.LOGO_URL;
-    if (url && url.startsWith('/')) {
+    // O carimbo prefere um carimbo.svg do tema quando existe. Motivo: aqui todo o alfa do
+    // arquivo vira branco, então um fio fino de outra cor no logo colorido viraria uma
+    // segunda linha branca encostada na forma e sujaria a marca a 10% da largura da foto.
+    // Sem carimbo.svg, cai no logo.svg de sempre e nada muda.
+    const candidatos = [];
+    if (cfg.TEMA) candidatos.push(`/temas/${cfg.TEMA}/carimbo.svg`);
+    if (cfg.LOGO_URL) candidatos.push(cfg.LOGO_URL);
+    for (const url of candidatos) {
+      if (!url || !url.startsWith('/')) continue;
       const arq = path.join(__dirname, '..', '..', 'public', url.replace(/^\//, '').split('?')[0]);
-      if (fs.existsSync(arq)) LOGO = fs.readFileSync(arq);
+      if (fs.existsSync(arq)) { LOGO = fs.readFileSync(arq); break; }
     }
   } catch { LOGO = null; }
   return LOGO;

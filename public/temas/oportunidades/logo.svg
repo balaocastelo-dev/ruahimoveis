@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 310" width="240" height="310" role="img" aria-label="Herrera House">
+  <title>Herrera House</title>
+  <!-- Pórtico: as duas iniciais lidas como tres colunas entre lintel e base.
+       Moldura de cantos chanfrados, com fio interno em ouro. -->
+  <g fill="none" stroke="#16130F" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M24 8 H216 L232 24 V286 L216 302 H24 L8 286 V24 Z" stroke-width="7"/>
+  </g>
+  <path d="M31 17 H209 L223 31 V279 L209 293 H31 L17 279 V31 Z" fill="none" stroke="#8A6D2F" stroke-width="1.6"/>
+
+  <!-- lintel -->
+  <path d="M48 71 H192" stroke="#16130F" stroke-width="7" stroke-linecap="butt"/>
+  <path d="M48 83 H192" stroke="#8A6D2F" stroke-width="2" stroke-linecap="butt"/>
+
+  <!-- colunas: H H -->
+  <rect x="58" y="99" width="20" height="112" fill="#16130F"/>
+  <rect x="110" y="99" width="20" height="112" fill="#16130F"/>
+  <rect x="162" y="99" width="20" height="112" fill="#16130F"/>
+  <rect x="58" y="149.5" width="124" height="11" fill="#16130F"/>
+
+  <!-- base -->
+  <path d="M48 227 H192" stroke="#8A6D2F" stroke-width="2" stroke-linecap="butt"/>
+  <path d="M48 239 H192" stroke="#16130F" stroke-width="7" stroke-linecap="butt"/>
+</svg>
