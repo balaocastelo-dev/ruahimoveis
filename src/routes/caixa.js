@@ -65,8 +65,9 @@ r.get('/caixa', (req, res) => {
 
   // O resumo e das linhas filtradas, nao da pagina: e o que responde "vale a pena olhar isso?".
   const resumo = one(
-    `SELECT count(*) n, round(avg(desconto)::numeric, 1)::float8 desconto_medio,
+    `SELECT count(*) n, round(avg(nullif(desconto, 0))::numeric, 1)::float8 desconto_medio,
             max(desconto)::float8 desconto_maior, min(preco)::float8 menor,
+            count(*) filter (where desconto > 0) com_desconto,
             sum(greatest(coalesce(avaliacao,0) - coalesce(preco,0), 0))::float8 abatimento
        FROM caixa_imoveis WHERE ${onde}`, ...p);
 

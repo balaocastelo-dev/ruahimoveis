@@ -14,7 +14,12 @@ let CX_OPC = null;
 const cxNum = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
 const cxArea = (v) => (cxNum(v) ? Math.round(Number(v)) + ' m²' : null);
 const cxPct = (v) => (cxNum(v) ? Number(v).toFixed(0).replace('.', ',') + '%' : null);
-const cxCidade = (s) => String(s || '').toLowerCase().replace(/(^|[\s'])([a-zà-ú])/g, (_, a, b) => a + b.toUpperCase());
+// A Caixa escreve tudo em caixa alta. Vira capitular, menos numero romano:
+// "JARDIM TERRAMERICA III" nao pode virar "Jardim Terramerica Iii".
+const ROMANO = /^(?:i{1,3}|i[vx]|vi{0,3}|ix|xi{0,3})$/;
+const cxCidade = (s) => String(s || '').toLowerCase().split(/(\s+)/)
+  .map((p) => (ROMANO.test(p) ? p.toUpperCase() : p.replace(/(^|['])([a-zà-ú])/g, (_, a, b) => a + b.toUpperCase())))
+  .join('');
 
 function cxQuery() {
   const q = {};
@@ -62,7 +67,7 @@ async function telaCaixa(qs) {
 function marcaSeg(saiu) {
   for (const b of document.querySelectorAll('[data-act="cx-onde"]')) {
     const meu = b.dataset.saiu === '1' ? CX.saiu === '1' : CX.saiu !== '1' && b.dataset.uf === CX.uf;
-    b.classList.toggle('on', meu);
+    b.setAttribute('aria-pressed', meu ? 'true' : 'false'); // o .seg da casa marca por aria-pressed
   }
 }
 
@@ -152,7 +157,10 @@ async function cxCarrega() {
   const alvo = $('#cx-resumo');
   if (alvo) {
     const partes = [`${d.total.toLocaleString('pt-BR')} ${d.total === 1 ? 'imóvel' : 'imóveis'}`];
-    if (cxNum(r.desconto_medio)) partes.push(`desconto médio de ${cxPct(r.desconto_medio)}`);
+    if (cxNum(r.desconto_medio)) {
+      const quantos = cxNum(r.com_desconto);
+      partes.push(`${quantos} com desconto, média de ${cxPct(r.desconto_medio)}`);
+    }
     if (cxNum(r.desconto_maior)) partes.push(`maior desconto ${cxPct(r.desconto_maior)}`);
     if (cxNum(r.menor)) partes.push(`a partir de ${brl(r.menor)}`);
     alvo.textContent = partes.join(' · ');
