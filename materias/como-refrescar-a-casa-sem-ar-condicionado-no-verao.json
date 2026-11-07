@@ -1,0 +1,131 @@
+{
+  "slug": "como-refrescar-a-casa-sem-ar-condicionado-no-verao",
+  "tema": "refrescar a casa no calor sem ar condicionado",
+  "titulo": "Como refrescar a casa sem ar-condicionado nos dias de calor",
+  "resumo": "Fechar na hora certa, abrir à noite, barrar o sol do lado de fora e cortar fontes de calor: os hábitos que deixam a casa mais fresca sem ligar o ar.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "conforto térmico",
+    "verão",
+    "ventilação",
+    "bem-estar em casa"
+  ],
+  "capa": {
+    "alt": "Varanda sombreada por toldo de lona clara, com persiana de madeira entreaberta e vasos de plantas altas na frente da janela"
+  },
+  "redes": {
+    "legenda": "Calor de verão chegando e o ar-condicionado não é opção em todo cômodo? Dá para refrescar a casa com hábitos simples: fechar janelas e persianas quando o sol bate, abrir tudo à noite para o ar fresco atravessar, sombrear o vidro pelo lado de fora e deixar forno e ferro para mais tarde. No blog, explicamos por que cada passo funciona e quando ele não ajuda. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "verao",
+      "casafresca",
+      "confortotermico",
+      "bemestar",
+      "arquitetura",
+      "dicasdecasa",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos dias mais quentes, muita gente abre todas as janelas esperando um alívio e descobre que a casa só esquenta mais. Para **refrescar a casa sem ar-condicionado**, o segredo não é ventilar o tempo todo, e sim controlar quando o calor entra e quando ele sai. É uma questão de horário, sombra e de algumas fontes de calor que passam despercebidas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: feche janelas e persianas enquanto o ar de fora estiver mais quente que o de dentro, abra tudo à noite e de manhã cedo, sombreie o vidro pelo lado de fora sempre que puder e deixe para o fim do dia o que gera calor, como forno, ferro e secadora."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "De dia, com o ar de fora mais quente, mantenha janelas e persianas fechadas nas fachadas que recebem sol.",
+        "À noite e cedo, abra janelas em lados opostos para o ar fresco atravessar a casa.",
+        "Sombra do lado de fora, como toldo, brise ou árvore, barra o sol antes que ele chegue ao vidro.",
+        "Ventilador de teto ajuda a sentir menos calor, mas não esfria o ar do cômodo."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando fechar e quando abrir as janelas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A regra que a associação de consumidores portuguesa DECO Proteste e o programa americano de eficiência energética Efficiency Vermont repetem é a mesma: abra quando o ar de fora estiver mais fresco que o de dentro e feche quando estiver mais quente. Na prática, isso significa ventilar à noite e de manhã cedo e fechar janelas e persianas antes que o calor do dia aumente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "À noite, abrir duas janelas em fachadas opostas cria a chamada ventilação cruzada, em que o ar entra por um lado e sai pelo outro, resfriando também paredes e móveis. Mas há um limite: em noites abafadas, sem vento e quase tão quentes quanto o dia, o efeito é pequeno, e o Departamento de Energia dos Estados Unidos lembra que a ventilação natural rende menos em climas quentes e úmidos."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Antes do sol forte, feche janelas e persianas das fachadas que recebem sol, sobretudo a da tarde.",
+        "Prefira proteção do lado de fora do vidro: toldo, persiana externa, brise, pergolado ou árvore.",
+        "Deixe forno, ferro, secadora e máquina de lavar louça para o início da noite.",
+        "Ligue o exaustor durante o banho e ao cozinhar, para tirar o ar quente e úmido.",
+        "No fim da tarde, quando o ar de fora esfriar, abra janelas em lados opostos da casa.",
+        "Use plantas altas em vasos perto das janelas mais expostas para criar sombra."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Sombra, ventilador e o que realmente faz diferença"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A DECO Proteste aponta o sombreamento externo como a medida mais eficaz, porque barra a radiação do sol antes que ela atravesse o vidro, de preferência com materiais claros. Cortina por dentro ajuda, mas parte do calor já entrou. Quem ainda vai escolher a casa pode observar se as janelas da tarde têm beiral, varanda ou brise. Mais ideias de conforto estão em [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ventilador de teto movimenta o ar e aumenta a sensação de frescor sobre a pele, mas não baixa a temperatura do cômodo. A Efficiency Vermont recomenda que, no verão, ele gire de forma a empurrar o ar para baixo. Lembre ainda que pessoas, lâmpadas e aparelhos ligados também aquecem o ambiente: a DECO calcula cerca de 80 watts por pessoa em repouso."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Toldo, brise e persiana externa presos à fachada pedem instalação por profissional e, em condomínio, autorização prévia. Se a casa esquenta demais mesmo com esses cuidados, um arquiteto pode avaliar isolamento do telhado e sombreamento das janelas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Outros temas de casa e conforto estão no [blog](/blog). Se você está procurando um imóvel e quer avaliar sol, sombra e ventilação já na visita, a equipe da {{cliente}} pode ajudar a comparar as opções com esse olhar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Feche para o sol, abra para a noite: é assim que a casa fica fresca sem gastar mais."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Deixar a janela aberta de dia ajuda a refrescar a casa?",
+      "resposta": "Só quando o ar de fora está mais fresco que o de dentro. Nas horas mais quentes, a janela aberta deixa o calor entrar; o melhor é fechar e sombrear, e ventilar à noite e de manhã cedo."
+    },
+    {
+      "pergunta": "Ventilador esfria o ambiente?",
+      "resposta": "Não. Ele movimenta o ar e aumenta a sensação de frescor no corpo, mas não reduz a temperatura do cômodo. Por isso, faz sentido desligá-lo quando não há ninguém no ambiente."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Como refrescar a casa sem ar condicionado — DECO Proteste",
+      "url": "https://www.deco.proteste.pt/eletrodomesticos/ar-condicionado/dicas/como-refrescar-casa-sem-ar-condicionado",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "9 tips to keep your house cool without air conditioning — Efficiency Vermont",
+      "url": "https://www.efficiencyvermont.com/blog/how-to/summer-guide-to-energy-savings-comfort",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Home Cooling — U.S. Department of Energy (arquivo)",
+      "url": "https://webarchive.library.unt.edu/web/20170115114355/https://energy.gov/public-services/homes/heating-cooling/home-cooling",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
