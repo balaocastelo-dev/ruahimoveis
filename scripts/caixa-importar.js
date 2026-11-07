@@ -63,10 +63,21 @@ function parsear(texto) {
   };
   if (idx.numero < 0) throw new Error('nao achei a coluna do numero do imovel');
 
+  // O CSV da Caixa mistura dois formatos na mesma linha: o preco vem com virgula
+  // decimal e ponto de milhar (43.534,28) e o desconto vem com ponto decimal
+  // (51.69). Tratar todo ponto como milhar transformava 51.69 em 5169.
+  // Regra: havendo virgula, ela e o decimal e o ponto e milhar; sem virgula, o
+  // ponto e o decimal.
   const num = (s) => {
-    const t = String(s || '').replace(/[^\d,.-]/g, '').replace(/\./g, '').replace(',', '.');
+    let t = String(s || '').replace(/[^\d,.-]/g, '');
+    if (!t) return null;
+    t = t.includes(',') ? t.replace(/\./g, '').replace(',', '.') : t;
     const n = Number(t);
-    return Number.isFinite(n) && t !== '' ? n : null;
+    return Number.isFinite(n) ? n : null;
+  };
+  const pct = (s) => {
+    const n = num(s);
+    return n === null || n < 0 || n > 100 ? null : n;   // desconto fora de 0-100 e lixo
   };
   const fora = [];
   for (let i = iCab + 1; i < linhas.length; i++) {
@@ -83,7 +94,7 @@ function parsear(texto) {
       endereco: (c[idx.endereco] || '').trim(),
       preco: num(c[idx.preco]),
       avaliacao: num(c[idx.avaliacao]),
-      desconto: num(c[idx.desconto]),
+      desconto: pct(c[idx.desconto]),
       financiamento: (c[idx.financiamento] || '').trim(),
       descricao: (c[idx.descricao] || '').trim(),
       modalidade: (c[idx.modalidade] || '').trim(),
