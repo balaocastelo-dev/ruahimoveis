@@ -6,7 +6,7 @@
 //   /imoveis/dados.json         a ficha e as fotos de cada imóvel à venda, para a rotina que escreve as páginas
 //   POST /api/publico/portal/interesse   "Tenho interesse" / "Agendar visita" → lead no CRM
 const express = require('express');
-const { one, run, audit } = require('../db');
+const { one, all, run, audit } = require('../db');
 const { txt } = require('../util');
 const fonte = require('../portal/fonte');
 const dados = require('../portal/dados');
@@ -324,6 +324,46 @@ function interesseCondominio(req, res, b) {
   audit(null, 'portal_interesse_condominio', `${c.nome} · lead ${leadId}`);
   res.json({ ok: true });
 }
+
+
+// ------------------------------------------------- Oportunidades Caixa (publico)
+// Os imoveis retomados da Caixa, abertos ao visitante. Sao so leitura: a tabela e
+// alimentada pelos scripts diarios. O preco mostrado e o da Caixa, com a assessoria
+// da casa somada a parte -- src/portal/caixa.js explica por que nao se remarca.
+const ocPaginas = require('../portal/caixa-paginas');
+const CAMPOS_OC = `numero, cidade, bairro, endereco, tipo, quartos, vagas,
+  area_util::float8 area_util, area_terreno::float8 area_terreno,
+  preco::float8 preco, avaliacao::float8 avaliacao, desconto::float8 desconto,
+  modalidade, financiamento, link, descricao, prazo_em, prazo2_em, prazo_tipo`;
+
+router.get('/oportunidades', (req, res) => {
+  const lista = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+     WHERE saiu_em is null AND na_rmc
+     ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 240`);
+  const resumo = one('SELECT max(ultima_safra) safra FROM caixa_imoveis') || {};
+  html(res, ocPaginas.paginaOportunidades(req, lista, resumo));
+});
+
+router.get('/oportunidades/:numero/foto', (req, res) => {
+  const numero = String(req.params.numero || '').replace(/\\D/g, '').slice(0, 20);
+  const f = numero && one('SELECT img FROM fachadas WHERE ref=?', 'caixa:' + numero);
+  if (!f || !f.img) return res.status(404).end();
+  res.set('Content-Type', 'image/jpeg');
+  res.set('Cache-Control', 'public, max-age=604800');
+  res.end(Buffer.from(f.img));
+});
+
+router.get('/oportunidades/:numero', (req, res, next) => {
+  const numero = String(req.params.numero || '').replace(/\\D/g, '').slice(0, 20);
+  if (!numero) return next();
+  const i = one(`SELECT ${CAMPOS_OC} FROM caixa_imoveis WHERE numero = ? AND saiu_em is null AND na_rmc`, numero);
+  if (!i) return next();
+  const parecidos = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+     WHERE saiu_em is null AND na_rmc AND cidade = ? AND numero <> ?
+     ORDER BY desconto desc nulls last LIMIT 3`, i.cidade, numero);
+  html(res, ocPaginas.paginaOportunidade(req, i, parecidos));
+});
+
 
 module.exports = router;
 module.exports.api = api;

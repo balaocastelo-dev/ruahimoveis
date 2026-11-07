@@ -670,3 +670,91 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .p-links-item span{display:block;padding:6px 2px 0;font-size:12.5px;line-height:1.3}
 .p-links-item small{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--pedra)}
 @media (max-width:520px){.p-links-grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ------------------------------------------------- OPORTUNIDADES CAIXA */
+/* Vitrine dos imoveis retomados da Caixa. O preco aparece em duas linhas de
+   proposito: o valor e da Caixa, a assessoria e da casa, e misturar os dois
+   seria anunciar preco que ninguem vai cobrar. */
+.oc-capa{max-width:46rem;margin:0 auto 2.6em}
+.oc-capa h1{margin:.2em 0 .5em}
+.oc-lead{font-size:1.06em;line-height:1.62;color:var(--grafite)}
+.oc-lead-2{font-size:.98em;color:var(--pedra)}
+.oc-safra{text-align:center;font-size:.8em;letter-spacing:.14em;text-transform:uppercase;color:var(--pedra);margin:0 0 1.6em}
+.oc-vazio{text-align:center;color:var(--pedra);padding:3em 0}
+
+.oc-grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px}
+
+.oc-card{display:flex;flex-direction:column;background:var(--papel);border:1px solid var(--linha);border-radius:3px;overflow:hidden}
+.oc-card.oc-financia{border-color:var(--ouro);box-shadow:0 0 0 1px var(--ouro)}
+.oc-foto{position:relative;display:block;aspect-ratio:4/3;background:var(--salvia-claro)}
+.oc-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.oc-selo{position:absolute;left:0;bottom:0;background:var(--ouro);color:#fff;font-size:.72em;font-weight:600;
+  letter-spacing:.05em;padding:6px 11px;z-index:1}
+.oc-desc{position:absolute;right:10px;top:10px;background:rgba(22,19,15,.86);color:#fff;font-size:.72em;
+  font-weight:600;padding:5px 9px;border-radius:2px;z-index:1}
+.oc-corpo{display:flex;flex-direction:column;gap:5px;padding:16px 17px 17px;flex:1}
+.oc-tipo{margin:0;font-size:.74em;letter-spacing:.15em;text-transform:uppercase;color:var(--pedra)}
+.oc-card h3{margin:.1em 0 .2em;font-size:1.22em;line-height:1.24}
+.oc-card h3 a{color:inherit;text-decoration:none}
+.oc-card h3 a:hover{color:var(--ouro-escuro)}
+.oc-ficha{margin:0;font-size:.88em;color:var(--pedra)}
+.oc-valor{margin:.5em 0 0;font-size:1.5em;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.oc-valor span{display:block;font-size:.46em;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--pedra);margin-top:4px}
+.oc-valor-c{margin:.2em 0 0;font-size:.82em;color:var(--pedra)}
+.oc-btn{display:inline-block;margin-top:auto;padding-top:13px;font-size:.88em;font-weight:500;color:var(--ouro-escuro)}
+
+/* O contador. Prazo de verdade vira relogio; quem nao tem prazo diz que nao tem. */
+.oc-prazo{margin:.7em 0 0;font-size:.84em;line-height:1.45;color:var(--grafite)}
+.oc-prazo-r{display:block;font-size:.84em;letter-spacing:.12em;text-transform:uppercase;color:var(--pedra)}
+.oc-conta{font-weight:600;font-variant-numeric:tabular-nums}
+.oc-prazo[data-prazo] .oc-prazo-d{display:none}
+.oc-prazo:not([data-prazo]) .oc-conta{display:none}
+.oc-prazo-livre .oc-prazo-r{color:var(--ouro-escuro)}
+.oc-prazo-fim{color:var(--pedra)}
+.oc-prazo-g{font-size:1em;padding:14px 16px;background:var(--salvia-claro);border-left:3px solid var(--ouro);margin:1.4em 0}
+.oc-urgente .oc-conta{color:#9A3412}
+
+/* ------- a materia de cada imovel ------- */
+.oc-materia{max-width:44rem;margin:0 auto}
+.oc-migalha{font-size:.82em;color:var(--pedra);margin-bottom:1.4em}
+.oc-materia h1{margin:.15em 0 .25em}
+.oc-sub{margin:0 0 1.6em;color:var(--pedra)}
+.oc-foto-g{margin:0 0 1.8em}
+.oc-foto-g img{width:100%;height:auto;display:block;border-radius:3px}
+.oc-foto-g figcaption{font-size:.8em;color:var(--pedra);margin-top:8px}
+.oc-materia h2{margin:1.9em 0 .6em;font-size:1.5em}
+
+.oc-preco{border:1px solid var(--linha);border-radius:3px;padding:16px 18px;background:var(--papel)}
+.oc-preco dl{margin:0}
+.oc-preco dl>div{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-bottom:1px solid var(--linha)}
+.oc-preco dl>div:last-child{border-bottom:0}
+.oc-preco dt{color:var(--pedra);font-size:.92em}
+.oc-preco dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
+.oc-total dt,.oc-total dd{font-size:1.14em;color:var(--grafite)}
+.oc-ganho{margin:.9em 0 0;font-size:.94em;color:var(--ouro-escuro)}
+.oc-nota{margin:.9em 0 0;font-size:.86em;line-height:1.55;color:var(--pedra)}
+.oc-fin{margin:1em 0 0;padding:12px 15px;background:var(--salvia-claro);border-left:3px solid var(--ouro);font-size:.94em}
+.oc-atencao{padding:12px 15px;background:var(--salvia-claro);border-left:3px solid var(--ouro);font-size:.94em}
+
+.oc-regras,.oc-ficha-l{margin:0}
+.oc-regras>div{padding:13px 0;border-bottom:1px solid var(--linha)}
+.oc-regras dt{font-weight:600;margin-bottom:4px}
+.oc-regras dd{margin:0;font-size:.94em;line-height:1.6;color:var(--pedra)}
+.oc-ficha-l{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.oc-ficha-l>div{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid var(--linha)}
+.oc-ficha-l dt{color:var(--pedra);font-size:.92em}
+.oc-ficha-l dd{margin:0;font-weight:500;text-align:right}
+.oc-desc-caixa{font-size:.92em;color:var(--pedra);line-height:1.6;margin-top:1.2em}
+
+.oc-cta{margin:2.4em 0;padding:22px 24px;background:var(--salvia-claro);border-radius:3px}
+.oc-cta h2{margin:0 0 .5em;font-size:1.35em}
+.oc-btn-g{display:inline-block;margin-top:.6em;background:var(--ouro);color:#fff;padding:13px 22px;border-radius:3px;
+  font-weight:600;text-decoration:none}
+.oc-btn-g:hover{background:var(--ouro-escuro);color:#fff}
+.oc-link{margin:1em 0 0;font-size:.9em}
+.oc-parecidos{margin-top:3em}
+
+@media (max-width:600px){
+  .oc-grade{grid-template-columns:1fr}
+  .oc-ficha-l{grid-template-columns:1fr}
+}

@@ -224,3 +224,42 @@
     if (navigator.clipboard) navigator.clipboard.writeText(url).then(feito, function () {});
   });
 })();
+
+/* ---------------------------------------- contador das Oportunidades Caixa */
+/* O prazo vem escrito no HTML com o fuso de Sao Paulo por extenso, entao o
+   navegador nao tem o que adivinhar. Quando a data chega, o relogio para e diz
+   que encerrou -- em vez de contar para tras. */
+(function () {
+  var alvos = document.querySelectorAll('.oc-prazo[data-prazo]');
+  if (!alvos.length) return;
+
+  function escreve(el, ms) {
+    var saida = el.querySelector('[data-conta]');
+    if (!saida) return;
+    if (ms <= 0) { saida.textContent = 'encerrado'; el.classList.remove('oc-urgente'); return true; }
+    var s = Math.floor(ms / 1000);
+    var d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600),
+        m = Math.floor((s % 3600) / 60), seg = s % 60;
+    var partes = [];
+    if (d) partes.push(d + (d === 1 ? ' dia' : ' dias'));
+    if (d || h) partes.push(h + 'h');
+    partes.push(m + 'min');
+    if (d === 0) partes.push(seg + 's');
+    saida.textContent = partes.join(' ');
+    el.classList.toggle('oc-urgente', s < 86400);
+    return false;
+  }
+
+  function tique() {
+    var agora = Date.now();
+    var acabou = true;
+    for (var i = 0; i < alvos.length; i++) {
+      var quando = Date.parse(alvos[i].getAttribute('data-prazo'));
+      if (!isFinite(quando)) continue;
+      if (!escreve(alvos[i], quando - agora)) acabou = false;
+    }
+    if (acabou) clearInterval(relogio);
+  }
+  tique();
+  var relogio = setInterval(tique, 1000);
+})();

@@ -138,6 +138,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
     <a href="/imoveis"${['/imoveis', '/imoveis/revista'].includes(req.path) ? ' aria-current="page"' : ''}>Imóveis</a>
     <a class="p-nav-sig" href="/imoveis/signature"${req.path.startsWith('/imoveis/signature') ? ' aria-current="page"' : ''}>Signature</a>
     <a href="/imoveis/favoritos"${req.path === '/imoveis/favoritos' ? ' aria-current="page"' : ''}>Favoritos <span class="p-fav-n" data-fav-n hidden></span></a>
+    <a href="/oportunidades"${req.path.startsWith('/oportunidades') ? ' aria-current="page"' : ''}>Oportunidades Caixa</a>
     <a href="/bairros"${req.path.startsWith('/bairros') ? ' aria-current="page"' : ''}>Bairros</a>
     <a href="/condominios"${req.path.startsWith('/condominios') ? ' aria-current="page"' : ''}>Condomínios</a>
     <a href="/blog">${esc(cfg.BLOG_NOME)}</a>
