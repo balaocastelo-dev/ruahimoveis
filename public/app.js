@@ -242,8 +242,7 @@ ACT.sair = async () => { await api('POST', '/api/logout').catch(() => {}); ME = 
 
 // ---------- moldura ----------
 const MENU = [
-  ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel']]],
-  ['Imóveis da base', [['#/condominios', 'Condomínios', 'cond'], ['#/apartamentos', 'Apartamentos'], ['#/casas', 'Casas'], ['#/terrenos', 'Terrenos'], ['#/comerciais', 'Salas e barracões']]],
+  ['Operação', [['#/painel', 'Painel'], ['#/chat', 'Mensagens'], ['#/imoveis', 'Carteira de imóveis'], ['#/imoveis/novo', 'Novo imóvel'], ['#/apartamentos', 'Imóveis da região', 'cond']]],
   ['Vendas', [['#/leads', 'CRM e funil'], ['#/visitas', 'Visitas']]],
   ['Conteúdo', [['#/redes', 'Redes e publicações', 'redes'], ['#/portal', 'Portal de imóveis'], ['#/bairros', 'Páginas de bairros'], ['#/blog', MARCA.blog || MARCA.cliente + ' Blog']]],
     // Robôs e consultas saiu do menu junto com o Fisgar (06/11/2026). A rota #/robos continua

@@ -26,7 +26,7 @@ function mkAbas(on, cats, neg) {
   const qn = neg === 'locacao' ? '?neg=locacao' : '';
   const n = (k) => (cats && cats[k] ? ` <span class="mk-ab-n">${(cats[k].n || 0).toLocaleString('pt-BR')}</span>` : '');
   return `<div class="tabs mk-abas"><a href="#/condominios" class="${on === 'condominios' ? 'on' : ''}">Condomínios</a>${MK_CATS.map(([k, t]) => `<a href="#/${k}${qn}" class="${k === on ? 'on' : ''}">${esc(t)}${n(k)}</a>`).join('')}
-    <a href="#/fisguei" class="${on === 'fisguei' ? 'on' : ''}" title="Sinais nos anúncios: queda de preço, particular, abaixo do bairro">Leitura da IA</a><a href="#/radar" class="${on === 'radar' ? 'on' : ''}" title="Anúncios que chegaram pelos portais">Portais</a>${on === 'aprovacoes' ? '<a href="#/radar/aprovacoes" class="on">Aprovações</a>' : ''}</div>
+    <a href="#/fisguei" class="${on === 'fisguei' ? 'on' : ''}" title="Sinais nos anúncios: queda de preço, particular, abaixo do bairro">Leitura da IA</a></div>
   ${mkBuscaCaixa()}`;
 }
 
