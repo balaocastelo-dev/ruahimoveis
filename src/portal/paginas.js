@@ -14,7 +14,9 @@ const { lerTextoRico, montarSumario, dataPorExtenso, cortar, semAcento } = requi
 const { SITE_CLIENTE, INSTAGRAM_CLIENTE } = require('../blog/categorias');
 // O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
 const CLIENTE = cfg.CLIENTE_NOME;
-const FUNDO = require('./fundos').fundoDe(process.env.PORTAL_FUNDO, CLIENTE);
+// O papel de parede troca com o relógio (src/portal/fundos.js), entao e calculado
+// a cada pedido, nao uma vez quando o servidor sobe.
+const { fundoAgora } = require('./fundos');
 const EMPRESA = cfg.EMPRESA;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -199,6 +201,7 @@ function filtrar(lista, q) {
 const FAIXAS = [500000, 800000, 1000000, 1500000, 2000000, 3000000, 5000000, 10000000];
 
 function paginaVitrine(req, lista, guiaDoBairro = null) {
+  const FUNDO = fundoAgora(process.env.PORTAL_FUNDO, CLIENTE);
   const q = req.query || {};
   const achados = filtrar(lista, q);
   const pagina = Math.max(1, parseInt(q.pagina, 10) || 1);
