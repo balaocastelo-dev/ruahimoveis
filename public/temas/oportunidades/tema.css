@@ -1,18 +1,19 @@
 /* Herrera House - Oportunidades Imobiliárias.
-   Direção "Pórtico": tinta quase preta, ouro queimado e creme.
-   O logo é geometria pura (SVG não carrega fonte externa); o nome da imobiliária
-   é texto HTML, e é aqui que ele ganha a serifa de verdade. */
+   Direção "Pórtico": claro sempre. Papel branco, fundo creme muito leve,
+   tinta quase preta e ouro queimado só no detalhe.
+   Sem bloco de modo escuro de propósito: o portal é vitrine de imóvel, e
+   foto de imóvel pede fundo claro. Quem está com o sistema em modo escuro
+   continua vendo o portal claro.
+   O logo é geometria pura (SVG não carrega fonte externa); o nome da
+   imobiliária é texto HTML, e é aqui que ele ganha a serifa de verdade. */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap");
 
 :root{
-  --cal:#F4F1EA; --papel:#FFFFFF; --grafite:#16130F; --pedra:#5C554A; --linha:#DCD5C8;
-  --ouro:#8A6D2F; --ouro-escuro:#574419; --salvia:#C9B896; --salvia-claro:#F0EADC;
+  --cal:#FBFAF7; --papel:#FFFFFF; --grafite:#1F1B16; --pedra:#6B6356; --linha:#E8E2D6;
+  --ouro:#8A6D2F; --ouro-escuro:#6B5323; --salvia:#C9B896; --salvia-claro:#F7F2E7;
   --serifa:"Cormorant Garamond", Georgia, "Times New Roman", serif;
   --raio:3px;
 }
-@media (prefers-color-scheme:dark){:root{
-  --cal:#14120E; --papel:#1C1915; --grafite:#EFEBE2; --pedra:#B4AB99; --linha:#2C2821;
-  --ouro:#C9B896; --ouro-escuro:#E2D6BC; --salvia:#8A6D2F; --salvia-claro:#231F18}}
 
 /* O nome ao lado do logo: serifa, largo, caixa alta. É o lockup de verdade,
    montado em HTML porque aí a fonte carrega. */
@@ -32,7 +33,7 @@ button,.btn,.p-btn,a.p-btn,.p-cta{border-radius:3px!important}
 h1,h2,h3{font-family:var(--serifa);font-weight:600;letter-spacing:.005em}
 h1{letter-spacing:-.005em}
 
-/* Fio dourado como separador, no lugar de sombra. */
+/* Fio fino como separador, no lugar de sombra. */
 .p-secao+.p-secao,.p-card+.p-card{border-top-color:var(--linha)}
 .p-destaque,.p-tag{letter-spacing:.16em;text-transform:uppercase;font-size:.72em;
   font-family:Jost,system-ui,sans-serif;font-weight:500;color:var(--ouro)}
