@@ -1,0 +1,144 @@
+{
+  "slug": "quanto-tempo-esperar-para-pintar-reboco-novo",
+  "tema": "tempo de cura do reboco novo antes de pintar",
+  "titulo": "Reboco novo: quanto tempo esperar para pintar a parede",
+  "resumo": "Reboco novo pede ao menos 28 dias de cura antes da tinta. Entenda por que esperar, o que acontece se pintar antes e quando usar selador ou fundo preparador.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "construção",
+    "pintura",
+    "reboco",
+    "obra"
+  ],
+  "capa": {
+    "alt": "Parede recém-rebocada em cinza claro, ao lado de outra já pintada de branco, com rolo e bandeja de pintura sobre lona no chão"
+  },
+  "redes": {
+    "legenda": "A parede rebocada já parece seca. Dá para pintar? Ainda não. O reboco continua reagindo por dentro depois que a superfície clareia, e fabricantes de tinta pedem ao menos 28 dias de cura. Pintar antes costuma trazer bolhas, manchas brancas e tinta descascando meses depois. Explicamos a espera e a preparação certa. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "obra",
+      "construcao",
+      "pintura",
+      "reboco",
+      "casanova",
+      "reforma",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem acompanha uma obra quer ver logo a **parede rebocada** ganhar cor. Mas o **reboco novo** precisa de pelo menos 28 dias de cura antes de receber selador e tinta, segundo boletins técnicos de fabricantes como Suvinil e Dacar. Em ambientes úmidos, frios ou pouco ventilados, a espera costuma ser maior."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O motivo é que a argamassa continua passando por reações de hidratação do cimento depois que a superfície parece seca. Enquanto isso, ela guarda umidade e alcalinidade elevada, duas coisas que atrapalham a aderência da tinta. Esperar é parte da obra, não atraso."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A referência dos fabricantes é de no mínimo 28 dias de cura para reboco novo.",
+        "Pintar antes pode causar bolhas, descascamento e manchas esbranquiçadas.",
+        "Selador acrílico vai em reboco firme; fundo preparador, em reboco fraco ou que solta pó.",
+        "Nenhum produto substitui a cura nem resolve infiltração ativa."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Respeite a cura e saiba o que dá errado quando ela é pulada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O boletim do selador acrílico da Suvinil pede 28 dias de secagem e cura para reboco, argamassa, concreto ou cimento novos, e o mesmo prazo para buracos corrigidos com reboco. Uma especificação técnica de obras públicas de Sergipe vai além e recomenda de 30 a 45 dias. A espessura da camada, a ventilação e o clima mudam a conta."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Pintar logo ou esperar a cura",
+      "pros": [
+        "Esperar a cura garante melhor aderência da tinta",
+        "A cor fica uniforme e o acabamento dura mais",
+        "Dá tempo de perceber trincas e pontos de umidade antes de pintar"
+      ],
+      "contras": [
+        "Pintar antes pode formar bolhas e descascar",
+        "Sais da argamassa podem subir e deixar manchas brancas",
+        "A alcalinidade alta reage com a tinta e o defeito pode surgir só meses depois"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma reportagem do Correio Braziliense sobre o tema lembra um detalhe que engana: o problema pode não aparecer na hora. A parede fica bonita na entrega e, semanas ou meses depois, surgem as bolhas e as manchas. Por isso, um bom acabamento inicial não prova que a etapa foi feita no tempo certo. Mais sobre obra em [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Prepare a parede: selador ou fundo preparador"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Passada a cura, a NBR 13245, da ABNT, citada no boletim da Dacar como referência do sistema de pintura, pede superfície limpa, seca e livre de pó e gordura. Lixe de leve, remova o pó e observe a parede: ela deve estar firme, de cor uniforme e sem manchas escuras de umidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se o reboco está firme, o **selador acrílico** uniformiza a absorção e prepara para a massa ou a tinta. Se ele solta grãos ou pó ao passar a mão, o indicado é o **fundo preparador de paredes**, que consolida as partículas soltas e, segundo a especificação de Sergipe, também funciona como barreira contra a alcalinidade do reboco."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas há limites para o que o produto faz. Se a parede tem umidade persistente, mofo que volta ou sinais de infiltração, a pintura vai falhar de qualquer jeito: a causa precisa ser resolvida antes, com avaliação de um engenheiro ou arquiteto responsável. E evite pintar com chuva, vento forte, umidade do ar acima de 90% ou temperatura abaixo de 10 °C, como pede o boletim da Suvinil."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você prefere uma casa pronta, com essa etapa já resolvida, a equipe da {{cliente}}, imobiliária em Campinas, atende quem quer comprar e quem quer vender. Veja mais textos no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: espere ao menos 28 dias, confira se a parede está firme e seca e só então escolha entre selador e fundo preparador."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso pintar reboco novo antes de 28 dias?",
+      "resposta": "Não é o recomendado pelos fabricantes. A especificação de Sergipe admite, quando não dá para esperar, secar a superfície e aplicar fundo preparador, mas o risco de defeito aumenta. Na dúvida, consulte o responsável técnico da obra."
+    },
+    {
+      "pergunta": "Qual a diferença entre selador acrílico e fundo preparador?",
+      "resposta": "O selador uniformiza a absorção de reboco firme. O fundo preparador consolida superfícies fracas, que soltam pó, e ajuda a barrar a alcalinidade."
+    },
+    {
+      "pergunta": "Por que aparecem manchas brancas na parede pintada?",
+      "resposta": "Costumam ser sais da argamassa que migram para a superfície com a umidade, comuns quando a pintura foi feita antes da cura ou há infiltração."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Boletim técnico Suvinil Selador Acrílico — Suvinil",
+      "url": "https://cdn-suvinil.s3.amazonaws.com/catalog/products/92/docs/bt/suvinil-selador-acrilico.pdf",
+      "data": "janeiro de 2024"
+    },
+    {
+      "nome": "Boletim técnico Cimento Queimado: preparação de superfície — Dacar Tintas",
+      "url": "https://www.dacar.com.br/wp-content/uploads/2025/04/boletim-tecnico-cimento-queimado-dacar.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Especificação técnica 1.14.04, outras pinturas — ORSE, CEHOP Sergipe",
+      "url": "https://orse.cehop.se.gov.br/esp/ES00147.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Pintar parede recém-rebocada: tempo de cura e cuidados — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/pintar-parede-recem-rebocada-tempo-de-cura-cuidados/",
+      "data": "outubro de 2026"
+    }
+  ]
+}

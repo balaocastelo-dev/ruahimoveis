@@ -1125,7 +1125,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-07T17:20:32.553Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "quanto-tempo-esperar-para-pintar-reboco-novo",
+      "titulo": "Reboco novo: quanto tempo esperar para pintar a parede",
+      "tema": "tempo de cura do reboco novo antes de pintar",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-07T17:21:22.010Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-07T17:20:32.553Z"
+  "atualizadoEm": "2026-11-07T17:21:22.011Z"
 }
