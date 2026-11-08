@@ -1,0 +1,250 @@
+{
+  "slug": "lavanderia-planejada-area-de-servico-medidas-e-projeto",
+  "tema": "projeto da lavanderia e area de servico",
+  "titulo": "Lavanderia planejada: medidas, ventilação e projeto da área de serviço",
+  "resumo": "Lavanderia planejada sem erro: quanto espaço reservar, medidas de máquina, tanque e bancada, secadora, aquecedor a gás e os detalhes que facilitam a rotina.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "lavanderia",
+    "área de serviço",
+    "projeto",
+    "marcenaria",
+    "interiores"
+  ],
+  "capa": {
+    "alt": "Lavanderia clara com máquina de abertura frontal sob bancada de pedra, tanque de inox e armários de madeira"
+  },
+  "redes": {
+    "legenda": "A lavanderia é o cômodo que você usa quase todo dia e o último a entrar no projeto. Uns poucos centímetros fazem diferença: espaço para abrir a porta da máquina, bancada na altura certa e ventilação que não pode ser fechada quando há aquecedor a gás. Reunimos as medidas de referência e os cuidados para a área de serviço funcionar. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "lavanderia",
+      "areadeservico",
+      "interiores",
+      "decoracao",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **lavanderia planejada** costuma ser o último cômodo a receber atenção no projeto e um dos que mais trabalham no dia a dia. É ali que a roupa é lavada, estendida, passada e guardada por alguns minutos, e é também onde ficam vassouras, produtos de limpeza e, em muitas casas, o aquecedor de água. Quando o espaço não foi pensado, cada tarefa vira um pequeno contorcionismo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: reserve espaço para a máquina abrir e para você circular com o cesto, coloque a bancada e o tanque na altura do corpo, escolha a secadora pensando na ventilação disponível e nunca bloqueie as aberturas exigidas para aparelho a gás. Armários rasos, revestimento lavável e boa luz completam uma área de serviço que dá conta da rotina."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Casas costumam reservar de 3 m² a 6 m² para a lavanderia; apartamentos funcionam com bem menos, desde que a circulação seja respeitada.",
+        "Deixe de 5 cm a 10 cm de folga em volta da máquina e de 80 cm a 1 m livres na frente dela e do tanque.",
+        "Secadora de exaustão precisa de tubo para fora; as de condensação e de bomba de calor dispensam esse tubo.",
+        "Aquecedor a gás exige ventilação permanente pela NBR 13103: qualquer fechamento passa antes por um profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quanto espaço reservar e como organizar a área de serviço"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um guia de medidas publicado pelo Planner 5D indica de 3 m² a 6 m² para a lavanderia de uma casa e uma área bem menor nos apartamentos, que chega a ficar entre pouco mais de 1 m² e 3 m². O número mínimo importa menos do que a sequência: onde a roupa suja chega, onde é lavada, onde seca e onde é dobrada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma orientação comum entre arquitetos, registrada em reportagem do jornal A Gazeta, é deixar a máquina perto da entrada e o tanque perto da janela e do varal. Assim a roupa molhada percorre o menor caminho, a água escorre menos pelo piso e o tecido aproveita a luz e o vento para secar mais depressa."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para a lavanderia",
+      "colunas": [
+        "Item",
+        "Medida de referência",
+        "O que observar"
+      ],
+      "linhas": [
+        [
+          "Máquina de abertura frontal",
+          "60 a 65 cm de largura, cerca de 85 cm de altura, 55 a 70 cm de profundidade",
+          "Permite bancada por cima"
+        ],
+        [
+          "Máquina de abertura superior",
+          "Base de cerca de 60 x 70 cm, 95 a 110 cm de altura",
+          "A tampa precisa de espaço livre acima"
+        ],
+        [
+          "Tanque",
+          "50 a 60 cm de largura, 55 a 70 cm de profundidade, 90 a 95 cm de altura",
+          "Em espaços pequenos, há modelos de 40 a 45 cm"
+        ],
+        [
+          "Bancada",
+          "90 a 93 cm de altura",
+          "Confortável para dobrar roupa em pé"
+        ],
+        [
+          "Circulação",
+          "80 cm para passar; 90 cm a 1 m para usar com conforto",
+          "Pode cair para 70 cm em fluxos simples"
+        ],
+        [
+          "Folga da máquina",
+          "5 a 10 cm nas laterais e atrás",
+          "Ajuda na vibração e na manutenção"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Planner 5D — guia de medidas de lavanderia",
+        "url": "https://planner5d.com/blog/pt/tamanho-de-lavanderia/"
+      },
+      "nota": "São referências gerais: confira sempre o manual do modelo escolhido antes de fechar a marcenaria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela não substitui o manual da máquina. Cada fabricante indica a distância mínima para a mangueira de saída, a altura do ponto de água e a folga atrás do aparelho. Vale escolher o modelo **antes** de encomendar os armários, e não depois: é comum o móvel planejado ficar dois centímetros mais estreito do que a máquina nova."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Lavadora, lava e seca ou secadora: o que muda no projeto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A máquina de abertura frontal mudou o desenho das lavanderias pequenas. Como a porta fica na frente, a parte de cima vira bancada para dobrar roupa ou apoiar o cesto. A reportagem do A Gazeta mostra justamente esse arranjo: uma lava e seca frontal liberando o tampo para bancada e tanque, com armários rasos ao lado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem prefere secadora separada precisa olhar a tecnologia. Segundo explicação publicada pela LG, a secadora de **exaustão** expulsa o ar quente e úmido por um tubo ligado ao exterior. As de **condensação** e de **bomba de calor** funcionam em circuito fechado: a água retirada da roupa vai para o esgoto ou para um reservatório que você esvazia, e nenhum tubo atravessa a parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ainda conforme a LG, a de bomba de calor trabalha com temperaturas mais baixas, o que poupa o tecido, e gasta menos energia no uso, embora costume secar mais devagar e custar mais na compra. A de condensação convencional seca mais depressa, mas consome mais. Para uma área de serviço sem parede externa, as duas sem tubo resolvem melhor."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Máquinas empilhadas em coluna",
+      "pros": [
+        "Ocupa a largura de um aparelho só",
+        "Libera parede para armário ou tanque",
+        "Deixa a secadora na altura dos olhos, sem abaixar"
+      ],
+      "contras": [
+        "Exige o kit de empilhamento indicado pelo fabricante",
+        "A secadora no alto pode ficar difícil para pessoas mais baixas",
+        "Pede dois pontos elétricos adequados, definidos por eletricista"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas antes de empilhar, confirme que os dois aparelhos aceitam a montagem e que o piso aguenta a vibração da centrífuga. Tomadas, disjuntores e a bitola dos fios são assunto para eletricista: máquina de lavar e secadora puxam corrente alta, e a instalação elétrica não é lugar para improviso. Mais ideias de layout estão em [Interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Ventilação e aquecedor a gás: o que não se pode fechar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em muitos apartamentos e casas, o aquecedor de passagem a gás fica na área de serviço. A norma ABNT NBR 13103, que trata da instalação desses aparelhos, admite o lugar desde que o ambiente tenha volume mínimo e **aberturas de ventilação permanente** compatíveis com o tipo e a potência do aquecedor, conforme resume o portal SíndicoNet."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma norma proíbe aquecedor em banheiro e dormitório, com exceção do modelo de fluxo balanceado, que capta o ar de fora por duto. A instalação deve ser feita por profissional qualificado, com teste de funcionamento e ART, que é a Anotação de Responsabilidade Técnica, e o SíndicoNet recomenda inspeção anual da chama, das conexões e da chaminé."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Antes de fechar a área de serviço",
+      "texto": "Envidraçar a lavanderia, trocar a janela ou esconder o aquecedor dentro de um armário pode eliminar as aberturas que a NBR 13103 exige. Nunca faça essa mudança sem um profissional habilitado avaliar a ventilação e, em prédio, sem consultar as regras do condomínio. Gás não é assunto para teste caseiro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mesmo sem gás, a lavanderia lida com muita umidade. A reportagem do A Gazeta sugere revestir todas as paredes, o que protege contra mofo e respingos, e evitar pisos polidos, que ficam escorregadios com água. Nos armários, o MDF próprio para áreas úmidas, conhecido como MDF naval, resiste melhor do que o comum quando a verba permite."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Armários, bancada e luz: os detalhes que tornam a rotina leve"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Armário fundo demais vira depósito de coisas esquecidas. O guia do Planner 5D sugere prateleiras de 25 cm a 30 cm de profundidade para produtos de limpeza, e o exemplo mostrado pelo A Gazeta usa armários de apenas 15 cm a 20 cm para guardar vassouras, rodos e até uma escada dobrável, sem roubar a circulação."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Torneira articulada ou alta** no tanque, para encher balde sem esforço.",
+        "**Ganchos atrás das portas** para vassoura e rodo, fora da vista.",
+        "**Varal de teto** retrátil, que libera o chão quando não está em uso.",
+        "**Tanque de inox**, fácil de limpar, quando o orçamento permite.",
+        "**Cestos separados** por tipo de roupa, já encaixados sob a bancada."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A luz também conta. O A Gazeta recomenda iluminação intensa e de tom mais quente, porque luz muito branca cansa com o tempo. Na prática, uma luminária geral bem distribuída e um ponto mais forte sobre a bancada ajudam a enxergar manchas sem deixar o ambiente frio. Para escolher lâmpadas, há outras matérias em [o blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Lavanderia integrada à cozinha e escondida por portas de correr ou ripadas é uma solução elegante para apartamentos. Mas funciona só se houver ventilação de verdade e se o barulho da centrífuga não atrapalhar quem está na sala. Em casas novas, vale pedir ao arquiteto que a área de serviço tenha janela e saída próxima para o quintal ou varal externo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita a um imóvel à venda, observe se a área de serviço tem janela, se cabe uma máquina frontal com folga, onde fica o aquecedor e se há ponto elétrico perto. Esses detalhes dizem muito sobre como a casa vai funcionar. Se você está procurando um imóvel em Campinas, a equipe da {{cliente}} pode ajudar a comparar opções com esse olhar. A boa lavanderia é a que você nem percebe usar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho mínimo de uma lavanderia?",
+      "resposta": "Não há um número único. Guias de projeto citam de 3 m² a 6 m² em casas e áreas bem menores em apartamentos. O que manda é caber a máquina com folga e sobrar de 80 cm a 1 m de circulação na frente."
+    },
+    {
+      "pergunta": "Secadora precisa de tubo para fora de casa?",
+      "resposta": "Só a de exaustão. As secadoras de condensação e de bomba de calor funcionam em circuito fechado e mandam a água para o esgoto ou para um reservatório."
+    },
+    {
+      "pergunta": "Posso fechar a área de serviço que tem aquecedor a gás?",
+      "resposta": "Só com avaliação de um profissional habilitado. A NBR 13103 exige ventilação permanente compatível com o aparelho, e um fechamento mal feito pode tornar o ambiente perigoso."
+    },
+    {
+      "pergunta": "Qual a altura certa da bancada da lavanderia?",
+      "resposta": "A referência mais usada fica entre 90 cm e 93 cm, confortável para dobrar roupa em pé. Se quem mais usa o espaço for bem mais alto ou mais baixo, ajuste alguns centímetros."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Tamanho de lavanderia: medidas ideais para montar sua área de serviço — Planner 5D",
+      "url": "https://planner5d.com/blog/pt/tamanho-de-lavanderia/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "7 dicas para deixar sua lavanderia mais funcional e elegante — A Gazeta",
+      "url": "https://www.agazeta.com.br/imoveis/7-dicas-para-deixar-sua-lavanderia-mais-funcional-e-elegante-0322",
+      "data": "2022"
+    },
+    {
+      "nome": "Aquecedor de água a gás: regras para instalação e uso — SíndicoNet",
+      "url": "https://www.sindiconet.com.br/informese/aquecedor-de-agua-a-gas-quais-as-regras-para-instalacao-e-uso-para-moradores-manutencao",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "O que é uma máquina de secar roupa de bomba de calor — LG",
+      "url": "https://lg.com/pt/lg-experience/dicas-uteis/o-que-e-uma-maquina-de-secar-roupa-de-bomba-de-calor",
+      "data": "novembro de 2026"
+    }
+  ]
+}

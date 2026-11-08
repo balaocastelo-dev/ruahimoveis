@@ -1215,7 +1215,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-08T02:20:30.419Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "lavanderia-planejada-area-de-servico-medidas-e-projeto",
+      "titulo": "Lavanderia planejada: medidas, ventilação e projeto da área de serviço",
+      "tema": "projeto da lavanderia e area de servico",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-08T11:20:28.337Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T02:20:30.419Z"
+  "atualizadoEm": "2026-11-08T11:20:28.337Z"
 }
