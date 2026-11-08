@@ -1,0 +1,162 @@
+{
+  "slug": "etiqueta-do-colchao-de-espuma-selo-inmetro-densidade",
+  "tema": "etiqueta e selo inmetro do colchao de espuma",
+  "titulo": "Etiqueta do colchão de espuma: o que o selo do Inmetro e a densidade dizem",
+  "resumo": "Etiqueta do colchão de espuma: entenda o selo do Inmetro, a densidade em kg/m³, as medidas mínimas e o que conferir na loja antes de levar o colchão.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "bem-estar",
+    "quarto",
+    "sono",
+    "colchão",
+    "compra"
+  ],
+  "capa": {
+    "alt": "Quarto sereno com cama de casal arrumada com roupa de cama branca de linho, cabeceira de madeira clara e luz suave da manhã"
+  },
+  "redes": {
+    "legenda": "Você já leu a etiqueta do seu colchão? Ela diz mais do que parece. No colchão de espuma, o selo do Inmetro é obrigatório e a etiqueta traz a densidade em kg/m³, as medidas e o tipo de uso. Saber ler essas informações ajuda a comparar modelos na loja e a escolher com calma. Explicamos o que cada item quer dizer. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "quarto",
+      "bemestar",
+      "colchao",
+      "decoracao",
+      "casa",
+      "sono",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na loja, os colchões parecem todos iguais por fora, e a decisão acaba ficando entre deitar alguns minutos e confiar no vendedor. Mas a **etiqueta do colchão de espuma** traz informações que ajudam a comparar modelos com calma, a começar pelo selo do Inmetro e pela densidade da espuma, escrita em kg/m³."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em resumo: colchão de espuma vendido no Brasil precisa ter certificação do Inmetro, com selo costurado no produto, e uma etiqueta em português com dimensões, tipo, densidade e uso. Se faltar o selo ou a densidade, desconfie. As regras estão na Portaria Inmetro nº 35, de fevereiro de 2021."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O selo de conformidade do Inmetro é obrigatório e vem costurado no colchão.",
+        "A densidade nominal aparece em kg/m³; o termo \"D>\" só vale para alguns tipos de espuma.",
+        "Colchão comum de espuma tem densidade mínima de 20 kg/m³ e espessura mínima de 12 cm.",
+        "Colchão de molas segue outra portaria, com etiqueta própria."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba o que a etiqueta precisa mostrar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Portaria Inmetro nº 35, os colchões e colchonetes de espuma flexível de poliuretano passam por avaliação da conformidade compulsória. O certificado é condição para usar o selo e para vender o produto. O selo deve ser costurado no corpo do colchão, e repetido na embalagem quando ela não for transparente."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A etiqueta, com pelo menos 150 cm² e em português, deve trazer o fabricante ou importador com CNPJ, a marca, o modelo, as dimensões, o tipo do produto em letras grandes, a densidade nominal da espuma, o uso (geral, infantil ou hospitalar) e a data e o país de fabricação."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Densidade mínima de espuma na Portaria Inmetro nº 35",
+      "colunas": [
+        "Produto ou espuma",
+        "Densidade mínima"
+      ],
+      "linhas": [
+        [
+          "Colchões e colchonetes em geral",
+          "20 kg/m³"
+        ],
+        [
+          "Colchão auxiliar, box conjugado e misto",
+          "28 kg/m³"
+        ],
+        [
+          "Espuma de alta resiliência e viscoelástica",
+          "30 kg/m³"
+        ],
+        [
+          "Espuma aglomerada",
+          "65 kg/m³"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Para o colchão infantil, a mínima é de 18 kg/m³ ou 20 kg/m³, conforme o comprimento. A portaria também fixa espessura mínima de 12 cm para o colchão de espuma."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A densidade diz quantos quilos de espuma há em cada metro cúbico. Ela ajuda a comparar colchões do mesmo tipo, mas não é a única medida de conforto. Por isso, a portaria só permite o termo \"D>\", de densidade maior que, para revestimento, alta resiliência, viscoelástica e aglomerado. Nas demais espumas, o número exato precisa aparecer."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Confira na loja antes de levar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O colchão de molas segue outra regra, a Portaria Inmetro nº 75, de 2021, também com certificação obrigatória. A etiqueta dele precisa informar o tipo de molejo, os tipos e as densidades das espumas e a composição do revestimento. Já a capa, segundo o Inmetro, é produto têxtil e tem regulamento próprio."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Procure o selo do Inmetro costurado no colchão, não só impresso na embalagem.",
+        "Leia a densidade em kg/m³ e compare modelos do mesmo tipo de espuma.",
+        "Confira se as medidas batem com a cama e com o espaço do quarto.",
+        "Veja o uso indicado (geral, infantil ou hospitalar) e a data de fabricação.",
+        "Deite-se na posição em que costuma dormir, com calma, antes de decidir."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Desde 2024, a Portaria Inmetro nº 579, de 2023, também exige que os colchões certificados sejam registrados no Inmetro. Mas lembre: a etiqueta mostra se o produto cumpre o mínimo, e não qual colchão é o certo para você. Para mais ideias de conforto em casa, veja a categoria [bem-estar](/blog/categoria/bem-estar) e o [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um quarto tranquilo começa por uma casa que favorece o descanso. Se você está procurando esse lugar em Campinas, a equipe da {{cliente}} ajuda na busca. Na loja, a regra é simples: sem selo e sem densidade na etiqueta, não leve."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Colchão sem selo do Inmetro pode ser vendido?",
+      "resposta": "Pela Portaria Inmetro nº 35, a certificação é condição para usar o selo e para colocar o colchão de espuma no mercado. Sem o selo, o produto não está de acordo com a regra."
+    },
+    {
+      "pergunta": "Quanto maior a densidade, melhor o colchão?",
+      "resposta": "Não necessariamente. A densidade mostra quanto material há na espuma e ajuda a comparar modelos do mesmo tipo, mas o conforto também depende do tipo de espuma, da espessura e da combinação de camadas."
+    },
+    {
+      "pergunta": "O que significa D> na etiqueta?",
+      "resposta": "Quer dizer densidade maior que o valor indicado. Pela portaria, esse termo só pode ser usado para revestimento, espuma de alta resiliência, viscoelástica e aglomerado; nos outros casos, a densidade nominal precisa aparecer."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Portaria Inmetro nº 35, de 05/02/2021 — colchões e colchonetes de espuma — LegisWeb",
+      "url": "https://www.legisweb.com.br/legislacao/?id=452921",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Portaria Inmetro nº 75, de 04/02/2021 — colchões de molas — LegisWeb",
+      "url": "https://www.legisweb.com.br/legislacao/?id=452922",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Portaria Inmetro nº 579, de 11/12/2023 — Normas Brasil",
+      "url": "https://www.normasbrasil.com.br/norma/portaria-579-2023_452904.html",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Colchões são produtos têxteis? — Perguntas frequentes do Inmetro",
+      "url": "https://www.gov.br/inmetro/pt-br/acesso-a-informacao/perguntas-frequentes/avaliacao-da-conformidade/produtos-texteis/colchoes-sao-produtos-texteis-colchoes-devem-atender-as-disposicoes-da-portaria-inmetro-no-118-de-11-de-marco-de-2021",
+      "data": "novembro de 2026"
+    }
+  ]
+}
