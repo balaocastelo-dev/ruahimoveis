@@ -183,6 +183,13 @@ function cartao(x, { eager = false } = {}) {
 // ------------------------------------------------------------------- vitrine
 function filtrar(lista, q) {
   let r = lista;
+  // NEGOCIO-FILTRO: a chave venda/locacao da vitrine. Imovel marcado como
+  // 'venda_locacao' serve aos dois lados, entao entra nos dois.
+  const negocio = q.negocio === 'locacao' ? 'locacao' : 'venda';
+  r = r.filter((x) => {
+    const f = String(x.imovel.finalidade || 'venda');
+    return f === negocio || f === 'venda_locacao';
+  });
   const g = GRUPOS.find((x) => x.slug === q.tipo);
   if (g) r = r.filter((x) => g.tipos.includes(x.imovel.tipo));
   if (q.bairro) r = r.filter((x) => semAcento(x.imovel.bairro || '') === semAcento(q.bairro));
@@ -203,7 +210,9 @@ function filtrar(lista, q) {
     'menor-valor': (a, b) => (a.imovel.valor || Infinity) - (b.imovel.valor || Infinity),
     'maior-valor': (a, b) => (b.imovel.valor || 0) - (a.imovel.valor || 0),
     'maior-area': (a, b) => (b.imovel.area_util || b.imovel.area_total || 0) - (a.imovel.area_util || a.imovel.area_total || 0),
-  }[q.ordem];
+  // ORDEM-PADRAO: sem escolha do visitante, a lista vai por valor, do menor
+  // para o maior. Numa vitrine de oportunidade e por ai que se comeca a olhar.
+  }[q.ordem || 'menor-valor'];
   return ordem ? [...r].sort(ordem) : r;
 }
 
@@ -270,6 +279,7 @@ function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [],
       semPrazo: caixa.semPrazo || 0, maiorDesconto: caixa.maiorDesconto || 0, safra: caixa.safra || null,
     },
     fundo: FUNDO, doBlog, proprios: lista.length,
+    negocio: q.negocio === 'locacao' ? 'locacao' : 'venda',
     conhece: cidade.conhece || {}, bairrosGuia: cidade.bairrosGuia || [], alemDaCasa: cidade.alemDaCasa || null,
     achados, daPagina, paginas, pagina, filtrado, guiaDoBairro, q,
     ferramentas: {

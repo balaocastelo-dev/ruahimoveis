@@ -146,9 +146,22 @@ router.get('/imoveis/foto/:id/og.jpg', async (req, res) => {
   if (f.url_externa) return fotoExterna(res, f); // foto guardada fora do banco (ex.: imagens ilustrativas da demonstração)
   await og.enviarJpeg(res, f, { publico: true });
 });
-router.get('/imoveis/foto/:id', (req, res) => {
+router.get('/imoveis/foto/:id', async (req, res) => {
   if (!/^\d{1,9}$/.test(req.params.id)) return res.sendStatus(404);
   const f = dados.fotoPublica(req.params.id);
+  // FOTO-INTERNA: imovel de fonte publica nao tem arquivo em disco nem num site:
+  // a imagem esta no banco, em fachadas, e sai pela mesma tarja do portal.
+  const dentro = /^\/oportunidades\/(\d{1,20})\/foto$/.exec(String((f && f.url_externa) || ''));
+  if (dentro) {
+    const fa = one('SELECT img FROM fachadas WHERE ref=?', 'caixa:' + dentro[1]);
+    if (!fa || !fa.img) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+    const { carimbar } = require('../portal/carimbo');
+    const img = await carimbar(Buffer.from(fa.img), { chave: 'caixa:' + dentro[1], credito: 'Foto: Caixa Econômica Federal' });
+    res.setHeader('Content-Type', 'image/jpeg');
+    res.setHeader('Cache-Control', 'public, max-age=604800, immutable');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    return res.end(img);
+  }
   if (f && f.url_externa) return fotoExterna(res, f);
   const buf = f && require('../services/conteudo').ler(f);
   if (!buf) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }

@@ -895,3 +895,11 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
   .v-bairro{padding-right:0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---- a chave do negocio: a primeira decisao de quem chega ---- */
+.v-chave{display:inline-flex;border:1px solid rgba(247,245,240,.28);border-radius:2px;overflow:hidden;margin:0 0 clamp(22px,3vw,34px)}
+.v-chave-op{padding:9px 22px;font-size:14.5px;font-weight:500;color:rgba(247,245,240,.68);text-decoration:none;white-space:nowrap}
+.v-chave-op + .v-chave-op{border-left:1px solid rgba(247,245,240,.28)}
+.v-chave-op:hover{color:#F7F5F0}
+.v-chave-on{background:var(--ouro);color:var(--tinta)!important}
+.v-chave-on:hover{color:var(--tinta)!important}
+@media (max-width:560px){ .v-chave{width:100%}.v-chave-op{flex:1;text-align:center;padding:10px 12px} }

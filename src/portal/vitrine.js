@@ -25,6 +25,21 @@ const TEL = String(process.env.WHATSAPP_CLIENTE || '').replace(/\D/g, '');
 const telBonito = (n) => (n.length === 11 ? `(${n.slice(0, 2)}) ${n.slice(2, 7)}-${n.slice(7)}` : n);
 const num = (n) => Number(n || 0).toLocaleString('pt-BR');
 
+/** A chave do negocio. E a primeira decisao de quem chega: comprar ou alugar.
+ *  Dois links, nao um seletor: o estado fica no endereco, da para mandar o link
+ *  de locacao para alguem, e funciona sem JavaScript. */
+function chave(q = {}) {
+  const atual = q.negocio === 'locacao' ? 'locacao' : 'venda';
+  const resto = Object.entries(q)
+    .filter(([k, v]) => k !== 'negocio' && k !== 'pagina' && v)
+    .map(([k, v]) => `&${encodeURIComponent(k)}=${encodeURIComponent(v)}`).join('');
+  const um = (valor, rotulo) => `<a class="v-chave-op${atual === valor ? ' v-chave-on' : ''}"
+      href="/imoveis?negocio=${valor}${resto}"${atual === valor ? ' aria-current="true"' : ''}>${rotulo}</a>`;
+  return `<nav class="v-chave" aria-label="Comprar ou alugar">
+    ${um('venda', 'Comprar')}${um('locacao', 'Alugar')}
+  </nav>`;
+}
+
 /** A pergunta. O unico elemento grande da pagina: titulo e campo sao a mesma voz. */
 function pergunta(f, conhece) {
   const { q = {}, grupos = [], bairros = [], faixas = [], reais } = f || {};
@@ -40,8 +55,10 @@ function pergunta(f, conhece) {
 
   return `<section class="v-abrir">
   <div class="v-abrir-dentro">
+    ${chave(q)}
     <h1 class="v-titulo">Onde você quer morar?</h1>
     <form class="v-busca" method="get" action="/imoveis" role="search">
+      <input type="hidden" name="negocio" value="${esc(q.negocio === 'locacao' ? 'locacao' : 'venda')}">
       <div class="v-linha-busca">
         <label class="v-campo">
           <span class="oculto">Bairro, condomínio ou código do imóvel</span>
@@ -135,7 +152,7 @@ function faixaBlog(posts, cortar) {
 }
 
 /** A carteira propria: o resultado da busca, ou o estado honesto de quando nao ha nada. */
-function carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, ferramentas, alemDaCasa }) {
+function carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, ferramentas, alemDaCasa, negocio = 'venda' }) {
   const { cartao, link } = ferramentas;
 
   if (daPagina && daPagina.length) {
@@ -146,7 +163,7 @@ function carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, f
       </nav>` : '';
     return `<section class="v-carteira" id="resultado">
       <div class="v-cab">
-        <h2>${filtrado ? `${num(achados.length)} ${achados.length === 1 ? 'imóvel encontrado' : 'imóveis encontrados'}` : 'Na carteira'}</h2>
+        <h2>${num(achados.length)} ${achados.length === 1 ? 'imóvel' : 'imóveis'} ${negocio === 'locacao' ? 'para alugar' : 'à venda'}</h2>
         ${filtrado ? '<a class="v-mais" href="/imoveis">Limpar a busca</a>' : ''}
       </div>
       <div class="p-grade">${daPagina.map((x) => cartao(x)).join('')}</div>
@@ -158,6 +175,19 @@ function carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, f
     return `<section class="v-carteira" id="resultado">
       <div class="v-cab"><h2>Nada na carteira com esse pedido</h2><a class="v-mais" href="/imoveis">Limpar a busca</a></div>
       ${alem(alemDaCasa)}
+    </section>`;
+  }
+
+  // SEM-LOCACAO: a chave existe desde o primeiro dia, a carteira de aluguel nao.
+  // Pagina muda seria pior do que dizer que ainda nao tem.
+  if (negocio === 'locacao') {
+    return `<section class="v-carteira" id="resultado">
+      <div class="v-cab"><h2>Ainda não há imóvel para alugar</h2>
+        <a class="v-mais" href="/imoveis?negocio=venda">Ver os que estão à venda</a></div>
+      <p class="v-carteira-l">A casa começou pela venda. A locação entra quando houver imóvel que valha a pena
+      administrar &mdash; e não antes, porque alugar mal é pior para o proprietário do que não alugar.</p>
+      <p class="v-carteira-acao">Tem imóvel para alugar e quer conversar?
+      <a href="tel:+55${esc(TEL)}">${esc(telBonito(TEL))}</a></p>
     </section>`;
   }
 
@@ -177,10 +207,11 @@ function carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, f
 
 function corpo(d) {
   const { oc = {}, doBlog = [], proprios = 0, achados = [], daPagina = [], paginas = 1, pagina = 1,
-    filtrado = false, q = {}, ferramentas = {}, conhece = {}, bairrosGuia = [], alemDaCasa = null } = d;
+    filtrado = false, q = {}, ferramentas = {}, conhece = {}, bairrosGuia = [], alemDaCasa = null,
+    negocio = 'venda' } = d;
   return [
     pergunta(ferramentas.filtros, conhece),
-    carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, ferramentas, alemDaCasa }),
+    carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, ferramentas, alemDaCasa, negocio }),
     filtrado ? '' : faixaBairros(bairrosGuia),
     filtrado ? '' : faixaCaixa(oc),
     filtrado ? '' : faixaBlog(doBlog, ferramentas.cortar),

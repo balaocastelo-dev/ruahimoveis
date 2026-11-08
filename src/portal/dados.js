@@ -13,6 +13,7 @@ const { one, all } = require('../db');
 
 const CAMPOS = `i.id, i.codigo, i.tipo, i.bairro, i.cidade, i.uf, i.quartos, i.suites, i.vagas, i.area_util, i.area_total,
   i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em,
+  i.finalidade, i.valor_locacao, i.origem,
   c.nome condominio, c.lazer, u.nome corretor_nome, u.telefone corretor_tel, u.perfil corretor_perfil`;
 
 function versaoDe(i, fotos) {
