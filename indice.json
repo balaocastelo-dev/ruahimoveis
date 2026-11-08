@@ -1278,7 +1278,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-08T17:18:10.891Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "iluminacao-da-cozinha-bancada-ilha-e-armarios",
+      "titulo": "Iluminação da cozinha: como iluminar bancada, ilha e armários",
+      "tema": "iluminacao da cozinha bancada ilha e armarios",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-08T17:19:25.772Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T17:18:10.891Z"
+  "atualizadoEm": "2026-11-08T17:19:25.772Z"
 }
