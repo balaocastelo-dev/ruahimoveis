@@ -1,0 +1,246 @@
+{
+  "slug": "tubulacao-hidraulica-pex-ppr-cpvc-ou-pvc-casa-nova",
+  "tema": "tubulacao hidraulica pex ppr cpvc ou pvc",
+  "titulo": "Tubulação hidráulica da casa: PEX, PPR, CPVC ou PVC?",
+  "resumo": "PEX, PPR, CPVC ou PVC na tubulação hidráulica da casa: onde cada tubo vai, quanto calor aguenta, como se une e o que conferir no projeto e na obra.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "hidráulica",
+    "casa nova",
+    "obra",
+    "água quente"
+  ],
+  "capa": {
+    "alt": "Parede de obra limpa com tubos hidráulicos novos de cores diferentes saindo de um distribuidor, antes do revestimento"
+  },
+  "redes": {
+    "legenda": "Você sabe qual tubo leva a água quente do seu chuveiro? O PVC comum é para água fria. Para a quente, as opções são PEX, PPR e CPVC, cada uma com um jeito de unir e um cuidado próprio. Escolher bem na obra evita quebrar parede depois. Explicamos as diferenças e o que conferir no projeto. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "obra",
+      "hidraulica",
+      "casanova",
+      "arquitetura",
+      "engenharia",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem constrói ou reforma costuma escolher piso, louça e metais com cuidado, mas deixa a **tubulação hidráulica** para o fim da lista. É um erro compreensível: os tubos somem dentro da parede. Só que é por eles que passa toda a água da casa, inclusive a quente, e trocar um tubo embutido significa quebrar revestimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o PVC soldável comum serve para água fria. Para água quente, as opções usuais em casas são o PEX, tubo flexível de polietileno reticulado; o PPR, de polipropileno unido por calor; e o CPVC, um PVC modificado unido com adesivo próprio. A escolha depende do projeto, do aquecedor e da mão de obra disponível."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "PVC soldável marrom é feito para água fria, conforme a NBR 5648.",
+        "PEX, PPR e CPVC aguentam água quente, dentro das temperaturas que cada fabricante informa.",
+        "Cada sistema tem um modo de união: conexão mecânica, termofusão ou adesivo.",
+        "O projeto hidráulico segue a NBR 5626 e fica com engenheiro ou arquiteto responsável."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda onde cada tubo pode ser usado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto de partida é separar água fria e água quente. A norma **NBR 5648**, da ABNT, a associação que publica as normas técnicas brasileiras, trata dos tubos e conexões de PVC com junta soldável para sistemas prediais de água fria. É o tubo marrom que se vê em quase toda obra, colado com adesivo, e o mais conhecido de encanadores e lojas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para a água quente, cada material tem norma própria. O PPR segue a **NBR 15813**, que prevê a união por termofusão. O CPVC segue a **NBR 15884**. O PEX tem a **NBR 15939**. Acima de tudo isso está a **NBR 5626**, de 2020, que trata do projeto, da execução, da operação e da manutenção dos sistemas prediais de água fria e quente."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os quatro tubos lado a lado (segundo normas e fichas técnicas de fabricantes)",
+      "colunas": [
+        "Tubo",
+        "Água",
+        "Como se une",
+        "Temperatura informada"
+      ],
+      "linhas": [
+        [
+          "PVC soldável (NBR 5648)",
+          "Fria",
+          "Adesivo para PVC",
+          "Só água fria"
+        ],
+        [
+          "PPR (NBR 15813)",
+          "Fria e quente",
+          "Termofusão, com ferramenta a 260 °C",
+          "Até 70 °C nas classes PN20 e PN25"
+        ],
+        [
+          "CPVC (NBR 15884)",
+          "Fria e quente",
+          "Adesivo próprio para CPVC",
+          "Até 80 °C com pressão de até 60 mca"
+        ],
+        [
+          "PEX (NBR 15939)",
+          "Fria e quente",
+          "Conexões mecânicas, sem cola",
+          "Serviço a 70 °C; máxima de 80 °C"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Valores das fichas técnicas consultadas de fabricantes de PPR, CPVC e PEX. Cada marca e cada linha têm limites próprios: confira a ficha do produto que será usado. A sigla mca significa metros de coluna d'água, uma medida de pressão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela não fecha a escolha sozinha. A temperatura do aquecedor, a pressão da rede, a distância até os pontos e até a água que chega na rua entram na conta. Por isso a especificação do tubo é decisão do projeto hidráulico, e não do balcão da loja. Outros temas de obra estão em [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare PPR e CPVC, os tubos rígidos de água quente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **PPR** é unido por termofusão: uma ferramenta aquece o tubo e a conexão, que se fundem numa peça só. A ficha técnica de um fabricante consultada indica a ferramenta a 260 °C e diferencia as classes por faixa colorida: PN12, azul, só para água fria, até 40 °C; PN20, amarela, e PN25, vermelha, para água quente até 70 °C."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma ficha lista restrições que valem atenção. O fabricante não recomenda o PPR com cloro residual livre acima de 1,5 mg/L na água, proíbe o uso onde a rede é desinfetada com dióxido de cloro e não indica o sistema para recirculação de água quente, aquele circuito que mantém a água sempre quente perto dos pontos. Se a casa terá recirculação, a escolha muda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **CPVC**, de cor bege, é um PVC clorado. A ficha técnica consultada informa até 80 °C com pressão de serviço de até 60 mca, união com adesivo próprio e espera de uma hora antes de abrir os registros e de 24 horas antes do teste de pressão. O mesmo documento lembra que o sistema não serve para vapor e pede isolamento térmico em toda a rede de água quente."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "PPR e CPVC na obra",
+      "pros": [
+        "PPR: a junta por fusão vira uma peça contínua, e a água pode ser liberada logo após a última união, segundo o fabricante.",
+        "CPVC: a união com adesivo lembra a do PVC comum e não exige máquina de fusão.",
+        "Os dois são tubos plásticos, sem corrosão, adequados para água fria e quente."
+      ],
+      "contras": [
+        "PPR: exige ferramenta própria e mão de obra treinada; há restrições de cloro e de recirculação.",
+        "CPVC: pede tempo de cura antes de pressurizar e cuidado com a dilatação em trechos retos longos.",
+        "Os dois pedem proteção contra o sol quando ficam expostos."
+      ]
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Avalie o PEX, o tubo flexível que pode ser trocado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **PEX** chega em rolos e se curva com a mão. A ficha técnica consultada informa serviço a 70 °C e máxima de 80 °C, classe de aplicação 2 da NBR 15939, e conexões mecânicas de encaixe ou de anel deslizante, sem cola. Os raios mínimos de curva vão de 65 mm, no tubo de 16 mm, a 160 mm, no de 32 mm."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A instalação costuma seguir a lógica **ponto a ponto**: do distribuidor, uma espécie de central de onde saem os ramais, um tubo segue inteiro até cada chuveiro ou torneira, com menos conexões escondidas na parede. Quando embutido na alvenaria, o PEX passa dentro de um tubo-bainha maior, o que permite, em muitos casos, puxar e trocar o tubo sem quebrar o revestimento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o PEX também tem cuidados. O fabricante pede que o tubo fique longe do sol, da armazenagem à instalação, e que a passagem por vigas, pilares e lajes seja prevista para ele se movimentar. Em trechos externos, recomenda isolamento térmico. E a mão de obra precisa conhecer o sistema: o corte, o chanfro e o encaixe têm medidas certas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Peça o projeto hidráulico por escrito",
+      "texto": "Antes de fechar as paredes, guarde o projeto com o material especificado e fotografe as tubulações. Numa futura reforma ou na venda da casa, esse registro ajuda a saber por onde passa cada tubo."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Confira o que pedir no projeto e na obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Seja qual for o tubo, algumas perguntas valem para todos. Qual o material e a classe de cada trecho? Qual a temperatura máxima do aquecedor e se ela cabe no limite do tubo escolhido? A rede de água quente terá isolamento térmico, como pede a NBR 5626? Haverá teste de pressão antes do revestimento, com registro do resultado?"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Peça o projeto hidráulico com a especificação de tubos, classes e diâmetros.",
+        "Confira se o aquecedor tem dispositivos de controle que mantêm a água dentro do limite do tubo.",
+        "Exija material com marcação da norma impressa no tubo e compre tubos e conexões da mesma linha.",
+        "Acompanhe o teste de pressão antes de fechar paredes e forros.",
+        "Guarde notas, fichas técnicas e fotos da tubulação aberta."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E saiba onde parar. A hidráulica de uma casa nova, a troca de tubulação numa reforma e a ligação do aquecedor a gás ou elétrico ficam com profissional habilitado, com a anotação de responsabilidade técnica (ART, do engenheiro, ou RRT, do arquiteto). Mexer em gás e em elétrica por conta própria não é opção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de um imóvel pronto, vale perguntar ao vendedor qual tubulação foi usada na água quente e se há projeto hidráulico disponível. Uma casa com o projeto guardado e o sistema bem documentado costuma dar menos surpresas. Para mais guias de casa, visite o [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa nova ou vai vender a sua e quer organizar as informações da construção, a equipe da {{cliente}} acompanha você nessa conversa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "vender"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: PVC para água fria; PEX, PPR ou CPVC para a quente, escolhidos no projeto e instalados por quem conhece o sistema."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso usar PVC marrom comum para água quente?",
+      "resposta": "Não. O PVC soldável da NBR 5648 é feito para água fria. Para água quente, use tubos próprios, como PEX, PPR ou CPVC, especificados no projeto."
+    },
+    {
+      "pergunta": "Qual a diferença entre PPR e CPVC?",
+      "resposta": "O PPR é unido por termofusão, com ferramenta aquecida; o CPVC é unido com adesivo próprio. Os dois servem para água quente, cada um com limites de temperatura e restrições informados pelo fabricante."
+    },
+    {
+      "pergunta": "Por que o PEX facilita a manutenção?",
+      "resposta": "Ele é flexível e costuma ser instalado ponto a ponto, dentro de um tubo-bainha. Em muitos casos, isso permite trocar um trecho sem quebrar o revestimento."
+    },
+    {
+      "pergunta": "Quem deve escolher a tubulação da casa?",
+      "resposta": "O engenheiro ou arquiteto responsável pelo projeto hidráulico, seguindo a NBR 5626. A escolha considera aquecedor, pressão, distâncias e a água da rede."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "NBR 5648 — Tubos e conexões de PVC-U com junta soldável para sistemas prediais de água fria — normas.com.br",
+      "url": "https://www.normas.com.br/visualizar/abnt-nbr-nm/705/nbr5648-tubos-e-conexoes-de-pvc-u-com-junta-soldavel-para-sistemas-prediais-de-agua-fria-requisitos",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "NBR 15813-1 — Tubos de polipropileno PP-R e PP-RCT para água quente e fria — Target Normas",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/41616/nbr15813-1-sistemas-de-tubulacoes-plasticas-para-instalacoes-prediais-de-agua-quente-e-fria-parte-1-tubos-de-polipropileno-copolimero-random-pp-r-e-pp-rct-requisitos",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Ficha técnica PPR — Amanco Wavin",
+      "url": "https://mediahub.wavin.com/m/74fcd9fb35745739/original/FT-PPR.pdf",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Ficha técnica Aquatherm (CPVC) 2025 — Tigre",
+      "url": "https://tigresite.s3.amazonaws.com/2025/10/FT_Aquatherm_2025-Rev-Final.pdf",
+      "data": "outubro de 2025"
+    },
+    {
+      "nome": "Ficha técnica ClicPEX, julho de 2025 — Tigre",
+      "url": "https://tigresite.s3.amazonaws.com/2025/07/FT_ClicPEX_v3_Julho-2025.pdf",
+      "data": "julho de 2025"
+    }
+  ]
+}

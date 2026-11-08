@@ -1305,7 +1305,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-11-08T20:21:03.201Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "tubulacao-hidraulica-pex-ppr-cpvc-ou-pvc-casa-nova",
+      "titulo": "Tubulação hidráulica da casa: PEX, PPR, CPVC ou PVC?",
+      "tema": "tubulacao hidraulica pex ppr cpvc ou pvc",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-08T20:22:08.652Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T20:21:03.202Z"
+  "atualizadoEm": "2026-11-08T20:22:08.653Z"
 }
