@@ -245,7 +245,7 @@ function faixaCaixa(lista) {
   </section>`;
 }
 
-function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = []) {
+function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [], cidade = {}) {
   const FUNDO = fundoAgora(process.env.PORTAL_FUNDO, CLIENTE);
   const q = req.query || {};
   const achados = filtrar(lista, q);
@@ -270,6 +270,7 @@ function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [])
       semPrazo: caixa.semPrazo || 0, maiorDesconto: caixa.maiorDesconto || 0, safra: caixa.safra || null,
     },
     fundo: FUNDO, doBlog, proprios: lista.length,
+    conhece: cidade.conhece || {}, bairrosGuia: cidade.bairrosGuia || [], alemDaCasa: cidade.alemDaCasa || null,
     achados, daPagina, paginas, pagina, filtrado, guiaDoBairro, q,
     ferramentas: {
       seletor: require('./versoes').seletor('vitrine'),

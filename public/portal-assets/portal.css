@@ -1,6 +1,6 @@
-/* Portal do cliente (a imobiliária) · imóveis à venda
-   Mesma família do blog Sopro: cal (fundo), grafite (texto), ouro da marca (ação), sálvia (detalhes).
-   Cormorant Garamond nos títulos, DM Sans no texto. A foto é a protagonista. */
+/* Portal do cliente (a imobiliÃ¡ria) Â· imÃ³veis Ã  venda
+   Mesma famÃ­lia do blog Sopro: cal (fundo), grafite (texto), ouro da marca (aÃ§Ã£o), sÃ¡lvia (detalhes).
+   Cormorant Garamond nos tÃ­tulos, DM Sans no texto. A foto Ã© a protagonista. */
 :root{
   --cal:#FBFAF8; --papel:#FFFFFF; --grafite:#23272B; --pedra:#6E6C67; --linha:#E7E3DC;
   --ouro:#A8823C; --ouro-escuro:#86672C; --salvia:#5E6B5A; --salvia-claro:#EEF1EC; --zap:#1F8F55;
@@ -38,7 +38,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-fav-n{display:inline-block;min-width:20px;padding:0 6px;border-radius:999px;background:var(--ouro);color:#1B1C1E;font-size:12px;font-weight:600;text-align:center;line-height:20px}
 @media (max-width:640px){.p-marca-l{display:none}.p-topo{padding:16px 20px}.p-nav{gap:4px 16px}}
 
-/* ---- botões ---- */
+/* ---- botÃµes ---- */
 .p-botao{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ouro);color:#1B1C1E!important;text-decoration:none!important;font-size:15px;font-weight:600;padding:11px 20px;border-radius:999px;border:1px solid var(--ouro);cursor:pointer;white-space:nowrap;transition:background .2s,border-color .2s}
 .p-botao:hover{background:var(--ouro-escuro);border-color:var(--ouro-escuro)}
 .p-botao.sec{background:transparent;color:var(--grafite)!important;border-color:var(--linha);font-weight:500}
@@ -96,7 +96,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-vazio-g{padding:96px 20px}
 .p-vazio-g h1{font-family:var(--serifa);font-weight:500;font-size:48px;margin:0;color:var(--grafite)}
 
-/* hero com a vista aérea do Castelo (foto de fundo de ponta a ponta) */
+/* hero com a vista aÃ©rea do Castelo (foto de fundo de ponta a ponta) */
 .p-hero-foto{position:relative;margin:0 calc(50% - 50vw);min-height:clamp(560px,78vh,820px);display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(72px,9vw,120px) max(20px,calc(50vw - var(--largura)/2 + 20px)) 44px;color:#F6F2EA;isolation:isolate;overflow:hidden}
 .p-hero-fundo{position:absolute;inset:0;z-index:-1;background:#2a2a28}
 .p-hero-fundo img{width:100%;height:100%;object-fit:cover;object-position:62% 30%;animation:p-hero-zoom 26s ease-out both}
@@ -112,7 +112,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-hero-credito{position:absolute;right:max(20px,calc(50vw - var(--largura)/2 + 20px));bottom:10px;margin:0;font-size:11.5px;color:rgba(246,242,234,.7)}
 .p-hero-credito a{color:inherit;text-decoration:none}.p-hero-credito a:hover{text-decoration:underline}
 .p-hero-foto+.p-resultado{padding-top:28px}
-/* foto com a torre à esquerda: o texto vai para a direita */
+/* foto com a torre Ã  esquerda: o texto vai para a direita */
 .p-hero-direita .p-hero-txt{margin-left:auto;max-width:560px;text-align:right}
 .p-hero-direita .p-hero-txt h1{margin-left:auto}
 .p-hero-direita .p-hero-txt .p-hero-l{margin-left:auto}
@@ -124,7 +124,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 @media (max-width:640px){.p-hero-direita .p-hero-txt{text-align:left;margin-left:0}.p-hero-direita .p-hero-fundo img{object-position:22% 40%}}
 @media (max-width:640px){.p-hero-foto{padding-top:56px;min-height:0}.p-hero-fundo::after{background:linear-gradient(0deg,rgba(20,20,18,.75) 10%,rgba(20,20,18,.35) 70%,rgba(20,20,18,.2))}.p-hero-credito{left:20px;right:auto}}
 
-/* ---- página do imóvel ---- */
+/* ---- pÃ¡gina do imÃ³vel ---- */
 .p-trilha{font-size:14px;color:var(--pedra);padding:18px 0 0}
 .p-trilha a{color:var(--pedra);text-decoration:none}
 .p-trilha a:hover{color:var(--ouro-escuro);text-decoration:underline}
@@ -222,7 +222,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-faq details[open] summary::after{transform:rotate(-135deg);top:28px}
 .p-faq details p{margin:0 0 18px;font-size:16.5px}
 
-/* lateral com o valor e os botões */
+/* lateral com o valor e os botÃµes */
 .p-lado{position:sticky;top:20px}
 .p-lado-caixa{background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);padding:24px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 30px -18px rgba(35,39,43,.35)}
 .p-lado-rot{margin:0;font-size:13.5px;color:var(--pedra)}
@@ -233,7 +233,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-lado-corretor b{color:var(--grafite);font-weight:600}
 @media (max-width:980px){.p-lado{position:static}}
 
-/* formulário de contato */
+/* formulÃ¡rio de contato */
 .p-contato{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:40px;margin:72px 0 0;padding:36px;background:var(--papel);border:1px solid var(--linha);border-radius:var(--raio);scroll-margin-top:16px}
 .p-contato h2{font-family:var(--serifa);font-weight:500;font-size:clamp(30px,3.6vw,40px);line-height:1.08;margin:0 0 12px}
 .p-contato-txt p{color:var(--pedra);margin:0 0 10px}
@@ -283,7 +283,7 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 @media (max-width:640px){.p-luz-palco{padding:0}.p-luz-seta{display:none}.p-luz-leg{text-align:left}}
 body.p-luz-aberta{overflow:hidden}
 
-/* ---- rodapé ---- */
+/* ---- rodapÃ© ---- */
 .p-rodape{max-width:var(--largura);margin:96px auto 0;padding:36px 20px 48px;border-top:1px solid var(--linha);display:grid;grid-template-columns:1fr auto;gap:16px 40px;font-size:14.5px;color:var(--pedra)}
 .p-rodape p{margin:0}
 .p-rodape-n{font-family:var(--serifa);font-size:22px;font-weight:600;color:var(--grafite)}
@@ -292,7 +292,7 @@ body.p-luz-aberta{overflow:hidden}
 .p-rodape-p{grid-column:1/-1;font-size:13px;max-width:80ch}
 @media (max-width:640px){.p-rodape{grid-template-columns:1fr}}
 
-/* entrada suave dos cartões (respeita "reduzir movimento") */
+/* entrada suave dos cartÃµes (respeita "reduzir movimento") */
 @media (prefers-reduced-motion:no-preference){
   .p-grade .p-cartao{animation:sobe .6s cubic-bezier(.2,.7,.2,1) both}
   .p-grade .p-cartao:nth-child(3n+2){animation-delay:.06s}
@@ -300,7 +300,7 @@ body.p-luz-aberta{overflow:hidden}
   @keyframes sobe{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 }
 
-/* ---- página do condomínio ---- */
+/* ---- pÃ¡gina do condomÃ­nio ---- */
 .p-cd-fonte{font-size:13px;color:var(--pedra)}
 .p-cd-sec{margin:44px 0}
 .p-cd-sec h2{font-family:var(--serifa);font-weight:500;font-size:clamp(28px,3.4vw,40px);margin:0 0 16px}
@@ -362,7 +362,7 @@ body.p-luz-aberta{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.b-cartao-img img{transition:none}}
 
 /* =====================================================================
-   Três formas de ver os imóveis: Vitrine · Revista · Signature
+   TrÃªs formas de ver os imÃ³veis: Vitrine Â· Revista Â· Signature
    ===================================================================== */
 .p-nav-sig{letter-spacing:.08em;font-size:13.5px!important;text-transform:uppercase}
 .p-versoes{display:flex;gap:4px;justify-content:center;margin:22px auto 0;padding:4px;width:max-content;max-width:100%;border:1px solid var(--linha);border-radius:999px;background:var(--papel)}
@@ -372,7 +372,7 @@ body.p-luz-aberta{overflow:hidden}
 .p-versoes .p-versoes-sig{letter-spacing:.1em;text-transform:uppercase;font-size:12.5px}
 .p-preco-sig a{color:var(--ouro-escuro);font-size:14px;font-weight:500;letter-spacing:.02em}
 
-/* revelar ao rolar (só com JavaScript; sem ele tudo aparece) */
+/* revelar ao rolar (sÃ³ com JavaScript; sem ele tudo aparece) */
 .js-revelar [data-revelar]{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .js-revelar [data-revelar].visto{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js-revelar [data-revelar]{opacity:1;transform:none;transition:none}}
@@ -408,8 +408,8 @@ body.p-luz-aberta{overflow:hidden}
 .r-capitular::first-letter{float:left;font-family:var(--serifa);font-size:4.6em;line-height:.82;padding:.06em .1em 0 0;color:var(--ouro-escuro)}
 .r-citacao{max-width:820px;margin:50px auto 60px;padding:28px 0;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);text-align:center}
 .r-citacao p{margin:0;font-family:var(--serifa);font-style:italic;font-size:clamp(28px,3.6vw,42px);line-height:1.2;color:var(--grafite);text-wrap:balance}
-.r-citacao p::before{content:"“";color:var(--ouro)}
-.r-citacao p::after{content:"”";color:var(--ouro)}
+.r-citacao p::before{content:"â€œ";color:var(--ouro)}
+.r-citacao p::after{content:"â€";color:var(--ouro)}
 .r-vitrine-t{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--pedra);border-bottom:1px solid var(--linha);padding-bottom:12px;margin:0 0 30px}
 .r-dest{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:48px;align-items:center;margin-bottom:48px}
 .r-dest-inv .r-dest-img{order:2}
@@ -469,8 +469,8 @@ body.p-sig{
 .p-sig .p-campo input:focus,.p-sig .p-campo textarea:focus{border-color:var(--ouro)}
 .p-sig .p-rodape{border-top-color:var(--linha)}
 .s-sobre{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--salvia);margin:0 0 14px;font-weight:400}
-/* Capa: a foto inteira, sem zoom e sem corte, em qualquer tela. A altura acompanha a proporção da foto (3:2);
-   em telas mais largas que isso, as laterais são preenchidas pela própria foto desfocada. */
+/* Capa: a foto inteira, sem zoom e sem corte, em qualquer tela. A altura acompanha a proporÃ§Ã£o da foto (3:2);
+   em telas mais largas que isso, as laterais sÃ£o preenchidas pela prÃ³pria foto desfocada. */
 .s-hero{position:relative;min-height:min(88vh,860px,66.667vw);display:flex;align-items:flex-end;margin-top:22px;overflow:hidden;isolation:isolate}
 .s-hero-fundo{position:absolute;inset:0;z-index:-1;background:#0e0e0d}
 .s-hero-fundo img{position:absolute;inset:0;width:100%;height:100%}
@@ -533,12 +533,12 @@ body.p-sig{
 .s-clube-txt p{color:#C9C2B6;font-size:17px;line-height:1.7}
 .s-beneficios{list-style:none;margin:26px 0 0;padding:0}
 .s-beneficios li{padding:13px 0 13px 30px;border-bottom:1px solid var(--linha);position:relative;font-size:16px}
-.s-beneficios li::before{content:"✦";position:absolute;left:0;color:var(--ouro);font-size:13px;top:15px}
+.s-beneficios li::before{content:"âœ¦";position:absolute;left:0;color:var(--ouro);font-size:13px;top:15px}
 .s-form{align-self:center}
 .s-form .p-check{color:var(--pedra);font-size:13.5px}
 @media (max-width:900px){.s-clube{grid-template-columns:1fr;gap:34px}}
 .s-vazio{text-align:center;color:var(--pedra);padding:60px 20px}
-/* residência */
+/* residÃªncia */
 .s-trilha{max-width:1240px;margin:18px auto 0;padding:0 20px}
 .s-trilha,.s-trilha a{color:var(--pedra)}
 .s-hero-im{min-height:min(82vh,780px,66.667vw)}
@@ -576,7 +576,7 @@ body.p-sig{
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (max-width:640px){
   .p-hero-direita .p-hero-txt h1,.p-hero-direita .p-hero-txt .p-hero-l{margin-left:0}
-  /* menu do topo numa linha só, deslizando com o dedo */
+  /* menu do topo numa linha sÃ³, deslizando com o dedo */
   .p-topo{flex-wrap:nowrap;gap:12px;padding:12px 0 12px 16px}
   .p-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:2px 4px;padding-right:16px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
   .p-nav::-webkit-scrollbar{display:none}
@@ -592,7 +592,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (min-width:1800px){:root{--largura:1400px}}
 @media (min-width:2300px){:root{--largura:1560px}body{font-size:18px}}
 
-/* botão Entrar (área da equipe) no topo do portal */
+/* botÃ£o Entrar (Ã¡rea da equipe) no topo do portal */
 .p-nav a.p-nav-entrar{border:1px solid var(--grafite);border-radius:999px;padding:6px 16px;font-weight:600;text-decoration:none}
 .p-nav a.p-nav-entrar:hover{background:var(--grafite);color:var(--cal);text-decoration:none}
 
@@ -633,7 +633,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (max-width:900px){.p-legal-grade{grid-template-columns:minmax(0,1fr);gap:20px}.p-legal .legal-indice{position:static}}
 @media (max-width:560px){.p-legal .legal-form{grid-template-columns:1fr;padding:16px}}
 
-/* Rótulo depois do título (nunca acima dele): fica junto do título e abre espaço para o que vem a seguir. */
+/* RÃ³tulo depois do tÃ­tulo (nunca acima dele): fica junto do tÃ­tulo e abre espaÃ§o para o que vem a seguir. */
 .depois{margin-top:-.35em!important;margin-bottom:18px!important}
 .p-hero-foto .p-sobre.depois{margin-bottom:14px!important}
 /* Setas desenhadas (no lugar de caracteres) */
@@ -642,11 +642,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s}
 .p-seta-volta{transform:scaleX(-1)}
 a:hover>.p-seta:not(.p-seta-volta){transform:translateX(3px)}
-/* Superfícies do navegador no tom da imobiliária */
+/* SuperfÃ­cies do navegador no tom da imobiliÃ¡ria */
 ::selection{background:color-mix(in srgb,var(--ouro) 28%,transparent)}
 input,textarea{caret-color:var(--ouro)}
 a{text-underline-offset:.18em}
-/* alvos de toque e itens só para leitores de tela (varredura de 28/10) */
+/* alvos de toque e itens sÃ³ para leitores de tela (varredura de 28/10) */
 .oculto{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .p-rodape nav a,.p-trilha a{display:inline-block;padding:6px 0}
 .p-link{min-height:32px}
@@ -655,9 +655,9 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .p-cartao-tipo{color:color-mix(in srgb,var(--salvia) 58%,var(--grafite));margin:2px 0 6px}
 .r-indice span{color:var(--ouro-escuro)}
 .p-lado-reservado{font-size:21px;line-height:1.25}.p-lado-reservado a{color:var(--ouro-escuro);text-decoration-thickness:1px}
-/* demonstração: o selo "Imagem ilustrativa" fica no canto de baixo à esquerda da foto; o recorte não pode cortá-lo */
+/* demonstraÃ§Ã£o: o selo "Imagem ilustrativa" fica no canto de baixo Ã  esquerda da foto; o recorte nÃ£o pode cortÃ¡-lo */
 .p-demo img:not(.p-hero-fundo img):not(.s-hero-foto):not(.s-hero-desfoque){object-position:0% 100%}
-/* Página "link na bio" (/links): as últimas publicações das redes, cada uma leva à página certa */
+/* PÃ¡gina "link na bio" (/links): as Ãºltimas publicaÃ§Ãµes das redes, cada uma leva Ã  pÃ¡gina certa */
 .p-links{max-width:760px;margin:0 auto;padding:28px 16px 48px;text-align:center}
 .p-links h1{font-family:var(--serifa);font-size:clamp(30px,6vw,44px);margin:0 0 6px}
 .p-links-l{color:var(--pedra);margin:0 0 18px}
@@ -780,123 +780,118 @@ input[type=checkbox],input[type=radio]{width:22px;height:22px;accent-color:var(-
 .p-vazio-nota + .p-oc-faixa .p-oc-cab{padding-top:1.6em;border-top:0}
 
 /* ============================================================ PÁGINA INICIAL
-   O produto desta casa é uma lista que vence. A página abre com o estado dela,
-   como um painel de embarque, e a foto da cidade virou assinatura entre seções
-   em vez de parede de 770 pixels antes de qualquer coisa útil.
+   Segunda versão. A busca é a manchete: campo e pergunta são a mesma voz,
+   mesma serifa, mesmo tamanho, um fio dourado por baixo. Não há caixa de
+   filtro com cinco cortinas sobre foto de mansão — isso é cara de portal de
+   anúncio, não de casa de alto padrão.
 
-   Duas cores novas, cada uma com um trabalho só:
-     --tempo  tijolo escuro, exclusivo de prazo acabando
-     --abate  verde tinta, exclusivo de dinheiro abaixo da avaliação
-   Fora delas, a identidade da casa continua: papel, tinta e ouro queimado. */
-:root{ --tempo:#8C2F23; --abate:#2E5D4B; }
+   O fundo da abertura não é preto: é verde-tinta. Campinas é cidade de
+   árvore, e ouro sobre verde é mais esta casa do que ouro sobre creme, que
+   é o que todo site de alto padrão faz.
 
-.v-abre,.v-vitrine,.v-busca,.v-como,.v-blog,.p-resultado{max-width:1180px;margin:0 auto;padding:0 24px}
+   Os imóveis da Caixa saíram daqui: têm página própria. Sobrou um painel. */
+:root{ --tinta:#0E1A16; --ouro-claro:#C9A867; --areia:#F3F1EC; }
 
-/* ---- abertura: o que a casa faz, e o estado da lista ---- */
-.v-abre{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:48px 56px;
-  align-items:start;padding-top:56px;padding-bottom:56px}
-.v-dizer h1{margin:0;font-size:clamp(2.1rem,4.4vw,3.3rem);line-height:1.06;letter-spacing:-.014em;max-width:17ch}
-.v-lead{margin:1.1em 0 0;font-size:1.08rem;line-height:1.62;color:var(--pedra);max-width:46ch}
-.v-acao{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin:2em 0 0}
-.v-cta{display:inline-block;background:var(--grafite);color:var(--cal);padding:14px 26px;
-  border-radius:3px;font-weight:600;text-decoration:none;font-size:1rem}
-.v-cta:hover{background:var(--ouro-escuro);color:var(--cal)}
-.v-tel{font-size:1.06rem;font-weight:500;font-variant-numeric:tabular-nums;color:var(--grafite);
-  text-decoration:none;border-bottom:1px solid var(--linha);padding-bottom:2px}
-.v-tel:hover{border-bottom-color:var(--ouro)}
+/* ---- o cabeçalho entra no escuro, só nesta página ---- */
+.p-vitrine .p-topo{position:relative;border-bottom:0;color:#F7F5F0;z-index:1}
+.p-vitrine .p-topo::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;background:var(--tinta);z-index:-1}
+.p-vitrine .p-marca,.p-vitrine .p-nav a{color:#F7F5F0}
+.p-vitrine .p-marca-l{color:rgba(247,245,240,.6)}
+.p-vitrine .p-nav a{color:rgba(247,245,240,.74)}
+.p-vitrine .p-nav a:hover,.p-vitrine .p-nav a[aria-current]{color:#F7F5F0;text-decoration-color:var(--ouro-claro)}
+.p-vitrine .p-nav-zap,.p-vitrine .p-nav-entrar{border:1px solid rgba(247,245,240,.3);border-radius:2px;padding:7px 16px}
+.p-vitrine .p-nav-zap:hover,.p-vitrine .p-nav-entrar:hover{border-color:var(--ouro-claro)}
+.p-vitrine .p-marca-logo,.p-vitrine .brand-logo{filter:invert(1) hue-rotate(180deg) brightness(1.6)}
 
-/* ---- o painel: o que fecha primeiro ---- */
-.v-quadro{border:1px solid var(--linha);border-radius:3px;background:var(--papel);overflow:hidden}
-.v-quadro-cab{padding:16px 20px 13px;border-bottom:1px solid var(--linha)}
-.v-quadro-cab h2{margin:0;font-size:1.22rem;line-height:1.2}
-.v-quadro-cab p{margin:3px 0 0;font-size:.84rem;color:var(--pedra)}
-.v-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"onde valor" "prazo prazo";
-  gap:4px 16px;padding:13px 20px;border-bottom:1px solid var(--linha);text-decoration:none;color:inherit}
-.v-linha:last-of-type{border-bottom:0}
-.v-linha:hover{background:var(--salvia-claro)}
-.v-onde{grid-area:onde;min-width:0}
-.v-onde b{display:block;font-weight:600;font-size:1rem;line-height:1.25;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.v-onde>span{display:block;font-size:.82rem;color:var(--pedra);margin-top:2px}
-.v-valor{grid-area:valor;text-align:right;white-space:nowrap}
-.v-valor b{display:block;font-size:1.06rem;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.v-abaixo{display:block;font-size:.78rem;color:var(--abate);margin-top:2px}
-.v-prazo{grid-area:prazo;display:flex;align-items:baseline;gap:7px;margin-top:3px}
-.v-prazo b{font-size:.92rem;font-weight:600;font-variant-numeric:tabular-nums;color:var(--pedra)}
-.v-urgente b{color:var(--tempo)}
-.v-prazo>span{font-size:.78rem;color:var(--pedra)}
-.v-quadro-vazio{margin:0;padding:18px 20px;font-size:.92rem;color:var(--pedra);line-height:1.55}
-.v-quadro-mais{display:block;padding:13px 20px;border-top:1px solid var(--linha);
-  font-size:.9rem;font-weight:500;color:var(--ouro-escuro);text-decoration:none}
-.v-quadro-mais:hover{background:var(--salvia-claro)}
+/* ---- a abertura ---- */
+.v-abrir{margin:0 calc(50% - 50vw);padding:clamp(44px,7vw,92px) max(20px,calc(50vw - 590px)) clamp(44px,6vw,80px);
+  background:var(--tinta);color:#F7F5F0;min-height:min(62vh,600px);display:flex;flex-direction:column;justify-content:center}
+.v-titulo{margin:0;font-family:var(--serifa);font-weight:300;font-size:clamp(2.5rem,5.6vw,4.8rem);line-height:1.03;letter-spacing:-.012em;max-width:16ch}
+.v-busca{margin:clamp(28px,4vw,50px) 0 0;max-width:860px}
+.v-linha-busca{display:flex;align-items:flex-end;gap:20px;border-bottom:1px solid var(--ouro);padding-bottom:12px}
+.v-linha-busca:focus-within{border-bottom-color:var(--ouro-claro)}
+.v-campo{flex:1;min-width:0;margin:0}
+.v-campo input{width:100%;background:transparent;border:0;padding:0;color:#F7F5F0;
+  font-family:var(--serifa);font-weight:300;font-size:clamp(1.4rem,2.9vw,2.15rem);line-height:1.25}
+.v-campo input::placeholder{color:rgba(247,245,240,.42)}
+.v-campo input:focus{outline:none}
+.v-campo input::-webkit-search-cancel-button{filter:invert(1) opacity(.5)}
+.v-ir{background:transparent;border:1px solid rgba(247,245,240,.4);color:#F7F5F0;
+  font-family:var(--texto);font-size:14.5px;font-weight:500;padding:10px 22px;border-radius:2px;cursor:pointer;white-space:nowrap}
+.v-ir:hover{background:var(--ouro);border-color:var(--ouro);color:var(--tinta)}
+.v-refino{display:flex;flex-wrap:wrap;gap:14px 34px;margin-top:22px}
+.v-refino label{display:flex;align-items:baseline;gap:9px;font-size:14px;color:rgba(247,245,240,.6)}
+.v-refino select{background:transparent;border:0;border-bottom:1px solid rgba(247,245,240,.22);color:#F7F5F0;
+  font-family:var(--texto);font-size:14.5px;padding:3px 18px 4px 0;cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='6'><path d='M0 0l4.5 6L9 0z' fill='%23C9A867'/></svg>");
+  background-repeat:no-repeat;background-position:right 2px center}
+.v-refino select:hover{border-bottom-color:var(--ouro-claro)}
+.v-refino option{color:var(--grafite);background:var(--papel)}
+.v-sabe{margin:clamp(28px,4vw,46px) 0 0;font-size:14.5px;color:rgba(247,245,240,.55)}
 
-/* ---- a cidade, como assinatura ---- */
-.v-faixa{margin:0;position:relative}
-.v-faixa img{display:block;width:100%;height:clamp(150px,21vw,260px);object-fit:cover}
-.v-faixa figcaption{max-width:1180px;margin:0 auto;padding:7px 24px 0;font-size:.76rem;color:var(--pedra)}
-/* ---- cabeçalho que se repete nas seções ---- */
-.v-cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 24px}
-.v-cab h2{margin:0;font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.15}
-.v-mais{font-size:.93rem;font-weight:500;color:var(--ouro-escuro);white-space:nowrap}
-.v-cab-l{margin:.5em 0 0;color:var(--pedra);font-size:.98rem;line-height:1.55;max-width:60ch}
+/* ---- o corpo ---- */
+.v-carteira,.v-bairros,.v-blog,.v-alem{max-width:1180px;margin:0 auto;padding:0 4px}
+.v-carteira{padding-top:clamp(50px,6vw,82px)}
+.v-cab{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px 28px}
+.v-cab h2{margin:0;font-family:var(--serifa);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.15rem);line-height:1.15}
+.v-mais{font-size:14.5px;color:var(--ouro-escuro);border-bottom:1px solid var(--linha);padding-bottom:2px;text-decoration:none;white-space:nowrap}
+.v-mais:hover{border-bottom-color:var(--ouro)}
+.v-cab-l{margin:.7em 0 0;color:var(--pedra);font-size:1rem;line-height:1.62;max-width:62ch}
+.v-carteira-l{margin:1.1em 0 0;color:var(--pedra);font-size:1.04rem;line-height:1.68;max-width:66ch}
+.v-carteira-acao{margin:1.6em 0 0;font-size:1.02rem}
+.v-carteira-acao a{font-variant-numeric:tabular-nums;font-weight:500}
+.v-carteira .p-grade{margin-top:30px}
+.v-paginas{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:44px;font-size:15px;color:var(--pedra)}
 
-.v-vitrine{padding-top:52px}
-.v-vitrine .oc-grade{margin-top:26px}
+/* ---- o que a busca achou fora da carteira ---- */
+.v-alem{padding-top:34px}
+.v-alem-nota{margin:0 0 22px;color:var(--pedra);font-size:1rem}
+.v-alem-bloco{margin-top:26px}
+.v-alem-bloco h3{margin:0 0 10px;font-family:var(--texto);font-size:.86rem;font-weight:600;color:var(--pedra)}
+.v-alem-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid var(--linha)}
+.v-alem-lista a{display:block;padding:14px 20px 14px 0;border-bottom:1px solid var(--linha);text-decoration:none}
+.v-alem-lista b{display:block;font-weight:500;font-size:1rem;line-height:1.3}
+.v-alem-lista span{display:block;margin-top:2px;font-size:.85rem;color:var(--pedra)}
+.v-alem-lista a:hover b{color:var(--ouro-escuro)}
 
-/* ---- busca da carteira própria: desce, porque ninguém procura no vazio ---- */
-.v-busca{padding-top:56px}
-.v-busca h2{margin:0;font-size:clamp(1.4rem,2.3vw,1.8rem)}
-.v-busca-l{margin:.5em 0 1.3em;color:var(--pedra);font-size:.98rem;max-width:58ch}
-.v-busca .p-filtros{position:static;background:var(--papel);border:1px solid var(--linha);
-  border-radius:3px;padding:18px;box-shadow:none}
-.v-nada{color:var(--pedra);padding:26px 0}
+/* ---- os bairros ---- */
+.v-bairros{padding-top:clamp(56px,6vw,90px)}
+.v-bairros-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:30px;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha)}
+.v-bairro{display:block;padding:22px 24px 24px 0;text-decoration:none}
+.v-bairro + .v-bairro{box-shadow:0 -1px 0 var(--linha)}
+.v-bairro b{display:block;font-family:var(--serifa);font-size:1.35rem;font-weight:500;line-height:1.2}
+.v-bairro span{display:block;margin-top:5px;font-size:.9rem;color:var(--pedra);line-height:1.5}
+.v-bairro:hover b{color:var(--ouro-escuro)}
 
-/* ---- as três dúvidas de toda conversa sobre imóvel retomado ---- */
-.v-como{padding-top:60px}
-.v-como h2{margin:0 0 26px;font-size:clamp(1.5rem,2.6vw,2rem)}
-.v-como-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:30px 40px}
-.v-como-grade h3{margin:0 0 .45em;font-size:1.12rem;font-weight:600;line-height:1.3}
-.v-como-grade p{margin:0;color:var(--pedra);font-size:.96rem;line-height:1.62}
-.v-como-mais{margin:26px 0 0;font-size:.95rem}
+/* ---- a Caixa, como produto à parte ---- */
+.v-caixa{max-width:1180px;margin:clamp(56px,6vw,94px) auto 0;padding:0 4px}
+.v-caixa{background:var(--areia);padding:clamp(30px,4vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:32px 56px;align-items:start}
+.v-caixa h2{margin:0;font-family:var(--serifa);font-weight:400;font-size:clamp(1.55rem,2.6vw,2.05rem);line-height:1.15}
+.v-caixa p{margin:.9em 0 0;color:var(--pedra);font-size:.99rem;line-height:1.66;max-width:52ch}
+.v-caixa-ir{display:inline-block;margin-top:1.6em;background:var(--tinta);color:#F7F5F0!important;padding:13px 26px;border-radius:2px;font-size:15px;font-weight:500;text-decoration:none}
+.v-caixa-ir:hover{background:var(--ouro);color:var(--tinta)!important}
+.v-caixa-n{margin:0;display:grid;gap:20px}
+.v-caixa-n div{border-top:1px solid #DDD8CF;padding-top:11px}
+.v-caixa-n dd{margin:0;font-family:var(--serifa);font-size:2.3rem;line-height:1;font-variant-numeric:tabular-nums}
+.v-caixa-n dt{margin-top:5px;font-size:.84rem;color:var(--pedra)}
 
-/* ---- o blog no pé ---- */
-.v-blog{padding-top:60px;padding-bottom:70px}
-.v-blog-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:28px;margin-top:24px}
+/* ---- o blog ---- */
+.v-blog{padding-top:clamp(56px,6vw,90px);padding-bottom:clamp(58px,7vw,98px)}
+.v-blog-grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;margin-top:28px}
 .v-post{display:block;text-decoration:none;color:inherit}
-.v-post img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;border-radius:3px;margin-bottom:12px}
-.v-post h3{margin:0 0 .35em;font-size:1.1rem;line-height:1.28;font-weight:600}
-.v-post:hover h3{color:var(--ouro-escuro)}
+.v-post img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;margin-bottom:13px}
+.v-post h3{margin:0 0 .3em;font-family:var(--serifa);font-size:1.22rem;font-weight:500;line-height:1.26}
 .v-post p{margin:0;color:var(--pedra);font-size:.92rem;line-height:1.55}
+.v-post:hover h3{color:var(--ouro-escuro)}
 
-/* ---- celular ---- */
 @media (max-width:860px){
-  .v-abre{grid-template-columns:1fr;gap:36px;padding-top:36px;padding-bottom:40px}
-  .v-dizer h1{max-width:none}
+  .v-caixa{grid-template-columns:1fr}
+  .v-caixa-n{grid-template-columns:repeat(3,1fr);gap:14px}
 }
 @media (max-width:560px){
-  .v-abre,.v-vitrine,.v-busca,.v-como,.v-blog,.p-resultado{padding-left:16px;padding-right:16px}
-  .v-faixa figcaption{padding-left:16px;padding-right:16px}
-  .v-acao{gap:12px 16px}
-  .v-cta{flex:1 1 100%;text-align:center}
-  .v-linha{padding:12px 16px}
-  .v-quadro-cab,.v-quadro-mais{padding-left:16px;padding-right:16px}
+  .v-linha-busca{flex-wrap:wrap;gap:14px}
+  .v-ir{flex:1 1 100%}
+  .v-caixa-n{grid-template-columns:1fr}
+  .v-bairro{padding-right:0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-
-/* o painel agrupa por data: dezenas de imóveis dividem o mesmo encerramento */
-.v-grupo{border-bottom:1px solid var(--linha)}
-.v-grupo:last-of-type{border-bottom:0}
-.v-prazo{display:flex;align-items:baseline;gap:8px;margin:0;padding:11px 20px 8px;
-  background:var(--salvia-claro);font-size:.84rem}
-.v-prazo>span{color:var(--pedra)}
-.v-prazo b{font-weight:600;font-variant-numeric:tabular-nums;color:var(--grafite)}
-.v-urgente b{color:var(--tempo)}
-.v-grupo .v-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;
-  padding:11px 20px;border-bottom:1px solid var(--linha);text-decoration:none;color:inherit}
-.v-grupo .v-linha:last-child{border-bottom:0}
-.v-sem-prazo{margin:0;padding:13px 20px;font-size:.84rem;line-height:1.5;color:var(--pedra);
-  border-top:1px solid var(--linha)}
-@media (max-width:560px){ .v-prazo,.v-grupo .v-linha,.v-sem-prazo{padding-left:16px;padding-right:16px} }
-.v-parte{margin:2.4em 0 0;padding-top:1.6em;border-top:1px solid var(--linha);
-  font-size:.95rem;line-height:1.62;color:var(--pedra);max-width:46ch}
-.v-parte strong{color:var(--grafite);font-weight:600}

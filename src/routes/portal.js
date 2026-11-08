@@ -51,7 +51,10 @@ async function guiaDoBairro(nome) {
 }
 
 router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(
-  req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro), estadoDaCaixa(), await ultimasDoBlog())));
+  req, await fonte.noAr(), await guiaDoBairro(req.query && req.query.bairro), estadoDaCaixa(), await ultimasDoBlog(),
+  { conhece: { ...oQueAcasaConhece(), bairros: await quantosBairros() },
+    bairrosGuia: await guiasDeBairro(6),
+    alemDaCasa: await alemDaCarteira(req.query && req.query.q) })));
 // A revista mostra as capas do blog, que moram no GitHub.
 const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
 router.get('/imoveis/revista', async (req, res) => {
@@ -369,6 +372,53 @@ function estadoDaCaixa() {
 }
 
 /** As ultimas materias que ja estao no ar, para o pe da pagina inicial. */
+// O que a casa conhece: os numeros sob a busca da pagina inicial. Sao o
+// argumento dela enquanto a carteira propria enche.
+function oQueAcasaConhece() {
+  try {
+    const c = one("SELECT count(*) n FROM condominios WHERE coalesce(tipo,'') <> 'comercial'") || {};
+    return { condominios: Number(c.n || 0) };
+  } catch { return {}; }
+}
+
+async function guiasDeBairro(n = 6) {
+  try {
+    const lista = await require('../bairros/fonte').noAr();
+    return (lista || []).map((x) => ({
+      slug: x.bairro.slug,
+      nome: x.bairro.nome,
+      resumo: (x.pagina && (x.pagina.resumo || x.pagina.chamada)) || '',
+    })).slice(0, n);
+  } catch { return []; }
+}
+async function quantosBairros() {
+  try { return ((await require('../bairros/fonte').noAr()) || []).length; } catch { return 0; }
+}
+
+// Quando a busca nao acha nada na carteira, a casa mostra o que conhece com
+// aquele nome: o bairro que escreveu, o predio que mapeou. E o que faz a busca
+// valer alguma coisa hoje, com a carteira ainda vazia.
+async function alemDaCarteira(termo) {
+  const q = String(termo || '').trim();
+  if (q.length < 2) return null;
+  const fora = { bairros: [], condominios: [] };
+  try {
+    // Sem acento dos dois lados: quem digita "cambui" quer o Cambui.
+    const { semAcento } = require('../blog/texto');
+    const chave = semAcento(q).toLowerCase();
+    const bs = (await require('../bairros/fonte').noAr()) || [];
+    fora.bairros = bs
+      .filter((x) => semAcento(String(x.bairro.nome || '')).toLowerCase().includes(chave))
+      .slice(0, 6)
+      .map((x) => ({ slug: x.bairro.slug, nome: x.bairro.nome, resumo: (x.pagina && (x.pagina.resumo || x.pagina.chamada)) || '' }));
+  } catch {}
+  try {
+    const r = require('../condominios/base').listar({ q, porPagina: 8, pagina: 1 });
+    fora.condominios = (r.itens || []).slice(0, 8).map((c) => ({ id: c.id, nome: c.nome, bairro: c.bairro, cidade: c.cidade }));
+  } catch {}
+  return (fora.bairros.length || fora.condominios.length) ? fora : null;
+}
+
 async function ultimasDoBlog(n = 3) {
   try {
     const diario = require('../blog/diario');
