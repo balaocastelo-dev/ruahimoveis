@@ -1,0 +1,241 @@
+{
+  "slug": "muro-de-divisa-entre-vizinhos-regras-e-tipos-de-muro",
+  "tema": "muro de divisa entre vizinhos regras e tipos",
+  "titulo": "Muro de divisa: regras entre vizinhos e como escolher o tipo de muro",
+  "resumo": "Muro de divisa sem briga: o que o Código Civil diz sobre custos, a diferença para o muro de arrimo e como escolher entre alvenaria, gabião, gradil e cerca viva.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "muro",
+    "construção",
+    "vizinhança",
+    "terreno",
+    "obra"
+  ],
+  "capa": {
+    "alt": "Muro de pedras em gaiolas metálicas ao lado de um jardim gramado com arbustos e luz de fim de tarde"
+  },
+  "redes": {
+    "legenda": "Muro de divisa é de quem? Pelo Código Civil, o muro na linha entre dois terrenos presume-se dos dois vizinhos, e construção e conservação costumam ser divididas. Mas há um detalhe que evita acidente: muro que segura terra não é muro comum, é muro de arrimo, e pede engenheiro. Explicamos as regras e comparamos alvenaria, gabião, gradil e cerca viva. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "muro",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "paisagismo",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **muro de divisa** parece o elemento mais simples de uma casa: algumas fiadas de bloco entre um terreno e outro. Mas é ele que define a privacidade do quintal, a relação com o vizinho e, em terrenos com desnível, a segurança de quem está dos dois lados. Quando cai depois de uma chuva forte, a pergunta aparece na hora: de quem é a conta?"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: pelo Código Civil, o muro que fica na linha de divisa presume-se dos dois vizinhos, que dividem igualmente a construção e a conservação, salvo prova ou acordo em contrário. Se o muro segura terra, ele é um muro de arrimo e precisa de projeto de engenheiro. E o material, de alvenaria a cerca viva, muda privacidade, ventilação e manutenção."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O art. 1.297 do Código Civil presume que o muro na divisa é comum aos dois vizinhos, com custos divididos em partes iguais.",
+        "Cerca viva que marca a divisa só pode ser cortada ou arrancada com acordo entre os dois proprietários.",
+        "Muro que contém terra é muro de arrimo: exige projeto de engenheiro com ART e boa drenagem.",
+        "Alvenaria, gabião, gradil e cerca viva resolvem problemas diferentes; o regulamento do condomínio e a prefeitura também opinam."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "De quem é o muro da divisa e como dividir a conta"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O artigo 1.297 do Código Civil garante ao proprietário o direito de cercar, murar ou fechar o próprio imóvel, urbano ou rural. O primeiro parágrafo do artigo vai além: muros, cercas e tapumes que ficam na linha de divisa presumem-se comuns aos dois vizinhos, que devem arcar em partes iguais com a construção e a conservação, de acordo com os costumes do lugar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa presunção vale **até prova em contrário**. Se um dos vizinhos construiu o muro inteiramente dentro do próprio terreno, por exemplo, a situação muda. Reportagem do Correio Braziliense sobre o tema lembra que um vizinho pode responder sozinho quando fica provada culpa individual, como um aterro feito sem contenção ou uma obra que alterou a estrutura do muro sem avaliação técnica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo artigo traz dois detalhes pouco conhecidos. Sebes vivas, árvores e plantas que servem de marco da divisa só podem ser cortadas ou arrancadas com acordo entre os proprietários. E o chamado tapume especial, como uma tela para impedir a passagem de animais pequenos, pode ser cobrado só de quem criou a necessidade, sem dividir com o outro lado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Antes de chamar o pedreiro",
+      "texto": "Converse com o vizinho e registre por escrito o que foi combinado: o tipo de muro, a altura, o orçamento e a forma de dividir. Fotos do estado atual ajudam se surgir dúvida depois. Em caso de desacordo, procure um advogado; cada situação tem detalhes que a regra geral não resolve."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Muro de vedação ou muro de arrimo: a diferença que evita acidente"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O muro de vedação, o mais comum entre dois lotes no mesmo nível, sustenta basicamente o próprio peso. Já o **muro de arrimo**, também chamado de muro de contenção, segura uma massa de terra em desnível, criada por corte ou aterro. Ele recebe o empuxo, que é a força horizontal do solo empurrando a parede, e por isso precisa ser calculado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um guia técnico publicado pelo portal Lar Pontual cita a norma ABNT NBR 11682, de estabilidade de encostas, como referência para esse dimensionamento, e é taxativo: bloco cerâmico de vedação não serve para conter terra. Conforme a altura, o arrimo pode ser de pedra, gabião, bloco de concreto estrutural com aço e graute ou concreto armado com contrafortes."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo guia aponta a água como a principal causa de colapso. Solo encharcado empurra muito mais do que solo seco. Por isso o arrimo bem feito tem dreno na base, brita com manta geotêxtil atrás da parede e barbacãs, os pequenos tubos que atravessam o muro para a água escoar. O projeto cabe a engenheiro civil, com ART, a Anotação de Responsabilidade Técnica."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Barriga** ou abaulamento no corpo do muro.",
+        "**Trincas diagonais**, em torno de 45 graus.",
+        "**Inclinação** que aumenta com o tempo.",
+        "**Terra encharcada** atrás do muro depois da chuva, com os barbacãs secos, sinal de dreno entupido."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se aparecer qualquer um desses sinais, afaste as pessoas da área e chame um engenheiro antes da próxima chuva. Não tente escorar, demolir ou aterrar por conta própria. Mais orientações sobre obra e terreno estão em [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Alvenaria, gabião, gradil ou cerca viva: como escolher"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com o desnível resolvido, a escolha do fechamento passa a ser sobre como você quer viver o quintal. O muro de alvenaria rebocado é o mais comum e dá privacidade total. O gradil deixa passar vento e vista. A cerca viva traz verde e sombra. E o gabião, de pedras em gaiolas metálicas, saiu das obras de estrada para os jardins residenciais."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Comparação entre tipos de fechamento da divisa",
+      "colunas": [
+        "Tipo",
+        "Privacidade",
+        "Ventilação",
+        "Manutenção",
+        "Espaço que ocupa"
+      ],
+      "linhas": [
+        [
+          "Alvenaria rebocada",
+          "Total",
+          "Baixa",
+          "Pintura periódica",
+          "Pouco"
+        ],
+        [
+          "Gabião",
+          "Alta",
+          "Média",
+          "Baixa",
+          "Mais largo na base"
+        ],
+        [
+          "Gradil ou grade",
+          "Baixa",
+          "Alta",
+          "Pintura contra ferrugem",
+          "Pouco"
+        ],
+        [
+          "Cerca viva",
+          "Média a alta, depois de crescer",
+          "Alta",
+          "Poda e rega",
+          "Faixa de canteiro"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Comparação geral; o resultado depende do projeto, do material e do clima."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo reportagem do Xataka Brasil, o gabião deixa a água atravessar, o que evita acúmulo de pressão, e acompanha pequenos movimentos do solo sem rachar. A manutenção é baixa e a durabilidade pode passar de 50 anos. Mas ele ocupa mais espaço do que uma parede comum e pede mão de obra especializada para ficar estável e com bom acabamento."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Cerca viva na divisa",
+      "pros": [
+        "Traz verde, sombra e frescor ao quintal",
+        "Pode filtrar parte da poeira e da vista da rua",
+        "Combina com gradil ou muro baixo"
+      ],
+      "contras": [
+        "Leva tempo para fechar e dar privacidade",
+        "Exige poda e rega regulares",
+        "Se marca a divisa, só pode ser cortada com acordo do vizinho"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Muitas casas combinam soluções: muro baixo de alvenaria com gradil em cima, ou gradil com cerca viva por dentro. Mas lembre que muro alto e sem aberturas também barra a ventilação do quintal e escurece o jardim do vizinho. Para ideias de paisagismo e conforto, veja [Bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Antes da obra: prefeitura, condomínio e o vizinho"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A altura máxima do muro, o recuo e o tipo de fechamento permitido na frente do lote costumam vir do código de obras do município e, em condomínio fechado, do regulamento interno, que pode exigir gradil, proibir muro alto ou padronizar a cerca viva. Consulte as duas regras antes de comprar material, porque desfazer o muro sai mais caro do que esperar a resposta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em muro de arrimo ou em terreno com desnível, peça projeto e ART antes de começar, e confirme na prefeitura se a obra precisa de aprovação. Em muro de vedação simples, uma boa fundação, pilares bem amarrados e impermeabilização na base fazem a diferença entre um muro que dura décadas e um que trinca no primeiro verão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de uma casa, vale olhar o muro com atenção: trincas, inclinação, sinais de umidade e desnível com o vizinho contam parte da história do terreno. Se você procura uma casa em Campinas e quer ajuda para avaliar esses detalhes, fale com a equipe da {{cliente}}. Muro bom é o que foi combinado antes e calculado quando segura terra."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quem paga o muro de divisa?",
+      "resposta": "Pela regra geral do art. 1.297 do Código Civil, o muro na linha de divisa presume-se dos dois vizinhos, que dividem igualmente construção e conservação. A presunção admite prova em contrário, e cada caso pede orientação de um advogado."
+    },
+    {
+      "pergunta": "Posso cortar a cerca viva da divisa sozinho?",
+      "resposta": "Se as plantas servem de marco divisório, o Código Civil diz que só podem ser cortadas ou arrancadas com acordo entre os proprietários."
+    },
+    {
+      "pergunta": "Qual a diferença entre muro de divisa e muro de arrimo?",
+      "resposta": "O muro de divisa comum fecha o terreno e sustenta o próprio peso. O de arrimo segura terra em desnível e precisa de cálculo, drenagem e projeto de engenheiro com ART."
+    },
+    {
+      "pergunta": "Muro de gabião serve para conter terra?",
+      "resposta": "Ele é usado em contenções porque drena a água e tolera pequenos movimentos do solo. Mesmo assim, quando segura terra, precisa de projeto de engenheiro."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Código Civil, art. 1.297 (Lei 10.406/2002) — LegJur",
+      "url": "https://www.legjur.com/legislacao/art/LEI_00104062002-1297",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Muro de divisa: quem paga a reconstrução — Correio Braziliense",
+      "url": "https://www.correiobraziliense.com.br/cbradar/muro-de-divisa-quem-paga-reconstrucao/",
+      "data": "julho de 2026"
+    },
+    {
+      "nome": "Como fazer muro de arrimo — Lar Pontual",
+      "url": "https://larpontual.com.br/portal/como-fazer-muro-de-arrimo",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Muro de pedras em gaiola no quintal — Xataka Brasil",
+      "url": "https://www.xataka.com.br/engenharia/se-voce-tem-um-muro-pedras-em-gaiola-no-quintal-voce-tem-um-tesouro-incrivel-que-vai-te-fazer-economizar-dinheiro-e-dor-cabeca-no-futuro",
+      "data": "novembro de 2026"
+    }
+  ]
+}

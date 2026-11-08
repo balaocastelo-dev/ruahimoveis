@@ -1224,7 +1224,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-08T11:20:28.337Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "muro-de-divisa-entre-vizinhos-regras-e-tipos-de-muro",
+      "titulo": "Muro de divisa: regras entre vizinhos e como escolher o tipo de muro",
+      "tema": "muro de divisa entre vizinhos regras e tipos",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-08T11:21:25.538Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T11:20:28.337Z"
+  "atualizadoEm": "2026-11-08T11:21:25.539Z"
 }
