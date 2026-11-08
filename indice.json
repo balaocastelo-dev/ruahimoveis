@@ -1323,7 +1323,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-08T20:23:00.136Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "arquitetura-moderna-em-campinas-itatiaia-centro-de-convivencia",
+      "titulo": "Arquitetura moderna em Campinas: do Itatiaia ao Centro de Convivência",
+      "tema": "arquitetura moderna em campinas edificio itatiaia",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-08T23:21:35.906Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T20:23:00.137Z"
+  "atualizadoEm": "2026-11-08T23:21:35.907Z"
 }
