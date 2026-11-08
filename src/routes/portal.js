@@ -435,13 +435,16 @@ router.get('/oportunidades', (req, res) => {
   html(res, ocPaginas.paginaOportunidades(req, lista, resumo));
 });
 
-router.get('/oportunidades/:numero/foto', (req, res) => {
+router.get('/oportunidades/:numero/foto', async (req, res) => {
   const numero = String(req.params.numero || '').replace(/\\D/g, '').slice(0, 20);
   const f = numero && one('SELECT img FROM fachadas WHERE ref=?', 'caixa:' + numero);
   if (!f || !f.img) return res.status(404).end();
+  // A foto sai com a tarja da casa e o credito de quem a fez.
+  const { carimbar } = require('../portal/carimbo');
+  const img = await carimbar(Buffer.from(f.img), { chave: 'caixa:' + numero, credito: 'Foto: Caixa Econômica Federal' });
   res.set('Content-Type', 'image/jpeg');
   res.set('Cache-Control', 'public, max-age=604800');
-  res.end(Buffer.from(f.img));
+  res.end(img);
 });
 
 router.get('/oportunidades/:numero', (req, res, next) => {

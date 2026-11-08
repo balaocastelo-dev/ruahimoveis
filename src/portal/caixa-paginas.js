@@ -196,7 +196,7 @@ function paginaOportunidade(req, i, parecidos = [], viz = null) {
 
   return P.casca(req, {
     titulo: `${titulo(i)} · Imóvel da Caixa em ${capitalizar(i.cidade)}`,
-    descricao: `${i.tipo || 'Imóvel'} da Caixa em ${capitalizar(i.bairro || i.cidade)}: ${reais(c.caixa)} na Caixa${i.desconto > 0 ? `, ${pct(i.desconto)} abaixo da avaliação` : ''}. Veja prazo, regras e o que conferir antes de propor.`,
+    descricao: `${i.tipo || 'Imóvel'} da Caixa em ${capitalizar(i.bairro || i.cidade)}: ${reais(c.caixa)} na Caixa + ${C.TAXA}% de assessoria = ${reais(c.total)}${i.desconto > 0 ? `, ${pct(i.desconto)} abaixo da avaliação` : ''}. Veja prazo, regras e o que conferir.`,
     caminho: caminho(i),
     classe: 'p-oc p-oc-ficha',
     ld: [ldImovel(req, i)],
