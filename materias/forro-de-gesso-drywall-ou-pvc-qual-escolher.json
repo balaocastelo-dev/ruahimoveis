@@ -1,0 +1,282 @@
+{
+  "slug": "forro-de-gesso-drywall-ou-pvc-qual-escolher",
+  "tema": "forro de gesso drywall ou pvc no teto",
+  "titulo": "Forro de gesso, drywall ou PVC: qual teto escolher para a casa",
+  "resumo": "Forro de gesso em placas, drywall ou PVC? Veja como cada teto é feito, onde vai melhor, o cuidado com luz embutida, umidade e manutenção antes de decidir.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "interiores",
+    "forro",
+    "gesso",
+    "iluminação",
+    "reforma"
+  ],
+  "capa": {
+    "alt": "Sala de estar com teto rebaixado em gesso branco, sanca com luz indireta suave e spots embutidos sobre sofá claro"
+  },
+  "seo": {
+    "titulo": "Forro de gesso, drywall ou PVC: qual escolher"
+  },
+  "redes": {
+    "legenda": "Você já reparou no teto da sua casa? O forro decide onde a luz nasce, esconde tubos e fios e muda a sensação de altura da sala. Gesso em placas, drywall e PVC parecem iguais de longe, mas são montados de jeitos diferentes e pedem cuidados diferentes com luminária pesada, umidade e manutenção. Explicamos qual vai melhor em cada cômodo. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "forrodegesso",
+      "drywall",
+      "interiores",
+      "decoracao",
+      "iluminacao",
+      "arquitetura",
+      "reforma",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem reforma a casa ou visita um imóvel pronto logo percebe que o teto conta muito. O **forro** é a superfície que fica abaixo da laje ou do telhado: ele esconde tubulações, fios e vigas, recebe as luzes embutidas e define a altura que você sente ao entrar. A dúvida comum é entre gesso em placas, drywall e PVC."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: o gesso em placas e o drywall entregam o acabamento liso que a sala e o quarto pedem; o drywall é mais organizado de montar e de abrir para manutenção; e o PVC, por ser impermeável e fácil de limpar, faz sentido em área de serviço, varanda coberta e alguns banheiros. O projeto de luz deve vir antes do forro."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Gesso em placas: placas lisas penduradas por arames, acabamento clássico e liso.",
+        "Drywall: chapas de gesso aparafusadas em perfis de aço, com versões para área úmida.",
+        "PVC: réguas impermeáveis, fáceis de limpar, com visual mais simples.",
+        "Em qualquer um, luminária pesada vai presa na estrutura, nunca só no forro."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda como cada forro é feito"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **forro de gesso em placas** é o mais tradicional. O caderno de especificações de edificações do DER do Espírito Santo, atualizado em maio de 2026, descreve placas lisas de 60 cm por 60 cm, presas à laje por arames galvanizados, cerca de quatro por placa. Depois de montadas, as emendas recebem gesso e o teto fica contínuo, pronto para selador e pintura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo caderno insiste na conferência do nível durante a montagem, para o teto não ganhar as chamadas barrigas, e pede juntas de dilatação junto a pilares e paredes, com perfis de arremate. Essas juntas existem porque a casa se movimenta um pouco com o calor e a umidade. Sem elas, aparecem as trincas finas no encontro do forro com a parede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **drywall** usa chapas grandes de gesso revestidas de papel cartão, parafusadas em perfis de aço galvanizado que ficam pendurados na laje por tirantes. A ficha de um forro estruturado publicada no portal AECweb cita chapas de 12,5 mm, nos tipos comum e resistente ao fogo. Como a estrutura é metálica e modulada, a montagem costuma ser mais limpa e previsível."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **forro de PVC** é feito de réguas de plástico rígido encaixadas umas nas outras e fixadas numa estrutura de perfis de aço. No caderno do DER-ES, as réguas têm 20 cm de largura e de 7 mm a 8 mm de espessura, com frisos aparentes. O resultado é um teto de linhas paralelas, que não imita o gesso e tem cara de área de apoio."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os três forros lado a lado, em linhas gerais",
+      "colunas": [
+        "Ponto",
+        "Gesso em placas",
+        "Drywall",
+        "PVC"
+      ],
+      "linhas": [
+        [
+          "Como é preso",
+          "Arames na laje",
+          "Chapas parafusadas em perfis de aço",
+          "Réguas em perfis de aço"
+        ],
+        [
+          "Acabamento",
+          "Liso e contínuo",
+          "Liso e contínuo",
+          "Réguas com frisos"
+        ],
+        [
+          "Umidade",
+          "Sensível; pede ambiente seco",
+          "Há chapa própria para área úmida",
+          "Impermeável"
+        ],
+        [
+          "Luz embutida e sanca",
+          "Aceita bem",
+          "Aceita bem",
+          "Mais limitado"
+        ],
+        [
+          "Onde costuma ir",
+          "Sala, quarto, circulação",
+          "Sala, quarto, cozinha, banheiro",
+          "Área de serviço, varanda coberta"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "fonte": {
+        "nome": "Caderno de especificações: tetos e forros — DER-ES",
+        "url": "https://der.es.gov.br/Media/der/Documentos/Tabela%20Referencial%20de%20Preço/Referencial%20de%20Edificações/CADERNO_ESPECIFICACOES/1102-%20TETOS%20E%20FORROS%20-%20REBAIXAMENTOS.pdf"
+      },
+      "nota": "Comparação geral. A escolha final depende do projeto, do ambiente e do fornecedor."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida o forro de cada cômodo pela umidade e pelo uso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em sala, quarto, escritório e circulação, o que pesa é o acabamento. Gesso em placas e drywall chegam ao mesmo teto liso e pintado, e a diferença está mais na obra do que no resultado. O drywall tende a ser escolhido quando o projeto tem muitos recortes, sancas e rebaixos em alturas diferentes, porque a estrutura metálica facilita desenhar cada plano."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em banheiro, cozinha e lavanderia, a umidade manda. Segundo o portal Engenharia 360, o drywall tem três chapas principais: a **ST**, para áreas secas; a **RU**, resistente à umidade, conhecida como chapa verde; e a **RF**, resistente ao fogo, a chapa rosa. Em ambiente com vapor de banho, a escolha correta é a RU, e não a comum com pintura especial."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O PVC é imbatível em limpeza: o caderno do DER-ES orienta apenas pano macio com água e detergente neutro. Por isso ele aparece em área de serviço, garagem e varanda coberta. Mas há um cuidado pouco lembrado: quando o espaço entre o forro e o telhado pode passar de 45 °C, o mesmo caderno pede isolante térmico, porque o calor deforma as réguas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Luminária pesada vai na estrutura",
+      "texto": "O caderno do DER-ES é claro: luminárias pesadas nunca devem ser fixadas diretamente no forro de gesso nem nos perfis de PVC, e sim na estrutura da casa. Spots e plafons leves podem ir no forro. Lustre, pendente grande e ventilador de teto pedem ponto de fixação na laje, previsto antes de fechar o teto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma pergunta útil para cada ambiente: o que precisa ficar acessível depois? Registros, caixas de passagem, máquinas de ar-condicionado e drenos não podem ficar presos acima de um teto fechado. O caderno do DER-ES lembra de prever **alçapões**, no gesso e no PVC, as tampas de inspeção que permitem abrir o forro sem quebrar. Mais ideias de acabamento na categoria [interiores e mobiliário](/blog/categoria/interiores)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Planeje sanca, rebaixo e luz antes de fechar o teto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **sanca** é o recorte no forro que esconde uma fita ou um perfil de luz, e a claridade sai refletida pela parede ou pelo teto. É o recurso que cria aquela luz suave de fim de tarde na sala. Ela pode ser aberta, com a luz voltada para cima, ou fechada, com a luz escondida e saindo por um rasgo lateral."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **rebaixo** é a parte do forro que desce para esconder uma viga, um tubo ou para marcar um ambiente, como a área da mesa de jantar. Aqui mora o principal risco do forro: cada centímetro rebaixado sai do pé-direito, a altura entre o piso e o teto. Em apartamento de teto baixo, o rebaixo exagerado deixa a sala opressiva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso a ordem certa é: primeiro o projeto de iluminação, com a posição de cada spot, pendente e sanca; depois o desenho do forro em volta dele. Inverter essa ordem costuma gerar spots desalinhados com o móvel, lustre fora do centro da mesa e furos remendados. O arquiteto ou o designer de interiores resolve as duas coisas juntas."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Forro rebaixado na sala: o que pesa",
+      "pros": [
+        "Esconde vigas, tubos e fios e deixa o teto limpo",
+        "Permite sanca, luz indireta e spots bem posicionados",
+        "Ajuda a marcar ambientes num espaço integrado"
+      ],
+      "contras": [
+        "Diminui o pé-direito e pode deixar o ambiente baixo",
+        "Exige alçapões para manutenção do que fica acima",
+        "Luminária pesada precisa de fixação prevista na laje"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Antes de rebaixar, olhe também o que já existe. Em muitas casas novas, a laje de concreto aparente, só pintada ou com acabamento de cimento, combina com estilos mais industriais e preserva a altura. Nesse caso, a luz vai em trilhos, pendentes ou arandelas, sem forro nenhum. Rebaixar só porque é comum nem sempre é a melhor escolha."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba o que conferir na obra e no imóvel que vai comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na obra, o caderno do DER-ES pede que impermeabilização e instalações estejam concluídas antes do forro, com as tubulações testadas e sem vazamento. Parece óbvio, mas é o erro que mais estraga teto novo: um cano que pinga meses depois mancha o gesso e obriga a abrir o forro. A montagem deve ficar com equipe especializada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre normas, vale um cuidado atual. Segundo o catálogo de normas da Target, a parte da norma brasileira de drywall dedicada a forros, a NBR 15758-2, foi cancelada e substituída em setembro de 2025. Por isso, peça ao fornecedor que trabalhe pela edição vigente das normas da ABNT e registre isso no orçamento, em vez de aceitar uma referência antiga."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No caso do PVC, o caderno do DER-ES lembra que cada perfil deve trazer, gravada, a marca do fabricante, a referência à norma NBR 14285 e o mês e ano de fabricação. É um jeito simples de diferenciar material de procedência. No gesso, vale pedir a especificação da placa ou da chapa, inclusive se é a versão para área úmida."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "Manchas amareladas ou escuras no teto: sinal de infiltração vinda de cima.",
+        "Trincas no encontro do forro com a parede: falta de junta ou de fixação.",
+        "Barrigas e ondulações: nivelamento ou fixação deficiente.",
+        "Teto do banheiro com bolhas ou mofo: chapa ou ventilação inadequada.",
+        "Ausência de alçapão onde há registro ou máquina de ar-condicionado."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita a um imóvel pronto, olhe para cima com a mesma atenção que dá ao piso. Os sinais da lista acima costumam indicar problemas que vêm de cima do forro, como vazamento ou telhado, e merecem a opinião de um engenheiro ou arquiteto antes da compra. Outros guias de casa e de compra estão no [blog](/blog)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Pequenos reparos",
+      "texto": "Segundo o portal Sienge, pequenos danos no drywall costumam ser corrigidos com massa própria e lixamento, e a limpeza pede pano úmido com detergente neutro. Rachadura que volta, mancha que cresce ou teto cedendo não são reparo de pintura: chame um profissional e descubra a causa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um imóvel em Campinas e quer entender o que o acabamento de cada casa revela, a equipe da {{cliente}} pode ajudar na comparação, para comprar ou para vender."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: gesso ou drywall onde o teto é vitrine, drywall resistente à umidade onde há vapor e PVC onde a limpeza fala mais alto."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a diferença entre forro de gesso e drywall?",
+      "resposta": "O forro de gesso tradicional usa placas pequenas penduradas por arames e emendadas com gesso. O drywall usa chapas grandes parafusadas em perfis de aço galvanizado. O acabamento final é parecido; muda o jeito de montar e a facilidade de recortar e abrir para manutenção."
+    },
+    {
+      "pergunta": "Posso usar forro de gesso no banheiro?",
+      "resposta": "No drywall, existe a chapa resistente à umidade, a RU, conhecida como chapa verde, indicada para banheiro, cozinha e lavanderia. A chapa comum com tinta especial não substitui a RU. A ventilação do banheiro também precisa funcionar bem."
+    },
+    {
+      "pergunta": "Dá para pendurar lustre direto no forro de gesso?",
+      "resposta": "Luminária pesada deve ser fixada na estrutura da casa, como a laje, e não só no forro. Spots e plafons leves podem ir no gesso. O ponto de fixação precisa ser previsto antes de fechar o teto."
+    },
+    {
+      "pergunta": "Forro de PVC esquenta?",
+      "resposta": "O PVC é sensível a calor. Quando o espaço entre o forro e o telhado pode passar de 45 °C, cadernos técnicos pedem isolante térmico acima das réguas para evitar deformação."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Caderno de especificações de edificações: tetos e forros, rebaixamentos — DER-ES",
+      "url": "https://der.es.gov.br/Media/der/Documentos/Tabela%20Referencial%20de%20Preço/Referencial%20de%20Edificações/CADERNO_ESPECIFICACOES/1102-%20TETOS%20E%20FORROS%20-%20REBAIXAMENTOS.pdf",
+      "data": "maio de 2026"
+    },
+    {
+      "nome": "Drywall: uso da chapa correta — Engenharia 360",
+      "url": "https://engenharia360.com/drywall-uso-da-chapa-correta/",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Drywall: tudo o que você precisa saber — Sienge",
+      "url": "https://sienge.com.br/blog/drywall-tudo-que-voce-precisa-saber/",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Forro de drywall estruturado — AECweb",
+      "url": "https://www.aecweb.com.br/produto/forro-de-drywall-estruturado/133613",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "NBR 15758-2: requisitos para sistemas usados como forros — Target Normas",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/41227/nbr15758-2-sistemas-construtivos-em-chapas-de-gesso-para-drywall-projeto-e-procedimentos-executivos-para-montagem-parte-2-requisitos-para-sistemas-usados-como-forros",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
