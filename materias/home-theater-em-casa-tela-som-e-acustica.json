@@ -1,0 +1,261 @@
+{
+  "slug": "home-theater-em-casa-tela-som-e-acustica",
+  "tema": "sala de cinema em casa tela som acustica",
+  "titulo": "Home theater em casa: tela, som e acústica da sala de cinema",
+  "resumo": "Home theater em casa: a distância certa entre sofá e tela, onde ficam as caixas de som e como tratar a acústica para a sala de cinema soar bem.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "home theater",
+    "alto padrão",
+    "acústica",
+    "interiores",
+    "lazer em casa"
+  ],
+  "capa": {
+    "alt": "Sala de cinema em casa com paredes escuras revestidas de painéis de tecido, poltronas reclináveis e tela grande apagada"
+  },
+  "seo": {
+    "titulo": "Home theater em casa: tela, som e acústica"
+  },
+  "redes": {
+    "legenda": "Você sabe a que distância o sofá deve ficar da tela? Referências de cinema usam o ângulo de visão, e não um número fixo: com uma tela de 120 polegadas, a conta dá perto de 4 metros. Depois vêm as caixas de som na altura do ouvido e a acústica, que pesa tanto quanto o equipamento. Juntamos tudo num guia para planejar a sala de cinema em casa. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "hometheater",
+      "saladecinema",
+      "altopadrao",
+      "arquitetura",
+      "decoracao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Montar um **home theater em casa** é um desejo comum de quem gosta de cinema, de séries e de reunir a família no fim de semana. A tentação é começar pelo maior televisor ou pelo projetor mais potente. Mas quem já sentou numa sala com tela grande demais, eco nas paredes e graves embolados sabe que o aparelho, sozinho, não faz a experiência."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: uma boa sala de cinema nasce de três decisões, nesta ordem. Primeiro, o tamanho da tela pela distância do sofá, usando o ângulo de visão recomendado por referências como THX e SMPTE. Depois, as caixas de som em ângulos definidos e na altura do ouvido. Por fim, a acústica do cômodo, que controla ecos e graves."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "O tamanho da tela se escolhe pelo ângulo de visão: de 30° (SMPTE) a 36° (THX) a partir do assento.",
+        "Caixas frontais formam um triângulo com o sofá; as laterais ficam um pouco atrás de quem assiste.",
+        "Isolar o som (para não incomodar a casa) e tratar a acústica (para soar bem por dentro) são coisas diferentes.",
+        "Elétrica, ar-condicionado e alterações em paredes pedem projeto e profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha o tamanho da tela pela distância do sofá"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A pergunta certa não é qual a maior tela que cabe na parede, e sim quanto do seu campo de visão ela deve ocupar. Segundo o guia do portal Home Theater sobre as recomendações do setor, a **THX**, empresa de certificação de som e imagem para cinema, indica um ângulo horizontal de visão de 36°. A **SMPTE**, entidade de engenheiros de cinema e televisão, trabalha com 30° como piso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso vira uma conta simples de geometria: quanto maior a tela, mais longe fica o assento ideal. O mesmo guia sugere, como alvo confortável, de 36° a 40°, e aponta que acima de 40° a 45° o olho passa a varrer a imagem de um lado a outro. A tabela abaixo traduz os ângulos em metros para telas no formato 16:9."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Distância do assento à tela por tamanho (formato 16:9)",
+      "colunas": [
+        "Tela (diagonal)",
+        "Largura da imagem",
+        "Distância a 36° (THX)",
+        "Distância a 30° (SMPTE)"
+      ],
+      "linhas": [
+        [
+          "75 polegadas (1,91 m)",
+          "1,66 m",
+          "2,6 m",
+          "3,1 m"
+        ],
+        [
+          "100 polegadas (2,54 m)",
+          "2,21 m",
+          "3,4 m",
+          "4,1 m"
+        ],
+        [
+          "120 polegadas (3,05 m)",
+          "2,66 m",
+          "4,1 m",
+          "5,0 m"
+        ],
+        [
+          "135 polegadas (3,43 m)",
+          "2,99 m",
+          "4,6 m",
+          "5,6 m"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Cálculo a partir dos ângulos de 36° e 30° e da largura da tela 16:9 (diagonal × 0,872), conforme as fórmulas do guia do portal Home Theater. Arredondado para 0,1 m."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E a resolução? O guia observa que a vantagem visível do 4K sobre o Full HD aparece quando você senta a até cerca de 1,5 vez a diagonal da tela. Numa tela de 120 polegadas, isso dá perto de 4,6 m, faixa que coincide com a distância recomendada pela THX. Ou seja: na sala bem dimensionada, você aproveita a resolução sem esforço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a tabela tem limite. Em salas com duas fileiras de poltronas, a primeira fica mais perto e a segunda mais longe do ideal; o costume é calcular pelo assento principal e elevar a fileira de trás num pequeno tablado, para ninguém ver a cabeça da frente. Quem costuma ver mais esporte e TV aberta do que filmes tende a preferir um ângulo menor, mais descansado."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida entre projetor e televisor para o seu cômodo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com a distância definida, chega a hora de escolher como a imagem vai aparecer. Telas acima de uns 100 polegadas costumam ficar mais viáveis com projetor e tela de projeção. Televisores grandes, por outro lado, lidam melhor com a luz do dia e dispensam escurecer o ambiente. A escolha depende de quanto a sala será usada de dia e de quanto você consegue controlar a luz."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Projetor com tela de projeção numa sala dedicada",
+      "pros": [
+        "Permite imagens muito grandes sem ocupar a parede com um aparelho preto quando desligado.",
+        "Combina com salas dedicadas, escuras, que imitam a experiência do cinema.",
+        "A tela pode ser fixa, retrátil ou de material que deixa o som passar, com caixas atrás."
+      ],
+      "contras": [
+        "Pede controle da luz: cortina blackout e paredes e teto em tons escuros e foscos.",
+        "Exige planejar a posição do aparelho no teto, a ventilação e a passagem de cabos antes do forro.",
+        "Em sala de estar clara, usada de dia, a imagem perde contraste."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma sala dedicada, fechada e sem janela para a rua, é o cenário que mais favorece o projetor. Já o home theater montado na sala de estar, integrado à varanda e à cozinha, costuma funcionar melhor com um televisor grande e uma boa barra ou um conjunto de caixas. Mais ideias para áreas de lazer da casa estão em [alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Planeje a infraestrutura antes do forro",
+      "texto": "Pontos de energia para projetor e subwoofer, tubulação para cabos de imagem e de caixas, ar-condicionado silencioso e iluminação com dimerização se definem no projeto. Elétrica e climatização ficam com profissional habilitado, com a anotação de responsabilidade técnica (ART ou RRT) quando houver obra."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Posicione as caixas de som nos ângulos certos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os nomes dos sistemas parecem código, mas têm lógica. Em **5.1.2** ou **7.1.4**, o primeiro número conta as caixas na altura do ouvido, incluindo a central; o segundo, os subwoofers, que fazem os graves; o terceiro, as caixas de altura, no teto ou voltadas para ele, usadas em formatos de som imersivo como o Dolby Atmos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O guia de instalação da Dolby orienta escolher um assento central, apontar as caixas para ele e mantê-las na altura do ouvido de quem está sentado, salvo indicação diferente. O guia de posicionamento do site The Home Cinema Guide detalha os ângulos medidos a partir do assento, que estão resumidos na lista a seguir."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Frontais esquerda e direita:** de 22° a 30° de cada lado, à mesma distância do assento, como num triângulo.",
+        "**Central:** logo acima ou abaixo do meio da tela, com o alto-falante agudo na altura do ouvido; ela leva os diálogos.",
+        "**Surround no sistema 5.1:** de 110° a 120° (referência Dolby) ou de 90° a 110° (referência THX), um pouco atrás do sofá.",
+        "**Sistema 7.1:** laterais de 90° a 110° e traseiras de 135° a 150°.",
+        "**Caixas de altura em quatro pontos:** à frente e atrás, perto de 45° do assento, aceitando de 30° a 55°."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O subwoofer é o mais sensível ao lugar. O mesmo guia lembra que o canto reforça o grave, mas pode deixá-lo exagerado, e que o meio exato entre duas paredes opostas favorece as chamadas ondas estacionárias, que fazem o grave sumir em um ponto e sobrar em outro. Um teste caseiro conhecido é colocar o subwoofer no assento e andar pela sala ouvindo onde o grave soa mais equilibrado."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas não force o sistema para caber na sala. Num cômodo pequeno, um 5.1 bem posicionado costuma soar melhor do que um 7.1.4 espremido, com caixas encostadas no sofá. Comece pelo que a planta permite e deixe tubulação de reserva para ampliar depois."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Separe isolamento e tratamento acústico na sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Aqui mora a confusão mais comum. **Isolamento acústico** impede que o som saia da sala e acorde a casa, ou que o barulho da rua entre. Ele depende de massa e vedação: paredes, portas pesadas, janelas e frestas. **Tratamento acústico** cuida do som dentro da sala, controlando ecos e reflexões. Uma sala pode ser bem isolada e soar mal, e o contrário também acontece."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a empresa britânica de acústica Advanced Acoustics, salas sem tratamento tendem a ter eco, som embolado e graves imprevisíveis. A orientação é colocar painéis absorventes nos **pontos de primeira reflexão**, nas paredes laterais, no teto e atrás dos assentos, onde o som bate antes de chegar ao ouvido. O mesmo texto alerta que absorção demais deixa a sala abafada, sem vida."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os graves pedem outra estratégia. As frequências baixas se acumulam nos cantos, e por isso os chamados **bass traps**, peças absorventes mais espessas, costumam ir nas quinas da sala. Já os difusores, painéis que espalham o som em vez de absorvê-lo, são indicados pela mesma empresa para salas com 4 m de profundidade ou mais, para preservar a sensação de espaço."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O tratamento pode ser bonito. Painéis revestidos de tecido, ripados de madeira com material absorvente atrás, tapete grosso, cortinas pesadas e poltronas estofadas fazem parte do trabalho acústico e do clima da sala. Para entender como o ruído afeta o conforto no resto da casa, vale passar por [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas reforma de isolamento é outra conversa. Trocar porta, refazer parede ou mexer em forro com função acústica exige projeto, cálculo e profissional responsável. Se o objetivo é uma sala dedicada, de padrão alto, o caminho mais seguro é contratar um projeto acústico junto com o de arquitetura e o de interiores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa com espaço para uma sala de cinema, a equipe da {{cliente}} ajuda a avaliar plantas e cômodos com calma, olhando pé-direito, proporções e a possibilidade de isolar o ambiente do resto da casa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: defina a distância do sofá, escolha a tela pelo ângulo de visão, posicione o som e só então trate a acústica."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a distância ideal entre o sofá e uma tela de 100 polegadas?",
+      "resposta": "Pelo ângulo de 36° indicado pela THX, a distância fica perto de 3,4 m. Pelo ângulo de 30° da SMPTE, perto de 4,1 m. Entre os dois está a faixa confortável para a maioria das pessoas."
+    },
+    {
+      "pergunta": "O que significam os números 5.1.2 ou 7.1.4?",
+      "resposta": "O primeiro número indica as caixas na altura do ouvido, incluindo a central. O segundo, os subwoofers. O terceiro, as caixas de altura, usadas em formatos de som imersivo."
+    },
+    {
+      "pergunta": "Isolamento acústico e tratamento acústico são a mesma coisa?",
+      "resposta": "Não. O isolamento impede que o som saia ou entre na sala e depende de paredes, portas e vedação. O tratamento controla ecos e reflexões dentro da sala, com painéis, tapetes e estofados."
+    },
+    {
+      "pergunta": "Onde colocar o subwoofer na sala?",
+      "resposta": "Evite o meio exato entre duas paredes opostas, que favorece ondas estacionárias. O canto reforça o grave, mas pode exagerar. Testar algumas posições ouvindo do assento principal costuma dar o melhor resultado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Screen Size vs Viewing Distance: THX and SMPTE Guidelines — Home Theater (hometheater.us.com)",
+      "url": "https://hometheater.us.com/video/screen-size-viewing-distance/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Surround Sound Speaker Placement: 5.1, 7.1 & Dolby Atmos Setup — The Home Cinema Guide",
+      "url": "https://www.the-home-cinema-guide.com/surround-sound-speaker-placement.html",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "7.1.4 in-wall Dolby Atmos enabled speaker placement — Dolby",
+      "url": "https://dolby.com/en-in/about/support/guide/setup-guides/7.1.4-in-wall-dolby-atmos-enabled-speaker-placement",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Acoustically treating a cinema room: why it matters — Advanced Acoustics",
+      "url": "https://advancedacoustics-uk.com/pages/acoustically-treating-a-cinema-room-why-it-matters-how-to-get-it-right",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "The best seat-to-screen distance for different projector screen sizes — BenQ",
+      "url": "https://www.benq.com/en-me/knowledge-center/knowledge/the-best-seat-to-screen-distance-for-different-projector-screen-sizes.html",
+      "data": "novembro de 2026"
+    }
+  ]
+}

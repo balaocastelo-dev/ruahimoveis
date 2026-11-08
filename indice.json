@@ -1296,7 +1296,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-11-08T17:20:15.045Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "home-theater-em-casa-tela-som-e-acustica",
+      "titulo": "Home theater em casa: tela, som e acústica da sala de cinema",
+      "tema": "sala de cinema em casa tela som acustica",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-11-08T20:21:03.201Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T17:20:15.046Z"
+  "atualizadoEm": "2026-11-08T20:21:03.202Z"
 }
