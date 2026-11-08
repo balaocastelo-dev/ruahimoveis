@@ -1,0 +1,176 @@
+{
+  "slug": "piso-atermico-borda-de-piscina-como-escolher",
+  "tema": "piso atermico na borda da piscina",
+  "titulo": "Piso atérmico na borda da piscina: o que é e como escolher",
+  "resumo": "Piso que não queima o pé existe? Veja o que torna um piso atérmico, por que a cor pesa tanto, os materiais mais usados em volta da piscina e os cuidados.",
+  "formato": "dica",
+  "categoria": "construcao",
+  "etiquetas": [
+    "piscina",
+    "piso",
+    "área externa",
+    "construção"
+  ],
+  "capa": {
+    "alt": "Borda de piscina com piso cimentício claro, água azul e jardim tropical sob sol forte"
+  },
+  "redes": {
+    "legenda": "O piso da piscina queima o pé no verão? A cor pesa mais do que parece. Em ensaio da UFSC feito ao sol da tarde, a diferença de temperatura entre pisos de entorno de piscina chegou a cerca de 19 °C, e as peças claras refletiram muito mais o sol. No blog, explicamos o que é piso atérmico, quais materiais funcionam e os cuidados na limpeza. Leia o texto completo no blog (link na bio).",
+    "hashtags": [
+      "piscina",
+      "pisoatermico",
+      "areaexterna",
+      "arquitetura",
+      "construcao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem tem piscina conhece a cena: o sol de verão aquece a borda e atravessar até a água vira uma corrida na ponta dos pés. É por isso que o **piso atérmico** aparece em quase todo projeto de área de lazer. A dúvida é se ele de fato não esquenta e qual escolher entre tantas opções."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: nenhum piso fica frio ao sol, mas alguns esquentam bem menos. O que mais pesa é a capacidade de refletir a luz solar, e isso depende muito da cor. Peças claras de base cimentícia costumam ser as mais confortáveis, desde que tenham textura antiderrapante e recebam o cuidado certo."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Atérmico significa que esquenta menos, não que fica frio.",
+        "Em ensaio da UFSC, a diferença entre pisos ao sol chegou a cerca de 19 °C.",
+        "A cor clara foi o fator que mais pesou no desempenho térmico.",
+        "Cimentício pede limpeza suave: nada de jato de alta pressão nem abrasivos."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que um piso esquenta menos que outro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pesquisadores da UFSC compararam oito pisos usados em volta de piscinas, em trabalho apresentado no Encontro Nacional de Conforto no Ambiente Construído. Mediram em laboratório a **refletância solar**, que é a fração do sol que a superfície devolve, e depois fotografaram as peças com câmera térmica às 14h30 de um dia de novembro de 2024, com o ar a 29 °C."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As superfícies ficaram entre cerca de 35 °C e 54 °C, uma diferença de aproximadamente 19 °C entre os materiais. O cimentício atérmico branco refletiu cerca de 88% do sol, enquanto um cimentício esmaltado marrom-escuro refletiu perto de 10%. A conclusão dos autores: a refletância, ligada sobretudo à cor, foi o fator que mais influenciou o índice de reflexão solar."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Refletância solar de pisos de entorno de piscina",
+      "colunas": [
+        "Material",
+        "Cor",
+        "Refletância solar"
+      ],
+      "linhas": [
+        [
+          "Cimentício atérmico",
+          "Branco",
+          "0,88"
+        ],
+        [
+          "Cimentício atérmico",
+          "Cinza-claro",
+          "0,75"
+        ],
+        [
+          "Porcelanato esmaltado",
+          "Bege-claro",
+          "0,66"
+        ],
+        [
+          "Cimentício atérmico",
+          "Cinza",
+          "0,47"
+        ],
+        [
+          "Madeira",
+          "Marrom-escuro",
+          "0,31"
+        ],
+        [
+          "Cimentício esmaltado",
+          "Marrom-escuro",
+          "0,11"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Quanto mais perto de 1, mais sol a superfície reflete e menos ela aquece. Valores arredondados do estudo da UFSC; nem todas as amostras estão na tabela."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Repare que o mesmo cimentício atérmico, em cinza médio, refletiu bem menos que o branco. Ou seja, o nome na embalagem não basta: a cor escolhida decide boa parte do conforto. Um manual técnico de revestimentos cimentícios da Palazzo faz o mesmo alerta, lembrando que tons escuros absorvem mais calor."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual material escolher e como cuidar"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Cimentício atérmico:** feito com cimento branco e minerais, tem pequenos poros que aumentam a aderência ao pé molhado e pode imitar pedra, madeira ou concreto.",
+        "**Pedras naturais:** São Tomé e Goiás são tradicionais em borda de piscina; o acabamento apicoado ou flameado é o que dá aderência.",
+        "**Cerâmica e porcelanato:** há modelos próprios para piscina, mas só alguns são de fato atérmicos; confira a indicação do fabricante.",
+        "**Deque de madeira:** bonito e acolhedor, mas aquece mais em tons escuros e pede verniz com filtro solar periódico."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O cimentício tem um preço na manutenção. Segundo a Engenharia 360, ele não deve ser lavado com jato de alta pressão nem com produtos abrasivos, e alguns fabricantes indicam impermeabilização periódica. Na instalação, a área externa precisa de juntas de movimentação: o manual da Palazzo indica dividir o piso externo em panos de até 20 m² ou 4 m numa direção. Mais orientações de obra estão em [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Projeto e execução",
+      "texto": "Borda e entorno de piscina envolvem impermeabilização, caimento para ralos e juntas. Escolha o piso com o arquiteto ou engenheiro responsável pela obra e siga o manual do fabricante na argamassa, no rejunte e na cura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com área de lazer bem resolvida em Campinas, a equipe da {{cliente}} pode ajudar a avaliar esse e outros detalhes durante a busca. E o [blog](/blog) reúne mais ideias para quem gosta de morar bem."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para a borda da piscina, escolha um piso atérmico em tom claro e com textura antiderrapante: é a combinação que mais protege o pé no verão."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Piso atérmico fica frio no sol?",
+      "resposta": "Não. Ele esquenta menos que outros pisos, sobretudo em cores claras, mas também aquece sob sol forte. Em ensaio da UFSC, as superfícies variaram de cerca de 35 °C a 54 °C conforme o material e a cor."
+    },
+    {
+      "pergunta": "Posso lavar o piso cimentício da piscina com lavadora de alta pressão?",
+      "resposta": "Não é o recomendado. O jato forte e os produtos abrasivos podem desgastar a superfície porosa. Antes de limpar, siga o manual do fabricante do piso."
+    },
+    {
+      "pergunta": "Pedra São Tomé é atérmica?",
+      "resposta": "É uma das pedras tradicionais em borda de piscina, mas o desempenho térmico depende da cor da peça e do acabamento. Para aderência, prefira acabamentos ásperos, como o apicoado ou o flameado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Pisos para a área de entorno de piscina: análise e caracterização de propriedades térmicas e ópticas (UFSC, ENCAC) — ANTAC",
+      "url": "https://eventos.antac.org.br/index.php/encac/article/download/6419/5580/33284",
+      "data": "ensaio de novembro de 2024"
+    },
+    {
+      "nome": "Revestimentos para molduras de piscinas — Engenharia 360",
+      "url": "https://engenharia360.com/revestimentos-para-molduras-de-piscinas/",
+      "data": "janeiro de 2025"
+    },
+    {
+      "nome": "Manual técnico de revestimentos cimentícios — Palazzo",
+      "url": "https://palazzo.ind.br/wp-content/uploads/2021/11/manual-tecnico-palazzo-2024.pdf",
+      "data": "2024"
+    }
+  ]
+}
