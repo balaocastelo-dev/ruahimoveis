@@ -1269,7 +1269,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-08T14:21:25.259Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "concreto-aparente-em-casa-execucao-protecao-e-cuidados",
+      "titulo": "Concreto aparente em casa: execução, proteção e cuidados",
+      "tema": "concreto aparente na casa execucao e protecao",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-08T17:18:10.891Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T14:21:25.260Z"
+  "atualizadoEm": "2026-11-08T17:18:10.891Z"
 }
