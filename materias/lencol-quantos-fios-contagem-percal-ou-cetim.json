@@ -1,0 +1,155 @@
+{
+  "slug": "lencol-quantos-fios-contagem-percal-ou-cetim",
+  "tema": "contagem de fios do lencol percal ou cetim",
+  "titulo": "Lençol de quantos fios? O que a contagem diz e o que ela esconde",
+  "resumo": "Lençol de quantos fios vale a pena? Entenda a contagem, por que números altos enganam, a diferença entre percal e cetim e o que ler na etiqueta.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "quarto",
+    "sono",
+    "roupa de cama",
+    "bem-estar"
+  ],
+  "capa": {
+    "alt": "Cama arrumada com lençóis brancos de algodão, travesseiros macios e luz suave da manhã entrando pela janela"
+  },
+  "redes": {
+    "legenda": "Lençol de 1.000 fios é melhor que um de 300? Nem sempre. Parte dos números altos vem de fios torcidos contados mais de uma vez, e a fibra e a trama pesam mais do que o número na embalagem. Percal é fresco e fosco; cetim é macio e mais quente. Explicamos o que olhar antes de comprar. Leia no blog (link na bio).",
+    "hashtags": [
+      "quarto",
+      "roupadecama",
+      "sono",
+      "bemestar",
+      "decoracao",
+      "casa",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de comprar **lençol**, a pergunta sobre **quantos fios** aparece logo: 200, 400, 1.000? A embalagem trata o número como sinônimo de qualidade, e é natural imaginar que mais fios significam uma cama mais macia e um tecido que dura mais. A relação existe, mas é bem mais fraca do que a etiqueta sugere."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a contagem mede quantos fios cabem numa polegada quadrada de tecido, e números muito altos costumam vir de fios torcidos contados mais de uma vez. Para quem sente calor, um percal de algodão na faixa de 200 a 300 fios já é ótimo; quem prefere toque sedoso pode buscar cetim. A fibra, escrita na etiqueta, pesa mais do que o número."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Contagem de fios é o número de fios por polegada quadrada do tecido.",
+        "Fios de várias pernas torcidas podem inflar a contagem sem melhorar o lençol.",
+        "Percal é fresco, fosco e respirável; cetim é macio, com brilho leve e mais quente.",
+        "A etiqueta deve trazer a composição das fibras em porcentagem, por regra do Inmetro."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que um número alto nem sempre é um lençol melhor"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Muitos fios são formados por duas ou mais pernas torcidas juntas. Segundo o IDFL, laboratório americano de testes têxteis, alguns fabricantes passaram a contar cada perna como um fio, multiplicando o número. Uma investigação da revista Good Housekeeping, citada pelo laboratório, encontrou exageros de três a cinco vezes: um lençol vendido como 1.500 fios tinha cerca de 300."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois disso, a indústria têxtil americana revisou sua norma voluntária para contar fios, e não pernas, com apoio da Federal Trade Commission. O IDFL ainda dá um sinal prático: contagem muito alta por um preço baixo é motivo de desconfiança. Reportagem do TudoGostoso vai na mesma linha e lembra que um lençol sintético de 800 fios pode perder para um bom algodão de 300."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Percal ou cetim: a trama muda a sensação",
+      "colunas": [
+        "Trama",
+        "Como é tecida",
+        "Toque",
+        "Para quem"
+      ],
+      "linhas": [
+        [
+          "Percal",
+          "Um fio por cima, um por baixo",
+          "Fresco, firme e fosco",
+          "Quem sente calor e gosta de cama arejada"
+        ],
+        [
+          "Cetim",
+          "Quatro fios por cima, um por baixo",
+          "Macio, liso, com brilho leve",
+          "Quem sente frio e prefere toque sedoso"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "What is percale? Percale vs. sateen sheets explained — Avocado",
+        "url": "https://help.avocadogreenmattress.com/en/articles/14237778-what-is-percale-percale-vs-sateen-sheets-explained"
+      },
+      "nota": "Faixas citadas pelo IDFL: percal entre 200 e 300 fios; cetim entre 500 e 600."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o cetim tem um custo: os fios que correm soltos por cima do tecido podem enganchar e soltar bolinhas com o uso, enquanto o percal, mais travado, costuma resistir melhor. Para o verão de Campinas, o percal é escolha natural; no inverno, o cetim traz aconchego. Mais ideias para o quarto estão em [Bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que ler na etiqueta antes de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Brasil, a Portaria Inmetro nº 118, de 2021, aprovou o regulamento de etiquetagem de produtos têxteis, e a regra vale para roupa de cama. Segundo cartilha do Inmetro, a embalagem precisa informar o nome de cada fibra com a porcentagem, o país de origem, as dimensões e os cuidados de conservação, além da identificação de quem fabrica ou importa."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Composição:** procure 100% algodão ou linho se o objetivo é respirar bem; misturas com poliéster costumam amassar menos e respirar menos.",
+        "**Trama:** veja se é percal ou cetim e escolha pela sua temperatura de sono.",
+        "**Contagem:** use como referência, não como prova; desconfie de números muito altos a preço baixo.",
+        "**Medidas:** confira a altura do colchão para o elástico do lençol de baixo vestir bem.",
+        "**Cuidados:** leia os símbolos de lavagem; secar em temperatura acima da indicada pode encurtar a vida do tecido."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Algodões de fibra nobre, como o egípcio e o pima, aparecem como referência de toque macio, e o linho é a opção natural mais fresca, embora amasse com facilidade. Para combinar a roupa de cama com o resto da decoração, veja [Interiores e mobiliário](/blog/categoria/interiores). Se você está procurando a casa onde esse quarto vai existir, a {{cliente}} pode ajudar. Escolha pela fibra e pela trama; o número vem depois."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Lençol de 1.000 fios vale a pena?",
+      "resposta": "Nem sempre. Contagens muito altas costumam vir de fios torcidos contados mais de uma vez. Um bom percal de algodão na faixa de 200 a 300 fios pode ser mais confortável e durável."
+    },
+    {
+      "pergunta": "Percal ou cetim: qual é mais fresco?",
+      "resposta": "O percal. A trama de um fio por cima e um por baixo deixa o tecido mais respirável e com toque fresco, enquanto o cetim retém mais calor."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "The truth behind thread counts — IDFL",
+      "url": "https://idfl.com/info/the-truth-behind-thread-counts/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Nem 300, nem 800 fios: a verdade sobre a contagem de fios nos lençóis — TudoGostoso",
+      "url": "https://www.tudogostoso.com.br/noticias/nem-300-nem-800-fios-a-verdade-sobre-a-contagem-de-fios-nos-lencois-a20841.htm",
+      "data": "junho de 2025"
+    },
+    {
+      "nome": "Cartilha de produtos têxteis — Inmetro",
+      "url": "https://www.gov.br/inmetro/pt-br/centrais-de-conteudo/publicacoes/cartilhas/cartilha-produtos-texteis-2021.pdf/@@download/file",
+      "data": "2021"
+    },
+    {
+      "nome": "What is percale? Percale vs. sateen sheets explained — Avocado",
+      "url": "https://help.avocadogreenmattress.com/en/articles/14237778-what-is-percale-percale-vs-sateen-sheets-explained",
+      "data": "novembro de 2026"
+    }
+  ]
+}
