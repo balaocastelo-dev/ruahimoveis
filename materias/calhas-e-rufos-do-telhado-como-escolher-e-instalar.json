@@ -1,0 +1,221 @@
+{
+  "slug": "calhas-e-rufos-do-telhado-como-escolher-e-instalar",
+  "tema": "calhas rufos e condutores do telhado",
+  "titulo": "Calhas e rufos do telhado: como escolher, instalar e cuidar",
+  "resumo": "Calhas e rufos levam a água do telhado embora sem infiltrar. Veja materiais, caimento, condutores e os cuidados de obra e de manutenção que evitam goteira.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "telhado",
+    "calha",
+    "infiltração",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Beiral de casa moderna com calha metálica cinza-escura, condutor vertical junto à parede clara e jardim com grama abaixo"
+  },
+  "seo": {
+    "titulo": "Calhas e rufos: como escolher, instalar e cuidar"
+  },
+  "redes": {
+    "legenda": "Goteira na parede nem sempre vem da telha. Muitas vezes o problema está na calha entupida, no caimento errado ou no rufo mal vedado. Calhas costumam pedir caimento de 0,5% (cerca de 5 mm por metro) e acesso fácil para limpeza. Explicamos materiais, condutores e cuidados de obra para a água do telhado sair sem estragar a casa. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "telhado",
+      "calha",
+      "construcao",
+      "casanova",
+      "reforma",
+      "arquitetura",
+      "infiltracao",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma mancha de umidade no alto da parede, a tinta descascando perto do forro, um fio de água escorrendo pela fachada depois do temporal. Quando isso aparece, a primeira suspeita costuma ser a telha. Mas, muitas vezes, quem falhou foi o caminho da água: **as calhas, os rufos e os condutores do telhado**."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A boa notícia é que esse sistema é simples de entender. A calha recolhe a água na beira do telhado, o condutor a leva até o chão e o rufo veda o encontro da telha com a parede. Com material adequado, caimento certo, condutores bem dimensionados e limpeza em dia, ele funciona por muitos anos."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Calha recolhe, condutor desce e rufo veda: as três peças trabalham juntas.",
+        "Caimento usual da calha: 0,5%, ou cerca de 5 mm de desnível por metro.",
+        "O número de condutores depende da área do telhado e da chuva da cidade, e sai do projeto.",
+        "Calha embutida pede teste antes de fechar e acesso para limpeza."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o papel de cada peça no telhado"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **calha** é o canal que corre ao longo do beiral (a borda do telhado) ou entre duas águas do telhado. Ela pode ficar aparente, presa à testeira, ou embutida, escondida atrás de uma platibanda, aquela mureta que esconde o telhado na fachada. A embutida deixa a casa com cara mais limpa, mas exige mais cuidado na obra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **condutor** é o tubo que desce a água da calha até o chão. Ele pode ser vertical, colado à parede ou dentro dela, ou horizontal, quando corre pelo terreno até a caixa de areia ou a rede pública de drenagem. O **rufo** é a chapa dobrada que cobre o encontro do telhado com uma parede, impedindo que a água escorra por trás das telhas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No Brasil, o projeto dessas instalações segue a ABNT NBR 10844, a norma de instalações prediais de águas pluviais, cuja edição de 1989 foi confirmada várias vezes desde então, segundo o catálogo de normas da Target. Ela define como dimensionar calhas e condutores. Para outros temas da obra, veja a categoria [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha o material da calha e do rufo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O caderno de encargos da Sudecap, órgão de obras da Prefeitura de Belo Horizonte, lista as opções mais comuns: calhas metálicas em chapa de aço galvanizado, zinco ou alumínio, com espessura usual de 0,5 a 0,65 mm, além de calhas de concreto ou alvenaria. Para rufos, aço galvanizado, alumínio ou aço inox. O PVC aparece em condutores e em calhas prontas de fábrica."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Materiais de calha em linhas gerais",
+      "colunas": [
+        "Material",
+        "Onde costuma aparecer",
+        "Ponto de atenção"
+      ],
+      "linhas": [
+        [
+          "Aço galvanizado",
+          "Calhas aparentes e embutidas, rufos",
+          "Galvanização uniforme, sem ferrugem nem fissuras nas dobras"
+        ],
+        [
+          "Alumínio",
+          "Calhas aparentes e rufos",
+          "Confira espessura da chapa e fixação no projeto"
+        ],
+        [
+          "PVC de fábrica",
+          "Calhas aparentes em beirais",
+          "Conexões com folga para dilatação; suportes próximos"
+        ],
+        [
+          "Concreto ou alvenaria",
+          "Calhas embutidas em lajes e platibandas",
+          "Depende de boa impermeabilização"
+        ],
+        [
+          "Cobre ou aço inox",
+          "Condutores e rufos, sobretudo os aparentes",
+          "Materiais mais caros; pedem mão de obra especializada"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "nota": "Com base no Caderno de Encargos da Sudecap e no manual técnico da calha de PVC da Tigre. O projeto define o material de cada caso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na calha metálica, o mesmo caderno proíbe emendas no sentido do comprimento: escolhe-se o corte da chapa para evitá-las. As emendas transversais são feitas por sobreposição, com rebites e selante, e recobrimento mínimo de 5 cm. Na calha de PVC, o manual da Tigre lembra que as conexões têm uma marca de limite de montagem justamente para a peça dilatar no calor sem vazar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Acerte o caimento e o número de condutores"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A calha precisa de inclinação para a água correr até a saída, e não ficar parada. O caderno da Sudecap e o manual da Tigre falam em **0,5%**, o que dá cerca de 5 mm de desnível por metro. Parece pouco, mas uma calha de 10 m termina uns 5 cm mais baixa do que começa. Sem esse caimento, a água empoça, acumula folhas e transborda."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quantos condutores a casa precisa depende da área de telhado que despeja em cada calha e da intensidade da chuva na cidade. O manual da Tigre traz tabelas por cidade: na capital paulista, por exemplo, um condutor circular de PVC daquela linha atende pouco mais de 120 m² de telhado, num cálculo com período de retorno de cinco anos. Cada linha e cada projeto têm sua conta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os condutores verticais, sempre que possível, descem numa prumada só. Quando precisam desviar, o caderno da Sudecap pede curvas suaves, de 45° ou de 90° com raio longo, e peças de inspeção para desentupir. Quanto mais curvas fechadas, mais fácil a folha travar no caminho."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Calha embutida na platibanda",
+      "pros": [
+        "Fachada limpa, sem calha aparente no beiral",
+        "Combina com casas de linhas retas e telhado escondido",
+        "Protege a calha do sol direto"
+      ],
+      "contras": [
+        "Vazamento aparece dentro de casa, no forro ou na parede",
+        "Exige impermeabilização e teste antes de fechar",
+        "Limpeza e inspeção pedem acesso pensado no projeto"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cuide da obra e da manutenção para não ter goteira"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na obra, calhas e rufos embutidos devem ser instalados, soldados e **testados com água antes do fechamento**, como orienta o caderno da Sudecap. O rufo vai fixado na alvenaria e precisa ficar totalmente estanque. Em telhas metálicas, as limalhas da furação devem ser varridas no mesmo dia, porque enferrujam e mancham a calha."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Telhado é trabalho em altura",
+      "texto": "Limpeza de calha parece tarefa simples, mas envolve escada, telha frágil e risco de queda. Trabalho em telhado segue normas de segurança próprias. Se a calha não é acessível com segurança do chão ou de uma área protegida, chame um profissional equipado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na manutenção, a regra é olhar antes da estação das chuvas e depois de ventanias. Folhas, ninhos e areia fecham o bocal, a saída da calha para o condutor. Uma grelha no bocal ajuda a segurar as folhas, como sugere o manual da Tigre. Árvores perto do telhado pedem limpeza mais frequente. Mais ideias para cuidar da casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de uma casa, vale incluir as calhas na visita: procure manchas de escorrimento na fachada, ferrugem nas dobras, emendas com remendo de massa e condutores que terminam soltos no chão. Pergunte quando foi a última limpeza. Esses sinais não impedem um bom negócio, mas entram na conta da manutenção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa e quer olhar esses pontos com calma, a equipe da {{cliente}}, em Campinas, acompanha a visita com você. Em uma linha: calha com caimento, condutores no número certo, rufo vedado e limpeza em dia mantêm a água do lado de fora."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a inclinação certa de uma calha?",
+      "resposta": "O caimento usual é de 0,5%, cerca de 5 mm de desnível por metro, em direção à saída. O projeto confirma o valor para cada caso."
+    },
+    {
+      "pergunta": "Qual a diferença entre calha e rufo?",
+      "resposta": "A calha recolhe a água que escorre do telhado e a leva ao condutor. O rufo é uma chapa dobrada que veda o encontro do telhado com uma parede, para a água não entrar por trás das telhas."
+    },
+    {
+      "pergunta": "Calha embutida dá mais problema?",
+      "resposta": "Ela não é pior, mas qualquer falha aparece dentro de casa. Por isso pede impermeabilização bem-feita, teste com água antes de fechar e acesso para limpeza."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo limpar a calha?",
+      "resposta": "Não existe prazo único. O comum é conferir antes da estação das chuvas e depois de ventanias, com mais frequência quando há árvores perto do telhado."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Caderno de Encargos Sudecap, capítulo 8: Coberturas, forros e calhas — Prefeitura de Belo Horizonte",
+      "url": "https://prefeitura.pbh.gov.br/sites/default/files/estrutura-de-governo/sudecap/normas-padroes/VA-CADERNO/Capitulo08/CAP08-25-01-10.pdf",
+      "data": "janeiro de 2025"
+    },
+    {
+      "nome": "Manual técnico Calha Aquapluv Style — Tigre",
+      "url": "https://tigrecombr-prod.s3.amazonaws.com/export.tigre.com/files/arquivos/catalogos/Aquapluv%20Style.pdf",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "NBR 10844 — Instalações prediais de águas pluviais — Catálogo Target Normas",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/27559/nbr10844-instalacoes-prediais-de-aguas-pluviais-procedimento",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
