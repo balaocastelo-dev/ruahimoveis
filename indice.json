@@ -1431,7 +1431,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-09T14:29:55.329Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "altura-do-guarda-corpo-da-varanda-o-que-a-norma-pede",
+      "titulo": "Altura do guarda-corpo da varanda: o que a norma pede",
+      "tema": "altura minima do guarda corpo da varanda",
+      "tipo": "dica",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-11-09T17:21:12.816Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-09T14:29:55.330Z"
+  "atualizadoEm": "2026-11-09T17:21:12.817Z"
 }
