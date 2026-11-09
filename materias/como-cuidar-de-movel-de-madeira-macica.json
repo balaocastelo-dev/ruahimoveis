@@ -1,0 +1,129 @@
+{
+  "slug": "como-cuidar-de-movel-de-madeira-macica",
+  "tema": "como cuidar e limpar movel de madeira macica",
+  "titulo": "Como cuidar de móvel de madeira maciça para ele durar décadas",
+  "resumo": "Como cuidar de móvel de madeira maciça: limpeza do dia a dia, quando usar cera, por que evitar lustra-móveis com silicone e onde não colocar a peça.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "madeira",
+    "mobiliário",
+    "limpeza",
+    "decoração"
+  ],
+  "capa": {
+    "alt": "Aparador de madeira maciça escura com veios aparentes em sala iluminada por luz natural filtrada por cortina de linho"
+  },
+  "redes": {
+    "legenda": "Lustra-móveis toda semana faz bem para a madeira? Guias de conservação de museus dizem que não: muitos têm silicone, que forma uma película grudenta e atrai poeira. O segredo de um móvel de madeira maciça que atravessa gerações é mais simples: pano macio, cera em pasta de vez em quando e longe do sol direto. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "madeira",
+      "moveis",
+      "decoracao",
+      "interiores",
+      "casa",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Para **cuidar de móvel de madeira maciça**, o mais importante é o que se faz todo dia: tirar o pó com pano macio, levemente úmido, secar na hora qualquer líquido e manter a peça longe do sol direto e de fontes de calor. Produtos e cera entram de vez em quando, não toda semana."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa é a orientação de instituições que cuidam de acervos de mobiliário, como o Instituto Canadense de Conservação e o Serviço Nacional de Parques dos Estados Unidos. O que funciona para uma cômoda centenária num museu serve, com adaptações, para a mesa de jantar da sua casa."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Tire o pó com pano macio, de algodão, levemente úmido, e seque logo em seguida.",
+        "Evite lustra-móveis líquidos e em spray com silicone: eles deixam película e atraem sujeira.",
+        "Cera em pasta, em camadas finas, protege o acabamento e dura anos.",
+        "Sol direto, aquecedor e variação de umidade são os maiores inimigos da madeira."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Limpeza do dia a dia e quando usar cera"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Pó:** pano macio de algodão, apenas umedecido, e depois um pano seco para lustrar.",
+        "**Líquidos:** água deixa manchas esbranquiçadas no acabamento; seque derramamentos na hora e use porta-copos e pratinhos sob vasos.",
+        "**Produtos:** evite lustra-móveis com silicone ou óleo; segundo o instituto canadense, a madeira não precisa ser \"alimentada\" com essas misturas.",
+        "**Cera:** use cera em pasta sem corante nem perfume, só sobre acabamento firme, como verniz ou laca, e nunca sobre madeira crua.",
+        "**Como aplicar:** camada fina com pano de algodão, em movimentos circulares e depois no sentido dos veios; espere de 30 a 60 minutos e lustre."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quanto à frequência, o guia do Serviço Nacional de Parques indica nova cera a cada um a quatro anos em casas históricas abertas à visitação, e com mais frequência em peças muito usadas. A regra prática: enquanto a cera antiga ainda ganha brilho com um pano seco, não é preciso aplicar outra. Excesso de cera fica pegajoso e acumula sujeira."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Cuidado com o óleo",
+      "texto": "Óleo de linhaça só faz sentido em peça originalmente acabada com ele. Aplicado sem critério, escurece a madeira e endurece com o tempo, ficando muito difícil de remover. Na dúvida, em móvel antigo ou de valor, consulte um restaurador antes de qualquer produto."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde colocar o móvel na casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A madeira incha quando a umidade sobe e encolhe quando ela cai. Esse vaivém pode rachar a peça e o acabamento. Por isso, o instituto canadense recomenda um ambiente estável: nada de móvel colado a lareira, aquecedor ou saída de ar, nem guardado em sótão, porão ou garagem, onde a temperatura e a umidade variam muito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A luz também deixa marca, e o dano é cumulativo e irreversível: escurece madeiras claras, clareia as escuras e pode turvar o verniz. Cortina, persiana ou mudar a peça de parede bastam para proteger a peça nas horas de sol mais forte. Mas não é preciso viver no escuro: o problema é a luz direta, por muitas horas, todos os dias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de mudar o móvel de lugar, tire gavetas e prateleiras e levante a peça pela parte mais firme, como as pernas ou o tampo da mesa, em vez de arrastar. Para mais ideias de mobiliário e acabamentos, veja a [seção de interiores](/blog/categoria/interiores) e outros guias no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma casa nova em Campinas para receber aquele aparador de família, a equipe da {{cliente}} ajuda a encontrar o imóvel com a luz e o espaço certos. Em uma linha: pano macio, pouca cera e nada de sol direto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso limpar móvel de madeira com pano molhado?",
+      "resposta": "Use pano apenas umedecido, nunca encharcado, e seque logo depois. Água parada mancha o acabamento, e madeira sem acabamento não deve ser limpa com água."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo passar cera no móvel de madeira?",
+      "resposta": "Pouco. Guias de conservação falam em intervalos de anos, mais curtos em peças muito usadas. Enquanto a cera antiga ainda brilha com um pano seco, não é preciso reaplicar."
+    },
+    {
+      "pergunta": "Lustra-móveis faz mal para a madeira?",
+      "resposta": "Muitos lustra-móveis líquidos e em spray têm silicone ou óleos que formam película pegajosa e atraem poeira. Para proteger, prefira cera em pasta, aplicada de vez em quando."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Care of Furniture Finishes (CCI Notes 7/2) — Canadian Conservation Institute",
+      "url": "https://www.canada.ca/en/conservation-institute/services/conservation-preservation-publications/canadian-conservation-institute-notes/care-furniture-finishes.html",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Basic care: furniture and objects made of wood — Canadian Conservation Institute",
+      "url": "https://www.canada.ca/en/conservation-institute/services/care-objects/furniture-wooden-objects-basketry/basic-care-furniture-objects-wood.html",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Conserve O Gram 7/2: Waxing Furniture — National Park Service",
+      "url": "https://www.nps.gov/articles/000/conserve-o-gram-07-2-waxing-furniture.htm",
+      "data": "novembro de 2026"
+    }
+  ]
+}
