@@ -1467,7 +1467,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-09T20:17:24.483Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "tecido-de-sofa-resistente-teste-martindale",
+      "titulo": "Tecido de sofá resistente: o que o teste Martindale revela",
+      "tema": "tecido do sofa e o teste martindale de abrasao",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-09T20:18:28.968Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-09T20:17:24.484Z"
+  "atualizadoEm": "2026-11-09T20:18:28.968Z"
 }
