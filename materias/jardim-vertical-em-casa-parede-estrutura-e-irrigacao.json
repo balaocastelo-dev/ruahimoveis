@@ -1,0 +1,136 @@
+{
+  "slug": "jardim-vertical-em-casa-parede-estrutura-e-irrigacao",
+  "tema": "jardim vertical em casa estrutura e irrigacao",
+  "titulo": "Jardim vertical em casa: o que a parede precisa antes das plantas",
+  "resumo": "Jardim vertical em casa sem infiltração: como escolher a parede, o sistema, a irrigação e as plantas certas para sol ou sombra, e o que exige manutenção.",
+  "categoria": "bem-estar",
+  "formato": "dica",
+  "etiquetas": [
+    "jardim vertical",
+    "plantas",
+    "bem-estar",
+    "paisagismo"
+  ],
+  "capa": {
+    "alt": "Parede interna coberta por jardim vertical denso de samambaias e folhagens, ao lado de um banco de madeira e luz natural lateral"
+  },
+  "redes": {
+    "legenda": "Quer uma parede verde em casa? Antes das plantas, a parede precisa estar preparada: estrutura afastada, proteção contra umidade, ponto de água e uma irrigação que não dependa da memória de ninguém. Explicamos os sistemas, as plantas para sol e para sombra e a manutenção que um jardim vertical pede no blog (link na bio).",
+    "hashtags": [
+      "jardimvertical",
+      "plantas",
+      "paisagismo",
+      "decoracao",
+      "casaverde",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **jardim vertical** transforma uma parede vazia em um painel vivo, e é uma das imagens de casa mais salvas nas redes. O que a foto não mostra é a parte de trás: o peso da terra molhada, a água que escorre todo dia e a umidade que pode chegar à alvenaria se nada estiver preparado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: escolha uma parede com luz adequada às plantas, monte a estrutura afastada dela, preveja um ponto de água e prefira a irrigação automática por gotejamento. Com isso, o jardim costuma durar e a parede continua seca."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A luz da parede decide quais plantas funcionam ali.",
+        "Estrutura afastada da parede e proteção impermeável evitam infiltração.",
+        "Gotejamento automático rega por igual e reduz encharcamento e ressecamento.",
+        "Peso de plantas, terra e água precisa caber no que a parede aguenta."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Qual parede e qual sistema escolher"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pela luz. Uma matéria de decoração de A Gazeta recomenda parede com iluminação natural, mas sem sol exagerado, e plantas de sombra quando o ambiente interno é mais escuro. O guia do QuintoAndar cita espécies como samambaia, bromélia e flor-de-maio para meia-sombra, e aspargo-pluma e colar-de-pérolas para lugares de sol."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Depois, o sistema. Um trabalho de conclusão de curso de Agronomia da Universidade Federal de Uberlândia descreve três famílias: a **fachada verde**, com trepadeiras guiadas por treliças ou cabos; os **painéis modulares**, com vasos ou módulos presos a uma estrutura; e as **paredes contínuas**, com plantas em bolsos de feltro sobre uma placa que protege a alvenaria."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Jardim vertical dentro de casa",
+      "pros": [
+        "Traz verde para quem não tem quintal ou tem pouco espaço no piso.",
+        "Com a estrutura afastada, a câmara de ar entre painel e parede ajuda no conforto térmico, segundo o estudo da UFU.",
+        "Painéis modulares permitem trocar plantas sem desmontar tudo."
+      ],
+      "contras": [
+        "Exige ponto de água, drenagem e cuidado constante com a umidade.",
+        "Plantas, terra e água somam muito peso na parede.",
+        "Pede manutenção periódica: poda, troca de mudas e revisão da irrigação."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Irrigação, peso e manutenção: onde estão os riscos"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rega manual costuma ser o ponto fraco. O estudo da UFU defende a irrigação automatizada porque distribui a mesma quantidade de água em todo o painel; sem um responsável fixo, a rega à mão tende a alternar encharcamento e secura. O projeto testado usou um gotejador por vaso, controlador, filtro e sensor de chuva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um detalhe útil do mesmo trabalho: a parte de baixo do painel recebe a água que escorre de cima, por isso ganhou gotejadores de menor vazão. E o peso impressiona. No painel estudado, a estrutura metálica tinha cerca de 60 kg, e os vasos com plantas, por volta de 380 kg. Antes de instalar, confirme com um profissional se a parede suporta a carga."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Água e parede: onde parar",
+      "texto": "Novo ponto hidráulico, impermeabilização e fixação de cargas pesadas pedem arquiteto, engenheiro ou paisagista responsável. Em drywall, a parede precisa de reforço próprio. Não improvise furos perto de tubulações ou fiações."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na manutenção, o trabalho da UFU previu visitas mensais para conferir a distribuição de água, tirar folhas secas, olhar pragas e trocar plantas que encerraram o ciclo. Para outras ideias de verde dentro de casa, veja a categoria [Bem-estar](/blog/categoria/bem-estar); para impermeabilização e paredes, a de [Construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com parede, varanda ou pátio que receba bem um jardim, ou vai vender a sua, a equipe da {{cliente}}, em Campinas, pode conversar sobre o que observar em cada imóvel."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: prepare a parede e a água primeiro; as plantas vêm por último."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Jardim vertical causa infiltração na parede?",
+      "resposta": "Pode causar se a estrutura ficar encostada e a parede não tiver proteção contra umidade. Montar o painel afastado, com membrana ou placa impermeável e drenagem, reduz esse risco."
+    },
+    {
+      "pergunta": "Quais plantas usar em jardim vertical com pouca luz?",
+      "resposta": "Espécies de meia-sombra, como samambaia, bromélia e flor-de-maio, são citadas em guias para paredes internas. Para lugares de sol, aparecem aspargo-pluma e colar-de-pérolas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Jardins verticais: viabilidade de implantação (TCC de Agronomia) — Universidade Federal de Uberlândia — repositorio.ufu.br",
+      "url": "https://repositorio.ufu.br/bitstream/123456789/28263/1/ViabilidadeImplanta%c3%a7%c3%a3oJardins.pdf",
+      "data": "2019"
+    },
+    {
+      "nome": "Confira 8 dicas de como implantar um jardim vertical em casa — A Gazeta — agazeta.com.br",
+      "url": "https://www.agazeta.com.br/hub-imobi/decoracao/confira-8-dicas-de-como-implantar-um-jardim-vertical-em-casa-0523",
+      "data": "maio de 2023"
+    },
+    {
+      "nome": "Como fazer um jardim vertical em 4 passos — QuintoAndar Guias — quintoandar.com.br",
+      "url": "https://www.quintoandar.com.br/guias/?p=428245",
+      "data": "novembro de 2026"
+    }
+  ]
+}
