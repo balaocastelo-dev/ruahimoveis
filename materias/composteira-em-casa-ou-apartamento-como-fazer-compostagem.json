@@ -1,0 +1,245 @@
+{
+  "slug": "composteira-em-casa-ou-apartamento-como-fazer-compostagem",
+  "tema": "composteira domestica em casa ou apartamento",
+  "titulo": "Composteira em casa: como transformar restos de cozinha em adubo",
+  "resumo": "Composteira em casa ou apartamento: os tipos, o que pode e o que não pode entrar, como evitar cheiro e mosca e quanto tempo leva para o adubo ficar pronto.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "bem-estar",
+    "jardim",
+    "sustentabilidade",
+    "horta",
+    "apartamento"
+  ],
+  "capa": {
+    "alt": "Composteira de baldes empilhados numa área de serviço clara, ao lado de vasos com ervas e uma tigela com cascas de frutas"
+  },
+  "redes": {
+    "legenda": "Cerca de metade do lixo das cidades brasileiras é orgânico, segundo a Embrapa. Boa parte disso sai da cozinha: cascas, borra de café, talos. Numa composteira, isso vira adubo para os vasos e o jardim, sem cheiro, desde que você equilibre o úmido com o seco e deixe carne e gordura de fora. Explicamos os tipos de composteira e o passo a passo. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "compostagem",
+      "composteira",
+      "horta",
+      "jardim",
+      "sustentabilidade",
+      "bemestar",
+      "apartamento",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Cascas de banana, borra de café, talos de couve: quem cozinha em casa enche o lixo de restos que poderiam voltar para a terra. A **composteira em casa** faz exatamente isso. Ela transforma o resto orgânico da cozinha em adubo para vasos, horta e jardim, e diminui o volume e o cheiro do saco de lixo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A boa notícia é que dá para compostar tanto numa casa com quintal quanto num apartamento, com baldes empilhados na área de serviço. O segredo é sempre o mesmo: alternar o resto úmido da cozinha com material seco, como serragem ou folhas, deixar carne e gordura de fora e ter paciência de algumas semanas."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Segundo a Embrapa Hortaliças, cerca de metade do resíduo urbano no Brasil é orgânico.",
+        "Apartamento pede composteira de baldes ou caixa pequena; quintal comporta caixa ou leira.",
+        "Cascas, frutas, verduras e borra de café entram; carne, peixe, óleo e gordura ficam fora.",
+        "Material seco por cima de cada camada úmida é o que evita cheiro e mosca."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda por que vale compostar em casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um material da Embrapa Hortaliças, de 2021, estima que cerca de 50% do resíduo sólido urbano gerado no Brasil seja orgânico. Na cozinha de casa, essa proporção aparece todo dia: o que sobra do preparo de frutas, legumes e verduras pesa e estraga rápido no lixo comum, e é aí que surgem o mau cheiro e as moscas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na composteira, esse material é decomposto por bactérias, fungos e, em alguns modelos, minhocas. O resultado é um composto escuro, com cheiro de terra, que a página de compostagem caseira da Prefeitura de Porto Alegre descreve como sinal de maturação. Ele vai para vasos, canteiros e horta, devolvendo nutrientes ao solo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também um lado de rotina e bem-estar. Separar o orgânico muda a relação com a cozinha e com o que se compra, e o adubo pronto costuma levar a pessoa a cuidar de mais plantas. Para outras ideias de verde dentro de casa, a categoria [bem-estar em casa](/blog/categoria/bem-estar) reúne textos sobre jardim, luz e conforto."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Composteira não é lixeira",
+      "texto": "Ela recebe só resto orgânico. Plástico, vidro e metal seguem para a reciclagem, e carne, gordura e óleo ficam fora dela."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha o tipo de composteira que cabe na sua casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O modelo mais comum em apartamento é o de **baldes empilhados**. Um folheto da Embrapa Amapá descreve três baldes com tampa: o de baixo recolhe o líquido, o chamado chorume, por uma torneira; os de cima recebem o resto orgânico em camadas. Quando um balde enche, ele descansa enquanto outro passa a receber os restos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Prefeitura de Porto Alegre, na página de compostagem caseira, cita ainda a **caixa de madeira** com parede removível, a de **alvenaria** com duas divisões e uma versão para espaço pequeno: uma caixa plástica com furos no fundo, forrada com seis a oito folhas de jornal úmido. Ela também descreve a **vermicompostagem**, feita com minhocas da espécie *Eisenia foetida*."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em casa com quintal, dá para montar uma leira, um monte de camadas no chão. Uma circular técnica da Embrapa Agrobiologia, de 2005, orienta camadas de cerca de 20 cm, umidade perto de 50% e revolvimento semanal nas primeiras semanas. Nesse modelo, o centro do monte chega a cerca de 60 °C, o que acelera a decomposição."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Qual composteira combina com a sua casa",
+      "colunas": [
+        "Tipo",
+        "Onde cabe",
+        "Ponto de atenção"
+      ],
+      "linhas": [
+        [
+          "Baldes empilhados",
+          "Apartamento, área de serviço, varanda",
+          "Esvaziar o chorume pela torneira com frequência"
+        ],
+        [
+          "Caixa plástica pequena",
+          "Varanda e espaços apertados",
+          "Forrar com jornal úmido e furar o fundo"
+        ],
+        [
+          "Minhocário",
+          "Apartamento ou casa, à sombra",
+          "Sal prejudica as minhocas; mantenha à sombra"
+        ],
+        [
+          "Caixa de madeira ou alvenaria",
+          "Quintal ou jardim",
+          "Dois compartimentos para alternar"
+        ],
+        [
+          "Leira no chão",
+          "Quintal amplo",
+          "Revolver e controlar umidade"
+        ]
+      ],
+      "colunaDestaque": 0,
+      "fonte": {
+        "nome": "Compostagem caseira — DMLU, Prefeitura de Porto Alegre",
+        "url": "https://prefeitura.poa.br/dmlu/projetos/compostagem-caseira"
+      },
+      "nota": "Resumo de orientações da Prefeitura de Porto Alegre e da Embrapa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba o que pode entrar e o que fica de fora"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O folheto da Embrapa Amapá lista o que pode entrar: cascas, bagaços, caroços e sementes de frutas e hortaliças, borra de café, guardanapos e papel-toalha. A página de Porto Alegre acrescenta erva-mate, cascas de ovo trituradas, saquinhos de chá, aparas de grama, folhas secas, flores murchas e serragem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que fica de fora é parecido nas duas fontes: carnes, frango, peixe e frutos do mar, ossos, óleo de fritura e alimentos muito gordurosos ou salgados. A página de Porto Alegre explica que esses restos atraem ratos, moscas e baratas. A Embrapa Amapá ainda pede para evitar grandes quantidades de casca de laranja e limão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A proporção é o que mais pesa no resultado. Porto Alegre recomenda quantidades iguais de material verde, como cascas e borra de café, e de material marrom, como serragem, folhas secas e aparas. A Embrapa Amapá começa o balde com 5 cm de material seco e cobre cada camada de resto úmido com uma camada seca."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Composteira em casa",
+      "pros": [
+        "Diminui o volume e o cheiro do lixo da cozinha",
+        "Gera adubo para vasos, horta e jardim",
+        "Cabe em apartamento, no modelo de baldes",
+        "Pede pouco espaço e pouca manutenção diária"
+      ],
+      "contras": [
+        "Exige separar os restos todos os dias",
+        "Precisa de material seco à mão, como serragem",
+        "Erros de proporção causam cheiro e mosca",
+        "O adubo leva semanas para ficar pronto"
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Evite cheiro e mosca e saiba quando o adubo está pronto"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cheiro ruim quase sempre indica excesso de umidade ou falta de ar. A página de Porto Alegre orienta revolver o material para arejar, regar se estiver seco e acrescentar folhas secas ou serragem se estiver encharcado. Manter a composteira tampada, à sombra e protegida da chuva também ajuda a controlar a umidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O chorume não deve ir para o ralo sem necessidade: diluído, ele vira fertilizante líquido. O folheto da Embrapa Amapá indica 1 litro de chorume para 20 litros de água na rega. Quando o balde de cima enche, a orientação é cobrir com 5 cm de material seco e deixar descansar cerca de 30 dias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O composto está pronto quando fica escuro, homogêneo, com cheiro de terra e já não esquenta ao ser revolvido, segundo Porto Alegre. Na vermicompostagem, a Embrapa Agrobiologia fala em 30 dias ou mais, mais lento no inverno, até o material lembrar pó de café. Ter dois recipientes para alternar evita ficar sem lugar para os restos."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Coloque uma camada de material seco no fundo.",
+        "Acrescente os restos da cozinha picados.",
+        "Cubra sempre com outra camada seca.",
+        "Tampe e mantenha à sombra.",
+        "Esvazie o chorume e dilua antes de usar.",
+        "Deixe o recipiente cheio descansar e comece outro."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com quintal para horta e composteira, ou um apartamento com área de serviço arejada, a equipe da {{cliente}}, imobiliária em Campinas, ajuda a encontrar o imóvel com esse espaço. Mais textos sobre a casa estão na [página do blog](/blog). A decisão é simples: comece pequeno, com baldes e serragem, e ajuste a proporção até o cheiro sumir."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Composteira em apartamento dá cheiro?",
+      "resposta": "Bem montada, não costuma dar. O cheiro aparece quando há excesso de umidade ou de resto úmido; cobrir cada camada com material seco e manter a tampa fechada resolve a maior parte dos casos."
+    },
+    {
+      "pergunta": "Posso colocar comida cozida na composteira?",
+      "resposta": "As orientações variam. A Prefeitura de Porto Alegre deixa comida cozida de fora, porque atrai ratos, moscas e baratas; carne, peixe, óleo e alimentos gordurosos ou salgados ficam fora em todas as fontes consultadas."
+    },
+    {
+      "pergunta": "Quanto tempo leva para o composto ficar pronto?",
+      "resposta": "Depende do método e do cuidado. No modelo de baldes da Embrapa Amapá, o balde cheio descansa cerca de 30 dias; na vermicompostagem, a Embrapa Agrobiologia fala em 30 dias ou mais, mais lento no inverno."
+    },
+    {
+      "pergunta": "O que fazer com o chorume da composteira?",
+      "resposta": "Diluído, ele serve de fertilizante líquido. O folheto da Embrapa Amapá indica 1 litro de chorume para 20 litros de água na rega das plantas."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Lixo orgânico: composteira doméstica — Embrapa Amapá",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1033373/1/CPAFAPFolderCOMPOSTEIRA.pdf",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Compostagem caseira — DMLU, Prefeitura de Porto Alegre",
+      "url": "https://prefeitura.poa.br/dmlu/projetos/compostagem-caseira",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Integrando compostagem e vermicompostagem na reciclagem de resíduos orgânicos domésticos (Circular Técnica 12) — Embrapa Agrobiologia",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/596884/1/cit012.pdf",
+      "data": "2005"
+    },
+    {
+      "nome": "Hortaliça não é só salada: resíduos orgânicos — Embrapa Hortaliças",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1133862/1/HDJF-04-Residuos-Organicos-2021.pdf",
+      "data": "agosto de 2021"
+    }
+  ]
+}
