@@ -1,0 +1,242 @@
+{
+  "slug": "isolamento-termico-do-telhado-manta-la-de-rocha-forro",
+  "tema": "isolamento termico do telhado e do forro",
+  "titulo": "Isolamento térmico do telhado: manta, lã mineral ou forro?",
+  "resumo": "Isolamento térmico do telhado sem mito: como agem manta refletora, lã de rocha e forro, o que a norma pede para Campinas e onde cada solução falha.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "telhado",
+    "conforto térmico",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Sótão de casa em obra com caibros de madeira, manta aluminizada sob as telhas e rolos de lã mineral sobre o forro"
+  },
+  "redes": {
+    "legenda": "Sabia que a manta aluminizada do telhado só funciona se a face brilhante tiver um vão de ar à frente? E que poeira em cima dela reduz o efeito? Manta, lã de rocha e forro agem de jeitos diferentes contra o calor, e o clima de Campinas pede uma combinação própria. Explicamos o que a norma orienta e onde cada solução falha. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "telhado",
+      "conforto",
+      "isolamentotermico",
+      "casanova",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **isolamento térmico do telhado** é a primeira defesa da casa contra o calor que vem de cima. Em dias de sol forte, a cobertura recebe mais radiação do que qualquer parede, e boa parte desse calor desce para os quartos ao longo da tarde. Quem já dormiu num cômodo logo abaixo de um telhado sem forro conhece bem o efeito: o ambiente continua quente muito depois do pôr do sol."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: manta refletora, lã mineral e forro não são concorrentes, e sim peças que agem de formas diferentes. A manta reflete o calor irradiado pela telha; a lã de rocha ou de vidro freia o calor que atravessa o forro; o forro cria a camada de ar que faz as duas funcionarem. Em Campinas, a norma orienta uma cobertura leve e isolada."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Manta aluminizada reflete calor radiante, mas precisa de um vão de ar à frente da face brilhante e perde efeito com poeira.",
+        "Lã de rocha ou de vidro sobre o forro reduz a passagem de calor por condução; poucos centímetros já mudam o resultado.",
+        "Para Campinas, a parte 3 da NBR 15220 orienta cobertura leve e isolada, combinada com ventilação cruzada no verão.",
+        "Em climas muito quentes, isolar só a cobertura pode piorar o conforto: o projeto precisa olhar a casa inteira."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como o calor entra pelo telhado e o que cada solução bloqueia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O calor atravessa a cobertura de três jeitos. A telha absorve o sol e esquenta; dali, ele **irradia** para baixo, como uma chapa quente. Ele também passa por **condução**, de material em material, até chegar ao forro. E a **convecção** leva o ar aquecido do sótão para onde houver fresta. Cada solução de isolamento ataca principalmente uma dessas vias, e é por isso que a escolha depende de entender o caminho."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **barreira radiante**, a conhecida manta aluminizada, trabalha sobre a primeira via. Segundo o Departamento de Energia dos Estados Unidos, ela reflete a energia irradiada em vez de absorvê-la, mas não reduz a condução como um isolante comum. A condição para funcionar é a face refletora estar voltada para um espaço de ar; encostada em outra superfície, ela perde a razão de existir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os **isolantes resistivos**, como a lã de rocha, a lã de vidro e as placas de espuma, atacam a condução. São materiais leves, cheios de ar preso entre fibras ou células, que dificultam a passagem do calor. Costumam ir sobre o forro, no piso do sótão, ou dentro de telhas do tipo sanduíche. Já o **forro** cria uma câmara de ar entre telha e ambiente, que é a base para as outras soluções."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "As soluções de isolamento da cobertura lado a lado",
+      "colunas": [
+        "Solução",
+        "Como age",
+        "Onde entra",
+        "Cuidado principal"
+      ],
+      "linhas": [
+        [
+          "Manta aluminizada (barreira radiante)",
+          "Reflete o calor irradiado pela telha",
+          "Sob as telhas, presa aos caibros",
+          "Precisa de vão de ar e perde efeito com poeira"
+        ],
+        [
+          "Lã de rocha ou lã de vidro",
+          "Freia a passagem de calor por condução",
+          "Sobre o forro, no piso do sótão",
+          "Manter seca e não cobrir com manta"
+        ],
+        [
+          "Telha sanduíche",
+          "Isolante embutido entre duas chapas",
+          "A própria cobertura",
+          "Combinar com a estética e o caimento do projeto"
+        ],
+        [
+          "Forro com sótão ventilado",
+          "Cria câmara de ar e tira parte do calor",
+          "Entre telhado e ambiente",
+          "Ventilar sozinho rende menos que isolar"
+        ],
+        [
+          "Telha de cor clara",
+          "Absorve menos sol na face externa",
+          "Escolha do material da cobertura",
+          "Sujeira e envelhecimento escurecem a telha"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Radiant Barriers — Departamento de Energia dos EUA",
+        "url": "https://www.energy.gov/energysaver/radiant-barriers"
+      },
+      "nota": "Em obra nova, as soluções costumam ser combinadas; o projeto define quais e em que espessura."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a norma orienta para o clima de Campinas"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As normas brasileiras dividem o país em **zonas bioclimáticas**, regiões com clima parecido que pedem estratégias de construção parecidas. Na parte 3 da NBR 15220, a norma da ABNT sobre desempenho térmico de edificações, Campinas aparece na **zona 3**. Para ela, o texto orienta paredes externas leves e refletoras e uma cobertura **leve e isolada**, com transmitância térmica de até 2,00 W/(m²·K)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "**Transmitância térmica**, o tal valor U, mede quanto calor atravessa um metro quadrado do elemento para cada grau de diferença entre fora e dentro. Quanto menor, melhor o isolamento. A mesma tabela orienta, para o verão da zona 3, ventilação cruzada, e para o inverno, aproveitar o sol e ter paredes internas pesadas, que guardam calor. A própria norma trata esses limites como orientativos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale saber que as regras evoluem. A NBR 15575, a norma de desempenho de edificações habitacionais, ganhou nova versão em 2024, e estudos recentes apresentados no Encontro Nacional de Conforto no Ambiente Construído já trabalham com essa revisão. Por isso, peça ao arquiteto ou engenheiro que confirme quais versões e critérios valem para o seu projeto. Outros temas de obra estão em [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Isolar não é sempre melhor",
+      "texto": "Simulações apresentadas no Encontro Nacional de Conforto no Ambiente Construído de 2025 mostraram ganho com isolamento na cobertura em zonas amenas e frias, como a de Campinas, mas perda de conforto nas zonas mais quentes do país quando a casa depende só de ventilação natural."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Forro, ventilação ou lã: o que os estudos mostram"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um estudo do Instituto de Pesquisas Tecnológicas, o IPT, publicado em 2018, simulou uma casa térrea num dia típico de verão de Manaus. Sem forro, o dormitório ficou acima do limite mínimo de desempenho. Com forro e sótão bem ventilado, melhorou pouco. Com forro e pelo menos 2,5 cm de lã de rocha por cima, ficou cerca de 2 °C mais fresco que a versão sem forro e passou no critério."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo trabalho mostrou um detalhe que costuma surpreender: ventilar o sótão baixa a temperatura do próprio sótão, mas melhora pouco o cômodo de baixo, porque não altera o calor que a telha irradia. Já o sótão isolado fica mais quente que o ventilado, e isso não é defeito, é sinal de que o calor ficou lá em cima. O clima de Manaus é outro, mas a lógica do caminho do calor vale para qualquer casa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre a manta, o Departamento de Energia americano cita estudos com redução de cerca de 5% a 10% no custo de refrigeração em climas quentes e ensolarados, e menor vantagem em climas frios, onde vale mais reforçar o isolante comum. Pesquisas brasileiras citadas em congressos da área registraram desempenho melhor com a face aluminizada voltada para baixo: a superfície de baixa emissividade, virada para o ambiente, reduz o calor que desce."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como decidir na obra nova ou na casa que você vai comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **obra nova**, a decisão começa no projeto. Peça ao arquiteto que explique a composição da cobertura: tipo e cor da telha, se haverá manta, qual isolante vai sobre o forro e em que espessura, e como o sótão será ventilado. Esse conjunto deve aparecer no memorial descritivo, com responsável técnico e ART ou RRT, os registros de responsabilidade do engenheiro e do arquiteto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na **casa pronta**, o caminho é olhar e perguntar. Se houver alçapão, peça para ver o sótão: dá para notar se existe manta, se ela tem vão de ar, se está coberta de pó, e se há lã sobre o forro. Pergunte também pelos quartos do andar de cima nas tardes de verão. Um cômodo que esquenta muito costuma ter cobertura pouco isolada, o que tem conserto, mas entra na conta da reforma."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Colocar lã mineral sobre o forro de uma casa existente",
+      "pros": [
+        "Costuma ser uma intervenção sem quebra, feita pelo sótão",
+        "Reduz o calor que desce para os quartos no verão",
+        "Ajuda também a manter o calor dentro de casa no inverno",
+        "Combina com a manta, se a manta tiver o vão de ar correto"
+      ],
+      "contras": [
+        "Exige sótão acessível e forro em bom estado para receber o peso",
+        "A lã precisa ficar seca: telhado com goteira deve ser consertado antes",
+        "Mexer perto de fiação pede eletricista, e a folha de alumínio conduz eletricidade",
+        "Em casas com laje, o caminho é outro e passa pelo projeto"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Onde parar: estrutura de telhado, troca de telhas, reforço de forro e qualquer serviço perto da instalação elétrica são trabalhos para profissional habilitado. O Departamento de Energia americano lembra ainda que a manta não deve ser deitada diretamente sobre a lã do forro, porque junta poeira e pode reter umidade no isolante. Para mais ideias de conforto, veja [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa e quer ajuda para avaliar esses detalhes antes de decidir, ou vai vender e quer saber como apresentar as melhorias feitas no telhado, a equipe da {{cliente}}, imobiliária de Campinas, conversa com você sobre o imóvel. A decisão em uma linha: telhado fresco é forro, isolante e ventilação trabalhando juntos, definidos no projeto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Manta aluminizada sozinha resolve o calor do telhado?",
+      "resposta": "Ajuda, mas tem limites. Ela reflete o calor irradiado pela telha e precisa de um vão de ar à frente da face brilhante. Não reduz a condução como a lã mineral, por isso costuma ser combinada com forro e isolante."
+    },
+    {
+      "pergunta": "Qual lado da manta aluminizada fica para baixo?",
+      "resposta": "Pesquisas brasileiras citadas em congressos de conforto ambiental registraram resultado melhor com a face aluminizada voltada para baixo, porque a superfície de baixa emissividade passa a frear o calor que desce. Em mantas de face dupla, siga a orientação do fabricante e do projeto."
+    },
+    {
+      "pergunta": "Ventilar o sótão substitui o isolamento?",
+      "resposta": "Não totalmente. Um estudo do IPT mostrou que ventilar baixa a temperatura do sótão, mas melhora pouco o cômodo de baixo. Isolante sobre o forro teve efeito maior no conforto do dormitório."
+    },
+    {
+      "pergunta": "Quanto de lã de rocha colocar sobre o forro?",
+      "resposta": "Depende do clima, da telha e do projeto. No estudo do IPT, 2,5 cm já fizeram diferença; espessuras maiores rendem ganhos menores a cada centímetro. Quem define é o arquiteto ou engenheiro responsável."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Radiant Barriers — Energy Saver, Departamento de Energia dos EUA",
+      "url": "https://www.energy.gov/energysaver/radiant-barriers",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Contribuições para o aprimoramento do método simplificado de avaliação do desempenho térmico de coberturas (NBR 15575) — Revista IPT",
+      "url": "https://revista.ipt.br/revistaIPT/en/article/download/64/75",
+      "data": "2018"
+    },
+    {
+      "nome": "NBR 15220-3: zoneamento bioclimático brasileiro e diretrizes construtivas (texto do projeto de norma) — LabEEE/UFSC",
+      "url": "https://labeee.ufsc.br/sites/default/files/projetos/normalizacao/Termica_parte3_SET2004.pdf",
+      "data": "2003"
+    },
+    {
+      "nome": "Comparação da fibra de coco e lã de rocha no isolamento térmico em diferentes zonas bioclimáticas — ENCAC/ANTAC",
+      "url": "https://eventos.antac.org.br/index.php/encac/article/download/7214/5574/33278",
+      "data": "2025"
+    },
+    {
+      "nome": "Determinação da condutividade térmica do Tetra Pak para aplicação como barreira radiante — ENCAC/ANTAC",
+      "url": "https://eventos.antac.org.br/index.php/encac/article/download/3938/3810/15043",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
