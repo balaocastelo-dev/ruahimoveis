@@ -1,0 +1,259 @@
+{
+  "slug": "filtro-de-agua-em-casa-barro-ou-purificador",
+  "tema": "filtro de barro ou purificador de agua em casa",
+  "titulo": "Filtro de água em casa: barro, purificador ou filtro de entrada?",
+  "resumo": "Filtro de barro, purificador ou filtro de entrada? Entenda o que cada um retém, o que o selo do Inmetro informa e como cuidar do aparelho para a água seguir boa.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "bem-estar",
+    "cozinha",
+    "água",
+    "casa saudável",
+    "manutenção"
+  ],
+  "capa": {
+    "alt": "Cozinha clara com filtro de barro tradicional sobre bancada de madeira, copo de vidro com água e plantas na janela"
+  },
+  "seo": {
+    "titulo": "Filtro de água em casa: barro ou purificador?"
+  },
+  "redes": {
+    "legenda": "Filtro de barro ou purificador? Os dois melhoram a água da torneira, mas de jeitos diferentes. A vela de cerâmica segura partículas e, com carvão ativado, reduz gosto e cheiro de cloro. O purificador certificado pelo Inmetro informa na embalagem quanto ele retém e quando trocar o refil. E nenhum deles faz milagre com caixa d'água suja. Leia o guia completo no blog (link na bio).",
+    "hashtags": [
+      "agua",
+      "filtrodebarro",
+      "cozinha",
+      "bemestar",
+      "casasaudavel",
+      "decoracao",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Escolher um **filtro de água para casa** parece simples até você ficar diante das opções: o filtro de barro da casa da avó, o purificador de parede com refil, o modelo de bancada, o filtro de entrada que trata a água da casa inteira. Todos prometem água melhor, e a dúvida é qual deles faz sentido para a sua cozinha e a sua rotina."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta depende de duas coisas: da água que chega à sua torneira e do que você quer melhorar nela. Em cidades com água tratada, como Campinas, o filtro serve para reter partículas e suavizar o gosto do cloro. O de barro faz isso de forma simples; o purificador certificado informa com números quanto entrega. E nenhum dispensa a caixa d'água limpa."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A água tratada já chega potável; o filtro melhora gosto, cheiro e retém partículas.",
+        "A vela de cerâmica retém partículas maiores que os poros, mas não segura tudo.",
+        "Purificador vendido no Brasil tem certificação compulsória do Inmetro, com classes na embalagem.",
+        "Refil vencido e vela suja anulam qualquer filtro: a manutenção decide o resultado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o que chega à sua torneira antes de escolher"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em Campinas, o relatório anual de qualidade da água da Sanasa, referente a 2025, informa a captação no rio Atibaia e o tratamento da água em quatro estações de tratamento convencional, seguindo o padrão de potabilidade da Portaria GM/MS 888, de 2021, do Ministério da Saúde. Ou seja, ela sai da estação pronta para beber."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo relatório mostra dois detalhes que explicam o gosto da água. A Sanasa mantém na rede um mínimo de 2 mg/L de cloro combinado, que protege a água no caminho até as casas, e adiciona flúor na faixa de 0,6 a 0,8 mg/L, conforme regra estadual. O gosto de cloro, portanto, costuma ser sinal de proteção, não de problema."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O que muda a água entre a rua e o copo é a instalação da casa: a caixa d'água, os canos e o tempo que a água fica parada. Por isso, antes de pensar no filtro, vale conferir se a caixa está tampada e limpa. Esse e outros cuidados com a casa estão na categoria [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Água de poço é outra conversa",
+      "texto": "Fabricantes de purificador, como a Europa no manual do modelo Bliss, pedem laudo de potabilidade quando a água vem de poço. Filtro doméstico não substitui a análise da água nem o tratamento indicado por um profissional."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare o filtro de barro, o purificador e o filtro de entrada"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **filtro de barro** é uma talha de cerâmica com uma ou mais velas, cartuchos de porcelana porosa. Um comunicado técnico da Embrapa explica que a água atravessa a vela pelo próprio peso e que os poros têm de 1 a 20 micrômetros, conforme o fabricante. Velas com carvão ativado reduzem gosto e cheiro do cloro."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o mesmo documento faz um alerta honesto: os poros, embora pequenos, não seguram todos os contaminantes. Compostos químicos dissolvidos e a maioria dos vírus podem atravessar a vela, e água cristalina não é garantia de água segura. Por isso o filtro de barro funciona bem sobre água já tratada, não como tratamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **purificador** é ligado ao encanamento e usa refis com carvão ativado e outros elementos filtrantes. A ficha técnica de um purificador da Tigre informa certificação compulsória pelas Portarias 344 e 394, de 2014, do Inmetro, e atendimento à norma ABNT NBR 16098, que trata desses aparelhos. Na prática, a embalagem precisa informar o desempenho."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Filtro de barro, purificador e filtro de entrada, lado a lado",
+      "colunas": [
+        "Critério",
+        "Filtro de barro",
+        "Purificador de ponto de uso",
+        "Filtro de entrada"
+      ],
+      "linhas": [
+        [
+          "Onde fica",
+          "Sobre a bancada",
+          "Na parede ou bancada, ligado ao cano",
+          "Na entrada de água da casa"
+        ],
+        [
+          "Como funciona",
+          "Gravidade, vela de cerâmica",
+          "Pressão da rede, refil",
+          "Pressão da rede, elemento filtrante"
+        ],
+        [
+          "O que costuma fazer",
+          "Retém partículas; com carvão, reduz gosto de cloro",
+          "Retém partículas e reduz cloro, conforme a classe",
+          "Segura sedimentos antes de chegar aos aparelhos"
+        ],
+        [
+          "Energia e instalação",
+          "Nenhuma",
+          "Ponto de água; alguns modelos gelam e usam energia",
+          "Instalação hidráulica por profissional"
+        ],
+        [
+          "Manutenção",
+          "Limpar e trocar a vela",
+          "Trocar o refil no prazo",
+          "Limpar ou trocar o elemento"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Resumo geral a partir de documentos da Embrapa e de manuais de fabricantes; confira sempre o manual do seu modelo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **filtro de entrada** não substitui o filtro de beber. Ele fica antes da casa e segura areia e sedimentos que mancham louças e entopem aparelhos. O manual do purificador Bliss, por exemplo, recomenda esse acessório quando a água chega turva, porque ela satura os refis mais rápido."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba ler a embalagem do purificador"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Três informações separam um purificador do outro. A primeira é a **retenção de partículas**, dada em classes por faixa de tamanho, em micrômetros (milésimos de milímetro). O manual do Bliss, por exemplo, declara classe C, para partículas de 5 a menos de 15 micrômetros. Quanto menor a faixa retida, mais fina a filtragem."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A segunda é a **redução de cloro livre**, que mexe com o gosto: a ficha da Tigre declara redução de 75% ou mais. A terceira é a **eficiência bacteriológica**, que nem todo modelo tem; o próprio manual do Bliss avisa que ele não possui. Se esse ponto pesa para você, procure a informação escrita, não a promessa da propaganda."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Selo do Inmetro** na embalagem e no aparelho.",
+        "**Classe de retenção de partículas** e a faixa em micrômetros.",
+        "**Redução de cloro livre**, em porcentagem ou classe.",
+        "**Eficiência bacteriológica**, se o modelo tiver.",
+        "**Vida útil do refil**, em litros e em meses.",
+        "**Pressão de trabalho**, mínima e máxima, para conferir com a sua casa."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A pressão importa mais do que parece. O manual do Bliss pede no mínimo 50 kPa e no máximo 300 kPa; acima disso, exige um regulador. Em casa térrea com caixa d'água baixa, a água pode sair fraca; em prédio alto, a pressão pode passar do limite. Vale conferir antes de comprar."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida a rotina de cuidados que mantém a água boa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O melhor filtro vira o pior quando a manutenção atrasa. A ficha da Tigre indica vida útil de 1.500 litros, ou troca a cada seis meses. O manual do Bliss fala em 3.000 litros ou um ano, o que vier primeiro, e lembra que, com consumo baixo, vale o prazo em meses. Cada modelo tem o seu: anote a data da troca."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O mesmo manual traz cuidados simples que pouca gente segue: descartar 5 litros depois da instalação ou da troca do refil, desprezar os primeiros copos depois de um dia sem uso, limpar a bica a cada quinze dias e manter o aparelho longe do fogão e do sol. No filtro de barro, a vela pede limpeza regular, conforme o fabricante."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Filtro de barro em casa",
+      "pros": [
+        "Não usa energia nem instalação hidráulica",
+        "Funciona mesmo sem pressão na rede, pela gravidade",
+        "Vela com carvão ativado reduz gosto de cloro",
+        "Peça tradicional, bonita na bancada"
+      ],
+      "contras": [
+        "Filtra devagar e tem capacidade limitada",
+        "Não informa classes de desempenho como o purificador certificado",
+        "Exige limpeza manual da vela e da talha",
+        "Não retém compostos dissolvidos nem a maioria dos vírus"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem está escolhendo uma casa, a água também entra na visita: veja onde está a caixa d'água, se ela tem tampa e acesso fácil para limpeza, e se há ponto de água na cozinha para um purificador. Mais ideias para morar bem estão no [blog](/blog) e na categoria [bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando um imóvel em Campinas ou pensando em vender o seu, a equipe da {{cliente}} conversa com você sobre o próximo passo. Escolha o filtro pela água que você tem e pela manutenção que vai conseguir fazer em dia."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Filtro de barro é melhor que purificador?",
+      "resposta": "Depende do que você quer. O filtro de barro é simples, não usa energia e, com vela de carvão ativado, reduz gosto de cloro. O purificador certificado informa na embalagem quanto retém de partículas e de cloro, o que facilita comparar modelos."
+    },
+    {
+      "pergunta": "Preciso de filtro se a água da cidade é tratada?",
+      "resposta": "A água tratada já chega potável à rede. O filtro serve para reter partículas, melhorar gosto e cheiro e compensar o caminho pela caixa d'água e pelos canos da casa, que precisam estar limpos."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo troco o refil do purificador?",
+      "resposta": "Depende do modelo: manuais de fabricantes citam prazos como seis meses ou um ano, ou um volume em litros, o que vier primeiro. Siga o manual do seu aparelho e anote a data da última troca."
+    },
+    {
+      "pergunta": "O purificador precisa ter selo do Inmetro?",
+      "resposta": "Sim. Fichas técnicas de fabricantes citam a certificação compulsória do Inmetro, pelas Portarias 344 e 394 de 2014. Procure o selo na embalagem e no aparelho antes de comprar."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Relatório anual de qualidade da água 2025 — Sanasa Campinas",
+      "url": "https://www.sanasa.com.br/wp-content/uploads/2026/03/Relatorio-qualidade-agua-2025.pdf",
+      "data": "março de 2026"
+    },
+    {
+      "nome": "Caracterização estrutural e da eficiência de filtragem de velas cerâmicas porosas modificadas — Embrapa Instrumentação",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/29481/1/CT3199.pdf",
+      "data": "julho de 1999"
+    },
+    {
+      "nome": "Ficha técnica dos purificadores — Tigre",
+      "url": "https://tigrecombr-prod.s3.amazonaws.com/default/files/produtos/ficha-tecnica/FICHA%20TECNICA%20PURIFICADORES_FINAL.pdf",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Manual do purificador Bliss — Europa",
+      "url": "https://institucional.europa.com.br/manual/manual-purificador-bliss-03-02-2025.pdf",
+      "data": "junho de 2024"
+    },
+    {
+      "nome": "Purificador de água e nível de filtragem — Electrolux",
+      "url": "https://loja.electrolux.com.br/inspira/blog/purificador-agua-e-nivel-de-filtragem-tudo-que-precisa-saber",
+      "data": "outubro de 2025"
+    }
+  ]
+}

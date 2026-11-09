@@ -1503,7 +1503,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-09T23:18:37.036Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "filtro-de-agua-em-casa-barro-ou-purificador",
+      "titulo": "Filtro de água em casa: barro, purificador ou filtro de entrada?",
+      "tema": "filtro de barro ou purificador de agua em casa",
+      "tipo": "principal",
+      "categoria": "bem-estar",
+      "criadaEm": "2026-11-09T23:21:43.252Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-09T23:18:37.037Z"
+  "atualizadoEm": "2026-11-09T23:21:43.253Z"
 }
