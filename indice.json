@@ -1377,7 +1377,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-09T02:21:15.277Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "fossa-septica-em-casa-sem-rede-de-esgoto-filtro-e-sumidouro",
+      "titulo": "Fossa séptica: como tratar o esgoto da casa sem rede pública",
+      "tema": "fossa septica em casa sem rede de esgoto",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-09T11:30:10.516Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-09T02:21:15.278Z"
+  "atualizadoEm": "2026-11-09T11:30:10.516Z"
 }
