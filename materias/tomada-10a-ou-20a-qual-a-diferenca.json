@@ -1,0 +1,176 @@
+{
+  "slug": "tomada-10a-ou-20a-qual-a-diferenca",
+  "tema": "tomada de 10 a ou 20 a diferenca",
+  "titulo": "Tomada de 10 A ou 20 A: qual a diferença e onde usar cada uma",
+  "resumo": "Tomada de 10 A ou 20 A: a diferença está no pino, mas também na fiação. Veja o que encaixa onde, quando usar a de 20 A e por que trocar só o espelho não basta.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "instalação elétrica",
+    "tomada",
+    "segurança",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Tomada branca de três pinos redondos instalada em parede clara de cozinha, ao lado de bancada de pedra"
+  },
+  "redes": {
+    "legenda": "Já reparou que alguns plugues não entram em certas tomadas? Não é defeito: o pino de 20 A é mais grosso de propósito, para não ser ligado numa tomada de 10 A. Mas trocar a tomada por uma de 20 A não resolve se a fiação não acompanha. Explicamos a diferença e onde usar cada uma. Leia no blog (link na bio).",
+    "hashtags": [
+      "instalacaoeletrica",
+      "construcao",
+      "casanova",
+      "seguranca",
+      "reforma",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A diferença entre a **tomada de 10 A ou 20 A** está, à primeira vista, no tamanho do furo. Segundo o padrão brasileiro de plugues e tomadas, a NBR 14136, aparelhos de até 10 ampères usam pinos de 4,0 mm de diâmetro, e os de 10 a 20 ampères, pinos de 4,8 mm. O pino mais grosso existe para impedir que um aparelho de corrente maior seja ligado onde a instalação não aguenta."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso, a tomada de 10 A só aceita o plugue fino, enquanto a de 20 A aceita os dois. Mas a tomada é só a ponta do circuito: o que define se um ponto aguenta 20 A é o fio e o disjuntor que vêm atrás dela, dimensionados no projeto elétrico."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Pino de 4,0 mm é de 10 A; pino de 4,8 mm é de 10 a 20 A.",
+        "Tomada de 20 A aceita os dois plugues; a de 10 A, só o fino.",
+        "Aparelhos acima de 20 A não devem ser ligados por plugue e tomada.",
+        "Trocar a tomada de 10 A por uma de 20 A sem rever o circuito é risco."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que encaixa onde e quais aparelhos pedem 20 A"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Laboratório de Plugues e Tomadas da PUCRS, que faz ensaios de certificação, resume a compatibilidade: plugue de 4,0 mm encaixa na tomada de 20 A, mas plugue de 4,8 mm não entra na de 10 A. O mesmo laboratório lembra que equipamentos acima de 20 A não devem ser ligados à rede por plugue e tomada, e sim por ligação própria."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Plugues e tomadas no padrão brasileiro",
+      "colunas": [
+        "Situação",
+        "Pino",
+        "Encaixa?",
+        "Exemplo de uso"
+      ],
+      "linhas": [
+        [
+          "Plugue de 10 A em tomada de 10 A",
+          "4,0 mm",
+          "Sim",
+          "Maioria dos aparelhos da casa"
+        ],
+        [
+          "Plugue de 10 A em tomada de 20 A",
+          "4,0 mm",
+          "Sim",
+          "Ponto de 20 A usado por aparelho comum"
+        ],
+        [
+          "Plugue de 20 A em tomada de 10 A",
+          "4,8 mm",
+          "Não, de propósito",
+          "Bloqueio contra sobrecarga"
+        ],
+        [
+          "Plugue de 20 A em tomada de 20 A",
+          "4,8 mm",
+          "Sim",
+          "Lavadora e secadora, por exemplo"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "fonte": {
+        "nome": "Laboratório de Plugues e Tomadas — Labelo, PUCRS",
+        "url": "https://portal.pucrs.br/labelo/ensaios/laboratorios/laboratorio-de-plugues-e-tomadas/"
+      },
+      "nota": "Acima de 20 A, o aparelho vai em circuito e ligação próprios, definidos no projeto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Idec, entidade de defesa do consumidor, cita máquinas de lavar e secadoras entre os aparelhos de maior consumo que usam o pino de 4,8 mm. Na prática, o manual de cada aparelho informa a corrente e o tipo de plugue. Em casa nova, vale levar a lista dos eletrodomésticos ao projetista, para que os pontos de 20 A fiquem onde eles vão de fato. Outros temas de obra estão em [construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que trocar só a tomada não resolve"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quando o plugue grosso não entra, a tentação é trocar a tomada por uma de 20 A, serrar o pino ou usar um adaptador improvisado. Nenhuma dessas saídas muda o fio nem o disjuntor do circuito. Se ele foi pensado para 10 A, passar a puxar mais corrente aquece a fiação, e o padrão foi criado justamente para evitar esse aquecimento e o risco de incêndio."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Confira no manual a corrente do aparelho e o pino do plugue.",
+        "Veja se já existe um ponto de 20 A no lugar onde ele vai ficar.",
+        "Se não houver, chame um eletricista habilitado para avaliar o circuito.",
+        "Mudança de circuito, fio ou disjuntor segue o projeto elétrico, com responsável técnico em obra nova ou reforma.",
+        "Adaptador, só certificado e em caso pontual, nunca como solução permanente."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O terceiro pino é o **fio-terra**, que protege contra choque em aparelhos que precisam de aterramento. A Lei 11.337, de 2006, obriga as edificações cuja construção começou depois da sua vigência a ter sistema de aterramento e tomadas com o terceiro contato. Em imóvel mais antigo, vale pedir ao eletricista que confirme se o terra existe de verdade, e não só o furo na tomada."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Trocar fiação, disjuntor ou circuito não é serviço para fazer por conta própria. Desligue o disjuntor, não improvise e deixe a avaliação com um eletricista habilitado. Para mais ideias de casa, passe pelo [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você vai comprar uma casa e quer olhar a instalação elétrica com calma antes de decidir, ou vai vender e quer listar as melhorias feitas, a equipe da {{cliente}}, imobiliária de Campinas, conversa com você. A decisão em uma linha: o pino diz a corrente do aparelho, mas quem diz se a tomada aguenta é o circuito."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso ligar um aparelho de 10 A numa tomada de 20 A?",
+      "resposta": "Sim. Segundo o laboratório de plugues e tomadas da PUCRS, o plugue de 4,0 mm encaixa na tomada de 20 A. O contrário não acontece: o plugue de 4,8 mm não entra na tomada de 10 A."
+    },
+    {
+      "pergunta": "Posso trocar a tomada de 10 A por uma de 20 A?",
+      "resposta": "Só se o circuito, com fio e disjuntor, tiver sido dimensionado para isso. Trocar apenas a tomada deixa a fiação sujeita a aquecimento. Peça a avaliação de um eletricista habilitado."
+    },
+    {
+      "pergunta": "Para que serve o terceiro pino da tomada?",
+      "resposta": "É o pino de aterramento, que ajuda a evitar choques em aparelhos que precisam de terra, desde que a instalação da casa tenha aterramento de verdade."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Laboratório de Plugues e Tomadas — Labelo, PUCRS",
+      "url": "https://portal.pucrs.br/labelo/ensaios/laboratorios/laboratorio-de-plugues-e-tomadas/",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Plugues e tomadas: veja o que fazer — Idec",
+      "url": "https://idec.org.br/em-acao/em-foco/plugues-e-tomadas-veja-o-que-fazer",
+      "data": "atualizado em agosto de 2011"
+    },
+    {
+      "nome": "Brasil adota padrão de plugues e tomadas — CREA-SC",
+      "url": "https://portal.crea-sc.org.br/brasil-adota-padrao-de-plugues-e-tomadas/",
+      "data": "outubro de 2009"
+    },
+    {
+      "nome": "Lei nº 11.337, de 26 de julho de 2006 (norma atualizada) — Câmara dos Deputados",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/2006/lei-11337-26-julho-2006-544861-normaatualizada-pl.pdf",
+      "data": "2006"
+    }
+  ]
+}

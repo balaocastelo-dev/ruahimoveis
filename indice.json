@@ -1422,7 +1422,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-09T14:29:09.313Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "tomada-10a-ou-20a-qual-a-diferenca",
+      "titulo": "Tomada de 10 A ou 20 A: qual a diferença e onde usar cada uma",
+      "tema": "tomada de 10 a ou 20 a diferenca",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-09T14:29:55.329Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-09T14:29:09.313Z"
+  "atualizadoEm": "2026-11-09T14:29:55.330Z"
 }
