@@ -1,0 +1,242 @@
+{
+  "slug": "reforma-de-apartamento-nbr-16280-plano-de-reforma",
+  "tema": "reforma de apartamento e plano de reforma da nbr 16280",
+  "titulo": "Reforma de apartamento: o que a NBR 16280 pede antes da obra",
+  "resumo": "Reforma de apartamento em condomínio: o que é o plano de reforma da NBR 16280, quando entra a ART ou o RRT e o papel do morador e do síndico.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "reforma",
+    "condomínio",
+    "apartamento",
+    "norma técnica"
+  ],
+  "capa": {
+    "alt": "Apartamento em reforma com piso protegido por lona, paredes recém-emassadas, latas de tinta fechadas e plantas de arquitetura enroladas sobre uma bancada"
+  },
+  "redes": {
+    "legenda": "Vai reformar o apartamento? Antes da primeira martelada, existe um documento que o condomínio pode pedir: o plano de reforma da NBR 16280, assinado por engenheiro ou arquiteto. Ele protege a estrutura do prédio, os vizinhos e você mesmo. Explicamos o que entra no plano, quando a ART ou o RRT aparece e onde termina o papel do síndico. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "reforma",
+      "apartamento",
+      "condominio",
+      "arquitetura",
+      "engenharia",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **reforma de apartamento** costuma começar com uma lista de desejos: integrar a cozinha à sala, trocar o piso, refazer o banheiro, mudar a iluminação. Em prédio, porém, cada parede, cano e fio também faz parte de um conjunto maior, e o que se faz numa unidade pode afetar a estrutura, as instalações e a rotina dos vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso existe a **NBR 16280**, norma da ABNT (Associação Brasileira de Normas Técnicas) sobre reformas em edificações. Em linhas gerais, ela pede que toda alteração seja comunicada ao síndico e que a obra tenha um plano de reforma assinado por engenheiro ou arquiteto, com ART ou RRT. Abaixo, o que isso significa na prática."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A NBR 16280 está em vigor desde abril de 2014 e foi revisada em 2015.",
+        "Antes da obra, o morador apresenta ao síndico um plano de reforma com a ART ou o RRT do responsável técnico.",
+        "A responsabilidade pelo conteúdo do plano e pela execução é de quem faz a reforma; o síndico recebe, guarda e acompanha.",
+        "Parede, gás, elétrica e hidráulica pedem profissional habilitado; nunca mexa nelas por conta própria."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que a norma existe e quando ela vale para você"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo reportagem do portal Jornal dos Condomínios, a norma ganhou força depois do desabamento de três edifícios no centro do Rio de Janeiro, em janeiro de 2012, que deixou 22 mortos. A principal hipótese apontada na época foi uma obra irregular em um dos prédios. A partir dali, ficou claro que reforma em unidade não é assunto só do dono."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "De acordo com o SíndicoNet, a NBR 16280 passou a valer em 18 de abril de 2014 e foi revisada em agosto de 2015. Ela trata de condomínios verticais e vale para obras dentro do apartamento e nas áreas comuns. A ideia central é simples: qualquer alteração na edificação, mesmo dentro da sua unidade, deve ser comunicada ao síndico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, o grau de exigência varia com o tamanho da obra e com o regimento interno de cada prédio. Uma troca de luminária não pede o mesmo cuidado que a demolição de uma parede. Mas a regra de ouro continua: avise antes, com documento, e deixe a decisão técnica com quem tem habilitação para assiná-la."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Exemplos de intervenção e o cuidado que costumam pedir",
+      "colunas": [
+        "Intervenção",
+        "O que costuma exigir"
+      ],
+      "linhas": [
+        [
+          "Demolir ou abrir parede",
+          "Plano de reforma, ART ou RRT e análise de que a parede não é estrutural"
+        ],
+        [
+          "Trocar instalação elétrica ou hidráulica",
+          "Plano de reforma e profissional habilitado responsável"
+        ],
+        [
+          "Novo fechamento em drywall ou alvenaria",
+          "Plano de reforma e aprovação conforme as regras do prédio"
+        ],
+        [
+          "Trocar esquadria externa ou instalar ar-condicionado",
+          "Consulta ao condomínio, pois afeta a fachada e a estrutura"
+        ],
+        [
+          "Pintura, luminárias, louças e metais",
+          "Comunicação ao síndico; trâmite costuma ser mais simples"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Base: Jornal dos Condomínios e SíndicoNet. Cada condomínio pode ter regras próprias na convenção e no regimento interno."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que entra no plano de reforma"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **plano de reforma** é o documento que descreve o que será feito, com quem e por quanto tempo. Segundo o guia do QuintoAndar, ele deve trazer tudo o que será alterado na unidade, os materiais e as ferramentas usadas, sobretudo as de impacto, como o martelete, e a lista dos funcionários que vão trabalhar na obra."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "A descrição de cada alteração prevista, sem termos genéricos como só \"reforma na unidade\".",
+        "A ART ou o RRT do profissional responsável pela execução da obra.",
+        "Os materiais e as ferramentas de impacto que serão usados.",
+        "O cronograma dos serviços.",
+        "A relação dos profissionais, com nome e documento.",
+        "A aprovação do Corpo de Bombeiros, quando a intervenção exigir."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um detalhe faz diferença: o SíndicoNet lembra que a ART ou o RRT precisam ser de execução de obra ou reforma, e não um documento de outro tipo. E, se o plano chegar vago, o síndico pode pedir mais detalhes antes de liberar a entrada de material e de trabalhadores. Vale começar cedo, porque alguns prédios pedem tudo com semanas de antecedência."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Parede, viga, laje, gás, elétrica e impermeabilização não são serviços para fazer por conta própria. Furar uma viga, trocar o chuveiro por um mais potente sem revisar a fiação ou abrir uma parede sem análise pode trazer risco de incêndio ou de dano à estrutura. Nesses casos, o caminho é sempre o engenheiro ou o arquiteto responsável."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "ART, RRT e quem responde pela obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **ART** (Anotação de Responsabilidade Técnica) é o registro feito por engenheiros no CREA, prevista na Lei 6.496, de 1977. O **RRT** (Registro de Responsabilidade Técnica) é o equivalente para arquitetos e urbanistas no CAU, previsto na Lei 12.378, de 2010. Os dois identificam quem responde tecnicamente pelo projeto e pela execução da reforma."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com a revisão de 2015, explica o SíndicoNet, a responsabilidade pelo conteúdo da documentação e pela execução passou a ser do condômino ou do responsável legal pela unidade. O profissional que assina a ART ou o RRT também responde pelo que foi feito. Ou seja: contratar alguém habilitado não é burocracia, é a sua proteção."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O síndico, por sua vez, recebe e guarda os documentos, confere se a obra segue o que foi apresentado e pode adotar as medidas previstas na convenção, como multa. Em situação de risco, ainda pode comunicar a prefeitura ou pedir a paralisação na Justiça. Ele continua responsável pela segurança do prédio como um todo."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Seguir o plano de reforma desde o início",
+      "pros": [
+        "A obra tem um responsável técnico que responde por ela.",
+        "Menos chance de conflito com o síndico e com os vizinhos.",
+        "Registro organizado do que foi alterado, útil numa venda futura.",
+        "Mais segurança para a estrutura e as instalações do prédio."
+      ],
+      "contras": [
+        "Exige contratar e pagar um profissional habilitado.",
+        "Pede antecedência, o que pode atrasar o início da obra.",
+        "Alguns condomínios pedem análise técnica do plano, o que adiciona uma etapa."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como se planejar antes de comprar ou de reformar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo um apartamento já pensando em mudar a planta, vale pedir a convenção e o regimento interno antes de fechar negócio. Eles mostram horários permitidos para obra, regras de entrada de material e de descarte de entulho, e o que o prédio exige no plano. Assim, o sonho da reforma não vira surpresa depois da mudança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Também ajuda conversar com um arquiteto ou engenheiro ainda na fase de visitas. Um profissional consegue indicar, pela planta e pelo projeto do prédio, quais paredes têm função estrutural, onde passam as prumadas de água e esgoto e o que pode ou não mudar. Para mais ideias de obra e casa nova, veja a [seção de construção](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas nem sempre o caminho mais rápido é o melhor. Reformas que mexem em área molhada, por exemplo, costumam envolver impermeabilização, e um erro ali aparece no teto do vizinho de baixo. Planejar com calma, documentar e respeitar os prazos do prédio costuma sair mais barato do que corrigir depois. No [blog](/blog) há outros guias sobre casa e obra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada condomínio, cada contrato e cada obra têm particularidades. Para dúvidas sobre responsabilidade civil ou regras da convenção, procure um advogado; para a parte técnica, o engenheiro ou o arquiteto responsável. E, se você está buscando um apartamento para comprar e reformar, a equipe da {{cliente}}, em Campinas, ajuda na procura e na conversa com o condomínio."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: em apartamento, reforma boa começa no papel, com plano, responsável técnico e o síndico avisado."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Preciso de plano de reforma só para pintar o apartamento?",
+      "resposta": "A NBR 16280 pede que toda alteração seja comunicada ao síndico. Serviços simples, como pintura, costumam ter um trâmite mais leve, mas o detalhe depende do regimento interno do seu prédio."
+    },
+    {
+      "pergunta": "O síndico pode impedir a minha reforma?",
+      "resposta": "O síndico pode exigir a documentação, pedir detalhes e adotar as medidas da convenção se as regras não forem cumpridas. Em situação de risco, pode comunicar a prefeitura ou pedir a paralisação na Justiça."
+    },
+    {
+      "pergunta": "Qual a diferença entre ART e RRT?",
+      "resposta": "A ART é emitida por engenheiros, no CREA; o RRT, por arquitetos e urbanistas, no CAU. Os dois registram quem é o responsável técnico pela obra."
+    },
+    {
+      "pergunta": "Posso derrubar uma parede do meu apartamento?",
+      "resposta": "Só depois que um engenheiro ou arquiteto confirmar que a parede não tem função estrutural e a mudança constar do plano de reforma. Nunca abra parede por conta própria."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Norma ABNT 16280 sobre obras em condomínios — SíndicoNet",
+      "url": "https://www.sindiconet.com.br/informese/norma-abnt-16280-sobre-obras-em-condominios-manutencao-obras-e-reformas/amp",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Atualização da NBR 16280 — SíndicoNet",
+      "url": "https://www.sindiconet.com.br/informese/atualizacao-da-nbr-16280-manutencao-abnt-16280/amp",
+      "data": "janeiro de 2016"
+    },
+    {
+      "nome": "Obras em apartamento: como funcionam as regras para iniciar uma reforma — QuintoAndar",
+      "url": "https://www.quintoandar.com.br/guias/?p=414391",
+      "data": "setembro de 2024"
+    },
+    {
+      "nome": "Obras nos apartamentos: veja o que é preciso saber antes da execução — Jornal dos Condomínios",
+      "url": "https://condominiosc.com.br/jornal-dos-condominios/gestao/5086-obras-nos-apartamentos-veja-o-que-e-preciso-saber-antes-da-execucao",
+      "data": "março de 2023"
+    },
+    {
+      "nome": "ART e RRT: o que são — Engenharia 360",
+      "url": "https://engenharia360.com/bde-explica-art-e-rrt/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Planejar a execução da reforma do imóvel pode evitar acidentes — CRECI-ES",
+      "url": "https://crecies.gov.br/planejar-a-execucao-da-reforma-do-imovel-pode-evitar-acidentes",
+      "data": "novembro de 2026"
+    }
+  ]
+}
