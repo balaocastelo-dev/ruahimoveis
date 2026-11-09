@@ -1,0 +1,161 @@
+{
+  "slug": "chuveiro-fraco-pressurizador-vale-a-pena",
+  "tema": "chuveiro fraco e pressurizador de agua",
+  "titulo": "Chuveiro fraco: quando o pressurizador de água vale a pena",
+  "resumo": "Chuveiro fraco nem sempre pede pressurizador. Veja como a altura da caixa, o crivo e os canos afetam a pressão e quando a bomba faz sentido na sua casa.",
+  "categoria": "construcao",
+  "formato": "dica",
+  "etiquetas": [
+    "construção",
+    "hidráulica",
+    "banheiro",
+    "reforma",
+    "chuveiro"
+  ],
+  "capa": {
+    "alt": "Banheiro moderno com chuveiro de teto em metal escovado, parede de pedra clara e água caindo em jato abundante"
+  },
+  "redes": {
+    "legenda": "Chuveiro fraco? Antes de comprar um pressurizador, vale olhar três coisas: a altura da caixa d'água em relação ao chuveiro, o crivo entupido de calcário e o caminho dos canos até o banheiro. Cada metro de desnível vale cerca de 10 kPa de pressão. Explicamos quando a bomba resolve e o que ela exige na instalação. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "chuveiro",
+      "banheiro",
+      "hidraulica",
+      "reforma",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Um banho com **chuveiro fraco** estraga o fim do dia, e a primeira ideia costuma ser comprar um pressurizador de água. Ele de fato aumenta a força do jato, mas é um equipamento elétrico, com motor, que precisa de instalação correta. Antes dele, vale descobrir de onde vem a falta de pressão."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na maioria das casas abastecidas por caixa d'água, a pressão no chuveiro depende do desnível entre a caixa e a saída da água e do que se perde no caminho pelos canos. Quando a causa é um crivo entupido ou um registro estreito, a solução é simples. O pressurizador faz sentido quando o desnível é pequeno ou a ducha pede mais pressão."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Cada metro de altura entre a caixa e o chuveiro equivale a cerca de 10 kPa (1 m.c.a.).",
+        "Crivo com calcário, registro estreito e canos longos roubam pressão antes do jato.",
+        "Pressurizador nunca vai ligado direto na água da rua: ele puxa da caixa d'água.",
+        "A bomba pede disjuntor exclusivo, aterramento e instalação por profissional."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Descubra por que o seu chuveiro está fraco"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A pressão da água parada numa caixa elevada se mede em **metro de coluna d'água (m.c.a.)**: um metro de desnível equivale a cerca de 10 kPa. O manual de uma ducha da Lorenzetti, por exemplo, pede no mínimo 10 kPa, ou 1 m.c.a., para funcionar. Caixa logo acima do forro de uma casa térrea costuma entregar pouco."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O desnível, porém, não chega inteiro ao chuveiro. Uma reportagem do TNH1, de setembro de 2026, sobre um estudo da Universidade Federal de Lavras, mostra que tubos finos, trechos longos, joelhos, conexões em tê e registros consomem pressão pelo atrito. Num dos banheiros medidos, só o registro levava 0,35 m de coluna d'água."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**Limpe o crivo.** Com o disjuntor desligado, o espalhador sai girando e a escova macia abre os furos tomados por calcário, como orienta o manual do fabricante.",
+        "**Confira os registros.** Registro meio fechado ou de diâmetro menor que o cano estrangula o jato.",
+        "**Teste com outras torneiras fechadas.** Se o chuveiro melhora, o problema é a divisão da água entre os pontos.",
+        "**Meça o desnível.** Da base da caixa até a saída do chuveiro; poucos metros explicam um jato fraco.",
+        "**Leia o manual da ducha.** Cada modelo informa a pressão mínima e a máxima; alguns pedem bem mais que 1 m.c.a."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se o crivo e os registros estão em ordem, a saída pode ser elevar a caixa ou trocar trechos de cano por diâmetros maiores. Mas atenção: a mesma reportagem lembra que uma caixa de 2.000 litros cheia pesa cerca de duas toneladas. Mexer na altura dela exige avaliação de engenheiro. Outras escolhas de obra estão em [construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida se o pressurizador resolve e o que ele exige"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O pressurizador é uma pequena bomba que liga sozinha quando você abre o chuveiro. Segundo o catálogo da Lorenzetti, há modelos acionados por **fluxostato**, que percebe a água passando, e por **pressostato**, que reage à queda de pressão. Ele pode atender só um banheiro ou a casa inteira, conforme o modelo e a vazão."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Pressurizador no chuveiro",
+      "pros": [
+        "Resolve desnível pequeno sem mexer na altura da caixa",
+        "Permite usar duchas que pedem mais pressão",
+        "Pode atender a casa inteira, conforme o modelo",
+        "Há modelos próprios para aquecedor a gás"
+      ],
+      "contras": [
+        "Consome energia e faz algum ruído",
+        "Exige disjuntor exclusivo e aterramento",
+        "Não pode ser ligado direto à água da rua",
+        "Abaixo da vazão mínima, liga e desliga sem parar"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O manual da linha TP da Komeco é claro: não alimente o pressurizador com água direta da rua, use disjuntor exclusivo, faça o aterramento e instale perto da caixa, abrigado de sol e chuva, sobre base firme com borracha para reduzir o ruído. Também pede uma boia que desliga a bomba se a caixa esvaziar, para ela não trabalhar a seco."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Limpar o crivo e abrir o registro você faz sozinho. Ligação elétrica da bomba, troca de canos dentro da parede, elevação da caixa e qualquer ajuste em aquecedor a gás ficam com eletricista, encanador e engenheiro responsáveis."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem procura uma casa nova pode evitar o problema na visita: abra o chuveiro do banheiro mais alto e veja o jato. Mais ideias para conferir antes de comprar estão no [blog](/blog). E, se quiser ajuda para escolher um imóvel em Campinas, a equipe da {{cliente}} acompanha você na busca. Na dúvida, investigue a causa antes de comprar a bomba."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso ligar o pressurizador direto na água da rua?",
+      "resposta": "Não. Os esquemas dos fabricantes mostram a bomba puxando a água da caixa d'água, e o manual da Komeco, por exemplo, proíbe alimentá-la com água direta da rua e exclui esse uso da garantia. Na dúvida, siga o manual do seu modelo."
+    },
+    {
+      "pergunta": "Quanto a altura da caixa d'água muda a pressão do chuveiro?",
+      "resposta": "Cada metro de desnível entre a caixa e o chuveiro equivale a cerca de 10 kPa, ou 1 m.c.a. Mas parte disso se perde nos canos, registros e conexões, por isso o desnível sozinho não garante um bom jato."
+    },
+    {
+      "pergunta": "Pressurizador faz barulho?",
+      "resposta": "Faz algum ruído, que varia com o modelo e a instalação. Os fabricantes recomendam fixá-lo em base firme, com borracha, e em local abrigado, longe dos quartos quando possível."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Manual de instalação das Duchas Top Jet — Lorenzetti",
+      "url": "https://www.lorenzetti.com.br/manuais/topjet/manual.pdf",
+      "data": "abril de 2024"
+    },
+    {
+      "nome": "Manual do usuário da linha de pressurizadores TP 820 e TP 825 — Komeco",
+      "url": "https://www.komeco.com.br/arquivos/manuais/bombas-pressurizadores/pressurizadores/manual-bomba-tp-820-tp-825.pdf",
+      "data": "outubro de 2017"
+    },
+    {
+      "nome": "Catálogo de pressurizadores de água — Lorenzetti",
+      "url": "https://lorenzetti.com.br/docs/default-source/cat%C3%A1logos/pressurizadores.pdf",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Caixa d'água mais alta pode melhorar a pressão do chuveiro em algumas casas — TNH1",
+      "url": "https://www.tnh1.com.br/tnh1-variedades/caixa-dagua-mais-alta-pode-melhorar-a-pressao-do-chuveiro-em-algumas-casas/",
+      "data": "setembro de 2026"
+    }
+  ]
+}
