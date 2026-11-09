@@ -1350,7 +1350,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-08T23:23:38.638Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "etapas-do-projeto-de-arquitetura-da-casa",
+      "titulo": "Etapas do projeto de arquitetura: do programa da casa ao executivo",
+      "tema": "etapas do projeto de arquitetura residencial",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-09T02:18:19.483Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-08T23:23:38.639Z"
+  "atualizadoEm": "2026-11-09T02:18:19.484Z"
 }
