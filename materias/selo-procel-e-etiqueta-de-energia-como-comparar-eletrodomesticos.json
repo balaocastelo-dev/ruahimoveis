@@ -1,0 +1,160 @@
+{
+  "slug": "selo-procel-e-etiqueta-de-energia-como-comparar-eletrodomesticos",
+  "tema": "etiqueta de eficiencia energetica de eletrodomesticos",
+  "titulo": "Selo Procel e etiqueta de energia: como comparar eletrodomésticos",
+  "formato": "dica",
+  "resumo": "Selo Procel e etiqueta de energia do Inmetro ajudam a escolher geladeira e ar-condicionado. Veja o que cada campo mostra e por que olhar o consumo em kWh.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "eletrodomésticos",
+    "eficiência energética",
+    "cozinha",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Cozinha clara com geladeira de inox embutida em marcenaria de madeira, bancada de pedra branca e luz natural pela janela"
+  },
+  "redes": {
+    "legenda": "Duas geladeiras com a mesma letra A podem gastar energias bem diferentes. O segredo está no número em kWh por mês da etiqueta do Inmetro, e não só na letra. Explicamos o que cada campo da etiqueta mostra, o que muda com as classes A+, A++ e A+++ e o que significa o Selo Procel. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "casanova",
+      "cozinha",
+      "eficienciaenergetica",
+      "decoracao",
+      "economia",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de escolher geladeira, ar-condicionado ou máquina de lavar para a casa nova, o **Selo Procel e a etiqueta de energia** do Inmetro são as primeiras informações que aparecem na loja. A letra colorida chama atenção, mas nem sempre conta a história inteira, e muita gente compara aparelhos só por ela."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta direta: compare o **consumo em kWh por mês** entre modelos parecidos, com o mesmo tipo e capacidade. A letra da etiqueta ajuda a separar os mais e os menos eficientes, e o Selo Procel indica os melhores de cada categoria. Mas é o número de consumo que mostra quanto o aparelho deve gastar."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A etiqueta do Inmetro mostra a classe de eficiência e o consumo estimado em kWh por mês.",
+        "Nas geladeiras, as classes A+, A++ e A+++ indicam consumo cerca de 10%, 20% e 30% menor que o A antigo, segundo o Idec.",
+        "O Selo Procel é voluntário e marca os aparelhos mais eficientes de cada categoria.",
+        "Compare kWh por mês entre modelos do mesmo tipo e tamanho, não só a letra."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o que a etiqueta e o selo mostram"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A etiqueta faz parte do programa de etiquetagem do Inmetro e aparece em aparelhos como ar-condicionado, micro-ondas, lavadoras de roupa, refrigeradores, televisores e ventiladores, segundo o Idec. Na geladeira, ela traz a tensão, o tipo de degelo, a escala de eficiência, a classe do modelo, o consumo em kWh por mês, o volume dos compartimentos e a temperatura mínima do congelador."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Selo Procel é outra coisa. É o selo da lâmpada amarela, de adesão voluntária, ligado ao Procel, programa nacional de conservação de energia que existe desde 1985. Segundo a Agência Gov, o programa é coordenado pelo Ministério de Minas e Energia, e o selo reconhece os produtos mais eficientes de cada categoria, em geral os de classe A na etiqueta. Fogões e aquecedores a gás usam o selo verde do Conpet."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Etiqueta do Inmetro ou Selo Procel: o que cada um diz",
+      "colunas": [
+        "Ponto",
+        "Etiqueta do Inmetro",
+        "Selo Procel"
+      ],
+      "linhas": [
+        [
+          "O que é",
+          "Classificação de eficiência com consumo estimado",
+          "Reconhecimento dos mais eficientes da categoria"
+        ],
+        [
+          "Obrigatório?",
+          "Sim, nos produtos regulamentados",
+          "Não, é voluntário"
+        ],
+        [
+          "O que mostra",
+          "Classe, kWh por mês e dados técnicos",
+          "Que o aparelho está entre os melhores do grupo"
+        ],
+        [
+          "Como usar",
+          "Comparar consumo entre modelos parecidos",
+          "Desempatar entre opções semelhantes"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Regra geral; confira a etiqueta afixada no aparelho."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Compare do jeito certo na loja"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nas geladeiras, a etiqueta mudou. O Idec explica que o modelo mais novo acrescentou as classes A+, A++ e A+++, com consumo cerca de 10%, 20% e 30% menor que o A do padrão anterior. Por isso, comparar a letra de uma etiqueta antiga com a de uma nova não funciona. Segundo o instituto, esse modelo vale até o fim de 2026, e novas regras podem vir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Inmetro também vem ajustando o cálculo. Uma portaria de 2025 criou uma curva de consumo própria para geladeiras com máquina de gelo e dispenser de água na porta, que antes eram medidas pela mesma fórmula dos modelos comuns, segundo a Agência Gov. Mas a lógica para quem compra continua a mesma: olhar o número de consumo."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Separe modelos do mesmo tipo, número de portas, tipo de degelo e capacidade em litros.",
+        "Confira se as etiquetas seguem o mesmo padrão antes de comparar as letras.",
+        "Compare o consumo em kWh por mês: quanto menor, menos energia.",
+        "Use o Selo Procel para desempatar entre opções parecidas.",
+        "Confira a tensão (110 V ou 220 V) com a instalação da sua casa."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para planejar a cozinha e outros ambientes da casa nova, veja os textos de [interiores e mobiliário](/blog/categoria/interiores) e o restante do [blog](/blog). E, se você está em busca de um imóvel em Campinas, a equipe da {{cliente}} pode ajudar a encontrar a casa certa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: a letra mostra o grupo, mas é o kWh por mês que decide qual aparelho gasta menos."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a diferença entre o Selo Procel e a etiqueta do Inmetro?",
+      "resposta": "A etiqueta do Inmetro é obrigatória nos produtos regulamentados e mostra a classe e o consumo. O Selo Procel é voluntário e indica os aparelhos mais eficientes de cada categoria."
+    },
+    {
+      "pergunta": "Geladeira A+++ gasta muito menos que A?",
+      "resposta": "Segundo o Idec, as classes A+, A++ e A+++ indicam consumo cerca de 10%, 20% e 30% menor que o A do padrão anterior. Mesmo assim, compare o kWh por mês de modelos do mesmo tamanho."
+    },
+    {
+      "pergunta": "Posso comparar dois aparelhos só pela letra?",
+      "resposta": "Só se forem do mesmo tipo e tamanho e as etiquetas seguirem o mesmo padrão. O número de consumo em kWh por mês é a comparação mais segura."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Eficiência energética: como ler a etiqueta — Idec",
+      "url": "https://idec.org.br/edasuaconta/eficiencia",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Selo Procel leva mais economia e sustentabilidade aos brasileiros — Agência Gov",
+      "url": "https://agenciagov.ebc.com.br/noticias/202309/selo-procel-leva-mais-economia-e-sustentabilidade-aos-brasileiros",
+      "data": "setembro de 2023"
+    },
+    {
+      "nome": "Inmetro cria novas regras para eletrodomésticos e eletroeletrônicos — Agência Gov",
+      "url": "https://agenciagov.ebc.com.br/noticias/202504/inmetro-cria-novas-regras-para-fortalecer-a-industria-de-eletrodomesticos-e-eletroeletronicos-no-brasil",
+      "data": "abril de 2025"
+    }
+  ]
+}
