@@ -1,0 +1,240 @@
+{
+  "slug": "agua-cinza-reuso-em-casa-banho-e-maquina-de-lavar",
+  "tema": "reuso de agua cinza em casa",
+  "titulo": "Água cinza: como reaproveitar o banho e a máquina de lavar na casa",
+  "resumo": "Água cinza é a que sai do chuveiro, da pia do banheiro e da máquina de lavar. Veja quanto ela rende, o que a NBR 16783 exige e quando o sistema compensa.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "água",
+    "sustentabilidade",
+    "construção",
+    "casa nova",
+    "instalações"
+  ],
+  "capa": {
+    "alt": "Área técnica de uma casa com reservatório claro e tubulação pintada de magenta junto a um jardim"
+  },
+  "redes": {
+    "legenda": "Você sabia que a água do seu banho pode voltar para a descarga? Ela se chama água cinza e, com tratamento e uma rede só dela, serve para vaso sanitário, jardim e lavagem de piso. Mas a norma pede cuidados sérios: tubulação separada, identificação e manutenção. Explicamos como funciona e quando vale a pena no blog (link na bio).",
+    "hashtags": [
+      "aguacinza",
+      "reusodeagua",
+      "sustentabilidade",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A cada banho, uma boa quantidade de água limpa desce pelo ralo depois de uns poucos minutos de uso. Quem planeja uma casa nova, ou pensa numa reforma grande, costuma se perguntar se dá para aproveitar essa **água cinza**, a que sai do chuveiro, da pia do banheiro e da máquina de lavar, em vez de mandar tudo para o esgoto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Dá, e existe norma para isso. A água cinza tratada pode abastecer a descarga, a irrigação do jardim e a lavagem de pisos externos. Mas o sistema pede uma rede própria de tubos, tratamento, identificação e manutenção constante. Por isso ele rende mais quando entra no projeto desde o começo, e quase nunca como improviso."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Água cinza é a que vem de chuveiro, banheira, lavatório, tanque e máquina de lavar roupa; vaso sanitário e pia da cozinha ficam de fora.",
+        "A ABNT NBR 16783, de 2019, trata das fontes alternativas de água não potável nas edificações e fixa limites de qualidade.",
+        "A rede de reúso precisa ser totalmente separada da água potável, com tubos pintados de magenta e avisos nos pontos de uso.",
+        "Compensa mais em casa nova, com projeto de engenheiro, do que como adaptação numa casa pronta."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que entra como água cinza e o que fica de fora"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nos estudos de engenharia sanitária, água cinza é o esgoto de chuveiros, banheiras, lavatórios, tanques e máquinas de lavar roupa. Ela carrega sabão, resíduos de pele e fiapos, mas pouca matéria orgânica pesada. Já a água do vaso sanitário, da pia da cozinha e da lava-louças é tratada à parte, porque traz gordura, restos de comida e contaminação fecal."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa separação define o projeto inteiro. A casa passa a ter dois caminhos de esgoto: um que segue direto para a rede pública ou para a fossa, e outro que leva a água cinza até um reservatório com tratamento. A norma chama a parte mais limpa de **água cinza clara**, e é ela que costuma alimentar os sistemas residenciais."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "De onde vem cada tipo de água na casa",
+      "colunas": [
+        "Origem",
+        "Como é classificada",
+        "Vai para o reúso?"
+      ],
+      "linhas": [
+        [
+          "Chuveiro e banheira",
+          "Água cinza clara",
+          "Sim, depois de tratada"
+        ],
+        [
+          "Lavatório do banheiro",
+          "Água cinza clara",
+          "Sim, depois de tratada"
+        ],
+        [
+          "Máquina de lavar roupa e tanque",
+          "Água cinza clara",
+          "Sim, com atenção a fiapos e sabão"
+        ],
+        [
+          "Pia da cozinha e lava-louças",
+          "Fica fora da água cinza clara",
+          "Não, pela gordura e pelos restos de comida"
+        ],
+        [
+          "Vaso sanitário",
+          "Água negra",
+          "Não"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Classificação usada nos estudos acadêmicos citados nas fontes. O projetista confirma o que entra em cada caso."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se o seu interesse é casa nova, vale olhar também os outros textos sobre obra e instalações em [Construção e casas novas](/blog/categoria/construcao). O reúso de água cinza conversa com escolhas como a posição dos banheiros, o espaço da área técnica e o tipo de tubulação, decididas bem antes do acabamento."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quanto da água da casa dá para trocar pela de reúso"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um artigo publicado em 2022 na revista Engenharia Sanitária e Ambiental, de pesquisadores da Universidade Federal do Ceará, reuniu estimativas da literatura: de 25% a 57% da água potável de uma casa vira água cinza. Considerando só banho e máquina de lavar, a faixa citada fica entre 33% e 50%. Esses números dependem muito dos hábitos de cada família."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, o ganho real é menor do que a água gerada, porque o reúso só serve onde não se exige água potável. No condomínio residencial medido pelo estudo, a água de reúso cobriu cerca de 21,5% do consumo potável, somando descargas e irrigação. É uma economia relevante, mas não transforma a conta de água da noite para o dia."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O cálculo que o projetista faz se chama **balanço hídrico**: de um lado, quanta água cinza a casa produz por dia; do outro, quanto a descarga e o jardim consomem. Quando a oferta passa muito da demanda, o excesso volta para o esgoto e o reservatório fica grande demais. Quando falta, a casa recorre à água potável para completar."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Armazenar por pouco tempo",
+      "texto": "O mesmo estudo aponta que a água cinza guardada por cerca de 24 horas pode até melhorar, porque parte da sujeira decanta, mas que passar de 48 horas tende a gerar mau cheiro. Reservatório superdimensionado não é vantagem: o ideal é um volume que gire todo dia."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a NBR 16783 pede para o sistema ser seguro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ABNT NBR 16783, publicada em 2019, trata do uso de fontes alternativas de água não potável em edificações, como água cinza e água de chuva. Uma apresentação técnica do IPT, o Instituto de Pesquisas Tecnológicas de São Paulo, resume as exigências centrais. A principal é simples de entender: a rede não potável nunca pode se misturar à rede de água de beber."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": false,
+      "itens": [
+        "**Rede independente:** tubos, reservatório e bombas do reúso totalmente separados do sistema de água potável.",
+        "**Identificação:** tubulação pintada de magenta e aviso de advertência em cada ponto de uso.",
+        "**Estudo antes da obra:** demanda, balanço hídrico, qualidade da água, volume de armazenamento e viabilidade.",
+        "**Qualidade mínima:** limites de pH, turbidez, carga orgânica, bactérias E. coli e cloro residual.",
+        "**Manutenção:** programa baseado na NBR 5674 e operação supervisionada por profissional habilitado."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os usos permitidos para essa água incluem descarga de vasos sanitários, lavagem de áreas externas e de carros, irrigação de jardins, espelhos d'água ornamentais e resfriamento de telhados. Chuveiro, torneira de cozinha e qualquer contato com alimentos ficam fora. A irrigação de horta para consumo também não aparece entre os usos previstos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A apresentação do IPT mostra ainda que, em casas unifamiliares, a maior parte dos parâmetros é conferida por mês ou por semana. Em prédios, pH e cloro são medidos todo dia. Isso significa rotina: alguém precisa acompanhar o filtro, repor o cloro e anotar as medições, como se faz com a piscina."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Ligar um cano do chuveiro direto na caixa acoplada, sem tratamento, é o erro mais comum e o mais arriscado. Projeto e execução de reúso pedem engenheiro ou arquiteto responsável, com ART ou RRT, e não devem ser feitos por conta própria, porque uma ligação cruzada pode contaminar a água de beber da casa."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Vale a pena na sua casa? O que pesa na decisão"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Um trabalho de conclusão de curso da Engenharia Civil da UFRGS, de 2013, comparou dois projetos para um mesmo prédio residencial: o convencional e outro com reúso de água cinza dos chuveiros e lavatórios nas descargas. O sistema com reúso custou cerca de 59% a mais que o convencional, com retorno estimado em menos de três anos. É um caso específico, mas mostra a lógica."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Numa casa, a conta muda com o tamanho da família, o número de banheiros, a área de jardim e a tarifa local. O ganho também não é só financeiro: menos água potável consumida e menos esgoto gerado. Para quem gosta do tema conforto e casa saudável, há mais leituras em [Bem-estar em casa](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Reúso de água cinza em casa",
+      "pros": [
+        "Reduz o consumo de água potável na descarga e no jardim.",
+        "Diminui o volume de esgoto que sai da casa.",
+        "Pode ser combinado com o aproveitamento da água de chuva no mesmo projeto.",
+        "Em obra nova, a rede extra entra junto com as demais instalações."
+      ],
+      "contras": [
+        "Exige rede de tubos duplicada, reservatório, filtro e bomba.",
+        "Pede rotina de manutenção e medição da qualidade da água.",
+        "Em casa pronta, a adaptação costuma exigir quebrar paredes e pisos.",
+        "Falha no tratamento obriga a voltar para a água potável enquanto o sistema para."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O estudo da UFC lembra um ponto prático: o sistema precisa ter uma alimentação de reserva com água potável, porque o tratamento pode parar por falta de insumo ou defeito. No caso medido, a estação ficou parada justamente por falta de produtos. Uma boa instalação prevê essa troca sem que ninguém perceba na hora de dar a descarga."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está escolhendo uma casa para comprar, pergunte se ela tem rede de reúso, peça o projeto hidráulico e veja se a tubulação magenta e os avisos existem de fato. Para conversar sobre imóveis em Campinas que combinem com esse jeito de morar, a equipe da {{cliente}} atende quem quer comprar ou vender. Em resumo: água cinza compensa quando nasce no projeto."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Posso usar a água da máquina de lavar direto no vaso sanitário?",
+      "resposta": "Sem tratamento, não é o recomendado. A NBR 16783 exige qualidade mínima, rede separada e identificação. A ligação improvisada pode gerar mau cheiro e risco de contaminar a água potável."
+    },
+    {
+      "pergunta": "A água cinza serve para regar a horta?",
+      "resposta": "A norma prevê irrigação paisagística, como jardins e gramados. A irrigação de alimentos não está entre os usos previstos, então o mais prudente é usar água potável na horta."
+    },
+    {
+      "pergunta": "Por que os canos de reúso são pintados de magenta?",
+      "resposta": "A cor identifica a rede não potável e evita que alguém faça uma ligação errada numa manutenção futura. Os pontos de uso também recebem aviso de que a água não é para beber."
+    },
+    {
+      "pergunta": "Dá para instalar reúso numa casa já pronta?",
+      "resposta": "Dá, mas costuma exigir abrir paredes e pisos para separar os esgotos dos banheiros. Um engenheiro avalia se a obra compensa em relação ao consumo da casa."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Reúso de água cinza: Manual IPT e ABNT NBR 16783 — IPT, Instituto de Pesquisas Tecnológicas",
+      "url": "https://escriba.ipt.br/pdf/178655.pdf",
+      "data": "2023"
+    },
+    {
+      "nome": "Análise quantitativa de águas cinza em um condomínio residencial — Engenharia Sanitária e Ambiental (UFC)",
+      "url": "https://repositorio.ufc.br/bitstream/riufc/70651/1/2022_art_fsbmota.pdf",
+      "data": "março de 2022"
+    },
+    {
+      "nome": "Reúso de águas cinzas: implantação do sistema em um prédio residencial — Lume UFRGS",
+      "url": "https://lume.ufrgs.br/handle/10183/96310",
+      "data": "2013"
+    }
+  ]
+}

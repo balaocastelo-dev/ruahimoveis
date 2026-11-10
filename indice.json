@@ -1593,7 +1593,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-11-10T14:25:46.060Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "agua-cinza-reuso-em-casa-banho-e-maquina-de-lavar",
+      "titulo": "Água cinza: como reaproveitar o banho e a máquina de lavar na casa",
+      "tema": "reuso de agua cinza em casa",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-10T17:19:45.098Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-10T14:25:46.060Z"
+  "atualizadoEm": "2026-11-10T17:19:45.098Z"
 }
