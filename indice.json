@@ -1602,7 +1602,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-10T17:19:45.098Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-paulinia-vizinha-de-campinas",
+      "titulo": "Morar em Paulínia: a cidade da refinaria, dos parques e do cinema",
+      "tema": "morar em paulinia",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-10T17:20:52.425Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-10T17:19:45.098Z"
+  "atualizadoEm": "2026-11-10T17:20:52.425Z"
 }
