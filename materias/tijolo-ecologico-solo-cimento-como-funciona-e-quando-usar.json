@@ -1,0 +1,243 @@
+{
+  "slug": "tijolo-ecologico-solo-cimento-como-funciona-e-quando-usar",
+  "tema": "tijolo ecologico de solo cimento na construcao",
+  "titulo": "Tijolo ecológico de solo-cimento: como funciona e quando usar",
+  "resumo": "Tijolo ecológico de solo-cimento: do que é feito, o que a norma pede, como furos e encaixes mudam a obra e quando ele vale a pena na sua casa.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "tijolo ecológico",
+    "alvenaria",
+    "sustentabilidade"
+  ],
+  "capa": {
+    "alt": "Parede de tijolos ecológicos aparentes em tom terroso, com encaixes e furos visíveis, numa casa térrea iluminada pelo sol"
+  },
+  "redes": {
+    "legenda": "Já ouviu falar de tijolo que não vai ao forno? O tijolo ecológico é feito de terra, um pouco de cimento e água, prensado e curado, e muitas vezes vem com furos e encaixes que mudam a forma de levantar a parede. Mas ele não serve para qualquer projeto. Explicamos do que ele é feito, o que a norma pede e quando vale a pena. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "tijoloecologico",
+      "construcao",
+      "casanova",
+      "arquitetura",
+      "sustentabilidade",
+      "obra",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "O **tijolo ecológico de solo-cimento** costuma aparecer quando alguém começa a sonhar com a própria casa: uma parede de tom terroso, com textura de terra, que dispensa reboco e parece mais leve para o planeta. A curiosidade é natural, porque o material foge do tijolo comum que todo mundo conhece e promete uma obra mais limpa."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: é um tijolo de terra misturada com pouco cimento e água, prensado e curado, sem passar por forno. Ele funciona bem quando o projeto nasce pensando nele, quando o fabricante comprova resistência e absorção de água e quando a parede aparente recebe proteção. Sem esses cuidados, a economia prometida pode virar retrabalho."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "É feito de solo, cimento e água, prensado e curado; não é queimado em forno.",
+        "Bons tijolos têm resistência e absorção de água comprovadas em ensaio, conforme as normas da ABNT.",
+        "Furos e encaixes facilitam a passagem de tubulações e reduzem a argamassa, mas exigem projeto pensado para o sistema.",
+        "A decisão passa pelo arquiteto ou engenheiro responsável, com ART ou RRT, e não só pelo gosto estético."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Do que o tijolo ecológico é feito e por que ele não vai ao forno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Associação Brasileira de Cimento Portland (ABCP), o **solo-cimento** é uma mistura homogênea de solo, cimento e água, compactada e curada. O cimento entra em pequena quantidade, de 5% a 10% do peso do solo, só o suficiente para estabilizar a terra e dar a ela resistência, baixa retração e boa durabilidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No tijolo, essa mistura é umedecida e prensada em moldes, manuais ou mecânicos. Uma reportagem do Jornal da Unicamp sobre pesquisas da Faculdade de Engenharia Civil, Arquitetura e Urbanismo descreve a proporção de dez partes de solo para uma de cimento. A grande diferença em relação ao tijolo cerâmico é que ele não passa pela queima: ganha resistência com a cura, mantido úmido nos primeiros dias."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Daí vem o apelido de ecológico. Sem forno, não há consumo de lenha nem a fumaça da queima, e a reportagem lembra que o processo reduz a retirada de argila perto de rios, que provoca erosão e assoreamento. A mistura ainda pode receber resíduos, como entulho processado, conforme a disponibilidade da região e os ensaios de cada fórmula."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Nem toda terra serve. A ABCP indica que os solos mais adequados têm cerca de 45% a 50% de areia e que solo com matéria orgânica, aquele escuro da camada de cima, deve ficar de fora. A reportagem da Unicamp fala em algo perto de 60% de areia, 20% de argila e 20% de silte. As faixas mudam conforme a fonte, e é por isso que cada solo precisa ser ensaiado."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "Ecológico é apelido, não selo",
+      "texto": "O tijolo de solo-cimento continua levando cimento, e o transporte e a prensagem também gastam energia. O nome descreve a ausência de queima, não uma certificação ambiental. Se a sustentabilidade pesa na sua escolha, olhe também a origem do solo, a distância até a fábrica e o desperdício na obra."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que a norma pede e como conferir o tijolo antes de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Tijolo de solo-cimento tem norma. O boletim técnico da ABCP sobre a fabricação desses tijolos, na edição de 2000, se apoia na **NBR 8491**, que especifica os tipos e as dimensões do tijolo maciço de solo-cimento, e na **NBR 8492**, que traz o método de ensaio de resistência à compressão e de absorção de água. NBR é a sigla das normas brasileiras publicadas pela ABNT."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Requisitos do tijolo maciço de solo-cimento descritos no boletim da ABCP",
+      "colunas": [
+        "Item",
+        "O que o boletim indica",
+        "Por que importa"
+      ],
+      "linhas": [
+        [
+          "Resistência à compressão",
+          "Média de pelo menos 2,0 MPa, nenhum tijolo abaixo de 1,7 MPa, com 7 dias de idade",
+          "Mostra se o tijolo aguenta a carga prevista"
+        ],
+        [
+          "Absorção de água",
+          "Média de até 20%, nenhum tijolo acima de 22%",
+          "Água demais enfraquece e mancha a parede"
+        ],
+        [
+          "Dimensões",
+          "Tipo I: 20 x 9,5 x 5 cm; tipo II: 23 x 11 x 5 cm",
+          "Medida regular deixa a parede alinhada"
+        ],
+        [
+          "Cura",
+          "Umedecer com frequência nos 7 primeiros dias, começando 6 horas depois da moldagem",
+          "Sem cura, o cimento não ganha resistência"
+        ]
+      ],
+      "fonte": {
+        "nome": "Boletim Técnico 111 — ABCP",
+        "url": "https://abcp.org.br/wp-content/uploads/2016/01/BT-111.pdf"
+      },
+      "nota": "As normas podem ter sido revisadas desde então; confirme a versão vigente na ABNT com o responsável técnico."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, isso vira uma pergunta simples ao fornecedor: ele tem laudo de ensaio recente, feito por laboratório, mostrando resistência e absorção dentro do que a norma pede? Tijolo de solo-cimento é produzido em muitas fábricas pequenas e até no próprio canteiro, e a qualidade varia bastante de um lote para outro. O laudo é o que separa o material confiável do improvisado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Vale observar também o próprio tijolo. Arestas quebradiças, faces que esfarelam ao passar a unha, cores muito diferentes num mesmo lote e peças empenadas costumam indicar mistura, prensagem ou cura mal feitas. Se o tijolo será aparente, peça para ver uma parede pronta, já exposta à chuva há algum tempo, e não só a amostra nova no pátio da fábrica."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Furos, encaixes e parede aparente: o que muda na obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Muitos tijolos ecológicos são **modulares**: têm furos internos e encaixes entre uma peça e outra. Uma dissertação de mestrado da Escola de Engenharia de São Carlos, da USP, aponta as vantagens desse desenho: os furos permitem passar tubulações sem quebrar a parede, os encaixes agilizam o assentamento e o sistema pede pouca argamassa, o que reduz o desperdício."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Essa vantagem só aparece quando o projeto é feito para o tijolo. Como a parede não é cortada depois, os pontos de tomada, interruptores e canos precisam estar definidos antes de a primeira fiada subir. Mudar de ideia no meio da obra fica mais difícil do que numa parede comum rebocada. Por isso o projeto elétrico e o hidráulico andam junto com o de arquitetura."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também pesquisa sobre colas no lugar da argamassa. A reportagem da Unicamp cita estudos com cola à base de PVA, que prometia obra mais rápida e limpa, mas descreve os resultados como parciais na época. Antes de adotar qualquer técnica de assentamento diferente, confirme com o engenheiro se ela tem ensaio e se combina com o tijolo escolhido."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Já a parede aparente é o que mais encanta e o que mais exige. Sem reboco, a face do tijolo fica exposta ao sol e à chuva. Beirais generosos, rufos bem feitos, uma base que afaste a parede da umidade do chão e uma proteção superficial indicada pelo fabricante ou pelo projetista ajudam a manter a cor e a evitar manchas e eflorescências, aquelas manchas esbranquiçadas de sal."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Tijolo ecológico na balança",
+      "pros": [
+        "Dispensa a queima em forno e reduz a retirada de argila de várzeas.",
+        "Furos permitem passar tubulações sem quebrar a parede.",
+        "Encaixes e pouca argamassa deixam a obra mais limpa.",
+        "A parede aparente tem textura e cor naturais que dispensam reboco."
+      ],
+      "contras": [
+        "A qualidade varia muito entre fabricantes; o laudo de ensaio é indispensável.",
+        "Instalações precisam estar definidas antes, e mudanças custam mais.",
+        "A parede aparente pede beiral, rufo e proteção contra umidade.",
+        "Menos profissionais conhecem bem o sistema do que a alvenaria comum."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quando o tijolo ecológico vale a pena e quando é melhor outro caminho"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O tijolo ecológico tende a fazer sentido quando você quer a estética da parede aparente, aceita planejar tudo antes e encontra um fornecedor com ensaio comprovado e uma equipe que já trabalhou com o sistema. Casas térreas e sobrados de linhas simples, com bons beirais, costumam aproveitar melhor as vantagens. Ideias de outros sistemas estão na categoria [Construção e casas novas](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas ele não é a melhor escolha em todo caso. Se o projeto prevê grandes vãos, muitos andares ou reformas frequentes, a alvenaria comum ou outros sistemas podem resolver melhor. E se não houver laudo do tijolo, nem mão de obra experiente por perto, a economia prometida tende a sumir em ajustes, quebras e manchas que aparecem depois da mudança."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem decide se a parede será só de fechamento ou terá função estrutural é o engenheiro ou o arquiteto responsável, com ART ou RRT, que são os registros de responsabilidade técnica no conselho profissional. A dissertação da USP lembra que excesso de cimento com cura mal feita pode gerar fissuras de retração, e que solo com muita matéria orgânica perde resistência. Esses ajustes não se fazem a olho."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Fazer o tijolo no terreno exige ensaio",
+      "texto": "A ABCP lembra que o solo pode vir do próprio local da obra, o que atrai quem quer economizar. Mas cada terra se comporta de um jeito. Antes de prensar, o solo precisa ser analisado e os tijolos, ensaiados, sempre com acompanhamento de um profissional habilitado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está olhando casas prontas e encontrou uma de tijolo ecológico, as mesmas perguntas valem: peça o projeto, observe beirais e a base das paredes, procure manchas de umidade e fissuras e pergunte quem foi o responsável técnico. Mais textos sobre construir e escolher bem estão na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E se a sua busca é por uma casa que já tenha esse cuidado no projeto, a equipe da {{cliente}}, imobiliária em Campinas, ajuda você a comparar opções e a olhar cada imóvel com calma. No fim, o tijolo ecológico é uma boa escolha quando vem com projeto, ensaio e proteção; sem eles, a parede comum ainda é o caminho mais seguro."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Tijolo ecológico precisa de reboco?",
+      "resposta": "Não necessariamente: muitas casas deixam o tijolo aparente. Nesse caso, a parede precisa de proteção contra chuva e umidade, como beirais, rufos e um acabamento indicado pelo fabricante ou pelo projetista."
+    },
+    {
+      "pergunta": "Tijolo ecológico é mais fraco que o tijolo comum?",
+      "resposta": "Depende da fabricação. O boletim da ABCP descreve resistência média mínima de 2,0 MPa aos 7 dias para o tijolo maciço de solo-cimento. O que garante a qualidade é o laudo de ensaio do lote, não o nome do produto."
+    },
+    {
+      "pergunta": "Posso fazer tijolo ecológico com a terra do meu terreno?",
+      "resposta": "Segundo a ABCP, o solo pode vir do próprio local da obra, desde que seja adequado. Ele precisa ser analisado, e os tijolos, ensaiados, com acompanhamento de um profissional habilitado."
+    },
+    {
+      "pergunta": "Dá para passar fios e canos dentro do tijolo ecológico?",
+      "resposta": "Nos modelos modulares, sim: os furos internos permitem passar tubulações sem quebrar a parede. Para isso, os pontos de elétrica e hidráulica precisam estar definidos no projeto antes de a parede subir."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Solo-cimento — Portal ABCP",
+      "url": "https://abcp.org.br/solo-cimento/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Boletim Técnico 111: Fabricação de tijolos de solo-cimento com a utilização de prensas manuais — ABCP",
+      "url": "https://abcp.org.br/wp-content/uploads/2016/01/BT-111.pdf",
+      "data": "junho de 2000"
+    },
+    {
+      "nome": "Construindo com tijolos ecológicos — Jornal da Unicamp",
+      "url": "https://www2.unicamp.br/unicamp/unicamp_hoje/ju/setembro2009/ju440_pag09.php",
+      "data": "setembro de 2009"
+    },
+    {
+      "nome": "Fabricação de tijolos modulares de solo-cimento por prensagem manual com e sem adição de sílica ativa — EESC-USP",
+      "url": "https://teses.usp.br/teses/disponiveis/18/18141/tde-07072003-160408/publico/Digital.pdf",
+      "data": "2003"
+    }
+  ]
+}
