@@ -1,0 +1,237 @@
+{
+  "slug": "quadra-de-beach-tennis-em-casa-medidas-areia-drenagem",
+  "tema": "quadra de beach tennis no quintal de casa",
+  "titulo": "Quadra de beach tennis em casa: medidas, areia e drenagem",
+  "resumo": "Quer uma quadra de beach tennis em casa? Veja as medidas oficiais, quanto espaço o lote precisa, como fazer a drenagem, que areia usar e os cuidados no dia a dia.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "alto padrão",
+    "área de lazer",
+    "quintal",
+    "esporte",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Quadra de areia clara com rede no quintal de uma casa contemporânea, cercada por tela verde e jardim tropical"
+  },
+  "redes": {
+    "legenda": "Já pensou em ter uma quadra de beach tennis no quintal? A quadra oficial tem 16 m por 8 m, mas o lote precisa de bem mais espaço por causa da folga e da tela. E o segredo não está na areia que se vê: está na drenagem que fica embaixo dela. No blog, explicamos medidas, camadas, tipo de areia e o que conferir antes de começar a obra. Leia o artigo completo (link na bio).",
+    "hashtags": [
+      "beachtennis",
+      "areadelazer",
+      "altopadrao",
+      "casanova",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "A **quadra de beach tennis em casa** virou desejo de muita gente que pegou gosto pelo esporte e quer jogar sem depender de horário em arena. Ela também chama atenção em casas de condomínio com quintal grande, como alternativa ou complemento à piscina na área de lazer."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: dá para ter, desde que o lote comporte a quadra e a folga em volta, e que a obra trate a drenagem com o mesmo cuidado que a areia. A quadra oficial mede 16 m por 8 m, mas o espaço total, com tela e recuos, fica bem maior. E sem drenagem bem feita, a areia vira lama depois da chuva."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A regra da Federação Internacional de Tênis prevê quadra de 16 m por 8 m nas duplas e rede de 1,70 m na maioria das categorias.",
+        "Com folga e tela, a área ocupada costuma passar de 300 m².",
+        "Embaixo da areia vão drenos, brita e manta geotêxtil; é isso que mantém a quadra jogável depois da chuva.",
+        "Areia de quartzo lavada e peneirada, de grão arredondado, é a mais indicada."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Quanto espaço a quadra pede no seu terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As regras do beach tennis publicadas pela **ITF** (Federação Internacional de Tênis) definem a quadra como um retângulo de 16 m de comprimento. A largura é de 8 m para duplas e 4,5 m para simples. Na prática doméstica, quase todo mundo joga em dupla, então vale planejar a medida de 8 m."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A rede fica a 1,70 m de altura para mulheres, juniores e a maior parte dos torneios masculinos; em alguns circuitos masculinos ela sobe para 1,80 m. As linhas têm de 2,5 cm a 5 cm de largura, em fita colorida presa por âncoras, que contrasta com a areia. Em casa, a mesma quadra pode receber vôlei de praia e futevôlei com a rede ajustada."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto que mais surpreende é a folga. A regra oficial não fixa o recuo em volta, mas o guia de construção de quadras da USA Volleyball sugere tela a cerca de 3 m de cada lado. Um memorial descritivo de quadra pública de areia em Lages (SC) mostra alambrado de cerca de 14 m por 22 m. Ou seja: pense em uma área livre acima de 300 m²."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência da quadra",
+      "colunas": [
+        "Item",
+        "Medida",
+        "Origem"
+      ],
+      "linhas": [
+        [
+          "Comprimento",
+          "16 m",
+          "Regras da ITF"
+        ],
+        [
+          "Largura em duplas",
+          "8 m",
+          "Regras da ITF"
+        ],
+        [
+          "Largura em simples",
+          "4,5 m",
+          "Regras da ITF"
+        ],
+        [
+          "Altura da rede",
+          "1,70 m (1,80 m em alguns circuitos masculinos)",
+          "Regras da ITF"
+        ],
+        [
+          "Areia em competições",
+          "Ao menos 25 cm",
+          "Recomendação da ITF"
+        ],
+        [
+          "Folga até a tela",
+          "Cerca de 3 m de cada lado",
+          "Guia da USA Volleyball"
+        ]
+      ],
+      "nota": "Em quadra doméstica, o projeto pode adaptar a folga ao terreno, com orientação do arquiteto."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas, se o lote não comporta essa área, uma quadra menor para bater bola pode resolver o lazer da família, mesmo sem medida oficial. O que não vale é espremer a quadra até encostar na divisa: bola voando para o vizinho e tela colada no muro costumam gerar conflito. Mais ideias de área de lazer estão em [Alto padrão](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Drenagem e camadas: o que fica embaixo da areia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma quadra de areia bem construída é um sistema em camadas. O memorial de Lages descreve valas de drenagem em formato de espinha de peixe, com 40 cm de largura e de profundidade e caimento de 1%. Dentro delas vai um tubo corrugado e perfurado de 100 mm, envolto em brita e em **manta geotêxtil**, um tecido sintético que deixa a água passar e segura os grãos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre o fundo nivelado vem uma camada de brita compactada, depois a manta, que separa a brita da areia, e por fim a areia, com pelo menos 40 cm naquele projeto. A água da chuva atravessa a areia, chega aos drenos e segue para a rede pluvial por uma caixa de passagem. Sem esse caminho, ela fica parada e a quadra demora dias para secar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em volta, uma viga de concreto contém a areia e serve de base para os postes da tela. Ela fica alguns centímetros acima da areia e do piso ao redor, para a areia não escorrer para o jardim nem a enxurrada do jardim entrar na quadra."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Obra com responsável técnico",
+      "texto": "Escavação, drenagem ligada à rede pluvial, vigas de concreto e alambrado com postes altos pedem projeto e acompanhamento de engenheiro ou arquiteto, com ART ou RRT. A tela recebe a força do vento, e a fundação dos postes precisa ser calculada. Em terreno inclinado, a contenção também entra na conta."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Areia, orientação e tela: as escolhas que mudam o jogo"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A areia faz toda a diferença no conforto. O memorial de Lages especifica areia de quartzo lavada, seca e peneirada, de grão fino a médio, entre 0,25 mm e 1 mm, não angulosa e de cor clara. A USA Volleyball recomenda areia natural de grão arredondado, nunca a de rocha britada, que machuca a pele e compacta demais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A orientação conta tanto quanto a areia. O guia americano indica o eixo maior da quadra no sentido **norte-sul**, para que o sol nasça e se ponha ao longo da linha da rede e não ofusque ninguém. O vento ideal sopra de lado, e não de fundo a fundo. Árvores muito perto sujam a areia com folhas e frutos."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Quadra de areia em casa: o que pesa a favor e contra",
+      "pros": [
+        "Esporte e convivência sem sair de casa, a qualquer hora",
+        "Serve para beach tennis, vôlei de praia e futevôlei",
+        "Areia drena bem quando a base é bem feita",
+        "Pode ser um diferencial da área de lazer da casa"
+      ],
+      "contras": [
+        "Ocupa uma área grande do quintal, que deixa de ser jardim",
+        "Areia precisa ser peneirada, nivelada e reposta com o tempo",
+        "Bolas, barulho e iluminação noturna podem incomodar vizinhos",
+        "Exige obra de drenagem e contenção, não só despejar areia"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A tela é o terceiro item. O memorial de Lages usa alambrado de arame galvanizado revestido em PVC, com malha de 7,5 cm. Em casa, telas de cor escura costumam sumir mais na paisagem que as claras. Se a ideia é jogar à noite, a iluminação deve ser planejada para não ofuscar quem joga nem iluminar a janela do vizinho."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Antes de construir: condomínio, vizinhos e manutenção"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em condomínio fechado, o primeiro passo é ler o regulamento de construção. Muitos limitam altura de alambrado, recuos, iluminação externa e horário de uso de áreas de lazer barulhentas. O projeto pode precisar de aprovação da associação além da prefeitura. Melhor descobrir isso antes de contratar a obra."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Confira a área livre do quintal, já com a folga em volta da quadra.",
+        "Leia as regras do condomínio ou do loteamento sobre muros, telas e iluminação.",
+        "Peça ao arquiteto um estudo de implantação com orientação norte-sul e distância das divisas.",
+        "Contrate projeto de drenagem e de fundação da tela com responsável técnico.",
+        "Planeje a rotina: peneirar e nivelar a areia, repor o que se perde e cobrir com lona em períodos de chuva forte."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas, se o esporte é uma fase, vale pensar duas vezes. Uma quadra ocupa espaço por anos e não se desmonta facilmente. Para quem joga uma vez por semana, alugar horário em arena pode fazer mais sentido. Mais inspirações para o quintal e a casa estão na [página inicial do blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com terreno que comporte uma área de lazer como essa, ou quer vender a sua destacando o quintal, a equipe da {{cliente}}, imobiliária de Campinas, pode ajudar na busca e nas dúvidas. Uma boa quadra começa pela drenagem que ninguém vê."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual o tamanho oficial de uma quadra de beach tennis?",
+      "resposta": "Pelas regras da ITF, a quadra tem 16 m de comprimento e 8 m de largura nas duplas, ou 4,5 m nas simples. A rede fica a 1,70 m de altura na maioria das categorias."
+    },
+    {
+      "pergunta": "Quanto espaço preciso no quintal para uma quadra oficial?",
+      "resposta": "Além dos 16 m por 8 m da quadra, é preciso folga em volta até a tela. Com cerca de 3 m de cada lado, como sugere o guia da USA Volleyball, a área passa de 300 m²."
+    },
+    {
+      "pergunta": "Qual areia usar na quadra de beach tennis?",
+      "resposta": "Areia natural de quartzo, lavada e peneirada, de grão fino a médio e arredondado. Areia de rocha britada é áspera e compacta demais."
+    },
+    {
+      "pergunta": "Por que a quadra de areia precisa de drenagem?",
+      "resposta": "Porque a água da chuva precisa atravessar a areia e sair. Drenos com brita e manta geotêxtil levam a água para a rede pluvial; sem eles, a quadra encharca e demora a secar."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Regras do Beach Tennis 2023 (ITF) — Federação Paulista de Tênis",
+      "url": "https://fpt.com.br/Content/arquivos/portal/regulamento/regras-do-beach-tennis-2023.pdf",
+      "data": "2023"
+    },
+    {
+      "nome": "How to build a beach court — USA Volleyball",
+      "url": "https://usavolleyball.org/resource/how-to-build-a-beach-court/",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Memorial descritivo de quadra de areia — Prefeitura de Lages (SC)",
+      "url": "https://licitacoes.lages.sc.gov.br/assets/licitacao/anexo-vi-quadra-de-areia-ivo-silveira_memorial-descritivo-(1)-pdf-177686509360.pdf",
+      "data": "novembro de 2026"
+    }
+  ]
+}
