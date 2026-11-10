@@ -1,0 +1,159 @@
+{
+  "slug": "porta-de-correr-ou-porta-de-abrir-qual-usar",
+  "tema": "porta de correr ou porta de abrir",
+  "titulo": "Porta de correr ou de abrir: qual usar em cada cômodo da casa",
+  "resumo": "A porta de correr libera o giro da folha, mas pede parede livre e veda menos. Veja onde ela funciona, onde a de abrir é melhor e que medidas conferir.",
+  "categoria": "interiores",
+  "formato": "dica",
+  "etiquetas": [
+    "portas",
+    "interiores",
+    "reforma",
+    "projeto",
+    "medidas"
+  ],
+  "capa": {
+    "alt": "Porta de correr de madeira clara recolhida dentro da parede entre um quarto e um closet"
+  },
+  "redes": {
+    "legenda": "Porta de correr ou de abrir? A de abrir precisa de chão livre para girar a folha; a de correr devolve esse espaço, mas precisa de um trecho de parede livre e costuma vedar menos som e cheiro. Mostramos em quais cômodos cada uma funciona melhor e que medidas conferir antes da obra. Leia no blog (link na bio).",
+    "hashtags": [
+      "portadecorrer",
+      "interiores",
+      "decoracao",
+      "arquitetura",
+      "reforma",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de planejar um quarto, um closet ou um banheiro, a dúvida aparece cedo: **porta de correr ou porta de abrir**? A de abrir é a solução de sempre, mas a folha precisa de uma área livre no piso para girar, e esse espaço não pode receber móvel nem armário. A de correr promete devolver esse pedaço do cômodo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a porta de correr funciona muito bem em closets, lavanderias, despensas e divisões internas, onde o giro atrapalha. Onde se precisa de silêncio, privacidade e vedação de cheiro, como suítes e lavabos colados à sala, a porta de abrir bem vedada costuma ser a escolha mais segura."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A porta de abrir ocupa uma área de giro no piso; a de correr ocupa um trecho de parede ao lado do vão.",
+        "A versão embutida precisa de uma parede livre de tomadas, interruptores e canos no caminho da folha.",
+        "Nem toda porta de correr veda som e cheiro como uma porta comum bem ajustada.",
+        "A NBR 9050, de acessibilidade, fixa vão livre mínimo de 0,80 m para portas."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Onde a porta de correr ganha e onde ela perde"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Existem dois tipos principais. A **sobreposta** corre por fora da parede, num trilho aparente, e é a mais simples de instalar numa casa pronta. A **embutida**, também chamada de porta pocket, entra numa caixa dentro da parede e some quando aberta. Ela tem o visual mais limpo, mas exige obra e planejamento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os kits embutidos para drywall mostram a regra prática: a estrutura tem pouco mais que o dobro da largura da porta. Num modelo de catálogo, a folha de 82 cm pede uma estrutura de 167 cm de largura. Esse trecho de parede fica oco, sem lugar para tomada, interruptor, quadro pesado ou tubulação. As medidas mudam de um fabricante para outro."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Qual porta costuma funcionar melhor em cada cômodo",
+      "colunas": [
+        "Cômodo",
+        "Porta de correr",
+        "Porta de abrir"
+      ],
+      "linhas": [
+        [
+          "Closet e despensa",
+          "Costuma ser a melhor opção",
+          "Funciona se houver espaço de giro"
+        ],
+        [
+          "Lavanderia e área de serviço",
+          "Boa, libera a circulação",
+          "Pode bater em máquinas e armários"
+        ],
+        [
+          "Banheiro da suíte",
+          "Possível, com atenção à vedação",
+          "Veda melhor som e cheiro"
+        ],
+        [
+          "Lavabo ao lado da sala",
+          "Menos indicada",
+          "Mais privacidade"
+        ],
+        [
+          "Quarto e home office",
+          "Possível, se a parede comportar",
+          "Melhor para silêncio"
+        ]
+      ],
+      "colunaDestaque": 0
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para ver outras escolhas de projeto que mudam o uso do cômodo, como medidas de móveis e circulação, há mais textos em [Interiores e mobiliário](/blog/categoria/interiores). A porta parece detalhe, mas define onde vai a cama, o armário e o interruptor."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que conferir antes de decidir pela porta de correr"
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "**A parede:** tem comprimento livre para a folha correr? Em caso de dúvida sobre função estrutural, quem decide é o engenheiro.",
+        "**O que passa por dentro:** fios, tomadas, interruptores e canos no trecho da caixa precisam mudar de lugar.",
+        "**O uso do cômodo:** se o ambiente pede silêncio e privacidade, compare a vedação do sistema com a de uma porta comum.",
+        "**A manutenção:** pergunte como se regulam as roldanas e se há peças de reposição; em alguns kits, basta tirar o batente superior.",
+        "**A largura:** a NBR 9050 pede vão livre mínimo de 0,80 m, já descontados folha e batentes."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Numa casa pronta, a porta embutida costuma exigir abrir a parede e refazer acabamentos. Se a reforma não comporta isso, a sobreposta entrega parte do ganho de espaço sem quebrar nada. Para outras ideias de reforma e casa nova, vale passar pela [página inicial do blog](/blog). Se está escolhendo um imóvel, a {{cliente}}, imobiliária de Campinas, atende quem quer comprar ou vender. Em uma linha: correr onde falta espaço, abrir onde falta silêncio."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Porta de correr serve para banheiro?",
+      "resposta": "Serve, principalmente em suítes, mas nem todo sistema veda som e cheiro como uma porta de abrir bem ajustada. Avalie o modelo e o acabamento das guias antes de decidir."
+    },
+    {
+      "pergunta": "Dá para colocar porta embutida numa parede pronta?",
+      "resposta": "Dá, mas costuma exigir abrir a parede, mudar fios e tomadas do caminho e refazer o acabamento. A porta sobreposta é a alternativa sem quebra."
+    },
+    {
+      "pergunta": "Qual a largura mínima de uma porta acessível?",
+      "resposta": "A NBR 9050 fixa vão livre mínimo de 0,80 m, medido já descontando a folha e os batentes."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Portas de correr embutidas na parede estão voltando em apartamentos pequenos — Catraca Livre",
+      "url": "https://catracalivre.com.br/noticias/portas-de-correr-embutidas-na-parede-estao-voltando-em-apartamentos-pequenos-porque-liberam-a-area-que-uma-folha-convencional-precisa-para-abrir/"
+    },
+    {
+      "nome": "Porta de correr embutida para paredes de drywall — Portal AECweb",
+      "url": "https://www.aecweb.com.br/produto/porta-de-correr-embutida-para-paredes-de-drywall/17069"
+    },
+    {
+      "nome": "Anexo de avaliação de acessibilidade (NBR 9050) — Prefeitura de Porto Alegre",
+      "url": "https://www.prefeitura.poa.br/sites/default/files/usu_doc/sites/smap/ANEXO%20AVALIA.pdf"
+    }
+  ]
+}

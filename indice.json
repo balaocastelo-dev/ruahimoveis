@@ -1611,7 +1611,16 @@
       "categoria": "campinas",
       "criadaEm": "2026-11-10T17:20:52.425Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "porta-de-correr-ou-porta-de-abrir-qual-usar",
+      "titulo": "Porta de correr ou de abrir: qual usar em cada cômodo da casa",
+      "tema": "porta de correr ou porta de abrir",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-10T17:21:36.975Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-10T17:20:52.425Z"
+  "atualizadoEm": "2026-11-10T17:21:36.975Z"
 }
