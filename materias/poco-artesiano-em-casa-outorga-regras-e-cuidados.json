@@ -1,0 +1,274 @@
+{
+  "slug": "poco-artesiano-em-casa-outorga-regras-e-cuidados",
+  "tema": "poco artesiano em casa outorga e regras",
+  "titulo": "Poço artesiano em casa: outorga, regras e cuidados com a água",
+  "resumo": "Poço artesiano em casa pede outorga ou dispensa do órgão estadual, responsável técnico e análise da água. Veja as regras em São Paulo antes de perfurar.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "poço artesiano",
+    "água",
+    "construção",
+    "casa nova",
+    "legislação"
+  ],
+  "capa": {
+    "alt": "Quintal gramado de casa com tampa de concreto de poço, bomba protegida em pequena casinha de alvenaria e caixa d'água ao fundo"
+  },
+  "redes": {
+    "legenda": "Pensou em ter um poço artesiano em casa? Em São Paulo, ele não é só uma obra: tirar água do subsolo pede autorização do Estado (a outorga) ou uma declaração de dispensa, poço feito por profissional habilitado e análise da água ao menos uma vez por ano. Explicamos as regras gerais, o que muda entre cacimba e poço profundo e quando a rede pública pesa na decisão. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "pocoartesiano",
+      "agua",
+      "construcao",
+      "casanova",
+      "sustentabilidade",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter um **poço artesiano em casa** parece a resposta para quem quer independência da rede, água para o jardim ou segurança nos meses secos. A ideia aparece muito em chácaras, em casas de condomínio afastadas e em terrenos grandes na região de Campinas, onde há espaço para a obra e para a bomba."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: em São Paulo, a água do subsolo é um bem público, e usar um poço pede **outorga** (a autorização do Estado) ou uma **declaração de dispensa**, conforme o volume. O poço tubular precisa de projeto e obra com responsável técnico, e a água deve ser analisada com regularidade. Onde há rede pública, a lei federal limita a mistura das duas fontes."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Captar água do subsolo em São Paulo pede outorga ou declaração de dispensa do órgão estadual, hoje a SP Águas.",
+        "Pela Portaria DAEE 1.631/2017, extrações de até 15 m³ por dia podem ser dispensadas de outorga, mas a dispensa precisa ser pedida.",
+        "Poço tubular exige responsável técnico com ART no projeto, na perfuração e nos ensaios.",
+        "Na cidade, a instalação ligada à rede pública não pode receber água de outra fonte; confira a regra com a empresa de saneamento."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda quem autoriza o poço e por que ele não é só uma obra"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A água que está embaixo do terreno não pertence ao dono do lote. Ela é um recurso hídrico do Estado, e quem quer retirá-la precisa de autorização. Em São Paulo, quem cuidava disso era o DAEE, o Departamento de Águas e Energia Elétrica. Uma lei complementar estadual de 2024 transformou o DAEE na **SP Águas**, a agência que assumiu essas funções de controle e regulação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Segundo a Secretaria de Meio Ambiente, Infraestrutura e Logística do Estado, a outorga define quanto pode ser captado e serve para controlar o uso da água. Ela tem prazo: dez anos para poços profundos de abastecimento público e cinco anos para as demais finalidades. Quem explora água subterrânea também deve medir a vazão junto ao poço e enviar um relatório anual com o volume retirado."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Isso significa que o poço entra na conta antes da perfuração, não depois. A mesma lógica que vale para o projeto da casa vale aqui: primeiro se entende o que a regra pede, depois se contrata a obra. Para quem está planejando a casa do zero, vale ler também os outros textos de [construção e casas novas](/blog/categoria/construcao) do blog."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Confirme a regra vigente",
+      "texto": "As regras citadas aqui vêm da Portaria DAEE 1.631/2017 e da Instrução Técnica DPO 10. Com a mudança do DAEE para SP Águas, normas podem ser atualizadas. Antes de perfurar, confirme o procedimento atual na própria agência e com o profissional responsável."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Veja quando o uso pode ser dispensado de outorga"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Portaria DAEE 1.631/2017 trata dos usos que dispensam a outorga. Pela regra geral do texto, extrações de **até 15 m³ por dia** se enquadram na dispensa. Para ter uma ideia, 15 m³ são 15 mil litros por dia, volume bem acima do consumo comum de uma casa. Mesmo assim, a dispensa não é automática: o usuário precisa pedir e receber a declaração."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A portaria traz detalhes que mudam a conta. Se houver mais de um poço no mesmo terreno, retirando do mesmo aquífero, os volumes se somam. No aquífero freático, o mais raso, a soma vale quando os poços ficam a menos de 100 m um do outro. Já no Aquífero Guarani, todas as extrações dependem de outorga, com exceção de usos em área rural para atender pessoas físicas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Pelo texto, o pedido de dispensa segue um formulário próprio, paga taxa de 1 UFESP (a unidade fiscal do Estado) e passa por análise. Estando tudo certo, o órgão cadastra o uso e emite a **Declaração de Dispensa de Outorga**. Ela é dada a título precário, ou seja, pode ser revista, e não livra o usuário das exigências ambientais da CETESB."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Outorga ou dispensa: o que muda para o poço da casa",
+      "colunas": [
+        "Ponto",
+        "Outorga",
+        "Declaração de dispensa"
+      ],
+      "linhas": [
+        [
+          "Quando se aplica",
+          "Volumes acima do limite de dispensa ou aquíferos que sempre exigem autorização",
+          "Extrações de até 15 m³ por dia, pela Portaria DAEE 1.631/2017"
+        ],
+        [
+          "Precisa pedir?",
+          "Sim, com projeto e documentos",
+          "Sim, com formulário próprio e taxa de 1 UFESP"
+        ],
+        [
+          "Prazo",
+          "Cinco anos para usos que não são abastecimento público",
+          "Concedida a título precário"
+        ],
+        [
+          "Responsável técnico",
+          "Obrigatório no projeto, na obra e nos ensaios do poço tubular",
+          "Obrigatório no poço tubular"
+        ],
+        [
+          "Qualidade da água",
+          "Análise periódica e cuidados ambientais",
+          "Análise de potabilidade ao menos anual no uso doméstico"
+        ]
+      ],
+      "colunaDestaque": 2,
+      "nota": "Regra geral para o Estado de São Paulo. Cada caso deve ser conferido na SP Águas."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Escolha entre cacimba e poço tubular sabendo o que cada um exige"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na conversa do dia a dia, quase todo poço vira poço artesiano. Tecnicamente, há dois tipos bem diferentes. A **cacimba**, ou poço escavado, é rasa e larga, aberta até o lençol freático. O **poço tubular profundo** é perfurado por máquina, revestido com tubos e vai bem mais fundo, buscando aquíferos mais protegidos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A Instrução Técnica DPO 10 trata os dois de forma distinta. Poços escavados e poços tipo ponteira ficam dispensados da licença de execução, a autorização prévia para perfurar. O poço tubular precisa dela. Além disso, o projeto, a construção, o relatório final com o perfil do solo e os ensaios de vazão devem ter **responsável técnico habilitado**, com a ART guardada pelo dono."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Poço tubular profundo em casa: o que pesa",
+      "pros": [
+        "Água de aquíferos mais profundos, em geral mais protegidos que o lençol raso",
+        "Vazão mais estável ao longo do ano do que a da cacimba",
+        "Útil em terrenos sem rede pública ou para usos como irrigação",
+        "Projeto e ensaios documentados ajudam a regularizar e a vender a casa depois"
+      ],
+      "contras": [
+        "Exige licença de execução, responsável técnico e outorga ou dispensa",
+        "Pede hidrômetro, relatórios e análise periódica da água",
+        "Perfuração e bomba são obra de porte, com manutenção contínua",
+        "Onde há rede pública, a ligação com a casa tem restrições legais"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas a cacimba não é a saída fácil que parece. Por ser rasa, ela fica mais exposta a infiltrações de fossas, adubos e enxurradas. A própria portaria lembra que o usuário deve preservar as condições naturais do aquífero e cumprir a legislação de controle de poluição. Poço raso perto de fossa é um cenário de risco que pede distância, projeto e análise da água."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Cuide da qualidade da água e da relação com a rede pública"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para uso doméstico, a portaria pede análises de potabilidade pelo menos uma vez por ano e, quando couber, cadastro na Vigilância Sanitária. A Instrução Técnica sugere laboratório acreditado e, para residências unifamiliares, lista parâmetros como cor, turbidez, pH, dureza, nitrato, ferro, cloretos e a bactéria *E. coli*. Água transparente não é sinônimo de água própria para beber."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na cidade, entra também a lei federal do saneamento, a Lei 11.445/2007. Ela determina que toda edificação permanente urbana se ligue às redes públicas de água e esgoto disponíveis. Soluções individuais, como o poço, são admitidas na ausência de rede. E a instalação hidráulica ligada à rede pública não pode ser alimentada por outra fonte ao mesmo tempo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, quem tem rede na porta e quer usar o poço, por exemplo para o jardim, precisa de duas instalações separadas e de conversa prévia com a empresa de saneamento local. Misturar canos é o que a lei proíbe; um dos motivos é proteger a água da rede de uma fonte que ninguém controla. Em loteamentos e condomínios, o regulamento interno também pode ter regras próprias sobre poços."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Confirme se o terreno tem rede pública de água e o que diz a empresa de saneamento.",
+        "Leia o regulamento do condomínio ou do loteamento sobre poços.",
+        "Contrate geólogo ou engenheiro habilitado para o estudo, o projeto e a ART.",
+        "Peça a licença de execução e a outorga ou dispensa antes de perfurar.",
+        "Instale hidrômetro, faça os ensaios e guarde o relatório final do poço.",
+        "Analise a água em laboratório acreditado ao menos uma vez por ano."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Decida se o poço faz sentido na sua casa ou no imóvel que vai comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O poço costuma fazer sentido em chácaras e terrenos sem rede pública, em casas com jardim grande e em lugares onde a água é um ponto sensível. Faz menos sentido como simples economia na cidade, já que a casa continua ligada à rede e o poço traz deveres próprios: licenças, hidrômetro, relatórios, análises e manutenção da bomba."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na compra de uma casa que já tem poço, peça os papéis: outorga ou declaração de dispensa, ART da perfuração, relatório final do poço e as últimas análises da água. Um poço sem documentação pode precisar ser regularizado ou até tamponado, serviço que também exige responsável técnico. Esse cuidado entra na mesma lista de documentos que se confere antes de [comprar um imóvel](/blog/categoria/alto-padrao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em qualquer caso, este texto apresenta a regra geral. Cada terreno tem sua geologia, cada cidade tem sua empresa de saneamento e as normas podem ser atualizadas. Para o pedido de outorga, a perfuração e a análise da água, procure geólogo ou engenheiro habilitado; para dúvidas jurídicas, um advogado. Mais textos sobre a casa estão no [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa com terreno, quintal ou estrutura de água própria em Campinas, a equipe da {{cliente}} pode ajudar a separar os imóveis e a organizar a documentação que vale pedir antes de fechar negócio."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: poço em casa pode valer a pena, desde que seja tratado como obra regulada, com autorização, profissional responsável e água analisada."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Preciso de autorização para ter poço artesiano em casa em São Paulo?",
+      "resposta": "Sim. A água subterrânea é um recurso do Estado, e o uso pede outorga ou declaração de dispensa, emitida hoje pela SP Águas, que sucedeu o DAEE. Mesmo volumes pequenos precisam do pedido de dispensa."
+    },
+    {
+      "pergunta": "Qual o limite de água para dispensa de outorga?",
+      "resposta": "Pela Portaria DAEE 1.631/2017, extrações de até 15 m³ por dia podem ser dispensadas, com exceções, como no Aquífero Guarani. Vários poços no mesmo aquífero somam volumes. Confirme a regra atual na agência."
+    },
+    {
+      "pergunta": "Posso ligar o poço na mesma tubulação da rede pública?",
+      "resposta": "Não. A Lei 11.445/2007 diz que a instalação hidráulica ligada à rede pública não pode ser alimentada por outras fontes. Usar o poço exige instalação separada e conversa com a empresa de saneamento."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo devo analisar a água do poço?",
+      "resposta": "A Portaria DAEE 1.631/2017 pede análise de potabilidade ao menos anual no uso doméstico. O ideal é usar laboratório acreditado e repetir a análise depois de obras ou mudanças na água."
+    },
+    {
+      "pergunta": "Cacimba precisa de licença?",
+      "resposta": "Pela Instrução Técnica DPO 10, poços escavados ficam dispensados da licença de execução, mas o uso da água continua sujeito às regras de outorga ou dispensa e aos cuidados com a qualidade."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Portaria DAEE nº 1.631/2017 — Comitês PCJ",
+      "url": "https://www.comitespcj.org.br/images/Download/Portaria-DAEE-1631-2017.pdf",
+      "data": "2017"
+    },
+    {
+      "nome": "Instrução Técnica DPO nº 10 (DAEE) — Comitês PCJ",
+      "url": "https://www.comitespcj.org.br/images/Download/IT-DAEE-DPO-10-17.pdf",
+      "data": "2017"
+    },
+    {
+      "nome": "Lei Complementar nº 1.413/2024 (cria a SP Águas) — Assembleia Legislativa de SP",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2024/original-lei.complementar-1413-23.09.2024.html",
+      "data": "setembro de 2024"
+    },
+    {
+      "nome": "Outorga de uso da água — Semil, Governo do Estado de SP",
+      "url": "https://semil.sp.gov.br/?p=114973",
+      "data": "outubro de 2023"
+    },
+    {
+      "nome": "Lei Federal nº 11.445/2007 (texto da lei) — Águas do Piauí",
+      "url": "https://www.aguasdopiaui.com.br/wp-content/uploads/2024/12/Lei-Federal-No-11.445-Diretrizes-Nacionais-para-o-Saneamento-Basico.pdf",
+      "data": "2007"
+    },
+    {
+      "nome": "Proposta permite abastecimento de água por fontes alternativas — Agência Câmara",
+      "url": "https://www.camara.leg.br/noticias/547053-proposta-permite-abastecimento-de-agua-por-fontes-alternativas/",
+      "data": "outubro de 2018"
+    }
+  ]
+}
