@@ -1665,7 +1665,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-11-10T23:26:22.270Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "puxador-cava-ou-fecho-toque-armario-qual-escolher",
+      "titulo": "Puxador, cava ou fecho toque: qual escolher nos armários",
+      "tema": "puxador cava ou fecho toque nos armarios",
+      "tipo": "dica",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-10T23:27:05.677Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-10T23:26:22.270Z"
+  "atualizadoEm": "2026-11-10T23:27:05.677Z"
 }
