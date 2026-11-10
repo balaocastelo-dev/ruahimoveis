@@ -1,0 +1,257 @@
+{
+  "slug": "gas-natural-encanado-ou-glp-em-casa-como-escolher",
+  "tema": "gas natural encanado ou glp na casa",
+  "titulo": "Gás natural encanado ou GLP: qual escolher para a sua casa",
+  "resumo": "Gás natural da rede ou GLP em botijão e central: veja como cada um chega à casa, como se comporta num vazamento, o que a instalação exige e como decidir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "gás",
+    "construção",
+    "cozinha",
+    "segurança",
+    "casa nova"
+  ],
+  "capa": {
+    "alt": "Cozinha clara com cooktop a gás de chamas azuis acesas, bancada de pedra e janela aberta para um jardim"
+  },
+  "redes": {
+    "legenda": "Você sabia que o gás natural é mais leve que o ar e o GLP, o gás de botijão, é mais pesado? Num vazamento, um sobe e se dispersa; o outro tende a se acumular perto do chão. Essa diferença muda onde fica o botijão, como a cozinha é ventilada e quem pode instalar a tubulação. No blog, comparamos os dois sistemas e mostramos o que olhar na compra ou na construção da casa. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "gasnatural",
+      "construcao",
+      "casanova",
+      "cozinha",
+      "seguranca",
+      "arquitetura",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Na hora de construir, reformar ou comprar uma casa, a pergunta aparece cedo: **gás natural encanado ou GLP**? O gás natural chega pela rede da rua, sem botijão para trocar. O GLP, o gás liquefeito de petróleo, vem em botijões ou em cilindros maiores ligados a uma pequena central no terreno."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: onde existe rede de gás natural na rua, ela costuma ser a opção mais prática, com fornecimento contínuo e um gás mais leve que o ar. Onde a rede não chega, o GLP bem instalado funciona bem. Nos dois casos, o que decide a segurança é a instalação feita por empresa habilitada e a ventilação permanente."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Gás natural é mais leve que o ar e se dispersa; GLP é mais pesado e tende a se acumular perto do piso.",
+        "A rede interna de gás segue a ABNT NBR 15526 e deve ser feita por empresa especializada, com ART ou RRT.",
+        "Botijão nunca fica em armário fechado: o lugar dele é área aberta e ventilada, longe da chama.",
+        "Antes de decidir, confirme com a distribuidora se há rede de gás natural na sua rua."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que muda entre gás natural e GLP no dia a dia"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **gás natural** é basicamente metano. Ele viaja por tubulações subterrâneas da distribuidora até a porta do imóvel, e o consumo é medido por um medidor e cobrado depois de usado. Em Campinas, a distribuição é feita pela Comgás, cuja área de concessão inclui a região metropolitana de São Paulo, Campinas, a Baixada Santista e o Vale do Paraíba."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **GLP** é a mistura de propano e butano que conhecemos como gás de botijão. Numa casa, ele pode vir no botijão de 13 kg ao lado do fogão ou em cilindros de 45 kg reunidos numa central de gás, com tubulação levando o gás até a cozinha, a churrasqueira e o aquecedor. Em condomínios, a central costuma ser coletiva."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na rotina, a diferença mais sentida é a **continuidade**. Com a rede, o gás não acaba no meio do jantar e ninguém precisa receber entregas. Com GLP, alguém acompanha o nível e programa a troca. Mas a rede não chega a todas as ruas, e em chácaras e casas afastadas o GLP costuma ser a alternativa possível."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Gás natural encanado e GLP lado a lado",
+      "colunas": [
+        "Ponto",
+        "Gás natural (rede)",
+        "GLP (botijão ou central)"
+      ],
+      "linhas": [
+        [
+          "Como chega",
+          "Tubulação da distribuidora na rua",
+          "Botijão de 13 kg ou cilindros de 45 kg"
+        ],
+        [
+          "Peso em relação ao ar",
+          "Mais leve: sobe e se dispersa",
+          "Mais pesado: tende a ficar perto do piso"
+        ],
+        [
+          "Abastecimento",
+          "Contínuo, medido e cobrado depois",
+          "Por troca ou recarga dos recipientes"
+        ],
+        [
+          "Onde fica o equipamento",
+          "Abrigo do medidor na entrada",
+          "Área externa ventilada ou abrigo da central"
+        ],
+        [
+          "Quem instala a rede interna",
+          "Empresa especializada, com teste de estanqueidade",
+          "Empresa especializada, com ART ou RRT"
+        ],
+        [
+          "Disponibilidade",
+          "Só onde a rede passa",
+          "Em praticamente qualquer endereço"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "nota": "Regras locais do Corpo de Bombeiros e da distribuidora podem acrescentar exigências. Confirme sempre no seu caso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Segurança: para onde cada gás vai num vazamento"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O manual do consumidor da Cegás, distribuidora de gás natural do Ceará, resume a diferença física: o gás natural é mais leve que o ar e se dissipa rápido quando vaza, enquanto o GLP se acumula perto do chão e pode formar bolsões perigosos. Por isso o lugar do botijão e a ventilação baixa pesam tanto em casas com GLP."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O gás natural não tem cheiro próprio: a distribuidora acrescenta um **odorizante** para que o vazamento seja percebido pelo nariz. Se você sentir cheiro de gás em casa, seja qual for o tipo, a orientação comum das cartilhas é abrir portas e janelas, não acionar interruptores nem usar o celular no ambiente, sair do local e chamar a distribuidora ou os bombeiros pelo 193."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O GLP pede cuidados próprios. O guia de segurança do Sindigás orienta manter o botijão na vertical, em área aberta e arejada, nunca dentro de armários fechados, e longe da chama do fogão. A mesma cartilha indica verificar a validade do regulador e da mangueira, de cinco anos, e trocar por peças com a marca do Inmetro."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Vazamento se procura com espuma, nunca com fogo",
+      "texto": "Para conferir uma conexão, passe água com sabão: se surgirem bolhas, há vazamento. Feche o registro e chame a assistência técnica. Não tente consertar medidor, regulador da rede ou tubulação por conta própria."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas gás natural não dispensa cuidado. O manual da Cegás pede **ventilação permanente** nos ambientes com aparelhos a gás, revisão anual por profissional habilitado e atenção à chama: ela deve ser azul, firme e uniforme. Chama amarela ou que escapa pelas bordas do queimador indica aparelho desregulado, e isso vale para qualquer gás."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como cada sistema chega à casa e quem pode instalar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A tubulação dentro do imóvel segue a **ABNT NBR 15526**, norma da Associação Brasileira de Normas Técnicas para redes internas de gases combustíveis em instalações residenciais e comerciais. Ela vale para pressões de operação até 150 kPa e cobre tanto a rede alimentada pela rua quanto a que sai de uma central de gás."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com gás natural, a distribuidora leva o gás até a entrada do imóvel. Do medidor para dentro, o ramal interno é feito por empresa contratada pelo dono, que responde pelo projeto e pela conservação. A cartilha do Corpo de Bombeiros do Rio de Janeiro reforça que essas redes devem ser executadas por empresa especializada, com **teste de estanqueidade**, o ensaio que confirma que a tubulação não vaza."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Com GLP, a mesma cartilha indica que os cilindros de 45 kg sejam ligados por tubulação metálica, seguindo a NBR 13523, de centrais de GLP, e a NBR 15526, sem mangueira plástica. Os botijões devem ficar protegidos de sol e chuva, do lado de fora da edificação, e a porta do abrigo deve ser de veneziana ou grade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em qualquer caso, peça a **ART ou o RRT** do serviço: são os registros que identificam o engenheiro ou o arquiteto responsável pela instalação no conselho profissional. Mudança de ponto de gás, troca de tubulação ou ligação de aquecedor não são tarefas para fazer sozinho. Cada estado e cada município ainda podem ter exigências próprias dos bombeiros."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "nota",
+      "titulo": "E o fogão que já está em casa?",
+      "texto": "A maioria dos aparelhos a gás já vem preparada para a ligação na tubulação. Se o seu não estiver pronto para o gás da casa, consulte o manual e peça a adaptação ao fabricante ou à distribuidora, nunca de improviso."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como decidir na compra ou na construção da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O primeiro passo é saber se a rede passa na sua rua. A distribuidora informa a disponibilidade pelo endereço. Em loteamentos e condomínios novos, vale perguntar se a rede chega ao lote ou se o projeto prevê central coletiva de GLP. Essa informação muda o projeto da cozinha, do aquecimento de água e da área gourmet."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "O que pesa a favor e contra o gás natural encanado",
+      "pros": [
+        "Fornecimento contínuo, sem troca de botijão nem entregas.",
+        "Mais leve que o ar: num vazamento, tende a subir e se dispersar.",
+        "Libera a área que seria do botijão ou da central de GLP.",
+        "Consumo medido e cobrado depois de usado."
+      ],
+      "contras": [
+        "Só existe onde a distribuidora tem rede na rua.",
+        "Exige ligação, abrigo do medidor e ramal interno feito por empresa contratada.",
+        "Aparelhos antigos podem precisar de adaptação pelo fabricante.",
+        "Continua exigindo ventilação permanente e revisão periódica."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na visita a um imóvel pronto, observe onde fica o botijão ou a central, se o abrigo é ventilado e fora da projeção da casa, se há medidor de gás natural na entrada e se a cozinha tem janela ou ventilação permanente. Pergunte também quando foi a última revisão e se há documentos da instalação."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na construção, deixe o gás no projeto desde o começo: quantos pontos haverá, onde ficarão o aquecedor e a churrasqueira, por onde passará a tubulação. Para ver outras decisões de obra como esta, a seção [Construção e casas novas](/blog/categoria/construcao) reúne textos sobre instalações, estrutura e acabamento. E o [blog](/blog) traz o restante do conteúdo."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa em Campinas e quer entender esses detalhes antes de decidir, a equipe da {{cliente}} pode ajudar a olhar o imóvel com calma. Em resumo: com rede na rua, o gás natural costuma simplificar a rotina; sem ela, o GLP bem instalado e ventilado atende com segurança."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Gás natural é mais seguro que o GLP?",
+      "resposta": "O gás natural é mais leve que o ar e tende a se dispersar num vazamento, enquanto o GLP tende a se acumular perto do piso. Mas a segurança real depende da instalação correta, da ventilação e da manutenção, nos dois casos."
+    },
+    {
+      "pergunta": "Posso colocar o botijão dentro do armário da cozinha?",
+      "resposta": "As cartilhas de segurança orientam o contrário: o botijão deve ficar em área aberta e ventilada, na vertical e longe da chama. Armário fechado acumula gás em caso de vazamento."
+    },
+    {
+      "pergunta": "Qual norma vale para a tubulação de gás dentro de casa?",
+      "resposta": "A ABNT NBR 15526 trata do projeto e da execução das redes internas de gás em instalações residenciais e comerciais. Centrais de GLP seguem também a NBR 13523. O serviço deve ser feito por empresa especializada, com ART ou RRT."
+    },
+    {
+      "pergunta": "De quanto em quanto tempo trocar mangueira e regulador do botijão?",
+      "resposta": "O guia do Sindigás indica validade de cinco anos para regulador e mangueira. Ao trocar, use peças com a marca do Inmetro e confira as conexões com água e sabão."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Manual do Consumidor — Cegás",
+      "url": "https://www.cegas.com.br/wp-content/uploads/2018/04/Manual-do-Consumidor-rev-02.2021.pdf",
+      "data": "2021"
+    },
+    {
+      "nome": "Guia para Utilização Segura do GLP — Sindigás",
+      "url": "https://www.sindigas.org.br/Download/20240305_cartilha_sobre_seguranca_do_glp_v3.pdf",
+      "data": "2024"
+    },
+    {
+      "nome": "Cartilha de gás — Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+      "url": "https://cfap.cbmerj.rj.gov.br/pdfs/from_dgst/cartilha_gas.pdf",
+      "data": "outubro de 2016"
+    },
+    {
+      "nome": "ABNT NBR 15526: redes de distribuição interna para gases combustíveis — Target",
+      "url": "https://www.target.com.br/produtos/normas-tecnicas/40487/nbr15526-redes-de-distribuicao-interna-para-gases-combustiveis-em-instalacoes-residenciais-e-comerciais-projeto-e-execucao",
+      "data": "2026"
+    },
+    {
+      "nome": "Gás encanado: vantagens e cuidados para ter em casa — QuintoAndar",
+      "url": "https://www.quintoandar.com.br/guias/?p=475697",
+      "data": "setembro de 2024"
+    },
+    {
+      "nome": "Comgás transfere inovação e tecnologia para Campinas — Baguete",
+      "url": "https://www.baguete.com.br/noticias/comgas-transfere-inovacao-e-tecnologia-para-campinas",
+      "data": "outubro de 2022"
+    }
+  ]
+}
