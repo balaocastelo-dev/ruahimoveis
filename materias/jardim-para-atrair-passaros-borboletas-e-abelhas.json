@@ -1,0 +1,227 @@
+{
+  "slug": "jardim-para-atrair-passaros-borboletas-e-abelhas",
+  "tema": "jardim para atrair passaros borboletas e abelhas",
+  "titulo": "Jardim para atrair pássaros, borboletas e abelhas: o que plantar",
+  "resumo": "Jardim para atrair pássaros, borboletas e abelhas: frutíferas nativas, flores para beija-flor, folhas para lagartas e um jardim sem veneno.",
+  "categoria": "bem-estar",
+  "etiquetas": [
+    "jardim",
+    "paisagismo",
+    "plantas nativas",
+    "bem-estar"
+  ],
+  "capa": {
+    "alt": "Quintal ajardinado com pitangueira, arbustos floridos em vermelho e amarelo e um bebedouro de pedra sob luz da manhã"
+  },
+  "redes": {
+    "legenda": "Quer acordar com passarinho cantando no quintal? O jardim certo atrai sabiás, beija-flores, borboletas e abelhas nativas. O segredo é misturar frutíferas brasileiras, flores tubulares para o beija-flor e folhas para as lagartas, e deixar o veneno de lado. Cabe até numa varanda. Leia o guia completo no blog (link na bio).",
+    "hashtags": [
+      "jardim",
+      "paisagismo",
+      "plantasnativas",
+      "passaros",
+      "borboletas",
+      "abelhas",
+      "bemestar",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Um **jardim para atrair pássaros, borboletas e abelhas** muda o jeito de viver a casa. O canto do sabiá de manhã, o beija-flor parado diante da flor, a borboleta pousando no canteiro: tudo isso traz movimento e uma sensação de natureza que poucos objetos de decoração conseguem. E não depende de um quintal enorme."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta é oferecer comida e abrigo o ano inteiro. Isso significa plantar frutíferas e arbustos nativos, flores de formatos e épocas variadas, aceitar algumas folhas comidas por lagartas e não usar veneno. Com esse cardápio, os bichos chegam sozinhos, e até uma varanda bem plantada entra na rota deles."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Prefira espécies nativas: elas alimentam a fauna local e não viram praga.",
+        "Planeje frutas e flores em épocas diferentes, para ter comida o ano todo.",
+        "Borboleta precisa de flor para o adulto e de folha para a lagarta.",
+        "Sem agrotóxico: o veneno que mata a praga também afasta quem você quer receber."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Por que escolher plantas nativas para o seu jardim"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O manual *Plantando passarinhos*, do Instituto Butantan com o projeto Avistar, faz uma recomendação central: dar preferência a espécies nativas da região. Elas oferecem o alimento a que a fauna local está adaptada e evitam o risco das plantas exóticas invasoras, que escapam do jardim e podem se espalhar como praga por matas e terrenos vizinhos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há também um sentido maior. O mesmo grupo de pesquisadoras, no manual sobre borboletas, lembra que pequenos jardins de quintal ajudam a ligar as áreas verdes maiores da cidade. Funcionam como pontos de parada, onde os animais encontram comida e abrigo no caminho entre um parque e outro. Seu quintal vira parte de uma rede."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "As abelhas são um bom exemplo. Segundo a Embrapa Meio Ambiente, o Brasil tem mais de 1.500 espécies de abelhas descritas, e a destruição de habitats e o uso de agrotóxicos estão entre os fatores que reduzem sua diversidade. A pesquisadora da Embrapa observa que parques, praças e jardins urbanos ajudam a manter essas abelhas na cidade."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "dica",
+      "titulo": "Pergunte ao viveiro da sua cidade",
+      "texto": "O manual do Butantan sugere consultar o viveiro municipal antes de escolher as espécies. Lá você descobre o que é nativo da sua região e o que se adapta ao seu solo e ao seu clima."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que plantar para cada visitante do jardim"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada bicho procura uma coisa diferente. Pássaros que comem frutas querem árvores e arbustos frutíferos. Beija-flores buscam flores tubulares, ricas em néctar. Borboletas adultas também tomam néctar, mas suas lagartas comem folhas de plantas específicas. E as abelhas visitam uma grande variedade de flores. Um jardim diverso atende a todos ao mesmo tempo."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Quem visita e o que plantar",
+      "colunas": [
+        "Visitante",
+        "O que procura",
+        "Plantas citadas pelos manuais"
+      ],
+      "linhas": [
+        [
+          "Sabiás, sanhaços e outros pássaros",
+          "Frutas o ano inteiro",
+          "Pitangueira, jabuticabeira, goiabeira, araçá"
+        ],
+        [
+          "Pássaros em arbustos",
+          "Frutos pequenos e abrigo",
+          "Chal-chal, guaçatonga, aroeirinha, pau-pombo, ingá-feijão"
+        ],
+        [
+          "Beija-flores",
+          "Flores tubulares com néctar",
+          "Afelandra-zebra, lágrima-de-cristo, brinco-de-princesa"
+        ],
+        [
+          "Borboletas adultas",
+          "Flores coloridas, com lugar para pousar",
+          "Vedélia e outras flores variadas"
+        ],
+        [
+          "Abelhas",
+          "Flores variadas e floração contínua",
+          "Frutíferas nativas, ervas como manjericão, girassol, maracujá"
+        ]
+      ],
+      "nota": "Plantas citadas nos manuais do Instituto Butantan e na reportagem da Elle Brasil. Confirme no viveiro o que é nativo da sua região."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O manual do Butantan sugere planejar as frutíferas para que haja fruto em todas as estações: quando a pitangueira termina, a jabuticabeira começa, e assim por diante. Para as borboletas, o manual lembra que as preferidas são as flores grandes e coloridas, com uma espécie de plataforma onde elas possam pousar enquanto se alimentam."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Aqui vem o \"mas\" que muita gente estranha: para ter borboleta, é preciso aceitar lagarta. Elas comem folhas, e algumas espécies dependem de uma planta só. Um canteiro com folhas mordidas é sinal de que o jardim está funcionando. Mais ideias de verde em casa estão na seção de [bem-estar do blog](/blog/categoria/bem-estar)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como montar o jardim: sol, solo, água e nada de veneno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Comece pela luz. Uma reportagem da Elle Brasil sobre jardins para polinizadores recomenda escolher o canto mais ensolarado, porque a maioria das plantas floríferas e frutíferas pede muito sol. Também sugere levar em conta o vento e quanto você está disposto a regar. Para áreas de sombra, escolha espécies que toleram pouca luz."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O solo precisa drenar bem, porque raiz encharcada apodrece. A mesma reportagem sugere mudas orgânicas, produzidas sem agrotóxicos nem adubos químicos, e lembra que o jardim leva cerca de dois meses para se assentar. Paciência faz parte: os primeiros visitantes costumam aparecer quando as flores e os frutos começam a surgir."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Sobre o veneno, a regra é simples: o inseticida não escolhe alvo. O produto aplicado contra uma praga também atinge abelhas, borboletas e as lagartas que viram borboletas, e pode afastar os pássaros que se alimentam de insetos. Se surgir uma praga séria, procure orientação de um agrônomo ou paisagista antes de aplicar qualquer produto."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Bebedouro e comedouro no jardim",
+      "pros": [
+        "Atraem pássaros mais depressa, enquanto as plantas crescem.",
+        "Permitem observar as aves de perto, da janela ou da varanda.",
+        "Água rasa ajuda os pássaros nos dias quentes."
+      ],
+      "contras": [
+        "Exigem limpeza frequente para não acumular fungos.",
+        "Fruta esquecida atrai formigas e moscas.",
+        "Água parada sem troca pode criar foco de mosquito."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se quiser comedouros, o manual do Butantan cita mamão e banana para sabiás, sanhaços e saíras, e indica trocar a comida e a água e lavar os recipientes a cada cinco dias, no mínimo. Para o bebedouro de beija-flor, a proporção sugerida é de uma parte de açúcar para quatro de água. Mas lembre: a planta é a comida principal; o comedouro é só complemento."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Varanda, quintal ou área grande: como adaptar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na varanda de apartamento, o manual do Butantan lembra que vasos e jardineiras também contam. Arbustos floridos em vaso grande, ervas como manjericão e uma trepadeira como o maracujá já atraem abelhas e beija-flores. O que limita é o sol: varanda virada para o lado mais sombreado pede espécies de meia-sombra, e o vento forte das alturas exige vasos pesados."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No quintal, dá para trabalhar em camadas: uma ou duas frutíferas de porte médio, arbustos floridos embaixo e forração no chão. Antes de plantar árvore, pense no tamanho que ela vai ter adulta, na distância de muros, calhas e tubulações, e na sombra que vai fazer. Ideias para quem está planejando a casa estão na seção de [construção do blog](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "E se você está escolhendo a próxima casa, vale olhar o entorno: a vizinhança arborizada, um parque perto e o espaço de quintal ou varanda pesam muito para quem quer viver com mais verde. A equipe da {{cliente}}, imobiliária em Campinas, pode ajudar você a encontrar um imóvel com esse espaço para plantar."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "visita"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: plante nativas variadas, aceite algumas folhas comidas e deixe o veneno fora do jardim."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Quais plantas atraem beija-flor?",
+      "resposta": "Flores tubulares, ricas em néctar. O manual do Instituto Butantan cita afelandra-zebra, lágrima-de-cristo e brinco-de-princesa, entre outras. Confirme no viveiro da sua cidade quais se adaptam à sua região."
+    },
+    {
+      "pergunta": "Dá para atrair pássaros e borboletas numa varanda de apartamento?",
+      "resposta": "Sim. Vasos com arbustos floridos, ervas e trepadeiras atraem abelhas, borboletas e beija-flores. O que mais pesa é a quantidade de sol que a varanda recebe."
+    },
+    {
+      "pergunta": "Por que não usar inseticida no jardim?",
+      "resposta": "Porque o produto também atinge abelhas, borboletas e suas lagartas, e pode afastar pássaros. Se houver praga séria, procure orientação de um agrônomo ou paisagista."
+    },
+    {
+      "pergunta": "Comedouro substitui as plantas?",
+      "resposta": "Não. O comedouro atrai os pássaros mais rápido, mas exige limpeza frequente. As plantas nativas são a comida principal e o abrigo que faz os bichos ficarem."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Plantando passarinhos: pequeno manual para trazer a natureza para perto da sua casa — Instituto Butantan e Avistar",
+      "url": "https://publicacoeseducativas.butantan.gov.br/web/avistar/pages/pdf/plantando_passarinhos.pdf"
+    },
+    {
+      "nome": "Pequeno manual para atrair borboletas para o seu jardim — Instituto Butantan",
+      "url": "https://repositorio.butantan.gov.br/bitstream/butantan/3360/1/a5-jardim-borboletas.pdf"
+    },
+    {
+      "nome": "Abelhas: artigo de Katia Braga, Embrapa Meio Ambiente — Embrapa",
+      "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1129499/1/Malagodi-ONU-abelhas-2020.pdf",
+      "data": "maio de 2020"
+    },
+    {
+      "nome": "Jardim polinizador: aprenda a montar o seu — Elle Brasil",
+      "url": "https://elle.com.br/?p=13905",
+      "data": "janeiro de 2021"
+    }
+  ]
+}
