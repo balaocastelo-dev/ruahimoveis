@@ -1,0 +1,261 @@
+{
+  "slug": "piscina-aquecida-capa-termica-solar-bomba-de-calor-gas",
+  "tema": "piscina aquecida capa termica e tipos de aquecedor",
+  "titulo": "Piscina aquecida: capa térmica, solar, bomba de calor ou gás?",
+  "resumo": "Piscina aquecida com menos gasto: por que a capa térmica vem primeiro e quando escolher aquecimento solar, bomba de calor ou aquecedor a gás.",
+  "categoria": "alto-padrao",
+  "etiquetas": [
+    "piscina",
+    "alto padrão",
+    "área de lazer",
+    "energia",
+    "casa"
+  ],
+  "capa": {
+    "alt": "Piscina retangular de casa ao entardecer, com água azul-turquesa, deck de madeira, espreguiçadeiras e jardim tropical, com vapor leve sobre a água"
+  },
+  "redes": {
+    "legenda": "Sabia que a maior parte do calor de uma piscina vai embora pela evaporação? Segundo o Departamento de Energia dos Estados Unidos, cobrir a piscina quando ela não está em uso pode cortar de 50% a 70% do gasto com aquecimento. Depois da capa, vem a escolha do aquecedor: solar, bomba de calor ou gás, cada um com o seu jeito de usar. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "piscina",
+      "piscinaaquecida",
+      "altopadrao",
+      "arealazer",
+      "arquitetura",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Ter uma **piscina aquecida** é esticar o verão: nadar em uma manhã de maio, receber os amigos em uma noite mais fresca, deixar a água agradável para as crianças fora da estação. Em casas de alto padrão, o aquecimento entrou na lista de desejos ao lado da sauna e do deck, mas costuma ser decidido às pressas, na reta final da obra."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta é esta: antes de escolher o aquecedor, pense na capa térmica, que é a medida que mais reduz o gasto. Depois, o aquecimento solar costuma ser a base mais econômica onde há telhado e sol, a bomba de calor dá constância com pouca eletricidade, e o gás aquece rápido para quem usa a piscina de vez em quando."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "A evaporação é a maior perda de calor da piscina; cobrir a água fora de uso pode reduzir de 50% a 70% do gasto com aquecimento.",
+        "O aquecimento solar usa coletores que somam de 50% a 100% da área da superfície da piscina.",
+        "A bomba de calor entrega de 3 a 7 unidades de calor para cada unidade de eletricidade, mas rende menos em dias frios.",
+        "O gás aquece rápido e independe do clima; costuma servir a quem usa a piscina de vez em quando ou como apoio."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Antes do aquecedor: a capa térmica e a temperatura certa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Uma piscina perde calor de várias formas, mas a principal é a evaporação. O Departamento de Energia dos Estados Unidos, que mantém guias de eficiência para o consumidor, explica que cada quilo de água que evapora leva embora uma grande quantidade de calor. É por isso que uma piscina descoberta esfria tanto à noite, principalmente com vento."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A mesma fonte chama a capa de o meio mais eficaz para reduzir o custo de aquecimento: cobrir a piscina quando ela não está em uso pode cortar de 50% a 70% desse gasto. A capa também reduz a reposição de água, entre 30% e 50%, e o consumo de produtos químicos, entre 35% e 60%. Existem modelos de manta com bolhas, de vinil e de vinil com isolamento."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Capa térmica na piscina aquecida",
+      "pros": [
+        "É a medida que mais reduz o gasto com aquecimento",
+        "Diminui a evaporação, a reposição de água e o uso de produtos químicos",
+        "Permite um aquecedor solar com menos área de coletores",
+        "Há modelos manuais, semiautomáticos e automáticos"
+      ],
+      "contras": [
+        "Precisa ser colocada e retirada a cada uso",
+        "Modelos opacos reduzem o ganho de calor do sol durante o dia",
+        "Exige um lugar para guardar quando a piscina está aberta",
+        "A versão automática pede um projeto pensado desde a obra"
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A temperatura escolhida também pesa. Segundo o guia americano, a maioria das piscinas é mantida entre cerca de 26 °C e 28 °C, e cada grau a mais na escala Fahrenheit, usada no estudo, pode elevar o custo de energia entre 10% e 30%, conforme o lugar. Na prática, decidir a temperatura com a família, e não no máximo, costuma valer a pena."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Barreiras contra o vento ajudam do mesmo jeito. Muros, cercas vivas e arbustos ao redor da área da piscina reduzem a evaporação, desde que não fiquem tão perto a ponto de causar turbulência. Se você está desenhando a área de lazer agora, vale ver também outras ideias de casa na seção [Alto padrão](/blog/categoria/alto-padrao) do blog."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Aquecimento solar: quando o telhado faz o trabalho"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O aquecedor solar de piscina é simples: a bomba que já filtra a água a manda para coletores no telhado, onde ela esquenta, e a devolve à piscina. Quando o coletor não está mais quente que a água, uma válvula desvia o fluxo. O gasto de energia, nesse caso, é basicamente o da bomba, o que faz do solar a base mais econômica na maioria das casas."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A conta que define o projeto é a área de coletores. O Departamento de Energia americano indica de 50% a 100% da área da superfície da piscina; o portal Canal Solar, especializado no setor, traz a mesma faixa. Regiões mais frias ou nubladas pedem a ponta de cima, e o uso de capa térmica permite ficar mais perto da ponta de baixo. Para uma piscina de 32 m², seriam de 16 m² a 32 m² de coletores."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Há dois tipos de coletor. Os abertos, de plástico ou borracha tratados contra o sol, são mais baratos e atendem bem piscinas usadas em clima sem geada. Os fechados, com vidro, captam calor com mais eficiência no frio e podem trabalhar o ano todo. Em ambos, a orientação do telhado conta: no Brasil, a face voltada para o norte é a que recebe mais sol."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O limite do solar é óbvio: depende de sol. Em dias nublados e chuvosos o rendimento cai, e o Canal Solar observa que alguns projetos preveem um sistema de apoio. Também é preciso ter telhado com área livre, boa orientação e estrutura para receber o peso dos coletores cheios de água, o que nem toda casa tem."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "alto-padrao"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Bomba de calor: constância com pouca eletricidade"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A bomba de calor funciona como um ar-condicionado ao contrário. Um ventilador puxa o ar externo por uma serpentina, um gás refrigerante absorve o calor desse ar, um compressor o concentra e um trocador passa esse calor para a água. O resultado, segundo o guia americano, é um coeficiente de desempenho que costuma ir de 3 a 7: cada unidade de eletricidade vira de três a sete unidades de calor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Ela tende a custar mais na compra do que um aquecedor a gás, mas costuma ter gasto anual bem menor e durar mais, com manutenção adequada; o Departamento de Energia fala em dez anos ou mais, com revisão anual. É a escolha comum de quem quer a água sempre na mesma temperatura, sem depender de sol, e aceita aquecer um pouco mais devagar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O ponto fraco é o frio. A eficiência é maior com o ar acima de uns 10 °C e cai conforme a temperatura desce; abaixo de 7 °C a 10 °C, o rendimento piora bastante. No clima de Campinas isso pesa pouco na maior parte do ano, mas conta nas madrugadas mais frias do inverno. O aparelho também faz ruído de ventilador e precisa ficar longe dos quartos."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os três sistemas de aquecimento lado a lado",
+      "colunas": [
+        "Ponto",
+        "Solar",
+        "Bomba de calor",
+        "Gás"
+      ],
+      "linhas": [
+        [
+          "Fonte de energia",
+          "Sol, com a bomba da filtragem",
+          "Eletricidade e calor do ar",
+          "Gás natural ou GLP"
+        ],
+        [
+          "Rapidez para aquecer",
+          "Lenta, depende do sol",
+          "Média",
+          "Rápida"
+        ],
+        [
+          "Gasto para manter",
+          "O mais baixo",
+          "Baixo a médio",
+          "O mais alto"
+        ],
+        [
+          "Clima",
+          "Rende menos com tempo nublado",
+          "Rende menos no frio",
+          "Funciona em qualquer clima"
+        ],
+        [
+          "Vida útil típica",
+          "De 10 a 20 anos",
+          "10 anos ou mais",
+          "5 anos ou mais"
+        ],
+        [
+          "Uso que combina",
+          "Base do aquecimento no ano todo",
+          "Água sempre na mesma temperatura",
+          "Uso eventual ou apoio"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Energy Saver — Departamento de Energia dos Estados Unidos",
+        "url": "https://www.energy.gov/energysaver/heat-pump-swimming-pool-heaters"
+      },
+      "nota": "Comparação geral. O custo real depende do tamanho da piscina, do clima, da tarifa de energia e do uso da capa térmica."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Aquecedor a gás e as combinações: o que decidir com o projetista"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O aquecedor a gás queima gás natural ou GLP em uma câmara e passa o calor para a água que circula. O guia americano o descreve como ideal para aquecer rápido e bom para piscinas usadas de vez em quando, além de manter a temperatura em qualquer clima. O custo de operação, porém, costuma ser o mais alto, e a vida útil típica é de cinco anos ou mais."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Por isso o gás aparece muito como apoio. Uma combinação comum é o solar como base, com gás ou bomba de calor para os dias sem sol ou para aquecer rápido antes de um fim de semana com visitas. O Canal Solar também cita resistências elétricas e trocadores de calor como apoio, e a geração fotovoltaica para alimentar a bomba de calor."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O dimensionamento não é tarefa para tabela de internet. Ele depende da área da piscina, da temperatura desejada, da temperatura média do mês mais frio de uso, do vento e da capa. A recomendação do Departamento de Energia é que um profissional faça esse cálculo, e a mesma lógica vale para o projeto de coletores e da casa de máquinas."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Onde parar",
+      "texto": "Instalação de gás, circuito elétrico da bomba de calor e coletores sobre o telhado pedem profissionais habilitados, com ART ou RRT, que são os registros de responsabilidade técnica da obra. Não adapte a rede de gás ou a elétrica por conta própria, e confira as regras do condomínio antes de instalar equipamentos externos."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Para quem vai comprar uma casa com piscina aquecida, vale perguntar qual é o sistema, a idade do equipamento, se há capa térmica e quando foi a última revisão. Se a ideia é construir, decidir o aquecimento ainda no projeto evita quebrar piso ou telhado depois. Outros temas de casa e obra estão na página inicial do [blog](/blog)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura uma casa com área de lazer pensada para o ano todo, a equipe da {{cliente}} ajuda a encontrar imóveis à venda em Campinas e a olhar esses detalhes na visita. Em resumo: comece pela capa térmica, use o sol como base sempre que der e escolha a bomba de calor ou o gás pelo jeito como a sua família usa a piscina."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a melhor forma de aquecer a piscina?",
+      "resposta": "Depende do uso. O solar costuma ser a base mais econômica onde há telhado e sol; a bomba de calor dá constância com pouca eletricidade; o gás aquece rápido e serve a quem usa a piscina de vez em quando. Muitas casas combinam dois sistemas."
+    },
+    {
+      "pergunta": "Capa térmica faz mesmo diferença?",
+      "resposta": "Faz. Segundo o Departamento de Energia dos Estados Unidos, cobrir a piscina quando ela não está em uso pode reduzir de 50% a 70% do custo de aquecimento, porque diminui a evaporação, que é a maior perda de calor."
+    },
+    {
+      "pergunta": "Quantos coletores solares a piscina precisa?",
+      "resposta": "A referência é uma área de coletores entre 50% e 100% da área da superfície da piscina. Regiões mais frias ou nubladas pedem mais área; o uso de capa térmica permite menos. O cálculo final deve ser feito por um profissional."
+    },
+    {
+      "pergunta": "Bomba de calor funciona no inverno?",
+      "resposta": "Funciona, mas rende menos quando o ar esfria. A eficiência é maior com o ar acima de uns 10 °C e cai abaixo disso. Em climas como o de Campinas, a perda costuma se concentrar nas madrugadas mais frias."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Swimming Pool Covers — Energy Saver, Departamento de Energia dos Estados Unidos",
+      "url": "https://www.energy.gov/node/1266136"
+    },
+    {
+      "nome": "Heat Pump Swimming Pool Heaters — Energy Saver, Departamento de Energia dos Estados Unidos",
+      "url": "https://www.energy.gov/energysaver/heat-pump-swimming-pool-heaters"
+    },
+    {
+      "nome": "Solar Swimming Pool Heaters — Energy Saver, Departamento de Energia dos Estados Unidos",
+      "url": "https://www.energy.gov/energysaver/solar-swimming-pool-heaters"
+    },
+    {
+      "nome": "Gas Swimming Pool Heaters — Energy Saver, Departamento de Energia dos Estados Unidos",
+      "url": "https://www.energy.gov/energysaver/gas-pool-heaters"
+    },
+    {
+      "nome": "Stay Above Water with an Efficient Swimming Pool — Energy Saver, Departamento de Energia dos Estados Unidos",
+      "url": "https://www.energy.gov/index.php/energysaver/articles/stay-above-water-efficient-swimming-pool"
+    },
+    {
+      "nome": "Energia solar para piscina — Canal Solar",
+      "url": "https://canalsolar.com.br/energia-solar-para-piscina/",
+      "data": "julho de 2025"
+    }
+  ]
+}

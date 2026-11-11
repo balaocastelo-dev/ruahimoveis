@@ -1791,7 +1791,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-11T20:17:58.538Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "piscina-aquecida-capa-termica-solar-bomba-de-calor-gas",
+      "titulo": "Piscina aquecida: capa térmica, solar, bomba de calor ou gás?",
+      "tema": "piscina aquecida capa termica e tipos de aquecedor",
+      "tipo": "principal",
+      "categoria": "alto-padrao",
+      "criadaEm": "2026-11-11T20:19:08.716Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T20:17:58.539Z"
+  "atualizadoEm": "2026-11-11T20:19:08.716Z"
 }
