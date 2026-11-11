@@ -1728,7 +1728,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-11T11:28:57.670Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "iluminacao-do-banheiro-espelho-box-e-luz-geral",
+      "titulo": "Iluminação do banheiro: como iluminar espelho, box e luz geral",
+      "tema": "iluminacao do banheiro espelho box e luz geral",
+      "tipo": "principal",
+      "categoria": "interiores",
+      "criadaEm": "2026-11-11T14:21:46.761Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T11:28:57.670Z"
+  "atualizadoEm": "2026-11-11T14:21:46.761Z"
 }
