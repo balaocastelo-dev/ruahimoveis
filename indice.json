@@ -1764,7 +1764,16 @@
       "categoria": "interiores",
       "criadaEm": "2026-11-11T17:28:21.569Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-pedreira-sp-capital-da-porcelana",
+      "titulo": "Morar em Pedreira: a vida na Capital da Porcelana, perto de Campinas",
+      "tema": "morar em pedreira capital da porcelana",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-11T17:29:24.876Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T17:28:21.570Z"
+  "atualizadoEm": "2026-11-11T17:29:24.876Z"
 }
