@@ -1,0 +1,157 @@
+{
+  "slug": "mesa-de-centro-tamanho-altura-e-distancia-do-sofa",
+  "tema": "proporcao e medidas da mesa de centro",
+  "formato": "dica",
+  "titulo": "Mesa de centro: tamanho, altura e distância certa do sofá",
+  "resumo": "Mesa de centro do tamanho certo: até dois terços do sofá, altura igual ou pouco abaixo do assento e cerca de 45 cm de distância para alcançar sem tropeçar.",
+  "categoria": "interiores",
+  "etiquetas": [
+    "sala de estar",
+    "mobiliário",
+    "decoração",
+    "medidas"
+  ],
+  "capa": {
+    "alt": "Sala de estar com sofá claro e mesa de centro baixa de madeira com tampo oval sobre tapete de lã"
+  },
+  "redes": {
+    "legenda": "Sua mesa de centro vive batendo na canela ou fica longe demais para apoiar o copo? Há três medidas que resolvem isso: o comprimento em relação ao sofá, a altura em relação ao assento e a distância entre os dois. No blog, mostramos as faixas usadas por decoradores e como escolher o formato para a sua sala. Leia a dica completa no blog (link na bio).",
+    "hashtags": [
+      "mesadecentro",
+      "saladeestar",
+      "decoracao",
+      "interiores",
+      "designdeinteriores",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Escolher a **mesa de centro** parece simples até ela chegar em casa: às vezes ocupa a sala inteira, às vezes fica tão longe que ninguém alcança o copo. O problema quase nunca é o modelo, e sim a medida. Três números resolvem a maior parte das dúvidas: o comprimento, a altura e a distância do sofá."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: a mesa costuma ter até dois terços do comprimento do sofá, a mesma altura do assento ou um pouco menos, e fica a cerca de 45 cm dele. Guias de decoração usam essas faixas como ponto de partida, e você ajusta conforme o tamanho da sala e o jeito como usa o espaço."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Comprimento: até cerca de dois terços do sofá.",
+        "Altura: igual à do assento ou de 2,5 a 5 cm mais baixa.",
+        "Distância: de 40 a 46 cm entre a borda da mesa e o sofá."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "As três medidas que definem a mesa de centro"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **comprimento** é a primeira conta. Guias de decoração, como os publicados pela revista ¡Hola! e pelo blog de uma rede de lojas de móveis, sugerem que a mesa não passe de dois terços do sofá. Num sofá de 2,40 m, isso dá uma mesa de até 1,60 m. A proporção deixa sobra nas pontas, para quem senta ali também alcançar a mesa e circular."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **altura** vem depois. A referência mais citada é a mesa ficar na mesma altura do assento do sofá ou de 2,5 a 5 cm abaixo dele. Uma arquiteta ouvida pelo jornal A Gazeta resume a regra: a mesa deve ser igual ou menor que os assentos de sofá, poltronas e pufes. Mesa mais alta que o assento atrapalha a vista e o apoio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **distância** fecha o trio. A faixa comum fica entre 40 e 46 cm, espaço para passar as pernas sem esbarrar e, ao mesmo tempo, apoiar uma xícara sem se levantar. Mas há exceção: se a mesa fica no caminho de passagem da sala, esse guia de móveis recomenda deixar pelo menos 76 cm livres entre ela e os outros móveis grandes, ou 61 cm em salas estreitas."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Medidas de referência para a mesa de centro",
+      "colunas": [
+        "Medida",
+        "Faixa comum",
+        "Por que importa"
+      ],
+      "linhas": [
+        [
+          "Comprimento",
+          "Até dois terços do sofá",
+          "Equilibra o conjunto e libera as pontas"
+        ],
+        [
+          "Altura",
+          "Igual ao assento ou 2,5 a 5 cm abaixo",
+          "Facilita o apoio e não corta a vista"
+        ],
+        [
+          "Distância do sofá",
+          "40 a 46 cm",
+          "Alcança sem bater as pernas"
+        ],
+        [
+          "Passagem em volta",
+          "61 a 76 cm até outros móveis",
+          "Mantém a circulação da sala livre"
+        ]
+      ],
+      "colunaDestaque": 1,
+      "fonte": {
+        "nome": "Guía de dimensiones para mesas de centro — Ashley",
+        "url": "https://blog.ashley.pr/guia-de-dimensiones-para-mesas-de-centro/"
+      }
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Formato e material: como escolher para a sua sala"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em salas estreitas, mesas retangulares ou ovais mais finas costumam funcionar melhor, porque acompanham a linha do sofá sem roubar a passagem. Em salas amplas, mesas redondas ou quadradas maiores ajudam a reunir as poltronas em volta. Com crianças pequenas em casa, o guia consultado sugere tampos redondos ou ovais de madeira e evitar o vidro, por causa das quinas e do risco de quebra."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "blog"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "No material, madeira e pedras como o mármore são bonitas e duráveis, mas pedem cuidado: a arquiteta ouvida por A Gazeta recomenda usar porta-copos e apoios para evitar manchas. Se a sua sala é pequena, uma alternativa é trocar a mesa grande por duas menores, de alturas diferentes. Para mais ideias, veja a categoria [interiores e mobiliário](/blog/categoria/interiores) e o [blog](/blog)."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Meça o comprimento do sofá e calcule dois terços.",
+        "Meça a altura do assento e procure mesas até 5 cm mais baixas.",
+        "Marque no chão, com fita crepe, o contorno da mesa a 45 cm do sofá.",
+        "Ande em volta por alguns dias e veja se a passagem continua confortável."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você está procurando uma casa com sala que acomode bem o sofá, a mesa e a circulação, a equipe da {{cliente}}, imobiliária em Campinas, pode ajudar na busca. A regra que resume tudo: a mesa certa é aquela que você alcança sentado e não sente ao passar."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a altura ideal da mesa de centro?",
+      "resposta": "A referência é a mesma altura do assento do sofá ou de 2,5 a 5 cm abaixo dele. Mesa mais alta que o assento costuma atrapalhar o apoio e a vista da sala."
+    },
+    {
+      "pergunta": "Qual a distância entre o sofá e a mesa de centro?",
+      "resposta": "Guias de decoração indicam algo entre 40 e 46 cm. Assim você passa as pernas sem esbarrar e ainda alcança a mesa sem se levantar."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Guía de dimensiones para mesas de centro — Ashley",
+      "url": "https://blog.ashley.pr/guia-de-dimensiones-para-mesas-de-centro/",
+      "data": "consultado em novembro de 2026"
+    },
+    {
+      "nome": "Las 10 medidas de decoración que hacen que una casa funcione — ¡Hola!",
+      "url": "https://www.hola.com/decoracion/20260327887644/guia-medidas-clave-distancias-decoracion-casa-am/",
+      "data": "março de 2026"
+    },
+    {
+      "nome": "Especialista dá 5 dicas para escolher a mesinha ideal para a sala de estar — A Gazeta",
+      "url": "https://www.agazeta.com.br/hub-imobi/decoracao/especialista-da-5-dicas-para-escolher-a-mesinha-ideal-para-a-sala-de-estar-0124",
+      "data": "consultado em novembro de 2026"
+    }
+  ]
+}
