@@ -1683,7 +1683,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-11T02:17:52.736Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "morar-em-americana-sp-historia-tecelagem-e-vida-perto-de-campinas",
+      "titulo": "Morar em Americana: a cidade dos tecidos ao lado de Campinas",
+      "tema": "americana sp princesa tecela historia e vida",
+      "tipo": "principal",
+      "categoria": "campinas",
+      "criadaEm": "2026-11-11T02:19:10.050Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T02:17:52.736Z"
+  "atualizadoEm": "2026-11-11T02:19:10.050Z"
 }
