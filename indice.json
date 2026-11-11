@@ -1800,7 +1800,16 @@
       "categoria": "alto-padrao",
       "criadaEm": "2026-11-11T20:19:08.716Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "filtro-do-ar-condicionado-de-quanto-em-quanto-tempo-limpar",
+      "titulo": "Filtro do ar-condicionado: de quanto em quanto tempo limpar em casa",
+      "tema": "limpeza do filtro do ar condicionado em casa",
+      "tipo": "dica",
+      "categoria": "bem-estar",
+      "criadaEm": "2026-11-11T20:19:58.327Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T20:19:08.716Z"
+  "atualizadoEm": "2026-11-11T20:19:58.328Z"
 }
