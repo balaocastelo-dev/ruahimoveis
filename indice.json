@@ -1719,7 +1719,16 @@
       "categoria": "construcao",
       "criadaEm": "2026-11-11T11:28:12.798Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "diferenca-entre-art-e-rrt-na-obra",
+      "titulo": "ART ou RRT: qual a diferença e quando a obra precisa de cada um",
+      "tema": "diferenca entre art e rrt na obra",
+      "tipo": "dica",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-11T11:28:57.670Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T11:28:12.799Z"
+  "atualizadoEm": "2026-11-11T11:28:57.670Z"
 }

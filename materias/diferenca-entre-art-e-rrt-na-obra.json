@@ -1,0 +1,164 @@
+{
+  "slug": "diferenca-entre-art-e-rrt-na-obra",
+  "tema": "diferenca entre art e rrt na obra",
+  "titulo": "ART ou RRT: qual a diferença e quando a obra precisa de cada um",
+  "formato": "dica",
+  "resumo": "ART e RRT registram quem responde tecnicamente pela obra. A ART é do engenheiro, no Crea; o RRT é do arquiteto, no CAU. Veja quando pedir e como conferir.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "obra",
+    "reforma",
+    "construção",
+    "projeto"
+  ],
+  "capa": {
+    "alt": "Mesa de trabalho com plantas de arquitetura enroladas, régua, capacete branco e maquete de casa em madeira clara"
+  },
+  "redes": {
+    "legenda": "Vai construir ou reformar e ouviu falar em ART e RRT? Os dois registram quem é o responsável técnico pela obra. A ART é do engenheiro, feita no Crea; o RRT é do arquiteto, feito no CAU. Na execução, o registro deve sair antes de a obra começar, e você pode pedir o documento ao profissional. Leia o artigo completo no blog (link na bio).",
+    "hashtags": [
+      "obra",
+      "reforma",
+      "construcao",
+      "arquitetura",
+      "engenharia",
+      "casanova",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "Quem vai construir ou reformar ouve logo as siglas **ART e RRT**. As duas fazem a mesma coisa: registram oficialmente quem é o responsável técnico pelo projeto ou pela obra. A diferença está na profissão de quem assina e no conselho onde o registro é feito."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **ART**, Anotação de Responsabilidade Técnica, é emitida por engenheiros e outros profissionais do sistema Confea/Crea. O **RRT**, Registro de Responsabilidade Técnica, é emitido por arquitetos e urbanistas no CAU, o Conselho de Arquitetura e Urbanismo. Para a obra, o que importa é existir um deles para cada atividade técnica."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "ART: engenheiro, registrada no Crea do estado da obra.",
+        "RRT: arquiteto e urbanista, registrado no CAU pelo sistema SICCAU.",
+        "Na execução da obra, o registro deve ser feito antes de o serviço começar.",
+        "Peça o documento ao profissional e confira se ele foi quitado e registrado."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Entenda o que cada registro garante"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A ART nasceu com a Lei 6.496, de 1977. Segundo o texto da lei, todo contrato, escrito ou verbal, de serviços de engenharia fica sujeito à anotação, que define para os efeitos legais quem são os responsáveis técnicos. Na época a lei também cobria a arquitetura, que depois ganhou conselho próprio."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O Confea explica que a ART é registrada no Crea da região onde o serviço acontece e só vale depois de paga. Ela deve sair antes do início da execução, precisa ser complementada se o contrato mudar e recebe baixa quando o trabalho termina. A baixa encerra a participação, mas não apaga a responsabilidade do profissional."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O RRT segue a mesma lógica no CAU. A Resolução CAU/BR nº 91, de 2014, diz que ele identifica o responsável pela atividade técnica de arquitetura e urbanismo. Para atividades de execução, o registro vem antes do início; a falta dele pode gerar multa ao profissional e a paralisação do trabalho até a regularização."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "ART e RRT lado a lado",
+      "colunas": [
+        "Ponto",
+        "ART",
+        "RRT"
+      ],
+      "linhas": [
+        [
+          "Quem emite",
+          "Engenheiro ou empresa de engenharia",
+          "Arquiteto e urbanista ou empresa de arquitetura"
+        ],
+        [
+          "Onde se registra",
+          "Crea do estado da obra",
+          "CAU, pelo sistema SICCAU"
+        ],
+        [
+          "Base",
+          "Lei 6.496/1977",
+          "Resolução CAU/BR nº 91/2014"
+        ],
+        [
+          "Quando, na execução",
+          "Antes do início",
+          "Antes do início"
+        ]
+      ],
+      "colunaDestaque": 0
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Saiba quando pedir e como conferir"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Na prática, cada atividade técnica tem o seu registro. Uma casa nova costuma ter projeto de arquitetura, projeto estrutural, projetos de instalações e a execução da obra, e cada responsável registra a sua parte. Uma reforma que mexe em parede, laje, elétrica ou gás também costuma pedir responsável técnico."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Pergunte ao profissional, já no orçamento, qual registro ele vai emitir e para quais atividades.",
+        "Peça uma cópia da ART ou do RRT antes de a obra começar.",
+        "Confira o nome do profissional, o endereço da obra e a descrição do serviço.",
+        "Verifique se o documento foi quitado; a ART pode ser conferida no site do Crea.",
+        "Guarde as cópias com a documentação do imóvel."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mas o registro não substitui a escolha cuidadosa do profissional nem as licenças da prefeitura e do condomínio. Ele mostra quem responde pelo serviço; não garante que o serviço seja bom. Para dúvidas sobre o seu caso, fale com o próprio conselho, com um advogado ou com a prefeitura da cidade."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Mais orientações para quem vai construir estão em [Construção e casas novas](/blog/categoria/construcao), e outros temas da casa ficam no [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você vai comprar um imóvel que passou por reforma ou ampliação, pergunte ao vendedor pelos registros de responsabilidade técnica. A equipe da {{cliente}} pode ajudar você a reunir os documentos certos na compra ou na venda em Campinas. Em resumo: engenheiro faz ART, arquiteto faz RRT, e a sua obra precisa de um deles."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Reforma pequena precisa de ART ou RRT?",
+      "resposta": "Depende do serviço. Quando a reforma envolve estrutura, instalações elétricas ou de gás, ou alterações de projeto, o serviço pede um profissional habilitado e o registro correspondente. Na dúvida, consulte o Crea ou o CAU."
+    },
+    {
+      "pergunta": "Quem paga a ART ou o RRT?",
+      "resposta": "O registro é feito e quitado pelo profissional ou pela empresa contratada. O custo costuma entrar no orçamento do serviço, por isso vale combinar isso por escrito."
+    },
+    {
+      "pergunta": "Como saber se a ART é verdadeira?",
+      "resposta": "A ART só vale depois de quitada, e os dados podem ser conferidos no site do Crea do estado ou por meio de uma certidão de ART. No caso do RRT, o registro é feito no sistema do CAU."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Anotação de Responsabilidade Técnica – ART — Confea",
+      "url": "https://www.confea.org.br/index.php/servicos-prestados/anotacao-de-responsabilidade-tecnica-art",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Lei nº 6.496, de 7 de dezembro de 1977 — Câmara dos Deputados",
+      "url": "https://www2.camara.leg.br/legin/fed/lei/1970-1979/lei-6496-7-dezembro-1977-366461-normaatualizada-pl.html",
+      "data": "novembro de 2026"
+    },
+    {
+      "nome": "Resolução CAU/BR nº 91, de 9 de outubro de 2014 — Normas Brasil",
+      "url": "https://www.normasbrasil.com.br/norma/resolucao-91-2014_276004.html",
+      "data": "novembro de 2026"
+    }
+  ]
+}
