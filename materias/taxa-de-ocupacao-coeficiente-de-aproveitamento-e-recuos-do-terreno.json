@@ -1,0 +1,237 @@
+{
+  "slug": "taxa-de-ocupacao-coeficiente-de-aproveitamento-e-recuos-do-terreno",
+  "tema": "taxa de ocupacao coeficiente de aproveitamento e recuos do lote",
+  "titulo": "Taxa de ocupação, coeficiente e recuos: o que limita a casa no terreno",
+  "resumo": "Taxa de ocupação, coeficiente de aproveitamento, recuos e permeabilidade: o que cada índice diz e como saber quanto dá para construir no lote.",
+  "categoria": "construcao",
+  "etiquetas": [
+    "construção",
+    "terreno",
+    "projeto",
+    "legislação urbana"
+  ],
+  "seo": {
+    "titulo": "Taxa de ocupação, coeficiente e recuos do terreno"
+  },
+  "capa": {
+    "alt": "Plantas de arquitetura enroladas e uma maquete branca de casa sobre uma mesa de madeira, ao lado de um terreno gramado visto pela janela"
+  },
+  "redes": {
+    "legenda": "Comprou um terreno de 500 m²? Isso não quer dizer que dá para construir 500 m² nele. Taxa de ocupação, coeficiente de aproveitamento, recuos e permeabilidade definem o tamanho, a altura e a posição da casa. E em Campinas, a regra do coeficiente acaba de passar pela Câmara. Entenda cada índice no blog (link na bio).",
+    "hashtags": [
+      "construcao",
+      "terreno",
+      "arquitetura",
+      "casanova",
+      "projeto",
+      "campinas"
+    ]
+  },
+  "blocos": [
+    {
+      "tipo": "paragrafo",
+      "texto": "**Taxa de ocupação, coeficiente de aproveitamento e recuos** são palavras que aparecem logo na primeira conversa com o arquiteto, e que muita gente só descobre depois de comprar o terreno. Elas definem quanto do lote a casa pode cobrir, quantos metros quadrados podem ser construídos ao todo e a que distância das divisas a obra precisa ficar."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A resposta curta: cada lote tem um conjunto de índices dados pela lei de uso e ocupação do solo da cidade e, em condomínios e loteamentos, também pelas regras do empreendimento. Eles valem juntos, e o mais restritivo manda. Antes de comprar ou projetar, peça esses números à prefeitura e ao condomínio, e deixe o arquiteto fazer a conta."
+    },
+    {
+      "tipo": "resumo",
+      "itens": [
+        "Taxa de ocupação: quanto do terreno a projeção da casa pode cobrir.",
+        "Coeficiente de aproveitamento: quantos metros quadrados podem ser construídos, somando os andares.",
+        "Recuos: a distância mínima da casa até a frente, os lados e o fundo do lote.",
+        "Em Campinas, a Câmara aprovou em outubro de 2026 a mudança do coeficiente básico para 1."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que cada índice diz sobre o seu terreno"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "A **taxa de ocupação** é a relação entre a projeção horizontal da construção e a área do lote, como define o dicionário de termos do zoneamento da Prefeitura de São Paulo. Projeção horizontal é a \"sombra\" da casa vista de cima. Se a taxa é de 50% num terreno de 400 m², a casa pode cobrir até 200 m² do chão, mesmo que tenha dois andares."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O **coeficiente de aproveitamento** é a relação entre a área construída computável e a área total do lote. Ele trata da soma de todos os pavimentos. Um coeficiente 1 num lote de 400 m² permite, em regra, 400 m² de área computável. Área computável é a que entra na conta; algumas áreas, definidas em cada lei, ficam de fora."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os **recuos** são a distância entre a construção e as divisas da frente, dos lados e do fundo do lote. Já a **taxa de permeabilidade** é a parte do terreno que precisa ficar sem impermeabilizar, para a água da chuva infiltrar no solo. A Prefeitura de Curitiba lembra que esses índices protegem a circulação de ar, a iluminação e o escoamento da chuva, e não só o desenho da rua."
+    },
+    {
+      "tipo": "tabela",
+      "titulo": "Os índices que limitam a casa no lote",
+      "colunas": [
+        "Índice",
+        "O que mede",
+        "Exemplo num lote de 400 m²"
+      ],
+      "linhas": [
+        [
+          "Taxa de ocupação",
+          "Projeção da casa sobre o terreno",
+          "Com 50%, até 200 m² de chão coberto"
+        ],
+        [
+          "Coeficiente de aproveitamento",
+          "Soma das áreas computáveis de todos os andares",
+          "Com coeficiente 1, até 400 m² computáveis"
+        ],
+        [
+          "Recuos",
+          "Distância até frente, lados e fundo",
+          "Faixas do lote onde não se constrói"
+        ],
+        [
+          "Taxa de permeabilidade",
+          "Parte do lote que deixa a água infiltrar",
+          "Jardim ou piso drenante em uma fração do lote"
+        ]
+      ],
+      "nota": "Exemplos ilustrativos. Os números do seu lote estão na lei da sua cidade e, em condomínio, também no regulamento do empreendimento."
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como os índices se combinam no projeto da casa"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Os índices não se somam, se cruzam. Imagine o lote de 400 m² com taxa de ocupação de 50% e coeficiente 1. A casa térrea pode ter até 200 m², porque bate antes na taxa de ocupação. Para chegar aos 400 m² do coeficiente, é preciso um segundo andar. Os recuos, por sua vez, podem empurrar a casa para o meio do lote e reduzir ainda mais a área útil."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "É aí que a escolha entre casa térrea e sobrado deixa de ser só gosto. Em terrenos menores, o sobrado costuma ser a forma de usar todo o potencial do lote sem invadir a área permeável e os recuos. Em terrenos grandes, a casa térrea tem mais folga. Outros textos sobre projeto e obra estão na seção de [construção do blog](/blog/categoria/construcao)."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Piscina, varanda coberta, garagem e edícula também entram no raciocínio. Cada lei decide se elas contam na taxa de ocupação, no coeficiente ou em nenhum dos dois. Por isso não vale fazer a conta só com a área da casa principal: o arquiteto precisa ler a lei e o regulamento para saber o que conta e o que não conta no seu caso."
+    },
+    {
+      "tipo": "destaque",
+      "tom": "atencao",
+      "titulo": "Condomínio pode ser mais restritivo",
+      "texto": "Em condomínios e loteamentos fechados, o regulamento costuma trazer recuos, alturas e taxas próprios, às vezes mais rígidos do que a lei municipal. Os dois valem juntos, e o projeto precisa cumprir o mais restritivo. Peça o regulamento antes de comprar o lote."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "comprar"
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "O que mudou em Campinas com o coeficiente básico"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em Campinas, a Câmara Municipal aprovou em segundo turno, em outubro de 2026, o Projeto de Lei Complementar nº 42/2026, enviado pela Prefeitura, que altera a lei de uso e ocupação do solo. Segundo o jornal Correio da Manhã, o texto fixa o **coeficiente de aproveitamento básico** em 1 para os imóveis da cidade, com exceções previstas em lei. Antes, ele variava por região e podia chegar a 5."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "O coeficiente básico é o quanto se pode construir sem pagar contrapartida. Acima dele, até o máximo permitido para a zona, entra a **outorga onerosa**, uma cobrança da prefeitura sobre o potencial construtivo adicional. O projeto muda o cálculo dessa cobrança e cria descontos para alguns tipos de empreendimento, conforme a CBN Campinas e o Secovi-SP."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Até a publicação mais recente do Secovi-SP consultada, de outubro de 2026, o projeto seguia para sanção e publicação. Para quem vai construir uma casa, a mudança pesa menos do que para prédios, porque a maioria das casas fica dentro do coeficiente básico. Mas vale confirmar, no momento do projeto, qual é a regra em vigor para o seu lote."
+    },
+    {
+      "tipo": "pros-contras",
+      "titulo": "Comprar o terreno antes de consultar os índices",
+      "pros": [
+        "Garante o lote quando a oferta na região é pequena.",
+        "Dá mais tempo para pensar o projeto com calma.",
+        "Permite conhecer o terreno em diferentes horários e estações."
+      ],
+      "contras": [
+        "A casa sonhada pode não caber nos recuos e na taxa de ocupação.",
+        "Regras do condomínio podem limitar altura, piscina ou edícula.",
+        "Terreno inclinado ou irregular pode reduzir a área útil real."
+      ]
+    },
+    {
+      "tipo": "titulo",
+      "nivel": 2,
+      "texto": "Como descobrir os índices do lote antes de comprar"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Cada cidade tem o seu caminho. Em Curitiba, por exemplo, a prefeitura emite gratuitamente a Consulta Informativa do Lote, que resume parâmetros como alinhamento, taxa de ocupação e recuos. Em Campinas e nas cidades vizinhas, a informação sai da lei de uso e ocupação do solo e dos serviços da prefeitura. O arquiteto ou engenheiro costuma fazer essa consulta para você."
+    },
+    {
+      "tipo": "lista",
+      "ordenada": true,
+      "itens": [
+        "Peça a matrícula do lote e confirme área, medidas e confrontações.",
+        "Descubra a zona do lote na lei de uso e ocupação do solo da cidade.",
+        "Em condomínio ou loteamento fechado, peça o regulamento de construção.",
+        "Leve tudo ao arquiteto ou engenheiro antes de fechar negócio, para um estudo de massa do que cabe no terreno.",
+        "Confirme se há mudança de lei em andamento que possa afetar o seu lote."
+      ]
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Esse estudo inicial é barato perto do custo de um erro. Ele mostra se a casa que você imagina cabe no lote, se precisa de dois andares e quanto sobra de jardim. Na aprovação do projeto, a prefeitura confere tudo, e o responsável técnico assina com ART ou RRT. Dúvida jurídica sobre a compra pede advogado; dúvida sobre o registro, o cartório."
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Se você procura um terreno ou uma casa para ampliar em Campinas, a equipe da {{cliente}} pode ajudar você a comparar opções e reunir os documentos para levar ao seu arquiteto. Para mais assuntos do mercado e da cidade, vale acompanhar o [blog](/blog)."
+    },
+    {
+      "tipo": "chamada",
+      "tema": "geral"
+    },
+    {
+      "tipo": "paragrafo",
+      "texto": "Em uma linha: antes de comprar o terreno, descubra os índices dele e deixe o arquiteto mostrar o que cabe."
+    }
+  ],
+  "perguntas": [
+    {
+      "pergunta": "Qual a diferença entre taxa de ocupação e coeficiente de aproveitamento?",
+      "resposta": "A taxa de ocupação mede quanto do chão do lote a casa cobre, vista de cima. O coeficiente de aproveitamento mede o total de área computável construída, somando todos os andares."
+    },
+    {
+      "pergunta": "Em um terreno de 300 m² posso construir 300 m²?",
+      "resposta": "Depende dos índices da zona e do regulamento do condomínio. Com coeficiente 1, o total computável chega a 300 m², mas a taxa de ocupação e os recuos podem exigir dois andares para chegar a esse número."
+    },
+    {
+      "pergunta": "O que mudou no coeficiente de aproveitamento em Campinas?",
+      "resposta": "A Câmara aprovou em outubro de 2026 o projeto que fixa o coeficiente básico em 1 para os imóveis da cidade, com exceções, e muda o cálculo da outorga onerosa. Confirme a regra em vigor no momento do seu projeto."
+    },
+    {
+      "pergunta": "Quem calcula os índices do meu projeto?",
+      "resposta": "O arquiteto ou engenheiro responsável, que lê a lei da cidade e o regulamento do condomínio. A prefeitura confere na aprovação do projeto."
+    }
+  ],
+  "fontes": [
+    {
+      "nome": "Dicionário de termos do PL do zoneamento — Prefeitura de São Paulo",
+      "url": "https://prefeitura.sp.gov.br/noticia/dicionario-de-termos-2013-pl-zoneamento",
+      "data": "junho de 2015"
+    },
+    {
+      "nome": "Prefeitura dá dicas para quem quer comprar lote ou construir sem dor de cabeça — Prefeitura de Curitiba",
+      "url": "https://www.curitiba.pr.gov.br/noticias/prefeitura-da-dicas-para-quem-quer-comprar-lote-ou-construir-sem-dor-de-cabeca/81485",
+      "data": "janeiro de 2026"
+    },
+    {
+      "nome": "Campinas aprova mudança na cobrança da outorga onerosa — Correio da Manhã",
+      "url": "https://www.correiodamanha.com.br/nacional/sao-paulo/campinas/2026/10/327949-campinas-aprova-mudanca-na-cobranca-da-outorga-onerosa.html",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Câmara aprova mudanças em regras urbanísticas em Campinas — CBN Campinas",
+      "url": "https://cbncampinas.com.br/2026/10/camara-aprova-mudancas-em-regras-urbanisticas-e-protecao-a-servidoras-em-campinas/",
+      "data": "outubro de 2026"
+    },
+    {
+      "nome": "Nova regra da outorga onerosa pode destravar lançamentos em Campinas em 2027 — Secovi-SP",
+      "url": "https://secovi.com.br/nova-regra-da-outorga-onerosa-pode-destravar-lancamentos-em-campinas-em-2027-avalia-secovi-sp/",
+      "data": "outubro de 2026"
+    }
+  ]
+}

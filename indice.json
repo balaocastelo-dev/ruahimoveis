@@ -1746,7 +1746,16 @@
       "categoria": "bem-estar",
       "criadaEm": "2026-11-11T14:22:57.033Z",
       "situacao": "esperando-capa"
+    },
+    {
+      "slug": "taxa-de-ocupacao-coeficiente-de-aproveitamento-e-recuos-do-terreno",
+      "titulo": "Taxa de ocupação, coeficiente e recuos: o que limita a casa no terreno",
+      "tema": "taxa de ocupacao coeficiente de aproveitamento e recuos do lote",
+      "tipo": "principal",
+      "categoria": "construcao",
+      "criadaEm": "2026-11-11T14:23:59.865Z",
+      "situacao": "esperando-capa"
     }
   ],
-  "atualizadoEm": "2026-11-11T14:22:57.033Z"
+  "atualizadoEm": "2026-11-11T14:23:59.866Z"
 }
