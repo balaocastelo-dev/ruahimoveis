@@ -10,9 +10,9 @@ const { lerTextoRico, montarSumario, dataPorExtenso } = require('../blog/texto')
 const portal = require('../portal/paginas');
 const commons = require('./commons');
 const cfg = require('../config');
+const { empresaVisivel } = require('../catalogo-publico');
 // O nome da imobiliária vem da configuração: CLIENTE (curto, a marca) e EMPRESA (nome completo).
 const CLIENTE = cfg.CLIENTE_NOME;
-const EMPRESA = cfg.EMPRESA;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -38,7 +38,7 @@ async function fotosValidas(x, fotosPublicas) {
   const saida = new Map();
   await Promise.all(x.pagina.fotos.map(async (f) => {
     if (f.imovel_foto) {
-      if (fotosPublicas.has(f.imovel_foto)) saida.set(f.id, { ...f, src: portal.fotoUrl(f.imovel_foto), credito: `Foto: ${EMPRESA}`, ver: String(f.imovel_foto) });
+      if (fotosPublicas.has(f.imovel_foto)) saida.set(f.id, { ...f, src: portal.fotoUrl(f.imovel_foto), credito: `Foto: ${empresaVisivel()}`, ver: String(f.imovel_foto) });
       return;
     }
     let c = null;
@@ -160,8 +160,8 @@ async function paginaBairro(req, x, ctx) {
       '@context': 'https://schema.org', '@type': 'Article', headline: p.titulo, description: p.resumo, url, inLanguage: 'pt-BR',
       ...(p.publicadoEm ? { datePublished: p.publicadoEm } : {}), ...(data ? { dateModified: data } : {}),
       ...(capa ? { image: fotos.slice(0, 6).map((f) => `${base}${f.src}`) } : {}),
-      author: { '@type': 'Organization', name: EMPRESA, url: `${base}/imoveis` },
-      publisher: { '@type': 'RealEstateAgent', name: EMPRESA, url: `${base}/imoveis`, areaServed: 'Campinas, SP' },
+      author: { '@type': 'Organization', name: empresaVisivel(), url: `${base}/imoveis` },
+      publisher: { '@type': 'RealEstateAgent', name: empresaVisivel(), url: `${base}/imoveis`, areaServed: 'Campinas, SP' },
       about: {
         '@type': 'Place', name: `${b.nome}, Campinas`, ...(b.apelidos.length ? { alternateName: b.apelidos.slice(0, 5) } : {}),
         address: { '@type': 'PostalAddress', addressLocality: 'Campinas', addressRegion: 'SP', addressCountry: 'BR' },

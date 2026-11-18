@@ -130,6 +130,7 @@ try {
 const achados = lista.split('\n').map((s) => s.trim().replace(/\\/g, '/').replace(/^\.\//, '')).filter(Boolean).sort();
 const permitidos = [
   'docs/PLANO-CENTRALIZACAO.md',
+  'scripts/blog-materias-caixa.js', // URL do repositório antigo nas capas; não é marca na tela
   'sql/migrar-schema-ruah-para-base-rollback.sql',
   'sql/migrar-schema-ruah-para-base.sql',
   'sql/opcional-remover-cadastro-ruah.sql',

@@ -50,7 +50,7 @@ r.post('/assinatura/:token', limite(8), async (req, res) => {
   if (!cpfValido(cpf)) falha(400, 'CPF inválido.');
   // Só a autorização de venda é sempre assinada pelo dono. Num contrato, quem assina é o locatário,
   // o comprador ou o cliente da intermediação: o CPF não tem de bater com o do proprietário.
-  const ehAutorizacao = !a.tipo || a.tipo === 'autorizacao';
+  const ehAutorizacao = !a.tipo || a.tipo === 'autorizacao' || a.tipo === 'autorizacao_venda';
   const dono = ehAutorizacao && a.proprietario_id ? one('SELECT * FROM proprietarios WHERE id=?', a.proprietario_id) : null;
   if (dono && dono.cpf && dono.cpf.replace(/\D/g, '') !== String(cpf).replace(/\D/g, '')) falha(400, 'O CPF não confere com o proprietário cadastrado. Fale com o corretor.');
   if (typeof assinatura_png !== 'string' || !/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(assinatura_png) || assinatura_png.length > 400000 || assinatura_png.length < 500) falha(400, 'Desenhe sua assinatura no quadro.');

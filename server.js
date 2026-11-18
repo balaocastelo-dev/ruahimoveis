@@ -135,8 +135,9 @@ app.use(require('./src/condominios/publico'));
 // Marca: nome do sistema e do cliente desta instalação, lidos pelas telas (window.MARCA) antes do app.js.
 app.get('/marca.js', (req, res) => {
   const c = require('./src/config');
+  const pub = require('./src/catalogo-publico');
   res.type('application/javascript').setHeader('Cache-Control', 'no-cache');
-  res.send(`window.MARCA=${JSON.stringify({ sistema: c.SISTEMA_NOME, cliente: c.CLIENTE_NOME, empresa: c.EMPRESA, blog: c.BLOG_NOME, tema: c.TEMA, logo: c.LOGO_URL, icone: c.ICONE_URL }).replace(/</g, '\\u003c')};`);
+  res.send(`window.MARCA=${JSON.stringify({ sistema: c.SISTEMA_NOME, cliente: pub.clienteVisivel(), empresa: pub.empresaVisivel(), blog: c.BLOG_NOME, tema: c.TEMA, logo: c.LOGO_URL, icone: c.ICONE_URL }).replace(/</g, '\\u003c')};`);
 });
 app.get('/fisguei', (req, res) => res.redirect('/#/fisguei'));
 // 3D: o modo realista do Google precisa de WebAssembly (Draco), worker em blob e de falar com tile.googleapis.com.
@@ -172,7 +173,7 @@ app.get(['/', '/index.html'], (req, res) => {
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<title>Imóveis</title>
+<title>${cfg.CLIENTE_NOME} · Imóveis</title>
 <meta name="robots" content="noindex">
 <script src="/ir.js"></script>
 <noscript><meta http-equiv="refresh" content="0;url=/imoveis"></noscript>
