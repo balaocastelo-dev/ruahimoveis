@@ -18,7 +18,6 @@ const CLIENTE = cfg.CLIENTE_NOME;
 // O papel de parede troca com o relógio (src/portal/fundos.js), entao e calculado
 // a cada pedido, nao uma vez quando o servidor sobe.
 const { fundoAgora } = require('./fundos');
-const EMPRESA = cfg.EMPRESA;
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const json = (o) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -157,7 +156,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 </header>
 <main id="conteudo">${corpo}</main>
 <footer class="p-rodape">
-  <div><p class="p-rodape-n">${esc(EMPRESA)}</p><p class="p-rodape-tel">${cfg.WHATSAPP_CLIENTE ? `Thiago Herrera · <a href="tel:+55${String(cfg.WHATSAPP_CLIENTE).replace(/\D/g, '')}">${fmtTel(cfg.WHATSAPP_CLIENTE)}</a>` : ''}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
+  <div><p class="p-rodape-n">${esc(empresaVisivel())}</p><p class="p-rodape-tel">${cfg.WHATSAPP_CLIENTE ? `Thiago Herrera · <a href="tel:+55${String(cfg.WHATSAPP_CLIENTE).replace(/\D/g, '')}">${fmtTel(cfg.WHATSAPP_CLIENTE)}</a>` : ''}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
   <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/condominios">Condomínios</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}${SITE_CLIENTE ? `<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a>` : ''}<a href="/privacidade">Privacidade e seus dados</a><a href="/termos">Termos de uso</a><a href="/entrar" rel="nofollow">Área da equipe</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>${DEMONSTRACAO ? `
   <p class="p-rodape-p"><strong>Portal de demonstração.</strong> As fotos são imagens ilustrativas, criadas para esta demonstração: não mostram os imóveis reais.</p>` : ''}
@@ -423,7 +422,7 @@ function paginaImovel(req, x, lista) {
       '@context': 'https://schema.org', '@type': 'RealEstateListing', name: p.titulo, description: p.resumo, url,
       ...(p.publicadoEm ? { datePosted: p.publicadoEm } : {}),
       image: ordem.slice(0, 8).map((f) => `${base}${fotoUrl(f)}`),
-      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: EMPRESA, url: SITE_CLIENTE } } } : {}),
+      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: empresaVisivel(), url: SITE_CLIENTE } } } : {}),
       about: {
         '@type': residencia, name: `${im.tipo} ${im.codigo}`,
         address: { '@type': 'PostalAddress', ...(im.bairro ? { streetAddress: im.bairro } : {}), addressLocality: im.cidade, addressRegion: im.uf, addressCountry: 'BR' },

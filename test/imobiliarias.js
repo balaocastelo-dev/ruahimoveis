@@ -51,7 +51,11 @@ assert.equal(pub.empresaVisivel(), 'Cadê meu AP?');
 const legenda = pub.legendaDoBlog();
 assert.ok(legenda.includes('Cadê meu AP?'), legenda);
 assert.ok(!/intelig[eê]ncia/i.test(legenda), legenda);
-console.log('ok · legenda do blog cita a marca, não "imobiliária inteligência"');
+const paginas = require('../src/portal/paginas');
+const vitrine = paginas.paginaVitrine({ path: '/imoveis', query: {}, protocol: 'https', get: () => 'cademeuap.corretordofuturo.app' }, []);
+assert.ok(vitrine.includes('Cadê meu AP?'), 'rodapé sem a marca');
+assert.ok(!/intelig[eê]ncia/i.test(vitrine), 'rodapé ainda com a empresa errada');
+console.log('ok · legenda do blog e o rodapé do portal citam a marca, não "imobiliária inteligência"');
 
 const jpg = Buffer.from('/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP////////////////////////////////////////////////////////////////////////////////////8AAAsIAAEAAQEBEQD/xAAUAAEAAAAAAAAAAAAAAAAAAAAD/8QAFBABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQAAPwA3/9k=', 'base64');
 function publica(codigo, tipo) {
@@ -99,6 +103,7 @@ const base = `http://127.0.0.1:${srv.address().port}`;
     assert.ok(!html.includes('Sala comercial'), 'sala no portal');
     assert.ok(!html.includes('>Terreno<') && !html.includes('Terreno ·'), 'terreno no portal');
     assert.ok(html.includes('Cadê meu AP?'));
+    assert.ok(!/imobili[aá]ria intelig[eê]ncia/i.test(html), 'empresa errada no rodapé do portal');
     assert.ok(html.includes('/temas/cademeuap/'));
     const dadosJson = await (await fetch(base + '/imoveis/dados.json')).json();
     assert.deepEqual(dadosJson.imoveis.map((i) => i.codigo).sort(), ['AP9101', 'CB9106']);

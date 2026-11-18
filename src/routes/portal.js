@@ -17,7 +17,7 @@ const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
 const og = require('../og');
 const cfg = require('../config');
-const { sqlSomenteApartamento } = require('../catalogo-publico');
+const { sqlSomenteApartamento, empresaVisivel } = require('../catalogo-publico');
 // Origens dos leads do portal: "Portal " + nome do cliente.
 const ORIGEM_PORTAL = `Portal ${cfg.CLIENTE_NOME}`;
 const ORIGEM_SIGNATURE = `${cfg.CLIENTE_NOME} Signature`;
@@ -200,7 +200,7 @@ function paginaLegal(req, tipo, { aviso = '' } = {}) {
 <nav class="p-legal-abas" aria-label="Páginas institucionais"><a href="/privacidade"${tipo === 'privacidade' ? ' aria-current="page"' : ''}>Privacidade</a><a href="/termos"${tipo === 'termos' ? ' aria-current="page"' : ''}>Termos de uso</a></nav>
 <div class="p-legal-grade">${T.indice(lista)}<div class="p-legal-texto">${aviso}${T.corpo(secoes)}${tipo === 'privacidade' ? T.formulario('/privacidade/pedido') : ''}</div></div>
 </div>`;
-  return paginas.casca(req, { titulo: `${titulo} · ${cfg.EMPRESA}`, descricao: `${titulo} de ${cfg.EMPRESA}: dados tratados, bases legais da LGPD e os seus direitos.`, caminho: `/${tipo}`, corpo, classe: 'p-pagina-legal' });
+  return paginas.casca(req, { titulo: `${titulo} · ${empresaVisivel()}`, descricao: `${titulo} de ${empresaVisivel()}: dados tratados, bases legais da LGPD e os seus direitos.`, caminho: `/${tipo}`, corpo, classe: 'p-pagina-legal' });
 }
 router.get('/privacidade', (req, res) => html(res, paginaLegal(req, 'privacidade')));
 router.get('/termos', (req, res) => html(res, paginaLegal(req, 'termos')));
@@ -212,7 +212,7 @@ router.post('/privacidade/pedido', express.urlencoded({ extended: false, limit: 
   if (limite(req, 5)) return falha(429, 'Muitos pedidos seguidos. Tente de novo em alguns minutos.');
   try {
     const r = require('../lgpd').registrar({ ...b, declaro: b.declaro === '1' }, 'portal');
-    html(res, paginas.casca(req, { titulo: 'Pedido recebido', descricao: 'Pedido do titular recebido.', caminho: '/privacidade', semIndice: true, classe: 'p-pagina-legal', corpo: `<div class="p-legal"><div class="p-legal-ok" role="status"><strong>Pedido recebido.</strong> Protocolo <b>${T.esc(r.protocolo)}</b>. A ${T.esc(cfg.EMPRESA)} responde até ${T.esc(r.prazo.split('-').reverse().join('/'))}.${['oposicao', 'eliminar'].includes(r.tipo) ? '<br>O telefone informado já entrou na lista "não contatar" desta imobiliária e de todas as que usam o mesmo sistema.' : ''}</div><p><a href="/privacidade">Voltar</a> · <a href="/imoveis">Ver imóveis</a></p></div>` }), 200, { privado: true });
+    html(res, paginas.casca(req, { titulo: 'Pedido recebido', descricao: 'Pedido do titular recebido.', caminho: '/privacidade', semIndice: true, classe: 'p-pagina-legal', corpo: `<div class="p-legal"><div class="p-legal-ok" role="status"><strong>Pedido recebido.</strong> Protocolo <b>${T.esc(r.protocolo)}</b>. A ${T.esc(empresaVisivel())} responde até ${T.esc(r.prazo.split('-').reverse().join('/'))}.${['oposicao', 'eliminar'].includes(r.tipo) ? '<br>O telefone informado já entrou na lista "não contatar" desta imobiliária e de todas as que usam o mesmo sistema.' : ''}</div><p><a href="/privacidade">Voltar</a> · <a href="/imoveis">Ver imóveis</a></p></div>` }), 200, { privado: true });
   } catch (e) {
     if (!e.status) console.error('[lgpd] pedido no portal:', e.message);
     falha(e.status || 500, e.status ? e.message : 'Não foi possível registrar agora. Tente de novo em instantes.');

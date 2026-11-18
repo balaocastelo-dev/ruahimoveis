@@ -12,6 +12,7 @@
 // que vale para TODAS as imobiliárias (a base de anúncios é comum). O robô pergunta lgpd.pode_contatar() antes de enviar.
 const crypto = require('crypto');
 const cfg = require('../config');
+const { clienteVisivel, empresaVisivel } = require('../catalogo-publico');
 
 const env = (k, d = '') => String(process.env[k] ?? d).trim();
 const VERSAO = '2026-10-28'; // versão dos Termos/Política (mudou o texto de forma relevante → trocar e pedir novo aceite)
@@ -30,8 +31,8 @@ const PLATAFORMA = {
 
 // Quem é a imobiliária desta instalação (controladora do portal dela).
 const CLIENTE = {
-  get nome() { return cfg.CLIENTE_NOME; },
-  get empresa() { return cfg.EMPRESA; },
+  get nome() { return clienteVisivel(); },
+  get empresa() { return empresaVisivel(); },
   get cnpj() { return env('CLIENTE_CNPJ'); },
   get creci() { return env('CLIENTE_CRECI') || env('BLOG_CRECI'); },
   get cidade() { return env('CLIENTE_CIDADE') || `${cfg.CIDADE_PADRAO}, ${cfg.UF_PADRAO}`; },
