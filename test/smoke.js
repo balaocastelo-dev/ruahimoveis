@@ -38,8 +38,11 @@ const assert = require('assert');
   // arquivo
   const fd = new FormData(); fd.append('categoria', 'Matrícula e certidões'); fd.append('arquivos', new Blob(['%PDF-1.4 teste'], { type: 'application/pdf' }), 'matricula.pdf');
   const up = await fetch(`${base}/api/imoveis/${novo.id}/arquivos`, { method: 'POST', headers: { cookie }, body: fd }); assert.equal(up.status, 200); console.log('ok · upload local (Drive desconectado)');
-  const arqs = ok(await req('GET', `/api/imoveis/${novo.id}/arquivos`), 'lista arquivos'); assert.equal(arqs.arquivos.length, 1);
-  const dl = await fetch(`${base}/api/arquivos/${arqs.arquivos[0].id}`, { headers: { cookie } }); assert.equal(dl.status, 200); console.log('ok · download com permissão');
+  const arqs = ok(await req('GET', `/api/imoveis/${novo.id}/arquivos`), 'lista arquivos');
+  const enviados = arqs.arquivos.filter((a) => a.categoria === 'Matrícula e certidões');
+  assert.equal(enviados.length, 1);
+  assert.equal(enviados[0].nome, 'matricula.pdf');
+  const dl = await fetch(`${base}/api/arquivos/${enviados[0].id}`, { headers: { cookie } }); assert.equal(dl.status, 200); console.log('ok · download com permissão');
 
   // link interno
   const lk = ok(await req('POST', `/api/imoveis/${novo.id}/links`, { dias: 7 }), 'gera link interno');

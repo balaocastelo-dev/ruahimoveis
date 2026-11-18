@@ -10,6 +10,7 @@ const { perto } = require('./perto');
 const { cena3d } = require('./cena3d');
 const G = require('./geo');
 const { CLIENTE_NOME: CLIENTE } = require('../config'); // nome da imobiliária, da configuração
+const { filtroTipoSql } = require('../catalogo-publico');
 
 const SLUG = /^[a-z0-9][a-z0-9-]{1,90}$/;
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -74,7 +75,8 @@ function html(res, corpo, status = 200) {
 
 async function pagina(req, c) {
   const noAr = (await fonte.noAr().catch(() => [])).filter((x) => x.imovel.condominio && G.chave(x.imovel.condominio) === G.chave(c.nome));
-  const textos = [c.lazer, ...all('SELECT descricao FROM imoveis WHERE condominio_id=? AND status=\'publicado\'', c.id).map((i) => i.descricao)].filter(Boolean).join(' ');
+  const ft = filtroTipoSql('tipo');
+  const textos = [c.lazer, ...all(`SELECT descricao FROM imoveis WHERE condominio_id=? AND status='publicado'${ft.sql}`, c.id, ...ft.params).map((i) => i.descricao)].filter(Boolean).join(' ');
   const lazer = LAZER.filter(([, re]) => re.test(textos)).map(([n]) => n);
   let p = null; try { p = await perto(c); } catch {}
   const cats = p ? p.categorias.filter((x) => x.itens.length) : [];
@@ -166,7 +168,8 @@ api.get('/:slug/3d', async (req, res) => {
   const cena = await cena3d(c);
   let imovel = null;
   if (req.query.imovel) {
-    const im = one("SELECT id, codigo, unidade, tipo FROM imoveis WHERE codigo=? AND condominio_id=? AND status='publicado'", String(req.query.imovel).toUpperCase(), c.id);
+    const ft = filtroTipoSql('tipo');
+    const im = one(`SELECT id, codigo, unidade, tipo FROM imoveis WHERE codigo=? AND condominio_id=? AND status='publicado'${ft.sql}`, String(req.query.imovel).toUpperCase(), c.id, ...ft.params);
     if (im) imovel = { codigo: im.codigo, tipo: im.tipo, ...G.andarDaUnidade(im.unidade, c.numeracao), unidade: null };
   }
   res.setHeader('Cache-Control', 'public, max-age=300, s-maxage=3600');

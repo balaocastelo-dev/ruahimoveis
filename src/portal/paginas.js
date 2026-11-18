@@ -6,6 +6,7 @@
 //   /imoveis/<endereço>      a página única do imóvel
 
 const cfg = require('../config');
+const { empresaVisivel, somenteApartamentos } = require('../catalogo-publico');
 // Portal de demonstração (PORTAL_DEMONSTRACAO=1): fora do Google e com aviso de imagens ilustrativas.
 const DEMONSTRACAO = /^(1|sim|true)$/i.test(String(process.env.PORTAL_DEMONSTRACAO || '').trim());
 const og = require('../og');
@@ -125,7 +126,7 @@ function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemA
 <meta name="description" content="${esc(descricao)}">
 <link rel="canonical" href="${esc(canonico)}">
 ${semIndice || DEMONSTRACAO ? '<meta name="robots" content="noindex">' : ''}
-<meta property="og:site_name" content="${esc(EMPRESA)}">
+<meta property="og:site_name" content="${esc(empresaVisivel())}">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(titulo)}">
@@ -296,7 +297,9 @@ function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [],
   }];
   const capaOg = daPagina[0] ? og.metaFotoPortal(daPagina[0].pagina.capa.foto) : {};
   return casca(req, {
-    titulo, descricao: `${lista.length} imóveis à venda pela ${CLIENTE} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
+    titulo, descricao: somenteApartamentos()
+      ? `${lista.length} apartamentos à venda pela ${CLIENTE} em Campinas e região, com fotos, ficha completa e contato direto com o corretor.`
+      : `${lista.length} imóveis à venda pela ${CLIENTE} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
     caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
   });
 }

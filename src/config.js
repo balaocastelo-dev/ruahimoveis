@@ -16,9 +16,11 @@ if (fs.existsSync(envPath)) {
 }
 
 const env = (k, d = '') => (process.env[k] ?? d).trim();
+// "Cadê meu AP ?" gravado com espaço antes do ponto de interrogação volta a "Cadê meu AP?".
+const aperta = (s) => String(s || '').replace(/\s+([?!.,])/g, '$1').replace(/[ \t]+/g, ' ').trim();
 
 const PORT = parseInt(env('PORT', '3333'), 10);
-const CLIENTE_NOME = env('CLIENTE_NOME', 'Imobiliária'); // nome curto da imobiliária (cliente desta instalação)
+const CLIENTE_NOME = aperta(env('CLIENTE_NOME', 'Imobiliária')); // nome curto da imobiliária (cliente desta instalação)
 
 module.exports = {
   ROOT,
@@ -32,13 +34,13 @@ module.exports = {
   // Nome do sistema (o produto) e do cliente que usa esta instalação (a imobiliária).
   SISTEMA_NOME: env('SISTEMA_NOME', 'Herrera HOUSE IA'),
   CLIENTE_NOME,                                                   // nome curto da imobiliária (marca no portal, blog, mensagens)
-  EMPRESA: env('EMPRESA', 'Imobiliária'),                      // razão/nome completo da imobiliária
+  EMPRESA: aperta(env('EMPRESA', 'Imobiliária')),              // razão/nome completo da imobiliária
   // Identidade visual da imobiliária (opcional): logo e tema (pasta public/temas/<TEMA>, com tema.css, logo.svg e icone.svg)
   TEMA: env('TEMA').replace(/[^a-z0-9-]/gi, ''),
   get LOGO_URL() { return env('LOGO_URL') || (this.TEMA ? `/temas/${this.TEMA}/logo.svg` : ''); },
   get ICONE_URL() { return env('ICONE_URL') || (this.TEMA ? `/temas/${this.TEMA}/icone.svg` : ''); },
   // Nome do blog: o da imobiliária + "Blog"; BLOG_NOME troca.
-  get BLOG_NOME() { return env('BLOG_NOME') || `${CLIENTE_NOME} Blog`; },
+  get BLOG_NOME() { return aperta(env('BLOG_NOME') || `${CLIENTE_NOME} Blog`); },
   CIDADE_PADRAO: env('CIDADE_PADRAO', 'Campinas'),
   UF_PADRAO: env('UF_PADRAO', 'SP'),
 

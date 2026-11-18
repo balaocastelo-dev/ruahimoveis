@@ -10,11 +10,46 @@
 const crypto = require('crypto');
 const cfg = require('../config');
 const { one, all } = require('../db');
+const { filtroTipoSql } = require('../catalogo-publico');
 
+// origem entrou no SELECT em 08/11 (0efc1ea) antes da coluna existir nos tenants.
+// Postgres devolve 42703 e a página inteira caía. Se a coluna (ou finalidade /
+// valor_locacao, no banco local de 06/11) não existe, a consulta repete sem ela.
 const CAMPOS = `i.id, i.codigo, i.tipo, i.bairro, i.cidade, i.uf, i.quartos, i.suites, i.vagas, i.area_util, i.area_total,
   i.valor, i.valor_condominio, i.iptu, i.descricao, i.criado_em, i.atualizado_em,
   i.finalidade, i.valor_locacao, i.origem,
   c.nome condominio, c.lazer, u.nome corretor_nome, u.telefone corretor_tel, u.perfil corretor_perfil`;
+
+function colunaAusente(e) {
+  const msg = String((e && e.message) || '');
+  const falta = (e && e.code === '42703') || /no such column/i.test(msg) || /column .+ does not exist/i.test(msg);
+  if (!falta) return null;
+  const m = /column "?([a-z_][\w.]*)"? does not exist/i.exec(msg) || /no such column:\s*([a-z_][\w.]*)/i.exec(msg);
+  return m ? m[1].split('.').pop() : null;
+}
+
+function tiraColuna(sql, coluna) {
+  const c = String(coluna || '').split('.').pop().replace(/[^a-z0-9_]/gi, '');
+  if (!c) return sql;
+  return sql
+    .replace(new RegExp(`,\\s*[a-z]\\.${c}\\b`, 'gi'), '')
+    .replace(new RegExp(`\\b[a-z]\\.${c}\\s*,\\s*`, 'gi'), '');
+}
+
+function ler(fn, sql, params = []) {
+  let q = sql;
+  for (let i = 0; i < 8; i++) {
+    try { return fn(q, ...params); }
+    catch (e) {
+      const col = colunaAusente(e);
+      if (!col) throw e;
+      const next = tiraColuna(q, col);
+      if (next === q) throw e;
+      q = next;
+    }
+  }
+  throw new Error('consulta do portal');
+}
 
 function versaoDe(i, fotos) {
   const base = JSON.stringify([i.tipo, i.bairro, i.cidade, i.condominio, i.lazer, i.quartos, i.suites, i.vagas, i.area_util, i.area_total, (i.descricao || '').trim(), fotos]);
@@ -29,6 +64,9 @@ function montar(i, fotos) {
     quartos: i.quartos ?? null, suites: i.suites ?? null, vagas: i.vagas ?? null, area_util: area(i.area_util), area_total: area(i.area_total),
     valor: Number(i.valor) > 0 ? Number(i.valor) : null, valor_condominio: Number(i.valor_condominio) > 0 ? Number(i.valor_condominio) : null,
     iptu: Number(i.iptu) > 0 ? Number(i.iptu) : null, descricao: i.descricao || '',
+    finalidade: i.finalidade || 'venda',
+    valor_locacao: Number(i.valor_locacao) > 0 ? Number(i.valor_locacao) : null,
+    origem: i.origem || null,
     fotos, criado_em: i.criado_em, atualizado_em: i.atualizado_em,
     // Corretor só aparece com nome se é corretor de verdade e tem telefone; senão, "Equipe <cliente>" (cfg.CLIENTE_NOME).
     corretor: i.corretor_perfil === 'corretor' && i.corretor_tel ? { nome: i.corretor_nome, telefone: i.corretor_tel } : null,
@@ -39,8 +77,9 @@ function montar(i, fotos) {
 
 /** Todos os imóveis à venda com foto, do mais novo para o mais antigo. */
 function imoveisAVenda() {
-  const linhas = all(`SELECT ${CAMPOS} FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
-    WHERE i.status='publicado' ORDER BY i.id DESC`);
+  const f = filtroTipoSql('i.tipo');
+  const linhas = ler(all, `SELECT ${CAMPOS} FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
+    WHERE i.status='publicado'${f.sql} ORDER BY i.id DESC`, f.params);
   if (!linhas.length) return [];
   const fotos = new Map();
   for (const f of all(`SELECT f.id, f.imovel_id FROM arquivos f JOIN imoveis i ON i.id=f.imovel_id
@@ -53,14 +92,16 @@ function imoveisAVenda() {
 
 /** Publicados sem nenhuma foto própria (só fotos internas ou nenhuma): ficam fora do portal; a tela Portal mostra por quê. */
 function publicadosSemFoto() {
+  const f = filtroTipoSql('i.tipo');
   return all(`SELECT i.codigo, i.tipo, i.bairro, i.cidade FROM imoveis i WHERE i.status='publicado'
-    AND NOT EXISTS (SELECT 1 FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%') ORDER BY i.id DESC`);
+    AND NOT EXISTS (SELECT 1 FROM arquivos f WHERE f.imovel_id=i.id AND f.categoria='Fotos' AND f.mime LIKE 'image/%')${f.sql} ORDER BY i.id DESC`, ...f.params);
 }
 
 /** Um imóvel à venda pelo código, ou null. */
 function imovelAVenda(codigo) {
-  const i = one(`SELECT ${CAMPOS} FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
-    WHERE i.codigo=? AND i.status='publicado'`, String(codigo));
+  const f = filtroTipoSql('i.tipo');
+  const i = ler(one, `SELECT ${CAMPOS} FROM imoveis i LEFT JOIN condominios c ON c.id=i.condominio_id LEFT JOIN usuarios u ON u.id=i.corretor_id
+    WHERE i.codigo=? AND i.status='publicado'${f.sql}`, [String(codigo), ...f.params]);
   if (!i) return null;
   const fotos = all("SELECT id FROM arquivos WHERE imovel_id=? AND categoria='Fotos' AND mime LIKE 'image/%' ORDER BY id", i.id).map((f) => f.id);
   return fotos.length ? montar(i, fotos) : null;
@@ -68,11 +109,12 @@ function imovelAVenda(codigo) {
 
 /** A foto, só se for de um imóvel à venda. */
 function fotoPublica(id) {
+  const f = filtroTipoSql('i.tipo');
   return one(`SELECT f.* FROM arquivos f JOIN imoveis i ON i.id=f.imovel_id
-    WHERE f.id=? AND i.status='publicado' AND f.categoria='Fotos' AND f.mime LIKE 'image/%'`, Number(id)) || null;
+    WHERE f.id=? AND i.status='publicado' AND f.categoria='Fotos' AND f.mime LIKE 'image/%'${f.sql}`, Number(id), ...f.params) || null;
 }
 
 /** O que a régua precisa da ficha. */
 const fichaParaRegua = (im) => im && ({ codigo: im.codigo, tipo: im.tipo, quartos: im.quartos, suites: im.suites, vagas: im.vagas, area_util: im.area_util, area_total: im.area_total, fotos: im.fotos });
 
-module.exports = { publicadosSemFoto, imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe };
+module.exports = { publicadosSemFoto, imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe, colunaAusente, tiraColuna };

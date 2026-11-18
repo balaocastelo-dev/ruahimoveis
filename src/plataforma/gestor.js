@@ -7,6 +7,7 @@ const path = require('path');
 const crypto = require('crypto');
 const express = require('express');
 const cfg = require('../config');
+const { slugPermitido, porSlug } = require('../imobiliarias');
 
 const HOSTS = new Set(String(process.env.GESTOR_HOSTS || 'corretordofuturo.app,www.corretordofuturo.app,localhost,127.0.0.1')
   .split(',').map((h) => h.trim().toLowerCase()).filter(Boolean));
@@ -97,7 +98,9 @@ async function vercel(caminho, metodo = 'GET', corpo) {
 function variaveis(im, dbUrl, segredo) {
   const v = {
     DATABASE_URL: dbUrl, SECRET_KEY: segredo, CLIENTE_NOME: im.nome, EMPRESA: im.empresa || im.nome,
-    BLOG_NOME: `${im.nome} Blog`, BLOG_LEGENDA: `Casa, bairro e jeito de morar, pela ${im.empresa || im.nome}`,
+    BLOG_NOME: `${im.nome} Blog`, BLOG_LEGENDA: (porSlug(im.slug) || {}).somenteApartamentos
+      ? `Apartamentos em Campinas, pela ${im.nome}`
+      : `Casa, bairro e jeito de morar, pela ${im.nome}`,
     BLOG_DIARIO_URL: `${VAZIO}/blog`, PORTAL_CONTEUDO_URL: `${VAZIO}/portal`, BAIRROS_CONTEUDO_URL: `${VAZIO}/bairros`,
     IA_MODO: 'desligado', RADAR_PORTAIS: '0', FISGUEI_ROBO: '0', ESCRITORIO: '0', DRIVE_ROOT_NAME: `${im.nome} Imóveis`,
   };
@@ -105,6 +108,7 @@ function variaveis(im, dbUrl, segredo) {
   if (process.env.GOOGLE_MAPS_KEY) v.GOOGLE_MAPS_KEY = process.env.GOOGLE_MAPS_KEY;
   // Identidade visual: quando existe public/temas/<slug>, a imobiliária já nasce com a marca dela.
   if (fs.existsSync(path.join(__dirname, '..', '..', 'public', 'temas', im.slug))) v.TEMA = im.slug;
+  if ((porSlug(im.slug) || {}).somenteApartamentos) v.PORTAL_SOMENTE = 'apartamento';
   if (im.fundo) v.PORTAL_FUNDO = im.fundo; // papel de parede do portal: um lugar-símbolo de Campinas, diferente para cada imobiliária
   if (im.link) { v.PUBLIC_URL = im.link; v.LINK_ONLINE = im.link; }
   return v;
@@ -240,7 +244,7 @@ api.post('/imobiliarias', exige(async (req, res) => {
   const b = req.body || {};
   const nome = txt(b.nome, 120) || falha(400, 'Informe o nome da imobiliária.');
   const slug = slugDe(b.slug || nome);
-  if (!/^[a-z][a-z0-9_]{2,30}$/.test(slug)) falha(400, 'Nome técnico inválido: use letras e números (começando por letra).');
+  if (!slugPermitido(slug)) falha(400, 'Nome técnico reservado ou inválido: use letras e números (começando por letra).');
   const adminEmail = txt(b.admin_email, 160); if (!adminEmail || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(adminEmail)) falha(400, 'Informe o e-mail do administrador da imobiliária.');
   const adminSenha = String(b.admin_senha || ''); if (adminSenha.length < 8) falha(400, 'A senha do administrador precisa ter pelo menos 8 caracteres.');
   if (await um('SELECT 1 FROM imobiliarias WHERE slug = $1', [slug])) falha(409, `Já existe uma imobiliária com o nome técnico "${slug}".`);
@@ -591,7 +595,8 @@ function gestor(req, res, next) {
   const cerebro = req.path.replace(/\/$/, '') === '/gestor/cerebro';
   const ehGestor = req.path === '/gestor' || req.path === '/gestor/' || !!SIM || cerebro || req.path.startsWith('/gestor-api/');
   if (!ehGestor) return next();
-  if (!HOSTS.has(host)) return res.status(404).type('text/plain').send('Não encontrado.');
+  // O painel da plataforma não mora no subdomínio da imobiliária. Lá a equipe entra em /entrar.
+  if (!HOSTS.has(host)) return res.status(404).type('text/plain').send('Não encontrado. O painel do gestor fica em corretordofuturo.app/gestor. Nesta imobiliária, a equipe entra em /entrar.');
   res.setHeader('X-Robots-Tag', 'noindex, nofollow');
   res.setHeader('Cache-Control', 'no-store');
   if (req.path.startsWith('/gestor-api/')) { req.url = req.url.replace(/^\/gestor-api/, ''); return api(req, res, next); }

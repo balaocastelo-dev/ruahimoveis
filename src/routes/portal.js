@@ -17,6 +17,7 @@ const { SLUG, CODIGO } = require('../portal/config');
 const { normTel } = require('../services/whatsapp');
 const og = require('../og');
 const cfg = require('../config');
+const { sqlSomenteApartamento } = require('../catalogo-publico');
 // Origens dos leads do portal: "Portal " + nome do cliente.
 const ORIGEM_PORTAL = `Portal ${cfg.CLIENTE_NOME}`;
 const ORIGEM_SIGNATURE = `${cfg.CLIENTE_NOME} Signature`;
@@ -361,23 +362,24 @@ const CAMPOS_OC = `numero, cidade, bairro, endereco, tipo, quartos, vagas,
 // primeiro e quanto se desconta no melhor caso.
 function estadoDaCaixa() {
   const vazio = { fecham: [], destaques: [], total: 0, financiam: 0, maiorDesconto: 0, safra: null, semPrazo: 0 };
+  const extra = sqlSomenteApartamento('tipo');
   try {
     const n = one(`SELECT count(*) total,
         count(*) filter (where financiamento = 'Sim') financiam,
         count(*) filter (where prazo_em is null) sem_prazo,
         max(desconto)::float8 maior,
         max(ultima_safra) safra
-      FROM caixa_imoveis WHERE saiu_em is null AND na_rmc`) || {};
+      FROM caixa_imoveis WHERE saiu_em is null AND na_rmc${extra}`) || {};
     // Os que tem data marcada, do mais proximo para o mais distante. So os que ainda
     // nao venceram: relogio zerado na capa seria pior que relogio nenhum.
     const fecham = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
-       WHERE saiu_em is null AND na_rmc AND prazo_em is not null
+       WHERE saiu_em is null AND na_rmc${extra} AND prazo_em is not null
          AND coalesce(prazo2_em, prazo_em) > to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD"T"HH24:MI:SS')
        ORDER BY coalesce(
          case when prazo_em > to_char(now() at time zone 'America/Sao_Paulo','YYYY-MM-DD"T"HH24:MI:SS') then prazo_em end,
          prazo2_em) ASC LIMIT 8`);
     const destaques = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
-       WHERE saiu_em is null AND na_rmc
+       WHERE saiu_em is null AND na_rmc${extra}
        ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 6`);
     return { fecham, destaques, total: n.total || 0, financiam: n.financiam || 0,
       semPrazo: n.sem_prazo || 0, maiorDesconto: n.maior || 0, safra: n.safra || null };
@@ -441,15 +443,28 @@ async function ultimasDoBlog(n = 3) {
 }
 
 router.get('/oportunidades', (req, res) => {
-  const lista = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
-     WHERE saiu_em is null AND na_rmc
-     ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 240`);
-  const resumo = one('SELECT max(ultima_safra) safra FROM caixa_imoveis') || {};
+  // A view caixa_imoveis mora no schema compartilhado e ainda não foi criada em
+  // todo tenant. Sem ela a lista fica vazia; a página não pode responder 500.
+  const extra = sqlSomenteApartamento('tipo');
+  let lista = [], resumo = {};
+  try {
+    lista = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+       WHERE saiu_em is null AND na_rmc${extra}
+       ORDER BY (financiamento = 'Sim') desc, desconto desc nulls last LIMIT 240`);
+    resumo = one('SELECT max(ultima_safra) safra FROM caixa_imoveis') || {};
+  } catch (e) { console.error('[portal] lista da Caixa indisponível:', e.message); }
   html(res, ocPaginas.paginaOportunidades(req, lista, resumo));
 });
 
 router.get('/oportunidades/:numero/foto', async (req, res) => {
   const numero = String(req.params.numero || '').replace(/\\D/g, '').slice(0, 20);
+  const extra = sqlSomenteApartamento('tipo');
+  if (extra) {
+    try {
+      const dono = numero && one(`SELECT tipo FROM caixa_imoveis WHERE numero = ?${extra}`, numero);
+      if (!dono) { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+    } catch { res.setHeader('Cache-Control', 'no-store'); return res.sendStatus(404); }
+  }
   const f = numero && one('SELECT img FROM fachadas WHERE ref=?', 'caixa:' + numero);
   if (!f || !f.img) return res.status(404).end();
   // A foto sai com a tarja da casa e o credito de quem a fez.
@@ -463,14 +478,19 @@ router.get('/oportunidades/:numero/foto', async (req, res) => {
 router.get('/oportunidades/:numero', (req, res, next) => {
   const numero = String(req.params.numero || '').replace(/\\D/g, '').slice(0, 20);
   if (!numero) return next();
-  const i = one(`SELECT ${CAMPOS_OC} FROM caixa_imoveis WHERE numero = ? AND saiu_em is null AND na_rmc`, numero);
-  if (!i) return next();
-  const parecidos = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
-     WHERE saiu_em is null AND na_rmc AND cidade = ? AND numero <> ?
-     ORDER BY desconto desc nulls last LIMIT 3`, i.cidade, numero);
+  const extra = sqlSomenteApartamento('tipo');
+  let i, parecidos;
+  try {
+    i = one(`SELECT ${CAMPOS_OC} FROM caixa_imoveis WHERE numero = ? AND saiu_em is null AND na_rmc${extra}`, numero);
+    if (!i) return next();
+    parecidos = all(`SELECT ${CAMPOS_OC} FROM caixa_imoveis
+       WHERE saiu_em is null AND na_rmc${extra} AND cidade = ? AND numero <> ?
+       ORDER BY desconto desc nulls last LIMIT 3`, i.cidade, numero);
+  } catch (e) { console.error('[portal] ficha da Caixa indisponível:', e.message); return next(); }
   // A vizinhanca e levantada a parte (scripts/caixa-vizinhanca.js): quando ainda nao
   // foi, a pagina simplesmente nao traz a secao, em vez de trazer vazia.
-  const v = one('SELECT dados FROM caixa_vizinhanca WHERE numero = ?', numero);
+  let v = null;
+  try { v = one('SELECT dados FROM caixa_vizinhanca WHERE numero = ?', numero); } catch { v = null; }
   let viz = null;
   if (v && v.dados) { try { viz = typeof v.dados === 'string' ? JSON.parse(v.dados) : v.dados; } catch { viz = null; } }
   html(res, ocPaginas.paginaOportunidade(req, i, parecidos, viz));
