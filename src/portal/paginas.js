@@ -6,6 +6,7 @@
 //   /imoveis/<endereço>      a página única do imóvel
 
 const cfg = require('../config');
+const marcaOc = require('./marca-oportunidades');
 const { empresaVisivel, somenteApartamentos } = require('../catalogo-publico');
 // Portal de demonstração (PORTAL_DEMONSTRACAO=1): fora do Google e com aviso de imagens ilustrativas.
 const DEMONSTRACAO = /^(1|sim|true)$/i.test(String(process.env.PORTAL_DEMONSTRACAO || '').trim());
@@ -113,6 +114,13 @@ function blocoImagem(base, imagem, largura, altura, tipo) {
 }
 
 function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false }) {
+  if (!imagem && marcaOc.eh()) {
+    const padrao = marcaOc.imagemPadrao();
+    imagem = padrao.imagem;
+    imagemLargura = padrao.imagemLargura;
+    imagemAltura = padrao.imagemAltura;
+    imagemTipo = padrao.imagemTipo;
+  }
   const base = urlBase(req);
   const canonico = base + caminho;
   const zap = whatsapp(null, `Olá! Vim pelo portal da ${CLIENTE} e quero ajuda para encontrar um imóvel.`);
@@ -160,6 +168,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
   <nav aria-label="${esc(CLIENTE)}"><a href="/imoveis">Imóveis à venda</a><a href="/bairros">Bairros de Campinas</a><a href="/condominios">Condomínios</a><a href="/blog">${esc(cfg.BLOG_NOME)}</a>${INSTAGRAM_CLIENTE ? `<a href="${esc(INSTAGRAM_CLIENTE)}" target="_blank" rel="noopener">Instagram</a>` : ''}${SITE_CLIENTE ? `<a href="${esc(SITE_CLIENTE)}" target="_blank" rel="noopener">Site da ${esc(CLIENTE)}</a>` : ''}<a href="/privacidade">Privacidade e seus dados</a><a href="/termos">Termos de uso</a><a href="/entrar" rel="nofollow">Área da equipe</a></nav>
   <p class="p-rodape-p">Valores, áreas e condições conferidos na ficha do imóvel e sujeitos a alteração sem aviso; confirme com o corretor antes de qualquer decisão. Os textos das páginas foram escritos a partir das fotos e da ficha de cada imóvel. O endereço exato é informado pelo corretor.</p>${DEMONSTRACAO ? `
   <p class="p-rodape-p"><strong>Portal de demonstração.</strong> As fotos são imagens ilustrativas, criadas para esta demonstração: não mostram os imóveis reais.</p>` : ''}
+  ${marcaOc.avisoRodape()}
 </footer>
 <script src="/portal-assets/portal.js?v=${VERSAO_ASSETS}" defer></script>
 </body></html>`;
@@ -175,6 +184,7 @@ function cartao(x, { eager = false } = {}) {
 <div class="p-cartao-t">
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
 <p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
+${marcaOc.selo(im.origem)}
 <p class="p-specs">${specs(im, true).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
 <p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
 </div></article>`;
@@ -448,6 +458,7 @@ function paginaImovel(req, x, lista) {
   <p class="p-sobre depois">${esc(im.tipo)} · ${esc(lugar(im))}${im.condominio ? ` · ${esc(im.condominio)}` : ''}</p>
   <p class="p-linha-fina">${esc(p.resumo)}</p>
 </header>
+${marcaOc.avisoImovel()}
 <div class="p-mosaico p-mosaico-${Math.min(mosaico.length, 5)}" data-galeria='${esc(JSON.stringify(ordem.map((f) => ({ src: fotoUrl(f), legenda: legendas.get(f) || '' }))))}'>
 ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}" aria-label="Ampliar: ${esc(legendas.get(f) || capa.alt)}"><img src="${fotoUrl(f)}" alt="${esc(i === 0 ? capa.alt : legendas.get(f) || '')}" ${i === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" width="1280" height="853"></button>`).join('')}
 <button type="button" class="p-mos-todas" data-ver="${capa.foto}">Ver as ${ordem.length} fotos</button>

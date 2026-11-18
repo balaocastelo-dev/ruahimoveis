@@ -1,12 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Herrera House">
-  <title>Herrera House</title>
-  <!-- Favicon: a 16 px a moldura e o lintel somem, entao sobra so o HH em colunas,
-       com traco proporcionalmente mais grosso. -->
-  <rect width="64" height="64" rx="7" fill="#16130F"/>
-  <g fill="#EFEBE2">
-    <rect x="14" y="15" width="7" height="34"/>
-    <rect x="28.5" y="15" width="7" height="34"/>
-    <rect x="43" y="15" width="7" height="34"/>
-    <rect x="14" y="28.5" width="36" height="7"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374.36 374.36" width="64" height="64" role="img" aria-label="Oportunidades Caixa">
+  <title>Oportunidades Caixa</title>
+  <path fill="#005CA9" d="M78.83 394.24L22.27 394.24L108.79 198.24L163.39 198.24L250.19 394.24L192.51 394.24L177.11 356.16L94.23 356.16L78.83 394.24ZM135.67 252.56L110.47 315.28L160.87 315.28L135.67 252.56Z"/>
+  <path fill="#F39200" d="M41.60 114.80L127.43 64.40L213.26 114.80Z"/>
 </svg>

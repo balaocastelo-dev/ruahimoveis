@@ -1,39 +1,42 @@
-/* Herrera House - Oportunidades Imobiliárias.
-   Direção "Pórtico": claro sempre. Papel branco, fundo creme muito leve,
-   tinta quase preta e ouro queimado só no detalhe.
-   Sem bloco de modo escuro de propósito: o portal é vitrine de imóvel, e
-   foto de imóvel pede fundo claro. Quem está com o sistema em modo escuro
-   continua vendo o portal claro.
-   O logo é geometria pura (SVG não carrega fonte externa); o nome da
-   imobiliária é texto HTML, e é aqui que ele ganha a serifa de verdade. */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap");
+/* Oportunidades Caixa.
+   Azul #005CA9 é a cor principal. Laranja #F39200 só no destaque
+   (o telhado do logo e o acento). Fundo claro: foto de imóvel pede papel branco.
+   O logo é SVG com o texto em paths; não carrega a fonte. */
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap");
 
 :root{
-  --cal:#FBFAF7; --papel:#FFFFFF; --grafite:#1F1B16; --pedra:#6B6356; --linha:#E8E2D6;
-  --ouro:#8A6D2F; --ouro-escuro:#6B5323; --salvia:#C9B896; --salvia-claro:#F7F2E7;
-  --serifa:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --cal:#F4F8FC; --papel:#FFFFFF; --grafite:#0E2A43; --pedra:#5E6A75; --linha:#D5E3EE;
+  --ouro:#F39200; --ouro-escuro:#C56A00; --salvia:#005CA9; --salvia-claro:#E6F1FA;
+  --azul:#005CA9; --laranja:#F39200;
+  --serifa:Jost, system-ui, sans-serif;
   --raio:3px;
 }
 
-/* O nome ao lado do logo: serifa, largo, caixa alta. É o lockup de verdade,
-   montado em HTML porque aí a fonte carrega. */
-.p-marca{align-items:center;gap:16px}
-.p-marca-logo{height:54px;width:auto;display:block}
-.marca-logo{height:clamp(58px,9vw,88px);width:auto;display:block}
-@media (max-width:640px){.p-marca-logo{height:40px}.p-marca{gap:11px}}
+.p-marca{align-items:center;gap:14px}
+.p-marca-logo{height:92px;width:auto;display:block}
+.marca-logo{height:clamp(72px,12vw,104px);width:auto;display:block}
+.p-marca-l{display:none}
+@media (max-width:640px){.p-marca-logo{height:68px}.p-marca{gap:8px}}
 
-.p-marca-nome,.marca-nome{
-  font-family:var(--serifa);font-weight:600;letter-spacing:.14em;
-  text-transform:uppercase;line-height:1.1;color:var(--grafite)}
+h1,h2,h3{font-family:var(--serifa);font-weight:600;letter-spacing:-.01em;color:var(--azul)}
+a{color:var(--azul)}
 
-/* Esta identidade é de canto reto e fio fino: nada de borda arredondada. */
-button,.btn,.p-btn,a.p-btn,.p-cta{border-radius:3px!important}
-.p-card,.cartao,.card,article.c{border-radius:3px!important;overflow:hidden}
+.p-botao,.oc-btn{
+  background:var(--azul)!important;border-color:var(--azul)!important;color:#fff!important}
+.p-botao:hover,.oc-btn:hover{background:#004A87!important;border-color:#004A87!important}
+.p-botao.sec{background:transparent!important;color:var(--azul)!important}
+.p-destaque,.p-tag{letter-spacing:.14em;text-transform:uppercase;font-size:.72em;
+  font-family:Jost,system-ui,sans-serif;font-weight:600;color:var(--laranja)}
 
-h1,h2,h3{font-family:var(--serifa);font-weight:600;letter-spacing:.005em}
-h1{letter-spacing:-.005em}
-
-/* Fio fino como separador, no lugar de sombra. */
-.p-secao+.p-secao,.p-card+.p-card{border-top-color:var(--linha)}
-.p-destaque,.p-tag{letter-spacing:.16em;text-transform:uppercase;font-size:.72em;
-  font-family:Jost,system-ui,sans-serif;font-weight:500;color:var(--ouro)}
+.oc-selo-caixa{
+  display:inline-block;margin:0 0 6px;padding:2px 8px;
+  border:1px solid var(--azul);color:var(--azul);background:#fff;
+  font-family:Jost,system-ui,sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;line-height:1.4}
+.oc-aviso{
+  margin:16px 0 0;padding:12px 14px;background:var(--salvia-claro);
+  border-left:4px solid var(--azul);color:var(--grafite);
+  font-size:14px;line-height:1.5}
+.oc-aviso p{margin:0}
+.oc-aviso-imovel{margin:0 0 22px}
+.p-rodape .oc-aviso,.rodape .oc-aviso{grid-column:1/-1;margin-top:8px;max-width:78ch}
