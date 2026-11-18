@@ -20,7 +20,11 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from 'module';
 import pg from 'pg';
+
+const require = createRequire(import.meta.url);
+const { resolver, garantirTabelasCaixa, viewsCaixa } = require('./schema-compartilhado');
 
 const RAIZ = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ARQUIVO_ORIGEM = path.join(RAIZ, 'sql', 'imoveis-origem.sql');
@@ -35,18 +39,6 @@ const COLUNAS_IMOVEL = [
   ['origem_ref', 'text'],
   ['finalidade', "text NOT NULL DEFAULT 'venda'"],
   ['valor_locacao', 'double precision'],
-];
-
-const COLUNAS_CAIXA = [
-  ['vagas', 'integer'],
-  ['prazo_em', 'text'],
-  ['prazo2_em', 'text'],
-  ['prazo_tipo', 'text'],
-  ['prazo_visto_em', 'text'],
-  ['lat', 'double precision'],
-  ['lon', 'double precision'],
-  ['geo_precisao', 'text'],
-  ['geo_em', 'text'],
 ];
 
 function args(argv) {
@@ -116,26 +108,24 @@ async function relacao(client, schema, nome) {
   return r.rows[0] ? r.rows[0].relkind : null;
 }
 
-async function plano(client, tenants) {
+async function plano(client, tenants, sc) {
   const passos = [];
-  const baseIm = await colunas(client, 'base', 'imoveis');
-  if (!baseIm.size) passos.push({ ok: false, texto: 'base.imoveis não existe: as colunas da base ficam de fora; os tenants seguem.' });
-  else for (const [col] of COLUNAS_IMOVEL) {
-    passos.push({ ok: true, texto: baseIm.has(col) ? `base.imoveis.${col} já existe` : `base.imoveis: ADD COLUMN ${col}`, fazer: !baseIm.has(col), tipo: 'col', schema: 'base', col });
-  }
-  const caixa = await relacao(client, 'base', 'caixa_imoveis');
-  passos.push({
-    ok: true,
-    texto: caixa ? 'base.caixa_imoveis já existe' : 'base.caixa_imoveis: CREATE TABLE',
-    fazer: !caixa, tipo: 'tabela',
-  });
-  if (caixa === 'r') {
-    const cols = await colunas(client, 'base', 'caixa_imoveis');
-    for (const [col] of COLUNAS_CAIXA) {
-      passos.push({ ok: true, texto: cols.has(col) ? `base.caixa_imoveis.${col} já existe` : `base.caixa_imoveis: ADD COLUMN ${col}`, fazer: !cols.has(col), tipo: 'col-caixa', col });
+  if (sc === 'base') {
+    const baseIm = await colunas(client, 'base', 'imoveis');
+    if (!baseIm.size) passos.push({ ok: true, texto: 'base.imoveis não existe: as colunas do molde ficam de fora; os tenants seguem.', fazer: false });
+    else for (const [col] of COLUNAS_IMOVEL) {
+      passos.push({ ok: true, texto: baseIm.has(col) ? `base.imoveis.${col} já existe` : `base.imoveis: ADD COLUMN ${col}`, fazer: !baseIm.has(col), tipo: 'col', schema: 'base', col });
     }
-  } else if (!caixa) {
-    passos.push({ ok: true, texto: 'base.caixa_imoveis nasce com prazo, lat/lon e geo (a lista da Caixa lê essas colunas)', fazer: false });
+  } else {
+    passos.push({ ok: true, texto: `Schema compartilhado: ${sc}. Não crio o schema base e não altero imoveis de ${sc}.`, fazer: false });
+  }
+  for (const nome of ['caixa_imoveis', 'fachadas', 'caixa_vizinhanca']) {
+    const kind = await relacao(client, sc, nome);
+    passos.push({
+      ok: true,
+      texto: kind === 'r' ? `${sc}.${nome} já existe` : `${sc}.${nome}: CREATE TABLE`,
+      fazer: kind !== 'r', tipo: 'tabela',
+    });
   }
 
   for (const slug of tenants) {
@@ -153,20 +143,27 @@ async function plano(client, tenants) {
       passos.push({ ok: true, texto: im.has(col) ? `${slug}.imoveis.${col} já existe` : `${slug}.imoveis: ADD COLUMN ${col}`, fazer: !im.has(col), tipo: 'col', schema: slug, col });
     }
     const cx = await relacao(client, slug, 'caixa_imoveis');
-    if (!cx) passos.push({ ok: true, texto: `${slug}.caixa_imoveis: CREATE VIEW para base.caixa_imoveis`, fazer: true, tipo: 'view', schema: slug });
-    else passos.push({ ok: true, texto: `${slug}.caixa_imoveis já existe (${cx === 'v' ? 'view' : 'tabela'})`, fazer: false });
+    if (!cx) passos.push({ ok: true, texto: `${slug}.caixa_imoveis: CREATE VIEW para ${sc}.caixa_imoveis`, fazer: true, tipo: 'view', schema: slug });
+    else passos.push({ ok: true, texto: `${slug}.caixa_imoveis já existe (${cx === 'v' ? 'view' : 'tabela'})`, fazer: cx === 'v', tipo: cx === 'v' ? 'view' : '' });
+    for (const nome of ['fachadas', 'caixa_vizinhanca']) {
+      const kind = await relacao(client, slug, nome);
+      if (kind === 'r') passos.push({ ok: true, texto: `${slug}.${nome} já é tabela`, fazer: false });
+      else passos.push({ ok: true, texto: `${slug}.${nome}: CREATE VIEW para ${sc}.${nome}`, fazer: true, tipo: 'view', schema: slug });
+    }
     const papel = await client.query('SELECT 1 FROM pg_roles WHERE rolname = $1', [`${slug}_app`]);
     passos.push({ ok: true, texto: papel.rows.length ? `${slug}_app: GRANT SELECT na lista da Caixa, se a view/tabela existir` : `${slug}_app não existe: sem GRANT`, fazer: !!papel.rows.length, tipo: papel.rows.length ? 'grant' : '', schema: slug });
   }
   return passos;
 }
 
-async function aplica(client, tenants) {
+async function aplica(client, tenants, sc) {
   await client.query('BEGIN');
   try {
-    const baseIm = await colunas(client, 'base', 'imoveis');
     const schemasOrigem = [];
-    if (baseIm.size) schemasOrigem.push('base');
+    if (sc === 'base') {
+      const baseIm = await colunas(client, 'base', 'imoveis');
+      if (baseIm.size) schemasOrigem.push('base');
+    }
     for (const slug of tenants) {
       const im = await colunas(client, slug, 'imoveis');
       if (im.size) schemasOrigem.push(slug);
@@ -176,39 +173,8 @@ async function aplica(client, tenants) {
       await client.query(`ALTER TABLE ${ident(schema)}.imoveis ADD COLUMN IF NOT EXISTS finalidade text NOT NULL DEFAULT 'venda'`);
       await client.query(`ALTER TABLE ${ident(schema)}.imoveis ADD COLUMN IF NOT EXISTS valor_locacao double precision`);
     }
-    await client.query(`
-      CREATE TABLE IF NOT EXISTS base.caixa_imoveis (
-        id integer GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,
-        numero text NOT NULL UNIQUE,
-        uf text, cidade text, bairro text, endereco text,
-        preco numeric, avaliacao numeric, desconto numeric,
-        financiamento text, descricao text, modalidade text, link text,
-        tipo text, quartos integer, vagas integer,
-        area_util numeric, area_terreno numeric,
-        na_rmc boolean NOT NULL DEFAULT false,
-        primeira_safra text NOT NULL DEFAULT '',
-        ultima_safra text NOT NULL DEFAULT '',
-        saiu_em text,
-        prazo_em text, prazo2_em text, prazo_tipo text, prazo_visto_em text,
-        lat double precision, lon double precision, geo_precisao text, geo_em text,
-        criado_em text NOT NULL DEFAULT to_char(now() AT TIME ZONE 'America/Sao_Paulo','YYYY-MM-DD HH24:MI:SS'),
-        atualizado_em text NOT NULL DEFAULT to_char(now() AT TIME ZONE 'America/Sao_Paulo','YYYY-MM-DD HH24:MI:SS')
-      )`);
-    for (const [col, def] of COLUNAS_CAIXA) {
-      await client.query(`ALTER TABLE base.caixa_imoveis ADD COLUMN IF NOT EXISTS ${col} ${def}`);
-    }
-    for (const slug of tenants) {
-      const cx = await relacao(client, slug, 'caixa_imoveis');
-      if (!cx) {
-        await client.query(`CREATE VIEW ${ident(slug)}.caixa_imoveis AS SELECT * FROM base.caixa_imoveis`);
-      }
-      const papel = `${slug}_app`;
-      const tem = await client.query('SELECT 1 FROM pg_roles WHERE rolname = $1', [papel]);
-      if (tem.rows.length) {
-        await client.query(`GRANT SELECT ON base.caixa_imoveis TO ${ident(papel)}`);
-        await client.query(`GRANT SELECT ON ${ident(slug)}.caixa_imoveis TO ${ident(papel)}`);
-      }
-    }
+    await garantirTabelasCaixa(client, sc);
+    await viewsCaixa(client, sc, tenants);
     await client.query('COMMIT');
   } catch (e) {
     await client.query('ROLLBACK');
@@ -229,9 +195,11 @@ async function main() {
   });
   await client.connect();
   try {
-    const passos = await plano(client, op.tenants);
+    const sc = await resolver(client);
+    const passos = await plano(client, op.tenants, sc);
     console.log(op.apply ? 'Plano (em seguida aplica):' : 'Dry-run (nada será gravado). Para aplicar: --apply');
     console.log(`Banco: ${semSegredo(url)}`);
+    console.log(`Schema compartilhado: ${sc}`);
     console.log(`Tenants: ${op.tenants.join(', ')}`);
     let bloqueio = false;
     for (const p of passos) {
@@ -246,7 +214,7 @@ async function main() {
       console.error('Não apliquei: há schema ou tabela imoveis ausente na lista.');
       process.exit(2);
     }
-    await aplica(client, op.tenants);
+    await aplica(client, op.tenants, sc);
     console.log('Aplicado. Rodar de novo não muda o que já existe.');
   } finally {
     await client.end();

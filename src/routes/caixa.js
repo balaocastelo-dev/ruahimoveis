@@ -110,8 +110,8 @@ r.get('/caixa/opcoes', (req, res) => {
 // porque com precisao de rua a foto seria a do vizinho, e foto errada e pior que
 // foto nenhuma.
 //
-// Cada imagem e buscada uma vez e fica guardada em base.fachadas, que ja e
-// compartilhada por todas as imobiliarias. Guardar (em vez de apontar direto para o
+// Cada imagem e buscada uma vez e fica guardada em fachadas, no schema
+// compartilhado, vista por todas as imobiliarias. Guardar (em vez de apontar direto para o
 // site da Caixa) tambem faz a foto continuar existindo depois que o imovel sai da
 // lista, que e justamente quando ela serve de prova do que foi negociado.
 const CAIXA_FOTO = (numero) => `https://venda-imoveis.caixa.gov.br/fotos/F${numero}21.jpg`;

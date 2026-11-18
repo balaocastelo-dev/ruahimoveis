@@ -8,11 +8,17 @@ Nada disto foi executado no Postgres de produção. Os comandos abaixo são para
 
 ## 1. Banco (dono do Supabase, não o papel `_app`)
 
+Em produção **não existe o schema `base`**. O compartilhado continua se chamando `ruah`, e as views dos cinco tenants apontam para `ruah.*`. A migração `sql/migrar-schema-ruah-para-base.sql` está suspensa: não rode.
+
+Os scripts descobrem o schema sozinhos: se `SCHEMA_COMPARTILHADO` estiver definida, usam esse nome (e param se ele não existir); senão usam `base` quando o schema existe; senão usam `ruah`. Não criam schema `base`.
+
 Dry-run, não grava:
 
 ```bash
 DATABASE_URL='postgres://DONO@HOST/postgres' node scripts/criar-tenant-oportunidades.mjs
 ```
+
+O plano tem de dizer `Schema compartilhado: ruah`.
 
 Aplicar (pode rodar de novo; não apaga o que já existe):
 
@@ -28,10 +34,19 @@ Sem essas duas variáveis, o script gera as senhas e imprime cada uma uma vez. N
 O que entra, se ainda não existir:
 
 - linha em `plataforma.imobiliarias` (slug `oportunidades`, nome Oportunidades Caixa, domínio `oportunidades.corretordofuturo.app`, situação `implantacao`)
-- schema `oportunidades` com as tabelas do molde `base`
+- schema `oportunidades`, com as tabelas copiadas de `ruah` (estrutura, sem os dados)
 - papel `oportunidades_app` (`search_path` `oportunidades, extensions`)
-- `base.fachadas`, `base.caixa_imoveis`, `base.caixa_vizinhanca`
-- views `caixa_imoveis`, `caixa_vizinhanca`, `fachadas` (e as outras bases comuns que já existirem) e os GRANT
+- `ruah.fachadas`, `ruah.caixa_imoveis`, `ruah.caixa_vizinhanca`
+- views `caixa_imoveis`, `fachadas` e `caixa_vizinhanca` em `oportunidades` e nos cinco que já estão no ar (`l7inteligencia`, `cademeuap`, `ondemorar`, `casaprado`, `lumen`), com `GRANT SELECT` para o papel `*_app` de cada um
+
+As colunas `origem`, `origem_ref`, `finalidade`, `valor_locacao` e o índice `ux_imoveis_origem` já estão nos cinco. O script não mexe em `ruah.imoveis`. No tenant novo, essas colunas entram na cópia.
+
+Para repetir só as views dos cinco, o mesmo banco:
+
+```bash
+DATABASE_URL='postgres://DONO@HOST/postgres' node scripts/corrigir-schema-tenants.mjs
+DATABASE_URL='postgres://DONO@HOST/postgres' node scripts/corrigir-schema-tenants.mjs --apply
+```
 
 A URL do projeto na Vercel segue o mesmo formato das outras imobiliárias:
 
@@ -46,6 +61,8 @@ O pooler e o ref estão em `src/plataforma/gestor.js` (`PLATAFORMA_POOLER`, `PLA
 ```bash
 DATABASE_URL='postgres://DONO@HOST/postgres' node scripts/caixa-esteira.js --uf SP --imobiliaria oportunidades
 ```
+
+A esteira grava em `ruah` (o schema que ela detectar). Não precisa exportar `SCHEMA_COMPARTILHADO` se o banco for o de produção.
 
 Ordem: CSV da Caixa → fotos → prazos → geocode → vizinhança → `oportunidades.imoveis` (`origem=caixa`, código `CX0001`…). A primeira vez baixa a foto de cada imóvel da região (250 ms entre uma e outra). As seguintes só pegam o que entrou.
 

@@ -16,6 +16,7 @@
 const fs = require('fs');
 const { Client } = require('pg');
 const zlib = require('zlib');
+const { usar } = require('./schema-compartilhado');
 
 function arg(nome) {
   const i = process.argv.indexOf(nome);
@@ -185,6 +186,8 @@ create index if not exists ix_caixa_safra on base.caixa_imoveis(ultima_safra);
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  const esquema = await usar(cli);
+  console.log(`schema compartilhado: ${esquema}`);
 
   const safra = new Date().toLocaleString('sv-SE', { timeZone: 'America/Sao_Paulo' }).slice(0, 19);
   console.log(`safra ${safra} - UF ${UF}`);

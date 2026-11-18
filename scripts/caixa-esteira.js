@@ -17,6 +17,8 @@
 
 const { spawnSync } = require('child_process');
 const path = require('path');
+const { Client } = require('pg');
+const { resolver } = require('./schema-compartilhado');
 
 const DIR = __dirname;
 
@@ -41,7 +43,23 @@ function ajuda() {
   console.log(`Uso: node scripts/caixa-esteira.js [--uf SP] [--imobiliaria oportunidades] [--arquivo lista.csv] [--pasta dir] [--sem-rede]
 
 Lê DATABASE_URL do ambiente (dono do banco). Não imprime a URL.
+O schema compartilhado é SCHEMA_COMPARTILHADO, se existir; senão base, se esse
+schema existir; senão o schema compartilhado que já está no banco. Não cria schema.
 Ordem: caixa-importar, caixa-fotos, caixa-prazos --revalidar, caixa-geocodificar, caixa-vizinhanca, caixa-para-crm.`);
+}
+
+function cliente(url) {
+  return new Client({
+    connectionString: url.replace(/[?&]sslmode=[^&]*/g, ''),
+    ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
+  });
+}
+
+async function schemaDoBanco() {
+  const cli = cliente(process.env.DATABASE_URL);
+  await cli.connect();
+  try { return await resolver(cli); }
+  finally { await cli.end(); }
 }
 
 function passo(script, argumentos) {
@@ -56,13 +74,15 @@ function passo(script, argumentos) {
   }
 }
 
-function main() {
+async function main() {
   const o = args(process.argv.slice(2));
   if (o.ajuda) { ajuda(); return; }
   if (!process.env.DATABASE_URL) {
     console.error('Falta DATABASE_URL (dono do banco). Nada foi importado.');
     process.exit(1);
   }
+  const esquema = await schemaDoBanco();
+  console.log(`Schema compartilhado: ${esquema}`);
   const imp = ['--uf', o.uf.toUpperCase()];
   if (o.arquivo) imp.push('--arquivo', o.arquivo);
   passo('caixa-importar.js', imp);
@@ -89,5 +109,4 @@ function main() {
   console.log('\nEsteira concluída.');
 }
 
-try { main(); }
-catch (e) { console.error(e.message || e); process.exit(1); }
+main().catch((e) => { console.error(e.message || e); process.exit(1); });

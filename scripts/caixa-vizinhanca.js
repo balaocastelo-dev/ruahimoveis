@@ -16,6 +16,7 @@
 // Uso:  node scripts/caixa-vizinhanca.js [--todos] [--limite 300] [--raio 1200]
 
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
 const TODOS = process.argv.includes('--todos');
 const LIMITE = Number(process.argv[process.argv.indexOf('--limite') + 1]) || 100000;
@@ -126,6 +127,7 @@ create table if not exists base.caixa_vizinhanca (
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  console.log(`schema compartilhado: ${await usar(cli)}`);
   await cli.query(DDL);
 
   const { rows } = await cli.query(

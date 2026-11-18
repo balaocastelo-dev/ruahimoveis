@@ -16,6 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
 const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : ''; };
 const TODOS = process.argv.includes('--todos');
@@ -51,6 +52,7 @@ async function baixar(numero) {
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  console.log(`schema compartilhado: ${await usar(cli)}`);
 
   const { rows } = await cli.query(
     `select i.numero from base.caixa_imoveis i

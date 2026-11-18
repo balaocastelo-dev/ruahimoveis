@@ -18,6 +18,7 @@
 // Nao use o papel oportunidades_app: ele nao cria coluna e nao grava em base.
 
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
 const arg = (n, padrao) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : padrao; };
 const SLUG = arg('--imobiliaria', 'oportunidades');
@@ -49,7 +50,9 @@ function cliente(url) {
   if (!url) throw new Error('falta DATABASE_URL');
   const cli = cliente(url);
   await cli.connect();
-  await cli.query('SELECT set_config($1, $2, false)', ['search_path', `${SLUG}, base, public`]);
+  const esquema = await usar(cli);
+  console.log(`schema compartilhado: ${esquema}`);
+  await cli.query('SELECT set_config($1, $2, false)', ['search_path', `${SLUG}, ${esquema}, public`]);
 
   const schema = await cli.query('SELECT 1 FROM pg_namespace WHERE nspname = $1', [SLUG]);
   if (!schema.rows.length) throw new Error(`schema ${SLUG} nao existe: rode scripts/criar-tenant-oportunidades.mjs --apply`);

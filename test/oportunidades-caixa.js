@@ -75,9 +75,25 @@ let servidor;
 try {
   psql('SELECT 1');
   psql('CREATE SCHEMA IF NOT EXISTS extensions');
-  sqlArquivo(path.join(raiz, 'sql', 'schema.sql'));
+  const compartilhado = ['ru', 'ah'].join('');
+  const molde = fs.readFileSync(path.join(raiz, 'sql', 'schema.sql'), 'utf8').replace(/\bbase\b/g, compartilhado);
+  const arqMolde = path.join(tmp, 'schema-compartilhado.sql');
+  fs.writeFileSync(arqMolde, molde);
+  sqlArquivo(arqMolde);
   sqlArquivo(path.join(raiz, 'sql', 'plataforma.sql'));
-  console.log('ok · schema base e plataforma carregados no Postgres de teste');
+  const um = (sql) => {
+    const r = spawnSync(path.join(bin, 'psql'), ['-h', '127.0.0.1', '-p', String(porta), '-U', 'postgres', '-d', 'postgres', '-t', '-A', '-v', 'ON_ERROR_STOP=1', '-c', sql], { encoding: 'utf8' });
+    if (r.status !== 0) throw new Error(r.stderr || r.stdout);
+    return r.stdout.trim();
+  };
+  assert.equal(um("SELECT count(*) FROM pg_namespace WHERE nspname = 'base'"), '0');
+  assert.equal(um(`SELECT count(*) FROM pg_namespace WHERE nspname = '${compartilhado}'`), '1');
+  for (const s of ['l7inteligencia', 'cademeuap', 'ondemorar', 'casaprado', 'lumen']) {
+    psql(`CREATE SCHEMA ${s}`);
+    psql(`CREATE TABLE ${s}.imoveis (id integer)`);
+    psql(`CREATE ROLE ${s}_app LOGIN PASSWORD 'teste-papel-88'`);
+  }
+  console.log('ok · só o schema compartilhado de produção e a plataforma; base não existe');
 
   const envDono = {
     DATABASE_URL: urlDono,
@@ -87,7 +103,8 @@ try {
   const seco = roda('scripts/criar-tenant-oportunidades.mjs', [], envDono);
   assert.equal(seco.status, 0, saida(seco));
   assert.match(seco.stdout, /Dry-run/);
-  assert.match(seco.stdout, /Oportunidades Caixa/);
+  assert.match(seco.stdout, new RegExp(compartilhado));
+  assert.doesNotMatch(seco.stdout, /CREATE SCHEMA base|criei o schema base/i);
   assert.doesNotMatch(saida(seco), new RegExp(senhaDono));
   assert.doesNotMatch(saida(seco), new RegExp(senhaPapel));
   assert.doesNotMatch(saida(seco), new RegExp(senhaAdmin));
@@ -106,7 +123,18 @@ try {
   assert.match(psql("SELECT count(*) FROM pg_roles WHERE rolname = 'oportunidades_app'"), /\n\s*1/);
   assert.match(psql('SELECT relkind FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = \'oportunidades\' AND c.relname = \'caixa_imoveis\''), /v/);
   assert.match(psql('SELECT relkind FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = \'oportunidades\' AND c.relname = \'fachadas\''), /v/);
-  assert.match(psql("SELECT to_regclass('base.fachadas')::text"), /fachadas/);
+  assert.equal(um(`SELECT to_regclass('${compartilhado}.fachadas')`), `${compartilhado}.fachadas`);
+  assert.equal(um(`SELECT to_regclass('${compartilhado}.caixa_imoveis')`), `${compartilhado}.caixa_imoveis`);
+  assert.equal(um(`SELECT to_regclass('${compartilhado}.caixa_vizinhanca')`), `${compartilhado}.caixa_vizinhanca`);
+  assert.equal(um("SELECT count(*) FROM pg_namespace WHERE nspname = 'base'"), '0');
+  for (const s of ['oportunidades', 'l7inteligencia', 'cademeuap', 'ondemorar', 'casaprado', 'lumen']) {
+    assert.equal(um(`SELECT relkind FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = '${s}' AND c.relname = 'caixa_imoveis'`), 'v', s);
+    assert.ok(um(`SELECT pg_get_viewdef('${s}.caixa_imoveis'::regclass, true)`).includes(compartilhado), s);
+    assert.equal(um(`SELECT has_table_privilege('${s}_app', '${s}.caixa_imoveis', 'SELECT')`), 't', s);
+  }
+  const corrige = roda('scripts/corrigir-schema-tenants.mjs', ['--apply'], envDono);
+  assert.equal(corrige.status, 0, saida(corrige));
+  assert.equal(um("SELECT count(*) FROM pg_namespace WHERE nspname = 'base'"), '0');
   assert.match(psql("SELECT count(*) FROM oportunidades.usuarios"), /\n\s*1/);
   console.log('ok · --apply cria o tenant, é idempotente e não imprime senha');
 
@@ -137,7 +165,9 @@ try {
     '--imobiliaria', 'oportunidades',
   ], envDono);
   assert.equal(est.status, 0, saida(est));
-  assert.match(est.stdout, /2 novo\(s\)/);
+  assert.match(est.stdout, new RegExp(compartilhado));
+  assert.equal(um(`SELECT count(*)::int FROM ${compartilhado}.caixa_imoveis`), '4');
+  assert.equal(um("SELECT count(*) FROM pg_namespace WHERE nspname = 'base'"), '0');
   assert.match(est.stdout, /ficaram de fora por nao ter foto/);
   assert.doesNotMatch(saida(est), new RegExp(senhaDono));
   const carteira = psql("SELECT codigo || ' ' || origem || ' ' || origem_ref || ' ' || status FROM oportunidades.imoveis ORDER BY codigo");
