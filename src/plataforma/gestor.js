@@ -566,7 +566,7 @@ const PAGINA = `<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><m
 <title>Painel do gestor · Herrera HOUSE IA</title><meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/gestor/gestor.css"><link rel="stylesheet" href="/gestor/herrera.css"></head><body><div id="raiz"></div><script src="/gestor/gestor.js"></script><script src="/gestor/herrera.js"></script></body></html>`;
+<link rel="stylesheet" href="/gestor/gestor.css?v=2"><link rel="stylesheet" href="/gestor/herrera.css"></head><body><div id="raiz"></div><script src="/gestor/gestor.js?v=2"></script><script src="/gestor/herrera.js"></script></body></html>`;
 
 // Fora do painel: o ciclo chamado pelo pg_cron (token em plataforma.config 'banco_ciclo_token') e um resumo
 // sem segredo para a rotina que escreve (quantas há em estoque, consumo por dia e temas já usados).
@@ -601,7 +601,7 @@ function gestor(req, res, next) {
   res.setHeader('Cache-Control', 'no-store');
   if (req.path.startsWith('/gestor-api/')) { req.url = req.url.replace(/^\/gestor-api/, ''); return api(req, res, next); }
   if (cerebro) return res.type('html').send(PAGINA.replace('<body>', '<body data-pagina="cerebro">').replace('<title>Painel do gestor', '<title>Cérebro · Painel do gestor'));
-  if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js').replace('/gestor/gestor.css">', '/gestor/gestor.css"><link rel="stylesheet" href="/gestor/bi.css">')
+  if (SIM) return res.type('html').send(PAGINA.replace('<body>', `<body data-pagina="${SIM}">`).replace('/gestor/gestor.js', '/gestor/simulacao.js').replace('/gestor/gestor.css?v=2">', '/gestor/gestor.css?v=2"><link rel="stylesheet" href="/gestor/bi.css">')
     .replace(/<title>[^<]*<\/title>/, `<title>${SIM === 'dashboard' ? 'Dashboard' : 'Projeção'} · Painel do gestor</title>`));
   res.type('html').send(PAGINA);
 }

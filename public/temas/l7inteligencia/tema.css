@@ -11,11 +11,13 @@
 @media (prefers-color-scheme:dark){:root{
   --cal:#0D0D0D; --papel:#171717; --grafite:#F2F2F2; --pedra:#A8A8A8; --linha:#2B2B2B;
   --ouro:#EDEDED; --ouro-escuro:#FFFFFF; --salvia:#C4C4C4; --salvia-claro:#1F1F1F}}
-/* logo no topo */
-.p-marca{align-items:center}
-.p-marca-logo{height:46px;width:auto;display:block}
-.marca-logo{height:clamp(46px,7.5vw,70px);width:auto;display:block}
-@media (max-width:640px){.p-marca-logo{height:32px}}
+/* logo no topo. A regra global img{max-width:100%} esmagava o wordmark
+   no celular, porque o menu do topo não quebra linha. */
+.p-marca{align-items:center;flex-shrink:0}
+.p-marca-logo{height:46px;width:auto;max-width:none;display:block;flex-shrink:0}
+.marca-logo{height:clamp(46px,7.5vw,70px);width:auto;max-width:none;display:block}
+.p-rodape-logo,.rodape-logo{height:32px;width:auto;max-width:none;display:block;margin:0 0 8px}
+@media (max-width:640px){.p-marca-logo{height:28px}}
 /* títulos firmes e um pouco apertados, como o lettering do logo */
 h1,h2,h3,.p-hero h1,.marca-n{font-weight:700!important;letter-spacing:-.015em!important}
 /* cantos retos em tudo o que é clicável, como os blocos do "L7" */

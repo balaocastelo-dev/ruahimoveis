@@ -133,7 +133,7 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 <main id="conteudo">${corpo}</main>
 ${formularioDeContato(req)}
 <footer class="rodape">
-  <div><p class="rodape-n">${esc(empresaDe())}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
+  <div><p class="rodape-n">${require('../tema').logo(clienteDe(), 'rodape-logo')}${esc(empresaDe())}</p><p>Imobiliária de venda em Campinas, SP.${process.env.BLOG_CRECI ? ` CRECI ${esc(process.env.BLOG_CRECI)}.` : ''}</p></div>
   <nav aria-label="${esc(clienteDe())}"><a href="/imoveis">Imóveis à venda</a><a href="#contato" data-motivo="duvida">Fale com a ${esc(clienteDe())}</a><a href="/blog/rss.xml">RSS</a><a href="/privacidade">Privacidade e seus dados</a><a href="/termos">Termos de uso</a></nav>
   <p class="rodape-p">Os textos deste blog são informativos e não substituem a orientação de arquiteto, engenheiro, advogado ou contador. As capas são imagens ilustrativas geradas por IA.</p>
 </footer>

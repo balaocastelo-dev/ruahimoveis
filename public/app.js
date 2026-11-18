@@ -211,7 +211,7 @@ const dataNum = (d) => { if (!d) return null; const t = new Date(String(d).lengt
 const imFotos = (i) => [i.capa && `/api/arquivos/${i.capa}`, i.condominio_id && typeof MAPAS !== 'undefined' && MAPAS && MAPAS.fachada ? `/api/fachada?ref=cd${i.condominio_id}` : null];
 function telaSetup() {
   $('#root').innerHTML = `<main class="auth"><form class="card" data-form="setup">
-    <h1 class="brand"><b>${esc(MARCA.sistema)}</b><span>Primeiro acesso</span></h1>
+    <h1 class="brand">${MARCA.logo ? `<img class="brand-logo" src="${esc(MARCA.logo)}" alt="${esc(MARCA.cliente)}">` : ''}<b>${esc(MARCA.sistema)}</b><span>${MARCA.logo ? esc(MARCA.empresa) : 'Primeiro acesso'}</span></h1>
     <p class="muted" style="margin:0">Crie o usuário administrativo. Ele cadastra os corretores depois.</p>
     <label class="f">Seu nome<input name="nome" required autocomplete="name"></label>
     <label class="f">E-mail (login)<input name="email" type="email" required autocomplete="username"></label>

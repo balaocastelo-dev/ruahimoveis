@@ -277,7 +277,7 @@ function pagina() {
 <meta name="theme-color" content="#070b0f">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Cormorant+Garamond:ital,wght@1,600&family=Pinyon+Script&family=IBM+Plex+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="/plataforma/site.css?v=8">
+<link rel="stylesheet" href="/plataforma/site.css?v=9">
 <link rel="preload" as="image" href="${T}3d-poster.webp?v=5">
 <link rel="preload" as="image" href="${C}ondemorar-d-m.webp">
 <script type="application/ld+json">${json(ld)}</script><script type="application/ld+json">${json(faq)}</script>
@@ -292,6 +292,7 @@ ${topo()}
       <p class="sub">Nove agentes de IA atendendo no WhatsApp, um radar que lê os anúncios da cidade e acha o dono, os prédios em 3D com o andar do apartamento e um portal com a sua marca, da Vitrine à ${CAL}.</p>
       <div class="acoes"><a class="btn pri" href="#contato">Quero ver funcionando</a><a class="btn" href="#ao-vivo">Ver imobiliárias ao vivo</a></div>
       <a class="no-ar" href="#ao-vivo"><span class="no-ar-t"><i></i>Veja ao vivo</span>${CLIENTES.map((c) => `<span class="no-ar-ic"><img src="${C}icone-${c.slug}.svg" alt="${esc(c.nome)}" width="34" height="34"></span>`).join('')}<span class="no-ar-m">4 portais de demonstração ${ICONE.seta}</span></a>
+      <a class="no-ar no-ar-l7" href="https://l7inteligencia.corretordofuturo.app" target="_blank" rel="noopener"><span class="no-ar-l7-marca"><img src="/temas/l7inteligencia/logo.svg?v=2" alt="L7 Inteligência Imobiliária" width="186" height="84"></span><span class="no-ar-m">no ar ${ICONE.seta}</span></a>
       <div class="selo"><span>Para corretor e imobiliária</span><span>Sua marca, seu domínio</span><span>Computador, tablet e celular</span></div>
     </div>
     <div class="palco">
@@ -540,6 +541,7 @@ function vitrine(req, res, next) {
   if (req.path === '/sitemap.xml') return res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://corretordofuturo.app/</loc></url><url><loc>https://corretordofuturo.app/sobre</loc></url><url><loc>https://corretordofuturo.app/termos</loc></url><url><loc>https://corretordofuturo.app/privacidade</loc></url></urlset>');
   if (req.path.startsWith('/plataforma/')) { const orig = req.url; req.url = req.url.slice('/plataforma'.length) || '/'; return estaticos(req, res, () => { req.url = orig; next(); }); }
   if (req.path.startsWith('/gestor/')) return next(); // painel do gestor
+  if (req.path.startsWith('/temas/')) return next(); // logo e ícone da imobiliária, também no cartão do gestor
   if (require('./legal').atende(req, res)) return; // Sobre nós, Termos, Privacidade e pedido do titular
   if (req.method !== 'GET' && req.method !== 'HEAD') return res.status(404).json({ erro: 'Não encontrado.' });
   if (req.path !== '/') return res.redirect(302, '/');

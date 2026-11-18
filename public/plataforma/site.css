@@ -469,6 +469,8 @@ summary .cal { font-size: 1.5em; vertical-align: -.1em; }
 .no-ar-t i, .pulso, .av-aovivo i { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; box-shadow: 0 0 0 0 rgb(61 220 132 / .6); display: inline-block; }
 .no-ar-ic { width: 34px; height: 34px; border-radius: 10px; background: #fff; display: grid; place-items: center; margin-left: -4px; box-shadow: 0 4px 14px -4px rgb(0 0 0 / .6); }
 .no-ar-ic img { width: 26px; height: 26px; }
+.no-ar-l7-marca { display: grid; place-items: center; height: 40px; padding: 4px 10px; border-radius: 10px; background: #fff; }
+.no-ar-l7-marca img { width: auto; height: 28px; max-width: 168px; }
 .no-ar-m { color: var(--luz-2); display: inline-flex; align-items: center; gap: 4px; } .no-ar-m svg { width: 14px; height: 14px; }
 @media (prefers-reduced-motion: no-preference) {
   .no-ar-t i, .pulso, .av-aovivo i { animation: pulso 1.8s infinite; }

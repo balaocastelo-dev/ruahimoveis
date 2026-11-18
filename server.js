@@ -37,13 +37,35 @@ const ICONE_TIPO = {
   '/apple-touch-icon-precomposed.png': 'image/png',
   '/site.webmanifest': 'application/manifest+json',
 };
+// Com tema, o pedido automático do navegador (/favicon.ico, /icon.svg) usa a marca da imobiliária.
+// O arquivo do produto continua sendo o fallback de quem não tem pasta em public/temas/<tema>.
+const ICONE_TEMA = {
+  '/favicon.ico': ['favicon.ico', 'image/x-icon'],
+  '/icon.svg': ['icone.svg', 'image/svg+xml'],
+  '/apple-touch-icon.png': ['icone.png', 'image/png'],
+  '/apple-touch-icon-precomposed.png': ['icone.png', 'image/png'],
+};
+function ogDoLogo(req) {
+  const u = String(cfg.LOGO_URL || '');
+  if (!u) return '';
+  const png = u.replace(/\.svg(\?.*)?$/i, '.png$1');
+  const abs = /^https?:/i.test(png) ? png : `${req.protocol}://${req.get('host')}${png}`;
+  return `<meta property="og:image" content="${abs.replace(/"/g, '')}">`;
+}
+function arquivoDoTema(req) {
+  const item = cfg.TEMA && ICONE_TEMA[req.path];
+  if (!item) return null;
+  const arq = path.join(__dirname, 'public', 'temas', cfg.TEMA, item[0]);
+  return fs.existsSync(arq) ? { arq, tipo: item[1] } : null;
+}
 app.use((req, res, next) => {
-  const tipo = ICONE_TIPO[req.path];
+  const doTema = arquivoDoTema(req);
+  const tipo = doTema ? doTema.tipo : ICONE_TIPO[req.path];
   if (!tipo || (req.method !== 'GET' && req.method !== 'HEAD')) return next();
   const nome = req.path === '/apple-touch-icon-precomposed.png' ? 'apple-touch-icon.png' : req.path.slice(1);
-  res.setHeader('Cache-Control', 'public, max-age=604800');
+  res.setHeader('Cache-Control', doTema ? 'public, max-age=3600' : 'public, max-age=604800');
   res.type(tipo);
-  res.sendFile(path.join(__dirname, 'public', nome), (err) => { if (err) next(err); });
+  res.sendFile(doTema ? doTema.arq : path.join(__dirname, 'public', nome), (err) => { if (err) next(err); });
 });
 
 // Painel do gestor da plataforma (corretordofuturo.app/gestor): as imobiliárias clientes.
@@ -155,7 +177,14 @@ app.get('/v/:token', (req, res, next) => { try { publico.paginaLink(req, res); }
 // do sistema, /#/...) vai para o sistema; /entrar abre sempre a tela de entrada. Na entrada da plataforma
 // (app.corretordofuturo.app) e sem nenhum usuário ainda (primeiro acesso), a raiz continua sendo o sistema.
 // no-store (e não no-cache): com 304 o Chrome reaproveita cabeçalhos velhos, inclusive a CSP, e mudanças de política não chegam ao navegador
-const telaDoSistema = (req, res) => { res.setHeader('Cache-Control', 'no-store'); res.sendFile(path.join(PUB, 'app.html')); };
+const telaDoSistema = (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
+  if (!cfg.TEMA) return res.sendFile(path.join(PUB, 'app.html'));
+  // A tela de login é um HTML fixo com o ícone do produto. Com tema, a aba e o apple touch usam a marca.
+  let html = fs.readFileSync(path.join(PUB, 'app.html'), 'utf8');
+  html = html.replace('href="/favicon.ico"', 'href="/favicon.ico?v=2"').replace('href="/icon.svg"', 'href="/icon.svg?v=2"').replace('href="/apple-touch-icon.png"', 'href="/apple-touch-icon.png?v=2"');
+  res.type('html').send(html);
+};
 app.get('/entrar', telaDoSistema);
 app.get(['/', '/index.html'], (req, res) => {
   const { APP_HOSTS } = require('./src/plataforma/vitrine');
@@ -170,10 +199,11 @@ app.get(['/', '/index.html'], (req, res) => {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" href="/icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" href="/icon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <title>${cfg.CLIENTE_NOME} · Imóveis</title>
+${ogDoLogo(req)}
 <meta name="robots" content="noindex">
 <script src="/ir.js"></script>
 <noscript><meta http-equiv="refresh" content="0;url=/imoveis"></noscript>
