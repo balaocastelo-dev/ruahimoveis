@@ -1558,5 +1558,1045 @@
     "ambiente": "banheiro"
    }
   ]
+ },
+ "78860": {
+  "imob": "cademeuap",
+  "codigo": "AP0003",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/78860-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78860-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78860-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78860-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78860-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "78931": {
+  "imob": "cademeuap",
+  "codigo": "AP0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/78931-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78931-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78931-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78931-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78931-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "78990": {
+  "imob": "cademeuap",
+  "codigo": "AP0005",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/78990-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78990-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78990-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78990-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/78990-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79119": {
+  "imob": "cademeuap",
+  "codigo": "AP0006",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79119-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79119-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79119-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79119-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79119-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79172": {
+  "imob": "cademeuap",
+  "codigo": "AP0007",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79172-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79172-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79172-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79172-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79172-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79193": {
+  "imob": "cademeuap",
+  "codigo": "AP0008",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79193-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79193-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79193-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79193-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79193-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79221": {
+  "imob": "cademeuap",
+  "codigo": "AP0009",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79221-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79221-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79221-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79221-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79221-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79259": {
+  "imob": "cademeuap",
+  "codigo": "AP0010",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79259-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79259-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79259-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79259-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79259-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79296": {
+  "imob": "cademeuap",
+  "codigo": "AP0011",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79296-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79296-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79296-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79296-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79296-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79310": {
+  "imob": "cademeuap",
+  "codigo": "AP0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79310-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79310-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79310-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79310-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79310-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79423": {
+  "imob": "cademeuap",
+  "codigo": "AP0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79423-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79423-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79423-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79423-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79423-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79438": {
+  "imob": "cademeuap",
+  "codigo": "AP0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79438-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79438-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79438-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79438-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79438-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79508": {
+  "imob": "cademeuap",
+  "codigo": "AP0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79508-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79508-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79508-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79508-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79508-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79530": {
+  "imob": "cademeuap",
+  "codigo": "AP0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79530-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79530-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79530-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79530-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79530-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79666": {
+  "imob": "cademeuap",
+  "codigo": "AP0017",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79666-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79666-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79666-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79666-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79666-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79686": {
+  "imob": "cademeuap",
+  "codigo": "AP0018",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79686-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79686-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79686-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79686-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79686-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79691": {
+  "imob": "cademeuap",
+  "codigo": "AP0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79691-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79691-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79691-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79691-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79691-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79734": {
+  "imob": "cademeuap",
+  "codigo": "AP0020",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/79734-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79734-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79734-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79734-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/79734-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80125": {
+  "imob": "cademeuap",
+  "codigo": "AP0021",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80125-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80125-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80125-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80125-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80125-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80166": {
+  "imob": "cademeuap",
+  "codigo": "AP0022",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80166-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80166-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80166-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80166-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80166-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80184": {
+  "imob": "cademeuap",
+  "codigo": "AP0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80184-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80184-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80184-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80184-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80184-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80209": {
+  "imob": "cademeuap",
+  "codigo": "AP0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80209-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80209-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80209-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80209-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80209-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80231": {
+  "imob": "cademeuap",
+  "codigo": "AP0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80231-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80231-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80231-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80231-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80231-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80274": {
+  "imob": "cademeuap",
+  "codigo": "AP0026",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80274-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80274-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80274-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80274-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80274-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80613": {
+  "imob": "cademeuap",
+  "codigo": "CB0001",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80613-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80613-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80613-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80613-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80613-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80647": {
+  "imob": "cademeuap",
+  "codigo": "CB0002",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/80647-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80647-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80647-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80647-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/80647-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81396": {
+  "imob": "cademeuap",
+  "codigo": "AP0027",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81396-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81396-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81396-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81396-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81396-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81420": {
+  "imob": "cademeuap",
+  "codigo": "AP0028",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81420-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81420-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81420-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81420-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81420-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81547": {
+  "imob": "cademeuap",
+  "codigo": "AP0029",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81547-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81547-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81547-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81547-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81547-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81549": {
+  "imob": "cademeuap",
+  "codigo": "AP0030",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81549-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81549-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81549-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81549-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81549-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81603": {
+  "imob": "cademeuap",
+  "codigo": "AP0031",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81603-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81603-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81603-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81603-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81603-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81641": {
+  "imob": "cademeuap",
+  "codigo": "AP0032",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81641-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81641-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81641-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81641-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81641-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81670": {
+  "imob": "cademeuap",
+  "codigo": "AP0033",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81670-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81670-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81670-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81670-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81670-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81679": {
+  "imob": "cademeuap",
+  "codigo": "AP0034",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81679-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81679-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81679-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81679-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81679-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81691": {
+  "imob": "cademeuap",
+  "codigo": "AP0035",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81691-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81691-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81691-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81691-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81691-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81798": {
+  "imob": "cademeuap",
+  "codigo": "AP0036",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81798-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81798-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81798-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81798-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81798-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81969": {
+  "imob": "cademeuap",
+  "codigo": "AP0037",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/81969-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81969-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81969-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81969-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/81969-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82124": {
+  "imob": "cademeuap",
+  "codigo": "CB0003",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/82124-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82124-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82124-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82124-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82124-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82247": {
+  "imob": "cademeuap",
+  "codigo": "AP0038",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/82247-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82247-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82247-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82247-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82247-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82300": {
+  "imob": "cademeuap",
+  "codigo": "CB0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/cademeuap/82300-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82300-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82300-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82300-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/cademeuap/82300-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
  }
 }
