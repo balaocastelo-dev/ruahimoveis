@@ -1,0 +1,1562 @@
+{
+ "78856": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/78856-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78856-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78856-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78856-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78856-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "78865": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/78865-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78865-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78865-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78865-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/78865-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79345": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0020",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79345-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79345-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79345-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79345-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79345-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "79473": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79473-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79473-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79473-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79473-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79473-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79489": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0021",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79489-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79489-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79489-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79489-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79489-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "79788": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0022",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79788-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79788-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79788-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79788-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79788-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "79831": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79831-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79831-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79831-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79831-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79831-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79995": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/79995-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79995-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79995-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79995-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/79995-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80049": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0026",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80049-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80049-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80049-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80049-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80049-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80114": {
+  "imob": "l7inteligencia",
+  "codigo": "CA0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80114-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80114-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80114-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80114-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80114-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80127": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0027",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80127-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80127-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80127-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80127-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80127-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80509": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0028",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80509-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80509-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80509-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80509-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80509-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80511": {
+  "imob": "l7inteligencia",
+  "codigo": "CA0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80511-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80511-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80511-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80511-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80511-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80534": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0029",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80534-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80534-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80534-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80534-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80534-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80616": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80616-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80616-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80616-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80616-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80616-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80666": {
+  "imob": "l7inteligencia",
+  "codigo": "CA0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80666-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80666-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80666-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80666-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80666-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80734": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0030",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80734-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80734-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80734-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80734-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80734-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80742": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80742-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80742-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80742-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80742-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80742-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80835": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0031",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80835-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80835-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80835-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80835-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80835-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80916": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/80916-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80916-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80916-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80916-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/80916-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "81025": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81025-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81025-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81025-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81025-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81025-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "81031": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81031-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81031-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81031-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81031-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81031-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "81164": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0026",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81164-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81164-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81164-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81164-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81164-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "81381": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0032",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81381-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81381-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81381-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81381-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81381-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81469": {
+  "imob": "l7inteligencia",
+  "codigo": "SO0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81469-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81469-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81469-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81469-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81469-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81473": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0027",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81473-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81473-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81473-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81473-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81473-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "81483": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0033",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81483-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81483-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81483-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81483-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81483-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81509": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0017",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81509-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81509-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81509-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81509-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81509-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81577": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0034",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81577-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81577-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81577-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81577-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81577-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81600": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0035",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81600-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81600-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81600-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81600-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81600-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81658": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0036",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81658-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81658-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81658-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81658-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81658-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81726": {
+  "imob": "l7inteligencia",
+  "codigo": "CA0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81726-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81726-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81726-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81726-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81726-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81773": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0028",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81773-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81773-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81773-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81773-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81773-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "81796": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0037",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81796-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81796-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81796-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81796-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81796-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81827": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0029",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81827-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81827-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81827-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81827-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81827-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "81875": {
+  "imob": "l7inteligencia",
+  "codigo": "SO0005",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81875-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81875-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81875-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81875-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81875-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81897": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0030",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/81897-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81897-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81897-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81897-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/81897-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "82510": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0031",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/82510-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82510-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82510-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82510-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82510-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "82671": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0032",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/82671-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82671-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82671-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82671-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82671-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "82731": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0038",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/82731-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82731-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82731-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82731-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82731-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82829": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0033",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/82829-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82829-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82829-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82829-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82829-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "82856": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0034",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/82856-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82856-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82856-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82856-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/82856-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83081": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0039",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83081-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83081-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83081-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83081-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83081-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "83115": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0035",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83115-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83115-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83115-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83115-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83115-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83300": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0040",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83300-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83300-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83300-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83300-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83300-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "83700": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0036",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83700-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83700-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83700-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83700-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83700-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83819": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0037",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83819-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83819-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83819-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83819-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83819-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83940": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0041",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/83940-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83940-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83940-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83940-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/83940-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "84393": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0018",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/84393-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/84393-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/84393-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/84393-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/84393-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "86397": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0038",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/86397-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86397-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86397-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86397-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86397-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "86672": {
+  "imob": "l7inteligencia",
+  "codigo": "AP0042",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/86672-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86672-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86672-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86672-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/86672-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "87548": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0039",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/87548-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87548-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87548-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87548-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87548-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "87920": {
+  "imob": "l7inteligencia",
+  "codigo": "CA0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/87920-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87920-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87920-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87920-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/87920-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "88112": {
+  "imob": "l7inteligencia",
+  "codigo": "SO0006",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/88112-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88112-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88112-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88112-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88112-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "88533": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0040",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/88533-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88533-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88533-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88533-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/88533-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "89762": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0041",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/89762-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89762-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89762-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89762-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89762-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "89935": {
+  "imob": "l7inteligencia",
+  "codigo": "SO0007",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/89935-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89935-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89935-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89935-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/89935-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "90056": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0042",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/90056-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/90056-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/90056-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/90056-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/90056-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "91140": {
+  "imob": "l7inteligencia",
+  "codigo": "CC0043",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/91140-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91140-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91140-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91140-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91140-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "91902": {
+  "imob": "l7inteligencia",
+  "codigo": "CB0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/l7inteligencia/91902-1.jpg",
+    "ambiente": "vista"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91902-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91902-3.jpg",
+    "ambiente": "varanda"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91902-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/l7inteligencia/91902-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ }
+}
