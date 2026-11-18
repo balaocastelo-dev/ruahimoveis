@@ -13,7 +13,7 @@ const ETAPAS = [
   ['publicado', 'Publicado'],
   ['vendido', 'Vendido / alugado'],
 ];
-const ORIGENS = [['fisgar', 'Fisgar'], ['radar', 'Portais (Radar)'], ['cadastro', 'Site / cadastro da equipe']];
+const ORIGENS = [['fisgar', 'Fisgar'], ['radar', 'Portais (Radar)'], ['radar-demo', 'Demonstração'], ['cadastro', 'Site / cadastro da equipe']];
 
 function porIds(sql, ids) {
   const out = [];

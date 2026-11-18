@@ -117,4 +117,9 @@ function fotoPublica(id) {
 /** O que a régua precisa da ficha. */
 const fichaParaRegua = (im) => im && ({ codigo: im.codigo, tipo: im.tipo, quartos: im.quartos, suites: im.suites, vagas: im.vagas, area_util: im.area_util, area_total: im.area_total, fotos: im.fotos });
 
-module.exports = { publicadosSemFoto, imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe, colunaAusente, tiraColuna };
+/** Imóvel de demonstração: entra na vitrine de locação, fora de sitemap, llms.txt, Signature e fotos de bairro/condomínio. */
+function ehDemonstracao(im) {
+  return !!(im && im.origem === 'radar-demo');
+}
+
+module.exports = { publicadosSemFoto, imoveisAVenda, imovelAVenda, fotoPublica, fichaParaRegua, versaoDe, colunaAusente, tiraColuna, ehDemonstracao };

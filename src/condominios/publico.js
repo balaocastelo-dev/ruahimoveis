@@ -74,7 +74,7 @@ function html(res, corpo, status = 200) {
 }
 
 async function pagina(req, c) {
-  const noAr = (await fonte.noAr().catch(() => [])).filter((x) => x.imovel.condominio && G.chave(x.imovel.condominio) === G.chave(c.nome));
+  const noAr = (await fonte.noAr().catch(() => [])).filter((x) => x.imovel.origem !== 'radar-demo' && x.imovel.condominio && G.chave(x.imovel.condominio) === G.chave(c.nome));
   const ft = filtroTipoSql('tipo');
   const textos = [c.lazer, ...all(`SELECT descricao FROM imoveis WHERE condominio_id=? AND status='publicado'${ft.sql}`, c.id, ...ft.params).map((i) => i.descricao)].filter(Boolean).join(' ');
   const lazer = LAZER.filter(([, re]) => re.test(textos)).map(([n]) => n);
