@@ -46,11 +46,26 @@ const ICONE_TEMA = {
   '/apple-touch-icon-precomposed.png': ['icone.png', 'image/png'],
 };
 function ogDoLogo(req) {
+  const esc = (s) => String(s || '').replace(/"/g, '');
+  const origem = `${req.protocol}://${req.get('host')}`;
+  const tema = cfg.TEMA;
+  // Tema com og.png (1200×630) usa esse arquivo. Trocar logo.svg por logo.png
+  // quebrava a Oportunidades: o tema não tem logo.png.
+  if (tema && fs.existsSync(path.join(__dirname, 'public', 'temas', tema, 'og.png'))) {
+    const abs = esc(`${origem}/temas/${tema}/og.png`);
+    return `<meta property="og:image" content="${abs}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${abs}">`;
+  }
   const u = String(cfg.LOGO_URL || '');
   if (!u) return '';
   const png = u.replace(/\.svg(\?.*)?$/i, '.png$1');
-  const abs = /^https?:/i.test(png) ? png : `${req.protocol}://${req.get('host')}${png}`;
-  return `<meta property="og:image" content="${abs.replace(/"/g, '')}">`;
+  const abs = esc(/^https?:/i.test(png) ? png : `${origem}${png}`);
+  return `<meta property="og:image" content="${abs}">
+<meta name="twitter:image" content="${abs}">`;
 }
 function arquivoDoTema(req) {
   const item = cfg.TEMA && ICONE_TEMA[req.path];

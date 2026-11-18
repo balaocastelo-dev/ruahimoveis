@@ -109,6 +109,7 @@ function blocoImagem(base, imagem, largura, altura, tipo) {
     linhas.push(`<meta property="og:image:width" content="${Math.round(w)}">`);
     linhas.push(`<meta property="og:image:height" content="${Math.round(h)}">`);
   }
+  linhas.push(`<meta name="twitter:image" content="${esc(url)}">`);
   linhas.push('<meta name="twitter:card" content="summary_large_image">');
   return linhas.join('\n');
 }
