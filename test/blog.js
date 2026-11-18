@@ -28,6 +28,10 @@ const ramo = http.createServer((req, res) => {
   let corpo = null;
   if (p === '/indice.json') corpo = indice;
   else if (p === '/capas/pendentes.json') corpo = { pendentes: [{ slug: 'artigo-sem-foto-ainda-esperando' }] };
+  else if (/^\/capas\/[a-z0-9-]+-[0-9a-f]{8}\.jpe?g$/.test(p)) {
+    res.setHeader('Content-Type', 'image/jpeg');
+    return res.end(Buffer.from('/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wAALCAABAAEBAREA/8QAFAABAAAAAAAAAAAAAAAAAAAAAP/aAAgBAQAAPwA3/9k=', 'base64'));
+  }
   else { const m = /^\/artigos\/([a-z0-9-]+)\.json$/.exec(p); if (m && artigos[m[1]]) corpo = artigos[m[1]]; }
   if (!corpo) { res.statusCode = 404; return res.end(); }
   res.setHeader('Content-Type', 'application/json'); res.end(JSON.stringify(corpo));
@@ -51,7 +55,16 @@ const ramo = http.createServer((req, res) => {
     assert.equal(ini.s, 200); assert.ok(ini.t.includes(base.titulo.replace(/&/g, '&amp;').slice(0, 30)), 'título do artigo na inicial');
     assert.ok(!ini.t.includes('artigo-sem-foto-ainda-esperando'), 'sem foto fica fora');
     assert.ok(!ini.t.includes('artigo-agendado-para-amanha-cedo'), 'agendado fica fora');
-    assert.match(ini.h.get('content-security-policy'), /raw\.githubusercontent\.com/); console.log('ok · /blog mostra só o que tem foto e já chegou a hora');
+    assert.ok(ini.t.includes(`/blog/capa/${base.slug}-0123abcd.jpg`), 'capa no endereço do próprio site');
+    assert.ok(!ini.t.includes('raw.githubusercontent.com') && !ini.t.includes('[object Object]'), 'capa não aponta para fora');
+    assert.ok(!/raw\.githubusercontent\.com/.test(ini.h.get('content-security-policy') || ''));
+    const foto = await get(`/blog/capa/${base.slug}-0123abcd.jpg`);
+    assert.equal(foto.s, 200);
+    assert.match(foto.h.get('content-type') || '', /image\/jpeg/);
+    const neutra = await get('/blog/capa/sem-foto.svg');
+    assert.equal(neutra.s, 200);
+    assert.match(neutra.h.get('content-type') || '', /image\/svg/);
+    console.log('ok · /blog mostra só o que tem foto e já chegou a hora, e a capa sai do próprio site');
 
     const art = await get(`/blog/${base.slug}`);
     assert.equal(art.s, 200); assert.ok(art.t.includes('<h1>')); assert.ok(art.t.includes('application/ld+json')); assert.ok(art.t.includes('og:image'));

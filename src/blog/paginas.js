@@ -9,6 +9,7 @@ const NOME = cfg.BLOG_NOME;
 // O nome da imobiliária vem da configuração: cliente (curto, a marca) e empresa (nome completo).
 // Lidos a cada página: uma legenda gravada que não cita a marca (ex.: "pela imobiliária inteligência") não entra.
 const pub = require('../catalogo-publico');
+const { urlPublica, semFoto } = require('./capas');
 const clienteDe = () => pub.clienteVisivel();
 const empresaDe = () => pub.empresaVisivel();
 const legendaDe = () => pub.legendaDoBlog();
@@ -142,7 +143,8 @@ ${formularioDeContato(req)}
 }
 
 function cartao(a, grande = false) {
-  const img = a.capa ? `<img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt)}" width="1600" height="900" loading="${grande ? 'eager' : 'lazy'}"${grande ? ' fetchpriority="high"' : ''}>` : '';
+  const alt = (a.capa && a.capa.alt) || a.titulo;
+  const img = `<img src="${esc(urlPublica(a.capa))}" alt="${esc(alt)}" width="1600" height="900" loading="${grande ? 'eager' : 'lazy'}"${grande ? ' fetchpriority="high"' : ''}>`;
   const tag = grande ? 'h2' : 'h3';
   return `<article class="cartao${grande ? ' cartao-g' : ''}" data-busca="${esc(`${a.titulo} ${a.resumo} ${a.etiquetas.join(' ')} ${nomeDaCategoria(a.categoria)}`.toLowerCase())}">
 <a href="/blog/${a.slug}" class="cartao-img">${img}</a>
@@ -165,7 +167,8 @@ ${resto.length ? `<section class="lista-art" aria-label="Mais textos">
 <div class="grade">${resto.map((a) => cartao(a)).join('')}</div><p class="sem-resultado" hidden>Nada encontrado. Tente outra palavra.</p></section>` : ''}`;
   const base = urlBase(req);
   const ld = [{ '@context': 'https://schema.org', '@type': 'Blog', name: NOME, description: descricao, url: `${base}/blog`, publisher: { '@type': 'RealEstateAgent', name: empresaDe(), url: SITE_CLIENTE, address: { '@type': 'PostalAddress', addressLocality: 'Campinas', addressRegion: 'SP', addressCountry: 'BR' } } }];
-  return casca(req, { titulo, descricao, caminho: cat ? `/blog/categoria/${cat.slug}` : '/blog', imagem: primeiro && primeiro.capa && primeiro.capa.src, ld, corpo, classe: 'inicio' });
+  const capaOg = primeiro && !semFoto(primeiro.capa) ? `${base}${urlPublica(primeiro.capa)}` : null;
+  return casca(req, { titulo, descricao, caminho: cat ? `/blog/categoria/${cat.slug}` : '/blog', imagem: capaOg, ld, corpo, classe: 'inicio' });
 }
 
 function paginaArtigo(req, a, relacionados) {
@@ -177,7 +180,7 @@ function paginaArtigo(req, a, relacionados) {
   const ld = [
     {
       '@context': 'https://schema.org', '@type': noticia ? 'NewsArticle' : 'BlogPosting',
-      headline: a.titulo, description: a.resumo, image: a.capa ? [a.capa.src] : undefined,
+      headline: a.titulo, description: a.resumo, image: semFoto(a.capa) ? undefined : [`${base}${urlPublica(a.capa)}`],
       datePublished: a.publicadoEm, dateModified: a.atualizadoEm || a.publicadoEm,
       author: { '@type': 'Organization', name: `Equipe ${clienteDe()}`, url: SITE_CLIENTE },
       publisher: { '@type': 'Organization', name: empresaDe(), url: SITE_CLIENTE },
@@ -200,7 +203,7 @@ function paginaArtigo(req, a, relacionados) {
   <p class="linha-fina">${esc(a.resumo)}</p>
   <p class="meta">Em <a class="cat" href="/blog/categoria/${a.categoria}">${esc(nomeDaCategoria(a.categoria))}${a.formato === 'dica' ? ', dica' : ''}</a>. Por Equipe ${esc(clienteDe())}. <time datetime="${a.publicadoEm}">${dataPorExtenso(a.publicadoEm)}</time>${a.atualizadoEm ? `, atualizado em ${dataPorExtenso(a.atualizadoEm)}` : ''}. Leitura de ${minutos} min.</p>
 </header>
-${a.capa ? `<figure class="capa"><img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt)}" width="${a.capa.largura || 1600}" height="${a.capa.altura || 900}" fetchpriority="high"><figcaption>Imagem ilustrativa gerada por IA.</figcaption></figure>` : ''}
+<figure class="capa"><img src="${esc(urlPublica(a.capa))}" alt="${esc((a.capa && a.capa.alt) || a.titulo)}" width="${(a.capa && a.capa.largura) || 1600}" height="${(a.capa && a.capa.altura) || 900}" fetchpriority="high"><figcaption>${semFoto(a.capa) ? 'Sem foto de capa.' : 'Imagem ilustrativa gerada por IA.'}</figcaption></figure>
 <div class="art-corpo">
 ${sumario.filter((s) => s.nivel === 2).length >= 3 ? `<details class="sumario" open><summary>Neste texto</summary><ol>${sumario.filter((s) => s.nivel === 2).map((s) => `<li><a href="#${esc(s.id)}">${esc(s.texto)}</a></li>`).join('')}</ol></details>` : ''}
 <div class="texto">
@@ -211,7 +214,8 @@ ${a.fontes ? `<section class="fontes"><h2>Fontes consultadas</h2><ul>${a.fontes.
 </div></div>
 </article>
 ${relacionados.length ? `<section class="relacionados" aria-labelledby="leia"><h2 id="leia">Leia também</h2><div class="grade">${relacionados.map((r) => cartao(r)).join('')}</div></section>` : ''}`;
-  return casca(req, { titulo: `${(a.seo && a.seo.titulo) || a.titulo} · ${NOME}`, descricao: a.resumo, caminho: `/blog/${a.slug}`, imagem: a.capa && a.capa.src, tipoOg: 'article', ld, corpo, classe: 'pagina-artigo' });
+  const capaOg = semFoto(a.capa) ? null : `${base}${urlPublica(a.capa)}`;
+  return casca(req, { titulo: `${(a.seo && a.seo.titulo) || a.titulo} · ${NOME}`, descricao: a.resumo, caminho: `/blog/${a.slug}`, imagem: capaOg, tipoOg: 'article', ld, corpo, classe: 'pagina-artigo' });
 }
 
 function paginaNaoAchada(req) {

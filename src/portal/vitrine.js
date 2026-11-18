@@ -137,11 +137,12 @@ function faixaBairros(lista) {
     <div class="v-bairros-grade">${itens}</div>
   </section>`;
 }
-/** As ultimas do blog. */
+/** As ultimas do blog. A capa é sempre um endereço deste site (/blog/capa/…). */
 function faixaBlog(posts, cortar) {
   if (!posts || !posts.length) return '';
+  const { urlPublica } = require('../blog/capas');
   const itens = posts.slice(0, 3).map((p) => `<a class="v-post" href="/blog/${esc(p.slug)}">
-      ${p.capa ? `<img src="${esc(p.capa)}" alt="" loading="lazy" decoding="async">` : ''}
+      <img src="${esc(urlPublica(p.capa))}" alt="" loading="lazy" decoding="async">
       <h3>${esc(p.titulo)}</h3>
       ${p.resumo ? `<p>${esc(cortar ? cortar(p.resumo, 120) : p.resumo)}</p>` : ''}
     </a>`).join('');
