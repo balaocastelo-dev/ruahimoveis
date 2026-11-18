@@ -131,6 +131,7 @@ function cartao(i) {
     </a>
     <div class="oc-corpo">
       <p class="oc-tipo">${esc(i.tipo || 'Imóvel')} em ${esc(capitalizar(i.cidade))}</p>
+      ${require('./marca-oportunidades').selo('caixa')}
       <h3><a href="${esc(caminho(i))}">${esc(capitalizar(i.bairro || i.cidade))}</a></h3>
       ${ficha.length ? `<p class="oc-ficha">${esc(ficha.join(' · '))}</p>` : ''}
       <p class="oc-valor">${esc(reais(c.total))}<span>total com assessoria</span></p>
