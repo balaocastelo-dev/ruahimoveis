@@ -16,6 +16,18 @@ const FUNDOS = {
   carlosgomes: { lugar: 'Praça Carlos Gomes, Campinas', arquivo: 'File:Praça Carlos Gomes - Campinas - 20250913112922.JPG', autor: 'EdgardMC79', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 2564, quatroK: true, original4k: true, posicao: '50% 45%' },
   convivencia: { lugar: 'Centro de Convivência, Campinas', arquivo: 'File:Centro de Convivência - Campinas - 20250913115244.JPG', autor: 'EdgardMC79', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 2564, quatroK: true, original4k: true, posicao: '50% 50%' },
   bentoquirino: { lugar: 'Creche Bento Quirino, Campinas', arquivo: 'File:Creche Bento Quirino - Campinas - 20220821095730.jpg', autor: 'Thiagoca', licenca: 'CC BY-SA 4.0', largura: 3840, altura: 1918, quatroK: true, original4k: true, posicao: '50% 50%' },
+  // Foto aprovada da L7. Não entra na rotação: só o tema l7inteligencia usa.
+  l7: {
+    lugar: 'L7 Inteligência Imobiliária',
+    src: '/temas/l7inteligencia/hero-1920.jpg?v=1',
+    srcset: '/temas/l7inteligencia/hero-1920.jpg?v=1 1920w, /temas/l7inteligencia/hero-3840.webp?v=1 3840w',
+    srcsetJpeg: '/temas/l7inteligencia/hero-1920.jpg?v=1 1920w, /temas/l7inteligencia/hero-3840.jpg?v=1 3840w',
+    webp: '/temas/l7inteligencia/hero-3840.webp?v=1',
+    largura: 3840,
+    altura: 2160,
+    posicao: 'right center',
+    propria: true,
+  },
 };
 // ordem em que as novas imobiliárias recebem uma foto (o Castelo entra só se PORTAL_FUNDO=castelo)
 const SEQUENCIA = ['taquaral', 'skyline', 'jequitibas', 'noite', 'catedral', 'estacao', 'cambui', 'carlosgomes', 'convivencia', 'bentoquirino'];
@@ -33,7 +45,9 @@ function fundoDe(id, cliente) {
   const src = f.src || (f.quatroK ? `/portal-assets/fundos/${chave}-1920.jpg?v=1` : `/portal-assets/fundos/${chave}.jpg?v=1`);
   const srcset4k = f.quatroK ? `/portal-assets/fundos/${chave}-1280.jpg?v=1 1280w, /portal-assets/fundos/${chave}-1920.jpg?v=1 1920w, /portal-assets/fundos/${chave}-3840.webp?v=1 3840w` : '';
   return {
-    id: chave, lugar: f.lugar, src, srcset: f.srcset || srcset4k, largura: f.largura, altura: f.altura, posicao: f.posicao,
+    id: chave, lugar: f.lugar, src, srcset: f.srcset || srcset4k,
+    srcsetJpeg: f.srcsetJpeg || '', webp: f.webp || '',
+    largura: f.largura, altura: f.altura, posicao: f.posicao,
     credito: f.propria ? '' : `Foto: ${f.autor} · ${f.licenca} · Wikimedia Commons${f.quatroK && !f.original4k ? ' · ampliada com IA' : ''}`,
     link: f.arquivo ? `https://commons.wikimedia.org/wiki/${encodeURI(f.arquivo.replace(/ /g, '_'))}` : '',
   };
@@ -56,6 +70,8 @@ const MINUTOS = Number.isFinite(Number(process.env.PORTAL_FUNDO_MINUTOS)) ? Numb
  * fixa: quem escolheu uma escolheu de propósito.
  */
 function fundoAgora(id, cliente, agora = Date.now()) {
+  // A L7 tem foto própria no hero. A rotação de Campinas não troca essa escolha.
+  if (require('../config').TEMA === 'l7inteligencia') return fundoDe('l7', cliente);
   if (id && FUNDOS[id]) return fundoDe(id, cliente);
   if (!(MINUTOS > 0)) return fundoDe(null, cliente);
   let h = 0; for (const c of String(cliente || '')) h = (h * 31 + c.codePointAt(0)) >>> 0;

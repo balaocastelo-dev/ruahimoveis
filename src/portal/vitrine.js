@@ -40,8 +40,17 @@ function chave(q = {}) {
   </nav>`;
 }
 
+function fotoDoHero(fundo) {
+  if (!fundo || fundo.id !== 'l7' || !fundo.src) return '';
+  const webp = fundo.webp || '';
+  return `<div class="v-abrir-foto" aria-hidden="true"><picture>
+    ${webp ? `<source type="image/webp" srcset="${esc(webp)}" media="(min-width: 1400px) and (min-resolution: 1.25dppx), (min-width: 2000px)">` : ''}
+    <img src="${esc(fundo.src)}"${fundo.srcsetJpeg || fundo.srcset ? ` srcset="${esc(fundo.srcsetJpeg || fundo.srcset)}"` : ''} sizes="100vw" alt="" width="${fundo.largura || 3840}" height="${fundo.altura || 2160}" fetchpriority="high" decoding="async">
+  </picture></div>`;
+}
+
 /** A pergunta. O unico elemento grande da pagina: titulo e campo sao a mesma voz. */
-function pergunta(f, conhece) {
+function pergunta(f, conhece, fundo) {
   const { q = {}, grupos = [], bairros = [], faixas = [], reais } = f || {};
   const sel = (v, atual) => (String(v) === String(atual || '') ? ' selected' : '');
   const tipo = grupos.map((g) => `<option value="${esc(g.slug)}"${sel(g.slug, q.tipo)}>${esc(g.nome)}</option>`).join('');
@@ -54,6 +63,7 @@ function pergunta(f, conhece) {
   if (conhece && conhece.bairros) sabe.push(`${num(conhece.bairros)} bairros`);
 
   return `<section class="v-abrir">
+  ${fotoDoHero(fundo)}
   <div class="v-abrir-dentro">
     ${chave(q)}
     <h1 class="v-titulo">Onde você quer morar?</h1>
@@ -211,7 +221,7 @@ function corpo(d) {
     filtrado = false, q = {}, ferramentas = {}, conhece = {}, bairrosGuia = [], alemDaCasa = null,
     negocio = 'venda' } = d;
   return [
-    pergunta(ferramentas.filtros, conhece),
+    pergunta(ferramentas.filtros, conhece, d.fundo),
     carteira({ achados, daPagina, pagina, paginas, filtrado, proprios, q, ferramentas, alemDaCasa, negocio }),
     filtrado ? '' : faixaBairros(bairrosGuia),
     filtrado ? '' : faixaCaixa(oc),

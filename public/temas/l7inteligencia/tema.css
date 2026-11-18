@@ -18,6 +18,19 @@
 .marca-logo{height:clamp(46px,7.5vw,70px);width:auto;max-width:none;display:block}
 .p-rodape-logo,.rodape-logo{height:32px;width:auto;max-width:none;display:block;margin:0 0 8px}
 @media (max-width:640px){.p-marca-logo{height:28px}}
+/* Hero da vitrine: a foto aprovada no lugar do fundo chapado.
+   Prédios à direita, céu à esquerda. O véu escurece o lado do texto. */
+.p-vitrine .v-abrir{position:relative;isolation:isolate;overflow:hidden}
+.v-abrir-foto{position:absolute;inset:0;z-index:0;pointer-events:none}
+.v-abrir-foto img{width:100%;height:100%;max-width:none;object-fit:cover;object-position:right center}
+.v-abrir-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,8,8,.9) 0%,rgba(8,8,8,.74) 38%,rgba(8,8,8,.4) 64%,rgba(8,8,8,.12) 86%,rgba(8,8,8,0) 100%)}
+.v-abrir-dentro{position:relative;z-index:1}
+.p-vitrine .v-campo input::placeholder{color:rgba(247,245,240,.88)}
+.p-vitrine .v-refino label,.p-vitrine .v-sabe{color:rgba(247,245,240,.9)}
+.p-vitrine .v-chave-on,.p-vitrine .v-chave-on:hover{background:#F7F5F0;color:#111!important}
+@media (max-width:700px){
+  .v-abrir-foto::after{background:linear-gradient(180deg,rgba(8,8,8,.82) 0%,rgba(8,8,8,.66) 48%,rgba(8,8,8,.42) 100%)}
+}
 /* títulos firmes e um pouco apertados, como o lettering do logo */
 h1,h2,h3,.p-hero h1,.marca-n{font-weight:700!important;letter-spacing:-.015em!important}
 /* cantos retos em tudo o que é clicável, como os blocos do "L7" */
