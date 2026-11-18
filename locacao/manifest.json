@@ -4678,5 +4678,1045 @@
     "ambiente": "piscina"
    }
   ]
+ },
+ "78864": {
+  "imob": "lumen",
+  "codigo": "CC0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/78864-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/78864-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/78864-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/78864-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/78864-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "79139": {
+  "imob": "lumen",
+  "codigo": "CA0003",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79139-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79139-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79139-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79139-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79139-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79235": {
+  "imob": "lumen",
+  "codigo": "AP0010",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79235-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79235-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79235-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79235-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79235-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79248": {
+  "imob": "lumen",
+  "codigo": "CC0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79248-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79248-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79248-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79248-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79248-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "79258": {
+  "imob": "lumen",
+  "codigo": "CA0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79258-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79258-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79258-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79258-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79258-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79362": {
+  "imob": "lumen",
+  "codigo": "AP0011",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79362-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79362-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79362-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79362-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79362-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79372": {
+  "imob": "lumen",
+  "codigo": "CA0005",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79372-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79372-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79372-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79372-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79372-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79394": {
+  "imob": "lumen",
+  "codigo": "AP0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79394-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79394-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79394-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79394-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79394-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79441": {
+  "imob": "lumen",
+  "codigo": "AP0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79441-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79441-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79441-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79441-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79441-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79506": {
+  "imob": "lumen",
+  "codigo": "AP0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79506-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79506-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79506-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79506-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79506-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79532": {
+  "imob": "lumen",
+  "codigo": "AP0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79532-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79532-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79532-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79532-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79532-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79559": {
+  "imob": "lumen",
+  "codigo": "AP0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79559-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79559-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79559-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79559-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79559-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79709": {
+  "imob": "lumen",
+  "codigo": "AP0017",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79709-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79709-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79709-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79709-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79709-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79733": {
+  "imob": "lumen",
+  "codigo": "AP0018",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/79733-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/79733-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/79733-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/79733-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/79733-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80295": {
+  "imob": "lumen",
+  "codigo": "SO0001",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80295-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80295-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80295-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80295-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80295-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80477": {
+  "imob": "lumen",
+  "codigo": "CA0006",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80477-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80477-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80477-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80477-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80477-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80487": {
+  "imob": "lumen",
+  "codigo": "AP0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80487-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80487-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80487-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80487-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80487-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80496": {
+  "imob": "lumen",
+  "codigo": "CC0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80496-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80496-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80496-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80496-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80496-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "80612": {
+  "imob": "lumen",
+  "codigo": "AP0020",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80612-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80612-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80612-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80612-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80612-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80812": {
+  "imob": "lumen",
+  "codigo": "AP0021",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/80812-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/80812-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/80812-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/80812-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/80812-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81021": {
+  "imob": "lumen",
+  "codigo": "SO0002",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81021-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81021-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81021-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81021-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81021-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81477": {
+  "imob": "lumen",
+  "codigo": "CC0017",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81477-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81477-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81477-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81477-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81477-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "81505": {
+  "imob": "lumen",
+  "codigo": "SO0003",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81505-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81505-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81505-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81505-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81505-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81707": {
+  "imob": "lumen",
+  "codigo": "AP0022",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81707-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81707-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81707-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81707-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81707-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81749": {
+  "imob": "lumen",
+  "codigo": "AP0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81749-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81749-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81749-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81749-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81749-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81954": {
+  "imob": "lumen",
+  "codigo": "AP0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/81954-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/81954-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/81954-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/81954-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/81954-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82444": {
+  "imob": "lumen",
+  "codigo": "CA0007",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/82444-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/82444-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/82444-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/82444-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/82444-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82460": {
+  "imob": "lumen",
+  "codigo": "CC0018",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/82460-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/82460-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/82460-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/82460-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/82460-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "82672": {
+  "imob": "lumen",
+  "codigo": "CC0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/82672-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/82672-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/82672-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/82672-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/82672-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "82747": {
+  "imob": "lumen",
+  "codigo": "CA0008",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/82747-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/82747-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/82747-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/82747-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/82747-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "83032": {
+  "imob": "lumen",
+  "codigo": "AP0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/83032-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/83032-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/83032-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/83032-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/83032-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "83347": {
+  "imob": "lumen",
+  "codigo": "CC0020",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/83347-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/83347-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/83347-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/83347-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/83347-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "83467": {
+  "imob": "lumen",
+  "codigo": "CC0021",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/83467-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/83467-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/83467-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/83467-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/83467-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "85335": {
+  "imob": "lumen",
+  "codigo": "CC0022",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/85335-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/85335-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/85335-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/85335-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/85335-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "85828": {
+  "imob": "lumen",
+  "codigo": "SO0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/85828-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/85828-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/85828-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/85828-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/85828-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "87571": {
+  "imob": "lumen",
+  "codigo": "CA0009",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/87571-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/87571-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/87571-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/87571-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/87571-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "88715": {
+  "imob": "lumen",
+  "codigo": "CC0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/88715-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/88715-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/88715-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/88715-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/88715-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "88828": {
+  "imob": "lumen",
+  "codigo": "CC0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/88828-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/88828-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/88828-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/88828-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/88828-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "89283": {
+  "imob": "lumen",
+  "codigo": "CA0010",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/89283-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/89283-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/89283-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/89283-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/89283-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "89482": {
+  "imob": "lumen",
+  "codigo": "CC0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/lumen/89482-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/lumen/89482-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/lumen/89482-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/lumen/89482-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/lumen/89482-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
  }
 }
