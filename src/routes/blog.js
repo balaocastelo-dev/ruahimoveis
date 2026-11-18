@@ -11,8 +11,8 @@ const ORIGEM_BLOG = `Blog ${cfg.CLIENTE_NOME}`;
 
 const router = express.Router();
 
-// As capas moram no GitHub (raw.githubusercontent.com): só as páginas do blog liberam esse endereço.
-const CSP_BLOG = "default-src 'self'; img-src 'self' data: https://raw.githubusercontent.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
+// A capa sai daqui mesmo (/blog/capa/…). O navegador não busca imagem em outro site.
+const CSP_BLOG = "default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'";
 
 function html(res, corpo, status = 200) {
   res.status(status);
@@ -45,6 +45,29 @@ router.get('/sitemap.xml', async (req, res) => {
   res.type('application/xml').send(paginas.sitemap(req, await diario.listar(), imoveis, bairros));
 });
 router.get('/blog/rss.xml', async (req, res) => res.type('application/rss+xml').send(paginas.rss(req, await diario.listar())));
+
+router.get('/blog/capa/:nome', async (req, res) => {
+  const capas = require('../blog/capas');
+  const nome = String(req.params.nome || '').toLowerCase();
+  if (nome === capas.SEM_FOTO) {
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    return res.send(capas.VAZIO);
+  }
+  if (!capas.NOME.test(nome)) return res.sendStatus(404);
+  const item = await capas.baixar(nome);
+  if (!item) {
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    return res.send(capas.VAZIO);
+  }
+  res.setHeader('Content-Type', item.tipo);
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.end(item.buf);
+});
 
 router.get('/blog', async (req, res) => html(res, paginas.paginaInicial(req, await diario.listar())));
 

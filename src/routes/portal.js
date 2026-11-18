@@ -56,8 +56,8 @@ router.get('/imoveis', async (req, res) => html(res, paginas.paginaVitrine(
   { conhece: { ...oQueAcasaConhece(), bairros: await quantosBairros() },
     bairrosGuia: await guiasDeBairro(6),
     alemDaCasa: await alemDaCarteira(req.query && req.query.q) })));
-// A revista mostra as capas do blog, que moram no GitHub.
-const CSP_REVISTA = CSP.replace("img-src 'self' data:", "img-src 'self' data: https://raw.githubusercontent.com");
+// A revista mostra as capas do blog pelo próprio site (/blog/capa/…).
+const CSP_REVISTA = CSP;
 router.get('/imoveis/revista', async (req, res) => {
   const artigos = await require('../blog/diario').listar().catch(() => []);
   html(res, versoes.paginaRevista(req, await fonte.noAr(), artigos), 200, { csp: CSP_REVISTA });

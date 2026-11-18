@@ -36,6 +36,11 @@ for (const im of CINCO) {
 for (const arq of ['logo.png', 'logo-claro.png', 'logo-claro.svg', 'icone.png']) {
   assert.ok(fs.existsSync(path.join(raiz, 'l7inteligencia', arq)), arq);
 }
+const logoSvg = fs.readFileSync(path.join(raiz, 'l7inteligencia', 'logo.svg'), 'utf8');
+const iconeSvg = fs.readFileSync(path.join(raiz, 'l7inteligencia', 'icone.svg'), 'utf8');
+assert.ok(logoSvg.includes('data:image/png;base64,'), 'o logo precisa trazer o PNG dentro do SVG');
+assert.ok(iconeSvg.includes('data:image/png;base64,'), 'o ícone precisa trazer o PNG dentro do SVG');
+assert.ok(!/href="logo\.png"/.test(logoSvg) && !/href="icone\.png"/.test(iconeSvg), 'SVG com arquivo externo some dentro de <img>');
 for (const s of RETIRADAS) assert.equal(fs.existsSync(path.join(raiz, s)), false, s);
 console.log('ok · temas das cinco existem; as outras L7 saíram; a L7 tem logo claro e ícone');
 

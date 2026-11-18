@@ -93,7 +93,7 @@ function leituras(artigos) {
 <h2 id="sopro-t">Leituras para a casa</h2>
 <p class="r-chapeu depois">Do ${esc(cfg.BLOG_NOME)}</p>
 <div class="r-sopro-grade">${artigos.map((a) => `<article class="r-art">
-<a href="/blog/${esc(a.slug)}" class="r-art-img">${a.capa && a.capa.src ? `<img src="${esc(a.capa.src)}" alt="${esc(a.capa.alt || '')}" width="1600" height="900" loading="lazy" decoding="async">` : ''}</a>
+<a href="/blog/${esc(a.slug)}" class="r-art-img"><img src="${esc(require('../blog/capas').urlPublica(a.capa))}" alt="${esc((a.capa && a.capa.alt) || '')}" width="1600" height="900" loading="lazy" decoding="async"></a>
 <h3><a href="/blog/${esc(a.slug)}">${esc(a.titulo)}</a></h3>
 <p class="r-chapeu depois">${esc(nomeDaCategoria(a.categoria))}</p>
 <p>${esc(cortar(a.resumo || '', 140))}</p>

@@ -263,8 +263,9 @@ function desenhaLista() {
   $('#lista').innerHTML = l.map((i) => {
     const x = i.numeros || {};
     const met = (v, lb) => `<div class="met"><div class="v">${v}</div><div class="l">${esc(lb)}</div></div>`;
+    const logo = /^[a-z0-9-]+$/i.test(i.slug || '') ? `<img class="imob-logo" src="/temas/${esc(i.slug)}/logo.svg?v=2" alt="${esc(i.nome)}" onerror="this.remove()">` : '';
     return `<article class="imob ${i.situacao}${i.fundo ? ' com-fundo' : ''}" data-id="${i.id}"${i.fundo ? ` style="--foto:url('${esc(i.fundo.src)}');--foto-pos:${esc(i.fundo.posicao || '50% 50%')}" title="${esc(i.fundo.lugar)}"` : ''}>
-      <div><div class="imob-nome">${esc(i.nome)}</div><div class="imob-sub">${esc(i.empresa || '')}${i.link ? ` · <a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.link.replace(/^https:\/\//, ''))}</a>` : ' · <span class="muted">sem link ainda</span>'}</div>
+      <div>${logo}<div class="imob-nome">${esc(i.nome)}</div><div class="imob-sub">${esc(i.empresa || '')}${i.link ? ` · <a href="${esc(i.link)}" target="_blank" rel="noopener">${esc(i.link.replace(/^https:\/\//, ''))}</a>` : ' · <span class="muted">sem link ainda</span>'}</div>
         <div class="selos"><span class="selo ${i.situacao}">${esc(SITU[i.situacao] || i.situacao)}</span><span class="selo plano">${esc(i.plano)}</span>${i.mensalidade ? `<span class="selo">${brl(i.mensalidade)}/mês</span>` : ''}<span class="selo">${n(i.comissao_pct)}% da comissão</span>${window.Herrera ? (() => { const f = Herrera.progresso(i.onboarding), t = Herrera.NUCLEO.length; return `<span class="selo ${f >= t ? 'conf-ok' : 'conf'}" title="Passos da configuração conferidos pelo Herrera">Configuração ${f}/${t}</span>`; })() : ''}</div></div>
       <div class="metricas">${i.numeros ? met(n(x.imoveis), `imóveis · ${n(x.publicados)} publicados`) + met(mi(x.vgv_carteira), 'na carteira') + met(n(x.vendidos) + (x.alugados ? ` + ${n(x.alugados)}` : ''), x.alugados ? 'vendidos + alugados' : 'vendidos')
         + met(brl(i.comissao_mes), 'sua parte no mês') + met(n(x.leads_30d), 'clientes em 30 dias') + met(n(x.visitas_30d), 'visitas em 30 dias') + met(n(x.usuarios), 'usuários')

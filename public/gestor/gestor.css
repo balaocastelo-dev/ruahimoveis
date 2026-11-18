@@ -58,6 +58,7 @@ h2{font-family:var(--titulo);font-size:20px;margin:0;letter-spacing:-.01em}
 .imob.com-fundo .acoes .btn{background:color-mix(in srgb,var(--papel) 92%,transparent)}
 @media (max-width:900px){.imob.com-fundo{background:linear-gradient(180deg,color-mix(in srgb,var(--papel) 70%,transparent),var(--papel) 140px),var(--foto) var(--foto-pos,50% 50%)/100% auto no-repeat,var(--papel)}}
 .imob.suspensa{background:repeating-linear-gradient(-45deg,var(--papel),var(--papel) 12px,var(--erro-claro) 12px,var(--erro-claro) 13px)}
+.imob-logo{display:block;height:34px;width:auto;max-width:168px;margin:0 0 8px;object-fit:contain;object-position:left center}
 .imob-nome{font-family:var(--titulo);font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1.15}
 .imob-sub{color:var(--suave);font-size:13px;margin-top:2px;word-break:break-word}
 .selos{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
