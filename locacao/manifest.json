@@ -2598,5 +2598,1045 @@
     "ambiente": "banheiro"
    }
   ]
+ },
+ "78898": {
+  "imob": "ondemorar",
+  "codigo": "CA0008",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/78898-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78898-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78898-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78898-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78898-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "78987": {
+  "imob": "ondemorar",
+  "codigo": "CA0009",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/78987-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78987-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78987-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78987-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78987-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "78998": {
+  "imob": "ondemorar",
+  "codigo": "CA0010",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/78998-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78998-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78998-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78998-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/78998-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79272": {
+  "imob": "ondemorar",
+  "codigo": "AP0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79272-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79272-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79272-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79272-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79272-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79308": {
+  "imob": "ondemorar",
+  "codigo": "AP0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79308-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79308-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79308-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79308-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79308-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79422": {
+  "imob": "ondemorar",
+  "codigo": "AP0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79422-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79422-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79422-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79422-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79422-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79662": {
+  "imob": "ondemorar",
+  "codigo": "CC0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79662-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79662-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79662-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79662-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79662-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "79678": {
+  "imob": "ondemorar",
+  "codigo": "AP0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79678-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79678-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79678-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79678-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79678-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79697": {
+  "imob": "ondemorar",
+  "codigo": "AP0016",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79697-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79697-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79697-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79697-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79697-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "79829": {
+  "imob": "ondemorar",
+  "codigo": "CC0005",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/79829-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79829-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79829-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79829-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/79829-5.jpg",
+    "ambiente": "area_gourmet"
+   }
+  ]
+ },
+ "80398": {
+  "imob": "ondemorar",
+  "codigo": "AP0017",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80398-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80398-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80398-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80398-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80398-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80638": {
+  "imob": "ondemorar",
+  "codigo": "CA0011",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80638-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80638-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80638-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80638-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80638-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80704": {
+  "imob": "ondemorar",
+  "codigo": "CA0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80704-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80704-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80704-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80704-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80704-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80741": {
+  "imob": "ondemorar",
+  "codigo": "CC0006",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80741-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80741-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80741-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80741-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80741-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "80829": {
+  "imob": "ondemorar",
+  "codigo": "AP0018",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80829-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80829-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80829-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80829-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80829-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80848": {
+  "imob": "ondemorar",
+  "codigo": "AP0019",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80848-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80848-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80848-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80848-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80848-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "80944": {
+  "imob": "ondemorar",
+  "codigo": "AP0020",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/80944-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80944-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80944-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80944-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/80944-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81314": {
+  "imob": "ondemorar",
+  "codigo": "AP0021",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81314-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81314-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81314-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81314-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81314-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81438": {
+  "imob": "ondemorar",
+  "codigo": "SO0004",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81438-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81438-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81438-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81438-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81438-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81460": {
+  "imob": "ondemorar",
+  "codigo": "SO0005",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81460-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81460-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81460-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81460-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81460-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81462": {
+  "imob": "ondemorar",
+  "codigo": "SO0006",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81462-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81462-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81462-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81462-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81462-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81554": {
+  "imob": "ondemorar",
+  "codigo": "CA0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81554-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81554-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81554-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81554-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81554-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81557": {
+  "imob": "ondemorar",
+  "codigo": "CA0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81557-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81557-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81557-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81557-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81557-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81727": {
+  "imob": "ondemorar",
+  "codigo": "AP0022",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81727-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81727-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81727-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81727-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81727-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81730": {
+  "imob": "ondemorar",
+  "codigo": "AP0023",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81730-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81730-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81730-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81730-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81730-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "81934": {
+  "imob": "ondemorar",
+  "codigo": "AP0024",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/81934-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81934-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81934-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81934-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/81934-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82180": {
+  "imob": "ondemorar",
+  "codigo": "AP0025",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/82180-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82180-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82180-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82180-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82180-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82229": {
+  "imob": "ondemorar",
+  "codigo": "AP0026",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/82229-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82229-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82229-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82229-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82229-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "82668": {
+  "imob": "ondemorar",
+  "codigo": "CC0007",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/82668-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82668-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82668-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82668-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/82668-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "84201": {
+  "imob": "ondemorar",
+  "codigo": "CC0008",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/84201-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84201-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84201-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84201-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84201-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "84776": {
+  "imob": "ondemorar",
+  "codigo": "CC0009",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/84776-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84776-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84776-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84776-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/84776-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "86141": {
+  "imob": "ondemorar",
+  "codigo": "CC0010",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/86141-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86141-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86141-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86141-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86141-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "86618": {
+  "imob": "ondemorar",
+  "codigo": "CC0011",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/86618-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86618-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86618-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86618-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/86618-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "87573": {
+  "imob": "ondemorar",
+  "codigo": "CC0012",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/87573-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/87573-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/87573-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/87573-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/87573-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "88906": {
+  "imob": "ondemorar",
+  "codigo": "CC0013",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/88906-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/88906-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/88906-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/88906-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/88906-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "89078": {
+  "imob": "ondemorar",
+  "codigo": "SO0007",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/89078-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89078-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89078-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89078-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89078-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "89280": {
+  "imob": "ondemorar",
+  "codigo": "CC0014",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/89280-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89280-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89280-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89280-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89280-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "89497": {
+  "imob": "ondemorar",
+  "codigo": "CA0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/89497-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89497-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89497-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89497-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/89497-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
+ },
+ "91173": {
+  "imob": "ondemorar",
+  "codigo": "CC0015",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/91173-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91173-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91173-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91173-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91173-5.jpg",
+    "ambiente": "piscina"
+   }
+  ]
+ },
+ "91754": {
+  "imob": "ondemorar",
+  "codigo": "AP0027",
+  "fotos": [
+   {
+    "arquivo": "locacao/ondemorar/91754-1.jpg",
+    "ambiente": "fachada"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91754-2.jpg",
+    "ambiente": "sala"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91754-3.jpg",
+    "ambiente": "cozinha"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91754-4.jpg",
+    "ambiente": "quarto"
+   },
+   {
+    "arquivo": "locacao/ondemorar/91754-5.jpg",
+    "ambiente": "banheiro"
+   }
+  ]
  }
 }
