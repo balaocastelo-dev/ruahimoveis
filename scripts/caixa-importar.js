@@ -9,11 +9,14 @@
 // Por isso aqui nao se reabre link de anuncio nenhum: compara-se a lista nova
 // com a anterior. Mais leve, mais confiavel e sem depender de link.
 //
-// Uso:  node scripts/caixa-importar.js [--uf SP] [--seco]
-//   --seco  roda sem gravar, so mostra o que faria.
+// Uso:  node scripts/caixa-importar.js [--uf SP] [--arquivo lista.csv] [--seco]
+//   --arquivo  lê esse CSV em vez de baixar o da Caixa (mesmo formato, ISO-8859-1)
+//   --seco     roda sem gravar, so mostra o que faria.
 
+const fs = require('fs');
 const { Client } = require('pg');
 const zlib = require('zlib');
+const { usar } = require('./schema-compartilhado');
 
 function arg(nome) {
   const i = process.argv.indexOf(nome);
@@ -22,6 +25,7 @@ function arg(nome) {
 
 const UF = (arg('--uf') || 'SP').toUpperCase();
 const SECO = process.argv.includes('--seco');
+const ARQUIVO = arg('--arquivo');
 const URL = `https://venda-imoveis.caixa.gov.br/listaweb/Lista_imoveis_${UF}.csv`;
 
 // Municipios da Regiao Metropolitana de Campinas (LC 870/2000 + Morungaba pela LC 1.234/2014).
@@ -34,17 +38,23 @@ const RMC = new Set([
 
 const semAcento = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/['`\u00b4]/g, '').toUpperCase().trim();
 
-/** O CSV vem em ISO-8859-1, com ponto e virgula, e algumas linhas de cabecalho antes da tabela. */
-async function baixar() {
-  const r = await fetch(URL, {
-    headers: {
-      'User-Agent': 'HerreraHouseIA/1.0 (+https://corretordofuturo.app)',
-      Accept: 'text/csv,*/*',
-    },
-    redirect: 'follow',
-  });
-  if (!r.ok) throw new Error(`Caixa devolveu ${r.status} ${r.statusText}`);
-  let buf = Buffer.from(await r.arrayBuffer());
+/** O CSV oficial vem em ISO-8859-1, às vezes gzip. --arquivo lê uma cópia local
+ *  (amostra de teste ou o arquivo que o ProLiant já baixou) no mesmo formato. */
+async function lerLista() {
+  let buf;
+  if (ARQUIVO) {
+    buf = fs.readFileSync(ARQUIVO);
+  } else {
+    const r = await fetch(URL, {
+      headers: {
+        'User-Agent': 'HerreraHouseIA/1.0 (+https://corretordofuturo.app)',
+        Accept: 'text/csv,*/*',
+      },
+      redirect: 'follow',
+    });
+    if (!r.ok) throw new Error(`Caixa devolveu ${r.status} ${r.statusText}`);
+    buf = Buffer.from(await r.arrayBuffer());
+  }
   if (buf[0] === 0x1f && buf[1] === 0x8b) buf = zlib.gunzipSync(buf);
   return new TextDecoder('iso-8859-1').decode(buf);
 }
@@ -176,12 +186,14 @@ create index if not exists ix_caixa_safra on base.caixa_imoveis(ultima_safra);
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  const esquema = await usar(cli);
+  console.log(`schema compartilhado: ${esquema}`);
 
   const safra = new Date().toLocaleString('sv-SE', { timeZone: 'America/Sao_Paulo' }).slice(0, 19);
   console.log(`safra ${safra} - UF ${UF}`);
 
-  console.log('baixando a lista da Caixa...');
-  const brutos = parsear(await baixar()).map(enriquecer);
+  console.log(ARQUIVO ? `lendo ${ARQUIVO}` : 'baixando a lista da Caixa...');
+  const brutos = parsear(await lerLista()).map(enriquecer);
   const rmc = brutos.filter((i) => RMC.has(semAcento(i.cidade)));
   console.log(`  ${brutos.length} imoveis em ${UF}, ${rmc.length} na RMC`);
   if (!brutos.length) throw new Error('lista veio vazia: nao vou mexer na base');

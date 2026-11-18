@@ -443,8 +443,9 @@ async function ultimasDoBlog(n = 3) {
 }
 
 router.get('/oportunidades', (req, res) => {
-  // A view caixa_imoveis mora no schema compartilhado e ainda não foi criada em
-  // todo tenant. Sem ela a lista fica vazia; a página não pode responder 500.
+// A view no schema da imobiliária aponta para a tabela no schema compartilhado
+// (SCHEMA_COMPARTILHADO; base quando esse schema existe). Sem a view, a lista
+// fica vazia; a página não responde 500.
   const extra = sqlSomenteApartamento('tipo');
   let lista = [], resumo = {};
   try {

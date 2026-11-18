@@ -10,18 +10,32 @@
 // alem da velocidade: quando o imovel sai da lista a Caixa tira a foto do ar, e e
 // justamente ai que ela serve de registro do que foi negociado.
 //
-// Uso:  node scripts/caixa-fotos.js [--todos] [--limite 500]
+// Uso:  node scripts/caixa-fotos.js [--todos] [--limite 500] [--pasta dir]
+//   --pasta  lê {numero}.jpg dessa pasta em vez de baixar do site da Caixa
 
+const fs = require('fs');
+const path = require('path');
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
+const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : ''; };
 const TODOS = process.argv.includes('--todos');
 const LIMITE = Number(process.argv[process.argv.indexOf('--limite') + 1]) || 100000;
+// Pasta local ({numero}.jpg) no lugar do site da Caixa. A esteira de teste usa
+// isto; o job diário não passa --pasta e continua baixando F{numero}21.jpg.
+const PASTA = arg('--pasta') || process.env.CAIXA_FOTOS_DIR || '';
 const UA = { 'User-Agent': 'HerreraHouseIA/1.0 (+https://corretordofuturo.app)', Accept: 'image/*' };
 const ESPERA = 250; // sem pressa: e o servidor de um banco publico
 
 const dorme = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function baixar(numero) {
+  if (PASTA) {
+    const arquivo = path.join(PASTA, `${numero}.jpg`);
+    if (!fs.existsSync(arquivo)) return null;
+    const img = fs.readFileSync(arquivo);
+    return img.length > 1500 ? img : null;
+  }
   const r = await fetch(`https://venda-imoveis.caixa.gov.br/fotos/F${numero}21.jpg`,
     { headers: UA, signal: AbortSignal.timeout(20000) });
   if (!r.ok) return null;
@@ -38,6 +52,7 @@ async function baixar(numero) {
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  console.log(`schema compartilhado: ${await usar(cli)}`);
 
   const { rows } = await cli.query(
     `select i.numero from base.caixa_imoveis i
@@ -57,7 +72,7 @@ async function baixar(numero) {
     await cli.query(
       `insert into base.fachadas(ref, img) values ($1, $2)
        on conflict (ref) do update set img = excluded.img`, ['caixa:' + numero, img]);
-    await dorme(ESPERA);
+    if (!PASTA) await dorme(ESPERA);
     if ((i + 1) % 20 === 0 || i === rows.length - 1) {
       process.stdout.write(`\r  ${i + 1}/${rows.length}  ·  ${com} com foto, ${sem} sem, ${erro} erro`);
     }

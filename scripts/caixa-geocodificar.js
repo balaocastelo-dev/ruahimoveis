@@ -14,6 +14,7 @@
 //   sem --todos, faz so os da regiao metropolitana de Campinas.
 
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
 const TODOS = process.argv.includes('--todos');
 const LIMITE = Number((process.argv[process.argv.indexOf('--limite') + 1]) || 0) || 100000;
@@ -94,6 +95,7 @@ create index if not exists ix_caixa_geo on base.caixa_imoveis(geo_em) where saiu
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  console.log(`schema compartilhado: ${await usar(cli)}`);
   await cli.query(DDL);
 
   const { rows } = await cli.query(

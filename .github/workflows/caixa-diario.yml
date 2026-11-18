@@ -1,0 +1,40 @@
+# Esteira diária da Caixa. Não roda no pull request: só no horário e quando
+# alguém dispara à mão. Sem o segredo, o job avisa e sai sem importar nada.
+#
+# Segredo (Settings → Secrets → Actions), URL do DONO do Postgres de produção,
+# nunca a do ProLiant e nunca a do papel oportunidades_app:
+#   DATABASE_URL_CAIXA
+#
+# 09:47 UTC = 06:47 em São Paulo, o mesmo horário do job do ProLiant.
+name: Caixa diário
+
+on:
+  schedule:
+    - cron: '47 9 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: caixa-diario
+  cancel-in-progress: false
+
+jobs:
+  esteira:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Importar, fotografar e levar para a carteira
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL_CAIXA }}
+          CAIXA_ASSESSORIA: '12'
+        run: |
+          if [ -z "$DATABASE_URL" ]; then
+            echo "Segredo DATABASE_URL_CAIXA ausente. Nada foi importado."
+            exit 0
+          fi
+          node scripts/caixa-esteira.js --uf SP --imobiliaria oportunidades

@@ -18,6 +18,7 @@
 // Uso:  node scripts/caixa-prazos.js [--todos] [--limite 300] [--revalidar]
 
 const { Client } = require('pg');
+const { usar } = require('./schema-compartilhado');
 
 const TODOS = process.argv.includes('--todos');
 const REVALIDAR = process.argv.includes('--revalidar');
@@ -81,6 +82,7 @@ alter table base.caixa_imoveis add column if not exists prazo_visto_em text;
     ssl: /sslmode=disable|localhost|127\.0\.0\.1/.test(url) ? false : { rejectUnauthorized: false },
   });
   await cli.connect();
+  console.log(`schema compartilhado: ${await usar(cli)}`);
   await cli.query(DDL);
 
   // Revalida quem ja passou do prazo: a Caixa remarca leilao, e prazo vencido na tela

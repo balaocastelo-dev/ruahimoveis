@@ -1,0 +1,6 @@
+Lista de imoveis da Caixa (amostra para teste; nao e o CSV do dia)
+N do imovel;UF;Cidade;Bairro;Endereco;Preco;Valor de avaliacao;Desconto;Financiamento;Descricao;Modalidade de venda;Link de acesso
+8444431067520;SP;Campinas;Cambui;RUA DA AMOSTRA 100;43534,28;90100,00;51.69;Sim;Apartamento, 42.23 de area privativa, 2 qto(s), 1 vaga(s), 1 sala(s);Venda Direta Online;https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnimovel=8444431067520
+1444418696260;SP;Valinhos;Jardim Prova;RUA DO EXEMPLO 20;176376,05;332500,00;46.96;Nao;Casa, 120.00 de area privativa, 220.00 de area do terreno, 3 qto(s), 2 vaga(s);Licitacao Aberta;https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnimovel=1444418696260
+0000000001001;SP;Campinas;Distrito Industrial;ESTRADA DA AMOSTRA S/N;80000,00;100000,00;20.00;Nao;Terreno, 250.00 de area do terreno;Venda Online;https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnimovel=0000000001001
+0000000001002;SP;Sao Paulo;Centro;PRACA DA AMOSTRA 1;500000,00;600000,00;16.67;Nao;Apartamento, 70.00 de area privativa, 2 qto(s), 1 vaga(s);Leilao SFI;https://venda-imoveis.caixa.gov.br/sistema/detalhe-imovel.asp?hdnimovel=0000000001002
