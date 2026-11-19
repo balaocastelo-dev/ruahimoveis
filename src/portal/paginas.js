@@ -119,7 +119,7 @@ function blocoImagem(base, imagem, largura, altura, tipo) {
   return linhas.join('\n');
 }
 
-function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false }) {
+function casca(req, { titulo, descricao, caminho, imagem, imagemLargura, imagemAltura, imagemTipo, ld = [], corpo, classe = '', semIndice = false, extraHead = '' }) {
   if (!imagem && marcaOc.eh()) {
     const padrao = marcaOc.imagemPadrao();
     imagem = padrao.imagem;
@@ -147,6 +147,7 @@ ${semIndice || DEMONSTRACAO ? '<meta name="robots" content="noindex">' : ''}
 <meta property="og:url" content="${esc(canonico)}">
 ${blocoImagem(base, imagem, imagemLargura, imagemAltura, imagemTipo)}
 <meta name="theme-color" content="#FBFAF8">
+${extraHead}
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 <link rel="stylesheet" href="/portal-assets/portal.css?v=${VERSAO_ASSETS}">${require('../tema').head()}
@@ -321,11 +322,12 @@ function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [],
     itemListElement: daPagina.map((x, i) => ({ '@type': 'ListItem', position: (pagina - 1) * POR_PAGINA + i + 1, url: `${base}/imoveis/${x.pagina.slug}`, name: x.pagina.titulo })),
   }];
   const capaOg = daPagina[0] ? og.metaFotoPortal(daPagina[0].pagina.capa.foto) : {};
+  const extraHead = FUNDO && FUNDO.id === 'l7' && FUNDO.src ? `<link rel="preload" as="image" href="${esc(FUNDO.src)}" imagesrcset="${esc(FUNDO.srcsetJpeg || FUNDO.srcset || '')}" imagesizes="100vw" fetchpriority="high">` : '';
   return casca(req, {
     titulo, descricao: somenteApartamentos()
       ? `${lista.length} apartamentos à venda pela ${CLIENTE} em Campinas e região, com fotos, ficha completa e contato direto com o corretor.`
       : `${lista.length} imóveis à venda pela ${CLIENTE} em Campinas e região: apartamentos, casas em condomínio e terrenos, com fotos, ficha completa e contato direto com o corretor.`,
-    caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1),
+    caminho: link(pagina), imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-vitrine', semIndice: filtrado && !(grupo && Object.keys(q).length === 1), extraHead,
   });
 }
 
