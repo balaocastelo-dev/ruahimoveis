@@ -34,7 +34,7 @@ function fundo(foto) {
   return `<div class="s-hero-fundo" aria-hidden="true"><img class="s-hero-desfoque" src="${src}" alt="" decoding="async"><img class="s-hero-foto" src="${src}"${extra} alt="" fetchpriority="high" decoding="async">${DEMONSTRACAO ? '<span class="s-hero-aviso">Imagem ilustrativa</span>' : ''}</div>`;
 }
 
-const ehSignature = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
+const ehSignature = (im) => !!(im && im.origem !== 'radar-demo' && im.finalidade !== 'locacao' && im.valor && im.valor >= SIGNATURE.limite);
 const RESIDENCIAIS = new Set(['Casa', 'Casa em condomínio', 'Sobrado', 'Chácara', 'Sítio', 'Fazenda', 'Apartamento', 'Cobertura', 'Flat']);
 const residencia = (im) => RESIDENCIAIS.has(im.tipo);
 

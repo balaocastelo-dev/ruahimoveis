@@ -31,7 +31,8 @@ function paginaAutomatica(im) {
     im.lazer && `Lazer: ${im.lazer}`,
   ].filter(Boolean);
   const desc = descricaoPublica(im.descricao);
-  const abertura = desc ? null : `${im.tipo} à venda${onde ? ` em ${onde}` : ''}${numeros.length ? `, com ${numeros.slice(0, 3).join(', ').toLowerCase()}` : ''}. Veja as fotos e fale com a equipe da ${cfg.CLIENTE_NOME} para agendar uma visita.`;
+  const oferta = im.finalidade === 'locacao' ? 'para alugar' : 'à venda';
+  const abertura = desc ? null : `${im.tipo} ${oferta}${onde ? ` em ${onde}` : ''}${numeros.length ? `, com ${numeros.slice(0, 3).join(', ').toLowerCase()}` : ''}. Veja as fotos e fale com a equipe da ${cfg.CLIENTE_NOME} para agendar uma visita.`;
   const blocos = [
     ...(desc ? desc.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean).slice(0, 8).map((texto) => ({ tipo: 'paragrafo', texto })) : [{ tipo: 'paragrafo', texto: abertura }]),
     ...(numeros.length ? [{ tipo: 'resumo', titulo: 'Ficha', itens: numeros }] : []),
