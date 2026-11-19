@@ -38,6 +38,11 @@ const { SIGNATURE } = require('./edicoes');
 const reservado = (im) => !!(im && im.valor && im.valor >= SIGNATURE.limite);
 const RESERVADO = `${CLIENTE} Signature · valor para membros`;
 const valorTexto = (im) => (reservado(im) ? RESERVADO : im.valor ? reais(im.valor) : 'Sob consulta');
+const ehLocacao = (im) => String((im && im.finalidade) || '') === 'locacao';
+const { ehDemonstracao } = require('./dados');
+const precoDe = (im, negocio) => (negocio === 'locacao' || ehLocacao(im) ? im.valor_locacao : im.valor);
+const textoAluguel = (im) => (im.valor_locacao ? `${reais(im.valor_locacao)}/mês` : 'Aluguel sob consulta');
+const seloDemo = (im) => (ehDemonstracao(im) ? '<span class="p-selo-demo">Demonstração</span>' : '');
 
 function rico(texto) {
   const desenhar = (t) => t.map((x) => (x.tipo === 'texto' ? esc(x.valor) : x.tipo === 'negrito' ? `<strong>${desenhar(x.filhos)}</strong>`
@@ -177,7 +182,14 @@ ${ld.map((o) => `<script type="application/ld+json">${json(o)}</script>`).join('
 }
 
 // ------------------------------------------------------------------- cartões
-function cartao(x, { eager = false } = {}) {
+function precoDoCartao(im, negocio) {
+  const loc = negocio === 'locacao' || ehLocacao(im);
+  if (loc) return `<p class="p-preco"><span class="p-preco-rot">Aluguel</span> ${esc(textoAluguel(im))}</p>`;
+  if (reservado(im)) return `<p class="p-preco p-preco-sig"><a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a></p>`;
+  return `<p class="p-preco">${im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>`;
+}
+
+function cartao(x, { eager = false, negocio = 'venda' } = {}) {
   const { imovel: im, pagina: p } = x;
   const busca = semAcento(`${p.titulo} ${p.resumo} ${im.tipo} ${im.bairro || ''} ${im.cidade || ''} ${im.condominio || ''} ${im.codigo}`);
   return `<article class="p-cartao" data-codigo="${esc(im.codigo)}" data-busca="${esc(busca)}">
@@ -186,9 +198,10 @@ function cartao(x, { eager = false } = {}) {
 <div class="p-cartao-t">
 <h3><a href="/imoveis/${p.slug}">${esc(p.titulo)}</a></h3>
 <p class="p-cartao-tipo">${esc(im.tipo)} · ${esc(lugar(im))}</p>
+${seloDemo(im)}
 ${marcaOc.selo(im.origem)}
 <p class="p-specs">${specs(im, true).map(esc).join('<span aria-hidden="true"> · </span>')}</p>
-<p class="p-preco${reservado(im) ? ' p-preco-sig' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : im.valor ? esc(reais(im.valor)) : 'Valor sob consulta'}</p>
+${precoDoCartao(im, negocio)}
 </div></article>`;
 }
 
@@ -198,6 +211,7 @@ function filtrar(lista, q) {
   // NEGOCIO-FILTRO: a chave venda/locacao da vitrine. Imovel marcado como
   // 'venda_locacao' serve aos dois lados, entao entra nos dois.
   const negocio = q.negocio === 'locacao' ? 'locacao' : 'venda';
+  const preco = (im) => precoDe(im, negocio);
   r = r.filter((x) => {
     const f = String(x.imovel.finalidade || 'venda');
     return f === negocio || f === 'venda_locacao';
@@ -208,9 +222,9 @@ function filtrar(lista, q) {
   const quartos = parseInt(q.quartos, 10);
   if (quartos > 0) r = r.filter((x) => (x.imovel.quartos || 0) >= quartos);
   const ate = Number(String(q.ate || '').replace(/\D/g, ''));
-  if (ate > 0) r = r.filter((x) => x.imovel.valor && !reservado(x.imovel) && x.imovel.valor <= ate);
+  if (ate > 0) r = r.filter((x) => preco(x.imovel) && !(negocio === 'venda' && reservado(x.imovel)) && preco(x.imovel) <= ate);
   const de = Number(String(q.de || '').replace(/\D/g, ''));
-  if (de > 0) r = r.filter((x) => x.imovel.valor && !reservado(x.imovel) && x.imovel.valor >= de);
+  if (de > 0) r = r.filter((x) => preco(x.imovel) && !(negocio === 'venda' && reservado(x.imovel)) && preco(x.imovel) >= de);
   const termos = semAcento(String(q.q || '').slice(0, 80)).split(/\s+/).filter(Boolean);
   if (termos.length) {
     r = r.filter((x) => {
@@ -219,8 +233,8 @@ function filtrar(lista, q) {
     });
   }
   const ordem = {
-    'menor-valor': (a, b) => (a.imovel.valor || Infinity) - (b.imovel.valor || Infinity),
-    'maior-valor': (a, b) => (b.imovel.valor || 0) - (a.imovel.valor || 0),
+    'menor-valor': (a, b) => (preco(a.imovel) || Infinity) - (preco(b.imovel) || Infinity),
+    'maior-valor': (a, b) => (preco(b.imovel) || 0) - (preco(a.imovel) || 0),
     'maior-area': (a, b) => (b.imovel.area_util || b.imovel.area_total || 0) - (a.imovel.area_util || a.imovel.area_total || 0),
   // ORDEM-PADRAO: sem escolha do visitante, a lista vai por valor, do menor
   // para o maior. Numa vitrine de oportunidade e por ai que se comeca a olhar.
@@ -229,6 +243,7 @@ function filtrar(lista, q) {
 }
 
 const FAIXAS = [500000, 800000, 1000000, 1500000, 2000000, 3000000, 5000000, 10000000];
+const FAIXAS_ALUGUEL = [1500, 2500, 3500, 5000, 8000, 12000, 20000];
 
 // Faixa das Oportunidades Caixa na vitrine. Rotulada e separada de proposito: sao
 // imoveis que a Caixa vende, nao da carteira da casa, e misturar os dois confundiria
@@ -296,8 +311,8 @@ function paginaVitrine(req, lista, guiaDoBairro = null, caixa = {}, doBlog = [],
     achados, daPagina, paginas, pagina, filtrado, guiaDoBairro, q,
     ferramentas: {
       seletor: require('./versoes').seletor('vitrine'),
-      cartao, cortar, link,
-      filtros: { q, grupos, bairros, faixas: FAIXAS, reais },
+      cartao: (x, o) => cartao(x, { ...o, negocio: q.negocio === 'locacao' ? 'locacao' : 'venda' }), cortar, link,
+      filtros: { q, grupos, bairros, faixas: q.negocio === 'locacao' ? FAIXAS_ALUGUEL : FAIXAS, reais },
     },
   });
 
@@ -367,7 +382,7 @@ function ficha(im) {
     ['Tipo', im.tipo], ['Código', im.codigo], ['Bairro', im.bairro], ['Cidade', [im.cidade, im.uf].filter(Boolean).join(' – ')],
     ['Condomínio', im.condominio], ['Área útil', metros(im.area_util)], ['Área total', metros(im.area_total)],
     ['Quartos', im.quartos], ['Suítes', im.suites], ['Vagas', im.vagas],
-    ['Valor de venda', valorTexto(im)],
+    ...(ehLocacao(im) ? [['Aluguel', textoAluguel(im)]] : [['Valor de venda', valorTexto(im)]]),
     ['Condomínio (mês)', reais(im.valor_condominio)], ['IPTU (ano)', reais(im.iptu)],
   ].filter(([, v]) => v !== null && v !== undefined && v !== '');
   return `<dl class="p-ficha">${linhas.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join('')}</dl>
@@ -406,10 +421,22 @@ function parecidos(x, lista) {
       let pts = 0;
       if (y.imovel.tipo === im.tipo) pts += 3; else if (g && grupoDo(y.imovel.tipo) === g) pts += 2;
       if (im.bairro && y.imovel.bairro === im.bairro) pts += 2;
-      if (im.valor && y.imovel.valor) pts += Math.max(0, 2 - Math.abs(Math.log(y.imovel.valor / im.valor)) * 2);
+      const pa = precoDe(im, ehLocacao(im) ? 'locacao' : 'venda');
+      const pb = precoDe(y.imovel, ehLocacao(im) ? 'locacao' : 'venda');
+      if (pa && pb) pts += Math.max(0, 2 - Math.abs(Math.log(pb / pa)) * 2);
       return { y, pts };
     })
     .sort((a, b) => b.pts - a.pts).slice(0, 3).map((a) => a.y);
+}
+
+function ofertaJson(im) {
+  const vendedor = { '@type': 'RealEstateAgent', name: empresaVisivel(), url: SITE_CLIENTE };
+  if (ehLocacao(im)) {
+    if (!im.valor_locacao) return {};
+    return { offers: { '@type': 'Offer', price: im.valor_locacao, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut', seller: vendedor } };
+  }
+  if (im.valor && !reservado(im)) return { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: vendedor } };
+  return {};
 }
 
 function paginaImovel(req, x, lista) {
@@ -435,7 +462,7 @@ function paginaImovel(req, x, lista) {
       '@context': 'https://schema.org', '@type': 'RealEstateListing', name: p.titulo, description: p.resumo, url,
       ...(p.publicadoEm ? { datePosted: p.publicadoEm } : {}),
       image: ordem.slice(0, 8).map((f) => `${base}${fotoUrl(f)}`),
-      ...(im.valor && !reservado(im) ? { offers: { '@type': 'Offer', price: im.valor, priceCurrency: 'BRL', availability: 'https://schema.org/InStock', businessFunction: 'http://purl.org/goodrelations/v1#Sell', seller: { '@type': 'RealEstateAgent', name: empresaVisivel(), url: SITE_CLIENTE } } } : {}),
+      ...ofertaJson(im),
       about: {
         '@type': residencia, name: `${im.tipo} ${im.codigo}`,
         address: { '@type': 'PostalAddress', ...(im.bairro ? { streetAddress: im.bairro } : {}), addressLocality: im.cidade, addressRegion: im.uf, addressCountry: 'BR' },
@@ -459,6 +486,7 @@ function paginaImovel(req, x, lista) {
 <header class="p-im-cab">
   <h1>${esc(p.titulo)}</h1>
   <p class="p-sobre depois">${esc(im.tipo)} · ${esc(lugar(im))}${im.condominio ? ` · ${esc(im.condominio)}` : ''}</p>
+  ${seloDemo(im)}
   <p class="p-linha-fina">${esc(p.resumo)}</p>
 </header>
 ${marcaOc.avisoImovel()}
@@ -488,8 +516,8 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 </div>
 <aside class="p-lado" aria-label="Valor e contato">
   <div class="p-lado-caixa">
-    <p class="p-lado-rot">Valor de venda</p>
-    <p class="p-lado-preco${reservado(im) ? ' p-lado-reservado' : ''}">${reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
+    <p class="p-lado-rot">${ehLocacao(im) ? 'Aluguel' : 'Valor de venda'}</p>
+    <p class="p-lado-preco${reservado(im) && !ehLocacao(im) ? ' p-lado-reservado' : ''}">${ehLocacao(im) ? esc(textoAluguel(im)) : reservado(im) ? `<a href="/imoveis/signature/${esc(im.codigo.toLowerCase())}">${RESERVADO}</a>` : esc(valorTexto(im))}</p>
     ${im.valor_condominio || im.iptu ? `<p class="p-lado-taxas">${[im.valor_condominio ? `Condomínio ${esc(reais(im.valor_condominio))}/mês` : '', im.iptu ? `IPTU ${esc(reais(im.iptu))}/ano` : ''].filter(Boolean).join(' · ')}</p>` : ''}
     <a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>
     <a class="p-botao sec" href="#contato" data-contato="visita">Agendar visita</a>
@@ -504,11 +532,11 @@ ${mosaico.map((f, i) => `<button type="button" class="p-mos-${i}" data-ver="${f}
 </div>
 ${formulario(im, p)}
 ${(() => { const ps = parecidos(x, lista); return ps.length ? `<section class="p-parecidos" aria-labelledby="parecidos"><h2 id="parecidos">Imóveis parecidos</h2><div class="p-grade">${ps.map((y) => cartao(y)).join('')}</div></section>` : ''; })()}
-<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${esc(reservado(im) ? `${CLIENTE} Signature` : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
+<div class="p-barra" aria-label="Contato rápido"><span class="p-barra-preco">${ehLocacao(im) ? esc(textoAluguel(im)) : esc(reservado(im) ? `${CLIENTE} Signature` : valorTexto(im))}</span><a class="p-botao" href="#contato" data-contato="interesse">Tenho interesse</a>${zap ? `<a class="p-botao zap" href="${esc(zap)}" target="_blank" rel="noopener" aria-label="WhatsApp">WhatsApp</a>` : ''}</div>`;
 
   const titulo = `${(p.seo && p.seo.titulo) || p.titulo} · ${CLIENTE}`;
   const capaOg = og.metaFotoPortal(capa.foto);
-  return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-pagina-imovel' });
+  return casca(req, { titulo, descricao: p.resumo, caminho: `/imoveis/${p.slug}`, imagem: capaOg.caminho, imagemLargura: capaOg.largura, imagemAltura: capaOg.altura, imagemTipo: capaOg.tipo, ld, corpo, classe: 'p-pagina-imovel', semIndice: ehDemonstracao(im) });
 }
 
 function paginaNaoAchada(req) {

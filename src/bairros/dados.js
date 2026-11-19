@@ -112,6 +112,7 @@ function imoveisPorBairro(noAr) {
   const mapa = mapaDeChaves();
   const g = new Map();
   for (const x of noAr || []) {
+    if (x.imovel && x.imovel.origem === 'radar-demo') continue;
     const s = slugDoTexto(x.imovel.bairro, mapa);
     if (!s) continue;
     if (!g.has(s)) g.set(s, []);
@@ -129,7 +130,7 @@ function imoveisPorBairro(noAr) {
 function fotosDeImoveis(slug, imoveisAVenda, noAr) {
   const mapa = mapaDeChaves();
   const paginas = new Map((noAr || []).map((x) => [x.imovel.codigo, x.pagina]));
-  return imoveisAVenda.filter((im) => slugDoTexto(im.bairro, mapa) === slug).map((im) => {
+  return imoveisAVenda.filter((im) => im.origem !== 'radar-demo' && slugDoTexto(im.bairro, mapa) === slug).map((im) => {
     const pg = paginas.get(im.codigo);
     const amb = new Map(((pg && pg.galeria) || []).map((f) => [f.foto, f]));
     return {

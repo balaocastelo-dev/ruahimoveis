@@ -88,6 +88,8 @@ main{max-width:var(--largura);margin:0 auto;padding:0 20px}
 .p-cartao h3 a:hover{color:var(--ouro-escuro)}
 .p-specs{font-size:14.5px;color:var(--pedra);margin:0 0 6px}
 .p-preco{font-size:18px;font-weight:600;margin:0;font-variant-numeric:tabular-nums}
+.p-preco-rot{display:block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--pedra)}
+.p-selo-demo{display:inline-block;margin:0 0 6px;padding:2px 8px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b5323;background:#f7f2e7;border-radius:2px}
 @media (prefers-reduced-motion:reduce){.p-cartao-img img,.p-fav{transition:none}.p-cartao:hover .p-cartao-img img{transform:none}}
 
 .p-paginas{display:flex;justify-content:space-between;align-items:center;margin:48px 0 0;padding-top:20px;border-top:1px solid var(--linha);font-size:15px;color:var(--pedra)}

@@ -34,15 +34,16 @@ function relacionados(artigo, todos) {
 
 router.get('/robots.txt', (req, res) => res.type('text/plain').send(paginas.robots(req)));
 // Para as IAs (ChatGPT, Claude, Perplexity…): o mapa do que a imobiliária publica, em texto simples.
+const semDemonstracao = (lista) => (lista || []).filter((x) => !(x.imovel && x.imovel.origem === 'radar-demo'));
 router.get('/llms.txt', async (req, res) => {
   const [imoveis, bairros, artigos] = await Promise.all([require('../portal/fonte').noAr().catch(() => []), require('../bairros/fonte').noAr().catch(() => []), diario.listar().catch(() => [])]);
   res.setHeader('Cache-Control', 'public, max-age=600, s-maxage=3600');
-  res.type('text/plain').send(paginas.llms(req, { imoveis, bairros, artigos }));
+  res.type('text/plain').send(paginas.llms(req, { imoveis: semDemonstracao(imoveis), bairros, artigos }));
 });
 router.get('/sitemap.xml', async (req, res) => {
   const imoveis = await require('../portal/fonte').noAr().catch(() => []);
   const bairros = await require('../bairros/fonte').noAr().catch(() => []);
-  res.type('application/xml').send(paginas.sitemap(req, await diario.listar(), imoveis, bairros));
+  res.type('application/xml').send(paginas.sitemap(req, await diario.listar(), semDemonstracao(imoveis), bairros));
 });
 router.get('/blog/rss.xml', async (req, res) => res.type('application/rss+xml').send(paginas.rss(req, await diario.listar())));
 
