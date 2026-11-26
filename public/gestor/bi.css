@@ -123,4 +123,25 @@
 .bi-gaveta input{padding:9px 10px;border-radius:9px;border:1px solid rgba(255,255,255,.12);background:#070B16;color:#fff;font:14px "IBM Plex Mono",monospace}
 .bi-nota{font-size:12px;color:#6E7896;margin:4px 0 0}
 
+/* Contrato L7 — só na projeção. Cenários de uma imobiliária e a rede ano a ano. */
+.bi-l7{margin:0 0 14px;padding:14px 16px 16px;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;animation:bi-entra .6s both}
+.bi-l7-nota{margin:-2px 0 12px;color:#8C95B0;font-size:12.5px;line-height:1.45}
+.bi-l7-grade{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:1100px){.bi-l7-grade{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.bi-l7-grade{grid-template-columns:minmax(0,1fr)}}
+.bi-l7-card{position:relative;padding:12px 12px 4px;border-radius:14px;background:rgba(7,11,22,.45);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+.bi-l7-card::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,#22D3EE,#A78BFA)}
+.bi-l7-bloco{margin:14px 0 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8C95B0;font-weight:600}
+.bi-l7-card h4{margin:0 0 4px;font:600 13px "Bricolage Grotesque","IBM Plex Sans",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#E6FBFF}
+.bi-l7-card.on{border-color:rgba(34,211,238,.6);box-shadow:0 0 18px rgba(34,211,238,.22)}
+.bi-l7-card.on h4{color:#22D3EE}
+.bi-l7-tab{max-height:none}
+.bi-l7-tab table{min-width:560px}
+.bi-l7-linhas{list-style:none;margin:0;padding:0}
+.bi-l7-linhas li{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:7px 0;border-top:1px solid rgba(255,255,255,.06);font-size:12px;color:#8C95B0}
+.bi-l7-linhas b{font:500 13px "IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:#F3F5FB;text-align:right;white-space:nowrap;flex:none}
+.bi-l7-linhas .total span{color:#FDE68A;font-weight:600}
+.bi-l7-linhas .total b{color:#FDE68A;font-size:15px;text-shadow:0 0 18px rgba(251,191,36,.28)}
+.bi-l7-gaveta{margin:6px 0 0;font:600 12px "Bricolage Grotesque",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#E6FBFF}
+
 @media (prefers-reduced-motion:reduce){.bi *{animation:none!important;transition:none!important}}

@@ -3,8 +3,86 @@
 // Tudo é calculado no navegador a partir das premissas (guardadas neste aparelho). Nada vem do banco.
 // Modelo: a plataforma ganha a mensalidade de cada imobiliária + uma parte da comissão de cada venda
 // (valor do imóvel × comissão da imobiliária × parte da plataforma).
+// Contrato L7 (só na projeção). Cada imobiliária: as 20 primeiras vendas pagam R$ 1.000;
+// da 21ª em diante, a parte da plataforma sobre o lucro bruto (ticket × margem).
+// 3 vendas por semana = 156 no 1º ano dela, crescendo dali. A L7 entra no ano 1;
+// imobiliárias novas por ano entram em todo ano, cada uma na própria curva.
+const SEMANAS_NO_ANO = 52;
+const HORIZONTES_L7 = [2, 3, 5, 10];
+const CRESCIMENTOS_L7 = [0, 15, 17.5, 20];
+const ANOS_L7 = 10;
+const PISO_QTD_L7 = 20;
+const PISO_VALOR_L7 = 1000;
+const PADRAO_L7 = {
+  l7_ticket: 800000, l7_margem: 30, l7_parte: 5, l7_vendas_semana: 3,
+  l7_crescimento: 17.5, l7_novas_por_ano: 1,
+};
+
+function premissasL7(p) {
+  const b = { ...PADRAO_L7, ...(p || {}) };
+  return {
+    ticket: Number(b.l7_ticket),
+    margem: Number(b.l7_margem) / 100,
+    parte: Number(b.l7_parte) / 100,
+    vendasAno1: Number(b.l7_vendas_semana) * SEMANAS_NO_ANO,
+    g: Number(b.l7_crescimento) / 100,
+    novas: Math.max(0, Math.round(Number(b.l7_novas_por_ano))),
+  };
+}
+
+function curvaL7(m, anos) {
+  const linha = [];
+  let antes = 0;
+  const porCheia = m.ticket * m.margem * m.parte;
+  for (let idade = 1; idade <= anos; idade++) {
+    const vendas = m.vendasAno1 * Math.pow(1 + m.g, idade - 1);
+    const noPiso = Math.min(Math.max(vendas, 0), Math.max(0, PISO_QTD_L7 - antes));
+    const cheias = Math.max(0, vendas - noPiso);
+    linha.push({ idade, vendas, receita: noPiso * PISO_VALOR_L7 + cheias * porCheia });
+    antes += vendas;
+  }
+  return linha;
+}
+
+function contratoL7(p, horizontes) {
+  const m = premissasL7(p);
+  const anosLista = horizontes && horizontes.length ? horizontes : HORIZONTES_L7;
+  const fim = Math.max(...anosLista.map((n) => Math.max(0, Number(n))), 0);
+  const curva = curvaL7(m, fim);
+  const saida = {};
+  for (const anos of anosLista) {
+    const n = Math.max(0, Number(anos));
+    const ate = curva.slice(0, n);
+    const vendas = ate.reduce((s, x) => s + x.vendas, 0);
+    const total = ate.reduce((s, x) => s + x.receita, 0);
+    saida[anos] = { anos: n, vendas, total, ultimo: n ? curva[n - 1].receita : 0 };
+  }
+  return saida;
+}
+
+function tabelaL7(p, anos) {
+  const m = premissasL7(p);
+  const fim = Math.max(0, Number(anos) || ANOS_L7);
+  const curva = curvaL7(m, fim);
+  const linhas = [];
+  let acum = 0;
+  for (let t = 1; t <= fim; t++) {
+    const ate = curva.slice(0, t);
+    const vendas = m.novas * ate.reduce((s, x) => s + x.vendas, 0);
+    const receita = m.novas * ate.reduce((s, x) => s + x.receita, 0);
+    acum += receita;
+    linhas.push({ ano: t, imobs: m.novas * t, vendas, receita, acum });
+  }
+  return linhas;
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { contratoL7, tabelaL7, PADRAO_L7, HORIZONTES_L7, CRESCIMENTOS_L7, SEMANAS_NO_ANO, PISO_QTD_L7, PISO_VALOR_L7 };
+}
+
 (function () {
   'use strict';
+  if (typeof document === 'undefined') return;
   const $ = (s, el = document) => el.querySelector(s);
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const PAGINA = document.body.dataset.pagina || 'dashboard';
@@ -20,7 +98,7 @@
   };
   const CHAVE = 'gestor.simulacao.v1';
   let P;
-  try { P = { ...PADRAO, ...JSON.parse(localStorage.getItem(CHAVE) || '{}') }; } catch { P = { ...PADRAO }; }
+  try { P = { ...PADRAO, ...PADRAO_L7, ...JSON.parse(localStorage.getItem(CHAVE) || '{}') }; } catch { P = { ...PADRAO, ...PADRAO_L7 }; }
   const salvar = () => { try { localStorage.setItem(CHAVE, JSON.stringify(P)); } catch {} };
   const calmo = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
@@ -34,6 +112,8 @@
     return brl(v);
   };
   const int = (v) => Math.round(v).toLocaleString('pt-BR');
+  const textoNum = (v) => { const n = Number(v); return Number.isFinite(n) ? n.toLocaleString('pt-BR', { maximumFractionDigits: 4 }) : String(v ?? ''); };
+  const valorDoCampo = (input) => String(input.name).startsWith('l7_') ? textoNum(P[input.name]) : P[input.name];
   const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
   const rotMes = (m) => `${MESES[m % 12]} · ano ${Math.floor(m / 12) + 1}`;
 
@@ -87,6 +167,7 @@
       <button class="bi-btn" id="b-tela" title="Tela cheia">⛶ Apresentar</button>
     </header>
     <section class="bi-cenarios"><span>Cenário</span>${Object.keys(CENARIOS).map((c) => `<button class="bi-chip" data-cen="${esc(c)}">${esc(c)}</button>`).join('')}<span class="bi-dica" id="dica-cen"></span></section>
+    ${PAGINA === 'projecao' ? '<section class="bi-l7" id="l7" aria-label="Contrato L7"></section>' : ''}
     <section class="bi-kpis" id="kpis"></section>
     <section class="bi-grade">
       <div class="bi-painel bi-g8"><div class="bi-cab"><h3>Faturamento mês a mês</h3><span class="bi-leg"><i class="c1"></i>total <i class="c2"></i>mensalidades <i class="c3"></i>caminho projetado</span></div><div id="area" class="bi-area"></div></div>
@@ -109,8 +190,15 @@
         ['parte', 'Parte da plataforma na comissão (%)'], ['mensalidade', 'Mensalidade (R$)'], ['rampa', 'Vendas por ano de cada imobiliária (1º, 2º, 3º...)'],
         ['crescimento_depois', 'Crescimento depois da rampa (% ao ano)'], ['anos_historia', 'Anos até hoje'], ['anos_projecao', 'Anos de projeção'],
         ['multiplo', 'Múltiplo de valor (× receita anual)']].map(([k, r]) => `<label><span>${r}</span><input name="${k}" value="${esc(P[k])}"></label>`).join('')}
+        ${PAGINA === 'projecao' ? `<p class="bi-l7-gaveta">Contrato L7</p>${[
+          ['l7_ticket', 'Valor médio do imóvel no contrato (R$)'], ['l7_margem', 'Margem bruta (%)'],
+          ['l7_parte', 'Parte da plataforma (%)'], ['l7_vendas_semana', 'Vendas por semana'],
+          ['l7_crescimento', 'Crescimento das vendas (% ao ano)'], ['l7_novas_por_ano', 'Imobiliárias novas por ano'],
+        ].map(([k, r]) => `<label><span>${r}</span><input name="${k}" value="${esc(textoNum(P[k]))}"></label>`).join('')}` : ''}
         <button class="bi-btn" type="button" id="b-padrao">Voltar ao padrão</button>
-        <p class="bi-nota">Simulação: os números vêm destas premissas, não do banco. O valor da empresa é só a receita anualizada × o múltiplo escolhido.</p></form></aside>
+        <p class="bi-nota">Simulação: os números vêm destas premissas, não do banco. O valor da empresa é só a receita anualizada × o múltiplo escolhido.</p>
+        ${PAGINA === 'projecao' ? '<p class="bi-nota">Contrato L7: as 20 primeiras vendas de cada imobiliária pagam R$ 1.000. Da 21ª em diante, a parte da plataforma incide sobre o lucro bruto (ticket × margem). Cada imobiliária tem a própria curva, e a leva nova entra todo ano.</p>' : ''}
+        </form></aside>
     </div>`;
   }
 
@@ -280,6 +368,34 @@
     $('#tabela').innerHTML = `<table><thead><tr><th>Ano</th><th>Imobiliárias</th><th>Vendas</th><th>VGV</th><th>Parte das vendas</th><th>Mensalidades</th><th>Faturamento</th><th>Acumulado</th></tr></thead><tbody>${h}</tbody></table>`;
   }
 
+  function desenhaL7() {
+    const sec = $('#l7'); if (!sec) return;
+    const cresc = Number(P.l7_crescimento);
+    const novas = Math.max(0, Math.round(Number(P.l7_novas_por_ano)));
+    const porCheia = Number(P.l7_ticket) * Number(P.l7_margem) / 100 * Number(P.l7_parte) / 100;
+    const porAno = Number(P.l7_vendas_semana) * SEMANAS_NO_ANO;
+    const entrada = novas === 1
+      ? 'A L7 entra no ano 1 e uma nova imobiliária entra a cada ano seguinte.'
+      : `No ano 1 entram ${textoNum(novas)} imobiliárias e a mesma quantidade entra a cada ano seguinte.`;
+    const nota = `As 20 primeiras vendas de cada imobiliária pagam R$ 1.000 (piso de R$ 20.000). Da 21ª em diante, cada venda paga ${textoNum(P.l7_parte)}% do lucro bruto (ticket × margem de ${textoNum(P.l7_margem)}%, ${brl(porCheia)} por venda). ${textoNum(P.l7_vendas_semana)} vendas por semana são ${textoNum(porAno)} no 1º ano de cada uma, crescendo ${textoNum(cresc)}% ao ano. ${entrada}`;
+    const qtd = (v) => textoNum(Math.round(v * 10) / 10);
+    const cards = CRESCIMENTOS_L7.map((g) => {
+      const h = contratoL7({ ...P, l7_crescimento: g });
+      const on = Math.abs(g - cresc) < 0.001 ? ' on' : '';
+      const titulo = g === 0 ? 'Sem crescimento' : `${textoNum(g)}% ao ano`;
+      const linhas = HORIZONTES_L7.map((anos) => `<li class="${anos === 10 ? 'total' : ''}"><span>${anos} anos</span><b data-anos="${anos}" data-valor="${Math.round(h[anos].total)}">${esc(brl(h[anos].total))}</b></li>`).join('');
+      return `<article class="bi-l7-card${on}" data-crescimento="${g}"><h4>${titulo}</h4><ul class="bi-l7-linhas">${linhas}</ul></article>`;
+    }).join('');
+    const rows = tabelaL7(P, ANOS_L7).map((x) => `<tr data-ano="${x.ano}"><td>Ano ${x.ano}</td><td data-k="imobs">${esc(int(x.imobs))}</td><td data-k="vendas">${esc(qtd(x.vendas))}</td><td data-k="receita" data-valor="${Math.round(x.receita)}">${esc(brl(x.receita))}</td><td data-k="acum" data-valor="${Math.round(x.acum)}"><b>${esc(brl(x.acum))}</b></td></tr>`).join('');
+    const leva = novas === 1 ? '1 imobiliária nova por ano' : `${textoNum(novas)} imobiliárias novas por ano`;
+    sec.innerHTML = `<div class="bi-cab"><h3>Contrato L7</h3></div>
+      <p class="bi-l7-nota">${esc(nota)}</p>
+      <p class="bi-l7-bloco">Curva de uma imobiliária · receita acumulada</p>
+      <div class="bi-l7-grade">${cards}</div>
+      <p class="bi-l7-bloco">Rede, ano a ano · ${esc(leva)} · crescimento de ${esc(textoNum(cresc))}%</p>
+      <div class="bi-tab bi-l7-tab"><table><thead><tr><th>Ano</th><th>Imobiliárias</th><th>Vendas</th><th>Receita do ano</th><th>Acumulado</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  }
+
   function quadro(salto) {
     atualizaKpis(salto); area(); donut(); coortes(); tabela();
     $('#t').value = atual;
@@ -315,7 +431,7 @@
     $('#t').max = M.length - 1;
     if (!mantemPosicao) atual = 0;
     atual = Math.min(atual, M.length - 1);
-    preparaRede(); marcos(); feedMes = -1; quadro(true);
+    preparaRede(); marcos(); feedMes = -1; quadro(true); desenhaL7();
     document.querySelectorAll('.bi-chip').forEach((b) => b.classList.toggle('on', Object.entries(CENARIOS[b.dataset.cen]).every(([k, v]) => Number(P[k]) === v)));
   }
 
@@ -330,14 +446,20 @@
       const k = e.target.name; let v = e.target.value.trim();
       if (k !== 'rampa') { v = Number(v.replace(/\./g, '').replace(',', '.')); if (!Number.isFinite(v) || v < 0) return; }
       if ((k === 'anos_historia' || k === 'anos_projecao') && v > 30) v = 30;
-      P[k] = v; salvar(); reinicia(true);
+      P[k] = v; salvar();
+      if (String(k).startsWith('l7_')) { desenhaL7(); return; }
+      reinicia(true);
     });
     const recomeca = () => { reinicia(false); if (PAGINA === 'projecao') { atual = HIST() - 1; quadro(true); toca(); } else toca(HIST() - 1); };
-    $('#b-padrao').onclick = () => { P = { ...PADRAO }; salvar(); document.querySelectorAll('#f-sim input').forEach((i) => { i.value = P[i.name]; }); $('#dica-cen').textContent = ''; recomeca(); };
+    $('#b-padrao').onclick = () => {
+      const l7salvo = Object.fromEntries(Object.entries(P).filter(([k]) => k.startsWith('l7_')));
+      P = { ...PADRAO, ...(PAGINA === 'projecao' ? PADRAO_L7 : l7salvo) };
+      salvar(); document.querySelectorAll('#f-sim input').forEach((i) => { i.value = valorDoCampo(i); }); $('#dica-cen').textContent = ''; desenhaL7(); recomeca();
+    };
     document.querySelectorAll('.bi-chip').forEach((b) => {
       b.onclick = () => {
         Object.assign(P, CENARIOS[b.dataset.cen]); salvar();
-        document.querySelectorAll('#f-sim input').forEach((i) => { i.value = P[i.name]; });
+        document.querySelectorAll('#f-sim input').forEach((i) => { i.value = valorDoCampo(i); });
         $('#dica-cen').textContent = `${P.novas_por_ano} imobiliária(s) nova(s) por ano · imóvel de ${curto(P.ticket)} · ${P.parte}% da comissão · ${brl(P.mensalidade)}/mês`;
         recomeca();
       };
